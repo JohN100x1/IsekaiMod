@@ -1,0 +1,172 @@
+{
+  "LocalizedStrings": [
+    {
+      "Key": "f15c8e487cfa440d90a65736c192d039",
+      "SimpleName": "$IsekaiProtagonistSpellbook.Name",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonist"
+    },
+    {
+      "Key": "4fb42fd638ef4493a7a08a3ff3015cad",
+      "SimpleName": "BackgroundBlackRoseMatriarch.Description",
+      "ProcessTemplates": true,
+      "enGB": "Black Rose Matriarch adds Lore (Nature), Lore (Religion), Knowledge (World) and Knowledge (Arcana) to the list of her class skills. She also becomes proficient with scythes and can use her Intelligence instead of Wisdom while attempting Lore (Nature) or Lore (Religion) checks.\nIf the character already has the class skill, weapon proficiency or armor proficiency granted by the selected background from her class during character creation, then the corresponding bonuses from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor Check Penalty reduction in case of armor proficiency."
+    },
+    {
+      "Key": "d6441ffc0a9f4bcfb0985ba35c34e907",
+      "SimpleName": "BackgroundBlackRoseMatriarch.DescriptionShort",
+      "ProcessTemplates": true,
+      "enGB": "The leader of The Black Roses, an evil syndicate of powerful women plotting to take over Golarion."
+    },
+    {
+      "Key": "4fbfdc31ac174ec28bd66f7b0677c2f4",
+      "SimpleName": "BackgroundBlackRoseMatriarch.Name",
+      "ProcessTemplates": false,
+      "enGB": "Black Rose Matriarch"
+    },
+    {
+      "Key": "e34c39fb244d419c95f238c4d6030f89",
+      "SimpleName": "BlackRoseBackgroundSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "You are a member of The Black Roses, an evil syndicate of powerful women plotting to take over Golarion."
+    },
+    {
+      "Key": "5e7e6b45afe64894b22ac625a2c9346f",
+      "SimpleName": "BlackRoseBackgroundSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Black Roses"
+    },
+    {
+      "Key": "cd6955358de9489f87105f8fe4f2d54a",
+      "SimpleName": "IsekaiProtagonistBonusFeat.Description",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonists gain twice as many feats as the other classes."
+    },
+    {
+      "Key": "d4c51d6b8dea4b6882728ffe35b308c6",
+      "SimpleName": "IsekaiProtagonistBonusFeat.DescriptionShort",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonists gain twice as many feats as the other classes."
+    },
+    {
+      "Key": "45fe66014eb94cedaf3f7adf9c944868",
+      "SimpleName": "IsekaiProtagonistBonusFeat.Name",
+      "ProcessTemplates": false,
+      "enGB": "Bonus Feat"
+    },
+    {
+      "Key": "461d4e4cd6974e39a7fcb3a35dd108c7",
+      "SimpleName": "IsekaiProtagonistBonusFeatSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 1st level, and at every even level thereafter, Isekai Protagonists gains a bonus feat in addition to those gained from normal advancement."
+    },
+    {
+      "Key": "78bc1310f2e54eb39e02e061a02d2f76",
+      "SimpleName": "IsekaiProtagonistCantripsFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonists can cast a number of cantrips, or 0-level spells. These spells are cast like any other spell, but they are not expended when cast and may be used again."
+    },
+    {
+      "Key": "fff9180e35944722b81cf2793bbf7ad6",
+      "SimpleName": "IsekaiProtagonistCantripsFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Cantrips"
+    },
+    {
+      "Key": "ead7a4c9acea4541a197319224560a0b",
+      "SimpleName": "IsekaiProtagonistClass.Description",
+      "ProcessTemplates": true,
+      "enGB": "Isekai protagonists are skilled in both martial prowess and magical ability. They are able to cast spells while wearing any armor or shield."
+    },
+    {
+      "Key": "07872fb319404683a83f2333a24d46bd",
+      "SimpleName": "IsekaiProtagonistProficiencies.Description",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonists are proficient with all simple and martial weapons and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast spells from this class while wearing armor and shields (including tower shields) without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes."
+    },
+    {
+      "Key": "e13e52a784fc409d84b69adeff2c0012",
+      "SimpleName": "IsekaiProtagonistProficiencies.Name",
+      "ProcessTemplates": false,
+      "enGB": "Isekai Protagonist Proficiences"
+    },
+    {
+      "Key": "72a9155190434b3ba3feee03d375336b",
+      "SimpleName": "IsekaiProtagonistProgression.Description",
+      "ProcessTemplates": true,
+      "enGB": "Isekai protagonists are otherworldly entities who have been reincarnated into the world of Golarion with extraordinary abilities. As their story progresses, they gain more unexplained and overpowered abilities to overcome every challenge they face."
+    },
+    {
+      "Key": "584dc471d1bd4c23adc3726701126242",
+      "SimpleName": "IsekaiProtagonistProgression.Name",
+      "ProcessTemplates": false,
+      "enGB": ""
+    },
+    {
+      "Key": "1d4de37c6523473e9e32d33e8a49d2bd",
+      "SimpleName": "IsekaiProtagonistSneakFeat.Description",
+      "ProcessTemplates": true,
+      "enGB": "Most characters gain advantages when they flank an enemy, attack an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional damage in such a situation."
+    },
+    {
+      "Key": "f2d9e79ab6df472e8788160e83185ab2",
+      "SimpleName": "IsekaiProtagonistSneakFeat.DescriptionShort",
+      "ProcessTemplates": true,
+      "enGB": "Most characters gain advantages when they flank an enemy, attack an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional damage in such a situation."
+    },
+    {
+      "Key": "125a193f21284b66b31eec4dad3fbcce",
+      "SimpleName": "IsekaiProtagonistSneakFeat.Name",
+      "ProcessTemplates": false,
+      "enGB": "Sneak Attack"
+    },
+    {
+      "Key": "910198b4ca3f461cb8625ff56bc7a4c1",
+      "SimpleName": "PlotArmor.Description",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonists gain a Luck bonus equal to their level on AC."
+    },
+    {
+      "Key": "a5e15ce7e50e44b1b44e266e44b0ccf8",
+      "SimpleName": "PlotArmor.Name",
+      "ProcessTemplates": false,
+      "enGB": "Plot Armor"
+    },
+    {
+      "Key": "489035c4ba8a492f9c18780e8fb69e6b",
+      "SimpleName": "SuccubusCharmAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "You can make any creature fight on your side as if it was your ally. It will attack your opponents to the best of its ability. However this creature will try to throw off the domination effect, making a Will save each round."
+    },
+    {
+      "Key": "d5a8e30b1d984d9a8d65f3ea5e226700",
+      "SimpleName": "SuccubusCharmAbility.Duration",
+      "ProcessTemplates": true,
+      "enGB": "1 minute/level"
+    },
+    {
+      "Key": "57b2e053fb9645b29917c4970fe6266d",
+      "SimpleName": "SuccubusCharmAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Succubus Charm"
+    },
+    {
+      "Key": "526767bd3ecd4a998b25d358d246f5b7",
+      "SimpleName": "SuccubusCharmAbility.SavingThrow",
+      "ProcessTemplates": true,
+      "enGB": "Will negates"
+    },
+    {
+      "Key": "53a802ab1fe24359b2a6c0b4356d79f2",
+      "SimpleName": "TieflingHeritageSuccubus.Description",
+      "ProcessTemplates": true,
+      "enGB": "Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power. They have a voracious appetite for sensory pleasures and carnal delights.\nIsekai Succubus have a +72 racial bonus bonus to Charisma and a +60 racial bonus bonus to all other attributes. They gain a +100 racial bonus to AC, have DR 100/—, and a spell resistance of 100. They can use the Charm spell. They are also immune to everything."
+    },
+    {
+      "Key": "4d764b050cc642e6b8137acdd0e652d6",
+      "SimpleName": "TieflingHeritageSuccubus.Name",
+      "ProcessTemplates": false,
+      "enGB": "Isekai Succubus"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "NewSettingsOffByDefault": false,
+  "Heritages": {
+    "DisableAll": false,
+    "Settings": {
+      "Isekai Succubus": {
+        "Enabled": true,
+        "Homebrew": false,
+        "Description": "Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power."
+      }
+    }
+  },
+  "Backgrounds": {
+    "DisableAll": false,
+    "Settings": {
+      "Black Roses": {
+        "Enabled": true,
+        "Homebrew": false,
+        "Description": "You are a member of The Black Roses, an evil syndicate of powerful women plotting to take over Golarion."
+      },
+      "Black Rose Matriarch": {
+        "Enabled": false,
+        "Homebrew": true,
+        "Description": "A matriarch of The Black Roses, an evil syndicate of powerful women plotting to take over Golarion."
+      }
+    },
+    "IsExpanded": false
+  }
+  }

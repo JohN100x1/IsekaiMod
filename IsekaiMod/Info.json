@@ -1,0 +1,10 @@
+﻿{
+  "Id": "IsekaiMod",
+  "DisplayName": "Isekai Mod",
+  "Author": "JohN100x1",
+  "Version": "1.0.0",
+  "ManagerVersion": "0.21.3",
+  "Requirements": [],
+  "AssemblyName": "IsekaiMod.dll",
+  "EntryMethod": "IsekaiMod.Main.Load"
+}
