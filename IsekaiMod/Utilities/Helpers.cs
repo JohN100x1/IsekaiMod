@@ -128,7 +128,7 @@ namespace IsekaiMod.Utilities
 
         public static UIGroup CreateUIGroup(IEnumerable<BlueprintFeatureBase> features)
         {
-            UIGroup uiGroup = new UIGroup();
+            UIGroup uiGroup = new();
             BlueprintFeatureBaseReference[] featureBaseReferenceArray = new BlueprintFeatureBaseReference[features.Count()];
             for (int index = 0; index < ((IEnumerable<BlueprintFeatureBaseReference>)featureBaseReferenceArray).Count(); ++index)
                 featureBaseReferenceArray[index] = features.ElementAt(index).ToReference<BlueprintFeatureBaseReference>();
@@ -140,7 +140,7 @@ namespace IsekaiMod.Utilities
 
         public static UIGroup[] CreateUIGroups(IEnumerable<BlueprintFeatureBase> features)
         {
-            UIGroup uiGroup = new UIGroup();
+            UIGroup uiGroup = new();
             BlueprintFeatureBaseReference[] featureBaseReferenceArray = new BlueprintFeatureBaseReference[features.Count()];
             for (int index = 0; index < ((IEnumerable<BlueprintFeatureBaseReference>)featureBaseReferenceArray).Count(); ++index)
                 featureBaseReferenceArray[index] = features.ElementAt(index).ToReference<BlueprintFeatureBaseReference>();

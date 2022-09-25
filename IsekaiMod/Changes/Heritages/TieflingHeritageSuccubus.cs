@@ -141,26 +141,26 @@ namespace IsekaiMod.Changes.Heritages
 
 
                 // Add Energy Damage Immunity
-                bp.AddComponent<AddEnergyDamageImmunity>(c => {
-                    c.EnergyType = DamageEnergyType.Acid;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.Acid;
                 });
-                bp.AddComponent<AddEnergyDamageImmunity>(c => {
-                    c.EnergyType = DamageEnergyType.Cold;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.Cold;
                 });
-                bp.AddComponent<AddEnergyDamageImmunity>(c => {
-                    c.EnergyType = DamageEnergyType.Electricity;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.Electricity;
                 });
-                bp.AddComponent<AddEnergyDamageImmunity>(c => {
-                    c.EnergyType = DamageEnergyType.Fire;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.Fire;
                 });
-                bp.AddComponent<AddEnergyDamageImmunity>(c => {
-                    c.EnergyType = DamageEnergyType.Sonic;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.Sonic;
                 });
-                bp.AddComponent<AddEnergyDamageImmunity>(c => {
-                    c.EnergyType = DamageEnergyType.Unholy;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.Unholy;
                 });
-                bp.AddComponent<AddEnergyDamageImmunity>(c => {
-                    c.EnergyType = DamageEnergyType.NegativeEnergy;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.NegativeEnergy;
                 });
 
 
@@ -189,6 +189,7 @@ namespace IsekaiMod.Changes.Heritages
                     | SpellDescriptor.Sonic
                     | SpellDescriptor.Evil
                     | SpellDescriptor.Chaos
+                    | SpellDescriptor.Bleed
                     | SpellDescriptor.Fire;
                 });
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
@@ -213,6 +214,7 @@ namespace IsekaiMod.Changes.Heritages
                     | SpellDescriptor.Sonic
                     | SpellDescriptor.Evil
                     | SpellDescriptor.Chaos
+                    | SpellDescriptor.Bleed
                     | SpellDescriptor.Fire;
                 });
 
@@ -223,7 +225,21 @@ namespace IsekaiMod.Changes.Heritages
                 bp.AddComponent<AddImmunityToEnergyDrain>();
                 bp.AddComponent<AddImmunityToCriticalHits>();
                 bp.AddComponent<AddImmunityToPrecisionDamage>();
+                bp.AddComponent<AddFortification>(c => {
+                    c.Bonus = 100;
+                    c.Value = new ContextValue() {
+                        ValueType = ContextValueType.Simple
+                    };
+                });
+
+                // Ignore enemy's resistance and immunity
+                bp.AddComponent<IgnoreSpellImmunity>();
+                bp.AddComponent<IgnoreSpellResistanceForSpells>();
                 bp.AddComponent<IgnoreDamageReductionOnAttack>();
+                bp.AddComponent<IgnoreCritImmunity>();
+
+                // Auto confirm crits
+                bp.AddComponent<InitiatorCritAutoconfirm>();
 
 
                 // Add Charm Ability

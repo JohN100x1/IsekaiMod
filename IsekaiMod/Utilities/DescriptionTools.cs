@@ -104,6 +104,7 @@ namespace IsekaiMod.Utilities
             new EncyclopediaEntry {
                 Entry = "Saving_Throw",
                 Patterns = {
+                    "saving throws",
                     "Saving Throw",
                     "Reflex Save",
                     "Will Save",
@@ -259,7 +260,10 @@ namespace IsekaiMod.Utilities
             },
             new EncyclopediaEntry {
                 Entry = "Critical",
-                Patterns = { "Critical Hit" }
+                Patterns = {
+                    "Critical Hit",
+                    "critical hits"
+                }
             },
             new EncyclopediaEntry {
                 Entry = "Fast_Healing",

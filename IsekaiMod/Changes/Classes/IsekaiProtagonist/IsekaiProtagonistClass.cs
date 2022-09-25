@@ -14,6 +14,7 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using Kingmaker.Enums.Damage;
 
 namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 {
@@ -46,8 +47,19 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
         // Mythic Ability Selection
         private static readonly BlueprintFeatureSelection MythicAbilitySelection = Resources.GetBlueprint<BlueprintFeatureSelection>("ba0e5a900b775be4a99702f1ed08914d");
 
+
+        // Abilities
+        private static readonly BlueprintAbility ResistAcid = Resources.GetBlueprint<BlueprintAbility>("fedc77de9b7aad54ebcc43b4daf8decd");
+        private static readonly BlueprintAbility ResistCold = Resources.GetBlueprint<BlueprintAbility>("5368cecec375e1845ae07f48cdc09dd1");
+        private static readonly BlueprintAbility ResistElectricity = Resources.GetBlueprint<BlueprintAbility>("90987584f54ab7a459c56c2d2f22cee2");
+        private static readonly BlueprintAbility ResistFire = Resources.GetBlueprint<BlueprintAbility>("ddfb4ac970225f34dbff98a10a4a8844");
+        private static readonly BlueprintAbility ResistSonic = Resources.GetBlueprint<BlueprintAbility>("8d3b10f92387c84429ced317b06ad001");
+        private static readonly BlueprintAbility DeathWard = Resources.GetBlueprint<BlueprintAbility>("0413915f355a38146bc6ad40cdf27b3f");
+        private static readonly BlueprintAbility MageArmor = Resources.GetBlueprint<BlueprintAbility>("9e1ad5d6f87d19e4d8883d63a6e35568");
+
         public static void AddIsekaiProtagonistClass()
         {
+            // TODO: feature selection, "Exceptional abilities" should probably be more than just immunities
             // TODO: create "plot armor" feature group
             // TODO: create feature called "harem" (don't know the mechanics yet)
             // TODO: create feature called "deus ex machina" that gives spell resistance
@@ -57,7 +69,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             // TODO: Add MythicAbilitySelection ability
             // TODO: Add mythic spellbook merging
 
-            // TODO: Add archetypes
+            // TODO: Add archetypes, Archetype ideas: God Emporer, Edge Lord
             // TODO: Add custom equipment
 
             var BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
@@ -74,23 +86,23 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     new SpellsLevelEntry() { Count = new int[] { } },
                     new SpellsLevelEntry() { Count = new int[] { 0, 5 } },
                     new SpellsLevelEntry() { Count = new int[] { 0, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 15 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 10 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 15, 5 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 10, 5 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 15, 10 } },
                     new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 10 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 10, 5 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 15, 10 } },
                     new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 10 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 10, 5 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 15, 10 } },
                     new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 10 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 10, 5 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 15, 10 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 15 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
                     new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
                     new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
                     new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
@@ -107,23 +119,23 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     new SpellsLevelEntry() { Count = new int[] { } },
                     new SpellsLevelEntry() { Count = new int[] { 0, 5 } },
                     new SpellsLevelEntry() { Count = new int[] { 0, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 15 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 10 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 15, 5 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 10, 5 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 15, 10 } },
                     new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 10 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 10, 5 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 15, 10 } },
                     new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 10 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 10, 5 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 15, 10 } },
                     new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 10 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 10, 5 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 15, 10 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 15 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
                     new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } }
                 };
             });
@@ -292,7 +304,8 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             // Plot Armor
             var PlotArmor = Helpers.CreateBlueprint<BlueprintFeature>("PlotArmor", bp => {
                 bp.SetName("Plot Armor");
-                bp.SetDescription("Isekai Protagonists gain a Luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
+                bp.SetDescription("Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
+                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
                 bp.m_Icon = EdictOfImpenetrableFortress.m_Icon;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Luck;
@@ -340,7 +353,215 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var UncannyDodge = Resources.GetBlueprint<BlueprintFeature>("3c08d842e802c3e4eb19d15496145709");
             var ImprovedUncannyDodge = Resources.GetBlueprint<BlueprintFeature>("485a18c05792521459c7d06c63128c79");
             var Evasion = Resources.GetBlueprint<BlueprintFeature>("576933720c440aa4d8d42b0c54b77e80");
-            var ImprovedEvasion = Resources.GetBlueprint<BlueprintFeature>("0d35d6c4d5eef8d4790d09bd9a874e57");
+            var ImprovedEvasion = Resources.GetBlueprint<BlueprintFeature>("ce96af454a6137d47b9c6a1e02e66803");
+            // Capstone
+            var Icon_TrueMainCharacter = AssetLoader.LoadInternal("Features", "ICON_TRUE_MAIN_CHARACTER.png");
+            var TrueMainCharacter = Helpers.CreateBlueprint<BlueprintFeature>("TrueMainCharacter", bp => {
+                bp.SetName("True Main Character");
+                bp.SetDescription("You are the main character of this world. Your attacks ignore {g|Encyclopedia:Damage_Reduction}damage reduction{/g} and immunity to {g|Encyclopedia:Critical}critical hits{/g}. Your critical threats are also automatically confirmed. The {g|Encyclopedia:Spell}spells{/g} you cast ignore {g|Encyclopedia:Spell_Resistance}spell resistance{/g} and spell immunity.");
+                bp.m_Icon = Icon_TrueMainCharacter;
+                bp.AddComponent<IgnoreSpellImmunity>();
+                bp.AddComponent<IgnoreSpellResistanceForSpells>();
+                bp.AddComponent<IgnoreDamageReductionOnAttack>();
+                bp.AddComponent<IgnoreCritImmunity>();
+                bp.AddComponent<InitiatorCritAutoconfirm>();
+                bp.IsClassFeature = true;
+            });
+
+            // Exceptional feats
+            var Icon_ExceptionalFeatureSelection = AssetLoader.LoadInternal("Features", "ICON_EXCEPTIONAL_FEAT.png");
+            var Icon_ExceptionalFeatureSelection_2 = AssetLoader.LoadInternal("Features", "ICON_EXCEPTIONAL_FEAT_2.png");
+            var ImmunityToCriticalHitsFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToCriticalHitsFeat", bp => {
+                bp.SetName("Immunity to Critical hits");
+                bp.SetDescription("You gain immunity to {g|Encyclopedia:Critical}critical hits{/g}.");
+                bp.m_Icon = MageArmor.m_Icon;
+                bp.AddComponent<AddImmunityToCriticalHits>();
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var ImmunityToCriticalSneakFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToCriticalSneakFeat", bp => {
+                bp.SetName("Immunity to Sneak attack damage");
+                bp.SetDescription("You gain immunity to sneak attack damage.");
+                bp.m_Icon = MageArmor.m_Icon;
+                bp.AddComponent<AddImmunityToPrecisionDamage>();
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var ImmunityToAbilityScoreDamageFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToAbilityScoreDamageFeat", bp => {
+                bp.SetName("Immunity to Ability score damage");
+                bp.SetDescription("You gain immunity to {g|Encyclopedia:Ability_Scores}ability score{/g} {g|Encyclopedia:Damage}damage{/g}");
+                bp.m_Icon = DeathWard.m_Icon;
+                bp.AddComponent<AddImmunityToAbilityScoreDamage>();
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var ImmunityToEnergyDrainFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToEnergyDrainFeat", bp => {
+                bp.SetName("Immunity to Energy drain");
+                bp.SetDescription("You gain immunity to energy drain.");
+                bp.m_Icon = DeathWard.m_Icon;
+                bp.AddComponent<AddImmunityToEnergyDrain>();
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var ImmunityToAcidFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToAcidFeat", bp => {
+                bp.SetName("Acid Immunity");
+                bp.SetDescription("You gain immunity to Acid.");
+                bp.m_Icon = ResistAcid.m_Icon;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.Acid;
+                });
+                bp.AddComponent<BuffDescriptorImmunity>(c => {
+                    c.Descriptor = SpellDescriptor.Acid;
+                });
+                bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
+                    c.Descriptor = SpellDescriptor.Acid;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var ImmunityToColdFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToColdFeat", bp => {
+                bp.SetName("Cold Immunity");
+                bp.SetDescription("You gain immunity to Cold.");
+                bp.m_Icon = ResistCold.m_Icon;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.Cold;
+                });
+                bp.AddComponent<BuffDescriptorImmunity>(c => {
+                    c.Descriptor = SpellDescriptor.Cold;
+                });
+                bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
+                    c.Descriptor = SpellDescriptor.Cold;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var ImmunityToElectricityFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToElectricityFeat", bp => {
+                bp.SetName("Electricity Immunity");
+                bp.SetDescription("You gain immunity to Electricity.");
+                bp.m_Icon = ResistElectricity.m_Icon;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.Electricity;
+                });
+                bp.AddComponent<BuffDescriptorImmunity>(c => {
+                    c.Descriptor = SpellDescriptor.Electricity;
+                });
+                bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
+                    c.Descriptor = SpellDescriptor.Electricity;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var ImmunityToFireFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToFireFeat", bp => {
+                bp.SetName("Fire Immunity");
+                bp.SetDescription("You gain immunity to Fire.");
+                bp.m_Icon = ResistFire.m_Icon;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.Fire;
+                });
+                bp.AddComponent<BuffDescriptorImmunity>(c => {
+                    c.Descriptor = SpellDescriptor.Fire;
+                });
+                bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
+                    c.Descriptor = SpellDescriptor.Fire;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var ImmunityToSonicFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToSonicFeat", bp => {
+                bp.SetName("Sonic Immunity");
+                bp.SetDescription("You gain immunity to Sonic.");
+                bp.m_Icon = ResistSonic.m_Icon;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.Sonic;
+                });
+                bp.AddComponent<BuffDescriptorImmunity>(c => {
+                    c.Descriptor = SpellDescriptor.Sonic;
+                });
+                bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
+                    c.Descriptor = SpellDescriptor.Sonic;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var ImmunityToHolyFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToHolyFeat", bp => {
+                bp.SetName("Holy Immunity");
+                bp.SetDescription("You gain immunity to Holy damage.");
+                bp.m_Icon = Icon_ExceptionalFeatureSelection;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.Holy;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var ImmunityToUnholyFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToUnholyFeat", bp => {
+                bp.SetName("Unholy Immunity");
+                bp.SetDescription("You gain immunity to Unholy damage.");
+                bp.m_Icon = Icon_ExceptionalFeatureSelection_2;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.Unholy;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var ImmunityToPositiveFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToPositiveFeat", bp => {
+                bp.SetName("Positive energy Immunity");
+                bp.SetDescription("You gain immunity to Positive energy.");
+                bp.m_Icon = Icon_ExceptionalFeatureSelection;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.PositiveEnergy;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var ImmunityToNegativeFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToNegativeFeat", bp => {
+                bp.SetName("Negative energy Immunity");
+                bp.SetDescription("You gain immunity to Negative energy.");
+                bp.m_Icon = Icon_ExceptionalFeatureSelection_2;
+                bp.AddComponent<AddEnergyImmunity>(c => {
+                    c.Type = DamageEnergyType.NegativeEnergy;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            // You are the exception
+            var ExceptionalFeatureSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("ExceptionalFeatureSelection", bp => {
+                bp.SetName("Exceptional Feat");
+                bp.SetDescription("At 4th level, and every three levels thereafter, you can select one exceptional feat.");
+                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists gain exceptional feats. These feats include immunity to {g|Encyclopedia:Critical}critical hits{/g}, {g|Encyclopedia:Energy_Damage}energy damage{/g}, or conditions.");
+                bp.m_Icon = Icon_ExceptionalFeatureSelection;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    ImmunityToCriticalHitsFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToCriticalSneakFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToAbilityScoreDamageFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToEnergyDrainFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToAcidFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToColdFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToFireFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToElectricityFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToSonicFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToHolyFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToUnholyFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToPositiveFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToNegativeFeat.ToReference<BlueprintFeatureReference>()
+                };
+                bp.m_Features = new BlueprintFeatureReference[] {
+                    ImmunityToCriticalHitsFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToCriticalSneakFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToAbilityScoreDamageFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToEnergyDrainFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToAcidFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToColdFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToFireFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToElectricityFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToSonicFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToHolyFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToUnholyFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToPositiveFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToNegativeFeat.ToReference<BlueprintFeatureReference>()
+                };
+            });
 
             //// Class Signature Features
             // Bonus Feats
@@ -362,34 +583,38 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             });
 
             // Signature Abilities
-            IsekaiProtagonistClass.m_SignatureAbilities = new BlueprintFeatureReference[2] {
+            IsekaiProtagonistClass.m_SignatureAbilities = new BlueprintFeatureReference[4] {
                     IsekaiProtagonistBonusFeat.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistSneakFeat.ToReference<BlueprintFeatureReference>()
+                    IsekaiProtagonistSneakFeat.ToReference<BlueprintFeatureReference>(),
+                    PlotArmor.ToReference<BlueprintFeatureReference>(),
+                    ExceptionalFeatureSelection.ToReference<BlueprintFeatureReference>()
             };
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
                 Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, PlotArmor),
-                Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(3, SneakAttack),
-                Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection, UncannyDodge),
-                Helpers.LevelEntry(5, SneakAttack),
+                Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection, UncannyDodge),
+                Helpers.LevelEntry(3, SneakAttack, Evasion),
+                Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection, ExceptionalFeatureSelection),
+                Helpers.LevelEntry(5, SneakAttack, ImprovedUncannyDodge),
                 Helpers.LevelEntry(6, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(7, SneakAttack, Evasion),
+                Helpers.LevelEntry(7, SneakAttack, ExceptionalFeatureSelection),
                 Helpers.LevelEntry(8, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(9, SneakAttack),
-                Helpers.LevelEntry(10, IsekaiProtagonistBonusFeatSelection, ImprovedUncannyDodge),
+                Helpers.LevelEntry(9, SneakAttack, ImprovedEvasion),
+                Helpers.LevelEntry(10, IsekaiProtagonistBonusFeatSelection, ExceptionalFeatureSelection),
                 Helpers.LevelEntry(11, SneakAttack),
                 Helpers.LevelEntry(12, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(13, SneakAttack, ImprovedEvasion),
+                Helpers.LevelEntry(13, SneakAttack, ExceptionalFeatureSelection),
                 Helpers.LevelEntry(14, IsekaiProtagonistBonusFeatSelection),
                 Helpers.LevelEntry(15, SneakAttack),
-                Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection),
+                Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection, ExceptionalFeatureSelection),
                 Helpers.LevelEntry(17, SneakAttack),
                 Helpers.LevelEntry(18, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(19, SneakAttack),
-                Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection)
+                Helpers.LevelEntry(19, SneakAttack, ExceptionalFeatureSelection),
+                Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, TrueMainCharacter)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
-                Helpers.CreateUIGroup(PlotArmor, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion),
+                Helpers.CreateUIGroup(PlotArmor, TrueMainCharacter),
+                Helpers.CreateUIGroup(UncannyDodge, ImprovedUncannyDodge),
+                Helpers.CreateUIGroup(Evasion, ImprovedEvasion)
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
                 IsekaiProtagonistProficiencies.ToReference<BlueprintFeatureBaseReference>(),
