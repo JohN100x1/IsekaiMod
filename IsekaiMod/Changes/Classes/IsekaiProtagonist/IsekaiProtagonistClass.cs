@@ -70,6 +70,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 
         public static void AddIsekaiProtagonistClass()
         {
+            // TODO: character development feats should initially give energy resistance and then finally give immunity at a certain level.
             // TODO: debug harem magnet, (harem magnet buff is not removed on attack in UI), (harem magnet source stacks and is not removed in UI)
             // TODO: feature selection, rename "Exceptional feats" to "Hidden powers" or "character development feats", also should probably be more than just immunities
             // TODO: create "plot armor" feature group
@@ -579,6 +580,27 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     c.m_Facts = new BlueprintUnitFactReference[] { HaremMagnetActivatableAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
+            // Otherworldly Stamina
+            var Icon_Stamina = AssetLoader.LoadInternal("Features", "ICON_STAMINA.png");
+            var OtherworldlyStamina = Helpers.CreateBlueprint<BlueprintFeature>("OtherworldlyStamina", bp => {
+                bp.SetName("Otherworldly Stamina");
+                bp.SetDescription("At 17th Level, the Isekai Protagonist becomes immune to fatigue and exhaustion conditions from spells and spell-like abilities.");
+                bp.m_Icon = Icon_Harem;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Fatigued;
+                });
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Exhausted;
+                });
+                bp.AddComponent<BuffDescriptorImmunity>(c => {
+                    c.Descriptor = SpellDescriptor.Fatigue | SpellDescriptor.Exhausted;
+                });
+                bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
+                    c.Descriptor = SpellDescriptor.Fatigue | SpellDescriptor.Exhausted;
+                });
+            });
 
             // Character development feats
             var Icon_CharacterDevelopment_1 = AssetLoader.LoadInternal("Features", "ICON_POSITIVE_SHIELD.png");
@@ -738,7 +760,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             // You are the exception
             var CharacterDevelopmentSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection", bp => {
                 bp.SetName("Character Development Feat");
-                bp.SetDescription("At 4th level, and every three levels thereafter, you can select one character development feat.");
+                bp.SetDescription("At 1st level, and every three levels thereafter, you can select one character development feat.");
                 bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists gain character development feats. These feats include immunity to {g|Encyclopedia:Critical}critical hits{/g}, {g|Encyclopedia:Energy_Damage}energy damage{/g}, or conditions.");
                 bp.m_Icon = Icon_CharacterDevelopment_1;
                 bp.Ranks = 1;
@@ -802,7 +824,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     CharacterDevelopmentSelection.ToReference<BlueprintFeatureReference>()
             };
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
-                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, HaremMagnetFeature),
+                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, CharacterDevelopmentSelection, HaremMagnetFeature),
                 Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection, UncannyDodge),
                 Helpers.LevelEntry(3, SneakAttack, Evasion),
                 Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection),
@@ -818,7 +840,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 Helpers.LevelEntry(14, IsekaiProtagonistBonusFeatSelection),
                 Helpers.LevelEntry(15, SneakAttack),
                 Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection),
-                Helpers.LevelEntry(17, SneakAttack, PlotArmor),
+                Helpers.LevelEntry(17, SneakAttack, PlotArmor, OtherworldlyStamina),
                 Helpers.LevelEntry(18, IsekaiProtagonistBonusFeatSelection),
                 Helpers.LevelEntry(19, SneakAttack, CharacterDevelopmentSelection),
                 Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, TrueMainCharacter)

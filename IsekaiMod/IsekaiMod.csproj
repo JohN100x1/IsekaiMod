@@ -84,6 +84,9 @@
     <None Update="Assets\Features\ICON_NEGATIVE_SHIELD.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Assets\Features\ICON_STAMINA.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\Features\ICON_TRUE_MAIN_CHARACTER.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
