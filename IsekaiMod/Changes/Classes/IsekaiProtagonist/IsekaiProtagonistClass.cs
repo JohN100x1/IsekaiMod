@@ -71,7 +71,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
         public static void AddIsekaiProtagonistClass()
         {
             // TODO: debug harem magnet, (harem magnet buff is not removed on attack in UI), (harem magnet source stacks and is not removed in UI)
-            // TODO: feature selection, "Exceptional abilities" should probably be more than just immunities
+            // TODO: feature selection, rename "Exceptional feats" to "Hidden powers" or "character development feats", also should probably be more than just immunities
             // TODO: create "plot armor" feature group
             // TODO: create feature called "deus ex machina" that gives spell resistance
             // TODO: Add IgnoreDamageReductionOnAttack
@@ -580,9 +580,9 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 });
             });
 
-            // Exceptional feats
-            var Icon_ExceptionalFeatureSelection = AssetLoader.LoadInternal("Features", "ICON_EXCEPTIONAL_FEAT.png");
-            var Icon_ExceptionalFeatureSelection_2 = AssetLoader.LoadInternal("Features", "ICON_EXCEPTIONAL_FEAT_2.png");
+            // Character development feats
+            var Icon_CharacterDevelopment_1 = AssetLoader.LoadInternal("Features", "ICON_POSITIVE_SHIELD.png");
+            var Icon_CharacterDevelopment_2 = AssetLoader.LoadInternal("Features", "ICON_NEGATIVE_SHIELD.png");
             var ImmunityToCriticalHitsFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToCriticalHitsFeat", bp => {
                 bp.SetName("Immunity to Critical hits");
                 bp.SetDescription("You gain immunity to {g|Encyclopedia:Critical}critical hits{/g}.");
@@ -698,7 +698,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ImmunityToHolyFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToHolyFeat", bp => {
                 bp.SetName("Holy Immunity");
                 bp.SetDescription("You gain immunity to Holy damage.");
-                bp.m_Icon = Icon_ExceptionalFeatureSelection;
+                bp.m_Icon = Icon_CharacterDevelopment_1;
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Holy;
                 });
@@ -708,7 +708,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ImmunityToUnholyFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToUnholyFeat", bp => {
                 bp.SetName("Unholy Immunity");
                 bp.SetDescription("You gain immunity to Unholy damage.");
-                bp.m_Icon = Icon_ExceptionalFeatureSelection_2;
+                bp.m_Icon = Icon_CharacterDevelopment_2;
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Unholy;
                 });
@@ -718,7 +718,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ImmunityToPositiveFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToPositiveFeat", bp => {
                 bp.SetName("Positive energy Immunity");
                 bp.SetDescription("You gain immunity to Positive energy.");
-                bp.m_Icon = Icon_ExceptionalFeatureSelection;
+                bp.m_Icon = Icon_CharacterDevelopment_1;
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.PositiveEnergy;
                 });
@@ -728,7 +728,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ImmunityToNegativeFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToNegativeFeat", bp => {
                 bp.SetName("Negative energy Immunity");
                 bp.SetDescription("You gain immunity to Negative energy.");
-                bp.m_Icon = Icon_ExceptionalFeatureSelection_2;
+                bp.m_Icon = Icon_CharacterDevelopment_2;
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.NegativeEnergy;
                 });
@@ -736,11 +736,11 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.IsClassFeature = true;
             });
             // You are the exception
-            var ExceptionalFeatureSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("ExceptionalFeatureSelection", bp => {
-                bp.SetName("Exceptional Feat");
-                bp.SetDescription("At 4th level, and every three levels thereafter, you can select one exceptional feat.");
-                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists gain exceptional feats. These feats include immunity to {g|Encyclopedia:Critical}critical hits{/g}, {g|Encyclopedia:Energy_Damage}energy damage{/g}, or conditions.");
-                bp.m_Icon = Icon_ExceptionalFeatureSelection;
+            var CharacterDevelopmentSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection", bp => {
+                bp.SetName("Character Development Feat");
+                bp.SetDescription("At 4th level, and every three levels thereafter, you can select one character development feat.");
+                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists gain character development feats. These feats include immunity to {g|Encyclopedia:Critical}critical hits{/g}, {g|Encyclopedia:Energy_Damage}energy damage{/g}, or conditions.");
+                bp.m_Icon = Icon_CharacterDevelopment_1;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
@@ -799,28 +799,28 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     IsekaiProtagonistBonusFeat.ToReference<BlueprintFeatureReference>(),
                     IsekaiProtagonistSneakFeat.ToReference<BlueprintFeatureReference>(),
                     PlotArmor.ToReference<BlueprintFeatureReference>(),
-                    ExceptionalFeatureSelection.ToReference<BlueprintFeatureReference>()
+                    CharacterDevelopmentSelection.ToReference<BlueprintFeatureReference>()
             };
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
-                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, PlotArmor),
+                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, HaremMagnetFeature),
                 Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection, UncannyDodge),
                 Helpers.LevelEntry(3, SneakAttack, Evasion),
-                Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection, ExceptionalFeatureSelection),
+                Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection),
                 Helpers.LevelEntry(5, SneakAttack, ImprovedUncannyDodge),
                 Helpers.LevelEntry(6, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(7, SneakAttack, ExceptionalFeatureSelection),
+                Helpers.LevelEntry(7, SneakAttack, CharacterDevelopmentSelection),
                 Helpers.LevelEntry(8, IsekaiProtagonistBonusFeatSelection),
                 Helpers.LevelEntry(9, SneakAttack, ImprovedEvasion),
-                Helpers.LevelEntry(10, IsekaiProtagonistBonusFeatSelection, ExceptionalFeatureSelection),
+                Helpers.LevelEntry(10, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection),
                 Helpers.LevelEntry(11, SneakAttack),
                 Helpers.LevelEntry(12, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(13, SneakAttack, ExceptionalFeatureSelection),
+                Helpers.LevelEntry(13, SneakAttack, CharacterDevelopmentSelection),
                 Helpers.LevelEntry(14, IsekaiProtagonistBonusFeatSelection),
                 Helpers.LevelEntry(15, SneakAttack),
-                Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection, ExceptionalFeatureSelection),
-                Helpers.LevelEntry(17, SneakAttack, HaremMagnetFeature),
+                Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection),
+                Helpers.LevelEntry(17, SneakAttack, PlotArmor),
                 Helpers.LevelEntry(18, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(19, SneakAttack, ExceptionalFeatureSelection),
+                Helpers.LevelEntry(19, SneakAttack, CharacterDevelopmentSelection),
                 Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, TrueMainCharacter)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {

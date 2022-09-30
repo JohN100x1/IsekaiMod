@@ -78,10 +78,10 @@
     <None Update="Assets\Backgrounds\ICON_BLACK_ROSE.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Features\ICON_EXCEPTIONAL_FEAT.png">
+    <None Update="Assets\Features\ICON_POSITIVE_SHIELD.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Features\ICON_EXCEPTIONAL_FEAT_2.png">
+    <None Update="Assets\Features\ICON_NEGATIVE_SHIELD.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Features\ICON_TRUE_MAIN_CHARACTER.png">
