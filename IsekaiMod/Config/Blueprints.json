@@ -20,13 +20,15 @@
 
     "PlotArmor": "8acca981-65f0-4933-8093-3f788ec9d2c6",
     "OtherworldlyStamina": "7f0bc8e8-34ad-4691-b66e-a2d526a35d0b",
+    "SignatureAttack": "834fc856-6aa1-4abc-aa59-7c100ad190f4",
+    "IsekaiFighterTraining": "61c3c186-fc1a-4735-97e3-99e8b6eac959",
+    "IsekaiFastMovement": "7ad9bfd8-d189-4b7a-89c6-f93c401f1c7c",
+    "IsekaiQuickFooted": "f178a6db-1e64-40d2-84ee-87483c9d681a",
     "TrueMainCharacter": "d174a98e-9963-4c90-8a0a-68a2d648195e",
 
     "CharacterDevelopmentSelection": "91751bce-90bc-42a2-b667-c807146a0cfb",
-    "ImmunityToCriticalHitsFeat": "2a36d826-f9de-478d-bd43-3932b63b9ad0",
-    "ImmunityToCriticalSneakFeat": "8bb3cd3c-34c0-45b7-ba23-8b1ef504537e",
-    "ImmunityToAbilityScoreDamageFeat": "e8b5d863-a729-486c-9c4f-c776fe1c353c",
-    "ImmunityToEnergyDrainFeat": "b6ca1e1d-025f-43a5-93ee-5edc9d8f7a4e",
+    "ImmunityToSneakAndCriticalHitsFeat": "2a36d826-f9de-478d-bd43-3932b63b9ad0",
+    "ImmunityToAbilityScoreDamageAndEnergyDrainFeat": "e8b5d863-a729-486c-9c4f-c776fe1c353c",
     "ImmunityToAcidFeat": "66ea106a-bb0c-4a52-a1bd-4fa77955ae4a",
     "ImmunityToColdFeat": "f956dd94-9198-4011-b836-465ef8b1eeb8",
     "ImmunityToFireFeat": "9762e6ff-bd61-4f91-83a0-1f8f1391d147",
@@ -37,12 +39,14 @@
     "ImmunityToPositiveFeat": "b8fe58cb-8d87-48f2-9e77-c7ce1d552801",
     "ImmunityToNegativeFeat": "5fd7109d-d4f0-44c1-a722-b2ba76c86473",
 
+    "FriendlyAuraEffectBuff": "450c2d6c-4ffd-4f45-971e-099457e0dd54",
+    "FriendlyAuraArea": "5bfec8d0-c27b-4d34-b8d3-d532bfc78386",
+    "FriendlyAuraBuff": "ce7fbc51-9904-4200-b15f-949b4d73e518",
+    "FriendlyAuraFeature": "b509ab2b-7968-4280-807f-0e49e3ce777c",
+
     "HaremMagnetEffect": "e7b76354-23fb-40ad-9598-74e81f209314",
-    "HaremMagnetSource": "69344c2f-d4a4-4b62-bd4a-0d7fac117fb1",
     "HaremMagnetImmunity": "2f6b1ba2-4fa1-4038-9c08-26eca9ab80c6",
-    "HaremMagnetBuff": "dc2494bb-5916-4967-b80b-4dad482127cd",
-    "HaremMagnetAreaEffect": "ccdf93d5-9d82-403d-9786-dce0de11dc4f",
-    "HaremMagnetActivatableAbility": "1e6f1421-951c-48cc-8fa9-e279e3083e1c",
+    "HaremMagnetAbility": "1e6f1421-951c-48cc-8fa9-e279e3083e1c",
     "HaremMagnetFeature": "4145dc5a-358f-4057-affa-7ff4cc130c03"
 
   },

@@ -233,6 +233,7 @@ namespace IsekaiMod.Changes.Heritages
                 });
 
                 // Ignore enemy's resistance and immunity
+                bp.AddComponent<IgnoreConcealment>();
                 bp.AddComponent<IgnoreSpellImmunity>();
                 bp.AddComponent<IgnoreSpellResistanceForSpells>();
                 bp.AddComponent<IgnoreDamageReductionOnAttack>();

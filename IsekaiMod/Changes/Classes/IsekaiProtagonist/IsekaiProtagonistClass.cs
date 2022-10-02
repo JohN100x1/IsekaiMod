@@ -16,16 +16,19 @@ using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.Utility;
 using Kingmaker.ResourceLinks;
-using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.ElementsSystem;
 using Kingmaker.UnitLogic.Mechanics.Conditions;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic;
+using UnityEngine;
+using Kingmaker.UnitLogic.Abilities;
+using Kingmaker.Visual.Animation.Kingmaker.Actions;
+using Kingmaker.UnitLogic.Commands.Base;
+using Kingmaker.UnitLogic.Abilities.Components;
 
 namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 {
@@ -59,23 +62,27 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
         private static readonly BlueprintFeatureSelection MythicAbilitySelection = Resources.GetBlueprint<BlueprintFeatureSelection>("ba0e5a900b775be4a99702f1ed08914d");
 
 
-        // Abilities
-        private static readonly BlueprintAbility ResistAcid = Resources.GetBlueprint<BlueprintAbility>("fedc77de9b7aad54ebcc43b4daf8decd");
-        private static readonly BlueprintAbility ResistCold = Resources.GetBlueprint<BlueprintAbility>("5368cecec375e1845ae07f48cdc09dd1");
-        private static readonly BlueprintAbility ResistElectricity = Resources.GetBlueprint<BlueprintAbility>("90987584f54ab7a459c56c2d2f22cee2");
-        private static readonly BlueprintAbility ResistFire = Resources.GetBlueprint<BlueprintAbility>("ddfb4ac970225f34dbff98a10a4a8844");
-        private static readonly BlueprintAbility ResistSonic = Resources.GetBlueprint<BlueprintAbility>("8d3b10f92387c84429ced317b06ad001");
-        private static readonly BlueprintAbility DeathWard = Resources.GetBlueprint<BlueprintAbility>("0413915f355a38146bc6ad40cdf27b3f");
-        private static readonly BlueprintAbility MageArmor = Resources.GetBlueprint<BlueprintAbility>("9e1ad5d6f87d19e4d8883d63a6e35568");
+        // Icons
+        private static readonly Sprite Icon_ResistAcid = Resources.GetBlueprint<BlueprintAbility>("fedc77de9b7aad54ebcc43b4daf8decd").m_Icon;
+        private static readonly Sprite Icon_ResistCold = Resources.GetBlueprint<BlueprintAbility>("5368cecec375e1845ae07f48cdc09dd1").m_Icon;
+        private static readonly Sprite Icon_ResistElectricity = Resources.GetBlueprint<BlueprintAbility>("90987584f54ab7a459c56c2d2f22cee2").m_Icon;
+        private static readonly Sprite Icon_ResistFire = Resources.GetBlueprint<BlueprintAbility>("ddfb4ac970225f34dbff98a10a4a8844").m_Icon;
+        private static readonly Sprite Icon_ResistSonic = Resources.GetBlueprint<BlueprintAbility>("8d3b10f92387c84429ced317b06ad001").m_Icon;
+        private static readonly Sprite Icon_DeathWard = Resources.GetBlueprint<BlueprintAbility>("0413915f355a38146bc6ad40cdf27b3f").m_Icon;
+        private static readonly Sprite Icon_MageArmor = Resources.GetBlueprint<BlueprintAbility>("9e1ad5d6f87d19e4d8883d63a6e35568").m_Icon;
+        private static readonly Sprite Icon_EdictOfImpenetrableFortress = Resources.GetBlueprint<BlueprintAbility>("d7741c08ccf699e4a8a8f8ab2ed345f8").m_Icon;
+        private static readonly Sprite Icon_ExpeditiousRetreat = Resources.GetBlueprint<BlueprintAbility>("4f8181e7a7f1d904fbaea64220e83379").m_Icon;
+
+        private static readonly Sprite Icon_SwordSaintWeaponMastery = Resources.GetBlueprint<BlueprintFeature>("5b31af13868166d4c9bb452f19277f19").m_Icon;
+        private static readonly Sprite Icon_SwordSaintFighterTraining = Resources.GetBlueprint<BlueprintFeature>("9ab2ec65977cc524a99600babc7fe3b6").m_Icon;
+        private static readonly Sprite Icon_FastMovement = Resources.GetBlueprint<BlueprintFeature>("d294a5dddd0120046aae7d4eb6cbc4fc").m_Icon;
+        private static readonly Sprite Icon_Bravery = Resources.GetBlueprint<BlueprintFeature>("f6388946f9f472f4585591b80e9f2452").m_Icon;
 
         public static void AddIsekaiProtagonistClass()
         {
+            // TODO: character development feats should be renamed to personality types.
             // TODO: character development feats should initially give energy resistance and then finally give immunity at a certain level.
-            // TODO: debug harem magnet, (harem magnet buff is not removed on attack in UI), (harem magnet source stacks and is not removed in UI)
-            // TODO: feature selection, rename "Exceptional feats" to "Hidden powers" or "character development feats", also should probably be more than just immunities
-            // TODO: create "plot armor" feature group
-            // TODO: create feature called "deus ex machina" that gives spell resistance
-            // TODO: Add IgnoreDamageReductionOnAttack
+            // TODO: "character development feats" should probably be more than just immunities
 
             // TODO: Add a "hexagon-player" default build
             // TODO: Add MythicAbilitySelection ability
@@ -83,9 +90,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 
             // TODO: Add archetypes, Archetype ideas: God Emporer, Edge Lord
             // TODO: Add custom equipment
-
             var BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
-            var EdictOfImpenetrableFortress = Resources.GetBlueprint<BlueprintAbility>("d7741c08ccf699e4a8a8f8ab2ed345f8");
 
             var AnimalClass = Resources.GetBlueprint<BlueprintCharacterClass>("4cd1757a0eea7694ba5c933729a53920");
             var FighterClass = Resources.GetBlueprint<BlueprintCharacterClass>("48ac8db94d5de7645906c7d0ad3bcfbd");
@@ -318,7 +323,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.SetName("Plot Armor");
                 bp.SetDescription("Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
                 bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
-                bp.m_Icon = EdictOfImpenetrableFortress.m_Icon;
+                bp.m_Icon = Icon_EdictOfImpenetrableFortress;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Luck;
                     c.Stat = StatType.AC;
@@ -366,37 +371,28 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ImprovedUncannyDodge = Resources.GetBlueprint<BlueprintFeature>("485a18c05792521459c7d06c63128c79");
             var Evasion = Resources.GetBlueprint<BlueprintFeature>("576933720c440aa4d8d42b0c54b77e80");
             var ImprovedEvasion = Resources.GetBlueprint<BlueprintFeature>("ce96af454a6137d47b9c6a1e02e66803");
-            // Capstone
-            var Icon_TrueMainCharacter = AssetLoader.LoadInternal("Features", "ICON_TRUE_MAIN_CHARACTER.png");
-            var TrueMainCharacter = Helpers.CreateBlueprint<BlueprintFeature>("TrueMainCharacter", bp => {
-                bp.SetName("True Main Character");
-                bp.SetDescription("You are the main character of this world. Your attacks ignore {g|Encyclopedia:Damage_Reduction}damage reduction{/g} and immunity to {g|Encyclopedia:Critical}critical hits{/g}. Your critical threats are also automatically confirmed. The {g|Encyclopedia:Spell}spells{/g} you cast ignore {g|Encyclopedia:Spell_Resistance}spell resistance{/g} and spell immunity.");
-                bp.m_Icon = Icon_TrueMainCharacter;
-                bp.AddComponent<IgnoreSpellImmunity>();
-                bp.AddComponent<IgnoreSpellResistanceForSpells>();
-                bp.AddComponent<IgnoreDamageReductionOnAttack>();
-                bp.AddComponent<IgnoreCritImmunity>();
-                bp.AddComponent<InitiatorCritAutoconfirm>();
-                bp.IsClassFeature = true;
-            });
             // Harem Magnet
             var Icon_Harem = AssetLoader.LoadInternal("Abilities", "ICON_HAREM.png");
             var HaremMagnetEffect = Helpers.CreateBlueprint<BlueprintBuff>("HaremMagnetEffect", bp => {
                 bp.SetName("Fascinated");
-                bp.SetDescription("This creature is Fascinated by the Protagonist and can take no actions unless attacked.");
+                bp.SetDescription("This creature is Fascinated by the Protagonist and can take no actions. Any {g|Encyclopedia:Damage}damage{/g} to the target automatically breaks the effect.");
                 bp.m_Icon = Icon_Harem;
+                bp.TickEachSecond = false;
                 bp.Stacking = StackingType.Replace;
                 bp.Frequency = DurationRate.Rounds;
-                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
+                bp.m_AllowNonContextActions = false;
                 bp.FxOnStart = new PrefabLink() { AssetId = "396af91a93f6e2b468f5fa1a944fae8a" };
+                bp.FxOnRemove = new PrefabLink();
                 bp.AddComponent<AddCondition>(c => { c.Condition = UnitCondition.Dazed; });
                 bp.AddComponent<AddIncomingDamageTrigger>(c => {
                     c.TriggerOnStatDamageOrEnergyDrain = true;
                     c.Actions = Helpers.CreateActionList(
-                        new ContextActionRemoveSelf()
+                        new ContextActionRemoveSelf() { name = "$ContextActionRemoveSelf$e030f2e6-efe6-48e4-b836-211ee145248d" } // Turns out having a name is very important
                         );
                 });
                 bp.AddComponent<AddFactContextActions>(c => {
+                    c.NewRound = Helpers.CreateActionList();
+                    c.Deactivated = Helpers.CreateActionList();
                     c.Activated = Helpers.CreateActionList(
                         new ContextActionSpawnFx() {
                             PrefabLink = new PrefabLink() {
@@ -404,14 +400,8 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                             }
                         });
                 });
-            });
-            var HaremMagnetSource = Helpers.CreateBlueprint<BlueprintBuff>("HaremMagnetSource", bp => {
-                bp.SetName("Harem Magnet");
-                bp.SetDescription("Enemies within 60 feet who fails a {g|Encyclopedia:DC}DC{/g} 50 {g|Encyclopedia:Saving_Throw}Will save{/g} loses any immunity to mind-affecting effects, charm effects, and compulsion effects, and becomes fascinated by you for {g|Encyclopedia:Dice}5d4{/g} {g|Encyclopedia:Combat_Round}rounds{/g}. A creature affected by a mind-affecting effect while within this aura remains affected even after leaving the Isekai Protagonist's presence. Creatures that succeed at this saving throw are immune to this ability for 24 hours.");
-                bp.m_Icon = Icon_Harem;
-                bp.Stacking = StackingType.Replace;
-                bp.Frequency = DurationRate.Rounds;
-                bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
+                bp.Ranks = 0;
+                bp.IsClassFeature = true;
             });
             var HaremMagnetImmunity = Helpers.CreateBlueprint<BlueprintBuff>("HaremMagnetImmunity", bp => {
                 bp.SetName("Harem Magnet Immunity");
@@ -421,70 +411,24 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.Frequency = DurationRate.Rounds;
                 bp.AddComponent<IsPositiveEffect>();
             });
-            var HaremMagnetBuff = Helpers.CreateBlueprint<BlueprintBuff>("HaremMagnetBuff", bp => {
-                bp.SetName("Fascinated");
-                bp.SetDescription("This creature is Fascinated by the Protagonist and can take no actions unless attacked.");
-                bp.m_Icon = Icon_Harem;
-                bp.Stacking = StackingType.Replace;
-                bp.Frequency = DurationRate.Rounds;
-                bp.AddComponent<AddFactContextActions>(c => {
-                    c.Activated = Helpers.CreateActionList(
-                        new ContextActionSpawnFx()
-                        {
-                            PrefabLink = new PrefabLink()
-                            {
-                                AssetId = "28b3cd92c1fdc194d9ee1e378c23be6b"
-                            }
-                        },
-                        new ContextActionApplyBuff()
-                        {
-                            m_Buff = HaremMagnetEffect.ToReference<BlueprintBuffReference>(),
-                            Permanent = true,
-                            DurationValue = new ContextDurationValue() {
-                                Rate = DurationRate.Rounds,
-                                DiceType = DiceType.Zero,
-                                DiceCountValue = 0,
-                                BonusValue = 0,
-                            },
-                            IsFromSpell = false,
-                            ToCaster = false,
-                            AsChild = true
-                        });
-                    c.Deactivated = Helpers.CreateActionList(
-                        new ContextActionRemoveBuff()
-                        {
-                            m_Buff = HaremMagnetEffect.ToReference<BlueprintBuffReference>(),
-                            RemoveRank = false,
-                            ToCaster = false
-                        }
-                        );
-                });
-                bp.AddComponent<AddIncomingDamageTrigger>(c => {
-                    c.TriggerOnStatDamageOrEnergyDrain = true;
+            var HaremMagnetAbility = Helpers.CreateBlueprint<BlueprintAbility>("HaremMagnetAbility", bp => {
+                bp.SetName("Harem Magnet");
+                bp.SetDescription("As a {g|Encyclopedia:Free_Action}free action{/g}, enemies within 60 feet who fails a {g|Encyclopedia:DC}DC{/g} 50 {g|Encyclopedia:Saving_Throw}Will save{/g} loses any immunity to mind-affecting effects, charm effects, and compulsion effects, and becomes fascinated by the Isekai Protagonist for {g|Encyclopedia:Dice}5d4{/g} {g|Encyclopedia:Combat_Round}rounds{/g}. Creatures that succeed at this saving throw are immune to this ability for 24 hours.");
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.SavingThrowType = SavingThrowType.Unknown;
                     c.Actions = Helpers.CreateActionList(
-                        new ContextActionRemoveSelf()
-                        );
-                });
-            });
-            var HaremMagnetAreaEffect = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("HaremMagnetAreaEffect", bp => {
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Charisma;
-                });
-                bp.AddComponent<AbilityAreaEffectRunAction>(c => {
-                    c.Round = Helpers.CreateActionList(
                         new Conditional()
                         {
                             ConditionsChecker = new ConditionsChecker()
                             {
                                 Operation = Operation.And,
                                 Conditions = new Condition[] {
-                                    new ContextConditionHasFact() {
-                                        Not = true,
-                                        m_Fact = HaremMagnetBuff.ToReference<BlueprintUnitFactReference>()
+                                    new ContextConditionIsCaster() {
+                                        Not = true
                                     },
                                     new ContextConditionHasFact() {
                                         Not = true,
-                                        m_Fact = HaremMagnetSource.ToReference<BlueprintUnitFactReference>()
+                                        m_Fact = HaremMagnetEffect.ToReference<BlueprintUnitFactReference>()
                                     },
                                     new ContextConditionHasFact() {
                                         Not = true,
@@ -493,14 +437,17 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                                 }
                             },
                             IfTrue = Helpers.CreateActionList(
-                                new ContextActionSavingThrow() {
+                                new ContextActionSavingThrow()
+                                {
                                     m_ConditionalDCIncrease = new ContextActionSavingThrow.ConditionalDCIncrease[0],
+                                    FromBuff = false,
                                     Type = SavingThrowType.Will,
                                     UseDCFromContextSavingThrow = true,
                                     CustomDC = 50,
                                     HasCustomDC = true,
                                     Actions = Helpers.CreateActionList(
-                                        new ContextActionConditionalSaved() {
+                                        new ContextActionConditionalSaved()
+                                        {
                                             Succeed = Helpers.CreateActionList(
                                                 new ContextActionApplyBuff()
                                                 {
@@ -519,18 +466,17 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                                                         },
                                                         m_IsExtendable = true
                                                     },
+                                                    UseDurationSeconds = false,
                                                     DurationSeconds = 0,
                                                     IsFromSpell = false,
                                                     ToCaster = false,
-                                                    AsChild = true,
-                                                    SameDuration = false,
-                                                    NotLinkToAreaEffect = true
+                                                    AsChild = false,
                                                 }),
                                             Failed = Helpers.CreateActionList(
                                                 new ContextActionApplyBuff()
                                                 {
                                                     Permanent = false,
-                                                    m_Buff = HaremMagnetBuff.ToReference<BlueprintBuffReference>(),
+                                                    m_Buff = HaremMagnetEffect.ToReference<BlueprintBuffReference>(),
                                                     DurationValue = new ContextDurationValue()
                                                     {
                                                         Rate = DurationRate.Rounds,
@@ -539,12 +485,11 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                                                         BonusValue = new ContextValue(),
                                                         m_IsExtendable = true
                                                     },
+                                                    UseDurationSeconds = false,
                                                     DurationSeconds = 0,
                                                     IsFromSpell = false,
                                                     ToCaster = false,
-                                                    AsChild = true,
-                                                    SameDuration = false,
-                                                    NotLinkToAreaEffect = false
+                                                    AsChild = false,
                                                 })
                                         }
                                     )
@@ -552,40 +497,49 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                             IfFalse = Helpers.CreateActionList(),
                         });
                 });
-                bp.m_AllowNonContextActions = false;
-                bp.AggroEnemies = false;
-                bp.AffectEnemies = true;
-                bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Enemy;
-                bp.SpellResistance = false;
-                bp.Fx = null;
-                bp.Shape = AreaEffectShape.Cylinder;
-                bp.Size = new Feet() { m_Value = 60 };
-            });
-            HaremMagnetSource.AddComponent<AddAreaEffect>(c => {
-                c.m_AreaEffect = HaremMagnetAreaEffect.ToReference<BlueprintAbilityAreaEffectReference>();
-            });
-            var HaremMagnetActivatableAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("HaremMagnetActivatableAbility", bp => {
-                bp.SetName("Harem Magnet");
-                bp.SetDescription("As a {g|Encyclopedia:Free_Action}free action{/g}, enemies within 60 feet who fails a {g|Encyclopedia:DC}DC{/g} 50 {g|Encyclopedia:Saving_Throw}Will save{/g} loses any immunity to mind-affecting effects, charm effects, and compulsion effects, and becomes fascinated by the Isekai Protagonist for {g|Encyclopedia:Dice}5d4{/g} {g|Encyclopedia:Combat_Round}rounds{/g}. A creature affected by a mind-affecting effect while within this aura remains affected even after leaving the Isekai Protagonist's presence. Creatures that succeed at this saving throw are immune to this ability for 24 hours.");
+                bp.AddComponent<AbilityTargetsAround>(c => {
+                    c.m_Radius = new Feet() { m_Value = 60 };
+                    c.m_TargetType = TargetType.Enemy;
+                    c.m_Condition = new ConditionsChecker()
+                    {
+                        Conditions = new Condition[0]
+                    };
+                });
+                bp.AddComponent<ContextSetAbilityParams>(c => {
+                    c.Add10ToDC = false;
+                    c.DC = 50;
+                });
                 bp.m_Icon = Icon_Harem;
-                bp.m_Buff = HaremMagnetSource.ToReference<BlueprintBuffReference>();
+                bp.Type = AbilityType.Supernatural;
+                bp.Range = AbilityRange.Personal;
+                bp.CanTargetPoint = false;
+                bp.CanTargetEnemies = true;
+                bp.CanTargetFriends = false;
+                bp.CanTargetSelf = true;
+                bp.EffectOnAlly = AbilityEffectOnUnit.None;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.None;
+                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Self;
+                bp.ActionType = UnitCommand.CommandType.Free;
+                bp.AvailableMetamagic = Metamagic.Reach;
+                bp.m_TargetMapObjects = false;
+                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "5d4 rounds");
+                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "Will negates");
             });
             var HaremMagnetFeature = Helpers.CreateBlueprint<BlueprintFeature>("HaremMagnetFeature", bp => {
                 bp.SetName("Harem Magnet");
-                bp.SetDescription("At 17th Level, the Isekai Protagonist gains the ability to attract anyone. As a {g|Encyclopedia:Free_Action}free action{/g}, enemies within 60 feet who fails a {g|Encyclopedia:DC}DC{/g} 50 {g|Encyclopedia:Saving_Throw}Will save{/g} loses any immunity to mind-affecting effects, charm effects, and compulsion effects, and becomes fascinated by the Isekai Protagonist for {g|Encyclopedia:Dice}5d4{/g} {g|Encyclopedia:Combat_Round}rounds{/g}. A creature affected by a mind-affecting effect while within this aura remains affected even after leaving the Isekai Protagonist's presence. Creatures that succeed at this saving throw are immune to this ability for 24 hours.");
+                bp.SetDescription("At 17th Level, the Isekai Protagonist gains the ability to attract anyone. As a {g|Encyclopedia:Free_Action}free action{/g}, enemies within 60 feet who fails a {g|Encyclopedia:DC}DC{/g} 50 {g|Encyclopedia:Saving_Throw}Will save{/g} loses any immunity to mind-affecting effects, charm effects, and compulsion effects, and becomes fascinated by the Isekai Protagonist for {g|Encyclopedia:Dice}5d4{/g} {g|Encyclopedia:Combat_Round}rounds{/g}. Creatures that succeed at this saving throw are immune to this ability for 24 hours.");
                 bp.m_Icon = Icon_Harem;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] { HaremMagnetActivatableAbility.ToReference<BlueprintUnitFactReference>() };
+                    c.m_Facts = new BlueprintUnitFactReference[] { HaremMagnetAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
             // Otherworldly Stamina
-            var Icon_Stamina = AssetLoader.LoadInternal("Features", "ICON_STAMINA.png");
             var OtherworldlyStamina = Helpers.CreateBlueprint<BlueprintFeature>("OtherworldlyStamina", bp => {
                 bp.SetName("Otherworldly Stamina");
-                bp.SetDescription("At 17th Level, the Isekai Protagonist becomes immune to fatigue and exhaustion conditions from spells and spell-like abilities.");
-                bp.m_Icon = Icon_Harem;
+                bp.SetDescription("At 15th Level, the Isekai Protagonist becomes immune to fatigue and exhaustion.");
+                bp.m_Icon = Icon_Bravery;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddConditionImmunity>(c => {
@@ -601,38 +555,146 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     c.Descriptor = SpellDescriptor.Fatigue | SpellDescriptor.Exhausted;
                 });
             });
-
-            // Character development feats
-            var Icon_CharacterDevelopment_1 = AssetLoader.LoadInternal("Features", "ICON_POSITIVE_SHIELD.png");
-            var Icon_CharacterDevelopment_2 = AssetLoader.LoadInternal("Features", "ICON_NEGATIVE_SHIELD.png");
-            var ImmunityToCriticalHitsFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToCriticalHitsFeat", bp => {
-                bp.SetName("Immunity to Critical hits");
-                bp.SetDescription("You gain immunity to {g|Encyclopedia:Critical}critical hits{/g}.");
-                bp.m_Icon = MageArmor.m_Icon;
-                bp.AddComponent<AddImmunityToCriticalHits>();
+            // Signature Attack
+            var SignatureAttack = Helpers.CreateBlueprint<BlueprintFeature>("SignatureAttack", bp => {
+                bp.SetName("Signature Attack");
+                bp.SetDescription("At 6th level, the Isekai Protagonist gains a luck bonus to {g|Encyclopedia:BAB}attack{/g} equal to 1/2 their character level.");
+                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:BAB}attack{/g} equal to 1/2 their character level.");
+                bp.m_Icon = Icon_SwordSaintWeaponMastery;
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Luck;
+                    c.Stat = StatType.AdditionalAttackBonus;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.StatBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
+                });
+                bp.IsClassFeature = true;
+                bp.ReapplyOnLevelUp = true;
+            });
+            // Fighter Training
+            var IsekaiFighterTraining = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiFighterTraining", bp => {
+                bp.SetName("Fighter Training");
+                bp.SetDescription("At 3rd level, the Isekai Protagonist counts their class level as his fighter level for the purpose of qualifying for {g|Encyclopedia:Feat}feats{/g}. If they have levels in fighter, these levels stack.");
+                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "The Isekai Protagonist counts their class level as his fighter level for the purpose of qualifying for {g|Encyclopedia:Feat}feats{/g}. If they have levels in fighter, these levels stack.");
+                bp.m_Icon = Icon_SwordSaintFighterTraining;
+                bp.AddComponent<ClassLevelsForPrerequisites>(c => {
+                    c.m_FakeClass = FighterClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_ActualClass = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+                    c.Modifier = 1.0;
+                    c.Summand = 0;
+                });
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
-            var ImmunityToCriticalSneakFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToCriticalSneakFeat", bp => {
-                bp.SetName("Immunity to Sneak attack damage");
-                bp.SetDescription("You gain immunity to sneak attack damage.");
-                bp.m_Icon = MageArmor.m_Icon;
+            // Fast Movement
+            var IsekaiFastMovement = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiFastMovement", bp => {
+                bp.SetName("Fast Movement");
+                bp.SetDescription("At 8th level, the Isekai Protagonist gains a +10 competence {g|Encyclopedia:Bonus}bonus{/g} to their base {g|Encyclopedia:Speed}speed{/g}.");
+                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "The Isekai Protagonist gains a +10 enhancement {g|Encyclopedia:Bonus}bonus{/g} to their base {g|Encyclopedia:Speed}speed{/g}.");
+                bp.m_Icon = Icon_FastMovement;
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Competence;
+                    c.Stat = StatType.Speed;
+                    c.Value = 10;
+                });
+                bp.IsClassFeature = true;
+            });
+            // Quick-Footed
+            var IsekaiQuickFooted = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiQuickFooted", bp => {
+                bp.SetName("Quick-Footed");
+                bp.SetDescription("At 15th level, the Isekai Protagonist gains a competence {g|Encyclopedia:Bonus}bonus{/g} to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}checks{/g} equal to their {g|Encyclopedia:Charisma}Charisma{/g} modifier (minimum 1).");
+                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "The Isekai Protagonist gains a competence {g|Encyclopedia:Bonus}bonus{/g} to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}checks{/g} equal to their {g|Encyclopedia:Charisma}Charisma{/g} modifier (minimum 1).");
+                bp.m_Icon = Icon_ExpeditiousRetreat;
+                bp.AddComponent<DerivativeStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Competence;
+                    c.BaseStat = StatType.Charisma;
+                    c.DerivativeStat = StatType.Initiative;
+                });
+                bp.AddComponent<RecalculateOnStatChange>(c => {
+                    c.Stat = StatType.Charisma;
+                });
+                bp.IsClassFeature = true;
+            });
+            // Friendly Aura
+            var Icon_Friendly_Aura = AssetLoader.LoadInternal("Features", "ICON_FRIENDLY_AURA.png");
+            var FriendlyAuraEffectBuff = Helpers.CreateBlueprint<BlueprintBuff>("FriendlyAuraEffectBuff", bp => {
+                bp.SetName("Friendly Aura");
+                bp.SetDescription("At 9th level, enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.");
+                bp.IsClassFeature = true;
+                bp.m_Icon = Icon_Friendly_Aura;
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Penalty;
+                    c.Stat = StatType.AdditionalAttackBonus;
+                    c.Value = -4;
+                });
+            });
+            var FriendlyAuraArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("FriendlyAuraArea", bp => {
+                bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Enemy;
+                bp.SpellResistance = false;
+                bp.AggroEnemies = false;
+                bp.AffectEnemies = true;
+                bp.Shape = AreaEffectShape.Cylinder;
+                bp.Size = new Feet() { m_Value = 40 };
+                bp.Fx = new PrefabLink();
+                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(FriendlyAuraEffectBuff.ToReference<BlueprintBuffReference>()));
+            });
+            var FriendlyAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("FriendlyAuraBuff", bp => {
+                bp.SetName("Friendly Aura");
+                bp.SetDescription("At 9th level, enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.");
+                bp.m_Icon = Icon_Friendly_Aura;
+                bp.IsClassFeature = true;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
+                bp.AddComponent<AddAreaEffect>(c => {
+                    c.m_AreaEffect = FriendlyAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
+                });
+            });
+            var FriendlyAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("FriendlyAuraFeature", bp => {
+                bp.SetName("Friendly Aura");
+                bp.SetDescription("At 9th level, enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.");
+                bp.m_Icon = Icon_Friendly_Aura;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.AddComponent<AuraFeatureComponent>(c => {
+                    c.m_Buff = FriendlyAuraBuff.ToReference<BlueprintBuffReference>();
+                });
+            });
+            // Capstone
+            var Icon_TrueMainCharacter = AssetLoader.LoadInternal("Features", "ICON_TRUE_MAIN_CHARACTER.png");
+            var TrueMainCharacter = Helpers.CreateBlueprint<BlueprintFeature>("TrueMainCharacter", bp => {
+                bp.SetName("True Main Character");
+                bp.SetDescription("You are the main character of this world. Your attacks ignore {g|Encyclopedia:Damage_Reduction}damage reduction{/g} and immunity to {g|Encyclopedia:Critical}critical hits{/g}. Your critical threats are also automatically confirmed. The {g|Encyclopedia:Spell}spells{/g} you cast ignore {g|Encyclopedia:Spell_Resistance}spell resistance{/g} and spell immunity.");
+                bp.m_Icon = Icon_TrueMainCharacter;
+                bp.AddComponent<IgnoreSpellImmunity>();
+                bp.AddComponent<IgnoreSpellResistanceForSpells>();
+                bp.AddComponent<IgnoreDamageReductionOnAttack>();
+                bp.AddComponent<IgnoreCritImmunity>();
+                bp.AddComponent<InitiatorCritAutoconfirm>();
+                bp.IsClassFeature = true;
+            });
+            // Character development feats
+            var Icon_CharacterDevelopment_1 = AssetLoader.LoadInternal("Features", "ICON_POSITIVE_SHIELD.png");
+            var Icon_CharacterDevelopment_2 = AssetLoader.LoadInternal("Features", "ICON_NEGATIVE_SHIELD.png");
+            var ImmunityToSneakAndCriticalHitsFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToSneakAndCriticalHitsFeat", bp => {
+                bp.SetName("Ultimate Protection");
+                bp.SetDescription("You gain immunity to Sneak attack damage and {g|Encyclopedia:Critical}critical hits{/g}.");
+                bp.m_Icon = Icon_MageArmor;
+                bp.AddComponent<AddImmunityToCriticalHits>();
                 bp.AddComponent<AddImmunityToPrecisionDamage>();
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
-            var ImmunityToAbilityScoreDamageFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToAbilityScoreDamageFeat", bp => {
-                bp.SetName("Immunity to Ability score damage");
-                bp.SetDescription("You gain immunity to {g|Encyclopedia:Ability_Scores}ability score{/g} {g|Encyclopedia:Damage}damage{/g}");
-                bp.m_Icon = DeathWard.m_Icon;
+            var ImmunityToAbilityScoreDamageAndEnergyDrainFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToAbilityScoreDamageAndEnergyDrainFeat", bp => {
+                bp.SetName("Steadfast Vigour");
+                bp.SetDescription("You gain immunity to {g|Encyclopedia:Ability_Scores}ability score{/g} {g|Encyclopedia:Damage}damage{/g} and energy drain.");
+                bp.m_Icon = Icon_DeathWard;
                 bp.AddComponent<AddImmunityToAbilityScoreDamage>();
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-            });
-            var ImmunityToEnergyDrainFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToEnergyDrainFeat", bp => {
-                bp.SetName("Immunity to Energy drain");
-                bp.SetDescription("You gain immunity to energy drain.");
-                bp.m_Icon = DeathWard.m_Icon;
                 bp.AddComponent<AddImmunityToEnergyDrain>();
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -640,7 +702,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ImmunityToAcidFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToAcidFeat", bp => {
                 bp.SetName("Acid Immunity");
                 bp.SetDescription("You gain immunity to Acid.");
-                bp.m_Icon = ResistAcid.m_Icon;
+                bp.m_Icon = Icon_ResistAcid;
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Acid;
                 });
@@ -656,7 +718,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ImmunityToColdFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToColdFeat", bp => {
                 bp.SetName("Cold Immunity");
                 bp.SetDescription("You gain immunity to Cold.");
-                bp.m_Icon = ResistCold.m_Icon;
+                bp.m_Icon = Icon_ResistCold;
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Cold;
                 });
@@ -672,7 +734,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ImmunityToElectricityFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToElectricityFeat", bp => {
                 bp.SetName("Electricity Immunity");
                 bp.SetDescription("You gain immunity to Electricity.");
-                bp.m_Icon = ResistElectricity.m_Icon;
+                bp.m_Icon = Icon_ResistElectricity;
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Electricity;
                 });
@@ -688,7 +750,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ImmunityToFireFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToFireFeat", bp => {
                 bp.SetName("Fire Immunity");
                 bp.SetDescription("You gain immunity to Fire.");
-                bp.m_Icon = ResistFire.m_Icon;
+                bp.m_Icon = Icon_ResistFire;
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Fire;
                 });
@@ -704,7 +766,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ImmunityToSonicFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToSonicFeat", bp => {
                 bp.SetName("Sonic Immunity");
                 bp.SetDescription("You gain immunity to Sonic.");
-                bp.m_Icon = ResistSonic.m_Icon;
+                bp.m_Icon = Icon_ResistSonic;
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Sonic;
                 });
@@ -717,83 +779,32 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
-            var ImmunityToHolyFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToHolyFeat", bp => {
-                bp.SetName("Holy Immunity");
-                bp.SetDescription("You gain immunity to Holy damage.");
-                bp.m_Icon = Icon_CharacterDevelopment_1;
-                bp.AddComponent<AddEnergyImmunity>(c => {
-                    c.Type = DamageEnergyType.Holy;
-                });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-            });
-            var ImmunityToUnholyFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToUnholyFeat", bp => {
-                bp.SetName("Unholy Immunity");
-                bp.SetDescription("You gain immunity to Unholy damage.");
-                bp.m_Icon = Icon_CharacterDevelopment_2;
-                bp.AddComponent<AddEnergyImmunity>(c => {
-                    c.Type = DamageEnergyType.Unholy;
-                });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-            });
-            var ImmunityToPositiveFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToPositiveFeat", bp => {
-                bp.SetName("Positive energy Immunity");
-                bp.SetDescription("You gain immunity to Positive energy.");
-                bp.m_Icon = Icon_CharacterDevelopment_1;
-                bp.AddComponent<AddEnergyImmunity>(c => {
-                    c.Type = DamageEnergyType.PositiveEnergy;
-                });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-            });
-            var ImmunityToNegativeFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToNegativeFeat", bp => {
-                bp.SetName("Negative energy Immunity");
-                bp.SetDescription("You gain immunity to Negative energy.");
-                bp.m_Icon = Icon_CharacterDevelopment_2;
-                bp.AddComponent<AddEnergyImmunity>(c => {
-                    c.Type = DamageEnergyType.NegativeEnergy;
-                });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-            });
+
             // You are the exception
             var CharacterDevelopmentSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection", bp => {
-                bp.SetName("Character Development Feat");
+                bp.SetName("Character Development");
                 bp.SetDescription("At 1st level, and every three levels thereafter, you can select one character development feat.");
                 bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists gain character development feats. These feats include immunity to {g|Encyclopedia:Critical}critical hits{/g}, {g|Encyclopedia:Energy_Damage}energy damage{/g}, or conditions.");
                 bp.m_Icon = Icon_CharacterDevelopment_1;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                    ImmunityToCriticalHitsFeat.ToReference<BlueprintFeatureReference>(),
-                    ImmunityToCriticalSneakFeat.ToReference<BlueprintFeatureReference>(),
-                    ImmunityToAbilityScoreDamageFeat.ToReference<BlueprintFeatureReference>(),
-                    ImmunityToEnergyDrainFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToSneakAndCriticalHitsFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToAbilityScoreDamageAndEnergyDrainFeat.ToReference<BlueprintFeatureReference>(),
                     ImmunityToAcidFeat.ToReference<BlueprintFeatureReference>(),
                     ImmunityToColdFeat.ToReference<BlueprintFeatureReference>(),
                     ImmunityToFireFeat.ToReference<BlueprintFeatureReference>(),
                     ImmunityToElectricityFeat.ToReference<BlueprintFeatureReference>(),
                     ImmunityToSonicFeat.ToReference<BlueprintFeatureReference>(),
-                    ImmunityToHolyFeat.ToReference<BlueprintFeatureReference>(),
-                    ImmunityToUnholyFeat.ToReference<BlueprintFeatureReference>(),
-                    ImmunityToPositiveFeat.ToReference<BlueprintFeatureReference>(),
-                    ImmunityToNegativeFeat.ToReference<BlueprintFeatureReference>()
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
-                    ImmunityToCriticalHitsFeat.ToReference<BlueprintFeatureReference>(),
-                    ImmunityToCriticalSneakFeat.ToReference<BlueprintFeatureReference>(),
-                    ImmunityToAbilityScoreDamageFeat.ToReference<BlueprintFeatureReference>(),
-                    ImmunityToEnergyDrainFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToSneakAndCriticalHitsFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToAbilityScoreDamageAndEnergyDrainFeat.ToReference<BlueprintFeatureReference>(),
                     ImmunityToAcidFeat.ToReference<BlueprintFeatureReference>(),
                     ImmunityToColdFeat.ToReference<BlueprintFeatureReference>(),
                     ImmunityToFireFeat.ToReference<BlueprintFeatureReference>(),
                     ImmunityToElectricityFeat.ToReference<BlueprintFeatureReference>(),
                     ImmunityToSonicFeat.ToReference<BlueprintFeatureReference>(),
-                    ImmunityToHolyFeat.ToReference<BlueprintFeatureReference>(),
-                    ImmunityToUnholyFeat.ToReference<BlueprintFeatureReference>(),
-                    ImmunityToPositiveFeat.ToReference<BlueprintFeatureReference>(),
-                    ImmunityToNegativeFeat.ToReference<BlueprintFeatureReference>()
                 };
             });
 
@@ -824,31 +835,30 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     CharacterDevelopmentSelection.ToReference<BlueprintFeatureReference>()
             };
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
-                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, CharacterDevelopmentSelection, HaremMagnetFeature),
+                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, CharacterDevelopmentSelection, PlotArmor),
                 Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection, UncannyDodge),
-                Helpers.LevelEntry(3, SneakAttack, Evasion),
+                Helpers.LevelEntry(3, SneakAttack, IsekaiFighterTraining, Evasion),
                 Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection),
                 Helpers.LevelEntry(5, SneakAttack, ImprovedUncannyDodge),
-                Helpers.LevelEntry(6, IsekaiProtagonistBonusFeatSelection),
+                Helpers.LevelEntry(6, IsekaiProtagonistBonusFeatSelection, SignatureAttack),
                 Helpers.LevelEntry(7, SneakAttack, CharacterDevelopmentSelection),
-                Helpers.LevelEntry(8, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(9, SneakAttack, ImprovedEvasion),
+                Helpers.LevelEntry(8, IsekaiProtagonistBonusFeatSelection, IsekaiFastMovement),
+                Helpers.LevelEntry(9, SneakAttack, FriendlyAuraFeature),
                 Helpers.LevelEntry(10, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection),
-                Helpers.LevelEntry(11, SneakAttack),
+                Helpers.LevelEntry(11, SneakAttack, ImprovedEvasion),
                 Helpers.LevelEntry(12, IsekaiProtagonistBonusFeatSelection),
                 Helpers.LevelEntry(13, SneakAttack, CharacterDevelopmentSelection),
                 Helpers.LevelEntry(14, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(15, SneakAttack),
+                Helpers.LevelEntry(15, SneakAttack, OtherworldlyStamina, IsekaiQuickFooted),
                 Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection),
-                Helpers.LevelEntry(17, SneakAttack, PlotArmor, OtherworldlyStamina),
+                Helpers.LevelEntry(17, SneakAttack, HaremMagnetFeature),
                 Helpers.LevelEntry(18, IsekaiProtagonistBonusFeatSelection),
                 Helpers.LevelEntry(19, SneakAttack, CharacterDevelopmentSelection),
                 Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, TrueMainCharacter)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
-                Helpers.CreateUIGroup(PlotArmor, HaremMagnetFeature, TrueMainCharacter),
-                Helpers.CreateUIGroup(UncannyDodge, ImprovedUncannyDodge),
-                Helpers.CreateUIGroup(Evasion, ImprovedEvasion)
+                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
+                Helpers.CreateUIGroup(UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, IsekaiQuickFooted),
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
                 IsekaiProtagonistProficiencies.ToReference<BlueprintFeatureBaseReference>(),
