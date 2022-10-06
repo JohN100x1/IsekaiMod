@@ -63,23 +63,39 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 
 
         // Icons
-        private static readonly Sprite Icon_ResistAcid = Resources.GetBlueprint<BlueprintAbility>("fedc77de9b7aad54ebcc43b4daf8decd").m_Icon;
-        private static readonly Sprite Icon_ResistCold = Resources.GetBlueprint<BlueprintAbility>("5368cecec375e1845ae07f48cdc09dd1").m_Icon;
-        private static readonly Sprite Icon_ResistElectricity = Resources.GetBlueprint<BlueprintAbility>("90987584f54ab7a459c56c2d2f22cee2").m_Icon;
-        private static readonly Sprite Icon_ResistFire = Resources.GetBlueprint<BlueprintAbility>("ddfb4ac970225f34dbff98a10a4a8844").m_Icon;
-        private static readonly Sprite Icon_ResistSonic = Resources.GetBlueprint<BlueprintAbility>("8d3b10f92387c84429ced317b06ad001").m_Icon;
+        private static readonly Sprite Icon_AcidSplash = Resources.GetBlueprint<BlueprintAbility>("0c852a2405dd9f14a8bbcfaf245ff823").m_Icon;
+        private static readonly Sprite Icon_IceStorm = Resources.GetBlueprint<BlueprintAbility>("fcb028205a71ee64d98175ff39a0abf9").m_Icon;
+        private static readonly Sprite Icon_LightningBolt = Resources.GetBlueprint<BlueprintAbility>("d2cff9243a7ee804cb6d5be47af30c73").m_Icon;
+        private static readonly Sprite Icon_Fireball = Resources.GetBlueprint<BlueprintAbility>("2d81362af43aeac4387a3d4fced489c3").m_Icon;
+        private static readonly Sprite Icon_EarPiercingScream = Resources.GetBlueprint<BlueprintAbility>("8e7cfa5f213a90549aadd18f8f6f4664").m_Icon;
+
+        private static readonly Sprite Icon_ProtectionFromAcid = Resources.GetBlueprint<BlueprintAbility>("3d77ee3fc4913c44b9df7c5bbcdc4906").m_Icon;
+        private static readonly Sprite Icon_ProtectionFromCold = Resources.GetBlueprint<BlueprintAbility>("021d39c8e0eec384ba69140f4875e166").m_Icon;
+        private static readonly Sprite Icon_ProtectionFromElectricity = Resources.GetBlueprint<BlueprintAbility>("e24ce0c3e8eaaaf498d3656b534093df").m_Icon;
+        private static readonly Sprite Icon_ProtectionFromFire = Resources.GetBlueprint<BlueprintAbility>("3f9605134d34e1243b096e1f6cb4c148").m_Icon;
+        private static readonly Sprite Icon_ProtectionFromSonic = Resources.GetBlueprint<BlueprintAbility>("0cee375b4e5265a46a13fc269beb8763").m_Icon;
         private static readonly Sprite Icon_DeathWard = Resources.GetBlueprint<BlueprintAbility>("0413915f355a38146bc6ad40cdf27b3f").m_Icon;
         private static readonly Sprite Icon_MageArmor = Resources.GetBlueprint<BlueprintAbility>("9e1ad5d6f87d19e4d8883d63a6e35568").m_Icon;
         private static readonly Sprite Icon_EdictOfImpenetrableFortress = Resources.GetBlueprint<BlueprintAbility>("d7741c08ccf699e4a8a8f8ab2ed345f8").m_Icon;
         private static readonly Sprite Icon_ExpeditiousRetreat = Resources.GetBlueprint<BlueprintAbility>("4f8181e7a7f1d904fbaea64220e83379").m_Icon;
+        private static readonly Sprite Icon_PredictionOfFailure = Resources.GetBlueprint<BlueprintAbility>("0e67fa8f011662c43934d486acc50253").m_Icon;
+        private static readonly Sprite Icon_CrushingDespair = Resources.GetBlueprint<BlueprintAbility>("4baf4109145de4345861fe0f2209d903").m_Icon;
+        private static readonly Sprite Icon_Daze = Resources.GetBlueprint<BlueprintAbility>("55f14bc84d7c85446b07a1b5dd6b2b4c").m_Icon;
+        private static readonly Sprite Icon_Rage = Resources.GetBlueprint<BlueprintAbility>("97b991256e43bb140b263c326f690ce2").m_Icon;
+        private static readonly Sprite Icon_OverwhelmingGrief = Resources.GetBlueprint<BlueprintAbility>("dd2918e4a77c50044acba1ac93494c36").m_Icon;
 
         private static readonly Sprite Icon_SwordSaintWeaponMastery = Resources.GetBlueprint<BlueprintFeature>("5b31af13868166d4c9bb452f19277f19").m_Icon;
         private static readonly Sprite Icon_SwordSaintFighterTraining = Resources.GetBlueprint<BlueprintFeature>("9ab2ec65977cc524a99600babc7fe3b6").m_Icon;
         private static readonly Sprite Icon_FastMovement = Resources.GetBlueprint<BlueprintFeature>("d294a5dddd0120046aae7d4eb6cbc4fc").m_Icon;
         private static readonly Sprite Icon_Bravery = Resources.GetBlueprint<BlueprintFeature>("f6388946f9f472f4585591b80e9f2452").m_Icon;
 
+        private static readonly Sprite Icon_Discovery = Resources.GetBlueprint<BlueprintFeatureSelection>("cd86c437488386f438dcc9ae727ea2a6").m_Icon;
+
         public static void AddIsekaiProtagonistClass()
         {
+            // TODO: fix spells known progression
+            // TODO: add resistance for backstories
+            // TODO: add story arcs: entrance exam arc, training montage, study montage, tournament arc, beach episode, flashback episode, Final boss arc, tragic backstory
             // TODO: character development feats should be renamed to personality types.
             // TODO: character development feats should initially give energy resistance and then finally give immunity at a certain level.
             // TODO: "character development feats" should probably be more than just immunities
@@ -699,10 +715,62 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
+
+            var VulnerabilityAcidFeat = Helpers.CreateBlueprint<BlueprintFeature>("VulnerabilityAcidFeat", bp => {
+                bp.SetName("Acid Vulnerability");
+                bp.SetDescription("You are vulnerable to Acid.");
+                bp.m_Icon = Icon_AcidSplash;
+                bp.AddComponent<AddEnergyVulnerability>(c => {
+                    c.Type = DamageEnergyType.Acid;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var VulnerabilityColdFeat = Helpers.CreateBlueprint<BlueprintFeature>("VulnerabilityColdFeat", bp => {
+                bp.SetName("Cold Vulnerability");
+                bp.SetDescription("You are vulnerable to Cold.");
+                bp.m_Icon = Icon_IceStorm;
+                bp.AddComponent<AddEnergyVulnerability>(c => {
+                    c.Type = DamageEnergyType.Cold;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var VulnerabilityElectricityFeat = Helpers.CreateBlueprint<BlueprintFeature>("VulnerabilityElectricityFeat", bp => {
+                bp.SetName("Electricity Vulnerability");
+                bp.SetDescription("You are vulnerable to Electricity.");
+                bp.m_Icon = Icon_LightningBolt;
+                bp.AddComponent<AddEnergyVulnerability>(c => {
+                    c.Type = DamageEnergyType.Electricity;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var VulnerabilityFireFeat = Helpers.CreateBlueprint<BlueprintFeature>("VulnerabilityFireFeat", bp => {
+                bp.SetName("Fire Vulnerability");
+                bp.SetDescription("You are vulnerable to Fire.");
+                bp.m_Icon = Icon_Fireball;
+                bp.AddComponent<AddEnergyVulnerability>(c => {
+                    c.Type = DamageEnergyType.Fire;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var VulnerabilitySonicFeat = Helpers.CreateBlueprint<BlueprintFeature>("VulnerabilitySonicFeat", bp => {
+                bp.SetName("Sonic Vulnerability");
+                bp.SetDescription("You are vulnerable to Sonic.");
+                bp.m_Icon = Icon_EarPiercingScream;
+                bp.AddComponent<AddEnergyVulnerability>(c => {
+                    c.Type = DamageEnergyType.Sonic;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+
             var ImmunityToAcidFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToAcidFeat", bp => {
                 bp.SetName("Acid Immunity");
                 bp.SetDescription("You gain immunity to Acid.");
-                bp.m_Icon = Icon_ResistAcid;
+                bp.m_Icon = Icon_ProtectionFromAcid;
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Acid;
                 });
@@ -718,7 +786,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ImmunityToColdFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToColdFeat", bp => {
                 bp.SetName("Cold Immunity");
                 bp.SetDescription("You gain immunity to Cold.");
-                bp.m_Icon = Icon_ResistCold;
+                bp.m_Icon = Icon_ProtectionFromCold;
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Cold;
                 });
@@ -734,7 +802,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ImmunityToElectricityFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToElectricityFeat", bp => {
                 bp.SetName("Electricity Immunity");
                 bp.SetDescription("You gain immunity to Electricity.");
-                bp.m_Icon = Icon_ResistElectricity;
+                bp.m_Icon = Icon_ProtectionFromElectricity;
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Electricity;
                 });
@@ -750,7 +818,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ImmunityToFireFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToFireFeat", bp => {
                 bp.SetName("Fire Immunity");
                 bp.SetDescription("You gain immunity to Fire.");
-                bp.m_Icon = Icon_ResistFire;
+                bp.m_Icon = Icon_ProtectionFromFire;
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Fire;
                 });
@@ -766,7 +834,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ImmunityToSonicFeat = Helpers.CreateBlueprint<BlueprintFeature>("ImmunityToSonicFeat", bp => {
                 bp.SetName("Sonic Immunity");
                 bp.SetDescription("You gain immunity to Sonic.");
-                bp.m_Icon = Icon_ResistSonic;
+                bp.m_Icon = Icon_ProtectionFromSonic;
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Sonic;
                 });
@@ -780,12 +848,165 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.IsClassFeature = true;
             });
 
-            // You are the exception
+            // Story Arcs
+            var HopelessBackstory = Helpers.CreateBlueprint<BlueprintFeature>("HopelessBackstory", bp => {
+                bp.SetName("Hopeless Backstory");
+                bp.SetDescription("You were a hopeless and untalented side character in the past, envious of what others had which you did not. Your inner insecurities leave you vulnerable to toxicity.\n" +
+                    "At 1st level, you are vulnerable to acid.\n" +
+                    "At 4th level, you are no longer vulnerable to acid.\n" +
+                    "At 10th level, you are immune to acid.\n");
+                bp.m_Icon = Icon_PredictionOfFailure;
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.Level = 4;
+                    c.BeforeThisLevel = true;
+                    c.m_Feature = VulnerabilityAcidFeat.ToReference<BlueprintFeatureReference>();
+                    c.m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_AdditionalClasses = new BlueprintCharacterClassReference[0];
+                    c.m_Archetypes = new BlueprintArchetypeReference[0];
+                });
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.Level = 10;
+                    c.BeforeThisLevel = false;
+                    c.m_Feature = ImmunityToAcidFeat.ToReference<BlueprintFeatureReference>();
+                    c.m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_AdditionalClasses = new BlueprintCharacterClassReference[0];
+                    c.m_Archetypes = new BlueprintArchetypeReference[0];
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var TragicBackstory = Helpers.CreateBlueprint<BlueprintFeature>("TragicBackstory", bp => {
+                bp.SetName("Tragic Backstory");
+                bp.SetDescription("You had a heart-breaking and emotionally tragic past, leaving you vulnerable to the coldness in your heart.\n" +
+                    "At 1st level, you are vulnerable to cold.\n" +
+                    "At 4th level, you are no longer vulnerable to cold.\n" +
+                    "At 10th level, you are immune to cold.\n");
+                bp.m_Icon = Icon_CrushingDespair;
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.Level = 4;
+                    c.BeforeThisLevel = true;
+                    c.m_Feature = VulnerabilityColdFeat.ToReference<BlueprintFeatureReference>();
+                    c.m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_AdditionalClasses = new BlueprintCharacterClassReference[0];
+                    c.m_Archetypes = new BlueprintArchetypeReference[0];
+                });
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.Level = 10;
+                    c.BeforeThisLevel = false;
+                    c.m_Feature = ImmunityToColdFeat.ToReference<BlueprintFeatureReference>();
+                    c.m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_AdditionalClasses = new BlueprintCharacterClassReference[0];
+                    c.m_Archetypes = new BlueprintArchetypeReference[0];
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var PainfulBackstory = Helpers.CreateBlueprint<BlueprintFeature>("PainfulBackstory", bp => {
+                bp.SetName("Painful Backstory");
+                bp.SetDescription("You were subjected to unspeakable creulty in the past, leaving you traumatised to even the slight shock of pain.\n" +
+                    "At 1st level, you are vulnerable to electricity.\n" +
+                    "At 4th level, you are no longer vulnerable to electricity.\n" +
+                    "At 10th level, you are immune to electricity.\n");
+                bp.m_Icon = Icon_Daze;
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.Level = 4;
+                    c.BeforeThisLevel = true;
+                    c.m_Feature = VulnerabilityElectricityFeat.ToReference<BlueprintFeatureReference>();
+                    c.m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_AdditionalClasses = new BlueprintCharacterClassReference[0];
+                    c.m_Archetypes = new BlueprintArchetypeReference[0];
+                });
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.Level = 10;
+                    c.BeforeThisLevel = false;
+                    c.m_Feature = ImmunityToElectricityFeat.ToReference<BlueprintFeatureReference>();
+                    c.m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_AdditionalClasses = new BlueprintCharacterClassReference[0];
+                    c.m_Archetypes = new BlueprintArchetypeReference[0];
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var VengefulBackstory = Helpers.CreateBlueprint<BlueprintFeature>("VengefulBackstory", bp => {
+                bp.SetName("Vengeful Backstory");
+                bp.SetDescription("You were betrayed by a some-one you trusted, leaving your heart full of vengeance and malevolence. You decide to fight fire with more fire, even if you end up being burnt.\n" +
+                    "At 1st level, you are vulnerable to fire.\n" +
+                    "At 4th level, you are no longer vulnerable to fire.\n" +
+                    "At 10th level, you are immune to fire.\n");
+                bp.m_Icon = Icon_Rage;
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.Level = 4;
+                    c.BeforeThisLevel = true;
+                    c.m_Feature = VulnerabilityFireFeat.ToReference<BlueprintFeatureReference>();
+                    c.m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_AdditionalClasses = new BlueprintCharacterClassReference[0];
+                    c.m_Archetypes = new BlueprintArchetypeReference[0];
+                });
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.Level = 10;
+                    c.BeforeThisLevel = false;
+                    c.m_Feature = ImmunityToFireFeat.ToReference<BlueprintFeatureReference>();
+                    c.m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_AdditionalClasses = new BlueprintCharacterClassReference[0];
+                    c.m_Archetypes = new BlueprintArchetypeReference[0];
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var ForsakenBackstory = Helpers.CreateBlueprint<BlueprintFeature>("ForsakenBackstory", bp => {
+                bp.SetName("Forsaken Backstory");
+                bp.SetDescription("Your past life was lonely and devoid. Your only friend was the sound of silence.\n" +
+                    "At 1st level, you are vulnerable to sonic.\n" +
+                    "At 4th level, you are no longer vulnerable to sonic.\n" +
+                    "At 10th level, you are immune to sonic.\n");
+                bp.m_Icon = Icon_OverwhelmingGrief;
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.Level = 4;
+                    c.BeforeThisLevel = true;
+                    c.m_Feature = VulnerabilitySonicFeat.ToReference<BlueprintFeatureReference>();
+                    c.m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_AdditionalClasses = new BlueprintCharacterClassReference[0];
+                    c.m_Archetypes = new BlueprintArchetypeReference[0];
+                });
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.Level = 10;
+                    c.BeforeThisLevel = false;
+                    c.m_Feature = ImmunityToSonicFeat.ToReference<BlueprintFeatureReference>();
+                    c.m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_AdditionalClasses = new BlueprintCharacterClassReference[0];
+                    c.m_Archetypes = new BlueprintArchetypeReference[0];
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+
+            // Character Development Selection
+            var BackstorySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("BackstorySelection", bp => {
+                bp.SetName("Backstory");
+                bp.SetDescription("At 1st level, you get to select a backstory. These will develop over time as you increase your level.");
+                bp.m_Icon = Icon_Discovery;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    HopelessBackstory.ToReference<BlueprintFeatureReference>(),
+                    TragicBackstory.ToReference<BlueprintFeatureReference>(),
+                    PainfulBackstory.ToReference<BlueprintFeatureReference>(),
+                    VengefulBackstory.ToReference<BlueprintFeatureReference>(),
+                    ForsakenBackstory.ToReference<BlueprintFeatureReference>(),
+                };
+                bp.m_Features = new BlueprintFeatureReference[] {
+                    HopelessBackstory.ToReference<BlueprintFeatureReference>(),
+                    TragicBackstory.ToReference<BlueprintFeatureReference>(),
+                    PainfulBackstory.ToReference<BlueprintFeatureReference>(),
+                    VengefulBackstory.ToReference<BlueprintFeatureReference>(),
+                    ForsakenBackstory.ToReference<BlueprintFeatureReference>(),
+                };
+            });
             var CharacterDevelopmentSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection", bp => {
                 bp.SetName("Character Development");
-                bp.SetDescription("At 1st level, and every three levels thereafter, you can select one character development feat.");
+                bp.SetDescription("At 1st level, and every three levels thereafter, you can select one character development.");
                 bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists gain character development feats. These feats include immunity to {g|Encyclopedia:Critical}critical hits{/g}, {g|Encyclopedia:Energy_Damage}energy damage{/g}, or conditions.");
-                bp.m_Icon = Icon_CharacterDevelopment_1;
+                bp.m_Icon = Icon_Discovery;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
@@ -835,7 +1056,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     CharacterDevelopmentSelection.ToReference<BlueprintFeatureReference>()
             };
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
-                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, CharacterDevelopmentSelection, PlotArmor),
+                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, BackstorySelection, PlotArmor),
                 Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection, UncannyDodge),
                 Helpers.LevelEntry(3, SneakAttack, IsekaiFighterTraining, Evasion),
                 Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection),
@@ -857,6 +1078,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, TrueMainCharacter)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
+                Helpers.CreateUIGroup(BackstorySelection, CharacterDevelopmentSelection),
                 Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
                 Helpers.CreateUIGroup(UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, IsekaiQuickFooted),
             };

@@ -18,6 +18,7 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.UnitLogic.ActivatableAbilities;
 
 namespace IsekaiMod.Changes.Heritages
 {
@@ -28,6 +29,68 @@ namespace IsekaiMod.Changes.Heritages
 
         public static void AddTieflingHeritageSuccubus()
         {
+
+            // TODO: Change DemonWingsAbility to custom use custom icon (create new BlueprintActivatableAbility)
+
+            // Charm Ability
+            var ICON_CHARM = AssetLoader.LoadInternal("Abilities", "ICON_CHARM.png");
+            var DominatePersonBuff = Resources.GetBlueprint<BlueprintBuff>("c0f4e1c24c9cd334ca988ed1bd9d201f");
+            var SuccubusCharmAbility = Helpers.CreateBlueprint<BlueprintAbility>("SuccubusCharmAbility", bp => {
+                bp.SetName("Succubus Charm");
+                bp.SetDescription("You can make any creature fight on your side as if it was your ally. " +
+                    "It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its ability. " +
+                    "However this creature will try to throw off the domination effect, making a {g|Encyclopedia:Saving_Throw}Will save{/g} each {g|Encyclopedia:Combat_Round}round{/g}.");
+                bp.m_Icon = ICON_CHARM;
+                bp.AddComponent<SpellComponent>(c => {
+                    c.m_Flags = 0;
+                    c.School = SpellSchool.Enchantment;
+                });
+                bp.AddComponent<SpellDescriptorComponent>(c => {
+                    c.Descriptor = SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion;
+                });
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.SavingThrowType = SavingThrowType.Will;
+                    c.Actions = Helpers.CreateActionList(
+                    new ContextActionConditionalSaved()
+                    {
+                        Succeed = new ActionList(),
+                        Failed = Helpers.CreateActionList(
+                        new ContextActionApplyBuff()
+                        {
+                            m_Buff = DominatePersonBuff.ToReference<BlueprintBuffReference>(),
+                            Permanent = false,
+                            DurationValue = new ContextDurationValue()
+                            {
+                                Rate = DurationRate.Minutes,
+                                m_IsExtendable = true,
+                                DiceCountValue = 0,
+                                BonusValue = new ContextValue()
+                                {
+                                    Value = 0,
+                                    ValueType = ContextValueType.Rank
+                                }
+                            },
+                            IsFromSpell = false,
+                        }),
+                    });
+                });
+
+                bp.Type = AbilityType.SpellLike;
+                bp.Range = AbilityRange.Medium;
+                bp.m_AllowNonContextActions = false;
+                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 minute/level");
+                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "Will negates");
+                bp.CanTargetFriends = true;
+                bp.CanTargetEnemies = true;
+                bp.CanTargetSelf = false;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.None;
+                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Directional;
+                bp.ActionType = UnitCommand.CommandType.Standard;
+                bp.AvailableMetamagic = Metamagic.Heighten | Metamagic.Reach | Metamagic.CompletelyNormal;
+            });
+            // Wings Ability
+            var DemonWingsAbility = Resources.GetBlueprint<BlueprintActivatableAbility>("3c5c902ec6397094184195419a231ee6");
+
             var TieflingHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("c862fd0e4046d2d4d9702dd60474a181");
             var ICON_SUCCUBUS = AssetLoader.LoadInternal("Heritages", "ICON_SUCCUBUS.png");
             var TieflingHeritageSuccubus = Helpers.CreateBlueprint<BlueprintFeature>("TieflingHeritageSuccubus", bp => {
@@ -242,65 +305,12 @@ namespace IsekaiMod.Changes.Heritages
                 // Auto confirm crits
                 bp.AddComponent<InitiatorCritAutoconfirm>();
 
-
-                // Add Charm Ability
-                var ICON_CHARM = AssetLoader.LoadInternal("Abilities", "ICON_CHARM.png");
-                var DominatePersonBuff = Resources.GetBlueprint<BlueprintBuff>("c0f4e1c24c9cd334ca988ed1bd9d201f");
-                var SuccubusCharmAbility = Helpers.CreateBlueprint<BlueprintAbility>("SuccubusCharmAbility", bp => {
-                    bp.SetName("Succubus Charm");
-                    bp.SetDescription("You can make any creature fight on your side as if it was your ally. " +
-                        "It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its ability. " +
-                        "However this creature will try to throw off the domination effect, making a {g|Encyclopedia:Saving_Throw}Will save{/g} each {g|Encyclopedia:Combat_Round}round{/g}.");
-                    bp.m_Icon = ICON_CHARM;
-                    bp.AddComponent<SpellComponent>(c => {
-                        c.m_Flags = 0;
-                        c.School = SpellSchool.Enchantment;
-                    });
-                    bp.AddComponent<SpellDescriptorComponent>(c => {
-                        c.Descriptor = SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion;
-                    });
-                    bp.AddComponent<AbilityEffectRunAction>(c => {
-                        c.SavingThrowType = SavingThrowType.Will;
-                        c.Actions = Helpers.CreateActionList(
-                        new ContextActionConditionalSaved()
-                        {
-                            Succeed = new ActionList(),
-                            Failed = Helpers.CreateActionList(
-                            new ContextActionApplyBuff()
-                            {
-                                m_Buff = DominatePersonBuff.ToReference<BlueprintBuffReference>(),
-                                Permanent = false,
-                                DurationValue = new ContextDurationValue()
-                                {
-                                    Rate = DurationRate.Minutes,
-                                    m_IsExtendable = true,
-                                    DiceCountValue = 0,
-                                    BonusValue = new ContextValue()
-                                    {
-                                        Value = 0,
-                                        ValueType = ContextValueType.Rank
-                                    }
-                                },
-                                IsFromSpell = false,
-                            }),
-                        });
-                    });
-
-                    bp.Type = AbilityType.SpellLike;
-                    bp.Range = AbilityRange.Medium;
-                    bp.m_AllowNonContextActions = false;
-                    bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 minute/level");
-                    bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "Will negates");
-                    bp.CanTargetFriends = true;
-                    bp.CanTargetEnemies = true;
-                    bp.CanTargetSelf = false;
-                    bp.EffectOnEnemy = AbilityEffectOnUnit.None;
-                    bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Directional;
-                    bp.ActionType = UnitCommand.CommandType.Standard;
-                    bp.AvailableMetamagic = Metamagic.Heighten | Metamagic.Reach | Metamagic.CompletelyNormal;
-                });
+                // Add Abilities
                 bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] { SuccubusCharmAbility.ToReference<BlueprintUnitFactReference>() };
+                    c.m_Facts = new BlueprintUnitFactReference[] {
+                        SuccubusCharmAbility.ToReference<BlueprintUnitFactReference>(),
+                        DemonWingsAbility.ToReference<BlueprintUnitFactReference>()
+                    };
                 });
 
                 bp.Groups = new FeatureGroup[] { FeatureGroup.Racial, FeatureGroup.TieflingHeritage };
