@@ -94,13 +94,15 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
         private static readonly Sprite Icon_SwordSaintFighterTraining = Resources.GetBlueprint<BlueprintFeature>("9ab2ec65977cc524a99600babc7fe3b6").m_Icon;
         private static readonly Sprite Icon_FastMovement = Resources.GetBlueprint<BlueprintFeature>("d294a5dddd0120046aae7d4eb6cbc4fc").m_Icon;
         private static readonly Sprite Icon_Bravery = Resources.GetBlueprint<BlueprintFeature>("f6388946f9f472f4585591b80e9f2452").m_Icon;
+        private static readonly Sprite Icon_PurityOfBody = Resources.GetBlueprint<BlueprintFeature>("9b02f77c96d6bba4daf9043eff876c76").m_Icon;
+        private static readonly Sprite Icon_BurningRenewal = Resources.GetBlueprint<BlueprintFeature>("7cf2a6bf35c422e4ea219fcc2eb564f5").m_Icon;
 
         private static readonly Sprite Icon_Discovery = Resources.GetBlueprint<BlueprintFeatureSelection>("cd86c437488386f438dcc9ae727ea2a6").m_Icon;
 
         public static void AddIsekaiProtagonistClass()
         {
-            // TODO: fix spells known progression
-            // TODO: add story arcs: entrance exam arc, training montage, study montage, tournament arc, beach episode, flashback episode, Final boss arc, tragic backstory
+            // TODO: condition immunity feats
+            // TODO: add story arcs: entrance exam arc, training montage, study montage, tournament arc, beach episode, flashback episode, Final boss arc
             // TODO: character development feats should be renamed to personality types.
             // TODO: character development feats should initially give energy resistance and then finally give immunity at a certain level.
             // TODO: "character development feats" should probably be more than just immunities
@@ -122,59 +124,59 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var IsekaiProtagonistSpellsPerDay = Helpers.CreateBlueprint<BlueprintSpellsTable>("IsekaiProtagonistSpellsPerDay", bp => {
                 bp.Levels = new SpellsLevelEntry[29] {
                     new SpellsLevelEntry() { Count = new int[] { } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 10, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 15, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 10, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 15, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 10, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 15, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 10, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 15, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 15 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20, 2 } }
+                    new SpellsLevelEntry() { Count = new int[] { 0, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 12 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 24, 12 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 24, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 24, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 24, 12, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 18, 12, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 18, 12, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 18, 12, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 18, 12, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 18, 12, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 12 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20, 2 } }
                 };
             });
             var IsekaiProtagonistSpellsKnown = Helpers.CreateBlueprint<BlueprintSpellsTable>("IsekaiProtagonistSpellsKnown", bp => {
                 bp.Levels = new SpellsLevelEntry[21] {
                     new SpellsLevelEntry() { Count = new int[] { } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 10, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 15, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 10, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 15, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 10, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 15, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 15, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 10, 5 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 15, 10 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 15 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 20, 20, 20, 20, 20, 20, 20, 20, 20 } }
+                    new SpellsLevelEntry() { Count = new int[] { 0, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 12 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 24, 12 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 24, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 24, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 24, 12, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 18, 12, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 18, 12, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 18, 12, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 18, 12, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 18, 12, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 18, 6 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 12 } },
+                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } }
                 };
             });
             var IsekaiProtagonistSpellbook = Helpers.CreateBlueprint<BlueprintSpellbook>("IsekaiProtagonistSpellbook", bp => {
@@ -980,7 +982,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             });
             var PainfulBackstory = Helpers.CreateBlueprint<BlueprintFeature>("PainfulBackstory", bp => {
                 bp.SetName("Painful Backstory");
-                bp.SetDescription("You were subjected to unspeakable creulty in the past, leaving you traumatised to even the slight shock of pain.\n" +
+                bp.SetDescription("You were subjected to unspeakable creulty in the past, leaving you traumatised to even the slightest shock of pain.\n" +
                     "At 1st level, you are vulnerable to electricity.\n" +
                     "At 4th level, you are no longer vulnerable to electricity.\n" +
                     "At 7th level, you gain electricity resistance 10.\n" +
@@ -1106,6 +1108,21 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     ForsakenBackstory.ToReference<BlueprintFeatureReference>(),
                 };
             });
+            var CharacterDevelopmentSelection1 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection1", bp => {
+                bp.SetName("Character Development I");
+                bp.SetDescription("At 4th level, you can select one character development.");
+                bp.m_Icon = Icon_Discovery;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    ImmunityToSneakAndCriticalHitsFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToAbilityScoreDamageAndEnergyDrainFeat.ToReference<BlueprintFeatureReference>(),
+                };
+                bp.m_Features = new BlueprintFeatureReference[] {
+                    ImmunityToSneakAndCriticalHitsFeat.ToReference<BlueprintFeatureReference>(),
+                    ImmunityToAbilityScoreDamageAndEnergyDrainFeat.ToReference<BlueprintFeatureReference>(),
+                };
+            });
             var CharacterDevelopmentSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection", bp => {
                 bp.SetName("Character Development");
                 bp.SetDescription("At 1st level, and every three levels thereafter, you can select one character development.");
@@ -1163,26 +1180,26 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, BackstorySelection, PlotArmor),
                 Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection, UncannyDodge),
                 Helpers.LevelEntry(3, SneakAttack, IsekaiFighterTraining, Evasion),
-                Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection),
+                Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection1),
                 Helpers.LevelEntry(5, SneakAttack, ImprovedUncannyDodge),
                 Helpers.LevelEntry(6, IsekaiProtagonistBonusFeatSelection, SignatureAttack),
-                Helpers.LevelEntry(7, SneakAttack, CharacterDevelopmentSelection),
+                Helpers.LevelEntry(7, SneakAttack, CharacterDevelopmentSelection1),
                 Helpers.LevelEntry(8, IsekaiProtagonistBonusFeatSelection, IsekaiFastMovement),
                 Helpers.LevelEntry(9, SneakAttack, FriendlyAuraFeature),
-                Helpers.LevelEntry(10, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection),
+                Helpers.LevelEntry(10, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection1),
                 Helpers.LevelEntry(11, SneakAttack, ImprovedEvasion),
                 Helpers.LevelEntry(12, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(13, SneakAttack, CharacterDevelopmentSelection),
+                Helpers.LevelEntry(13, SneakAttack, CharacterDevelopmentSelection1),
                 Helpers.LevelEntry(14, IsekaiProtagonistBonusFeatSelection),
                 Helpers.LevelEntry(15, SneakAttack, OtherworldlyStamina, IsekaiQuickFooted),
-                Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection),
+                Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection1),
                 Helpers.LevelEntry(17, SneakAttack, HaremMagnetFeature),
                 Helpers.LevelEntry(18, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(19, SneakAttack, CharacterDevelopmentSelection),
+                Helpers.LevelEntry(19, SneakAttack, CharacterDevelopmentSelection1),
                 Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, TrueMainCharacter)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
-                Helpers.CreateUIGroup(BackstorySelection, CharacterDevelopmentSelection),
+                Helpers.CreateUIGroup(BackstorySelection, CharacterDevelopmentSelection1, CharacterDevelopmentSelection),
                 Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
                 Helpers.CreateUIGroup(UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, IsekaiQuickFooted),
             };
