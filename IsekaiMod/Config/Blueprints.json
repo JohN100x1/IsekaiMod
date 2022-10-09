@@ -15,8 +15,10 @@
     "IsekaiProtagonistSpellsKnown": "6d3f3e9e-a449-4bed-a4c6-865a5d01b346",
     "IsekaiProtagonistSpellsPerDay": "1f89acc7-f07c-4d76-b217-89fdd4f8414e",
     "IsekaiProtagonistBonusFeatSelection": "039dec4f-d83c-4e4b-9be9-e4aae6fe4b5b",
+
     "IsekaiProtagonistBonusFeat": "414b5c1b-3b32-4e54-99e3-96505698a929",
     "IsekaiProtagonistSneakFeat": "8f8b74df-5190-42e1-a7ae-ad797cb8430a",
+    "CharacterDevelopmentFeat": "91751bce-90bc-42a2-b667-c807146a0cfb",
 
     "PlotArmor": "8acca981-65f0-4933-8093-3f788ec9d2c6",
     "OtherworldlyStamina": "7f0bc8e8-34ad-4691-b66e-a2d526a35d0b",
@@ -26,12 +28,14 @@
     "IsekaiQuickFooted": "f178a6db-1e64-40d2-84ee-87483c9d681a",
     "TrueMainCharacter": "d174a98e-9963-4c90-8a0a-68a2d648195e",
 
-    "CharacterDevelopmentSelection": "91751bce-90bc-42a2-b667-c807146a0cfb",
-
     "CharacterDevelopmentSelection1": "b5e98cc6-1828-4009-8a9d-ae8638eda059",
 
-    "ImmunityToSneakAndCriticalHitsFeat": "2a36d826-f9de-478d-bd43-3932b63b9ad0",
-    "ImmunityToAbilityScoreDamageAndEnergyDrainFeat": "e8b5d863-a729-486c-9c4f-c776fe1c353c",
+    "AmorphousArmor": "2a36d826-f9de-478d-bd43-3932b63b9ad0",
+    "VigorousWard": "e8b5d863-a729-486c-9c4f-c776fe1c353c",
+    "AlphaStrike": "8f7a38b6-ab25-4578-83e2-0d095a247dcb",
+    "YouthfulBody": "c6165832-f997-40bb-b0af-145ea74670a4",
+    "StudyMontage": "d4cb7b02-2c06-496b-802d-0db6fccae177",
+    "TrainingMontage": "557a9018-bea9-4f2a-b110-27e9d332ab56",
 
     "VulnerabilityAcidFeat": "cc3f53b6-2bdd-4002-a4ee-9d90ac51c158",
     "VulnerabilityColdFeat": "162d9f8b-2ffe-48ee-81d4-e1093abbeb36",
