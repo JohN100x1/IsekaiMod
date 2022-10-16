@@ -89,7 +89,7 @@ namespace IsekaiMod.Changes.Heritages
                 bp.AvailableMetamagic = Metamagic.Heighten | Metamagic.Reach | Metamagic.CompletelyNormal;
             });
             // Wings Ability
-            var DemonWingsAbility = Resources.GetBlueprint<BlueprintActivatableAbility>("3c5c902ec6397094184195419a231ee6");
+            var DemonWingsAbility = Resources.GetBlueprint<BlueprintActivatableAbility>("9ae14c50ef7a28e468b585c673b5c48f");
 
             var TieflingHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("c862fd0e4046d2d4d9702dd60474a181");
             var ICON_SUCCUBUS = AssetLoader.LoadInternal("Heritages", "ICON_SUCCUBUS.png");
@@ -280,7 +280,6 @@ namespace IsekaiMod.Changes.Heritages
                     | SpellDescriptor.Bleed
                     | SpellDescriptor.Fire;
                 });
-
 
                 // Add other immunities
                 bp.AddComponent<AddPhysicalImmunity>();

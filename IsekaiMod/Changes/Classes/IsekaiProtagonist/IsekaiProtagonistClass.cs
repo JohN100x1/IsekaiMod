@@ -89,6 +89,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
         private static readonly Sprite Icon_OverwhelmingGrief = Resources.GetBlueprint<BlueprintAbility>("dd2918e4a77c50044acba1ac93494c36").m_Icon;
         private static readonly Sprite Icon_Thoughtsense = Resources.GetBlueprint<BlueprintAbility>("8fb1a1670b6e1f84b89ea846f589b627").m_Icon;
         private static readonly Sprite Icon_LegendaryProportions = Resources.GetBlueprint<BlueprintAbility>("da1b292d91ba37948893cdbe9ea89e28").m_Icon;
+        private static readonly Sprite Icon_Serenity = Resources.GetBlueprint<BlueprintAbility>("d316d3d94d20c674db2c24d7de96f6a7").m_Icon;
 
         private static readonly Sprite Icon_SwordSaintWeaponMastery = Resources.GetBlueprint<BlueprintFeature>("5b31af13868166d4c9bb452f19277f19").m_Icon;
         private static readonly Sprite Icon_SwordSaintFighterTraining = Resources.GetBlueprint<BlueprintFeature>("9ab2ec65977cc524a99600babc7fe3b6").m_Icon;
@@ -1084,10 +1085,12 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.AddComponent<AddImmunityToAbilityScoreDamage>();
                 bp.AddComponent<AddImmunityToEnergyDrain>();
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
-                    c.Descriptor = SpellDescriptor.NegativeLevel;
+                    c.Descriptor = SpellDescriptor.NegativeLevel
+                    | SpellDescriptor.StatDebuff;
                 });
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
-                    c.Descriptor = SpellDescriptor.NegativeLevel;
+                    c.Descriptor = SpellDescriptor.NegativeLevel
+                    | SpellDescriptor.StatDebuff;
                 });
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -1101,9 +1104,9 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
-            var YouthfulBody = Helpers.CreateBlueprint<BlueprintFeature>("YouthfulBody", bp => {
-                bp.SetName("Youthful Body");
-                bp.SetDescription("You are immune to sickened and nauseated conditions.");
+            var HealthyBody = Helpers.CreateBlueprint<BlueprintFeature>("HealthyBody", bp => {
+                bp.SetName("Healthy Body");
+                bp.SetDescription("You gain immunity to bleed, curses, poison, disease, sickened, and nauseated conditions.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Sickened;
                 });
@@ -1111,12 +1114,84 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     c.Condition = UnitCondition.Nauseated;
                 });
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
-                    c.Descriptor = SpellDescriptor.Sickened | SpellDescriptor.Nauseated;
+                    c.Descriptor = SpellDescriptor.Sickened
+                    | SpellDescriptor.Nauseated
+                    | SpellDescriptor.Bleed
+                    | SpellDescriptor.Curse
+                    | SpellDescriptor.Poison;
                 });
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
-                    c.Descriptor = SpellDescriptor.Sickened | SpellDescriptor.Nauseated;
+                    c.Descriptor = SpellDescriptor.Sickened
+                    | SpellDescriptor.Nauseated
+                    | SpellDescriptor.Bleed
+                    | SpellDescriptor.Curse
+                    | SpellDescriptor.Poison;
                 });
                 bp.m_Icon = Icon_PurityOfBody;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var InnerPower = Helpers.CreateBlueprint<BlueprintFeature>("InnerPower", bp => {
+                bp.SetName("Inner Power");
+                bp.SetDescription("You gain immunity to shaken, frightened, cowering, fear, paralysis, and death effects.");
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Shaken;
+                });
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Frightened;
+                });
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Cowering;
+                });
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Paralyzed;
+                });
+                bp.AddComponent<BuffDescriptorImmunity>(c => {
+                    c.Descriptor = SpellDescriptor.Shaken
+                    | SpellDescriptor.Frightened
+                    | SpellDescriptor.Fear
+                    | SpellDescriptor.Paralysis
+                    | SpellDescriptor.Death;
+                });
+                bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
+                    c.Descriptor = SpellDescriptor.Shaken
+                    | SpellDescriptor.Frightened
+                    | SpellDescriptor.Fear
+                    | SpellDescriptor.Paralysis
+                    | SpellDescriptor.Death;
+                });
+                bp.m_Icon = Icon_BurningRenewal;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var MasterSelf = Helpers.CreateBlueprint<BlueprintFeature>("MasterSelf", bp => {
+                bp.SetName("Master Self-Control");
+                bp.SetDescription("You gain immunity to sleep, confusion, charm, emotion, complusion, and mind-affecting effects.");
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Confusion;
+                });
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Sleeping;
+                });
+                bp.AddComponent<BuffDescriptorImmunity>(c => {
+                    c.Descriptor = SpellDescriptor.Compulsion
+                    | SpellDescriptor.Charm
+                    | SpellDescriptor.MindAffecting
+                    | SpellDescriptor.Emotion
+                    | SpellDescriptor.NegativeEmotion
+                    | SpellDescriptor.Confusion
+                    | SpellDescriptor.Sleep;
+                });
+                bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
+                    c.Descriptor = SpellDescriptor.Compulsion
+                    | SpellDescriptor.Charm
+                    | SpellDescriptor.MindAffecting
+                    | SpellDescriptor.Emotion
+                    | SpellDescriptor.NegativeEmotion
+                    | SpellDescriptor.Confusion
+                    | SpellDescriptor.Sleep;
+                });
+                bp.m_Icon = Icon_Serenity;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
@@ -1164,6 +1239,8 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
+            var CripplingStrike = Resources.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
+            var WearyingStrike = Resources.GetBlueprint<BlueprintFeature>("b4befb0a9b58e0e4687942661c55198d");
 
             // Character Development Selection
             var BackstorySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("BackstorySelection", bp => {
@@ -1187,6 +1264,21 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     ForsakenBackstory.ToReference<BlueprintFeatureReference>(),
                 };
             });
+            var TrainingArcSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("TrainingArcSelection", bp => {
+                bp.SetName("Training Arc");
+                bp.SetDescription("At 4th level, you train yourself intensely and gaining insight in your own abilities.");
+                bp.m_Icon = Icon_Discovery;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    StudyMontage.ToReference<BlueprintFeatureReference>(),
+                    TrainingMontage.ToReference<BlueprintFeatureReference>(),
+                };
+                bp.m_Features = new BlueprintFeatureReference[] {
+                    StudyMontage.ToReference<BlueprintFeatureReference>(),
+                    TrainingMontage.ToReference<BlueprintFeatureReference>(),
+                };
+            });
             var CharacterDevelopmentSelection1 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection1", bp => {
                 bp.SetName("Character Development I");
                 bp.SetDescription("At 4th level, you can select one character development.");
@@ -1197,17 +1289,21 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     AmorphousArmor.ToReference<BlueprintFeatureReference>(),
                     VigorousWard.ToReference<BlueprintFeatureReference>(),
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                    YouthfulBody.ToReference<BlueprintFeatureReference>(),
-                    StudyMontage.ToReference<BlueprintFeatureReference>(),
-                    TrainingMontage.ToReference<BlueprintFeatureReference>(),
+                    HealthyBody.ToReference<BlueprintFeatureReference>(),
+                    InnerPower.ToReference<BlueprintFeatureReference>(),
+                    MasterSelf.ToReference<BlueprintFeatureReference>(),
+                    CripplingStrike.ToReference<BlueprintFeatureReference>(),
+                    WearyingStrike.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     AmorphousArmor.ToReference<BlueprintFeatureReference>(),
                     VigorousWard.ToReference<BlueprintFeatureReference>(),
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                    YouthfulBody.ToReference<BlueprintFeatureReference>(),
-                    StudyMontage.ToReference<BlueprintFeatureReference>(),
-                    TrainingMontage.ToReference<BlueprintFeatureReference>(),
+                    HealthyBody.ToReference<BlueprintFeatureReference>(),
+                    InnerPower.ToReference<BlueprintFeatureReference>(),
+                    MasterSelf.ToReference<BlueprintFeatureReference>(),
+                    CripplingStrike.ToReference<BlueprintFeatureReference>(),
+                    WearyingStrike.ToReference<BlueprintFeatureReference>(),
                 };
             });
 
@@ -1249,7 +1345,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, BackstorySelection, PlotArmor),
                 Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection, UncannyDodge),
                 Helpers.LevelEntry(3, SneakAttack, IsekaiFighterTraining, Evasion),
-                Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection1),
+                Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection, TrainingArcSelection),
                 Helpers.LevelEntry(5, SneakAttack, ImprovedUncannyDodge),
                 Helpers.LevelEntry(6, IsekaiProtagonistBonusFeatSelection, SignatureAttack),
                 Helpers.LevelEntry(7, SneakAttack, CharacterDevelopmentSelection1),
@@ -1268,7 +1364,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, TrueMainCharacter)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
-                Helpers.CreateUIGroup(BackstorySelection, CharacterDevelopmentSelection1, CharacterDevelopmentFeat),
+                Helpers.CreateUIGroup(BackstorySelection, TrainingArcSelection, CharacterDevelopmentSelection1, CharacterDevelopmentFeat),
                 Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
                 Helpers.CreateUIGroup(UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, IsekaiQuickFooted),
             };
