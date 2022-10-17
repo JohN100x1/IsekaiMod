@@ -47,6 +47,31 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
         private static readonly BlueprintFeature ShieldsProficiency = Resources.GetBlueprint<BlueprintFeature>("cb8686e7357a68c42bdd9d4e65334633");
         private static readonly BlueprintFeature TowerShieldProficiency = Resources.GetBlueprint<BlueprintFeature>("6105f450bb2acbd458d277e71e19d835");
 
+        // Prebuild Features
+        private static readonly BlueprintFeature PowerAttack = Resources.GetBlueprint<BlueprintFeature>("9972f33f977fc724c838e59641b2fca5");
+        private static readonly BlueprintFeature CombatReflexes = Resources.GetBlueprint<BlueprintFeature>("0f8939ae6f220984e8fb568abbdfba95");
+        private static readonly BlueprintFeature WeaponSpecializationScythe = Resources.GetBlueprint<BlueprintFeature>("d0a776a7998164d46a2100ed29004c0a");
+        private static readonly BlueprintFeature Outflank = Resources.GetBlueprint<BlueprintFeature>("075c27c421ad48e4fa0e04cfd4d0c545");
+        private static readonly BlueprintFeature WeaponFocusGreaterScythe = Resources.GetBlueprint<BlueprintFeature>("b03d4fdb4bd6353499c3e6318e3e2d66");
+        private static readonly BlueprintFeature ImprovedInitiative = Resources.GetBlueprint<BlueprintFeature>("797f25d709f559546b29e7bcb181cc74");
+        private static readonly BlueprintFeature IntimidatingProwess = Resources.GetBlueprint<BlueprintFeature>("d76497bfc48516e45a0831628f767a0f");
+        private static readonly BlueprintFeature SpellPenetration = Resources.GetBlueprint<BlueprintFeature>("ee7dc126939e4d9438357fbd5980d459");
+        private static readonly BlueprintFeature GreaterSpellPenetration = Resources.GetBlueprint<BlueprintFeature>("1978c3f91cfbbc24b9c9b0d017f4beec");
+        private static readonly BlueprintFeature LightningReflexes = Resources.GetBlueprint<BlueprintFeature>("15e7da6645a7f3d41bdad7c8c4b9de1e");
+
+        private static readonly BlueprintFeature Cleave = Resources.GetBlueprint<BlueprintFeature>("d809b6c4ff2aaff4fa70d712a70f7d7b");
+        private static readonly BlueprintFeature CleavingFinish = Resources.GetBlueprint<BlueprintFeature>("59bd93899149fa44687ff4121389b3a9");
+        private static readonly BlueprintFeature WeaponFocusScythe = Resources.GetBlueprint<BlueprintFeature>("9db0097ee1a4b4b4688f9a3190c23969");
+        private static readonly BlueprintFeature DazzlingDisplay = Resources.GetBlueprint<BlueprintFeature>("bcbd674ec70ff6f4894bb5f07b6f4095");
+        private static readonly BlueprintFeature ImprovedCriticalScythe = Resources.GetBlueprint<BlueprintFeature>("0fba06b436d498e46bbb598f8d8b2c83");
+        private static readonly BlueprintFeature ShatterDefenses = Resources.GetBlueprint<BlueprintFeature>("61a17ccbbb3d79445b0926347ec07577");
+        private static readonly BlueprintFeature WeaponSpecializationGreaterScythe = Resources.GetBlueprint<BlueprintFeature>("312a1650efbfb7849ab008bd4edc7d5d");
+        private static readonly BlueprintFeature PenetratingStrike = Resources.GetBlueprint<BlueprintFeature>("308cd7dc4f10efd428f531bbf4f2823d");
+        private static readonly BlueprintFeature GreaterPenetratingStrike = Resources.GetBlueprint<BlueprintFeature>("eb6eb946c68ef094f89c7633f5bfdc9b");
+        private static readonly BlueprintFeature GreatFortitude = Resources.GetBlueprint<BlueprintFeature>("79042cb55f030614ea29956177977c52");
+        private static readonly BlueprintFeature IronWill = Resources.GetBlueprint<BlueprintFeature>("175d1577bb6c9a04baf88eec99c66334");
+
+
         // Mythic Classes
         private static readonly BlueprintCharacterClass MythicCompanionClass = Resources.GetBlueprint<BlueprintCharacterClass>("530b6a79cb691c24ba99e1577b4beb6d");
         private static readonly BlueprintCharacterClass MythicStartingClass = Resources.GetBlueprint<BlueprintCharacterClass>("247aa787806d5da4f89cfc3dff0b217f");
@@ -63,11 +88,6 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 
 
         // Icons
-        private static readonly Sprite Icon_AcidSplash = Resources.GetBlueprint<BlueprintAbility>("0c852a2405dd9f14a8bbcfaf245ff823").m_Icon;
-        private static readonly Sprite Icon_IceStorm = Resources.GetBlueprint<BlueprintAbility>("fcb028205a71ee64d98175ff39a0abf9").m_Icon;
-        private static readonly Sprite Icon_LightningBolt = Resources.GetBlueprint<BlueprintAbility>("d2cff9243a7ee804cb6d5be47af30c73").m_Icon;
-        private static readonly Sprite Icon_Fireball = Resources.GetBlueprint<BlueprintAbility>("2d81362af43aeac4387a3d4fced489c3").m_Icon;
-        private static readonly Sprite Icon_EarPiercingScream = Resources.GetBlueprint<BlueprintAbility>("8e7cfa5f213a90549aadd18f8f6f4664").m_Icon;
         private static readonly Sprite Icon_ResistAcid = Resources.GetBlueprint<BlueprintAbility>("fedc77de9b7aad54ebcc43b4daf8decd").m_Icon;
         private static readonly Sprite Icon_ResistCold = Resources.GetBlueprint<BlueprintAbility>("5368cecec375e1845ae07f48cdc09dd1").m_Icon;
         private static readonly Sprite Icon_ResistElectricity = Resources.GetBlueprint<BlueprintAbility>("90987584f54ab7a459c56c2d2f22cee2").m_Icon;
@@ -90,6 +110,9 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
         private static readonly Sprite Icon_Thoughtsense = Resources.GetBlueprint<BlueprintAbility>("8fb1a1670b6e1f84b89ea846f589b627").m_Icon;
         private static readonly Sprite Icon_LegendaryProportions = Resources.GetBlueprint<BlueprintAbility>("da1b292d91ba37948893cdbe9ea89e28").m_Icon;
         private static readonly Sprite Icon_Serenity = Resources.GetBlueprint<BlueprintAbility>("d316d3d94d20c674db2c24d7de96f6a7").m_Icon;
+        private static readonly Sprite Icon_PureForm = Resources.GetBlueprint<BlueprintAbility>("33e53b74891b4c34ba6ee3baa322beeb").m_Icon;
+        private static readonly Sprite Icon_SpellResistance = Resources.GetBlueprint<BlueprintAbility>("0a5ddfbcfb3989543ac7c936fc256889").m_Icon;
+        private static readonly Sprite Icon_IronBody = Resources.GetBlueprint<BlueprintAbility>("198fcc43490993f49899ed086fe723c1").m_Icon;
 
         private static readonly Sprite Icon_SwordSaintWeaponMastery = Resources.GetBlueprint<BlueprintFeature>("5b31af13868166d4c9bb452f19277f19").m_Icon;
         private static readonly Sprite Icon_SwordSaintFighterTraining = Resources.GetBlueprint<BlueprintFeature>("9ab2ec65977cc524a99600babc7fe3b6").m_Icon;
@@ -98,25 +121,35 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
         private static readonly Sprite Icon_PurityOfBody = Resources.GetBlueprint<BlueprintFeature>("9b02f77c96d6bba4daf9043eff876c76").m_Icon;
         private static readonly Sprite Icon_BurningRenewal = Resources.GetBlueprint<BlueprintFeature>("7cf2a6bf35c422e4ea219fcc2eb564f5").m_Icon;
         private static readonly Sprite Icon_SneakStab = Resources.GetBlueprint<BlueprintFeature>("df4f34f7cac73ab40986bc33f87b1a3c").m_Icon;
+        private static readonly Sprite Icon_DextrousDuelist = Resources.GetBlueprint<BlueprintFeature>("b701196306bb4674bb902c9f1160180f").m_Icon;
+        private static readonly Sprite Icon_PerfectStrike = Resources.GetBlueprint<BlueprintFeature>("9ff65b68c09567e48af9b33848b23323").m_Icon;
+        private static readonly Sprite Icon_BladeSense = Resources.GetBlueprint<BlueprintFeature>("112bf4c6943097942b24eadfa750215f").m_Icon;
 
         private static readonly Sprite Icon_Discovery = Resources.GetBlueprint<BlueprintFeatureSelection>("cd86c437488386f438dcc9ae727ea2a6").m_Icon;
 
         public static void AddIsekaiProtagonistClass()
         {
-            // TODO: condition immunity feats
-            // TODO: add story arcs: entrance exam arc, training montage, study montage, tournament arc, beach episode, flashback episode, Final boss arc
-            // TODO: character development feats should be renamed to personality types.
-            // TODO: character development feats should initially give energy resistance and then finally give immunity at a certain level.
-            // TODO: "character development feats" should probably be more than just immunities
-
-            // TODO: Add a "hexagon-player" default build
             // TODO: Add MythicAbilitySelection ability
             // TODO: Add mythic spellbook merging
 
             // TODO: Add archetypes, Archetype ideas: God Emporer, Edge Lord
             // TODO: Add custom equipment
-            var BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
 
+            // Prebuild Selections
+            var BackgroundNone = Resources.GetBlueprint<BlueprintFeature>("7d300f497584d9245ac24c062dce0bd6");
+            var BackgroundBaseSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("f926dabeee7f8a54db8f2010b323383c");
+
+            var PitbornHeritage = Resources.GetBlueprint<BlueprintFeature>("c09ffb2657f6c2b41b5ed0ed607b362a");
+            var TieflingHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("c862fd0e4046d2d4d9702dd60474a181");
+
+            var AngelHeritage = Resources.GetBlueprint<BlueprintFeature>("ceedc840b113c3348a2f32b434df5fef");
+            var AasimarHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("67aabcbce8f8ae643a9d08a6ca67cabd");
+
+            var SkillFocusPhysique = Resources.GetBlueprint<BlueprintFeature>("9db907332bdaec1468cff3a99efef5b4");
+            var Adaptibility = Resources.GetBlueprint<BlueprintFeatureSelection>("26a668c5a8c22354bac67bcd42e09a3f");
+
+            // Used in Class
+            var BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
             var AnimalClass = Resources.GetBlueprint<BlueprintCharacterClass>("4cd1757a0eea7694ba5c933729a53920");
             var FighterClass = Resources.GetBlueprint<BlueprintCharacterClass>("48ac8db94d5de7645906c7d0ad3bcfbd");
             var MonkClass = Resources.GetBlueprint<BlueprintCharacterClass>("e8f21e5b58e0569468e420ebea456124");
@@ -234,7 +267,6 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.m_Spellbook = IsekaiProtagonistSpellbook.ToReference<BlueprintSpellbookReference>();
                 bp.m_EquipmentEntities = new KingmakerEquipmentEntityReference[] { };
                 bp.m_StartingItems = new BlueprintItemReference[] { };
-                bp.m_DefaultBuild = null;
                 bp.m_Archetypes = new BlueprintArchetypeReference[] { };
                 bp.SkillPoints = 0;
                 bp.ClassSkills = new StatType[11] {
@@ -583,7 +615,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             // Signature Attack
             var SignatureAttack = Helpers.CreateBlueprint<BlueprintFeature>("SignatureAttack", bp => {
                 bp.SetName("Signature Attack");
-                bp.SetDescription("At 6th level, the Isekai Protagonist gains a luck bonus to {g|Encyclopedia:BAB}attack{/g} equal to 1/2 their character level.");
+                bp.SetDescription("At 6th level, the Isekai Protagonist gains a luck bonus to {g|Encyclopedia:BAB}attack{/g} and damage rolls equal to their character level.");
                 bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:BAB}attack{/g} equal to 1/2 their character level.");
                 bp.m_Icon = Icon_SwordSaintWeaponMastery;
                 bp.AddComponent<AddContextStatBonus>(c => {
@@ -595,10 +627,18 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                         ValueRank = AbilityRankType.StatBonus
                     };
                 });
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Luck;
+                    c.Stat = StatType.AdditionalDamage;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
+                });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
                 });
                 bp.IsClassFeature = true;
                 bp.ReapplyOnLevelUp = true;
@@ -709,7 +749,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var VulnerabilityAcidFeat = Helpers.CreateBlueprint<BlueprintFeature>("VulnerabilityAcidFeat", bp => {
                 bp.SetName("Acid Vulnerability");
                 bp.SetDescription("You are vulnerable to Acid.");
-                bp.m_Icon = Icon_AcidSplash;
+                bp.m_Icon = IsekaiProtagonist.IsekaiProtagonistSpellList.AcidSplashAbility.m_Icon;
                 bp.AddComponent<AddEnergyVulnerability>(c => {
                     c.Type = DamageEnergyType.Acid;
                 });
@@ -719,7 +759,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var VulnerabilityColdFeat = Helpers.CreateBlueprint<BlueprintFeature>("VulnerabilityColdFeat", bp => {
                 bp.SetName("Cold Vulnerability");
                 bp.SetDescription("You are vulnerable to Cold.");
-                bp.m_Icon = Icon_IceStorm;
+                bp.m_Icon = IsekaiProtagonist.IsekaiProtagonistSpellList.IceStormAbility.m_Icon;
                 bp.AddComponent<AddEnergyVulnerability>(c => {
                     c.Type = DamageEnergyType.Cold;
                 });
@@ -729,7 +769,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var VulnerabilityElectricityFeat = Helpers.CreateBlueprint<BlueprintFeature>("VulnerabilityElectricityFeat", bp => {
                 bp.SetName("Electricity Vulnerability");
                 bp.SetDescription("You are vulnerable to Electricity.");
-                bp.m_Icon = Icon_LightningBolt;
+                bp.m_Icon = IsekaiProtagonist.IsekaiProtagonistSpellList.LightningBoltAbility.m_Icon;
                 bp.AddComponent<AddEnergyVulnerability>(c => {
                     c.Type = DamageEnergyType.Electricity;
                 });
@@ -739,7 +779,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var VulnerabilityFireFeat = Helpers.CreateBlueprint<BlueprintFeature>("VulnerabilityFireFeat", bp => {
                 bp.SetName("Fire Vulnerability");
                 bp.SetDescription("You are vulnerable to Fire.");
-                bp.m_Icon = Icon_Fireball;
+                bp.m_Icon = IsekaiProtagonist.IsekaiProtagonistSpellList.FireballAbility.m_Icon;
                 bp.AddComponent<AddEnergyVulnerability>(c => {
                     c.Type = DamageEnergyType.Fire;
                 });
@@ -749,7 +789,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var VulnerabilitySonicFeat = Helpers.CreateBlueprint<BlueprintFeature>("VulnerabilitySonicFeat", bp => {
                 bp.SetName("Sonic Vulnerability");
                 bp.SetDescription("You are vulnerable to Sonic.");
-                bp.m_Icon = Icon_EarPiercingScream;
+                bp.m_Icon = IsekaiProtagonist.IsekaiProtagonistSpellList.EarPiercingScreamAbility.m_Icon;
                 bp.AddComponent<AddEnergyVulnerability>(c => {
                     c.Type = DamageEnergyType.Sonic;
                 });
@@ -1068,6 +1108,90 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.IsClassFeature = true;
             });
 
+            //Training Arc
+            var StudyMontage = Helpers.CreateBlueprint<BlueprintFeature>("StudyMontage", bp => {
+                bp.SetName("Study Montage");
+                bp.SetDescription("After extensive study sessions, you gain a +4 insight bonus to Intelligence, Wisdom, and Charisma.");
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Insight;
+                    c.Stat = StatType.Intelligence;
+                    c.Value = 4;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Insight;
+                    c.Stat = StatType.Wisdom;
+                    c.Value = 4;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Insight;
+                    c.Stat = StatType.Charisma;
+                    c.Value = 4;
+                });
+                bp.m_Icon = Icon_Thoughtsense;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var TrainingMontage = Helpers.CreateBlueprint<BlueprintFeature>("TrainingMontage", bp => {
+                bp.SetName("Training Montage");
+                bp.SetDescription("After extensive training sessions, you gain a +4 insight bonus to Strength, Dexterity, and Constitution.");
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Insight;
+                    c.Stat = StatType.Strength;
+                    c.Value = 4;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Insight;
+                    c.Stat = StatType.Dexterity;
+                    c.Value = 4;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Insight;
+                    c.Stat = StatType.Constitution;
+                    c.Value = 4;
+                });
+                bp.m_Icon = Icon_LegendaryProportions;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var BodyStrengthening = Helpers.CreateBlueprint<BlueprintFeature>("BodyStrengthening", bp => {
+                bp.SetName("Body Strengthening");
+                bp.SetDescription("After extensive strengthening of your body, you gain {g|Encyclopedia:Damage_Reduction}DR{/g}/— equal to your character level.");
+                bp.AddComponent<AddDamageResistancePhysical>(c => {
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.StatBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                });
+                bp.m_Icon = Icon_IronBody;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+            var SpellNegation = Helpers.CreateBlueprint<BlueprintFeature>("SpellNegation", bp => {
+                bp.SetName("Spell Negation");
+                bp.SetDescription("After extensive studying of spells, you gain spell resistance equal to four times your character level.");
+                bp.AddComponent<AddSpellResistance>(c => {
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.StatBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.MultiplyByModifier;
+                    c.m_StepLevel = 4;
+                });
+                bp.m_Icon = Icon_SpellResistance;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
+
             // Character development feats
             var AmorphousArmor = Helpers.CreateBlueprint<BlueprintFeature>("AmorphousArmor", bp => {
                 bp.SetName("Amorphous Armor");
@@ -1104,19 +1228,35 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
+            var GammaStrike = Helpers.CreateBlueprint<BlueprintFeature>("GammaStrike", bp => {
+                bp.SetName("Gamma Strike");
+                bp.SetDescription("Your attacks ignore concealment and are treated as adamantite for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
+                bp.m_Icon = Icon_BladeSense;
+                bp.AddComponent<IgnoreConcealment>();
+                bp.AddComponent<AddOutgoingPhysicalDamageProperty>(c => {
+                    c.AddMaterial = true;
+                    c.Material = PhysicalDamageMaterial.Adamantite;
+                });
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+            });
             var HealthyBody = Helpers.CreateBlueprint<BlueprintFeature>("HealthyBody", bp => {
                 bp.SetName("Healthy Body");
-                bp.SetDescription("You gain immunity to bleed, curses, poison, disease, sickened, and nauseated conditions.");
+                bp.SetDescription("You gain immunity to bleed, blindness, curses, poison, disease, sickened, and nauseated conditions.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Sickened;
                 });
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Nauseated;
                 });
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Blindness;
+                });
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.Sickened
                     | SpellDescriptor.Nauseated
                     | SpellDescriptor.Bleed
+                    | SpellDescriptor.Blindness
                     | SpellDescriptor.Curse
                     | SpellDescriptor.Poison;
                 });
@@ -1124,6 +1264,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     c.Descriptor = SpellDescriptor.Sickened
                     | SpellDescriptor.Nauseated
                     | SpellDescriptor.Bleed
+                    | SpellDescriptor.Blindness
                     | SpellDescriptor.Curse
                     | SpellDescriptor.Poison;
                 });
@@ -1133,7 +1274,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             });
             var InnerPower = Helpers.CreateBlueprint<BlueprintFeature>("InnerPower", bp => {
                 bp.SetName("Inner Power");
-                bp.SetDescription("You gain immunity to shaken, frightened, cowering, fear, paralysis, and death effects.");
+                bp.SetDescription("You gain immunity to shaken, frightened, cowering, fear, petrified, paralysis, and death effects.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Shaken;
                 });
@@ -1146,10 +1287,14 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Paralyzed;
                 });
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Petrified;
+                });
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.Shaken
                     | SpellDescriptor.Frightened
                     | SpellDescriptor.Fear
+                    | SpellDescriptor.Petrified
                     | SpellDescriptor.Paralysis
                     | SpellDescriptor.Death;
                 });
@@ -1157,6 +1302,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     c.Descriptor = SpellDescriptor.Shaken
                     | SpellDescriptor.Frightened
                     | SpellDescriptor.Fear
+                    | SpellDescriptor.Petrified
                     | SpellDescriptor.Paralysis
                     | SpellDescriptor.Death;
                 });
@@ -1195,58 +1341,58 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
-            var StudyMontage = Helpers.CreateBlueprint<BlueprintFeature>("StudyMontage", bp => {
-                bp.SetName("Study Montage");
-                bp.SetDescription("After extensive study sessions, you gain a +2 insight bonus to Intelligence, Wisdom, and Charisma.");
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Insight;
-                    c.Stat = StatType.Intelligence;
-                    c.Value = 2;
+            var Unstoppable = Helpers.CreateBlueprint<BlueprintFeature>("Unstoppable", bp => {
+                bp.SetName("Unstoppable");
+                bp.SetDescription("You gain immunity to dazed, dazzled, stunned, staggered, slowed, entangled, and movement impairing effects.");
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Slowed;
                 });
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Insight;
-                    c.Stat = StatType.Wisdom;
-                    c.Value = 2;
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Staggered;
                 });
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Insight;
-                    c.Stat = StatType.Charisma;
-                    c.Value = 2;
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Stunned;
                 });
-                bp.m_Icon = Icon_Thoughtsense;
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Dazed;
+                });
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Dazzled;
+                });
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.CantMove;
+                });
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.MovementBan;
+                });
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Entangled;
+                });
+                bp.AddComponent<BuffDescriptorImmunity>(c => {
+                    c.Descriptor = SpellDescriptor.Staggered
+                    | SpellDescriptor.Stun
+                    | SpellDescriptor.Daze
+                    | SpellDescriptor.MovementImpairing;
+                });
+                bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
+                    c.Descriptor = SpellDescriptor.Staggered
+                    | SpellDescriptor.Stun
+                    | SpellDescriptor.Daze
+                    | SpellDescriptor.MovementImpairing;
+                });
+                bp.m_Icon = Icon_DextrousDuelist;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
-            var TrainingMontage = Helpers.CreateBlueprint<BlueprintFeature>("TrainingMontage", bp => {
-                bp.SetName("Training Montage");
-                bp.SetDescription("After extensive training sessions, you gain a +2 insight bonus to Strength, Dexterity, and Constitution.");
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Insight;
-                    c.Stat = StatType.Strength;
-                    c.Value = 2;
-                });
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Insight;
-                    c.Stat = StatType.Dexterity;
-                    c.Value = 2;
-                });
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Insight;
-                    c.Stat = StatType.Constitution;
-                    c.Value = 2;
-                });
-                bp.m_Icon = Icon_LegendaryProportions;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-            });
-            var CripplingStrike = Resources.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
-            var WearyingStrike = Resources.GetBlueprint<BlueprintFeature>("b4befb0a9b58e0e4687942661c55198d");
+
 
             // Character Development Selection
+            var Icon_Backstory = AssetLoader.LoadInternal("Features", "ICON_BACKSTORY.png");
+            var Icon_BeachEpisode = AssetLoader.LoadInternal("Features", "ICON_BEACH.png");
             var BackstorySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("BackstorySelection", bp => {
                 bp.SetName("Backstory");
                 bp.SetDescription("At 1st level, you get to select a backstory. These will develop over time as you increase your level.");
-                bp.m_Icon = Icon_Discovery;
+                bp.m_Icon = Icon_Backstory;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
@@ -1266,22 +1412,46 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             });
             var TrainingArcSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("TrainingArcSelection", bp => {
                 bp.SetName("Training Arc");
-                bp.SetDescription("At 4th level, you train yourself intensely and gaining insight in your own abilities.");
-                bp.m_Icon = Icon_Discovery;
+                bp.SetDescription("At 4th and 16th level, you train yourself intensely and gain insight into your own abilities.");
+                bp.m_Icon = Icon_PerfectStrike;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     StudyMontage.ToReference<BlueprintFeatureReference>(),
                     TrainingMontage.ToReference<BlueprintFeatureReference>(),
+                    BodyStrengthening.ToReference<BlueprintFeatureReference>(),
+                    SpellNegation.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     StudyMontage.ToReference<BlueprintFeatureReference>(),
                     TrainingMontage.ToReference<BlueprintFeatureReference>(),
+                    BodyStrengthening.ToReference<BlueprintFeatureReference>(),
+                    SpellNegation.ToReference<BlueprintFeatureReference>(),
                 };
             });
+            var BeachEpisodeSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection", bp => {
+                bp.SetName("Beach Episode");
+                bp.SetDescription("At 10th level, you and your companions take a short intermission beside a large body of water. During this time, you begin a journey of self discovery.");
+                bp.m_Icon = Icon_BeachEpisode;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    HealthyBody.ToReference<BlueprintFeatureReference>(),
+                    InnerPower.ToReference<BlueprintFeatureReference>(),
+                    MasterSelf.ToReference<BlueprintFeatureReference>(),
+                    Unstoppable.ToReference<BlueprintFeatureReference>(),
+                };
+                bp.m_Features = new BlueprintFeatureReference[] {
+                    HealthyBody.ToReference<BlueprintFeatureReference>(),
+                    InnerPower.ToReference<BlueprintFeatureReference>(),
+                    MasterSelf.ToReference<BlueprintFeatureReference>(),
+                    Unstoppable.ToReference<BlueprintFeatureReference>(),
+                };
+            });
+
             var CharacterDevelopmentSelection1 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection1", bp => {
                 bp.SetName("Character Development I");
-                bp.SetDescription("At 4th level, you can select one character development.");
+                bp.SetDescription("At 7th, 13th, and 19th level, you can select one character development.");
                 bp.m_Icon = Icon_Discovery;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -1289,23 +1459,447 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     AmorphousArmor.ToReference<BlueprintFeatureReference>(),
                     VigorousWard.ToReference<BlueprintFeatureReference>(),
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                    HealthyBody.ToReference<BlueprintFeatureReference>(),
-                    InnerPower.ToReference<BlueprintFeatureReference>(),
-                    MasterSelf.ToReference<BlueprintFeatureReference>(),
-                    CripplingStrike.ToReference<BlueprintFeatureReference>(),
-                    WearyingStrike.ToReference<BlueprintFeatureReference>(),
+                    GammaStrike.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     AmorphousArmor.ToReference<BlueprintFeatureReference>(),
                     VigorousWard.ToReference<BlueprintFeatureReference>(),
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                    HealthyBody.ToReference<BlueprintFeatureReference>(),
-                    InnerPower.ToReference<BlueprintFeatureReference>(),
-                    MasterSelf.ToReference<BlueprintFeatureReference>(),
-                    CripplingStrike.ToReference<BlueprintFeatureReference>(),
-                    WearyingStrike.ToReference<BlueprintFeatureReference>(),
+                    GammaStrike.ToReference<BlueprintFeatureReference>(),
                 };
             });
+            var CharacterDevelopmentSelection2 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection2", bp => {
+                bp.SetName("Character Development II");
+                bp.SetDescription("At 7th, 13th, and 19th level, you can select one character development.");
+                bp.m_Icon = Icon_Discovery;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    AmorphousArmor.ToReference<BlueprintFeatureReference>(),
+                    VigorousWard.ToReference<BlueprintFeatureReference>(),
+                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
+                    GammaStrike.ToReference<BlueprintFeatureReference>(),
+                };
+                bp.m_Features = new BlueprintFeatureReference[] {
+                    AmorphousArmor.ToReference<BlueprintFeatureReference>(),
+                    VigorousWard.ToReference<BlueprintFeatureReference>(),
+                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
+                    GammaStrike.ToReference<BlueprintFeatureReference>(),
+                };
+            });
+            var CharacterDevelopmentSelection3 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection3", bp => {
+                bp.SetName("Character Development III");
+                bp.SetDescription("At 7th, 13th, and 19th level, you can select one character development.");
+                bp.m_Icon = Icon_Discovery;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    AmorphousArmor.ToReference<BlueprintFeatureReference>(),
+                    VigorousWard.ToReference<BlueprintFeatureReference>(),
+                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
+                    GammaStrike.ToReference<BlueprintFeatureReference>(),
+                };
+                bp.m_Features = new BlueprintFeatureReference[] {
+                    AmorphousArmor.ToReference<BlueprintFeatureReference>(),
+                    VigorousWard.ToReference<BlueprintFeatureReference>(),
+                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
+                    GammaStrike.ToReference<BlueprintFeatureReference>(),
+                };
+            });
+
+            // Prebuild
+            var PrebuildIsekaiProtagonistFeatureList = Helpers.CreateBlueprint<BlueprintFeature>("PrebuildIsekaiProtagonistFeatureList", bp => {
+                bp.Ranks = 1;
+                bp.HideInUI = true;
+                bp.AddComponent<AddClassLevels>(c => {
+                    c.DoNotApplyAutomatically = false;
+                    c.m_CharacterClass = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+                    c.Levels = 20;
+                    c.RaceStat = StatType.Strength;
+                    c.LevelsStat = StatType.Charisma;
+                    c.Skills = new StatType[11] {
+                    StatType.SkillAthletics,
+                    StatType.SkillMobility,
+                    StatType.SkillThievery,
+                    StatType.SkillStealth,
+                    StatType.SkillKnowledgeArcana,
+                    StatType.SkillKnowledgeWorld,
+                    StatType.SkillLoreNature,
+                    StatType.SkillLoreReligion,
+                    StatType.SkillPerception,
+                    StatType.SkillPersuasion,
+                    StatType.SkillUseMagicDevice
+                };
+                    c.Selections = new SelectionEntry[] {
+                    new SelectionEntry()
+                    {
+                        m_Selection = BasicFeatSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Features = new BlueprintFeatureReference[]{
+                            PowerAttack.ToReference<BlueprintFeatureReference>(),
+                            CombatReflexes.ToReference<BlueprintFeatureReference>(),
+                            WeaponSpecializationScythe.ToReference<BlueprintFeatureReference>(),
+                            Outflank.ToReference<BlueprintFeatureReference>(),
+                            WeaponFocusGreaterScythe.ToReference<BlueprintFeatureReference>(),
+                            ImprovedInitiative.ToReference<BlueprintFeatureReference>(),
+                            IntimidatingProwess.ToReference<BlueprintFeatureReference>(),
+                            SpellPenetration.ToReference<BlueprintFeatureReference>(),
+                            GreaterSpellPenetration.ToReference<BlueprintFeatureReference>(),
+                            LightningReflexes.ToReference<BlueprintFeatureReference>(),
+                        }
+                    },
+                    new SelectionEntry()
+                    {
+                        m_Selection = IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Features = new BlueprintFeatureReference[]{
+                            Cleave.ToReference<BlueprintFeatureReference>(),
+                            CleavingFinish.ToReference<BlueprintFeatureReference>(),
+                            WeaponFocusScythe.ToReference<BlueprintFeatureReference>(),
+                            DazzlingDisplay.ToReference<BlueprintFeatureReference>(),
+                            ImprovedCriticalScythe.ToReference<BlueprintFeatureReference>(),
+                            ShatterDefenses.ToReference<BlueprintFeatureReference>(),
+                            WeaponSpecializationGreaterScythe.ToReference<BlueprintFeatureReference>(),
+                            PenetratingStrike.ToReference<BlueprintFeatureReference>(),
+                            GreaterPenetratingStrike.ToReference<BlueprintFeatureReference>(),
+                            GreatFortitude.ToReference<BlueprintFeatureReference>(),
+                            IronWill.ToReference<BlueprintFeatureReference>(),
+                        }
+                    },
+                    new SelectionEntry()
+                    {
+                        m_Selection = BackstorySelection.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Features = new BlueprintFeatureReference[]{
+                            VengefulBackstory.ToReference<BlueprintFeatureReference>()
+                        }
+                    },
+                    new SelectionEntry()
+                    {
+                        m_Selection = TrainingArcSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Features = new BlueprintFeatureReference[]{
+                            TrainingMontage.ToReference<BlueprintFeatureReference>(),
+                            StudyMontage.ToReference<BlueprintFeatureReference>()
+                        }
+                    },
+                    new SelectionEntry()
+                    {
+                        m_Selection = CharacterDevelopmentSelection1.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Features = new BlueprintFeatureReference[]{
+                            AlphaStrike.ToReference<BlueprintFeatureReference>(),
+                            GammaStrike.ToReference<BlueprintFeatureReference>(),
+                            VigorousWard.ToReference<BlueprintFeatureReference>()
+                        }
+                    },
+                    new SelectionEntry()
+                    {
+                        m_Selection = BeachEpisodeSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Features = new BlueprintFeatureReference[]{
+                            MasterSelf.ToReference<BlueprintFeatureReference>()
+                        }
+                    },
+                    new SelectionEntry()
+                    {
+                        m_Selection = Adaptibility.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Features = new BlueprintFeatureReference[]{
+                            SkillFocusPhysique.ToReference<BlueprintFeatureReference>()
+                        }
+                    },
+                    new SelectionEntry()
+                    {
+                        m_Selection = AasimarHeritageSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Features = new BlueprintFeatureReference[]{
+                            AngelHeritage.ToReference<BlueprintFeatureReference>()
+                        }
+                    },
+                    new SelectionEntry()
+                    {
+                        m_Selection = TieflingHeritageSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Features = new BlueprintFeatureReference[]{
+                            PitbornHeritage.ToReference<BlueprintFeatureReference>()
+                        }
+                    },
+                    new SelectionEntry()
+                    {
+                        m_Selection = BackgroundBaseSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Features = new BlueprintFeatureReference[]{
+                            BackgroundNone.ToReference<BlueprintFeatureReference>()
+                        }
+                    },
+                };
+                    c.m_SelectSpells = new BlueprintAbilityReference[]
+                    {
+                    // Level 1
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.EnlargePersonAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ReducePersonAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.MageArmorAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.MagicWeaponAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.GreaseAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.MagicMissileAbility.ToReference<BlueprintAbilityReference>(),
+                    //Level 2
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.MageShieldAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.TrueStrikeAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.BlessAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ShieldOfFaithAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SleepAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.DivineFavorAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 3
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.UnbreakableHeartAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.VanishAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.StunningBarrierAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FeatherStepAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ExpeditiousRetreatAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CureLightWoundsAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.AidAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.AlignWeaponAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.BarkskinAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.GlitterdustAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.RestorationLesserAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ScorchingRayAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 4
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.EntangleAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FaerieFireAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.RemoveSicknessAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.RemoveFearAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonMonsterIAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonNaturesAllyIAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.AnimalAspectAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FalseLifeAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SenseVitalsAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.MirrorImageAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CureModerateWoundsAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.InvisibilityAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 5
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FoxsCunningAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.BearsEnduranceAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.BullsStrengthAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.EaglesSplendorAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CatsGraceAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.OwlsWisdomAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HasteAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FireballAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.AnimateDeadAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CureSeriousWoundsAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ResistEnergyCommunalAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SlowAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 6
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HazeOfDreamsAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.InflictLightWoundsAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.LongstriderAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.RayOfEnfeeblementAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.TouchOfGracelessnessAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CommandAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ProtectionFromArrowsAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.RemoveParalysisAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ResisEnergyAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonElementalSmallAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonMonsterIIAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonNaturesAllyIIAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 7
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.AnimalAspectGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.BestowCurseAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.MagicWeaponGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HeroismAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.MagicalVestmentAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ProtectionFromArrowsCommunalAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CrusaderEdgeAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.DeathWardAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FalseLifeGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FreedomOfMovementAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ProtectionFromEnergyCommunalAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.RestorationAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 8
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.PoxPustulesAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.PerniciousPoisonAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SeeInvisibilityAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HoldAnimalAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HoldPersonAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.InflictModerateWoundsAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.DispelMagicAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.DisplacementAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.InflictSeriousWoundsAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.PrayerAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ProtectionFromEnergyAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SeeInvisibilityCommunalAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 9
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CureCriticalWoundsAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.InvisibilityGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.PhantasmalKillerAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonElementalMediumAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonMonsterIVAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonNaturesAllyIVAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CureLightWoundsMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.InflictLightWoundsMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.TrueSeeingAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonElementalLargeAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonMonsterVAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonNaturesAllyVAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 10
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.LightningBoltAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.RemoveBlindnessAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.RemoveCurseAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.RemoveDiseaseAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonMonsterIIIAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonNaturesAllyIIIAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.BoneshatterAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ControlledFireballAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.DimensionDoorAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.DragonsBreathAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ElementalBodyIAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.InflictCriticalWoundsAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 11
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.BalefulPolymorphAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.BreathOfLifeAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CaveFangsAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.DominatePersonAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.MindFogAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.StoneskinCommunalAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.BearsEnduranceMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.BullsStrengthMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.EaglesSplendorMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FoxsCunningMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.OwlsWisdomMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CatsGraceMassAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 12
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.EnervationAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.EnlargePersonMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.LifeBubbleAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ShadowConjurationAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ShieldOfDawnAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ThornBodyAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.BreakEnchantmentAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.BurstOfGloryAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ElementalBodyIIAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HoldMonsterAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ShadowEvocationAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SpellResistanceAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 13
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CreateUndeadAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CureModerateWoundsMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FormOfTheDragonIAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.EaglesoulAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ElementalBodyIIIAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.InflictModerateWoundsMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.BestowCurseGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CreepingDoomAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FormOfTheDragonIIAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ElementalBodyIVAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.LegendaryProportionsAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.RestorationGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 14
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.AnimalGrowthAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HungryPitAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.PolymorphAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.RaiseDeadAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SerenityAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FeeblemindAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HarmAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HealAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HeroismGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonElementalHugeAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonMonsterVIAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonNaturesAllyVIAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 15
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CureSeriousWoundsMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.InflictSeriousWoundsMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.InvisibilityMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.PolymorphGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ResurrectionAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.WavesOfExhaustionAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.DeathClutchAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.CureCriticalWoundsMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.InflictCriticalWoundsMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonElementalElderAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonMonsterVIIIAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonNaturesAllyVIIIAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 16
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.DispelMagicGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.EyebiteAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.InspiringRecoveryAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.PrimalRegressionAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SiroccoAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.StoneToFleshAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FingerOfDeathAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.WalkThroughSpaceAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ShadowConjurationGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonElementalGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonMonsterVIIAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonNaturesAllyVIIAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 17
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.AngelicAspectGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FrightfulAspectAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HolyAuraAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FormOfTheDragonIIIAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.IronBodyAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SeamantleAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.DominateMonsterAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.DeathClutchAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ElementalSwarmAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonElderWormAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonMonsterIXAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SummonNaturesAllyIXAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 18
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.DestructionAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HolyWordAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FireStormAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.IceBodyAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.KiShoutAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.PrismaticSprayAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.MindBlankAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.PolarRayAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.StormboltsAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ShieldOfLawAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.RiftOfRuinAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ShadowEvocationGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 19
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.EuphoricTranquilityAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ScintillatingPatternAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ProtectionFromSpellsAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SouldreaverAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.SunburstAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.UnholyAuraAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HealMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.MindBlankCommunalAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HeroicInvocationAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ShadesAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.WeirdAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ShapechangeAbility.ToReference<BlueprintAbilityReference>(),
+                    // Level 20
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.EnergyDrainAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.FieryBodyAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.ForesightAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.HoldMonsterMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.IcyPrisonMassAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.OverwhelmingPresenceAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.PolarMidnightAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiProtagonist.IsekaiProtagonistSpellList.WailOfBansheeAbility.ToReference<BlueprintAbilityReference>(),
+                    };
+                });
+                bp.AddComponent<StatsDistributionPreset>(c => {
+                    c.TargetPoints = 20;
+                    c.Strength = 14;
+                    c.Dexterity = 12;
+                    c.Constitution = 8;
+                    c.Intelligence = 10;
+                    c.Wisdom = 12;
+                    c.Charisma = 17;
+                });
+                bp.AddComponent<StatsDistributionPreset>(c => {
+                    c.TargetPoints = 25;
+                    c.Strength = 14;
+                    c.Dexterity = 13;
+                    c.Constitution = 8;
+                    c.Intelligence = 10;
+                    c.Wisdom = 12;
+                    c.Charisma = 18;
+                });
+                bp.AddComponent<BuildBalanceRadarChart>(c => {
+                    c.Control = 5;
+                    c.Defense = 5;
+                    c.Magic = 5;
+                    c.Melee = 5;
+                    c.Ranged = 5;
+                    c.Support = 5;
+                });
+            });
+            IsekaiProtagonistClass.m_DefaultBuild = PrebuildIsekaiProtagonistFeatureList.ToReference<BlueprintUnitFactReference>();
 
             //// Class Signature Features
             // Bonus Feats
@@ -1327,8 +1921,8 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             });
             var CharacterDevelopmentFeat = Helpers.CreateBlueprint<BlueprintFeature>("CharacterDevelopmentFeat", bp => {
                 bp.SetName("Character Development");
-                bp.SetDescription("At 1st level, and every three levels thereafter, you can select one character development feats.");
-                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists gain character development feats. These feats develop as your level increases.");
+                bp.SetDescription("At 7th, 13th, and 19th level, you can select one character development.");
+                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "At 7th, 13th, and 19th level, you can select one character development.");
                 bp.m_Icon = Icon_Discovery;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -1351,20 +1945,20 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 Helpers.LevelEntry(7, SneakAttack, CharacterDevelopmentSelection1),
                 Helpers.LevelEntry(8, IsekaiProtagonistBonusFeatSelection, IsekaiFastMovement),
                 Helpers.LevelEntry(9, SneakAttack, FriendlyAuraFeature),
-                Helpers.LevelEntry(10, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection1, ImprovedEvasion),
+                Helpers.LevelEntry(10, IsekaiProtagonistBonusFeatSelection, BeachEpisodeSelection, ImprovedEvasion),
                 Helpers.LevelEntry(11, SneakAttack),
                 Helpers.LevelEntry(12, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(13, SneakAttack, CharacterDevelopmentSelection1),
+                Helpers.LevelEntry(13, SneakAttack, CharacterDevelopmentSelection2),
                 Helpers.LevelEntry(14, IsekaiProtagonistBonusFeatSelection),
                 Helpers.LevelEntry(15, SneakAttack, OtherworldlyStamina, IsekaiQuickFooted),
-                Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection1),
+                Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection, TrainingArcSelection),
                 Helpers.LevelEntry(17, SneakAttack, HaremMagnetFeature),
                 Helpers.LevelEntry(18, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(19, SneakAttack, CharacterDevelopmentSelection1),
+                Helpers.LevelEntry(19, SneakAttack, CharacterDevelopmentSelection3),
                 Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, TrueMainCharacter)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
-                Helpers.CreateUIGroup(BackstorySelection, TrainingArcSelection, CharacterDevelopmentSelection1, CharacterDevelopmentFeat),
+                Helpers.CreateUIGroup(BackstorySelection, TrainingArcSelection, BeachEpisodeSelection, CharacterDevelopmentSelection1, CharacterDevelopmentSelection2, CharacterDevelopmentSelection3),
                 Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
                 Helpers.CreateUIGroup(UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, IsekaiQuickFooted),
             };
