@@ -51,7 +51,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
         private static readonly BlueprintFeature PowerAttack = Resources.GetBlueprint<BlueprintFeature>("9972f33f977fc724c838e59641b2fca5");
         private static readonly BlueprintFeature CombatReflexes = Resources.GetBlueprint<BlueprintFeature>("0f8939ae6f220984e8fb568abbdfba95");
         private static readonly BlueprintFeature WeaponSpecializationScythe = Resources.GetBlueprint<BlueprintFeature>("d0a776a7998164d46a2100ed29004c0a");
-        private static readonly BlueprintFeature Outflank = Resources.GetBlueprint<BlueprintFeature>("075c27c421ad48e4fa0e04cfd4d0c545");
+        private static readonly BlueprintFeature Outflank = Resources.GetBlueprint<BlueprintFeature>("422dab7309e1ad343935f33a4d6e9f11");
         private static readonly BlueprintFeature WeaponFocusGreaterScythe = Resources.GetBlueprint<BlueprintFeature>("b03d4fdb4bd6353499c3e6318e3e2d66");
         private static readonly BlueprintFeature ImprovedInitiative = Resources.GetBlueprint<BlueprintFeature>("797f25d709f559546b29e7bcb181cc74");
         private static readonly BlueprintFeature IntimidatingProwess = Resources.GetBlueprint<BlueprintFeature>("d76497bfc48516e45a0831628f767a0f");
@@ -129,11 +129,11 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 
         public static void AddIsekaiProtagonistClass()
         {
-            // TODO: Add MythicAbilitySelection ability
             // TODO: Add mythic spellbook merging
-
             // TODO: Add archetypes, Archetype ideas: God Emporer, Edge Lord
             // TODO: Add custom equipment
+
+            // TODO: Add MythicAbilitySelection ability
 
             // Prebuild Selections
             var BackgroundNone = Resources.GetBlueprint<BlueprintFeature>("7d300f497584d9245ac24c062dce0bd6");
@@ -153,6 +153,8 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var AnimalClass = Resources.GetBlueprint<BlueprintCharacterClass>("4cd1757a0eea7694ba5c933729a53920");
             var FighterClass = Resources.GetBlueprint<BlueprintCharacterClass>("48ac8db94d5de7645906c7d0ad3bcfbd");
             var MonkClass = Resources.GetBlueprint<BlueprintCharacterClass>("e8f21e5b58e0569468e420ebea456124");
+            var AngelIncorporateSpellBook = Resources.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
+            var LichIncorporateSpellBook = Resources.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
 
             // Spellbook
             var IsekaiProtagonistSpellList = Resources.GetModBlueprint<BlueprintSpellList>("IsekaiProtagonistSpellList");
@@ -219,7 +221,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.Spontaneous = true;
                 bp.CastingAttribute = StatType.Charisma;
                 bp.CantripsType = CantripsType.Cantrips;
-                bp.IsArcane = true;
+                bp.IsArcane = false;
                 bp.IsArcanist = false;
                 bp.m_SpellsPerDay = IsekaiProtagonistSpellsPerDay.ToReference<BlueprintSpellsTableReference>();
                 bp.m_SpellsKnown = IsekaiProtagonistSpellsKnown.ToReference<BlueprintSpellsTableReference>();
@@ -282,8 +284,8 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     StatType.SkillPersuasion,
                     StatType.SkillUseMagicDevice
                 };
-                bp.IsDivineCaster = false;
-                bp.IsArcaneCaster = true;
+                bp.IsDivineCaster = true;
+                bp.IsArcaneCaster = false;
                 bp.StartingGold = 69420;
                 bp.PrimaryColor = 9;
                 bp.SecondaryColor = 9;
@@ -304,6 +306,9 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 }
             };
             IsekaiProtagonistSpellbook.m_CharacterClass = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+            // Allow Spellbook to be merged with angel and lich
+            AngelIncorporateSpellBook.m_AllowedSpellbooks = AngelIncorporateSpellBook.m_AllowedSpellbooks.AddToArray(IsekaiProtagonistSpellbook.ToReference<BlueprintSpellbookReference>());
+            LichIncorporateSpellBook.m_AllowedSpellbooks = LichIncorporateSpellBook.m_AllowedSpellbooks.AddToArray(IsekaiProtagonistSpellbook.ToReference<BlueprintSpellbookReference>());
 
             //// Class Features
             // Proficiencies
