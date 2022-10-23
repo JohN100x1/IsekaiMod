@@ -134,64 +134,8 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 
             // Spellbook
             var IsekaiProtagonistSpellList = Resources.GetModBlueprint<BlueprintSpellList>("IsekaiProtagonistSpellList");
-            var IsekaiProtagonistSpellsPerDay = Helpers.CreateBlueprint<BlueprintSpellsTable>("IsekaiProtagonistSpellsPerDay", bp => {
-                bp.Levels = new SpellsLevelEntry[29] {
-                    new SpellsLevelEntry() { Count = new int[] { } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 12 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 24, 12 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 24, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 24, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 24, 12, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 18, 12, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 18, 12, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 18, 12, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 18, 12, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 18, 12, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 12 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20, 2 } }
-                };
-            });
-            var IsekaiProtagonistSpellsKnown = Helpers.CreateBlueprint<BlueprintSpellsTable>("IsekaiProtagonistSpellsKnown", bp => {
-                bp.Levels = new SpellsLevelEntry[21] {
-                    new SpellsLevelEntry() { Count = new int[] { } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 12 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 24, 12 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 24, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 24, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 24, 12, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 18, 12, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 18, 12, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 18, 12, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 18, 12, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 18, 12, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 18, 6 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 12 } },
-                    new SpellsLevelEntry() { Count = new int[] { 0, 30, 30, 24, 24, 24, 24, 24, 24, 20 } }
-                };
-            });
+            var IsekaiProtagonistSpellsPerDay = Resources.GetModBlueprint<BlueprintSpellList>("IsekaiProtagonistSpellsPerDay");
+            var IsekaiProtagonistSpellsKnown = Resources.GetModBlueprint<BlueprintSpellList>("IsekaiProtagonistSpellsKnown");
             var IsekaiProtagonistSpellbook = Helpers.CreateBlueprint<BlueprintSpellbook>("IsekaiProtagonistSpellbook", bp => {
                 bp.Name = Helpers.CreateString("$IsekaiProtagonistSpellbook.Name", "Isekai Protagonist");
                 bp.Spontaneous = true;

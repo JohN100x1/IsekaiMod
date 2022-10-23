@@ -23,6 +23,8 @@ namespace IsekaiMod.Changes
                 Features.IsekaiProtagonist.DarkAuraFeature.Add();
 
                 Classes.IsekaiProtagonist.IsekaiProtagonistSpellList.Add();
+                Classes.IsekaiProtagonist.IsekaiProtagonistSpellsPerDay.Add();
+                Classes.IsekaiProtagonist.IsekaiProtagonistSpellsKnown.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistClass.Add();
                 Classes.IsekaiProtagonist.Archetypes.GodEmporer.Add();
 
