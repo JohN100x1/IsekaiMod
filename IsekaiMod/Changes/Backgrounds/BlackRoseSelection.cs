@@ -6,10 +6,10 @@ using Kingmaker.Blueprints.Classes.Selection;
 
 namespace IsekaiMod.Changes.Backgrounds
 {
-    internal class BackgroundSelectionFeature
+    internal class BlackRoseSelection
     {
 
-        public static void PatchBackgroundSelection()
+        public static void Add()
         {
 
             //Black Rose Backgrounds

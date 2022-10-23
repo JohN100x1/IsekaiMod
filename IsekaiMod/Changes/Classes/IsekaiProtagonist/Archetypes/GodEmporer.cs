@@ -8,26 +8,33 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
 {
     class GodEmporer
     {
-        public static void AddGodEmporer()
+        public static void Add()
         {
-            var IsekaiProtagonistClass = Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
+            // Archetype features
+            var GodEmporerProficiencies = Resources.GetModBlueprint<BlueprintFeature>("GodEmporerProficiencies");
+            var GodEmporerPlotArmor = Resources.GetModBlueprint<BlueprintFeature>("GodEmporerPlotArmor");
             var DarkAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("DarkAuraFeature");
+
+            // Removed features
+            var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
+            var PlotArmor = Resources.GetModBlueprint<BlueprintFeature>("PlotArmor");
             var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
 
-             var BackstorySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BackstorySelection");
+            var BackstorySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BackstorySelection");
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
             var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
             var CharacterDevelopmentSelection1 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection1");
             var CharacterDevelopmentSelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection2");
             var CharacterDevelopmentSelection3 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection3");
 
+            // Archetype
             var GodEmporerArchetype = Helpers.CreateBlueprint<BlueprintArchetype>("GodEmporerArchetype", bp => {
                 bp.LocalizedName = Helpers.CreateString($"GodEmporerArchetype.Name", "God Emporer");
                 bp.LocalizedDescription = Helpers.CreateString($"GodEmporerArchetype.Description", "Drezen today. The whole of Golarion tomorrow.");
                 bp.LocalizedDescriptionShort = Helpers.CreateString($"GodEmporerArchetype.Description", "Drezen today. The whole of Golarion tomorrow.");
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.LevelEntry(1, BackstorySelection),
+                    Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, BackstorySelection, PlotArmor),
                     Helpers.LevelEntry(4, TrainingArcSelection),
                     Helpers.LevelEntry(7, CharacterDevelopmentSelection1),
                     Helpers.LevelEntry(9, FriendlyAuraFeature),
@@ -37,9 +44,13 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(19, CharacterDevelopmentSelection3),
                 };
                 bp.AddFeatures = new LevelEntry[] {
+                    Helpers.LevelEntry(1, GodEmporerProficiencies, GodEmporerPlotArmor),
                     Helpers.LevelEntry(9, DarkAuraFeature),
                 };
             });
+
+            // Add Archetype to Class
+            var IsekaiProtagonistClass = Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
             IsekaiProtagonistClass.m_Archetypes = IsekaiProtagonistClass.m_Archetypes.AppendToArray(GodEmporerArchetype.ToReference<BlueprintArchetypeReference>());
         }
     }

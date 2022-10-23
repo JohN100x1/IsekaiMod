@@ -38,15 +38,6 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
         private static readonly BlueprintStatProgression BaseAttackBonus = Resources.GetBlueprint<BlueprintStatProgression>("b3057560ffff3514299e8b93e7648a9d");
         private static readonly BlueprintStatProgression SavesProgression = Resources.GetBlueprint<BlueprintStatProgression>("ff4662bde9e75f145853417313842751");
 
-        // Proficiencies
-        private static readonly BlueprintFeature LightArmorProficiency = Resources.GetBlueprint<BlueprintFeature>("6d3728d4e9c9898458fe5e9532951132");
-        private static readonly BlueprintFeature MediumArmorProficiency = Resources.GetBlueprint<BlueprintFeature>("46f4fb320f35704488ba3d513397789d");
-        private static readonly BlueprintFeature HeavyArmorProficiency = Resources.GetBlueprint<BlueprintFeature>("1b0f68188dcc435429fb87a022239681");
-        private static readonly BlueprintFeature SimpleWeaponProficiency = Resources.GetBlueprint<BlueprintFeature>("e70ecf1ed95ca2f40b754f1adb22bbdd");
-        private static readonly BlueprintFeature MartialWeaponProficiency = Resources.GetBlueprint<BlueprintFeature>("203992ef5b35c864390b4e4a1e200629");
-        private static readonly BlueprintFeature ShieldsProficiency = Resources.GetBlueprint<BlueprintFeature>("cb8686e7357a68c42bdd9d4e65334633");
-        private static readonly BlueprintFeature TowerShieldProficiency = Resources.GetBlueprint<BlueprintFeature>("6105f450bb2acbd458d277e71e19d835");
-
         // Prebuild Features
         private static readonly BlueprintFeature PowerAttack = Resources.GetBlueprint<BlueprintFeature>("9972f33f977fc724c838e59641b2fca5");
         private static readonly BlueprintFeature CombatReflexes = Resources.GetBlueprint<BlueprintFeature>("0f8939ae6f220984e8fb568abbdfba95");
@@ -84,7 +75,6 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
         private static readonly Sprite Icon_ProtectionFromSonic = Resources.GetBlueprint<BlueprintAbility>("0cee375b4e5265a46a13fc269beb8763").m_Icon;
         private static readonly Sprite Icon_DeathWard = Resources.GetBlueprint<BlueprintAbility>("0413915f355a38146bc6ad40cdf27b3f").m_Icon;
         private static readonly Sprite Icon_MageArmor = Resources.GetBlueprint<BlueprintAbility>("9e1ad5d6f87d19e4d8883d63a6e35568").m_Icon;
-        private static readonly Sprite Icon_EdictOfImpenetrableFortress = Resources.GetBlueprint<BlueprintAbility>("d7741c08ccf699e4a8a8f8ab2ed345f8").m_Icon;
         private static readonly Sprite Icon_ExpeditiousRetreat = Resources.GetBlueprint<BlueprintAbility>("4f8181e7a7f1d904fbaea64220e83379").m_Icon;
         private static readonly Sprite Icon_PredictionOfFailure = Resources.GetBlueprint<BlueprintAbility>("0e67fa8f011662c43934d486acc50253").m_Icon;
         private static readonly Sprite Icon_CrushingDespair = Resources.GetBlueprint<BlueprintAbility>("4baf4109145de4345861fe0f2209d903").m_Icon;
@@ -111,12 +101,14 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 
         private static readonly Sprite Icon_Discovery = Resources.GetBlueprint<BlueprintFeatureSelection>("cd86c437488386f438dcc9ae727ea2a6").m_Icon;
 
-        public static void AddIsekaiProtagonistClass()
+        public static void Add()
         {
             // TODO: refactor code
-            // TODO: Add archetypes, Archetype ideas: God Emporer, Edge Lord
+            // TODO: Archetype idea: God Emporer; has overpowered buffs, passive effects and auras
+            // TODO: Archetype idea: Edge Lord; has extra attacks and can cast spells as a swift action
             // TODO: Add custom equipment
 
+            // TODO: Add isekai backgrounds
             // TODO: Add MythicAbilitySelection ability
 
             // Prebuild Selections
@@ -295,61 +287,10 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 
             //// Class Features
             // Proficiencies
-            var IsekaiProtagonistProficiencies = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies", bp => {
-                bp.SetName("Isekai Protagonist Proficiences");
-                bp.SetDescription("Isekai Protagonists are proficient with all simple and {g|Encyclopedia:Weapon_Proficiency}martial weapons{/g} and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor and shields (including tower shields) without incurring the normal {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell failure chance for arcane spells received from other classes.");
-                bp.m_Icon = null;
-                bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] {
-                        LightArmorProficiency.ToReference<BlueprintUnitFactReference>(),
-                        MediumArmorProficiency.ToReference<BlueprintUnitFactReference>(),
-                        HeavyArmorProficiency.ToReference<BlueprintUnitFactReference>(),
-                        SimpleWeaponProficiency.ToReference<BlueprintUnitFactReference>(),
-                        MartialWeaponProficiency.ToReference<BlueprintUnitFactReference>(),
-                        ShieldsProficiency.ToReference<BlueprintUnitFactReference>(),
-                        TowerShieldProficiency.ToReference<BlueprintUnitFactReference>(),
-                    };
-                });
-                bp.AddComponent<ArcaneArmorProficiency>(c => {
-                    c.Armor = new ArmorProficiencyGroup[] {
-                        ArmorProficiencyGroup.Light,
-                        ArmorProficiencyGroup.Medium,
-                        ArmorProficiencyGroup.Heavy,
-                        ArmorProficiencyGroup.Buckler,
-                        ArmorProficiencyGroup.LightShield,
-                        ArmorProficiencyGroup.HeavyShield,
-                        ArmorProficiencyGroup.TowerShield
-                    };
-                });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-            });
-            // Cantrips (May need to change this in the future since it doesn't actually add the cantrips)
-            var IsekaiProtagonistCantripsFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistCantripsFeature", bp => {
-                bp.SetName("Cantrips");
-                bp.SetDescription("Isekai Protagonists can cast a number of {g|Encyclopedia:Cantrips_Orisons}cantrips{/g}, or 0-level {g|Encyclopedia:Spell}spells{/g}. These spells are cast like any other spell, but they are not expended when cast and may be used again.");
-                bp.m_Icon = null;
-                bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[]
-                    {
-                        IsekaiProtagonist.IsekaiProtagonistSpellList.MageLightAbility.ToReference<BlueprintUnitFactReference>(),
-                        IsekaiProtagonist.IsekaiProtagonistSpellList.JoltAbility.ToReference<BlueprintUnitFactReference>(),
-                        IsekaiProtagonist.IsekaiProtagonistSpellList.DisruptUndeadAbility.ToReference<BlueprintUnitFactReference>(),
-                        IsekaiProtagonist.IsekaiProtagonistSpellList.AcidSplashAbility.ToReference<BlueprintUnitFactReference>(),
-                        IsekaiProtagonist.IsekaiProtagonistSpellList.DismissAreaEffectAbility.ToReference<BlueprintUnitFactReference>(),
-                        IsekaiProtagonist.IsekaiProtagonistSpellList.DazeAbility.ToReference<BlueprintUnitFactReference>(),
-                        IsekaiProtagonist.IsekaiProtagonistSpellList.TouchOfFatigueAbility.ToReference<BlueprintUnitFactReference>(),
-                        IsekaiProtagonist.IsekaiProtagonistSpellList.FlareAbility.ToReference<BlueprintUnitFactReference>(),
-                        IsekaiProtagonist.IsekaiProtagonistSpellList.RayOfFrostAbility.ToReference<BlueprintUnitFactReference>(),
-                        IsekaiProtagonist.IsekaiProtagonistSpellList.ResistanceAbility.ToReference<BlueprintUnitFactReference>(),
-                        IsekaiProtagonist.IsekaiProtagonistSpellList.DivineZapAbility.ToReference<BlueprintUnitFactReference>(),
-                        IsekaiProtagonist.IsekaiProtagonistSpellList.GuidanceAbility.ToReference<BlueprintUnitFactReference>(),
-                        IsekaiProtagonist.IsekaiProtagonistSpellList.VirtueAbility.ToReference<BlueprintUnitFactReference>()
-                    };
-                });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-            });
+            var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
+            var GodEmporerProficiencies = Resources.GetModBlueprint<BlueprintFeature>("GodEmporerProficiencies");
+            // Cantrips
+            var IsekaiProtagonistCantripsFeature = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistCantripsFeature");
             // Bonus Feats
             var IsekaiProtagonistBonusFeatSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection", bp => {
                 bp.SetName("Bonus Feat");
@@ -364,54 +305,8 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             // Sneak Attack
             var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
             // Plot Armor
-            var PlotArmor = Helpers.CreateBlueprint<BlueprintFeature>("PlotArmor", bp => {
-                bp.SetName("Plot Armor");
-                bp.SetDescription("Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
-                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
-                bp.m_Icon = Icon_EdictOfImpenetrableFortress;
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Luck;
-                    c.Stat = StatType.AC;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Luck;
-                    c.Stat = StatType.SaveFortitude;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Luck;
-                    c.Stat = StatType.SaveReflex;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Luck;
-                    c.Stat = StatType.SaveWill;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.StatBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                });
-                bp.IsClassFeature = true;
-                bp.ReapplyOnLevelUp = true;
-            });
+            var PlotArmor = Resources.GetModBlueprint<BlueprintFeature>("PlotArmor");
+            var GodEmporerPlotArmor = Resources.GetModBlueprint<BlueprintFeature>("GodEmporerPlotArmor");
             var UncannyDodge = Resources.GetBlueprint<BlueprintFeature>("3c08d842e802c3e4eb19d15496145709");
             var ImprovedUncannyDodge = Resources.GetBlueprint<BlueprintFeature>("485a18c05792521459c7d06c63128c79");
             var Evasion = Resources.GetBlueprint<BlueprintFeature>("576933720c440aa4d8d42b0c54b77e80");
@@ -676,111 +571,9 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.IsClassFeature = true;
             });
             // Friendly Aura
-            var Icon_Friendly_Aura = AssetLoader.LoadInternal("Features", "ICON_FRIENDLY_AURA.png");
-            var FriendlyAuraEffectBuff = Helpers.CreateBlueprint<BlueprintBuff>("FriendlyAuraEffectBuff", bp => {
-                bp.SetName("Friendly Aura");
-                bp.SetDescription("At 9th level, enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.");
-                bp.IsClassFeature = true;
-                bp.m_Icon = Icon_Friendly_Aura;
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Penalty;
-                    c.Stat = StatType.AdditionalAttackBonus;
-                    c.Value = -4;
-                });
-            });
-            var FriendlyAuraArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("FriendlyAuraArea", bp => {
-                bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Enemy;
-                bp.SpellResistance = false;
-                bp.AggroEnemies = false;
-                bp.AffectEnemies = true;
-                bp.Shape = AreaEffectShape.Cylinder;
-                bp.Size = new Feet() { m_Value = 40 };
-                bp.Fx = new PrefabLink();
-                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(FriendlyAuraEffectBuff.ToReference<BlueprintBuffReference>()));
-            });
-            var FriendlyAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("FriendlyAuraBuff", bp => {
-                bp.SetName("Friendly Aura");
-                bp.SetDescription("At 9th level, enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.");
-                bp.m_Icon = Icon_Friendly_Aura;
-                bp.IsClassFeature = true;
-                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
-                bp.AddComponent<AddAreaEffect>(c => {
-                    c.m_AreaEffect = FriendlyAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
-                });
-            });
-            var FriendlyAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("FriendlyAuraFeature", bp => {
-                bp.SetName("Friendly Aura");
-                bp.SetDescription("At 9th level, enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.");
-                bp.m_Icon = Icon_Friendly_Aura;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.AddComponent<AuraFeatureComponent>(c => {
-                    c.m_Buff = FriendlyAuraBuff.ToReference<BlueprintBuffReference>();
-                });
-            });
+            var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
             // Dark Aura
-            var Icon_Dark_Aura = AssetLoader.LoadInternal("Features", "ICON_DARK_AURA.png");
-            var DarkAuraEffectBuff = Helpers.CreateBlueprint<BlueprintBuff>("DarkAuraEffectBuff", bp => {
-                bp.SetName("Dark Aura");
-                bp.SetDescription("At 9th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
-                bp.IsClassFeature = true;
-                bp.m_Icon = Icon_Dark_Aura;
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Penalty;
-                    c.Stat = StatType.AdditionalAttackBonus;
-                    c.Value = -4;
-                });
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Penalty;
-                    c.Stat = StatType.AC;
-                    c.Value = -4;
-                });
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Penalty;
-                    c.Stat = StatType.SaveFortitude;
-                    c.Value = -4;
-                });
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Penalty;
-                    c.Stat = StatType.SaveReflex;
-                    c.Value = -4;
-                });
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Penalty;
-                    c.Stat = StatType.SaveWill;
-                    c.Value = -4;
-                });
-            });
-            var DarkAuraArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("DarkAuraArea", bp => {
-                bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Enemy;
-                bp.SpellResistance = false;
-                bp.AggroEnemies = false;
-                bp.AffectEnemies = true;
-                bp.Shape = AreaEffectShape.Cylinder;
-                bp.Size = new Feet() { m_Value = 40 };
-                bp.Fx = new PrefabLink();
-                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(DarkAuraEffectBuff.ToReference<BlueprintBuffReference>()));
-            });
-            var DarkAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("DarkAuraBuff", bp => {
-                bp.SetName("Dark Aura");
-                bp.SetDescription("At 9th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
-                bp.m_Icon = Icon_Dark_Aura;
-                bp.IsClassFeature = true;
-                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
-                bp.AddComponent<AddAreaEffect>(c => {
-                    c.m_AreaEffect = DarkAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
-                });
-            });
-            var DarkAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("DarkAuraFeature", bp => {
-                bp.SetName("Dark Aura");
-                bp.SetDescription("At 9th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
-                bp.m_Icon = Icon_Dark_Aura;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.AddComponent<AuraFeatureComponent>(c => {
-                    c.m_Buff = DarkAuraBuff.ToReference<BlueprintBuffReference>();
-                });
-            });
+            var DarkAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("DarkAuraFeature");
             // Capstone
             var Icon_TrueMainCharacter = AssetLoader.LoadInternal("Features", "ICON_TRUE_MAIN_CHARACTER.png");
             var TrueMainCharacter = Helpers.CreateBlueprint<BlueprintFeature>("TrueMainCharacter", bp => {
@@ -2010,10 +1803,11 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 Helpers.CreateUIGroup(BackstorySelection, TrainingArcSelection, BeachEpisodeSelection, CharacterDevelopmentSelection1, CharacterDevelopmentSelection2, CharacterDevelopmentSelection3),
-                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, DarkAuraFeature, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
+                Helpers.CreateUIGroup(PlotArmor, GodEmporerPlotArmor, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, DarkAuraFeature, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
                 Helpers.CreateUIGroup(UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, IsekaiQuickFooted),
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
+                GodEmporerProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiProtagonistProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiProtagonistCantripsFeature.ToReference<BlueprintFeatureBaseReference>()
             };

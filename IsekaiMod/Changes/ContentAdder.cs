@@ -13,14 +13,23 @@ namespace IsekaiMod.Changes
                 if (Initialized) return;
                 Initialized = true;
 
-                Classes.IsekaiProtagonist.IsekaiProtagonistSpellList.AddIsekaiProtagonistSpellList();
-                Classes.IsekaiProtagonist.IsekaiProtagonistClass.AddIsekaiProtagonistClass();
-                Classes.IsekaiProtagonist.Archetypes.GodEmporer.AddGodEmporer();
+                Features.IsekaiProtagonist.IsekaiProtagonistProficiencies.Add();
+                Features.IsekaiProtagonist.IsekaiProtagonistCantripsFeature.Add();
+                Features.IsekaiProtagonist.PlotArmor.Add();
+                Features.IsekaiProtagonist.FriendlyAuraFeature.Add();
 
-                Heritages.TieflingHeritageSuccubus.AddTieflingHeritageSuccubus();
+                Features.IsekaiProtagonist.GodEmporerProficiencies.Add();
+                Features.IsekaiProtagonist.GodEmporerPlotArmor.Add();
+                Features.IsekaiProtagonist.DarkAuraFeature.Add();
 
-                Backgrounds.BlackRoseMatriarch.AddBackgroundBlackRoseMatriarch();
-                Backgrounds.BackgroundSelectionFeature.PatchBackgroundSelection();
+                Classes.IsekaiProtagonist.IsekaiProtagonistSpellList.Add();
+                Classes.IsekaiProtagonist.IsekaiProtagonistClass.Add();
+                Classes.IsekaiProtagonist.Archetypes.GodEmporer.Add();
+
+                Heritages.TieflingHeritageSuccubus.Add();
+
+                Backgrounds.BlackRoseMatriarch.Add();
+                Backgrounds.BlackRoseSelection.Add();
             }
         }
     }

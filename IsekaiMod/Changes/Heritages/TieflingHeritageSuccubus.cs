@@ -27,10 +27,11 @@ namespace IsekaiMod.Changes.Heritages
         private static readonly int AttributeBoostAmount = 61;
         private static readonly int CharismaBoostAmount = 72;
 
-        public static void AddTieflingHeritageSuccubus()
+        public static void Add()
         {
 
             // TODO: Change DemonWingsAbility to custom use custom icon (create new BlueprintActivatableAbility)
+            // TODO: use diabolic wings
 
             // Charm Ability
             var ICON_CHARM = AssetLoader.LoadInternal("Abilities", "ICON_CHARM.png");

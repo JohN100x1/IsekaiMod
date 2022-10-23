@@ -434,7 +434,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
         public static readonly BlueprintAbility ElementalSwarmAbility = Resources.GetBlueprint<BlueprintAbility>("0340fe43f35e7a448981b646c638c83d");
         public static readonly BlueprintAbility SummonElderWormAbility = Resources.GetBlueprint<BlueprintAbility>("954f1469ed62843409783c9fa7472998");
 
-        public static void AddIsekaiProtagonistSpellList()
+        public static void Add()
         {
             Helpers.CreateBlueprint<BlueprintSpellList>("IsekaiProtagonistSpellList", bp => {
                 bp.SpellsByLevel = new SpellLevelList[] {

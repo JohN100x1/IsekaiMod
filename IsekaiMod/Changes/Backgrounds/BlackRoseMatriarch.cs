@@ -10,7 +10,7 @@ namespace IsekaiMod.Changes.Backgrounds
     {
         private static readonly BlueprintFeature ScytheProficiency = Resources.GetBlueprint<BlueprintFeature>("96c174b0ebca7b246b82d4bc4aac4574");
 
-        public static void AddBackgroundBlackRoseMatriarch()
+        public static void Add()
         {
             var ICON_BR = AssetLoader.LoadInternal("Backgrounds", "ICON_BLACK_ROSE.png");
             var BackgroundBlackRoseMatriarch = Helpers.CreateBlueprint<BlueprintFeature>("BackgroundBlackRoseMatriarch", bp => {
