@@ -71,22 +71,6 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
         private static readonly BlueprintFeature GreatFortitude = Resources.GetBlueprint<BlueprintFeature>("79042cb55f030614ea29956177977c52");
         private static readonly BlueprintFeature IronWill = Resources.GetBlueprint<BlueprintFeature>("175d1577bb6c9a04baf88eec99c66334");
 
-
-        // Mythic Classes
-        private static readonly BlueprintCharacterClass MythicCompanionClass = Resources.GetBlueprint<BlueprintCharacterClass>("530b6a79cb691c24ba99e1577b4beb6d");
-        private static readonly BlueprintCharacterClass MythicStartingClass = Resources.GetBlueprint<BlueprintCharacterClass>("247aa787806d5da4f89cfc3dff0b217f");
-        private static readonly BlueprintCharacterClass AeonMythicClass = Resources.GetBlueprint<BlueprintCharacterClass>("15a85e67b7d69554cab9ed5830d0268e");
-        private static readonly BlueprintCharacterClass AngelMythicClass = Resources.GetBlueprint<BlueprintCharacterClass>("a5a9fe8f663d701488bd1db8ea40484e");
-        private static readonly BlueprintCharacterClass AzataMythicClass = Resources.GetBlueprint<BlueprintCharacterClass>("9a3b2c63afa79744cbca46bea0da9a16");
-        private static readonly BlueprintCharacterClass DemonMythicClass = Resources.GetBlueprint<BlueprintCharacterClass>("8e19495ea576a8641964102d177e34b7");
-        private static readonly BlueprintCharacterClass LichMythicClass = Resources.GetBlueprint<BlueprintCharacterClass>("5d501618a28bdc24c80007a5c937dcb7");
-        private static readonly BlueprintCharacterClass DevilMythicClass = Resources.GetBlueprint<BlueprintCharacterClass>("211f49705f478b3468db6daa802452a2");
-        private static readonly BlueprintCharacterClass SwarmThatWalksClass = Resources.GetBlueprint<BlueprintCharacterClass>("5295b8e13c2303f4c88bdb3d7760a757");
-
-        // Mythic Ability Selection
-        private static readonly BlueprintFeatureSelection MythicAbilitySelection = Resources.GetBlueprint<BlueprintFeatureSelection>("ba0e5a900b775be4a99702f1ed08914d");
-
-
         // Icons
         private static readonly Sprite Icon_ResistAcid = Resources.GetBlueprint<BlueprintAbility>("fedc77de9b7aad54ebcc43b4daf8decd").m_Icon;
         private static readonly Sprite Icon_ResistCold = Resources.GetBlueprint<BlueprintAbility>("5368cecec375e1845ae07f48cdc09dd1").m_Icon;
@@ -129,7 +113,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 
         public static void AddIsekaiProtagonistClass()
         {
-            // TODO: Add mythic spellbook merging
+            // TODO: refactor code
             // TODO: Add archetypes, Archetype ideas: God Emporer, Edge Lord
             // TODO: Add custom equipment
 
@@ -269,7 +253,6 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.m_Spellbook = IsekaiProtagonistSpellbook.ToReference<BlueprintSpellbookReference>();
                 bp.m_EquipmentEntities = new KingmakerEquipmentEntityReference[] { };
                 bp.m_StartingItems = new BlueprintItemReference[] { };
-                bp.m_Archetypes = new BlueprintArchetypeReference[] { };
                 bp.SkillPoints = 0;
                 bp.ClassSkills = new StatType[11] {
                     StatType.SkillAthletics,
@@ -733,6 +716,69 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.IsClassFeature = true;
                 bp.AddComponent<AuraFeatureComponent>(c => {
                     c.m_Buff = FriendlyAuraBuff.ToReference<BlueprintBuffReference>();
+                });
+            });
+            // Dark Aura
+            var Icon_Dark_Aura = AssetLoader.LoadInternal("Features", "ICON_DARK_AURA.png");
+            var DarkAuraEffectBuff = Helpers.CreateBlueprint<BlueprintBuff>("DarkAuraEffectBuff", bp => {
+                bp.SetName("Dark Aura");
+                bp.SetDescription("At 9th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.IsClassFeature = true;
+                bp.m_Icon = Icon_Dark_Aura;
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Penalty;
+                    c.Stat = StatType.AdditionalAttackBonus;
+                    c.Value = -4;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Penalty;
+                    c.Stat = StatType.AC;
+                    c.Value = -4;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Penalty;
+                    c.Stat = StatType.SaveFortitude;
+                    c.Value = -4;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Penalty;
+                    c.Stat = StatType.SaveReflex;
+                    c.Value = -4;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Penalty;
+                    c.Stat = StatType.SaveWill;
+                    c.Value = -4;
+                });
+            });
+            var DarkAuraArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("DarkAuraArea", bp => {
+                bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Enemy;
+                bp.SpellResistance = false;
+                bp.AggroEnemies = false;
+                bp.AffectEnemies = true;
+                bp.Shape = AreaEffectShape.Cylinder;
+                bp.Size = new Feet() { m_Value = 40 };
+                bp.Fx = new PrefabLink();
+                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(DarkAuraEffectBuff.ToReference<BlueprintBuffReference>()));
+            });
+            var DarkAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("DarkAuraBuff", bp => {
+                bp.SetName("Dark Aura");
+                bp.SetDescription("At 9th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.m_Icon = Icon_Dark_Aura;
+                bp.IsClassFeature = true;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
+                bp.AddComponent<AddAreaEffect>(c => {
+                    c.m_AreaEffect = DarkAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
+                });
+            });
+            var DarkAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("DarkAuraFeature", bp => {
+                bp.SetName("Dark Aura");
+                bp.SetDescription("At 9th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.m_Icon = Icon_Dark_Aura;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.AddComponent<AuraFeatureComponent>(c => {
+                    c.m_Buff = DarkAuraBuff.ToReference<BlueprintBuffReference>();
                 });
             });
             // Capstone
@@ -1964,7 +2010,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 Helpers.CreateUIGroup(BackstorySelection, TrainingArcSelection, BeachEpisodeSelection, CharacterDevelopmentSelection1, CharacterDevelopmentSelection2, CharacterDevelopmentSelection3),
-                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
+                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, DarkAuraFeature, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
                 Helpers.CreateUIGroup(UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, IsekaiQuickFooted),
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {

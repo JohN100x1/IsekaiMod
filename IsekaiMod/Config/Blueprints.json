@@ -6,6 +6,8 @@
     "BackgroundBlackRoseMatriarch": "d317a919-354f-4c40-a7ae-285f293f106b",
     "BlackRoseBackgroundSelection": "5400da49-2595-443c-b6ba-0574d8c191dd",
 
+    "GodEmporerArchetype": "2ff78bd9-6224-4376-9f64-720ce94d0616",
+
     "PrebuildIsekaiProtagonistFeatureList": "de7da5cc-7e37-438a-855c-a31f861a4960",
     "IsekaiProtagonistClass": "051cef8e-2906-4217-a6d5-c8011b1d9f60",
     "IsekaiProtagonistProgression": "c5190864-af7d-439e-981c-47d059e9c8c9",
@@ -80,6 +82,11 @@
     "FriendlyAuraArea": "5bfec8d0-c27b-4d34-b8d3-d532bfc78386",
     "FriendlyAuraBuff": "ce7fbc51-9904-4200-b15f-949b4d73e518",
     "FriendlyAuraFeature": "b509ab2b-7968-4280-807f-0e49e3ce777c",
+
+    "DarkAuraEffectBuff": "933e2f47-c9b1-4b73-a76c-6072f9171ec6",
+    "DarkAuraArea": "f56e4cb4-2f89-4c6f-8e88-2297505f42d8",
+    "DarkAuraBuff": "15de04ea-523a-48c8-942b-19619fa2b657",
+    "DarkAuraFeature": "67f01a9d-f8d8-474d-bd5b-db91a616cf16",
 
     "HaremMagnetEffect": "e7b76354-23fb-40ad-9598-74e81f209314",
     "HaremMagnetImmunity": "2f6b1ba2-4fa1-4038-9c08-26eca9ab80c6",

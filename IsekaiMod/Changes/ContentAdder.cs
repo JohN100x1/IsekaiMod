@@ -15,6 +15,7 @@ namespace IsekaiMod.Changes
 
                 Classes.IsekaiProtagonist.IsekaiProtagonistSpellList.AddIsekaiProtagonistSpellList();
                 Classes.IsekaiProtagonist.IsekaiProtagonistClass.AddIsekaiProtagonistClass();
+                Classes.IsekaiProtagonist.Archetypes.GodEmporer.AddGodEmporer();
 
                 Heritages.TieflingHeritageSuccubus.AddTieflingHeritageSuccubus();
 
