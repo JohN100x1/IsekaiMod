@@ -58,7 +58,9 @@ namespace IsekaiMod.Changes
                 Features.IsekaiProtagonist.GodEmporerProficiencies.Add();
                 Features.IsekaiProtagonist.GodEmporerPlotArmor.Add();
                 Features.IsekaiProtagonist.GodEmporerTraining.Add();
+                Features.IsekaiProtagonist.GodEmporerSignatureAttack.Add();
                 Features.IsekaiProtagonist.DarkAuraFeature.Add();
+                Features.IsekaiProtagonist.Invincible.Add();
                 Classes.IsekaiProtagonist.Archetypes.GodEmporer.Add();
 
                 // Add Progression & Prebuild after Class and class-dependent features are added

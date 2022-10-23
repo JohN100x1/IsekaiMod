@@ -93,6 +93,9 @@
     <None Update="Assets\Features\ICON_FRIENDLY_AURA.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Assets\Features\ICON_INVINCIBLE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\Features\ICON_TRUE_MAIN_CHARACTER.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

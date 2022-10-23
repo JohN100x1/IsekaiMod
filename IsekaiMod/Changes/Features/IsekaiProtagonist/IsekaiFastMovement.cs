@@ -14,8 +14,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             var Icon_FastMovement = Resources.GetBlueprint<BlueprintFeature>("d294a5dddd0120046aae7d4eb6cbc4fc").m_Icon;
             var IsekaiFastMovement = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiFastMovement", bp => {
                 bp.SetName("Fast Movement");
-                bp.SetDescription("At 8th level, the Isekai Protagonist gains a +10 competence {g|Encyclopedia:Bonus}bonus{/g} to their base {g|Encyclopedia:Speed}speed{/g}.");
-                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "The Isekai Protagonist gains a +10 competence {g|Encyclopedia:Bonus}bonus{/g} to their base {g|Encyclopedia:Speed}speed{/g}.");
+                bp.SetDescription("At 8th level, you gain a +10 competence {g|Encyclopedia:Bonus}bonus{/g} to your base {g|Encyclopedia:Speed}speed{/g}.");
                 bp.m_Icon = Icon_FastMovement;
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Competence;

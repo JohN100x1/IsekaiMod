@@ -17,8 +17,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             var Icon_SwordSaintFighterTraining = Resources.GetBlueprint<BlueprintFeature>("9ab2ec65977cc524a99600babc7fe3b6").m_Icon;
             var GodEmporerTraining = Helpers.CreateBlueprint<BlueprintFeature>("GodEmporerTraining", bp => {
                 bp.SetName("Fighter Training");
-                bp.SetDescription("At 3rd level, the God Emporer counts their class level as his fighter level for the purpose of qualifying for {g|Encyclopedia:Feat}feats{/g}. If they have levels in fighter, these levels stack.");
-                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "The God Emporer counts their class level as his fighter level for the purpose of qualifying for {g|Encyclopedia:Feat}feats{/g}. If they have levels in fighter, these levels stack.");
+                bp.SetDescription("At 4th level, the God Emporer counts their class level as their fighter level for the purpose of qualifying for {g|Encyclopedia:Feat}feats{/g}. If they have levels in fighter, these levels stack.");
                 bp.m_Icon = Icon_SwordSaintFighterTraining;
                 bp.AddComponent<ClassLevelsForPrerequisites>(c => {
                     c.m_FakeClass = FighterClass.ToReference<BlueprintCharacterClassReference>();
