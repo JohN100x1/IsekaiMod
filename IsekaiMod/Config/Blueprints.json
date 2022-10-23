@@ -22,7 +22,8 @@
 
     "IsekaiProtagonistBonusFeat": "414b5c1b-3b32-4e54-99e3-96505698a929",
     "IsekaiProtagonistSneakFeat": "8f8b74df-5190-42e1-a7ae-ad797cb8430a",
-    "CharacterDevelopmentFeat": "91751bce-90bc-42a2-b667-c807146a0cfb",
+    "IsekaiProtagonistPlotArmorFeat": "91751bce-90bc-42a2-b667-c807146a0cfb",
+    "IsekaiProtagonistCharacterDevelopmentFeat": "107d5300-b827-4963-a84c-df0e61fa7107",
 
     "PlotArmor": "8acca981-65f0-4933-8093-3f788ec9d2c6",
     "OtherworldlyStamina": "7f0bc8e8-34ad-4691-b66e-a2d526a35d0b",
@@ -39,7 +40,7 @@
     "CharacterDevelopmentSelection2": "26420865-8717-4d1a-97e4-b5f80d46d212",
     "CharacterDevelopmentSelection3": "16f18340-0d22-4416-b171-5296348cdc29",
 
-    "AmorphousArmor": "2a36d826-f9de-478d-bd43-3932b63b9ad0",
+    "MundaneArmor": "2a36d826-f9de-478d-bd43-3932b63b9ad0",
     "VigorousWard": "e8b5d863-a729-486c-9c4f-c776fe1c353c",
 
     "AlphaStrike": "8f7a38b6-ab25-4578-83e2-0d095a247dcb",
@@ -83,8 +84,10 @@
     "FriendlyAuraBuff": "ce7fbc51-9904-4200-b15f-949b4d73e518",
     "FriendlyAuraFeature": "b509ab2b-7968-4280-807f-0e49e3ce777c",
 
+    "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",
     "GodEmporerProficiencies": "1f112bb6-3b8e-44ca-8158-325436f6b308",
     "GodEmporerPlotArmor": "57625816-3065-4bf1-8b34-38c7dba2a633",
+    "GodEmporerTraining": "e0132a7d-478c-4d03-bb5d-5eaa0f8ae586",
 
     "DarkAuraEffectBuff": "933e2f47-c9b1-4b73-a76c-6072f9171ec6",
     "DarkAuraArea": "f56e4cb4-2f89-4c6f-8e88-2297505f42d8",

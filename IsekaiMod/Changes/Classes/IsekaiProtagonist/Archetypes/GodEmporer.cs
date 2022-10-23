@@ -13,11 +13,13 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
             // Archetype features
             var GodEmporerProficiencies = Resources.GetModBlueprint<BlueprintFeature>("GodEmporerProficiencies");
             var GodEmporerPlotArmor = Resources.GetModBlueprint<BlueprintFeature>("GodEmporerPlotArmor");
+            var GodEmporerTraining = Resources.GetModBlueprint<BlueprintFeature>("GodEmporerTraining");
             var DarkAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("DarkAuraFeature");
 
             // Removed features
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
             var PlotArmor = Resources.GetModBlueprint<BlueprintFeature>("PlotArmor");
+            var IsekaiFighterTraining = Resources.GetModBlueprint<BlueprintFeature>("IsekaiFighterTraining");
             var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
 
             var BackstorySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BackstorySelection");
@@ -35,6 +37,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, BackstorySelection, PlotArmor),
+                    Helpers.LevelEntry(3, IsekaiFighterTraining),
                     Helpers.LevelEntry(4, TrainingArcSelection),
                     Helpers.LevelEntry(7, CharacterDevelopmentSelection1),
                     Helpers.LevelEntry(9, FriendlyAuraFeature),
@@ -45,6 +48,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, GodEmporerProficiencies, GodEmporerPlotArmor),
+                    Helpers.LevelEntry(3, GodEmporerTraining),
                     Helpers.LevelEntry(9, DarkAuraFeature),
                 };
             });

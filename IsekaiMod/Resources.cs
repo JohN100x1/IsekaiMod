@@ -22,7 +22,7 @@ namespace IsekaiMod
         }
         public static T GetBlueprint<T>(string id) where T : SimpleBlueprint
         {
-            var assetId = new BlueprintGuid(System.Guid.Parse(id));
+            var assetId = new BlueprintGuid(Guid.Parse(id));
             return GetBlueprint<T>(assetId);
         }
         public static T GetBlueprint<T>(BlueprintGuid id) where T : SimpleBlueprint
