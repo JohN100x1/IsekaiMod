@@ -12,7 +12,7 @@ using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
 
-namespace IsekaiMod.Changes.Features.IsekaiProtagonist
+namespace IsekaiMod.Changes.Features.IsekaiProtagonist.GodEmporer
 {
     class ProtectiveAuraFeature
     {

@@ -56,7 +56,7 @@
     },
     {
       "Key": "461d4e4cd6974e39a7fcb3a35dd108c7",
-      "SimpleName": "IsekaiProtagonistBonusFeatSelection.Description",
+      "SimpleName": "IsekaiBonusFeatSelection.Description",
       "ProcessTemplates": true,
       "enGB": "At 1st level, and at every even level thereafter, Isekai Protagonists gains a bonus feat in addition to those gained from normal advancement."
     },

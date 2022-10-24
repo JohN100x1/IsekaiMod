@@ -9,7 +9,7 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.FactLogic;
 
-namespace IsekaiMod.Changes.Features.IsekaiProtagonist
+namespace IsekaiMod.Changes.Features.IsekaiProtagonist.GodEmporer
 {
     class GodEmporerProficiencies
     {

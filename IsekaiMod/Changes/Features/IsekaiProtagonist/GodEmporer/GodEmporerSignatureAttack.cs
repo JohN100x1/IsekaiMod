@@ -7,7 +7,7 @@ using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 
-namespace IsekaiMod.Changes.Features.IsekaiProtagonist
+namespace IsekaiMod.Changes.Features.IsekaiProtagonist.GodEmporer
 {
     class GodEmporerSignatureAttack
     {

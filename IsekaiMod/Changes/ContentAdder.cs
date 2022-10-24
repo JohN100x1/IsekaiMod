@@ -21,7 +21,7 @@ namespace IsekaiMod.Changes
                 // Isekai Protagonist Features
                 Features.IsekaiProtagonist.IsekaiProtagonistProficiencies.Add();
                 Features.IsekaiProtagonist.IsekaiProtagonistCantripsFeature.Add();
-                Features.IsekaiProtagonist.IsekaiProtagonistBonusFeatSelection.Add();
+                Features.IsekaiProtagonist.IsekaiBonusFeatSelection.Add();
                 Features.IsekaiProtagonist.PlotArmor.Add();
                 Features.IsekaiProtagonist.IsekaiFighterTraining.Add();
                 Features.IsekaiProtagonist.SignatureAttack.Add();
@@ -41,31 +41,34 @@ namespace IsekaiMod.Changes
                 Features.IsekaiProtagonist.BeachEpisode.Unstoppable.Add();
                 Features.IsekaiProtagonist.BeachEpisode.BeachEpisodeSelection.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.MundaneAura.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.VigorousWard.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.AlphaStrike.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.BetaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.GammaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection1.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection2.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection3.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection4.Add();
                 Features.IsekaiProtagonist.Backstory.HopelessBackstory.Add();
                 Features.IsekaiProtagonist.Backstory.TragicBackstory.Add();
                 Features.IsekaiProtagonist.Backstory.PainfulBackstory.Add();
                 Features.IsekaiProtagonist.Backstory.VengefulBackstory.Add();
                 Features.IsekaiProtagonist.Backstory.ForsakenBackstory.Add();
                 Features.IsekaiProtagonist.Backstory.BackstorySelection.Add();
-
-                Features.IsekaiProtagonist.GodEmporerProficiencies.Add();
-                Features.IsekaiProtagonist.GodEmporerPlotArmor.Add();
-                Features.IsekaiProtagonist.NascentApotheosis.Add();
-                Features.IsekaiProtagonist.GodEmporerTraining.Add();
-                Features.IsekaiProtagonist.ProtectiveAuraFeature.Add();
-                Features.IsekaiProtagonist.GodEmporerSignatureAttack.Add();
-                Features.IsekaiProtagonist.DarkAuraFeature.Add();
-                Features.IsekaiProtagonist.GloriousAuraFeature.Add();
-                Features.IsekaiProtagonist.GodlyVessel.Add();
-                Features.IsekaiProtagonist.SiphoningAuraFeature.Add();
-                Features.IsekaiProtagonist.Godhood.Add();
+                // God Emporer Archetype
+                Features.IsekaiProtagonist.GodEmporer.GodEmporerProficiencies.Add();
+                Features.IsekaiProtagonist.GodEmporer.GodEmporerPlotArmor.Add();
+                Features.IsekaiProtagonist.GodEmporer.NascentApotheosis.Add();
+                Features.IsekaiProtagonist.GodEmporer.GodEmporerTraining.Add();
+                Features.IsekaiProtagonist.GodEmporer.ProtectiveAuraFeature.Add();
+                Features.IsekaiProtagonist.GodEmporer.GodEmporerSignatureAttack.Add();
+                Features.IsekaiProtagonist.GodEmporer.DarkAuraFeature.Add();
+                Features.IsekaiProtagonist.GodEmporer.GloriousAuraFeature.Add();
+                Features.IsekaiProtagonist.GodEmporer.GodlyVessel.Add();
+                Features.IsekaiProtagonist.GodEmporer.SiphoningAuraFeature.Add();
+                Features.IsekaiProtagonist.GodEmporer.Godhood.Add();
                 Classes.IsekaiProtagonist.Archetypes.GodEmporer.Add();
+                // Edge Lord Archetype
+                Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
 
                 // Add Progression & Prebuild after Class and class-dependent features are added
                 Classes.IsekaiProtagonist.PrebuildIsekaiProtagonistFeatureList.Add();

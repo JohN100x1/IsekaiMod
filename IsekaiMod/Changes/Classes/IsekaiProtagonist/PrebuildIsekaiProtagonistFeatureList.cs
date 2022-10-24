@@ -45,13 +45,14 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var Adaptibility = Resources.GetBlueprint<BlueprintFeatureSelection>("26a668c5a8c22354bac67bcd42e09a3f");
             var BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
 
-            var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
+            var IsekaiBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiBonusFeatSelection");
             var BackstorySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BackstorySelection");
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
             var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
             var CharacterDevelopmentSelection1 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection1");
             var CharacterDevelopmentSelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection2");
             var CharacterDevelopmentSelection3 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection3");
+            var CharacterDevelopmentSelection4 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection4");
 
             var VengefulBackstory = Resources.GetModBlueprint<BlueprintFeature>("VengefulBackstory");
             var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
@@ -59,8 +60,9 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var SpellNegation = Resources.GetModBlueprint<BlueprintFeature>("SpellNegation");
             var MasterSelf = Resources.GetModBlueprint<BlueprintFeature>("MasterSelf");
             var AlphaStrike = Resources.GetModBlueprint<BlueprintFeature>("AlphaStrike");
+            var BetaStrike = Resources.GetModBlueprint<BlueprintFeature>("BetaStrike");
             var GammaStrike = Resources.GetModBlueprint<BlueprintFeature>("GammaStrike");
-            var VigorousWard = Resources.GetModBlueprint<BlueprintFeature>("VigorousWard");
+            var MundaneAura = Resources.GetModBlueprint<BlueprintFeature>("MundaneAura");
 
             var IsekaiProtagonistClass = Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
             var PrebuildIsekaiProtagonistFeatureList = Helpers.CreateBlueprint<BlueprintFeature>("PrebuildIsekaiProtagonistFeatureList", bp => {
@@ -104,7 +106,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     },
                     new SelectionEntry()
                     {
-                        m_Selection = IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Selection = IsekaiBonusFeatSelection.ToReference<BlueprintFeatureSelectionReference>(),
                         m_Features = new BlueprintFeatureReference[]{
                             Cleave.ToReference<BlueprintFeatureReference>(),
                             CleavingFinish.ToReference<BlueprintFeatureReference>(),
@@ -139,21 +141,28 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     {
                         m_Selection = CharacterDevelopmentSelection1.ToReference<BlueprintFeatureSelectionReference>(),
                         m_Features = new BlueprintFeatureReference[]{
-                            AlphaStrike.ToReference<BlueprintFeatureReference>(),
+                            BetaStrike.ToReference<BlueprintFeatureReference>(),
                         }
                     },
                     new SelectionEntry()
                     {
                         m_Selection = CharacterDevelopmentSelection2.ToReference<BlueprintFeatureSelectionReference>(),
                         m_Features = new BlueprintFeatureReference[]{
-                            GammaStrike.ToReference<BlueprintFeatureReference>(),
+                            AlphaStrike.ToReference<BlueprintFeatureReference>(),
                         }
                     },
                     new SelectionEntry()
                     {
                         m_Selection = CharacterDevelopmentSelection3.ToReference<BlueprintFeatureSelectionReference>(),
                         m_Features = new BlueprintFeatureReference[]{
-                            VigorousWard.ToReference<BlueprintFeatureReference>()
+                            GammaStrike.ToReference<BlueprintFeatureReference>()
+                        }
+                    },
+                    new SelectionEntry()
+                    {
+                        m_Selection = CharacterDevelopmentSelection4.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Features = new BlueprintFeatureReference[]{
+                            MundaneAura.ToReference<BlueprintFeatureReference>()
                         }
                     },
                     new SelectionEntry()

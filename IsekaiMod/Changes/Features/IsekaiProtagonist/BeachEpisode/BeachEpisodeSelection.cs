@@ -20,7 +20,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.BeachEpisode
             var Icon_BeachEpisode = AssetLoader.LoadInternal("Features", "ICON_BEACH.png");
             var BeachEpisodeSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection", bp => {
                 bp.SetName("Beach Episode");
-                bp.SetDescription("At 10th level, you and your companions take a short intermission beside a large body of water. During this time, you begin a journey of self discovery.");
+                bp.SetDescription("At 12th level, you and your companions take a short intermission beside a large body of water. During this time, you begin a journey of self discovery.");
                 bp.m_Icon = Icon_BeachEpisode;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

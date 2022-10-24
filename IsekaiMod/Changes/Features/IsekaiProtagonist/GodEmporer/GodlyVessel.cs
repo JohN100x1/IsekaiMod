@@ -6,7 +6,7 @@ using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 
-namespace IsekaiMod.Changes.Features.IsekaiProtagonist
+namespace IsekaiMod.Changes.Features.IsekaiProtagonist.GodEmporer
 {
     class GodlyVessel
     {

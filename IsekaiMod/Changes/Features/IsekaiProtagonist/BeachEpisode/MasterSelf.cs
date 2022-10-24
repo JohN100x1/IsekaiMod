@@ -15,7 +15,13 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.BeachEpisode
             var Icon_Serenity = Resources.GetBlueprint<BlueprintAbility>("d316d3d94d20c674db2c24d7de96f6a7").m_Icon;
             var MasterSelf = Helpers.CreateBlueprint<BlueprintFeature>("MasterSelf", bp => {
                 bp.SetName("Master Self-Control");
-                bp.SetDescription("You gain immunity to sleep, confusion, charm, emotion, complusion, and mind-affecting effects.");
+                bp.SetDescription("You gain immunity to dazed, dazzled, sleep, confusion, charm, emotion, complusion, and mind-affecting effects.");
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Dazed;
+                });
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Dazzled;
+                });
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Confusion;
                 });
@@ -26,6 +32,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.BeachEpisode
                     c.Descriptor = SpellDescriptor.Compulsion
                     | SpellDescriptor.Charm
                     | SpellDescriptor.MindAffecting
+                    | SpellDescriptor.Daze
                     | SpellDescriptor.Emotion
                     | SpellDescriptor.NegativeEmotion
                     | SpellDescriptor.Confusion
@@ -35,6 +42,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.BeachEpisode
                     c.Descriptor = SpellDescriptor.Compulsion
                     | SpellDescriptor.Charm
                     | SpellDescriptor.MindAffecting
+                    | SpellDescriptor.Daze
                     | SpellDescriptor.Emotion
                     | SpellDescriptor.NegativeEmotion
                     | SpellDescriptor.Confusion

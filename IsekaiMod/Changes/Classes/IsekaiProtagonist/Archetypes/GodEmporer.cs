@@ -39,26 +39,29 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
             var CharacterDevelopmentSelection1 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection1");
             var CharacterDevelopmentSelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection2");
             var CharacterDevelopmentSelection3 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection3");
+            var CharacterDevelopmentSelection4 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection4");
 
             // Archetype
             var GodEmporerArchetype = Helpers.CreateBlueprint<BlueprintArchetype>("GodEmporerArchetype", bp => {
                 bp.LocalizedName = Helpers.CreateString($"GodEmporerArchetype.Name", "God Emporer");
-                bp.LocalizedDescription = Helpers.CreateString($"GodEmporerArchetype.Description", "Drezen today. The whole of Golarion tomorrow.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString($"GodEmporerArchetype.Description", "Drezen today. The whole of Golarion tomorrow.");
+                bp.LocalizedDescription = Helpers.CreateString($"GodEmporerArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
+                    + "some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively.");
+                bp.LocalizedDescriptionShort = Helpers.CreateString($"GodEmporerArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
+                    + "some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively.");
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, PlotArmor),
-                    Helpers.LevelEntry(3, IsekaiFighterTraining),
+                    Helpers.LevelEntry(3, IsekaiFighterTraining, CharacterDevelopmentSelection1),
                     Helpers.LevelEntry(5, SneakAttack, TrainingArcSelection),
                     Helpers.LevelEntry(6, SignatureAttack),
-                    Helpers.LevelEntry(7, CharacterDevelopmentSelection1),
+                    Helpers.LevelEntry(7, CharacterDevelopmentSelection2),
                     Helpers.LevelEntry(9, SneakAttack, FriendlyAuraFeature),
                     Helpers.LevelEntry(10, TrainingArcSelection),
                     Helpers.LevelEntry(12, BeachEpisodeSelection),
-                    Helpers.LevelEntry(13, SneakAttack, CharacterDevelopmentSelection2),
+                    Helpers.LevelEntry(13, SneakAttack, CharacterDevelopmentSelection3),
                     Helpers.LevelEntry(15, TrainingArcSelection, OtherworldlyStamina),
                     Helpers.LevelEntry(17, SneakAttack),
-                    Helpers.LevelEntry(19, CharacterDevelopmentSelection3),
+                    Helpers.LevelEntry(19, CharacterDevelopmentSelection4),
                     Helpers.LevelEntry(20, TrueMainCharacter),
                 };
                 bp.AddFeatures = new LevelEntry[] {

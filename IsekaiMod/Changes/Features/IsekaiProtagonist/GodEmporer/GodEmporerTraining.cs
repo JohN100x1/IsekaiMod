@@ -4,7 +4,7 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 
-namespace IsekaiMod.Changes.Features.IsekaiProtagonist
+namespace IsekaiMod.Changes.Features.IsekaiProtagonist.GodEmporer
 {
     class GodEmporerTraining
     {

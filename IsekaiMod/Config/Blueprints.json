@@ -18,13 +18,12 @@
     "IsekaiProtagonistSpellsKnown": "6d3f3e9e-a449-4bed-a4c6-865a5d01b346",
     "IsekaiProtagonistSpellsPerDay": "1f89acc7-f07c-4d76-b217-89fdd4f8414e",
 
-    "IsekaiProtagonistBonusFeatSelection": "039dec4f-d83c-4e4b-9be9-e4aae6fe4b5b",
-
     "IsekaiProtagonistBonusFeat": "414b5c1b-3b32-4e54-99e3-96505698a929",
     "IsekaiProtagonistSneakFeat": "8f8b74df-5190-42e1-a7ae-ad797cb8430a",
     "IsekaiProtagonistPlotArmorFeat": "91751bce-90bc-42a2-b667-c807146a0cfb",
     "IsekaiProtagonistCharacterDevelopmentFeat": "107d5300-b827-4963-a84c-df0e61fa7107",
 
+    "IsekaiBonusFeatSelection": "039dec4f-d83c-4e4b-9be9-e4aae6fe4b5b",
     "PlotArmor": "8acca981-65f0-4933-8093-3f788ec9d2c6",
     "OtherworldlyStamina": "7f0bc8e8-34ad-4691-b66e-a2d526a35d0b",
     "SignatureAttack": "834fc856-6aa1-4abc-aa59-7c100ad190f4",
@@ -39,12 +38,12 @@
     "CharacterDevelopmentSelection1": "b5e98cc6-1828-4009-8a9d-ae8638eda059",
     "CharacterDevelopmentSelection2": "26420865-8717-4d1a-97e4-b5f80d46d212",
     "CharacterDevelopmentSelection3": "16f18340-0d22-4416-b171-5296348cdc29",
-
-    "MundaneAura": "2a36d826-f9de-478d-bd43-3932b63b9ad0",
-    "VigorousWard": "e8b5d863-a729-486c-9c4f-c776fe1c353c",
+    "CharacterDevelopmentSelection4": "f3adb893-53d2-4d50-8849-fb43fd962bba",
 
     "AlphaStrike": "8f7a38b6-ab25-4578-83e2-0d095a247dcb",
+    "BetaStrike": "290c88af-a0eb-43f8-88ac-e49a76ccec0c",
     "GammaStrike": "1c4edc77-1a1e-4bc8-add2-8784a14551b4",
+    "MundaneAura": "2a36d826-f9de-478d-bd43-3932b63b9ad0",
 
     "HealthyBody": "c6165832-f997-40bb-b0af-145ea74670a4",
     "InnerPower": "51c61f4f-a583-48dd-8824-3dc4864ef844",

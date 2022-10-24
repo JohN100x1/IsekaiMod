@@ -14,7 +14,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.BeachEpisode
             var Icon_DextrousDuelist = Resources.GetBlueprint<BlueprintFeature>("b701196306bb4674bb902c9f1160180f").m_Icon;
             var Unstoppable = Helpers.CreateBlueprint<BlueprintFeature>("Unstoppable", bp => {
                 bp.SetName("Unstoppable");
-                bp.SetDescription("You gain immunity to dazed, dazzled, stunned, staggered, slowed, entangled, and movement impairing effects.");
+                bp.SetDescription("You gain immunity to stunned, staggered, slowed, entangled, petrified, paralysis, and movement impairing effects.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Slowed;
                 });
@@ -25,12 +25,6 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.BeachEpisode
                     c.Condition = UnitCondition.Stunned;
                 });
                 bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Dazed;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Dazzled;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.CantMove;
                 });
                 bp.AddComponent<AddConditionImmunity>(c => {
@@ -39,16 +33,24 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.BeachEpisode
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Entangled;
                 });
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Paralyzed;
+                });
+                bp.AddComponent<AddConditionImmunity>(c => {
+                    c.Condition = UnitCondition.Petrified;
+                });
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.Staggered
                     | SpellDescriptor.Stun
-                    | SpellDescriptor.Daze
+                    | SpellDescriptor.Petrified
+                    | SpellDescriptor.Paralysis
                     | SpellDescriptor.MovementImpairing;
                 });
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
                     c.Descriptor = SpellDescriptor.Staggered
                     | SpellDescriptor.Stun
-                    | SpellDescriptor.Daze
+                    | SpellDescriptor.Petrified
+                    | SpellDescriptor.Paralysis
                     | SpellDescriptor.MovementImpairing;
                 });
                 bp.m_Icon = Icon_DextrousDuelist;

@@ -14,7 +14,9 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.BeachEpisode
             var Icon_BurningRenewal = Resources.GetBlueprint<BlueprintFeature>("7cf2a6bf35c422e4ea219fcc2eb564f5").m_Icon;
             var InnerPower = Helpers.CreateBlueprint<BlueprintFeature>("InnerPower", bp => {
                 bp.SetName("Inner Power");
-                bp.SetDescription("You gain immunity to shaken, frightened, cowering, fear, petrified, paralysis, and death effects.");
+                bp.SetDescription("You gain immunity to shaken, frightened, cowering, fear, death effects, {g|Encyclopedia:Ability_Scores}ability score{/g} {g|Encyclopedia:Damage}damage{/g}, energy drain, and negative levels.");
+                bp.AddComponent<AddImmunityToAbilityScoreDamage>();
+                bp.AddComponent<AddImmunityToEnergyDrain>();
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Shaken;
                 });
@@ -24,26 +26,18 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.BeachEpisode
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Cowering;
                 });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Paralyzed;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Petrified;
-                });
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.Shaken
                     | SpellDescriptor.Frightened
                     | SpellDescriptor.Fear
-                    | SpellDescriptor.Petrified
-                    | SpellDescriptor.Paralysis
+                    | SpellDescriptor.NegativeLevel
                     | SpellDescriptor.Death;
                 });
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
                     c.Descriptor = SpellDescriptor.Shaken
                     | SpellDescriptor.Frightened
                     | SpellDescriptor.Fear
-                    | SpellDescriptor.Petrified
-                    | SpellDescriptor.Paralysis
+                    | SpellDescriptor.NegativeLevel
                     | SpellDescriptor.Death;
                 });
                 bp.m_Icon = Icon_BurningRenewal;
