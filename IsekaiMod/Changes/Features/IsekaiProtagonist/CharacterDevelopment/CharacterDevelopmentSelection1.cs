@@ -11,7 +11,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.CharacterDevelopment
         public static void Add()
         {
             // Character development feats
-            var MundaneArmor = Resources.GetModBlueprint<BlueprintFeature>("MundaneArmor");
+            var MundaneAura = Resources.GetModBlueprint<BlueprintFeature>("MundaneAura");
             var VigorousWard = Resources.GetModBlueprint<BlueprintFeature>("VigorousWard");
             var AlphaStrike = Resources.GetModBlueprint<BlueprintFeature>("AlphaStrike");
             var GammaStrike = Resources.GetModBlueprint<BlueprintFeature>("GammaStrike");
@@ -25,13 +25,13 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                    MundaneArmor.ToReference<BlueprintFeatureReference>(),
+                    MundaneAura.ToReference<BlueprintFeatureReference>(),
                     VigorousWard.ToReference<BlueprintFeatureReference>(),
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
-                    MundaneArmor.ToReference<BlueprintFeatureReference>(),
+                    MundaneAura.ToReference<BlueprintFeatureReference>(),
                     VigorousWard.ToReference<BlueprintFeatureReference>(),
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),

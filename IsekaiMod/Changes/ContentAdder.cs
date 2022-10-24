@@ -41,7 +41,7 @@ namespace IsekaiMod.Changes
                 Features.IsekaiProtagonist.BeachEpisode.MasterSelf.Add();
                 Features.IsekaiProtagonist.BeachEpisode.Unstoppable.Add();
                 Features.IsekaiProtagonist.BeachEpisode.BeachEpisodeSelection.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.MundaneArmor.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.MundaneAura.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.VigorousWard.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.AlphaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.GammaStrike.Add();
@@ -59,8 +59,10 @@ namespace IsekaiMod.Changes
                 Features.IsekaiProtagonist.GodEmporerPlotArmor.Add();
                 Features.IsekaiProtagonist.NascentApotheosis.Add();
                 Features.IsekaiProtagonist.GodEmporerTraining.Add();
+                Features.IsekaiProtagonist.ProtectiveAuraFeature.Add();
                 Features.IsekaiProtagonist.GodEmporerSignatureAttack.Add();
                 Features.IsekaiProtagonist.DarkAuraFeature.Add();
+                Features.IsekaiProtagonist.GloriousAuraFeature.Add();
                 Features.IsekaiProtagonist.GodlyBody.Add();
                 Features.IsekaiProtagonist.Invincible.Add();
                 Classes.IsekaiProtagonist.Archetypes.GodEmporer.Add();

@@ -40,7 +40,7 @@
     "CharacterDevelopmentSelection2": "26420865-8717-4d1a-97e4-b5f80d46d212",
     "CharacterDevelopmentSelection3": "16f18340-0d22-4416-b171-5296348cdc29",
 
-    "MundaneArmor": "2a36d826-f9de-478d-bd43-3932b63b9ad0",
+    "MundaneAura": "2a36d826-f9de-478d-bd43-3932b63b9ad0",
     "VigorousWard": "e8b5d863-a729-486c-9c4f-c776fe1c353c",
 
     "AlphaStrike": "8f7a38b6-ab25-4578-83e2-0d095a247dcb",
@@ -92,6 +92,16 @@
     "GodEmporerSignatureAttack": "1984ae0d-ff08-41ea-858a-6160c8cc3b23",
     "GodlyBody": "128a880e-72d8-4800-b246-dcc85d7edb1d",
     "Invincible": "57649922-6046-4aa7-82aa-6f3c95ecb9e4",
+
+    "ProtectiveAuraEffectBuff": "b025cc85-6989-4512-9bd8-14c88a3e0b8d",
+    "ProtectiveAuraArea": "e30be595-fbb1-4a73-9542-fbab025b561a",
+    "ProtectiveAuraBuff": "f6f01dc8-6d05-41e3-9ad6-f7b8bdc8e84a",
+    "ProtectiveAuraFeature": "203fd36f-2228-449b-bf51-f61c385ec77c",
+
+    "GloriousAuraEffectBuff": "38ad66b1-b10c-44c1-86a7-d2a8a6df279c",
+    "GloriousAuraArea": "d972a3da-0e4e-497f-adc2-f4019605e915",
+    "GloriousAuraBuff": "d721187a-499b-4ee2-a51f-d7569dab8313",
+    "GloriousAuraFeature": "2d178124-ddb0-4be9-835b-f659009b6d82",
 
     "DarkAuraEffectBuff": "933e2f47-c9b1-4b73-a76c-6072f9171ec6",
     "DarkAuraArea": "f56e4cb4-2f89-4c6f-8e88-2297505f42d8",

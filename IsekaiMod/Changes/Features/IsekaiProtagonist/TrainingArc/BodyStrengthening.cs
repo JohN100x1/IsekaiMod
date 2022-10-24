@@ -16,7 +16,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.TrainingArc
             var Icon_IronBody = Resources.GetBlueprint<BlueprintAbility>("198fcc43490993f49899ed086fe723c1").m_Icon;
             var BodyStrengthening = Helpers.CreateBlueprint<BlueprintFeature>("BodyStrengthening", bp => {
                 bp.SetName("Body Strengthening");
-                bp.SetDescription("After extensive strengthening of your body, you gain {g|Encyclopedia:Damage_Reduction}DR{/g}/— equal to your character level.");
+                bp.SetDescription("After extensive strengthening of your body, you gain {g|Encyclopedia:Damage_Reduction}DR{/g} 5/— per character level.");
                 bp.AddComponent<AddDamageResistancePhysical>(c => {
                     c.Value = new ContextValue()
                     {
@@ -27,6 +27,8 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.TrainingArc
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.MultiplyByModifier;
+                    c.m_StepLevel = 5;
                 });
                 bp.m_Icon = Icon_IronBody;
                 bp.Ranks = 1;

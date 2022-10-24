@@ -17,7 +17,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
                 bp.SetName("Godly Body");
                 bp.SetDescription("At 10th level, the God Emporer gains immunity to sickened, nauseated, blindness, shaken, frightened, cowering, "
                     + "paralyzed, petrified, confusion, sleeping, slowed, staggered, stunned, dazed, dazzled, entangled, fatigued, exhausted, and movement impairing conditions, "
-                    + "bleed, curse, posion, fear, death, compulsion, charm, mind-affecting, emotion effects, {g|Encyclopedia:Ability_Scores}ability score{/g} {g|Encyclopedia:Damage}damage{/g}, "
+                    + "bleed, curses, hexes, posion, fear effects, death effects, compulsion effects, charm effects, mind-affecting effects, emotion effects, {g|Encyclopedia:Ability_Scores}ability score{/g} {g|Encyclopedia:Damage}damage{/g}, "
                     + "energy drain and negative levels."
                     );
                 bp.m_Icon = Icon_PureForm;
@@ -86,6 +86,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
                     | SpellDescriptor.Nauseated
                     | SpellDescriptor.Bleed
                     | SpellDescriptor.Blindness
+                    | SpellDescriptor.Hex
                     | SpellDescriptor.Curse
                     | SpellDescriptor.Poison
                     | SpellDescriptor.Shaken
@@ -114,6 +115,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
                     | SpellDescriptor.Nauseated
                     | SpellDescriptor.Bleed
                     | SpellDescriptor.Blindness
+                    | SpellDescriptor.Hex
                     | SpellDescriptor.Curse
                     | SpellDescriptor.Poison
                     | SpellDescriptor.Shaken

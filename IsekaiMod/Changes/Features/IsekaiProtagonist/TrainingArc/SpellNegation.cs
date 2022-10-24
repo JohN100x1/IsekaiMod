@@ -16,7 +16,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.TrainingArc
             var Icon_SpellResistance = Resources.GetBlueprint<BlueprintAbility>("0a5ddfbcfb3989543ac7c936fc256889").m_Icon;
             var SpellNegation = Helpers.CreateBlueprint<BlueprintFeature>("SpellNegation", bp => {
                 bp.SetName("Spell Negation");
-                bp.SetDescription("After extensive studying of spells, you gain spell resistance equal to four times your character level.");
+                bp.SetDescription("After extensive studying of spells, you gain spell resistance equal to 10 + twice your character level.");
                 bp.AddComponent<AddSpellResistance>(c => {
                     c.Value = new ContextValue()
                     {
@@ -27,8 +27,8 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.TrainingArc
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.MultiplyByModifier;
-                    c.m_StepLevel = 4;
+                    c.m_Progression = ContextRankProgression.DoublePlusBonusValue;
+                    c.m_StepLevel = 10;
                 });
                 bp.m_Icon = Icon_SpellResistance;
                 bp.Ranks = 1;

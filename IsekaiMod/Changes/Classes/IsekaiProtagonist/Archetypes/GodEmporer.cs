@@ -15,8 +15,10 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
             var GodEmporerPlotArmor = Resources.GetModBlueprint<BlueprintFeature>("GodEmporerPlotArmor");
             var NascentApotheosis = Resources.GetModBlueprint<BlueprintFeature>("NascentApotheosis");
             var GodEmporerTraining = Resources.GetModBlueprint<BlueprintFeature>("GodEmporerTraining");
+            var ProtectiveAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("ProtectiveAuraFeature");
             var GodEmporerSignatureAttack = Resources.GetModBlueprint<BlueprintFeature>("GodEmporerSignatureAttack");
             var DarkAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("DarkAuraFeature");
+            var GloriousAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("GloriousAuraFeature");
             var Invincible = Resources.GetModBlueprint<BlueprintFeature>("Invincible");
             var GodlyBody = Resources.GetModBlueprint<BlueprintFeature>("GodlyBody");
 
@@ -58,9 +60,11 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(1, GodEmporerProficiencies, GodEmporerPlotArmor),
                     Helpers.LevelEntry(3, NascentApotheosis),
                     Helpers.LevelEntry(4, GodEmporerTraining),
+                    Helpers.LevelEntry(6, ProtectiveAuraFeature),
                     Helpers.LevelEntry(7, GodEmporerSignatureAttack),
                     Helpers.LevelEntry(9, DarkAuraFeature),
                     Helpers.LevelEntry(10, GodlyBody),
+                    Helpers.LevelEntry(13, GloriousAuraFeature),
                     Helpers.LevelEntry(19, Invincible),
                 };
             });
