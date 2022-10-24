@@ -19,6 +19,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 
         public static void Add()
         {
+            // TODO: give an extra attack to the isekai protagonist
             // TODO: Archetype idea: God Emporer; has overpowered buffs, passive effects and auras
             // TODO: Archetype idea: Edge Lord; has extra attacks and can cast spells as a swift action
             // TODO: Add custom equipment
@@ -65,8 +66,8 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             });
             var IsekaiProtagonistCharacterDevelopmentFeat = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistCharacterDevelopmentFeat", bp => {
                 bp.SetName("Character Development");
-                bp.SetDescription("At 7th, 13th, and 19th level, you can select one character development.");
-                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "At 7th, 13th, and 19th level, you can select one character development.");
+                bp.SetDescription("Isekai Protagonists can gain powerful character development feats.");
+                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists can gain powerful character development feats.");
                 bp.m_Icon = Icon_Discovery;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

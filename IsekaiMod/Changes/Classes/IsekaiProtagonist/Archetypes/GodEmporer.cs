@@ -31,6 +31,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
             var SignatureAttack = Resources.GetModBlueprint<BlueprintFeature>("SignatureAttack");
             var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
             var OtherworldlyStamina = Resources.GetModBlueprint<BlueprintFeature>("OtherworldlyStamina");
+            var TrueMainCharacter = Resources.GetModBlueprint<BlueprintFeature>("TrueMainCharacter");
 
             var BackstorySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BackstorySelection");
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
@@ -47,31 +48,29 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, PlotArmor),
-                    Helpers.LevelEntry(3, SneakAttack, IsekaiFighterTraining),
-                    Helpers.LevelEntry(4, TrainingArcSelection),
-                    Helpers.LevelEntry(5, SneakAttack),
+                    Helpers.LevelEntry(3, IsekaiFighterTraining),
+                    Helpers.LevelEntry(5, SneakAttack, TrainingArcSelection),
                     Helpers.LevelEntry(6, SignatureAttack),
                     Helpers.LevelEntry(7, CharacterDevelopmentSelection1),
                     Helpers.LevelEntry(9, SneakAttack, FriendlyAuraFeature),
-                    Helpers.LevelEntry(10, BeachEpisodeSelection),
-                    Helpers.LevelEntry(11, SneakAttack),
-                    Helpers.LevelEntry(13, CharacterDevelopmentSelection2),
-                    Helpers.LevelEntry(15, SneakAttack, OtherworldlyStamina),
-                    Helpers.LevelEntry(16, TrainingArcSelection),
+                    Helpers.LevelEntry(10, TrainingArcSelection),
+                    Helpers.LevelEntry(12, BeachEpisodeSelection),
+                    Helpers.LevelEntry(13, SneakAttack, CharacterDevelopmentSelection2),
+                    Helpers.LevelEntry(15, TrainingArcSelection, OtherworldlyStamina),
                     Helpers.LevelEntry(17, SneakAttack),
                     Helpers.LevelEntry(19, CharacterDevelopmentSelection3),
+                    Helpers.LevelEntry(20, TrueMainCharacter),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, GodEmporerProficiencies, GodEmporerPlotArmor),
                     Helpers.LevelEntry(3, NascentApotheosis),
-                    Helpers.LevelEntry(4, SneakAttack, GodEmporerTraining),
+                    Helpers.LevelEntry(4, GodEmporerTraining),
                     Helpers.LevelEntry(6, ProtectiveAuraFeature),
                     Helpers.LevelEntry(7, GodEmporerSignatureAttack),
                     Helpers.LevelEntry(9, GloriousAuraFeature),
-                    Helpers.LevelEntry(10, SneakAttack, DarkAuraFeature),
-                    Helpers.LevelEntry(13, GodlyVessel),
-                    Helpers.LevelEntry(15, SiphoningAuraFeature),
-                    Helpers.LevelEntry(16, SneakAttack),
+                    Helpers.LevelEntry(10, DarkAuraFeature),
+                    Helpers.LevelEntry(12, SiphoningAuraFeature),
+                    Helpers.LevelEntry(15, GodlyVessel),
                     Helpers.LevelEntry(20, Godhood),
                 };
             });

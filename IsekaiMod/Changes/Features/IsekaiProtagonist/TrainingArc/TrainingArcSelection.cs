@@ -11,7 +11,6 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.TrainingArc
         public static void Add()
         {
             //Training Arc
-            var StudyMontage = Resources.GetModBlueprint<BlueprintFeature>("StudyMontage");
             var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
             var BodyStrengthening = Resources.GetModBlueprint<BlueprintFeature>("BodyStrengthening");
             var SpellNegation = Resources.GetModBlueprint<BlueprintFeature>("SpellNegation");
@@ -20,18 +19,16 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.TrainingArc
             var Icon_PerfectStrike = Resources.GetBlueprint<BlueprintFeature>("9ff65b68c09567e48af9b33848b23323").m_Icon;
             var TrainingArcSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("TrainingArcSelection", bp => {
                 bp.SetName("Training Arc");
-                bp.SetDescription("At 4th and 16th level, you train yourself intensely and gain insight into your own abilities.");
+                bp.SetDescription("At 5th, 10th and 15th level, you train yourself intensely and gain insight into your own abilities.");
                 bp.m_Icon = Icon_PerfectStrike;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                    StudyMontage.ToReference<BlueprintFeatureReference>(),
                     TrainingMontage.ToReference<BlueprintFeatureReference>(),
                     BodyStrengthening.ToReference<BlueprintFeatureReference>(),
                     SpellNegation.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
-                    StudyMontage.ToReference<BlueprintFeatureReference>(),
                     TrainingMontage.ToReference<BlueprintFeatureReference>(),
                     BodyStrengthening.ToReference<BlueprintFeatureReference>(),
                     SpellNegation.ToReference<BlueprintFeatureReference>(),

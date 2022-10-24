@@ -21,7 +21,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             var Icon_SiphoningAura = AssetLoader.LoadInternal("Features", "ICON_SIPHONING_AURA.png");
             var SiphoningAuraEffectBuff = Helpers.CreateBlueprint<BlueprintBuff>("SiphoningAuraEffectBuff", bp => {
                 bp.SetName("Siphoning Aura");
-                bp.SetDescription("At 15th level, enemies within 40 feet of the God Emporer take a –4 penalty on all attributes.");
+                bp.SetDescription("At 12th level, enemies within 40 feet of the God Emporer take a –4 penalty on all attributes.");
                 bp.IsClassFeature = true;
                 bp.m_Icon = Icon_SiphoningAura;
                 bp.AddComponent<AddStatBonus>(c => {
@@ -67,7 +67,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             });
             var SiphoningAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("SiphoningAuraBuff", bp => {
                 bp.SetName("Siphoning Aura");
-                bp.SetDescription("At 15th level, enemies within 40 feet of the God Emporer take a –4 penalty on all attributes.");
+                bp.SetDescription("At 12th level, enemies within 40 feet of the God Emporer take a –4 penalty on all attributes.");
                 bp.m_Icon = Icon_SiphoningAura;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -77,7 +77,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             });
             var SiphoningAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("SiphoningAuraFeature", bp => {
                 bp.SetName("Siphoning Aura");
-                bp.SetDescription("At 15th level, enemies within 40 feet of the God Emporer take a –4 penalty on all attributes.");
+                bp.SetDescription("At 12th level, enemies within 40 feet of the God Emporer take a –4 penalty on all attributes.");
                 bp.m_Icon = Icon_SiphoningAura;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

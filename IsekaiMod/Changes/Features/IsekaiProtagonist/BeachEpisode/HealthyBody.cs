@@ -30,6 +30,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.BeachEpisode
                     | SpellDescriptor.Bleed
                     | SpellDescriptor.Blindness
                     | SpellDescriptor.Curse
+                    | SpellDescriptor.Disease
                     | SpellDescriptor.Poison;
                 });
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
@@ -38,6 +39,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.BeachEpisode
                     | SpellDescriptor.Bleed
                     | SpellDescriptor.Blindness
                     | SpellDescriptor.Curse
+                    | SpellDescriptor.Disease
                     | SpellDescriptor.Poison;
                 });
                 bp.m_Icon = Icon_PurityOfBody;

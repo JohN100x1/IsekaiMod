@@ -31,7 +31,6 @@ namespace IsekaiMod.Changes
                 Features.IsekaiProtagonist.FriendlyAuraFeature.Add();
                 Features.IsekaiProtagonist.HaremMagnetFeature.Add();
                 Features.IsekaiProtagonist.TrueMainCharacter.Add();
-                Features.IsekaiProtagonist.TrainingArc.StudyMontage.Add();
                 Features.IsekaiProtagonist.TrainingArc.TrainingMontage.Add();
                 Features.IsekaiProtagonist.TrainingArc.BodyStrengthening.Add();
                 Features.IsekaiProtagonist.TrainingArc.SpellNegation.Add();

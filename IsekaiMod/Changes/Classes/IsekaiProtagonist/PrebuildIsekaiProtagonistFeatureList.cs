@@ -54,8 +54,9 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var CharacterDevelopmentSelection3 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection3");
 
             var VengefulBackstory = Resources.GetModBlueprint<BlueprintFeature>("VengefulBackstory");
-            var StudyMontage = Resources.GetModBlueprint<BlueprintFeature>("StudyMontage");
             var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
+            var BodyStrengthening = Resources.GetModBlueprint<BlueprintFeature>("BodyStrengthening");
+            var SpellNegation = Resources.GetModBlueprint<BlueprintFeature>("SpellNegation");
             var MasterSelf = Resources.GetModBlueprint<BlueprintFeature>("MasterSelf");
             var AlphaStrike = Resources.GetModBlueprint<BlueprintFeature>("AlphaStrike");
             var GammaStrike = Resources.GetModBlueprint<BlueprintFeature>("GammaStrike");
@@ -130,7 +131,8 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                         m_Selection = TrainingArcSelection.ToReference<BlueprintFeatureSelectionReference>(),
                         m_Features = new BlueprintFeatureReference[]{
                             TrainingMontage.ToReference<BlueprintFeatureReference>(),
-                            StudyMontage.ToReference<BlueprintFeatureReference>()
+                            BodyStrengthening.ToReference<BlueprintFeatureReference>(),
+                            SpellNegation.ToReference<BlueprintFeatureReference>(),
                         }
                     },
                     new SelectionEntry()
