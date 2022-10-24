@@ -15,7 +15,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             var Icon_PureForm = Resources.GetBlueprint<BlueprintAbility>("33e53b74891b4c34ba6ee3baa322beeb").m_Icon;
             var GodlyVessel = Helpers.CreateBlueprint<BlueprintFeature>("GodlyVessel", bp => {
                 bp.SetName("Godly Vessel");
-                bp.SetDescription("At 10th level, the God Emporer gains immunity to sickening effects, nauseated effects, blindness, shaken effects, frightening effects, cowering, "
+                bp.SetDescription("At 13th level, the God Emporer gains immunity to sickening effects, nauseated effects, blindness, shaken effects, frightening effects, cowering, "
                     + "paralysis, petrification, confusion, sleep effects, slow effects, staggered effects, stun, daze, dazzle, entanglement, fatigue, exhaustion, movement impairing conditions, "
                     + "bleed, curses, hexes, posion, fear effects, death effects, compulsion effects, charm effects, mind-affecting effects, emotion effects, {g|Encyclopedia:Ability_Scores}ability score{/g} {g|Encyclopedia:Damage}damage{/g}, "
                     + "energy drain and negative levels."

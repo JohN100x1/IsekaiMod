@@ -64,7 +64,8 @@ namespace IsekaiMod.Changes
                 Features.IsekaiProtagonist.DarkAuraFeature.Add();
                 Features.IsekaiProtagonist.GloriousAuraFeature.Add();
                 Features.IsekaiProtagonist.GodlyVessel.Add();
-                Features.IsekaiProtagonist.Invincible.Add();
+                Features.IsekaiProtagonist.SiphoningAuraFeature.Add();
+                Features.IsekaiProtagonist.Godhood.Add();
                 Classes.IsekaiProtagonist.Archetypes.GodEmporer.Add();
 
                 // Add Progression & Prebuild after Class and class-dependent features are added

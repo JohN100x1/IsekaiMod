@@ -19,8 +19,9 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
             var GodEmporerSignatureAttack = Resources.GetModBlueprint<BlueprintFeature>("GodEmporerSignatureAttack");
             var DarkAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("DarkAuraFeature");
             var GloriousAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("GloriousAuraFeature");
-            var Invincible = Resources.GetModBlueprint<BlueprintFeature>("Invincible");
+            var Godhood = Resources.GetModBlueprint<BlueprintFeature>("Godhood");
             var GodlyVessel = Resources.GetModBlueprint<BlueprintFeature>("GodlyVessel");
+            var SiphoningAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("SiphoningAuraFeature");
 
             // Removed features
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
@@ -63,9 +64,10 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(6, ProtectiveAuraFeature),
                     Helpers.LevelEntry(7, GodEmporerSignatureAttack),
                     Helpers.LevelEntry(9, DarkAuraFeature),
-                    Helpers.LevelEntry(10, GodlyVessel),
-                    Helpers.LevelEntry(13, GloriousAuraFeature),
-                    Helpers.LevelEntry(19, Invincible),
+                    Helpers.LevelEntry(10, GloriousAuraFeature),
+                    Helpers.LevelEntry(13, GodlyVessel),
+                    Helpers.LevelEntry(15, SiphoningAuraFeature),
+                    Helpers.LevelEntry(19, Godhood),
                 };
             });
 
