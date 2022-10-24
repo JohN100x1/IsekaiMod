@@ -21,7 +21,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             var Icon_BurstOfGlory = Resources.GetBlueprint<BlueprintAbility>("1bc83efec9f8c4b42a46162d72cbf494").m_Icon;
             var GloriousAuraEffectBuff = Helpers.CreateBlueprint<BlueprintBuff>("GloriousAuraEffectBuff", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("At 10th level, allies within 40 feet of the God Emporer gain a +4 competence bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level.");
+                bp.SetDescription("At 9th level, allies within 40 feet of the God Emporer gain a +4 competence bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level.");
                 bp.IsClassFeature = true;
                 bp.m_Icon = Icon_BurstOfGlory;
                 bp.AddComponent<AddStatBonus>(c => {
@@ -47,7 +47,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             });
             var GloriousAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("GloriousAuraBuff", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("At 10th level, allies within 40 feet of the God Emporer gain a +4 competence bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level.");
+                bp.SetDescription("At 9th level, allies within 40 feet of the God Emporer gain a +4 competence bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level.");
                 bp.m_Icon = Icon_BurstOfGlory;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -57,7 +57,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             });
             var GloriousAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("GloriousAuraFeature", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("At 10th level, allies within 40 feet of the God Emporer gain a +4 competence bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level.");
+                bp.SetDescription("At 9th level, allies within 40 feet of the God Emporer gain a +4 competence bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level.");
                 bp.m_Icon = Icon_BurstOfGlory;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

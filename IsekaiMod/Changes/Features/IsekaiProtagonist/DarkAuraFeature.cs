@@ -21,7 +21,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             var Icon_Dark_Aura = AssetLoader.LoadInternal("Features", "ICON_DARK_AURA.png");
             var DarkAuraEffectBuff = Helpers.CreateBlueprint<BlueprintBuff>("DarkAuraEffectBuff", bp => {
                 bp.SetName("Dark Aura");
-                bp.SetDescription("At 9th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.SetDescription("At 10th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.IsClassFeature = true;
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.AddComponent<AddStatBonus>(c => {
@@ -62,7 +62,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             });
             var DarkAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("DarkAuraBuff", bp => {
                 bp.SetName("Dark Aura");
-                bp.SetDescription("At 9th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.SetDescription("At 10th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -72,7 +72,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             });
             var DarkAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("DarkAuraFeature", bp => {
                 bp.SetName("Dark Aura");
-                bp.SetDescription("At 9th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.SetDescription("At 10th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

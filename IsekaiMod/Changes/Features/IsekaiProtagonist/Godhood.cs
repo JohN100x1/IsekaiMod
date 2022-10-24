@@ -12,7 +12,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             var Icon_Godhood = AssetLoader.LoadInternal("Features", "ICON_GODHOOD.png");
             var Godhood = Helpers.CreateBlueprint<BlueprintFeature>("Godhood", bp => {
                 bp.SetName("Godhood");
-                bp.SetDescription("At 19th level, you become a god. You are immune to all {g|Encyclopedia:Physical_Damage}physical damage{/g}.");
+                bp.SetDescription("At 20th level, you become a god. You are immune to all {g|Encyclopedia:Physical_Damage}physical damage{/g}.");
                 bp.m_Icon = Icon_Godhood;
                 bp.AddComponent<AddPhysicalImmunity>();
                 bp.IsClassFeature = true;
