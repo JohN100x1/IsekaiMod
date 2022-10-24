@@ -57,9 +57,11 @@ namespace IsekaiMod.Changes
 
                 Features.IsekaiProtagonist.GodEmporerProficiencies.Add();
                 Features.IsekaiProtagonist.GodEmporerPlotArmor.Add();
+                Features.IsekaiProtagonist.NascentApotheosis.Add();
                 Features.IsekaiProtagonist.GodEmporerTraining.Add();
                 Features.IsekaiProtagonist.GodEmporerSignatureAttack.Add();
                 Features.IsekaiProtagonist.DarkAuraFeature.Add();
+                Features.IsekaiProtagonist.GodlyBody.Add();
                 Features.IsekaiProtagonist.Invincible.Add();
                 Classes.IsekaiProtagonist.Archetypes.GodEmporer.Add();
 

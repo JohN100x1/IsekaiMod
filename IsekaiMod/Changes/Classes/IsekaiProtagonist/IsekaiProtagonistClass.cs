@@ -8,7 +8,6 @@ using Kingmaker.Blueprints;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using UnityEngine;
 
 namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 {
@@ -17,9 +16,6 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
         // Stat Progression
         private static readonly BlueprintStatProgression BaseAttackBonus = Resources.GetBlueprint<BlueprintStatProgression>("b3057560ffff3514299e8b93e7648a9d");
         private static readonly BlueprintStatProgression SavesProgression = Resources.GetBlueprint<BlueprintStatProgression>("ff4662bde9e75f145853417313842751");
-
-        // Icons
-        private static readonly Sprite Icon_PureForm = Resources.GetBlueprint<BlueprintAbility>("33e53b74891b4c34ba6ee3baa322beeb").m_Icon;
 
         public static void Add()
         {

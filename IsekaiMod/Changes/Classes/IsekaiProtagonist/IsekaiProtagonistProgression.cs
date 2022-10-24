@@ -34,6 +34,8 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var DarkAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("DarkAuraFeature");
             var TrueMainCharacter = Resources.GetModBlueprint<BlueprintFeature>("TrueMainCharacter");
             var Invincible = Resources.GetModBlueprint<BlueprintFeature>("Invincible");
+            var GodlyBody = Resources.GetModBlueprint<BlueprintFeature>("GodlyBody");
+            var NascentApotheosis = Resources.GetModBlueprint<BlueprintFeature>("NascentApotheosis");
 
             var BackstorySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BackstorySelection");
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
@@ -81,7 +83,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, TrueMainCharacter)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
-                Helpers.CreateUIGroup(BackstorySelection, TrainingArcSelection, BeachEpisodeSelection, CharacterDevelopmentSelection1, CharacterDevelopmentSelection2, CharacterDevelopmentSelection3, Invincible),
+                Helpers.CreateUIGroup(BackstorySelection, TrainingArcSelection, NascentApotheosis, BeachEpisodeSelection, GodlyBody, CharacterDevelopmentSelection1, CharacterDevelopmentSelection2, CharacterDevelopmentSelection3, Invincible),
                 Helpers.CreateUIGroup(PlotArmor, GodEmporerPlotArmor, IsekaiFighterTraining, GodEmporerTraining, SignatureAttack, GodEmporerSignatureAttack, FriendlyAuraFeature, DarkAuraFeature, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
                 Helpers.CreateUIGroup(UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, IsekaiQuickFooted),
             };

@@ -100,8 +100,7 @@ namespace IsekaiMod.Changes.Heritages
                     "They have a voracious appetite for sensory pleasures and carnal delights.\n" +
                     "Isekai Succubus have a +72 racial bonus {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Charisma}Charisma{/g} and a +60 racial bonus {g|Encyclopedia:Bonus}bonus{/g} to all other attributes. " +
                     "They gain a +100 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Armor_Class}AC{/g}, have {g|Encyclopedia:Damage_Reduction}DR{/g} 100/—, and a {g|Encyclopedia:Spell_Resistance}spell resistance{/g} of 100. " +
-                    "They can use the Charm {g|Encyclopedia:Spell}spell{/g}. " +
-                    "They are also immune to everything.");
+                    "They can use the Charm {g|Encyclopedia:Spell}spell{/g}.");
                 bp.m_Icon = ICON_SUCCUBUS;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -154,55 +153,6 @@ namespace IsekaiMod.Changes.Heritages
                 bp.AddComponent<AddSpellResistance>(c => {
                     c.Value = new ContextValue { Value = 100 };
                 });
-
-
-                // Add Condition Immunity
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Fatigued;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Exhausted;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Petrified;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Frightened;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Shaken;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Paralyzed;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Sleeping;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Slowed;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Sickened;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Nauseated;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Dazed;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Dazzled;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Stunned;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Confusion;
-                });
-                bp.AddComponent<AddConditionImmunity>(c => {
-                    c.Condition = UnitCondition.Staggered;
-                });
-
 
                 // Add Energy Damage Immunity
                 bp.AddComponent<AddEnergyImmunity>(c => {
