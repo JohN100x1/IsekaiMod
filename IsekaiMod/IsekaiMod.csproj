@@ -105,6 +105,9 @@
     <None Update="Assets\Features\ICON_TRUE_MAIN_CHARACTER.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Assets\Features\ICON_WINNER.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\Heritages\ICON_ANGEL.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

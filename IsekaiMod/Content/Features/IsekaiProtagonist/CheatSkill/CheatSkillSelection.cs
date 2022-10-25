@@ -15,6 +15,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
             var Spellslinger = Resources.GetModBlueprint<BlueprintFeature>("Spellslinger");
             var GraspHeartFeature = Resources.GetModBlueprint<BlueprintFeature>("GraspHeartFeature");
             var DupeGoldFeature = Resources.GetModBlueprint<BlueprintFeature>("DupeGoldFeature");
+            var Winner = Resources.GetModBlueprint<BlueprintFeature>("Winner");
 
             // Cheat Skill Selection
             var Icon_TrickFate = Resources.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
@@ -28,11 +29,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                     Spellslinger.ToReference<BlueprintFeatureReference>(),
                     GraspHeartFeature.ToReference<BlueprintFeatureReference>(),
                     DupeGoldFeature.ToReference<BlueprintFeatureReference>(),
+                    Winner.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     Spellslinger.ToReference<BlueprintFeatureReference>(),
                     GraspHeartFeature.ToReference<BlueprintFeatureReference>(),
                     DupeGoldFeature.ToReference<BlueprintFeatureReference>(),
+                    Winner.ToReference<BlueprintFeatureReference>(),
                 };
             });
         }
