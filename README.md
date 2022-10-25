@@ -3,12 +3,23 @@ This is a WIP mod for `Pathfinder: Wrath of the Righteous` that adds an `Isekai 
 
 ### New Content
 - New Classes & Archetypes
-  - [ ] Isekai Protagonist
-  - [ ] God Emporer (Isekai Protagonist Archetype)
-  - [ ] Edge Lord (Isekai Protagonist Archetype)
+	- [x] Isekai Protagonist
+	- [x] God Emporer (Isekai Protagonist Archetype)
+	- [x] Edge Lord (Isekai Protagonist Archetype)
 - Cheat Skill
-  - [x] Spellslinger
-  - [x] Grasp Heart
-  - [x] Dupe Gold
+	- [x] Spellslinger
+	- [x] Grasp Heart
+	- [x] Dupe Gold
 - Features
-  - [x] Plot Armor
+	- [x] Plot Armor
+	- [x] Character Development Feats
+	- [x] Training Arc feats
+### WIP
+- New Heritages
+	- [ ] Isekai Succubus (Tiefling heritage)
+	- [ ] Isekai Angel (Aasimar heritage)
+- New Backgrounds
+	- [ ] Tabletop RPG Player
+	- [ ] MMORPG Gamer
+	- [ ] Salaryman
+	- [ ] Gacha Gamer

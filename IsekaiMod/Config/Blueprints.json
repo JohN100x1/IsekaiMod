@@ -3,8 +3,8 @@
   "NewBlueprints": {
     "SuccubusCharmAbility": "0e19dd2f-5e66-4d6b-8a48-9f00c221698d",
     "TieflingHeritageSuccubus": "cd4ffe35-6174-429c-9379-97a3eb1eee70",
-    "BackgroundBlackRoseMatriarch": "d317a919-354f-4c40-a7ae-285f293f106b",
-    "BlackRoseBackgroundSelection": "5400da49-2595-443c-b6ba-0574d8c191dd",
+    "BackgroundTabletopRPGPlayer": "d317a919-354f-4c40-a7ae-285f293f106b",
+    "IsekaiBackgroundSelection": "5400da49-2595-443c-b6ba-0574d8c191dd",
 
     "GodEmporerArchetype": "2ff78bd9-6224-4376-9f64-720ce94d0616",
     "EdgeLordArchetype": "900db658-4f20-4636-ae84-a198c2b50f58",
@@ -22,7 +22,7 @@
     "IsekaiProtagonistBonusFeat": "414b5c1b-3b32-4e54-99e3-96505698a929",
     "IsekaiProtagonistSneakFeat": "8f8b74df-5190-42e1-a7ae-ad797cb8430a",
     "IsekaiProtagonistPlotArmorFeat": "91751bce-90bc-42a2-b667-c807146a0cfb",
-    "IsekaiProtagonistCharacterDevelopmentFeat": "107d5300-b827-4963-a84c-df0e61fa7107",
+    "IsekaiProtagonistCheatSkillFeat": "107d5300-b827-4963-a84c-df0e61fa7107",
 
     "IsekaiProtagonistBonusFeatSelection": "039dec4f-d83c-4e4b-9be9-e4aae6fe4b5b",
     "PlotArmor": "8acca981-65f0-4933-8093-3f788ec9d2c6",
