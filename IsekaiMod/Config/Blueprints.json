@@ -74,11 +74,11 @@
 
     "ForsakenBackstory": "ec30bae3-78a1-4c58-81aa-4722f3dd9469",
     "HopelessBackstory": "8b74787b-f7e0-42e2-aace-7d3e9d198103",
-    "TragicBackstory": "5eb6dd86-6c66-4b33-8a9a-1eb451af73cc",
-    "PainfulBackstory": "55e06f68-8f56-4d4b-824f-f6bbaa46899d",
-    "VengefulBackstory": "d9c8316e-3a4f-4737-ae7c-56838eb42540",
 
     "Spellslinger": "44f7f338-4d58-4e47-a1fb-b9c68b789333",
+    "GraspHeartUnitProperty": "5eb6dd86-6c66-4b33-8a9a-1eb451af73cc",
+    "GraspHeartAbility": "55e06f68-8f56-4d4b-824f-f6bbaa46899d",
+    "GraspHeartFeature": "d9c8316e-3a4f-4737-ae7c-56838eb42540",
     "CheatSkillSelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
 
     "FriendlyAuraEffectBuff": "450c2d6c-4ffd-4f45-971e-099457e0dd54",

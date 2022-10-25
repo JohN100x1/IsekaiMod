@@ -2,6 +2,7 @@
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.ElementsSystem;
 using Kingmaker.EntitySystem.Stats;
@@ -165,7 +166,6 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
                     };
                 });
                 bp.AddComponent<ContextSetAbilityParams>(c => {
-                    c.Add10ToDC = false;
                     c.DC = 50;
                 });
                 bp.m_Icon = Icon_Harem;
