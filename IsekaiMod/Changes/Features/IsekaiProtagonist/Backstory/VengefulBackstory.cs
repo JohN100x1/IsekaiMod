@@ -64,7 +64,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.Backstory
             });
             var VengefulBackstory = Helpers.CreateBlueprint<BlueprintFeature>("VengefulBackstory", bp => {
                 bp.SetName("Vengeful Backstory");
-                bp.SetDescription("You were betrayed by a some-one you trusted, leaving your heart full of vengeance and malevolence. You decide to fight fire with more fire, even if you end up being burnt.\n" +
+                bp.SetDescription("You were betrayed by a some-one you trusted, leaving your heart full of burning rage and vengeance.\n" +
                     "At 1st level, you are vulnerable to fire.\n" +
                     "At 4th level, you are no longer vulnerable to fire.\n" +
                     "At 7th level, you gain fire resistance 10.\n" +

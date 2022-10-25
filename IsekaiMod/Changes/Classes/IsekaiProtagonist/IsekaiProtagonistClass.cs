@@ -19,9 +19,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: add extra attacks for edge lord
             // TODO: add feature: can cast spells as a swift action for base class
-            // TODO: Archetype idea: Edge Lord; has extra attacks and can cast spells as a swift action
             // TODO: Add more character development feats
             // TODO: rework backstories
             // TODO: Add custom equipment
@@ -94,7 +92,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 bp.m_Spellbook = SpellBook.ToReference<BlueprintSpellbookReference>();
                 bp.m_EquipmentEntities = new KingmakerEquipmentEntityReference[] { };
                 bp.m_StartingItems = new BlueprintItemReference[] { };
-                bp.SkillPoints = 0;
+                bp.SkillPoints = 4;
                 bp.ClassSkills = new StatType[11] {
                     StatType.SkillAthletics,
                     StatType.SkillMobility,

@@ -1,7 +1,7 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.ActivatableAbilities;
@@ -18,7 +18,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.SetName("Beta Strike");
                 bp.SetDescription("You get an additional {g|Encyclopedia:Attack}attack{/g} per {g|Encyclopedia:Combat_Round}round{/g} but take a –4 penalty to damage rolls.");
                 bp.m_Icon = Icon_ArcaneWeaponSpeed;
-                bp.AddComponent<WeaponExtraAttack>(c => {
+                bp.AddComponent<BuffExtraAttack>(c => {
                     c.Number = 1;
                     c.Haste = false;
                 });

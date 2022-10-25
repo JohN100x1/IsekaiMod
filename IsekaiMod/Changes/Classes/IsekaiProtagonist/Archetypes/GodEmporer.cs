@@ -48,10 +48,10 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                     + "some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively.");
                 bp.LocalizedDescriptionShort = Helpers.CreateString($"GodEmporerArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
                     + "some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively.");
-                bp.RemoveSpellbook = false;
+                bp.RemoveSpellbook = true;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, PlotArmor),
-                    Helpers.LevelEntry(3, SneakAttack, IsekaiFighterTraining, CharacterDevelopmentSelection1),
+                    Helpers.LevelEntry(3, IsekaiFighterTraining, CharacterDevelopmentSelection1),
                     Helpers.LevelEntry(5, SneakAttack, TrainingArcSelection),
                     Helpers.LevelEntry(6, SignatureAttack),
                     Helpers.LevelEntry(7, CharacterDevelopmentSelection2),
@@ -67,7 +67,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, GodEmporerProficiencies, GodEmporerPlotArmor),
                     Helpers.LevelEntry(3, NascentApotheosis),
-                    Helpers.LevelEntry(4, SneakAttack, GodEmporerTraining),
+                    Helpers.LevelEntry(4, GodEmporerTraining),
                     Helpers.LevelEntry(6, ProtectiveAuraFeature),
                     Helpers.LevelEntry(7, GodEmporerSignatureAttack),
                     Helpers.LevelEntry(9, GloriousAuraFeature),

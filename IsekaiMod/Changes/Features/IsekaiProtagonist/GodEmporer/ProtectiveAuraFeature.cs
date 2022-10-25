@@ -18,12 +18,12 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.GodEmporer
     {
         public static void Add()
         {
-            var Icon_ShieldOfFaith = Resources.GetBlueprint<BlueprintAbility>("183d5bb91dea3a1489a6db6c9cb64445").m_Icon;
+            var Icon_Protective_Aura = AssetLoader.LoadInternal("Features", "ICON_PROTECTIVE_AURA.png");
             var ProtectiveAuraEffectBuff = Helpers.CreateBlueprint<BlueprintBuff>("ProtectiveAuraEffectBuff", bp => {
                 bp.SetName("Protective Aura");
                 bp.SetDescription("At 6th level, allies within 40 feet of the God Emporer gain a +4 bonus on AC and saving throws.");
                 bp.IsClassFeature = true;
-                bp.m_Icon = Icon_ShieldOfFaith;
+                bp.m_Icon = Icon_Protective_Aura;
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.None;
                     c.Stat = StatType.AC;
@@ -58,7 +58,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.GodEmporer
             var ProtectiveAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("ProtectiveAuraBuff", bp => {
                 bp.SetName("Protective Aura");
                 bp.SetDescription("At 6th level, allies within 40 feet of the God Emporer take a +4 bonus on AC, and saving throws.");
-                bp.m_Icon = Icon_ShieldOfFaith;
+                bp.m_Icon = Icon_Protective_Aura;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
                 bp.AddComponent<AddAreaEffect>(c => {
@@ -68,7 +68,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.GodEmporer
             var ProtectiveAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("ProtectiveAuraFeature", bp => {
                 bp.SetName("Protective Aura");
                 bp.SetDescription("At 6th level, allies within 40 feet of the God Emporer take a +4 bonus on AC, and saving throws.");
-                bp.m_Icon = Icon_ShieldOfFaith;
+                bp.m_Icon = Icon_Protective_Aura;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AuraFeatureComponent>(c => {

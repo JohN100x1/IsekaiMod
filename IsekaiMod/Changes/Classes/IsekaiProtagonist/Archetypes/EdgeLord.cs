@@ -22,8 +22,10 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
             var ExtraStrikeII = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeII");
             var ExtraStrikeIII = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeIII");
             var ExtraStrikeIV = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeIV");
+            var CripplingStrike = Resources.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
 
             // Removed features
+            var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
             var PlotArmor = Resources.GetModBlueprint<BlueprintFeature>("PlotArmor");
             var IsekaiFighterTraining = Resources.GetModBlueprint<BlueprintFeature>("IsekaiFighterTraining");
             var SignatureAttack = Resources.GetModBlueprint<BlueprintFeature>("SignatureAttack");
@@ -44,7 +46,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                     + "to look cool and stylish. Their attacks become flashy and myriad, moving so fast that side characters would be lucky to even see the afterimage.");
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.LevelEntry(1, PlotArmor),
+                    Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, PlotArmor),
                     Helpers.LevelEntry(3, CharacterDevelopmentSelection1, IsekaiFighterTraining),
                     Helpers.LevelEntry(6, SignatureAttack),
                     Helpers.LevelEntry(7, CharacterDevelopmentSelection2),
@@ -59,6 +61,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(3, ExtraStrikeI),
                     Helpers.LevelEntry(4, EdgeLordSignatureAttack),
                     Helpers.LevelEntry(7, ExtraStrikeII, EdgeLordFastMovement),
+                    Helpers.LevelEntry(8, CripplingStrike),
                     Helpers.LevelEntry(13, ExtraStrikeIII),
                     Helpers.LevelEntry(19, ExtraStrikeIV),
                 };

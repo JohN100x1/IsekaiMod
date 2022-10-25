@@ -49,6 +49,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ExtraStrikeII = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeII");
             var ExtraStrikeIII = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeIII");
             var ExtraStrikeIV = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeIV");
+            var CripplingStrike = Resources.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
 
             var BackstorySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BackstorySelection");
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
@@ -98,7 +99,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 Helpers.CreateUIGroup(BackstorySelection, TrainingArcSelection, NascentApotheosis, GodlyVessel, CharacterDevelopmentSelection1, ProtectiveAuraFeature, CharacterDevelopmentSelection2, GloriousAuraFeature, SiphoningAuraFeature, CharacterDevelopmentSelection3, CharacterDevelopmentSelection4, Godhood, ExtraStrikeI, ExtraStrikeII, ExtraStrikeIII, ExtraStrikeIV),
-                Helpers.CreateUIGroup(PlotArmor, EdgeLordPlotArmor, GodEmporerPlotArmor, IsekaiFighterTraining, EdgeLordTraining, GodEmporerTraining, SignatureAttack, GodEmporerSignatureAttack, EdgeLordSignatureAttack, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
+                Helpers.CreateUIGroup(PlotArmor, EdgeLordPlotArmor, GodEmporerPlotArmor, CripplingStrike, IsekaiFighterTraining, EdgeLordTraining, GodEmporerTraining, SignatureAttack, GodEmporerSignatureAttack, EdgeLordSignatureAttack, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
                 Helpers.CreateUIGroup(SupersonicCombat, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted),
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {

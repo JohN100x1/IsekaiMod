@@ -63,7 +63,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.Backstory
             });
             var PainfulBackstory = Helpers.CreateBlueprint<BlueprintFeature>("PainfulBackstory", bp => {
                 bp.SetName("Painful Backstory");
-                bp.SetDescription("You were subjected to unspeakable creulty in the past, leaving you traumatised to even the slightest shock of pain.\n" +
+                bp.SetDescription("You were subjected to unspeakable creulty in the past, leaving you traumatised to the slightest shock of pain.\n" +
                     "At 1st level, you are vulnerable to electricity.\n" +
                     "At 4th level, you are no longer vulnerable to electricity.\n" +
                     "At 7th level, you gain electricity resistance 10.\n" +
@@ -74,24 +74,18 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.Backstory
                     c.BeforeThisLevel = true;
                     c.m_Feature = VulnerabilityElectricityFeat.ToReference<BlueprintFeatureReference>();
                     c.m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
-                    c.m_AdditionalClasses = new BlueprintCharacterClassReference[0];
-                    c.m_Archetypes = new BlueprintArchetypeReference[0];
                 });
                 bp.AddComponent<AddFeatureOnClassLevel>(c => {
                     c.Level = 7;
                     c.BeforeThisLevel = false;
                     c.m_Feature = ResistanceElectricity10.ToReference<BlueprintFeatureReference>();
                     c.m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
-                    c.m_AdditionalClasses = new BlueprintCharacterClassReference[0];
-                    c.m_Archetypes = new BlueprintArchetypeReference[0];
                 });
                 bp.AddComponent<AddFeatureOnClassLevel>(c => {
                     c.Level = 10;
                     c.BeforeThisLevel = false;
                     c.m_Feature = ImmunityToElectricityFeat.ToReference<BlueprintFeatureReference>();
                     c.m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
-                    c.m_AdditionalClasses = new BlueprintCharacterClassReference[0];
-                    c.m_Archetypes = new BlueprintArchetypeReference[0];
                 });
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
