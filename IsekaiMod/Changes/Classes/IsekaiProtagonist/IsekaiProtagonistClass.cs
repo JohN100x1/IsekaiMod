@@ -19,6 +19,8 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 
         public static void Add()
         {
+            // TODO: add extra attacks for edge lord
+            // TODO: add feature: can cast spells as a swift action for base class
             // TODO: Archetype idea: Edge Lord; has extra attacks and can cast spells as a swift action
             // TODO: Add more character development feats
             // TODO: rework backstories

@@ -72,7 +72,13 @@ namespace IsekaiMod.Changes
                 Features.IsekaiProtagonist.EdgeLord.EdgeLordProficiencies.Add();
                 Features.IsekaiProtagonist.EdgeLord.EdgeLordPlotArmor.Add();
                 Features.IsekaiProtagonist.EdgeLord.SupersonicCombat.Add();
+                Features.IsekaiProtagonist.EdgeLord.EdgeLordTraining.Add();
+                Features.IsekaiProtagonist.EdgeLord.EdgeLordSignatureAttack.Add();
                 Features.IsekaiProtagonist.EdgeLord.EdgeLordFastMovement.Add();
+                Features.IsekaiProtagonist.EdgeLord.ExtraStrikeI.Add();
+                Features.IsekaiProtagonist.EdgeLord.ExtraStrikeII.Add();
+                Features.IsekaiProtagonist.EdgeLord.ExtraStrikeIII.Add();
+                Features.IsekaiProtagonist.EdgeLord.ExtraStrikeIV.Add();
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
 
                 // Add Progression & Prebuild after Class and class-dependent features are added

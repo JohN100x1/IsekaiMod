@@ -15,10 +15,18 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
             var EdgeLordProficiencies = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordProficiencies");
             var EdgeLordPlotArmor = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordPlotArmor");
             var SupersonicCombat = Resources.GetModBlueprint<BlueprintFeature>("SupersonicCombat");
+            var EdgeLordTraining = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordTraining");
+            var EdgeLordSignatureAttack = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordSignatureAttack");
             var EdgeLordFastMovement = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordFastMovement");
+            var ExtraStrikeI = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeI");
+            var ExtraStrikeII = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeII");
+            var ExtraStrikeIII = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeIII");
+            var ExtraStrikeIV = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeIV");
 
             // Removed features
             var PlotArmor = Resources.GetModBlueprint<BlueprintFeature>("PlotArmor");
+            var IsekaiFighterTraining = Resources.GetModBlueprint<BlueprintFeature>("IsekaiFighterTraining");
+            var SignatureAttack = Resources.GetModBlueprint<BlueprintFeature>("SignatureAttack");
             var IsekaiFastMovement = Resources.GetModBlueprint<BlueprintFeature>("IsekaiFastMovement");
             var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
 
@@ -37,7 +45,8 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, PlotArmor),
-                    Helpers.LevelEntry(3, CharacterDevelopmentSelection1),
+                    Helpers.LevelEntry(3, CharacterDevelopmentSelection1, IsekaiFighterTraining),
+                    Helpers.LevelEntry(6, SignatureAttack),
                     Helpers.LevelEntry(7, CharacterDevelopmentSelection2),
                     Helpers.LevelEntry(8, IsekaiFastMovement),
                     Helpers.LevelEntry(9, FriendlyAuraFeature),
@@ -46,7 +55,12 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, EdgeLordProficiencies, EdgeLordPlotArmor, SupersonicCombat),
-                    Helpers.LevelEntry(7, EdgeLordFastMovement),
+                    Helpers.LevelEntry(2, EdgeLordTraining),
+                    Helpers.LevelEntry(3, ExtraStrikeI),
+                    Helpers.LevelEntry(4, EdgeLordSignatureAttack),
+                    Helpers.LevelEntry(7, ExtraStrikeII, EdgeLordFastMovement),
+                    Helpers.LevelEntry(13, ExtraStrikeIII),
+                    Helpers.LevelEntry(19, ExtraStrikeIV),
                 };
                 bp.OverrideAttributeRecommendations = true;
                 bp.RecommendedAttributes = new StatType[] { StatType.Dexterity, StatType.Charisma };

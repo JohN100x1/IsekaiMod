@@ -43,6 +43,12 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var SupersonicCombat = Resources.GetModBlueprint<BlueprintFeature>("SupersonicCombat");
             var EdgeLordProficiencies = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordProficiencies");
             var EdgeLordFastMovement = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordFastMovement");
+            var EdgeLordTraining = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordTraining");
+            var EdgeLordSignatureAttack = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordSignatureAttack");
+            var ExtraStrikeI = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeI");
+            var ExtraStrikeII = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeII");
+            var ExtraStrikeIII = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeIII");
+            var ExtraStrikeIV = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeIV");
 
             var BackstorySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BackstorySelection");
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
@@ -91,8 +97,8 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, TrueMainCharacter)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
-                Helpers.CreateUIGroup(BackstorySelection, TrainingArcSelection, NascentApotheosis, GodlyVessel, CharacterDevelopmentSelection1, ProtectiveAuraFeature, CharacterDevelopmentSelection2, GloriousAuraFeature, SiphoningAuraFeature, CharacterDevelopmentSelection3, CharacterDevelopmentSelection4, Godhood),
-                Helpers.CreateUIGroup(PlotArmor, EdgeLordPlotArmor, GodEmporerPlotArmor, IsekaiFighterTraining, GodEmporerTraining, SignatureAttack, GodEmporerSignatureAttack, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
+                Helpers.CreateUIGroup(BackstorySelection, TrainingArcSelection, NascentApotheosis, GodlyVessel, CharacterDevelopmentSelection1, ProtectiveAuraFeature, CharacterDevelopmentSelection2, GloriousAuraFeature, SiphoningAuraFeature, CharacterDevelopmentSelection3, CharacterDevelopmentSelection4, Godhood, ExtraStrikeI, ExtraStrikeII, ExtraStrikeIII, ExtraStrikeIV),
+                Helpers.CreateUIGroup(PlotArmor, EdgeLordPlotArmor, GodEmporerPlotArmor, IsekaiFighterTraining, EdgeLordTraining, GodEmporerTraining, SignatureAttack, GodEmporerSignatureAttack, EdgeLordSignatureAttack, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
                 Helpers.CreateUIGroup(SupersonicCombat, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted),
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
