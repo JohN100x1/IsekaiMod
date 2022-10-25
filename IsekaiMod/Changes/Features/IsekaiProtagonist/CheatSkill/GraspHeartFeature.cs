@@ -138,7 +138,8 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.CheatSkill
             });
             var GraspHeartFeature = Helpers.CreateBlueprint<BlueprintFeature>("GraspHeartFeature", bp => {
                 bp.SetName("Cheat Skill — Grasp Heart");
-                bp.SetDescription("You gain the Grasp Heart ability which can kill any creature that fails a Fortitude {g|Encyclopedia:Saving_Throw}saving throw{/g}, otherwise they are stunned for 1 round.");
+                bp.SetDescription("You gain the Grasp Heart ability which can kill any creature that fails a Fortitude {g|Encyclopedia:Saving_Throw}saving throw{/g}, "
+                    + "otherwise they are stunned for 1 round. The DC of the Fortitude save is 10 + your character level + your Charisma modifier.");
                 bp.m_Icon = Icon_DeathClutch;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
