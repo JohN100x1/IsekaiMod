@@ -49,12 +49,8 @@ namespace IsekaiMod.Changes
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection2.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection3.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection4.Add();
-                Features.IsekaiProtagonist.Backstory.HopelessBackstory.Add();
-                Features.IsekaiProtagonist.Backstory.TragicBackstory.Add();
-                Features.IsekaiProtagonist.Backstory.PainfulBackstory.Add();
-                Features.IsekaiProtagonist.Backstory.VengefulBackstory.Add();
-                Features.IsekaiProtagonist.Backstory.ForsakenBackstory.Add();
-                Features.IsekaiProtagonist.Backstory.BackstorySelection.Add();
+                Features.IsekaiProtagonist.CheatSkill.Spellslinger.Add();
+                Features.IsekaiProtagonist.CheatSkill.CheatSkillSelection.Add();
                 // God Emporer Archetype
                 Features.IsekaiProtagonist.GodEmporer.GodEmporerProficiencies.Add();
                 Features.IsekaiProtagonist.GodEmporer.GodEmporerPlotArmor.Add();

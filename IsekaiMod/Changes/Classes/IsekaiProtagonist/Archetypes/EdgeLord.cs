@@ -23,6 +23,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
             var ExtraStrikeIII = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeIII");
             var ExtraStrikeIV = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeIV");
             var CripplingStrike = Resources.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
+            var DispellingAttack = Resources.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
 
             // Removed features
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
@@ -62,6 +63,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(4, EdgeLordSignatureAttack),
                     Helpers.LevelEntry(7, ExtraStrikeII, EdgeLordFastMovement),
                     Helpers.LevelEntry(8, CripplingStrike),
+                    Helpers.LevelEntry(10, DispellingAttack),
                     Helpers.LevelEntry(13, ExtraStrikeIII),
                     Helpers.LevelEntry(19, ExtraStrikeIV),
                 };

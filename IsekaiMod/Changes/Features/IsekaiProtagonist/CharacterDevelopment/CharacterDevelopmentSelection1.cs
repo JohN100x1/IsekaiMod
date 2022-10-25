@@ -15,6 +15,8 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.CharacterDevelopment
             var BetaStrike = Resources.GetModBlueprint<BlueprintFeature>("BetaStrike");
             var GammaStrike = Resources.GetModBlueprint<BlueprintFeature>("GammaStrike");
             var MundaneAura = Resources.GetModBlueprint<BlueprintFeature>("MundaneAura");
+            var CripplingStrike = Resources.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
+            var DispellingAttack = Resources.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
 
             // Feature
             var Icon_Discovery = Resources.GetBlueprint<BlueprintFeatureSelection>("cd86c437488386f438dcc9ae727ea2a6").m_Icon;
@@ -29,12 +31,16 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
+                    CripplingStrike.ToReference<BlueprintFeatureReference>(),
+                    DispellingAttack.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
+                    CripplingStrike.ToReference<BlueprintFeatureReference>(),
+                    DispellingAttack.ToReference<BlueprintFeatureReference>(),
                 };
             });
         }

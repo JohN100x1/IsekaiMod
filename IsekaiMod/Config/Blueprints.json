@@ -72,12 +72,14 @@
     "ImmunityToElectricityFeat": "ed887779-8eec-45df-99e6-6ea4a23ca904",
     "ImmunityToSonicFeat": "609acbad-a8df-490a-9a4d-b5fc4a0cdf8e",
 
+    "ForsakenBackstory": "ec30bae3-78a1-4c58-81aa-4722f3dd9469",
     "HopelessBackstory": "8b74787b-f7e0-42e2-aace-7d3e9d198103",
     "TragicBackstory": "5eb6dd86-6c66-4b33-8a9a-1eb451af73cc",
     "PainfulBackstory": "55e06f68-8f56-4d4b-824f-f6bbaa46899d",
     "VengefulBackstory": "d9c8316e-3a4f-4737-ae7c-56838eb42540",
-    "ForsakenBackstory": "44f7f338-4d58-4e47-a1fb-b9c68b789333",
-    "BackstorySelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
+
+    "Spellslinger": "44f7f338-4d58-4e47-a1fb-b9c68b789333",
+    "CheatSkillSelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
 
     "FriendlyAuraEffectBuff": "450c2d6c-4ffd-4f45-971e-099457e0dd54",
     "FriendlyAuraArea": "5bfec8d0-c27b-4d34-b8d3-d532bfc78386",

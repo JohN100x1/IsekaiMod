@@ -46,7 +46,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
 
             var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
-            var BackstorySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BackstorySelection");
+            var CheatSkillSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CheatSkillSelection");
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
             var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
             var CharacterDevelopmentSelection1 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection1");
@@ -54,7 +54,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var CharacterDevelopmentSelection3 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection3");
             var CharacterDevelopmentSelection4 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection4");
 
-            var VengefulBackstory = Resources.GetModBlueprint<BlueprintFeature>("VengefulBackstory");
+            var Spellslinger = Resources.GetModBlueprint<BlueprintFeature>("Spellslinger");
             var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
             var BodyStrengthening = Resources.GetModBlueprint<BlueprintFeature>("BodyStrengthening");
             var SpellNegation = Resources.GetModBlueprint<BlueprintFeature>("SpellNegation");
@@ -123,9 +123,9 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     },
                     new SelectionEntry()
                     {
-                        m_Selection = BackstorySelection.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Selection = CheatSkillSelection.ToReference<BlueprintFeatureSelectionReference>(),
                         m_Features = new BlueprintFeatureReference[]{
-                            VengefulBackstory.ToReference<BlueprintFeatureReference>()
+                            Spellslinger.ToReference<BlueprintFeatureReference>()
                         }
                     },
                     new SelectionEntry()

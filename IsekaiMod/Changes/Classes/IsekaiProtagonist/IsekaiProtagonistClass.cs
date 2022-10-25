@@ -19,13 +19,13 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: add feature: can cast spells as a swift action for base class
-            // TODO: Add more character development feats
-            // TODO: rework backstories
-            // TODO: Add custom equipment
+            // TODO: add cheat skill: kill target creature (once per day)
+            // TODO: add cheat skill: become invincible (toggable ability)
 
             // TODO: Add isekai backgrounds, including ones that give good stats
-            // TODO: Add MythicAbilitySelection ability
+            // TODO: add isekai angel heritage
+            // TODO: Add MythicAbilitySelection for this class
+            // TODO: Add custom equipment
 
             // Used in Class
             var BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");

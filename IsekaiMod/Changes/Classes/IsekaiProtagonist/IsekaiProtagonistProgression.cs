@@ -51,7 +51,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var ExtraStrikeIV = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeIV");
             var CripplingStrike = Resources.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
 
-            var BackstorySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BackstorySelection");
+            var CheatSkillSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CheatSkillSelection");
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
             var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
             var CharacterDevelopmentSelection1 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection1");
@@ -76,7 +76,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 };
             });
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
-                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, BackstorySelection, PlotArmor),
+                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, CheatSkillSelection, PlotArmor),
                 Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection, UncannyDodge),
                 Helpers.LevelEntry(3, SneakAttack, IsekaiFighterTraining, Evasion, CharacterDevelopmentSelection1),
                 Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection),
@@ -98,7 +98,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                 Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, TrueMainCharacter)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
-                Helpers.CreateUIGroup(BackstorySelection, TrainingArcSelection, NascentApotheosis, GodlyVessel, CharacterDevelopmentSelection1, ProtectiveAuraFeature, CharacterDevelopmentSelection2, GloriousAuraFeature, SiphoningAuraFeature, CharacterDevelopmentSelection3, CharacterDevelopmentSelection4, Godhood, ExtraStrikeI, ExtraStrikeII, ExtraStrikeIII, ExtraStrikeIV),
+                Helpers.CreateUIGroup(CheatSkillSelection, TrainingArcSelection, NascentApotheosis, GodlyVessel, CharacterDevelopmentSelection1, ProtectiveAuraFeature, CharacterDevelopmentSelection2, GloriousAuraFeature, SiphoningAuraFeature, CharacterDevelopmentSelection3, CharacterDevelopmentSelection4, Godhood, ExtraStrikeI, ExtraStrikeII, ExtraStrikeIII, ExtraStrikeIV),
                 Helpers.CreateUIGroup(PlotArmor, EdgeLordPlotArmor, GodEmporerPlotArmor, CripplingStrike, IsekaiFighterTraining, EdgeLordTraining, GodEmporerTraining, SignatureAttack, GodEmporerSignatureAttack, EdgeLordSignatureAttack, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
                 Helpers.CreateUIGroup(SupersonicCombat, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted),
             };
