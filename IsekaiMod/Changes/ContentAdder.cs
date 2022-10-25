@@ -51,6 +51,7 @@ namespace IsekaiMod.Changes
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection4.Add();
                 Features.IsekaiProtagonist.CheatSkill.Spellslinger.Add();
                 Features.IsekaiProtagonist.CheatSkill.GraspHeartFeature.Add();
+                Features.IsekaiProtagonist.CheatSkill.DupeGoldFeature.Add();
                 Features.IsekaiProtagonist.CheatSkill.CheatSkillSelection.Add();
                 // God Emporer Archetype
                 Features.IsekaiProtagonist.GodEmporer.GodEmporerProficiencies.Add();

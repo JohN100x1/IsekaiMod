@@ -9,5 +9,6 @@ This is a WIP mod for `Pathfinder: Wrath of the Righteous` that adds an `Isekai 
 - Cheat Skill
   - [x] Spellslinger
   - [x] Grasp Heart
+  - [x] Dupe Gold
 - Features
   - [x] Plot Armor

@@ -19,7 +19,6 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: add cheat skill: kill target creature (once per day)
             // TODO: add cheat skill: become invincible (toggable ability)
 
             // TODO: Add isekai backgrounds, including ones that give good stats

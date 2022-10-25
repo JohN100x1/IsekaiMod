@@ -34,9 +34,6 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.CheatSkill
             // Buffs
             var StunnedBuff = Resources.GetBlueprint<BlueprintBuff>("09d39b38bb7c6014394b6daced9bacd3");
 
-            // Class
-            var IsekaiProtagonistClass = Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
-
             // Feature
             var Icon_DeathClutch = Resources.GetBlueprint<BlueprintAbility>("c3d2294a6740bc147870fff652f3ced5").m_Icon;
             var GraspHeartUnitProperty = Helpers.CreateBlueprint<BlueprintUnitProperty>("GraspHeartUnitProperty", bp => {
