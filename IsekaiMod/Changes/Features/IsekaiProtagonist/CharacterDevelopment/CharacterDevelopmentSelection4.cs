@@ -24,7 +24,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.CharacterDevelopment
             var Icon_Discovery = Resources.GetBlueprint<BlueprintFeatureSelection>("cd86c437488386f438dcc9ae727ea2a6").m_Icon;
             var CharacterDevelopmentSelection4 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection4", bp => {
                 bp.SetName("Character Development IV");
-                bp.SetDescription("At 3rd, 7th, 13th, and 19th level, you can select one character development.");
+                bp.SetDescription("As you increase your level, you can select powerful character development feats.");
                 bp.m_Icon = Icon_Discovery;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

@@ -17,7 +17,6 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             var SignatureAttack = Helpers.CreateBlueprint<BlueprintFeature>("SignatureAttack", bp => {
                 bp.SetName("Signature Attack");
                 bp.SetDescription("At 6th level, the Isekai Protagonist gains a luck bonus to {g|Encyclopedia:BAB}attack{/g} and damage rolls equal to their character level.");
-                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:BAB}attack{/g} and damage rolls equal to their character level.");
                 bp.m_Icon = Icon_SwordSaintWeaponMastery;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Luck;

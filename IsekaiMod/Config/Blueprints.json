@@ -7,6 +7,7 @@
     "BlackRoseBackgroundSelection": "5400da49-2595-443c-b6ba-0574d8c191dd",
 
     "GodEmporerArchetype": "2ff78bd9-6224-4376-9f64-720ce94d0616",
+    "EdgeLordArchetype": "900db658-4f20-4636-ae84-a198c2b50f58",
 
     "PrebuildIsekaiProtagonistFeatureList": "de7da5cc-7e37-438a-855c-a31f861a4960",
     "IsekaiProtagonistClass": "051cef8e-2906-4217-a6d5-c8011b1d9f60",
@@ -23,7 +24,7 @@
     "IsekaiProtagonistPlotArmorFeat": "91751bce-90bc-42a2-b667-c807146a0cfb",
     "IsekaiProtagonistCharacterDevelopmentFeat": "107d5300-b827-4963-a84c-df0e61fa7107",
 
-    "IsekaiBonusFeatSelection": "039dec4f-d83c-4e4b-9be9-e4aae6fe4b5b",
+    "IsekaiProtagonistBonusFeatSelection": "039dec4f-d83c-4e4b-9be9-e4aae6fe4b5b",
     "PlotArmor": "8acca981-65f0-4933-8093-3f788ec9d2c6",
     "OtherworldlyStamina": "7f0bc8e8-34ad-4691-b66e-a2d526a35d0b",
     "SignatureAttack": "834fc856-6aa1-4abc-aa59-7c100ad190f4",
@@ -53,6 +54,7 @@
     "TrainingMontage": "557a9018-bea9-4f2a-b110-27e9d332ab56",
     "BodyStrengthening": "f48b2667-6ac5-4971-b0a4-6e04d5082680",
     "SpellNegation": "4baa3f55-899d-43db-9a95-3a570f78263f",
+    "ExtremeSpeed": "51da3531-fc19-4e1a-abd2-804ce067c1f1",
 
     "VulnerabilityAcidFeat": "cc3f53b6-2bdd-4002-a4ee-9d90ac51c158",
     "VulnerabilityColdFeat": "162d9f8b-2ffe-48ee-81d4-e1093abbeb36",
@@ -110,6 +112,11 @@
     "DarkAuraArea": "f56e4cb4-2f89-4c6f-8e88-2297505f42d8",
     "DarkAuraBuff": "15de04ea-523a-48c8-942b-19619fa2b657",
     "DarkAuraFeature": "67f01a9d-f8d8-474d-bd5b-db91a616cf16",
+
+    "EdgeLordProficiencies": "08979809-7770-475e-934f-f69c270e3cf5",
+    "EdgeLordPlotArmor": "b1a38abb-c7e0-49b5-a549-049e046f496d",
+    "SupersonicCombat": "89a4f509-0847-4956-9564-0b6a04645f77",
+    "EdgeLordFastMovement": "087e0c42-d008-44c3-bb4b-d5b95387f862",
 
     "HaremMagnetEffect": "e7b76354-23fb-40ad-9598-74e81f209314",
     "HaremMagnetImmunity": "2f6b1ba2-4fa1-4038-9c08-26eca9ab80c6",

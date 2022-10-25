@@ -104,7 +104,6 @@ namespace IsekaiMod.Changes.Heritages
                 bp.m_Icon = ICON_SUCCUBUS;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_DescriptionShort = null;
 
                 // Add boost to all attributes
                 bp.AddComponent<AddStatBonus>(c => {

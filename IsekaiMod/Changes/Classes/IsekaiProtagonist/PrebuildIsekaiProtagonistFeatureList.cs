@@ -45,7 +45,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var Adaptibility = Resources.GetBlueprint<BlueprintFeatureSelection>("26a668c5a8c22354bac67bcd42e09a3f");
             var BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
 
-            var IsekaiBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiBonusFeatSelection");
+            var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
             var BackstorySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BackstorySelection");
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
             var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
@@ -106,7 +106,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
                     },
                     new SelectionEntry()
                     {
-                        m_Selection = IsekaiBonusFeatSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Selection = IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureSelectionReference>(),
                         m_Features = new BlueprintFeatureReference[]{
                             Cleave.ToReference<BlueprintFeatureReference>(),
                             CleavingFinish.ToReference<BlueprintFeatureReference>(),

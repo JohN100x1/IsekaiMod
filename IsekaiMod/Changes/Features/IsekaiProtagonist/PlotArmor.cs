@@ -17,7 +17,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
             var Icon_EdictOfImpenetrableFortress = Resources.GetBlueprint<BlueprintAbility>("d7741c08ccf699e4a8a8f8ab2ed345f8").m_Icon;
             var PlotArmor = Helpers.CreateBlueprint<BlueprintFeature>("PlotArmor", bp => {
                 bp.SetName("Plot Armor");
-                bp.SetDescription("Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal 10 + their character level.");
+                bp.SetDescription("Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal 10 + 1/2 their character level.");
                 bp.m_Icon = Icon_EdictOfImpenetrableFortress;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Luck;
@@ -58,7 +58,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.BonusValue;
+                    c.m_Progression = ContextRankProgression.Div2PlusStep;
                     c.m_StepLevel = 10;
                 });
                 bp.IsClassFeature = true;

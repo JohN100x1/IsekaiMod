@@ -51,7 +51,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, PlotArmor),
-                    Helpers.LevelEntry(3, IsekaiFighterTraining, CharacterDevelopmentSelection1),
+                    Helpers.LevelEntry(3, SneakAttack, IsekaiFighterTraining, CharacterDevelopmentSelection1),
                     Helpers.LevelEntry(5, SneakAttack, TrainingArcSelection),
                     Helpers.LevelEntry(6, SignatureAttack),
                     Helpers.LevelEntry(7, CharacterDevelopmentSelection2),
@@ -67,7 +67,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist.Archetypes
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, GodEmporerProficiencies, GodEmporerPlotArmor),
                     Helpers.LevelEntry(3, NascentApotheosis),
-                    Helpers.LevelEntry(4, GodEmporerTraining),
+                    Helpers.LevelEntry(4, SneakAttack, GodEmporerTraining),
                     Helpers.LevelEntry(6, ProtectiveAuraFeature),
                     Helpers.LevelEntry(7, GodEmporerSignatureAttack),
                     Helpers.LevelEntry(9, GloriousAuraFeature),

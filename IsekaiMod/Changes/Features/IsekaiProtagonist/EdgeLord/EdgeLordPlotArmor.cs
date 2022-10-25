@@ -8,16 +8,16 @@ using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 
-namespace IsekaiMod.Changes.Features.IsekaiProtagonist.GodEmporer
+namespace IsekaiMod.Changes.Features.IsekaiProtagonist.EdgeLord
 {
-    class GodEmporerPlotArmor
+    class EdgeLordPlotArmor
     {
         public static void Add()
         {
             var Icon_EdictOfImpenetrableFortress = Resources.GetBlueprint<BlueprintAbility>("d7741c08ccf699e4a8a8f8ab2ed345f8").m_Icon;
-            var GodEmporerPlotArmor = Helpers.CreateBlueprint<BlueprintFeature>("GodEmporerPlotArmor", bp => {
-                bp.SetName("Godly Plot Armor");
-                bp.SetDescription("The God Emporer gains a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
+            var EdgeLordPlotArmor = Helpers.CreateBlueprint<BlueprintFeature>("EdgeLordPlotArmor", bp => {
+                bp.SetName("Edgy Plot Armor");
+                bp.SetDescription("The Edge Lord gains a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
                 bp.m_Icon = Icon_EdictOfImpenetrableFortress;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Luck;

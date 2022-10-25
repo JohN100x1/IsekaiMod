@@ -14,6 +14,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.TrainingArc
             var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
             var BodyStrengthening = Resources.GetModBlueprint<BlueprintFeature>("BodyStrengthening");
             var SpellNegation = Resources.GetModBlueprint<BlueprintFeature>("SpellNegation");
+            var ExtremeSpeed = Resources.GetModBlueprint<BlueprintFeature>("ExtremeSpeed");
 
             // Feature
             var Icon_PerfectStrike = Resources.GetBlueprint<BlueprintFeature>("9ff65b68c09567e48af9b33848b23323").m_Icon;
@@ -27,11 +28,13 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.TrainingArc
                     TrainingMontage.ToReference<BlueprintFeatureReference>(),
                     BodyStrengthening.ToReference<BlueprintFeatureReference>(),
                     SpellNegation.ToReference<BlueprintFeatureReference>(),
+                    ExtremeSpeed.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     TrainingMontage.ToReference<BlueprintFeatureReference>(),
                     BodyStrengthening.ToReference<BlueprintFeatureReference>(),
                     SpellNegation.ToReference<BlueprintFeatureReference>(),
+                    ExtremeSpeed.ToReference<BlueprintFeatureReference>(),
                 };
             });
         }

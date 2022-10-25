@@ -25,8 +25,6 @@ namespace IsekaiMod.Changes.Backgrounds
                 bp.m_Icon = ICON_BR;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_DescriptionShort = Helpers.CreateString("BackgroundBlackRoseMatriarch.DescriptionShort", "The leader of The Black Roses, an evil syndicate of powerful women plotting to take over Golarion.");
-                
                 
                 // Add Lore (Nature), Lore (Religion), Knowledge (World), and Knowledge (Arcana) to class skills
                 bp.AddComponent<AddClassSkill>(c => {

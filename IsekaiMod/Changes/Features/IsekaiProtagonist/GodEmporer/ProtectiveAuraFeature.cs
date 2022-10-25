@@ -21,26 +21,26 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.GodEmporer
             var Icon_ShieldOfFaith = Resources.GetBlueprint<BlueprintAbility>("183d5bb91dea3a1489a6db6c9cb64445").m_Icon;
             var ProtectiveAuraEffectBuff = Helpers.CreateBlueprint<BlueprintBuff>("ProtectiveAuraEffectBuff", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("At 6th level, allies within 40 feet of the God Emporer gain a +4 competence bonus on AC and saving throws.");
+                bp.SetDescription("At 6th level, allies within 40 feet of the God Emporer gain a +4 bonus on AC and saving throws.");
                 bp.IsClassFeature = true;
                 bp.m_Icon = Icon_ShieldOfFaith;
                 bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Competence;
+                    c.Descriptor = ModifierDescriptor.None;
                     c.Stat = StatType.AC;
                     c.Value = 4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Competence;
+                    c.Descriptor = ModifierDescriptor.None;
                     c.Stat = StatType.SaveFortitude;
                     c.Value = 4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Competence;
+                    c.Descriptor = ModifierDescriptor.None;
                     c.Stat = StatType.SaveReflex;
                     c.Value = 4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Competence;
+                    c.Descriptor = ModifierDescriptor.None;
                     c.Stat = StatType.SaveWill;
                     c.Value = 4;
                 });
@@ -57,7 +57,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.GodEmporer
             });
             var ProtectiveAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("ProtectiveAuraBuff", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("At 6th level, allies within 40 feet of the God Emporer take a +4 competence bonus on AC, and saving throws.");
+                bp.SetDescription("At 6th level, allies within 40 feet of the God Emporer take a +4 bonus on AC, and saving throws.");
                 bp.m_Icon = Icon_ShieldOfFaith;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -67,7 +67,7 @@ namespace IsekaiMod.Changes.Features.IsekaiProtagonist.GodEmporer
             });
             var ProtectiveAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("ProtectiveAuraFeature", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("At 6th level, allies within 40 feet of the God Emporer take a +4 competence bonus on AC, and saving throws.");
+                bp.SetDescription("At 6th level, allies within 40 feet of the God Emporer take a +4 bonus on AC, and saving throws.");
                 bp.m_Icon = Icon_ShieldOfFaith;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

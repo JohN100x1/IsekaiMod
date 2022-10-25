@@ -67,7 +67,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var IsekaiProtagonistCharacterDevelopmentFeat = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistCharacterDevelopmentFeat", bp => {
                 bp.SetName("Character Development");
                 bp.SetDescription("Isekai Protagonists can gain powerful character development feats when they reach certain levels.");
-                bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists can gain powerful character development feats when they reach certain levels.");
+                bp.m_DescriptionShort = Helpers.CreateString("IsekaiProtagonistCharacterDevelopmentFeat.DescriptionShort", "Isekai Protagonists can gain powerful character development feats when they reach certain levels.");
                 bp.m_Icon = Icon_Discovery;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -77,7 +77,7 @@ namespace IsekaiMod.Changes.Classes.IsekaiProtagonist
             var IsekaiProtagonistClass = Helpers.CreateBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass", bp => {
                 bp.LocalizedName = Helpers.CreateString($"IsekaiProtagonistClass.Name", "Isekai Protagonist");
                 bp.LocalizedDescription = Helpers.CreateString($"IsekaiProtagonistClass.Description", "Isekai protagonists are skilled in both martial prowess and magical ability. " +
-                    "They are able to cast spells while wearing any armor or shield. They also gain character development feats which greatly enhance their combat strength.");
+                    "They are able to cast spells while wearing any armor or shield. They also gain character development feats which greatly enhance their combat power.");
                 bp.LocalizedDescriptionShort = Helpers.CreateString($"IsekaiProtagonistClass.Description",
                     "Isekai protagonists are people who have been reincarnated into the world of Golarion with extraordinary abilities. " +
                     "As their story progresses, they gain more overpowered abilities to wreck every wannabe villain and side characters they face.");

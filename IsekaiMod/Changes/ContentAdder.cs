@@ -21,7 +21,7 @@ namespace IsekaiMod.Changes
                 // Isekai Protagonist Features
                 Features.IsekaiProtagonist.IsekaiProtagonistProficiencies.Add();
                 Features.IsekaiProtagonist.IsekaiProtagonistCantripsFeature.Add();
-                Features.IsekaiProtagonist.IsekaiBonusFeatSelection.Add();
+                Features.IsekaiProtagonist.IsekaiProtagonistBonusFeatSelection.Add();
                 Features.IsekaiProtagonist.PlotArmor.Add();
                 Features.IsekaiProtagonist.IsekaiFighterTraining.Add();
                 Features.IsekaiProtagonist.SignatureAttack.Add();
@@ -34,6 +34,7 @@ namespace IsekaiMod.Changes
                 Features.IsekaiProtagonist.TrainingArc.TrainingMontage.Add();
                 Features.IsekaiProtagonist.TrainingArc.BodyStrengthening.Add();
                 Features.IsekaiProtagonist.TrainingArc.SpellNegation.Add();
+                Features.IsekaiProtagonist.TrainingArc.ExtremeSpeed.Add();
                 Features.IsekaiProtagonist.TrainingArc.TrainingArcSelection.Add();
                 Features.IsekaiProtagonist.BeachEpisode.HealthyBody.Add();
                 Features.IsekaiProtagonist.BeachEpisode.InnerPower.Add();
@@ -68,6 +69,10 @@ namespace IsekaiMod.Changes
                 Features.IsekaiProtagonist.GodEmporer.Godhood.Add();
                 Classes.IsekaiProtagonist.Archetypes.GodEmporer.Add();
                 // Edge Lord Archetype
+                Features.IsekaiProtagonist.EdgeLord.EdgeLordProficiencies.Add();
+                Features.IsekaiProtagonist.EdgeLord.EdgeLordPlotArmor.Add();
+                Features.IsekaiProtagonist.EdgeLord.SupersonicCombat.Add();
+                Features.IsekaiProtagonist.EdgeLord.EdgeLordFastMovement.Add();
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
 
                 // Add Progression & Prebuild after Class and class-dependent features are added
