@@ -12,7 +12,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
         public static void Add()
         {
             // Cheat Skills
-            var Spellslinger = Resources.GetModBlueprint<BlueprintFeature>("Spellslinger");
+            var AutoQuicken = Resources.GetModBlueprint<BlueprintFeature>("AutoQuicken");
+            var AutoMaximize = Resources.GetModBlueprint<BlueprintFeature>("AutoMaximize");
             var GraspHeartFeature = Resources.GetModBlueprint<BlueprintFeature>("GraspHeartFeature");
             var DupeGoldFeature = Resources.GetModBlueprint<BlueprintFeature>("DupeGoldFeature");
             var Winner = Resources.GetModBlueprint<BlueprintFeature>("Winner");
@@ -26,13 +27,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                    Spellslinger.ToReference<BlueprintFeatureReference>(),
+                    AutoQuicken.ToReference<BlueprintFeatureReference>(),
+                    AutoMaximize.ToReference<BlueprintFeatureReference>(),
                     GraspHeartFeature.ToReference<BlueprintFeatureReference>(),
                     DupeGoldFeature.ToReference<BlueprintFeatureReference>(),
                     Winner.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
-                    Spellslinger.ToReference<BlueprintFeatureReference>(),
+                    AutoQuicken.ToReference<BlueprintFeatureReference>(),
+                    AutoMaximize.ToReference<BlueprintFeatureReference>(),
                     GraspHeartFeature.ToReference<BlueprintFeatureReference>(),
                     DupeGoldFeature.ToReference<BlueprintFeatureReference>(),
                     Winner.ToReference<BlueprintFeatureReference>(),

@@ -72,7 +72,8 @@
     "ImmunityToElectricityFeat": "ed887779-8eec-45df-99e6-6ea4a23ca904",
     "ImmunityToSonicFeat": "609acbad-a8df-490a-9a4d-b5fc4a0cdf8e",
 
-    "Spellslinger": "44f7f338-4d58-4e47-a1fb-b9c68b789333",
+    "AutoQuicken": "44f7f338-4d58-4e47-a1fb-b9c68b789333",
+    "AutoMaximize": "1fd610f4-ec36-4298-adca-bf9c5a0bc3cc",
     "GraspHeartUnitProperty": "5eb6dd86-6c66-4b33-8a9a-1eb451af73cc",
     "GraspHeartAbility": "55e06f68-8f56-4d4b-824f-f6bbaa46899d",
     "GraspHeartFeature": "d9c8316e-3a4f-4737-ae7c-56838eb42540",
