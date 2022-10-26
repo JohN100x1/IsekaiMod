@@ -46,7 +46,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                     c.Anchor = AbilitySpawnFxAnchor.Caster;
                 });
                 bp.m_Icon = Icon_Dupe_Gold;
-                bp.Type = AbilityType.SpellLike;
+                bp.Type = AbilityType.Special;
                 bp.Range = AbilityRange.Personal;
                 bp.CanTargetPoint = false;
                 bp.CanTargetEnemies = false;

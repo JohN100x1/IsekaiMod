@@ -8,6 +8,7 @@ This is a WIP mod for `Pathfinder: Wrath of the Righteous` that adds an `Isekai 
 	- [x] Edge Lord (Isekai Protagonist Archetype)
 - Cheat Skill
 	- [x] AutoQuicken
+	- [x] AutoMaximize
 	- [x] Grasp Heart
 	- [x] Dupe Gold
 - Features
