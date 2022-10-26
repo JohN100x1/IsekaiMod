@@ -50,7 +50,7 @@
     "HealthyBody": "c6165832-f997-40bb-b0af-145ea74670a4",
     "InnerPower": "51c61f4f-a583-48dd-8824-3dc4864ef844",
     "MasterSelf": "e18b657b-3167-4885-9ccc-cfcb2c4a3a4d",
-    "Unstoppable": "cb9360d9-ea2e-418a-a75d-d0347c717280",
+    "Tenacious": "cb9360d9-ea2e-418a-a75d-d0347c717280",
 
     "TrainingMontage": "557a9018-bea9-4f2a-b110-27e9d332ab56",
     "BodyStrengthening": "f48b2667-6ac5-4971-b0a4-6e04d5082680",
@@ -96,6 +96,7 @@
     "WinnerAbility": "5d39f2f1-a90d-4506-8d97-e0aa44a14724",
     "Winner": "d7b02f2a-903c-494e-8ae9-e5586ff1c340",
     "CheatSkillSelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
+    "CheatSkillMythicSelection": "46d086ef-4932-4fb1-8652-cd4afabada43",
 
     "FriendlyAuraEffectBuff": "450c2d6c-4ffd-4f45-971e-099457e0dd54",
     "FriendlyAuraArea": "5bfec8d0-c27b-4d34-b8d3-d532bfc78386",

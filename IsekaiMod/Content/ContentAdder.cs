@@ -40,7 +40,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.BeachEpisode.HealthyBody.Add();
                 Features.IsekaiProtagonist.BeachEpisode.InnerPower.Add();
                 Features.IsekaiProtagonist.BeachEpisode.MasterSelf.Add();
-                Features.IsekaiProtagonist.BeachEpisode.Unstoppable.Add();
+                Features.IsekaiProtagonist.BeachEpisode.Tenacious.Add();
                 Features.IsekaiProtagonist.BeachEpisode.BeachEpisodeSelection.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.MundaneAura.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.AlphaStrike.Add();
@@ -56,6 +56,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CheatSkill.DupeGoldFeature.Add();
                 Features.IsekaiProtagonist.CheatSkill.Winner.Add();
                 Features.IsekaiProtagonist.CheatSkill.CheatSkillSelection.Add();
+                Features.IsekaiProtagonist.CheatSkill.CheatSkillMythicSelection.Add();
                 // God Emporer Archetype
                 Features.IsekaiProtagonist.GodEmporer.GodEmporerProficiencies.Add();
                 Features.IsekaiProtagonist.GodEmporer.GodEmporerPlotArmor.Add();

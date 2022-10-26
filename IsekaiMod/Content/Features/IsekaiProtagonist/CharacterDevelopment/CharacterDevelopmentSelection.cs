@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             var HealthyBody = Resources.GetModBlueprint<BlueprintFeature>("HealthyBody");
             var InnerPower = Resources.GetModBlueprint<BlueprintFeature>("InnerPower");
             var MasterSelf = Resources.GetModBlueprint<BlueprintFeature>("MasterSelf");
-            var Unstoppable = Resources.GetModBlueprint<BlueprintFeature>("Unstoppable");
+            var Tenacious = Resources.GetModBlueprint<BlueprintFeature>("Tenacious");
             var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
             var IsekaiProtagonistTalentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistTalentSelection");
 
@@ -86,7 +86,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
-                    Unstoppable.ToReference<BlueprintFeatureReference>(),
+                    Tenacious.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
@@ -98,7 +98,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
-                    Unstoppable.ToReference<BlueprintFeatureReference>(),
+                    Tenacious.ToReference<BlueprintFeatureReference>(),
                 };
             });
             var CharacterDevelopmentSelection4 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection4", bp => {
@@ -117,7 +117,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
-                    Unstoppable.ToReference<BlueprintFeatureReference>(),
+                    Tenacious.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
@@ -129,7 +129,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
-                    Unstoppable.ToReference<BlueprintFeatureReference>(),
+                    Tenacious.ToReference<BlueprintFeatureReference>(),
                 };
             });
         }

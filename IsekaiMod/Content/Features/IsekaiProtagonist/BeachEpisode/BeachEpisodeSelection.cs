@@ -14,7 +14,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
             var HealthyBody = Resources.GetModBlueprint<BlueprintFeature>("HealthyBody");
             var InnerPower = Resources.GetModBlueprint<BlueprintFeature>("InnerPower");
             var MasterSelf = Resources.GetModBlueprint<BlueprintFeature>("MasterSelf");
-            var Unstoppable = Resources.GetModBlueprint<BlueprintFeature>("Unstoppable");
+            var Tenacious = Resources.GetModBlueprint<BlueprintFeature>("Tenacious");
 
             // Feature
             var Icon_BeachEpisode = AssetLoader.LoadInternal("Features", "ICON_BEACH.png");
@@ -28,13 +28,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
-                    Unstoppable.ToReference<BlueprintFeatureReference>(),
+                    Tenacious.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
-                    Unstoppable.ToReference<BlueprintFeatureReference>(),
+                    Tenacious.ToReference<BlueprintFeatureReference>(),
                 };
             });
         }

@@ -7,13 +7,13 @@ using Kingmaker.UnitLogic.FactLogic;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
 {
-    class Unstoppable
+    class Tenacious
     {
         public static void Add()
         {
             var Icon_DextrousDuelist = Resources.GetBlueprint<BlueprintFeature>("b701196306bb4674bb902c9f1160180f").m_Icon;
-            var Unstoppable = Helpers.CreateBlueprint<BlueprintFeature>("Unstoppable", bp => {
-                bp.SetName("Unstoppable");
+            var Tenacious = Helpers.CreateBlueprint<BlueprintFeature>("Tenacious", bp => {
+                bp.SetName("Tenacious");
                 bp.SetDescription("You gain immunity to stunned, staggered, slowed, entangled, petrified, paralysis, and movement impairing effects.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Slowed;
