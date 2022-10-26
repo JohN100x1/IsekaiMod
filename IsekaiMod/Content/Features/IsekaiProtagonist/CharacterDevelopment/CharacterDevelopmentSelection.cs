@@ -21,6 +21,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             var Tenacious = Resources.GetModBlueprint<BlueprintFeature>("Tenacious");
             var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
             var IsekaiProtagonistTalentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistTalentSelection");
+            var AcidImmunity = Resources.GetModBlueprint<BlueprintFeature>("AcidImmunity");
+            var ColdImmunity = Resources.GetModBlueprint<BlueprintFeature>("ColdImmunity");
+            var ElectricityImmunity = Resources.GetModBlueprint<BlueprintFeature>("ElectricityImmunity");
+            var FireImmunity = Resources.GetModBlueprint<BlueprintFeature>("FireImmunity");
+            var SonicImmunity = Resources.GetModBlueprint<BlueprintFeature>("SonicImmunity");
 
             // Feature
             var Icon_Discovery = Resources.GetBlueprint<BlueprintFeatureSelection>("cd86c437488386f438dcc9ae727ea2a6").m_Icon;
@@ -37,6 +42,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
+                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
+                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
+                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
+                    FireImmunity.ToReference<BlueprintFeatureReference>(),
+                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
@@ -45,6 +55,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
+                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
+                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
+                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
+                    FireImmunity.ToReference<BlueprintFeatureReference>(),
+                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
                 };
             });
             var CharacterDevelopmentSelection2 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection2", bp => {
@@ -60,6 +75,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
+                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
+                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
+                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
+                    FireImmunity.ToReference<BlueprintFeatureReference>(),
+                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
@@ -68,6 +88,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
+                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
+                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
+                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
+                    FireImmunity.ToReference<BlueprintFeatureReference>(),
+                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
                 };
             });
             var CharacterDevelopmentSelection3 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection3", bp => {
@@ -83,6 +108,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
+                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
+                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
+                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
+                    FireImmunity.ToReference<BlueprintFeatureReference>(),
+                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
@@ -95,6 +125,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
+                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
+                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
+                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
+                    FireImmunity.ToReference<BlueprintFeatureReference>(),
+                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
@@ -114,6 +149,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
+                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
+                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
+                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
+                    FireImmunity.ToReference<BlueprintFeatureReference>(),
+                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
@@ -126,6 +166,52 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
+                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
+                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
+                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
+                    FireImmunity.ToReference<BlueprintFeatureReference>(),
+                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
+                    HealthyBody.ToReference<BlueprintFeatureReference>(),
+                    InnerPower.ToReference<BlueprintFeatureReference>(),
+                    MasterSelf.ToReference<BlueprintFeatureReference>(),
+                    Tenacious.ToReference<BlueprintFeatureReference>(),
+                };
+            });
+            var CharacterDevelopmentSelection5 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection5", bp => {
+                bp.SetName("Character Development V");
+                bp.SetDescription("As you increase your level, you can select powerful character development feats.");
+                bp.m_Icon = Icon_Discovery;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
+                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
+                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
+                    BetaStrike.ToReference<BlueprintFeatureReference>(),
+                    GammaStrike.ToReference<BlueprintFeatureReference>(),
+                    MundaneAura.ToReference<BlueprintFeatureReference>(),
+                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
+                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
+                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
+                    FireImmunity.ToReference<BlueprintFeatureReference>(),
+                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
+                    HealthyBody.ToReference<BlueprintFeatureReference>(),
+                    InnerPower.ToReference<BlueprintFeatureReference>(),
+                    MasterSelf.ToReference<BlueprintFeatureReference>(),
+                    Tenacious.ToReference<BlueprintFeatureReference>(),
+                };
+                bp.m_Features = new BlueprintFeatureReference[] {
+                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
+                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
+                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
+                    BetaStrike.ToReference<BlueprintFeatureReference>(),
+                    GammaStrike.ToReference<BlueprintFeatureReference>(),
+                    MundaneAura.ToReference<BlueprintFeatureReference>(),
+                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
+                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
+                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
+                    FireImmunity.ToReference<BlueprintFeatureReference>(),
+                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),

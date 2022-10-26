@@ -36,7 +36,8 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 	- [ ] Isekai Succubus (Tiefling heritage)
 	- [ ] Isekai Angel (Aasimar heritage)
 - New Backgrounds
-	- [x] Tabletop RPG Player
+	- [x] `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Knowledge skills can use WIS instead of INT.
+	- [ ] `Weeaboo`: Get proficiency in all exotic weapons and a +2 bonus to initiative.
 	- [ ] MMORPG Gamer
 	- [ ] Salaryman
 	- [ ] Gacha Gamer

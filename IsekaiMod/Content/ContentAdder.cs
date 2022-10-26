@@ -46,6 +46,11 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.AlphaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.BetaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.GammaStrike.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.AcidImmunity.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.ColdImmunity.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.ElectricityImmunity.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.FireImmunity.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.SonicImmunity.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection.Add();
                 Features.IsekaiProtagonist.CheatSkill.AutoEmpowerFeature.Add();
                 Features.IsekaiProtagonist.CheatSkill.AutoExtendFeature.Add();
