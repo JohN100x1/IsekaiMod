@@ -45,10 +45,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.AlphaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.BetaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.GammaStrike.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection1.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection2.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection3.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection4.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection.Add();
                 Features.IsekaiProtagonist.CheatSkill.AutoEmpowerFeature.Add();
                 Features.IsekaiProtagonist.CheatSkill.AutoExtendFeature.Add();
                 Features.IsekaiProtagonist.CheatSkill.AutoMaximizeFeature.Add();
@@ -78,10 +75,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.EdgeLord.EdgeLordTraining.Add();
                 Features.IsekaiProtagonist.EdgeLord.EdgeLordSignatureAttack.Add();
                 Features.IsekaiProtagonist.EdgeLord.EdgeLordFastMovement.Add();
-                Features.IsekaiProtagonist.EdgeLord.ExtraStrikeI.Add();
-                Features.IsekaiProtagonist.EdgeLord.ExtraStrikeII.Add();
-                Features.IsekaiProtagonist.EdgeLord.ExtraStrikeIII.Add();
-                Features.IsekaiProtagonist.EdgeLord.ExtraStrikeIV.Add();
+                Features.IsekaiProtagonist.EdgeLord.ExtraStrike.Add();
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
 
                 // Add Progression & Prebuild after Class and class-dependent features are added

@@ -19,9 +19,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: Add isekai backgrounds, including ones that give good stats
-            // TODO: add isekai angel heritage
+            // TODO: Allow combat feats to be selected in training arc and character development
             // TODO: Add MythicAbilitySelection for this class (extra cheat skill should exclude those who choose winner feat)
+            // TODO: Add isekai backgrounds, including ones that give good stats
+            // TODO: rework isekai succubus heritage
+            // TODO: add isekai angel heritage
             // TODO: remove backstories
             // TODO: Use localisation instead of hardcoded strings
             // TODO: Add custom equipment
