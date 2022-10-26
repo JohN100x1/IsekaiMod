@@ -24,7 +24,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
             // Feature Selection
             var IsekaiProtagonistTalentSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistTalentSelection", bp => {
                 bp.SetName("Rogue Talents");
-                bp.SetDescription("You can select a rogue talent from a limited set of rogue talents.");
+                bp.SetDescription("You can select a rogue talent from a limited set of rogue talents, ignoring any prerequisites of these talents.");
                 bp.m_Icon = null;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

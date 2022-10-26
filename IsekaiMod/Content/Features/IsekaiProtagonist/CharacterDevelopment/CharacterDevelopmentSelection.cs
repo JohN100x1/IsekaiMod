@@ -15,8 +15,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             var BetaStrike = Resources.GetModBlueprint<BlueprintFeature>("BetaStrike");
             var GammaStrike = Resources.GetModBlueprint<BlueprintFeature>("GammaStrike");
             var MundaneAura = Resources.GetModBlueprint<BlueprintFeature>("MundaneAura");
-            var CripplingStrike = Resources.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
-            var DispellingAttack = Resources.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
             var HealthyBody = Resources.GetModBlueprint<BlueprintFeature>("HealthyBody");
             var InnerPower = Resources.GetModBlueprint<BlueprintFeature>("InnerPower");
             var MasterSelf = Resources.GetModBlueprint<BlueprintFeature>("MasterSelf");
@@ -39,8 +37,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    CripplingStrike.ToReference<BlueprintFeatureReference>(),
-                    DispellingAttack.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
@@ -49,8 +45,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    CripplingStrike.ToReference<BlueprintFeatureReference>(),
-                    DispellingAttack.ToReference<BlueprintFeatureReference>(),
                 };
             });
             var CharacterDevelopmentSelection2 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection2", bp => {
@@ -66,8 +60,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    CripplingStrike.ToReference<BlueprintFeatureReference>(),
-                    DispellingAttack.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
@@ -76,8 +68,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    CripplingStrike.ToReference<BlueprintFeatureReference>(),
-                    DispellingAttack.ToReference<BlueprintFeatureReference>(),
                 };
             });
             var CharacterDevelopmentSelection3 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection3", bp => {
@@ -93,8 +83,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    CripplingStrike.ToReference<BlueprintFeatureReference>(),
-                    DispellingAttack.ToReference<BlueprintFeatureReference>(),
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
@@ -107,8 +95,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    CripplingStrike.ToReference<BlueprintFeatureReference>(),
-                    DispellingAttack.ToReference<BlueprintFeatureReference>(),
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
@@ -128,8 +114,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    CripplingStrike.ToReference<BlueprintFeatureReference>(),
-                    DispellingAttack.ToReference<BlueprintFeatureReference>(),
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
@@ -142,8 +126,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
                     MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    CripplingStrike.ToReference<BlueprintFeatureReference>(),
-                    DispellingAttack.ToReference<BlueprintFeatureReference>(),
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
