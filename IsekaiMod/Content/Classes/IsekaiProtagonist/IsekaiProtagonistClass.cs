@@ -19,6 +19,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
+            // TODO: change the aura feats to be activatable abilities
             // TODO: Add isekai backgrounds, including ones that give good stats
             // TODO: rework isekai succubus heritage
             // TODO: add isekai angel heritage
