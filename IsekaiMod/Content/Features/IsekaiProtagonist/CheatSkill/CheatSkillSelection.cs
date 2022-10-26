@@ -15,8 +15,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
             var AutoEmpower = Resources.GetModBlueprint<BlueprintFeature>("AutoEmpower");
             var AutoExtend = Resources.GetModBlueprint<BlueprintFeature>("AutoExtend");
             var AutoMaximize = Resources.GetModBlueprint<BlueprintFeature>("AutoMaximize");
-            var AutoQuicken = Resources.GetModBlueprint<BlueprintFeature>("AutoQuicken");
-            var AutoReach = Resources.GetModBlueprint<BlueprintFeature>("AutoReach");
+            var AutoQuickenFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoQuickenFeature");
+            var AutoReachFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoReachFeature");
             var GraspHeartFeature = Resources.GetModBlueprint<BlueprintFeature>("GraspHeartFeature");
             var DupeGoldFeature = Resources.GetModBlueprint<BlueprintFeature>("DupeGoldFeature");
             var Winner = Resources.GetModBlueprint<BlueprintFeature>("Winner");
@@ -33,8 +33,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                     AutoEmpower.ToReference<BlueprintFeatureReference>(),
                     AutoExtend.ToReference<BlueprintFeatureReference>(),
                     AutoMaximize.ToReference<BlueprintFeatureReference>(),
-                    AutoQuicken.ToReference<BlueprintFeatureReference>(),
-                    AutoReach.ToReference<BlueprintFeatureReference>(),
+                    AutoQuickenFeature.ToReference<BlueprintFeatureReference>(),
+                    AutoReachFeature.ToReference<BlueprintFeatureReference>(),
                     GraspHeartFeature.ToReference<BlueprintFeatureReference>(),
                     DupeGoldFeature.ToReference<BlueprintFeatureReference>(),
                     Winner.ToReference<BlueprintFeatureReference>(),
@@ -43,8 +43,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                     AutoEmpower.ToReference<BlueprintFeatureReference>(),
                     AutoExtend.ToReference<BlueprintFeatureReference>(),
                     AutoMaximize.ToReference<BlueprintFeatureReference>(),
-                    AutoQuicken.ToReference<BlueprintFeatureReference>(),
-                    AutoReach.ToReference<BlueprintFeatureReference>(),
+                    AutoQuickenFeature.ToReference<BlueprintFeatureReference>(),
+                    AutoReachFeature.ToReference<BlueprintFeatureReference>(),
                     GraspHeartFeature.ToReference<BlueprintFeatureReference>(),
                     DupeGoldFeature.ToReference<BlueprintFeatureReference>(),
                     Winner.ToReference<BlueprintFeatureReference>(),

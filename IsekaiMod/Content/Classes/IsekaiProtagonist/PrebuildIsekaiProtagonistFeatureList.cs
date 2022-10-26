@@ -54,7 +54,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var CharacterDevelopmentSelection3 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection3");
             var CharacterDevelopmentSelection4 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection4");
 
-            var AutoQuicken = Resources.GetModBlueprint<BlueprintFeature>("AutoQuicken");
+            var AutoQuickenFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoQuickenFeature");
             var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
             var BodyStrengthening = Resources.GetModBlueprint<BlueprintFeature>("BodyStrengthening");
             var SpellNegation = Resources.GetModBlueprint<BlueprintFeature>("SpellNegation");
@@ -125,7 +125,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     {
                         m_Selection = CheatSkillSelection.ToReference<BlueprintFeatureSelectionReference>(),
                         m_Features = new BlueprintFeatureReference[]{
-                            AutoQuicken.ToReference<BlueprintFeatureReference>()
+                            AutoQuickenFeature.ToReference<BlueprintFeatureReference>()
                         }
                     },
                     new SelectionEntry()

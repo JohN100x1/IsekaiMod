@@ -10,8 +10,8 @@ This is a WIP mod for `Pathfinder: Wrath of the Righteous` that adds an `Isekai 
 	- [x] AutoEmpower
 	- [x] AutoExtend
 	- [x] AutoMaximize
-	- [x] AutoQuicken
-	- [x] AutoReach
+	- [x] AutoQuickenFeature
+	- [x] AutoReachFeature
 	- [x] Grasp Heart
 	- [x] Dupe Gold
 - Features
