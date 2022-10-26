@@ -49,8 +49,11 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection2.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection3.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection4.Add();
-                Features.IsekaiProtagonist.CheatSkill.AutoQuicken.Add();
+                Features.IsekaiProtagonist.CheatSkill.AutoEmpower.Add();
+                Features.IsekaiProtagonist.CheatSkill.AutoExtend.Add();
                 Features.IsekaiProtagonist.CheatSkill.AutoMaximize.Add();
+                Features.IsekaiProtagonist.CheatSkill.AutoQuicken.Add();
+                Features.IsekaiProtagonist.CheatSkill.AutoReach.Add();
                 Features.IsekaiProtagonist.CheatSkill.GraspHeartFeature.Add();
                 Features.IsekaiProtagonist.CheatSkill.DupeGoldFeature.Add();
                 Features.IsekaiProtagonist.CheatSkill.Winner.Add();

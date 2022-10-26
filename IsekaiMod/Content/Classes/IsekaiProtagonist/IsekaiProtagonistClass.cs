@@ -19,8 +19,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: add cheat skill that gives every buff
-
             // TODO: Add isekai backgrounds, including ones that give good stats
             // TODO: add isekai angel heritage
             // TODO: Add MythicAbilitySelection for this class (extra cheat skill should exclude those who choose winner feat)
