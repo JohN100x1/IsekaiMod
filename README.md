@@ -20,7 +20,7 @@ This is a WIP mod for `Pathfinder: Wrath of the Righteous` that adds an `Isekai 
 	- [ ] Isekai Succubus (Tiefling heritage)
 	- [ ] Isekai Angel (Aasimar heritage)
 - New Backgrounds
-	- [ ] Tabletop RPG Player
+	- [x] Tabletop RPG Player
 	- [ ] MMORPG Gamer
 	- [ ] Salaryman
 	- [ ] Gacha Gamer
