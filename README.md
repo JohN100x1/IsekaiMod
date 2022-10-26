@@ -1,5 +1,5 @@
 # Isekai Mod
-This is a WIP mod for `Pathfinder: Wrath of the Righteous` that adds an `Isekai Protagonist` Class into the game.
+This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Isekai Protagonist` Class into the game.
 
 ### New Content
 - New Classes & Archetypes

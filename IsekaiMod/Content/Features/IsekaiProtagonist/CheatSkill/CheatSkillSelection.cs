@@ -12,9 +12,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
         public static void Add()
         {
             // Cheat Skills
-            var AutoEmpower = Resources.GetModBlueprint<BlueprintFeature>("AutoEmpower");
-            var AutoExtend = Resources.GetModBlueprint<BlueprintFeature>("AutoExtend");
-            var AutoMaximize = Resources.GetModBlueprint<BlueprintFeature>("AutoMaximize");
+            var AutoEmpowerFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoEmpowerFeature");
+            var AutoExtendFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoExtendFeature");
+            var AutoMaximizeFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoMaximizeFeature");
             var AutoQuickenFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoQuickenFeature");
             var AutoReachFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoReachFeature");
             var GraspHeartFeature = Resources.GetModBlueprint<BlueprintFeature>("GraspHeartFeature");
@@ -30,9 +30,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                    AutoEmpower.ToReference<BlueprintFeatureReference>(),
-                    AutoExtend.ToReference<BlueprintFeatureReference>(),
-                    AutoMaximize.ToReference<BlueprintFeatureReference>(),
+                    AutoEmpowerFeature.ToReference<BlueprintFeatureReference>(),
+                    AutoExtendFeature.ToReference<BlueprintFeatureReference>(),
+                    AutoMaximizeFeature.ToReference<BlueprintFeatureReference>(),
                     AutoQuickenFeature.ToReference<BlueprintFeatureReference>(),
                     AutoReachFeature.ToReference<BlueprintFeatureReference>(),
                     GraspHeartFeature.ToReference<BlueprintFeatureReference>(),
@@ -40,9 +40,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                     Winner.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
-                    AutoEmpower.ToReference<BlueprintFeatureReference>(),
-                    AutoExtend.ToReference<BlueprintFeatureReference>(),
-                    AutoMaximize.ToReference<BlueprintFeatureReference>(),
+                    AutoEmpowerFeature.ToReference<BlueprintFeatureReference>(),
+                    AutoExtendFeature.ToReference<BlueprintFeatureReference>(),
+                    AutoMaximizeFeature.ToReference<BlueprintFeatureReference>(),
                     AutoQuickenFeature.ToReference<BlueprintFeatureReference>(),
                     AutoReachFeature.ToReference<BlueprintFeatureReference>(),
                     GraspHeartFeature.ToReference<BlueprintFeatureReference>(),

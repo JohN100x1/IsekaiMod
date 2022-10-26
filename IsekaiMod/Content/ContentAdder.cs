@@ -22,6 +22,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.IsekaiProtagonistProficiencies.Add();
                 Features.IsekaiProtagonist.IsekaiProtagonistCantripsFeature.Add();
                 Features.IsekaiProtagonist.IsekaiProtagonistBonusFeatSelection.Add();
+                Features.IsekaiProtagonist.IsekaiProtagonistTalentSelection.Add();
                 Features.IsekaiProtagonist.PlotArmor.Add();
                 Features.IsekaiProtagonist.IsekaiFighterTraining.Add();
                 Features.IsekaiProtagonist.SignatureAttack.Add();

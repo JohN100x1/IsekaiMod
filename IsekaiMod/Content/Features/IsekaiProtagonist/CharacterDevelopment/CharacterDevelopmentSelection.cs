@@ -21,6 +21,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             var InnerPower = Resources.GetModBlueprint<BlueprintFeature>("InnerPower");
             var MasterSelf = Resources.GetModBlueprint<BlueprintFeature>("MasterSelf");
             var Unstoppable = Resources.GetModBlueprint<BlueprintFeature>("Unstoppable");
+            var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
+            var IsekaiProtagonistTalentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistTalentSelection");
 
             // Feature
             var Icon_Discovery = Resources.GetBlueprint<BlueprintFeatureSelection>("cd86c437488386f438dcc9ae727ea2a6").m_Icon;
@@ -31,6 +33,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
+                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
@@ -39,6 +43,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     DispellingAttack.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
+                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
+                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
@@ -54,6 +60,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
+                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
@@ -62,6 +70,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     DispellingAttack.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
+                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
+                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
@@ -77,6 +87,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
+                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
@@ -89,6 +101,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     Unstoppable.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
+                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
+                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
@@ -108,6 +122,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
+                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
@@ -120,6 +136,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     Unstoppable.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
+                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
+                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
                     AlphaStrike.ToReference<BlueprintFeatureReference>(),
                     BetaStrike.ToReference<BlueprintFeatureReference>(),
                     GammaStrike.ToReference<BlueprintFeatureReference>(),
