@@ -29,11 +29,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
     {
         public static void Add()
         {
-            var Icon_Harem = AssetLoader.LoadInternal("Abilities", "ICON_HAREM.png");
-            var HaremMagnetEffect = Helpers.CreateBlueprint<BlueprintBuff>("HaremMagnetEffect", bp => {
+            var Icon_Harem = AssetLoader.LoadInternal("Features", "ICON_HAREM.png");
+            var Icon_Harem_Immune = AssetLoader.LoadInternal("Features", "ICON_HAREM_IMMUNE.png");
+            var HaremMagnetBuff = Helpers.CreateBlueprint<BlueprintBuff>("HaremMagnetBuff", bp => {
                 bp.SetName("Fascinated");
                 bp.SetDescription("This creature is Fascinated and can take no actions. Any {g|Encyclopedia:Damage}damage{/g} to the target automatically breaks the effect.");
-                bp.m_Icon = Icon_Harem;
+                bp.m_Icon = Icon_Harem_Immune;
                 bp.TickEachSecond = false;
                 bp.Stacking = StackingType.Replace;
                 bp.Frequency = DurationRate.Rounds;
@@ -44,7 +45,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.AddComponent<AddIncomingDamageTrigger>(c => {
                     c.TriggerOnStatDamageOrEnergyDrain = true;
                     c.Actions = Helpers.CreateActionList(
-                        new ContextActionRemoveSelf() { name = "$ContextActionRemoveSelf$e030f2e6-efe6-48e4-b836-211ee145248d" }
+                        new ContextActionRemoveSelf()
                         );
                 });
                 bp.AddComponent<AddFactContextActions>(c => {
@@ -53,10 +54,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                     c.Activated = Helpers.CreateActionList(
                         new ContextActionSpawnFx()
                         {
-                            PrefabLink = new PrefabLink()
-                            {
-                                AssetId = "28b3cd92c1fdc194d9ee1e378c23be6b"
-                            }
+                            PrefabLink = new PrefabLink() { AssetId = "28b3cd92c1fdc194d9ee1e378c23be6b" }
                         });
                 });
                 bp.Ranks = 0;
@@ -69,6 +67,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.Stacking = StackingType.Replace;
                 bp.Frequency = DurationRate.Rounds;
                 bp.AddComponent<IsPositiveEffect>();
+                bp.FxOnStart = new PrefabLink();
+                bp.FxOnRemove = new PrefabLink();
             });
             var HaremMagnetAbility = Helpers.CreateBlueprint<BlueprintAbility>("HaremMagnetAbility", bp => {
                 bp.SetName("Harem Magnet");
@@ -87,7 +87,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                                     },
                                     new ContextConditionHasFact() {
                                         Not = true,
-                                        m_Fact = HaremMagnetEffect.ToReference<BlueprintUnitFactReference>()
+                                        m_Fact = HaremMagnetBuff.ToReference<BlueprintUnitFactReference>()
                                     },
                                     new ContextConditionHasFact() {
                                         Not = true,
@@ -135,7 +135,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                                                 new ContextActionApplyBuff()
                                                 {
                                                     Permanent = false,
-                                                    m_Buff = HaremMagnetEffect.ToReference<BlueprintBuffReference>(),
+                                                    m_Buff = HaremMagnetBuff.ToReference<BlueprintBuffReference>(),
                                                     DurationValue = new ContextDurationValue()
                                                     {
                                                         Rate = DurationRate.Rounds,

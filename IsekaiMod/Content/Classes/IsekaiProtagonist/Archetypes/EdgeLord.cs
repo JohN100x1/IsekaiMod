@@ -18,10 +18,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var EdgeLordTraining = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordTraining");
             var EdgeLordSignatureAttack = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordSignatureAttack");
             var EdgeLordFastMovement = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordFastMovement");
-            var ExtraStrikeI = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeI");
-            var ExtraStrikeII = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeII");
-            var ExtraStrikeIII = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeIII");
-            var ExtraStrikeIV = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrikeIV");
+            var ExtraStrike1 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike1");
+            var ExtraStrike2 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike2");
+            var ExtraStrike3 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike3");
+            var ExtraStrike4 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike4");
             var CripplingStrike = Resources.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
             var DispellingAttack = Resources.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
 
@@ -59,13 +59,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, EdgeLordProficiencies, EdgeLordPlotArmor, SupersonicCombat),
                     Helpers.LevelEntry(2, EdgeLordTraining),
-                    Helpers.LevelEntry(3, ExtraStrikeI),
+                    Helpers.LevelEntry(3, ExtraStrike1),
                     Helpers.LevelEntry(4, EdgeLordSignatureAttack),
-                    Helpers.LevelEntry(7, ExtraStrikeII, EdgeLordFastMovement),
+                    Helpers.LevelEntry(7, ExtraStrike2, EdgeLordFastMovement),
                     Helpers.LevelEntry(8, CripplingStrike),
                     Helpers.LevelEntry(10, DispellingAttack),
-                    Helpers.LevelEntry(13, ExtraStrikeIII),
-                    Helpers.LevelEntry(19, ExtraStrikeIV),
+                    Helpers.LevelEntry(13, ExtraStrike3),
+                    Helpers.LevelEntry(19, ExtraStrike4),
                 };
                 bp.OverrideAttributeRecommendations = true;
                 bp.RecommendedAttributes = new StatType[] { StatType.Dexterity, StatType.Charisma };

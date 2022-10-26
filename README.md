@@ -10,8 +10,12 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 		- Has extra feats like the fighter but not limited to combat feats.
 		- Starts of with the `Plot Armor` feature which make them hard to kill.
 		- Has cheat skills.
-	- God Emporer (Isekai Protagonist Archetype)
-	- Edge Lord (Isekai Protagonist Archetype)
+	- `God Emporer` (Isekai Protagonist Archetype)
+		- Has powerful auras that buff allies and debuff enemies.
+		- Has powerful immunities in the late game.
+	- `Edge Lord` (Isekai Protagonist Archetype)
+		- Has alot of extra attacks.
+		- Uses dexterity for damage and attack rolls.
 - New Features
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
 	- Character Development Feats

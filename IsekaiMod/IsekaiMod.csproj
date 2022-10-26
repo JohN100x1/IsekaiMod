@@ -72,7 +72,7 @@
     <None Update="Assets\Abilities\ICON_CHARM.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Abilities\ICON_HAREM.png">
+    <None Update="Assets\Features\ICON_HAREM.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Abilities\ICON_WINGS.png">

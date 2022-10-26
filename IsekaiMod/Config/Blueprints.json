@@ -18,7 +18,7 @@
     "IsekaiProtagonistSpellList": "aaa34b3d-d70d-45b0-b060-5d125c7ef366",
     "IsekaiProtagonistSpellsKnown": "6d3f3e9e-a449-4bed-a4c6-865a5d01b346",
     "IsekaiProtagonistSpellsPerDay": "1f89acc7-f07c-4d76-b217-89fdd4f8414e",
-
+    // Signature abilities
     "IsekaiProtagonistBonusFeat": "414b5c1b-3b32-4e54-99e3-96505698a929",
     "IsekaiProtagonistSneakFeat": "8f8b74df-5190-42e1-a7ae-ad797cb8430a",
     "IsekaiProtagonistPlotArmorFeat": "91751bce-90bc-42a2-b667-c807146a0cfb",
@@ -36,7 +36,8 @@
 
     "TrainingArcSelection": "1313a25a-e9ba-4a67-b746-4c37a9629f19",
     "BeachEpisodeSelection": "7697c19c-c07c-4411-ada4-5ece5b0a58fc",
-
+    "CheatSkillSelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
+    "CheatSkillMythicSelection": "46d086ef-4932-4fb1-8652-cd4afabada43",
     "CharacterDevelopmentSelection1": "b5e98cc6-1828-4009-8a9d-ae8638eda059",
     "CharacterDevelopmentSelection2": "26420865-8717-4d1a-97e4-b5f80d46d212",
     "CharacterDevelopmentSelection3": "16f18340-0d22-4416-b171-5296348cdc29",
@@ -95,13 +96,16 @@
     "DupeGoldFeature": "8b74787b-f7e0-42e2-aace-7d3e9d198103",
     "WinnerAbility": "5d39f2f1-a90d-4506-8d97-e0aa44a14724",
     "Winner": "d7b02f2a-903c-494e-8ae9-e5586ff1c340",
-    "CheatSkillSelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
-    "CheatSkillMythicSelection": "46d086ef-4932-4fb1-8652-cd4afabada43",
 
-    "FriendlyAuraEffectBuff": "450c2d6c-4ffd-4f45-971e-099457e0dd54",
+    "FriendlyAuraBuff": "450c2d6c-4ffd-4f45-971e-099457e0dd54",
     "FriendlyAuraArea": "5bfec8d0-c27b-4d34-b8d3-d532bfc78386",
-    "FriendlyAuraBuff": "ce7fbc51-9904-4200-b15f-949b4d73e518",
+    "FriendlyAuraAreaBuff": "ce7fbc51-9904-4200-b15f-949b4d73e518",
+    "FriendlyAuraAbility": "7b1b7ada-b0aa-4fb3-9768-be512e9b02f0",
     "FriendlyAuraFeature": "b509ab2b-7968-4280-807f-0e49e3ce777c",
+    "HaremMagnetBuff": "e7b76354-23fb-40ad-9598-74e81f209314",
+    "HaremMagnetImmunity": "2f6b1ba2-4fa1-4038-9c08-26eca9ab80c6",
+    "HaremMagnetAbility": "1e6f1421-951c-48cc-8fa9-e279e3083e1c",
+    "HaremMagnetFeature": "4145dc5a-358f-4057-affa-7ff4cc130c03",
 
     "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",
     "GodEmporerProficiencies": "1f112bb6-3b8e-44ca-8158-325436f6b308",
@@ -112,25 +116,26 @@
     "GodlyVessel": "128a880e-72d8-4800-b246-dcc85d7edb1d",
     "Godhood": "57649922-6046-4aa7-82aa-6f3c95ecb9e4",
 
-    "ProtectiveAuraEffectBuff": "b025cc85-6989-4512-9bd8-14c88a3e0b8d",
+    "ProtectiveAuraBuff": "b025cc85-6989-4512-9bd8-14c88a3e0b8d",
     "ProtectiveAuraArea": "e30be595-fbb1-4a73-9542-fbab025b561a",
-    "ProtectiveAuraBuff": "f6f01dc8-6d05-41e3-9ad6-f7b8bdc8e84a",
+    "ProtectiveAuraAreaBuff": "f6f01dc8-6d05-41e3-9ad6-f7b8bdc8e84a",
+    "ProtectiveAuraAbility": "cbb73cca-8019-4be9-b141-912857de4ebe",
     "ProtectiveAuraFeature": "203fd36f-2228-449b-bf51-f61c385ec77c",
-
-    "GloriousAuraEffectBuff": "38ad66b1-b10c-44c1-86a7-d2a8a6df279c",
+    "GloriousAuraBuff": "38ad66b1-b10c-44c1-86a7-d2a8a6df279c",
     "GloriousAuraArea": "d972a3da-0e4e-497f-adc2-f4019605e915",
-    "GloriousAuraBuff": "d721187a-499b-4ee2-a51f-d7569dab8313",
+    "GloriousAuraAreaBuff": "d721187a-499b-4ee2-a51f-d7569dab8313",
+    "GloriousAuraAbility": "07f6caaf-0005-429d-af13-d40f8453cbeb",
     "GloriousAuraFeature": "2d178124-ddb0-4be9-835b-f659009b6d82",
-
-    "SiphoningAuraEffectBuff": "d0bb7228-6ea3-4ae5-81d0-9eb5e350a330",
-    "SiphoningAuraArea": "aa309882-b248-4574-a0a8-44c997710f4f",
-    "SiphoningAuraBuff": "47ef4a38-afbc-40eb-868f-f5f5af3ea04b",
-    "SiphoningAuraFeature": "ca467aba-ba1a-4ce4-a33f-a099f0813bbb",
-
-    "DarkAuraEffectBuff": "933e2f47-c9b1-4b73-a76c-6072f9171ec6",
+    "DarkAuraBuff": "933e2f47-c9b1-4b73-a76c-6072f9171ec6",
     "DarkAuraArea": "f56e4cb4-2f89-4c6f-8e88-2297505f42d8",
-    "DarkAuraBuff": "15de04ea-523a-48c8-942b-19619fa2b657",
+    "DarkAuraAreaBuff": "15de04ea-523a-48c8-942b-19619fa2b657",
+    "DarkAuraAbility": "fee7e12a-40fe-450c-9901-813b58a695cc",
     "DarkAuraFeature": "67f01a9d-f8d8-474d-bd5b-db91a616cf16",
+    "SiphoningAuraBuff": "d0bb7228-6ea3-4ae5-81d0-9eb5e350a330",
+    "SiphoningAuraArea": "aa309882-b248-4574-a0a8-44c997710f4f",
+    "SiphoningAuraAreaBuff": "47ef4a38-afbc-40eb-868f-f5f5af3ea04b",
+    "SiphoningAuraAbility": "45e3f209-d90b-41bf-81c1-404b5ed577ab",
+    "SiphoningAuraFeature": "ca467aba-ba1a-4ce4-a33f-a099f0813bbb",
 
     "EdgeLordProficiencies": "08979809-7770-475e-934f-f69c270e3cf5",
     "EdgeLordPlotArmor": "b1a38abb-c7e0-49b5-a549-049e046f496d",
@@ -138,16 +143,10 @@
     "EdgeLordTraining": "3a8492bc-47c6-4bcf-81cc-0b563d1fba7b",
     "EdgeLordSignatureAttack": "500f3b8f-6396-4292-bb8c-bbf4b3354090",
     "EdgeLordFastMovement": "087e0c42-d008-44c3-bb4b-d5b95387f862",
-    "ExtraStrikeI": "5c37047c-4030-47c7-ab09-dac2d523f8ce",
-    "ExtraStrikeII": "c8e7305b-5727-4779-86d9-8d1a8505df6d",
-    "ExtraStrikeIII": "addce7b5-8d98-49ce-a724-58ad7b5b6cb0",
-    "ExtraStrikeIV": "0653401f-4db9-4b56-a24d-d3c8b03691ef",
-
-    "HaremMagnetEffect": "e7b76354-23fb-40ad-9598-74e81f209314",
-    "HaremMagnetImmunity": "2f6b1ba2-4fa1-4038-9c08-26eca9ab80c6",
-    "HaremMagnetAbility": "1e6f1421-951c-48cc-8fa9-e279e3083e1c",
-    "HaremMagnetFeature": "4145dc5a-358f-4057-affa-7ff4cc130c03"
-
+    "ExtraStrike1": "5c37047c-4030-47c7-ab09-dac2d523f8ce",
+    "ExtraStrike2": "c8e7305b-5727-4779-86d9-8d1a8505df6d",
+    "ExtraStrike3": "addce7b5-8d98-49ce-a724-58ad7b5b6cb0",
+    "ExtraStrike4": "0653401f-4db9-4b56-a24d-d3c8b03691ef"
   },
   "AutoGenerated": {},
   "UnusedGUIDs": {}

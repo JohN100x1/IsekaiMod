@@ -5,7 +5,6 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums.Damage;
-using Kingmaker.UnitLogic;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
@@ -32,6 +31,7 @@ namespace IsekaiMod.Content.Heritages
 
             // TODO: Change DemonWingsAbility to custom use custom icon (create new BlueprintActivatableAbility)
             // TODO: use diabolic wings
+            // TODO: rework charm to scale with charisma
 
             // Charm Ability
             var ICON_CHARM = AssetLoader.LoadInternal("Abilities", "ICON_CHARM.png");

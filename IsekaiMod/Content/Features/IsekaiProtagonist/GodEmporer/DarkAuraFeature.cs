@@ -2,11 +2,11 @@
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
@@ -19,9 +19,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
         public static void Add()
         {
             var Icon_Dark_Aura = AssetLoader.LoadInternal("Features", "ICON_DARK_AURA.png");
-            var DarkAuraEffectBuff = Helpers.CreateBlueprint<BlueprintBuff>("DarkAuraEffectBuff", bp => {
+            var DarkAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("DarkAuraBuff", bp => {
                 bp.SetName("Dark Aura");
-                bp.SetDescription("At 10th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.SetDescription("This creature has a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.IsClassFeature = true;
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.AddComponent<AddStatBonus>(c => {
@@ -49,6 +49,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
                     c.Stat = StatType.SaveWill;
                     c.Value = -4;
                 });
+                bp.FxOnStart = new PrefabLink();
+                bp.FxOnRemove = new PrefabLink();
             });
             var DarkAuraArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("DarkAuraArea", bp => {
                 bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Enemy;
@@ -58,17 +60,31 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
                 bp.Shape = AreaEffectShape.Cylinder;
                 bp.Size = new Feet() { m_Value = 40 };
                 bp.Fx = new PrefabLink();
-                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(DarkAuraEffectBuff.ToReference<BlueprintBuffReference>()));
+                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(DarkAuraBuff.ToReference<BlueprintBuffReference>()));
             });
-            var DarkAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("DarkAuraBuff", bp => {
+            var DarkAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("DarkAuraAreaBuff", bp => {
                 bp.SetName("Dark Aura");
-                bp.SetDescription("At 10th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.SetDescription("Enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.IsClassFeature = true;
-                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
                 bp.AddComponent<AddAreaEffect>(c => {
                     c.m_AreaEffect = DarkAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
+                bp.FxOnStart = new PrefabLink();
+                bp.FxOnRemove = new PrefabLink();
+            });
+            var DarkAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("DarkAuraAbility", bp => {
+                bp.SetName("Dark Aura");
+                bp.SetDescription("Enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.m_Icon = Icon_Dark_Aura;
+                bp.m_Buff = DarkAuraAreaBuff.ToReference<BlueprintBuffReference>();
+                bp.Group = ActivatableAbilityGroup.None;
+                bp.WeightInGroup = 1;
+                bp.IsOnByDefault = true;
+                bp.DoNotTurnOffOnRest = true;
+                bp.DeactivateImmediately = true;
+                bp.ActivationType = AbilityActivationType.Immediately;
             });
             var DarkAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("DarkAuraFeature", bp => {
                 bp.SetName("Dark Aura");
@@ -76,8 +92,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.AddComponent<AuraFeatureComponent>(c => {
-                    c.m_Buff = DarkAuraBuff.ToReference<BlueprintBuffReference>();
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] { DarkAuraAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
         }

@@ -15,7 +15,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Backstory
     {
         public static void Add()
         {
-
             // Icons
             var Icon_ResistSonic = Resources.GetBlueprint<BlueprintAbility>("8d3b10f92387c84429ced317b06ad001").m_Icon;
             var Icon_ProtectionFromSonic = Resources.GetBlueprint<BlueprintAbility>("0cee375b4e5265a46a13fc269beb8763").m_Icon;
