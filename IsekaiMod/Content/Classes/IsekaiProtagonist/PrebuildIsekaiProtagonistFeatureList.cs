@@ -53,6 +53,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var CharacterDevelopmentSelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection2");
             var CharacterDevelopmentSelection3 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection3");
             var CharacterDevelopmentSelection4 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection4");
+            var CharacterDevelopmentSelection5 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection5");
 
             var AutoQuickenFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoQuickenFeature");
             var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
@@ -63,6 +64,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var BetaStrike = Resources.GetModBlueprint<BlueprintFeature>("BetaStrike");
             var GammaStrike = Resources.GetModBlueprint<BlueprintFeature>("GammaStrike");
             var MundaneAura = Resources.GetModBlueprint<BlueprintFeature>("MundaneAura");
+            var FireImmunity = Resources.GetModBlueprint<BlueprintFeature>("FireImmunity");
 
             var IsekaiProtagonistClass = Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
             var PrebuildIsekaiProtagonistFeatureList = Helpers.CreateBlueprint<BlueprintFeature>("PrebuildIsekaiProtagonistFeatureList", bp => {
@@ -163,6 +165,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                         m_Selection = CharacterDevelopmentSelection4.ToReference<BlueprintFeatureSelectionReference>(),
                         m_Features = new BlueprintFeatureReference[]{
                             MundaneAura.ToReference<BlueprintFeatureReference>()
+                        }
+                    },
+                    new SelectionEntry()
+                    {
+                        m_Selection = CharacterDevelopmentSelection5.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Features = new BlueprintFeatureReference[]{
+                            FireImmunity.ToReference<BlueprintFeatureReference>()
                         }
                     },
                     new SelectionEntry()

@@ -64,11 +64,8 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CheatSkill.CheatSkillMythicSelection.Add();
                 // God Emporer Archetype
                 Features.IsekaiProtagonist.GodEmporer.GodEmporerProficiencies.Add();
-                Features.IsekaiProtagonist.GodEmporer.GodEmporerPlotArmor.Add();
                 Features.IsekaiProtagonist.GodEmporer.NascentApotheosis.Add();
-                Features.IsekaiProtagonist.GodEmporer.GodEmporerTraining.Add();
                 Features.IsekaiProtagonist.GodEmporer.ProtectiveAuraFeature.Add();
-                Features.IsekaiProtagonist.GodEmporer.GodEmporerSignatureAttack.Add();
                 Features.IsekaiProtagonist.GodEmporer.DarkAuraFeature.Add();
                 Features.IsekaiProtagonist.GodEmporer.GloriousAuraFeature.Add();
                 Features.IsekaiProtagonist.GodEmporer.GodlyVessel.Add();
@@ -77,10 +74,7 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.Archetypes.GodEmporer.Add();
                 // Edge Lord Archetype
                 Features.IsekaiProtagonist.EdgeLord.EdgeLordProficiencies.Add();
-                Features.IsekaiProtagonist.EdgeLord.EdgeLordPlotArmor.Add();
                 Features.IsekaiProtagonist.EdgeLord.SupersonicCombat.Add();
-                Features.IsekaiProtagonist.EdgeLord.EdgeLordTraining.Add();
-                Features.IsekaiProtagonist.EdgeLord.EdgeLordSignatureAttack.Add();
                 Features.IsekaiProtagonist.EdgeLord.EdgeLordFastMovement.Add();
                 Features.IsekaiProtagonist.EdgeLord.ExtraStrike.Add();
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();

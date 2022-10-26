@@ -19,9 +19,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: remove training arc from edge lord and add custom "training" feat selection that includes 'extreme speed'
-            // TODO: add another charcter development feat on progression at 17th level
-            // TODO: add energy immunity training arc feats
             // TODO: Add isekai backgrounds, including ones that give good stats
             // TODO: rework isekai succubus heritage
             // TODO: add isekai angel heritage

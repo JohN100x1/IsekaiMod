@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
                 bp.SetDescription("At 15th level, the God Emporer gains immunity to sickening effects, nauseated effects, blindness, shaken effects, frightening effects, cowering, "
                     + "paralysis, petrification, confusion, sleep effects, slow effects, staggered effects, stun, daze, dazzle, entanglement, fatigue, exhaustion, movement impairing conditions, "
                     + "bleed, curses, hexes, posion, disease, fear effects, death effects, compulsion effects, charm effects, mind-affecting effects, emotion effects, {g|Encyclopedia:Ability_Scores}ability score{/g} {g|Encyclopedia:Damage}damage{/g}, "
-                    + "energy drain and negative levels."
+                    + "energy drain, negative levels, sneak attack damage and {g|Encyclopedia:Critical}critical hits{/g}."
                     );
                 bp.m_Icon = Icon_PureForm;
                 bp.AddComponent<AddConditionImmunity>(c => {
@@ -143,6 +143,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
                 });
                 bp.AddComponent<AddImmunityToAbilityScoreDamage>();
                 bp.AddComponent<AddImmunityToEnergyDrain>();
+                bp.AddComponent<AddImmunityToCriticalHits>();
+                bp.AddComponent<AddImmunityToPrecisionDamage>();
                 bp.IsClassFeature = true;
             });
         }
