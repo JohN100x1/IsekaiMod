@@ -79,13 +79,14 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.EdgeLord.EdgeLordFastMovement.Add();
                 Features.IsekaiProtagonist.EdgeLord.ExtraStrike.Add();
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
-
                 // Add Progression & Prebuild after Class and class-dependent features are added
                 Classes.IsekaiProtagonist.PrebuildIsekaiProtagonistFeatureList.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistProgression.Add();
 
-                Heritages.TieflingHeritageSuccubus.Add();
+                // Add Heritages
+                // Heritages.TieflingHeritageSuccubus.Add();
 
+                // Add Backgrounds
                 Backgrounds.TabletopRPGPlayer.Add();
                 Backgrounds.MartialArtist.Add();
                 Backgrounds.Salaryman.Add();

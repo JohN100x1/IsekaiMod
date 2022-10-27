@@ -19,16 +19,17 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: Add 'perfect roll' cheat skill
-            // TODO: Add isekai backgrounds, including ones that give good stats
-            // TODO: add powerful summons
+            // TODO: need to get artist permission for assets
+            // TODO: add background screenshots
+            // TODO: fix settings menus
+            // TODO: turn 'spell negation' into an activatable ability
+            // TODO: Add isekai backgrounds that give good stats
             // TODO: rework isekai succubus heritage
             // TODO: add isekai angel heritage
             // TODO: Use localisation instead of hardcoded strings
-            // TODO: Add custom equipment
 
             // Used in Class
-            var MonkClass = Resources.GetBlueprint<BlueprintCharacterClass>("e8f21e5b58e0569468e420ebea456124");
+            var SlayerClass = Resources.GetBlueprint<BlueprintCharacterClass>("c75e0971973957d4dbad24bc7957e4fb");
             var AnimalClass = Resources.GetBlueprint<BlueprintCharacterClass>("4cd1757a0eea7694ba5c933729a53920");
 
             // Spellbook
@@ -76,11 +77,12 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             // Main Class
             var IsekaiProtagonistClass = Helpers.CreateBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass", bp => {
                 bp.LocalizedName = Helpers.CreateString($"IsekaiProtagonistClass.Name", "Isekai Protagonist");
-                bp.LocalizedDescription = Helpers.CreateString($"IsekaiProtagonistClass.Description", "Isekai protagonists are skilled in both martial prowess and magical ability. " +
-                    "They are able to cast spells while wearing any armor or shield. They also gain character development feats which greatly enhance their combat power.");
+                bp.LocalizedDescription = Helpers.CreateString($"IsekaiProtagonistClass.Description", "Isekai protagonists are very powerful beings. "
+                    + "They have plot armor which make them hard to kill, and have cheat skills which make them really powerful. "
+                    + "They also gain character development feats which greatly enhance their combat power.");
                 bp.LocalizedDescriptionShort = Helpers.CreateString($"IsekaiProtagonistClass.Description",
-                    "Isekai protagonists are people who have been reincarnated into the world of Golarion with extraordinary abilities. " +
-                    "As their story progresses, they gain more overpowered abilities to wreck every wannabe villain and side characters they face.");
+                    "Isekai protagonists are people who have been reincarnated into the world of Golarion with overpowered abilities. "
+                    + "As their story progresses, they gain more overpowered abilities to wreck every wannabe villain and side character they face.");
                 bp.HitDie = DiceType.D12;
                 bp.m_BaseAttackBonus = BaseAttackBonus.ToReference<BlueprintStatProgressionReference>();
                 bp.m_FortitudeSave = SavesProgression.ToReference<BlueprintStatProgressionReference>();
@@ -111,13 +113,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 bp.StartingGold = 69420;
                 bp.PrimaryColor = 9;
                 bp.SecondaryColor = 9;
-                bp.MaleEquipmentEntities = MonkClass.MaleEquipmentEntities;
-                bp.FemaleEquipmentEntities = MonkClass.FemaleEquipmentEntities;
+                bp.MaleEquipmentEntities = SlayerClass.MaleEquipmentEntities;
+                bp.FemaleEquipmentEntities = SlayerClass.FemaleEquipmentEntities;
                 bp.m_SignatureAbilities = new BlueprintFeatureReference[4] {
                     IsekaiProtagonistBonusFeat.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistSneakFeat.ToReference<BlueprintFeatureReference>(),
                     IsekaiProtagonistPlotArmorFeat.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistCheatSkillFeat.ToReference<BlueprintFeatureReference>()
+                    IsekaiProtagonistCheatSkillFeat.ToReference<BlueprintFeatureReference>(),
+                    IsekaiProtagonistSneakFeat.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.AddComponent<PrerequisiteNoClassLevel>(c => {
                     c.m_CharacterClass = AnimalClass.ToReference<BlueprintCharacterClassReference>();

@@ -14,7 +14,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             var Godhood = Helpers.CreateBlueprint<BlueprintFeature>("Godhood", bp => {
                 bp.SetName("Godhood");
                 bp.SetDescription("At 20th level, you become a god. You gain 100 spell resistance and are immune to all {g|Encyclopedia:Physical_Damage}physical damage{/g}. "
-                    + "Your attack ignore concealment, critical immunity, and damage reduction. Any critical threats you make are automatically confirmed. "
+                    + "Your attacks ignore concealment, critical immunity, and damage reduction. Any critical threats you make are automatically confirmed. "
                     + "The spells you cast ignore spell resistance and spell immunity.");
                 bp.m_Icon = Icon_Godhood;
                 bp.AddComponent<AddSpellResistance>(c => {

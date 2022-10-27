@@ -16,7 +16,6 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using Kingmaker.UnitLogic.Abilities;
-using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 
 namespace IsekaiMod.Content.Heritages
@@ -32,7 +31,9 @@ namespace IsekaiMod.Content.Heritages
             // TODO: Change DemonWingsAbility to custom use custom icon (create new BlueprintActivatableAbility)
             // TODO: use diabolic wings
             // TODO: rework charm to scale with charisma
-            // TODO: add trickery perception skill?
+            // TODO: add perception and persuasion as class skills
+            // TODO: add an ability to summon a babau
+            // TODO: attacks apply negative levels
 
             // Charm Ability
             var ICON_CHARM = AssetLoader.LoadInternal("Abilities", "ICON_CHARM.png");
@@ -231,29 +232,6 @@ namespace IsekaiMod.Content.Heritages
                     | SpellDescriptor.Bleed
                     | SpellDescriptor.Fire;
                 });
-
-                // Add other immunities
-                bp.AddComponent<AddPhysicalImmunity>();
-                bp.AddComponent<AddImmunityToAbilityScoreDamage>();
-                bp.AddComponent<AddImmunityToEnergyDrain>();
-                bp.AddComponent<AddImmunityToCriticalHits>();
-                bp.AddComponent<AddImmunityToPrecisionDamage>();
-                bp.AddComponent<AddFortification>(c => {
-                    c.Bonus = 100;
-                    c.Value = new ContextValue() {
-                        ValueType = ContextValueType.Simple
-                    };
-                });
-
-                // Ignore enemy's resistance and immunity
-                bp.AddComponent<IgnoreConcealment>();
-                bp.AddComponent<IgnoreSpellImmunity>();
-                bp.AddComponent<IgnoreSpellResistanceForSpells>();
-                bp.AddComponent<IgnoreDamageReductionOnAttack>();
-                bp.AddComponent<IgnoreCritImmunity>();
-
-                // Auto confirm crits
-                bp.AddComponent<InitiatorCritAutoconfirm>();
 
                 // Add Abilities
                 bp.AddComponent<AddFacts>(c => {
