@@ -44,6 +44,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var ExtraStrike3 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike3");
             var CripplingStrike = Resources.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
             var DispellingAttack = Resources.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
+            var ExtremeSpeed = Resources.GetModBlueprint<BlueprintFeature>("ExtremeSpeed");
 
             var CheatSkillSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CheatSkillSelection");
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
@@ -95,7 +96,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 Helpers.CreateUIGroup(CheatSkillSelection, TrainingArcSelection, NascentApotheosis, GodlyVessel, CharacterDevelopmentSelection1, ProtectiveAuraFeature, CharacterDevelopmentSelection2, GloriousAuraFeature, SiphoningAuraFeature, CharacterDevelopmentSelection3, CharacterDevelopmentSelection4, CharacterDevelopmentSelection5, Godhood, ExtraStrike1, ExtraStrike2, ExtraStrike3),
                 Helpers.CreateUIGroup(PlotArmor, CripplingStrike, DispellingAttack, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
-                Helpers.CreateUIGroup(SupersonicCombat, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted),
+                Helpers.CreateUIGroup(SupersonicCombat, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, ExtremeSpeed),
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
                 EdgeLordProficiencies.ToReference<BlueprintFeatureBaseReference>(),

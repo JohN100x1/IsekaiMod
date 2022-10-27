@@ -27,17 +27,19 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 		- `AutoReachFeature`: Gives more range on every spell you cast.
 		- `Grasp Heart`: Kills target creature (no HP limit).
 		- `Dupe Gold`: Get infinite gold.
+		- `Perfect Roll`: Roll 20 on every d20 roll.
 		- `Winner`: Does nothing.
 - New Mythic abilities
 	- `Second Cheat Skill`: Gives you another cheat skill.
-### WIP
-- New Heritages
-	- [ ] Isekai Succubus (Tiefling heritage)
-	- [ ] Isekai Angel (Aasimar heritage)
 - New Backgrounds
 	- [x] `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Lore and Knowledge skills use CHA instead of WIS/INT.
 	- [x] `MartialArtist`: Get proficiency in all exotic weapons.
 	- [x] `Salaryman`: Adds perception as class skill. Perception uses CHA instead of WIS.
+### WIP
+- New Heritages (WIP)
+	- [ ] Isekai Succubus (Tiefling heritage)
+	- [ ] Isekai Angel (Aasimar heritage)
+- New Backgrounds (WIP)
 	- [ ] `Hero`: Get +1 bonus to all attributes.
 	- [ ] `Legend`: Get +2 bonus to all attributes.
 	- [ ] `God`: Get +10 bonus to all attributes.

@@ -59,6 +59,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CheatSkill.AutoReachFeatureFeature.Add();
                 Features.IsekaiProtagonist.CheatSkill.GraspHeartFeature.Add();
                 Features.IsekaiProtagonist.CheatSkill.DupeGoldFeature.Add();
+                Features.IsekaiProtagonist.CheatSkill.PerfectRollFeature.Add();
                 Features.IsekaiProtagonist.CheatSkill.Winner.Add();
                 Features.IsekaiProtagonist.CheatSkill.CheatSkillSelection.Add();
                 Features.IsekaiProtagonist.CheatSkill.CheatSkillMythicSelection.Add();

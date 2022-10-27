@@ -20,6 +20,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var ExtraStrike3 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike3");
             var CripplingStrike = Resources.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
             var DispellingAttack = Resources.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
+            var ExtremeSpeed = Resources.GetModBlueprint<BlueprintFeature>("ExtremeSpeed");
 
             // Removed features
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
@@ -58,6 +59,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(8, CripplingStrike),
                     Helpers.LevelEntry(10, ExtraStrike2, DispellingAttack),
                     Helpers.LevelEntry(15, ExtraStrike3),
+                    Helpers.LevelEntry(20, ExtremeSpeed),
                 };
                 bp.OverrideAttributeRecommendations = true;
                 bp.RecommendedAttributes = new StatType[] { StatType.Dexterity, StatType.Charisma };

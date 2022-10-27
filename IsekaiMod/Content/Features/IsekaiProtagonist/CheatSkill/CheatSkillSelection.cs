@@ -19,6 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
             var AutoReachFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoReachFeature");
             var GraspHeartFeature = Resources.GetModBlueprint<BlueprintFeature>("GraspHeartFeature");
             var DupeGoldFeature = Resources.GetModBlueprint<BlueprintFeature>("DupeGoldFeature");
+            var PerfectRollFeature = Resources.GetModBlueprint<BlueprintFeature>("PerfectRollFeature");
             var Winner = Resources.GetModBlueprint<BlueprintFeature>("Winner");
 
             // Cheat Skill Selection
@@ -37,6 +38,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                     AutoReachFeature.ToReference<BlueprintFeatureReference>(),
                     GraspHeartFeature.ToReference<BlueprintFeatureReference>(),
                     DupeGoldFeature.ToReference<BlueprintFeatureReference>(),
+                    PerfectRollFeature.ToReference<BlueprintFeatureReference>(),
                     Winner.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
@@ -47,6 +49,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                     AutoReachFeature.ToReference<BlueprintFeatureReference>(),
                     GraspHeartFeature.ToReference<BlueprintFeatureReference>(),
                     DupeGoldFeature.ToReference<BlueprintFeatureReference>(),
+                    PerfectRollFeature.ToReference<BlueprintFeatureReference>(),
                     Winner.ToReference<BlueprintFeatureReference>(),
                 };
             });

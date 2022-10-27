@@ -19,6 +19,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
+            // TODO: Add 'perfect roll' cheat skill
             // TODO: Add isekai backgrounds, including ones that give good stats
             // TODO: add powerful summons
             // TODO: rework isekai succubus heritage
