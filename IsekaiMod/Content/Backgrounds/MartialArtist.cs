@@ -13,7 +13,7 @@ namespace IsekaiMod.Content.Backgrounds
         {
             var ExoticWeaponProficiency = Resources.GetModBlueprint<BlueprintFeature>("ExoticWeaponProficiency");
             var BackgroundMartialArtist = Helpers.CreateBlueprint<BlueprintFeature>("BackgroundMartialArtist", bp => {
-                bp.SetName("MartialArtist");
+                bp.SetName("Martial Artist");
                 bp.SetDescription("The MartialArtist is proficient with all exotic weapons.\n"
                     + "If the character already has the class skill, {g|Encyclopedia:Weapon_Proficiency}weapon proficiency{/g} or armor proficiency granted by the selected background "
                     + "from her class during character creation, then the corresponding {g|Encyclopedia:Bonus}bonuses{/g} from background change to a +1 competence bonus in case of skills, "

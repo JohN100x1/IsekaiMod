@@ -32,6 +32,7 @@ namespace IsekaiMod.Content.Heritages
             // TODO: Change DemonWingsAbility to custom use custom icon (create new BlueprintActivatableAbility)
             // TODO: use diabolic wings
             // TODO: rework charm to scale with charisma
+            // TODO: add trickery perception skill?
 
             // Charm Ability
             var ICON_CHARM = AssetLoader.LoadInternal("Abilities", "ICON_CHARM.png");
