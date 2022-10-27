@@ -1,0 +1,35 @@
+﻿using IsekaiMod.Utilities;
+using IsekaiMod.Extensions;
+using Kingmaker.Blueprints.Classes;
+using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.EntitySystem.Stats;
+
+namespace IsekaiMod.Content.Backgrounds
+{
+    internal class Salaryman
+    {
+        public static void Add()
+        {
+            var BackgroundSalaryman = Helpers.CreateBlueprint<BlueprintFeature>("BackgroundSalaryman", bp => {
+                bp.SetName("Salaryman");
+                bp.SetDescription("The Salaryman adds Perception to the list of her class skills. She can also use her Charisma instead of Wisdom while attempting Perception checks.\n"
+                    + "If the character already has the class skill, {g|Encyclopedia:Weapon_Proficiency}weapon proficiency{/g} or armor proficiency granted by the selected background "
+                    + "from her class during character creation, then the corresponding {g|Encyclopedia:Bonus}bonuses{/g} from background change to a +1 competence bonus in case of skills, "
+                    + "a +1 enhancement bonus in case of weapon proficiency and a -1 Armor {g|Encyclopedia:Check}Check{/g} {g|Encyclopedia:Penalty}Penalty{/g} reduction in case of armor proficiency.");
+                bp.m_Icon = null;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.AddComponent<AddClassSkill>(c => {
+                    c.Skill = StatType.SkillPerception;
+                });
+                bp.AddComponent<AddBackgroundClassSkill>(c => {
+                    c.Skill = StatType.SkillPerception;
+                });
+                bp.AddComponent<ReplaceStatBaseAttribute>(c => {
+                    c.TargetStat = StatType.SkillPerception;
+                    c.BaseAttributeReplacement = StatType.Charisma;
+                });
+            });
+        }
+    }
+}

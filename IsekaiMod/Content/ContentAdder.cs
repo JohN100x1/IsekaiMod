@@ -87,6 +87,7 @@ namespace IsekaiMod.Content
 
                 Backgrounds.TabletopRPGPlayer.Add();
                 Backgrounds.MartialArtist.Add();
+                Backgrounds.Salaryman.Add();
                 Backgrounds.IsekaiBackgroundSelection.Add();
             }
         }
