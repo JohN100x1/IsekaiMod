@@ -90,3 +90,5 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 | 18    | 30  | 30  | 24  | 24  | 24  | 24  | 24  | 18  | 6   |
 | 19    | 30  | 30  | 24  | 24  | 24  | 24  | 24  | 24  | 12  |
 | 20    | 30  | 30  | 24  | 24  | 24  | 24  | 24  | 24  | 20  |
+## Credits
+This code is repurposed from 
