@@ -18,8 +18,7 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 		- Uses dexterity for damage and attack rolls.
 - New Features
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
-	- Character Development Feats
-	- Training Arc feats
+	- `Character Development Feats`: A selection of bonus feats which have very good effects (e.g. energy immunity and crit bypass).
 	- `Cheat Skill`: Powerful 1st level feat.
 		- `AutoEmpower`: Empowers every spell you cast.
 		- `AutoExtend`: Extends every spell you cast.
@@ -36,11 +35,11 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 	- [ ] Isekai Succubus (Tiefling heritage)
 	- [ ] Isekai Angel (Aasimar heritage)
 - New Backgrounds
-	- [x] `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Knowledge skills can use WIS instead of INT.
-	- [ ] `Weeaboo`: Get proficiency in all exotic weapons and a +2 bonus to initiative.
-	- [ ] MMORPG Gamer
-	- [ ] Salaryman
-	- [ ] Gacha Gamer
+	- [x] `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Lore and Knowledge skills use CHA instead of WIS/INT.
+	- [x] `MartialArtist`: Get proficiency in all exotic weapons.
+	- [ ] `Gamer`: Adds all skills as class skills.
+	- [ ] `Salaryman`: Adds perception as class skill. Perception uses CHA instead of WIS.
+	- [ ] `Hero`: Get +10 bonus to all attributes.
 ### Isekai Protagonist Spell progression
 #### Spells per Day table
 | Level | 1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th | 9th |

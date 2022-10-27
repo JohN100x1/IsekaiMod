@@ -20,9 +20,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         public static void Add()
         {
             // TODO: Add isekai backgrounds, including ones that give good stats
+            // TODO: add powerful summons
             // TODO: rework isekai succubus heritage
             // TODO: add isekai angel heritage
-            // TODO: remove backstories
             // TODO: Use localisation instead of hardcoded strings
             // TODO: Add custom equipment
 

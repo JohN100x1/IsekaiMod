@@ -12,6 +12,7 @@ namespace IsekaiMod.Content.Backgrounds
         {
             //Isekai Backgrounds
             var BackgroundTabletopRPGPlayer = Resources.GetModBlueprint<BlueprintFeature>("BackgroundTabletopRPGPlayer");
+            var BackgroundMartialArtist = Resources.GetModBlueprint<BlueprintFeature>("BackgroundMartialArtist");
 
             // Isekai Background Selection
             var IsekaiBackgroundSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("IsekaiBackgroundSelection", bp => {
@@ -19,7 +20,10 @@ namespace IsekaiMod.Content.Backgrounds
                 bp.SetDescription("Before you were hit by a truck, you were a...");
                 bp.m_Icon = null;
                 bp.HideInUI = true;
-                bp.m_AllFeatures = new BlueprintFeatureReference[] { BackgroundTabletopRPGPlayer.ToReference<BlueprintFeatureReference>() };
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    BackgroundTabletopRPGPlayer.ToReference<BlueprintFeatureReference>(),
+                    BackgroundMartialArtist.ToReference<BlueprintFeatureReference>(),
+                };
                 bp.Groups = new FeatureGroup[] { FeatureGroup.BackgroundSelection };
             });
 

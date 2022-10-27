@@ -86,6 +86,7 @@ namespace IsekaiMod.Content
                 Heritages.TieflingHeritageSuccubus.Add();
 
                 Backgrounds.TabletopRPGPlayer.Add();
+                Backgrounds.MartialArtist.Add();
                 Backgrounds.IsekaiBackgroundSelection.Add();
             }
         }
