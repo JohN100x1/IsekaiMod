@@ -37,7 +37,6 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 - New Backgrounds
 	- [x] `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Lore and Knowledge skills use CHA instead of WIS/INT.
 	- [x] `MartialArtist`: Get proficiency in all exotic weapons.
-	- [ ] `Gamer`: Adds all skills as class skills.
 	- [ ] `Salaryman`: Adds perception as class skill. Perception uses CHA instead of WIS.
 	- [ ] `Hero`: Get +1 bonus to all attributes.
 	- [ ] `Legend`: Get +2 bonus to all attributes.
