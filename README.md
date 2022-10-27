@@ -95,6 +95,6 @@ This code was repurposed from the following repositories:
 - https://github.com/Vek17/TabletopTweaks-Base
 - https://github.com/ka-dyn/ExpandedContent
 
-Thanks to Vek17, bittercranberry, WittleWolfie and all other other contributors for their code.
+Thanks to Vek17, ka-dyn, bittercranberry, WittleWolfie and all other other contributors for their code.
 Special thanks to WittleWolfie for creating this modding guide that helped me get started:
 - https://github.com/WittleWolfie/OwlcatModdingWiki/wiki
