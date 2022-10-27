@@ -2,7 +2,6 @@
 using HarmonyLib;
 using IsekaiMod.Config;
 using IsekaiMod.Utilities;
-using Kingmaker;
 
 namespace IsekaiMod
 {
@@ -22,11 +21,6 @@ namespace IsekaiMod
         public static void Log(string msg)
         {
             ModSettings.ModEntry.Logger.Log(msg);
-        }
-        public static void Error(string message)
-        {
-            Log(message);
-            PFLog.Mods.Error(message);
         }
         static void OnSaveGUI(UnityModManager.ModEntry modEntry)
         {

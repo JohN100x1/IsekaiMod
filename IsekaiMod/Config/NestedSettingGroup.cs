@@ -6,12 +6,10 @@ namespace IsekaiMod.Config
     {
         private IDisableableGroup parent;
         public IDisableableGroup Parent { set { parent = value; } }
-
         public NestedSettingGroup([NotNull] IDisableableGroup parent)
         {
             this.parent = parent;
         }
-
         public override bool GroupIsDisabled() => parent.GroupIsDisabled() || base.GroupIsDisabled();
         public override void SetGroupDisabled(bool value)
         {
@@ -20,7 +18,6 @@ namespace IsekaiMod.Config
                 base.SetGroupDisabled(value);
             }
         }
-
         public override bool IsEnabled(string key)
         {
             return base.IsEnabled(key) && !GroupIsDisabled();

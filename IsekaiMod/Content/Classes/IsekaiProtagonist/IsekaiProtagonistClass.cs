@@ -20,8 +20,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         public static void Add()
         {
             // TODO: need to get artist permission for assets
-            // TODO: add background screenshots
-            // TODO: fix settings menus
             // TODO: turn 'spell negation' into an activatable ability
             // TODO: Add isekai backgrounds that give good stats
             // TODO: rework isekai succubus heritage

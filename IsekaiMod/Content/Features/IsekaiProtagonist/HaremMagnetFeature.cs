@@ -159,10 +159,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.AddComponent<AbilityTargetsAround>(c => {
                     c.m_Radius = new Feet() { m_Value = 60 };
                     c.m_TargetType = TargetType.Enemy;
-                    c.m_Condition = new ConditionsChecker()
-                    {
-                        Conditions = new Condition[0]
-                    };
+                    c.m_Condition = ActionFlow.EmptyCondition();
                 });
                 bp.AddComponent<ContextSetAbilityParams>(c => {
                     c.DC = 50;

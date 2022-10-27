@@ -18,11 +18,11 @@ namespace IsekaiMod.Config
             DisableAll = group.DisableAll;
             if (frozen)
             {
-                this.Settings.Keys.ToList().ForEach(key => {
+                Settings.Keys.ToList().ForEach(key => {
                     Settings[key].Enabled = false;
                 });
             }
-            this.DisableAll = group.DisableAll;
+            DisableAll = group.DisableAll;
             group.Settings.ForEach(entry => {
                 if (Settings.ContainsKey(entry.Key))
                 {
@@ -42,7 +42,6 @@ namespace IsekaiMod.Config
         {
             return !IsEnabled(key);
         }
-
         public virtual void ChangeSetting(string key, bool value)
         {
             if (GroupIsDisabled())
@@ -51,12 +50,10 @@ namespace IsekaiMod.Config
             }
             Settings[key].Enabled = value;
         }
-
         ref bool ICollapseableGroup.IsExpanded()
         {
             return ref IsExpanded;
         }
-
         public void SetExpanded(bool value)
         {
             IsExpanded = value;

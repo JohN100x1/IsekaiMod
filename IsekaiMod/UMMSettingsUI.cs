@@ -15,12 +15,9 @@ namespace IsekaiMod
         private static int selectedTab;
         public static void OnGUI(UnityModManager.ModEntry modEntry)
         {
-
-
             UI.AutoWidth();
             UI.TabBar(ref selectedTab,
                     () => UI.Label("Select your preferred settings and restart your game.".yellow().bold()),
-
                    new NamedAction("Added Content", () => SettingsTabs.AddedContent())
             );
         }
@@ -28,7 +25,6 @@ namespace IsekaiMod
 
     static class SettingsTabs
     {
-
         public static void AddedContent()
         {
             var TabLevel = SetttingUI.TabLevel.Zero;
@@ -39,6 +35,7 @@ namespace IsekaiMod
                 UI.Toggle("New Settings Off By Default".bold(), ref AddedContent.NewSettingsOffByDefault);
                 UI.Space(25);
                 SetttingUI.SettingGroup("Heritages", TabLevel, AddedContent.Heritages);
+                SetttingUI.SettingGroup("Classes", TabLevel, AddedContent.Classes);
                 SetttingUI.SettingGroup("Backgrounds", TabLevel, AddedContent.Backgrounds);
             }
         }

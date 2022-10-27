@@ -1,12 +1,28 @@
 {
   "NewSettingsOffByDefault": false,
+  "Heritages": {
+    "DisableAll": false,
+    "Settings": {},
+    "IsExpanded": true
+  },
+  "Backgrounds": {
+    "DisableAll": false,
+    "Settings": {
+      "Isekai Backgrounds": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds all the Isekai Backgrounds."
+      }
+    },
+    "IsExpanded": true
+  },
   "Classes": {
     "DisableAll": false,
     "Settings": {
       "Isekai Protagonist": {
         "Enabled": true,
-        "Homebrew": false,
-        "Description": "People that are reincarnated into this world are significantly more powerful than the average inhabitant."
+        "Homebrew": true,
+        "Description": "Adds the Isekai Protagonist class."
       }
     },
     "IsExpanded": true

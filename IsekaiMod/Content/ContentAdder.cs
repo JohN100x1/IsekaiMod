@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using IsekaiMod.Config;
 using Kingmaker.Blueprints.JsonSystem;
 
 namespace IsekaiMod.Content
@@ -12,6 +13,22 @@ namespace IsekaiMod.Content
             public static void Postfix() {
                 if (Initialized) return;
                 Initialized = true;
+
+                if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) {
+                    AddIsekaiProtagonistClass();
+                }
+
+                // Add Heritages
+                // Heritages.TieflingHeritageSuccubus.Add();
+
+                if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds"))
+                {
+                    AddIsekaiBackgrounds();
+                }
+            }
+
+            public static void AddIsekaiProtagonistClass()
+            {
                 // Isekai Protagonist Class
                 Classes.IsekaiProtagonist.IsekaiProtagonistSpellList.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistSpellsPerDay.Add();
@@ -82,10 +99,9 @@ namespace IsekaiMod.Content
                 // Add Progression & Prebuild after Class and class-dependent features are added
                 Classes.IsekaiProtagonist.PrebuildIsekaiProtagonistFeatureList.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistProgression.Add();
-
-                // Add Heritages
-                // Heritages.TieflingHeritageSuccubus.Add();
-
+            }
+            public static void AddIsekaiBackgrounds()
+            {
                 // Add Backgrounds
                 Backgrounds.TabletopRPGPlayer.Add();
                 Backgrounds.MartialArtist.Add();

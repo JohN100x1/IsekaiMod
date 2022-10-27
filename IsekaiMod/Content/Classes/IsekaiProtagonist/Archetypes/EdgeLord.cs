@@ -15,9 +15,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var EdgeLordProficiencies = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordProficiencies");
             var SupersonicCombat = Resources.GetModBlueprint<BlueprintFeature>("SupersonicCombat");
             var EdgeLordFastMovement = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordFastMovement");
-            var ExtraStrike1 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike1");
-            var ExtraStrike2 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike2");
-            var ExtraStrike3 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike3");
+            var ExtraStrike = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike");
             var CripplingStrike = Resources.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
             var DispellingAttack = Resources.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
             var ExtremeSpeed = Resources.GetModBlueprint<BlueprintFeature>("ExtremeSpeed");
@@ -54,11 +52,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, EdgeLordProficiencies, SupersonicCombat),
-                    Helpers.LevelEntry(5, ExtraStrike1),
+                    Helpers.LevelEntry(5, ExtraStrike),
                     Helpers.LevelEntry(7, EdgeLordFastMovement),
                     Helpers.LevelEntry(8, CripplingStrike),
-                    Helpers.LevelEntry(10, ExtraStrike2, DispellingAttack),
-                    Helpers.LevelEntry(15, ExtraStrike3),
+                    Helpers.LevelEntry(10, ExtraStrike, DispellingAttack),
+                    Helpers.LevelEntry(15, ExtraStrike),
                     Helpers.LevelEntry(20, ExtremeSpeed),
                 };
                 bp.OverrideAttributeRecommendations = true;

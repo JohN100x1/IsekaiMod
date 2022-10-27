@@ -4,8 +4,9 @@ namespace IsekaiMod.Config
     public class AddedContent : IUpdatableSettings
     {
         public bool NewSettingsOffByDefault = false;
-        public SettingGroup Heritages = new SettingGroup();
-        public SettingGroup Backgrounds = new SettingGroup();
+        public SettingGroup Heritages = new();
+        public SettingGroup Backgrounds = new();
+        public SettingGroup Classes = new();
 
         public void Init()
         {
@@ -17,6 +18,7 @@ namespace IsekaiMod.Config
             NewSettingsOffByDefault = loadedSettings.NewSettingsOffByDefault;
             Heritages.LoadSettingGroup(loadedSettings.Heritages, NewSettingsOffByDefault);
             Backgrounds.LoadSettingGroup(loadedSettings.Backgrounds, NewSettingsOffByDefault);
+            Classes.LoadSettingGroup(loadedSettings.Classes, NewSettingsOffByDefault);
         }
     }
 }
