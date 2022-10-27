@@ -94,6 +94,7 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 This code was repurposed from the following repositories:
 - https://github.com/Vek17/TabletopTweaks-Base
 - https://github.com/ka-dyn/ExpandedContent
+
 Thanks to Vek17, bittercranberry, WittleWolfie and all other other contributors for their code.
 Special thanks to WittleWolfie for creating this modding guide that helped me get started:
 - https://github.com/WittleWolfie/OwlcatModdingWiki/wiki
