@@ -19,6 +19,8 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 - If you edited the blueprint names, copy `Blueprints.json` as well.
 - If you added new assets, copy those as well.
 ## Mod Information
+### Requirements
+- [Unity Mod Manager](https://www.nexusmods.com/site/mods/21).
 ### Installation
 - Open Unity Mod Manager and go to the 'Mods' tab.
 - Drag and Drop the IsekaiMod.zip file into Unity Mod Manager.
