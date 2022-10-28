@@ -51,7 +51,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.TrueMainCharacter.Add();
                 Features.IsekaiProtagonist.TrainingArc.TrainingMontage.Add();
                 Features.IsekaiProtagonist.TrainingArc.BodyStrengthening.Add();
-                Features.IsekaiProtagonist.TrainingArc.SpellNegation.Add();
+                Features.IsekaiProtagonist.TrainingArc.SpellNegationFeature.Add();
                 Features.IsekaiProtagonist.TrainingArc.ExtremeSpeed.Add();
                 Features.IsekaiProtagonist.TrainingArc.TrainingArcSelection.Add();
                 Features.IsekaiProtagonist.BeachEpisode.HealthyBody.Add();

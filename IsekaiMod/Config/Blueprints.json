@@ -60,7 +60,9 @@
 
     "TrainingMontage": "557a9018-bea9-4f2a-b110-27e9d332ab56",
     "BodyStrengthening": "f48b2667-6ac5-4971-b0a4-6e04d5082680",
-    "SpellNegation": "4baa3f55-899d-43db-9a95-3a570f78263f",
+    "SpellNegationBuff": "92a00da0-0ab7-42f7-9390-b8acacb3bf35",
+    "SpellNegationAbility": "a3f078e9-aee6-4adb-85a1-1079af938af1",
+    "SpellNegationFeature": "4baa3f55-899d-43db-9a95-3a570f78263f",
     "ExtremeSpeed": "51da3531-fc19-4e1a-abd2-804ce067c1f1",
 
     "AcidImmunity": "66ea106a-bb0c-4a52-a1bd-4fa77955ae4a",

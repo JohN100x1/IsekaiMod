@@ -21,6 +21,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         {
             // TODO: update screenshots
             // TODO: turn 'spell negation' into an activatable ability
+            // TODO: test all features
+            // TODO: nerf true main character and godhood
+            // TODO: copy localization
 
             // TODO: Add isekai backgrounds that give good stats
             // TODO: rework isekai succubus heritage

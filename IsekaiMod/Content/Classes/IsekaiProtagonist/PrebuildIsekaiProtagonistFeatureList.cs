@@ -59,7 +59,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var AutoQuickenFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoQuickenFeature");
             var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
             var BodyStrengthening = Resources.GetModBlueprint<BlueprintFeature>("BodyStrengthening");
-            var SpellNegation = Resources.GetModBlueprint<BlueprintFeature>("SpellNegation");
+            var SpellNegationFeature = Resources.GetModBlueprint<BlueprintFeature>("SpellNegationFeature");
             var MasterSelf = Resources.GetModBlueprint<BlueprintFeature>("MasterSelf");
             var AlphaStrike = Resources.GetModBlueprint<BlueprintFeature>("AlphaStrike");
             var BetaStrike = Resources.GetModBlueprint<BlueprintFeature>("BetaStrike");
@@ -137,7 +137,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                         m_Features = new BlueprintFeatureReference[]{
                             TrainingMontage.ToReference<BlueprintFeatureReference>(),
                             BodyStrengthening.ToReference<BlueprintFeatureReference>(),
-                            SpellNegation.ToReference<BlueprintFeatureReference>(),
+                            SpellNegationFeature.ToReference<BlueprintFeatureReference>(),
                         }
                     },
                     new SelectionEntry()
