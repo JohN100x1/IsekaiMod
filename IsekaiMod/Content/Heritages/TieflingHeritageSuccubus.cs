@@ -30,7 +30,7 @@ namespace IsekaiMod.Content.Heritages
 
             // TODO: Change DemonWingsAbility to custom use custom icon (create new BlueprintActivatableAbility)
             // TODO: use diabolic wings
-            // TODO: rework charm to scale with charisma
+            // TODO: rework charm to scale with charisma (use BlueprintUnitProperty with SimplePropertyGetter and set DC using ContextSetAbilityParams)
             // TODO: add perception and persuasion as class skills
             // TODO: add an ability to summon a babau
             // TODO: attacks apply negative levels
