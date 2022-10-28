@@ -20,7 +20,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         public static void Add()
         {
             // TODO: update screenshots
-            // TODO: turn 'spell negation' into an activatable ability
             // TODO: test all features
             // TODO: nerf true main character and godhood
             // TODO: copy localization
