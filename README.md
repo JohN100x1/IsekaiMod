@@ -87,7 +87,7 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 | 19    | 30  | 30  | 24  | 24  | 24  | 24  | 24  | 24  | 12  |
 | 20    | 30  | 30  | 24  | 24  | 24  | 24  | 24  | 24  | 20  |
 ## Credits
-This code was repurposed from the following repositories:
+Alot of the code was repurposed from the following repositories:
 - https://github.com/Vek17/TabletopTweaks-Base
 - https://github.com/ka-dyn/ExpandedContent
 
