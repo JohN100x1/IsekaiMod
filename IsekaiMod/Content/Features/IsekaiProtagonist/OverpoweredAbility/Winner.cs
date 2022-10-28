@@ -11,7 +11,7 @@ using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class Winner
     {
@@ -48,7 +48,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
             });
             var Winner = Helpers.CreateBlueprint<BlueprintFeature>("Winner", bp => {
                 bp.SetName("Winner");
-                bp.SetDescription("You decide not to have any Cheat Abilitys after reincarnating into the new world.");
+                bp.SetDescription("You decide not to have any Overpowered Abilitys after reincarnating into the new world.");
                 bp.m_Icon = Icon_Winner;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { WinnerAbility.ToReference<BlueprintUnitFactReference>() };

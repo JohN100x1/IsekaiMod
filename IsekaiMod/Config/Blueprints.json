@@ -26,7 +26,7 @@
     "IsekaiProtagonistBonusFeat": "414b5c1b-3b32-4e54-99e3-96505698a929",
     "IsekaiProtagonistSneakFeat": "8f8b74df-5190-42e1-a7ae-ad797cb8430a",
     "IsekaiProtagonistPlotArmorFeat": "91751bce-90bc-42a2-b667-c807146a0cfb",
-    "IsekaiProtagonistCheatAbilityFeat": "107d5300-b827-4963-a84c-df0e61fa7107",
+    "IsekaiProtagonistOverpoweredAbilityFeat": "107d5300-b827-4963-a84c-df0e61fa7107",
 
     "IsekaiProtagonistTalentSelection": "b27a3573-9bbd-4653-bee5-9c022008c490",
     "IsekaiProtagonistBonusFeatSelection": "039dec4f-d83c-4e4b-9be9-e4aae6fe4b5b",
@@ -40,8 +40,8 @@
 
     "TrainingArcSelection": "1313a25a-e9ba-4a67-b746-4c37a9629f19",
     "BeachEpisodeSelection": "7697c19c-c07c-4411-ada4-5ece5b0a58fc",
-    "CheatAbilitySelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
-    "CheatAbilityMythicSelection": "46d086ef-4932-4fb1-8652-cd4afabada43",
+    "OverpoweredAbilitySelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
+    "OverpoweredAbilityMythicSelection": "46d086ef-4932-4fb1-8652-cd4afabada43",
     "CharacterDevelopmentSelection1": "b5e98cc6-1828-4009-8a9d-ae8638eda059",
     "CharacterDevelopmentSelection2": "26420865-8717-4d1a-97e4-b5f80d46d212",
     "CharacterDevelopmentSelection3": "16f18340-0d22-4416-b171-5296348cdc29",

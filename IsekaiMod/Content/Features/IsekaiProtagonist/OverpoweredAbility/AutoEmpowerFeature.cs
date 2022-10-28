@@ -9,7 +9,7 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class AutoEmpowerFeature
     {
@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
         {
             var Icon_EmpowerSpell = Resources.GetBlueprint<BlueprintFeature>("a1de1e4f92195b442adb946f0e2b9d4e").m_Icon;
             var AutoEmpowerBuff = Helpers.CreateBlueprint<BlueprintBuff>("AutoEmpowerBuff", bp => {
-                bp.SetName("Cheat Ability — Auto Empower");
+                bp.SetName("Overpowered Ability — Auto Empower");
                 bp.SetDescription("Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat.");
                 bp.m_Icon = Icon_EmpowerSpell;
                 bp.AddComponent<AutoMetamagic>(c => {
@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
                 bp.FxOnRemove = new PrefabLink();
             });
             var AutoEmpowerAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("AutoEmpowerAbility", bp => {
-                bp.SetName("Cheat Ability — Auto Empower");
+                bp.SetName("Overpowered Ability — Auto Empower");
                 bp.SetDescription("Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat.");
                 bp.m_Icon = Icon_EmpowerSpell;
                 bp.m_Buff = AutoEmpowerBuff.ToReference<BlueprintBuffReference>();
@@ -42,7 +42,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
             var AutoEmpowerFeature = Helpers.CreateBlueprint<BlueprintFeature>("AutoEmpowerFeature", bp => {
-                bp.SetName("Cheat Ability — Auto Empower");
+                bp.SetName("Overpowered Ability — Auto Empower");
                 bp.SetDescription("Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat.");
                 bp.m_Icon = Icon_EmpowerSpell;
                 bp.AddComponent<AddFacts>(c => {

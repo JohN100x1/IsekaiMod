@@ -9,7 +9,7 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class AutoQuickenFeature
     {
@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
         {
             var Icon_QuickenSpell = Resources.GetBlueprint<BlueprintFeature>("ef7ece7bb5bb66a41b256976b27f424e").m_Icon;
             var AutoQuickenBuff = Helpers.CreateBlueprint<BlueprintBuff>("AutoQuickenBuff", bp => {
-                bp.SetName("Cheat Ability — Auto Quicken");
+                bp.SetName("Overpowered Ability — Auto Quicken");
                 bp.SetDescription("Every time you cast a spell, it becomes quickened, as though using the Quicken Spell feat.");
                 bp.m_Icon = Icon_QuickenSpell;
                 bp.AddComponent<AutoMetamagic>(c => {
@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
                 bp.FxOnRemove = new PrefabLink();
             });
             var AutoQuickenAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("AutoQuickenAbility", bp => {
-                bp.SetName("Cheat Ability — Auto Quicken");
+                bp.SetName("Overpowered Ability — Auto Quicken");
                 bp.SetDescription("Every time you cast a spell, it becomes quickened, as though using the Quicken Spell feat.");
                 bp.m_Icon = Icon_QuickenSpell;
                 bp.m_Buff = AutoQuickenBuff.ToReference<BlueprintBuffReference>();
@@ -42,7 +42,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
             var AutoQuickenFeature = Helpers.CreateBlueprint<BlueprintFeature>("AutoQuickenFeature", bp => {
-                bp.SetName("Cheat Ability — Auto Quicken");
+                bp.SetName("Overpowered Ability — Auto Quicken");
                 bp.SetDescription("Every time you cast a spell, it becomes quickened, as though using the Quicken Spell feat.");
                 bp.m_Icon = Icon_QuickenSpell;
                 bp.AddComponent<AddFacts>(c => {

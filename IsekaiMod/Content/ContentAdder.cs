@@ -69,17 +69,17 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.FireImmunity.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.SonicImmunity.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection.Add();
-                Features.IsekaiProtagonist.CheatAbility.AutoEmpowerFeature.Add();
-                Features.IsekaiProtagonist.CheatAbility.AutoExtendFeature.Add();
-                Features.IsekaiProtagonist.CheatAbility.AutoMaximizeFeature.Add();
-                Features.IsekaiProtagonist.CheatAbility.AutoQuickenFeature.Add();
-                Features.IsekaiProtagonist.CheatAbility.AutoReachFeatureFeature.Add();
-                Features.IsekaiProtagonist.CheatAbility.GraspHeartFeature.Add();
-                Features.IsekaiProtagonist.CheatAbility.DupeGoldFeature.Add();
-                Features.IsekaiProtagonist.CheatAbility.PerfectRollFeature.Add();
-                Features.IsekaiProtagonist.CheatAbility.Winner.Add();
-                Features.IsekaiProtagonist.CheatAbility.CheatAbilitySelection.Add();
-                Features.IsekaiProtagonist.CheatAbility.CheatAbilityMythicSelection.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoEmpowerFeature.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoExtendFeature.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoMaximizeFeature.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoQuickenFeature.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoReachFeatureFeature.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.GraspHeartFeature.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.DupeGoldFeature.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.PerfectRollFeature.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.Winner.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilityMythicSelection.Add();
                 // God Emporer Archetype
                 Features.IsekaiProtagonist.GodEmporer.GodEmporerProficiencies.Add();
                 Features.IsekaiProtagonist.GodEmporer.NascentApotheosis.Add();

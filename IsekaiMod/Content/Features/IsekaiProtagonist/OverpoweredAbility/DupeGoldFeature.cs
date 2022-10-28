@@ -14,7 +14,7 @@ using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class DupeGoldFeature
     {
@@ -26,7 +26,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
             // Feature
             var Icon_Dupe_Gold = AssetLoader.LoadInternal("Features", "ICON_DUPE_GOLD.png");
             var DupeGoldAbility = Helpers.CreateBlueprint<BlueprintAbility>("DupeGoldAbility", bp => {
-                bp.SetName("Cheat Ability — Dupe Gold");
+                bp.SetName("Overpowered Ability — Dupe Gold");
                 bp.SetDescription("As a standard action, you gain 1 million gold.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = Helpers.CreateActionList(
@@ -63,7 +63,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
                 bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
             });
             var DupeGoldFeature = Helpers.CreateBlueprint<BlueprintFeature>("DupeGoldFeature", bp => {
-                bp.SetName("Cheat Ability — Dupe Gold");
+                bp.SetName("Overpowered Ability — Dupe Gold");
                 bp.SetDescription("As a standard action, you gain 1 million gold.");
                 bp.m_Icon = Icon_Dupe_Gold;
                 bp.Ranks = 1;

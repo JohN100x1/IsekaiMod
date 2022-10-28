@@ -47,7 +47,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
 
             var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
-            var CheatAbilitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CheatAbilitySelection");
+            var OverpoweredAbilitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection");
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
             var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
             var CharacterDevelopmentSelection1 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection1");
@@ -126,7 +126,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     },
                     new SelectionEntry()
                     {
-                        m_Selection = CheatAbilitySelection.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Selection = OverpoweredAbilitySelection.ToReference<BlueprintFeatureSelectionReference>(),
                         m_Features = new BlueprintFeatureReference[]{
                             AutoQuickenFeature.ToReference<BlueprintFeatureReference>()
                         }

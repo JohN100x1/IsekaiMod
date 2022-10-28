@@ -16,7 +16,7 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class GraspHeartFeature
     {
@@ -32,7 +32,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
             // Feature
             var Icon_DeathClutch = Resources.GetBlueprint<BlueprintAbility>("c3d2294a6740bc147870fff652f3ced5").m_Icon;
             var GraspHeartAbility = Helpers.CreateBlueprint<BlueprintAbility>("GraspHeartAbility", bp => {
-                bp.SetName("Cheat Ability — Grasp Heart");
+                bp.SetName("Overpowered Ability — Grasp Heart");
                 bp.SetDescription("Kills the targeted creature.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = Helpers.CreateActionList(
@@ -78,7 +78,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
                 bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
             });
             var GraspHeartFeature = Helpers.CreateBlueprint<BlueprintFeature>("GraspHeartFeature", bp => {
-                bp.SetName("Cheat Ability — Grasp Heart");
+                bp.SetName("Overpowered Ability — Grasp Heart");
                 bp.SetDescription("You gain the Grasp Heart ability which can kill any creature in range.");
                 bp.m_Icon = Icon_DeathClutch;
                 bp.Ranks = 1;

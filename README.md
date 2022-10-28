@@ -30,7 +30,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- Has sneak attack.
 		- Has extra feats like the fighter but not limited to combat feats.
 		- Starts of with the `Plot Armor` feature which make them hard to kill.
-		- Has Cheat Abilities.
+		- Has Overpowered Abilities.
 		- Can merge their spellbook with angel or lich.
 	- `God Emporer` (Isekai Protagonist Archetype)
 		- Has powerful auras that buff allies and debuff enemies.
@@ -41,7 +41,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 - New Features
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
 	- `Character Development Feats`: A selection of bonus feats which have very good effects (e.g. energy immunity and crit bypass).
-	- `Cheat Ability`: Powerful 1st level feat.
+	- `Overpowered Ability`: Powerful 1st level feat.
 		- `AutoEmpower`: Empowers every spell you cast.
 		- `AutoExtend`: Extends every spell you cast.
 		- `AutoMaximize`: Maximizes every spell you cast.
@@ -52,7 +52,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Perfect Roll`: Roll 20 on every d20 roll.
 		- `Winner`: Does nothing.
 - New Mythic abilities
-	- `Second Cheat Ability`: Gives you another Cheat Ability.
+	- `Second Overpowered Ability`: Gives you another Overpowered Ability.
 - New Backgrounds
 	- `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Lore and Knowledge skills use CHA instead of WIS/INT.
 	- `MartialArtist`: Get proficiency in all exotic weapons.
