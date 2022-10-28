@@ -422,13 +422,13 @@
     },
     {
       "Key": "475b2ade7a56431a88e976c06f21b205",
-      "SimpleName": "ExtremeSpeed.Description",
+      "SimpleName": "ExtremeSpeedFeature.Description",
       "ProcessTemplates": true,
       "enGB": "After extensive speed training, you gain a +100 insight bonus to your speed."
     },
     {
       "Key": "6e8ab2deb88a469c8b5022f6d480fb26",
-      "SimpleName": "ExtremeSpeed.Name",
+      "SimpleName": "ExtremeSpeedFeature.Name",
       "ProcessTemplates": false,
       "enGB": "Extreme Speed"
     },

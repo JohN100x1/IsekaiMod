@@ -63,7 +63,9 @@
     "SpellNegationBuff": "92a00da0-0ab7-42f7-9390-b8acacb3bf35",
     "SpellNegationAbility": "a3f078e9-aee6-4adb-85a1-1079af938af1",
     "SpellNegationFeature": "4baa3f55-899d-43db-9a95-3a570f78263f",
-    "ExtremeSpeed": "51da3531-fc19-4e1a-abd2-804ce067c1f1",
+    "ExtremeSpeedBuff": "2b57d0d0-20fd-479e-9bb8-95529a0ca8bf",
+    "ExtremeSpeedAbility": "91e70095-88bd-467c-bd9c-ba6f980c7576",
+    "ExtremeSpeedFeature": "51da3531-fc19-4e1a-abd2-804ce067c1f1",
 
     "AcidImmunity": "66ea106a-bb0c-4a52-a1bd-4fa77955ae4a",
     "ColdImmunity": "f956dd94-9198-4011-b836-465ef8b1eeb8",

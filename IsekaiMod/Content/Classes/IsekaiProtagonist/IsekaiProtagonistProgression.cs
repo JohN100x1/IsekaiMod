@@ -42,7 +42,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var ExtraStrike = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike");
             var CripplingStrike = Resources.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
             var DispellingAttack = Resources.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
-            var ExtremeSpeed = Resources.GetModBlueprint<BlueprintFeature>("ExtremeSpeed");
+            var ExtremeSpeedFeature = Resources.GetModBlueprint<BlueprintFeature>("ExtremeSpeedFeature");
 
             var OverpoweredAbilitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection");
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
@@ -94,7 +94,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 Helpers.CreateUIGroup(OverpoweredAbilitySelection, TrainingArcSelection, NascentApotheosis, GodlyVessel, CharacterDevelopmentSelection1, ProtectiveAuraFeature, CharacterDevelopmentSelection2, GloriousAuraFeature, SiphoningAuraFeature, CharacterDevelopmentSelection3, CharacterDevelopmentSelection4, CharacterDevelopmentSelection5, Godhood, ExtraStrike),
                 Helpers.CreateUIGroup(PlotArmor, CripplingStrike, DispellingAttack, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter),
-                Helpers.CreateUIGroup(SupersonicCombat, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, ExtremeSpeed),
+                Helpers.CreateUIGroup(SupersonicCombat, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, ExtremeSpeedFeature),
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
                 EdgeLordProficiencies.ToReference<BlueprintFeatureBaseReference>(),

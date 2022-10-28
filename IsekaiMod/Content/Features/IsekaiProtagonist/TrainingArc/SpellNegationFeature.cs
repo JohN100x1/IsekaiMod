@@ -46,7 +46,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.TrainingArc
                 bp.SetDescription("You gain spell resistance equal to 10 + twice your character level.");
                 bp.m_Icon = Icon_SpellResistance;
                 bp.m_Buff = SpellNegationBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.MetamagicRod;
+                bp.Group = ActivatableAbilityGroup.None;
                 bp.WeightInGroup = 1;
                 bp.IsOnByDefault = true;
                 bp.DeactivateImmediately = true;
