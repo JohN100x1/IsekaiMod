@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: fix prebuild
+            // TODO: add development guide in readme.md
             // TODO: update screenshots
             // TODO: turn 'spell negation' into an activatable ability
 
