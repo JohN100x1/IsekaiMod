@@ -21,28 +21,28 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             var Icon_Protective_Aura = AssetLoader.LoadInternal("Features", "ICON_PROTECTIVE_AURA.png");
             var ProtectiveAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("ProtectiveAuraBuff", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("This character has a +4 bonus on AC and saving throws.");
+                bp.SetDescription("This character has a +2 bonus on AC and saving throws.");
                 bp.IsClassFeature = true;
                 bp.m_Icon = Icon_Protective_Aura;
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.None;
                     c.Stat = StatType.AC;
-                    c.Value = 4;
+                    c.Value = 2;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.None;
                     c.Stat = StatType.SaveFortitude;
-                    c.Value = 4;
+                    c.Value = 2;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.None;
                     c.Stat = StatType.SaveReflex;
-                    c.Value = 4;
+                    c.Value = 2;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.None;
                     c.Stat = StatType.SaveWill;
-                    c.Value = 4;
+                    c.Value = 2;
                 });
                 bp.FxOnStart = new PrefabLink();
                 bp.FxOnRemove = new PrefabLink();
@@ -59,7 +59,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             });
             var ProtectiveAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("ProtectiveAuraAreaBuff", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emporer take a +4 bonus on AC, and saving throws.");
+                bp.SetDescription("Allies within 40 feet of the God Emporer take a +2 bonus on AC, and saving throws.");
                 bp.m_Icon = Icon_Protective_Aura;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -71,7 +71,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             });
             var ProtectiveAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("ProtectiveAuraAbility", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emporer take a +4 bonus on AC, and saving throws.");
+                bp.SetDescription("Allies within 40 feet of the God Emporer take a +2 bonus on AC, and saving throws.");
                 bp.m_Icon = Icon_Protective_Aura;
                 bp.m_Buff = ProtectiveAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.None;
@@ -83,7 +83,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             });
             var ProtectiveAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("ProtectiveAuraFeature", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("At 6th level, allies within 40 feet of the God Emporer take a +4 bonus on AC, and saving throws.");
+                bp.SetDescription("At 6th level, allies within 40 feet of the God Emporer take a +2 bonus on AC, and saving throws.");
                 bp.m_Icon = Icon_Protective_Aura;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

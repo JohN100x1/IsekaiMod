@@ -21,33 +21,33 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             var Icon_Dark_Aura = AssetLoader.LoadInternal("Features", "ICON_DARK_AURA.png");
             var DarkAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("DarkAuraBuff", bp => {
                 bp.SetName("Dark Aura");
-                bp.SetDescription("This creature has a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.SetDescription("This creature has a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.IsClassFeature = true;
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.AdditionalAttackBonus;
-                    c.Value = -4;
+                    c.Value = -2;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.AC;
-                    c.Value = -4;
+                    c.Value = -2;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.SaveFortitude;
-                    c.Value = -4;
+                    c.Value = -2;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.SaveReflex;
-                    c.Value = -4;
+                    c.Value = -2;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.SaveWill;
-                    c.Value = -4;
+                    c.Value = -2;
                 });
                 bp.FxOnStart = new PrefabLink();
                 bp.FxOnRemove = new PrefabLink();
@@ -64,7 +64,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             });
             var DarkAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("DarkAuraAreaBuff", bp => {
                 bp.SetName("Dark Aura");
-                bp.SetDescription("Enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.SetDescription("Enemies within 40 feet of the God Emporer take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddAreaEffect>(c => {
@@ -76,7 +76,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             });
             var DarkAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("DarkAuraAbility", bp => {
                 bp.SetName("Dark Aura");
-                bp.SetDescription("Enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.SetDescription("Enemies within 40 feet of the God Emporer take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.m_Buff = DarkAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.None;
@@ -88,7 +88,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             });
             var DarkAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("DarkAuraFeature", bp => {
                 bp.SetName("Dark Aura");
-                bp.SetDescription("At 10th level, enemies within 40 feet of the God Emporer take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.SetDescription("At 10th level, enemies within 40 feet of the God Emporer take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
