@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
     {
         public static void Add()
         {
-            var Icon_Winner = AssetLoader.LoadInternal("Features", "ICON_WINNER.png");
+            var Icon_Winner = Resources.GetBlueprint<BlueprintAbility>("0082c3ed87626204f9b46d84cec1518d").m_Icon;
             var WinnerAbility = Helpers.CreateBlueprint<BlueprintAbility>("WinnerAbility", bp => {
                 bp.SetName("Celebrate");
                 bp.SetDescription("You celebrate your awesomeness (Does nothing).");

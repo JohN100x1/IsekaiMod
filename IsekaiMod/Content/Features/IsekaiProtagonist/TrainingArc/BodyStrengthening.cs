@@ -33,6 +33,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.TrainingArc
                 bp.m_Icon = Icon_IronBody;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
+                bp.ReapplyOnLevelUp = true;
             });
         }
     }

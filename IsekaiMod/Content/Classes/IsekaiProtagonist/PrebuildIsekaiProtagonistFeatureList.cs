@@ -14,25 +14,26 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             // Prebuild Features
             var PowerAttack = Resources.GetBlueprint<BlueprintFeature>("9972f33f977fc724c838e59641b2fca5");
             var CombatReflexes = Resources.GetBlueprint<BlueprintFeature>("0f8939ae6f220984e8fb568abbdfba95");
-            var WeaponSpecializationScythe = Resources.GetBlueprint<BlueprintFeature>("d0a776a7998164d46a2100ed29004c0a");
-            var Outflank = Resources.GetBlueprint<BlueprintFeature>("422dab7309e1ad343935f33a4d6e9f11");
-            var WeaponFocusGreaterScythe = Resources.GetBlueprint<BlueprintFeature>("b03d4fdb4bd6353499c3e6318e3e2d66");
             var ImprovedInitiative = Resources.GetBlueprint<BlueprintFeature>("797f25d709f559546b29e7bcb181cc74");
-            var IntimidatingProwess = Resources.GetBlueprint<BlueprintFeature>("d76497bfc48516e45a0831628f767a0f");
+            var IronWill = Resources.GetBlueprint<BlueprintFeature>("175d1577bb6c9a04baf88eec99c66334");
+            var Outflank = Resources.GetBlueprint<BlueprintFeature>("422dab7309e1ad343935f33a4d6e9f11");
+            var IronWillImproved = Resources.GetBlueprint<BlueprintFeature>("3ea2215150a1c8a4a9bfed9d9023903e");
+            var Dodge = Resources.GetBlueprint<BlueprintFeature>("97e216dbb46ae3c4faef90cf6bbe6fd5");
+            var Toughness = Resources.GetBlueprint<BlueprintFeature>("d09b20029e9abfe4480b356c92095623");
             var SpellPenetration = Resources.GetBlueprint<BlueprintFeature>("ee7dc126939e4d9438357fbd5980d459");
             var GreaterSpellPenetration = Resources.GetBlueprint<BlueprintFeature>("1978c3f91cfbbc24b9c9b0d017f4beec");
-            var LightningReflexes = Resources.GetBlueprint<BlueprintFeature>("15e7da6645a7f3d41bdad7c8c4b9de1e");
+
             var Cleave = Resources.GetBlueprint<BlueprintFeature>("d809b6c4ff2aaff4fa70d712a70f7d7b");
             var CleavingFinish = Resources.GetBlueprint<BlueprintFeature>("59bd93899149fa44687ff4121389b3a9");
-            var WeaponFocusScythe = Resources.GetBlueprint<BlueprintFeature>("9db0097ee1a4b4b4688f9a3190c23969");
-            var DazzlingDisplay = Resources.GetBlueprint<BlueprintFeature>("bcbd674ec70ff6f4894bb5f07b6f4095");
-            var ImprovedCriticalScythe = Resources.GetBlueprint<BlueprintFeature>("0fba06b436d498e46bbb598f8d8b2c83");
-            var ShatterDefenses = Resources.GetBlueprint<BlueprintFeature>("61a17ccbbb3d79445b0926347ec07577");
-            var WeaponSpecializationGreaterScythe = Resources.GetBlueprint<BlueprintFeature>("312a1650efbfb7849ab008bd4edc7d5d");
-            var PenetratingStrike = Resources.GetBlueprint<BlueprintFeature>("308cd7dc4f10efd428f531bbf4f2823d");
-            var GreaterPenetratingStrike = Resources.GetBlueprint<BlueprintFeature>("eb6eb946c68ef094f89c7633f5bfdc9b");
+            var PointBlankShot = Resources.GetBlueprint<BlueprintFeature>("0da0c194d6e1d43419eb8d990b28e0ab");
+            var PreciseShot = Resources.GetBlueprint<BlueprintFeature>("8f3d1e6b4be006f4d896081f2f889665");
+            var DeadlyAim = Resources.GetBlueprint<BlueprintFeature>("f47df34d53f8c904f9981a3ee8e84892");
             var GreatFortitude = Resources.GetBlueprint<BlueprintFeature>("79042cb55f030614ea29956177977c52");
-            var IronWill = Resources.GetBlueprint<BlueprintFeature>("175d1577bb6c9a04baf88eec99c66334");
+            var GreatFortitudeImproved = Resources.GetBlueprint<BlueprintFeature>("f5db1cc7ad48d794f85252fa4a64157b");
+            var LightningReflexes = Resources.GetBlueprint<BlueprintFeature>("15e7da6645a7f3d41bdad7c8c4b9de1e");
+            var LightningReflexesImproved = Resources.GetBlueprint<BlueprintFeature>("1e813eb8159b67a459b1c975027866e5");
+            var MaximizeSpellFeat = Resources.GetBlueprint<BlueprintFeature>("7f2b282626862e345935bbea5e66424b");
+            var EmpowerSpellFeat = Resources.GetBlueprint<BlueprintFeature>("a1de1e4f92195b442adb946f0e2b9d4e");
 
             // Prebuild Selections
             var BackgroundNone = Resources.GetBlueprint<BlueprintFeature>("7d300f497584d9245ac24c062dce0bd6");
@@ -96,14 +97,14 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                         m_Features = new BlueprintFeatureReference[]{
                             PowerAttack.ToReference<BlueprintFeatureReference>(),
                             CombatReflexes.ToReference<BlueprintFeatureReference>(),
-                            WeaponSpecializationScythe.ToReference<BlueprintFeatureReference>(),
-                            Outflank.ToReference<BlueprintFeatureReference>(),
-                            WeaponFocusGreaterScythe.ToReference<BlueprintFeatureReference>(),
                             ImprovedInitiative.ToReference<BlueprintFeatureReference>(),
-                            IntimidatingProwess.ToReference<BlueprintFeatureReference>(),
+                            Outflank.ToReference<BlueprintFeatureReference>(),
+                            IronWill.ToReference<BlueprintFeatureReference>(),
+                            IronWillImproved.ToReference<BlueprintFeatureReference>(),
+                            Dodge.ToReference<BlueprintFeatureReference>(),
+                            Toughness.ToReference<BlueprintFeatureReference>(),
                             SpellPenetration.ToReference<BlueprintFeatureReference>(),
                             GreaterSpellPenetration.ToReference<BlueprintFeatureReference>(),
-                            LightningReflexes.ToReference<BlueprintFeatureReference>(),
                         }
                     },
                     new SelectionEntry()
@@ -112,15 +113,15 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                         m_Features = new BlueprintFeatureReference[]{
                             Cleave.ToReference<BlueprintFeatureReference>(),
                             CleavingFinish.ToReference<BlueprintFeatureReference>(),
-                            WeaponFocusScythe.ToReference<BlueprintFeatureReference>(),
-                            DazzlingDisplay.ToReference<BlueprintFeatureReference>(),
-                            ImprovedCriticalScythe.ToReference<BlueprintFeatureReference>(),
-                            ShatterDefenses.ToReference<BlueprintFeatureReference>(),
-                            WeaponSpecializationGreaterScythe.ToReference<BlueprintFeatureReference>(),
-                            PenetratingStrike.ToReference<BlueprintFeatureReference>(),
-                            GreaterPenetratingStrike.ToReference<BlueprintFeatureReference>(),
+                            PointBlankShot.ToReference<BlueprintFeatureReference>(),
+                            PreciseShot.ToReference<BlueprintFeatureReference>(),
+                            DeadlyAim.ToReference<BlueprintFeatureReference>(),
                             GreatFortitude.ToReference<BlueprintFeatureReference>(),
-                            IronWill.ToReference<BlueprintFeatureReference>(),
+                            GreatFortitudeImproved.ToReference<BlueprintFeatureReference>(),
+                            LightningReflexes.ToReference<BlueprintFeatureReference>(),
+                            LightningReflexesImproved.ToReference<BlueprintFeatureReference>(),
+                            MaximizeSpellFeat.ToReference<BlueprintFeatureReference>(),
+                            EmpowerSpellFeat.ToReference<BlueprintFeatureReference>(),
                         }
                     },
                     new SelectionEntry()

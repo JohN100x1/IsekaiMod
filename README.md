@@ -1,6 +1,8 @@
 # Isekai Mod
 This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Isekai Protagonist` Class into the game.
-
+### Installation
+- Open Unity Mod Manager and go to the 'Mods' tab.
+- Drag and Drop the IsekaiMod.zip file into Unity Mod Manager.
 ### New Content
 - New Classes & Archetypes
 	- `Isekai Protagonist`
@@ -10,6 +12,7 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 		- Has extra feats like the fighter but not limited to combat feats.
 		- Starts of with the `Plot Armor` feature which make them hard to kill.
 		- Has cheat skills.
+		- Can merge their spellbook with angel or lich.
 	- `God Emporer` (Isekai Protagonist Archetype)
 		- Has powerful auras that buff allies and debuff enemies.
 		- Has powerful immunities in the late game.
@@ -35,14 +38,7 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 	- [x] `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Lore and Knowledge skills use CHA instead of WIS/INT.
 	- [x] `MartialArtist`: Get proficiency in all exotic weapons.
 	- [x] `Salaryman`: Adds perception as a class skill. Perception uses CHA instead of WIS.
-### WIP
-- New Heritages (WIP)
-	- [ ] Isekai Succubus (Tiefling heritage)
-	- [ ] Isekai Angel (Aasimar heritage)
-- New Backgrounds (WIP)
-	- [ ] `Hero`: Get +1 bonus to all attributes.
-	- [ ] `Legend`: Get +2 bonus to all attributes.
-	- [ ] `God`: Get +10 bonus to all attributes.
+
 ### Isekai Protagonist Spell progression
 #### Spells per Day table
 | Level | 1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th | 9th |
