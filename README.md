@@ -1,5 +1,23 @@
 # Isekai Mod
 This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Isekai Protagonist` Class into the game.
+## Development Guide
+### Requirements
+- Visual Studio 2019 (You can use the latest version if you know what you're doing)
+### Setup
+- Add `WrathPath` as an environment variable with the value `C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure` or wherever your game directory is.
+- Open Visual Studio and [publicize your assemblies](https://github.com/WittleWolfie/OwlcatModdingWiki/wiki/Publicize-Assemblies) (`SolutionDir` can be replaced with `WrathPath`).
+### Testing
+- Create a folder called `IsekaiMod` in `C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods`.
+- After building your solution in Visual Studio, go to your project directory -> `bin` -> `Release` or `Debug` -> `IsekaiMod` -> `net472`.
+- Copy the files and folders from the image below and place them in the folder you created (ignore `UserSettings`).
+![](tutorial.png)
+- Create the `UserSettings` folder here and copy the `AddedContent.json` and the `Blueprints.json` files from the project and place them in this `UserSettings` folder.
+- Now you're ready to test.
+
+On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
+- If you edited the blueprint names, copy `Blueprints.json` as well.
+- If you added new assets, copy those as well.
+## Mod Information
 ### Installation
 - Open Unity Mod Manager and go to the 'Mods' tab.
 - Drag and Drop the IsekaiMod.zip file into Unity Mod Manager.
@@ -35,9 +53,9 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 - New Mythic abilities
 	- `Second Cheat Ability`: Gives you another Cheat Ability.
 - New Backgrounds
-	- [x] `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Lore and Knowledge skills use CHA instead of WIS/INT.
-	- [x] `MartialArtist`: Get proficiency in all exotic weapons.
-	- [x] `Salaryman`: Adds perception as a class skill. Perception uses CHA instead of WIS.
+	- `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Lore and Knowledge skills use CHA instead of WIS/INT.
+	- `MartialArtist`: Get proficiency in all exotic weapons.
+	- `Salaryman`: Adds perception as a class skill. Perception uses CHA instead of WIS.
 
 ### Isekai Protagonist Spell progression
 #### Spells per Day table
