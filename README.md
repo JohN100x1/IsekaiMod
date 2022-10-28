@@ -13,7 +13,7 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 
 ![](tutorial.png)
 - Create the `UserSettings` folder here and copy the `AddedContent.json` and the `Blueprints.json` files from the project and place them in this `UserSettings` folder.
-- Now you're ready to test.
+- Now you can start your game and test.
 
 On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 - If you edited the blueprint names, copy `Blueprints.json` as well.
