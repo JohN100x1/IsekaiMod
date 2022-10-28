@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
                 bp.SetName("Godly Vessel");
                 bp.SetDescription("At 15th level, the God Emporer gains immunity to sickening effects, nauseating effects, blindness, shaken effects, frightening effects, cowering, "
                     + "paralysis, petrification, confusion, sleep effects, slow effects, staggered effects, stun, daze, dazzle, entanglement, fatigue, exhaustion, movement impairing conditions, "
-                    + "bleed, curses, hexes, posion, disease, fear effects, death effects, compulsion effects, charm effects, mind-affecting effects, emotion effects, {g|Encyclopedia:Ability_Scores}ability score{/g} {g|Encyclopedia:Damage}damage{/g}, "
+                    + "bleed, curses, hexes, posion, disease, fear effects, death effects, compulsion, charm, mind-affecting effects, emotion effects, {g|Encyclopedia:Ability_Scores}ability score{/g} {g|Encyclopedia:Damage}damage{/g}, "
                     + "energy drain, negative levels, sneak attack damage and {g|Encyclopedia:Critical}critical hits{/g}."
                     );
                 bp.m_Icon = Icon_PureForm;

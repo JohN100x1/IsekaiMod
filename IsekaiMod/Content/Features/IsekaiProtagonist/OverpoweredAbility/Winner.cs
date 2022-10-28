@@ -48,7 +48,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             });
             var Winner = Helpers.CreateBlueprint<BlueprintFeature>("Winner", bp => {
                 bp.SetName("Winner");
-                bp.SetDescription("You decide not to have any Overpowered Abilitys after reincarnating into the new world.");
+                bp.SetDescription("You decide not to have any Overpowered Abilities after reincarnating into the new world.");
                 bp.m_Icon = Icon_Winner;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { WinnerAbility.ToReference<BlueprintUnitFactReference>() };

@@ -21,7 +21,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         {
             // TODO: update screenshots
             // TODO: test all features
-            // TODO: nerf true main character and godhood
             // TODO: copy localization
 
             // TODO: Add isekai backgrounds that give good stats
@@ -79,7 +78,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var IsekaiProtagonistClass = Helpers.CreateBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass", bp => {
                 bp.LocalizedName = Helpers.CreateString($"IsekaiProtagonistClass.Name", "Isekai Protagonist");
                 bp.LocalizedDescription = Helpers.CreateString($"IsekaiProtagonistClass.Description", "Isekai protagonists are very powerful beings. "
-                    + "They have plot armor which make them hard to kill, and have Overpowered Abilitys which make them really powerful. "
+                    + "They have plot armor which make them hard to kill, and have Overpowered Abilities which make them really powerful. "
                     + "They also gain character development feats which greatly enhance their combat power.");
                 bp.LocalizedDescriptionShort = Helpers.CreateString($"IsekaiProtagonistClass.Description",
                     "Isekai protagonists are people who have been reincarnated into the world of Golarion with overpowered abilities. "
