@@ -19,11 +19,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: update extreme speed to activatable ability
-            // TODO: update screenshots
-            // TODO: test all features
-            // TODO: copy localization
-
             // TODO: Add isekai backgrounds that give good stats
             // TODO: rework isekai succubus heritage
             // TODO: add isekai angel heritage
