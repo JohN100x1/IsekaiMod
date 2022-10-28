@@ -46,7 +46,7 @@
       "Key": "9a80e0a380cc4e1c97b76988f820f896",
       "SimpleName": "AutoEmpowerBuff.Name",
       "ProcessTemplates": false,
-      "enGB": "Cheat Skill — Auto Empower"
+      "enGB": "Cheat Ability — Auto Empower"
     },
     {
       "Key": "97ea710898a141be96374fb474587796",
@@ -70,7 +70,7 @@
       "Key": "0ee74a03d252412eb43bb2849ccb16b5",
       "SimpleName": "AutoExtendBuff.Name",
       "ProcessTemplates": false,
-      "enGB": "Cheat Skill — Auto Extend"
+      "enGB": "Cheat Ability — Auto Extend"
     },
     {
       "Key": "ffe66bb6389e4e5b90bf4867160db971",
@@ -94,7 +94,7 @@
       "Key": "749b9dcfb5834688a5102f3d8e8120e4",
       "SimpleName": "AutoMaximizeBuff.Name",
       "ProcessTemplates": false,
-      "enGB": "Cheat Skill — Auto Maximize"
+      "enGB": "Cheat Ability — Auto Maximize"
     },
     {
       "Key": "ed55e61b20b04ff1bf074dc0b658818f",
@@ -118,7 +118,7 @@
       "Key": "51ccaf7251164dc1a26e231658187341",
       "SimpleName": "AutoQuickenBuff.Name",
       "ProcessTemplates": false,
-      "enGB": "Cheat Skill — Auto Quicken"
+      "enGB": "Cheat Ability — Auto Quicken"
     },
     {
       "Key": "50245c467a494d6f9f4b838bea930578",
@@ -142,7 +142,7 @@
       "Key": "8000d5ea67b34b62ae55d39b9da5e56e",
       "SimpleName": "AutoReachBuff.Name",
       "ProcessTemplates": false,
-      "enGB": "Cheat Skill — Auto Reach"
+      "enGB": "Cheat Ability — Auto Reach"
     },
     {
       "Key": "54fdd73f85c24676942e025668f4cc76",
@@ -248,21 +248,21 @@
     },
     {
       "Key": "2b212f06ed094a9dbd1ff9c2f18a8b27",
-      "SimpleName": "CheatSkillMythicSelection.Description",
+      "SimpleName": "CheatAbilityMythicSelection.Description",
       "ProcessTemplates": true,
-      "enGB": "You use your mythic powers to gain an additional cheat skill."
+      "enGB": "You use your mythic powers to gain an additional Cheat Ability."
     },
     {
       "Key": "40ff773ad0714f7e96d41173ea9570b1",
-      "SimpleName": "CheatSkillMythicSelection.Name",
+      "SimpleName": "CheatAbilityMythicSelection.Name",
       "ProcessTemplates": false,
-      "enGB": "Second Cheat Skill"
+      "enGB": "Second Cheat Ability"
     },
     {
       "Key": "6429435c41be466892c186e1170d2b19",
-      "SimpleName": "CheatSkillSelection.Description",
+      "SimpleName": "CheatAbilitySelection.Description",
       "ProcessTemplates": true,
-      "enGB": "At 1st level, you get to select an extremely powerful cheat skill."
+      "enGB": "At 1st level, you get to select an extremely powerful Cheat Ability."
     },
     {
       "Key": "c1cecedab7c44e4e90b02a8c80502bd7",
@@ -316,7 +316,7 @@
       "Key": "ac755f322fd8460e9d4d1cd688514152",
       "SimpleName": "DupeGoldAbility.Name",
       "ProcessTemplates": false,
-      "enGB": "Cheat Skill — Dupe Gold"
+      "enGB": "Cheat Ability — Dupe Gold"
     },
     {
       "Key": "33544221291e4d83ac2816db067606be",
@@ -568,7 +568,7 @@
       "Key": "254ae8f7ba524d5b8e147f1c5fbf998c",
       "SimpleName": "GraspHeartAbility.Name",
       "ProcessTemplates": false,
-      "enGB": "Cheat Skill — Grasp Heart"
+      "enGB": "Cheat Ability — Grasp Heart"
     },
     {
       "Key": "0f48eca0d6c3422484924c84b3f46d06",
@@ -722,21 +722,21 @@
     },
     {
       "Key": "40a05121992f41838395112cae5548e5",
-      "SimpleName": "IsekaiProtagonistCheatSkillFeat.Description",
+      "SimpleName": "IsekaiProtagonistCheatAbilityFeat.Description",
       "ProcessTemplates": true,
-      "enGB": "Isekai Protagonists gain an extremely powerful cheat skill at 1st level."
+      "enGB": "Isekai Protagonists gain an extremely powerful Cheat Ability at 1st level."
     },
     {
       "Key": "1b110041ef5144528802e64c383d002a",
-      "SimpleName": "IsekaiProtagonistCheatSkillFeat.DescriptionShort",
+      "SimpleName": "IsekaiProtagonistCheatAbilityFeat.DescriptionShort",
       "ProcessTemplates": true,
-      "enGB": "Isekai Protagonists gain an extremely powerful cheat skill at 1st level."
+      "enGB": "Isekai Protagonists gain an extremely powerful Cheat Ability at 1st level."
     },
     {
       "Key": "5527fe490e4b487f9a5a9cad5824e3d2",
-      "SimpleName": "IsekaiProtagonistCheatSkillFeat.Name",
+      "SimpleName": "IsekaiProtagonistCheatAbilityFeat.Name",
       "ProcessTemplates": false,
-      "enGB": "Cheat Skill"
+      "enGB": "Cheat Ability"
     },
     {
       "Key": "88bf26291b7d4bcb875d2e27936cda9a",
@@ -748,7 +748,7 @@
       "Key": "1c0fc9c5c22f4773b8ec453d7f24c3f8",
       "SimpleName": "IsekaiProtagonistClass.Description",
       "ProcessTemplates": true,
-      "enGB": "Isekai protagonists are very powerful beings. They have plot armor which make them hard to kill, and have cheat skills which make them really powerful. They also gain character development feats which greatly enhance their combat power."
+      "enGB": "Isekai protagonists are very powerful beings. They have plot armor which make them hard to kill, and have Cheat Abilitys which make them really powerful. They also gain character development feats which greatly enhance their combat power."
     },
     {
       "Key": "230362b9f270401f9fde6bec3a4f7572",
@@ -886,7 +886,7 @@
       "Key": "6b1508305dee4c9dad70bafc2f6e862d",
       "SimpleName": "PerfectRollBuff.Name",
       "ProcessTemplates": false,
-      "enGB": "Cheat Skill — Perfect Roll"
+      "enGB": "Cheat Ability — Perfect Roll"
     },
     {
       "Key": "da7d053a87794d1c9ed3f08c6ba19b23",
@@ -1066,7 +1066,7 @@
       "Key": "3b5bc3d45126497eb0fc964b0516e483",
       "SimpleName": "Winner.Description",
       "ProcessTemplates": true,
-      "enGB": "You decide not to have any cheat skills after reincarnating into the new world."
+      "enGB": "You decide not to have any Cheat Abilitys after reincarnating into the new world."
     },
     {
       "Key": "82328148bdf54720861c3ea2fa65b780",

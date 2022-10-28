@@ -5,13 +5,13 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
 {
-    class CheatSkillSelection
+    class CheatAbilitySelection
     {
         public static void Add()
         {
-            // Cheat Skills
+            // Cheat Abilities
             var AutoEmpowerFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoEmpowerFeature");
             var AutoExtendFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoExtendFeature");
             var AutoMaximizeFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoMaximizeFeature");
@@ -22,11 +22,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
             var PerfectRollFeature = Resources.GetModBlueprint<BlueprintFeature>("PerfectRollFeature");
             var Winner = Resources.GetModBlueprint<BlueprintFeature>("Winner");
 
-            // Cheat Skill Selection
+            // Cheat Ability Selection
             var Icon_TrickFate = Resources.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
-            var CheatSkillSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CheatSkillSelection", bp => {
-                bp.SetName("Cheat Skill");
-                bp.SetDescription("At 1st level, you get to select an extremely powerful cheat skill.");
+            var CheatAbilitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CheatAbilitySelection", bp => {
+                bp.SetName("Cheat Ability");
+                bp.SetDescription("At 1st level, you get to select an extremely powerful Cheat Ability.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

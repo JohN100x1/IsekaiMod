@@ -69,17 +69,17 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.FireImmunity.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.SonicImmunity.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection.Add();
-                Features.IsekaiProtagonist.CheatSkill.AutoEmpowerFeature.Add();
-                Features.IsekaiProtagonist.CheatSkill.AutoExtendFeature.Add();
-                Features.IsekaiProtagonist.CheatSkill.AutoMaximizeFeature.Add();
-                Features.IsekaiProtagonist.CheatSkill.AutoQuickenFeature.Add();
-                Features.IsekaiProtagonist.CheatSkill.AutoReachFeatureFeature.Add();
-                Features.IsekaiProtagonist.CheatSkill.GraspHeartFeature.Add();
-                Features.IsekaiProtagonist.CheatSkill.DupeGoldFeature.Add();
-                Features.IsekaiProtagonist.CheatSkill.PerfectRollFeature.Add();
-                Features.IsekaiProtagonist.CheatSkill.Winner.Add();
-                Features.IsekaiProtagonist.CheatSkill.CheatSkillSelection.Add();
-                Features.IsekaiProtagonist.CheatSkill.CheatSkillMythicSelection.Add();
+                Features.IsekaiProtagonist.CheatAbility.AutoEmpowerFeature.Add();
+                Features.IsekaiProtagonist.CheatAbility.AutoExtendFeature.Add();
+                Features.IsekaiProtagonist.CheatAbility.AutoMaximizeFeature.Add();
+                Features.IsekaiProtagonist.CheatAbility.AutoQuickenFeature.Add();
+                Features.IsekaiProtagonist.CheatAbility.AutoReachFeatureFeature.Add();
+                Features.IsekaiProtagonist.CheatAbility.GraspHeartFeature.Add();
+                Features.IsekaiProtagonist.CheatAbility.DupeGoldFeature.Add();
+                Features.IsekaiProtagonist.CheatAbility.PerfectRollFeature.Add();
+                Features.IsekaiProtagonist.CheatAbility.Winner.Add();
+                Features.IsekaiProtagonist.CheatAbility.CheatAbilitySelection.Add();
+                Features.IsekaiProtagonist.CheatAbility.CheatAbilityMythicSelection.Add();
                 // God Emporer Archetype
                 Features.IsekaiProtagonist.GodEmporer.GodEmporerProficiencies.Add();
                 Features.IsekaiProtagonist.GodEmporer.NascentApotheosis.Add();

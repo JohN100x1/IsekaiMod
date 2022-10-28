@@ -65,10 +65,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
-            var IsekaiProtagonistCheatSkillFeat = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistCheatSkillFeat", bp => {
-                bp.SetName("Cheat Skill");
-                bp.SetDescription("Isekai Protagonists gain an extremely powerful cheat skill at 1st level.");
-                bp.m_DescriptionShort = Helpers.CreateString("IsekaiProtagonistCheatSkillFeat.DescriptionShort", "Isekai Protagonists gain an extremely powerful cheat skill at 1st level.");
+            var IsekaiProtagonistCheatAbilityFeat = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistCheatAbilityFeat", bp => {
+                bp.SetName("Cheat Ability");
+                bp.SetDescription("Isekai Protagonists gain an extremely powerful Cheat Ability at 1st level.");
+                bp.m_DescriptionShort = Helpers.CreateString("IsekaiProtagonistCheatAbilityFeat.DescriptionShort", "Isekai Protagonists gain an extremely powerful Cheat Ability at 1st level.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -78,7 +78,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var IsekaiProtagonistClass = Helpers.CreateBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass", bp => {
                 bp.LocalizedName = Helpers.CreateString($"IsekaiProtagonistClass.Name", "Isekai Protagonist");
                 bp.LocalizedDescription = Helpers.CreateString($"IsekaiProtagonistClass.Description", "Isekai protagonists are very powerful beings. "
-                    + "They have plot armor which make them hard to kill, and have cheat skills which make them really powerful. "
+                    + "They have plot armor which make them hard to kill, and have Cheat Abilitys which make them really powerful. "
                     + "They also gain character development feats which greatly enhance their combat power.");
                 bp.LocalizedDescriptionShort = Helpers.CreateString($"IsekaiProtagonistClass.Description",
                     "Isekai protagonists are people who have been reincarnated into the world of Golarion with overpowered abilities. "
@@ -118,7 +118,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 bp.m_SignatureAbilities = new BlueprintFeatureReference[4] {
                     IsekaiProtagonistBonusFeat.ToReference<BlueprintFeatureReference>(),
                     IsekaiProtagonistPlotArmorFeat.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistCheatSkillFeat.ToReference<BlueprintFeatureReference>(),
+                    IsekaiProtagonistCheatAbilityFeat.ToReference<BlueprintFeatureReference>(),
                     IsekaiProtagonistSneakFeat.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.AddComponent<PrerequisiteNoClassLevel>(c => {

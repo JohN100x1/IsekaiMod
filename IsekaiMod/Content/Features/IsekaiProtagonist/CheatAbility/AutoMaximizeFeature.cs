@@ -9,7 +9,7 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
 {
     class AutoMaximizeFeature
     {
@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
         {
             var Icon_MaximizeSpell = Resources.GetBlueprint<BlueprintFeature>("7f2b282626862e345935bbea5e66424b").m_Icon;
             var AutoMaximizeBuff = Helpers.CreateBlueprint<BlueprintBuff>("AutoMaximizeBuff", bp => {
-                bp.SetName("Cheat Skill — Auto Maximize");
+                bp.SetName("Cheat Ability — Auto Maximize");
                 bp.SetDescription("Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat.");
                 bp.m_Icon = Icon_MaximizeSpell;
                 bp.AddComponent<AutoMetamagic>(c => {
@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                 bp.FxOnRemove = new PrefabLink();
             });
             var AutoMaximizeAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("AutoMaximizeAbility", bp => {
-                bp.SetName("Cheat Skill — Auto Maximize");
+                bp.SetName("Cheat Ability — Auto Maximize");
                 bp.SetDescription("Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat.");
                 bp.m_Icon = Icon_MaximizeSpell;
                 bp.m_Buff = AutoMaximizeBuff.ToReference<BlueprintBuffReference>();
@@ -42,7 +42,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
             var AutoMaximizeFeature = Helpers.CreateBlueprint<BlueprintFeature>("AutoMaximizeFeature", bp => {
-                bp.SetName("Cheat Skill — Auto Maximize");
+                bp.SetName("Cheat Ability — Auto Maximize");
                 bp.SetDescription("Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat.");
                 bp.m_Icon = Icon_MaximizeSpell;
                 bp.AddComponent<AddFacts>(c => {

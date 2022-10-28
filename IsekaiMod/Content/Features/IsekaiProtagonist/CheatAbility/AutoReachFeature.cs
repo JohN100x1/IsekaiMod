@@ -9,7 +9,7 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
 {
     class AutoReachFeatureFeature
     {
@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
         {
             var Icon_ReachSpell = Resources.GetBlueprint<BlueprintFeature>("46fad72f54a33dc4692d3b62eca7bb78").m_Icon;
             var AutoReachBuff = Helpers.CreateBlueprint<BlueprintBuff>("AutoReachBuff", bp => {
-                bp.SetName("Cheat Skill — Auto Reach");
+                bp.SetName("Cheat Ability — Auto Reach");
                 bp.SetDescription("Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat.");
                 bp.m_Icon = Icon_ReachSpell;
                 bp.AddComponent<AutoMetamagic>(c => {
@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                 bp.FxOnRemove = new PrefabLink();
             });
             var AutoReachAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("AutoReachAbility", bp => {
-                bp.SetName("Cheat Skill — Auto Reach");
+                bp.SetName("Cheat Ability — Auto Reach");
                 bp.SetDescription("Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat.");
                 bp.m_Icon = Icon_ReachSpell;
                 bp.m_Buff = AutoReachBuff.ToReference<BlueprintBuffReference>();
@@ -42,7 +42,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
             var AutoReachFeature = Helpers.CreateBlueprint<BlueprintFeature>("AutoReachFeature", bp => {
-                bp.SetName("Cheat Skill — Auto Reach");
+                bp.SetName("Cheat Ability — Auto Reach");
                 bp.SetDescription("Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat.");
                 bp.m_Icon = Icon_ReachSpell;
                 bp.AddComponent<AddFacts>(c => {

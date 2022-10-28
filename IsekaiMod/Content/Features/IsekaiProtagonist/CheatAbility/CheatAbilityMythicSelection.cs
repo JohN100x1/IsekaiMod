@@ -6,13 +6,13 @@ using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
 {
-    class CheatSkillMythicSelection
+    class CheatAbilityMythicSelection
     {
         public static void Add()
         {
-            // Cheat Skills
+            // Cheat Abilities
             var AutoEmpowerFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoEmpowerFeature");
             var AutoExtendFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoExtendFeature");
             var AutoMaximizeFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoMaximizeFeature");
@@ -23,20 +23,20 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
             var PerfectRollFeature = Resources.GetModBlueprint<BlueprintFeature>("PerfectRollFeature");
             var Winner = Resources.GetModBlueprint<BlueprintFeature>("Winner");
 
-            // Cheat Skill Selection
-            var CheatSkillSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CheatSkillSelection");
+            // Cheat Ability Selection
+            var CheatAbilitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CheatAbilitySelection");
 
-            // Cheat Skill Mythic Selection
+            // Cheat Ability Mythic Selection
             var Icon_TrickFate = Resources.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
-            var CheatSkillMythicSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CheatSkillMythicSelection", bp => {
-                bp.SetName("Second Cheat Skill");
-                bp.SetDescription("You use your mythic powers to gain an additional cheat skill.");
+            var CheatAbilityMythicSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CheatAbilityMythicSelection", bp => {
+                bp.SetName("Second Cheat Ability");
+                bp.SetDescription("You use your mythic powers to gain an additional Cheat Ability.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.AddComponent<PrerequisiteNoFeature>(c => {
                     c.m_Feature = Winner.ToReference<BlueprintFeatureReference>();
                 });
                 bp.AddComponent<PrerequisiteFeature>(c => {
-                    c.m_Feature = CheatSkillSelection.ToReference<BlueprintFeatureReference>();
+                    c.m_Feature = CheatAbilitySelection.ToReference<BlueprintFeatureReference>();
                 });
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -62,11 +62,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                 };
             });
 
-            // You can't select a third cheat skill
-            CheatSkillMythicSelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = CheatSkillMythicSelection.ToReference<BlueprintFeatureReference>(); });
+            // You can't select a third Cheat Ability
+            CheatAbilityMythicSelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = CheatAbilityMythicSelection.ToReference<BlueprintFeatureReference>(); });
             // Add selection to mythic ability selection
             var MythicAbilitySelection = Resources.GetBlueprint<BlueprintFeatureSelection>("ba0e5a900b775be4a99702f1ed08914d");
-            MythicAbilitySelection.m_AllFeatures = MythicAbilitySelection.m_AllFeatures.AppendToArray(CheatSkillMythicSelection.ToReference<BlueprintFeatureReference>());
+            MythicAbilitySelection.m_AllFeatures = MythicAbilitySelection.m_AllFeatures.AppendToArray(CheatAbilityMythicSelection.ToReference<BlueprintFeatureReference>());
         }
     }
 }

@@ -21,7 +21,7 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatAbility
 {
     class GraspHeartFeature
     {
@@ -48,7 +48,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                 bp.OperationOnComponents = BlueprintUnitProperty.MathOperation.Sum;
             });
             var GraspHeartAbility = Helpers.CreateBlueprint<BlueprintAbility>("GraspHeartAbility", bp => {
-                bp.SetName("Cheat Skill — Grasp Heart");
+                bp.SetName("Cheat Ability — Grasp Heart");
                 bp.SetDescription("Any creature that fails a Fortitude {g|Encyclopedia:Saving_Throw}saving throw{/g} is instantly killed, otherwise they are stunned for 1 round. "
                     + "The DC of the Fortitude save is 10 + your character level + your Charisma modifier.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
@@ -134,7 +134,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CheatSkill
                 bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "Fortitude negates death");
             });
             var GraspHeartFeature = Helpers.CreateBlueprint<BlueprintFeature>("GraspHeartFeature", bp => {
-                bp.SetName("Cheat Skill — Grasp Heart");
+                bp.SetName("Cheat Ability — Grasp Heart");
                 bp.SetDescription("You gain the Grasp Heart ability which can kill any creature that fails a Fortitude {g|Encyclopedia:Saving_Throw}saving throw{/g}, "
                     + "otherwise they are stunned for 1 round. The DC of the Fortitude save is 10 + your character level + your Charisma modifier.");
                 bp.m_Icon = Icon_DeathClutch;
