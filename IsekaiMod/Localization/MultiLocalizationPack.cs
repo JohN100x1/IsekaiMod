@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using IsekaiMod.Config;
 using IsekaiMod.Utilities;
+using System.ComponentModel;
 
 namespace IsekaiMod.Localization
 {
@@ -101,6 +102,11 @@ namespace IsekaiMod.Localization
             public string SimpleName;
             [JsonProperty]
             public bool ProcessTemplates;
+#if DEBUG
+            [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+            [DefaultValue(true)]
+            private bool IsUsed = false;
+#endif
             [JsonProperty]
             public string enGB = "";
             [JsonProperty]
@@ -123,6 +129,9 @@ namespace IsekaiMod.Localization
                         m_Key = Key,
                         m_ShouldProcess = ProcessTemplates
                     };
+#if DEBUG
+                    IsUsed = true;
+#endif
                     return m_LocalizedString;
                 }
             }
@@ -201,7 +210,7 @@ namespace IsekaiMod.Localization
             }
             public override string ToString()
             {
-                return this.StringEntry(LocalizationManager.CurrentLocale).Text;
+                return StringEntry(LocalizationManager.CurrentLocale).Text;
             }
             public override int GetHashCode()
             {

@@ -13,7 +13,7 @@ using Kingmaker.Visual.Animation.Kingmaker.Actions;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
-    class Winner
+    class WinnerFeature
     {
         public static void Add()
         {
@@ -46,7 +46,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "");
                 bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
             });
-            var Winner = Helpers.CreateBlueprint<BlueprintFeature>("Winner", bp => {
+            var WinnerFeature = Helpers.CreateBlueprint<BlueprintFeature>("WinnerFeature", bp => {
                 bp.SetName("Winner");
                 bp.SetDescription("You decide not to have any Overpowered Abilities after reincarnating into the new world.");
                 bp.m_Icon = Icon_Winner;

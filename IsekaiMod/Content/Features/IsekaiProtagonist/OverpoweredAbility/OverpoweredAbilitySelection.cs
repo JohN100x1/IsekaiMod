@@ -20,7 +20,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             var GraspHeartFeature = Resources.GetModBlueprint<BlueprintFeature>("GraspHeartFeature");
             var DupeGoldFeature = Resources.GetModBlueprint<BlueprintFeature>("DupeGoldFeature");
             var PerfectRollFeature = Resources.GetModBlueprint<BlueprintFeature>("PerfectRollFeature");
-            var Winner = Resources.GetModBlueprint<BlueprintFeature>("Winner");
+            var WinnerFeature = Resources.GetModBlueprint<BlueprintFeature>("WinnerFeature");
 
             // Overpowered Ability Selection
             var Icon_TrickFate = Resources.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
@@ -39,7 +39,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     GraspHeartFeature.ToReference<BlueprintFeatureReference>(),
                     DupeGoldFeature.ToReference<BlueprintFeatureReference>(),
                     PerfectRollFeature.ToReference<BlueprintFeatureReference>(),
-                    Winner.ToReference<BlueprintFeatureReference>(),
+                    WinnerFeature.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     AutoEmpowerFeature.ToReference<BlueprintFeatureReference>(),
@@ -50,7 +50,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     GraspHeartFeature.ToReference<BlueprintFeatureReference>(),
                     DupeGoldFeature.ToReference<BlueprintFeatureReference>(),
                     PerfectRollFeature.ToReference<BlueprintFeatureReference>(),
-                    Winner.ToReference<BlueprintFeatureReference>(),
+                    WinnerFeature.ToReference<BlueprintFeatureReference>(),
                 };
             });
         }

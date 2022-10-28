@@ -13,10 +13,8 @@ namespace IsekaiMod.Config
         public static AddedContent AddedContent;
 
         private static string UserConfigFolder => ModEntry.Path + "UserSettings";
-        private static string localizationFolder => ModEntry.Path + "Localization";
-
-        public static MultiLocalizationPack ModLocalizationPack = new MultiLocalizationPack();
-
+        private static string LocalizationFolder => ModEntry.Path + "Localization";
+        public static MultiLocalizationPack ModLocalizationPack = new();
         private static JsonSerializerSettings cachedSettings;
         private static JsonSerializerSettings SerializerSettings
         {
@@ -51,52 +49,48 @@ namespace IsekaiMod.Config
             JsonSerializer serializer = JsonSerializer.Create(SerializerSettings);
             var fileName = "LocalizationPack.json";
             var assembly = Assembly.GetExecutingAssembly();
-            var resourcePath = $"IsekaiMod.Localization.{fileName}"; ;
-            var localizationPath = $"{localizationFolder}{Path.DirectorySeparatorChar}{fileName}";
-            Directory.CreateDirectory(localizationFolder);
+            var resourcePath = $"IsekaiMod.Localization.{fileName}";
+            var localizationPath = $"{LocalizationFolder}{Path.DirectorySeparatorChar}{fileName}";
+            Directory.CreateDirectory(LocalizationFolder);
             if (File.Exists(localizationPath))
             {
-                using (StreamReader streamReader = File.OpenText(localizationPath))
-                using (JsonReader jsonReader = new JsonTextReader(streamReader))
+                using StreamReader streamReader = File.OpenText(localizationPath);
+                using JsonReader jsonReader = new JsonTextReader(streamReader);
+                try
                 {
+                    MultiLocalizationPack localization = serializer.Deserialize<MultiLocalizationPack>(jsonReader);
+                    ModLocalizationPack = localization;
+                }
+                catch
+                {
+                    ModLocalizationPack = new MultiLocalizationPack();
+                    Main.Log("Failed to localization. Settings will be rebuilt.");
                     try
                     {
-                        MultiLocalizationPack localization = serializer.Deserialize<MultiLocalizationPack>(jsonReader);
-                        ModLocalizationPack = localization;
+                        File.Copy(localizationPath, ModEntry.Path + $"{Path.DirectorySeparatorChar}BROKEN_{fileName}", true);
                     }
                     catch
                     {
-                        ModLocalizationPack = new MultiLocalizationPack();
-                        Main.Log("Failed to localization. Settings will be rebuilt.");
-                        try
-                        {
-                            File.Copy(localizationPath, ModEntry.Path + $"{Path.DirectorySeparatorChar}BROKEN_{fileName}", true);
-                        }
-                        catch
-                        {
-                            Main.Log("Failed to archive broken localization.");
-                        }
+                        Main.Log("Failed to archive broken localization.");
                     }
                 }
             }
             else
             {
-                using (Stream stream = assembly.GetManifestResourceStream(resourcePath))
-                using (StreamReader streamReader = new StreamReader(stream))
-                using (JsonReader jsonReader = new JsonTextReader(streamReader))
-                {
-                    ModLocalizationPack = serializer.Deserialize<MultiLocalizationPack>(jsonReader);
-                }
+                using Stream stream = assembly.GetManifestResourceStream(resourcePath);
+                using StreamReader streamReader = new StreamReader(stream);
+                using JsonReader jsonReader = new JsonTextReader(streamReader);
+                ModLocalizationPack = serializer.Deserialize<MultiLocalizationPack>(jsonReader);
             }
         }
         public static void SaveLocalization(string fileName, MultiLocalizationPack localizaiton)
         {
             localizaiton.Strings.Sort((x, y) => string.Compare(x.SimpleName, y.SimpleName));
             Directory.CreateDirectory(UserConfigFolder);
-            var localizationPath = $"{localizationFolder}{Path.DirectorySeparatorChar}{fileName}";
+            var localizationPath = $"{LocalizationFolder}{Path.DirectorySeparatorChar}{fileName}";
 
             JsonSerializer serializer = JsonSerializer.Create(SerializerSettings);
-            using (StreamWriter streamWriter = new StreamWriter(localizationPath))
+            using (StreamWriter streamWriter = new(localizationPath))
             using (JsonWriter jsonWriter = new JsonTextWriter(streamWriter))
             {
                 serializer.Serialize(jsonWriter, localizaiton);
@@ -112,7 +106,7 @@ namespace IsekaiMod.Config
 
             Directory.CreateDirectory(UserConfigFolder);
             using (Stream stream = assembly.GetManifestResourceStream(resourcePath))
-            using (StreamReader streamReader = new StreamReader(stream))
+            using (StreamReader streamReader = new(stream))
             using (JsonReader jsonReader = new JsonTextReader(streamReader))
             {
                 setting = serializer.Deserialize<T>(jsonReader);
@@ -121,25 +115,23 @@ namespace IsekaiMod.Config
 
             if (File.Exists(userPath))
             {
-                using (StreamReader streamReader = File.OpenText(userPath))
-                using (JsonReader jsonReader = new JsonTextReader(streamReader))
+                using StreamReader streamReader = File.OpenText(userPath);
+                using JsonReader jsonReader = new JsonTextReader(streamReader);
+                try
                 {
+                    T userSettings = serializer.Deserialize<T>(jsonReader);
+                    setting.OverrideSettings(userSettings);
+                }
+                catch
+                {
+                    Main.Log("Failed to load user settings. Settings will be rebuilt.");
                     try
                     {
-                        T userSettings = serializer.Deserialize<T>(jsonReader);
-                        setting.OverrideSettings(userSettings);
+                        File.Copy(userPath, UserConfigFolder + $"{Path.DirectorySeparatorChar}BROKEN_{fileName}", true);
                     }
                     catch
                     {
-                        Main.Log("Failed to load user settings. Settings will be rebuilt.");
-                        try
-                        {
-                            File.Copy(userPath, UserConfigFolder + $"{Path.DirectorySeparatorChar}BROKEN_{fileName}", true);
-                        }
-                        catch
-                        {
-                            Main.Log("Failed to archive broken settings.");
-                        }
+                        Main.Log("Failed to archive broken settings.");
                     }
                 }
             }
@@ -153,11 +145,9 @@ namespace IsekaiMod.Config
             var userPath = $"{UserConfigFolder}{Path.DirectorySeparatorChar}{fileName}";
 
             JsonSerializer serializer = JsonSerializer.Create(SerializerSettings);
-            using (StreamWriter streamWriter = new StreamWriter(userPath))
-            using (JsonWriter jsonWriter = new JsonTextWriter(streamWriter))
-            {
-                serializer.Serialize(jsonWriter, setting);
-            }
+            using StreamWriter streamWriter = new StreamWriter(userPath);
+            using JsonWriter jsonWriter = new JsonTextWriter(streamWriter);
+            serializer.Serialize(jsonWriter, setting);
         }
 
     }

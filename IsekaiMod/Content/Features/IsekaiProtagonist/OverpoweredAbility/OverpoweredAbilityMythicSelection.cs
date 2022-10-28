@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             var GraspHeartFeature = Resources.GetModBlueprint<BlueprintFeature>("GraspHeartFeature");
             var DupeGoldFeature = Resources.GetModBlueprint<BlueprintFeature>("DupeGoldFeature");
             var PerfectRollFeature = Resources.GetModBlueprint<BlueprintFeature>("PerfectRollFeature");
-            var Winner = Resources.GetModBlueprint<BlueprintFeature>("Winner");
+            var WinnerFeature = Resources.GetModBlueprint<BlueprintFeature>("WinnerFeature");
 
             // Overpowered Ability Selection
             var OverpoweredAbilitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection");
@@ -33,7 +33,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.SetDescription("You use your mythic powers to gain an additional Overpowered Ability.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.AddComponent<PrerequisiteNoFeature>(c => {
-                    c.m_Feature = Winner.ToReference<BlueprintFeatureReference>();
+                    c.m_Feature = WinnerFeature.ToReference<BlueprintFeatureReference>();
                 });
                 bp.AddComponent<PrerequisiteFeature>(c => {
                     c.m_Feature = OverpoweredAbilitySelection.ToReference<BlueprintFeatureReference>();

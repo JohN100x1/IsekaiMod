@@ -198,8 +198,7 @@ namespace IsekaiMod.Utilities
             // (It's common for many features to use the same localized text.
             // In that case, we reuse the old entry instead of making a new one.)
             string strippedText = text.StripHTML().StripEncyclopediaTags();
-            MultiLocalizationPack.MultiLocaleString multiLocalized;
-            if (ModSettings.ModLocalizationPack.TryGetText(strippedText, out multiLocalized))
+            if (ModSettings.ModLocalizationPack.TryGetText(strippedText, out MultiLocalizationPack.MultiLocaleString multiLocalized))
             {
                 return multiLocalized.LocalizedString;
             }
