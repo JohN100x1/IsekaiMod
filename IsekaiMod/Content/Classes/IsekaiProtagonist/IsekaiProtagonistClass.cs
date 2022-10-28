@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             // TODO: Add isekai backgrounds that give good stats
             // TODO: rework isekai succubus heritage
             // TODO: add isekai angel heritage
-            // TODO: Use localisation instead of hardcoded strings
+            // TODO: Load localisation instead of hardcoded strings
 
             // Used in Class
             var SlayerClass = Resources.GetBlueprint<BlueprintCharacterClass>("c75e0971973957d4dbad24bc7957e4fb");

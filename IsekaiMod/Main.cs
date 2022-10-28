@@ -22,6 +22,11 @@ namespace IsekaiMod
         {
             ModSettings.ModEntry.Logger.Log(msg);
         }
+        [System.Diagnostics.Conditional("DEBUG")]
+        public static void LogDebug(string msg)
+        {
+            ModSettings.ModEntry.Logger.Log(msg);
+        }
         static void OnSaveGUI(UnityModManager.ModEntry modEntry)
         {
             ModSettings.SaveSettings("AddedContent.json", ModSettings.AddedContent);

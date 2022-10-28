@@ -203,7 +203,7 @@ namespace IsekaiMod.Utilities
                 return multiLocalized.LocalizedString;
             }
             multiLocalized = new MultiLocalizationPack.MultiLocaleString(simpleName, strippedText, shouldProcess, locale);
-            Main.Log($"WARNING: Generated New Localizaed String: {multiLocalized.Key}:{multiLocalized.SimpleName}");
+            Main.LogDebug($"WARNING: Generated New Localizaed String: {multiLocalized.Key}:{multiLocalized.SimpleName}");
             ModSettings.ModLocalizationPack.AddString(multiLocalized);
             return multiLocalized.LocalizedString;
         }
