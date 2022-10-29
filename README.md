@@ -42,7 +42,11 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- Uses dexterity for damage and attack rolls.
 - New Features
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
-	- `Character Development Feats`: A selection of bonus feats which have very good effects (e.g. energy immunity and crit bypass).
+	- `Character Development Feats`: A selection of bonus feats which have very good effects.
+		- `Alpha Strike`: Ignore crit immunity and automatically confirm crits.
+		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
+		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
+		- `Exceptional Summoning` (new ): Your summons get +100 HP, +10 attack, AC, and saving throws.
 	- `Overpowered Ability`: Powerful 1st level feat.
 		- `AutoEmpower`: Empowers every spell you cast.
 		- `AutoExtend`: Extends every spell you cast.
