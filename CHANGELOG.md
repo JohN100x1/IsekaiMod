@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Fixed
-- Fixed `Repository.json` to have the correct name.
+- Fixed `Repository.json` to have the correct release Id.
 - Fixed bug with `Martial Artist` background if the `Isekai Protagonist` class is disabled.
 
 ## [1.0.0] - 2022-10-28
