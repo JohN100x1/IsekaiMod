@@ -46,7 +46,8 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Alpha Strike`: Ignore crit immunity and automatically confirm crits.
 		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
-		- `Exceptional Summoning` (new ): Your summons get +100 HP, +10 attack, AC, and saving throws.
+		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
+		- `Exceptional Summoning`: Your summons get +100 HP, +10 attack, AC, and saving throws.
 	- `Overpowered Ability`: Powerful 1st level feat.
 		- `AutoEmpower`: Empowers every spell you cast.
 		- `AutoExtend`: Extends every spell you cast.
@@ -61,7 +62,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Second Overpowered Ability`: Gives you another Overpowered Ability.
 - New Backgrounds
 	- `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Lore and Knowledge skills use CHA instead of WIS/INT.
-	- `MartialArtist`: Get proficiency in all exotic weapons.
+	- `Martial Artist`: Get proficiency in all exotic weapons.
 	- `Salaryman`: Adds perception as a class skill. Perception uses CHA instead of WIS.
 	- `Highschool Student`: Get a +1 bonus to all attributes.
 
