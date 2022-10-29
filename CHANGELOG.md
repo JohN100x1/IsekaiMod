@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added `Highschool Student` background.
+- Added `Exceptional Summoning` feature.
 ### Fixed
 - Fixed `Repository.json` to have the correct release Id.
 - Fixed bug with `Martial Artist` background if the `Isekai Protagonist` class is disabled.
