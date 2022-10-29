@@ -20,7 +20,7 @@ namespace IsekaiMod.Content
                     AddIsekaiProtagonistClass();
                 }
 
-                // Add Heritages
+                // Add Heritages (Still in development)
                 // Heritages.TieflingHeritageSuccubus.Add();
 
                 if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds"))
@@ -108,6 +108,7 @@ namespace IsekaiMod.Content
                 Backgrounds.TabletopRPGPlayer.Add();
                 Backgrounds.MartialArtist.Add();
                 Backgrounds.Salaryman.Add();
+                Backgrounds.HighschoolStudent.Add();
                 Backgrounds.IsekaiBackgroundSelection.Add();
             }
         }

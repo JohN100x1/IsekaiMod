@@ -59,6 +59,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Lore and Knowledge skills use CHA instead of WIS/INT.
 	- `MartialArtist`: Get proficiency in all exotic weapons.
 	- `Salaryman`: Adds perception as a class skill. Perception uses CHA instead of WIS.
+	- `Highschool Student`: Get a +1 bonus to all attributes.
 
 ### Isekai Protagonist Spell progression
 #### Spells per Day table
