@@ -8,6 +8,7 @@
     "BackgroundTabletopRPGPlayer": "d317a919-354f-4c40-a7ae-285f293f106b",
     "BackgroundMartialArtist": "f1502fbd-14dc-431d-9481-43e910425dc6",
     "BackgroundSalaryman": "e7151a7f-449c-4aa6-bda4-8fa41e1b489a",
+    "BackgroundHighschoolStudent": "c94d449b-7978-45e8-89cc-2c7f76999203",
     "IsekaiBackgroundSelection": "5400da49-2595-443c-b6ba-0574d8c191dd",
 
     "GodEmporerArchetype": "2ff78bd9-6224-4376-9f64-720ce94d0616",
@@ -52,6 +53,10 @@
     "BetaStrike": "290c88af-a0eb-43f8-88ac-e49a76ccec0c",
     "GammaStrike": "1c4edc77-1a1e-4bc8-add2-8784a14551b4",
     "MundaneAura": "2a36d826-f9de-478d-bd43-3932b63b9ad0",
+    "ExceptionalSummoningSummonBuff": "1f017106-a0e3-4eef-a8f2-3bcb62256979",
+    "ExceptionalSummoningBuff": "1435e658-ec5c-4425-a087-21cd66aa756c",
+    "ExceptionalSummoningAbility": "91cf3dae-7106-46ff-8719-6bea757143a5",
+    "ExceptionalSummoningFeature": "9428fd68-a233-43a9-afac-1e1b54c1f037",
 
     "HealthyBody": "c6165832-f997-40bb-b0af-145ea74670a4",
     "InnerPower": "51c61f4f-a583-48dd-8824-3dc4864ef844",

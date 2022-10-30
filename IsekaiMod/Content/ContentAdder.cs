@@ -20,7 +20,7 @@ namespace IsekaiMod.Content
                     AddIsekaiProtagonistClass();
                 }
 
-                // Add Heritages
+                // Add Heritages (Still in development)
                 // Heritages.TieflingHeritageSuccubus.Add();
 
                 if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds"))
@@ -70,6 +70,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.ElectricityImmunity.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.FireImmunity.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.SonicImmunity.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.ExceptionalSummoningFeature.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoEmpowerFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoExtendFeature.Add();
@@ -108,6 +109,7 @@ namespace IsekaiMod.Content
                 Backgrounds.TabletopRPGPlayer.Add();
                 Backgrounds.MartialArtist.Add();
                 Backgrounds.Salaryman.Add();
+                Backgrounds.HighschoolStudent.Add();
                 Backgrounds.IsekaiBackgroundSelection.Add();
             }
         }

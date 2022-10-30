@@ -26,6 +26,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             var ElectricityImmunity = Resources.GetModBlueprint<BlueprintFeature>("ElectricityImmunity");
             var FireImmunity = Resources.GetModBlueprint<BlueprintFeature>("FireImmunity");
             var SonicImmunity = Resources.GetModBlueprint<BlueprintFeature>("SonicImmunity");
+            var ExceptionalSummoningFeature = Resources.GetModBlueprint<BlueprintFeature>("ExceptionalSummoningFeature");
 
             // Feature
             var Icon_Discovery = Resources.GetBlueprint<BlueprintFeatureSelection>("cd86c437488386f438dcc9ae727ea2a6").m_Icon;
@@ -47,6 +48,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
                     FireImmunity.ToReference<BlueprintFeatureReference>(),
                     SonicImmunity.ToReference<BlueprintFeatureReference>(),
+                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
@@ -60,6 +62,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
                     FireImmunity.ToReference<BlueprintFeatureReference>(),
                     SonicImmunity.ToReference<BlueprintFeatureReference>(),
+                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
                 };
             });
             var CharacterDevelopmentSelection2 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection2", bp => {
@@ -80,6 +83,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
                     FireImmunity.ToReference<BlueprintFeatureReference>(),
                     SonicImmunity.ToReference<BlueprintFeatureReference>(),
+                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
@@ -93,6 +97,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
                     FireImmunity.ToReference<BlueprintFeatureReference>(),
                     SonicImmunity.ToReference<BlueprintFeatureReference>(),
+                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
                 };
             });
             var CharacterDevelopmentSelection3 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection3", bp => {
@@ -113,6 +118,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
                     FireImmunity.ToReference<BlueprintFeatureReference>(),
                     SonicImmunity.ToReference<BlueprintFeatureReference>(),
+                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
@@ -130,6 +136,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
                     FireImmunity.ToReference<BlueprintFeatureReference>(),
                     SonicImmunity.ToReference<BlueprintFeatureReference>(),
+                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
@@ -154,6 +161,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
                     FireImmunity.ToReference<BlueprintFeatureReference>(),
                     SonicImmunity.ToReference<BlueprintFeatureReference>(),
+                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
@@ -171,6 +179,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
                     FireImmunity.ToReference<BlueprintFeatureReference>(),
                     SonicImmunity.ToReference<BlueprintFeatureReference>(),
+                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
@@ -195,6 +204,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
                     FireImmunity.ToReference<BlueprintFeatureReference>(),
                     SonicImmunity.ToReference<BlueprintFeatureReference>(),
+                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),
@@ -212,6 +222,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
                     FireImmunity.ToReference<BlueprintFeatureReference>(),
                     SonicImmunity.ToReference<BlueprintFeatureReference>(),
+                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
                     HealthyBody.ToReference<BlueprintFeatureReference>(),
                     InnerPower.ToReference<BlueprintFeatureReference>(),
                     MasterSelf.ToReference<BlueprintFeatureReference>(),

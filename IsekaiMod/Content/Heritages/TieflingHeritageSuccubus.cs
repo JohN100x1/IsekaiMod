@@ -17,6 +17,7 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.ActivatableAbilities;
+using Kingmaker.Enums;
 
 namespace IsekaiMod.Content.Heritages
 {
@@ -109,32 +110,32 @@ namespace IsekaiMod.Content.Heritages
 
                 // Add boost to all attributes
                 bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = Kingmaker.Enums.ModifierDescriptor.Racial;
+                    c.Descriptor = ModifierDescriptor.Racial;
                     c.Stat = StatType.Strength;
                     c.Value = AttributeBoostAmount;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = Kingmaker.Enums.ModifierDescriptor.Racial;
+                    c.Descriptor = ModifierDescriptor.Racial;
                     c.Stat = StatType.Dexterity;
                     c.Value = AttributeBoostAmount;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = Kingmaker.Enums.ModifierDescriptor.Racial;
+                    c.Descriptor = ModifierDescriptor.Racial;
                     c.Stat = StatType.Constitution;
                     c.Value = AttributeBoostAmount;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = Kingmaker.Enums.ModifierDescriptor.Racial;
+                    c.Descriptor = ModifierDescriptor.Racial;
                     c.Stat = StatType.Intelligence;
                     c.Value = AttributeBoostAmount;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = Kingmaker.Enums.ModifierDescriptor.Racial;
+                    c.Descriptor = ModifierDescriptor.Racial;
                     c.Stat = StatType.Wisdom;
                     c.Value = AttributeBoostAmount;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = Kingmaker.Enums.ModifierDescriptor.Racial;
+                    c.Descriptor = ModifierDescriptor.Racial;
                     c.Stat = StatType.Charisma;
                     c.Value = CharismaBoostAmount;
                 });
@@ -142,7 +143,7 @@ namespace IsekaiMod.Content.Heritages
 
                 // Add AC Bonus
                 bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = Kingmaker.Enums.ModifierDescriptor.Racial;
+                    c.Descriptor = ModifierDescriptor.Racial;
                     c.Stat = StatType.AC;
                     c.Value = 100;
                 });
