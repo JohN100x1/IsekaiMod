@@ -84,15 +84,15 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.WinnerFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilityMythicSelection.Add();
-                // God Emporer Archetype
-                Features.IsekaiProtagonist.GodEmporer.GodEmporerProficiencies.Add();
-                Features.IsekaiProtagonist.GodEmporer.NascentApotheosis.Add();
-                Features.IsekaiProtagonist.GodEmporer.ProtectiveAuraFeature.Add();
-                Features.IsekaiProtagonist.GodEmporer.DarkAuraFeature.Add();
-                Features.IsekaiProtagonist.GodEmporer.GloriousAuraFeature.Add();
-                Features.IsekaiProtagonist.GodEmporer.GodlyVessel.Add();
-                Features.IsekaiProtagonist.GodEmporer.SiphoningAuraFeature.Add();
-                Features.IsekaiProtagonist.GodEmporer.Godhood.Add();
+                // God Emperor Archetype
+                Features.IsekaiProtagonist.GodEmperor.GodEmporerProficiencies.Add();
+                Features.IsekaiProtagonist.GodEmperor.NascentApotheosis.Add();
+                Features.IsekaiProtagonist.GodEmperor.ProtectiveAuraFeature.Add();
+                Features.IsekaiProtagonist.GodEmperor.DarkAuraFeature.Add();
+                Features.IsekaiProtagonist.GodEmperor.GloriousAuraFeature.Add();
+                Features.IsekaiProtagonist.GodEmperor.GodlyVessel.Add();
+                Features.IsekaiProtagonist.GodEmperor.SiphoningAuraFeature.Add();
+                Features.IsekaiProtagonist.GodEmperor.Godhood.Add();
                 Classes.IsekaiProtagonist.Archetypes.GodEmporer.Add();
                 // Edge Lord Archetype
                 Features.IsekaiProtagonist.EdgeLord.EdgeLordProficiencies.Add();

@@ -37,7 +37,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
 
             // Archetype
             var GodEmporerArchetype = Helpers.CreateBlueprint<BlueprintArchetype>("GodEmporerArchetype", bp => {
-                bp.LocalizedName = Helpers.CreateString($"GodEmporerArchetype.Name", "God Emporer");
+                bp.LocalizedName = Helpers.CreateString($"GodEmporerArchetype.Name", "God Emperor");
                 bp.LocalizedDescription = Helpers.CreateString($"GodEmporerArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
                     + "some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively.");
                 bp.LocalizedDescriptionShort = Helpers.CreateString($"GodEmporerArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "

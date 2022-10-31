@@ -4,7 +4,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.FactLogic;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
 {
     class Godhood
     {

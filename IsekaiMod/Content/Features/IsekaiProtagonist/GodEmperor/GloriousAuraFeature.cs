@@ -13,7 +13,7 @@ using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
 {
     class GloriousAuraFeature
     {
@@ -50,7 +50,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             });
             var GloriousAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("GloriousAuraAreaBuff", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emporer gain a +2 bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance.");
+                bp.SetDescription("Allies within 40 feet of the God Emperor gain a +2 bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance.");
                 bp.m_Icon = Icon_BurstOfGlory;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -62,7 +62,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             });
             var GloriousAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("GloriousAuraAbility", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emporer gain a +2 bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance.");
+                bp.SetDescription("Allies within 40 feet of the God Emperor gain a +2 bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance.");
                 bp.m_Icon = Icon_BurstOfGlory;
                 bp.m_Buff = GloriousAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.None;
@@ -74,7 +74,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             });
             var GloriousAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("GloriousAuraFeature", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("At 9th level, allies within 40 feet of the God Emporer gain a +2 bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance.");
+                bp.SetDescription("At 9th level, allies within 40 feet of the God Emperor gain a +2 bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance.");
                 bp.m_Icon = Icon_BurstOfGlory;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
