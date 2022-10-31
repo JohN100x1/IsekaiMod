@@ -6,7 +6,7 @@ using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
 {
     class GodlyVessel
     {
@@ -15,7 +15,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             var Icon_PureForm = Resources.GetBlueprint<BlueprintAbility>("33e53b74891b4c34ba6ee3baa322beeb").m_Icon;
             var GodlyVessel = Helpers.CreateBlueprint<BlueprintFeature>("GodlyVessel", bp => {
                 bp.SetName("Godly Vessel");
-                bp.SetDescription("At 15th level, the God Emporer gains immunity to sickening effects, nauseating effects, blindness, shaken effects, frightening effects, cowering, "
+                bp.SetDescription("At 15th level, the God Emperor gains immunity to sickening effects, nauseating effects, blindness, shaken effects, frightening effects, cowering, "
                     + "paralysis, petrification, confusion, sleep effects, slow effects, staggered effects, stun, daze, dazzle, entanglement, fatigue, exhaustion, movement impairing conditions, "
                     + "bleed, curses, hexes, posion, disease, fear effects, death effects, compulsion, charm, mind-affecting effects, emotion effects, {g|Encyclopedia:Ability_Scores}ability score{/g} {g|Encyclopedia:Damage}damage{/g}, "
                     + "energy drain, negative levels, sneak attack damage and {g|Encyclopedia:Critical}critical hits{/g}."

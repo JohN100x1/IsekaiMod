@@ -8,7 +8,7 @@ using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
 {
     class NascentApotheosis
     {
@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             var Icon_Serenity = Resources.GetBlueprint<BlueprintAbility>("d316d3d94d20c674db2c24d7de96f6a7").m_Icon;
             var NascentApotheosis = Helpers.CreateBlueprint<BlueprintFeature>("NascentApotheosis", bp => {
                 bp.SetName("Nascent Apotheosis");
-                bp.SetDescription("At 3rd level, the God Emporer gains an inherent bonus to all attributes equal to 1/2 their character level.");
+                bp.SetDescription("At 3rd level, the God Emperor gains an inherent bonus to all attributes equal to 1/2 their character level.");
                 bp.m_Icon = Icon_Serenity;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Inherent;

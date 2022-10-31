@@ -12,7 +12,7 @@ using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
 {
     class ProtectiveAuraFeature
     {
@@ -59,7 +59,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             });
             var ProtectiveAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("ProtectiveAuraAreaBuff", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emporer take a +2 bonus on AC, and saving throws.");
+                bp.SetDescription("Allies within 40 feet of the God Emperor take a +2 bonus on AC, and saving throws.");
                 bp.m_Icon = Icon_Protective_Aura;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -71,7 +71,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             });
             var ProtectiveAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("ProtectiveAuraAbility", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emporer take a +2 bonus on AC, and saving throws.");
+                bp.SetDescription("Allies within 40 feet of the God Emperor take a +2 bonus on AC, and saving throws.");
                 bp.m_Icon = Icon_Protective_Aura;
                 bp.m_Buff = ProtectiveAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.None;
@@ -83,7 +83,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmporer
             });
             var ProtectiveAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("ProtectiveAuraFeature", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("At 6th level, allies within 40 feet of the God Emporer take a +2 bonus on AC, and saving throws.");
+                bp.SetDescription("At 6th level, allies within 40 feet of the God Emperor take a +2 bonus on AC, and saving throws.");
                 bp.m_Icon = Icon_Protective_Aura;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
