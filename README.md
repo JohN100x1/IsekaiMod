@@ -34,7 +34,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- Starts of with the `Plot Armor` feature which make them hard to kill.
 		- Has Overpowered Abilities.
 		- Can merge their spellbook with angel or lich.
-	- `God Emporer` (Isekai Protagonist Archetype)
+	- `God Emperor` (Isekai Protagonist Archetype)
 		- Has powerful auras that buff allies and debuff enemies.
 		- Has powerful immunities in the late game.
 	- `Edge Lord` (Isekai Protagonist Archetype)
