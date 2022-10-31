@@ -21,8 +21,8 @@ namespace IsekaiMod.Content
                 }
 
                 // Add Heritages (Still in development)
-                Features.IsekaiSuccubus.SuccubusCharmAbility.Add();
-                Heritages.IsekaiSuccubusHeritage.Add();
+                // Features.IsekaiSuccubus.SuccubusCharmAbility.Add();
+                // Heritages.IsekaiSuccubusHeritage.Add();
 
                 if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds"))
                 {
