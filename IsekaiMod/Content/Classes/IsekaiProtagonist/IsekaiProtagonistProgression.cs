@@ -44,6 +44,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var DispellingAttack = Resources.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
             var ExtremeSpeedFeature = Resources.GetModBlueprint<BlueprintFeature>("ExtremeSpeedFeature");
 
+            var IsekaiPetSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiPetSelection");
             var OverpoweredAbilitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection");
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
             var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
@@ -70,7 +71,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 };
             });
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
-                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, OverpoweredAbilitySelection, PlotArmor),
+                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, OverpoweredAbilitySelection, PlotArmor, IsekaiPetSelection),
                 Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection, UncannyDodge),
                 Helpers.LevelEntry(3, SneakAttack, IsekaiFighterTraining, Evasion, CharacterDevelopmentSelection1),
                 Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection),

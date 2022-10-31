@@ -46,6 +46,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var Adaptibility = Resources.GetBlueprint<BlueprintFeatureSelection>("26a668c5a8c22354bac67bcd42e09a3f");
             var BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
 
+            var WitchFamiliarSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("29a333b7ccad3214ea3a51943fa0d8e9");
+            var CatFamiliarBondFeature = Resources.GetBlueprint<BlueprintFeature>("1cb0b559ca2e31e4d9dc65de012fa82f");
+
+            var IsekaiPetSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiPetSelection");
             var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
             var OverpoweredAbilitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection");
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
@@ -208,6 +212,20 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                         m_Selection = BackgroundBaseSelection.ToReference<BlueprintFeatureSelectionReference>(),
                         m_Features = new BlueprintFeatureReference[]{
                             BackgroundNone.ToReference<BlueprintFeatureReference>()
+                        }
+                    },
+                    new SelectionEntry()
+                    {
+                        m_Selection = IsekaiPetSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Features = new BlueprintFeatureReference[]{
+                            WitchFamiliarSelection.ToReference<BlueprintFeatureReference>()
+                        }
+                    },
+                    new SelectionEntry()
+                    {
+                        m_Selection = WitchFamiliarSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                        m_Features = new BlueprintFeatureReference[]{
+                            CatFamiliarBondFeature.ToReference<BlueprintFeatureReference>()
                         }
                     },
                 };
