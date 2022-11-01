@@ -21,11 +21,17 @@ namespace IsekaiMod.Content
                 }
 
                 // Add Heritages (Still in development)
-                // Heritages.TieflingHeritageSuccubus.Add();
+                // Features.IsekaiSuccubus.SuccubusCharmAbility.Add();
+                // Heritages.IsekaiSuccubusHeritage.Add();
 
                 if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds"))
                 {
                     AddIsekaiBackgrounds();
+                }
+
+                if (ModSettings.AddedContent.Deities.IsEnabled("Isekai Deities"))
+                {
+                    Deities.TruckKun.Add();
                 }
             }
 
@@ -42,6 +48,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.IsekaiProtagonistCantripsFeature.Add();
                 Features.IsekaiProtagonist.IsekaiProtagonistBonusFeatSelection.Add();
                 Features.IsekaiProtagonist.IsekaiProtagonistTalentSelection.Add();
+                Features.IsekaiProtagonist.IsekaiPetSelection.Add();
                 Features.IsekaiProtagonist.PlotArmor.Add();
                 Features.IsekaiProtagonist.IsekaiFighterTraining.Add();
                 Features.IsekaiProtagonist.SignatureAttack.Add();

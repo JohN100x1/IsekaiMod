@@ -37,6 +37,7 @@ namespace IsekaiMod
                 SetttingUI.SettingGroup("Heritages", TabLevel, AddedContent.Heritages);
                 SetttingUI.SettingGroup("Classes", TabLevel, AddedContent.Classes);
                 SetttingUI.SettingGroup("Backgrounds", TabLevel, AddedContent.Backgrounds);
+                SetttingUI.SettingGroup("Deities", TabLevel, AddedContent.Deities);
             }
         }
     }
