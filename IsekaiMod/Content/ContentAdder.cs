@@ -28,6 +28,8 @@ namespace IsekaiMod.Content
                 {
                     AddIsekaiBackgrounds();
                 }
+
+                Deities.TruckKun.Add();
             }
 
             public static void AddIsekaiProtagonistClass()
