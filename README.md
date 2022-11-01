@@ -34,6 +34,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- Starts of with the `Plot Armor` feature which make them hard to kill.
 		- Has Overpowered Abilities.
 		- Can merge their spellbook with angel or lich.
+		- Can choose a familiar or animal companion.
 	- `God Emperor` (Isekai Protagonist Archetype)
 		- Has powerful auras that buff allies and debuff enemies.
 		- Has powerful immunities in the late game.
@@ -65,6 +66,8 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Martial Artist`: Get proficiency in all exotic weapons.
 	- `Salaryman`: Adds perception as a class skill. Perception uses CHA instead of WIS.
 	- `Highschool Student`: Get a +1 bonus to all attributes.
+- New Deities
+	- `Truck-kun`: A god of transportation.
 
 ### Isekai Protagonist Spell progression
 #### Spells per Day table
