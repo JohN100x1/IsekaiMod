@@ -1,1195 +1,1231 @@
 {
   "LocalizedStrings": [
     {
-      "Key": "33fb919c3c3d4aa08eaf86f07940de3b",
+      "Key": "7db9d0d6fc6f4e33a8bb3c9d324deaf2",
       "SimpleName": "$IsekaiProtagonistSpellbook.Name",
       "ProcessTemplates": true,
       "enGB": "Isekai Protagonist"
     },
     {
-      "Key": "f2da1634e85c45cc86896dadae0c8c0a",
+      "Key": "6f7dd6f39b564058bac616efc5b6f27a",
       "SimpleName": "AcidImmunity.Description",
       "ProcessTemplates": true,
       "enGB": "You gain immunity to Acid."
     },
     {
-      "Key": "9cfd718ef6a94769a449092484dff27c",
+      "Key": "9b912db8a4754d569fd48d6088c6b2f7",
       "SimpleName": "AcidImmunity.Name",
       "ProcessTemplates": false,
       "enGB": "Acid Immunity"
     },
     {
-      "Key": "6b4cfabf48ff48f79134e1e068f005e8",
+      "Key": "38d50f1ec46b419bbd3fcd4f8fe0b260",
       "SimpleName": "AlphaStrike.Description",
       "ProcessTemplates": true,
       "enGB": "You have become an alpha. Your attacks ignore immunity to critical hits and your critical threats are also automatically confirmed."
     },
     {
-      "Key": "a020feeeab3b4aac92bec4091319a238",
+      "Key": "166230f347cf41e9a6b8d699dd865018",
       "SimpleName": "AlphaStrike.Name",
       "ProcessTemplates": false,
       "enGB": "Alpha Strike"
     },
     {
-      "Key": "984d70051650431898ae4ab4208221b6",
+      "Key": "9b5a9de5ce9b455296e885b2d29910e2",
       "SimpleName": "AutoEmpowerAbility.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat."
     },
     {
-      "Key": "db2a282006e34223a255ec961645be12",
+      "Key": "a5deb9bfaa7e46499b4ecfa5e03fbbfa",
       "SimpleName": "AutoEmpowerBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat."
     },
     {
-      "Key": "54311f2009774309a4ead1e0a6b78c1a",
+      "Key": "d3072f2f15e84a8687431c1dab5e6ed0",
       "SimpleName": "AutoEmpowerBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Overpowered Ability — Auto Empower"
     },
     {
-      "Key": "f997c7a46bcb455b8bfbce48b6aa3397",
+      "Key": "9501399d608d469fa2e3c27a8d69434a",
       "SimpleName": "AutoEmpowerFeature.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat."
     },
     {
-      "Key": "14d98423ab1b44aabe4aa5560bd91667",
+      "Key": "3bdcb237375e4eb3a777fc4cc9b8a4dc",
       "SimpleName": "AutoExtendAbility.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it becomes extended, as though using the Extend Spell feat."
     },
     {
-      "Key": "5cb5d743703c486389466be759b64854",
+      "Key": "60bc9c73778d402ab463ce06e262f6a4",
       "SimpleName": "AutoExtendBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it becomes extended, as though using the Extend Spell feat."
     },
     {
-      "Key": "531489bf735540a9b8f11bb2a957af19",
+      "Key": "c4c4ae45dce94109aa12ec52ade21a1e",
       "SimpleName": "AutoExtendBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Overpowered Ability — Auto Extend"
     },
     {
-      "Key": "13fceabe7e564f1183bfaf47711b8dca",
+      "Key": "859ea6942b91435594e5b16a5fa123a6",
       "SimpleName": "AutoExtendFeature.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it becomes extended, as though using the Extend Spell feat."
     },
     {
-      "Key": "1a723abb47ac4e859cc9467dfd1abe47",
+      "Key": "5a4fb33614d046d1bf2bd9e659299566",
       "SimpleName": "AutoMaximizeAbility.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat."
     },
     {
-      "Key": "d87d36eea8a84f0f87601313e6547245",
+      "Key": "0afa7f9b7e9c4fe88ab5ea2d3b7386a0",
       "SimpleName": "AutoMaximizeBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat."
     },
     {
-      "Key": "d545d14db08147cfaa0ee6d46ab7c9ea",
+      "Key": "2a9ca0294c574c48810766ce9a7a4148",
       "SimpleName": "AutoMaximizeBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Overpowered Ability — Auto Maximize"
     },
     {
-      "Key": "beeb3e01b9af4342802f3ee511e4112d",
+      "Key": "7177eeac11cb4fa39c9a38481db8da22",
       "SimpleName": "AutoMaximizeFeature.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat."
     },
     {
-      "Key": "240ad35b72954b4eadf0e66a08159894",
+      "Key": "b6d558a75b64418299062f18671773a9",
       "SimpleName": "AutoQuickenAbility.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it becomes quickened, as though using the Quicken Spell feat."
     },
     {
-      "Key": "64d771d2146c4b50bbec4c0cd194c712",
+      "Key": "662abbe2854f40b286864bfe39601922",
       "SimpleName": "AutoQuickenBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it becomes quickened, as though using the Quicken Spell feat."
     },
     {
-      "Key": "d78e605faeb3480abf89492621416ad7",
+      "Key": "b9da8bb0bf5944c9bf5e2a6409d2050b",
       "SimpleName": "AutoQuickenBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Overpowered Ability — Auto Quicken"
     },
     {
-      "Key": "424c858d306040a5864ee7798d160c9f",
+      "Key": "9f373fad22b443928cf8685d0ad7ae9a",
       "SimpleName": "AutoQuickenFeature.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it becomes quickened, as though using the Quicken Spell feat."
     },
     {
-      "Key": "c1ff1c47de2d4eaca356126ea5b374b2",
+      "Key": "3aa93f0cf2764d8aa4842507863ff4cb",
       "SimpleName": "AutoReachAbility.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat."
     },
     {
-      "Key": "fbe9f531dba14c7684cb5a83e0af0c3a",
+      "Key": "2d8c8dac40fd4173a14e99a3e5780866",
       "SimpleName": "AutoReachBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat."
     },
     {
-      "Key": "ddd9953dbdd04dd2a8e31e30b614f355",
+      "Key": "421fa0aba3ae4a168959b52c2bad11f9",
       "SimpleName": "AutoReachBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Overpowered Ability — Auto Reach"
     },
     {
-      "Key": "6e8228b87c924cdc801ca17b2fddb703",
+      "Key": "68f49c345edf462ea03e7ad00ab0d61b",
       "SimpleName": "AutoReachFeature.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat."
     },
     {
-      "Key": "64fae622c9074caf84eadc51d1f53cf8",
+      "Key": "66c5275e2f69463ba8289a695e8274da",
       "SimpleName": "BackgroundHighschoolStudent.Description",
       "ProcessTemplates": true,
       "enGB": "The Highschool Student gains a +1 bonus to all attributes.\nIf the character already has the class skill, weapon proficiency or armor proficiency granted by the selected background from her class during character creation, then the corresponding bonuses from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor Check Penalty reduction in case of armor proficiency."
     },
     {
-      "Key": "f0df2231510a41ecb20c360af59d505a",
+      "Key": "ae4a2f8c98d74692ba814b5f9bc7beeb",
       "SimpleName": "BackgroundHighschoolStudent.Name",
       "ProcessTemplates": false,
       "enGB": "Highschool Student"
     },
     {
-      "Key": "f501764ccf1344459ae961ef8d116136",
+      "Key": "572c495cb05b408193cea3638b37f529",
       "SimpleName": "BackgroundMartialArtist.Description",
       "ProcessTemplates": true,
       "enGB": "The Martial Artist is proficient with all exotic weapons.\nIf the character already has the class skill, weapon proficiency or armor proficiency granted by the selected background from her class during character creation, then the corresponding bonuses from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor Check Penalty reduction in case of armor proficiency."
     },
     {
-      "Key": "b4f5cdd6c19d4182a941b2a526d825cd",
+      "Key": "a628960e072b4afb903ca4ad098f559f",
       "SimpleName": "BackgroundMartialArtist.Name",
       "ProcessTemplates": false,
       "enGB": "Martial Artist"
     },
     {
-      "Key": "0a03e87e72e749ec87f8fd4e8f63add3",
+      "Key": "a429098470b4455599fdd58776aa0d00",
       "SimpleName": "BackgroundSalaryman.Description",
       "ProcessTemplates": true,
       "enGB": "The Salaryman adds Perception to the list of her class skills. She can also use her Charisma instead of Wisdom while attempting Perception checks.\nIf the character already has the class skill, weapon proficiency or armor proficiency granted by the selected background from her class during character creation, then the corresponding bonuses from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor Check Penalty reduction in case of armor proficiency."
     },
     {
-      "Key": "f8bcd58cbec74bf7aca6397130474e08",
+      "Key": "57cfaf3394b1461ca735a024f09cba2b",
       "SimpleName": "BackgroundSalaryman.Name",
       "ProcessTemplates": false,
       "enGB": "Salaryman"
     },
     {
-      "Key": "c52fa22148524c48a3aa6fd7c9a48238",
+      "Key": "230461f196f440b99bfeb4ddc4212dfd",
       "SimpleName": "BackgroundTabletopRPGPlayer.Description",
       "ProcessTemplates": true,
       "enGB": "The Tabletop RPG Player adds Lore (Nature), Lore (Religion), Knowledge (World) and Knowledge (Arcana) to the list of her class skills and can use her Charisma instead of Intelligence or Wisdom while attempting Knowledge (World), Knowledge (Arcana), Lore (Religion), or Lore (Nature) checks.\nIf the character already has the class skill, weapon proficiency or armor proficiency granted by the selected background from her class during character creation, then the corresponding bonuses from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor Check Penalty reduction in case of armor proficiency."
     },
     {
-      "Key": "227662826c9e4659a61bed12e800817a",
+      "Key": "de748e3799274035bf64f77f12566c2d",
       "SimpleName": "BackgroundTabletopRPGPlayer.Name",
       "ProcessTemplates": false,
       "enGB": "Tabletop RPG Player"
     },
     {
-      "Key": "c82c233bddda4d6cb416e0791560cd8e",
+      "Key": "1e3fe00fd5b44907882148f24bc92c19",
       "SimpleName": "BeachEpisodeSelection.Description",
       "ProcessTemplates": true,
       "enGB": "At 12th level, you and your companions take a short intermission beside a large body of water. During this time, you begin a journey of self discovery."
     },
     {
-      "Key": "60a53fcfd75f4a7aa4ae6eb6f69006f3",
+      "Key": "d6d65ee451df4d959659ea3263164d54",
       "SimpleName": "BeachEpisodeSelection.Name",
       "ProcessTemplates": false,
       "enGB": "Beach Episode"
     },
     {
-      "Key": "3cfe10bb138546b3a0ae1c4e21b139ce",
+      "Key": "b73179ccfebb48fc8a7c3557fb6b0d76",
       "SimpleName": "BetaStrike.Description",
       "ProcessTemplates": true,
       "enGB": "You get an additional attack per round but take a –4 penalty to damage rolls."
     },
     {
-      "Key": "d098b5c69d8a4376816432262d93853d",
+      "Key": "552f8d779e1e42a0a4bafe306d20d361",
       "SimpleName": "BetaStrike.Name",
       "ProcessTemplates": false,
       "enGB": "Beta Strike"
     },
     {
-      "Key": "19f68a6eea8f41149a5d31d94f964eb5",
+      "Key": "8c3dd1bc781b4c5bbb09af90821f9491",
       "SimpleName": "BodyStrengthening.Description",
       "ProcessTemplates": true,
       "enGB": "After extensive strengthening of your body, you gain DR/— equal to 10 + your character level."
     },
     {
-      "Key": "b9ac6ec0103847db8a76b562ba5ae7e9",
+      "Key": "5de120f42bcd47d5ba7720ef04b2882e",
       "SimpleName": "BodyStrengthening.Name",
       "ProcessTemplates": false,
       "enGB": "Body Strengthening"
     },
     {
-      "Key": "c4248900f79a480ab16dbdf09d8081ce",
+      "Key": "a8f0e9d2e1eb4f9f83ca43e09bbc2e8a",
       "SimpleName": "CharacterDevelopmentSelection1.Description",
       "ProcessTemplates": true,
       "enGB": "As you increase your level, you can select powerful character development feats."
     },
     {
-      "Key": "a08caaca60404a6c8f1848a7ed322ac2",
+      "Key": "5040f2462bd4469fac60ac5e46b0d4fd",
       "SimpleName": "CharacterDevelopmentSelection1.Name",
       "ProcessTemplates": false,
       "enGB": "Character Development I"
     },
     {
-      "Key": "9798b11d4a344e5e9b224624d48c315a",
+      "Key": "5b3b384913b84119b496567269904324",
       "SimpleName": "CharacterDevelopmentSelection2.Description",
       "ProcessTemplates": true,
       "enGB": "As you increase your level, you can select powerful character development feats."
     },
     {
-      "Key": "050462300b87405598a0000381760dcc",
+      "Key": "70eed411fc0c455c8219c42cd98bb0f8",
       "SimpleName": "CharacterDevelopmentSelection2.Name",
       "ProcessTemplates": false,
       "enGB": "Character Development II"
     },
     {
-      "Key": "f61f4dfede7148938829297dce52430c",
+      "Key": "b5b7fead27754bf896503b339560153d",
       "SimpleName": "CharacterDevelopmentSelection3.Description",
       "ProcessTemplates": true,
       "enGB": "As you increase your level, you can select powerful character development feats."
     },
     {
-      "Key": "3da958d6d3bf40f8949e41aafcf76bb6",
+      "Key": "bd30a36dfe144618876e931e5c4d6e5a",
       "SimpleName": "CharacterDevelopmentSelection3.Name",
       "ProcessTemplates": false,
       "enGB": "Character Development III"
     },
     {
-      "Key": "841a8981d4b0428aa792572f89b37efa",
+      "Key": "c706118f7fa14ff0b9005aaa9cc32d91",
       "SimpleName": "CharacterDevelopmentSelection4.Description",
       "ProcessTemplates": true,
       "enGB": "As you increase your level, you can select powerful character development feats."
     },
     {
-      "Key": "a4370765656342c0b1d16c81a6678323",
+      "Key": "7ed9b0f50abe4d5a86488333d3e26715",
       "SimpleName": "CharacterDevelopmentSelection4.Name",
       "ProcessTemplates": false,
       "enGB": "Character Development IV"
     },
     {
-      "Key": "64239ba67a9145e2bdef838ae08ba407",
+      "Key": "6a1e936291cb4e9198ac04a80e5570ba",
       "SimpleName": "CharacterDevelopmentSelection5.Description",
       "ProcessTemplates": true,
       "enGB": "As you increase your level, you can select powerful character development feats."
     },
     {
-      "Key": "19b77a953ce74ed8b79a6432282d30af",
+      "Key": "60cd880bf84141a2aa5393d639684636",
       "SimpleName": "CharacterDevelopmentSelection5.Name",
       "ProcessTemplates": false,
       "enGB": "Character Development V"
     },
     {
-      "Key": "f70684a40bb04927b08f36a8dad5406d",
+      "Key": "0affc34f4fd34ef1b8185c50cc57b399",
       "SimpleName": "ColdImmunity.Description",
       "ProcessTemplates": true,
       "enGB": "You gain immunity to Cold."
     },
     {
-      "Key": "66b6d9b13e5e4b81a1544383fdf92fe8",
+      "Key": "53e5b874bad54b28bbb42cc62b7b915f",
       "SimpleName": "ColdImmunity.Name",
       "ProcessTemplates": false,
       "enGB": "Cold Immunity"
     },
     {
-      "Key": "a7bbc191582f478e8e93d1f7222a584d",
+      "Key": "3344e29a8a894a2e8faa9ea8923c34cd",
       "SimpleName": "DarkAuraAbility.Description",
       "ProcessTemplates": true,
       "enGB": "Enemies within 40 feet of the God Emperor take a –2 penalty on attack rolls, AC, and saving throws."
     },
     {
-      "Key": "a9e3c17ca81c487d97bd796899a7be5c",
+      "Key": "db9e6f4ea1e04b0fb3af62063e3bceb9",
       "SimpleName": "DarkAuraAreaBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Enemies within 40 feet of the God Emperor take a –2 penalty on attack rolls, AC, and saving throws."
     },
     {
-      "Key": "73094ade01464424927f9c9208cd8f46",
+      "Key": "1cab679c727e4cddbbebe3db0b653518",
       "SimpleName": "DarkAuraBuff.Description",
       "ProcessTemplates": true,
       "enGB": "This creature has a –2 penalty on attack rolls, AC, and saving throws."
     },
     {
-      "Key": "37c4b400cb3c48f49b1734bb34a2fbfe",
+      "Key": "9bbca246e9324cdc91b87a26b351665a",
       "SimpleName": "DarkAuraBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Dark Aura"
     },
     {
-      "Key": "d3387c76224544fea96247d0b29e86ba",
+      "Key": "e980a4edf912401e8033fad55db8d041",
       "SimpleName": "DarkAuraFeature.Description",
       "ProcessTemplates": true,
       "enGB": "At 10th level, enemies within 40 feet of the God Emperor take a –2 penalty on attack rolls, AC, and saving throws."
     },
     {
-      "Key": "c5985cde723f42aaa982df0b28c7bc5a",
+      "Key": "3f502e8cbd8447a3930ce593de92546d",
       "SimpleName": "DupeGoldAbility.Description",
       "ProcessTemplates": true,
       "enGB": "As a standard action, you gain 1 million gold."
     },
     {
-      "Key": "ac4d9e0d211545148154c52829c3f780",
+      "Key": "5cf9c53f0f4b4e75b2e889bd690105d2",
       "SimpleName": "DupeGoldAbility.Name",
       "ProcessTemplates": false,
       "enGB": "Overpowered Ability — Dupe Gold"
     },
     {
-      "Key": "b3ad9fe5a450418c91edbc6a2537acea",
+      "Key": "214fd3d31b4e4fcdaabb57a92444228e",
       "SimpleName": "DupeGoldFeature.Description",
       "ProcessTemplates": true,
       "enGB": "As a standard action, you gain 1 million gold."
     },
     {
-      "Key": "8bcd5f72ddf64474bb6543fd07967710",
+      "Key": "9963b79428a54ec5b8f42c05259fe8db",
       "SimpleName": "EdgeLordArchetype.Description",
       "ProcessTemplates": true,
       "enGB": "After reincarnating into Golarion, some protagonists use their newfound abilities to look cool and stylish. Their attacks become flashy and myriad, moving so fast that side characters would be lucky to even see the afterimage."
     },
     {
-      "Key": "237c15715f124f2788459d1767825985",
+      "Key": "523ce272f9dd4ca78e54abf07d380d80",
       "SimpleName": "EdgeLordArchetype.Description",
       "ProcessTemplates": true,
       "enGB": "After reincarnating into Golarion, some protagonists use their newfound abilities to look cool and stylish. Their attacks become flashy and myriad, moving so fast that side characters would be lucky to even see the afterimage."
     },
     {
-      "Key": "ffd11f381ad84686828f7261c3cf1a24",
+      "Key": "25eba928f58742a48d4a8c6192e24cf6",
       "SimpleName": "EdgeLordArchetype.Name",
       "ProcessTemplates": true,
       "enGB": "Edge Lord"
     },
     {
-      "Key": "4e9bfc67b67e40249fadb5f496dd66f1",
+      "Key": "8a408423f5f4461692805029474e8939",
       "SimpleName": "EdgeLordFastMovement.Description",
       "ProcessTemplates": true,
       "enGB": "At 7th level, you gain an +20 insight bonus to your speed."
     },
     {
-      "Key": "5df319bf58c54d93b09e55bc59117445",
+      "Key": "750987bb3f01424a9b7396b8ce75cff2",
       "SimpleName": "EdgeLordFastMovement.Name",
       "ProcessTemplates": false,
       "enGB": "Very Fast Movement"
     },
     {
-      "Key": "974d800283124c578b2bd5b42a45ed3d",
+      "Key": "b6605615124a43eea54943aef84e175d",
       "SimpleName": "EdgeLordProficiencies.Description",
       "ProcessTemplates": true,
       "enGB": "The Edge Lord is proficient with all simple and martial weapons as well as light and medium armor. They can cast spells from this class while wearing armor without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes."
     },
     {
-      "Key": "02c2f638a8114bd6bc4183e9c61fcda2",
+      "Key": "e242e70da142417ca0fff749c2ef3c92",
       "SimpleName": "EdgeLordProficiencies.Name",
       "ProcessTemplates": false,
       "enGB": "Edge Lord Proficiencies"
     },
     {
-      "Key": "fe494560fec149afb069c601a84cb7eb",
+      "Key": "6ab2fe401ca04f98a2e4f1faec1d1be6",
       "SimpleName": "ElectricityImmunity.Description",
       "ProcessTemplates": true,
       "enGB": "You gain immunity to Electricity."
     },
     {
-      "Key": "8fcf1f315f884cbc90d6a1619f0cddcd",
+      "Key": "6ffb1fa260a644c08805e03e9715dcbd",
       "SimpleName": "ElectricityImmunity.Name",
       "ProcessTemplates": false,
       "enGB": "Electricity Immunity"
     },
     {
-      "Key": "97862f9ca5e64a329f6f88851a51019b",
+      "Key": "6918d1e9dba74bda87bbd54a4ea827cf",
       "SimpleName": "ExceptionalSummoningAbility.Description",
       "ProcessTemplates": true,
       "enGB": "Your summoned creatures get a +100 bonus to maximum Hit Points and a +10 bonus to Attack, AC, and saving throws."
     },
     {
-      "Key": "391c48a2e8c748e38be4a34623c17da6",
+      "Key": "442ce90fc8784ac1ba991996ce7d2a13",
       "SimpleName": "ExceptionalSummoningBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Your summoned creatures get a +100 bonus to maximum Hit Points and a +10 bonus to Attack, AC, and saving throws."
     },
     {
-      "Key": "7954ba3e5113435ba5a399084e334bc2",
+      "Key": "bb1c8cdb04e244ee9822c6bfc8b8b0ff",
       "SimpleName": "ExceptionalSummoningBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Exceptional Summoning"
     },
     {
-      "Key": "66473644c38844d6ad2ee8173b1320d1",
+      "Key": "bb15e4ef3b8747768a26a17d44bf42e2",
       "SimpleName": "ExceptionalSummoningFeature.Description",
       "ProcessTemplates": true,
       "enGB": "Your summoned creatures get a +100 bonus to maximum Hit Points and a +10 bonus to Attack, AC, and saving throws."
     },
     {
-      "Key": "4a90c563165d43d79fcd83f80edf9641",
+      "Key": "742c4d261194485dafa55b755b2ac1df",
       "SimpleName": "ExceptionalSummoningSummonBuff.Description",
       "ProcessTemplates": true,
       "enGB": "This creature gets a +100 bonus to maximum Hit Points and a +10 bonus to Attack, AC, and saving throws."
     },
     {
-      "Key": "fd6fcea24f8f4bae8326c5c2a027e54a",
+      "Key": "a9fe987f7960489ba302043023bceee7",
       "SimpleName": "ExceptionalSummoningSummonBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Exceptional Summon"
     },
     {
-      "Key": "2378b9c6a36e4307942e7127a3ad505b",
+      "Key": "2bc8fbe6784e41c08ca96bacb2ca3d95",
       "SimpleName": "ExoticWeaponProficiency.Description",
       "ProcessTemplates": true,
       "enGB": "You become proficient with all Exotic Weapons."
     },
     {
-      "Key": "6595722832c846e6a6f6ef1ec335d67e",
+      "Key": "141c90e48a764ff1a3688da169c78506",
       "SimpleName": "ExoticWeaponProficiency.Name",
       "ProcessTemplates": false,
       "enGB": "Exotic Weapon Proficiency"
     },
     {
-      "Key": "14b7f692cbfb4253a733cd9f02133066",
+      "Key": "549be78288764993829c43f9a596a014",
       "SimpleName": "ExtraStrike.Description",
       "ProcessTemplates": true,
       "enGB": "You gain additional attacks based on your level.\nAt 5th level and every 5 levels thereafter (10th, 15th, and 20th level), you gain 1 additional attack."
     },
     {
-      "Key": "5d79c6b829df45f8bed1976f6c7f2363",
+      "Key": "2856ad07187b4a89b3801c7408372158",
       "SimpleName": "ExtraStrike.Name",
       "ProcessTemplates": false,
       "enGB": "Extra Strike"
     },
     {
-      "Key": "d244ad5525c74a4fa82f5e37f07efa77",
+      "Key": "790594ae93614aa3a44b430216937bbf",
       "SimpleName": "ExtremeSpeedAbility.Description",
       "ProcessTemplates": true,
       "enGB": "You gain a +100 insight bonus to your speed."
     },
     {
-      "Key": "0aa61efd6e9c4faca52d298b824367d3",
+      "Key": "31bab858dce8486a83ebf12dcd174d0f",
       "SimpleName": "ExtremeSpeedBuff.Description",
       "ProcessTemplates": true,
       "enGB": "You gain a +100 insight bonus to your speed."
     },
     {
-      "Key": "8aadddfc2c1549d3b5d3faf4c2562faa",
+      "Key": "1790feebad23494aa62bd84d9db34885",
       "SimpleName": "ExtremeSpeedBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Extreme Speed"
     },
     {
-      "Key": "e72ae68c515a45cd9d5081e3fb0ec64c",
+      "Key": "4d2cfd7d7b494f32b6edf5fd1d57c91a",
       "SimpleName": "ExtremeSpeedFeature.Description",
       "ProcessTemplates": true,
       "enGB": "After extensive speed training, you gain a +100 insight bonus to your speed."
     },
     {
-      "Key": "a52a242de3c448adb7cc7fe7cc2baef6",
+      "Key": "7c5d971e374e4838a373bd46b4a2ee34",
       "SimpleName": "FireImmunity.Description",
       "ProcessTemplates": true,
       "enGB": "You gain immunity to Fire."
     },
     {
-      "Key": "8be3575d77984dbbbfb5f0c933667528",
+      "Key": "71af0a34316b4d288a688f719a35fcbf",
       "SimpleName": "FireImmunity.Name",
       "ProcessTemplates": false,
       "enGB": "Fire Immunity"
     },
     {
-      "Key": "f41f9d85c78540229e9875e20e6e5644",
+      "Key": "8837ec3bb43340aab5906ebd9dfbffdc",
       "SimpleName": "FriendlyAuraAbility.Description",
       "ProcessTemplates": true,
       "enGB": "Enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack rolls."
     },
     {
-      "Key": "b32f1277e948471998242fd8a2a48c98",
+      "Key": "e7209676f1f34650b72b997f24c0623e",
       "SimpleName": "FriendlyAuraAreaBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack rolls."
     },
     {
-      "Key": "e3ade2446ba9443bb04d85d9c3be5018",
+      "Key": "c5bc38d1d17944cfb5cb42e1aef7708a",
       "SimpleName": "FriendlyAuraBuff.Description",
       "ProcessTemplates": true,
       "enGB": "This creature has a –4 penalty on attack rolls."
     },
     {
-      "Key": "566aaa091d784dc1b02a7e05507f9d70",
+      "Key": "56282ba855514d87b1d740f27f59ef61",
       "SimpleName": "FriendlyAuraBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Friendly Aura"
     },
     {
-      "Key": "cb21fc4507334071b4bc732ef87ea603",
+      "Key": "31711dffdce34a1082ebca0a75539fb5",
       "SimpleName": "FriendlyAuraFeature.Description",
       "ProcessTemplates": true,
       "enGB": "At 9th level, enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack rolls."
     },
     {
-      "Key": "01e836f3c4f547ab8771732e64101de3",
+      "Key": "5148cad521564d26a4dcdea237b1449f",
       "SimpleName": "GammaStrike.Description",
       "ProcessTemplates": true,
       "enGB": "Your attacks ignore concealment and are treated as adamantite for the purpose of overcoming damage reduction."
     },
     {
-      "Key": "e2e776c7c292438990e7db2f17f2b158",
+      "Key": "d04398cf371445d982f7ff4df435fdc1",
       "SimpleName": "GammaStrike.Name",
       "ProcessTemplates": false,
       "enGB": "Gamma Strike"
     },
     {
-      "Key": "6f31d0aff1d34013a8d357ea40cf46f4",
+      "Key": "6c6a67fb284f44379918a1f677738c4f",
       "SimpleName": "GloriousAuraAbility.Description",
       "ProcessTemplates": true,
       "enGB": "Allies within 40 feet of the God Emperor gain a +2 bonus on attack rolls and caster level checks made to overcome spell resistance."
     },
     {
-      "Key": "1ac7a2def9a74c7a8e071dd2ffa41209",
+      "Key": "4ae46a11a5ea4c0d992e30160294bbeb",
       "SimpleName": "GloriousAuraAreaBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Allies within 40 feet of the God Emperor gain a +2 bonus on attack rolls and caster level checks made to overcome spell resistance."
     },
     {
-      "Key": "1ae5155ec75049279340a79a99509b22",
+      "Key": "593d30b36ff74ee1ba0d1db22f6b7a20",
       "SimpleName": "GloriousAuraBuff.Description",
       "ProcessTemplates": true,
       "enGB": "This character has a +2 bonus on attack rolls and caster level checks made to overcome spell resistance."
     },
     {
-      "Key": "f529fc5dc94e484387a79679bb39a34f",
+      "Key": "202357fcb67e42d7a5bb70bb34f4dbf6",
       "SimpleName": "GloriousAuraBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Glorious Aura"
     },
     {
-      "Key": "ba2e8636d9b2484d9ceff8a8c28b6bea",
+      "Key": "e5e3e76588e7491881187cf1949369b7",
       "SimpleName": "GloriousAuraFeature.Description",
       "ProcessTemplates": true,
       "enGB": "At 9th level, allies within 40 feet of the God Emperor gain a +2 bonus on attack rolls and caster level checks made to overcome spell resistance."
     },
     {
-      "Key": "d3761e32bbf848a3a68bbafc5f7d9e09",
+      "Key": "289bded13e53461e965ed42db06d6972",
       "SimpleName": "GodEmporerArchetype.Description",
       "ProcessTemplates": true,
       "enGB": "Rather than wandering aimlessly, collecting harems, or defeating demon lords, some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively."
     },
     {
-      "Key": "9995902eea6941e893c12bf52d00d236",
+      "Key": "80871b6f37804eaa8b5680d781800907",
       "SimpleName": "GodEmporerArchetype.Description",
       "ProcessTemplates": true,
       "enGB": "Rather than wandering aimlessly, collecting harems, or defeating demon lords, some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively."
     },
     {
-      "Key": "afde556f0c8542bf8684169a3175e381",
+      "Key": "91abf7a288344b3087573dff81cb8509",
       "SimpleName": "GodEmporerArchetype.Name",
       "ProcessTemplates": true,
       "enGB": "God Emperor"
     },
     {
-      "Key": "cbeb7ffe8d61410c9122ae19040984b5",
+      "Key": "d59c93bb12704e1e9fe28d21cde5871c",
       "SimpleName": "GodEmporerProficiencies.Description",
       "ProcessTemplates": true,
       "enGB": "The God Emperor is proficient with all simple, martial, and exotic weapons and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast spells from this class while wearing armor and shields (including tower shields) without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes."
     },
     {
-      "Key": "6b3a1ee7b5f4461da67566b69af45da7",
+      "Key": "8ceb68b6a0c141e58e2b6c43e32b0a47",
       "SimpleName": "GodEmporerProficiencies.Name",
       "ProcessTemplates": false,
       "enGB": "God Emperor Proficiences"
     },
     {
-      "Key": "a512b2495b624428a515172e86ea2df5",
+      "Key": "c7387a6c88bc4f3995ae7d9af6480c23",
       "SimpleName": "Godhood.Description",
       "ProcessTemplates": true,
       "enGB": "At 20th level, you become a god. You gain 100 spell resistance and are immune to all physical damage. Your attacks ignore concealment, critical immunity, and damage reduction. Any critical threats you make are automatically confirmed. The spells you cast ignore spell resistance and spell immunity."
     },
     {
-      "Key": "d229cb63a3054a69b4df8237f0e171c2",
+      "Key": "f8f6547cce7b412194893654d57b6aa2",
       "SimpleName": "Godhood.Name",
       "ProcessTemplates": false,
       "enGB": "Godhood"
     },
     {
-      "Key": "9631367e9ff740049dc4f808953b441c",
+      "Key": "1fbc1a06440546a79fbd8d5da9c5ea7e",
       "SimpleName": "GodlyVessel.Description",
       "ProcessTemplates": true,
       "enGB": "At 15th level, the God Emperor gains immunity to sickening effects, nauseating effects, blindness, shaken effects, frightening effects, cowering, paralysis, petrification, confusion, sleep effects, slow effects, staggered effects, stun, daze, dazzle, entanglement, fatigue, exhaustion, movement impairing conditions, bleed, curses, hexes, posion, disease, fear effects, death effects, compulsion, charm, mind-affecting effects, emotion effects, ability score damage, energy drain, negative levels, sneak attack damage and critical hits."
     },
     {
-      "Key": "48e6e1ffdb0345f99d4557ec537dfeeb",
+      "Key": "14f9f60781bc4ddfb8b2e07be396433d",
       "SimpleName": "GodlyVessel.Name",
       "ProcessTemplates": false,
       "enGB": "Godly Vessel"
     },
     {
-      "Key": "96d9de6259c841f9a611f021dfae9d64",
+      "Key": "76f1531114b9423ab32680983e91607e",
       "SimpleName": "GraspHeartAbility.Description",
       "ProcessTemplates": true,
       "enGB": "Kills the targeted creature."
     },
     {
-      "Key": "b985550bdf1e4e4a95107c9bc0c66e3b",
+      "Key": "c33696ae9b5b48e1a6d5cb80a0034a09",
       "SimpleName": "GraspHeartAbility.Duration",
       "ProcessTemplates": true,
       "enGB": ""
     },
     {
-      "Key": "e357e2c5ef5c426f9695fe2027f0d80b",
+      "Key": "d33a3cb5744c4717b8461a75fab738ec",
       "SimpleName": "GraspHeartAbility.Name",
       "ProcessTemplates": false,
       "enGB": "Overpowered Ability — Grasp Heart"
     },
     {
-      "Key": "af2514571e914c2abe07c9eca741f6c2",
+      "Key": "287ea15c728448059a14b06fb6dafaf3",
       "SimpleName": "GraspHeartFeature.Description",
       "ProcessTemplates": true,
       "enGB": "You gain the Grasp Heart ability which can kill any creature in range."
     },
     {
-      "Key": "957d4c986d0b42c7bbf19d69be879b8f",
+      "Key": "2262651fdf14459e89071081870deacb",
       "SimpleName": "HaremMagnetAbility.Description",
       "ProcessTemplates": true,
       "enGB": "As a free action, enemies within 60 feet who fails a DC 50 Will save loses any immunity to mind-affecting effects, charm effects, and compulsion effects, and becomes fascinated for 1d4 rounds. Creatures that succeed at this saving throw are immune to this ability for 24 hours."
     },
     {
-      "Key": "05fc0ac07186402c8fe2b7d3aa7f5a06",
+      "Key": "ce2f8d17df084853babc9dabbdc66ea2",
       "SimpleName": "HaremMagnetAbility.Duration",
       "ProcessTemplates": true,
       "enGB": "1d4 rounds"
     },
     {
-      "Key": "42bb8b4a99354d1e849dd6277657bde2",
+      "Key": "3a1b9ca8356f4f1eb29cd4bff8d402c5",
       "SimpleName": "HaremMagnetAbility.Name",
       "ProcessTemplates": false,
       "enGB": "Harem Magnet"
     },
     {
-      "Key": "b004477d35c74812bd1e17fe75694e24",
+      "Key": "8bd0b4bc7f1d4ff9b843a0d0a1f97139",
       "SimpleName": "HaremMagnetAbility.SavingThrow",
       "ProcessTemplates": true,
       "enGB": "Will negates"
     },
     {
-      "Key": "6124236e92d54b289a75044ec7bfd936",
+      "Key": "870c12df25094141890e3372dabd8dfb",
       "SimpleName": "HaremMagnetBuff.Description",
       "ProcessTemplates": true,
       "enGB": "This creature is Fascinated and can take no actions. Any damage to the target automatically breaks the effect."
     },
     {
-      "Key": "38bac521ea504402b95cf5a7e459466b",
+      "Key": "29a89a0b05c14a95a4ea334d6e9e750b",
       "SimpleName": "HaremMagnetBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Fascinated"
     },
     {
-      "Key": "2039bcc9491e4442bc5412839fbd13bd",
+      "Key": "0ca015673d154d4ab46f8c720862bb26",
       "SimpleName": "HaremMagnetFeature.Description",
       "ProcessTemplates": true,
       "enGB": "At 17th Level, you gain the ability to attract anyone. As a free action, enemies within 60 feet who fails a DC 50 Will save loses any immunity to mind-affecting effects, charm effects, and compulsion effects, and becomes fascinated for 1d4 rounds. Creatures that succeed at this saving throw are immune to this ability for 24 hours."
     },
     {
-      "Key": "4ba97daf1ce44efbb66e8e09e2d19cf8",
+      "Key": "628b5ae1353944d8af7769649ceab38b",
       "SimpleName": "HaremMagnetImmunity.Description",
       "ProcessTemplates": true,
       "enGB": "This creature is immune to Harem Magnet for 24 hours."
     },
     {
-      "Key": "984f25794d494a14a1a3759b3df33fba",
+      "Key": "52ea8a1cdbd54fecbd6443a20e3679d3",
       "SimpleName": "HaremMagnetImmunity.Name",
       "ProcessTemplates": false,
       "enGB": "Harem Magnet Immunity"
     },
     {
-      "Key": "9e80fe1791f34eea9011e28b235810e9",
+      "Key": "c731d920921b4efc8015c5f6f2412744",
       "SimpleName": "HealthyBody.Description",
       "ProcessTemplates": true,
       "enGB": "You gain immunity to bleed, blindness, curses, poison, disease, sickened, and nauseated conditions."
     },
     {
-      "Key": "73bdcf1f55b6494fab2793cc06c84602",
+      "Key": "0475707456284840acfb02662ad9b217",
       "SimpleName": "HealthyBody.Name",
       "ProcessTemplates": false,
       "enGB": "Healthy Body"
     },
     {
-      "Key": "ca6e6da014c942babcfa967be0912e8b",
+      "Key": "21988ada700e48228b9da2dc235983a7",
       "SimpleName": "InnerPower.Description",
       "ProcessTemplates": true,
       "enGB": "You gain immunity to shaken, frightened, cowering, fear, death effects, ability score damage, energy drain, and negative levels."
     },
     {
-      "Key": "01295b2c1da44878a758510de51f9486",
+      "Key": "65c28a7236474f1493bfae4aa814abca",
       "SimpleName": "InnerPower.Name",
       "ProcessTemplates": false,
       "enGB": "Inner Power"
     },
     {
-      "Key": "1eff0a7ce832433d90ef05d0e28b5750",
+      "Key": "b686276dd06f4b4b9eedb44d79e107bb",
       "SimpleName": "IsekaiBackgroundSelection.Description",
       "ProcessTemplates": true,
       "enGB": "Before you were hit by a truck, you were a..."
     },
     {
-      "Key": "bc9301a8632d41d1a80c4a74d6d0106b",
+      "Key": "e591db8201544eaf83f3ef295eb20166",
       "SimpleName": "IsekaiBackgroundSelection.Name",
       "ProcessTemplates": false,
       "enGB": "Isekai"
     },
     {
-      "Key": "31d72e46f96647418d149c0fa1723259",
+      "Key": "e0f1259123ed40648693c03b46b254aa",
+      "SimpleName": "IsekaiFamiliarSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain the service of a familiar, which offers you some skill bonuses."
+    },
+    {
+      "Key": "439a8511ac6343f28aa12a122509cc11",
+      "SimpleName": "IsekaiFamiliarSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Familiar Selection"
+    },
+    {
+      "Key": "32fb925fefe2411a8d267212987f24c7",
       "SimpleName": "IsekaiFastMovement.Description",
       "ProcessTemplates": true,
       "enGB": "At 8th level, you gain a +10 bonus to your speed."
     },
     {
-      "Key": "8a7a646e0fb84943b9cef4db758c4892",
+      "Key": "3378561b5f224c159e61dbfb6e64d626",
       "SimpleName": "IsekaiFastMovement.Name",
       "ProcessTemplates": false,
       "enGB": "Fast Movement"
     },
     {
-      "Key": "ab7a2c902c9d4e239806d9bdca569f30",
+      "Key": "1cb5c17e28f84394999d21f5ffdfa9e4",
       "SimpleName": "IsekaiFighterTraining.Description",
       "ProcessTemplates": true,
       "enGB": "At 3rd level, you count your class level as your fighter level for the purpose of qualifying for feats. If you have levels in fighter, these levels stack."
     },
     {
-      "Key": "dfd20729bc51488f96a5017ee9b5b05e",
+      "Key": "84d75d223ff94b6fafde8edca4ceabcd",
       "SimpleName": "IsekaiFighterTraining.Name",
       "ProcessTemplates": false,
       "enGB": "Fighter Training"
     },
     {
-      "Key": "af9ba2b306de4925bfbeb520496674b2",
+      "Key": "7e9e1a953d3742e0a6f6f09e3bc20bad",
+      "SimpleName": "IsekaiPetSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 1st level, you gain the service of either an animal companion or familiar, using your class level as your effective druid level."
+    },
+    {
+      "Key": "3d6a27c8e6d44755b66a206e04033aeb",
+      "SimpleName": "IsekaiPetSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Pet Selection"
+    },
+    {
+      "Key": "a69aa655589946caaaa19e62ea50805c",
       "SimpleName": "IsekaiProtagonistBonusFeat.Description",
       "ProcessTemplates": true,
       "enGB": "Isekai Protagonists gain twice as many feats as the other classes."
     },
     {
-      "Key": "7c438cee09a0469e80fb96584c509caa",
+      "Key": "5c096aa8e1344bfaa22f55f09b9da80e",
       "SimpleName": "IsekaiProtagonistBonusFeat.DescriptionShort",
       "ProcessTemplates": true,
       "enGB": "Isekai Protagonists gain twice as many feats as the other classes."
     },
     {
-      "Key": "60f1a5ec89cc48af9e1276558e1955e5",
+      "Key": "6ca6e4cbd06946879e3b996b4ce0f6a4",
       "SimpleName": "IsekaiProtagonistBonusFeat.Name",
       "ProcessTemplates": false,
       "enGB": "Bonus Feat"
     },
     {
-      "Key": "5a0cda63642c4679bce492b9d1b95673",
+      "Key": "e52b1e08f1614b9ab0b88dc8ab565111",
       "SimpleName": "IsekaiProtagonistBonusFeatSelection.Description",
       "ProcessTemplates": true,
       "enGB": "At 1st level, and at every even level thereafter, you gain a bonus feat in addition to those gained from normal advancement."
     },
     {
-      "Key": "70ac088fe2c14170a7ab5fa458c6fe54",
+      "Key": "c8b28d6d78c047309fa92e207c58c74b",
       "SimpleName": "IsekaiProtagonistCantripsFeature.Description",
       "ProcessTemplates": true,
       "enGB": "You can cast a number of cantrips, or 0-level spells. These spells are cast like any other spell, but they are not expended when cast and may be used again."
     },
     {
-      "Key": "4ca7096395bb426f9503de8e8f73f24c",
+      "Key": "c8fa7b56e8f849ca8b5780582615d785",
       "SimpleName": "IsekaiProtagonistCantripsFeature.Name",
       "ProcessTemplates": false,
       "enGB": "Cantrips"
     },
     {
-      "Key": "4c75fa5d07f247f49bdb035558f3e9d9",
+      "Key": "ad81bd9fbe0740dabdaa4542e69a9fd3",
       "SimpleName": "IsekaiProtagonistClass.Description",
       "ProcessTemplates": true,
       "enGB": "Isekai protagonists are very powerful beings. They have plot armor which make them hard to kill, and have Overpowered Abilities which make them really powerful. They also gain character development feats which greatly enhance their combat power."
     },
     {
-      "Key": "3bffeb806f914b7ab4e00a609aacf569",
+      "Key": "5b2a21f820744f179b5646ec1444fccc",
       "SimpleName": "IsekaiProtagonistClass.Description",
       "ProcessTemplates": true,
       "enGB": "Isekai protagonists are people who have been reincarnated into the world of Golarion with overpowered abilities. As their story progresses, they gain more overpowered abilities to wreck every wannabe villain and side character they face."
     },
     {
-      "Key": "06ad2e3f356b4990b8cd5e81c4e78b52",
+      "Key": "889500ffbadd414cab083e4581c04f43",
       "SimpleName": "IsekaiProtagonistOverpoweredAbilityFeat.Description",
       "ProcessTemplates": true,
       "enGB": "Isekai Protagonists gain an extremely Overpowered Ability at 1st level."
     },
     {
-      "Key": "e06a5379b2574c39bba791cbe6ee18fa",
+      "Key": "4c09a738498e443c906754d5ee00a308",
       "SimpleName": "IsekaiProtagonistOverpoweredAbilityFeat.Name",
       "ProcessTemplates": false,
       "enGB": "Overpowered Ability"
     },
     {
-      "Key": "91c9ec8efe954c88a91bf823b7f21ac4",
+      "Key": "8c3723886f13488cb500f5fb0e06bc25",
       "SimpleName": "IsekaiProtagonistPlotArmorFeat.Description",
       "ProcessTemplates": true,
       "enGB": "Isekai Protagonists gain a luck bonus to AC and all saving throws equal to their character level."
     },
     {
-      "Key": "b7862696692c4470b78bbdf4c358d474",
+      "Key": "1ffae48f5f1c4897b92cc8e30dd9c823",
       "SimpleName": "IsekaiProtagonistPlotArmorFeat.Name",
       "ProcessTemplates": false,
       "enGB": "Plot Armor"
     },
     {
-      "Key": "e1a91f7f6fc94a82822f259c924424cb",
+      "Key": "ded58bfc66d3463fa98d1ddb8f773228",
       "SimpleName": "IsekaiProtagonistProficiencies.Description",
       "ProcessTemplates": true,
       "enGB": "Isekai Protagonists are proficient with all simple and martial weapons and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast spells from this class while wearing armor and shields (including tower shields) without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes."
     },
     {
-      "Key": "bb6bd414820546eb9cc8f676c8691e87",
+      "Key": "63cfb01eb8bd4bb5b9d38dafb6b6d791",
       "SimpleName": "IsekaiProtagonistProficiencies.Name",
       "ProcessTemplates": false,
       "enGB": "Isekai Protagonist Proficiences"
     },
     {
-      "Key": "b0302bb5e8d542cfb814e85c68f1faf9",
+      "Key": "77a60933199940e68693c542d92fb9ac",
       "SimpleName": "IsekaiProtagonistProgression.Description",
       "ProcessTemplates": true,
       "enGB": "Isekai protagonists are otherworldly entities who have been reincarnated into the world of Golarion with extraordinary abilities. As their story progresses, they gain more unexplained and overpowered abilities to overcome every challenge they face."
     },
     {
-      "Key": "dd8558a9bb32417fa4d465934e9ad75a",
+      "Key": "23dd8ef3b4424e8ea1b22c7c90b22942",
       "SimpleName": "IsekaiProtagonistSneakFeat.Description",
       "ProcessTemplates": true,
       "enGB": "Most characters gain advantages when they flank an enemy, attack an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional damage in such a situation."
     },
     {
-      "Key": "118e4621a67e4a708f76d19d371b1454",
+      "Key": "f38b5ad9c7af444aa05e6b03e057bf83",
       "SimpleName": "IsekaiProtagonistSneakFeat.DescriptionShort",
       "ProcessTemplates": true,
       "enGB": "Most characters gain advantages when they flank an enemy, attack an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional damage in such a situation."
     },
     {
-      "Key": "09d2108a0de642798884e484beb68f78",
+      "Key": "a3c5e5f25ff749a9b2e90cd9dde1e9fd",
       "SimpleName": "IsekaiProtagonistSneakFeat.Name",
       "ProcessTemplates": false,
       "enGB": "Sneak Attack"
     },
     {
-      "Key": "3dc95b7d3c76437ebd1690f6a0c28e04",
+      "Key": "fae66f1f61f2486c980adff3b4934feb",
       "SimpleName": "IsekaiProtagonistTalentSelection.Description",
       "ProcessTemplates": true,
       "enGB": "You can select a rogue talent from a limited set of rogue talents, ignoring any prerequisites for these talents."
     },
     {
-      "Key": "51fdcc74bece43c398b90340588022d6",
+      "Key": "2cbdaab4db024f34bf4b7c4e6c3dffd3",
       "SimpleName": "IsekaiProtagonistTalentSelection.Name",
       "ProcessTemplates": false,
       "enGB": "Rogue Talents"
     },
     {
-      "Key": "60f099f1aa3f40b8b03c13ef771e49e0",
+      "Key": "29fa6512051548b5a9028e01f551d334",
       "SimpleName": "IsekaiQuickFooted.Description",
       "ProcessTemplates": true,
       "enGB": "At 15th level, you gain a competence bonus to your initiative checks equal to your Charisma modifier."
     },
     {
-      "Key": "25807a16fb844a94ad55b2d9459ce417",
+      "Key": "cae9727638ce4954b8710deb8d194eaa",
       "SimpleName": "IsekaiQuickFooted.Name",
       "ProcessTemplates": false,
       "enGB": "Quick-Footed"
     },
     {
-      "Key": "5b513d9494f24debbf0096c775f3b76f",
+      "Key": "122a57d945b94a42ab61bcf5cc8704da",
       "SimpleName": "MasterSelf.Description",
       "ProcessTemplates": true,
       "enGB": "You gain immunity to dazed, dazzled, sleep, confusion, charm, emotion, complusion, and mind-affecting effects."
     },
     {
-      "Key": "be6e424324c94178ac26e8297c237e1a",
+      "Key": "b03ea7304426496b9fe01efdc4cdce4c",
       "SimpleName": "MasterSelf.Name",
       "ProcessTemplates": false,
       "enGB": "Master Self-Control"
     },
     {
-      "Key": "2648e48c7514423d806e21ca711564b9",
+      "Key": "fa8ebea39bb646119e970eb4ba554774",
       "SimpleName": "MundaneAura.Description",
       "ProcessTemplates": true,
       "enGB": "You emit a small aura of mundanity, giving you immunity to Sneak attack damage and critical hits."
     },
     {
-      "Key": "01efaf6fca43493fa8e3e972e9062b36",
+      "Key": "db9c6ac2b66d46ada44f70b2549b40bc",
       "SimpleName": "MundaneAura.Name",
       "ProcessTemplates": false,
       "enGB": "Mundane Aura"
     },
     {
-      "Key": "972c36dd1dd54f66aee6cf609cfe756e",
+      "Key": "971afbbf8bd3431ebe1d3c0b14c7eaff",
       "SimpleName": "NascentApotheosis.Description",
       "ProcessTemplates": true,
       "enGB": "At 3rd level, the God Emperor gains an inherent bonus to all attributes equal to 1/2 their character level."
     },
     {
-      "Key": "b1a22b4e46f74171b50819df349f637a",
+      "Key": "588a6ae53e2b46b286e6500429058f73",
       "SimpleName": "NascentApotheosis.Name",
       "ProcessTemplates": false,
       "enGB": "Nascent Apotheosis"
     },
     {
-      "Key": "7ce4d50911ee4448ac8c3d18e824df74",
+      "Key": "861c52cc03ab499795895a9d8d664871",
       "SimpleName": "OtherworldlyStamina.Description",
       "ProcessTemplates": true,
       "enGB": "At 15th Level, you become immune to fatigue and exhaustion."
     },
     {
-      "Key": "64f4f4f919354cffbc54a83194ff3aa0",
+      "Key": "5a64c9c3562047f78b6eb05d3508c31b",
       "SimpleName": "OtherworldlyStamina.Name",
       "ProcessTemplates": false,
       "enGB": "Otherworldly Stamina"
     },
     {
-      "Key": "13999ea11fdf4251a175deee15049189",
+      "Key": "790869249ce04d37b82f2cea6a7c29a0",
       "SimpleName": "OverpoweredAbilityMythicSelection.Description",
       "ProcessTemplates": true,
       "enGB": "You use your mythic powers to gain an additional Overpowered Ability."
     },
     {
-      "Key": "e1824f7ba6dc4d39af1d631f460fd466",
+      "Key": "7340d20f1b4746c7bee411c1c5689232",
       "SimpleName": "OverpoweredAbilityMythicSelection.Name",
       "ProcessTemplates": false,
       "enGB": "Second Overpowered Ability"
     },
     {
-      "Key": "2560ee9a5ca642598849fe0ea968600c",
+      "Key": "abed1da2dba64f238a5de3c3086f3ee8",
       "SimpleName": "OverpoweredAbilitySelection.Description",
       "ProcessTemplates": true,
       "enGB": "At 1st level, you get to select an extremely powerful Overpowered Ability."
     },
     {
-      "Key": "c2d8e71f252c4766a263865e64c1a0ce",
+      "Key": "d2e90e97b8d64364975889880b9f492b",
       "SimpleName": "PerfectRollAbility.Description",
       "ProcessTemplates": true,
       "enGB": "You always roll a 20 on all d20 rolls."
     },
     {
-      "Key": "ce9ad98d32e5491d802c333639411a61",
+      "Key": "c9af34a3f9aa44ee967c58ea11f4a8f8",
       "SimpleName": "PerfectRollBuff.Description",
       "ProcessTemplates": true,
       "enGB": "This character always rolls 20 on all d20 rolls."
     },
     {
-      "Key": "366cf5e7d26b4f469e329140e376adfa",
+      "Key": "5fb5709298044c10923976451d6bb4b8",
       "SimpleName": "PerfectRollBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Overpowered Ability — Perfect Roll"
     },
     {
-      "Key": "f8b3ed758a90475897fc2e4bef4cd109",
+      "Key": "27b5bc0c2e94451e9ae1109a6c08f238",
       "SimpleName": "PerfectRollFeature.Description",
       "ProcessTemplates": true,
       "enGB": "You always roll a 20 on all d20 rolls."
     },
     {
-      "Key": "57b3d7dcc2a54d2eaf9defab1adef4e6",
+      "Key": "c6a4c213c0ac431296641aedda91af64",
       "SimpleName": "PlotArmor.Description",
       "ProcessTemplates": true,
       "enGB": "You gain a luck bonus to AC and all saving throws equal to your character level."
     },
     {
-      "Key": "317a3c283ab8481eb30fabe9d3e116da",
+      "Key": "17cbc45210724e1eade654c97139f958",
       "SimpleName": "PlotArmor.DescriptionShort",
       "ProcessTemplates": true,
       "enGB": "You gain a luck bonus to AC and all saving throws based on your character level."
     },
     {
-      "Key": "7a3653d704c64402aef590df5151ae08",
+      "Key": "071b6835a2cd42398305b8a79f4fff9b",
       "SimpleName": "ProtectiveAuraAbility.Description",
       "ProcessTemplates": true,
       "enGB": "Allies within 40 feet of the God Emperor take a +2 bonus on AC, and saving throws."
     },
     {
-      "Key": "dfc48802e47045f992740c5117f7a34e",
+      "Key": "6a9091453d8145a0b30033a9fbf19bca",
       "SimpleName": "ProtectiveAuraAreaBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Allies within 40 feet of the God Emperor take a +2 bonus on AC, and saving throws."
     },
     {
-      "Key": "5455b3479b014fd3af34912564b5a7a9",
+      "Key": "cec82f39942445c791759d68f198c5f3",
       "SimpleName": "ProtectiveAuraBuff.Description",
       "ProcessTemplates": true,
       "enGB": "This character has a +2 bonus on AC and saving throws."
     },
     {
-      "Key": "5e8384294b5b45bc8aa6ace5d00e8115",
+      "Key": "7b0bec86034a4e7b8cb6dae2f4240988",
       "SimpleName": "ProtectiveAuraBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Protective Aura"
     },
     {
-      "Key": "0fde90c8345949c38f5b9bcc56ae0cf6",
+      "Key": "00e9717630154844b45347d2d89f1d78",
       "SimpleName": "ProtectiveAuraFeature.Description",
       "ProcessTemplates": true,
       "enGB": "At 6th level, allies within 40 feet of the God Emperor take a +2 bonus on AC, and saving throws."
     },
     {
-      "Key": "82f311410d5d464aa42d7d46491e3958",
+      "Key": "876d7c39d5fe4dc0aeef9c51c0482caf",
       "SimpleName": "SignatureAttack.Description",
       "ProcessTemplates": true,
       "enGB": "At 6th level, you gain a luck bonus to attack and damage rolls equal to 1/2 your character level."
     },
     {
-      "Key": "fbd33dd9279a4aa68f50594d37d5ffd7",
+      "Key": "47b0777facf647caa00ffad9316582d8",
       "SimpleName": "SignatureAttack.Name",
       "ProcessTemplates": false,
       "enGB": "Signature Attack"
     },
     {
-      "Key": "8f2add6cd9f744019fd457fa9a2bedd2",
+      "Key": "ad7254e73fee46fe97f1087079652595",
       "SimpleName": "SiphoningAuraAbility.Description",
       "ProcessTemplates": true,
       "enGB": "Enemies within 40 feet of the God Emperor take a –2 penalty on all attributes."
     },
     {
-      "Key": "3f7963a74d754056970c9dcb3f930de2",
+      "Key": "71ede93e7ecc40d4920f146faab4cfcf",
       "SimpleName": "SiphoningAuraAreaBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Enemies within 40 feet of the God Emperor take a –2 penalty on all attributes."
     },
     {
-      "Key": "0af633e57d8b42f28d493dd027c6fc03",
+      "Key": "ad0c005153c241de96734ffa27e284f4",
       "SimpleName": "SiphoningAuraBuff.Description",
       "ProcessTemplates": true,
       "enGB": "This creature has a –2 penalty on all attributes."
     },
     {
-      "Key": "3d0e157fcc2441ffa7fda25191a5237f",
+      "Key": "0b84e4144e8f46a0942d69ff2b9de507",
       "SimpleName": "SiphoningAuraBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Siphoning Aura"
     },
     {
-      "Key": "d9db0ff5b52e4af0bc6853371ff0db53",
+      "Key": "51f9470be3f649d78b4d003effa58afc",
       "SimpleName": "SiphoningAuraFeature.Description",
       "ProcessTemplates": true,
       "enGB": "At 12th level, enemies within 40 feet of the God Emperor take a –2 penalty on all attributes."
     },
     {
-      "Key": "281559a74c5042669a8f8635e92496d2",
+      "Key": "b6c0edfa36f84172976feabaf0fe9a7b",
       "SimpleName": "SonicImmunity.Description",
       "ProcessTemplates": true,
       "enGB": "You gain immunity to Sonic."
     },
     {
-      "Key": "8ae205263c9a469bacfe2cfda3bb6e27",
+      "Key": "da6ad6c96e87400ab88a93c2590710f8",
       "SimpleName": "SonicImmunity.Name",
       "ProcessTemplates": false,
       "enGB": "Sonic Immunity"
     },
     {
-      "Key": "ee0847e174d04680a5ce4c1446044453",
+      "Key": "6dd08895aa264a39844c4d348aae1bcf",
       "SimpleName": "SpellNegationAbility.Description",
       "ProcessTemplates": true,
       "enGB": "You gain spell resistance equal to 10 + twice your character level."
     },
     {
-      "Key": "34b2ca93f9844e3881072f2ef39952bf",
+      "Key": "6767cee3f6254c50bdeb8eeca4c02cd9",
       "SimpleName": "SpellNegationBuff.Description",
       "ProcessTemplates": true,
       "enGB": "You gain spell resistance equal to 10 + twice your character level."
     },
     {
-      "Key": "f6df1fd57d2d4e9e98c9bbf062449231",
+      "Key": "7ca3342937a746a290434d74e81ab500",
       "SimpleName": "SpellNegationBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Spell Negation"
     },
     {
-      "Key": "d005fb691e4c4b1b8dee673a2476afc9",
+      "Key": "69608eff469f4cf68ec097455fb30f55",
       "SimpleName": "SpellNegationFeature.Description",
       "ProcessTemplates": true,
       "enGB": "After extensive studying of spells, you gain spell resistance equal to 10 + twice your character level."
     },
     {
-      "Key": "2feca82c3ca044a18946ce71070ae9eb",
+      "Key": "bc8406adac1f42bba40115050d29496c",
       "SimpleName": "SupersonicCombat.Description",
       "ProcessTemplates": true,
       "enGB": "The Edge Lord uses their Dexterity modifier for their melee attack and damage bonus instead of Strength."
     },
     {
-      "Key": "78aed8f8161444dda3309928e4384dde",
+      "Key": "0dc6eab3e2194102b47753c3c00a5580",
       "SimpleName": "SupersonicCombat.Name",
       "ProcessTemplates": false,
       "enGB": "Supersonic Combat"
     },
     {
-      "Key": "e7da6dbccaf04d71a15191b2ea7ed4fc",
+      "Key": "1e3b658087bb47c182bd529b682da9a0",
       "SimpleName": "Tenacious.Description",
       "ProcessTemplates": true,
       "enGB": "You gain immunity to stunned, staggered, slowed, entangled, petrified, paralysis, and movement impairing effects."
     },
     {
-      "Key": "79a871bef27042d4ab2fad22669b302a",
+      "Key": "760546e250f145c1a2cdb62cdd083e9b",
       "SimpleName": "Tenacious.Name",
       "ProcessTemplates": false,
       "enGB": "Tenacious"
     },
     {
-      "Key": "5cf9d774bf3846a592fde0584612b9ef",
+      "Key": "5264121a5224476e81ce70c964b1e72d",
       "SimpleName": "TrainingArcSelection.Description",
       "ProcessTemplates": true,
       "enGB": "At 5th, 10th and 15th level, you train yourself intensely and gain insight into your own abilities."
     },
     {
-      "Key": "851265e88b8f402ba814b9973542e12e",
+      "Key": "301d71d3aed94504b1e92b9c1e14e1e6",
       "SimpleName": "TrainingArcSelection.Name",
       "ProcessTemplates": false,
       "enGB": "Training Arc"
     },
     {
-      "Key": "790fbbf37afb450eb77e4710b8496f86",
+      "Key": "1903958a2ee94be1a1df9f2a51d53250",
       "SimpleName": "TrainingMontage.Description",
       "ProcessTemplates": true,
       "enGB": "After extensive training sessions, you gain a +8 insight bonus to all attributes."
     },
     {
-      "Key": "eab2db76b6cf4f75b52507ed41c6a77a",
+      "Key": "01d856147ea244a6be0a84df040e4471",
       "SimpleName": "TrainingMontage.Name",
       "ProcessTemplates": false,
       "enGB": "Training Montage"
     },
     {
-      "Key": "3aa5e169141d4dfc83cd2d0d1f299749",
+      "Key": "e6b2bb233bce42dda58ac0645be281e3",
+      "SimpleName": "TruckKunFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Truck-kun is a menance of the streets, a killer that prowls the road before it smashes their victim so hard they get transported into another world. Many fear death brought by Truck-kun, but there are some who believe that their reincarnation will bring them into a harem paradise. Beware of the streets, and look on both sides of the road, or else you might be its latest victim.\nDomains: Artifice, Destruction, Repose, Travel\nFavoured Weapon: Heavy Shield Bash"
+    },
+    {
+      "Key": "7957faa579d64e629756b6c368f3746f",
+      "SimpleName": "TruckKunFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Truck-kun"
+    },
+    {
+      "Key": "1dc0572589ff40b0a413ce135e1d549c",
       "SimpleName": "TrueMainCharacter.Description",
       "ProcessTemplates": true,
       "enGB": "You are the true main character of this world. Your health cannot go below 1 HP.\nYour attacks ignore damage reduction. The spells you cast ignore spell resistance and spell immunity."
     },
     {
-      "Key": "dc55560cbe1641a09a34b495aa0e562e",
+      "Key": "75978c51affd446b9e5f16f8973d593a",
       "SimpleName": "TrueMainCharacter.Name",
       "ProcessTemplates": false,
       "enGB": "True Main Character"
     },
     {
-      "Key": "724ff60112f74820a626a4fb8b928612",
+      "Key": "820cf5e1c95440f59d547131b35f71ec",
       "SimpleName": "WinnerAbility.Description",
       "ProcessTemplates": true,
       "enGB": "You celebrate your awesomeness (Does nothing)."
     },
     {
-      "Key": "980d323268d0493280ef483fa9895938",
+      "Key": "1339961fb7f2406bb0e951704e102331",
       "SimpleName": "WinnerAbility.Name",
       "ProcessTemplates": false,
       "enGB": "Celebrate"
     },
     {
-      "Key": "6f1ed1b5fc31403288168f9e8e1014b7",
+      "Key": "e2bc517a72b947cc9cdfcc169f0e386b",
       "SimpleName": "WinnerFeature.Description",
       "ProcessTemplates": true,
       "enGB": "You decide not to have any Overpowered Abilities after reincarnating into the new world."
     },
     {
-      "Key": "704bba460ddd4512978d0566d4f47f70",
+      "Key": "0004549501fc4ebca07a27e439c56431",
       "SimpleName": "WinnerFeature.Name",
       "ProcessTemplates": false,
       "enGB": "Winner"
