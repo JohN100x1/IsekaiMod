@@ -43,9 +43,9 @@ namespace IsekaiMod.Content.Deities
             var TruckKunFeature = Helpers.CreateBlueprint<BlueprintFeature>("TruckKunFeature", (bp => {
                 bp.SetName("Truck-kun");
                 bp.SetDescription(
-                    "Truck-kun is a menance of the streets, a killer that prowls the road before it smashes their victim so hard they get transported into another world. "
+                    "Truck-kun is a menace of the streets, a killer that prowls the road before it smashes their victim so hard they get transported into another world. "
                     + "Many fear death brought by Truck-kun, but there are some who believe that their reincarnation will bring them into a harem paradise. "
-                    + "Beware of the streets, and look on both sides of the road, or else you might be its latest victim."
+                    + "Beware of the streets, and look at both sides of the road, or else you might be its latest victim."
                     + "\nDomains: Artifice, Destruction, Repose, Travel"
                     + "\nFavoured Weapon: Heavy Shield Bash");
                 bp.m_Icon = Icon_Truck;

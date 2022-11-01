@@ -16,7 +16,8 @@ namespace IsekaiMod.Content
 
                 Features.ExoticWeaponProficiency.Add();
 
-                if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) {
+                if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist"))
+                {
                     AddIsekaiProtagonistClass();
                 }
 
