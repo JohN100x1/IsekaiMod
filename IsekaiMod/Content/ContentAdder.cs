@@ -29,7 +29,10 @@ namespace IsekaiMod.Content
                     AddIsekaiBackgrounds();
                 }
 
-                Deities.TruckKun.Add();
+                if (ModSettings.AddedContent.Deities.IsEnabled("Isekai Deities"))
+                {
+                    Deities.TruckKun.Add();
+                }
             }
 
             public static void AddIsekaiProtagonistClass()

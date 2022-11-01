@@ -26,5 +26,16 @@
       }
     },
     "IsExpanded": true
+  },
+  "Deities": {
+    "DisableAll": false,
+    "Settings": {
+      "Isekai Deities": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds Truck-kun."
+      }
+    },
+    "IsExpanded": true
   }
 }

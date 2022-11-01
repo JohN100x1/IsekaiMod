@@ -7,6 +7,7 @@ namespace IsekaiMod.Config
         public SettingGroup Heritages = new();
         public SettingGroup Backgrounds = new();
         public SettingGroup Classes = new();
+        public SettingGroup Deities = new();
 
         public void Init()
         {
@@ -19,6 +20,7 @@ namespace IsekaiMod.Config
             Heritages.LoadSettingGroup(loadedSettings.Heritages, NewSettingsOffByDefault);
             Backgrounds.LoadSettingGroup(loadedSettings.Backgrounds, NewSettingsOffByDefault);
             Classes.LoadSettingGroup(loadedSettings.Classes, NewSettingsOffByDefault);
+            Deities.LoadSettingGroup(loadedSettings.Deities, NewSettingsOffByDefault);
         }
     }
 }
