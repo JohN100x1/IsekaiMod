@@ -22,6 +22,7 @@ namespace IsekaiMod.Utilities
             {
                 if (Initialized) return;
                 Initialized = true;
+                if (Config.ModSettings.AddedContent.Classes.IsDisabled("Isekai Protagonist")) return;
                 var IsekaiProtagonistSpellList = Resources.GetModBlueprint<BlueprintSpellList>("IsekaiProtagonistSpellList");
 
                 if (IsMysticalMayhemEnabled())
