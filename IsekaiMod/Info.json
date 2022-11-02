@@ -7,5 +7,6 @@
   "Requirements": [],
   "AssemblyName": "IsekaiMod.dll",
   "EntryMethod": "IsekaiMod.Main.Load",
+  "LoadAfter": [ "TabletopTweaks-Base", "ExpandedContent", "MysticalMayhem" ],
   "HomePage": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/398"
 }

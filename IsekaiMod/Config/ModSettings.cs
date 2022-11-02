@@ -11,7 +11,6 @@ namespace IsekaiMod.Config
         public static ModEntry ModEntry;
         public static Blueprints Blueprints;
         public static AddedContent AddedContent;
-
         private static string UserConfigFolder => ModEntry.Path + "UserSettings";
         private static string LocalizationFolder => ModEntry.Path + "Localization";
         public static MultiLocalizationPack ModLocalizationPack = new();
@@ -43,6 +42,7 @@ namespace IsekaiMod.Config
         {
             LoadSettings("AddedContent.json", ref AddedContent);
             LoadSettings("Blueprints.json", ref Blueprints);
+            ModEntry.Logger.Log("saving settings...");
         }
         public static void LoadLocalization()
         {
@@ -135,7 +135,6 @@ namespace IsekaiMod.Config
                     }
                 }
             }
-            ModEntry.Logger.Log("saving settings...");
             SaveSettings(fileName, setting);
         }
 
@@ -149,6 +148,5 @@ namespace IsekaiMod.Config
             using JsonWriter jsonWriter = new JsonTextWriter(streamWriter);
             serializer.Serialize(jsonWriter, setting);
         }
-
     }
 }

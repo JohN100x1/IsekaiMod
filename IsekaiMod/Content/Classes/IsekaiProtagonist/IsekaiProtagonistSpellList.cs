@@ -888,6 +888,5 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 };
             });
         }
-
     }
 }

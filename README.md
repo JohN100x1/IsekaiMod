@@ -116,6 +116,12 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 | 18    | 30  | 30  | 24  | 24  | 24  | 24  | 24  | 18  | 6   |
 | 19    | 30  | 30  | 24  | 24  | 24  | 24  | 24  | 24  | 12  |
 | 20    | 30  | 30  | 24  | 24  | 24  | 24  | 24  | 24  | 20  |
+
+## Mod Support
+This mod has support for the following mods.
+### MysticalMayhem
+If you have the `MysticalMayhem` mod, the `Isekai Protagonist` will have the 9th level `Meteor Swarm` spell added to its spellbook.
+
 ## Credits
 Alot of the code was repurposed from the following repositories:
 - https://github.com/Vek17/TabletopTweaks-Base
