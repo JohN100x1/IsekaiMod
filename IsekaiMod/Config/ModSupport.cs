@@ -27,7 +27,7 @@ namespace IsekaiMod.Utilities
                 {
                     var IsekaiProtagonistSpellList = Resources.GetModBlueprint<BlueprintSpellList>("IsekaiProtagonistSpellList");
 
-                    Main.Log("Mystical Mayhem Support Enabled.");
+                    Main.Log("Mystical Mayhem 0.1.3 Support Enabled.");
                     BlueprintGuid MeteorSwarmGuid = BlueprintGuid.Parse("d0cd103b15494866b0444c1a961bc40f");
                     BlueprintAbility MeteorSwarmAbility = (BlueprintAbility)ResourcesLibrary.BlueprintsCache.Load(MeteorSwarmGuid);
                     IsekaiProtagonistSpellList.SpellsByLevel[9].m_Spells.Add(MeteorSwarmAbility.ToReference<BlueprintAbilityReference>());
