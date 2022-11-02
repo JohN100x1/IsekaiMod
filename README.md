@@ -119,8 +119,10 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 
 ## Mod Support
 This mod has support for the following mods.
-### MysticalMayhem
+### MysticalMayhem (0.1.3)
 If you have the `MysticalMayhem` mod, the `Isekai Protagonist` will have the 9th level `Meteor Swarm` spell added to its spellbook.
+## ExpandedContent (0.4.40)
+If you have the `ExpandedContent` mod, the `Isekai Protagonist` will have the following spells added to its spellbook: Hydraulic push, Slipstream, Scourge of the Horsemen, Rigor mortis, Hollow Blades, Goodberry, Steam Ray Fusillade, Inflict Pain, Inflict Pain Mass, Gloomblind Bolts, Fury of the Sun, Invoke Deity.
 
 ## Credits
 Alot of the code was repurposed from the following repositories:
