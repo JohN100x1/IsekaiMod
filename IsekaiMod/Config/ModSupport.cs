@@ -28,37 +28,24 @@ namespace IsekaiMod.Utilities
                 if (IsMysticalMayhemEnabled())
                 {
                     Main.Log("Mystical Mayhem 0.1.3 Support Enabled.");
-                    BlueprintGuid MeteorSwarmGuid = BlueprintGuid.Parse("d0cd103b15494866b0444c1a961bc40f");
-                    BlueprintAbility MeteorSwarmAbility = (BlueprintAbility)ResourcesLibrary.BlueprintsCache.Load(MeteorSwarmGuid);
+                    BlueprintAbility MeteorSwarmAbility = Resources.GetBlueprint<BlueprintAbility>("d0cd103b15494866b0444c1a961bc40f");
                     IsekaiProtagonistSpellList.SpellsByLevel[9].m_Spells.Add(MeteorSwarmAbility.ToReference<BlueprintAbilityReference>());
                 }
                 if (IsExpandedContentEnabled())
                 {
                     Main.Log("Expanded Content 0.4.40 Support Enabled.");
-                    BlueprintGuid FuryOftheSunGuid = BlueprintGuid.Parse("accc5584b62e4e73aa0a693f725ddf60");
-                    BlueprintGuid GloomblindBoltsGuid = BlueprintGuid.Parse("e28f4633c0a2425d8895adf20cb22f8f");
-                    BlueprintGuid GoodberryGuid = BlueprintGuid.Parse("f8774451760a427ab4694d10581cfda6");
-                    BlueprintGuid HollowBladesGuid = BlueprintGuid.Parse("bad01be5ec684dc39019269c6eff4d6f");
-                    BlueprintGuid HydraulicPushGuid = BlueprintGuid.Parse("490cc69049be462eafecf69d7030b07a");
-                    BlueprintGuid InflictPainGuid = BlueprintGuid.Parse("e023af1af9c147549a8e7bd246967861");
-                    BlueprintGuid InflictPainMassGuid = BlueprintGuid.Parse("ff31ae1abe3c418db7842dcc76eca7ee");
-                    BlueprintGuid InvokeDeityGuid = BlueprintGuid.Parse("98f9c960637f4934bc4cca02c45cb3bc");
-                    BlueprintGuid RigorMortisGuid = BlueprintGuid.Parse("2bba038472a64f67b235674c7e27d90c");
-                    BlueprintGuid ScourgeOfTheHorsemenGuid = BlueprintGuid.Parse("dafdc0eef4374785aa827bf5b2059bf0");
-                    BlueprintGuid SlipstreamGuid = BlueprintGuid.Parse("fe43fadb91b040b38718e88dd5744413");
-                    BlueprintGuid SteamRayFusilladeGuid = BlueprintGuid.Parse("a8be30ddf37042d5b56ffaa8eae976d6");
-                    BlueprintAbility FuryOftheSunAbility = (BlueprintAbility)ResourcesLibrary.BlueprintsCache.Load(FuryOftheSunGuid);
-                    BlueprintAbility GloomblindBoltsAbility = (BlueprintAbility)ResourcesLibrary.BlueprintsCache.Load(GloomblindBoltsGuid);
-                    BlueprintAbility GoodberryAbility = (BlueprintAbility)ResourcesLibrary.BlueprintsCache.Load(GoodberryGuid);
-                    BlueprintAbility HollowBladesAbility = (BlueprintAbility)ResourcesLibrary.BlueprintsCache.Load(HollowBladesGuid);
-                    BlueprintAbility HydraulicPushAbility = (BlueprintAbility)ResourcesLibrary.BlueprintsCache.Load(HydraulicPushGuid);
-                    BlueprintAbility InflictPainAbility = (BlueprintAbility)ResourcesLibrary.BlueprintsCache.Load(InflictPainGuid);
-                    BlueprintAbility InflictPainMassAbility = (BlueprintAbility)ResourcesLibrary.BlueprintsCache.Load(InflictPainMassGuid);
-                    BlueprintAbility InvokeDeityAbility = (BlueprintAbility)ResourcesLibrary.BlueprintsCache.Load(InvokeDeityGuid);
-                    BlueprintAbility RigorMortisAbility = (BlueprintAbility)ResourcesLibrary.BlueprintsCache.Load(RigorMortisGuid);
-                    BlueprintAbility ScourgeOfTheHorsemenAbility = (BlueprintAbility)ResourcesLibrary.BlueprintsCache.Load(ScourgeOfTheHorsemenGuid);
-                    BlueprintAbility SlipstreamAbility = (BlueprintAbility)ResourcesLibrary.BlueprintsCache.Load(SlipstreamGuid);
-                    BlueprintAbility SteamRayFusilladeAbility = (BlueprintAbility)ResourcesLibrary.BlueprintsCache.Load(SteamRayFusilladeGuid);
+                    BlueprintAbility FuryOftheSunAbility = Resources.GetBlueprint<BlueprintAbility>("accc5584b62e4e73aa0a693f725ddf60");
+                    BlueprintAbility GloomblindBoltsAbility = Resources.GetBlueprint<BlueprintAbility>("e28f4633c0a2425d8895adf20cb22f8f");
+                    BlueprintAbility GoodberryAbility = Resources.GetBlueprint<BlueprintAbility>("f8774451760a427ab4694d10581cfda6");
+                    BlueprintAbility HollowBladesAbility = Resources.GetBlueprint<BlueprintAbility>("bad01be5ec684dc39019269c6eff4d6f");
+                    BlueprintAbility HydraulicPushAbility = Resources.GetBlueprint<BlueprintAbility>("490cc69049be462eafecf69d7030b07a");
+                    BlueprintAbility InflictPainAbility = Resources.GetBlueprint<BlueprintAbility>("e023af1af9c147549a8e7bd246967861");
+                    BlueprintAbility InflictPainMassAbility = Resources.GetBlueprint<BlueprintAbility>("ff31ae1abe3c418db7842dcc76eca7ee");
+                    BlueprintAbility InvokeDeityAbility = Resources.GetBlueprint<BlueprintAbility>("98f9c960637f4934bc4cca02c45cb3bc");
+                    BlueprintAbility RigorMortisAbility = Resources.GetBlueprint<BlueprintAbility>("2bba038472a64f67b235674c7e27d90c");
+                    BlueprintAbility ScourgeOfTheHorsemenAbility = Resources.GetBlueprint<BlueprintAbility>("dafdc0eef4374785aa827bf5b2059bf0");
+                    BlueprintAbility SlipstreamAbility = Resources.GetBlueprint<BlueprintAbility>("fe43fadb91b040b38718e88dd5744413");
+                    BlueprintAbility SteamRayFusilladeAbility = Resources.GetBlueprint<BlueprintAbility>("a8be30ddf37042d5b56ffaa8eae976d6");
                     IsekaiProtagonistSpellList.SpellsByLevel[2].m_Spells.Add(FuryOftheSunAbility.ToReference<BlueprintAbilityReference>());
                     IsekaiProtagonistSpellList.SpellsByLevel[3].m_Spells.Add(GloomblindBoltsAbility.ToReference<BlueprintAbilityReference>());
                     IsekaiProtagonistSpellList.SpellsByLevel[1].m_Spells.Add(GoodberryAbility.ToReference<BlueprintAbilityReference>());
