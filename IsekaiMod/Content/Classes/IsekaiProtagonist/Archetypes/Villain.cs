@@ -15,7 +15,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
         public static void Add()
         {
             // TODO: add second form final feature
-            // TODO: increase spell slots
 
             // Archetype features
             var VillainSpellbook = Resources.GetModBlueprint<BlueprintSpellbook>("VillainSpellbook");

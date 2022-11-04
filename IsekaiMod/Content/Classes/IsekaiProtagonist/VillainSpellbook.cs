@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 bp.m_SpellsKnown = null;
                 bp.m_SpellList = IsekaiProtagonistSpellList.ToReference<BlueprintSpellListReference>();
                 bp.m_SpellSlots = null;
-                bp.SpellsPerLevel = 4;
+                bp.SpellsPerLevel = 6;
                 bp.AllSpellsKnown = false;
                 bp.CanCopyScrolls = true;
 
