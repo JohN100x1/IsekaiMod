@@ -107,6 +107,9 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.EdgeLord.EdgeLordFastMovement.Add();
                 Features.IsekaiProtagonist.EdgeLord.ExtraStrike.Add();
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
+                // Villain Archetype
+                Classes.IsekaiProtagonist.VillainSpellbook.Add();
+                Classes.IsekaiProtagonist.Archetypes.Villain.Add();
                 // Add Progression & Prebuild after Class and class-dependent features are added
                 Classes.IsekaiProtagonist.PrebuildIsekaiProtagonistFeatureList.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistProgression.Add();

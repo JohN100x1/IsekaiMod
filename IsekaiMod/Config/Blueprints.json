@@ -17,6 +17,7 @@
 
     "GodEmporerArchetype": "2ff78bd9-6224-4376-9f64-720ce94d0616",
     "EdgeLordArchetype": "900db658-4f20-4636-ae84-a198c2b50f58",
+    "VillainArchetype": "7d9fa1f5-c8e2-4c68-adc7-bc493e94ae56",
 
     "PrebuildIsekaiProtagonistFeatureList": "de7da5cc-7e37-438a-855c-a31f861a4960",
     "IsekaiProtagonistClass": "051cef8e-2906-4217-a6d5-c8011b1d9f60",
@@ -151,6 +152,10 @@
     "SupersonicCombat": "89a4f509-0847-4956-9564-0b6a04645f77",
     "EdgeLordFastMovement": "087e0c42-d008-44c3-bb4b-d5b95387f862",
     "ExtraStrike": "5c37047c-4030-47c7-ab09-dac2d523f8ce",
+
+    "VillainSpellbook": "9f393ace-2006-436a-85f9-8b47f347d3cd",
+    "OverpoweredAbilitySelection2": "b8fdf264-0691-4e02-bbcc-6969f0e31d6d",
+    "StudyTargetFeature": "2d0e8bf9-5978-45c3-bafc-9b3eefc573c7",
 
     // Mod Support
     "DrakeCompanionSelection": "182a364d-4566-4cfd-bf08-4a7043bec650"

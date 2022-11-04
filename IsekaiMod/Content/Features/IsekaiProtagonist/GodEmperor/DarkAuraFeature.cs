@@ -64,7 +64,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var DarkAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("DarkAuraAreaBuff", bp => {
                 bp.SetName("Dark Aura");
-                bp.SetDescription("Enemies within 40 feet of the God Emperor take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.SetDescription("Enemies within 40 feet take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddAreaEffect>(c => {
@@ -76,7 +76,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var DarkAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("DarkAuraAbility", bp => {
                 bp.SetName("Dark Aura");
-                bp.SetDescription("Enemies within 40 feet of the God Emperor take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.SetDescription("Enemies within 40 feet take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.m_Buff = DarkAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.None;
@@ -88,7 +88,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var DarkAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("DarkAuraFeature", bp => {
                 bp.SetName("Dark Aura");
-                bp.SetDescription("At 10th level, enemies within 40 feet of the God Emperor take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
+                bp.SetDescription("At 10th level, enemies within 40 feet take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
