@@ -38,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2022-10-28
 ### Added
 - Added `Isekai Protagonist` class
-- Added `God Emporer` archetype
+- Added `God Emperor` archetype
 - Added `Edge Lord` archetype
 - Added 3 Isekai backgrounds
 - Added related features and abilities

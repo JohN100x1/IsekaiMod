@@ -578,31 +578,31 @@
     },
     {
       "Key": "e19ede9857634df6b733772c0cd85e5a",
-      "SimpleName": "GodEmporerArchetype.Description",
+      "SimpleName": "GodEmperorArchetype.Description",
       "ProcessTemplates": true,
       "enGB": "Rather than wandering aimlessly, collecting harems, or defeating demon lords, some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively."
     },
     {
       "Key": "5b8ebde05c764ed9aae0588e7f33d26b",
-      "SimpleName": "GodEmporerArchetype.Description",
+      "SimpleName": "GodEmperorArchetype.Description",
       "ProcessTemplates": true,
       "enGB": "Rather than wandering aimlessly, collecting harems, or defeating demon lords, some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively."
     },
     {
       "Key": "861086d30f3e49a9aa6b566168f21140",
-      "SimpleName": "GodEmporerArchetype.Name",
+      "SimpleName": "GodEmperorArchetype.Name",
       "ProcessTemplates": true,
       "enGB": "God Emperor"
     },
     {
       "Key": "0bf11f2c7d884510a0145d664dc1483d",
-      "SimpleName": "GodEmporerProficiencies.Description",
+      "SimpleName": "GodEmperorProficiencies.Description",
       "ProcessTemplates": true,
       "enGB": "The God Emperor is proficient with all simple, martial, and exotic weapons and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast spells from this class while wearing armor and shields (including tower shields) without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes."
     },
     {
       "Key": "297c79c358904d6bb1a1bf8261951125",
-      "SimpleName": "GodEmporerProficiencies.Name",
+      "SimpleName": "GodEmperorProficiencies.Name",
       "ProcessTemplates": false,
       "enGB": "God Emperor Proficiences"
     },

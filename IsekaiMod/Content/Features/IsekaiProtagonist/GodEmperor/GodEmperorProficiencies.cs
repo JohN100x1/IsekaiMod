@@ -8,7 +8,7 @@ using Kingmaker.UnitLogic.FactLogic;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
 {
-    class GodEmporerProficiencies
+    class GodEmperorProficiencies
     {
         public static void Add()
         {
@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
 
             // Features
             var ExoticWeaponProficiency = Resources.GetModBlueprint<BlueprintFeature>("ExoticWeaponProficiency");
-            var GodEmporerProficiencies = Helpers.CreateBlueprint<BlueprintFeature>("GodEmporerProficiencies", bp => {
+            var GodEmperorProficiencies = Helpers.CreateBlueprint<BlueprintFeature>("GodEmperorProficiencies", bp => {
                 bp.SetName("God Emperor Proficiences");
                 bp.SetDescription("The God Emperor is proficient with all simple, martial, and exotic weapons and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor and shields (including tower shields) without incurring the normal {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell failure chance for arcane spells received from other classes.");
                 bp.m_Icon = null;

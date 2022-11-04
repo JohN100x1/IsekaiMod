@@ -15,7 +15,7 @@
     "BackgroundHighschoolStudent": "c94d449b-7978-45e8-89cc-2c7f76999203",
     "IsekaiBackgroundSelection": "5400da49-2595-443c-b6ba-0574d8c191dd",
 
-    "GodEmporerArchetype": "2ff78bd9-6224-4376-9f64-720ce94d0616",
+    "GodEmperorArchetype": "2ff78bd9-6224-4376-9f64-720ce94d0616",
     "EdgeLordArchetype": "900db658-4f20-4636-ae84-a198c2b50f58",
     "VillainArchetype": "7d9fa1f5-c8e2-4c68-adc7-bc493e94ae56",
 
@@ -122,7 +122,7 @@
     "HaremMagnetFeature": "4145dc5a-358f-4057-affa-7ff4cc130c03",
 
     "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",
-    "GodEmporerProficiencies": "1f112bb6-3b8e-44ca-8158-325436f6b308",
+    "GodEmperorProficiencies": "1f112bb6-3b8e-44ca-8158-325436f6b308",
     "NascentApotheosis": "c2ffd60b-ed95-4c7b-8486-948e870ad38c",
     "GodlyVessel": "128a880e-72d8-4800-b246-dcc85d7edb1d",
     "Godhood": "57649922-6046-4aa7-82aa-6f3c95ecb9e4",
@@ -154,8 +154,9 @@
     "ExtraStrike": "5c37047c-4030-47c7-ab09-dac2d523f8ce",
 
     "VillainSpellbook": "9f393ace-2006-436a-85f9-8b47f347d3cd",
+    "VillainProficiencies": "b4d2cd29-c850-4716-95c1-74eca502a30c",
     "OverpoweredAbilitySelection2": "b8fdf264-0691-4e02-bbcc-6969f0e31d6d",
-    "StudyTargetFeature": "2d0e8bf9-5978-45c3-bafc-9b3eefc573c7",
+    "VillainQuickFooted": "2d0e8bf9-5978-45c3-bafc-9b3eefc573c7",
 
     // Mod Support
     "DrakeCompanionSelection": "182a364d-4566-4cfd-bf08-4a7043bec650"

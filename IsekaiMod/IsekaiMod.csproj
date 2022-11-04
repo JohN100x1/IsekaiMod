@@ -122,10 +122,6 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Content\Features\IsekaiProtagonist\Villain\" />
-  </ItemGroup>
-
   <Target Name="Publicize" AfterTargets="Clean">
 	<ItemGroup>
 	  <Assemblies Include="$(WrathPath)\Wrath_Data\Managed\Assembly-CSharp.dll" />
