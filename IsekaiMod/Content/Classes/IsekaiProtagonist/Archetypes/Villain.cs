@@ -5,6 +5,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UnitLogic.Alignments;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
@@ -14,14 +15,16 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
         public static void Add()
         {
             // TODO: add second form final feature
-            // TODO: quick-footed replacement (uses intelligence instead os charisma)
+            // TODO: increase spell slots
 
             // Archetype features
             var VillainSpellbook = Resources.GetModBlueprint<BlueprintSpellbook>("VillainSpellbook");
+            var VillainProficiencies = Resources.GetModBlueprint<BlueprintFeature>("VillainProficiencies");
             var DarkAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("DarkAuraFeature");
             var SlayerStudyTargetFeature = Resources.GetBlueprint<BlueprintFeature>("09bdd9445ac38044389476689ae8d5a1");
             var SlayerSwiftStudyTargetFeature = Resources.GetBlueprint<BlueprintFeature>("40d4f55a5ac0e4f469d67d36c0dfc40b");
             var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeature>("OverpoweredAbilitySelection2");
+            var VillainQuickFooted = Resources.GetModBlueprint<BlueprintFeature>("VillainQuickFooted");
 
             // Removed features
             var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
@@ -53,11 +56,12 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(20, TrueMainCharacter),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.LevelEntry(1, OverpoweredAbilitySelection2, SlayerStudyTargetFeature),
+                    Helpers.LevelEntry(1, VillainProficiencies, OverpoweredAbilitySelection2, SlayerStudyTargetFeature),
                     Helpers.LevelEntry(5, SlayerStudyTargetFeature),
                     Helpers.LevelEntry(7, SlayerSwiftStudyTargetFeature),
                     Helpers.LevelEntry(10, SlayerStudyTargetFeature, DarkAuraFeature),
                     Helpers.LevelEntry(15, SlayerStudyTargetFeature),
+                    Helpers.LevelEntry(16, VillainQuickFooted),
                     Helpers.LevelEntry(20, SlayerStudyTargetFeature),
                 };
                 bp.OverrideAttributeRecommendations = true;
@@ -67,6 +71,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 });
                 bp.ChangeCasterType = true;
                 bp.m_ReplaceSpellbook = VillainSpellbook.ToReference<BlueprintSpellbookReference>();
+                bp.RecommendedAttributes = new StatType[] { StatType.Intelligence, StatType.Strength };
             });
 
             // Add Archetype to Class

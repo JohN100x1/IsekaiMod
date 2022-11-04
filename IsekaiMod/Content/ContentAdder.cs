@@ -92,7 +92,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilityMythicSelection.Add();
                 // God Emperor Archetype
-                Features.IsekaiProtagonist.GodEmperor.GodEmporerProficiencies.Add();
+                Features.IsekaiProtagonist.GodEmperor.GodEmperorProficiencies.Add();
                 Features.IsekaiProtagonist.GodEmperor.NascentApotheosis.Add();
                 Features.IsekaiProtagonist.GodEmperor.ProtectiveAuraFeature.Add();
                 Features.IsekaiProtagonist.GodEmperor.DarkAuraFeature.Add();
@@ -100,7 +100,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.GodEmperor.GodlyVessel.Add();
                 Features.IsekaiProtagonist.GodEmperor.SiphoningAuraFeature.Add();
                 Features.IsekaiProtagonist.GodEmperor.Godhood.Add();
-                Classes.IsekaiProtagonist.Archetypes.GodEmporer.Add();
+                Classes.IsekaiProtagonist.Archetypes.GodEmperor.Add();
                 // Edge Lord Archetype
                 Features.IsekaiProtagonist.EdgeLord.EdgeLordProficiencies.Add();
                 Features.IsekaiProtagonist.EdgeLord.SupersonicCombat.Add();
@@ -108,6 +108,8 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.EdgeLord.ExtraStrike.Add();
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
                 // Villain Archetype
+                Features.IsekaiProtagonist.Villain.VillainProficiencies.Add();
+                Features.IsekaiProtagonist.Villain.VillainQuickFooted.Add();
                 Classes.IsekaiProtagonist.VillainSpellbook.Add();
                 Classes.IsekaiProtagonist.Archetypes.Villain.Add();
                 // Add Progression & Prebuild after Class and class-dependent features are added
