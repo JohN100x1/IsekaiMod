@@ -13,6 +13,7 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.Enums;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using Kingmaker.Designers.Mechanics.Facts;
 
 namespace IsekaiMod.Content.Heritages
 {
@@ -37,7 +38,7 @@ namespace IsekaiMod.Content.Heritages
                     "have a voracious appetite for sensory pleasures and carnal delights.\n" +
                     "The Isekai Succubus has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Charisma}Charisma{/g}, a -2 {g|Encyclopedia:Penalty}penalty{/g} to "
                     + "{g|Encyclopedia:Strength}Strength{/g}, and a +2 racial bonus on {g|Encyclopedia:Persuasion}Persuasion{/g} and {g|Encyclopedia:Perception}Perception checks{/g}. "
-                    + "They have 10 DR/Cold Iron or Good, and have spell resistance equal to 10 + their character level. "
+                    + "They have DR 10/Cold Iron or Good, and have spell resistance equal to 10 + their character level. "
                     + "They have immunity to fire, electricity, and poisons as well as acid and cold resistance 20. "
                     + "They can also use the Charm spell once per day.");
                 bp.m_Icon = Icon_Succubus;
