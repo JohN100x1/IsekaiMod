@@ -15,25 +15,29 @@
     "BackgroundHighschoolStudent": "c94d449b-7978-45e8-89cc-2c7f76999203",
     "IsekaiBackgroundSelection": "5400da49-2595-443c-b6ba-0574d8c191dd",
 
+    // Archetypes
     "GodEmperorArchetype": "2ff78bd9-6224-4376-9f64-720ce94d0616",
     "EdgeLordArchetype": "900db658-4f20-4636-ae84-a198c2b50f58",
     "VillainArchetype": "7d9fa1f5-c8e2-4c68-adc7-bc493e94ae56",
 
-    "PrebuildIsekaiProtagonistFeatureList": "de7da5cc-7e37-438a-855c-a31f861a4960",
+    // Isekai Protagonist Class
     "IsekaiProtagonistClass": "051cef8e-2906-4217-a6d5-c8011b1d9f60",
+    "PrebuildIsekaiProtagonistFeatureList": "de7da5cc-7e37-438a-855c-a31f861a4960",
     "IsekaiProtagonistProgression": "c5190864-af7d-439e-981c-47d059e9c8c9",
-    "IsekaiProtagonistProficiencies": "f85b2b09-e16e-4cd6-acba-d262d2a27881",
-    "IsekaiProtagonistCantripsFeature": "7075cc91-de39-47f0-bbfe-e47b679ce1d0",
     "IsekaiProtagonistSpellbook": "094d7d56-08e0-424b-944e-568030a529aa",
     "IsekaiProtagonistSpellList": "aaa34b3d-d70d-45b0-b060-5d125c7ef366",
     "IsekaiProtagonistSpellsKnown": "6d3f3e9e-a449-4bed-a4c6-865a5d01b346",
     "IsekaiProtagonistSpellsPerDay": "1f89acc7-f07c-4d76-b217-89fdd4f8414e",
+
     // Signature abilities
     "IsekaiProtagonistBonusFeat": "414b5c1b-3b32-4e54-99e3-96505698a929",
     "IsekaiProtagonistSneakFeat": "8f8b74df-5190-42e1-a7ae-ad797cb8430a",
     "IsekaiProtagonistPlotArmorFeat": "91751bce-90bc-42a2-b667-c807146a0cfb",
     "IsekaiProtagonistOverpoweredAbilityFeat": "107d5300-b827-4963-a84c-df0e61fa7107",
 
+    // Isekai Protagonist Features
+    "IsekaiProtagonistProficiencies": "f85b2b09-e16e-4cd6-acba-d262d2a27881",
+    "IsekaiProtagonistCantripsFeature": "7075cc91-de39-47f0-bbfe-e47b679ce1d0",
     "IsekaiProtagonistTalentSelection": "b27a3573-9bbd-4653-bee5-9c022008c490",
     "IsekaiProtagonistBonusFeatSelection": "039dec4f-d83c-4e4b-9be9-e4aae6fe4b5b",
     "IsekaiFamiliarSelection": "6988b26a-2bc0-4a9e-9411-e7cce90fb134",
@@ -45,7 +49,17 @@
     "IsekaiFastMovement": "7ad9bfd8-d189-4b7a-89c6-f93c401f1c7c",
     "IsekaiQuickFooted": "f178a6db-1e64-40d2-84ee-87483c9d681a",
     "TrueMainCharacter": "d174a98e-9963-4c90-8a0a-68a2d648195e",
+    "FriendlyAuraBuff": "450c2d6c-4ffd-4f45-971e-099457e0dd54",
+    "FriendlyAuraArea": "5bfec8d0-c27b-4d34-b8d3-d532bfc78386",
+    "FriendlyAuraAreaBuff": "ce7fbc51-9904-4200-b15f-949b4d73e518",
+    "FriendlyAuraAbility": "7b1b7ada-b0aa-4fb3-9768-be512e9b02f0",
+    "FriendlyAuraFeature": "b509ab2b-7968-4280-807f-0e49e3ce777c",
+    "HaremMagnetBuff": "e7b76354-23fb-40ad-9598-74e81f209314",
+    "HaremMagnetImmunity": "2f6b1ba2-4fa1-4038-9c08-26eca9ab80c6",
+    "HaremMagnetAbility": "1e6f1421-951c-48cc-8fa9-e279e3083e1c",
+    "HaremMagnetFeature": "4145dc5a-358f-4057-affa-7ff4cc130c03",
 
+    // Selections
     "TrainingArcSelection": "1313a25a-e9ba-4a67-b746-4c37a9629f19",
     "BeachEpisodeSelection": "7697c19c-c07c-4411-ada4-5ece5b0a58fc",
     "OverpoweredAbilitySelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
@@ -56,6 +70,7 @@
     "CharacterDevelopmentSelection4": "f3adb893-53d2-4d50-8849-fb43fd962bba",
     "CharacterDevelopmentSelection5": "5b7c1347-e3cf-4f8f-bf1b-014fa0c58a5d",
 
+    // Character Development Features
     "AlphaStrike": "8f7a38b6-ab25-4578-83e2-0d095a247dcb",
     "BetaStrike": "290c88af-a0eb-43f8-88ac-e49a76ccec0c",
     "GammaStrike": "1c4edc77-1a1e-4bc8-add2-8784a14551b4",
@@ -64,12 +79,19 @@
     "ExceptionalSummoningBuff": "1435e658-ec5c-4425-a087-21cd66aa756c",
     "ExceptionalSummoningAbility": "91cf3dae-7106-46ff-8719-6bea757143a5",
     "ExceptionalSummoningFeature": "9428fd68-a233-43a9-afac-1e1b54c1f037",
+    "AcidImmunity": "66ea106a-bb0c-4a52-a1bd-4fa77955ae4a",
+    "ColdImmunity": "f956dd94-9198-4011-b836-465ef8b1eeb8",
+    "FireImmunity": "9762e6ff-bd61-4f91-83a0-1f8f1391d147",
+    "ElectricityImmunity": "ed887779-8eec-45df-99e6-6ea4a23ca904",
+    "SonicImmunity": "609acbad-a8df-490a-9a4d-b5fc4a0cdf8e",
 
+    // Beach Episode Features
     "HealthyBody": "c6165832-f997-40bb-b0af-145ea74670a4",
     "InnerPower": "51c61f4f-a583-48dd-8824-3dc4864ef844",
     "MasterSelf": "e18b657b-3167-4885-9ccc-cfcb2c4a3a4d",
     "Tenacious": "cb9360d9-ea2e-418a-a75d-d0347c717280",
 
+    // Training Arc Features
     "TrainingMontage": "557a9018-bea9-4f2a-b110-27e9d332ab56",
     "BodyStrengthening": "f48b2667-6ac5-4971-b0a4-6e04d5082680",
     "SpellNegationBuff": "92a00da0-0ab7-42f7-9390-b8acacb3bf35",
@@ -79,12 +101,7 @@
     "ExtremeSpeedAbility": "91e70095-88bd-467c-bd9c-ba6f980c7576",
     "ExtremeSpeedFeature": "51da3531-fc19-4e1a-abd2-804ce067c1f1",
 
-    "AcidImmunity": "66ea106a-bb0c-4a52-a1bd-4fa77955ae4a",
-    "ColdImmunity": "f956dd94-9198-4011-b836-465ef8b1eeb8",
-    "FireImmunity": "9762e6ff-bd61-4f91-83a0-1f8f1391d147",
-    "ElectricityImmunity": "ed887779-8eec-45df-99e6-6ea4a23ca904",
-    "SonicImmunity": "609acbad-a8df-490a-9a4d-b5fc4a0cdf8e",
-
+    // Overpowered Abilities
     "AutoEmpowerBuff": "236781bd-b572-4dbf-bddd-a7b00d91a587",
     "AutoEmpowerAbility": "1291d796-c847-4f6e-a674-aaa8c472da6c",
     "AutoEmpowerFeature": "93906e16-de01-4a24-9163-33bdbe80c1a1",
@@ -111,22 +128,12 @@
     "WinnerAbility": "5d39f2f1-a90d-4506-8d97-e0aa44a14724",
     "WinnerFeature": "d7b02f2a-903c-494e-8ae9-e5586ff1c340",
 
-    "FriendlyAuraBuff": "450c2d6c-4ffd-4f45-971e-099457e0dd54",
-    "FriendlyAuraArea": "5bfec8d0-c27b-4d34-b8d3-d532bfc78386",
-    "FriendlyAuraAreaBuff": "ce7fbc51-9904-4200-b15f-949b4d73e518",
-    "FriendlyAuraAbility": "7b1b7ada-b0aa-4fb3-9768-be512e9b02f0",
-    "FriendlyAuraFeature": "b509ab2b-7968-4280-807f-0e49e3ce777c",
-    "HaremMagnetBuff": "e7b76354-23fb-40ad-9598-74e81f209314",
-    "HaremMagnetImmunity": "2f6b1ba2-4fa1-4038-9c08-26eca9ab80c6",
-    "HaremMagnetAbility": "1e6f1421-951c-48cc-8fa9-e279e3083e1c",
-    "HaremMagnetFeature": "4145dc5a-358f-4057-affa-7ff4cc130c03",
-
+    // God Emperor Features
     "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",
     "GodEmperorProficiencies": "1f112bb6-3b8e-44ca-8158-325436f6b308",
     "NascentApotheosis": "c2ffd60b-ed95-4c7b-8486-948e870ad38c",
     "GodlyVessel": "128a880e-72d8-4800-b246-dcc85d7edb1d",
     "Godhood": "57649922-6046-4aa7-82aa-6f3c95ecb9e4",
-
     "ProtectiveAuraBuff": "b025cc85-6989-4512-9bd8-14c88a3e0b8d",
     "ProtectiveAuraArea": "e30be595-fbb1-4a73-9542-fbab025b561a",
     "ProtectiveAuraAreaBuff": "f6f01dc8-6d05-41e3-9ad6-f7b8bdc8e84a",
@@ -148,11 +155,13 @@
     "SiphoningAuraAbility": "45e3f209-d90b-41bf-81c1-404b5ed577ab",
     "SiphoningAuraFeature": "ca467aba-ba1a-4ce4-a33f-a099f0813bbb",
 
+    // Edge Lord Features
     "EdgeLordProficiencies": "08979809-7770-475e-934f-f69c270e3cf5",
     "SupersonicCombat": "89a4f509-0847-4956-9564-0b6a04645f77",
     "EdgeLordFastMovement": "087e0c42-d008-44c3-bb4b-d5b95387f862",
     "ExtraStrike": "5c37047c-4030-47c7-ab09-dac2d523f8ce",
 
+    // Villain Features
     "VillainSpellbook": "9f393ace-2006-436a-85f9-8b47f347d3cd",
     "VillainProficiencies": "b4d2cd29-c850-4716-95c1-74eca502a30c",
     "SecondFormBuffEffect": "1204ffd1-2371-4497-bbde-e839ee202908",
