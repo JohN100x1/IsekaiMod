@@ -110,6 +110,7 @@ namespace IsekaiMod.Content
                 // Villain Archetype
                 Features.IsekaiProtagonist.Villain.VillainProficiencies.Add();
                 Features.IsekaiProtagonist.Villain.VillainQuickFooted.Add();
+                Features.IsekaiProtagonist.Villain.SecondFormFeature.Add();
                 Classes.IsekaiProtagonist.VillainSpellbook.Add();
                 Classes.IsekaiProtagonist.Archetypes.Villain.Add();
                 // Add Progression & Prebuild after Class and class-dependent features are added

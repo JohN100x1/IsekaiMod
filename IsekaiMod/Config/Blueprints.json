@@ -155,6 +155,10 @@
 
     "VillainSpellbook": "9f393ace-2006-436a-85f9-8b47f347d3cd",
     "VillainProficiencies": "b4d2cd29-c850-4716-95c1-74eca502a30c",
+    "SecondFormBuffEffect": "1204ffd1-2371-4497-bbde-e839ee202908",
+    "SecondFormBuffTrigger": "7a626a0a-758a-4584-a90c-cb6032014bb7",
+    "SecondFormBuff": "2601c5aa-4f9b-450f-8a50-69f36d694d3d",
+    "SecondFormFeature": "56365f1f-cf02-4ad7-873f-5b6dd6becbb2",
     "OverpoweredAbilitySelection2": "b8fdf264-0691-4e02-bbcc-6969f0e31d6d",
     "VillainQuickFooted": "2d0e8bf9-5978-45c3-bafc-9b3eefc573c7",
 

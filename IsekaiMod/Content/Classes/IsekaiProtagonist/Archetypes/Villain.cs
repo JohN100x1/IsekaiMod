@@ -14,8 +14,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
     {
         public static void Add()
         {
-            // TODO: add second form final feature
-
             // Archetype features
             var VillainSpellbook = Resources.GetModBlueprint<BlueprintSpellbook>("VillainSpellbook");
             var VillainProficiencies = Resources.GetModBlueprint<BlueprintFeature>("VillainProficiencies");
@@ -24,6 +22,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var SlayerSwiftStudyTargetFeature = Resources.GetBlueprint<BlueprintFeature>("40d4f55a5ac0e4f469d67d36c0dfc40b");
             var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeature>("OverpoweredAbilitySelection2");
             var VillainQuickFooted = Resources.GetModBlueprint<BlueprintFeature>("VillainQuickFooted");
+            var SecondFormFeature = Resources.GetModBlueprint<BlueprintFeature>("SecondFormFeature");
 
             // Removed features
             var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
@@ -61,7 +60,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(10, SlayerStudyTargetFeature, DarkAuraFeature),
                     Helpers.LevelEntry(15, SlayerStudyTargetFeature),
                     Helpers.LevelEntry(16, VillainQuickFooted),
-                    Helpers.LevelEntry(20, SlayerStudyTargetFeature),
+                    Helpers.LevelEntry(20, SlayerStudyTargetFeature, SecondFormFeature),
                 };
                 bp.OverrideAttributeRecommendations = true;
                 bp.AddComponent<PrerequisiteAlignment>(c => {
