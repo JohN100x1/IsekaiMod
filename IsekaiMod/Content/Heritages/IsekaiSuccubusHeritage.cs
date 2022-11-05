@@ -13,7 +13,6 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.Enums;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.UnitLogic.Mechanics.Components;
-using Kingmaker.Designers.Mechanics.Facts;
 
 namespace IsekaiMod.Content.Heritages
 {
@@ -101,6 +100,14 @@ namespace IsekaiMod.Content.Heritages
                 });
                 bp.AddComponent<AddDamageResistanceEnergy>(c => {
                     c.Type = DamageEnergyType.Cold;
+                    c.Value = 20;
+                });
+                bp.AddComponent<AddDamageResistanceEnergy>(c => {
+                    c.Type = DamageEnergyType.Fire;
+                    c.Value = 20;
+                });
+                bp.AddComponent<AddDamageResistanceEnergy>(c => {
+                    c.Type = DamageEnergyType.Electricity;
                     c.Value = 20;
                 });
                 bp.AddComponent<AddEnergyImmunity>(c => {

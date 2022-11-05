@@ -15,8 +15,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.EdgeLord
             var SupersonicCombat = Helpers.CreateBlueprint<BlueprintFeature>("SupersonicCombat", bp => {
                 bp.SetName("Supersonic Combat");
                 bp.SetDescription("The Edge Lord uses their Dexterity modifier for their melee attack and damage bonus instead of Strength. "
-                    + "In addition, you may use your Dexterity in place of your Strength to qualify for any feat for which it is a prerequisite.");
+                    + "In addition, you may use your Dexterity in place of your Strength for CMB and to qualify for any feat for which it is a prerequisite.");
                 bp.m_Icon = Icon_SuperiorReflexes;
+                bp.AddComponent<ReplaceCombatManeuverStat>(c => {
+                    c.StatType = StatType.Dexterity;
+                });
                 bp.AddComponent<AttackStatReplacement>(c => {
                     c.ReplacementStat = StatType.Dexterity;
                 });
