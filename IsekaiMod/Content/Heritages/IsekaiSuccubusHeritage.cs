@@ -19,20 +19,14 @@ namespace IsekaiMod.Content.Heritages
     {
         public static void Add()
         {
-            // TODO: find icon for wings
-            // TODO: Change DemonWingsAbility to custom use custom icon (create new BlueprintActivatableAbility)
-            // TODO: use diabolic wings
-            // TODO: add perception and persuasion as class skills
             // TODO: add an ability to summon a babau
             // TODO: attacks apply negative levels
 
             var DestinyBeyondBirthMythicFeat = Resources.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
 
-            // Charm Ability
+            // Succubus Abilities
             var SuccubusCharmAbility = Resources.GetModBlueprint<BlueprintAbility>("SuccubusCharmAbility");
-
-            // Wings Ability
-            var DemonWingsAbility = Resources.GetBlueprint<BlueprintActivatableAbility>("9ae14c50ef7a28e468b585c673b5c48f");
+            var SuccubusWingsAbility = Resources.GetModBlueprint<BlueprintActivatableAbility>("SuccubusWingsAbility");
 
             var TieflingHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("c862fd0e4046d2d4d9702dd60474a181");
             var ICON_SUCCUBUS = AssetLoader.LoadInternal("Heritages", "ICON_SUCCUBUS.png");
@@ -167,7 +161,7 @@ namespace IsekaiMod.Content.Heritages
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
                         SuccubusCharmAbility.ToReference<BlueprintUnitFactReference>(),
-                        DemonWingsAbility.ToReference<BlueprintUnitFactReference>()
+                        SuccubusWingsAbility.ToReference<BlueprintUnitFactReference>()
                     };
                 });
 

@@ -1,10 +1,5 @@
 {
   "NewSettingsOffByDefault": false,
-  "Heritages": {
-    "DisableAll": false,
-    "Settings": {},
-    "IsExpanded": true
-  },
   "Backgrounds": {
     "DisableAll": false,
     "Settings": {
@@ -12,6 +7,17 @@
         "Enabled": true,
         "Homebrew": true,
         "Description": "Adds all the Isekai Backgrounds."
+      }
+    },
+    "IsExpanded": true
+  },
+  "Heritages": {
+    "DisableAll": false,
+    "Settings": {
+      "Isekai Heritages": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds Isekai Heritages."
       }
     },
     "IsExpanded": true

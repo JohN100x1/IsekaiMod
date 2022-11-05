@@ -34,8 +34,8 @@ namespace IsekaiMod
             {
                 UI.Toggle("New Settings Off By Default".bold(), ref AddedContent.NewSettingsOffByDefault);
                 UI.Space(25);
-                SetttingUI.SettingGroup("Heritages", TabLevel, AddedContent.Heritages);
                 SetttingUI.SettingGroup("Classes", TabLevel, AddedContent.Classes);
+                SetttingUI.SettingGroup("Heritages", TabLevel, AddedContent.Heritages);
                 SetttingUI.SettingGroup("Backgrounds", TabLevel, AddedContent.Backgrounds);
                 SetttingUI.SettingGroup("Deities", TabLevel, AddedContent.Deities);
             }

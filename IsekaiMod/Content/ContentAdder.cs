@@ -17,7 +17,7 @@ namespace IsekaiMod.Content
                 Features.ExoticWeaponProficiency.Add();
 
                 if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
-                // if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
+                if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
                 if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
                 if (ModSettings.AddedContent.Deities.IsEnabled("Isekai Deities")) Deities.TruckKun.Add();
             }
@@ -107,6 +107,7 @@ namespace IsekaiMod.Content
             {
                 // Add Heritages
                 Features.IsekaiSuccubus.SuccubusCharmAbility.Add();
+                Features.IsekaiSuccubus.SuccubusWingsAbility.Add();
                 Heritages.IsekaiSuccubusHeritage.Add();
             }
             public static void AddIsekaiBackgrounds()
