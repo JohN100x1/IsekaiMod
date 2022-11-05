@@ -1,53 +1,44 @@
-﻿using IsekaiMod.Utilities;
-using IsekaiMod.Extensions;
+﻿using IsekaiMod.Extensions;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Enums.Damage;
 using Kingmaker.Blueprints.Classes.Spells;
-using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.EntitySystem.Stats;
-using Kingmaker.UnitLogic.Mechanics;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.Enums;
-using Kingmaker.Designers.Mechanics.Buffs;
+using Kingmaker.Enums.Damage;
+using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 
 namespace IsekaiMod.Content.Heritages
 {
-    internal class IsekaiSuccubusHeritage
+    class IsekaiAngelHeritage
     {
         public static void Add()
         {
-            var DestinyBeyondBirthMythicFeat = Resources.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
+            var AngelWingsFeature = Resources.GetBlueprint<BlueprintFeature>("d9bd0fde6deb2e44a93268f2dfb3e169");
 
-            // Succubus Abilities
-            var SuccubusCharmAbility = Resources.GetModBlueprint<BlueprintAbility>("SuccubusCharmAbility");
-            var SuccubusWingsAbility = Resources.GetModBlueprint<BlueprintActivatableAbility>("SuccubusWingsAbility");
-
-            // Succubus Heritage
-            var Icon_Succubus = AssetLoader.LoadInternal("Heritages", "ICON_SUCCUBUS.png");
-            var IsekaiSuccubusHeritage = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiSuccubusHeritage", bp => {
-                bp.SetName("Isekai Succubus");
-                bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power, and often "
-                    + "have a voracious appetite for sensory pleasures and carnal delights.\n"
-                    + "The Isekai Succubus has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Charisma}Charisma{/g}, a -2 {g|Encyclopedia:Penalty}penalty{/g} to "
-                    + "{g|Encyclopedia:Strength}Strength{/g}, and a +2 racial bonus on {g|Encyclopedia:Persuasion}Persuasion{/g} and {g|Encyclopedia:Perception}Perception checks{/g}. "
-                    + "They have DR 10/Cold Iron or Good, and have spell resistance equal to 10 + their character level. "
-                    + "They have immunity to fire, electricity, and poisons as well as acid and cold resistance 20. "
+            // Angel Heritage
+            var Icon_Angel = AssetLoader.LoadInternal("Heritages", "ICON_ANGEL.png");
+            var IsekaiAngelHeritage = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiAngelHeritage", bp => {
+                bp.SetName("Isekai Angel");
+                bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as an Angel have both extreme beauty and power. "
+                    + "They serve as exemplars of good and light regardless of the myriad forms they may take.\n"
+                    + "The Isekai Angel has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Strength}Strength{/g} and {g|Encyclopedia:Charisma}Charisma{/g}, "
+                    + "and a +2 racial bonus on {g|Encyclopedia:Persuasion}Persuasion{/g} and {g|Encyclopedia:Lore_Religion}Lore (religion){/g} checks. "
+                    + "They have DR 10/Evil, and have spell resistance equal to 10 + their character level. "
+                    + "They have immunity to acid, cold, and petrification as well as fire and electricity resistance 20. "
                     + "They can also use the Charm spell once per day.");
-                bp.m_Icon = Icon_Succubus;
+                bp.m_Icon = Icon_Angel;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
 
                 // Attributes
-                bp.AddComponent<AddStatBonusIfHasFact>(c => {
+                bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Racial;
                     c.Stat = StatType.Strength;
-                    c.Value = -2;
-                    c.InvertCondition = true;
-                    c.m_CheckedFacts = new BlueprintUnitFactReference[] { DestinyBeyondBirthMythicFeat.ToReference<BlueprintUnitFactReference>() };
+                    c.Value = 4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Racial;
@@ -56,7 +47,7 @@ namespace IsekaiMod.Content.Heritages
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Racial;
-                    c.Stat = StatType.SkillPerception;
+                    c.Stat = StatType.SkillLoreReligion;
                     c.Value = 2;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
@@ -65,13 +56,11 @@ namespace IsekaiMod.Content.Heritages
                     c.Value = 2;
                 });
 
-                // Add DR/cold iron or good
+                // Add DR/Evil
                 bp.AddComponent<AddDamageResistancePhysical>(c => {
                     c.Or = true;
                     c.Value = 10;
-                    c.BypassedByMaterial = true;
                     c.BypassedByAlignment = true;
-                    c.Material = PhysicalDamageMaterial.ColdIron;
                     c.Alignment = DamageAlignment.Good;
                 });
 
@@ -108,38 +97,38 @@ namespace IsekaiMod.Content.Heritages
                     c.Value = 20;
                 });
                 bp.AddComponent<AddEnergyImmunity>(c => {
-                    c.Type = DamageEnergyType.Electricity;
+                    c.Type = DamageEnergyType.Acid;
                 });
                 bp.AddComponent<AddEnergyImmunity>(c => {
-                    c.Type = DamageEnergyType.Fire;
+                    c.Type = DamageEnergyType.Cold;
                 });
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
-                    c.Descriptor = SpellDescriptor.Poison
-                    | SpellDescriptor.Electricity
-                    | SpellDescriptor.Fire;
+                    c.Descriptor = SpellDescriptor.Petrified
+                    | SpellDescriptor.Acid
+                    | SpellDescriptor.Cold;
                 });
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
-                    c.Descriptor = SpellDescriptor.Poison
-                    | SpellDescriptor.Electricity
-                    | SpellDescriptor.Fire;
+                    c.Descriptor = SpellDescriptor.Petrified
+                    | SpellDescriptor.Acid
+                    | SpellDescriptor.Cold;
                 });
 
                 // Add Abilities
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
                         SuccubusCharmAbility.ToReference<BlueprintUnitFactReference>(),
-                        SuccubusWingsAbility.ToReference<BlueprintUnitFactReference>()
+                        AngelWingsFeature.ToReference<BlueprintUnitFactReference>()
                     };
                 });
 
-                bp.Groups = new FeatureGroup[] { FeatureGroup.Racial, FeatureGroup.TieflingHeritage };
+                bp.Groups = new FeatureGroup[] { FeatureGroup.Racial, FeatureGroup.AasimarHeritage };
                 bp.IsClassFeature = true;
                 bp.ReapplyOnLevelUp = true;
             });
 
-            // Add to Tiefling Heritage Selection
-            var TieflingHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("c862fd0e4046d2d4d9702dd60474a181");
-            TieflingHeritageSelection.m_AllFeatures = TieflingHeritageSelection.m_AllFeatures.AddToArray(IsekaiSuccubusHeritage.ToReference<BlueprintFeatureReference>());
+            // Add to Aasimar Heritage Selection
+            var AasimarHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("67aabcbce8f8ae643a9d08a6ca67cabd");
+            AasimarHeritageSelection.m_AllFeatures = AasimarHeritageSelection.m_AllFeatures.AddToArray(IsekaiAngelHeritage.ToReference<BlueprintFeatureReference>());
         }
     }
 }

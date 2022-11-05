@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiSuccubus
             // Ability
             var Icon_Charm = AssetLoader.LoadInternal("Abilities", "ICON_CHARM.png");
             var SuccubusCharmUnitProperty = Helpers.CreateBlueprint<BlueprintUnitProperty>("SuccubusCharmUnitProperty", bp => {
-                bp.name = "GraspHeartUnitProperty";
+                bp.name = "SuccubusCharmUnitProperty";
                 bp.AddComponent<SimplePropertyGetter>(c => {
                     c.Property = UnitProperty.Level;
                 });
