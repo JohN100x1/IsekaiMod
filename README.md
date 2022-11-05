@@ -41,6 +41,9 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Edge Lord` (Isekai Protagonist Archetype)
 		- Has alot of extra attacks.
 		- Uses dexterity for damage and attack rolls.
+	- `Villain` (Isekai Protagonist Archetype)
+		- Has studied target.
+		- Intelligence based caster that memorizes spells.
 - New Features
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
 	- `Character Development Feats`: A selection of bonus feats which have very good effects.
@@ -123,6 +126,7 @@ This mod has support for the following mods.
 If you have the `MysticalMayhem` mod, the `Isekai Protagonist` will have the 9th level `Meteor Swarm` spell added to its spellbook.
 ### ExpandedContent (0.4.40)
 If you have the `ExpandedContent` mod, the `Isekai Protagonist` will have the following spells added to its spellbook: Hydraulic push, Slipstream, Scourge of the Horsemen, Rigor mortis, Hollow Blades, Goodberry, Steam Ray Fusillade, Inflict Pain, Inflict Pain Mass, Gloomblind Bolts, Fury of the Sun, Invoke Deity.
+You are also able to choose a drake companion as a pet.
 
 ## Credits
 Alot of the code was repurposed from the following repositories:

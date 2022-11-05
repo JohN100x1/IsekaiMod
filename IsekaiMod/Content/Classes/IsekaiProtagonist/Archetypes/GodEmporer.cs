@@ -6,12 +6,12 @@ using Kingmaker.Blueprints.Classes.Selection;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
 {
-    class GodEmporer
+    class GodEmperor
     {
         public static void Add()
         {
             // Archetype features
-            var GodEmporerProficiencies = Resources.GetModBlueprint<BlueprintFeature>("GodEmporerProficiencies");
+            var GodEmperorProficiencies = Resources.GetModBlueprint<BlueprintFeature>("GodEmperorProficiencies");
             var NascentApotheosis = Resources.GetModBlueprint<BlueprintFeature>("NascentApotheosis");
             var ProtectiveAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("ProtectiveAuraFeature");
             var DarkAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("DarkAuraFeature");
@@ -36,11 +36,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var CharacterDevelopmentSelection5 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection5");
 
             // Archetype
-            var GodEmporerArchetype = Helpers.CreateBlueprint<BlueprintArchetype>("GodEmporerArchetype", bp => {
-                bp.LocalizedName = Helpers.CreateString($"GodEmporerArchetype.Name", "God Emperor");
-                bp.LocalizedDescription = Helpers.CreateString($"GodEmporerArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
+            var GodEmperorArchetype = Helpers.CreateBlueprint<BlueprintArchetype>("GodEmperorArchetype", bp => {
+                bp.LocalizedName = Helpers.CreateString($"GodEmperorArchetype.Name", "God Emperor");
+                bp.LocalizedDescription = Helpers.CreateString($"GodEmperorArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
                     + "some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString($"GodEmporerArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
+                bp.LocalizedDescriptionShort = Helpers.CreateString($"GodEmperorArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
                     + "some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively.");
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
@@ -58,7 +58,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(20, TrueMainCharacter),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.LevelEntry(1, GodEmporerProficiencies),
+                    Helpers.LevelEntry(1, GodEmperorProficiencies),
                     Helpers.LevelEntry(3, NascentApotheosis),
                     Helpers.LevelEntry(6, ProtectiveAuraFeature),
                     Helpers.LevelEntry(9, GloriousAuraFeature),
@@ -71,7 +71,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
 
             // Add Archetype to Class
             var IsekaiProtagonistClass = Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
-            IsekaiProtagonistClass.m_Archetypes = IsekaiProtagonistClass.m_Archetypes.AppendToArray(GodEmporerArchetype.ToReference<BlueprintArchetypeReference>());
+            IsekaiProtagonistClass.m_Archetypes = IsekaiProtagonistClass.m_Archetypes.AppendToArray(GodEmperorArchetype.ToReference<BlueprintArchetypeReference>());
         }
     }
 }
