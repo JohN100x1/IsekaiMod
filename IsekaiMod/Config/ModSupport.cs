@@ -6,7 +6,6 @@ using System.Linq;
 using static UnityModManagerNet.UnityModManager;
 using Kingmaker.Blueprints.Classes.Selection;
 using IsekaiMod.Extensions;
-using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Blueprints.Classes;
 using static Kingmaker.Blueprints.Classes.BlueprintProgression;
 
@@ -74,40 +73,11 @@ namespace IsekaiMod.Utilities
 
             public static void AddExpandedContentDrakes(BlueprintCharacterClass characterClass)
             {
-                var DrakeCompanionFeatureGreen = Resources.GetBlueprint<BlueprintFeature>("bef2fb86de284ccfbf7cb391754c9d63");
-                var DrakeCompanionFeatureSilver = Resources.GetBlueprint<BlueprintFeature>("c58b42a62ce14cb797e516d8608225ea");
-                var DrakeCompanionFeatureBlack = Resources.GetBlueprint<BlueprintFeature>("8a41c6c006474b5fb442a3232fb39034");
-                var DrakeCompanionFeatureBlue = Resources.GetBlueprint<BlueprintFeature>("3e1f0d4d82784b18b8eb28206a475737");
-                var DrakeCompanionFeatureBrass = Resources.GetBlueprint<BlueprintFeature>("863864d6b19c41e0b3adc353adb01dcf");
-                var DrakeCompanionFeatureRed = Resources.GetBlueprint<BlueprintFeature>("9780a4d19ca04717853aae86daa86d88");
-                var DrakeCompanionFeatureWhite = Resources.GetBlueprint<BlueprintFeature>("8446d2aeb66446e78df7affbb603dccc");
-                var DrakeCompanionFeatureGold = Resources.GetBlueprint<BlueprintFeature>("b7bb60773879480b8e8d49b4bbae7750");
-                var DrakeCompanionProgression = Resources.GetBlueprint<BlueprintProgression>("925c3ece6b9446efa9100fe2cf98542e");
-                var AnimalCompanionRank = Resources.GetBlueprint<BlueprintFeature>("1670990255e4fe948a863bafd5dbda5d");
+                // Get the Drake Selection
+                var DrakeCompanionSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("d78cdd3dd370473ea1ee3003ea6e83f2");
 
-                var DrakeCompanionSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("DrakeCompanionSelection", bp => {
-                    bp.SetName("Drake Companion");
-                    bp.SetDescription("You can choose a drake companion instead of an animal companion.");
-                    bp.AddComponent<AddFeatureOnApply>(c => {
-                        c.m_Feature = DrakeCompanionProgression.ToReference<BlueprintFeatureReference>();
-                    });
-                    bp.AddComponent<AddFeatureOnApply>(c => {
-                        c.m_Feature = AnimalCompanionRank.ToReference<BlueprintFeatureReference>();
-                    });
-                    bp.m_AllowNonContextActions = false;
-                    bp.IsClassFeature = true;
-                    bp.Group = FeatureGroup.None;
-                    bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                        DrakeCompanionFeatureBlack.ToReference<BlueprintFeatureReference>(),
-                        DrakeCompanionFeatureBlue.ToReference<BlueprintFeatureReference>(),
-                        DrakeCompanionFeatureBrass.ToReference<BlueprintFeatureReference>(),
-                        DrakeCompanionFeatureGold.ToReference<BlueprintFeatureReference>(),
-                        DrakeCompanionFeatureGreen.ToReference<BlueprintFeatureReference>(),
-                        DrakeCompanionFeatureRed.ToReference<BlueprintFeatureReference>(),
-                        DrakeCompanionFeatureSilver.ToReference<BlueprintFeatureReference>(),
-                        DrakeCompanionFeatureWhite.ToReference<BlueprintFeatureReference>()
-                    };
-                });
+                // Add Isekai Protagonist Class to Drake Progression
+                var DrakeCompanionProgression = Resources.GetBlueprint<BlueprintProgression>("925c3ece6b9446efa9100fe2cf98542e");
                 DrakeCompanionProgression.m_Classes = DrakeCompanionProgression.m_Classes.AddToArray(
                     new ClassWithLevel
                     {

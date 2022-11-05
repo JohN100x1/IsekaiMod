@@ -16,11 +16,8 @@ namespace IsekaiMod.Content
 
                 Features.ExoticWeaponProficiency.Add();
 
-                // Add Heritages (Still in development)
-                // Features.IsekaiSuccubus.SuccubusCharmAbility.Add();
-                // Heritages.IsekaiSuccubusHeritage.Add();
-
                 if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
+                // if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
                 if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
                 if (ModSettings.AddedContent.Deities.IsEnabled("Isekai Deities")) Deities.TruckKun.Add();
             }
@@ -105,6 +102,12 @@ namespace IsekaiMod.Content
                 // Add Progression & Prebuild after Class and class-dependent features are added
                 Classes.IsekaiProtagonist.PrebuildIsekaiProtagonistFeatureList.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistProgression.Add();
+            }
+            public static void AddIsekaiHeritages()
+            {
+                // Add Heritages
+                Features.IsekaiSuccubus.SuccubusCharmAbility.Add();
+                Heritages.IsekaiSuccubusHeritage.Add();
             }
             public static void AddIsekaiBackgrounds()
             {
