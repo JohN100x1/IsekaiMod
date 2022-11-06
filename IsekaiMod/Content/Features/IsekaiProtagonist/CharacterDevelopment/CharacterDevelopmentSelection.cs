@@ -27,6 +27,32 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             var FireImmunity = Resources.GetModBlueprint<BlueprintFeature>("FireImmunity");
             var SonicImmunity = Resources.GetModBlueprint<BlueprintFeature>("SonicImmunity");
             var ExceptionalSummoningFeature = Resources.GetModBlueprint<BlueprintFeature>("ExceptionalSummoningFeature");
+            var SecondBackground = Resources.GetModBlueprint<BlueprintFeature>("SecondBackground");
+
+            var PreBeachFeatures = new BlueprintFeatureReference[] {
+                IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
+                IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
+                AlphaStrike.ToReference<BlueprintFeatureReference>(),
+                BetaStrike.ToReference<BlueprintFeatureReference>(),
+                GammaStrike.ToReference<BlueprintFeatureReference>(),
+                MundaneAura.ToReference<BlueprintFeatureReference>(),
+                AcidImmunity.ToReference<BlueprintFeatureReference>(),
+                ColdImmunity.ToReference<BlueprintFeatureReference>(),
+                ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
+                FireImmunity.ToReference<BlueprintFeatureReference>(),
+                SonicImmunity.ToReference<BlueprintFeatureReference>(),
+                ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
+                SecondBackground.ToReference<BlueprintFeatureReference>(),
+            };
+
+            var PostBeachFeatures = PreBeachFeatures.AppendToArray(
+                new BlueprintFeatureReference[]
+                {
+                    HealthyBody.ToReference<BlueprintFeatureReference>(),
+                    InnerPower.ToReference<BlueprintFeatureReference>(),
+                    MasterSelf.ToReference<BlueprintFeatureReference>(),
+                    Tenacious.ToReference<BlueprintFeatureReference>(),
+                });
 
             // Feature
             var Icon_Discovery = Resources.GetBlueprint<BlueprintFeatureSelection>("cd86c437488386f438dcc9ae727ea2a6").m_Icon;
@@ -36,34 +62,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Icon = Icon_Discovery;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
-                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                    BetaStrike.ToReference<BlueprintFeatureReference>(),
-                    GammaStrike.ToReference<BlueprintFeatureReference>(),
-                    MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
-                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
-                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
-                    FireImmunity.ToReference<BlueprintFeatureReference>(),
-                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
-                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
-                };
-                bp.m_Features = new BlueprintFeatureReference[] {
-                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
-                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                    BetaStrike.ToReference<BlueprintFeatureReference>(),
-                    GammaStrike.ToReference<BlueprintFeatureReference>(),
-                    MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
-                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
-                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
-                    FireImmunity.ToReference<BlueprintFeatureReference>(),
-                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
-                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
-                };
+                bp.m_AllFeatures = PreBeachFeatures;
+                bp.m_Features = PreBeachFeatures;
             });
             var CharacterDevelopmentSelection2 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection2", bp => {
                 bp.SetName("Character Development II");
@@ -71,34 +71,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Icon = Icon_Discovery;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
-                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                    BetaStrike.ToReference<BlueprintFeatureReference>(),
-                    GammaStrike.ToReference<BlueprintFeatureReference>(),
-                    MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
-                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
-                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
-                    FireImmunity.ToReference<BlueprintFeatureReference>(),
-                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
-                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
-                };
-                bp.m_Features = new BlueprintFeatureReference[] {
-                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
-                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                    BetaStrike.ToReference<BlueprintFeatureReference>(),
-                    GammaStrike.ToReference<BlueprintFeatureReference>(),
-                    MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
-                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
-                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
-                    FireImmunity.ToReference<BlueprintFeatureReference>(),
-                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
-                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
-                };
+                bp.m_AllFeatures = PreBeachFeatures;
+                bp.m_Features = PreBeachFeatures;
             });
             var CharacterDevelopmentSelection3 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection3", bp => {
                 bp.SetName("Character Development III");
@@ -106,42 +80,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Icon = Icon_Discovery;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
-                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                    BetaStrike.ToReference<BlueprintFeatureReference>(),
-                    GammaStrike.ToReference<BlueprintFeatureReference>(),
-                    MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
-                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
-                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
-                    FireImmunity.ToReference<BlueprintFeatureReference>(),
-                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
-                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
-                    HealthyBody.ToReference<BlueprintFeatureReference>(),
-                    InnerPower.ToReference<BlueprintFeatureReference>(),
-                    MasterSelf.ToReference<BlueprintFeatureReference>(),
-                    Tenacious.ToReference<BlueprintFeatureReference>(),
-                };
-                bp.m_Features = new BlueprintFeatureReference[] {
-                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
-                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                    BetaStrike.ToReference<BlueprintFeatureReference>(),
-                    GammaStrike.ToReference<BlueprintFeatureReference>(),
-                    MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
-                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
-                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
-                    FireImmunity.ToReference<BlueprintFeatureReference>(),
-                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
-                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
-                    HealthyBody.ToReference<BlueprintFeatureReference>(),
-                    InnerPower.ToReference<BlueprintFeatureReference>(),
-                    MasterSelf.ToReference<BlueprintFeatureReference>(),
-                    Tenacious.ToReference<BlueprintFeatureReference>(),
-                };
+                bp.m_AllFeatures = PostBeachFeatures;
+                bp.m_Features = PostBeachFeatures;
             });
             var CharacterDevelopmentSelection4 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection4", bp => {
                 bp.SetName("Character Development IV");
@@ -149,42 +89,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Icon = Icon_Discovery;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
-                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                    BetaStrike.ToReference<BlueprintFeatureReference>(),
-                    GammaStrike.ToReference<BlueprintFeatureReference>(),
-                    MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
-                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
-                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
-                    FireImmunity.ToReference<BlueprintFeatureReference>(),
-                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
-                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
-                    HealthyBody.ToReference<BlueprintFeatureReference>(),
-                    InnerPower.ToReference<BlueprintFeatureReference>(),
-                    MasterSelf.ToReference<BlueprintFeatureReference>(),
-                    Tenacious.ToReference<BlueprintFeatureReference>(),
-                };
-                bp.m_Features = new BlueprintFeatureReference[] {
-                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
-                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                    BetaStrike.ToReference<BlueprintFeatureReference>(),
-                    GammaStrike.ToReference<BlueprintFeatureReference>(),
-                    MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
-                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
-                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
-                    FireImmunity.ToReference<BlueprintFeatureReference>(),
-                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
-                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
-                    HealthyBody.ToReference<BlueprintFeatureReference>(),
-                    InnerPower.ToReference<BlueprintFeatureReference>(),
-                    MasterSelf.ToReference<BlueprintFeatureReference>(),
-                    Tenacious.ToReference<BlueprintFeatureReference>(),
-                };
+                bp.m_AllFeatures = PostBeachFeatures;
+                bp.m_Features = PostBeachFeatures;
             });
             var CharacterDevelopmentSelection5 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection5", bp => {
                 bp.SetName("Character Development V");
@@ -192,42 +98,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Icon = Icon_Discovery;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
-                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                    BetaStrike.ToReference<BlueprintFeatureReference>(),
-                    GammaStrike.ToReference<BlueprintFeatureReference>(),
-                    MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
-                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
-                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
-                    FireImmunity.ToReference<BlueprintFeatureReference>(),
-                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
-                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
-                    HealthyBody.ToReference<BlueprintFeatureReference>(),
-                    InnerPower.ToReference<BlueprintFeatureReference>(),
-                    MasterSelf.ToReference<BlueprintFeatureReference>(),
-                    Tenacious.ToReference<BlueprintFeatureReference>(),
-                };
-                bp.m_Features = new BlueprintFeatureReference[] {
-                    IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
-                    AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                    BetaStrike.ToReference<BlueprintFeatureReference>(),
-                    GammaStrike.ToReference<BlueprintFeatureReference>(),
-                    MundaneAura.ToReference<BlueprintFeatureReference>(),
-                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
-                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
-                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
-                    FireImmunity.ToReference<BlueprintFeatureReference>(),
-                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
-                    ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
-                    HealthyBody.ToReference<BlueprintFeatureReference>(),
-                    InnerPower.ToReference<BlueprintFeatureReference>(),
-                    MasterSelf.ToReference<BlueprintFeatureReference>(),
-                    Tenacious.ToReference<BlueprintFeatureReference>(),
-                };
+                bp.m_AllFeatures = PostBeachFeatures;
+                bp.m_Features = PostBeachFeatures;
             });
         }
     }
