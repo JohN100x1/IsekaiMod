@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Heritages
                     + "and a +2 racial bonus on {g|Encyclopedia:Persuasion}Persuasion{/g} and {g|Encyclopedia:Lore_Religion}Lore (religion){/g} checks. "
                     + "They have DR 10/Evil, and have spell resistance equal to 10 + their character level. "
                     + "They have immunity to acid, cold, and petrification as well as fire and electricity resistance 20. "
-                    + "They can also use the Charm spell once per day.");
+                    + "They can also use the Angelic Bolt spell once per day.");
                 bp.m_Icon = Icon_Angel;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

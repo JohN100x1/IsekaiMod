@@ -40,7 +40,7 @@ namespace IsekaiMod.Content.Features.IsekaiAngel
             var AngelicBoltAbility = Helpers.CreateBlueprint<BlueprintAbility>("AngelicBoltAbility", bp => {
                 bp.SetName("Angelic Bolt");
                 bp.SetDescription("You release a powerful stroke of energy that deals {g|Encyclopedia:Dice}2d6{/g} points of holy {g|Encyclopedia:Damage}damage{/g} per "
-                    + "character level.\n"
+                    + "character level. The target needs to make a successful Reflex saving throw, or become prone.\n"
                     + "If the target is evil, the {g|Encyclopedia:Spell}spell{/g} instead deals 2d8 points of holy {g|Encyclopedia:Energy_Damage}damage{/g} per character level. "
                     + "The target needs to make a successful Reflex saving throw, or become prone and suffer a -2 {g|Encyclopedia:Penalty}penalty{/g} to {g|Encyclopedia:Armor_Class}AC{/g}, "
                     + "{g|Encyclopedia:Attack}attack rolls{/g} and saving throws.\nIf the target is an evil outsider or an undead creature, the spell instead deals 2d10 points of holy damage "
