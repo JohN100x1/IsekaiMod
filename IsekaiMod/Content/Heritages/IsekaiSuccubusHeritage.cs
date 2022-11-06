@@ -12,6 +12,7 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.Enums;
 using Kingmaker.Designers.Mechanics.Buffs;
+using Kingmaker.UnitLogic.Mechanics.Components;
 
 namespace IsekaiMod.Content.Heritages
 {
@@ -19,29 +20,24 @@ namespace IsekaiMod.Content.Heritages
     {
         public static void Add()
         {
-            // TODO: find icon for wings
-            // TODO: Change DemonWingsAbility to custom use custom icon (create new BlueprintActivatableAbility)
-            // TODO: use diabolic wings
-            // TODO: add perception and persuasion as class skills
-            // TODO: add an ability to summon a babau
-            // TODO: attacks apply negative levels
-
             var DestinyBeyondBirthMythicFeat = Resources.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
 
-            // Charm Ability
+            // Succubus Abilities
             var SuccubusCharmAbility = Resources.GetModBlueprint<BlueprintAbility>("SuccubusCharmAbility");
+            var SuccubusWingsAbility = Resources.GetModBlueprint<BlueprintActivatableAbility>("SuccubusWingsAbility");
 
-            // Wings Ability
-            var DemonWingsAbility = Resources.GetBlueprint<BlueprintActivatableAbility>("9ae14c50ef7a28e468b585c673b5c48f");
-
-            var TieflingHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("c862fd0e4046d2d4d9702dd60474a181");
-            var ICON_SUCCUBUS = AssetLoader.LoadInternal("Heritages", "ICON_SUCCUBUS.png");
+            // Succubus Heritage
+            var Icon_Succubus = AssetLoader.LoadInternal("Heritages", "ICON_SUCCUBUS.png");
             var IsekaiSuccubusHeritage = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiSuccubusHeritage", bp => {
                 bp.SetName("Isekai Succubus");
-                bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power. " +
-                    "They have a voracious appetite for sensory pleasures and carnal delights.\n" +
-                    "................................................");
-                bp.m_Icon = ICON_SUCCUBUS;
+                bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power, and often "
+                    + "have a voracious appetite for sensory pleasures and carnal delights.\n"
+                    + "The Isekai Succubus has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Charisma}Charisma{/g}, a -2 {g|Encyclopedia:Penalty}penalty{/g} to "
+                    + "{g|Encyclopedia:Strength}Strength{/g}, and a +2 racial bonus on {g|Encyclopedia:Persuasion}Persuasion{/g} and {g|Encyclopedia:Perception}Perception checks{/g}. "
+                    + "They have DR 10/Cold Iron or Good, and have spell resistance equal to 10 + their character level. "
+                    + "They have immunity to fire, electricity, and poisons as well as acid and cold resistance 20. "
+                    + "They can also use the Charm spell once per day.");
+                bp.m_Icon = Icon_Succubus;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
 
@@ -69,28 +65,47 @@ namespace IsekaiMod.Content.Heritages
                     c.Value = 2;
                 });
 
-
-                // Add AC Bonus
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Racial;
-                    c.Stat = StatType.AC;
-                    c.Value = 100;
-                });
-                // Add DR Bonus
+                // Add DR/cold iron or good
                 bp.AddComponent<AddDamageResistancePhysical>(c => {
-                    c.Value = 100;
+                    c.Or = true;
+                    c.Value = 10;
+                    c.BypassedByMaterial = true;
+                    c.BypassedByAlignment = true;
+                    c.Material = PhysicalDamageMaterial.ColdIron;
+                    c.Alignment = DamageAlignment.Good;
                 });
+
                 // Add Spell Resistance
                 bp.AddComponent<AddSpellResistance>(c => {
-                    c.Value = new ContextValue { Value = 100 };
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.StatBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.BonusValue;
+                    c.m_StepLevel = 10;
                 });
 
-                // Add Energy Damage Immunity
-                bp.AddComponent<AddEnergyImmunity>(c => {
+                // Add Resistance and Immunities
+                bp.AddComponent<AddDamageResistanceEnergy>(c => {
                     c.Type = DamageEnergyType.Acid;
+                    c.Value = 20;
                 });
-                bp.AddComponent<AddEnergyImmunity>(c => {
+                bp.AddComponent<AddDamageResistanceEnergy>(c => {
                     c.Type = DamageEnergyType.Cold;
+                    c.Value = 20;
+                });
+                bp.AddComponent<AddDamageResistanceEnergy>(c => {
+                    c.Type = DamageEnergyType.Fire;
+                    c.Value = 20;
+                });
+                bp.AddComponent<AddDamageResistanceEnergy>(c => {
+                    c.Type = DamageEnergyType.Electricity;
+                    c.Value = 20;
                 });
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Electricity;
@@ -98,68 +113,14 @@ namespace IsekaiMod.Content.Heritages
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Fire;
                 });
-                bp.AddComponent<AddEnergyImmunity>(c => {
-                    c.Type = DamageEnergyType.Sonic;
-                });
-                bp.AddComponent<AddEnergyImmunity>(c => {
-                    c.Type = DamageEnergyType.Unholy;
-                });
-                bp.AddComponent<AddEnergyImmunity>(c => {
-                    c.Type = DamageEnergyType.NegativeEnergy;
-                });
-
-
-                // Add Descriptor Immunity
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
-                    c.Descriptor = SpellDescriptor.Compulsion
-                    | SpellDescriptor.Charm
-                    | SpellDescriptor.Blindness
-                    | SpellDescriptor.Fatigue
-                    | SpellDescriptor.Exhausted
-                    | SpellDescriptor.Death
-                    | SpellDescriptor.Poison
-                    | SpellDescriptor.Sickened
-                    | SpellDescriptor.Disease
-                    | SpellDescriptor.Petrified
-                    | SpellDescriptor.Paralysis
-                    | SpellDescriptor.NegativeLevel
-                    | SpellDescriptor.StatDebuff
-                    | SpellDescriptor.MindAffecting
-                    | SpellDescriptor.Fear
-                    | SpellDescriptor.Daze
-                    | SpellDescriptor.Acid
-                    | SpellDescriptor.Cold
+                    c.Descriptor = SpellDescriptor.Poison
                     | SpellDescriptor.Electricity
-                    | SpellDescriptor.Force
-                    | SpellDescriptor.Sonic
-                    | SpellDescriptor.Evil
-                    | SpellDescriptor.Chaos
-                    | SpellDescriptor.Bleed
                     | SpellDescriptor.Fire;
                 });
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
-                    c.Descriptor = SpellDescriptor.Compulsion
-                    | SpellDescriptor.Charm
-                    | SpellDescriptor.Fatigue
-                    | SpellDescriptor.Exhausted
-                    | SpellDescriptor.Death
-                    | SpellDescriptor.Poison
-                    | SpellDescriptor.Sickened
-                    | SpellDescriptor.Disease
-                    | SpellDescriptor.Petrified
-                    | SpellDescriptor.NegativeLevel
-                    | SpellDescriptor.StatDebuff
-                    | SpellDescriptor.MindAffecting
-                    | SpellDescriptor.Fear
-                    | SpellDescriptor.Daze
-                    | SpellDescriptor.Acid
-                    | SpellDescriptor.Cold
+                    c.Descriptor = SpellDescriptor.Poison
                     | SpellDescriptor.Electricity
-                    | SpellDescriptor.Force
-                    | SpellDescriptor.Sonic
-                    | SpellDescriptor.Evil
-                    | SpellDescriptor.Chaos
-                    | SpellDescriptor.Bleed
                     | SpellDescriptor.Fire;
                 });
 
@@ -167,12 +128,17 @@ namespace IsekaiMod.Content.Heritages
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
                         SuccubusCharmAbility.ToReference<BlueprintUnitFactReference>(),
-                        DemonWingsAbility.ToReference<BlueprintUnitFactReference>()
+                        SuccubusWingsAbility.ToReference<BlueprintUnitFactReference>()
                     };
                 });
 
                 bp.Groups = new FeatureGroup[] { FeatureGroup.Racial, FeatureGroup.TieflingHeritage };
+                bp.IsClassFeature = true;
+                bp.ReapplyOnLevelUp = true;
             });
+
+            // Add to Tiefling Heritage Selection
+            var TieflingHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("c862fd0e4046d2d4d9702dd60474a181");
             TieflingHeritageSelection.m_AllFeatures = TieflingHeritageSelection.m_AllFeatures.AddToArray(IsekaiSuccubusHeritage.ToReference<BlueprintFeatureReference>());
         }
     }

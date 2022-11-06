@@ -17,7 +17,7 @@ namespace IsekaiMod.Content
                 Features.ExoticWeaponProficiency.Add();
 
                 if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
-                // if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
+                if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
                 if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
                 if (ModSettings.AddedContent.Deities.IsEnabled("Isekai Deities")) Deities.TruckKun.Add();
             }
@@ -74,9 +74,9 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.GraspHeartFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.DupeGoldFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.PerfectRollFeature.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.SuperBuffFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.WinnerFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilityMythicSelection.Add();
                 // God Emperor Archetype
                 Features.IsekaiProtagonist.GodEmperor.GodEmperorProficiencies.Add();
                 Features.IsekaiProtagonist.GodEmperor.NascentApotheosis.Add();
@@ -107,7 +107,10 @@ namespace IsekaiMod.Content
             {
                 // Add Heritages
                 Features.IsekaiSuccubus.SuccubusCharmAbility.Add();
+                Features.IsekaiSuccubus.SuccubusWingsAbility.Add();
                 Heritages.IsekaiSuccubusHeritage.Add();
+                Features.IsekaiAngel.AngelicBoltAbility.Add();
+                Heritages.IsekaiAngelHeritage.Add();
             }
             public static void AddIsekaiBackgrounds()
             {

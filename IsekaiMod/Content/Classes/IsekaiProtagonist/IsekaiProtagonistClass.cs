@@ -19,8 +19,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: add isekai succubus heritage
-            // TODO: add isekai angel heritage
+            // TODO: rename protective aura
             // TODO: Load localisation instead of hardcoded strings
 
             // Used in Class

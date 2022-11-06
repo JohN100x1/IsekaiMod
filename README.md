@@ -61,6 +61,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Grasp Heart`: Kills target creature (no HP limit).
 		- `Dupe Gold`: Get infinite gold.
 		- `Perfect Roll`: Roll 20 on every d20 roll.
+		- `Super Buff`: Apply many powerful buffs on you and your allies.
 		- `Winner`: Does nothing.
 - New Mythic abilities
 	- `Second Overpowered Ability`: Gives you another Overpowered Ability.
@@ -69,6 +70,9 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Martial Artist`: Get proficiency in all exotic weapons.
 	- `Salaryman`: Adds perception as a class skill. Perception uses CHA instead of WIS.
 	- `Highschool Student`: Get a +1 bonus to all attributes.
+- New Heritages
+	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
+	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.
 - New Deities
 	- `Truck-kun`: A god of transportation.
 

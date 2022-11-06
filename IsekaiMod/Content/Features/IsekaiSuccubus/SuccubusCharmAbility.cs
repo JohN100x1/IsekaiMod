@@ -16,6 +16,7 @@ using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using System.Collections.Generic;
 
 namespace IsekaiMod.Content.Features.IsekaiSuccubus
 {
@@ -23,13 +24,13 @@ namespace IsekaiMod.Content.Features.IsekaiSuccubus
     {
         public static void Add()
         {
-            // Buff
             var DominatePersonBuff = Resources.GetBlueprint<BlueprintBuff>("c0f4e1c24c9cd334ca988ed1bd9d201f");
+            var TieflingSpellLikeResource = Resources.GetBlueprint<BlueprintAbilityResource>("803d7e39e05fa2a47a7e2424d0e4b623");
 
             // Ability
-            var ICON_CHARM = AssetLoader.LoadInternal("Abilities", "ICON_CHARM.png");
+            var Icon_Charm = AssetLoader.LoadInternal("Abilities", "ICON_CHARM.png");
             var SuccubusCharmUnitProperty = Helpers.CreateBlueprint<BlueprintUnitProperty>("SuccubusCharmUnitProperty", bp => {
-                bp.name = "GraspHeartUnitProperty";
+                bp.name = "SuccubusCharmUnitProperty";
                 bp.AddComponent<SimplePropertyGetter>(c => {
                     c.Property = UnitProperty.Level;
                 });
@@ -41,10 +42,10 @@ namespace IsekaiMod.Content.Features.IsekaiSuccubus
             });
             var SuccubusCharmAbility = Helpers.CreateBlueprint<BlueprintAbility>("SuccubusCharmAbility", bp => {
                 bp.SetName("Succubus Charm");
-                bp.SetDescription("You can make any creature fight on your side as if it was your ally. " +
-                    "It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its ability. " +
-                    "However this creature will try to throw off the domination effect, making a {g|Encyclopedia:Saving_Throw}Will save{/g} each {g|Encyclopedia:Combat_Round}round{/g}.");
-                bp.m_Icon = ICON_CHARM;
+                bp.SetDescription("You can make any creature fight on your side as if it was your ally. "
+                    + "It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its ability. "
+                    + "However this creature will try to throw off the domination effect, making a {g|Encyclopedia:Saving_Throw}Will save{/g} each {g|Encyclopedia:Combat_Round}round{/g}.");
+                bp.m_Icon = Icon_Charm;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Will;
                     c.Actions = Helpers.CreateActionList(
@@ -89,6 +90,14 @@ namespace IsekaiMod.Content.Features.IsekaiSuccubus
                         ValueType = ContextValueType.CasterCustomProperty,
                         m_CustomProperty = SuccubusCharmUnitProperty.ToReference<BlueprintUnitPropertyReference>()
                     };
+                });
+                bp.AddComponent<AbilityResourceLogic>(c => {
+                    c.m_RequiredResource = TieflingSpellLikeResource.ToReference<BlueprintAbilityResourceReference>();
+                    c.m_IsSpendResource = true;
+                    c.CostIsCustom = false;
+                    c.Amount = 1;
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
                 bp.Type = AbilityType.SpellLike;
                 bp.Range = AbilityRange.Medium;

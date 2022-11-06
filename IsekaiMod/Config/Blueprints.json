@@ -1,9 +1,16 @@
 {
   "OverrideIds": false,
   "NewBlueprints": {
+    // Isekai Succubus Heritage
     "SuccubusCharmUnitProperty": "bc4e0bec-cfa4-4505-a7b1-eac579153d48",
     "SuccubusCharmAbility": "0e19dd2f-5e66-4d6b-8a48-9f00c221698d",
+    "SuccubusWingsBuff": "a7c9d59b-17de-4fc4-ae74-80427448a2a6",
+    "SuccubusWingsAbility": "92f9474f-1fe0-4ea2-8848-a6fd9ccd2bc1",
     "IsekaiSuccubusHeritage": "cd4ffe35-6174-429c-9379-97a3eb1eee70",
+    // Isekai Angel Heritage
+    "AngelicBoltUnitProperty": "d1fdf2bf-dc7f-44f4-a957-3b0ea98211f4",
+    "AngelicBoltAbility": "ca121891-64ec-44e8-ab7d-bdd132c81e4b",
+    "IsekaiAngelHeritage": "fe1c2ffe-2b29-4e02-8d17-dfce5670bacf",
 
     // Deities
     "TruckKunFeature": "36513264-aae2-418f-8fd1-7525b143efd0",
@@ -125,6 +132,8 @@
     "PerfectRollBuff": "57b81080-a37d-45d8-8854-c8cbf30dce24",
     "PerfectRollAbility": "3a7b97f6-f6c6-4095-be85-5fd49dc39160",
     "PerfectRollFeature": "7b53443a-43b4-4c86-a1fc-3e57893333fa",
+    "SuperBuffAbility": "a75ce3b1-221e-4a4c-bc8f-0c5235938705",
+    "SuperBuffFeature": "a7d8ceeb-9ab6-4d8a-9a1b-001e5b413732",
     "WinnerAbility": "5d39f2f1-a90d-4506-8d97-e0aa44a14724",
     "WinnerFeature": "d7b02f2a-903c-494e-8ae9-e5586ff1c340",
 
