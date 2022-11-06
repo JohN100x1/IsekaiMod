@@ -7,6 +7,7 @@ using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
@@ -17,6 +18,7 @@ namespace IsekaiMod.Content.Heritages
     {
         public static void Add()
         {
+            var AngelicBoltAbility = Resources.GetModBlueprint<BlueprintAbility>("AngelicBoltAbility");
             var AngelWingsFeature = Resources.GetBlueprint<BlueprintFeature>("d9bd0fde6deb2e44a93268f2dfb3e169");
 
             // Angel Heritage
@@ -61,7 +63,7 @@ namespace IsekaiMod.Content.Heritages
                     c.Or = true;
                     c.Value = 10;
                     c.BypassedByAlignment = true;
-                    c.Alignment = DamageAlignment.Good;
+                    c.Alignment = DamageAlignment.Evil;
                 });
 
                 // Add Spell Resistance
@@ -116,7 +118,7 @@ namespace IsekaiMod.Content.Heritages
                 // Add Abilities
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
-                        SuccubusCharmAbility.ToReference<BlueprintUnitFactReference>(),
+                        AngelicBoltAbility.ToReference<BlueprintUnitFactReference>(),
                         AngelWingsFeature.ToReference<BlueprintUnitFactReference>()
                     };
                 });
