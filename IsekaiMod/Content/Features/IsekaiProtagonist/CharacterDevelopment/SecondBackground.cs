@@ -33,13 +33,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.Stat = StatType.Intelligence;
                     c.Value = 3;
                 });
-                bp.HideInCharacterSheetAndLevelUp = true;
                 bp.Mode = SelectionMode.Default;
                 bp.Group = FeatureGroup.BackgroundSelection;
                 bp.Group2 = FeatureGroup.None;
                 bp.m_Features = new BlueprintFeatureReference[0];
                 bp.m_AllFeatures = BackgroundSelection.m_AllFeatures;
-                bp.ShowThisSelection = false;
             });
 
             // You can't select a third background

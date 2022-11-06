@@ -31,6 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.Group = FeatureGroup.RogueTalent;
                 bp.Group2 = FeatureGroup.None;
                 bp.IgnorePrerequisites = true;
+                bp.m_Features = new BlueprintFeatureReference[0];
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     CripplingStrike.ToReference<BlueprintFeatureReference>(),
                     DispellingAttack.ToReference<BlueprintFeatureReference>(),
