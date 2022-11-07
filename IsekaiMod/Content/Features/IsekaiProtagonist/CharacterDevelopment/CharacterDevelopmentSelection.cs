@@ -27,7 +27,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             var FireImmunity = Resources.GetModBlueprint<BlueprintFeature>("FireImmunity");
             var SonicImmunity = Resources.GetModBlueprint<BlueprintFeature>("SonicImmunity");
             var ExceptionalSummoningFeature = Resources.GetModBlueprint<BlueprintFeature>("ExceptionalSummoningFeature");
-            var SecondBackground = Resources.GetModBlueprint<BlueprintFeatureSelection>("SecondBackground");
 
             var PreBeachFeatures = new BlueprintFeatureReference[] {
                 IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
@@ -42,7 +41,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 FireImmunity.ToReference<BlueprintFeatureReference>(),
                 SonicImmunity.ToReference<BlueprintFeatureReference>(),
                 ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
-                SecondBackground.ToReference<BlueprintFeatureReference>(),
             };
 
             var PostBeachFeatures = PreBeachFeatures.AppendToArray(
