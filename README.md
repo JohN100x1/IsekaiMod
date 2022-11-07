@@ -47,7 +47,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 - New Features
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
 	- `Character Development Feats`: A selection of bonus feats which have very good effects.
-		- `Alpha Strike`: Ignore crit immunity and automatically confirm crits.
+		- `Alpha Strike`: Automatically confirm crits.
 		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
@@ -62,6 +62,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Dupe Gold`: Get infinite gold.
 		- `Perfect Roll`: Roll 20 on every d20 roll.
 		- `Super Buff`: Apply many powerful buffs on you and your allies.
+		- `Interdimensional Bag`: Get infinite carry capacity.
 		- `Winner`: Does nothing.
 - New Mythic abilities
 	- `Second Overpowered Ability`: Gives you another Overpowered Ability.

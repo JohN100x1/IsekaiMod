@@ -22,6 +22,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             var DupeGoldFeature = Resources.GetModBlueprint<BlueprintFeature>("DupeGoldFeature");
             var PerfectRollFeature = Resources.GetModBlueprint<BlueprintFeature>("PerfectRollFeature");
             var SuperBuffFeature = Resources.GetModBlueprint<BlueprintFeature>("SuperBuffFeature");
+            var InterdimensionalBagFeature = Resources.GetModBlueprint<BlueprintFeature>("InterdimensionalBagFeature");
             var WinnerFeature = Resources.GetModBlueprint<BlueprintFeature>("WinnerFeature");
 
             var OPAbilityList = new BlueprintFeatureReference[] {
@@ -34,6 +35,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 DupeGoldFeature.ToReference<BlueprintFeatureReference>(),
                 PerfectRollFeature.ToReference<BlueprintFeatureReference>(),
                 SuperBuffFeature.ToReference<BlueprintFeatureReference>(),
+                InterdimensionalBagFeature.ToReference<BlueprintFeatureReference>(),
             };
 
             // Overpowered Ability Selection
