@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added Character Development feat `Second Background`.
+### Fixed
+- Removed critical immunity bypass from `Alpha Strike` and `Godhood` because they don't work.
 
 ## [1.5.0] - 2022-11-06
 ### Added
