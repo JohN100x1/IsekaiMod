@@ -62,6 +62,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Dupe Gold`: Get infinite gold.
 		- `Perfect Roll`: Roll 20 on every d20 roll.
 		- `Super Buff`: Apply many powerful buffs on you and your allies.
+		- `Interdimensional Bag`: Get infinite carry capacity.
 		- `Winner`: Does nothing.
 - New Mythic abilities
 	- `Second Overpowered Ability`: Gives you another Overpowered Ability.
