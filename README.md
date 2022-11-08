@@ -43,7 +43,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- Uses dexterity for damage and attack rolls.
 	- `Villain` (Isekai Protagonist Archetype)
 		- Has studied target.
-		- Intelligence based caster that memorizes spells.
+		- Intelligence based caster that memorizes spells (becomes like wizard).
 - New Features
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
 	- `Character Development Feats`: A selection of bonus feats which have very good effects.
