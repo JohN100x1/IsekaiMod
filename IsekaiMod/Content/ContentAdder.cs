@@ -120,6 +120,7 @@ namespace IsekaiMod.Content
                 Backgrounds.MartialArtist.Add();
                 Backgrounds.Salaryman.Add();
                 Backgrounds.HighschoolStudent.Add();
+                Backgrounds.Otaku.Add();
                 Backgrounds.IsekaiBackgroundSelection.Add();
             }
         }
