@@ -72,6 +72,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Salaryman`: Adds perception as a class skill. Perception uses CHA instead of WIS.
 	- `Highschool Student`: Get a +1 bonus to all attributes.
 	- `Otaku`: Adds all skills as class skills except Persuasion.
+	- `Reborn Demon Lord`: Get a +2 bonus to Strength and Electricity resistance 20.
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.
