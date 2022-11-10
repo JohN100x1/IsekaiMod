@@ -122,6 +122,7 @@ namespace IsekaiMod.Content
                 Backgrounds.HighschoolStudent.Add();
                 Backgrounds.Otaku.Add();
                 Backgrounds.RebornDemonLord.Add();
+                Backgrounds.Gamer.Add();
                 Backgrounds.IsekaiBackgroundSelection.Add();
             }
         }
