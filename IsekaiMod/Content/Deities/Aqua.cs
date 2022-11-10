@@ -12,14 +12,14 @@ using Kingmaker.UnitLogic.FactLogic;
 
 namespace IsekaiMod.Content.Deities
 {
-    class TruckKun
+    class Aqua
     {
         public static void Add()
         {
-            var ArtificeDomainAllowed = Resources.GetBlueprint<BlueprintFeature>("9656b1c7214180f4b9a6ab56f83b92fb");
-            var DestructionDomainAllowed = Resources.GetBlueprint<BlueprintFeature>("6832681c9a91bf946a1d9da28c5be4b4");
-            var ReposeDomainAllowed = Resources.GetBlueprint<BlueprintFeature>("076ba1e3a05fac146acfc956a9f41e95");
-            var TravelDomainAllowed = Resources.GetBlueprint<BlueprintFeature>("c008853fe044bd442ae8bd22260592b7");
+            var WaterDomainAllowed = Resources.GetBlueprint<BlueprintFeature>("8f49469c40e2c6e4db61296558e08966");
+            var HealingDomainAllowed = Resources.GetBlueprint<BlueprintFeature>("73ae164c388990c43ade94cfe8ed5755");
+            var GoodDomainAllowed = Resources.GetBlueprint<BlueprintFeature>("882521af8012fc749930b03dc18a69de");
+            var ProtectionDomainAllowed = Resources.GetBlueprint<BlueprintFeature>("d4ce7592bd12d63439907ad64e986e59");
 
             var CrusaderSpellbook = Resources.GetBlueprint<BlueprintSpellbook>("673d39f7da699aa408cdda6282e7dcc0");
             var ClericSpellbook = Resources.GetBlueprint<BlueprintSpellbook>("4673d19a0cf2fab4f885cc4d1353da33");
@@ -30,25 +30,23 @@ namespace IsekaiMod.Content.Deities
             var WarpriestClass = Resources.GetBlueprint<BlueprintCharacterClass>("30b5e47d47a0e37438cc5a80c96cfb99");
 
             var FeralChampionArchetype = Resources.GetBlueprint<BlueprintArchetype>("f68ca492c9c15e241ab73735fbd0fb9f");
-            var AngelfireApostle = Resources.GetBlueprint<BlueprintArchetype>("857bc9fadf70f294795a9cba974a48b8");
+            var PriestOfBalance = Resources.GetBlueprint<BlueprintArchetype>("a4560e3fb5d247d68fb1a2738fcc0855");
 
             var ChannelPositiveAllowed = Resources.GetBlueprint<BlueprintFeature>("8c769102f3996684fb6e09a2c4e7e5b9");
-            var ChannelNegativeAllowed = Resources.GetBlueprint<BlueprintFeature>("dab5255d809f77c4395afc2b713e9cd6");
 
-            var ShieldsProficiency = Resources.GetBlueprint<BlueprintFeature>("cb8686e7357a68c42bdd9d4e65334633");
-            var ShieldBashFeature = Resources.GetBlueprint<BlueprintFeature>("121811173a614534e8720d7550aae253");
-            var HeavyShieldPlus1 = Resources.GetBlueprint<BlueprintItem>("5c7b898a1bfb6cb4f8c14a0ebc143abe");
+            var QuarterstaffProficiency = Resources.GetBlueprint<BlueprintFeature>("aed4f88b52ae0fb468895f90da854ad4");
+            var QuarterstaffPlus1 = Resources.GetBlueprint<BlueprintItem>("2c4a3077efc2378499c60b03d2b0527a");
 
-            var Icon_Truck = AssetLoader.LoadInternal("Deities", "ICON_TRUCK.png");
-            var TruckKunFeature = Helpers.CreateBlueprint<BlueprintFeature>("TruckKunFeature", (bp => {
-                bp.SetName("Truck-kun");
+            var Icon_Aqua = AssetLoader.LoadInternal("Deities", "ICON_AQUA.png");
+            var GoddessAquaFeature = Helpers.CreateBlueprint<BlueprintFeature>("GoddessAquaFeature", (bp => {
+                bp.SetName("Aqua");
                 bp.SetDescription(
-                    "Truck-kun is a menace of the streets, a killer that prowls the road before it smashes their victim so hard they get transported into another world. "
-                    + "Many fear death brought by Truck-kun, but there are some who believe that their reincarnation will bring them into a harem paradise. "
-                    + "Beware of the streets, and look at both sides of the road, or else you might be its latest victim."
-                    + "\nDomains: Artifice, Destruction, Repose, Travel"
-                    + "\nFavoured Weapon: Heavy Shield Bash");
-                bp.m_Icon = Icon_Truck;
+                    "Aqua is the goddess of water who guided humans in the afterlife and oversaw the reincarnation of people into other worlds. "
+                    + "She is an extremely useful goddess, so much so that she worked multiple part-time jobs in another world. "
+                    + "As a goddess that cries alot, it is said that her tears can purify the foulest waters and even the most wretched undead."
+                    + "\nDomains: Water, Healing, Good, Protection"
+                    + "\nFavoured Weapon: Quarterstaff");
+                bp.m_Icon = Icon_Aqua;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.HideInCharacterSheetAndLevelUp = false;
@@ -57,7 +55,7 @@ namespace IsekaiMod.Content.Deities
                 // Exclude from Archetypes
                 bp.AddComponent<PrerequisiteNoArchetype>(c => {
                     c.m_CharacterClass = ClericClass.ToReference<BlueprintCharacterClassReference>();
-                    c.m_Archetype = AngelfireApostle.ToReference<BlueprintArchetypeReference>();
+                    c.m_Archetype = PriestOfBalance.ToReference<BlueprintArchetypeReference>();
                 });
                 bp.AddComponent<PrerequisiteNoArchetype>(c => {
                     c.m_CharacterClass = WarpriestClass.ToReference<BlueprintCharacterClassReference>();
@@ -66,18 +64,17 @@ namespace IsekaiMod.Content.Deities
 
                 // Alignment
                 bp.AddComponent<PrerequisiteAlignment>(c => {
-                    c.Alignment = AlignmentMaskType.LawfulNeutral | AlignmentMaskType.ChaoticNeutral | AlignmentMaskType.TrueNeutral | AlignmentMaskType.NeutralGood | AlignmentMaskType.NeutralEvil;
+                    c.Alignment = AlignmentMaskType.ChaoticNeutral | AlignmentMaskType.ChaoticGood | AlignmentMaskType.NeutralGood;
                 });
 
                 // Domains & Energy Channel
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
-                        ArtificeDomainAllowed.ToReference<BlueprintUnitFactReference>(),
-                        DestructionDomainAllowed.ToReference<BlueprintUnitFactReference>(),
-                        ReposeDomainAllowed.ToReference<BlueprintUnitFactReference>(),
-                        TravelDomainAllowed.ToReference<BlueprintUnitFactReference>(),
-                        ChannelPositiveAllowed.ToReference<BlueprintUnitFactReference>(),
-                        ChannelNegativeAllowed.ToReference<BlueprintUnitFactReference>()
+                        WaterDomainAllowed.ToReference<BlueprintUnitFactReference>(),
+                        HealingDomainAllowed.ToReference<BlueprintUnitFactReference>(),
+                        GoodDomainAllowed.ToReference<BlueprintUnitFactReference>(),
+                        ProtectionDomainAllowed.ToReference<BlueprintUnitFactReference>(),
+                        ChannelPositiveAllowed.ToReference<BlueprintUnitFactReference>()
                     };
                 });
 
@@ -93,17 +90,7 @@ namespace IsekaiMod.Content.Deities
                 // Cleric, Inquistor, Warpriest starting proficiency and weapon
                 bp.AddComponent<AddFeatureOnClassLevel>(c => {
                     c.m_Class = ClericClass.ToReference<BlueprintCharacterClassReference>();
-                    c.m_Feature = ShieldsProficiency.ToReference<BlueprintFeatureReference>();
-                    c.Level = 1;
-                    c.m_Archetypes = null;
-                    c.m_AdditionalClasses = new BlueprintCharacterClassReference[2] {
-                        InquistorClass.ToReference<BlueprintCharacterClassReference>(),
-                        WarpriestClass.ToReference<BlueprintCharacterClassReference>()
-                    };
-                });
-                bp.AddComponent<AddFeatureOnClassLevel>(c => {
-                    c.m_Class = ClericClass.ToReference<BlueprintCharacterClassReference>();
-                    c.m_Feature = ShieldBashFeature.ToReference<BlueprintFeatureReference>();
+                    c.m_Feature = QuarterstaffProficiency.ToReference<BlueprintFeatureReference>();
                     c.Level = 1;
                     c.m_Archetypes = null;
                     c.m_AdditionalClasses = new BlueprintCharacterClassReference[2] {
@@ -112,7 +99,7 @@ namespace IsekaiMod.Content.Deities
                     };
                 });
                 bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { HeavyShieldPlus1.ToReference<BlueprintItemReference>() };
+                    c.m_BasicItems = new BlueprintItemReference[1] { QuarterstaffPlus1.ToReference<BlueprintItemReference>() };
                     c.m_RestrictedByClass = new BlueprintCharacterClassReference[3] {
                         ClericClass.ToReference<BlueprintCharacterClassReference>(),
                         InquistorClass.ToReference<BlueprintCharacterClassReference>(),
@@ -123,7 +110,7 @@ namespace IsekaiMod.Content.Deities
 
             // Add to Deity Selection
             var DeitySelection = Resources.GetBlueprint<BlueprintFeatureSelection>("59e7a76987fe3b547b9cce045f4db3e4");
-            DeitySelection.m_AllFeatures = DeitySelection.m_AllFeatures.AddToArray(TruckKunFeature.ToReference<BlueprintFeatureReference>());
+            DeitySelection.m_AllFeatures = DeitySelection.m_AllFeatures.AddToArray(GoddessAquaFeature.ToReference<BlueprintFeatureReference>());
         }
     }
 }

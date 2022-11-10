@@ -19,7 +19,7 @@ namespace IsekaiMod.Content
                 if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
                 if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
                 if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
-                if (ModSettings.AddedContent.Deities.IsEnabled("Isekai Deities")) Deities.TruckKun.Add();
+                if (ModSettings.AddedContent.Deities.IsEnabled("Isekai Deities")) AddIsekaiDeities();
             }
 
             public static void AddIsekaiProtagonistClass()
@@ -124,6 +124,11 @@ namespace IsekaiMod.Content
                 Backgrounds.RebornDemonLord.Add();
                 Backgrounds.Gamer.Add();
                 Backgrounds.IsekaiBackgroundSelection.Add();
+            }
+            public static void AddIsekaiDeities()
+            {
+                Deities.TruckKun.Add();
+                Deities.Aqua.Add();
             }
         }
     }

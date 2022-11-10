@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Otaku` Background.
 - Added `Reborn Demon Lord` Background.
 - Added `Gamer` Background.
+- Added `Aqua` Deity.
+### Changed
+- Changed `Truck-kun` Deity restriction from `Priest of Balance` to `Angelfire Apostle`.
 
 ## [1.6.0] - 2022-11-07
 ### Added

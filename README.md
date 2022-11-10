@@ -79,6 +79,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.
 - New Deities
 	- `Truck-kun`: A god of transportation.
+	- `Aqua`: A goddess of water.
 
 ### Isekai Protagonist Spell progression
 #### Spells per Day table
