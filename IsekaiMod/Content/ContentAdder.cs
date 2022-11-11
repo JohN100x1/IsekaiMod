@@ -127,8 +127,10 @@ namespace IsekaiMod.Content
             }
             public static void AddIsekaiDeities()
             {
+                Deities.IsekaiDeitySelection.Add();
                 Deities.TruckKun.Add();
                 Deities.Aqua.Add();
+                Deities.Ristarte.Add();
             }
         }
     }

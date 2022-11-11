@@ -80,6 +80,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 - New Deities
 	- `Truck-kun`: A god of transportation.
 	- `Aqua`: A goddess of water.
+	- `Ristarte`: A goddess of healing.
 
 ### Isekai Protagonist Spell progression
 #### Spells per Day table
