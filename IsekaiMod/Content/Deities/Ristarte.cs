@@ -63,7 +63,6 @@ namespace IsekaiMod.Content.Deities
 
                 // Alignment
                 bp.AddComponent<PrerequisiteAlignment>(c => {
-                    c.Group = Prerequisite.GroupType.Any;
                     c.Alignment = AlignmentMaskType.Good | AlignmentMaskType.TrueNeutral;
                 });
 

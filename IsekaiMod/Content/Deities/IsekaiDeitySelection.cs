@@ -15,9 +15,9 @@ namespace IsekaiMod.Content.Deities
                 bp.SetName("Isekai");
                 bp.SetDescription("Gods from another world.");
                 bp.m_Icon = null;
-                bp.HideInUI = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] { }; // Added upon blueprint creation
                 bp.Groups = new FeatureGroup[] { FeatureGroup.Deities };
+                bp.Group = FeatureGroup.Deities;
             });
 
             // Add to Deity Selection

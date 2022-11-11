@@ -44,7 +44,7 @@ namespace IsekaiMod.Content.Deities
                 bp.SetName("Administrator D");
                 bp.SetDescription(
                     "Administrator D is a playful, self-proclaimed \"Ultimate evil god\" that does things simply for entertainment. "
-                    + "She is sadistic and enjoys watching the protagonist struggle for survival in the new world."
+                    + "She is sadistic and enjoys watching the protagonist struggle for survival in the new world for her own amusement."
                     + "\nDomains: Chaos, Evil, Knowledge, Death, Destruction"
                     + "\nFavoured Weapon: Scythe");
                 bp.m_Icon = Icon_AdministratorD;
