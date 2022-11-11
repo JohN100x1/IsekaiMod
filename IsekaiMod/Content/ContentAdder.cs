@@ -19,7 +19,7 @@ namespace IsekaiMod.Content
                 if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
                 if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
                 if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
-                if (ModSettings.AddedContent.Deities.IsEnabled("Isekai Deities")) Deities.TruckKun.Add();
+                if (ModSettings.AddedContent.Deities.IsEnabled("Isekai Deities")) AddIsekaiDeities();
             }
 
             public static void AddIsekaiProtagonistClass()
@@ -120,7 +120,18 @@ namespace IsekaiMod.Content
                 Backgrounds.MartialArtist.Add();
                 Backgrounds.Salaryman.Add();
                 Backgrounds.HighschoolStudent.Add();
+                Backgrounds.Otaku.Add();
+                Backgrounds.RebornDemonLord.Add();
+                Backgrounds.Gamer.Add();
                 Backgrounds.IsekaiBackgroundSelection.Add();
+            }
+            public static void AddIsekaiDeities()
+            {
+                Deities.IsekaiDeitySelection.Add();
+                Deities.TruckKun.Add();
+                Deities.Aqua.Add();
+                Deities.Ristarte.Add();
+                Deities.AdministratorD.Add();
             }
         }
     }

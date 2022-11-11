@@ -15,6 +15,9 @@ namespace IsekaiMod.Content.Backgrounds
             var BackgroundMartialArtist = Resources.GetModBlueprint<BlueprintFeature>("BackgroundMartialArtist");
             var BackgroundSalaryman = Resources.GetModBlueprint<BlueprintFeature>("BackgroundSalaryman");
             var BackgroundHighschoolStudent = Resources.GetModBlueprint<BlueprintFeature>("BackgroundHighschoolStudent");
+            var BackgroundOtaku = Resources.GetModBlueprint<BlueprintFeature>("BackgroundOtaku");
+            var BackgroundRebornDemonLord = Resources.GetModBlueprint<BlueprintFeature>("BackgroundRebornDemonLord");
+            var BackgroundGamer = Resources.GetModBlueprint<BlueprintFeature>("BackgroundGamer");
 
             // Isekai Background Selection
             var IsekaiBackgroundSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("IsekaiBackgroundSelection", bp => {
@@ -27,6 +30,9 @@ namespace IsekaiMod.Content.Backgrounds
                     BackgroundMartialArtist.ToReference<BlueprintFeatureReference>(),
                     BackgroundSalaryman.ToReference<BlueprintFeatureReference>(),
                     BackgroundHighschoolStudent.ToReference<BlueprintFeatureReference>(),
+                    BackgroundOtaku.ToReference<BlueprintFeatureReference>(),
+                    BackgroundRebornDemonLord.ToReference<BlueprintFeatureReference>(),
+                    BackgroundGamer.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.Groups = new FeatureGroup[] { FeatureGroup.BackgroundSelection };
             });

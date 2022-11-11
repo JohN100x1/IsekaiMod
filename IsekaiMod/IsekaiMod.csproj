@@ -72,6 +72,15 @@
     <None Update="Assets\Abilities\ICON_CHARM.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Assets\Deities\ICON_ADMIN_D.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Deities\ICON_AQUA.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Deities\ICON_RISTARTE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\Deities\ICON_TRUCK.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

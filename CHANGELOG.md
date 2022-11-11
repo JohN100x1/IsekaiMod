@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.0] - 2022-11-11
+### Added
+- Added `Otaku` Background.
+- Added `Reborn Demon Lord` Background.
+- Added `Gamer` Background.
+- Added `Aqua` Deity.
+- Added `Ristarte` Deity.
+- Added `Administrator D` Deity.
+### Changed
+- Changed `Truck-kun` Deity restriction from `Priest of Balance` to `Angelfire Apostle`.
+
 ## [1.6.0] - 2022-11-07
 ### Added
 - Added Overpowered Ability `Interdimensional Bag`.
