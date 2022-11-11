@@ -81,6 +81,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Truck-kun`: A god of transportation.
 	- `Aqua`: A goddess of water.
 	- `Ristarte`: A goddess of healing.
+	- `Administrator D`: An ultimate god of evil.
 
 ### Isekai Protagonist Spell progression
 #### Spells per Day table

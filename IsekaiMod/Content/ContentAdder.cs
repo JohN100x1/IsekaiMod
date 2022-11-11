@@ -131,6 +131,7 @@ namespace IsekaiMod.Content
                 Deities.TruckKun.Add();
                 Deities.Aqua.Add();
                 Deities.Ristarte.Add();
+                Deities.AdministratorD.Add();
             }
         }
     }
