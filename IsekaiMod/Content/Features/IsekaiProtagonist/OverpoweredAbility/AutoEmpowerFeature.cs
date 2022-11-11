@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Icon = Icon_EmpowerSpell;
                 bp.AddComponent<AutoMetamagic>(c => {
                     c.m_AllowedAbilities = AutoMetamagic.AllowedType.SpellOnly;
-                    c.Metamagic = Metamagic.Extend;
+                    c.Metamagic = Metamagic.Empower;
                 });
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
