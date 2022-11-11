@@ -2,6 +2,7 @@
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Localization;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 {
@@ -32,7 +33,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
                 // These relate to special spell slots (like wizard's favourite school spell slots or shaman's spirit magic slots)
                 bp.HasSpecialSpellList = false;
-                bp.SpecialSpellListName = new Kingmaker.Localization.LocalizedString();
+                bp.SpecialSpellListName = new LocalizedString();
             });
         }
     }
