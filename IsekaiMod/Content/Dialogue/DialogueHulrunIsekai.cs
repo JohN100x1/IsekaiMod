@@ -22,6 +22,7 @@ namespace IsekaiMod.Content.Dialogue
             // Has Plot Armor
             var PlotArmor = Resources.GetModBlueprint<BlueprintFeature>("PlotArmor");
 
+            // Next Cue and Etude
             var DontRememberCue = Resources.GetBlueprint<BlueprintCue>("ba9c82193a32275408973a8aebdb3a6d");
             var DontRememberEtude = Resources.GetBlueprint<BlueprintEtude>("d6c6161d2cf0ac44786f9df67fca5ce9");
 
@@ -65,7 +66,7 @@ namespace IsekaiMod.Content.Dialogue
 
             // Add Answer to answers list
             var AnswersList_0020 = Resources.GetBlueprint<BlueprintAnswersList>("e27807b731f3b1a4eb19c1a04fdfcf53");
-            AnswersList_0020.Answers.Add(AnswerIsekai.ToReference<BlueprintAnswerBaseReference>());
+            AnswersList_0020.Answers.Insert(0, AnswerIsekai.ToReference<BlueprintAnswerBaseReference>());
         }
     }
 }
