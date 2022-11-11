@@ -34,8 +34,8 @@ namespace IsekaiMod.Content.Deities
 
             var ChannelPositiveAllowed = Resources.GetBlueprint<BlueprintFeature>("8c769102f3996684fb6e09a2c4e7e5b9");
 
-            var QuarterstaffProficiency = Resources.GetBlueprint<BlueprintFeature>("aed4f88b52ae0fb468895f90da854ad4");
-            var QuarterstaffPlus1 = Resources.GetBlueprint<BlueprintItem>("2c4a3077efc2378499c60b03d2b0527a");
+            var LongswordProficiency = Resources.GetBlueprint<BlueprintFeature>("62e27ffd9d53e14479f73da29760f64e");
+            var ColdIronLongsword = Resources.GetBlueprint<BlueprintItem>("533e10c8b4c6a4940a3767d096f4f05d");
 
             var Icon_Ristarte = AssetLoader.LoadInternal("Deities", "ICON_RISTARTE.png");
             var GoddessRistarteFeature = Helpers.CreateBlueprint<BlueprintFeature>("GoddessRistarteFeature", (bp => {
@@ -44,7 +44,7 @@ namespace IsekaiMod.Content.Deities
                     "Ristarte is the goddess of healing who aids reincarnated heroes in their journey to defeat the demon lord in their new world. "
                     + "Though the healing abilities of Ristarte are only as good as a common herb, her kind and caring smile provide an even greater emotional healing."
                     + "\nDomains: Healing, Good, Travel, Luck"
-                    + "\nFavoured Weapon: Quarterstaff");
+                    + "\nFavoured Weapon: Longsword");
                 bp.m_Icon = Icon_Ristarte;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -90,7 +90,7 @@ namespace IsekaiMod.Content.Deities
                 // Cleric, Inquistor, Warpriest starting proficiency and weapon
                 bp.AddComponent<AddFeatureOnClassLevel>(c => {
                     c.m_Class = ClericClass.ToReference<BlueprintCharacterClassReference>();
-                    c.m_Feature = QuarterstaffProficiency.ToReference<BlueprintFeatureReference>();
+                    c.m_Feature = LongswordProficiency.ToReference<BlueprintFeatureReference>();
                     c.Level = 1;
                     c.m_Archetypes = null;
                     c.m_AdditionalClasses = new BlueprintCharacterClassReference[2] {
@@ -99,7 +99,7 @@ namespace IsekaiMod.Content.Deities
                     };
                 });
                 bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { QuarterstaffPlus1.ToReference<BlueprintItemReference>() };
+                    c.m_BasicItems = new BlueprintItemReference[1] { ColdIronLongsword.ToReference<BlueprintItemReference>() };
                     c.m_RestrictedByClass = new BlueprintCharacterClassReference[3] {
                         ClericClass.ToReference<BlueprintCharacterClassReference>(),
                         InquistorClass.ToReference<BlueprintCharacterClassReference>(),
