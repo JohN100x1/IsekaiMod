@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Dialogue
 
             // Isekai Answer
             var AnswerIsekai = Helpers.CreateBlueprint<BlueprintAnswer>("AnswerIsekai", bp => {
-                bp.Text = Helpers.CreateString("AnswerIsekai.Text", "The last thing I remember was being hit by a truck...");
+                bp.Text = Helpers.CreateString("AnswerIsekai.Text", "Other than being hit by a truck, I don't remember anything at all...");
                 bp.NextCue = new CueSelection()
                 {
                     Cues = new List<BlueprintCueBaseReference>() { DontRememberCue.ToReference<BlueprintCueBaseReference>() },
