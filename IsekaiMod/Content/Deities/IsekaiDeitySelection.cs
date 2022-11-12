@@ -24,5 +24,11 @@ namespace IsekaiMod.Content.Deities
             var DeitySelection = Resources.GetBlueprint<BlueprintFeatureSelection>("59e7a76987fe3b547b9cce045f4db3e4");
             DeitySelection.m_AllFeatures = DeitySelection.m_AllFeatures.AddToArray(IsekaiDeitySelection.ToReference<BlueprintFeatureReference>());
         }
+
+        public static void AddToSelection(BlueprintFeature deityFeature)
+        {
+            var IsekaiDeitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiDeitySelection");
+            IsekaiDeitySelection.m_AllFeatures = IsekaiDeitySelection.m_AllFeatures.AddToArray(deityFeature.ToReference<BlueprintFeatureReference>());
+        }
     }
 }
