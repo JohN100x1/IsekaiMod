@@ -115,6 +115,7 @@ namespace IsekaiMod.Content
                 Heritages.IsekaiSuccubusHeritage.Add();
                 Features.IsekaiAngel.AngelicBoltAbility.Add();
                 Heritages.IsekaiAngelHeritage.Add();
+                Heritages.IsekaiVampireHeritage.Add();
             }
             public static void AddIsekaiBackgrounds()
             {

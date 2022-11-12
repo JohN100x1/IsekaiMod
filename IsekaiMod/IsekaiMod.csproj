@@ -132,6 +132,9 @@
     <None Update="Assets\Heritages\ICON_SUCCUBUS.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Assets\Heritages\ICON_VAMPIRE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Repository.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

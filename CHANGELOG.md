@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added `Isekai Protagonist` dialogue when speaking to Hulrun at the Kenabres festival.
+- Added `Isekai Vampire` Heritage (Dhampir Heritage).
+### Changed
+- Buffed `Isekai Succubus` with +4 racial bonus to Dexterity.
 ### Fixed
 - Fixed Villain Spellbook merge.
 

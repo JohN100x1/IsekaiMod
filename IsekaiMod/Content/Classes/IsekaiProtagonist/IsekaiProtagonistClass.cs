@@ -31,6 +31,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         public static void Add()
         {
             // TODO: rename protective aura
+            // TODO: add vampiric drain spell for isekai vampire heritage
             // TODO: Load localisation instead of hardcoded strings
 
             // Spellbook

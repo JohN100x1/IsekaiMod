@@ -7,7 +7,6 @@ using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
-using Kingmaker.ElementsSystem;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Localization;
 using Kingmaker.UnitLogic.Alignments;
@@ -40,26 +39,18 @@ namespace IsekaiMod.Content.Dialogue
                 bp.Experience = DialogExperience.NoExperience;
                 bp.DebugMode = false;
                 bp.CharacterSelection = new CharacterSelection() { SelectionType = CharacterSelection.Type.Clear, ComparisonStats = new StatType[0] };
-                bp.ShowConditions = new ConditionsChecker() {
-                    Operation = Operation.And,
-                    Conditions = new Condition[] {
-                        new HasFact()
-                        {
-                            Not = false,
-                            Unit = new PlayerCharacter(),
-                            m_Fact = PlotArmor.ToReference<BlueprintUnitFactReference>()
-                        }
-                    }
-                };
-                bp.SelectConditions = new ConditionsChecker();
+                bp.ShowConditions = ActionFlow.IfSingle<HasFact>(c => {
+                    c.Not = false;
+                    c.Unit = new PlayerCharacter();
+                    c.m_Fact = PlotArmor.ToReference<BlueprintUnitFactReference>();
+                });
+                bp.SelectConditions = ActionFlow.EmptyCondition();
                 bp.RequireValidCue = false;
                 bp.AddToHistory = true;
-                bp.OnSelect = Helpers.CreateActionList(
-                    new StartEtude()
-                    {
-                        Etude = DontRememberEtude.ToReference<BlueprintEtudeReference>(),
-                        Evaluate = false
-                    });
+                bp.OnSelect = ActionFlow.DoSingle<StartEtude>(c => {
+                    c.Etude = DontRememberEtude.ToReference<BlueprintEtudeReference>();
+                    c.Evaluate = false;
+                });
                 bp.FakeChecks = new CheckData[0];
                 bp.AlignmentShift = new AlignmentShift() { Direction = AlignmentShiftDirection.TrueNeutral, Value = 0, Description = new LocalizedString() };
             });

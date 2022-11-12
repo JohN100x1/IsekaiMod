@@ -18,10 +18,9 @@ namespace IsekaiMod.Content.Heritages
 {
     internal class IsekaiSuccubusHeritage
     {
+        private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = Resources.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
         public static void Add()
         {
-            var DestinyBeyondBirthMythicFeat = Resources.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
-
             // Succubus Abilities
             var SuccubusCharmAbility = Resources.GetModBlueprint<BlueprintAbility>("SuccubusCharmAbility");
             var SuccubusWingsAbility = Resources.GetModBlueprint<BlueprintActivatableAbility>("SuccubusWingsAbility");
@@ -32,8 +31,9 @@ namespace IsekaiMod.Content.Heritages
                 bp.SetName("Isekai Succubus");
                 bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power, and often "
                     + "have a voracious appetite for sensory pleasures and carnal delights.\n"
-                    + "The Isekai Succubus has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Charisma}Charisma{/g}, a -2 {g|Encyclopedia:Penalty}penalty{/g} to "
-                    + "{g|Encyclopedia:Strength}Strength{/g}, and a +2 racial bonus on {g|Encyclopedia:Persuasion}Persuasion{/g} and {g|Encyclopedia:Perception}Perception checks{/g}. "
+                    + "The Isekai Succubus has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Charisma}Charisma{/g}, "
+                    + "a -2 {g|Encyclopedia:Penalty}penalty{/g} to {g|Encyclopedia:Strength}Strength{/g}, and a +2 racial bonus on {g|Encyclopedia:Persuasion}Persuasion{/g} and "
+                    + "{g|Encyclopedia:Perception}Perception checks{/g}. "
                     + "They have DR 10/Cold Iron or Good, and have spell resistance equal to 10 + their character level. "
                     + "They have immunity to fire, electricity, and poisons as well as acid and cold resistance 20. "
                     + "They can also use the Charm spell once per day.");
@@ -48,6 +48,11 @@ namespace IsekaiMod.Content.Heritages
                     c.Value = -2;
                     c.InvertCondition = true;
                     c.m_CheckedFacts = new BlueprintUnitFactReference[] { DestinyBeyondBirthMythicFeat.ToReference<BlueprintUnitFactReference>() };
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Racial;
+                    c.Stat = StatType.Dexterity;
+                    c.Value = 4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Racial;
