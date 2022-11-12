@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Deities
 
         // Excluded Archetypes
         private static readonly BlueprintArchetype FeralChampionArchetype = Resources.GetBlueprint<BlueprintArchetype>("f68ca492c9c15e241ab73735fbd0fb9f");
-        private static readonly BlueprintArchetype PriestOfBalance = Resources.GetBlueprint<BlueprintArchetype>("857bc9fadf70f294795a9cba974a48b8");
+        private static readonly BlueprintArchetype PriestOfBalance = Resources.GetBlueprint<BlueprintArchetype>("a4560e3fb5d247d68fb1a2738fcc0855");
 
         // Effective Class
         private static readonly BlueprintCharacterClass ClericClass = Resources.GetBlueprint<BlueprintCharacterClass>("67819271767a9dd4fbfd4ae700befea0");
