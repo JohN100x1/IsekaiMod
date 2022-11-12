@@ -15,18 +15,20 @@ using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Formations.Facts;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiSuccubus
 {
     class SuccubusWingsAbility
     {
+        // Exclude Mutagen wings
+        private static readonly BlueprintBuff BuffWingsMutagen = Resources.GetBlueprint<BlueprintBuff>("e4979934bdb39d842b28bee614606823");
+
+        // Icon
+        private static readonly Sprite Icon_Wings = Resources.GetBlueprint<BlueprintBuff>("4113178a8d5bf4841b8f15b1b39e004f").m_Icon;
+
         public static void Add()
         {
-            // Buff
-            var BuffWingsMutagen = Resources.GetBlueprint<BlueprintBuff>("e4979934bdb39d842b28bee614606823");
-
-            // Ability
-            var Icon_Wings = Resources.GetBlueprint<BlueprintBuff>("4113178a8d5bf4841b8f15b1b39e004f").m_Icon;
             var SuccubusWingsBuff = Helpers.CreateBlueprint<BlueprintBuff>("SuccubusWingsBuff", bp => {
                 bp.SetName("Succubus Wings");
                 bp.SetDescription("You gain a pair of wings that grant a +3 dodge {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Armor_Class}AC{/g} "
