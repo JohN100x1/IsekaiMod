@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added `Isekai Protagonist` dialogue when speaking to Hulrun at the Kenabres festival.
+### Fixed
+- Fixed Villain Spellbook merge.
 
 ## [1.7.2] - 2022-11-11
 ### Fixed

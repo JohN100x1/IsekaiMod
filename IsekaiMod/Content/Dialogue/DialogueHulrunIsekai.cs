@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Dialogue
     {
         public static void Add()
         {
-            // Has Plot Armor
+            // Show Dialogue only when the player has Plot Armor
             var PlotArmor = Resources.GetModBlueprint<BlueprintFeature>("PlotArmor");
 
             // Next Cue and Etude

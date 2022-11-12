@@ -1,5 +1,7 @@
-﻿using IsekaiMod.Utilities;
+﻿using IsekaiMod.Extensions;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Localization;
@@ -35,6 +37,12 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 bp.HasSpecialSpellList = false;
                 bp.SpecialSpellListName = new LocalizedString();
             });
+
+            // Allow Spellbook to be merged with angel and lich
+            var AngelIncorporateSpellBook = Resources.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
+            var LichIncorporateSpellBook = Resources.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
+            AngelIncorporateSpellBook.m_AllowedSpellbooks = AngelIncorporateSpellBook.m_AllowedSpellbooks.AddToArray(VillainSpellbook.ToReference<BlueprintSpellbookReference>());
+            LichIncorporateSpellBook.m_AllowedSpellbooks = LichIncorporateSpellBook.m_AllowedSpellbooks.AddToArray(VillainSpellbook.ToReference<BlueprintSpellbookReference>());
         }
     }
 }

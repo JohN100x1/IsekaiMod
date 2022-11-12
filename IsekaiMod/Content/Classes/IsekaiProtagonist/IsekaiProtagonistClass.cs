@@ -125,12 +125,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             });
             SpellBook.m_CharacterClass = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
 
-            // Allow Spellbook to be merged with angel and lich
-            var AngelIncorporateSpellBook = Resources.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
-            var LichIncorporateSpellBook = Resources.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
-            AngelIncorporateSpellBook.m_AllowedSpellbooks = AngelIncorporateSpellBook.m_AllowedSpellbooks.AddToArray(SpellBook.ToReference<BlueprintSpellbookReference>());
-            LichIncorporateSpellBook.m_AllowedSpellbooks = LichIncorporateSpellBook.m_AllowedSpellbooks.AddToArray(SpellBook.ToReference<BlueprintSpellbookReference>());
-
             // Register Class
             Helpers.RegisterClass(IsekaiProtagonistClass);
         }
