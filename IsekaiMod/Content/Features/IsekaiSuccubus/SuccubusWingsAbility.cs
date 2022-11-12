@@ -92,25 +92,25 @@ namespace IsekaiMod.Content.Features.IsekaiSuccubus
             });
 
             // Patch pit spells
-            var PitOfDespairArea = Resources.GetBlueprint<BlueprintAbilityAreaEffect>("b905a3c987f22cb49a246f0ab211f34c");
-            var TricksterRecreationalPitArea = Resources.GetBlueprint<BlueprintAbilityAreaEffect>("bf68ec704dc186549a7c6fbf22d3d661");
-            var CreatePitArea = Resources.GetBlueprint<BlueprintAbilityAreaEffect>("cf742a1d377378e4c8799f6a3afff1ba");
-            var SpikedPitArea = Resources.GetBlueprint<BlueprintAbilityAreaEffect>("beccc33f543b1f8469c018982c23ac06");
-            var AcidPitArea = Resources.GetBlueprint<BlueprintAbilityAreaEffect>("e122151e93e44e0488521aed9e51b617");
-            var HungryPitArea = Resources.GetBlueprint<BlueprintAbilityAreaEffect>("d086b1aeb367a5b43808d34c321955d1");
-            var RiftOfRuinArea = Resources.GetBlueprint<BlueprintAbilityAreaEffect>("9b51157a5305dbf4184bf15bdad39226");
-            AddImmunityFacts(PitOfDespairArea, SuccubusWingsBuff);
-            AddImmunityFacts(TricksterRecreationalPitArea, SuccubusWingsBuff);
-            AddImmunityFacts(CreatePitArea, SuccubusWingsBuff);
-            AddImmunityFacts(SpikedPitArea, SuccubusWingsBuff);
-            AddImmunityFacts(AcidPitArea, SuccubusWingsBuff);
-            AddImmunityFacts(HungryPitArea, SuccubusWingsBuff);
-            AddImmunityFacts(RiftOfRuinArea, SuccubusWingsBuff);
+            PatchPitAreaEffects(SuccubusWingsBuff);
         }
-        public static void AddImmunityFacts(BlueprintAbilityAreaEffect abilityAreaEffect, BlueprintBuff buff)
+        private static void PatchPitAreaEffects(BlueprintBuff wingsBuff)
         {
-            var areaEffectPit = abilityAreaEffect.GetComponent<AreaEffectPit>();
-            areaEffectPit.m_EffectsImmunityFacts = areaEffectPit.m_EffectsImmunityFacts.AddToArray(buff.ToReference<BlueprintUnitFactReference>());
+            BlueprintAbilityAreaEffect[] pitAbilityAreaEffects = new BlueprintAbilityAreaEffect[]
+            {
+                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("b905a3c987f22cb49a246f0ab211f34c"), // PitOfDespairArea
+                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("bf68ec704dc186549a7c6fbf22d3d661"), // TricksterRecreationalPitArea
+                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("cf742a1d377378e4c8799f6a3afff1ba"), // CreatePitArea
+                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("beccc33f543b1f8469c018982c23ac06"), // SpikedPitArea
+                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("e122151e93e44e0488521aed9e51b617"), // AcidPitArea
+                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("d086b1aeb367a5b43808d34c321955d1"), // HungryPitArea
+                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("9b51157a5305dbf4184bf15bdad39226")  // RiftOfRuinArea
+            };
+            foreach (BlueprintAbilityAreaEffect pitAbilityAreaEffect in pitAbilityAreaEffects)
+            {
+                var areaEffectPit = pitAbilityAreaEffect.GetComponent<AreaEffectPit>();
+                areaEffectPit.m_EffectsImmunityFacts = areaEffectPit.m_EffectsImmunityFacts.AddToArray(wingsBuff.ToReference<BlueprintUnitFactReference>());
+            }
         }
     }
 }
