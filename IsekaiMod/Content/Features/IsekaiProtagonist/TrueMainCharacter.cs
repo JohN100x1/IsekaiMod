@@ -20,9 +20,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.AddComponent<IgnoreSpellImmunity>();
                 bp.AddComponent<IgnoreSpellResistanceForSpells>();
                 bp.AddComponent<IgnoreDamageReductionOnAttack>();
-                bp.AddComponent<UnitHealthGuard>(c => {
-                    c.HealthPercent = 0;
-                });
+                bp.AddComponent<UnitHealthGuard>(c => { c.HealthPercent = 0; });
                 bp.IsClassFeature = true;
             });
         }

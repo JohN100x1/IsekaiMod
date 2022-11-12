@@ -22,11 +22,10 @@ namespace IsekaiMod.Content.Features.IsekaiSuccubus
 {
     class SuccubusCharmAbility
     {
+        private static readonly BlueprintBuff DominatePersonBuff = Resources.GetBlueprint<BlueprintBuff>("c0f4e1c24c9cd334ca988ed1bd9d201f");
+        private static readonly BlueprintAbilityResource TieflingSpellLikeResource = Resources.GetBlueprint<BlueprintAbilityResource>("803d7e39e05fa2a47a7e2424d0e4b623");
         public static void Add()
         {
-            var DominatePersonBuff = Resources.GetBlueprint<BlueprintBuff>("c0f4e1c24c9cd334ca988ed1bd9d201f");
-            var TieflingSpellLikeResource = Resources.GetBlueprint<BlueprintAbilityResource>("803d7e39e05fa2a47a7e2424d0e4b623");
-
             // Ability
             var Icon_Charm = AssetLoader.LoadInternal("Abilities", "ICON_CHARM.png");
             var SuccubusCharmUnitProperty = Helpers.CreateBlueprint<BlueprintUnitProperty>("SuccubusCharmUnitProperty", bp => {

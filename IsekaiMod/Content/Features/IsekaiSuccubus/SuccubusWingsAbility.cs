@@ -97,20 +97,18 @@ namespace IsekaiMod.Content.Features.IsekaiSuccubus
             var AcidPitArea = Resources.GetBlueprint<BlueprintAbilityAreaEffect>("e122151e93e44e0488521aed9e51b617");
             var HungryPitArea = Resources.GetBlueprint<BlueprintAbilityAreaEffect>("d086b1aeb367a5b43808d34c321955d1");
             var RiftOfRuinArea = Resources.GetBlueprint<BlueprintAbilityAreaEffect>("9b51157a5305dbf4184bf15bdad39226");
-            PitOfDespairArea.GetComponent<AreaEffectPit>().m_EffectsImmunityFacts = PitOfDespairArea.GetComponent<AreaEffectPit>()
-                .m_EffectsImmunityFacts.AddToArray(SuccubusWingsBuff.ToReference<BlueprintUnitFactReference>());
-            TricksterRecreationalPitArea.GetComponent<AreaEffectPit>().m_EffectsImmunityFacts = TricksterRecreationalPitArea.GetComponent<AreaEffectPit>()
-                .m_EffectsImmunityFacts.AddToArray(SuccubusWingsBuff.ToReference<BlueprintUnitFactReference>());
-            CreatePitArea.GetComponent<AreaEffectPit>().m_EffectsImmunityFacts = CreatePitArea.GetComponent<AreaEffectPit>()
-                .m_EffectsImmunityFacts.AddToArray(SuccubusWingsBuff.ToReference<BlueprintUnitFactReference>());
-            SpikedPitArea.GetComponent<AreaEffectPit>().m_EffectsImmunityFacts = SpikedPitArea.GetComponent<AreaEffectPit>()
-                .m_EffectsImmunityFacts.AddToArray(SuccubusWingsBuff.ToReference<BlueprintUnitFactReference>());
-            AcidPitArea.GetComponent<AreaEffectPit>().m_EffectsImmunityFacts = AcidPitArea.GetComponent<AreaEffectPit>()
-                .m_EffectsImmunityFacts.AddToArray(SuccubusWingsBuff.ToReference<BlueprintUnitFactReference>());
-            HungryPitArea.GetComponent<AreaEffectPit>().m_EffectsImmunityFacts = HungryPitArea.GetComponent<AreaEffectPit>()
-                .m_EffectsImmunityFacts.AddToArray(SuccubusWingsBuff.ToReference<BlueprintUnitFactReference>());
-            RiftOfRuinArea.GetComponent<AreaEffectPit>().m_EffectsImmunityFacts = RiftOfRuinArea.GetComponent<AreaEffectPit>()
-                .m_EffectsImmunityFacts.AddToArray(SuccubusWingsBuff.ToReference<BlueprintUnitFactReference>());
+            AddImmunityFacts(PitOfDespairArea, SuccubusWingsBuff);
+            AddImmunityFacts(TricksterRecreationalPitArea, SuccubusWingsBuff);
+            AddImmunityFacts(CreatePitArea, SuccubusWingsBuff);
+            AddImmunityFacts(SpikedPitArea, SuccubusWingsBuff);
+            AddImmunityFacts(AcidPitArea, SuccubusWingsBuff);
+            AddImmunityFacts(HungryPitArea, SuccubusWingsBuff);
+            AddImmunityFacts(RiftOfRuinArea, SuccubusWingsBuff);
+        }
+        public static void AddImmunityFacts(BlueprintAbilityAreaEffect abilityAreaEffect, BlueprintBuff buff)
+        {
+            var areaEffectPit = abilityAreaEffect.GetComponent<AreaEffectPit>();
+            areaEffectPit.m_EffectsImmunityFacts = areaEffectPit.m_EffectsImmunityFacts.AddToArray(buff.ToReference<BlueprintUnitFactReference>());
         }
     }
 }
