@@ -1,4 +1,5 @@
-﻿using IsekaiMod.Extensions;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -41,11 +42,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
             });
 
             // Fix Animal Companion Progression
-            var IsekaiProtagonistClass = Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
             var DomainAnimalProgression = Resources.GetBlueprint<BlueprintProgression>("125af359f8bc9a145968b5d8fd8159b8");
             DomainAnimalProgression.m_Classes = DomainAnimalProgression.m_Classes.AddToArray(
                 new ClassWithLevel() {
-                    m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>(),
+                    m_Class = IsekaiProtagonistClass.get().ToReference<BlueprintCharacterClassReference>(),
                     AdditionalLevel = 0
                 });
         }

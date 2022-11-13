@@ -57,8 +57,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             });
 
             // Add Archetype to Class
-            var IsekaiProtagonistClass = Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
-            IsekaiProtagonistClass.m_Archetypes = IsekaiProtagonistClass.m_Archetypes.AppendToArray(EdgeLordArchetype.ToReference<BlueprintArchetypeReference>());
+            IsekaiProtagonistClass.RegisterArchetype(EdgeLordArchetype);
         }
     }
 }

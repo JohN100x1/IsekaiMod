@@ -9,6 +9,7 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using UnityEngine;
+using Kingmaker.Blueprints.Facts;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 {
@@ -30,8 +31,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: buff glorious and protective aura. change some images aswell.
-            // TODO: rename protective aura
             // TODO: add vampiric drain spell for isekai vampire heritage
             // TODO: Load localisation instead of hardcoded strings
 
@@ -131,6 +130,25 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
             // Register Class
             Helpers.RegisterClass(IsekaiProtagonistClass);
+        }
+        public static void RegisterArchetype(BlueprintArchetype archetype)
+        {
+            BlueprintCharacterClass IsekaiProtagonistClass = get();
+            IsekaiProtagonistClass.m_Archetypes = IsekaiProtagonistClass.m_Archetypes.AppendToArray(archetype.ToReference<BlueprintArchetypeReference>());
+        }
+        public static void SetProgression(BlueprintProgression progression)
+        {
+            BlueprintCharacterClass IsekaiProtagonistClass = get();
+            IsekaiProtagonistClass.m_Progression = progression.ToReference<BlueprintProgressionReference>();
+        }
+        public static void SetDefaultBuild(BlueprintUnitFact prebuildFeatureList)
+        {
+            BlueprintCharacterClass IsekaiProtagonistClass = get();
+            IsekaiProtagonistClass.m_DefaultBuild = prebuildFeatureList.ToReference<BlueprintUnitFactReference>();
+        }
+        public static BlueprintCharacterClass get()
+        {
+            return Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
         }
     }
 }

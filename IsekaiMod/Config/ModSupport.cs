@@ -8,6 +8,7 @@ using Kingmaker.Blueprints.Classes.Selection;
 using IsekaiMod.Extensions;
 using Kingmaker.Blueprints.Classes;
 using static Kingmaker.Blueprints.Classes.BlueprintProgression;
+using IsekaiMod.Content.Classes.IsekaiProtagonist;
 
 namespace IsekaiMod.Utilities
 {
@@ -26,20 +27,17 @@ namespace IsekaiMod.Utilities
                 if (Initialized) return;
                 Initialized = true;
                 if (Config.ModSettings.AddedContent.Classes.IsDisabled("Isekai Protagonist")) return;
-                var IsekaiProtagonistClass = Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
-                var IsekaiProtagonistSpellList = Resources.GetModBlueprint<BlueprintSpellList>("IsekaiProtagonistSpellList");
-
                 if (IsMysticalMayhemEnabled())
                 {
                     Main.Log("Mystical Mayhem 0.1.3 Support Enabled.");
                     BlueprintAbility MeteorSwarmAbility = Resources.GetBlueprint<BlueprintAbility>("d0cd103b15494866b0444c1a961bc40f");
-                    IsekaiProtagonistSpellList.SpellsByLevel[9].m_Spells.Add(MeteorSwarmAbility.ToReference<BlueprintAbilityReference>());
+                    IsekaiProtagonistSpellList.get().SpellsByLevel[9].m_Spells.Add(MeteorSwarmAbility.ToReference<BlueprintAbilityReference>());
                 }
                 if (IsExpandedContentEnabled())
                 {
                     Main.Log("Expanded Content 0.4.40 Support Enabled.");
-                    AddExpandedContentSpells(IsekaiProtagonistSpellList);
-                    AddExpandedContentDrakes(IsekaiProtagonistClass);
+                    AddExpandedContentSpells(IsekaiProtagonistSpellList.get());
+                    AddExpandedContentDrakes(IsekaiProtagonistClass.get());
                 }
             }
 

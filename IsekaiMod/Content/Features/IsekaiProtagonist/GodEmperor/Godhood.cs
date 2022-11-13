@@ -12,8 +12,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
     {
         public static void Add()
         {
-            var IsekaiProtagonistClass = Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
-
             var Icon_Godhood = AssetLoader.LoadInternal("Features", "ICON_GODHOOD.png");
             var Godhood = Helpers.CreateBlueprint<BlueprintFeature>("Godhood", bp => {
                 bp.SetName("Godhood");

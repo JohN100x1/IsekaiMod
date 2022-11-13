@@ -71,13 +71,12 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var MundaneAura = Resources.GetModBlueprint<BlueprintFeature>("MundaneAura");
             var FireImmunity = Resources.GetModBlueprint<BlueprintFeature>("FireImmunity");
 
-            var IsekaiProtagonistClass = Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
             var PrebuildIsekaiProtagonistFeatureList = Helpers.CreateBlueprint<BlueprintFeature>("PrebuildIsekaiProtagonistFeatureList", bp => {
                 bp.Ranks = 1;
                 bp.HideInUI = true;
                 bp.AddComponent<AddClassLevels>(c => {
                     c.DoNotApplyAutomatically = false;
-                    c.m_CharacterClass = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_CharacterClass = IsekaiProtagonistClass.get().ToReference<BlueprintCharacterClassReference>();
                     c.Levels = 20;
                     c.RaceStat = StatType.Strength;
                     c.LevelsStat = StatType.Charisma;
@@ -504,7 +503,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.Support = 5;
                 });
             });
-            IsekaiProtagonistClass.m_DefaultBuild = PrebuildIsekaiProtagonistFeatureList.ToReference<BlueprintUnitFactReference>();
+            IsekaiProtagonistClass.SetDefaultBuild(PrebuildIsekaiProtagonistFeatureList);
         }
     }
 }
