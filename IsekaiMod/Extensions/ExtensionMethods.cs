@@ -430,10 +430,7 @@ namespace IsekaiMod.Extensions
         public static T CreateCopy<T>(this T original, Action<T> action = null) where T : UnityEngine.Object
         {
             var clone = UnityEngine.Object.Instantiate(original);
-            if (action != null)
-            {
-                action(clone);
-            }
+            action?.Invoke(clone);
             return clone;
         }
 
@@ -527,15 +524,6 @@ namespace IsekaiMod.Extensions
         }
 
         public static readonly FastRef<BlueprintArchetype, Sprite> blueprintArchetype_set_Icon = CreateFieldSetter<BlueprintArchetype, Sprite>("m_Icon");
-
-        public static void FixDomainSpell(this BlueprintAbility spell, int level, string spellListId)
-        {
-            var spellList = Resources.GetBlueprint<BlueprintSpellList>(spellListId);
-            var spells = spellList.SpellsByLevel.First(s => s.SpellLevel == level).Spells;
-            spells.Clear();
-            spells.Add(spell);
-        }
-
 
         public static bool HasAreaEffect(this BlueprintAbility spell)
         {

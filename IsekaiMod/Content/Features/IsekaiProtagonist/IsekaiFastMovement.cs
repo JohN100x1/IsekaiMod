@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.SetDescription("At 8th level, you gain a +10 {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g}.");
                 bp.m_Icon = Icon_FastMovement;
                 bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.None;
+                    c.Descriptor = ModifierDescriptor.UntypedStackable;
                     c.Stat = StatType.Speed;
                     c.Value = 10;
                 });

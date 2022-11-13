@@ -103,6 +103,9 @@ namespace IsekaiMod.Content
                 // Add Progression & Prebuild after Class and class-dependent features are added
                 Classes.IsekaiProtagonist.PrebuildIsekaiProtagonistFeatureList.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistProgression.Add();
+
+                // Add extra dialogue
+                Dialogue.IsekaiWelcomeDialogue.Add();
             }
             public static void AddIsekaiHeritages()
             {
@@ -112,6 +115,7 @@ namespace IsekaiMod.Content
                 Heritages.IsekaiSuccubusHeritage.Add();
                 Features.IsekaiAngel.AngelicBoltAbility.Add();
                 Heritages.IsekaiAngelHeritage.Add();
+                Heritages.IsekaiVampireHeritage.Add();
             }
             public static void AddIsekaiBackgrounds()
             {

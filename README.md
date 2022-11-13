@@ -70,9 +70,9 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Lore and Knowledge skills use CHA instead of WIS/INT.
 	- `Martial Artist`: Get proficiency in all exotic weapons.
 	- `Salaryman`: Adds perception as a class skill. Perception uses CHA instead of WIS.
-	- `Highschool Student`: Get a +1 bonus to all attributes.
+	- `Highschool Student`: Get a +1 trait bonus to all attributes.
 	- `Otaku`: Adds all skills as class skills except Persuasion.
-	- `Reborn Demon Lord`: Get a +2 bonus to Strength and Electricity resistance 20.
+	- `Reborn Demon Lord`: Get a +2 trait bonus to Strength and Electricity resistance 20.
 	- `Gamer`: Get a +10 bonus to all knowledge, lore, and perception checks.
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.

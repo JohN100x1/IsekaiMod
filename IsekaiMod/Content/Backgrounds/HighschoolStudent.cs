@@ -3,6 +3,7 @@ using IsekaiMod.Extensions;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Enums;
 
 namespace IsekaiMod.Content.Backgrounds
 {
@@ -20,26 +21,32 @@ namespace IsekaiMod.Content.Backgrounds
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Trait;
                     c.Stat = StatType.Strength;
                     c.Value = 1;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Trait;
                     c.Stat = StatType.Dexterity;
                     c.Value = 1;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Trait;
                     c.Stat = StatType.Constitution;
                     c.Value = 1;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Trait;
                     c.Stat = StatType.Intelligence;
                     c.Value = 1;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Trait;
                     c.Stat = StatType.Wisdom;
                     c.Value = 1;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Trait;
                     c.Stat = StatType.Charisma;
                     c.Value = 1;
                 });

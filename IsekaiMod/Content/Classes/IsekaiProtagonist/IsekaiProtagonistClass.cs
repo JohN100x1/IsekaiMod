@@ -8,33 +8,37 @@ using Kingmaker.Blueprints;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 {
     internal class IsekaiProtagonistClass
     {
+        // Icons
+        private static readonly Sprite Icon_SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87").m_Icon;
+        private static readonly Sprite Icon_EdictOfImpenetrableFortress = Resources.GetBlueprint<BlueprintAbility>("d7741c08ccf699e4a8a8f8ab2ed345f8").m_Icon;
+        private static readonly Sprite Icon_TrickFate = Resources.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
+        private static readonly Sprite Icon_BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45").m_Icon;
+
         // Stat Progression
         private static readonly BlueprintStatProgression BaseAttackBonus = Resources.GetBlueprint<BlueprintStatProgression>("b3057560ffff3514299e8b93e7648a9d");
         private static readonly BlueprintStatProgression SavesProgression = Resources.GetBlueprint<BlueprintStatProgression>("ff4662bde9e75f145853417313842751");
 
+        // Used in Class
+        private static readonly BlueprintCharacterClass SlayerClass = Resources.GetBlueprint<BlueprintCharacterClass>("c75e0971973957d4dbad24bc7957e4fb");
+        private static readonly BlueprintCharacterClass AnimalClass = Resources.GetBlueprint<BlueprintCharacterClass>("4cd1757a0eea7694ba5c933729a53920");
+
         public static void Add()
         {
+            // TODO: buff glorious and protective aura. change some images aswell.
             // TODO: rename protective aura
+            // TODO: add vampiric drain spell for isekai vampire heritage
             // TODO: Load localisation instead of hardcoded strings
-
-            // Used in Class
-            var SlayerClass = Resources.GetBlueprint<BlueprintCharacterClass>("c75e0971973957d4dbad24bc7957e4fb");
-            var AnimalClass = Resources.GetBlueprint<BlueprintCharacterClass>("4cd1757a0eea7694ba5c933729a53920");
 
             // Spellbook
             var SpellBook = Resources.GetModBlueprint<BlueprintSpellbook>("IsekaiProtagonistSpellbook");
 
             // Class Signature Features
-            var Icon_SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87").m_Icon;
-            var Icon_EdictOfImpenetrableFortress = Resources.GetBlueprint<BlueprintAbility>("d7741c08ccf699e4a8a8f8ab2ed345f8").m_Icon;
-            var Icon_TrickFate = Resources.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
-            var Icon_BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45").m_Icon;
-
             var IsekaiProtagonistBonusFeat = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistBonusFeat", bp => {
                 bp.SetName("Bonus Feat");
                 bp.SetDescription("Isekai Protagonists gain twice as many {g|Encyclopedia:Feat}feats{/g} as the other classes.");
@@ -86,8 +90,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 bp.RecommendedAttributes = new StatType[] { StatType.Strength, StatType.Charisma};
                 bp.NotRecommendedAttributes = new StatType[] { StatType.Constitution };
                 bp.m_Spellbook = SpellBook.ToReference<BlueprintSpellbookReference>();
-                bp.m_EquipmentEntities = new KingmakerEquipmentEntityReference[] { };
-                bp.m_StartingItems = new BlueprintItemReference[] { };
+                bp.m_EquipmentEntities = new KingmakerEquipmentEntityReference[0];
+                bp.m_StartingItems = new BlueprintItemReference[0];
                 bp.SkillPoints = 4;
                 bp.ClassSkills = new StatType[11] {
                     StatType.SkillAthletics,
@@ -124,12 +128,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 });
             });
             SpellBook.m_CharacterClass = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
-
-            // Allow Spellbook to be merged with angel and lich
-            var AngelIncorporateSpellBook = Resources.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
-            var LichIncorporateSpellBook = Resources.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
-            AngelIncorporateSpellBook.m_AllowedSpellbooks = AngelIncorporateSpellBook.m_AllowedSpellbooks.AddToArray(SpellBook.ToReference<BlueprintSpellbookReference>());
-            LichIncorporateSpellBook.m_AllowedSpellbooks = LichIncorporateSpellBook.m_AllowedSpellbooks.AddToArray(SpellBook.ToReference<BlueprintSpellbookReference>());
 
             // Register Class
             Helpers.RegisterClass(IsekaiProtagonistClass);

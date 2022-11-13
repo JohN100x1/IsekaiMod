@@ -10,6 +10,8 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.UnitLogic.Mechanics;
+using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
@@ -21,28 +23,49 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             var Icon_Protective_Aura = AssetLoader.LoadInternal("Features", "ICON_PROTECTIVE_AURA.png");
             var ProtectiveAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("ProtectiveAuraBuff", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("This character has a +2 bonus on AC and saving throws.");
+                bp.SetDescription("This character has a sacred bonus to AC and saving throws equal to 1/2 the God Emporer's character level.");
                 bp.IsClassFeature = true;
                 bp.m_Icon = Icon_Protective_Aura;
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.None;
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.AC;
-                    c.Value = 2;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
                 });
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.None;
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.SaveFortitude;
-                    c.Value = 2;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
                 });
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.None;
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.SaveReflex;
-                    c.Value = 2;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
                 });
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.None;
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.SaveWill;
-                    c.Value = 2;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.StatBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.Div2;
                 });
                 bp.FxOnStart = new PrefabLink();
                 bp.FxOnRemove = new PrefabLink();
@@ -59,7 +82,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var ProtectiveAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("ProtectiveAuraAreaBuff", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emperor take a +2 bonus on AC, and saving throws.");
+                bp.SetDescription("Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emporer's character level.");
                 bp.m_Icon = Icon_Protective_Aura;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -71,7 +94,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var ProtectiveAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("ProtectiveAuraAbility", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emperor take a +2 bonus on AC, and saving throws.");
+                bp.SetDescription("Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emporer's character level.");
                 bp.m_Icon = Icon_Protective_Aura;
                 bp.m_Buff = ProtectiveAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.None;
@@ -83,7 +106,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var ProtectiveAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("ProtectiveAuraFeature", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("At 6th level, allies within 40 feet of the God Emperor take a +2 bonus on AC, and saving throws.");
+                bp.SetDescription("At 6th level, allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emporer's character level.");
                 bp.m_Icon = Icon_Protective_Aura;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

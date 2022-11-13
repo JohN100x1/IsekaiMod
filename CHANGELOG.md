@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.0] - 2022-11-13
+### Added
+- Added `Isekai Protagonist` dialogue when speaking to Hulrun at the Kenabres festival.
+- Added `Isekai Vampire` Heritage (Dhampir Heritage).
+### Changed
+- Buffed `Isekai Succubus` with +4 racial bonus to Dexterity.
+- Buffed `God Emporer`'s `Glorious Aura` to give a 1/2 level competence bonus.
+- Buffed `God Emporer`'s `Protective Aura` to give a 1/2 level sacred bonus.
+- Buffed `God Emporer`'s `Siphoning Aura` to give a -4 penalty.
+- Changed `Highschool Student` background to give a trait bonus instead of untyped.
+- Changed `Reborn Demon Lord` background to give a trait bonus instead of untyped.
+- Updated icon for `Glorious Aura` feature.
+- Updated icon for `Siphoning Aura` feature.
+- Updated icon for `Dark Aura` feature.
+- Updated icon for `Winner` feature.
+### Fixed
+- Fixed Villain Spellbook merge.
+
 ## [1.7.2] - 2022-11-11
 ### Fixed
 - Fixed `AutoEmpower` not working.
