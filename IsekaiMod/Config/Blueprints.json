@@ -192,9 +192,11 @@
     "OverpoweredAbilitySelection2": "b8fdf264-0691-4e02-bbcc-6969f0e31d6d",
     "VillainQuickFooted": "2d0e8bf9-5978-45c3-bafc-9b3eefc573c7",
 
-    // Patch Loremaster Spellbook
+    // Patch Loremaster & Hellknight Signifier Spellbook
     "LoremasterIsekai": "4133ad57-ec5b-4562-96d3-613e90418597",
     "LoremasterVillain": "63d7461a-e50e-4cb7-9fe5-51b2bdf742b8",
+    "HellknightSignifierIsekai": "0b417c38-5b73-4723-815d-d31021d83dee",
+    "HellknightSignifierVillain": "e40dd66f-a0de-4656-bdb6-f6ca23a93efe",
 
     // Deathsnatcher
     "DeathsnatcherClass": "e44a0435-06db-43e8-8762-35cd775bfd86",
