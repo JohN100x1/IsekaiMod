@@ -6,7 +6,7 @@ using UnityEngine;
 namespace IsekaiMod.Utilities
 {
     [HarmonyPatch(typeof(PortraitData), "get_FullLengthPortrait")]
-    public static class FullPortraitInjecotr
+    public static class FullPortraitInjector
     {
         public static Dictionary<PortraitData, Sprite> Replacements = new();
         public static bool Prefix(PortraitData __instance, ref Sprite __result)
@@ -17,7 +17,7 @@ namespace IsekaiMod.Utilities
         }
     }
     [HarmonyPatch(typeof(PortraitData), "get_HalfLengthPortrait")]
-    public static class HalfPortraitInjecotr
+    public static class HalfPortraitInjector
     {
         public static Dictionary<PortraitData, Sprite> Replacements = new();
         public static bool Prefix(PortraitData __instance, ref Sprite __result)
@@ -28,7 +28,7 @@ namespace IsekaiMod.Utilities
         }
     }
     [HarmonyPatch(typeof(PortraitData), "get_SmallPortrait")]
-    public static class SmallPortraitInjecotr
+    public static class SmallPortraitInjector
     {
         public static Dictionary<PortraitData, Sprite> Replacements = new();
         public static bool Prefix(PortraitData __instance, ref Sprite __result)
@@ -39,7 +39,7 @@ namespace IsekaiMod.Utilities
         }
     }
     [HarmonyPatch(typeof(PortraitData), "get_PetEyePortrait")]
-    public static class EyePortraitInjecotr
+    public static class EyePortraitInjector
     {
         public static Dictionary<PortraitData, Sprite> Replacements = new();
         public static bool Prefix(PortraitData __instance, ref Sprite __result)

@@ -144,16 +144,16 @@
     <None Update="Assets\Heritages\ICON_VAMPIRE.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Portraits\PlayfulDarknessFull.png">
+    <None Update="Assets\Portraits\DeathsnatcherFull.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Portraits\PlayfulDarknessMedium.png">
+    <None Update="Assets\Portraits\DeathsnatcherMedium.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Portraits\PlayfulDarknessPetEye.png">
+    <None Update="Assets\Portraits\DeathsnatcherPetEye.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Portraits\PlayfulDarknessSmall.png">
+    <None Update="Assets\Portraits\DeathsnatcherSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Repository.json">
@@ -162,10 +162,6 @@
     <None Update="Info.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Assets\Portraits\" />
   </ItemGroup>
 
   <Target Name="Publicize" AfterTargets="Clean">

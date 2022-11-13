@@ -106,7 +106,10 @@ namespace IsekaiMod.Content
                 // Patch Loremaster Spellbook
                 Classes.IsekaiProtagonist.LoremasterIsekai.Add();
                 Classes.IsekaiProtagonist.LoremasterVillain.Add();
-
+                // Deathsnatcher animal Companion
+                Classes.Deathsnatcher.DeathsnatcherClass.Add();
+                Classes.Deathsnatcher.DeathsnatcherClassProgression.Add();
+                Classes.Deathsnatcher.DeathsnatcherUnit.Add();
                 // Add extra dialogue
                 Dialogue.IsekaiWelcomeDialogue.Add();
             }

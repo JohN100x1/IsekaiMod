@@ -9,6 +9,7 @@ using IsekaiMod.Extensions;
 using Kingmaker.Blueprints.Classes;
 using static Kingmaker.Blueprints.Classes.BlueprintProgression;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Content.Features.IsekaiProtagonist;
 
 namespace IsekaiMod.Utilities
 {
@@ -71,9 +72,6 @@ namespace IsekaiMod.Utilities
 
             public static void AddExpandedContentDrakes(BlueprintCharacterClass characterClass)
             {
-                // Get the Drake Selection
-                var DrakeCompanionSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("d78cdd3dd370473ea1ee3003ea6e83f2");
-
                 // Add Isekai Protagonist Class to Drake Progression
                 var DrakeCompanionProgression = Resources.GetBlueprint<BlueprintProgression>("925c3ece6b9446efa9100fe2cf98542e");
                 DrakeCompanionProgression.m_Classes = DrakeCompanionProgression.m_Classes.AddToArray(
@@ -84,9 +82,8 @@ namespace IsekaiMod.Utilities
                     });
 
                 // Add Drake Selection to Pet Selection
-                var IsekaiPetSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiPetSelection");
-                IsekaiPetSelection.m_AllFeatures = IsekaiPetSelection.m_AllFeatures.AddToArray(DrakeCompanionSelection.ToReference<BlueprintFeatureReference>());
-                IsekaiPetSelection.m_Features = IsekaiPetSelection.m_Features.AddToArray(DrakeCompanionSelection.ToReference<BlueprintFeatureReference>());
+                var DrakeCompanionSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("d78cdd3dd370473ea1ee3003ea6e83f2");
+                IsekaiPetSelection.AddToSelection(DrakeCompanionSelection);
             }
         }
         protected static bool IsModEnabled(string modName)

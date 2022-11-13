@@ -196,10 +196,15 @@
     "LoremasterIsekai": "4133ad57-ec5b-4562-96d3-613e90418597",
     "LoremasterVillain": "63d7461a-e50e-4cb7-9fe5-51b2bdf742b8",
 
-    // Playful Darkness
-    "PlayfulDarknessPortrait": "969ea9ec-c47c-4fa5-bc12-c5aadc1efcd8",
-    "PlayfulDarknessFact": "c3222e37-2c5d-439d-982c-f96a4bbdfbf2",
-    "PlayfulDarknessUnit": "6846be37-6af5-4343-b4d4-884d849ceae1",
+    // Deathsnatcher
+    "DeathsnatcherClass": "e44a0435-06db-43e8-8762-35cd775bfd86",
+    "DeathsnatcherClassProgression": "be954421-a769-4980-b04d-9725495e1ad6",
+    "DeathsnatcherCompanionProgression": "7a99875f-7d87-4cc0-a7fb-8ebdaabce9f8",
+    "DeathsnatcherPortrait": "969ea9ec-c47c-4fa5-bc12-c5aadc1efcd8",
+    "DeathsnatcherFact": "c3222e37-2c5d-439d-982c-f96a4bbdfbf2",
+    "DeathsnatcherUnit": "6846be37-6af5-4343-b4d4-884d849ceae1",
+    "DeathsnatcherSlotFeature": "d4161122-8c8f-4282-a46d-3521256c7cc9",
+    "DeathsnatcherFeature": "c7f80655-70dd-4c86-8c47-7b553ccbc662",
 
     // Dialogue
     "AnswerIsekai": "068f20c2-6f38-4a36-8480-67a3df51249d"

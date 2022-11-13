@@ -10,7 +10,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
     {
         public static void Add()
         {
-            //// Class Features
+            // Class Features
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
             var EdgeLordProficiencies = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordProficiencies");
             var GodEmperorProficiencies = Resources.GetModBlueprint<BlueprintFeature>("GodEmperorProficiencies");
@@ -62,9 +62,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
             var IsekaiProtagonistProgression = Helpers.CreateBlueprint<BlueprintProgression>("IsekaiProtagonistProgression", bp => {
                 bp.SetName("");
-                bp.SetDescription(
-                    "Isekai protagonists are otherworldly entities who have been reincarnated into the world of Golarion with extraordinary abilities. " +
-                    "As their story progresses, they gain more unexplained and overpowered abilities to overcome every challenge they face.");
+                bp.SetDescription("Isekai protagonists are otherworldly entities who have been reincarnated into the world of Golarion with extraordinary abilities. "
+                    + "As their story progresses, they gain more unexplained and overpowered abilities to overcome every challenge they face.");
                 bp.m_AllowNonContextActions = false;
                 bp.IsClassFeature = true;
                 bp.m_FeaturesRankIncrease = null;
