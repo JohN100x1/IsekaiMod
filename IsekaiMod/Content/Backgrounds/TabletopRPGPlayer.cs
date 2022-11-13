@@ -10,6 +10,7 @@ namespace IsekaiMod.Content.Backgrounds
     {
         public static void Add()
         {
+            // Background
             var BackgroundTabletopRPGPlayer = Helpers.CreateBlueprint<BlueprintFeature>("BackgroundTabletopRPGPlayer", bp => {
                 bp.SetName("Tabletop RPG Player");
                 bp.SetDescription("The Tabletop RPG Player adds {g|Encyclopedia:Lore_Nature}Lore (Nature){/g}, {g|Encyclopedia:Lore_Religion}Lore (Religion){/g}, "
@@ -65,6 +66,9 @@ namespace IsekaiMod.Content.Backgrounds
                     c.BaseAttributeReplacement = StatType.Charisma;
                 });
             });
+
+            // Register Background
+            IsekaiBackgroundSelection.Register(BackgroundTabletopRPGPlayer);
         }
     }
 }

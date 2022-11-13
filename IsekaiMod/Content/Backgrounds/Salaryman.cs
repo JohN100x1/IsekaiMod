@@ -10,6 +10,7 @@ namespace IsekaiMod.Content.Backgrounds
     {
         public static void Add()
         {
+            // Background
             var BackgroundSalaryman = Helpers.CreateBlueprint<BlueprintFeature>("BackgroundSalaryman", bp => {
                 bp.SetName("Salaryman");
                 bp.SetDescription("The Salaryman adds Perception to the list of her class skills. She can also use her Charisma instead of Wisdom while attempting Perception checks.\n"
@@ -30,6 +31,9 @@ namespace IsekaiMod.Content.Backgrounds
                     c.BaseAttributeReplacement = StatType.Charisma;
                 });
             });
+
+            // Register Background
+            IsekaiBackgroundSelection.Register(BackgroundSalaryman);
         }
     }
 }

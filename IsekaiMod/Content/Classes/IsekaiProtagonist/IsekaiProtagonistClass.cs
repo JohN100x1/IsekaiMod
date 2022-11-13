@@ -121,6 +121,15 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.Not = true;
                     c.HideInUI = true;
                 });
+
+                // Register Archetypes later using RegisterArchetype
+                bp.m_Archetypes = new BlueprintArchetypeReference[0];
+
+                // Set Progression later using SetProgression (This is because some features in the progression reference IsekaiProtagonistClass which doeesn't exist yet)
+                bp.m_Progression = null;
+
+                // Set Default Build later using SetDefaultBuild
+                bp.m_DefaultBuild = null;
             });
             IsekaiProtagonistSpellbook.SetCharacterClass(IsekaiProtagonistClass);
 

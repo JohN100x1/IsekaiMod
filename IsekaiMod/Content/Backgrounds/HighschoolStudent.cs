@@ -11,6 +11,7 @@ namespace IsekaiMod.Content.Backgrounds
     {
         public static void Add()
         {
+            // Background
             var BackgroundHighschoolStudent = Helpers.CreateBlueprint<BlueprintFeature>("BackgroundHighschoolStudent", bp => {
                 bp.SetName("Highschool Student");
                 bp.SetDescription("The Highschool Student gains a +1 bonus to all attributes.\n"
@@ -51,6 +52,9 @@ namespace IsekaiMod.Content.Backgrounds
                     c.Value = 1;
                 });
             });
+
+            // Register Background
+            IsekaiBackgroundSelection.Register(BackgroundHighschoolStudent);
         }
     }
 }

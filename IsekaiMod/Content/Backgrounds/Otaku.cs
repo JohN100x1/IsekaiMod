@@ -10,6 +10,7 @@ namespace IsekaiMod.Content.Backgrounds
     {
         public static void Add()
         {
+            // Background
             var BackgroundOtaku = Helpers.CreateBlueprint<BlueprintFeature>("BackgroundOtaku", bp => {
                 bp.SetName("Otaku");
                 bp.SetDescription("The Otaku adds all skills to the list of her class skills except Persuasion.\n"
@@ -80,6 +81,9 @@ namespace IsekaiMod.Content.Backgrounds
                     c.Skill = StatType.SkillUseMagicDevice;
                 });
             });
+
+            // Register Background
+            IsekaiBackgroundSelection.Register(BackgroundOtaku);
         }
     }
 }

@@ -11,6 +11,7 @@ namespace IsekaiMod.Content.Backgrounds
     {
         public static void Add()
         {
+            // Background
             var ExoticWeaponProficiency = Resources.GetModBlueprint<BlueprintFeature>("ExoticWeaponProficiency");
             var BackgroundMartialArtist = Helpers.CreateBlueprint<BlueprintFeature>("BackgroundMartialArtist", bp => {
                 bp.SetName("Martial Artist");
@@ -100,6 +101,9 @@ namespace IsekaiMod.Content.Backgrounds
                     c.StackBonus = 1;
                 });
             });
+
+            // Register Background
+            IsekaiBackgroundSelection.Register(BackgroundMartialArtist);
         }
     }
 }

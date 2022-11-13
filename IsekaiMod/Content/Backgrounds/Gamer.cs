@@ -11,6 +11,7 @@ namespace IsekaiMod.Content.Backgrounds
     {
         public static void Add()
         {
+            // Background
             var BackgroundGamer = Helpers.CreateBlueprint<BlueprintFeature>("BackgroundGamer", bp => {
                 bp.SetName("Gamer");
                 bp.SetDescription("The Gamer has a +10 competence bonus to all knowledge, lore, and perception checks.\n"
@@ -46,6 +47,9 @@ namespace IsekaiMod.Content.Backgrounds
                     c.Value = 10;
                 });
             });
+
+            // Register Background
+            IsekaiBackgroundSelection.Register(BackgroundGamer);
         }
     }
 }

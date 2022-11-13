@@ -10,36 +10,30 @@ namespace IsekaiMod.Content.Backgrounds
     {
         public static void Add()
         {
-            //Isekai Backgrounds
-            var BackgroundTabletopRPGPlayer = Resources.GetModBlueprint<BlueprintFeature>("BackgroundTabletopRPGPlayer");
-            var BackgroundMartialArtist = Resources.GetModBlueprint<BlueprintFeature>("BackgroundMartialArtist");
-            var BackgroundSalaryman = Resources.GetModBlueprint<BlueprintFeature>("BackgroundSalaryman");
-            var BackgroundHighschoolStudent = Resources.GetModBlueprint<BlueprintFeature>("BackgroundHighschoolStudent");
-            var BackgroundOtaku = Resources.GetModBlueprint<BlueprintFeature>("BackgroundOtaku");
-            var BackgroundRebornDemonLord = Resources.GetModBlueprint<BlueprintFeature>("BackgroundRebornDemonLord");
-            var BackgroundGamer = Resources.GetModBlueprint<BlueprintFeature>("BackgroundGamer");
-
             // Isekai Background Selection
             var IsekaiBackgroundSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("IsekaiBackgroundSelection", bp => {
                 bp.SetName("Isekai");
                 bp.SetDescription("Before you were hit by a truck, you were a...");
                 bp.m_Icon = null;
                 bp.HideInUI = true;
-                bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                    BackgroundTabletopRPGPlayer.ToReference<BlueprintFeatureReference>(),
-                    BackgroundMartialArtist.ToReference<BlueprintFeatureReference>(),
-                    BackgroundSalaryman.ToReference<BlueprintFeatureReference>(),
-                    BackgroundHighschoolStudent.ToReference<BlueprintFeatureReference>(),
-                    BackgroundOtaku.ToReference<BlueprintFeatureReference>(),
-                    BackgroundRebornDemonLord.ToReference<BlueprintFeatureReference>(),
-                    BackgroundGamer.ToReference<BlueprintFeatureReference>(),
-                };
                 bp.Groups = new FeatureGroup[] { FeatureGroup.BackgroundSelection };
+
+                // Register Backgrounds later
+                bp.m_AllFeatures = new BlueprintFeatureReference[0];
             });
 
-            // Add to Background Selection
+            // Add Isekai Background Selection to Background Selection
             var BackgroundSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("f926dabeee7f8a54db8f2010b323383c");
             BackgroundSelection.m_AllFeatures = BackgroundSelection.m_AllFeatures.AddToArray(IsekaiBackgroundSelection.ToReference<BlueprintFeatureReference>());
+        }
+        public static void Register(BlueprintFeature background)
+        {
+            BlueprintFeatureSelection backgroundSelection = Get();
+            backgroundSelection.m_AllFeatures = backgroundSelection.m_AllFeatures.AddToArray(background.ToReference<BlueprintFeatureReference>());
+        }
+        public static BlueprintFeatureSelection Get()
+        {
+            return Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiBackgroundSelection");
         }
     }
 }
