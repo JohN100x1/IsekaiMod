@@ -171,7 +171,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Villain
                     {
                         PrefabLink = new PrefabLink() { AssetId = "14ba08b903ee28b41a779a616d905397" }
                     },
-                    new ContextActionHealTarGet()
+                    new ContextActionHealTarget()
                     {
                         Value = new ContextDiceValue()
                         {

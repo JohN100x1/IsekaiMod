@@ -192,6 +192,15 @@
     "OverpoweredAbilitySelection2": "b8fdf264-0691-4e02-bbcc-6969f0e31d6d",
     "VillainQuickFooted": "2d0e8bf9-5978-45c3-bafc-9b3eefc573c7",
 
+    // Patch Loremaster Spellbook
+    "LoremasterIsekai": "4133ad57-ec5b-4562-96d3-613e90418597",
+    "LoremasterVillain": "63d7461a-e50e-4cb7-9fe5-51b2bdf742b8",
+
+    // Playful Darkness
+    "PlayfulDarknessPortrait": "969ea9ec-c47c-4fa5-bc12-c5aadc1efcd8",
+    "PlayfulDarknessFact": "c3222e37-2c5d-439d-982c-f96a4bbdfbf2",
+    "PlayfulDarknessUnit": "6846be37-6af5-4343-b4d4-884d849ceae1",
+
     // Dialogue
     "AnswerIsekai": "068f20c2-6f38-4a36-8480-67a3df51249d"
   },

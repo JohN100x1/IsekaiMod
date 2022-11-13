@@ -75,5 +75,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             // Add Archetype to Class
             IsekaiProtagonistClass.RegisterArchetype(VillainArchetype);
         }
+        public static BlueprintArchetype Get()
+        {
+            return Resources.GetModBlueprint<BlueprintArchetype>("VillainArchetype");
+        }
+        public static BlueprintArchetypeReference GetReference()
+        {
+            return Get().ToReference<BlueprintArchetypeReference>();
+        }
     }
 }

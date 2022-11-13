@@ -103,6 +103,9 @@ namespace IsekaiMod.Content
                 // Add Progression & Prebuild after Class and class-dependent features are added
                 Classes.IsekaiProtagonist.PrebuildIsekaiProtagonistFeatureList.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistProgression.Add();
+                // Patch Loremaster Spellbook
+                Classes.IsekaiProtagonist.LoremasterIsekai.Add();
+                Classes.IsekaiProtagonist.LoremasterVillain.Add();
 
                 // Add extra dialogue
                 Dialogue.IsekaiWelcomeDialogue.Add();
@@ -119,7 +122,10 @@ namespace IsekaiMod.Content
             }
             public static void AddIsekaiBackgrounds()
             {
-                // Add Backgrounds
+                // Add the Selection First
+                Backgrounds.IsekaiBackgroundSelection.Add();
+
+                // Add Backgrounds to Isekai Background Selection
                 Backgrounds.TabletopRPGPlayer.Add();
                 Backgrounds.MartialArtist.Add();
                 Backgrounds.Salaryman.Add();
@@ -127,11 +133,13 @@ namespace IsekaiMod.Content
                 Backgrounds.Otaku.Add();
                 Backgrounds.RebornDemonLord.Add();
                 Backgrounds.Gamer.Add();
-                Backgrounds.IsekaiBackgroundSelection.Add();
             }
             public static void AddIsekaiDeities()
             {
+                // Add the Selection First
                 Deities.IsekaiDeitySelection.Add();
+
+                // Add Deities to the Isekai Deity Selection
                 Deities.TruckKun.Add();
                 Deities.Aqua.Add();
                 Deities.Ristarte.Add();
