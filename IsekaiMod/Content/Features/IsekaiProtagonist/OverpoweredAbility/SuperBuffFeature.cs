@@ -112,7 +112,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Actions = new ActionList() { Actions = BuffActions.ToArray() };
                 });
                 bp.AddComponent<AbilityTargetsAround>(c => {
-                    c.m_Radius = new Feet() { m_Value = 60 };
+                    c.m_Radius = new Feet(60);
                     c.m_TargetType = TargetType.Ally;
                     c.m_Condition = ActionFlow.EmptyCondition();
                 });
