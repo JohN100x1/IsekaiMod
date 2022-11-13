@@ -19,40 +19,41 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
         public static void Add()
         {
             var Icon_SiphoningAura = AssetLoader.LoadInternal("Features", "ICON_SIPHONING_AURA.png");
+            var Icon_SiphoningDebuff = AssetLoader.LoadInternal("Features", "ICON_SIPHONING_DEBUFF.png");
             var SiphoningAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("SiphoningAuraBuff", bp => {
                 bp.SetName("Siphoning Aura");
-                bp.SetDescription("This creature has a –2 penalty on all attributes.");
+                bp.SetDescription("This creature has a –4 penalty on all attributes.");
                 bp.IsClassFeature = true;
-                bp.m_Icon = Icon_SiphoningAura;
+                bp.m_Icon = Icon_SiphoningDebuff;
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.Strength;
-                    c.Value = -2;
+                    c.Value = -4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.Dexterity;
-                    c.Value = -2;
+                    c.Value = -4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.Constitution;
-                    c.Value = -2;
+                    c.Value = -4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.Intelligence;
-                    c.Value = -2;
+                    c.Value = -4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.Wisdom;
-                    c.Value = -2;
+                    c.Value = -4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.Charisma;
-                    c.Value = -2;
+                    c.Value = -4;
                 });
                 bp.FxOnStart = new PrefabLink();
                 bp.FxOnRemove = new PrefabLink();
@@ -69,10 +70,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var SiphoningAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("SiphoningAuraAreaBuff", bp => {
                 bp.SetName("Siphoning Aura");
-                bp.SetDescription("Enemies within 40 feet of the God Emperor take a –2 penalty on all attributes.");
+                bp.SetDescription("Enemies within 40 feet of the God Emperor take a –4 penalty on all attributes.");
                 bp.m_Icon = Icon_SiphoningAura;
                 bp.IsClassFeature = true;
-                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
                 bp.AddComponent<AddAreaEffect>(c => {
                     c.m_AreaEffect = SiphoningAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
@@ -81,7 +81,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var SiphoningAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("SiphoningAuraAbility", bp => {
                 bp.SetName("Siphoning Aura");
-                bp.SetDescription("Enemies within 40 feet of the God Emperor take a –2 penalty on all attributes.");
+                bp.SetDescription("Enemies within 40 feet of the God Emperor take a –4 penalty on all attributes.");
                 bp.m_Icon = Icon_SiphoningAura;
                 bp.m_Buff = SiphoningAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.None;
@@ -93,7 +93,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var SiphoningAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("SiphoningAuraFeature", bp => {
                 bp.SetName("Siphoning Aura");
-                bp.SetDescription("At 12th level, enemies within 40 feet of the God Emperor take a –2 penalty on all attributes.");
+                bp.SetDescription("At 12th level, enemies within 40 feet of the God Emperor take a –4 penalty on all attributes.");
                 bp.m_Icon = Icon_SiphoningAura;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

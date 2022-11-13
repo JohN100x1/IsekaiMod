@@ -30,6 +30,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
+            // TODO: buff glorious and protective aura. change some images aswell.
             // TODO: rename protective aura
             // TODO: add vampiric drain spell for isekai vampire heritage
             // TODO: Load localisation instead of hardcoded strings

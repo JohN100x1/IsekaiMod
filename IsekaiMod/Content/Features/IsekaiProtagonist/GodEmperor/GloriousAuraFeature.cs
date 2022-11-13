@@ -11,6 +11,8 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.UnitLogic.Mechanics;
+using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
@@ -19,21 +21,34 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
     {
         public static void Add()
         {
-            var Icon_BurstOfGlory = Resources.GetBlueprint<BlueprintAbility>("1bc83efec9f8c4b42a46162d72cbf494").m_Icon;
+            var Icon_Glorious_Aura = AssetLoader.LoadInternal("Features", "ICON_GLORIOUS_AURA.png");
             var GloriousAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("GloriousAuraBuff", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("This character has a +2 bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance.");
+                bp.SetDescription("This character has a competence bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance equal to 1/2 the God Emporer's character level.");
                 bp.IsClassFeature = true;
-                bp.m_Icon = Icon_BurstOfGlory;
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.None;
+                bp.m_Icon = Icon_Glorious_Aura;
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Competence;
                     c.Stat = StatType.AdditionalAttackBonus;
-                    c.Value = 2;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
                 });
                 bp.AddComponent<SpellPenetrationBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.None;
-                    c.Value = 2;
+                    c.Descriptor = ModifierDescriptor.Competence;
                     c.CheckFact = false;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.StatBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.Div2;
                 });
                 bp.FxOnStart = new PrefabLink();
                 bp.FxOnRemove = new PrefabLink();
@@ -50,8 +65,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var GloriousAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("GloriousAuraAreaBuff", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emperor gain a +2 bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance.");
-                bp.m_Icon = Icon_BurstOfGlory;
+                bp.SetDescription("Allies within 40 feet of the God Emperor gain a competence bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance equal to 1/2 the God Emporer's character level.");
+                bp.m_Icon = Icon_Glorious_Aura;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
                 bp.AddComponent<AddAreaEffect>(c => {
@@ -62,8 +77,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var GloriousAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("GloriousAuraAbility", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emperor gain a +2 bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance.");
-                bp.m_Icon = Icon_BurstOfGlory;
+                bp.SetDescription("Allies within 40 feet of the God Emperor gain a competence bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance equal to 1/2 the God Emporer's character level.");
+                bp.m_Icon = Icon_Glorious_Aura;
                 bp.m_Buff = GloriousAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.None;
                 bp.WeightInGroup = 1;
@@ -74,8 +89,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var GloriousAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("GloriousAuraFeature", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("At 9th level, allies within 40 feet of the God Emperor gain a +2 bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance.");
-                bp.m_Icon = Icon_BurstOfGlory;
+                bp.SetDescription("At 9th level, allies within 40 feet of the God Emperor gain a competence bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance equal to 1/2 the God Emporer's character level.");
+                bp.m_Icon = Icon_Glorious_Aura;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
