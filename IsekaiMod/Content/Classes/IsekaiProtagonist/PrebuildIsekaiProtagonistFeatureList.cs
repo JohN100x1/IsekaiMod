@@ -76,7 +76,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 bp.HideInUI = true;
                 bp.AddComponent<AddClassLevels>(c => {
                     c.DoNotApplyAutomatically = false;
-                    c.m_CharacterClass = IsekaiProtagonistClass.Get().ToReference<BlueprintCharacterClassReference>();
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.Levels = 20;
                     c.RaceStat = StatType.Strength;
                     c.LevelsStat = StatType.Charisma;

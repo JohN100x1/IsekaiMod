@@ -54,5 +54,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         {
             return Resources.GetModBlueprint<BlueprintSpellbook>("IsekaiProtagonistSpellbook");
         }
+        public static BlueprintSpellbookReference GetReference()
+        {
+            return Get().ToReference<BlueprintSpellbookReference>();
+        }
     }
 }

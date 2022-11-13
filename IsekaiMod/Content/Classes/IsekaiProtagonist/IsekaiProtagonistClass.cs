@@ -84,7 +84,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 bp.m_Difficulty = 1;
                 bp.RecommendedAttributes = new StatType[] { StatType.Strength, StatType.Charisma};
                 bp.NotRecommendedAttributes = new StatType[] { StatType.Constitution };
-                bp.m_Spellbook = IsekaiProtagonistSpellbook.Get().ToReference<BlueprintSpellbookReference>();
+                bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
                 bp.m_EquipmentEntities = new KingmakerEquipmentEntityReference[0];
                 bp.m_StartingItems = new BlueprintItemReference[0];
                 bp.SkillPoints = 4;
@@ -154,6 +154,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         public static BlueprintCharacterClass Get()
         {
             return Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
+        }
+        public static BlueprintCharacterClassReference GetReference()
+        {
+            return Get().ToReference<BlueprintCharacterClassReference>();
         }
     }
 }

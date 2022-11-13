@@ -70,7 +70,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 bp.m_FeaturesRankIncrease = null;
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
                     new BlueprintProgression.ClassWithLevel {
-                        m_Class = IsekaiProtagonistClass.Get().ToReference<BlueprintCharacterClassReference>(),
+                        m_Class = IsekaiProtagonistClass.GetReference(),
                         AdditionalLevel = 0
                     }
                 };
