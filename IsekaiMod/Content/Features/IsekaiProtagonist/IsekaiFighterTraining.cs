@@ -24,7 +24,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.m_Icon = Icon_SwordSaintFighterTraining;
                 bp.AddComponent<ClassLevelsForPrerequisites>(c => {
                     c.m_FakeClass = FighterClass.ToReference<BlueprintCharacterClassReference>();
-                    c.m_ActualClass = IsekaiProtagonistClass.get().ToReference<BlueprintCharacterClassReference>();
+                    c.m_ActualClass = IsekaiProtagonistClass.Get().ToReference<BlueprintCharacterClassReference>();
                     c.Modifier = 1.0;
                     c.Summand = 0;
                 });

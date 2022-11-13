@@ -31,13 +31,13 @@ namespace IsekaiMod.Utilities
                 {
                     Main.Log("Mystical Mayhem 0.1.3 Support Enabled.");
                     BlueprintAbility MeteorSwarmAbility = Resources.GetBlueprint<BlueprintAbility>("d0cd103b15494866b0444c1a961bc40f");
-                    IsekaiProtagonistSpellList.get().SpellsByLevel[9].m_Spells.Add(MeteorSwarmAbility.ToReference<BlueprintAbilityReference>());
+                    IsekaiProtagonistSpellList.Get().SpellsByLevel[9].m_Spells.Add(MeteorSwarmAbility.ToReference<BlueprintAbilityReference>());
                 }
                 if (IsExpandedContentEnabled())
                 {
                     Main.Log("Expanded Content 0.4.40 Support Enabled.");
-                    AddExpandedContentSpells(IsekaiProtagonistSpellList.get());
-                    AddExpandedContentDrakes(IsekaiProtagonistClass.get());
+                    AddExpandedContentSpells(IsekaiProtagonistSpellList.Get());
+                    AddExpandedContentDrakes(IsekaiProtagonistClass.Get());
                 }
             }
 

@@ -2,7 +2,6 @@
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints;
 using Kingmaker.EntitySystem.Stats;
@@ -33,9 +32,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         {
             // TODO: add vampiric drain spell for isekai vampire heritage
             // TODO: Load localisation instead of hardcoded strings
-
-            // Spellbook
-            var SpellBook = Resources.GetModBlueprint<BlueprintSpellbook>("IsekaiProtagonistSpellbook");
 
             // Class Signature Features
             var IsekaiProtagonistBonusFeat = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistBonusFeat", bp => {
@@ -88,7 +84,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 bp.m_Difficulty = 1;
                 bp.RecommendedAttributes = new StatType[] { StatType.Strength, StatType.Charisma};
                 bp.NotRecommendedAttributes = new StatType[] { StatType.Constitution };
-                bp.m_Spellbook = SpellBook.ToReference<BlueprintSpellbookReference>();
+                bp.m_Spellbook = IsekaiProtagonistSpellbook.Get().ToReference<BlueprintSpellbookReference>();
                 bp.m_EquipmentEntities = new KingmakerEquipmentEntityReference[0];
                 bp.m_StartingItems = new BlueprintItemReference[0];
                 bp.SkillPoints = 4;
@@ -126,27 +122,27 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.HideInUI = true;
                 });
             });
-            SpellBook.m_CharacterClass = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+            IsekaiProtagonistSpellbook.SetCharacterClass(IsekaiProtagonistClass);
 
             // Register Class
             Helpers.RegisterClass(IsekaiProtagonistClass);
         }
         public static void RegisterArchetype(BlueprintArchetype archetype)
         {
-            BlueprintCharacterClass IsekaiProtagonistClass = get();
+            BlueprintCharacterClass IsekaiProtagonistClass = Get();
             IsekaiProtagonistClass.m_Archetypes = IsekaiProtagonistClass.m_Archetypes.AppendToArray(archetype.ToReference<BlueprintArchetypeReference>());
         }
         public static void SetProgression(BlueprintProgression progression)
         {
-            BlueprintCharacterClass IsekaiProtagonistClass = get();
+            BlueprintCharacterClass IsekaiProtagonistClass = Get();
             IsekaiProtagonistClass.m_Progression = progression.ToReference<BlueprintProgressionReference>();
         }
         public static void SetDefaultBuild(BlueprintUnitFact prebuildFeatureList)
         {
-            BlueprintCharacterClass IsekaiProtagonistClass = get();
+            BlueprintCharacterClass IsekaiProtagonistClass = Get();
             IsekaiProtagonistClass.m_DefaultBuild = prebuildFeatureList.ToReference<BlueprintUnitFactReference>();
         }
-        public static BlueprintCharacterClass get()
+        public static BlueprintCharacterClass Get()
         {
             return Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
         }

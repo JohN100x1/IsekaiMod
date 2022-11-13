@@ -45,7 +45,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
             var DomainAnimalProgression = Resources.GetBlueprint<BlueprintProgression>("125af359f8bc9a145968b5d8fd8159b8");
             DomainAnimalProgression.m_Classes = DomainAnimalProgression.m_Classes.AddToArray(
                 new ClassWithLevel() {
-                    m_Class = IsekaiProtagonistClass.get().ToReference<BlueprintCharacterClassReference>(),
+                    m_Class = IsekaiProtagonistClass.Get().ToReference<BlueprintCharacterClassReference>(),
                     AdditionalLevel = 0
                 });
         }

@@ -888,7 +888,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 };
             });
         }
-        public static BlueprintSpellList get()
+        public static BlueprintSpellList Get()
         {
             return Resources.GetModBlueprint<BlueprintSpellList>("IsekaiProtagonistSpellList");
         }
