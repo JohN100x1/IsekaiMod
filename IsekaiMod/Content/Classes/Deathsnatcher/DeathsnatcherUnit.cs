@@ -184,12 +184,12 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     }
                 };
                 //Stats set for Tiny size
-                bp.Strength = 27;
-                bp.Dexterity = 25;
-                bp.Constitution = 36;
-                bp.Intelligence = 20;
-                bp.Wisdom = 25;
-                bp.Charisma = 28;
+                bp.Strength = 23;
+                bp.Dexterity = 21;
+                bp.Constitution = 32;
+                bp.Intelligence = 16;
+                bp.Wisdom = 21;
+                bp.Charisma = 24;
                 bp.Speed = new Feet(30);
                 bp.Skills = new BlueprintUnit.UnitSkills()
                 {
@@ -229,14 +229,16 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
             SmallPortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoader.LoadInternal("Portraits", "DeathsnatcherSmall.png", new Vector2Int(185, 242), TextureFormat.RGBA32);
             EyePortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoader.LoadInternal("Portraits", "DeathsnatcherPetEye.png", new Vector2Int(176, 24), TextureFormat.RGBA32);
 
+            // TODO: make deathsnatcher grow from small to medium that gives +10 boost to all attributes
+
             var DeathsnatcherFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherFeature", bp => {
                 bp.SetName("Deathsnatcher");
                 bp.SetDescription("Deathsnatchers dwell amid the ruins of fallen civilizations, where they play at being godlings worshiped by undead slaves. "
                     + "Though self-aggrandizing, deathsnatchers are known to give homage to (and claim descent from) the various demon lords of darkness, the desert, and undeath.\n"
                     + "{g|Encyclopedia:Size}Size{/g}: Medium\n{g|Encyclopedia:Speed}Speed{/g}: 30 ft.\n{g|Encyclopedia:Armor_Class}AC{/g}: +16 natural armor\n"
-                    + "{g|Encyclopedia:Attack}Attack{/g}: 1 bite ({g|Encyclopedia:Dice}2d6{/g}), 4 claws (1d6), 1 sting (1d4)\n{g|Encyclopedia:Ability_Scores}Ability scores{/g}: {g|Encyclopedia:Strength}Str{/g} 27, "
-                    + "{g|Encyclopedia:Dexterity}Dex{/g} 25, {g|Encyclopedia:Constitution}Con{/g} 36, {g|Encyclopedia:Intelligence}Int{/g} 20, {g|Encyclopedia:Wisdom}Wis{/g} 25, "
-                    + "{g|Encyclopedia:Charisma}Cha{/g} 28");
+                    + "{g|Encyclopedia:Attack}Attack{/g}: 1 bite ({g|Encyclopedia:Dice}2d6{/g}), 4 claws (1d6), 1 sting (1d4)\n{g|Encyclopedia:Ability_Scores}Ability scores{/g}: "
+                    + "{g|Encyclopedia:Strength}Str{/g} 23, {g|Encyclopedia:Dexterity}Dex{/g} 21, {g|Encyclopedia:Constitution}Con{/g} 32, {g|Encyclopedia:Intelligence}Int{/g} 16, "
+                    + "{g|Encyclopedia:Wisdom}Wis{/g} 21, {g|Encyclopedia:Charisma}Cha{/g} 24");
                 bp.m_Icon = null;
                 bp.AddComponent<AddPet>(c => {
                     c.Type = PetType.AnimalCompanion;
