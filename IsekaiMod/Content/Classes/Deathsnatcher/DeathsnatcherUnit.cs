@@ -5,11 +5,14 @@ using Kingmaker.AI.Blueprints;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
+using Kingmaker.Blueprints.Facts;
 using Kingmaker.Blueprints.Items.Weapons;
+using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
 using Kingmaker.Visual.HitSystem;
@@ -34,7 +37,14 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
         private static readonly BlueprintItemWeapon Sting1d4 = Resources.GetBlueprint<BlueprintItemWeapon>("df44800dbe7b4ba43ac6e0e435041ed8");
 
         // Unit Facts
+        private static readonly BlueprintUnitFact NaturalArmor16 = Resources.GetBlueprint<BlueprintUnitFact>("73a90b2a70d576f429ad401e7a5a8a4f");
+        private static readonly BlueprintFeature SpellResistance11PlusCR = Resources.GetBlueprint<BlueprintFeature>("205205053a2915d4782cf48dc0cc3c09");
+        private static readonly BlueprintFeature ImmunityToDeathEffects = Resources.GetBlueprint<BlueprintFeature>("41d5e076fcea3fa4a9158ffded9185f7");
+        private static readonly BlueprintFeature Airborne = Resources.GetBlueprint<BlueprintFeature>("70cffb448c132fa409e49156d013b175");
+        private static readonly BlueprintFeature DeathsnatcherEnergyDrainFeature = Resources.GetBlueprint<BlueprintFeature>("e4c3976c40072a747b1a9ba2d8f166f2");
         private static readonly BlueprintFeature NegativeEnergyAffinity = Resources.GetBlueprint<BlueprintFeature>("d5ee498e19722854198439629c1841a5");
+        private static readonly BlueprintFeature NegativeEnergyAssociation = Resources.GetBlueprint<BlueprintFeature>("5d6c8a31bbc195648af1bf95425b6a54");
+        private static readonly BlueprintFeature PlayfulDarkness_DispelFeature = Resources.GetBlueprint<BlueprintFeature>("6d6fc3df589dd8448aa2b7a0fdd55360");
 
         public static void Add()
         {
@@ -179,8 +189,8 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.Strength = 27;
                 bp.Dexterity = 25;
                 bp.Constitution = 36;
-                bp.Wisdom = 20;
-                bp.Intelligence = 25;
+                bp.Intelligence = 20;
+                bp.Wisdom = 25;
                 bp.Charisma = 28;
                 bp.Speed = new Feet(30);
                 bp.Skills = new BlueprintUnit.UnitSkills()
@@ -203,7 +213,14 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     DeathsnatcherSlotFeature.ToReference<BlueprintUnitFactReference>(),
                     MonstrousHumanoidType.ToReference<BlueprintUnitFactReference>(),
                     DeathsnatcherFact.ToReference<BlueprintUnitFactReference>(),
-                    NegativeEnergyAffinity.ToReference<BlueprintUnitFactReference>()
+                    Airborne.ToReference<BlueprintUnitFactReference>(),
+                    ImmunityToDeathEffects.ToReference<BlueprintUnitFactReference>(),
+                    SpellResistance11PlusCR.ToReference<BlueprintUnitFactReference>(),
+                    DeathsnatcherEnergyDrainFeature.ToReference<BlueprintUnitFactReference>(),
+                    NaturalArmor16.ToReference<BlueprintUnitFactReference>(),
+                    NegativeEnergyAffinity.ToReference<BlueprintUnitFactReference>(),
+                    NegativeEnergyAssociation.ToReference<BlueprintUnitFactReference>(),
+                    PlayfulDarkness_DispelFeature.ToReference<BlueprintUnitFactReference>(),
                 };
                 bp.IsCheater = false;
                 bp.IsFake = false;
@@ -217,7 +234,11 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
             var DeathsnatcherFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherFeature", bp => {
                 bp.SetName("Deathsnatcher");
                 bp.SetDescription("Deathsnatchers dwell amid the ruins of fallen civilizations, where they play at being godlings worshiped by undead slaves. "
-                    + "Though self-aggrandizing, deathsnatchers are known to give homage to (and claim descent from) the various demon lords of darkness, the desert, and undeath.");
+                    + "Though self-aggrandizing, deathsnatchers are known to give homage to (and claim descent from) the various demon lords of darkness, the desert, and undeath.\n"
+                    + "{g|Encyclopedia:Size}Size{/g}: Medium\n{g|Encyclopedia:Speed}Speed{/g}: 30 ft.\n{g|Encyclopedia:Armor_Class}AC{/g}: +16 natural armor\n"
+                    + "{g|Encyclopedia:Attack}Attack{/g}: bite ({g|Encyclopedia:Dice}2d6{/g}), 4 claws (1d6), 1 sting (1d4)\n{g|Encyclopedia:Ability_Scores}Ability scores{/g}: {g|Encyclopedia:Strength}Str{/g} 27, "
+                    + "{g|Encyclopedia:Dexterity}Dex{/g} 25, {g|Encyclopedia:Constitution}Con{/g} 36, {g|Encyclopedia:Intelligence}Int{/g} 20, {g|Encyclopedia:Wisdom}Wis{/g} 25, "
+                    + "{g|Encyclopedia:Charisma}Cha{/g} 28");
                 bp.m_Icon = null;
                 bp.AddComponent<AddPet>(c => {
                     c.Type = PetType.AnimalCompanion;

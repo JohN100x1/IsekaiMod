@@ -109,6 +109,7 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.HellknightSignifierSpellbookSelection.Patch();
 
                 // Deathsnatcher animal Companion
+                Features.Deathsnatcher.DeathSnatcherFastHealing.Add();
                 Classes.Deathsnatcher.DeathsnatcherClass.Add();
                 Classes.Deathsnatcher.DeathsnatcherClassProgression.Add();
                 Classes.Deathsnatcher.DeathsnatcherUnit.Add();

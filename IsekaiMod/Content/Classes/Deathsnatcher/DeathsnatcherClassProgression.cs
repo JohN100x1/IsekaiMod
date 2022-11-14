@@ -15,9 +15,12 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
 
         public static void Add()
         {
+            var Pounce = Resources.GetBlueprint<BlueprintFeature>("1a8149c09e0bdfc48a305ee6ac3729a8");
+            var DeathsnatcherSoulRendFeature = Resources.GetBlueprint<BlueprintFeature>("c8b468508a76c5140a9a2af00077753d");
             var ColdResistance30 = Resources.GetBlueprint<BlueprintFeature>("317b2de0512c81d47bb7895e44eddc60");
             var FireResistance30 = Resources.GetBlueprint<BlueprintFeature>("4c7bf052b24c61b4d8da4e42785f2ea3");
-            var ImmunityToDeathEffects = Resources.GetBlueprint<BlueprintFeature>("41d5e076fcea3fa4a9158ffded9185f7");
+
+            var DeathSnatcherFastHealing = Resources.GetModBlueprint<BlueprintFeature>("DeathSnatcherFastHealing");
 
             // Deathsnatcher Level Progression
             var DeathsnatcherCompanionProgression = Helpers.CreateBlueprint<BlueprintProgression>("DeathsnatcherCompanionProgression", bp => {
@@ -60,7 +63,10 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 };
             });
             DeathsnatcherClassProgression.LevelEntries = new LevelEntry[] {
-                Helpers.LevelEntry(1, ColdResistance30, FireResistance30, ImmunityToDeathEffects),
+                Helpers.LevelEntry(1, DeathsnatcherSoulRendFeature),
+                Helpers.LevelEntry(3, ColdResistance30, FireResistance30),
+                Helpers.LevelEntry(7, Pounce),
+                Helpers.LevelEntry(20, DeathSnatcherFastHealing),
             };
             DeathsnatcherClassProgression.UIGroups = new UIGroup[0];
             DeathsnatcherClassProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[0];
