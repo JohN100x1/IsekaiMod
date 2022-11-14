@@ -17,10 +17,10 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
         {
             var Pounce = Resources.GetBlueprint<BlueprintFeature>("1a8149c09e0bdfc48a305ee6ac3729a8");
             var DeathsnatcherSoulRendFeature = Resources.GetBlueprint<BlueprintFeature>("c8b468508a76c5140a9a2af00077753d");
-            var ColdResistance30 = Resources.GetBlueprint<BlueprintFeature>("317b2de0512c81d47bb7895e44eddc60");
-            var FireResistance30 = Resources.GetBlueprint<BlueprintFeature>("4c7bf052b24c61b4d8da4e42785f2ea3");
 
-            var DeathSnatcherFastHealing = Resources.GetModBlueprint<BlueprintFeature>("DeathSnatcherFastHealing");
+            var DeathsnatcherResistances = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherResistances");
+            var DeathsnatcherFastHealing = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherFastHealing");
+            var DeathsnatcherAnimateDeadFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherAnimateDeadFeature");
 
             // Deathsnatcher Level Progression
             var DeathsnatcherCompanionProgression = Helpers.CreateBlueprint<BlueprintProgression>("DeathsnatcherCompanionProgression", bp => {
@@ -63,13 +63,15 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 };
             });
             DeathsnatcherClassProgression.LevelEntries = new LevelEntry[] {
-                Helpers.LevelEntry(1, DeathsnatcherSoulRendFeature),
-                Helpers.LevelEntry(3, ColdResistance30, FireResistance30),
-                Helpers.LevelEntry(7, Pounce),
-                Helpers.LevelEntry(20, DeathSnatcherFastHealing),
+                Helpers.LevelEntry(1, DeathsnatcherResistances, DeathsnatcherSoulRendFeature),
+                Helpers.LevelEntry(4, Pounce),
+                Helpers.LevelEntry(7, DeathsnatcherAnimateDeadFeature),
+                Helpers.LevelEntry(20, DeathsnatcherFastHealing),
             };
             DeathsnatcherClassProgression.UIGroups = new UIGroup[0];
-            DeathsnatcherClassProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[0];
+            DeathsnatcherClassProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
+                DeathsnatcherResistances.ToReference<BlueprintFeatureBaseReference>()
+            };
 
             // Register Deathsnatcher Class Progression
             DeathsnatcherClass.SetProgression(DeathsnatcherClassProgression);

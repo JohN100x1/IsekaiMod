@@ -30,17 +30,15 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
         private static readonly BlueprintUnitAsksList Deathsnatcher_Barks = Resources.GetBlueprint<BlueprintUnitAsksList>("ec6a8faba9332024599becceb1da8a54");
 
         // Deathsnatcher Weapons
+        private static readonly BlueprintItemWeapon WeaponEmptyHand = Resources.GetBlueprint<BlueprintItemWeapon>("20375b5a0c9243d45966bd72c690ab74");
         private static readonly BlueprintItemWeapon Bite2d6 = Resources.GetBlueprint<BlueprintItemWeapon>("2abc1dc6172759c42971bd04b8c115cb");
         private static readonly BlueprintItemWeapon Claw1d6 = Resources.GetBlueprint<BlueprintItemWeapon>("65eb73689b94d894080d33a768cdf645");
         private static readonly BlueprintItemWeapon Sting1d4 = Resources.GetBlueprint<BlueprintItemWeapon>("df44800dbe7b4ba43ac6e0e435041ed8");
 
         // Unit Facts
         private static readonly BlueprintUnitFact NaturalArmor16 = Resources.GetBlueprint<BlueprintUnitFact>("73a90b2a70d576f429ad401e7a5a8a4f");
-        private static readonly BlueprintFeature SpellResistance11PlusCR = Resources.GetBlueprint<BlueprintFeature>("205205053a2915d4782cf48dc0cc3c09");
-        private static readonly BlueprintFeature ImmunityToDeathEffects = Resources.GetBlueprint<BlueprintFeature>("41d5e076fcea3fa4a9158ffded9185f7");
         private static readonly BlueprintFeature Airborne = Resources.GetBlueprint<BlueprintFeature>("70cffb448c132fa409e49156d013b175");
         private static readonly BlueprintFeature DeathsnatcherEnergyDrainFeature = Resources.GetBlueprint<BlueprintFeature>("e4c3976c40072a747b1a9ba2d8f166f2");
-        private static readonly BlueprintFeature NegativeEnergyAffinity = Resources.GetBlueprint<BlueprintFeature>("d5ee498e19722854198439629c1841a5");
         private static readonly BlueprintFeature NegativeEnergyAssociation = Resources.GetBlueprint<BlueprintFeature>("5d6c8a31bbc195648af1bf95425b6a54");
         private static readonly BlueprintFeature PlayfulDarkness_DispelFeature = Resources.GetBlueprint<BlueprintFeature>("6d6fc3df589dd8448aa2b7a0fdd55360");
 
@@ -171,12 +169,19 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.m_Brain = DeathsnatcherBrain.ToReference<BlueprintBrainReference>();
                 bp.Body = new BlueprintUnit.UnitBody()
                 {
-                    DisableHands = true,
+                    DisableHands = false,
                     ActiveHandSet = 0,
+                    m_EmptyHandWeapon = WeaponEmptyHand.ToReference<BlueprintItemWeaponReference>(),
+                    m_PrimaryHand = Bite2d6.ToReference<BlueprintItemEquipmentHandReference>(),
+                    m_SecondaryHand = Claw1d6.ToReference<BlueprintItemEquipmentHandReference>(),
+                    m_PrimaryHandAlternative1 = Bite2d6.ToReference<BlueprintItemEquipmentHandReference>(),
+                    m_SecondaryHandAlternative1 = Claw1d6.ToReference<BlueprintItemEquipmentHandReference>(),
+                    m_PrimaryHandAlternative2 = Bite2d6.ToReference<BlueprintItemEquipmentHandReference>(),
+                    m_SecondaryHandAlternative2 = Claw1d6.ToReference<BlueprintItemEquipmentHandReference>(),
+                    m_PrimaryHandAlternative3 = Bite2d6.ToReference<BlueprintItemEquipmentHandReference>(),
+                    m_SecondaryHandAlternative3 = Claw1d6.ToReference<BlueprintItemEquipmentHandReference>(),
                     m_AdditionalLimbs = new BlueprintItemWeaponReference[]
                     {
-                        Bite2d6.ToReference<BlueprintItemWeaponReference>(),
-                        Claw1d6.ToReference<BlueprintItemWeaponReference>(),
                         Claw1d6.ToReference<BlueprintItemWeaponReference>(),
                         Claw1d6.ToReference<BlueprintItemWeaponReference>(),
                         Claw1d6.ToReference<BlueprintItemWeaponReference>(),
@@ -212,11 +217,8 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     MonstrousHumanoidType.ToReference<BlueprintUnitFactReference>(),
                     DeathsnatcherFact.ToReference<BlueprintUnitFactReference>(),
                     Airborne.ToReference<BlueprintUnitFactReference>(),
-                    ImmunityToDeathEffects.ToReference<BlueprintUnitFactReference>(),
-                    SpellResistance11PlusCR.ToReference<BlueprintUnitFactReference>(),
                     DeathsnatcherEnergyDrainFeature.ToReference<BlueprintUnitFactReference>(),
                     NaturalArmor16.ToReference<BlueprintUnitFactReference>(),
-                    NegativeEnergyAffinity.ToReference<BlueprintUnitFactReference>(),
                     NegativeEnergyAssociation.ToReference<BlueprintUnitFactReference>(),
                     PlayfulDarkness_DispelFeature.ToReference<BlueprintUnitFactReference>(),
                 };
@@ -230,6 +232,10 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
             EyePortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoader.LoadInternal("Portraits", "DeathsnatcherPetEye.png", new Vector2Int(176, 24), TextureFormat.RGBA32);
 
             // TODO: make deathsnatcher grow from small to medium that gives +10 boost to all attributes
+            // TODO: add deathsnatcher race to unit
+            // TODO: add command undead as a spell-like ability
+            // TODO: add create undead as a spell-like ability
+            // TODO: add finger of death as a spell-like ability
 
             var DeathsnatcherFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherFeature", bp => {
                 bp.SetName("Deathsnatcher");

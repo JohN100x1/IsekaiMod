@@ -40,7 +40,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.NotRecommendedAttributes = new StatType[0];
                 bp.m_EquipmentEntities = new KingmakerEquipmentEntityReference[0];
                 bp.m_StartingItems = new BlueprintItemReference[0];
-                bp.SkillPoints = 4;
+                bp.SkillPoints = 0;
                 bp.ClassSkills = new StatType[4] {
                     StatType.SkillAthletics,
                     StatType.SkillMobility,
