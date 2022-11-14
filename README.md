@@ -77,6 +77,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.
+	- `Isekai Vampire` (Dhampir Heritage): A powerful heritage for Dhampir.
 - New Deities
 	- `Truck-kun`: A god of transportation.
 	- `Aqua`: A goddess of water.
