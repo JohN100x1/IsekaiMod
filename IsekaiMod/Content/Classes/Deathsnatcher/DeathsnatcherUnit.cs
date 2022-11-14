@@ -7,12 +7,10 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.Blueprints.Items.Weapons;
-using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
 using Kingmaker.Visual.HitSystem;
@@ -236,7 +234,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.SetDescription("Deathsnatchers dwell amid the ruins of fallen civilizations, where they play at being godlings worshiped by undead slaves. "
                     + "Though self-aggrandizing, deathsnatchers are known to give homage to (and claim descent from) the various demon lords of darkness, the desert, and undeath.\n"
                     + "{g|Encyclopedia:Size}Size{/g}: Medium\n{g|Encyclopedia:Speed}Speed{/g}: 30 ft.\n{g|Encyclopedia:Armor_Class}AC{/g}: +16 natural armor\n"
-                    + "{g|Encyclopedia:Attack}Attack{/g}: bite ({g|Encyclopedia:Dice}2d6{/g}), 4 claws (1d6), 1 sting (1d4)\n{g|Encyclopedia:Ability_Scores}Ability scores{/g}: {g|Encyclopedia:Strength}Str{/g} 27, "
+                    + "{g|Encyclopedia:Attack}Attack{/g}: 1 bite ({g|Encyclopedia:Dice}2d6{/g}), 4 claws (1d6), 1 sting (1d4)\n{g|Encyclopedia:Ability_Scores}Ability scores{/g}: {g|Encyclopedia:Strength}Str{/g} 27, "
                     + "{g|Encyclopedia:Dexterity}Dex{/g} 25, {g|Encyclopedia:Constitution}Con{/g} 36, {g|Encyclopedia:Intelligence}Int{/g} 20, {g|Encyclopedia:Wisdom}Wis{/g} 25, "
                     + "{g|Encyclopedia:Charisma}Cha{/g} 28");
                 bp.m_Icon = null;
