@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - Fixed Loremaster to work with Isekai Protagonist and Villain Spellbook.
+- Fixed Hellknight Signifier to work with Isekai Protagonist and Villain Spellbook.
 
 ## [1.8.0] - 2022-11-13
 ### Added
