@@ -110,9 +110,11 @@ namespace IsekaiMod.Content
 
                 // Deathsnatcher animal Companion
                 Classes.Deathsnatcher.DeathsnatcherClass.Add();
-                Features.Deathsnatcher.DeathsnatcherResistances.Add();
                 Features.Deathsnatcher.DeathsnatcherAnimateDeadResource.Add();
+                Features.Deathsnatcher.DeathsnatcherCreateUndeadResource.Add();
+                Features.Deathsnatcher.DeathsnatcherResistances.Add();
                 Features.Deathsnatcher.DeathsnatcherAnimateDead.Add();
+                Features.Deathsnatcher.DeathsnatcherCreateUndead.Add();
                 Features.Deathsnatcher.DeathsnatcherFastHealing.Add();
                 Classes.Deathsnatcher.DeathsnatcherClassProgression.Add();
                 Classes.Deathsnatcher.DeathsnatcherUnit.Add();

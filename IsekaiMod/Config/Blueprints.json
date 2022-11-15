@@ -210,8 +210,11 @@
     "DeathsnatcherFastHealing": "2592a3a7-3e5c-4904-a278-5c2631a3d9a6",
     "DeathsnatcherResistances": "a81a32ae-b3de-4b4b-9259-485ebe600877",
     "DeathsnatcherAnimateDeadResource": "8e4456b8-42db-4a64-ba8c-4a65d1e041e7",
-    "DeathsnatcherAnimateDeadFeature": "6d1d10d8-f55d-4b3a-94ce-8080884fff1f",
     "DeathsnatcherAnimateDeadAbility": "70519d59-f1e4-496e-956e-f123a6a99b74",
+    "DeathsnatcherAnimateDeadFeature": "6d1d10d8-f55d-4b3a-94ce-8080884fff1f",
+    "DeathsnatcherCreateUndeadResource": "443fd23d-6668-4f88-8c54-36cb9e4cf9b2",
+    "DeathsnatcherCreateUndeadAbility": "778b814c-1cef-404f-aa65-510202f14771",
+    "DeathsnatcherCreateUndeadFeature": "d0f0a30a-a31c-4387-a281-d20b477312b6",
 
     // Dialogue
     "AnswerIsekai": "068f20c2-6f38-4a36-8480-67a3df51249d"

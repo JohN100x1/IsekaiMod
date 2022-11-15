@@ -15,12 +15,22 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
 
         public static void Add()
         {
+            // TODO: add missing buffs for deathsnatcher
+            // TODO: add scaling natural armor, strength and dexterity (like animal companion)
+            // TODO: make deathsnatcher grow from small to medium that gives +10 boost to all attributes
+            // TODO: add command undead as a spell-like ability
+            // TODO: add finger of death as a spell-like ability
+
+            // TODO: re-order the features in the progression. DONT FORGET BEFORE RELEASE
+
             var Pounce = Resources.GetBlueprint<BlueprintFeature>("1a8149c09e0bdfc48a305ee6ac3729a8");
+            var DeathsnatcherPoisonFeature = Resources.GetBlueprint<BlueprintFeature>("9547e5db05fa6f143a1867c93b258fe0");
             var DeathsnatcherSoulRendFeature = Resources.GetBlueprint<BlueprintFeature>("c8b468508a76c5140a9a2af00077753d");
 
             var DeathsnatcherResistances = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherResistances");
             var DeathsnatcherFastHealing = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherFastHealing");
             var DeathsnatcherAnimateDeadFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherAnimateDeadFeature");
+            var DeathsnatcherCreateUndeadFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherCreateUndeadFeature");
 
             // Deathsnatcher Level Progression
             var DeathsnatcherCompanionProgression = Helpers.CreateBlueprint<BlueprintProgression>("DeathsnatcherCompanionProgression", bp => {
@@ -63,7 +73,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 };
             });
             DeathsnatcherClassProgression.LevelEntries = new LevelEntry[] {
-                Helpers.LevelEntry(1, DeathsnatcherResistances, DeathsnatcherSoulRendFeature),
+                Helpers.LevelEntry(1, DeathsnatcherResistances, DeathsnatcherSoulRendFeature, DeathsnatcherPoisonFeature, DeathsnatcherCreateUndeadFeature),
                 Helpers.LevelEntry(4, Pounce),
                 Helpers.LevelEntry(7, DeathsnatcherAnimateDeadFeature),
                 Helpers.LevelEntry(20, DeathsnatcherFastHealing),
