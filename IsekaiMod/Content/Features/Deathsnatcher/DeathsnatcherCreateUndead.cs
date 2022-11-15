@@ -73,6 +73,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Reach | Metamagic.Quicken | Metamagic.Extend | Metamagic.CompletelyNormal;
                 bp.m_TargetMapObjects = false;
+                bp.m_IsFullRoundAction = true;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
                 bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
             });

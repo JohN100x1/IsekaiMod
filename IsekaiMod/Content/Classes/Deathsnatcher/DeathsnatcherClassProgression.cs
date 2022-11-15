@@ -73,12 +73,15 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 };
             });
             DeathsnatcherClassProgression.LevelEntries = new LevelEntry[] {
-                Helpers.LevelEntry(1, DeathsnatcherResistances, DeathsnatcherSoulRendFeature, DeathsnatcherPoisonFeature, DeathsnatcherCreateUndeadFeature),
+                Helpers.LevelEntry(1, DeathsnatcherResistances, DeathsnatcherSoulRendFeature, DeathsnatcherPoisonFeature),
                 Helpers.LevelEntry(4, Pounce),
                 Helpers.LevelEntry(7, DeathsnatcherAnimateDeadFeature),
+                Helpers.LevelEntry(14, DeathsnatcherCreateUndeadFeature),
                 Helpers.LevelEntry(20, DeathsnatcherFastHealing),
             };
-            DeathsnatcherClassProgression.UIGroups = new UIGroup[0];
+            DeathsnatcherClassProgression.UIGroups = new UIGroup[] {
+                Helpers.CreateUIGroup(DeathsnatcherAnimateDeadFeature, DeathsnatcherCreateUndeadFeature),
+            };
             DeathsnatcherClassProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
                 DeathsnatcherResistances.ToReference<BlueprintFeatureBaseReference>()
             };
