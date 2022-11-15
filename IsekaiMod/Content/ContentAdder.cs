@@ -113,6 +113,7 @@ namespace IsekaiMod.Content
                 Features.Deathsnatcher.DeathsnatcherAnimateDeadResource.Add();
                 Features.Deathsnatcher.DeathsnatcherCreateUndeadResource.Add();
                 Features.Deathsnatcher.DeathsnatcherResistances.Add();
+                Features.Deathsnatcher.DeathsnatcherCommandUndead.Add();
                 Features.Deathsnatcher.DeathsnatcherAnimateDead.Add();
                 Features.Deathsnatcher.DeathsnatcherCreateUndead.Add();
                 Features.Deathsnatcher.DeathsnatcherFastHealing.Add();

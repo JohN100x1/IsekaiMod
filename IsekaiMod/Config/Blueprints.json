@@ -209,6 +209,8 @@
     "DeathsnatcherFeature": "c7f80655-70dd-4c86-8c47-7b553ccbc662",
     "DeathsnatcherFastHealing": "2592a3a7-3e5c-4904-a278-5c2631a3d9a6",
     "DeathsnatcherResistances": "a81a32ae-b3de-4b4b-9259-485ebe600877",
+    "DeathsnatcherCommandUndeadAbility": "cd2c1ae4-f981-4f6d-9f52-55cebac81747",
+    "DeathsnatcherCommandUndeadFeature": "5ea8dedf-7d32-4fdb-af64-73b61ad80f31",
     "DeathsnatcherAnimateDeadResource": "8e4456b8-42db-4a64-ba8c-4a65d1e041e7",
     "DeathsnatcherAnimateDeadAbility": "70519d59-f1e4-496e-956e-f123a6a99b74",
     "DeathsnatcherAnimateDeadFeature": "6d1d10d8-f55d-4b3a-94ce-8080884fff1f",

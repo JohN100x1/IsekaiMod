@@ -27,6 +27,23 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
 
         public static void Add()
         {
+            var DeathsnatcherCreateUndeadResource = Helpers.CreateBlueprint<BlueprintAbilityResource>("DeathsnatcherCreateUndeadResource", bp => {
+                bp.m_MaxAmount = new BlueprintAbilityResource.Amount
+                {
+                    BaseValue = 1,
+                    IncreasedByLevel = false,
+                    LevelIncrease = 1,
+                    IncreasedByLevelStartPlusDivStep = false,
+                    StartingLevel = 0,
+                    StartingIncrease = 0,
+                    LevelStep = 0,
+                    PerStepIncrease = 0,
+                    MinClassLevelIncrease = 0,
+                    OtherClassesModifier = 0,
+                    IncreasedByStat = false,
+                    ResourceBonusStat = StatType.Unknown,
+                };
+            });
             var DeathsnatcherCreateUndeadAbility = Helpers.CreateBlueprint<BlueprintAbility>("DeathsnatcherCreateUndeadAbility", bp => {
                 bp.SetName("Create Undead");
                 bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons a graveknight or a guardian armor. It appears where you designate and acts according to its "
@@ -56,7 +73,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     c.m_Class = new BlueprintCharacterClassReference[] { DeathsnatcherClass.GetReference() };
                 });
                 bp.AddComponent<AbilityResourceLogic>(c => {
-                    c.m_RequiredResource = DeathsnatcherCreateUndeadResource.GetReference();
+                    c.m_RequiredResource = DeathsnatcherCreateUndeadResource.ToReference<BlueprintAbilityResourceReference>();
                     c.m_IsSpendResource = true;
                 });
                 bp.Type = AbilityType.SpellLike;
@@ -83,7 +100,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 bp.m_Icon = Icon_CreateUndead;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddAbilityResources>(c => {
-                    c.m_Resource = DeathsnatcherCreateUndeadResource.GetReference();
+                    c.m_Resource = DeathsnatcherCreateUndeadResource.ToReference<BlueprintAbilityResourceReference>();
                     c.RestoreAmount = true;
                 });
                 bp.AddComponent<AddFacts>(c => {
