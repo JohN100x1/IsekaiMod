@@ -57,12 +57,10 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 bp.m_Icon = Icon_AnimateDead;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Unknown;
-                    c.Actions = Helpers.CreateActionList(
-                    new ContextActionSpawnMonster()
-                    {
-                        m_Blueprint = SummonedSkeletonChampion.ToReference<BlueprintUnitReference>(),
-                        m_SummonPool = SummonMonsterPool.ToReference<BlueprintSummonPoolReference>(),
-                        DurationValue = new ContextDurationValue()
+                    c.Actions = ActionFlow.DoSingle<ContextActionSpawnMonster>(c => {
+                        c.m_Blueprint = SummonedSkeletonChampion.ToReference<BlueprintUnitReference>();
+                        c.m_SummonPool = SummonMonsterPool.ToReference<BlueprintSummonPoolReference>();
+                        c.DurationValue = new ContextDurationValue()
                         {
                             Rate = DurationRate.Rounds,
                             DiceType = DiceType.Zero,
@@ -72,34 +70,32 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                                 ValueType = ContextValueType.Rank,
                                 ValueRank = AbilityRankType.Default
                             }
-                        },
-                        CountValue = new ContextDiceValue()
+                        };
+                        c.CountValue = new ContextDiceValue()
                         {
                             DiceType = DiceType.D4,
                             DiceCountValue = 1,
                             BonusValue = 2
-                        },
-                        LevelValue = 0,
-                        AfterSpawn = Helpers.CreateActionList(
-                            new ContextActionApplyBuff()
+                        };
+                        c.LevelValue = 0;
+                        c.AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
+                            c.Permanent = true;
+                            c.m_Buff = SummonedCreatureSpawnMonsterIV_VI.ToReference<BlueprintBuffReference>();
+                            c.DurationValue = new ContextDurationValue()
                             {
-                                Permanent = true,
-                                m_Buff = SummonedCreatureSpawnMonsterIV_VI.ToReference<BlueprintBuffReference>(),
-                                DurationValue = new ContextDurationValue()
-                                {
-                                    Rate = DurationRate.Rounds,
-                                    DiceType = DiceType.Zero,
-                                    DiceCountValue = 0,
-                                    BonusValue = 0,
-                                    m_IsExtendable = true
-                                },
-                                IsNotDispelable = true,
-                                UseDurationSeconds = false,
-                                DurationSeconds = 0,
-                                IsFromSpell = false,
-                                ToCaster = false,
-                                AsChild = false,
-                            })
+                                Rate = DurationRate.Rounds,
+                                DiceType = DiceType.Zero,
+                                DiceCountValue = 0,
+                                BonusValue = 0,
+                                m_IsExtendable = true
+                            };
+                            c.IsNotDispelable = true;
+                            c.UseDurationSeconds = false;
+                            c.DurationSeconds = 0;
+                            c.IsFromSpell = false;
+                            c.ToCaster = false;
+                            c.AsChild = false;
+                        });
                     });
                 });
                 bp.AddComponent<SpellComponent>(c => {

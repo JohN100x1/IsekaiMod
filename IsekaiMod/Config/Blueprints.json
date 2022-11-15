@@ -217,6 +217,9 @@
     "DeathsnatcherCreateUndeadResource": "443fd23d-6668-4f88-8c54-36cb9e4cf9b2",
     "DeathsnatcherCreateUndeadAbility": "778b814c-1cef-404f-aa65-510202f14771",
     "DeathsnatcherCreateUndeadFeature": "d0f0a30a-a31c-4387-a281-d20b477312b6",
+    "DeathsnatcherFingerOfDeathResource": "41c07e77-acd9-4690-99d1-2474b45ed83b",
+    "DeathsnatcherFingerOfDeathAbility": "8c87b09b-3b9c-49c1-8957-87734de017c9",
+    "DeathsnatcherFingerOfDeathFeature": "ffa4c9ae-228f-4ee6-9d74-cce557472bf4",
 
     // Dialogue
     "AnswerIsekai": "068f20c2-6f38-4a36-8480-67a3df51249d"

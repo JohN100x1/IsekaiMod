@@ -32,6 +32,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
             var DeathsnatcherCommandUndeadFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherCommandUndeadFeature");
             var DeathsnatcherAnimateDeadFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherAnimateDeadFeature");
             var DeathsnatcherCreateUndeadFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherCreateUndeadFeature");
+            var DeathsnatcherFingerOfDeathFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherFingerOfDeathFeature");
 
             // Deathsnatcher Level Progression
             var DeathsnatcherCompanionProgression = Helpers.CreateBlueprint<BlueprintProgression>("DeathsnatcherCompanionProgression", bp => {
@@ -77,11 +78,12 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 Helpers.LevelEntry(1, DeathsnatcherResistances, DeathsnatcherSoulRendFeature, DeathsnatcherPoisonFeature),
                 Helpers.LevelEntry(4, DeathsnatcherCommandUndeadFeature, Pounce),
                 Helpers.LevelEntry(7, DeathsnatcherAnimateDeadFeature),
-                Helpers.LevelEntry(14, DeathsnatcherCreateUndeadFeature),
+                Helpers.LevelEntry(13, DeathsnatcherCreateUndeadFeature),
+                Helpers.LevelEntry(16, DeathsnatcherFingerOfDeathFeature),
                 Helpers.LevelEntry(20, DeathsnatcherFastHealing),
             };
             DeathsnatcherClassProgression.UIGroups = new UIGroup[] {
-                Helpers.CreateUIGroup(DeathsnatcherCommandUndeadFeature, DeathsnatcherAnimateDeadFeature, DeathsnatcherCreateUndeadFeature),
+                Helpers.CreateUIGroup(DeathsnatcherCommandUndeadFeature, DeathsnatcherAnimateDeadFeature, DeathsnatcherCreateUndeadFeature, DeathsnatcherFingerOfDeathFeature),
             };
             DeathsnatcherClassProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
                 DeathsnatcherResistances.ToReference<BlueprintFeatureBaseReference>()

@@ -7,6 +7,7 @@ using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -114,7 +115,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     c.Descriptor = SpellDescriptor.UndeadControl;
                 });
                 bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new Kingmaker.ResourceLinks.PrefabLink() { AssetId = "cbfe312cb8e63e240a859efaad8e467c" };
+                    c.PrefabLink = new PrefabLink() { AssetId = "cbfe312cb8e63e240a859efaad8e467c" };
                     c.Time = AbilitySpawnFxTime.OnApplyEffect;
                     c.Anchor = AbilitySpawnFxAnchor.SelectedTarget;
                     c.WeaponTarget = AbilitySpawnFxWeaponTarget.None;
@@ -156,7 +157,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
             });
             var DeathsnatcherCommandUndeadFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherCommandUndeadFeature", bp => {
                 bp.SetName("Command Undead");
-                bp.SetDescription("At 3rd level, the Deathsnatcher gains Command Undead as a spell-like ability any number of times per day.");
+                bp.SetDescription("At 4th level, the Deathsnatcher gains Command Undead as a spell-like ability any number of times per day.");
                 bp.m_Icon = Icon_CommandUndead;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
