@@ -77,7 +77,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Villain
                     c.Stat = StatType.Strength;
                     c.Value = 2;
                 });
-                bp.AddComponent<AddStatBonus>(c => {
+                bp.AddComponent<AddGenericStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Size;
                     c.Stat = StatType.Dexterity;
                     c.Value = -2;

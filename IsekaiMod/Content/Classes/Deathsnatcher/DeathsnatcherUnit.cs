@@ -43,6 +43,8 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
 
         public static void Add()
         {
+            var DeathsnatcherSizeBaby = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherSizeBaby");
+
             var DeathsnatcherSlotFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherSlotFeature", bp => {
                 bp.SetName("Feature not available");
                 bp.AddComponent<LockEquipmentSlot>(c => {
@@ -215,7 +217,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     DeathsnatcherSlotFeature.ToReference<BlueprintUnitFactReference>(),
                     MonstrousHumanoidType.ToReference<BlueprintUnitFactReference>(),
                     DeathsnatcherFact.ToReference<BlueprintUnitFactReference>(),
-                    NaturalArmor16.ToReference<BlueprintUnitFactReference>(),
+                    DeathsnatcherSizeBaby.ToReference<BlueprintUnitFactReference>(),
 
                     // TODO: convert to deathsnatcher class
                     Airborne.ToReference<BlueprintUnitFactReference>(),
@@ -235,10 +237,11 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.SetName("Deathsnatcher");
                 bp.SetDescription("Deathsnatchers dwell amid the ruins of fallen civilizations, where they play at being godlings worshiped by undead slaves. "
                     + "Though self-aggrandizing, deathsnatchers are known to give homage to (and claim descent from) the various demon lords of darkness, the desert, and undeath.\n"
-                    + "{g|Encyclopedia:Size}Size{/g}: Medium\n{g|Encyclopedia:Speed}Speed{/g}: 30 ft.\n{g|Encyclopedia:Armor_Class}AC{/g}: +16 natural armor\n"
+                    + "{g|Encyclopedia:Size}Size{/g}: Tiny\n{g|Encyclopedia:Speed}Speed{/g}: 30 ft.\n{g|Encyclopedia:Armor_Class}AC{/g}: +10 natural armor\n"
                     + "{g|Encyclopedia:Attack}Attack{/g}: 1 bite ({g|Encyclopedia:Dice}2d6{/g}), 4 claws (1d6), 1 sting (1d4)\n{g|Encyclopedia:Ability_Scores}Ability scores{/g}: "
-                    + "{g|Encyclopedia:Strength}Str{/g} 23, {g|Encyclopedia:Dexterity}Dex{/g} 21, {g|Encyclopedia:Constitution}Con{/g} 32, {g|Encyclopedia:Intelligence}Int{/g} 16, "
-                    + "{g|Encyclopedia:Wisdom}Wis{/g} 21, {g|Encyclopedia:Charisma}Cha{/g} 24");
+                    + "{g|Encyclopedia:Strength}Str{/g} 19, {g|Encyclopedia:Dexterity}Dex{/g} 23, {g|Encyclopedia:Constitution}Con{/g} 30, {g|Encyclopedia:Intelligence}Int{/g} 16, "
+                    + "{g|Encyclopedia:Wisdom}Wis{/g} 21, {g|Encyclopedia:Charisma}Cha{/g} 24\n"
+                    + "At 4th level size becomes Medium, Str +4, Dex -2, Con +2, +6 natural armor, gains pounce.");
                 bp.m_Icon = null;
                 bp.AddComponent<AddPet>(c => {
                     c.Type = PetType.AnimalCompanion;
