@@ -15,16 +15,17 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
 
         public static void Add()
         {
-            // TODO: find out why sting attack doesn't work
+            // TODO: fix baby deathsnatcher size bonus to attacks
+            // TODO: test baby deathsnatcher growth
+            // TODO: test finger of death
 
             // TODO: add missing buffs for deathsnatcher
             // TODO: add scaling natural armor, strength and dexterity (like animal companion)
-            // TODO: make deathsnatcher grow from small to medium that gives +10 boost to all attributes
 
             // 10th level feature
             // TODO: add feature to increase animate dead uses to 10 at 10th level
 
-            // 19t level feature
+            // 19th level feature
             // TODO: add feature to increase animate dead uses to infinity at 19th level
             // TODO: add feature to increase create undead uses to 3 at 19th level
             // TODO: add feature to increase finger of death uses to 3 at 19th level

@@ -5,7 +5,6 @@ using Kingmaker.AI.Blueprints;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
-using Kingmaker.Blueprints.Facts;
 using Kingmaker.Blueprints.Items.Weapons;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
@@ -36,7 +35,6 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
         private static readonly BlueprintItemWeapon Sting1d4 = Resources.GetBlueprint<BlueprintItemWeapon>("df44800dbe7b4ba43ac6e0e435041ed8");
 
         // Unit Facts
-        private static readonly BlueprintUnitFact NaturalArmor16 = Resources.GetBlueprint<BlueprintUnitFact>("73a90b2a70d576f429ad401e7a5a8a4f");
         private static readonly BlueprintFeature Airborne = Resources.GetBlueprint<BlueprintFeature>("70cffb448c132fa409e49156d013b175");
         private static readonly BlueprintFeature DeathsnatcherEnergyDrainFeature = Resources.GetBlueprint<BlueprintFeature>("e4c3976c40072a747b1a9ba2d8f166f2");
         private static readonly BlueprintFeature NegativeEnergyAssociation = Resources.GetBlueprint<BlueprintFeature>("5d6c8a31bbc195648af1bf95425b6a54");
@@ -174,19 +172,19 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     ActiveHandSet = 0,
                     m_EmptyHandWeapon = WeaponEmptyHand.ToReference<BlueprintItemWeaponReference>(),
                     m_PrimaryHand = Bite2d6.ToReference<BlueprintItemEquipmentHandReference>(),
-                    m_SecondaryHand = Claw1d6.ToReference<BlueprintItemEquipmentHandReference>(),
+                    m_SecondaryHand = Sting1d4.ToReference<BlueprintItemEquipmentHandReference>(),
                     m_PrimaryHandAlternative1 = Bite2d6.ToReference<BlueprintItemEquipmentHandReference>(),
-                    m_SecondaryHandAlternative1 = Claw1d6.ToReference<BlueprintItemEquipmentHandReference>(),
+                    m_SecondaryHandAlternative1 = Sting1d4.ToReference<BlueprintItemEquipmentHandReference>(),
                     m_PrimaryHandAlternative2 = Bite2d6.ToReference<BlueprintItemEquipmentHandReference>(),
-                    m_SecondaryHandAlternative2 = Claw1d6.ToReference<BlueprintItemEquipmentHandReference>(),
+                    m_SecondaryHandAlternative2 = Sting1d4.ToReference<BlueprintItemEquipmentHandReference>(),
                     m_PrimaryHandAlternative3 = Bite2d6.ToReference<BlueprintItemEquipmentHandReference>(),
-                    m_SecondaryHandAlternative3 = Claw1d6.ToReference<BlueprintItemEquipmentHandReference>(),
+                    m_SecondaryHandAlternative3 = Sting1d4.ToReference<BlueprintItemEquipmentHandReference>(),
                     m_AdditionalLimbs = new BlueprintItemWeaponReference[]
                     {
                         Claw1d6.ToReference<BlueprintItemWeaponReference>(),
                         Claw1d6.ToReference<BlueprintItemWeaponReference>(),
                         Claw1d6.ToReference<BlueprintItemWeaponReference>(),
-                        Sting1d4.ToReference<BlueprintItemWeaponReference>(),
+                        Claw1d6.ToReference<BlueprintItemWeaponReference>(),
                     }
                 };
                 //Stats set for Tiny size
