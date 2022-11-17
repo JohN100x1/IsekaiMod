@@ -18,15 +18,14 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
             // TODO: fix baby deathsnatcher size bonus to attacks (feature doesn't seem to get removed)
             // TODO: test baby deathsnatcher growth
 
-            // TODO: add wrapper feature for the deathsnatcher poison feature
             // TODO: add missing buffs for deathsnatcher
             // TODO: add scaling natural armor, strength and dexterity (like animal companion)
 
             // TODO: re-order the features in the progression. DONT FORGET BEFORE RELEASE
 
             var Pounce = Resources.GetBlueprint<BlueprintFeature>("1a8149c09e0bdfc48a305ee6ac3729a8");
-            var DeathsnatcherPoisonFeature = Resources.GetBlueprint<BlueprintFeature>("9547e5db05fa6f143a1867c93b258fe0");
             var DeathsnatcherSoulRendFeature = Resources.GetBlueprint<BlueprintFeature>("c8b468508a76c5140a9a2af00077753d");
+            var DeathsnatcherPoisonSting = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherPoisonSting");
 
             var DeathsnatcherResistances = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherResistances");
             var DeathsnatcherFastHealing = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherFastHealing");
@@ -78,19 +77,20 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 };
             });
             DeathsnatcherClassProgression.LevelEntries = new LevelEntry[] {
-                Helpers.LevelEntry(1, DeathsnatcherResistances, DeathsnatcherCommandUndeadFeature, DeathsnatcherPoisonFeature),
+                Helpers.LevelEntry(1, DeathsnatcherResistances, DeathsnatcherCommandUndeadFeature),
                 Helpers.LevelEntry(3, DeathsnatcherAnimateDeadAdditionalUse),
                 Helpers.LevelEntry(4, Pounce),
                 Helpers.LevelEntry(7, DeathsnatcherAnimateDeadFeature),
-                Helpers.LevelEntry(10, DeathsnatcherSoulRendFeature),
+                Helpers.LevelEntry(10, DeathsnatcherPoisonSting),
                 Helpers.LevelEntry(13, DeathsnatcherCreateUndeadFeature),
+                Helpers.LevelEntry(15, DeathsnatcherSoulRendFeature),
                 Helpers.LevelEntry(16, DeathsnatcherFingerOfDeathFeature),
                 Helpers.LevelEntry(19, DeathsnatcherUndeadMaster),
                 Helpers.LevelEntry(20, DeathsnatcherFastHealing),
             };
             DeathsnatcherClassProgression.UIGroups = new UIGroup[] {
                 Helpers.CreateUIGroup(DeathsnatcherCommandUndeadFeature, DeathsnatcherAnimateDeadFeature, DeathsnatcherAnimateDeadAdditionalUse, DeathsnatcherCreateUndeadFeature, DeathsnatcherFingerOfDeathFeature, DeathsnatcherUndeadMaster),
-                Helpers.CreateUIGroup(DeathsnatcherResistances, Pounce, DeathsnatcherSoulRendFeature, DeathsnatcherFastHealing),
+                Helpers.CreateUIGroup(DeathsnatcherResistances, Pounce, DeathsnatcherPoisonSting, DeathsnatcherSoulRendFeature, DeathsnatcherFastHealing),
             };
             DeathsnatcherClassProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
                 DeathsnatcherResistances.ToReference<BlueprintFeatureBaseReference>()
