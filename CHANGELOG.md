@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Changed Metamagic abilities to have more than one active at a time.
 ### Fixed
 - Fixed Loremaster to work with Isekai Protagonist and Villain Spellbook.
 - Fixed Hellknight Signifier to work with Isekai Protagonist and Villain Spellbook.

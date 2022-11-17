@@ -35,7 +35,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.SetDescription("Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat.");
                 bp.m_Icon = Icon_EmpowerSpell;
                 bp.m_Buff = AutoEmpowerBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.MetamagicRod;
+                bp.Group = ActivatableAbilityGroup.None;
                 bp.WeightInGroup = 1;
                 bp.IsOnByDefault = false;
                 bp.DeactivateImmediately = true;
