@@ -215,7 +215,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     DeathsnatcherSlotFeature.ToReference<BlueprintUnitFactReference>(),
                     MonstrousHumanoidType.ToReference<BlueprintUnitFactReference>(),
                     DeathsnatcherFact.ToReference<BlueprintUnitFactReference>(),
-                    DeathsnatcherSizeBaby.ToReference<BlueprintUnitFactReference>(),
+                    // DeathsnatcherSizeBaby.ToReference<BlueprintUnitFactReference>(), FIX THIS
 
                     // TODO: convert to deathsnatcher class
                     Airborne.ToReference<BlueprintUnitFactReference>(),

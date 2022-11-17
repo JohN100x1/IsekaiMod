@@ -5,6 +5,7 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
+using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
@@ -36,6 +37,24 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
 
         public static void Add()
         {
+
+            var DeathsnatcherCommandUndeadResource = Helpers.CreateBlueprint<BlueprintAbilityResource>("DeathsnatcherCommandUndeadResource", bp => {
+                bp.m_MaxAmount = new BlueprintAbilityResource.Amount
+                {
+                    BaseValue = 10,
+                    IncreasedByLevel = false,
+                    LevelIncrease = 1,
+                    IncreasedByLevelStartPlusDivStep = false,
+                    StartingLevel = 0,
+                    StartingIncrease = 0,
+                    LevelStep = 0,
+                    PerStepIncrease = 0,
+                    MinClassLevelIncrease = 0,
+                    OtherClassesModifier = 0,
+                    IncreasedByStat = false,
+                    ResourceBonusStat = StatType.Unknown,
+                };
+            });
             var DeathsnatcherCommandUndeadAbility = Helpers.CreateBlueprint<BlueprintAbility>("DeathsnatcherCommandUndeadAbility", bp => {
                 bp.SetName("Command Undead");
                 bp.SetDescription("You can make any undead creature fight on your side as if it was your ally. It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its "
@@ -138,6 +157,10 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     c.m_StepLevel = 1;
                     c.m_Class = new BlueprintCharacterClassReference[] { DeathsnatcherClass.GetReference() };
                 });
+                bp.AddComponent<AbilityResourceLogic>(c => {
+                    c.m_RequiredResource = DeathsnatcherCommandUndeadResource.ToReference<BlueprintAbilityResourceReference>();
+                    c.m_IsSpendResource = true;
+                });
                 bp.Type = AbilityType.SpellLike;
                 bp.Range = AbilityRange.Close;
                 bp.m_AllowNonContextActions = false;
@@ -157,9 +180,13 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
             });
             var DeathsnatcherCommandUndeadFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherCommandUndeadFeature", bp => {
                 bp.SetName("Command Undead");
-                bp.SetDescription("At 4th level, the Deathsnatcher gains Command Undead as a spell-like ability any number of times per day.");
+                bp.SetDescription("At 1st level, the Deathsnatcher gains Command Undead as a spell-like ability 10 times per day.");
                 bp.m_Icon = Icon_CommandUndead;
                 bp.IsClassFeature = true;
+                bp.AddComponent<AddAbilityResources>(c => {
+                    c.m_Resource = DeathsnatcherCommandUndeadResource.ToReference<BlueprintAbilityResourceReference>();
+                    c.RestoreAmount = true;
+                });
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { DeathsnatcherCommandUndeadAbility.ToReference<BlueprintUnitFactReference>() };
                 });

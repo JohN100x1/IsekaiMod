@@ -213,17 +213,20 @@
     "DeathsnatcherSizeBaby": "03ddb4e2-8a88-4532-af4a-93673eaa6383",
     "DeathsnatcherNaturalArmor": "7029a082-0258-49c7-956c-eee17abcef11",
     "DeathsnatcherSizeBabyFeature": "3521cf3a-9c27-49ce-afc1-9233cc6e668f",
+    "DeathsnatcherCommandUndeadResource": "5caa135a-9313-4029-9af3-ffb3335e1482",
     "DeathsnatcherCommandUndeadAbility": "cd2c1ae4-f981-4f6d-9f52-55cebac81747",
     "DeathsnatcherCommandUndeadFeature": "5ea8dedf-7d32-4fdb-af64-73b61ad80f31",
     "DeathsnatcherAnimateDeadResource": "8e4456b8-42db-4a64-ba8c-4a65d1e041e7",
     "DeathsnatcherAnimateDeadAbility": "70519d59-f1e4-496e-956e-f123a6a99b74",
     "DeathsnatcherAnimateDeadFeature": "6d1d10d8-f55d-4b3a-94ce-8080884fff1f",
+    "DeathsnatcherAnimateDeadAdditionalUse": "e039f651-9ad8-4a2c-b3e2-b35c35d9b8bb",
     "DeathsnatcherCreateUndeadResource": "443fd23d-6668-4f88-8c54-36cb9e4cf9b2",
     "DeathsnatcherCreateUndeadAbility": "778b814c-1cef-404f-aa65-510202f14771",
     "DeathsnatcherCreateUndeadFeature": "d0f0a30a-a31c-4387-a281-d20b477312b6",
     "DeathsnatcherFingerOfDeathResource": "41c07e77-acd9-4690-99d1-2474b45ed83b",
     "DeathsnatcherFingerOfDeathAbility": "8c87b09b-3b9c-49c1-8957-87734de017c9",
     "DeathsnatcherFingerOfDeathFeature": "ffa4c9ae-228f-4ee6-9d74-cce557472bf4",
+    "DeathsnatcherUndeadMaster": "1a25fc4a-b94d-4e92-9d75-eb598c3a9af8",
 
     // Dialogue
     "AnswerIsekai": "068f20c2-6f38-4a36-8480-67a3df51249d"
