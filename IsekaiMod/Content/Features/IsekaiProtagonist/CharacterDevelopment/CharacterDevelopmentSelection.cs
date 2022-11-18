@@ -21,11 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             var Tenacious = Resources.GetModBlueprint<BlueprintFeature>("Tenacious");
             var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
             var IsekaiProtagonistTalentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistTalentSelection");
-            var AcidImmunity = Resources.GetModBlueprint<BlueprintFeature>("AcidImmunity");
-            var ColdImmunity = Resources.GetModBlueprint<BlueprintFeature>("ColdImmunity");
-            var ElectricityImmunity = Resources.GetModBlueprint<BlueprintFeature>("ElectricityImmunity");
-            var FireImmunity = Resources.GetModBlueprint<BlueprintFeature>("FireImmunity");
-            var SonicImmunity = Resources.GetModBlueprint<BlueprintFeature>("SonicImmunity");
+            var EnergyImmunitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("EnergyImmunitySelection");
             var ExceptionalSummoningFeature = Resources.GetModBlueprint<BlueprintFeature>("ExceptionalSummoningFeature");
 
             var PreBeachFeatures = new BlueprintFeatureReference[] {
@@ -35,11 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 BetaStrike.ToReference<BlueprintFeatureReference>(),
                 GammaStrike.ToReference<BlueprintFeatureReference>(),
                 MundaneAura.ToReference<BlueprintFeatureReference>(),
-                AcidImmunity.ToReference<BlueprintFeatureReference>(),
-                ColdImmunity.ToReference<BlueprintFeatureReference>(),
-                ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
-                FireImmunity.ToReference<BlueprintFeatureReference>(),
-                SonicImmunity.ToReference<BlueprintFeatureReference>(),
+                EnergyImmunitySelection.ToReference<BlueprintFeatureReference>(),
                 ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
             };
 

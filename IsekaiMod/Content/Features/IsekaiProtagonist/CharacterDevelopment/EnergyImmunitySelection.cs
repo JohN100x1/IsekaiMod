@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
 {
-    class EnergyImmunity
+    class EnergyImmunitySelection
     {
         private static readonly Sprite Icon_ProtectionFromAcid = Resources.GetBlueprint<BlueprintAbility>("3d77ee3fc4913c44b9df7c5bbcdc4906").m_Icon;
         private static readonly Sprite Icon_ProtectionFromCold = Resources.GetBlueprint<BlueprintAbility>("021d39c8e0eec384ba69140f4875e166").m_Icon;
@@ -104,8 +104,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             });
 
             // Energy Immunity Selection
-            var EnergyImmunity = Helpers.CreateBlueprint<BlueprintFeatureSelection>("EnergyImmunity", bp => {
-                bp.SetName("Energy Immunity");
+            var EnergyImmunitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("EnergyImmunitySelection", bp => {
+                bp.SetName("Energy Immunity Selection");
                 bp.SetDescription("You gain energy immunity of a particular type.");
                 bp.m_Icon = Icon_ProtectionFromEnergy;
                 bp.Ranks = 1;
