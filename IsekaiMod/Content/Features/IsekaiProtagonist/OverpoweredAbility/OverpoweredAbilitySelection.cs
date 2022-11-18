@@ -76,8 +76,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 
             // Add selection to Training Arc selection
             var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
-            TrainingArcSelection.m_Features = TrainingArcSelection.m_Features.AppendToArray(OverpoweredAbilityMythicSelection.ToReference<BlueprintFeatureReference>());
-            TrainingArcSelection.m_AllFeatures = TrainingArcSelection.m_AllFeatures.AppendToArray(OverpoweredAbilityMythicSelection.ToReference<BlueprintFeatureReference>());
+            TrainingArcSelection.m_Features = TrainingArcSelection.m_Features.AppendToArray(OverpoweredAbilitySelection2.ToReference<BlueprintFeatureReference>());
+            TrainingArcSelection.m_AllFeatures = TrainingArcSelection.m_AllFeatures.AppendToArray(OverpoweredAbilitySelection2.ToReference<BlueprintFeatureReference>());
 
             // Add selection to mythic ability selection
             var MythicAbilitySelection = Resources.GetBlueprint<BlueprintFeatureSelection>("ba0e5a900b775be4a99702f1ed08914d");
