@@ -64,6 +64,8 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Super Buff`: Apply many powerful buffs on you and your allies.
 		- `Interdimensional Bag`: Get infinite carry capacity.
 		- `Winner`: Does nothing.
+- New Animal Companion
+	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities
 	- `Second Overpowered Ability`: Gives you another Overpowered Ability.
 - New Backgrounds
