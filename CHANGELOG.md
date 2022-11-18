@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
+- Energy Immunities are now selected from the `Energy Immunity` Selection.
 - Changed `Isekai Protagonist` class description.
 - Changed `Training Arc` to allow `Overpowered Ability` to be selected.
 - Changed `Perfect Roll` and Auto metamagic abilities to be turned on by default.

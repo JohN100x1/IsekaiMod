@@ -102,12 +102,15 @@
     "ExceptionalSummoningBuff": "1435e658-ec5c-4425-a087-21cd66aa756c",
     "ExceptionalSummoningAbility": "91cf3dae-7106-46ff-8719-6bea757143a5",
     "ExceptionalSummoningFeature": "9428fd68-a233-43a9-afac-1e1b54c1f037",
+    "InterdimensionalBagFeature": "72ad9cc8-3ef1-4286-b5e4-29b9597d54b8",
+
+    // Energy immunity
+    "EnergyImmunity": "10fab0a2-6824-4181-9cf8-82aaad72c7ee",
     "AcidImmunity": "66ea106a-bb0c-4a52-a1bd-4fa77955ae4a",
     "ColdImmunity": "f956dd94-9198-4011-b836-465ef8b1eeb8",
     "FireImmunity": "9762e6ff-bd61-4f91-83a0-1f8f1391d147",
     "ElectricityImmunity": "ed887779-8eec-45df-99e6-6ea4a23ca904",
     "SonicImmunity": "609acbad-a8df-490a-9a4d-b5fc4a0cdf8e",
-    "InterdimensionalBagFeature": "72ad9cc8-3ef1-4286-b5e4-29b9597d54b8",
 
     // Beach Episode Features
     "HealthyBody": "c6165832-f997-40bb-b0af-145ea74670a4",
