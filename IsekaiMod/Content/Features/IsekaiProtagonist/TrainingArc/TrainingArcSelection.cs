@@ -10,7 +10,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.TrainingArc
     {
         public static void Add()
         {
-            //Training Arc
+            var OverpoweredAbilitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection");
+
             var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
             var BodyStrengthening = Resources.GetModBlueprint<BlueprintFeature>("BodyStrengthening");
             var SpellNegationFeature = Resources.GetModBlueprint<BlueprintFeature>("SpellNegationFeature");
@@ -25,12 +26,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.TrainingArc
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    OverpoweredAbilitySelection.ToReference<BlueprintFeatureReference>(),
                     TrainingMontage.ToReference<BlueprintFeatureReference>(),
                     BodyStrengthening.ToReference<BlueprintFeatureReference>(),
                     SpellNegationFeature.ToReference<BlueprintFeatureReference>(),
                     ExtremeSpeedFeature.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
+                    OverpoweredAbilitySelection.ToReference<BlueprintFeatureReference>(),
                     TrainingMontage.ToReference<BlueprintFeatureReference>(),
                     BodyStrengthening.ToReference<BlueprintFeatureReference>(),
                     SpellNegationFeature.ToReference<BlueprintFeatureReference>(),
