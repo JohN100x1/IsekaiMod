@@ -70,7 +70,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Features = OPAbilityList;
             });
 
-            // You can't select a third Overpowered Ability
+            // You can't select another Overpowered Ability from Mythic Abilities
             OverpoweredAbilityMythicSelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = OverpoweredAbilityMythicSelection.ToReference<BlueprintFeatureReference>(); });
 
             // Add selection to mythic ability selection
