@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
+- Changed `Isekai Protagonist` class description.
 - Changed `Training Arc` to allow `Overpowered Ability` to be selected.
 - Changed `Perfect Roll` and Auto metamagic abilities to be turned on by default.
 ### Removed
