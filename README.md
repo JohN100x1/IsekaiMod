@@ -34,7 +34,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- Starts of with the `Plot Armor` feature which make them hard to kill.
 		- Has Overpowered Abilities.
 		- Can merge their spellbook with angel or lich.
-		- Can choose a familiar or animal companion.
+		- Can choose a familiar or animal companion... or a deathsnatcher.
 	- `God Emperor` (Isekai Protagonist Archetype)
 		- Has powerful auras that buff allies and debuff enemies.
 		- Has powerful immunities in the late game.
@@ -64,6 +64,8 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Super Buff`: Apply many powerful buffs on you and your allies.
 		- `Interdimensional Bag`: Get infinite carry capacity.
 		- `Winner`: Does nothing.
+- New Animal Companion
+	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities
 	- `Second Overpowered Ability`: Gives you another Overpowered Ability.
 - New Backgrounds
@@ -77,6 +79,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.
+	- `Isekai Vampire` (Dhampir Heritage): A powerful heritage for Dhampir.
 - New Deities
 	- `Truck-kun`: A god of transportation.
 	- `Aqua`: A goddess of water.

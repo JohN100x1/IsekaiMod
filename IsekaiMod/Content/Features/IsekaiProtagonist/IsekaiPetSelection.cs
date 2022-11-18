@@ -1,18 +1,19 @@
-﻿using IsekaiMod.Extensions;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
+using UnityEngine;
 using static Kingmaker.Blueprints.Classes.BlueprintProgression;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist
 {
     class IsekaiPetSelection
     {
+        private static readonly Sprite Icon_FriendToAnimals = Resources.GetBlueprint<BlueprintFeature>("9a56368c28795544fbeb43fe70e1a40d").m_Icon;
         public static void Add()
         {
-            var Icon_FriendToAnimals = Resources.GetBlueprint<BlueprintFeature>("9a56368c28795544fbeb43fe70e1a40d").m_Icon;
-
             var AnimalCompanionSelectionDomain = Resources.GetBlueprint<BlueprintFeatureSelection>("2ecd6c64683b59944a7fe544033bb533");
             var WitchFamiliarSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("29a333b7ccad3214ea3a51943fa0d8e9");
 
@@ -41,13 +42,22 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
             });
 
             // Fix Animal Companion Progression
-            var IsekaiProtagonistClass = Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
             var DomainAnimalProgression = Resources.GetBlueprint<BlueprintProgression>("125af359f8bc9a145968b5d8fd8159b8");
             DomainAnimalProgression.m_Classes = DomainAnimalProgression.m_Classes.AddToArray(
                 new ClassWithLevel() {
-                    m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>(),
+                    m_Class = IsekaiProtagonistClass.GetReference(),
                     AdditionalLevel = 0
                 });
+        }
+        public static void AddToSelection(BlueprintFeature feature)
+        {
+            var IsekaiPetSelection = Get();
+            IsekaiPetSelection.m_AllFeatures = IsekaiPetSelection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            IsekaiPetSelection.m_Features = IsekaiPetSelection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+        }
+        public static BlueprintFeatureSelection Get()
+        {
+            return Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiPetSelection");
         }
     }
 }

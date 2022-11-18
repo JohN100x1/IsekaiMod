@@ -45,5 +45,18 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             AngelIncorporateSpellBook.m_AllowedSpellbooks = AngelIncorporateSpellBook.m_AllowedSpellbooks.AddToArray(IsekaiProtagonistSpellbook.ToReference<BlueprintSpellbookReference>());
             LichIncorporateSpellBook.m_AllowedSpellbooks = LichIncorporateSpellBook.m_AllowedSpellbooks.AddToArray(IsekaiProtagonistSpellbook.ToReference<BlueprintSpellbookReference>());
         }
+        public static void SetCharacterClass(BlueprintCharacterClass characterClass)
+        {
+            BlueprintSpellbook SpellBook = Get();
+            SpellBook.m_CharacterClass = characterClass.ToReference<BlueprintCharacterClassReference>();
+        }
+        public static BlueprintSpellbook Get()
+        {
+            return Resources.GetModBlueprint<BlueprintSpellbook>("IsekaiProtagonistSpellbook");
+        }
+        public static BlueprintSpellbookReference GetReference()
+        {
+            return Get().ToReference<BlueprintSpellbookReference>();
+        }
     }
 }

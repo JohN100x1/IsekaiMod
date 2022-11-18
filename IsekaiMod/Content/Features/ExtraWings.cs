@@ -17,20 +17,56 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiSuccubus
+
+namespace IsekaiMod.Content.Features
 {
-    class SuccubusWingsAbility
+    class ExtraWings
     {
-        // Exclude Mutagen wings
+        // Wings
         private static readonly BlueprintBuff BuffWingsMutagen = Resources.GetBlueprint<BlueprintBuff>("e4979934bdb39d842b28bee614606823");
+        private static readonly BlueprintBuff WingsAngelBlack = Resources.GetBlueprint<BlueprintBuff>("a19cda073f4c2b64ca1f8bf8fe285ece");
+        private static readonly BlueprintBuff BuffWingsAngelGhost = Resources.GetBlueprint<BlueprintBuff>("bd6980649fd60fa4085c34aa74ac47f2");
+        private static readonly BlueprintBuff BuffWingsDemon = Resources.GetBlueprint<BlueprintBuff>("3c958be25ab34dc448569331488bee27");
 
         // Icon
         private static readonly Sprite Icon_Wings = Resources.GetBlueprint<BlueprintBuff>("4113178a8d5bf4841b8f15b1b39e004f").m_Icon;
-
         public static void Add()
         {
-            var SuccubusWingsBuff = Helpers.CreateBlueprint<BlueprintBuff>("SuccubusWingsBuff", bp => {
-                bp.SetName("Succubus Wings");
+            var BlackWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("BlackWingsAbility", bp => {
+                bp.SetName("Wings (Black)");
+                bp.SetDescription("You gain a pair of wings that grant a +3 dodge {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Armor_Class}AC{/g} "
+                    + "against {g|Encyclopedia:MeleeAttack}melee attacks{/g} and an immunity to ground based effects, such as difficult terrain.");
+                bp.m_Icon = Icon_Wings;
+                bp.AddComponent<RestrictionHasFact>(c => {
+                    c.m_Feature = BuffWingsMutagen.ToReference<BlueprintUnitFactReference>();
+                    c.Not = true;
+                });
+                bp.m_Buff = WingsAngelBlack.ToReference<BlueprintBuffReference>();
+                bp.Group = ActivatableAbilityGroup.Wings;
+                bp.WeightInGroup = 1;
+                bp.IsOnByDefault = true;
+                bp.DeactivateImmediately = true;
+                bp.ActivationType = AbilityActivationType.Immediately;
+            });
+            var GhostWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("GhostWingsAbility", bp => {
+                bp.SetName("Wings (Ghostly)");
+                bp.SetDescription("You gain a pair of wings that grant a +3 dodge {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Armor_Class}AC{/g} "
+                    + "against {g|Encyclopedia:MeleeAttack}melee attacks{/g} and an immunity to ground based effects, such as difficult terrain.");
+                bp.m_Icon = Icon_Wings;
+                bp.AddComponent<RestrictionHasFact>(c => {
+                    c.m_Feature = BuffWingsMutagen.ToReference<BlueprintUnitFactReference>();
+                    c.Not = true;
+                });
+                bp.m_Buff = BuffWingsAngelGhost.ToReference<BlueprintBuffReference>();
+                bp.Group = ActivatableAbilityGroup.Wings;
+                bp.WeightInGroup = 1;
+                bp.IsOnByDefault = true;
+                bp.DeactivateImmediately = true;
+                bp.ActivationType = AbilityActivationType.Immediately;
+            });
+
+            var DevilWingsBuff = Helpers.CreateBlueprint<BlueprintBuff>("DevilWingsBuff", bp => {
+                bp.SetName("Wings");
                 bp.SetDescription("You gain a pair of wings that grant a +3 dodge {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Armor_Class}AC{/g} "
                     + "against {g|Encyclopedia:MeleeAttack}melee attacks{/g} and an immunity to ground based effects, such as difficult terrain.");
                 bp.AddComponent<ACBonusAgainstAttacks>(c => {
@@ -74,8 +110,8 @@ namespace IsekaiMod.Content.Features.IsekaiSuccubus
                 bp.FxOnStart = new PrefabLink();
                 bp.FxOnRemove = new PrefabLink();
             });
-            var SuccubusWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("SuccubusWingsAbility", bp => {
-                bp.SetName("Succubus Wings");
+            var DevilWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("DevilWingsAbility", bp => {
+                bp.SetName("Wings (Devilish)");
                 bp.SetDescription("You gain a pair of wings that grant a +3 dodge {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Armor_Class}AC{/g} "
                     + "against {g|Encyclopedia:MeleeAttack}melee attacks{/g} and an immunity to ground based effects, such as difficult terrain.");
                 bp.m_Icon = Icon_Wings;
@@ -83,7 +119,23 @@ namespace IsekaiMod.Content.Features.IsekaiSuccubus
                     c.m_Feature = BuffWingsMutagen.ToReference<BlueprintUnitFactReference>();
                     c.Not = true;
                 });
-                bp.m_Buff = SuccubusWingsBuff.ToReference<BlueprintBuffReference>();
+                bp.m_Buff = DevilWingsBuff.ToReference<BlueprintBuffReference>();
+                bp.Group = ActivatableAbilityGroup.Wings;
+                bp.WeightInGroup = 1;
+                bp.IsOnByDefault = true;
+                bp.DeactivateImmediately = true;
+                bp.ActivationType = AbilityActivationType.Immediately;
+            });
+            var DemonWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("DemonWingsAbility", bp => {
+                bp.SetName("Wings (Demonic)");
+                bp.SetDescription("You gain a pair of wings that grant a +3 dodge {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Armor_Class}AC{/g} "
+                    + "against {g|Encyclopedia:MeleeAttack}melee attacks{/g} and an immunity to ground based effects, such as difficult terrain.");
+                bp.m_Icon = Icon_Wings;
+                bp.AddComponent<RestrictionHasFact>(c => {
+                    c.m_Feature = BuffWingsMutagen.ToReference<BlueprintUnitFactReference>();
+                    c.Not = true;
+                });
+                bp.m_Buff = BuffWingsDemon.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.Wings;
                 bp.WeightInGroup = 1;
                 bp.IsOnByDefault = true;
@@ -92,7 +144,7 @@ namespace IsekaiMod.Content.Features.IsekaiSuccubus
             });
 
             // Patch pit spells
-            PatchPitAreaEffects(SuccubusWingsBuff);
+            PatchPitAreaEffects(DevilWingsBuff);
         }
         private static void PatchPitAreaEffects(BlueprintBuff wingsBuff)
         {
@@ -112,5 +164,6 @@ namespace IsekaiMod.Content.Features.IsekaiSuccubus
                 areaEffectPit.m_EffectsImmunityFacts = areaEffectPit.m_EffectsImmunityFacts.AddToArray(wingsBuff.ToReference<BlueprintUnitFactReference>());
             }
         }
+
     }
 }

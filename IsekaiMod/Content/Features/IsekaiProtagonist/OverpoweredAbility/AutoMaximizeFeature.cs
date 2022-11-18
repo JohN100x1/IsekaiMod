@@ -35,7 +35,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.SetDescription("Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat.");
                 bp.m_Icon = Icon_MaximizeSpell;
                 bp.m_Buff = AutoMaximizeBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.MetamagicRod;
+                bp.Group = ActivatableAbilityGroup.None;
                 bp.WeightInGroup = 1;
                 bp.IsOnByDefault = false;
                 bp.DeactivateImmediately = true;

@@ -35,7 +35,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.SetDescription("Every time you cast a spell, it becomes quickened, as though using the Quicken Spell feat.");
                 bp.m_Icon = Icon_QuickenSpell;
                 bp.m_Buff = AutoQuickenBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.MetamagicRod;
+                bp.Group = ActivatableAbilityGroup.None;
                 bp.WeightInGroup = 1;
                 bp.IsOnByDefault = false;
                 bp.DeactivateImmediately = true;

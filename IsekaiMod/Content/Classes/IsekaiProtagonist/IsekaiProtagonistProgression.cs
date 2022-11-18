@@ -10,7 +10,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
     {
         public static void Add()
         {
-            //// Class Features
+            // Class Features
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
             var EdgeLordProficiencies = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordProficiencies");
             var GodEmperorProficiencies = Resources.GetModBlueprint<BlueprintFeature>("GodEmperorProficiencies");
@@ -60,18 +60,16 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var CharacterDevelopmentSelection4 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection4");
             var CharacterDevelopmentSelection5 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection5");
 
-            var IsekaiProtagonistClass = Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
             var IsekaiProtagonistProgression = Helpers.CreateBlueprint<BlueprintProgression>("IsekaiProtagonistProgression", bp => {
                 bp.SetName("");
-                bp.SetDescription(
-                    "Isekai protagonists are otherworldly entities who have been reincarnated into the world of Golarion with extraordinary abilities. " +
-                    "As their story progresses, they gain more unexplained and overpowered abilities to overcome every challenge they face.");
+                bp.SetDescription("Isekai protagonists are otherworldly entities who have been reincarnated into the world of Golarion with extraordinary abilities. "
+                    + "As their story progresses, they gain more unexplained and overpowered abilities to overcome every challenge they face.");
                 bp.m_AllowNonContextActions = false;
                 bp.IsClassFeature = true;
                 bp.m_FeaturesRankIncrease = null;
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
                     new BlueprintProgression.ClassWithLevel {
-                        m_Class = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>(),
+                        m_Class = IsekaiProtagonistClass.GetReference(),
                         AdditionalLevel = 0
                     }
                 };
@@ -113,7 +111,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 IsekaiProtagonistProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiProtagonistCantripsFeature.ToReference<BlueprintFeatureBaseReference>()
             };
-            IsekaiProtagonistClass.m_Progression = IsekaiProtagonistProgression.ToReference<BlueprintProgressionReference>();
+            IsekaiProtagonistClass.SetProgression(IsekaiProtagonistProgression);
         }
     }
 }

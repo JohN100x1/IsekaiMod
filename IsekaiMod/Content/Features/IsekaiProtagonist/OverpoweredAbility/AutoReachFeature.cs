@@ -35,7 +35,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.SetDescription("Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat.");
                 bp.m_Icon = Icon_ReachSpell;
                 bp.m_Buff = AutoReachBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.MetamagicRod;
+                bp.Group = ActivatableAbilityGroup.None;
                 bp.WeightInGroup = 1;
                 bp.IsOnByDefault = false;
                 bp.DeactivateImmediately = true;

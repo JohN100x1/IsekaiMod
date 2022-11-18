@@ -58,7 +58,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
                 bp.AggroEnemies = false;
                 bp.AffectEnemies = true;
                 bp.Shape = AreaEffectShape.Cylinder;
-                bp.Size = new Feet() { m_Value = 40 };
+                bp.Size = new Feet(40);
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(DarkAuraBuff.ToReference<BlueprintBuffReference>()));
             });

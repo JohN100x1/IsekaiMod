@@ -2,13 +2,13 @@
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using UnityEngine;
+using Kingmaker.Blueprints.Facts;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 {
@@ -21,8 +21,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         private static readonly Sprite Icon_BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45").m_Icon;
 
         // Stat Progression
-        private static readonly BlueprintStatProgression BaseAttackBonus = Resources.GetBlueprint<BlueprintStatProgression>("b3057560ffff3514299e8b93e7648a9d");
-        private static readonly BlueprintStatProgression SavesProgression = Resources.GetBlueprint<BlueprintStatProgression>("ff4662bde9e75f145853417313842751");
+        private static readonly BlueprintStatProgression BABFull = Resources.GetBlueprint<BlueprintStatProgression>("b3057560ffff3514299e8b93e7648a9d");
+        private static readonly BlueprintStatProgression SavesHigh = Resources.GetBlueprint<BlueprintStatProgression>("ff4662bde9e75f145853417313842751");
 
         // Used in Class
         private static readonly BlueprintCharacterClass SlayerClass = Resources.GetBlueprint<BlueprintCharacterClass>("c75e0971973957d4dbad24bc7957e4fb");
@@ -30,13 +30,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: buff glorious and protective aura. change some images aswell.
-            // TODO: rename protective aura
+            // TODO: add scaling natural armor, strength and dexterity (like animal companion) to deathsnatcher
             // TODO: add vampiric drain spell for isekai vampire heritage
             // TODO: Load localisation instead of hardcoded strings
-
-            // Spellbook
-            var SpellBook = Resources.GetModBlueprint<BlueprintSpellbook>("IsekaiProtagonistSpellbook");
 
             // Class Signature Features
             var IsekaiProtagonistBonusFeat = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistBonusFeat", bp => {
@@ -82,14 +78,14 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     "Isekai protagonists are people who have been reincarnated into the world of Golarion with overpowered abilities. "
                     + "As their story progresses, they gain more overpowered abilities to wreck every wannabe villain and side character they face.");
                 bp.HitDie = DiceType.D12;
-                bp.m_BaseAttackBonus = BaseAttackBonus.ToReference<BlueprintStatProgressionReference>();
-                bp.m_FortitudeSave = SavesProgression.ToReference<BlueprintStatProgressionReference>();
-                bp.m_ReflexSave = SavesProgression.ToReference<BlueprintStatProgressionReference>();
-                bp.m_WillSave = SavesProgression.ToReference<BlueprintStatProgressionReference>();
+                bp.m_BaseAttackBonus = BABFull.ToReference<BlueprintStatProgressionReference>();
+                bp.m_FortitudeSave = SavesHigh.ToReference<BlueprintStatProgressionReference>();
+                bp.m_ReflexSave = SavesHigh.ToReference<BlueprintStatProgressionReference>();
+                bp.m_WillSave = SavesHigh.ToReference<BlueprintStatProgressionReference>();
                 bp.m_Difficulty = 1;
+                bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
                 bp.RecommendedAttributes = new StatType[] { StatType.Strength, StatType.Charisma};
                 bp.NotRecommendedAttributes = new StatType[] { StatType.Constitution };
-                bp.m_Spellbook = SpellBook.ToReference<BlueprintSpellbookReference>();
                 bp.m_EquipmentEntities = new KingmakerEquipmentEntityReference[0];
                 bp.m_StartingItems = new BlueprintItemReference[0];
                 bp.SkillPoints = 4;
@@ -126,11 +122,43 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.Not = true;
                     c.HideInUI = true;
                 });
+
+                // Register Archetypes later using RegisterArchetype
+                bp.m_Archetypes = new BlueprintArchetypeReference[0];
+
+                // Set Progression later using SetProgression (This is because some features in the progression reference IsekaiProtagonistClass which doeesn't exist yet)
+                bp.m_Progression = null;
+
+                // Set Default Build later using SetDefaultBuild
+                bp.m_DefaultBuild = null;
             });
-            SpellBook.m_CharacterClass = IsekaiProtagonistClass.ToReference<BlueprintCharacterClassReference>();
+            IsekaiProtagonistSpellbook.SetCharacterClass(IsekaiProtagonistClass);
 
             // Register Class
             Helpers.RegisterClass(IsekaiProtagonistClass);
+        }
+        public static void RegisterArchetype(BlueprintArchetype archetype)
+        {
+            BlueprintCharacterClass IsekaiProtagonistClass = Get();
+            IsekaiProtagonistClass.m_Archetypes = IsekaiProtagonistClass.m_Archetypes.AppendToArray(archetype.ToReference<BlueprintArchetypeReference>());
+        }
+        public static void SetProgression(BlueprintProgression progression)
+        {
+            BlueprintCharacterClass IsekaiProtagonistClass = Get();
+            IsekaiProtagonistClass.m_Progression = progression.ToReference<BlueprintProgressionReference>();
+        }
+        public static void SetDefaultBuild(BlueprintUnitFact prebuildFeatureList)
+        {
+            BlueprintCharacterClass IsekaiProtagonistClass = Get();
+            IsekaiProtagonistClass.m_DefaultBuild = prebuildFeatureList.ToReference<BlueprintUnitFactReference>();
+        }
+        public static BlueprintCharacterClass Get()
+        {
+            return Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
+        }
+        public static BlueprintCharacterClassReference GetReference()
+        {
+            return Get().ToReference<BlueprintCharacterClassReference>();
         }
     }
 }

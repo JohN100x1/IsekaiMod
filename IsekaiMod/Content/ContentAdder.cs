@@ -14,6 +14,7 @@ namespace IsekaiMod.Content
                 if (Initialized) return;
                 Initialized = true;
 
+                Features.ExtraWings.Add();
                 Features.ExoticWeaponProficiency.Add();
 
                 if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
@@ -104,22 +105,42 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.PrebuildIsekaiProtagonistFeatureList.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistProgression.Add();
 
+                // Patch Loremaster & Hellknight Signifier Spellbooks
+                Classes.IsekaiProtagonist.LoremasterSpellbookSelection.Patch();
+                Classes.IsekaiProtagonist.HellknightSignifierSpellbookSelection.Patch();
+
+                // Deathsnatcher animal Companion
+                Classes.Deathsnatcher.DeathsnatcherClass.Add();
+                Features.Deathsnatcher.DeathsnatcherSizeBaby.Add();
+                Features.Deathsnatcher.DeathsnatcherResistances.Add();
+                Features.Deathsnatcher.DeathsnatcherCommandUndead.Add();
+                Features.Deathsnatcher.DeathsnatcherAnimateDead.Add();
+                Features.Deathsnatcher.DeathsnatcherCreateUndead.Add();
+                Features.Deathsnatcher.DeathsnatcherFingerOfDeath.Add();
+                Features.Deathsnatcher.DeathsnatcherFastHealing.Add();
+                Features.Deathsnatcher.DeathsnatcherAnimateDeadAdditionalUse.Add();
+                Features.Deathsnatcher.DeathsnatcherPoisonSting.Add();
+                Features.Deathsnatcher.DeathsnatcherUndeadMaster.Add();
+                Classes.Deathsnatcher.DeathsnatcherClassProgression.Add();
+                Classes.Deathsnatcher.DeathsnatcherUnit.Add();
                 // Add extra dialogue
                 Dialogue.IsekaiWelcomeDialogue.Add();
             }
             public static void AddIsekaiHeritages()
             {
                 // Add Heritages
-                Features.IsekaiSuccubus.SuccubusCharmAbility.Add();
-                Features.IsekaiSuccubus.SuccubusWingsAbility.Add();
-                Heritages.IsekaiSuccubusHeritage.Add();
-                Features.IsekaiAngel.AngelicBoltAbility.Add();
-                Heritages.IsekaiAngelHeritage.Add();
+                Heritages.IsekaiSuccubus.SuccubusCharmAbility.Add();
+                Heritages.IsekaiSuccubus.IsekaiSuccubusHeritage.Add();
+                Heritages.IsekaiAngel.AngelicBoltAbility.Add();
+                Heritages.IsekaiAngel.IsekaiAngelHeritage.Add();
                 Heritages.IsekaiVampireHeritage.Add();
             }
             public static void AddIsekaiBackgrounds()
             {
-                // Add Backgrounds
+                // Add the Selection First
+                Backgrounds.IsekaiBackgroundSelection.Add();
+
+                // Add Backgrounds to Isekai Background Selection
                 Backgrounds.TabletopRPGPlayer.Add();
                 Backgrounds.MartialArtist.Add();
                 Backgrounds.Salaryman.Add();
@@ -127,11 +148,13 @@ namespace IsekaiMod.Content
                 Backgrounds.Otaku.Add();
                 Backgrounds.RebornDemonLord.Add();
                 Backgrounds.Gamer.Add();
-                Backgrounds.IsekaiBackgroundSelection.Add();
             }
             public static void AddIsekaiDeities()
             {
+                // Add the Selection First
                 Deities.IsekaiDeitySelection.Add();
+
+                // Add Deities to the Isekai Deity Selection
                 Deities.TruckKun.Add();
                 Deities.Aqua.Add();
                 Deities.Ristarte.Add();

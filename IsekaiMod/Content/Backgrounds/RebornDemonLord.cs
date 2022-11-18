@@ -12,6 +12,7 @@ namespace IsekaiMod.Content.Backgrounds
     {
         public static void Add()
         {
+            // Background
             var BackgroundRebornDemonLord = Helpers.CreateBlueprint<BlueprintFeature>("BackgroundRebornDemonLord", bp => {
                 bp.SetName("Reborn Demon Lord");
                 bp.SetDescription("The Reborn Demon Lord has a +2 bonus to strength and electricity resistance 20.\n"
@@ -31,6 +32,9 @@ namespace IsekaiMod.Content.Backgrounds
                     c.Value = 20;
                 });
             });
+
+            // Register Background
+            IsekaiBackgroundSelection.Register(BackgroundRebornDemonLord);
         }
     }
 }

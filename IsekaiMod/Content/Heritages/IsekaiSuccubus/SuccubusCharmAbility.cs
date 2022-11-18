@@ -18,7 +18,7 @@ using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using System.Collections.Generic;
 
-namespace IsekaiMod.Content.Features.IsekaiSuccubus
+namespace IsekaiMod.Content.Heritages.IsekaiSuccubus
 {
     class SuccubusCharmAbility
     {

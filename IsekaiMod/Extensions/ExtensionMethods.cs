@@ -28,7 +28,7 @@ namespace IsekaiMod.Extensions
     {
         public static IEnumerable<GameAction> FlattenAllActions(this BlueprintScriptableObject blueprint)
         {
-            List<GameAction> actions = new List<GameAction>();
+            List<GameAction> actions = new();
             foreach (var component in blueprint.ComponentsArray)
             {
                 Type type = component.GetType();
@@ -41,7 +41,7 @@ namespace IsekaiMod.Extensions
         }
         public static IEnumerable<GameAction> FlattenAllActions(this IEnumerable<GameAction> actions)
         {
-            List<GameAction> newActions = new List<GameAction>();
+            List<GameAction> newActions = new();
             foreach (var action in actions)
             {
                 Type type = action?.GetType();
