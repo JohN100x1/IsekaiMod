@@ -34,10 +34,8 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
         private static readonly BlueprintItemWeapon Claw1d6 = Resources.GetBlueprint<BlueprintItemWeapon>("65eb73689b94d894080d33a768cdf645");
         private static readonly BlueprintItemWeapon Sting1d4 = Resources.GetBlueprint<BlueprintItemWeapon>("df44800dbe7b4ba43ac6e0e435041ed8");
 
-        // Unit Facts
+        // Deathsnatcher Facts
         private static readonly BlueprintFeature Airborne = Resources.GetBlueprint<BlueprintFeature>("70cffb448c132fa409e49156d013b175");
-        private static readonly BlueprintFeature DeathsnatcherEnergyDrainFeature = Resources.GetBlueprint<BlueprintFeature>("e4c3976c40072a747b1a9ba2d8f166f2");
-        private static readonly BlueprintFeature NegativeEnergyAssociation = Resources.GetBlueprint<BlueprintFeature>("5d6c8a31bbc195648af1bf95425b6a54");
 
         public static void Add()
         {
@@ -215,12 +213,8 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     DeathsnatcherSlotFeature.ToReference<BlueprintUnitFactReference>(),
                     MonstrousHumanoidType.ToReference<BlueprintUnitFactReference>(),
                     DeathsnatcherFact.ToReference<BlueprintUnitFactReference>(),
-                    // DeathsnatcherSizeBaby.ToReference<BlueprintUnitFactReference>(), FIX THIS
-
-                    // TODO: convert to deathsnatcher class
-                    Airborne.ToReference<BlueprintUnitFactReference>(),
-                    DeathsnatcherEnergyDrainFeature.ToReference<BlueprintUnitFactReference>(),
-                    NegativeEnergyAssociation.ToReference<BlueprintUnitFactReference>(),
+                    DeathsnatcherSizeBaby.ToReference<BlueprintUnitFactReference>(),
+                    Airborne.ToReference<BlueprintUnitFactReference>()
                 };
                 bp.IsCheater = false;
                 bp.IsFake = false;
@@ -237,9 +231,9 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     + "Though self-aggrandizing, deathsnatchers are known to give homage to (and claim descent from) the various demon lords of darkness, the desert, and undeath.\n"
                     + "{g|Encyclopedia:Size}Size{/g}: Tiny\n{g|Encyclopedia:Speed}Speed{/g}: 30 ft.\n{g|Encyclopedia:Armor_Class}AC{/g}: +10 natural armor\n"
                     + "{g|Encyclopedia:Attack}Attack{/g}: 1 bite ({g|Encyclopedia:Dice}2d6{/g}), 4 claws (1d6), 1 sting (1d4)\n{g|Encyclopedia:Ability_Scores}Ability scores{/g}: "
-                    + "{g|Encyclopedia:Strength}Str{/g} 19, {g|Encyclopedia:Dexterity}Dex{/g} 23, {g|Encyclopedia:Constitution}Con{/g} 30, {g|Encyclopedia:Intelligence}Int{/g} 16, "
+                    + "{g|Encyclopedia:Strength}Str{/g} 17, {g|Encyclopedia:Dexterity}Dex{/g} 25, {g|Encyclopedia:Constitution}Con{/g} 28, {g|Encyclopedia:Intelligence}Int{/g} 16, "
                     + "{g|Encyclopedia:Wisdom}Wis{/g} 21, {g|Encyclopedia:Charisma}Cha{/g} 24\n"
-                    + "At 4th level size becomes Medium, Str +4, Dex -2, Con +2, +6 natural armor, gains pounce.");
+                    + "At 4th level size becomes Medium, Str +6, Dex -4, Con +4, +6 natural armor, gains pounce.");
                 bp.m_Icon = null;
                 bp.AddComponent<AddPet>(c => {
                     c.Type = PetType.AnimalCompanion;

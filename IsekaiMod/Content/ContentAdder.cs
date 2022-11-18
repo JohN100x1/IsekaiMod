@@ -118,8 +118,8 @@ namespace IsekaiMod.Content
                 Features.Deathsnatcher.DeathsnatcherFingerOfDeath.Add();
                 Features.Deathsnatcher.DeathsnatcherFastHealing.Add();
                 Features.Deathsnatcher.DeathsnatcherAnimateDeadAdditionalUse.Add();
-                Features.Deathsnatcher.DeathsnatcherUndeadMaster.Add();
                 Features.Deathsnatcher.DeathsnatcherPoisonSting.Add();
+                Features.Deathsnatcher.DeathsnatcherUndeadMaster.Add();
                 Classes.Deathsnatcher.DeathsnatcherClassProgression.Add();
                 Classes.Deathsnatcher.DeathsnatcherUnit.Add();
                 // Add extra dialogue

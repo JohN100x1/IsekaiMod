@@ -3,7 +3,9 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.FactLogic;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace IsekaiMod.Content.Features.Deathsnatcher
@@ -14,23 +16,21 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
 
         public static void Add()
         {
-            var DeathsnatcherAnimateDeadResource = Resources.GetModBlueprint<BlueprintAbilityResource>("DeathsnatcherAnimateDeadResource");
+            var DeathsnatcherCommandUndeadAbility = Resources.GetModBlueprint<BlueprintAbility>("DeathsnatcherCommandUndeadAbility");
+            var DeathsnatcherAnimateDeadAbility = Resources.GetModBlueprint<BlueprintAbility>("DeathsnatcherAnimateDeadAbility");
             var DeathsnatcherCreateUndeadResource = Resources.GetModBlueprint<BlueprintAbilityResource>("DeathsnatcherCreateUndeadResource");
             var DeathsnatcherFingerOfDeathResource = Resources.GetModBlueprint<BlueprintAbilityResource>("DeathsnatcherFingerOfDeathResource");
 
             // Feature
             var DeathsnatcherUndeadMaster = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherUndeadMaster", bp => {
                 bp.SetName("Undead Master");
-                bp.SetDescription("At 19th level, the Deathsnatcher becomes a master of the undead.\n"
-                    + "Animate Dead has 5 additional uses per day.\n"
+                bp.SetDescription("At 20th level, the Deathsnatcher becomes a master of the undead.\n"
+                    + "Command Undead has unlimited uses.\n"
+                    + "Animate Dead has unlimited uses.\n"
                     + "Create Undead has 2 additional uses per day.\n"
                     + "Finger of Death has 2 additional uses per day.");
                 bp.m_Icon = Icon_MasteryOfFlesh;
                 bp.IsClassFeature = true;
-                bp.AddComponent<IncreaseResourceAmount>(c => {
-                    c.m_Resource = DeathsnatcherAnimateDeadResource.ToReference<BlueprintAbilityResourceReference>();
-                    c.Value = 5;
-                });
                 bp.AddComponent<IncreaseResourceAmount>(c => {
                     c.m_Resource = DeathsnatcherCreateUndeadResource.ToReference<BlueprintAbilityResourceReference>();
                     c.Value = 2;
@@ -40,6 +40,8 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     c.Value = 2;
                 });
             });
+            DeathsnatcherCommandUndeadAbility.GetComponent<AbilityResourceLogic>().ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>() { DeathsnatcherUndeadMaster.ToReference<BlueprintUnitFactReference>() };
+            DeathsnatcherAnimateDeadAbility.GetComponent<AbilityResourceLogic>().ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>() { DeathsnatcherUndeadMaster.ToReference<BlueprintUnitFactReference>() };
         }
     }
 }
