@@ -14,7 +14,7 @@ using Kingmaker.Enums;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.UnitLogic.Mechanics.Components;
 
-namespace IsekaiMod.Content.Heritages
+namespace IsekaiMod.Content.Heritages.IsekaiSuccubus
 {
     internal class IsekaiSuccubusHeritage
     {
@@ -23,7 +23,9 @@ namespace IsekaiMod.Content.Heritages
         {
             // Succubus Abilities
             var SuccubusCharmAbility = Resources.GetModBlueprint<BlueprintAbility>("SuccubusCharmAbility");
-            var SuccubusWingsAbility = Resources.GetModBlueprint<BlueprintActivatableAbility>("SuccubusWingsAbility");
+            var DevilWingsAbility = Resources.GetModBlueprint<BlueprintActivatableAbility>("DevilWingsAbility");
+            var DemonWingsAbility = Resources.GetModBlueprint<BlueprintActivatableAbility>("DemonWingsAbility");
+            var BlackWingsAbility = Resources.GetModBlueprint<BlueprintActivatableAbility>("BlackWingsAbility");
 
             // Succubus Heritage
             var Icon_Succubus = AssetLoader.LoadInternal("Heritages", "ICON_SUCCUBUS.png");
@@ -133,7 +135,9 @@ namespace IsekaiMod.Content.Heritages
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
                         SuccubusCharmAbility.ToReference<BlueprintUnitFactReference>(),
-                        SuccubusWingsAbility.ToReference<BlueprintUnitFactReference>()
+                        DevilWingsAbility.ToReference<BlueprintUnitFactReference>(),
+                        DemonWingsAbility.ToReference<BlueprintUnitFactReference>(),
+                        BlackWingsAbility.ToReference<BlueprintUnitFactReference>()
                     };
                 });
 

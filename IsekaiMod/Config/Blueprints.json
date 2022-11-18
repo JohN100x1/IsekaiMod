@@ -1,11 +1,16 @@
 {
   "OverrideIds": false,
   "NewBlueprints": {
+    // Extra Wings
+    "BlackWingsAbility": "c059b7c6-89b2-4472-a7eb-83bb6672c442",
+    "GhostWingsAbility": "0a3c12e5-1dd8-44be-b67a-39fd445d8660",
+    "DevilWingsBuff": "a7c9d59b-17de-4fc4-ae74-80427448a2a6",
+    "DevilWingsAbility": "92f9474f-1fe0-4ea2-8848-a6fd9ccd2bc1",
+    "DemonWingsAbility": "bcbf5c15-38ff-4aba-a31d-71eb474041e3",
+
     // Isekai Succubus Heritage
     "SuccubusCharmUnitProperty": "bc4e0bec-cfa4-4505-a7b1-eac579153d48",
     "SuccubusCharmAbility": "0e19dd2f-5e66-4d6b-8a48-9f00c221698d",
-    "SuccubusWingsBuff": "a7c9d59b-17de-4fc4-ae74-80427448a2a6",
-    "SuccubusWingsAbility": "92f9474f-1fe0-4ea2-8848-a6fd9ccd2bc1",
     "IsekaiSuccubusHeritage": "cd4ffe35-6174-429c-9379-97a3eb1eee70",
 
     // Isekai Angel Heritage

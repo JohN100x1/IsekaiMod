@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.FactLogic;
 
-namespace IsekaiMod.Content.Features.IsekaiAngel
+namespace IsekaiMod.Content.Heritages.IsekaiAngel
 {
     class AngelicBoltAbility
     {

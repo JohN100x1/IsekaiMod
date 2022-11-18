@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added `Deathsnatcher` animal companion.
+- Added extra wing options for `Isekai Angel` and `Isekai Succubus` Heritage.
 ### Changed
 - Changed Metamagic abilities to have more than one active at a time.
 ### Fixed

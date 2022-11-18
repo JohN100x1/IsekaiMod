@@ -14,6 +14,7 @@ namespace IsekaiMod.Content
                 if (Initialized) return;
                 Initialized = true;
 
+                Features.ExtraWings.Add();
                 Features.ExoticWeaponProficiency.Add();
 
                 if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
@@ -128,11 +129,10 @@ namespace IsekaiMod.Content
             public static void AddIsekaiHeritages()
             {
                 // Add Heritages
-                Features.IsekaiSuccubus.SuccubusCharmAbility.Add();
-                Features.IsekaiSuccubus.SuccubusWingsAbility.Add();
-                Heritages.IsekaiSuccubusHeritage.Add();
-                Features.IsekaiAngel.AngelicBoltAbility.Add();
-                Heritages.IsekaiAngelHeritage.Add();
+                Heritages.IsekaiSuccubus.SuccubusCharmAbility.Add();
+                Heritages.IsekaiSuccubus.IsekaiSuccubusHeritage.Add();
+                Heritages.IsekaiAngel.AngelicBoltAbility.Add();
+                Heritages.IsekaiAngel.IsekaiAngelHeritage.Add();
                 Heritages.IsekaiVampireHeritage.Add();
             }
             public static void AddIsekaiBackgrounds()
