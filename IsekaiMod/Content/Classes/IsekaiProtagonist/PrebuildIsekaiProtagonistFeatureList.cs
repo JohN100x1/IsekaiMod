@@ -46,7 +46,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var Adaptibility = Resources.GetBlueprint<BlueprintFeatureSelection>("26a668c5a8c22354bac67bcd42e09a3f");
             var BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
 
-            var DeathsnatcherFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherFeature");
+            var WitchFamiliarSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("29a333b7ccad3214ea3a51943fa0d8e9");
+            var CatFamiliarBondFeature = Resources.GetBlueprint<BlueprintFeature>("1cb0b559ca2e31e4d9dc65de012fa82f");
 
             var IsekaiPetSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiPetSelection");
             var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
@@ -93,133 +94,140 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     StatType.SkillUseMagicDevice
                 };
                     c.Selections = new SelectionEntry[] {
-                    new SelectionEntry()
-                    {
-                        m_Selection = BasicFeatSelection.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            PowerAttack.ToReference<BlueprintFeatureReference>(),
-                            CombatReflexes.ToReference<BlueprintFeatureReference>(),
-                            ImprovedInitiative.ToReference<BlueprintFeatureReference>(),
-                            Outflank.ToReference<BlueprintFeatureReference>(),
-                            IronWill.ToReference<BlueprintFeatureReference>(),
-                            IronWillImproved.ToReference<BlueprintFeatureReference>(),
-                            Dodge.ToReference<BlueprintFeatureReference>(),
-                            Toughness.ToReference<BlueprintFeatureReference>(),
-                            SpellPenetration.ToReference<BlueprintFeatureReference>(),
-                            GreaterSpellPenetration.ToReference<BlueprintFeatureReference>(),
+                        new SelectionEntry()
+                        {
+                            m_Selection = BasicFeatSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                PowerAttack.ToReference<BlueprintFeatureReference>(),
+                                CombatReflexes.ToReference<BlueprintFeatureReference>(),
+                                ImprovedInitiative.ToReference<BlueprintFeatureReference>(),
+                                Outflank.ToReference<BlueprintFeatureReference>(),
+                                IronWill.ToReference<BlueprintFeatureReference>(),
+                                IronWillImproved.ToReference<BlueprintFeatureReference>(),
+                                Dodge.ToReference<BlueprintFeatureReference>(),
+                                Toughness.ToReference<BlueprintFeatureReference>(),
+                                SpellPenetration.ToReference<BlueprintFeatureReference>(),
+                                GreaterSpellPenetration.ToReference<BlueprintFeatureReference>(),
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                Cleave.ToReference<BlueprintFeatureReference>(),
+                                CleavingFinish.ToReference<BlueprintFeatureReference>(),
+                                PointBlankShot.ToReference<BlueprintFeatureReference>(),
+                                PreciseShot.ToReference<BlueprintFeatureReference>(),
+                                DeadlyAim.ToReference<BlueprintFeatureReference>(),
+                                GreatFortitude.ToReference<BlueprintFeatureReference>(),
+                                GreatFortitudeImproved.ToReference<BlueprintFeatureReference>(),
+                                LightningReflexes.ToReference<BlueprintFeatureReference>(),
+                                LightningReflexesImproved.ToReference<BlueprintFeatureReference>(),
+                                MaximizeSpellFeat.ToReference<BlueprintFeatureReference>(),
+                                EmpowerSpellFeat.ToReference<BlueprintFeatureReference>(),
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = OverpoweredAbilitySelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                AutoQuickenFeature.ToReference<BlueprintFeatureReference>()
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = TrainingArcSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                TrainingMontage.ToReference<BlueprintFeatureReference>(),
+                                BodyStrengthening.ToReference<BlueprintFeatureReference>(),
+                                SpellNegationFeature.ToReference<BlueprintFeatureReference>(),
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = CharacterDevelopmentSelection1.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                BetaStrike.ToReference<BlueprintFeatureReference>(),
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = CharacterDevelopmentSelection2.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                AlphaStrike.ToReference<BlueprintFeatureReference>(),
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = CharacterDevelopmentSelection3.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                GammaStrike.ToReference<BlueprintFeatureReference>()
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = CharacterDevelopmentSelection4.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                MundaneAura.ToReference<BlueprintFeatureReference>()
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = CharacterDevelopmentSelection5.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                FireImmunity.ToReference<BlueprintFeatureReference>()
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = BeachEpisodeSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                MasterSelf.ToReference<BlueprintFeatureReference>()
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = Adaptibility.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                SkillFocusPhysique.ToReference<BlueprintFeatureReference>()
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = AasimarHeritageSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                AngelHeritage.ToReference<BlueprintFeatureReference>()
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = TieflingHeritageSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                PitbornHeritage.ToReference<BlueprintFeatureReference>()
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = BackgroundBaseSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                BackgroundNone.ToReference<BlueprintFeatureReference>()
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = IsekaiPetSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                WitchFamiliarSelection.ToReference<BlueprintFeatureReference>()
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = WitchFamiliarSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                CatFamiliarBondFeature.ToReference<BlueprintFeatureReference>()
+                            }
                         }
-                    },
-                    new SelectionEntry()
-                    {
-                        m_Selection = IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            Cleave.ToReference<BlueprintFeatureReference>(),
-                            CleavingFinish.ToReference<BlueprintFeatureReference>(),
-                            PointBlankShot.ToReference<BlueprintFeatureReference>(),
-                            PreciseShot.ToReference<BlueprintFeatureReference>(),
-                            DeadlyAim.ToReference<BlueprintFeatureReference>(),
-                            GreatFortitude.ToReference<BlueprintFeatureReference>(),
-                            GreatFortitudeImproved.ToReference<BlueprintFeatureReference>(),
-                            LightningReflexes.ToReference<BlueprintFeatureReference>(),
-                            LightningReflexesImproved.ToReference<BlueprintFeatureReference>(),
-                            MaximizeSpellFeat.ToReference<BlueprintFeatureReference>(),
-                            EmpowerSpellFeat.ToReference<BlueprintFeatureReference>(),
-                        }
-                    },
-                    new SelectionEntry()
-                    {
-                        m_Selection = OverpoweredAbilitySelection.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            AutoQuickenFeature.ToReference<BlueprintFeatureReference>()
-                        }
-                    },
-                    new SelectionEntry()
-                    {
-                        m_Selection = TrainingArcSelection.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            TrainingMontage.ToReference<BlueprintFeatureReference>(),
-                            BodyStrengthening.ToReference<BlueprintFeatureReference>(),
-                            SpellNegationFeature.ToReference<BlueprintFeatureReference>(),
-                        }
-                    },
-                    new SelectionEntry()
-                    {
-                        m_Selection = CharacterDevelopmentSelection1.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            BetaStrike.ToReference<BlueprintFeatureReference>(),
-                        }
-                    },
-                    new SelectionEntry()
-                    {
-                        m_Selection = CharacterDevelopmentSelection2.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                        }
-                    },
-                    new SelectionEntry()
-                    {
-                        m_Selection = CharacterDevelopmentSelection3.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            GammaStrike.ToReference<BlueprintFeatureReference>()
-                        }
-                    },
-                    new SelectionEntry()
-                    {
-                        m_Selection = CharacterDevelopmentSelection4.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            MundaneAura.ToReference<BlueprintFeatureReference>()
-                        }
-                    },
-                    new SelectionEntry()
-                    {
-                        m_Selection = CharacterDevelopmentSelection5.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            FireImmunity.ToReference<BlueprintFeatureReference>()
-                        }
-                    },
-                    new SelectionEntry()
-                    {
-                        m_Selection = BeachEpisodeSelection.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            MasterSelf.ToReference<BlueprintFeatureReference>()
-                        }
-                    },
-                    new SelectionEntry()
-                    {
-                        m_Selection = Adaptibility.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            SkillFocusPhysique.ToReference<BlueprintFeatureReference>()
-                        }
-                    },
-                    new SelectionEntry()
-                    {
-                        m_Selection = AasimarHeritageSelection.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            AngelHeritage.ToReference<BlueprintFeatureReference>()
-                        }
-                    },
-                    new SelectionEntry()
-                    {
-                        m_Selection = TieflingHeritageSelection.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            PitbornHeritage.ToReference<BlueprintFeatureReference>()
-                        }
-                    },
-                    new SelectionEntry()
-                    {
-                        m_Selection = BackgroundBaseSelection.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            BackgroundNone.ToReference<BlueprintFeatureReference>()
-                        }
-                    },
-                    new SelectionEntry()
-                    {
-                        m_Selection = IsekaiPetSelection.ToReference<BlueprintFeatureSelectionReference>(),
-                        m_Features = new BlueprintFeatureReference[]{
-                            DeathsnatcherFeature.ToReference<BlueprintFeatureReference>()
-                        }
-                    }
-                };
+                    };
                     c.m_SelectSpells = new BlueprintAbilityReference[]
                     {
                     // Level 1
