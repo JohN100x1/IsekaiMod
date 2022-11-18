@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.TrainingArc
             var Icon_PerfectStrike = Resources.GetBlueprint<BlueprintFeature>("9ff65b68c09567e48af9b33848b23323").m_Icon;
             var TrainingArcSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("TrainingArcSelection", bp => {
                 bp.SetName("Training Arc");
-                bp.SetDescription("At 5th, 10th and 15th level, you train yourself intensely and gain insight into your own abilities.");
+                bp.SetDescription("At 5th, 10th and 15th level, you train yourself intensely and gain new abilities.");
                 bp.m_Icon = Icon_PerfectStrike;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
