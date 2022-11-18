@@ -37,7 +37,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Buff = AutoEmpowerBuff.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.None;
                 bp.WeightInGroup = 1;
-                bp.IsOnByDefault = false;
+                bp.IsOnByDefault = true;
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
