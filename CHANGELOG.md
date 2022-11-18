@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Changed `Training Arc` to allow `Overpowered Ability` to be selected.
 - Changed `Perfect Roll` and Auto metamagic abilities to be turned on by default.
+### Removed
+- Removed `Winner` feature.
 
 ## [1.9.0] - 2022-11-18
 ### Added

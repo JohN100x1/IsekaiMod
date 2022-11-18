@@ -23,7 +23,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             var PerfectRollFeature = Resources.GetModBlueprint<BlueprintFeature>("PerfectRollFeature");
             var SuperBuffFeature = Resources.GetModBlueprint<BlueprintFeature>("SuperBuffFeature");
             var InterdimensionalBagFeature = Resources.GetModBlueprint<BlueprintFeature>("InterdimensionalBagFeature");
-            var WinnerFeature = Resources.GetModBlueprint<BlueprintFeature>("WinnerFeature");
 
             var OPAbilityList = new BlueprintFeatureReference[] {
                 AutoEmpowerFeature.ToReference<BlueprintFeatureReference>(),
@@ -42,16 +41,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             var Icon_TrickFate = Resources.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
             var OverpoweredAbilitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection", bp => {
                 bp.SetName("Overpowered Ability");
-                bp.SetDescription("At 1st level, you get to select an extremely powerful Overpowered Ability.");
+                bp.SetDescription("At 1st level, you get to select an Overpowered Ability.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = OPAbilityList.AddToArray(WinnerFeature.ToReference<BlueprintFeatureReference>());
-                bp.m_Features = OPAbilityList.AddToArray(WinnerFeature.ToReference<BlueprintFeatureReference>());
+                bp.m_AllFeatures = OPAbilityList;
+                bp.m_Features = OPAbilityList;
             });
             var OverpoweredAbilitySelection2 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2", bp => {
                 bp.SetName("Another Overpowered Ability");
-                bp.SetDescription("You get to select an another extremely powerful Overpowered Ability.");
+                bp.SetDescription("You get to select an another Overpowered Ability.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -62,9 +61,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.SetName("Second Overpowered Ability");
                 bp.SetDescription("You use your mythic powers to gain an additional Overpowered Ability.");
                 bp.m_Icon = Icon_TrickFate;
-                bp.AddComponent<PrerequisiteNoFeature>(c => {
-                    c.m_Feature = WinnerFeature.ToReference<BlueprintFeatureReference>();
-                });
                 bp.AddComponent<PrerequisiteFeature>(c => {
                     c.m_Feature = OverpoweredAbilitySelection.ToReference<BlueprintFeatureReference>();
                 });

@@ -63,7 +63,6 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Perfect Roll`: Roll 20 on every d20 roll.
 		- `Super Buff`: Apply many powerful buffs on you and your allies.
 		- `Interdimensional Bag`: Get infinite carry capacity.
-		- `Winner`: Does nothing.
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities

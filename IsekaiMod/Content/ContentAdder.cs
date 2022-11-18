@@ -77,7 +77,6 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.PerfectRollFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.SuperBuffFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.InterdimensionalBagFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.WinnerFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
                 // God Emperor Archetype
                 Features.IsekaiProtagonist.GodEmperor.GodEmperorProficiencies.Add();
