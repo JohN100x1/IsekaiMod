@@ -15,11 +15,6 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
 
         public static void Add()
         {
-
-            // TODO: add scaling natural armor, strength and dexterity (like animal companion)
-
-            // TODO: re-order the features in the progression. DONT FORGET BEFORE RELEASE
-
             var Pounce = Resources.GetBlueprint<BlueprintFeature>("1a8149c09e0bdfc48a305ee6ac3729a8");
             var DeathsnatcherSoulRendFeature = Resources.GetBlueprint<BlueprintFeature>("c8b468508a76c5140a9a2af00077753d");
             var Evasion = Resources.GetBlueprint<BlueprintFeature>("576933720c440aa4d8d42b0c54b77e80");
