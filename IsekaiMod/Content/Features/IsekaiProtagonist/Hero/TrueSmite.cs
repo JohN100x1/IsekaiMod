@@ -88,6 +88,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Hero
                 bp.AddComponent<IgnoreTargetDR>(c => {
                     c.CheckCaster = true;
                 });
+                bp.AddComponent<TargetCritAutoconfirm>();
                 bp.AddComponent<UniqueBuff>();
                 bp.Stacking = StackingType.Replace;
                 bp.FxOnStart = new PrefabLink() { AssetId = "5b4cdc22715305949a1bd80fab08302b" };
