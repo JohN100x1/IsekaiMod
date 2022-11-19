@@ -105,6 +105,7 @@ namespace IsekaiMod.Content
 
                 // Hero Archetype
                 Features.IsekaiProtagonist.Hero.GracefulCombat.Add();
+                Features.IsekaiProtagonist.Hero.TrueSmite.Add();
                 Classes.IsekaiProtagonist.Archetypes.Hero.Add();
 
                 // Villain Archetype
@@ -132,7 +133,6 @@ namespace IsekaiMod.Content
                 Features.Deathsnatcher.DeathsnatcherCreateUndead.Add();
                 Features.Deathsnatcher.DeathsnatcherFingerOfDeath.Add();
                 Features.Deathsnatcher.DeathsnatcherFastHealing.Add();
-                Features.Deathsnatcher.DeathsnatcherAnimateDeadAdditionalUse.Add();
                 Features.Deathsnatcher.DeathsnatcherPoisonSting.Add();
                 Features.Deathsnatcher.DeathsnatcherUndeadMaster.Add();
                 Classes.Deathsnatcher.DeathsnatcherClassProgression.Add();

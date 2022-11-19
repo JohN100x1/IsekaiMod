@@ -15,7 +15,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Hero
         public static void Add()
         {
             var GracefulCombat = Helpers.CreateBlueprint<BlueprintFeature>("GracefulCombat", bp => {
-                bp.SetName("GracefulCombat");
+                bp.SetName("Graceful Combat");
                 bp.SetDescription("The Hero uses their Charisma modifier for their melee attack and damage bonus instead of Strength. "
                     + "In addition, they may use their Charisma in place of their Strength for CMB and to qualify for any feat for which it is a prerequisite.");
                 bp.m_Icon = Icon_HolySword;

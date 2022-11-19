@@ -13,6 +13,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
         {
             // Archetype features
             var GracefulCombat = Resources.GetModBlueprint<BlueprintFeature>("GracefulCombat");
+            var TrueSmiteFeature = Resources.GetModBlueprint<BlueprintFeature>("TrueSmiteFeature");
+            var TrueSmiteAdditionalUse = Resources.GetModBlueprint<BlueprintFeature>("TrueSmiteAdditionalUse");
 
             // Removed features
             var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
@@ -40,6 +42,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, GracefulCombat),
+                    Helpers.LevelEntry(2, TrueSmiteFeature),
+                    Helpers.LevelEntry(4, TrueSmiteAdditionalUse),
+                    Helpers.LevelEntry(7, TrueSmiteAdditionalUse),
+                    Helpers.LevelEntry(10, TrueSmiteAdditionalUse),
+                    Helpers.LevelEntry(13, TrueSmiteAdditionalUse),
+                    Helpers.LevelEntry(16, TrueSmiteAdditionalUse),
+                    Helpers.LevelEntry(19, TrueSmiteAdditionalUse),
                 };
                 bp.AddComponent<PrerequisiteAlignment>(c => {
                     c.Group = Prerequisite.GroupType.Any;
