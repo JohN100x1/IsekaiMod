@@ -1,6 +1,5 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.UnitLogic.Alignments;
@@ -12,11 +11,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
         public static void Add()
         {
             // Archetype features
+            var HeroProficiencies = Resources.GetModBlueprint<BlueprintFeature>("HeroProficiencies");
             var GracefulCombat = Resources.GetModBlueprint<BlueprintFeature>("GracefulCombat");
             var TrueSmiteFeature = Resources.GetModBlueprint<BlueprintFeature>("TrueSmiteFeature");
             var TrueSmiteAdditionalUse = Resources.GetModBlueprint<BlueprintFeature>("TrueSmiteAdditionalUse");
 
             // Removed features
+            var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
             var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
 
 
@@ -29,7 +30,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     + "despair of the inhabitants of the new world, the hero sets out to bring knowledge from their old world in order to save them.");
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.LevelEntry(1, SneakAttack),
+                    Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, SneakAttack),
                     Helpers.LevelEntry(3, SneakAttack),
                     Helpers.LevelEntry(5, SneakAttack),
                     Helpers.LevelEntry(7, SneakAttack),
@@ -41,7 +42,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(19, SneakAttack),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.LevelEntry(1, GracefulCombat),
+                    Helpers.LevelEntry(1, HeroProficiencies, GracefulCombat),
                     Helpers.LevelEntry(2, TrueSmiteFeature),
                     Helpers.LevelEntry(4, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(7, TrueSmiteAdditionalUse),
@@ -58,14 +59,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
 
             // Add Archetype to Class
             IsekaiProtagonistClass.RegisterArchetype(HeroArchetype);
-        }
-        public static BlueprintArchetype Get()
-        {
-            return Resources.GetModBlueprint<BlueprintArchetype>("HeroArchetype");
-        }
-        public static BlueprintArchetypeReference GetReference()
-        {
-            return Get().ToReference<BlueprintArchetypeReference>();
         }
     }
 }

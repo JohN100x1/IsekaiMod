@@ -15,6 +15,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var EdgeLordProficiencies = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordProficiencies");
             var GodEmperorProficiencies = Resources.GetModBlueprint<BlueprintFeature>("GodEmperorProficiencies");
             var VillainProficiencies = Resources.GetModBlueprint<BlueprintFeature>("VillainProficiencies");
+            var HeroProficiencies = Resources.GetModBlueprint<BlueprintFeature>("HeroProficiencies");
 
             var IsekaiProtagonistCantripsFeature = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistCantripsFeature");
             var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
@@ -106,6 +107,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 Helpers.CreateUIGroup(IsekaiPetSelection, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, VillainQuickFooted),
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
+                HeroProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 EdgeLordProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 GodEmperorProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 VillainProficiencies.ToReference<BlueprintFeatureBaseReference>(),

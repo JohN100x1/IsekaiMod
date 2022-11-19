@@ -104,6 +104,7 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
 
                 // Hero Archetype
+                Features.IsekaiProtagonist.Hero.HeroProficiencies.Add();
                 Features.IsekaiProtagonist.Hero.GracefulCombat.Add();
                 Features.IsekaiProtagonist.Hero.TrueSmite.Add();
                 Classes.IsekaiProtagonist.Archetypes.Hero.Add();
