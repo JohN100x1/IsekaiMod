@@ -49,8 +49,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Features = OPAbilityList;
             });
             var OverpoweredAbilitySelection2 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2", bp => {
-                bp.SetName("Another Overpowered Ability");
-                bp.SetDescription("You get to select an another Overpowered Ability.");
+                bp.SetName("Additional Overpowered Ability");
+                bp.SetDescription("You get to select an additional Overpowered Ability.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -58,7 +58,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Features = OPAbilityList;
             });
             var OverpoweredAbilityMythicSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("OverpoweredAbilityMythicSelection", bp => {
-                bp.SetName("Second Overpowered Ability");
+                bp.SetName("Mythic Overpowered Ability");
                 bp.SetDescription("You use your mythic powers to gain an additional Overpowered Ability.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.AddComponent<PrerequisiteFeature>(c => {
@@ -69,7 +69,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_AllFeatures = OPAbilityList;
                 bp.m_Features = OPAbilityList;
             });
-
 
             // You can't select another Overpowered Ability from Mythic Abilities
             OverpoweredAbilityMythicSelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = OverpoweredAbilityMythicSelection.ToReference<BlueprintFeatureReference>(); });
