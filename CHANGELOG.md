@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Buffed `Godhood` to give energy immunity against acid, cold, electricity, fire, and sonic.
 - Nerfed `Grasp Heart` to stun if the creature fails a DC 50 fortitude save.
 - Changed `Glorious Aura` to give a +4 sacred bonus to all attributes instead.
-- Changed `Training Montage` to give a +10 untyped bonus to all attributes but now requires character level 10.
+- Changed `Training Montage` to give a +10 untyped bonus to all attributes but now requires character level 13.
 - Changed `Extreme Speed` to give a +5 untyped speed bonus per character level.
 - Changed `Perfect Roll` and Auto metamagic abilities to be turned on by default.
 - Moved `Exceptional Summoning` to `Exceptional feats`.
