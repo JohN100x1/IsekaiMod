@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Effect Immunity` exceptional feat.
 ### Changed
 - Reworked `Isekai Protagonist` class progression to have more Overpowered Abilities instead of training arc feats.
-- Changed `Grasp Heart` to stun if the creature fails a DC 50 fortitude save.
+- Nerfed `Grasp Heart` to stun if the creature fails a DC 50 fortitude save.
 - Changed `Glorious Aura` to give a +4 sacred bonus to all attributes instead.
 - Changed `Training Montage` to give a +10 untyped bonus to all attributes but now requires character level 10.
 - Changed `Extreme Speed` to give a +5 untyped speed bonus per character level.

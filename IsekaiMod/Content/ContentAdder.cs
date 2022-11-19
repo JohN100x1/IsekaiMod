@@ -103,6 +103,9 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.EdgeLord.ExtraStrike.Add();
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
 
+                // Hero Archetype
+                Classes.IsekaiProtagonist.Archetypes.Hero.Add();
+
                 // Villain Archetype
                 Features.IsekaiProtagonist.Villain.VillainProficiencies.Add();
                 Features.IsekaiProtagonist.Villain.CorruptAuraFeature.Add();
