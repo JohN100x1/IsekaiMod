@@ -10,7 +10,7 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.ExceptionalFeats
 {
     class ExceptionalSummoningFeature
     {
@@ -88,7 +88,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 c.IsInfinity = true;
             });
 
-            CharacterDevelopmentSelection.AddToSelection(ExceptionalSummoningFeature);
+            ExceptionalFeatSelection.AddToSelection(ExceptionalSummoningFeature);
         }
     }
 }

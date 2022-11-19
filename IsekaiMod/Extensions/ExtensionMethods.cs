@@ -97,6 +97,15 @@ namespace IsekaiMod.Extensions
             return result;
         }
 
+        public static T[] AddToFirst<T>(this T[] array, T value)
+        {
+            var len = array.Length;
+            var result = new T[len + 1];
+            Array.Copy(array, 0, result, 1, len);
+            result[0] = value;
+            return result;
+        }
+
         public static T[] RemoveFromArrayByType<T, V>(this T[] array)
         {
             List<T> list = new List<T>();

@@ -17,6 +17,11 @@ namespace IsekaiMod.Content
                 Features.ExtraWings.Add();
                 Features.ExoticWeaponProficiency.Add();
 
+                // Add Exceptional Feats
+                Features.ExceptionalFeats.ExceptionalFeatSelection.Add();
+                Features.ExceptionalFeats.EffectImmunitySelection.Add();
+                Features.ExceptionalFeats.ExceptionalSummoningFeature.Add();
+
                 if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
                 if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
                 if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
@@ -57,8 +62,6 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.BetaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.GammaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.EnergyImmunitySelection.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.EffectImmunitySelection.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.ExceptionalSummoningFeature.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.TrainingMontage.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.BodyStrengthening.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.SpellNegationFeature.Add();

@@ -7,7 +7,7 @@ using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.FactLogic;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.ExceptionalFeats
 {
     class EffectImmunitySelection
     {
@@ -438,7 +438,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Features = EffectImmunityList;
                 bp.m_AllFeatures = EffectImmunityList;
             });
-            CharacterDevelopmentSelection.AddToSelection(EffectImmunitySelection);
+            ExceptionalFeatSelection.AddToSelection(EffectImmunitySelection);
         }
     }
 }

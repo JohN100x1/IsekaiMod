@@ -90,8 +90,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection),
                 Helpers.LevelEntry(17, SneakAttack, CharacterDevelopmentSelection, HaremMagnetFeature),
                 Helpers.LevelEntry(18, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(19, SneakAttack, CharacterDevelopmentSelection),
-                Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, TrueMainCharacter)
+                Helpers.LevelEntry(19, SneakAttack),
+                Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, CharacterDevelopmentSelection, TrueMainCharacter)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 Helpers.CreateUIGroup(SneakAttack, OverpoweredAbilitySelectionVillain),

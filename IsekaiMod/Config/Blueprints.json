@@ -38,6 +38,13 @@
     "BackgroundGamer": "2490f301-fc55-4be5-a726-34b8436e29e6",
     "IsekaiBackgroundSelection": "5400da49-2595-443c-b6ba-0574d8c191dd",
 
+    // Extra Feats
+    "ExceptionalFeatSelection": "f13b7a85-ea3c-450b-a2ef-c2f04b728515",
+    "ExceptionalSummoningSummonBuff": "1f017106-a0e3-4eef-a8f2-3bcb62256979",
+    "ExceptionalSummoningBuff": "1435e658-ec5c-4425-a087-21cd66aa756c",
+    "ExceptionalSummoningAbility": "91cf3dae-7106-46ff-8719-6bea757143a5",
+    "ExceptionalSummoningFeature": "9428fd68-a233-43a9-afac-1e1b54c1f037",
+
     // Archetypes
     "GodEmperorArchetype": "2ff78bd9-6224-4376-9f64-720ce94d0616",
     "EdgeLordArchetype": "900db658-4f20-4636-ae84-a198c2b50f58",
@@ -88,10 +95,6 @@
     "BetaStrike": "290c88af-a0eb-43f8-88ac-e49a76ccec0c",
     "GammaStrike": "1c4edc77-1a1e-4bc8-add2-8784a14551b4",
     "MundaneAura": "2a36d826-f9de-478d-bd43-3932b63b9ad0",
-    "ExceptionalSummoningSummonBuff": "1f017106-a0e3-4eef-a8f2-3bcb62256979",
-    "ExceptionalSummoningBuff": "1435e658-ec5c-4425-a087-21cd66aa756c",
-    "ExceptionalSummoningAbility": "91cf3dae-7106-46ff-8719-6bea757143a5",
-    "ExceptionalSummoningFeature": "9428fd68-a233-43a9-afac-1e1b54c1f037",
     "InterdimensionalBagFeature": "72ad9cc8-3ef1-4286-b5e4-29b9597d54b8",
     "TrainingMontage": "557a9018-bea9-4f2a-b110-27e9d332ab56",
     "BodyStrengthening": "f48b2667-6ac5-4971-b0a4-6e04d5082680",

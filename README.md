@@ -52,6 +52,10 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
 		- `Exceptional Summoning`: Your summons get +100 HP, +10 attack, AC, and saving throws.
+		- `Training Montage`: Get a +10 bonus to all attributes.
+		- `Body Strengthening`: Get a DR/— bonus equal to 10 + character level.
+		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
+		- `Extreme Speed`: Get a speed bonus equal to 5 times character level.
 	- `Overpowered Ability`: Powerful 1st level feat.
 		- `AutoEmpower`: Empowers every spell you cast.
 		- `AutoExtend`: Extends every spell you cast.

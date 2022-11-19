@@ -48,8 +48,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(13, SneakAttack, CharacterDevelopmentSelection),
                     Helpers.LevelEntry(15, OverpoweredAbilitySelection2, OtherworldlyStamina),
                     Helpers.LevelEntry(17, SneakAttack, CharacterDevelopmentSelection),
-                    Helpers.LevelEntry(19, CharacterDevelopmentSelection),
-                    Helpers.LevelEntry(20, TrueMainCharacter),
+                    Helpers.LevelEntry(20, CharacterDevelopmentSelection, TrueMainCharacter),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, GodEmperorProficiencies),
