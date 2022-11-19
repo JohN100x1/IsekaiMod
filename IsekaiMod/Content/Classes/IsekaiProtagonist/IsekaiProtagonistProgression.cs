@@ -10,7 +10,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
     {
         public static void Add()
         {
-            // Class Features
+            // Isekai Protagonist Features
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
             var EdgeLordProficiencies = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordProficiencies");
             var GodEmperorProficiencies = Resources.GetModBlueprint<BlueprintFeature>("GodEmperorProficiencies");
@@ -49,6 +49,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var SlayerSwiftStudyTargetFeature = Resources.GetBlueprint<BlueprintFeature>("40d4f55a5ac0e4f469d67d36c0dfc40b");
             var CorruptAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("CorruptAuraFeature");
             var SecondFormFeature = Resources.GetModBlueprint<BlueprintFeature>("SecondFormFeature");
+            var GracefulCombat = Resources.GetModBlueprint<BlueprintFeature>("GracefulCombat");
 
             var IsekaiPetSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiPetSelection");
             var OverpoweredAbilitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection");

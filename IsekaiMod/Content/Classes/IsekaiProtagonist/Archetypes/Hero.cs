@@ -12,7 +12,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
         public static void Add()
         {
             // Archetype features
-
+            var GracefulCombat = Resources.GetModBlueprint<BlueprintFeature>("GracefulCombat");
 
             // Removed features
             var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
@@ -39,6 +39,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(19, SneakAttack),
                 };
                 bp.AddFeatures = new LevelEntry[] {
+                    Helpers.LevelEntry(1, GracefulCombat),
                 };
                 bp.AddComponent<PrerequisiteAlignment>(c => {
                     c.Group = Prerequisite.GroupType.Any;

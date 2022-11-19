@@ -104,6 +104,7 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
 
                 // Hero Archetype
+                Features.IsekaiProtagonist.Hero.GracefulCombat.Add();
                 Classes.IsekaiProtagonist.Archetypes.Hero.Add();
 
                 // Villain Archetype

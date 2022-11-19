@@ -216,6 +216,9 @@
     "EdgeLordFastMovement": "087e0c42-d008-44c3-bb4b-d5b95387f862",
     "ExtraStrike": "5c37047c-4030-47c7-ab09-dac2d523f8ce",
 
+    // Hero Features
+    "GracefulCombat": "bfe81697-dba2-42bd-ac5a-6c51b8f43004",
+
     // Villain Features
     "VillainSpellbook": "9f393ace-2006-436a-85f9-8b47f347d3cd",
     "VillainProficiencies": "b4d2cd29-c850-4716-95c1-74eca502a30c",
