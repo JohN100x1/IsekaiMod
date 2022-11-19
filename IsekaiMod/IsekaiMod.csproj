@@ -126,9 +126,6 @@
     <None Update="Assets\Features\ICON_SIPHONING_AURA.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Features\ICON_SIPHONING_DEBUFF.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Assets\Features\ICON_SUPER_BUFF.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

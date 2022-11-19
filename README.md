@@ -41,6 +41,9 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Edge Lord` (Isekai Protagonist Archetype)
 		- Has alot of extra attacks.
 		- Uses dexterity for damage and attack rolls.
+	- `Hero` (Isekai Protagonist Archetype)
+		- Has the `True Smite` ability (smite any alignment).
+		- Uses charisma for damage and attack rolls.
 	- `Villain` (Isekai Protagonist Archetype)
 		- Has studied target.
 		- Intelligence based caster that memorizes spells (becomes like wizard).

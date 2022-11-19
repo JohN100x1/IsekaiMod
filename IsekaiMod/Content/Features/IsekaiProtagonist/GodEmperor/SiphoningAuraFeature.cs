@@ -11,15 +11,16 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
 {
     class SiphoningAuraFeature
     {
+        private static readonly Sprite Icon_SiphoningDebuff = Resources.GetBlueprint<BlueprintBuff>("886c7407dc629dc499b9f1465ff382df").m_Icon;
         public static void Add()
         {
             var Icon_SiphoningAura = AssetLoader.LoadInternal("Features", "ICON_SIPHONING_AURA.png");
-            var Icon_SiphoningDebuff = AssetLoader.LoadInternal("Features", "ICON_SIPHONING_DEBUFF.png");
             var SiphoningAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("SiphoningAuraBuff", bp => {
                 bp.SetName("Siphoning Aura");
                 bp.SetDescription("This creature has a –4 penalty on all attributes.");

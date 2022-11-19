@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Added `Hero` archetype.
 - Added `Corrupt Aura` feature for `Villain` archetype.
 - Added `Exceptional feats` within bonus feat selection.
 - Added `Effect Immunity` exceptional feat.
@@ -17,7 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `Extreme Speed` to give a +5 untyped speed bonus per character level.
 - Changed `Perfect Roll` and Auto metamagic abilities to be turned on by default.
 - Moved `Exceptional Summoning` to `Exceptional feats`.
-- Updated `Super Buff` spell description.
+- Updated description for `Super Buff` feature.
+- Updated icon for `Siphoning Aura` debuff.
 ### Removed
 - Removed `Winner` feature.
 - Removed `Training Arc` feature selection. Training Arc feats moved to character development.
