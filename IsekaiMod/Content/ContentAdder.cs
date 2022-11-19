@@ -36,6 +36,7 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.IsekaiProtagonistSpellsKnown.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistSpellbook.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistClass.Add();
+
                 // Isekai Protagonist Features
                 Features.IsekaiProtagonist.IsekaiProtagonistProficiencies.Add();
                 Features.IsekaiProtagonist.IsekaiProtagonistCantripsFeature.Add();
@@ -51,11 +52,15 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.FriendlyAuraFeature.Add();
                 Features.IsekaiProtagonist.HaremMagnetFeature.Add();
                 Features.IsekaiProtagonist.TrueMainCharacter.Add();
+
+                // Beach Episode Selection
+                Features.IsekaiProtagonist.BeachEpisode.BeachEpisodeSelection.Add();
                 Features.IsekaiProtagonist.BeachEpisode.HealthyBody.Add();
                 Features.IsekaiProtagonist.BeachEpisode.InnerPower.Add();
                 Features.IsekaiProtagonist.BeachEpisode.MasterSelf.Add();
                 Features.IsekaiProtagonist.BeachEpisode.Tenacious.Add();
-                Features.IsekaiProtagonist.BeachEpisode.BeachEpisodeSelection.Add();
+
+                // Character Development
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.MundaneAura.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.AlphaStrike.Add();
@@ -66,6 +71,9 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.BodyStrengthening.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.SpellNegationFeature.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.ExtremeSpeedFeature.Add();
+
+                // OP Ability
+                Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoEmpowerFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoExtendFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoMaximizeFeature.Add();
@@ -76,7 +84,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.PerfectRollFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.SuperBuffFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.InterdimensionalBagFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
+
                 // God Emperor Archetype
                 Features.IsekaiProtagonist.GodEmperor.GodEmperorProficiencies.Add();
                 Features.IsekaiProtagonist.GodEmperor.NascentApotheosis.Add();
@@ -87,12 +95,14 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.GodEmperor.SiphoningAuraFeature.Add();
                 Features.IsekaiProtagonist.GodEmperor.Godhood.Add();
                 Classes.IsekaiProtagonist.Archetypes.GodEmperor.Add();
+
                 // Edge Lord Archetype
                 Features.IsekaiProtagonist.EdgeLord.EdgeLordProficiencies.Add();
                 Features.IsekaiProtagonist.EdgeLord.SupersonicCombat.Add();
                 Features.IsekaiProtagonist.EdgeLord.EdgeLordFastMovement.Add();
                 Features.IsekaiProtagonist.EdgeLord.ExtraStrike.Add();
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
+
                 // Villain Archetype
                 Features.IsekaiProtagonist.Villain.VillainProficiencies.Add();
                 Features.IsekaiProtagonist.Villain.CorruptAuraFeature.Add();
@@ -100,6 +110,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.Villain.SecondFormFeature.Add();
                 Classes.IsekaiProtagonist.VillainSpellbook.Add();
                 Classes.IsekaiProtagonist.Archetypes.Villain.Add();
+
                 // Add Progression & Prebuild after Class and class-dependent features are added
                 Classes.IsekaiProtagonist.PrebuildIsekaiProtagonistFeatureList.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistProgression.Add();
@@ -122,6 +133,7 @@ namespace IsekaiMod.Content
                 Features.Deathsnatcher.DeathsnatcherUndeadMaster.Add();
                 Classes.Deathsnatcher.DeathsnatcherClassProgression.Add();
                 Classes.Deathsnatcher.DeathsnatcherUnit.Add();
+
                 // Add extra dialogue
                 Dialogue.IsekaiWelcomeDialogue.Add();
             }

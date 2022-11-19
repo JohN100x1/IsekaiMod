@@ -4,14 +4,15 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.FactLogic;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
 {
     class HealthyBody
     {
+        private static readonly Sprite Icon_PurityOfBody = Resources.GetBlueprint<BlueprintFeature>("9b02f77c96d6bba4daf9043eff876c76").m_Icon;
         public static void Add()
         {
-            var Icon_PurityOfBody = Resources.GetBlueprint<BlueprintFeature>("9b02f77c96d6bba4daf9043eff876c76").m_Icon;
             var HealthyBody = Helpers.CreateBlueprint<BlueprintFeature>("HealthyBody", bp => {
                 bp.SetName("Healthy Body");
                 bp.SetDescription("You gain immunity to bleed, blindness, curses, poison, disease, sickened, and nauseated conditions.");
@@ -46,6 +47,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
+
+            BeachEpisodeSelection.AddToSelection(HealthyBody);
         }
     }
 }

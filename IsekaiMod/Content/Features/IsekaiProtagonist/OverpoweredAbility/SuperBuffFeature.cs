@@ -91,8 +91,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 Resources.GetBlueprint<BlueprintBuff>("dea0dba1f7bff064987e03f1307bfa84"), // SenseVitalsBuff
                 Resources.GetBlueprint<BlueprintBuff>("b8da3ec045ec04845a126948e1f4fc1a"), // HeroismGreaterBuff
                 Resources.GetBlueprint<BlueprintBuff>("cbfd2f5279f5946439fe82570fd61df2"), // EcholocationBuff
-                Resources.GetBlueprint<BlueprintBuff>("4aa87d3319124a2daf74d80ca5d4595e"), // EcholocationBuff
-                // Resources.GetBlueprint<BlueprintBuff>("c6cc1c5356db4674dbd2be20ea205c86"), // FirebrandBuff
+                Resources.GetBlueprint<BlueprintBuff>("4aa87d3319124a2daf74d80ca5d4595e"), // LifeBubbleBuff
+                Resources.GetBlueprint<BlueprintBuff>("c6cc1c5356db4674dbd2be20ea205c86"), // FirebrandBuff
                 Resources.GetBlueprint<BlueprintBuff>("e9947402c84e8bc4e958b9be08d7a720"), // ProtectionFromSpellsBuffSpell
                 Resources.GetBlueprint<BlueprintBuff>("4f0064bea5b14554f809f5e075a0070d"), // ProtectionFromSpellsBuffSpellLike
                 Resources.GetBlueprint<BlueprintBuff>("35f3724d4e8877845af488d167cb8a89"), // MindBlankBuff
@@ -107,7 +107,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             var Icon_Super_Buff = AssetLoader.LoadInternal("Features", "ICON_SUPER_BUFF.png");
             var SuperBuffAbility = Helpers.CreateBlueprint<BlueprintAbility>("SuperBuffAbility", bp => {
                 bp.SetName("Overpowered Ability — Super Buff");
-                bp.SetDescription("You and your allies around you gain powerful effects for 24 hours.");
+                bp.SetDescription("You and your allies around you gain the following effects for 24 hours: resist energy, protection from energy, protection from arrows, haste, "
+                    + "mage armor, shield, shield of faith, veil of heaven, veil of positive energy, blur, bull's strength, cat's grace, bear's endurance, fox's cunning, owl's wisdom, "
+                    + "eagle's splendor, mirror image, false life, barkskin, aid, protection from evil, bestow grace, aura of greater courage, displacement, magical vestiment, "
+                    + "delay poison, invisibility greater, stone skin, death ward, freedom of movement, false life greater, burst of glory, spell resistance, eagle soul, "
+                    + "legendary proportions, ice body, frightful aspect, seamantle, foresight, fiery body, unbreakable heart, remove fear, divine favor, magic fang, align weapon good, "
+                    + "crusaders edge, magic weapon greater, divine power, true seeing, shield of law, angelic aspect greater, winds of vengeance, hurricane bow, sense vitals, "
+                    + "heroism greater, echolocation, life bubble, firebrand, protection from spells, mind blank, and heroic invocation.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = new ActionList() { Actions = BuffActions.ToArray() };
                 });
@@ -144,6 +150,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 });
                 bp.IsClassFeature = true;
             });
+
+            OverpoweredAbilitySelection.AddToSelection(SuperBuffFeature);
         }
 
         private static ContextActionApplyBuff GetApplyBuffOneDay(BlueprintBuff buff)

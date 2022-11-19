@@ -30,7 +30,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: add AddToSelection method to op ability selection
             // TODO: add Hero archetype
 
             // TODO: add scaling natural armor, strength and dexterity (like animal companion) to deathsnatcher

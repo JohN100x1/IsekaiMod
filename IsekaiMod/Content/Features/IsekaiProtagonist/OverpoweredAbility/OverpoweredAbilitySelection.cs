@@ -12,31 +12,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
     {
         public static void Add()
         {
-            // Overpowered Abilities
-            var AutoEmpowerFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoEmpowerFeature");
-            var AutoExtendFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoExtendFeature");
-            var AutoMaximizeFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoMaximizeFeature");
-            var AutoQuickenFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoQuickenFeature");
-            var AutoReachFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoReachFeature");
-            var GraspHeartFeature = Resources.GetModBlueprint<BlueprintFeature>("GraspHeartFeature");
-            var DupeGoldFeature = Resources.GetModBlueprint<BlueprintFeature>("DupeGoldFeature");
-            var PerfectRollFeature = Resources.GetModBlueprint<BlueprintFeature>("PerfectRollFeature");
-            var SuperBuffFeature = Resources.GetModBlueprint<BlueprintFeature>("SuperBuffFeature");
-            var InterdimensionalBagFeature = Resources.GetModBlueprint<BlueprintFeature>("InterdimensionalBagFeature");
-
-            var OPAbilityList = new BlueprintFeatureReference[] {
-                AutoEmpowerFeature.ToReference<BlueprintFeatureReference>(),
-                AutoExtendFeature.ToReference<BlueprintFeatureReference>(),
-                AutoMaximizeFeature.ToReference<BlueprintFeatureReference>(),
-                AutoQuickenFeature.ToReference<BlueprintFeatureReference>(),
-                AutoReachFeature.ToReference<BlueprintFeatureReference>(),
-                GraspHeartFeature.ToReference<BlueprintFeatureReference>(),
-                DupeGoldFeature.ToReference<BlueprintFeatureReference>(),
-                PerfectRollFeature.ToReference<BlueprintFeatureReference>(),
-                SuperBuffFeature.ToReference<BlueprintFeatureReference>(),
-                InterdimensionalBagFeature.ToReference<BlueprintFeatureReference>(),
-            };
-
             // Overpowered Ability Selection
             var Icon_TrickFate = Resources.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
             var OverpoweredAbilitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection", bp => {
@@ -45,8 +20,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Icon = Icon_TrickFate;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = OPAbilityList;
-                bp.m_Features = OPAbilityList;
+                bp.m_AllFeatures = new BlueprintFeatureReference[0];
+                bp.m_Features = new BlueprintFeatureReference[0];
             });
             var OverpoweredAbilitySelection2 = Helpers.CreateBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2", bp => {
                 bp.SetName("Additional Overpowered Ability");
@@ -54,8 +29,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Icon = Icon_TrickFate;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = OPAbilityList;
-                bp.m_Features = OPAbilityList;
+                bp.m_AllFeatures = new BlueprintFeatureReference[0];
+                bp.m_Features = new BlueprintFeatureReference[0];
             });
             var OverpoweredAbilitySelectionVillain = Helpers.CreateBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelectionVillain", bp => {
                 bp.SetName("Villainous Overpowered Ability");
@@ -63,8 +38,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Icon = Icon_TrickFate;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = OPAbilityList;
-                bp.m_Features = OPAbilityList;
+                bp.m_AllFeatures = new BlueprintFeatureReference[0];
+                bp.m_Features = new BlueprintFeatureReference[0];
             });
             var OverpoweredAbilityMythicSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("OverpoweredAbilityMythicSelection", bp => {
                 bp.SetName("Mythic Overpowered Ability");
@@ -75,8 +50,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 });
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = OPAbilityList;
-                bp.m_Features = OPAbilityList;
+                bp.m_AllFeatures = new BlueprintFeatureReference[0];
+                bp.m_Features = new BlueprintFeatureReference[0];
             });
 
             // You can't select another Overpowered Ability from Mythic Abilities
@@ -85,6 +60,21 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             // Add selection to mythic ability selection
             var MythicAbilitySelection = Resources.GetBlueprint<BlueprintFeatureSelection>("ba0e5a900b775be4a99702f1ed08914d");
             MythicAbilitySelection.m_AllFeatures = MythicAbilitySelection.m_AllFeatures.AppendToArray(OverpoweredAbilityMythicSelection.ToReference<BlueprintFeatureReference>());
+        }
+        public static void AddToSelection(BlueprintFeature feature)
+        {
+            var OverpoweredAbilitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection");
+            var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
+            var OverpoweredAbilitySelectionVillain = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelectionVillain");
+            var OverpoweredAbilityMythicSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilityMythicSelection");
+            OverpoweredAbilitySelection.m_Features = OverpoweredAbilitySelection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            OverpoweredAbilitySelection.m_AllFeatures = OverpoweredAbilitySelection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            OverpoweredAbilitySelection2.m_Features = OverpoweredAbilitySelection2.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            OverpoweredAbilitySelection2.m_AllFeatures = OverpoweredAbilitySelection2.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            OverpoweredAbilitySelectionVillain.m_Features = OverpoweredAbilitySelectionVillain.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            OverpoweredAbilitySelectionVillain.m_AllFeatures = OverpoweredAbilitySelectionVillain.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            OverpoweredAbilityMythicSelection.m_Features = OverpoweredAbilityMythicSelection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            OverpoweredAbilityMythicSelection.m_AllFeatures = OverpoweredAbilityMythicSelection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
         }
     }
 }

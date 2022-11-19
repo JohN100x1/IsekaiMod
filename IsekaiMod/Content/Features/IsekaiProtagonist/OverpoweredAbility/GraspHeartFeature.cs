@@ -3,7 +3,9 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.EntitySystem.Stats;
 using Kingmaker.ResourceLinks;
+using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
@@ -12,32 +14,56 @@ using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class GraspHeartFeature
     {
+        // Checked facts
+        private static readonly BlueprintFeature UndeadType = Resources.GetBlueprint<BlueprintFeature>("734a29b693e9ec346ba2951b27987e33");
+        private static readonly BlueprintFeature ConstructType = Resources.GetBlueprint<BlueprintFeature>("fd389783027d63343b4a5634bd81645f");
+
+        // Buff
+        private static readonly BlueprintBuff Stunned = Resources.GetBlueprint<BlueprintBuff>("09d39b38bb7c6014394b6daced9bacd3");
+
+        // Icon
+        private static readonly Sprite Icon_DeathClutch = Resources.GetBlueprint<BlueprintAbility>("c3d2294a6740bc147870fff652f3ced5").m_Icon;
         public static void Add()
         {
-            // Checked facts
-            var UndeadType = Resources.GetBlueprint<BlueprintFeature>("734a29b693e9ec346ba2951b27987e33");
-            var ConstructType = Resources.GetBlueprint<BlueprintFeature>("fd389783027d63343b4a5634bd81645f");
-
-            // Buffs
-            var StunnedBuff = Resources.GetBlueprint<BlueprintBuff>("09d39b38bb7c6014394b6daced9bacd3");
-
-            // Feature
-            var Icon_DeathClutch = Resources.GetBlueprint<BlueprintAbility>("c3d2294a6740bc147870fff652f3ced5").m_Icon;
             var GraspHeartAbility = Helpers.CreateBlueprint<BlueprintAbility>("GraspHeartAbility", bp => {
                 bp.SetName("Overpowered Ability — Grasp Heart");
-                bp.SetDescription("Kills the targeted creature.");
+                bp.SetDescription("Kills the targeted creature if they fail a DC 50 fortitude saving throw, otherwise they are stunned for 1 round.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.Actions = Helpers.CreateActionList(
-                        new ContextActionKill()
-                        );
+                    c.Actions = ActionFlow.DoSingle<ContextActionSavingThrow>(c => {
+                        c.Type = SavingThrowType.Fortitude;
+                        c.m_ConditionalDCIncrease = new ContextActionSavingThrow.ConditionalDCIncrease[0];
+                        c.HasCustomDC = false;
+                        c.CustomDC = 0;
+                        c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
+                            c.Succeed = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
+                                c.m_Buff = Stunned.ToReference<BlueprintBuffReference>();
+                                c.UseDurationSeconds = false;
+                                c.DurationValue = new ContextDurationValue()
+                                {
+                                    Rate = DurationRate.Rounds,
+                                    DiceType = DiceType.Zero,
+                                    DiceCountValue = 0,
+                                    BonusValue = 1,
+                                    m_IsExtendable = true
+                                };
+                                c.DurationSeconds = 0;
+                                c.IsFromSpell = false;
+                                c.ToCaster = false;
+                                c.AsChild = false;
+                            });
+                            c.Failed = ActionFlow.DoSingle<ContextActionKill>();
+                        });
+                    });
                 });
                 bp.AddComponent<SpellComponent>(c => {
                     c.School = SpellSchool.Necromancy;
@@ -58,7 +84,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Inverted = true;
                 });
                 bp.AddComponent<ContextSetAbilityParams>(c => {
-                    c.DC = 999;
+                    c.DC = 50;
                 });
                 bp.m_Icon = Icon_DeathClutch;
                 bp.Type = AbilityType.SpellLike;
@@ -79,7 +105,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             });
             var GraspHeartFeature = Helpers.CreateBlueprint<BlueprintFeature>("GraspHeartFeature", bp => {
                 bp.SetName("Overpowered Ability — Grasp Heart");
-                bp.SetDescription("You gain the Grasp Heart ability which can kill any creature in range.");
+                bp.SetDescription("You gain the Grasp Heart ability which can kill any creature if they fail a DC 50 fortitude saving throw, otherwise they are stunned for 1 round.");
                 bp.m_Icon = Icon_DeathClutch;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -87,6 +113,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.m_Facts = new BlueprintUnitFactReference[] { GraspHeartAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
+
+            OverpoweredAbilitySelection.AddToSelection(GraspHeartFeature);
         }
     }
 }

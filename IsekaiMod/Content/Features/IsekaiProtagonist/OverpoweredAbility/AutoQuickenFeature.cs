@@ -8,14 +8,15 @@ using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class AutoQuickenFeature
     {
+        private static readonly Sprite Icon_QuickenSpell = Resources.GetBlueprint<BlueprintFeature>("ef7ece7bb5bb66a41b256976b27f424e").m_Icon;
         public static void Add()
         {
-            var Icon_QuickenSpell = Resources.GetBlueprint<BlueprintFeature>("ef7ece7bb5bb66a41b256976b27f424e").m_Icon;
             var AutoQuickenBuff = Helpers.CreateBlueprint<BlueprintBuff>("AutoQuickenBuff", bp => {
                 bp.SetName("Overpowered Ability — Auto Quicken");
                 bp.SetDescription("Every time you cast a spell, it becomes quickened, as though using the Quicken Spell feat.");
@@ -50,6 +51,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 });
                 bp.IsClassFeature = true;
             });
+
+            OverpoweredAbilitySelection.AddToSelection(AutoQuickenFeature);
         }
     }
 }

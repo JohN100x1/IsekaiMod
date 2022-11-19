@@ -8,14 +8,15 @@ using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class AutoExtendFeature
     {
+        private static readonly Sprite Icon_ExtendSpell = Resources.GetBlueprint<BlueprintFeature>("f180e72e4a9cbaa4da8be9bc958132ef").m_Icon;
         public static void Add()
         {
-            var Icon_ExtendSpell = Resources.GetBlueprint<BlueprintFeature>("f180e72e4a9cbaa4da8be9bc958132ef").m_Icon;
             var AutoExtendBuff = Helpers.CreateBlueprint<BlueprintBuff>("AutoExtendBuff", bp => {
                 bp.SetName("Overpowered Ability — Auto Extend");
                 bp.SetDescription("Every time you cast a spell, it becomes extended, as though using the Extend Spell feat.");
@@ -50,6 +51,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 });
                 bp.IsClassFeature = true;
             });
+
+            OverpoweredAbilitySelection.AddToSelection(AutoExtendFeature);
         }
     }
 }

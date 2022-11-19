@@ -18,12 +18,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class DupeGoldFeature
     {
+        private static readonly BlueprintItem GoldCoins = Resources.GetBlueprint<BlueprintItem>("f2bc0997c24e573448c6c91d2be88afa");
         public static void Add()
         {
-            // Gold
-            var GoldCoins = Resources.GetBlueprint<BlueprintItem>("f2bc0997c24e573448c6c91d2be88afa");
-
-            // Feature
             var Icon_Dupe_Gold = AssetLoader.LoadInternal("Features", "ICON_DUPE_GOLD.png");
             var DupeGoldAbility = Helpers.CreateBlueprint<BlueprintAbility>("DupeGoldAbility", bp => {
                 bp.SetName("Overpowered Ability — Dupe Gold");
@@ -72,6 +69,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.m_Facts = new BlueprintUnitFactReference[] { DupeGoldAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
+
+            OverpoweredAbilitySelection.AddToSelection(DupeGoldFeature);
         }
     }
 }
