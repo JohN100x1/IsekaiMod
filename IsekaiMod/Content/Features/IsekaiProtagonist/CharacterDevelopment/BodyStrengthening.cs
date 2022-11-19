@@ -6,14 +6,15 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.TrainingArc
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
 {
     class BodyStrengthening
     {
+        private static readonly Sprite Icon_IronBody = Resources.GetBlueprint<BlueprintAbility>("198fcc43490993f49899ed086fe723c1").m_Icon;
         public static void Add()
         {
-            var Icon_IronBody = Resources.GetBlueprint<BlueprintAbility>("198fcc43490993f49899ed086fe723c1").m_Icon;
             var BodyStrengthening = Helpers.CreateBlueprint<BlueprintFeature>("BodyStrengthening", bp => {
                 bp.SetName("Body Strengthening");
                 bp.SetDescription("After extensive strengthening of your body, you gain {g|Encyclopedia:Damage_Reduction}DR{/g}/— equal to 10 + your character level.");
@@ -35,6 +36,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.TrainingArc
                 bp.IsClassFeature = true;
                 bp.ReapplyOnLevelUp = true;
             });
+
+            CharacterDevelopmentSelection.AddToSelection(BodyStrengthening);
         }
     }
 }

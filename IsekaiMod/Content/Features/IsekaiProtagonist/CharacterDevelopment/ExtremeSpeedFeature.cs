@@ -8,22 +8,35 @@ using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.UnitLogic.Mechanics;
+using Kingmaker.UnitLogic.Mechanics.Components;
+using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.TrainingArc
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
 {
     class ExtremeSpeedFeature
     {
+        private static readonly Sprite Icon_SupersonicSpeed = Resources.GetBlueprint<BlueprintFeature>("505456aa17dd18a4e8bd8172811a4fdc").m_Icon;
         public static void Add()
         {
-            var Icon_SupersonicSpeed = Resources.GetBlueprint<BlueprintFeature>("505456aa17dd18a4e8bd8172811a4fdc").m_Icon;
             var ExtremeSpeedBuff = Helpers.CreateBlueprint<BlueprintBuff>("ExtremeSpeedBuff", bp => {
                 bp.SetName("Extreme Speed");
-                bp.SetDescription("You gain a +100 insight {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g}.");
+                bp.SetDescription("You gain a +5 {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} per character level.");
                 bp.m_Icon = Icon_SupersonicSpeed;
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Insight;
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.UntypedStackable;
                     c.Stat = StatType.Speed;
-                    c.Value = 100;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.StatBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.MultiplyByModifier;
+                    c.m_StepLevel = 5;
                 });
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
@@ -33,7 +46,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.TrainingArc
             });
             var ExtremeSpeedAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("ExtremeSpeedAbility", bp => {
                 bp.SetName("Extreme Speed");
-                bp.SetDescription("You gain a +100 insight {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g}.");
+                bp.SetDescription("You gain a +5 {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} per character level.");
                 bp.m_Icon = Icon_SupersonicSpeed;
                 bp.m_Buff = ExtremeSpeedBuff.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.None;
@@ -44,7 +57,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.TrainingArc
             });
             var ExtremeSpeedFeature = Helpers.CreateBlueprint<BlueprintFeature>("ExtremeSpeedFeature", bp => {
                 bp.SetName("Extreme Speed");
-                bp.SetDescription("After extensive speed training, you gain a +100 insight {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g}.");
+                bp.SetDescription("You extensive speed training, gain a +5 {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} per character level.");
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { ExtremeSpeedAbility.ToReference<BlueprintUnitFactReference>() };
                 });
@@ -52,6 +65,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.TrainingArc
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
+
+            CharacterDevelopmentSelection.AddToSelection(ExtremeSpeedFeature);
         }
     }
 }

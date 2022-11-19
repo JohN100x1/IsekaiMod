@@ -87,6 +87,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 c.SpellDescriptor = SpellDescriptor.Summoning;
                 c.IsInfinity = true;
             });
+
+            CharacterDevelopmentSelection.AddToSelection(ExceptionalSummoningFeature);
         }
     }
 }

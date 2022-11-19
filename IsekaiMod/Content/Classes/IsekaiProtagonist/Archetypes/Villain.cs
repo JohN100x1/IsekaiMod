@@ -20,7 +20,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var DarkAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("DarkAuraFeature");
             var SlayerStudyTargetFeature = Resources.GetBlueprint<BlueprintFeature>("09bdd9445ac38044389476689ae8d5a1");
             var SlayerSwiftStudyTargetFeature = Resources.GetBlueprint<BlueprintFeature>("40d4f55a5ac0e4f469d67d36c0dfc40b");
-            var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeature>("OverpoweredAbilitySelection2");
+            var OverpoweredAbilitySelectionVillain = Resources.GetModBlueprint<BlueprintFeature>("OverpoweredAbilitySelectionVillain");
+            var CorruptAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("CorruptAuraFeature");
             var VillainQuickFooted = Resources.GetModBlueprint<BlueprintFeature>("VillainQuickFooted");
             var SecondFormFeature = Resources.GetModBlueprint<BlueprintFeature>("SecondFormFeature");
 
@@ -31,7 +32,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
             var IsekaiQuickFooted = Resources.GetModBlueprint<BlueprintFeature>("IsekaiQuickFooted");
             var TrueMainCharacter = Resources.GetModBlueprint<BlueprintFeature>("TrueMainCharacter");
-            var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
+            var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
 
             // Archetype
             var VillainArchetype = Helpers.CreateBlueprint<BlueprintArchetype>("VillainArchetype", bp => {
@@ -45,18 +46,19 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, SneakAttack),
-                    Helpers.LevelEntry(5, SneakAttack, TrainingArcSelection),
+                    Helpers.LevelEntry(5, SneakAttack),
                     Helpers.LevelEntry(9, SneakAttack, FriendlyAuraFeature),
-                    Helpers.LevelEntry(10, TrainingArcSelection),
+                    Helpers.LevelEntry(10, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(13, SneakAttack),
-                    Helpers.LevelEntry(15, TrainingArcSelection, IsekaiQuickFooted),
+                    Helpers.LevelEntry(15, OverpoweredAbilitySelection2, IsekaiQuickFooted),
                     Helpers.LevelEntry(17, SneakAttack),
                     Helpers.LevelEntry(20, TrueMainCharacter),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.LevelEntry(1, VillainProficiencies, OverpoweredAbilitySelection2, SlayerStudyTargetFeature),
+                    Helpers.LevelEntry(1, VillainProficiencies, OverpoweredAbilitySelectionVillain, SlayerStudyTargetFeature),
                     Helpers.LevelEntry(5, SlayerStudyTargetFeature),
                     Helpers.LevelEntry(7, SlayerSwiftStudyTargetFeature),
+                    Helpers.LevelEntry(9, CorruptAuraFeature),
                     Helpers.LevelEntry(10, SlayerStudyTargetFeature, DarkAuraFeature),
                     Helpers.LevelEntry(15, SlayerStudyTargetFeature),
                     Helpers.LevelEntry(16, VillainQuickFooted),
@@ -68,6 +70,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     c.Alignment = AlignmentMaskType.Evil;
                 });
                 bp.ChangeCasterType = true;
+                bp.IsDivineCaster = true;
                 bp.m_ReplaceSpellbook = VillainSpellbook.ToReference<BlueprintSpellbookReference>();
                 bp.RecommendedAttributes = new StatType[] { StatType.Intelligence, StatType.Strength };
             });

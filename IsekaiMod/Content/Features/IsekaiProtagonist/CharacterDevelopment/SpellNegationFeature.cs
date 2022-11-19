@@ -10,14 +10,15 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.TrainingArc
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
 {
     class SpellNegationFeature
     {
+        private static readonly Sprite Icon_SpellResistance = Resources.GetBlueprint<BlueprintAbility>("0a5ddfbcfb3989543ac7c936fc256889").m_Icon;
         public static void Add()
         {
-            var Icon_SpellResistance = Resources.GetBlueprint<BlueprintAbility>("0a5ddfbcfb3989543ac7c936fc256889").m_Icon;
             var SpellNegationBuff = Helpers.CreateBlueprint<BlueprintBuff>("SpellNegationBuff", bp => {
                 bp.SetName("Spell Negation");
                 bp.SetDescription("You gain spell resistance equal to 10 + twice your character level.");
@@ -62,6 +63,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.TrainingArc
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
+
+            CharacterDevelopmentSelection.AddToSelection(SpellNegationFeature);
         }
     }
 }

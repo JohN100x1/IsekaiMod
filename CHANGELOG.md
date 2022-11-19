@@ -5,13 +5,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Added `Corrupt Aura` feature for `Villain` archetype.
 ### Changed
-- Energy Immunities are now selected from the `Energy Immunity` Selection.
+- Changed `Glorious Aura` to give a +4 sacred bonus to all attributes instead.
+- Changed `Training Montage` to give a +10 untyped bonus to all attributes but now requires character level 10.
+- Changed `Extreme Speed` to give a +5 untyped speed bonus per character level.
 - Changed `Isekai Protagonist` class description.
-- Changed `Training Arc` to allow `Overpowered Ability` to be selected.
 - Changed `Perfect Roll` and Auto metamagic abilities to be turned on by default.
 ### Removed
 - Removed `Winner` feature.
+- Removed `Training Arc` feature selection. Training Arc feats moved to character development.
+### Fixed
+- Fixed `Villain` archetype to correctly show source of magic as a divine caster.
 
 ## [1.9.0] - 2022-11-18
 ### Added

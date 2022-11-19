@@ -46,16 +46,12 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.FriendlyAuraFeature.Add();
                 Features.IsekaiProtagonist.HaremMagnetFeature.Add();
                 Features.IsekaiProtagonist.TrueMainCharacter.Add();
-                Features.IsekaiProtagonist.TrainingArc.TrainingMontage.Add();
-                Features.IsekaiProtagonist.TrainingArc.BodyStrengthening.Add();
-                Features.IsekaiProtagonist.TrainingArc.SpellNegationFeature.Add();
-                Features.IsekaiProtagonist.TrainingArc.ExtremeSpeedFeature.Add();
-                Features.IsekaiProtagonist.TrainingArc.TrainingArcSelection.Add();
                 Features.IsekaiProtagonist.BeachEpisode.HealthyBody.Add();
                 Features.IsekaiProtagonist.BeachEpisode.InnerPower.Add();
                 Features.IsekaiProtagonist.BeachEpisode.MasterSelf.Add();
                 Features.IsekaiProtagonist.BeachEpisode.Tenacious.Add();
                 Features.IsekaiProtagonist.BeachEpisode.BeachEpisodeSelection.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.MundaneAura.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.AlphaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.BetaStrike.Add();
@@ -63,7 +59,10 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.EnergyImmunitySelection.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.EffectImmunitySelection.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.ExceptionalSummoningFeature.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.TrainingMontage.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.BodyStrengthening.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.SpellNegationFeature.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.ExtremeSpeedFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoEmpowerFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoExtendFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoMaximizeFeature.Add();
@@ -93,6 +92,7 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
                 // Villain Archetype
                 Features.IsekaiProtagonist.Villain.VillainProficiencies.Add();
+                Features.IsekaiProtagonist.Villain.CorruptAuraFeature.Add();
                 Features.IsekaiProtagonist.Villain.VillainQuickFooted.Add();
                 Features.IsekaiProtagonist.Villain.SecondFormFeature.Add();
                 Classes.IsekaiProtagonist.VillainSpellbook.Add();

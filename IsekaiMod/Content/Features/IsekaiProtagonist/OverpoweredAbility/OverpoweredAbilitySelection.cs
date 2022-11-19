@@ -57,6 +57,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_AllFeatures = OPAbilityList;
                 bp.m_Features = OPAbilityList;
             });
+            var OverpoweredAbilitySelectionVillain = Helpers.CreateBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelectionVillain", bp => {
+                bp.SetName("Villainous Overpowered Ability");
+                bp.SetDescription("Villains get to select an additional 1st level Overpowered Ability.");
+                bp.m_Icon = Icon_TrickFate;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_AllFeatures = OPAbilityList;
+                bp.m_Features = OPAbilityList;
+            });
             var OverpoweredAbilityMythicSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("OverpoweredAbilityMythicSelection", bp => {
                 bp.SetName("Mythic Overpowered Ability");
                 bp.SetDescription("You use your mythic powers to gain an additional Overpowered Ability.");
@@ -72,11 +81,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 
             // You can't select another Overpowered Ability from Mythic Abilities
             OverpoweredAbilityMythicSelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = OverpoweredAbilityMythicSelection.ToReference<BlueprintFeatureReference>(); });
-
-            // Add selection to Training Arc selection
-            var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
-            TrainingArcSelection.m_Features = TrainingArcSelection.m_Features.AppendToArray(OverpoweredAbilitySelection2.ToReference<BlueprintFeatureReference>());
-            TrainingArcSelection.m_AllFeatures = TrainingArcSelection.m_AllFeatures.AppendToArray(OverpoweredAbilitySelection2.ToReference<BlueprintFeatureReference>());
 
             // Add selection to mythic ability selection
             var MythicAbilitySelection = Resources.GetBlueprint<BlueprintFeatureSelection>("ba0e5a900b775be4a99702f1ed08914d");

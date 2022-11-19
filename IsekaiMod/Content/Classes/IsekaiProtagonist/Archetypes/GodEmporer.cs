@@ -1,6 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 
@@ -19,6 +17,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var Godhood = Resources.GetModBlueprint<BlueprintFeature>("Godhood");
             var GodlyVessel = Resources.GetModBlueprint<BlueprintFeature>("GodlyVessel");
             var SiphoningAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("SiphoningAuraFeature");
+            var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
 
             // Removed features
             var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
@@ -27,13 +26,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var OtherworldlyStamina = Resources.GetModBlueprint<BlueprintFeature>("OtherworldlyStamina");
             var TrueMainCharacter = Resources.GetModBlueprint<BlueprintFeature>("TrueMainCharacter");
 
-            var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
             var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
-            var CharacterDevelopmentSelection1 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection1");
-            var CharacterDevelopmentSelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection2");
-            var CharacterDevelopmentSelection3 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection3");
-            var CharacterDevelopmentSelection4 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection4");
-            var CharacterDevelopmentSelection5 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection5");
+            var CharacterDevelopmentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection");
 
             // Archetype
             var GodEmperorArchetype = Helpers.CreateBlueprint<BlueprintArchetype>("GodEmperorArchetype", bp => {
@@ -45,26 +39,27 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies),
-                    Helpers.LevelEntry(3, CharacterDevelopmentSelection1),
-                    Helpers.LevelEntry(5, SneakAttack, TrainingArcSelection),
-                    Helpers.LevelEntry(7, CharacterDevelopmentSelection2),
+                    Helpers.LevelEntry(3, CharacterDevelopmentSelection),
+                    Helpers.LevelEntry(5, SneakAttack),
+                    Helpers.LevelEntry(7, CharacterDevelopmentSelection),
                     Helpers.LevelEntry(9, SneakAttack, FriendlyAuraFeature),
-                    Helpers.LevelEntry(10, TrainingArcSelection),
+                    Helpers.LevelEntry(10, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(12, BeachEpisodeSelection),
-                    Helpers.LevelEntry(13, SneakAttack, CharacterDevelopmentSelection3),
-                    Helpers.LevelEntry(15, TrainingArcSelection, OtherworldlyStamina),
-                    Helpers.LevelEntry(17, SneakAttack, CharacterDevelopmentSelection4),
-                    Helpers.LevelEntry(19, CharacterDevelopmentSelection5),
+                    Helpers.LevelEntry(13, SneakAttack, CharacterDevelopmentSelection),
+                    Helpers.LevelEntry(15, OverpoweredAbilitySelection2, OtherworldlyStamina),
+                    Helpers.LevelEntry(17, SneakAttack, CharacterDevelopmentSelection),
+                    Helpers.LevelEntry(19, CharacterDevelopmentSelection),
                     Helpers.LevelEntry(20, TrueMainCharacter),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, GodEmperorProficiencies),
                     Helpers.LevelEntry(3, NascentApotheosis),
-                    Helpers.LevelEntry(6, ProtectiveAuraFeature),
+                    Helpers.LevelEntry(7, ProtectiveAuraFeature),
                     Helpers.LevelEntry(9, GloriousAuraFeature),
                     Helpers.LevelEntry(10, DarkAuraFeature),
                     Helpers.LevelEntry(12, SiphoningAuraFeature),
                     Helpers.LevelEntry(15, GodlyVessel),
+                    Helpers.LevelEntry(18, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(20, Godhood),
                 };
             });

@@ -82,18 +82,8 @@
     "HaremMagnetAbility": "1e6f1421-951c-48cc-8fa9-e279e3083e1c",
     "HaremMagnetFeature": "4145dc5a-358f-4057-affa-7ff4cc130c03",
 
-    // Selections
-    "TrainingArcSelection": "1313a25a-e9ba-4a67-b746-4c37a9629f19",
-    "BeachEpisodeSelection": "7697c19c-c07c-4411-ada4-5ece5b0a58fc",
-    "OverpoweredAbilitySelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
-    "OverpoweredAbilityMythicSelection": "46d086ef-4932-4fb1-8652-cd4afabada43",
-    "CharacterDevelopmentSelection1": "b5e98cc6-1828-4009-8a9d-ae8638eda059",
-    "CharacterDevelopmentSelection2": "26420865-8717-4d1a-97e4-b5f80d46d212",
-    "CharacterDevelopmentSelection3": "16f18340-0d22-4416-b171-5296348cdc29",
-    "CharacterDevelopmentSelection4": "f3adb893-53d2-4d50-8849-fb43fd962bba",
-    "CharacterDevelopmentSelection5": "5b7c1347-e3cf-4f8f-bf1b-014fa0c58a5d",
-
     // Character Development Features
+    "CharacterDevelopmentSelection": "b5e98cc6-1828-4009-8a9d-ae8638eda059",
     "AlphaStrike": "8f7a38b6-ab25-4578-83e2-0d095a247dcb",
     "BetaStrike": "290c88af-a0eb-43f8-88ac-e49a76ccec0c",
     "GammaStrike": "1c4edc77-1a1e-4bc8-add2-8784a14551b4",
@@ -103,6 +93,14 @@
     "ExceptionalSummoningAbility": "91cf3dae-7106-46ff-8719-6bea757143a5",
     "ExceptionalSummoningFeature": "9428fd68-a233-43a9-afac-1e1b54c1f037",
     "InterdimensionalBagFeature": "72ad9cc8-3ef1-4286-b5e4-29b9597d54b8",
+    "TrainingMontage": "557a9018-bea9-4f2a-b110-27e9d332ab56",
+    "BodyStrengthening": "f48b2667-6ac5-4971-b0a4-6e04d5082680",
+    "SpellNegationBuff": "92a00da0-0ab7-42f7-9390-b8acacb3bf35",
+    "SpellNegationAbility": "a3f078e9-aee6-4adb-85a1-1079af938af1",
+    "SpellNegationFeature": "4baa3f55-899d-43db-9a95-3a570f78263f",
+    "ExtremeSpeedBuff": "2b57d0d0-20fd-479e-9bb8-95529a0ca8bf",
+    "ExtremeSpeedAbility": "91e70095-88bd-467c-bd9c-ba6f980c7576",
+    "ExtremeSpeedFeature": "51da3531-fc19-4e1a-abd2-804ce067c1f1",
 
     // Energy immunity
     "EnergyImmunitySelection": "10fab0a2-6824-4181-9cf8-82aaad72c7ee",
@@ -145,22 +143,17 @@
     "HexImmunity": "879a6f61-cf23-4ad5-9267-9912828e30da",
 
     // Beach Episode Features
+    "BeachEpisodeSelection": "7697c19c-c07c-4411-ada4-5ece5b0a58fc",
     "HealthyBody": "c6165832-f997-40bb-b0af-145ea74670a4",
     "InnerPower": "51c61f4f-a583-48dd-8824-3dc4864ef844",
     "MasterSelf": "e18b657b-3167-4885-9ccc-cfcb2c4a3a4d",
     "Tenacious": "cb9360d9-ea2e-418a-a75d-d0347c717280",
 
-    // Training Arc Features
-    "TrainingMontage": "557a9018-bea9-4f2a-b110-27e9d332ab56",
-    "BodyStrengthening": "f48b2667-6ac5-4971-b0a4-6e04d5082680",
-    "SpellNegationBuff": "92a00da0-0ab7-42f7-9390-b8acacb3bf35",
-    "SpellNegationAbility": "a3f078e9-aee6-4adb-85a1-1079af938af1",
-    "SpellNegationFeature": "4baa3f55-899d-43db-9a95-3a570f78263f",
-    "ExtremeSpeedBuff": "2b57d0d0-20fd-479e-9bb8-95529a0ca8bf",
-    "ExtremeSpeedAbility": "91e70095-88bd-467c-bd9c-ba6f980c7576",
-    "ExtremeSpeedFeature": "51da3531-fc19-4e1a-abd2-804ce067c1f1",
-
     // Overpowered Abilities
+    "OverpoweredAbilitySelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
+    "OverpoweredAbilitySelection2": "2521c2df-33a9-4c67-bbf4-c3ea4125baad",
+    "OverpoweredAbilityMythicSelection": "46d086ef-4932-4fb1-8652-cd4afabada43",
+    "OverpoweredAbilitySelectionVillain": "b8fdf264-0691-4e02-bbcc-6969f0e31d6d",
     "AutoEmpowerBuff": "236781bd-b572-4dbf-bddd-a7b00d91a587",
     "AutoEmpowerAbility": "1291d796-c847-4f6e-a674-aaa8c472da6c",
     "AutoEmpowerFeature": "93906e16-de01-4a24-9163-33bdbe80c1a1",
@@ -222,11 +215,15 @@
     // Villain Features
     "VillainSpellbook": "9f393ace-2006-436a-85f9-8b47f347d3cd",
     "VillainProficiencies": "b4d2cd29-c850-4716-95c1-74eca502a30c",
+    "CorruptAuraBuff": "d4968dff-22ad-435c-bd21-2b3f5afc69a0",
+    "CorruptAuraArea": "770151d3-c0d7-4baa-b856-b94b23fdfea6",
+    "CorruptAuraAreaBuff": "44a2f1f6-ec06-4f3d-8a41-c5debba18ea6",
+    "CorruptAuraAbility": "1ac5a96b-4861-4b77-8314-f2684d48a45f",
+    "CorruptAuraFeature": "3852c32f-e3ac-45dc-bb14-d868a87467ac",
     "SecondFormBuffEffect": "1204ffd1-2371-4497-bbde-e839ee202908",
     "SecondFormBuffTrigger": "7a626a0a-758a-4584-a90c-cb6032014bb7",
     "SecondFormBuff": "2601c5aa-4f9b-450f-8a50-69f36d694d3d",
     "SecondFormFeature": "56365f1f-cf02-4ad7-873f-5b6dd6becbb2",
-    "OverpoweredAbilitySelection2": "b8fdf264-0691-4e02-bbcc-6969f0e31d6d",
     "VillainQuickFooted": "2d0e8bf9-5978-45c3-bafc-9b3eefc573c7",
 
     // Patch Loremaster & Hellknight Signifier Spellbook

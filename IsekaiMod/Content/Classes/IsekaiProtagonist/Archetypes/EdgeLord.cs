@@ -1,6 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.EntitySystem.Stats;
@@ -24,7 +22,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var IsekaiFastMovement = Resources.GetModBlueprint<BlueprintFeature>("IsekaiFastMovement");
             var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
             var TrueMainCharacter = Resources.GetModBlueprint<BlueprintFeature>("TrueMainCharacter");
-            var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
+            var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
 
             // Archetype
             var EdgeLordArchetype = Helpers.CreateBlueprint<BlueprintArchetype>("EdgeLordArchetype", bp => {
@@ -36,11 +34,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies),
-                    Helpers.LevelEntry(5, TrainingArcSelection),
+                    Helpers.LevelEntry(5, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(8, IsekaiFastMovement),
                     Helpers.LevelEntry(9, FriendlyAuraFeature),
-                    Helpers.LevelEntry(10, TrainingArcSelection),
-                    Helpers.LevelEntry(15, TrainingArcSelection),
+                    Helpers.LevelEntry(10, OverpoweredAbilitySelection2),
+                    Helpers.LevelEntry(15, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(20, TrueMainCharacter),
                 };
                 bp.AddFeatures = new LevelEntry[] {

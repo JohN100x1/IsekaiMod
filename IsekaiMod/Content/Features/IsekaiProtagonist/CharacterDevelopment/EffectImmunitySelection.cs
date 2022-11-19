@@ -438,6 +438,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Features = EffectImmunityList;
                 bp.m_AllFeatures = EffectImmunityList;
             });
+            CharacterDevelopmentSelection.AddToSelection(EffectImmunitySelection);
         }
     }
 }
