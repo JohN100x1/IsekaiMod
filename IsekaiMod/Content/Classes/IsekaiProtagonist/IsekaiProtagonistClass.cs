@@ -63,8 +63,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             });
             var IsekaiProtagonistOverpoweredAbilityFeat = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistOverpoweredAbilityFeat", bp => {
                 bp.SetName("Overpowered Ability");
-                bp.SetDescription("Isekai Protagonists gain an extremely Overpowered Ability at 1st level.");
-                bp.m_DescriptionShort = Helpers.CreateString("IsekaiProtagonistOverpoweredAbilityFeat.DescriptionShort", "Isekai Protagonists gain an extremely Overpowered Ability at 1st level.");
+                bp.SetDescription("Isekai Protagonists gain Overpowered Abilities as they increase their level.");
+                bp.m_DescriptionShort = Helpers.CreateString("IsekaiProtagonistOverpoweredAbilityFeat.DescriptionShort", "Isekai Protagonists gain an Overpowered Abilities as they increase their level.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
