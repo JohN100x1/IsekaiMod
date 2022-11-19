@@ -103,6 +103,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.IsClassFeature = true;
             });
 
+            var EnergyImmunityList = new BlueprintFeatureReference[] {
+                AcidImmunity.ToReference<BlueprintFeatureReference>(),
+                ColdImmunity.ToReference<BlueprintFeatureReference>(),
+                FireImmunity.ToReference<BlueprintFeatureReference>(),
+                ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
+                SonicImmunity.ToReference<BlueprintFeatureReference>(),
+            };
+
             // Energy Immunity Selection
             var EnergyImmunitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("EnergyImmunitySelection", bp => {
                 bp.SetName("Energy Immunity Selection");
@@ -110,20 +118,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Icon = Icon_ProtectionFromEnergy;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_Features = new BlueprintFeatureReference[] {
-                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
-                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
-                    FireImmunity.ToReference<BlueprintFeatureReference>(),
-                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
-                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
-                };
-                bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                    AcidImmunity.ToReference<BlueprintFeatureReference>(),
-                    ColdImmunity.ToReference<BlueprintFeatureReference>(),
-                    FireImmunity.ToReference<BlueprintFeatureReference>(),
-                    ElectricityImmunity.ToReference<BlueprintFeatureReference>(),
-                    SonicImmunity.ToReference<BlueprintFeatureReference>(),
-                };
+                bp.m_Features = EnergyImmunityList;
+                bp.m_AllFeatures = EnergyImmunityList;
             });
         }
     }

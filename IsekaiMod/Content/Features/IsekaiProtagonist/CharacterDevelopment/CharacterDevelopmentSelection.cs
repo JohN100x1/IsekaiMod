@@ -22,16 +22,18 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
             var IsekaiProtagonistTalentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistTalentSelection");
             var EnergyImmunitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("EnergyImmunitySelection");
+            var EffectImmunitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("EffectImmunitySelection");
             var ExceptionalSummoningFeature = Resources.GetModBlueprint<BlueprintFeature>("ExceptionalSummoningFeature");
 
             var PreBeachFeatures = new BlueprintFeatureReference[] {
                 IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureReference>(),
                 IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>(),
+                EffectImmunitySelection.ToReference<BlueprintFeatureReference>(),
+                EnergyImmunitySelection.ToReference<BlueprintFeatureReference>(),
                 AlphaStrike.ToReference<BlueprintFeatureReference>(),
                 BetaStrike.ToReference<BlueprintFeatureReference>(),
                 GammaStrike.ToReference<BlueprintFeatureReference>(),
                 MundaneAura.ToReference<BlueprintFeatureReference>(),
-                EnergyImmunitySelection.ToReference<BlueprintFeatureReference>(),
                 ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
             };
 

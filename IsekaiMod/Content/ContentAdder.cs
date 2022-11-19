@@ -61,6 +61,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.BetaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.GammaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.EnergyImmunitySelection.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.EffectImmunitySelection.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.ExceptionalSummoningFeature.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoEmpowerFeature.Add();
