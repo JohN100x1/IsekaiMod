@@ -143,7 +143,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             });
             var SuperBuffFeature = Helpers.CreateBlueprint<BlueprintFeature>("SuperBuffFeature", bp => {
                 bp.SetName("Overpowered Ability — Super Buff");
-                bp.SetDescription("You are able to buff you and your allies around you with powerful effects for 24 hours.");
+                bp.SetDescription("You are able to buff you and your allies with the following effects for 24 hours: resist energy, protection from energy, protection from arrows, haste, "
+                    + "mage armor, shield, shield of faith, veil of heaven, veil of positive energy, blur, bull's strength, cat's grace, bear's endurance, fox's cunning, owl's wisdom, "
+                    + "eagle's splendor, mirror image, false life, barkskin, aid, protection from evil, bestow grace, aura of greater courage, displacement, magical vestiment, "
+                    + "delay poison, invisibility greater, stone skin, death ward, freedom of movement, false life greater, burst of glory, spell resistance, eagle soul, "
+                    + "legendary proportions, ice body, frightful aspect, seamantle, foresight, fiery body, unbreakable heart, remove fear, divine favor, magic fang, align weapon good, "
+                    + "crusaders edge, magic weapon greater, divine power, true seeing, shield of law, angelic aspect greater, winds of vengeance, hurricane bow, sense vitals, "
+                    + "heroism greater, echolocation, life bubble, firebrand, protection from spells, mind blank, and heroic invocation.");
                 bp.m_Icon = Icon_Super_Buff;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { SuperBuffAbility.ToReference<BlueprintUnitFactReference>() };
