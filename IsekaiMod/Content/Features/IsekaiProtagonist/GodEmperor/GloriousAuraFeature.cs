@@ -2,7 +2,6 @@
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
@@ -11,8 +10,6 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics;
-using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
@@ -24,31 +21,38 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             var Icon_Glorious_Aura = AssetLoader.LoadInternal("Features", "ICON_GLORIOUS_AURA.png");
             var GloriousAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("GloriousAuraBuff", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("This character has a competence bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance equal to 1/2 the God Emporer's character level.");
+                bp.SetDescription("This character has a +4 sacred bonus to all attributes.");
                 bp.IsClassFeature = true;
                 bp.m_Icon = Icon_Glorious_Aura;
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Competence;
-                    c.Stat = StatType.AdditionalAttackBonus;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Sacred;
+                    c.Stat = StatType.Strength;
+                    c.Value = 4;
                 });
-                bp.AddComponent<SpellPenetrationBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Competence;
-                    c.CheckFact = false;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Sacred;
+                    c.Stat = StatType.Dexterity;
+                    c.Value = 4;
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.StatBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.Div2;
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Sacred;
+                    c.Stat = StatType.Constitution;
+                    c.Value = 4;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Sacred;
+                    c.Stat = StatType.Intelligence;
+                    c.Value = 4;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Sacred;
+                    c.Stat = StatType.Wisdom;
+                    c.Value = 4;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Sacred;
+                    c.Stat = StatType.Charisma;
+                    c.Value = 4;
                 });
                 bp.FxOnStart = new PrefabLink();
                 bp.FxOnRemove = new PrefabLink();
@@ -65,7 +69,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var GloriousAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("GloriousAuraAreaBuff", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emperor gain a competence bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance equal to 1/2 the God Emporer's character level.");
+                bp.SetDescription("Allies within 40 feet of the God Emperor gain a +4 sacred bonus to all attributes.");
                 bp.m_Icon = Icon_Glorious_Aura;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -77,7 +81,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var GloriousAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("GloriousAuraAbility", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emperor gain a competence bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance equal to 1/2 the God Emporer's character level.");
+                bp.SetDescription("Allies within 40 feet of the God Emperor gain a +4 sacred bonus to all attributes.");
                 bp.m_Icon = Icon_Glorious_Aura;
                 bp.m_Buff = GloriousAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.None;
@@ -89,7 +93,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
             });
             var GloriousAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("GloriousAuraFeature", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("At 9th level, allies within 40 feet of the God Emperor gain a competence bonus on attack {g|Encyclopedia:Dice}rolls{/g} and caster level checks made to overcome spell resistance equal to 1/2 the God Emporer's character level.");
+                bp.SetDescription("At 9th level, allies within 40 feet of the God Emperor gain a +4 sacred bonus to all attributes.");
                 bp.m_Icon = Icon_Glorious_Aura;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
