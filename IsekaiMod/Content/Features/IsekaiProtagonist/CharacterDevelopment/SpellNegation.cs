@@ -14,7 +14,7 @@ using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
 {
-    class SpellNegationFeature
+    class SpellNegation
     {
         private static readonly Sprite Icon_SpellResistance = Resources.GetBlueprint<BlueprintAbility>("0a5ddfbcfb3989543ac7c936fc256889").m_Icon;
         public static void Add()

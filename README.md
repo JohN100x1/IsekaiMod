@@ -59,6 +59,8 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Body Strengthening`: Get a DR/— bonus equal to 10 + character level.
 		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
 		- `Extreme Speed`: Get a speed bonus equal to 5 times character level.
+		- `Channel Positive Energy`: You can channel positive energy (requires good alignment).
+		- `Channel Negative Energy`: You can channel negative energy (requires evil alignment).
 	- `Overpowered Ability`: Powerful 1st level feat.
 		- `AutoEmpower`: Empowers every spell you cast.
 		- `AutoExtend`: Extends every spell you cast.

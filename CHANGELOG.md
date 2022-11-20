@@ -7,10 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added `Hero` archetype.
+- Added `Channel Positive Energy` character development feat.
+- Added `Channel Negative Energy` character development feat.
 - Added `Corrupt Aura` feature for `Villain` archetype.
 - Added `Exceptional feats` within bonus feat selection.
 - Added `Effect Immunity` exceptional feat.
 ### Changed
+- Reworked `Character Development` feats to no longer have bonus feats or feats from `Beach Episode` at later levels.
 - Reworked `Isekai Protagonist` class progression to have more Overpowered Abilities instead of training arc feats.
 - Reworked `Edge Lord` and `God Emporer` archetypes to have more evenly distributed character development feats.
 - Buffed `Godhood` to give energy immunity against acid, cold, electricity, fire, and sonic.
@@ -19,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `Training Montage` to give a +10 untyped bonus to all attributes but now requires character level 10.
 - Changed `Extreme Speed` to give a +5 untyped speed bonus per character level.
 - Changed `Perfect Roll` and Auto metamagic abilities to be turned on by default.
-- Moved `Exceptional Summoning` to `Exceptional feats`.
+- Changed `Exceptional Summoning` to now be an `Exceptional feat`.
 - Updated description for `Super Buff` feature.
 - Updated icon for `Siphoning Aura` debuff.
 - Updated icon for `Second Form` feature.

@@ -105,6 +105,12 @@
     "ExtremeSpeedBuff": "2b57d0d0-20fd-479e-9bb8-95529a0ca8bf",
     "ExtremeSpeedAbility": "91e70095-88bd-467c-bd9c-ba6f980c7576",
     "ExtremeSpeedFeature": "51da3531-fc19-4e1a-abd2-804ce067c1f1",
+    "IsekaiChannelNegativeEnergyAbility": "3c96cd97-68f3-4830-b25b-67b0199f8bb8",
+    "IsekaiChannelNegativeHealAbility": "60ccdbf8-c344-45e1-b141-c53a902e59be",
+    "IsekaiChannelNegativeEnergyFeature": "f185f40b-228f-4cce-a0e7-aceb0fb53363",
+    "IsekaiChannelPositiveEnergyAbility": "2c70c4c3-89c4-4061-8f42-f6056e6d8512",
+    "IsekaiChannelPositiveHealAbility": "00402908-33cd-4a48-bc0b-1add315b0702",
+    "IsekaiChannelPositiveEnergyFeature": "c8737e26-15a5-4b4b-b44e-2323ee6f5f8c",
 
     // Energy immunity
     "EnergyImmunitySelection": "10fab0a2-6824-4181-9cf8-82aaad72c7ee",

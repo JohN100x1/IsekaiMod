@@ -14,7 +14,7 @@ using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
 {
-    class ExtremeSpeedFeature
+    class ExtremeSpeed
     {
         private static readonly Sprite Icon_SupersonicSpeed = Resources.GetBlueprint<BlueprintFeature>("505456aa17dd18a4e8bd8172811a4fdc").m_Icon;
         public static void Add()

@@ -69,8 +69,10 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.EnergyImmunitySelection.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.TrainingMontage.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.BodyStrengthening.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.SpellNegationFeature.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.ExtremeSpeedFeature.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.SpellNegation.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.ExtremeSpeed.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.IsekaiChannelPositiveEnergy.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.IsekaiChannelNegativeEnergy.Add();
 
                 // OP Ability
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();

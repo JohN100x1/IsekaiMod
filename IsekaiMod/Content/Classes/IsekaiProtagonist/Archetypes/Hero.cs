@@ -3,6 +3,7 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UnitLogic.Alignments;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
@@ -65,6 +66,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     c.Group = Prerequisite.GroupType.Any;
                     c.Alignment = AlignmentMaskType.Good;
                 });
+                bp.OverrideAttributeRecommendations = true;
+                bp.RecommendedAttributes = new StatType[] { StatType.Charisma };
             });
 
             // Add Archetype to Class
