@@ -12,15 +12,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Effect Immunity` exceptional feat.
 ### Changed
 - Reworked `Isekai Protagonist` class progression to have more Overpowered Abilities instead of training arc feats.
+- Reworked `Edge Lord` and `God Emporer` archetypes to have more evenly distributed character development feats.
 - Buffed `Godhood` to give energy immunity against acid, cold, electricity, fire, and sonic.
 - Nerfed `Grasp Heart` to stun if the creature fails a DC 50 fortitude save.
 - Changed `Glorious Aura` to give a +4 sacred bonus to all attributes instead.
-- Changed `Training Montage` to give a +10 untyped bonus to all attributes but now requires character level 13.
+- Changed `Training Montage` to give a +10 untyped bonus to all attributes but now requires character level 10.
 - Changed `Extreme Speed` to give a +5 untyped speed bonus per character level.
 - Changed `Perfect Roll` and Auto metamagic abilities to be turned on by default.
 - Moved `Exceptional Summoning` to `Exceptional feats`.
 - Updated description for `Super Buff` feature.
 - Updated icon for `Siphoning Aura` debuff.
+- Updated icon for `Second Form` feature.
 ### Removed
 - Removed `Winner` feature.
 - Removed `Training Arc` feature selection. Training Arc feats moved to character development.
