@@ -24,7 +24,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var CorruptAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("CorruptAuraFeature");
             var VillainQuickFooted = Resources.GetModBlueprint<BlueprintFeature>("VillainQuickFooted");
             var SecondFormFeature = Resources.GetModBlueprint<BlueprintFeature>("SecondFormFeature");
-            var IsekaiChannelPositiveEnergyFeature = Resources.GetModBlueprint<BlueprintFeature>("IsekaiChannelPositiveEnergyFeature");
+            var IsekaiChannelNegativeEnergyFeature = Resources.GetModBlueprint<BlueprintFeature>("IsekaiChannelNegativeEnergyFeature");
 
             // Removed features
             var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
@@ -58,7 +58,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, VillainProficiencies, OverpoweredAbilitySelectionVillain, SlayerStudyTargetFeature),
-                    Helpers.LevelEntry(3, IsekaiChannelPositiveEnergyFeature),
+                    Helpers.LevelEntry(3, IsekaiChannelNegativeEnergyFeature),
                     Helpers.LevelEntry(5, SlayerStudyTargetFeature),
                     Helpers.LevelEntry(7, SlayerSwiftStudyTargetFeature),
                     Helpers.LevelEntry(9, CorruptAuraFeature),

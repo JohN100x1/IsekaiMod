@@ -10,12 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Channel Positive Energy` character development feat.
 - Added `Channel Negative Energy` character development feat.
 - Added `Corrupt Aura` feature for `Villain` archetype.
-- Added `Exceptional feats` within bonus feat selection.
+- Added `Exceptional feats` in feat/bonus feat selection.
 - Added `Effect Immunity` exceptional feat.
 ### Changed
 - Reworked `Character Development` feats to no longer have bonus feats or feats from `Beach Episode` at later levels.
 - Reworked `Isekai Protagonist` class progression to have more Overpowered Abilities instead of training arc feats.
 - Reworked `Edge Lord` and `God Emporer` archetypes to have more evenly distributed character development feats.
+- Reworked `Villain` to have `Channel Negative Energy`.
 - Buffed `Godhood` to give energy immunity against acid, cold, electricity, fire, and sonic.
 - Nerfed `Grasp Heart` to stun if the creature fails a DC 50 fortitude save.
 - Changed `Glorious Aura` to give a +4 sacred bonus to all attributes instead.
