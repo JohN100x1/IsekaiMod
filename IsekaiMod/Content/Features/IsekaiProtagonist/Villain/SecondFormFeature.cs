@@ -111,13 +111,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Villain
                     c.m_TriggeredBuff = SecondFormBuffTrigger.ToReference<BlueprintBuffReference>();
                 });
                 bp.AddComponent<AddFactContextActions>(c => {
-                    c.Activated = Helpers.CreateActionList(
-                        new ContextActionRemoveBuff()
-                        {
-                            m_Buff = SecondFormBuffEffect.ToReference<BlueprintBuffReference>(),
-                            ToCaster = false,
-                            RemoveRank = false
-                        });
+                    c.Activated = ActionFlow.DoSingle<ContextActionRemoveBuff>(c => {
+                        c.m_Buff = SecondFormBuffEffect.ToReference<BlueprintBuffReference>();
+                        c.ToCaster = false;
+                        c.RemoveRank = false;
+                    });
                     c.Deactivated = Helpers.CreateActionList();
                     c.NewRound = Helpers.CreateActionList();
                 });

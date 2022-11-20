@@ -107,6 +107,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.Hero.HeroProficiencies.Add();
                 Features.IsekaiProtagonist.Hero.GracefulCombat.Add();
                 Features.IsekaiProtagonist.Hero.TrueSmite.Add();
+                Features.IsekaiProtagonist.Hero.HerosPresence.Add();
                 Classes.IsekaiProtagonist.Archetypes.Hero.Add();
 
                 // Villain Archetype

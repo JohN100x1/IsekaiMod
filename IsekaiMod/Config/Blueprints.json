@@ -224,6 +224,10 @@
     "TrueSmiteAbility": "516866eb-537d-4e16-9be6-585f7b237a10",
     "TrueSmiteFeature": "5203aa1b-4553-4f24-aa9d-a1b238aa7495",
     "TrueSmiteAdditionalUse": "96b4916b-dfdf-4cba-b1c0-96deeb9a0b6d",
+    "HerosPresenceBuff": "0719c960-ce1b-4ebf-bd45-b64d6bcbdd62",
+    "HerosPresenceArea": "28ad0556-3ec1-44a2-ae81-bef4a2ef5c98",
+    "HerosPresenceAreaBuff": "be14db2b-cf86-4bb2-bb12-7b34a45cecf9",
+    "HerosPresenceFeature": "230d2557-97cb-4935-a251-2939b525c7c2",
 
     // Villain Features
     "VillainSpellbook": "9f393ace-2006-436a-85f9-8b47f347d3cd",

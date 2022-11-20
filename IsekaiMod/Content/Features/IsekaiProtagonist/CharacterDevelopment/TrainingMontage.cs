@@ -49,7 +49,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.Value = 10;
                 });
                 bp.AddComponent<PrerequisiteCharacterLevel>(c => {
-                    c.Level = 13;
+                    c.Level = 10;
                 });
                 bp.m_Icon = Icon_LegendaryProportions;
                 bp.Ranks = 1;
