@@ -5,14 +5,15 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Villain
 {
     class VillainQuickFooted
     {
+        private static readonly Sprite Icon_ExpeditiousRetreat = Resources.GetBlueprint<BlueprintAbility>("4f8181e7a7f1d904fbaea64220e83379").m_Icon;
         public static void Add()
         {
-            var Icon_ExpeditiousRetreat = Resources.GetBlueprint<BlueprintAbility>("4f8181e7a7f1d904fbaea64220e83379").m_Icon;
             var VillainQuickFooted = Helpers.CreateBlueprint<BlueprintFeature>("VillainQuickFooted", bp => {
                 bp.SetName("Quick-Footed");
                 bp.SetDescription("At 16th level, you gain a competence {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}checks{/g} equal to your {g|Encyclopedia:Intelligence}Intelligence{/g} modifier.");

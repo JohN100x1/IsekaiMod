@@ -23,11 +23,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Villain
     {
         public static void Add()
         {
-            // Buffs
-            var EnlargePersonBuff = Resources.GetBlueprint<BlueprintBuff>("4f139d125bb602f48bfaec3d3e1937cb");
-            var ReducePersonBuff = Resources.GetBlueprint<BlueprintBuff>("b0793973c61a19744a8630468e8f4174");
-
-            // Feature
             var Icon_SecondForm = AssetLoader.LoadInternal("Features", "ICON_SECOND_FORM.png");
             var Icon_SecondFormInactive = AssetLoader.LoadInternal("Features", "ICON_SECOND_FORM_INACTIVE.png");
             var SecondFormBuffEffect = Helpers.CreateBlueprint<BlueprintBuff>("SecondFormBuffEffect", bp => {
@@ -116,8 +111,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Villain
                         c.ToCaster = false;
                         c.RemoveRank = false;
                     });
-                    c.Deactivated = Helpers.CreateActionList();
-                    c.NewRound = Helpers.CreateActionList();
+                    c.Deactivated = ActionFlow.DoNothing();
+                    c.NewRound = ActionFlow.DoNothing();
                 });
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
                 bp.FxOnStart = new PrefabLink();
@@ -203,8 +198,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Villain
                     },
                     new ContextActionRemoveSelf()
                     );
-                c.Deactivated = Helpers.CreateActionList();
-                c.NewRound = Helpers.CreateActionList();
+                c.Deactivated = ActionFlow.DoNothing();
+                c.NewRound = ActionFlow.DoNothing();
             });
             var SecondFormFeature = Helpers.CreateBlueprint<BlueprintFeature>("SecondFormFeature", bp => {
                 bp.SetName("Second Form");
@@ -214,13 +209,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Villain
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddRestTrigger>(c => {
-                    c.Action = Helpers.CreateActionList(
-                        new ContextActionApplyBuff()
-                        {
-                            m_Buff = SecondFormBuff.ToReference<BlueprintBuffReference>(),
-                            Permanent = true,
-                            IsFromSpell = false
-                        });
+                    c.Action = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
+                        c.m_Buff = SecondFormBuff.ToReference<BlueprintBuffReference>();
+                        c.Permanent = true;
+                        c.IsFromSpell = false;
+                    });
                 });
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { SecondFormBuff.ToReference<BlueprintUnitFactReference>() };
