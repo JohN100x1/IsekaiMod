@@ -503,7 +503,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             var IsekaiChannelPositiveEnergyFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiChannelPositiveEnergyFeature", bp => {
                 bp.SetName("Channel Positive Energy");
                 bp.SetDescription("You gain the supernatural ability to channel positive energy like a cleric. You use your character level as your effective cleric level when "
-                    + "channeling positive energy. This is a Charisma-based ability.");
+                    + "channeling positive energy.  You can channel energy a number of times per day equal to 3 + your Charisma modifier.");
                 bp.m_Icon = ChannelPositiveHeal.Icon;
                 bp.Ranks = 1;
                 bp.Groups = new FeatureGroup[0];

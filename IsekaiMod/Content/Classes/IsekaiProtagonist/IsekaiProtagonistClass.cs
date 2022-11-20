@@ -30,8 +30,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: fix selective channel energy
-
             // TODO: add channel negative energy to villain and positive for hero
             // TODO: add scaling natural armor, strength and dexterity (like animal companion) to deathsnatcher
             // TODO: add vampiric drain spell for isekai vampire heritage
