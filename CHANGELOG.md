@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated description for `Super Buff` feature.
 - Updated icon for `Siphoning Aura` debuff.
 - Updated icon for `Second Form` feature.
+- Updated icon for `True Main Character` feature.
 ### Removed
 - Removed `Winner` feature.
 - Removed `Training Arc` feature selection. Training Arc feats moved to character development.
