@@ -18,6 +18,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var TrueSmiteFeature = Resources.GetModBlueprint<BlueprintFeature>("TrueSmiteFeature");
             var TrueSmiteAdditionalUse = Resources.GetModBlueprint<BlueprintFeature>("TrueSmiteAdditionalUse");
             var HerosPresenceFeature = Resources.GetModBlueprint<BlueprintFeature>("HerosPresenceFeature");
+            var IsekaiChannelPositiveEnergyFeature = Resources.GetModBlueprint<BlueprintFeature>("IsekaiChannelPositiveEnergyFeature");
 
             // Removed features
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
@@ -37,7 +38,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, SneakAttack),
-                    Helpers.LevelEntry(3, SneakAttack),
+                    Helpers.LevelEntry(3, SneakAttack, CharacterDevelopmentSelection),
                     Helpers.LevelEntry(5, SneakAttack),
                     Helpers.LevelEntry(7, SneakAttack),
                     Helpers.LevelEntry(9, SneakAttack),
@@ -52,6 +53,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, HeroProficiencies, GracefulCombat),
                     Helpers.LevelEntry(2, TrueSmiteFeature),
+                    Helpers.LevelEntry(3, IsekaiChannelPositiveEnergyFeature),
                     Helpers.LevelEntry(4, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(7, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(10, TrueSmiteAdditionalUse),
