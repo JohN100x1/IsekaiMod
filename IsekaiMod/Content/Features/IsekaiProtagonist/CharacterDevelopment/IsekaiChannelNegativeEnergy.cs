@@ -109,11 +109,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.Actions = ActionFlow.DoSingle<Conditional>(c => {
                         c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionHasFact>(c => {
                             c.m_Fact = NegativeEnergyAffinity.ToReference<BlueprintUnitFactReference>();
+                            c.Not = false;
                         });
                         c.IfTrue = ActionFlow.DoNothing();
                         c.IfFalse = ActionFlow.DoSingle<Conditional>(c => {
-                            c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionHasFact>(c => {
+                            c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionCasterHasFact>(c => {
                                 c.m_Fact = SelectiveChannel.ToReference<BlueprintUnitFactReference>();
+                                c.Not = false;
                             });
                             c.IfTrue = ActionFlow.DoSingle<Conditional>(c => {
                                 c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionIsEnemy>(c => {
@@ -324,8 +326,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                                 Not = false
                             });
                         c.IfTrue = ActionFlow.DoSingle<Conditional>(c => {
-                            c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionHasFact>(c => {
+                            c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionCasterHasFact>(c => {
                                 c.m_Fact = SelectiveChannel.ToReference<BlueprintUnitFactReference>();
+                                c.Not = false;
                             });
                             c.IfTrue = ActionFlow.DoSingle<Conditional>(c => {
                                 c.ConditionsChecker = ActionFlow.IfAll(

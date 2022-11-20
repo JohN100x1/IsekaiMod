@@ -122,6 +122,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                         c.IfFalse = ActionFlow.DoSingle<Conditional>(c => {
                             c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionHasFact>(c => {
                                 c.m_Fact = SelectiveChannel.ToReference<BlueprintUnitFactReference>();
+                                c.Not = false;
                             });
                             c.IfTrue = ActionFlow.DoSingle<Conditional>(c => {
                                 c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionIsEnemy>(c => {
@@ -327,6 +328,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                         c.IfTrue = ActionFlow.DoSingle<Conditional>(c => {
                             c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionHasFact>(c => {
                                 c.m_Fact = SelectiveChannel.ToReference<BlueprintUnitFactReference>();
+                                c.Not = false;
                             });
                             c.IfTrue = ActionFlow.DoSingle<Conditional>(c => {
                                 c.ConditionsChecker = ActionFlow.IfAll(
