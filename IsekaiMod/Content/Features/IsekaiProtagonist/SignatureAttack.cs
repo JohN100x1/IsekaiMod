@@ -6,14 +6,15 @@ using Kingmaker.Enums;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist
 {
     class SignatureAttack
     {
+        private static readonly Sprite Icon_SwordSaintWeaponMastery = Resources.GetBlueprint<BlueprintFeature>("5b31af13868166d4c9bb452f19277f19").m_Icon;
         public static void Add()
         {
-            var Icon_SwordSaintWeaponMastery = Resources.GetBlueprint<BlueprintFeature>("5b31af13868166d4c9bb452f19277f19").m_Icon;
             var SignatureAttack = Helpers.CreateBlueprint<BlueprintFeature>("SignatureAttack", bp => {
                 bp.SetName("Signature Attack");
                 bp.SetDescription("At 6th level, you gain a luck bonus to {g|Encyclopedia:BAB}attack{/g} and damage rolls equal to 1/2 your character level.");

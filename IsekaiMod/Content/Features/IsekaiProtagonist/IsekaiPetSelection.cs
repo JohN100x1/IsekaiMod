@@ -12,11 +12,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
     class IsekaiPetSelection
     {
         private static readonly Sprite Icon_FriendToAnimals = Resources.GetBlueprint<BlueprintFeature>("9a56368c28795544fbeb43fe70e1a40d").m_Icon;
+        private static readonly BlueprintFeatureSelection AnimalCompanionSelectionDomain = Resources.GetBlueprint<BlueprintFeatureSelection>("2ecd6c64683b59944a7fe544033bb533");
+        private static readonly BlueprintFeatureSelection WitchFamiliarSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("29a333b7ccad3214ea3a51943fa0d8e9");
         public static void Add()
         {
-            var AnimalCompanionSelectionDomain = Resources.GetBlueprint<BlueprintFeatureSelection>("2ecd6c64683b59944a7fe544033bb533");
-            var WitchFamiliarSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("29a333b7ccad3214ea3a51943fa0d8e9");
-
             var IsekaiFamiliarSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("IsekaiFamiliarSelection", bp => {
                 bp.SetName("Familiar Selection");
                 bp.SetDescription("You gain the service of a familiar, which offers you some skill bonuses.");
@@ -33,21 +32,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.Ranks = 1;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     AnimalCompanionSelectionDomain.ToReference<BlueprintFeatureReference>(),
-                    WitchFamiliarSelection.ToReference<BlueprintFeatureReference>(),
+                    IsekaiFamiliarSelection.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     AnimalCompanionSelectionDomain.ToReference<BlueprintFeatureReference>(),
-                    WitchFamiliarSelection.ToReference<BlueprintFeatureReference>(),
+                    IsekaiFamiliarSelection.ToReference<BlueprintFeatureReference>(),
                 };
             });
 
-            // Fix Animal Companion Progression
-            var DomainAnimalProgression = Resources.GetBlueprint<BlueprintProgression>("125af359f8bc9a145968b5d8fd8159b8");
-            DomainAnimalProgression.m_Classes = DomainAnimalProgression.m_Classes.AddToArray(
-                new ClassWithLevel() {
-                    m_Class = IsekaiProtagonistClass.GetReference(),
-                    AdditionalLevel = 0
-                });
+            PatchDomainAnimalProgression();
         }
         public static void AddToSelection(BlueprintFeature feature)
         {
@@ -58,6 +51,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
         public static BlueprintFeatureSelection Get()
         {
             return Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiPetSelection");
+        }
+        public static void PatchDomainAnimalProgression()
+        {
+            var DomainAnimalProgression = Resources.GetBlueprint<BlueprintProgression>("125af359f8bc9a145968b5d8fd8159b8");
+            DomainAnimalProgression.m_Classes = DomainAnimalProgression.m_Classes.AddToArray(
+                new ClassWithLevel()
+                {
+                    m_Class = IsekaiProtagonistClass.GetReference(),
+                    AdditionalLevel = 0
+                });
         }
     }
 }
