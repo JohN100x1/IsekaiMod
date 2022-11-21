@@ -144,6 +144,7 @@ namespace IsekaiMod.Content
 
                 // Add extra dialogue
                 Dialogue.IsekaiHulrun.Add();
+                Dialogue.IsekaiRadiance.Add();
             }
             public static void AddIsekaiHeritages()
             {
