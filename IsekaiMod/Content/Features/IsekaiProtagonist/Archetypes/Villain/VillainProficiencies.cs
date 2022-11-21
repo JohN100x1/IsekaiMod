@@ -6,7 +6,7 @@ using Kingmaker.Blueprints.Items.Armors;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.FactLogic;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Villain
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
 {
     class VillainProficiencies
     {

@@ -14,7 +14,7 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
 {
     class ProtectiveAuraFeature
     {

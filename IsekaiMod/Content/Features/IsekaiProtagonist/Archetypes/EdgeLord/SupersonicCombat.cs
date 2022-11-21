@@ -6,7 +6,7 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UnitLogic.FactLogic;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.EdgeLord
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord
 {
     class SupersonicCombat
     {

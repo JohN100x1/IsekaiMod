@@ -22,7 +22,7 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System.Collections.Generic;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Hero
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
 {
     class TrueSmite
     {

@@ -5,7 +5,7 @@ using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.EdgeLord
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord
 {
     class ExtraStrike
     {

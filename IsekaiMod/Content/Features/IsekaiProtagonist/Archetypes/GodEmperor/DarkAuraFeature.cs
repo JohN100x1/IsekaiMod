@@ -12,7 +12,7 @@ using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
 {
     class DarkAuraFeature
     {

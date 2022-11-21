@@ -88,35 +88,35 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.InterdimensionalBagFeature.Add();
 
                 // God Emperor Archetype
-                Features.IsekaiProtagonist.GodEmperor.GodEmperorProficiencies.Add();
-                Features.IsekaiProtagonist.GodEmperor.NascentApotheosis.Add();
-                Features.IsekaiProtagonist.GodEmperor.ProtectiveAuraFeature.Add();
-                Features.IsekaiProtagonist.GodEmperor.DarkAuraFeature.Add();
-                Features.IsekaiProtagonist.GodEmperor.GloriousAuraFeature.Add();
-                Features.IsekaiProtagonist.GodEmperor.GodlyVessel.Add();
-                Features.IsekaiProtagonist.GodEmperor.SiphoningAuraFeature.Add();
-                Features.IsekaiProtagonist.GodEmperor.Godhood.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.GodEmperorProficiencies.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.NascentApotheosis.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.ProtectiveAuraFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.DarkAuraFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.GloriousAuraFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.GodlyVessel.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.SiphoningAuraFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.Godhood.Add();
                 Classes.IsekaiProtagonist.Archetypes.GodEmperor.Add();
 
                 // Edge Lord Archetype
-                Features.IsekaiProtagonist.EdgeLord.EdgeLordProficiencies.Add();
-                Features.IsekaiProtagonist.EdgeLord.SupersonicCombat.Add();
-                Features.IsekaiProtagonist.EdgeLord.EdgeLordFastMovement.Add();
-                Features.IsekaiProtagonist.EdgeLord.ExtraStrike.Add();
+                Features.IsekaiProtagonist.Archetypes.EdgeLord.EdgeLordProficiencies.Add();
+                Features.IsekaiProtagonist.Archetypes.EdgeLord.SupersonicCombat.Add();
+                Features.IsekaiProtagonist.Archetypes.EdgeLord.EdgeLordFastMovement.Add();
+                Features.IsekaiProtagonist.Archetypes.EdgeLord.ExtraStrike.Add();
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
 
                 // Hero Archetype
-                Features.IsekaiProtagonist.Hero.HeroProficiencies.Add();
-                Features.IsekaiProtagonist.Hero.GracefulCombat.Add();
-                Features.IsekaiProtagonist.Hero.TrueSmite.Add();
-                Features.IsekaiProtagonist.Hero.HerosPresence.Add();
+                Features.IsekaiProtagonist.Archetypes.Hero.HeroProficiencies.Add();
+                Features.IsekaiProtagonist.Archetypes.Hero.GracefulCombat.Add();
+                Features.IsekaiProtagonist.Archetypes.Hero.TrueSmite.Add();
+                Features.IsekaiProtagonist.Archetypes.Hero.HerosPresence.Add();
                 Classes.IsekaiProtagonist.Archetypes.Hero.Add();
 
                 // Villain Archetype
-                Features.IsekaiProtagonist.Villain.VillainProficiencies.Add();
-                Features.IsekaiProtagonist.Villain.CorruptAuraFeature.Add();
-                Features.IsekaiProtagonist.Villain.VillainQuickFooted.Add();
-                Features.IsekaiProtagonist.Villain.SecondFormFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.Villain.VillainProficiencies.Add();
+                Features.IsekaiProtagonist.Archetypes.Villain.CorruptAuraFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.Villain.VillainQuickFooted.Add();
+                Features.IsekaiProtagonist.Archetypes.Villain.SecondFormFeature.Add();
                 Classes.IsekaiProtagonist.VillainSpellbook.Add();
                 Classes.IsekaiProtagonist.Archetypes.Villain.Add();
 

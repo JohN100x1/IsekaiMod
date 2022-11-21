@@ -7,7 +7,7 @@ using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Villain
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
 {
     class VillainQuickFooted
     {

@@ -7,7 +7,7 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.FactLogic;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.GodEmperor
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
 {
     class Godhood
     {

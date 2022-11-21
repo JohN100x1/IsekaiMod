@@ -13,7 +13,7 @@ using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Villain
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
 {
     class CorruptAuraFeature
     {

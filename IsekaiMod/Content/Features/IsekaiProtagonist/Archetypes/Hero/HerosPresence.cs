@@ -25,7 +25,7 @@ using Kingmaker.Utility;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System.Collections.Generic;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Hero
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
 {
     class HerosPresence
     {

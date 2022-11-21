@@ -5,7 +5,7 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UnitLogic.FactLogic;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Hero
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
 {
     class GracefulCombat
     {

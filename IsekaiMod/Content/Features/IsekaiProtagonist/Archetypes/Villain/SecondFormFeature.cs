@@ -17,7 +17,7 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Villain
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
 {
     class SecondFormFeature
     {

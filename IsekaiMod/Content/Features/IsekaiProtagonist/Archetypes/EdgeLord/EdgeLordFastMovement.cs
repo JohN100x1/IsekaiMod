@@ -6,7 +6,7 @@ using Kingmaker.Enums;
 using Kingmaker.UnitLogic.FactLogic;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.EdgeLord
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord
 {
     class EdgeLordFastMovement
     {
