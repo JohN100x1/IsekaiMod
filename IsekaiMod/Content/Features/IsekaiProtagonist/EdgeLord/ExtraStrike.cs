@@ -3,14 +3,15 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.EdgeLord
 {
     class ExtraStrike
     {
+        private static readonly Sprite Icon_Extra_Strike = Resources.GetBlueprint<BlueprintAbility>("3e1a13fdca87e9c49b2fac4556e5a948").m_Icon;
         public static void Add()
         {
-            var Icon_Extra_Strike = Resources.GetBlueprint<BlueprintAbility>("3e1a13fdca87e9c49b2fac4556e5a948").m_Icon;
             var ExtraStrike = Helpers.CreateBlueprint<BlueprintFeature>("ExtraStrike", bp => {
                 bp.SetName("Extra Strike");
                 bp.SetDescription("You gain additional attacks based on your level.\n"

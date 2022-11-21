@@ -48,13 +48,15 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- Has studied target.
 		- Intelligence based caster that memorizes spells (becomes like wizard).
 - New Features
+	- `Exceptional feats`: Strong feats that can be chosen in place of a feat/bonus feat.
+		- `Effect Immunity`: You become immune to a specific effect. (e.g. poison, bleed, charm etc.)
+		- `Exceptional Summoning`: Your summons get +100 HP, +10 attack, AC, and saving throws.
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
 	- `Character Development Feats`: A selection of bonus feats which have very good effects.
 		- `Alpha Strike`: Automatically confirm crits.
 		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
-		- `Exceptional Summoning`: Your summons get +100 HP, +10 attack, AC, and saving throws.
 		- `Training Montage`: Get a +10 bonus to all attributes.
 		- `Body Strengthening`: Get a DR/— bonus equal to 10 + character level.
 		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
