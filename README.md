@@ -63,7 +63,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Extreme Speed`: Get a speed bonus equal to 5 times character level.
 		- `Channel Positive Energy`: You can channel positive energy (requires good alignment).
 		- `Channel Negative Energy`: You can channel negative energy (requires evil alignment).
-	- `Overpowered Ability`: Powerful 1st level feat.
+	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoEmpower`: Empowers every spell you cast.
 		- `AutoExtend`: Extends every spell you cast.
 		- `AutoMaximize`: Maximizes every spell you cast.
@@ -77,7 +77,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities
-	- `Second Overpowered Ability`: Gives you another Overpowered Ability.
+	- `Mythic Overpowered Ability`: Gives you another Overpowered Ability.
 - New Backgrounds
 	- `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Lore and Knowledge skills use CHA instead of WIS/INT.
 	- `Martial Artist`: Get proficiency in all exotic weapons.
