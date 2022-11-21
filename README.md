@@ -95,6 +95,9 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Aqua`: A goddess of water.
 	- `Ristarte`: A goddess of healing.
 	- `Administrator D`: An ultimate god of evil.
+- New dialogue
+	- Prologue, speaking with Hulrun at Kenabres Festival.
+	- Act 1, Shield Maze after finding Radiance.
 
 ### Isekai Protagonist Spell progression
 #### Spells per Day table

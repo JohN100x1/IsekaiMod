@@ -4,7 +4,6 @@ namespace IsekaiMod.Utilities
 {
     public static class ActionFlow
     {
-
         public static ActionList DoNothing() => Helpers.CreateActionList();
 
         public static ActionList DoSingle<T>(System.Action<T> init = null) where T : GameAction, new()

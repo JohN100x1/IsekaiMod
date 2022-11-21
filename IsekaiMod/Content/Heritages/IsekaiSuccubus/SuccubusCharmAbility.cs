@@ -48,16 +48,12 @@ namespace IsekaiMod.Content.Heritages.IsekaiSuccubus
                 bp.m_Icon = Icon_Charm;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Will;
-                    c.Actions = Helpers.CreateActionList(
-                    new ContextActionConditionalSaved()
-                    {
-                        Succeed = new ActionList(),
-                        Failed = Helpers.CreateActionList(
-                        new ContextActionApplyBuff()
-                        {
-                            m_Buff = DominatePersonBuff.ToReference<BlueprintBuffReference>(),
-                            Permanent = false,
-                            DurationValue = new ContextDurationValue()
+                    c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
+                        c.Succeed = ActionFlow.DoNothing();
+                        c.Failed = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
+                            c.m_Buff = DominatePersonBuff.ToReference<BlueprintBuffReference>();
+                            c.Permanent = false;
+                            c.DurationValue = new ContextDurationValue()
                             {
                                 Rate = DurationRate.Minutes,
                                 m_IsExtendable = true,
@@ -67,9 +63,9 @@ namespace IsekaiMod.Content.Heritages.IsekaiSuccubus
                                     Value = 0,
                                     ValueType = ContextValueType.Rank
                                 }
-                            },
-                            IsFromSpell = false,
-                        }),
+                            };
+                            c.IsFromSpell = false;
+                        });
                     });
                 });
                 bp.AddComponent<SpellComponent>(c => {

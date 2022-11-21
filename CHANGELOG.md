@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Corrupt Aura` feature for `Villain` archetype.
 - Added `Exceptional feats` in feat/bonus feat selection.
 - Added `Effect Immunity` exceptional feat.
+- Added dialogue to upgrade radiance as the `Isekai Protagonist`.
 ### Changed
 - Reworked `Character Development` feats to no longer have bonus feats or feats from `Beach Episode` at later levels.
 - Reworked `Isekai Protagonist` class progression to have more Overpowered Abilities instead of training arc feats.

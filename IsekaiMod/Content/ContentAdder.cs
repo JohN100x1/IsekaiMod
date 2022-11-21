@@ -143,7 +143,7 @@ namespace IsekaiMod.Content
                 Classes.Deathsnatcher.DeathsnatcherUnit.Add();
 
                 // Add extra dialogue
-                Dialogue.IsekaiWelcomeDialogue.Add();
+                Dialogue.IsekaiHulrun.Add();
             }
             public static void AddIsekaiHeritages()
             {

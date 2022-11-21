@@ -26,13 +26,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.SetName("Overpowered Ability — Dupe Gold");
                 bp.SetDescription("As a standard action, you gain 1 million gold.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.Actions = Helpers.CreateActionList(
-                        new AddItemToPlayer()
-                        {
-                            m_ItemToGive = GoldCoins.ToReference<BlueprintItemReference>(),
-                            Silent = false,
-                            Quantity = 1000000
-                        });
+                    c.Actions = ActionFlow.DoSingle<AddItemToPlayer>(c => {
+                        c.m_ItemToGive = GoldCoins.ToReference<BlueprintItemReference>();
+                        c.Silent = false;
+                        c.Quantity = 100000;
+                    });
                 });
                 bp.AddComponent<SpellComponent>(c => {
                     c.School = SpellSchool.Transmutation;
