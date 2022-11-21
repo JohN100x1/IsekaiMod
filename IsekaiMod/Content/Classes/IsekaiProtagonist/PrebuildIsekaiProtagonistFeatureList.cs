@@ -60,15 +60,12 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var AutoMaximizeFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoMaximizeFeature");
             var AutoEmpowerFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoEmpowerFeature");
             var AutoExtendFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoExtendFeature");
-            var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
-            var BodyStrengthening = Resources.GetModBlueprint<BlueprintFeature>("BodyStrengthening");
-            var SpellNegationFeature = Resources.GetModBlueprint<BlueprintFeature>("SpellNegationFeature");
             var MasterSelf = Resources.GetModBlueprint<BlueprintFeature>("MasterSelf");
             var AlphaStrike = Resources.GetModBlueprint<BlueprintFeature>("AlphaStrike");
             var BetaStrike = Resources.GetModBlueprint<BlueprintFeature>("BetaStrike");
             var GammaStrike = Resources.GetModBlueprint<BlueprintFeature>("GammaStrike");
             var MundaneAura = Resources.GetModBlueprint<BlueprintFeature>("MundaneAura");
-            var ExceptionalSummoningFeature = Resources.GetModBlueprint<BlueprintFeature>("ExceptionalSummoningFeature");
+            var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
 
             var PrebuildIsekaiProtagonistFeatureList = Helpers.CreateBlueprint<BlueprintFeature>("PrebuildIsekaiProtagonistFeatureList", bp => {
                 bp.Ranks = 1;
@@ -150,7 +147,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                                 BetaStrike.ToReference<BlueprintFeatureReference>(),
                                 GammaStrike.ToReference<BlueprintFeatureReference>(),
                                 MundaneAura.ToReference<BlueprintFeatureReference>(),
-                                ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>()
+                                TrainingMontage.ToReference<BlueprintFeatureReference>()
                             }
                         },
                         new SelectionEntry()
