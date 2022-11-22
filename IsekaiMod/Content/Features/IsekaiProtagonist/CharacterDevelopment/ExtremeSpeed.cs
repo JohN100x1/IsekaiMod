@@ -57,7 +57,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             });
             var ExtremeSpeedFeature = Helpers.CreateBlueprint<BlueprintFeature>("ExtremeSpeedFeature", bp => {
                 bp.SetName("Extreme Speed");
-                bp.SetDescription("You extensive speed training, gain a +5 {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} per character level.");
+                bp.SetDescription("After extensive speed training, You gain a +5 {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} per character level.");
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { ExtremeSpeedAbility.ToReference<BlueprintUnitFactReference>() };
                 });
