@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added `Hero` archetype.
+- Added `Isekai Spriggan` heritage (Gnome Heritage).
 - Added `Channel Positive Energy` character development feat.
 - Added `Channel Negative Energy` character development feat.
 - Added `Corrupt Aura` feature for `Villain` archetype.
@@ -34,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed `Training Arc` feature selection. Training Arc feats moved to character development.
 ### Fixed
 - Fixed `Villain` archetype to correctly show source of magic as a divine caster.
+- Fixed `Edge Lord` extra attack not stacking at 10th, 15th and 20th level.
 
 ## [1.9.0] - 2022-11-18
 ### Added

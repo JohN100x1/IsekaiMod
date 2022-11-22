@@ -32,9 +32,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         {
             // TODO: learn what kineticists do
 
-            // TODO: add channel negative energy to villain and positive for hero
             // TODO: add scaling natural armor, strength and dexterity (like animal companion) to deathsnatcher
-            // TODO: add vampiric drain spell for isekai vampire heritage
+            // TODO: add vampiric drain spell for isekai vampire heritage?
             // TODO: Load localisation instead of hardcoded strings
 
             // Class Signature Features

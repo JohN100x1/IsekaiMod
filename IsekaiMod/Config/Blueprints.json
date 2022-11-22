@@ -21,6 +21,12 @@
     // Isekai Vampire Heritage
     "IsekaiVampireHeritage": "0a619c37-6809-4b08-aaa9-5644273b531c",
 
+    // Isekai Spriggan Heritage
+    "SizeAlterationBuff": "a01692d3-a363-4bee-800f-65d9e6c4d926",
+    "SizeAlterationAbility": "1cfcc60f-ce65-406e-8325-2d1b91fc8707",
+    "SizeAlterationFeature": "6410e472-de88-4f4e-a617-ff9032091e95",
+    "IsekaiSprigganHeritage": "c153ef88-76a5-44f8-9c5d-7ffc03e9512f",
+
     // Deities
     "IsekaiDeitySelection": "d7a574be-5e91-4420-b859-9f0ff708fdcf",
     "TruckKunFeature": "36513264-aae2-418f-8fd1-7525b143efd0",
