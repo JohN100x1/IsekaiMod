@@ -116,7 +116,6 @@ namespace IsekaiMod.Content.Heritages
                 });
 
                 bp.Groups = new FeatureGroup[] { FeatureGroup.Racial, FeatureGroup.DhampirHeritage };
-                bp.IsClassFeature = true;
                 bp.ReapplyOnLevelUp = true;
             });
 
