@@ -43,7 +43,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var SiphoningAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("SiphoningAuraFeature");
             var SupersonicCombat = Resources.GetModBlueprint<BlueprintFeature>("SupersonicCombat");
             var EdgeLordFastMovement = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordFastMovement");
-            var ExtraStrike = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike");
+            var ExtraStrike1 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike1");
+            var ExtraStrike2 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike2");
+            var ExtraStrike3 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike3");
+            var ExtraStrike4 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike4");
             var CripplingStrike = Resources.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
             var DispellingAttack = Resources.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
             var SlayerStudyTargetFeature = Resources.GetBlueprint<BlueprintFeature>("09bdd9445ac38044389476689ae8d5a1");
@@ -102,7 +105,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 Helpers.CreateUIGroup(SneakAttack, OverpoweredAbilitySelectionVillain),
-                Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike),
+                Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike1, ExtraStrike2, ExtraStrike3, ExtraStrike4),
                 Helpers.CreateUIGroup(GracefulCombat, TrueSmiteFeature, TrueSmiteAdditionalUse),
                 Helpers.CreateUIGroup(SlayerStudyTargetFeature, SlayerSwiftStudyTargetFeature),
                 Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, NascentApotheosis, GodlyVessel, CorruptAuraFeature, CharacterDevelopmentSelection, ProtectiveAuraFeature, GloriousAuraFeature, SiphoningAuraFeature, Godhood, IsekaiChannelPositiveEnergyFeature, IsekaiChannelNegativeEnergyFeature),

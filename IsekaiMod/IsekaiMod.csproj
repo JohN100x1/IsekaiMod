@@ -141,6 +141,9 @@
     <None Update="Assets\Heritages\ICON_ANGEL.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Assets\Heritages\ICON_SPRIGGAN.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\Heritages\ICON_SUCCUBUS.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
