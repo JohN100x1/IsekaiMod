@@ -32,6 +32,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         {
             // TODO: learn what kineticists do
 
+            // TODO: create a feature for drow poison and add DrowPoisonResource to that feature rather than the Drow heritage
             // TODO: add scaling natural armor, strength and dexterity (like animal companion) to deathsnatcher
             // TODO: add vampiric drain spell for isekai vampire heritage?
             // TODO: Load localisation instead of hardcoded strings

@@ -9,6 +9,7 @@ using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.Designers.Mechanics.Facts;
 
 namespace IsekaiMod.Content.Heritages.IsekaiDrow
 {
@@ -18,6 +19,7 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
         {
             // Drow Abilities
             var DrowPoisonAbility = Resources.GetModBlueprint<BlueprintAbility>("DrowPoisonAbility");
+            var DrowPoisonResource = Resources.GetModBlueprint<BlueprintAbilityResource>("DrowPoisonResource");
 
             // Drow Heritage
             var Icon_Drow = AssetLoader.LoadInternal("Heritages", "ICON_DROW.png");
@@ -57,6 +59,12 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
                     c.m_Progression = ContextRankProgression.BonusValue;
                     c.m_StepLevel = 11;
+                });
+
+                // Add Resources
+                bp.AddComponent<AddAbilityResources>(c => {
+                    c.m_Resource = DrowPoisonResource.ToReference<BlueprintAbilityResourceReference>();
+                    c.RestoreAmount = true;
                 });
 
                 // Add Abilities

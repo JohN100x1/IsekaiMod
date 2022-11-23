@@ -154,6 +154,10 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                         m_CustomProperty = DrowPoisonUnitProperty.ToReference<BlueprintUnitPropertyReference>()
                     };
                 });
+                bp.AddComponent<AbilityResourceLogic>(c => {
+                    c.m_RequiredResource = DrowPoisonResource.ToReference<BlueprintAbilityResourceReference>();
+                    c.m_IsSpendResource = true;
+                });
                 bp.Type = AbilityType.Special;
                 bp.Range = AbilityRange.Personal;
                 bp.m_AllowNonContextActions = false;
