@@ -28,6 +28,11 @@ namespace IsekaiMod.Content.Heritages.IsekaiSpriggan
                 });
                 bp.AddComponent<AddGenericStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Size;
+                    c.Stat = StatType.Speed;
+                    c.Value = 10;
+                });
+                bp.AddComponent<AddGenericStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Size;
                     c.Stat = StatType.Strength;
                     c.Value = 12;
                 });
