@@ -49,6 +49,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- Intelligence based caster that memorizes spells (becomes like wizard).
 - New Features
 	- `Exceptional feats`: Strong feats that can be chosen in place of a feat/bonus feat.
+		- `Mythic feat`: You can choose a mythic feat instead of a normal/bonus feat.
 		- `Effect Immunity`: You become immune to a specific effect. (e.g. poison, bleed, charm etc.)
 		- `Exceptional Summoning`: Your summons get +100 HP, +10 attack, AC, and saving throws.
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.

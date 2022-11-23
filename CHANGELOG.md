@@ -13,7 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Channel Negative Energy` character development feat.
 - Added `Corrupt Aura` feature for `Villain` archetype.
 - Added `Exceptional feats` in feat/bonus feat selection.
-- Added `Effect Immunity` exceptional feat.
+- Added `Effect Immunity` feats to exceptional feat selection.
+- Added Mythic feats to exceptional feat selection.
 - Added dialogue to upgrade radiance as the `Isekai Protagonist`.
 ### Changed
 - Reworked `Character Development` feats to no longer have bonus feats or feats from `Beach Episode` at later levels.
