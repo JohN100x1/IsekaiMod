@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - Fixed missing speed buff for `Isekai Spriggan` size alteration ability.
+- Fixed typo in `Isekai Protagonist` class description.
 
 ## [2.0.0] - 2022-11-23
 ### Added
