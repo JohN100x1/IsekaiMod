@@ -37,8 +37,13 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                 // Attributes
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Racial;
-                    c.Stat = StatType.Wisdom;
-                    c.Value = 4;
+                    c.Stat = StatType.Dexterity;
+                    c.Value = 2;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Racial;
+                    c.Stat = StatType.Intelligence;
+                    c.Value = 2;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Racial;
