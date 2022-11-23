@@ -27,8 +27,8 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                 bp.SetName("Isekai Drow");
                 bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Drow have both extreme beauty and power. "
                     + "Also called Dark Elves, they are a cruel and cunning dark reflection of the elven race.\n"
-                    + "The Isekai Drow has a +2 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Intelligence}Intelligence{/g}, and a "
-                    + "+4 racial bonus to {g|Encyclopedia:Charisma}Charisma{/g}. "
+                    + "The Isekai Drow has a +2 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Dexterity}Dexterity{/g}, {g|Encyclopedia:Intelligence}Intelligence{/g}, "
+                    + "{g|Encyclopedia:Wisdom}Wisdom{/g}, and {g|Encyclopedia:Charisma}Charisma{/g}. "
                     + "They have spell resistance equal to 11 + their character level. "
                     + "They can also use the Drow Poison ability as a swift action a number of times per day equal to their Charisma modifier.");
                 bp.m_Icon = Icon_Drow;
@@ -48,8 +48,13 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Racial;
+                    c.Stat = StatType.Wisdom;
+                    c.Value = 2;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Racial;
                     c.Stat = StatType.Charisma;
-                    c.Value = 4;
+                    c.Value = 2;
                 });
 
                 // Add Spell Resistance
