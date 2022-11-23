@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0.1] - 2022-11-23
 ### Changed
-- Changed `Isekai Drow` to give +2 DEX, +2 INT, + 4 CHA instead of +4 WIS, +4 CHA
+- Changed `Isekai Succubus` to give +2 DEX, +2 INT, +4 CHA, -2 STR instead of +4 DEX, +4 CHA, -2 STR.
+- Changed `Isekai Drow` to give +2 DEX, +2 INT, +4 CHA instead of +4 WIS, +4 CHA.
 ### Fixed
 - Fixed missing `Drow Poison` ability use limit.
 - Fixed missing speed buff for `Isekai Spriggan` size alteration ability.

@@ -33,7 +33,8 @@ namespace IsekaiMod.Content.Heritages.IsekaiSuccubus
                 bp.SetName("Isekai Succubus");
                 bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power, and often "
                     + "have a voracious appetite for sensory pleasures and carnal delights.\n"
-                    + "The Isekai Succubus has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Charisma}Charisma{/g}, "
+                    + "The Isekai Succubus has a +2 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Intelligence}Intelligence{/g}, "
+                    + "a +4 racial bonus to {g|Encyclopedia:Charisma}Charisma{/g}, "
                     + "a -2 {g|Encyclopedia:Penalty}penalty{/g} to {g|Encyclopedia:Strength}Strength{/g}, and a +2 racial bonus on {g|Encyclopedia:Persuasion}Persuasion{/g} and "
                     + "{g|Encyclopedia:Perception}Perception checks{/g}. "
                     + "They have DR 10/Cold Iron or Good, and have spell resistance equal to 10 + their character level. "
@@ -54,7 +55,12 @@ namespace IsekaiMod.Content.Heritages.IsekaiSuccubus
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Racial;
                     c.Stat = StatType.Dexterity;
-                    c.Value = 4;
+                    c.Value = 2;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Racial;
+                    c.Stat = StatType.Intelligence;
+                    c.Value = 2;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Racial;
