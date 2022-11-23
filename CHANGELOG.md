@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added `Hero` archetype.
+- Added `Isekai Drow` heritage (Elf Heritage).
 - Added `Isekai Spriggan` heritage (Gnome Heritage).
 - Added `Channel Positive Energy` character development feat.
 - Added `Channel Negative Energy` character development feat.

@@ -22,7 +22,9 @@ namespace IsekaiMod.Content.Heritages.IsekaiSpriggan
             var Icon_Spriggan = AssetLoader.LoadInternal("Heritages", "ICON_SPRIGGAN.png");
             var IsekaiSprigganHeritage = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiSprigganHeritage", bp => {
                 bp.SetName("Isekai Spriggan");
-                bp.SetDescription("The Isekai Spriggan gains a +1 racial bonus on concentration checks and on the {g|Encyclopedia:DC}DC{/g} of all "
+                bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Spriggan have both extreme beauty and power. "
+                    + "Their shape changing abilities allow them to easily defeat everyone who would underestimate their power.\n"
+                    + "The Isekai Spriggan gains a +1 racial bonus on concentration checks and on the {g|Encyclopedia:DC}DC{/g} of all "
                     + "{g|Encyclopedia:Spell}spells{/g} they cast. "
                     + "They add Athletics, Trickery, Stealth, and Perception to the list of their class skills. "
                     + "They are also able to use the Size alteration ability to increase their size by two size categories and gain +10 Speed, +12 Strength, -2 Dexterity, +6 Constitution, "

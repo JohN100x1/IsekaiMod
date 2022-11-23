@@ -156,6 +156,8 @@ namespace IsekaiMod.Content
                 Heritages.IsekaiVampireHeritage.Add();
                 Heritages.IsekaiSpriggan.SizeAlterationAbility.Add();
                 Heritages.IsekaiSpriggan.IsekaiSprigganHeritage.Add();
+                Heritages.IsekaiDrow.DrowPoisonAbility.Add();
+                Heritages.IsekaiDrow.IsekaiDrowHeritage.Add();
             }
             public static void AddIsekaiBackgrounds()
             {

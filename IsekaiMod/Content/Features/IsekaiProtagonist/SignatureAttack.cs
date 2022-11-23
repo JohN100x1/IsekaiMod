@@ -40,7 +40,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.Div2;
+                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
                 });
                 bp.IsClassFeature = true;
                 bp.ReapplyOnLevelUp = true;

@@ -8,7 +8,6 @@ using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.ResourceLinks;
 
 namespace IsekaiMod.Content.Heritages.IsekaiSpriggan
 {
@@ -50,7 +49,6 @@ namespace IsekaiMod.Content.Heritages.IsekaiSpriggan
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
-                bp.FxOnStart = new PrefabLink() { AssetId = "1091271ddadd4a34f8d012428252dd4d" };
             });
             var SizeAlterationAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("SizeAlterationAbility", bp => {
                 bp.SetName("Size Alteration");
