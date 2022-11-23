@@ -46,30 +46,26 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var Adaptibility = Resources.GetBlueprint<BlueprintFeatureSelection>("26a668c5a8c22354bac67bcd42e09a3f");
             var BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
 
-            var WitchFamiliarSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("29a333b7ccad3214ea3a51943fa0d8e9");
+            var IsekaiFamiliarSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiFamiliarSelection");
             var CatFamiliarBondFeature = Resources.GetBlueprint<BlueprintFeature>("1cb0b559ca2e31e4d9dc65de012fa82f");
 
             var IsekaiPetSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiPetSelection");
             var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
             var OverpoweredAbilitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection");
-            var TrainingArcSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("TrainingArcSelection");
+            var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
             var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
-            var CharacterDevelopmentSelection1 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection1");
-            var CharacterDevelopmentSelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection2");
-            var CharacterDevelopmentSelection3 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection3");
-            var CharacterDevelopmentSelection4 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection4");
-            var CharacterDevelopmentSelection5 = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection5");
+            var CharacterDevelopmentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection");
 
             var AutoQuickenFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoQuickenFeature");
-            var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
-            var BodyStrengthening = Resources.GetModBlueprint<BlueprintFeature>("BodyStrengthening");
-            var SpellNegationFeature = Resources.GetModBlueprint<BlueprintFeature>("SpellNegationFeature");
+            var AutoMaximizeFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoMaximizeFeature");
+            var AutoEmpowerFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoEmpowerFeature");
+            var AutoExtendFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoExtendFeature");
             var MasterSelf = Resources.GetModBlueprint<BlueprintFeature>("MasterSelf");
             var AlphaStrike = Resources.GetModBlueprint<BlueprintFeature>("AlphaStrike");
             var BetaStrike = Resources.GetModBlueprint<BlueprintFeature>("BetaStrike");
             var GammaStrike = Resources.GetModBlueprint<BlueprintFeature>("GammaStrike");
             var MundaneAura = Resources.GetModBlueprint<BlueprintFeature>("MundaneAura");
-            var FireImmunity = Resources.GetModBlueprint<BlueprintFeature>("FireImmunity");
+            var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
 
             var PrebuildIsekaiProtagonistFeatureList = Helpers.CreateBlueprint<BlueprintFeature>("PrebuildIsekaiProtagonistFeatureList", bp => {
                 bp.Ranks = 1;
@@ -136,46 +132,22 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                         },
                         new SelectionEntry()
                         {
-                            m_Selection = TrainingArcSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Selection = OverpoweredAbilitySelection2.ToReference<BlueprintFeatureSelectionReference>(),
                             m_Features = new BlueprintFeatureReference[]{
-                                TrainingMontage.ToReference<BlueprintFeatureReference>(),
-                                BodyStrengthening.ToReference<BlueprintFeatureReference>(),
-                                SpellNegationFeature.ToReference<BlueprintFeatureReference>(),
+                                AutoMaximizeFeature.ToReference<BlueprintFeatureReference>(),
+                                AutoEmpowerFeature.ToReference<BlueprintFeatureReference>(),
+                                AutoExtendFeature.ToReference<BlueprintFeatureReference>(),
                             }
                         },
                         new SelectionEntry()
                         {
-                            m_Selection = CharacterDevelopmentSelection1.ToReference<BlueprintFeatureSelectionReference>(),
-                            m_Features = new BlueprintFeatureReference[]{
-                                BetaStrike.ToReference<BlueprintFeatureReference>(),
-                            }
-                        },
-                        new SelectionEntry()
-                        {
-                            m_Selection = CharacterDevelopmentSelection2.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Selection = CharacterDevelopmentSelection.ToReference<BlueprintFeatureSelectionReference>(),
                             m_Features = new BlueprintFeatureReference[]{
                                 AlphaStrike.ToReference<BlueprintFeatureReference>(),
-                            }
-                        },
-                        new SelectionEntry()
-                        {
-                            m_Selection = CharacterDevelopmentSelection3.ToReference<BlueprintFeatureSelectionReference>(),
-                            m_Features = new BlueprintFeatureReference[]{
-                                GammaStrike.ToReference<BlueprintFeatureReference>()
-                            }
-                        },
-                        new SelectionEntry()
-                        {
-                            m_Selection = CharacterDevelopmentSelection4.ToReference<BlueprintFeatureSelectionReference>(),
-                            m_Features = new BlueprintFeatureReference[]{
-                                MundaneAura.ToReference<BlueprintFeatureReference>()
-                            }
-                        },
-                        new SelectionEntry()
-                        {
-                            m_Selection = CharacterDevelopmentSelection5.ToReference<BlueprintFeatureSelectionReference>(),
-                            m_Features = new BlueprintFeatureReference[]{
-                                FireImmunity.ToReference<BlueprintFeatureReference>()
+                                BetaStrike.ToReference<BlueprintFeatureReference>(),
+                                GammaStrike.ToReference<BlueprintFeatureReference>(),
+                                MundaneAura.ToReference<BlueprintFeatureReference>(),
+                                TrainingMontage.ToReference<BlueprintFeatureReference>()
                             }
                         },
                         new SelectionEntry()
@@ -217,12 +189,12 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                         {
                             m_Selection = IsekaiPetSelection.ToReference<BlueprintFeatureSelectionReference>(),
                             m_Features = new BlueprintFeatureReference[]{
-                                WitchFamiliarSelection.ToReference<BlueprintFeatureReference>()
+                                IsekaiFamiliarSelection.ToReference<BlueprintFeatureReference>()
                             }
                         },
                         new SelectionEntry()
                         {
-                            m_Selection = WitchFamiliarSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Selection = IsekaiFamiliarSelection.ToReference<BlueprintFeatureSelectionReference>(),
                             m_Features = new BlueprintFeatureReference[]{
                                 CatFamiliarBondFeature.ToReference<BlueprintFeatureReference>()
                             }

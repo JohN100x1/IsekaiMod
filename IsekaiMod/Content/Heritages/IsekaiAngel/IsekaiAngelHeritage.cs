@@ -129,7 +129,6 @@ namespace IsekaiMod.Content.Heritages.IsekaiAngel
                 });
 
                 bp.Groups = new FeatureGroup[] { FeatureGroup.Racial, FeatureGroup.AasimarHeritage };
-                bp.IsClassFeature = true;
                 bp.ReapplyOnLevelUp = true;
             });
 

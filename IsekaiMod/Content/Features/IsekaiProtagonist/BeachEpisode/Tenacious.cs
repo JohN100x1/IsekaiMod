@@ -4,14 +4,15 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.FactLogic;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
 {
     class Tenacious
     {
+        private static readonly Sprite Icon_DextrousDuelist = Resources.GetBlueprint<BlueprintFeature>("b701196306bb4674bb902c9f1160180f").m_Icon;
         public static void Add()
         {
-            var Icon_DextrousDuelist = Resources.GetBlueprint<BlueprintFeature>("b701196306bb4674bb902c9f1160180f").m_Icon;
             var Tenacious = Helpers.CreateBlueprint<BlueprintFeature>("Tenacious", bp => {
                 bp.SetName("Tenacious");
                 bp.SetDescription("You gain immunity to stunned, staggered, slowed, entangled, petrified, paralysis, and movement impairing effects.");
@@ -57,6 +58,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
             });
+
+            BeachEpisodeSelection.AddToSelection(Tenacious);
         }
     }
 }

@@ -18,24 +18,19 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class DupeGoldFeature
     {
+        private static readonly BlueprintItem GoldCoins = Resources.GetBlueprint<BlueprintItem>("f2bc0997c24e573448c6c91d2be88afa");
         public static void Add()
         {
-            // Gold
-            var GoldCoins = Resources.GetBlueprint<BlueprintItem>("f2bc0997c24e573448c6c91d2be88afa");
-
-            // Feature
             var Icon_Dupe_Gold = AssetLoader.LoadInternal("Features", "ICON_DUPE_GOLD.png");
             var DupeGoldAbility = Helpers.CreateBlueprint<BlueprintAbility>("DupeGoldAbility", bp => {
                 bp.SetName("Overpowered Ability — Dupe Gold");
                 bp.SetDescription("As a standard action, you gain 1 million gold.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.Actions = Helpers.CreateActionList(
-                        new AddItemToPlayer()
-                        {
-                            m_ItemToGive = GoldCoins.ToReference<BlueprintItemReference>(),
-                            Silent = false,
-                            Quantity = 1000000
-                        });
+                    c.Actions = ActionFlow.DoSingle<AddItemToPlayer>(c => {
+                        c.m_ItemToGive = GoldCoins.ToReference<BlueprintItemReference>();
+                        c.Silent = false;
+                        c.Quantity = 100000;
+                    });
                 });
                 bp.AddComponent<SpellComponent>(c => {
                     c.School = SpellSchool.Transmutation;
@@ -72,6 +67,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.m_Facts = new BlueprintUnitFactReference[] { DupeGoldAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
+
+            OverpoweredAbilitySelection.AddToSelection(DupeGoldFeature);
         }
     }
 }

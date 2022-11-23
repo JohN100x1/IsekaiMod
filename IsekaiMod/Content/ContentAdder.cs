@@ -17,6 +17,11 @@ namespace IsekaiMod.Content
                 Features.ExtraWings.Add();
                 Features.ExoticWeaponProficiency.Add();
 
+                // Add Exceptional Feats
+                Features.ExceptionalFeats.ExceptionalFeatSelection.Add();
+                Features.ExceptionalFeats.EffectImmunitySelection.Add();
+                Features.ExceptionalFeats.ExceptionalSummoningFeature.Add();
+
                 if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
                 if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
                 if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
@@ -31,6 +36,7 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.IsekaiProtagonistSpellsKnown.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistSpellbook.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistClass.Add();
+
                 // Isekai Protagonist Features
                 Features.IsekaiProtagonist.IsekaiProtagonistProficiencies.Add();
                 Features.IsekaiProtagonist.IsekaiProtagonistCantripsFeature.Add();
@@ -46,27 +52,30 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.FriendlyAuraFeature.Add();
                 Features.IsekaiProtagonist.HaremMagnetFeature.Add();
                 Features.IsekaiProtagonist.TrueMainCharacter.Add();
-                Features.IsekaiProtagonist.TrainingArc.TrainingMontage.Add();
-                Features.IsekaiProtagonist.TrainingArc.BodyStrengthening.Add();
-                Features.IsekaiProtagonist.TrainingArc.SpellNegationFeature.Add();
-                Features.IsekaiProtagonist.TrainingArc.ExtremeSpeedFeature.Add();
-                Features.IsekaiProtagonist.TrainingArc.TrainingArcSelection.Add();
+
+                // Beach Episode Selection
+                Features.IsekaiProtagonist.BeachEpisode.BeachEpisodeSelection.Add();
                 Features.IsekaiProtagonist.BeachEpisode.HealthyBody.Add();
                 Features.IsekaiProtagonist.BeachEpisode.InnerPower.Add();
                 Features.IsekaiProtagonist.BeachEpisode.MasterSelf.Add();
                 Features.IsekaiProtagonist.BeachEpisode.Tenacious.Add();
-                Features.IsekaiProtagonist.BeachEpisode.BeachEpisodeSelection.Add();
+
+                // Character Development
+                Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.MundaneAura.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.AlphaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.BetaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.GammaStrike.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.AcidImmunity.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.ColdImmunity.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.ElectricityImmunity.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.FireImmunity.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.SonicImmunity.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.ExceptionalSummoningFeature.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.EnergyImmunitySelection.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.TrainingMontage.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.BodyStrengthening.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.SpellNegation.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.ExtremeSpeed.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.IsekaiChannelPositiveEnergy.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.IsekaiChannelNegativeEnergy.Add();
+
+                // OP Ability
+                Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoEmpowerFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoExtendFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoMaximizeFeature.Add();
@@ -77,30 +86,40 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.PerfectRollFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.SuperBuffFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.InterdimensionalBagFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.WinnerFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
+
                 // God Emperor Archetype
-                Features.IsekaiProtagonist.GodEmperor.GodEmperorProficiencies.Add();
-                Features.IsekaiProtagonist.GodEmperor.NascentApotheosis.Add();
-                Features.IsekaiProtagonist.GodEmperor.ProtectiveAuraFeature.Add();
-                Features.IsekaiProtagonist.GodEmperor.DarkAuraFeature.Add();
-                Features.IsekaiProtagonist.GodEmperor.GloriousAuraFeature.Add();
-                Features.IsekaiProtagonist.GodEmperor.GodlyVessel.Add();
-                Features.IsekaiProtagonist.GodEmperor.SiphoningAuraFeature.Add();
-                Features.IsekaiProtagonist.GodEmperor.Godhood.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.GodEmperorProficiencies.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.NascentApotheosis.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.ProtectiveAuraFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.DarkAuraFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.GloriousAuraFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.GodlyVessel.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.SiphoningAuraFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.Godhood.Add();
                 Classes.IsekaiProtagonist.Archetypes.GodEmperor.Add();
+
                 // Edge Lord Archetype
-                Features.IsekaiProtagonist.EdgeLord.EdgeLordProficiencies.Add();
-                Features.IsekaiProtagonist.EdgeLord.SupersonicCombat.Add();
-                Features.IsekaiProtagonist.EdgeLord.EdgeLordFastMovement.Add();
-                Features.IsekaiProtagonist.EdgeLord.ExtraStrike.Add();
+                Features.IsekaiProtagonist.Archetypes.EdgeLord.EdgeLordProficiencies.Add();
+                Features.IsekaiProtagonist.Archetypes.EdgeLord.SupersonicCombat.Add();
+                Features.IsekaiProtagonist.Archetypes.EdgeLord.EdgeLordFastMovement.Add();
+                Features.IsekaiProtagonist.Archetypes.EdgeLord.ExtraStrike.Add();
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
+
+                // Hero Archetype
+                Features.IsekaiProtagonist.Archetypes.Hero.HeroProficiencies.Add();
+                Features.IsekaiProtagonist.Archetypes.Hero.GracefulCombat.Add();
+                Features.IsekaiProtagonist.Archetypes.Hero.TrueSmite.Add();
+                Features.IsekaiProtagonist.Archetypes.Hero.HerosPresence.Add();
+                Classes.IsekaiProtagonist.Archetypes.Hero.Add();
+
                 // Villain Archetype
-                Features.IsekaiProtagonist.Villain.VillainProficiencies.Add();
-                Features.IsekaiProtagonist.Villain.VillainQuickFooted.Add();
-                Features.IsekaiProtagonist.Villain.SecondFormFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.Villain.VillainProficiencies.Add();
+                Features.IsekaiProtagonist.Archetypes.Villain.CorruptAuraFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.Villain.VillainQuickFooted.Add();
+                Features.IsekaiProtagonist.Archetypes.Villain.SecondFormFeature.Add();
                 Classes.IsekaiProtagonist.VillainSpellbook.Add();
                 Classes.IsekaiProtagonist.Archetypes.Villain.Add();
+
                 // Add Progression & Prebuild after Class and class-dependent features are added
                 Classes.IsekaiProtagonist.PrebuildIsekaiProtagonistFeatureList.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistProgression.Add();
@@ -118,13 +137,14 @@ namespace IsekaiMod.Content
                 Features.Deathsnatcher.DeathsnatcherCreateUndead.Add();
                 Features.Deathsnatcher.DeathsnatcherFingerOfDeath.Add();
                 Features.Deathsnatcher.DeathsnatcherFastHealing.Add();
-                Features.Deathsnatcher.DeathsnatcherAnimateDeadAdditionalUse.Add();
                 Features.Deathsnatcher.DeathsnatcherPoisonSting.Add();
                 Features.Deathsnatcher.DeathsnatcherUndeadMaster.Add();
                 Classes.Deathsnatcher.DeathsnatcherClassProgression.Add();
                 Classes.Deathsnatcher.DeathsnatcherUnit.Add();
+
                 // Add extra dialogue
-                Dialogue.IsekaiWelcomeDialogue.Add();
+                Dialogue.IsekaiHulrun.Add();
+                Dialogue.IsekaiRadiance.Add();
             }
             public static void AddIsekaiHeritages()
             {
@@ -134,6 +154,10 @@ namespace IsekaiMod.Content
                 Heritages.IsekaiAngel.AngelicBoltAbility.Add();
                 Heritages.IsekaiAngel.IsekaiAngelHeritage.Add();
                 Heritages.IsekaiVampireHeritage.Add();
+                Heritages.IsekaiSpriggan.SizeAlterationAbility.Add();
+                Heritages.IsekaiSpriggan.IsekaiSprigganHeritage.Add();
+                Heritages.IsekaiDrow.DrowPoisonAbility.Add();
+                Heritages.IsekaiDrow.IsekaiDrowHeritage.Add();
             }
             public static void AddIsekaiBackgrounds()
             {

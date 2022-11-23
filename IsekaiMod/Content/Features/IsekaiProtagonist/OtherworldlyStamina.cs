@@ -4,14 +4,15 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.FactLogic;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist
 {
     class OtherworldlyStamina
     {
+        private static readonly Sprite Icon_Bravery = Resources.GetBlueprint<BlueprintFeature>("f6388946f9f472f4585591b80e9f2452").m_Icon;
         public static void Add()
         {
-            var Icon_Bravery = Resources.GetBlueprint<BlueprintFeature>("f6388946f9f472f4585591b80e9f2452").m_Icon;
             var OtherworldlyStamina = Helpers.CreateBlueprint<BlueprintFeature>("OtherworldlyStamina", bp => {
                 bp.SetName("Otherworldly Stamina");
                 bp.SetDescription("At 15th Level, you become immune to fatigue and exhaustion.");

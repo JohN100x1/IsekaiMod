@@ -142,7 +142,6 @@ namespace IsekaiMod.Content.Heritages.IsekaiSuccubus
                 });
 
                 bp.Groups = new FeatureGroup[] { FeatureGroup.Racial, FeatureGroup.TieflingHeritage };
-                bp.IsClassFeature = true;
                 bp.ReapplyOnLevelUp = true;
             });
 

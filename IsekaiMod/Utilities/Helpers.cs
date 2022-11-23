@@ -22,6 +22,10 @@ using IsekaiMod.Config;
 using Kingmaker.Blueprints.Root;
 using IsekaiMod.Extensions;
 using IsekaiMod.Localization;
+using Kingmaker.DialogSystem.Blueprints;
+using Kingmaker.DialogSystem;
+using Kingmaker.Designers.EventConditionActionSystem.Conditions;
+using Kingmaker.UnitLogic.Alignments;
 
 namespace IsekaiMod.Utilities
 {
@@ -91,13 +95,31 @@ namespace IsekaiMod.Utilities
             return result;
         }
 
-        public static T CreateCopy<T>(T original, Action<T> init = null)
+        public static BlueprintAnswer CreateAnswer(string name, Action<BlueprintAnswer> init = null)
         {
-            var result = (T)ObjectDeepCopier.Clone(original);
+            var result = CreateBlueprint<BlueprintAnswer>(name, bp => {
+                bp.NextCue = new CueSelection()
+                {
+                    Cues = new List<BlueprintCueBaseReference>(),
+                    Strategy = Strategy.First
+                };
+                bp.ShowOnce = false;
+                bp.ShowOnceCurrentDialog = false;
+                bp.ShowCheck = new ShowCheck() { Type = StatType.Unknown, DC = 0 };
+                bp.Experience = DialogExperience.NoExperience;
+                bp.DebugMode = false;
+                bp.CharacterSelection = new CharacterSelection() { SelectionType = CharacterSelection.Type.Clear, ComparisonStats = new StatType[0] };
+                bp.ShowConditions = ActionFlow.EmptyCondition();
+                bp.SelectConditions = ActionFlow.EmptyCondition();
+                bp.RequireValidCue = false;
+                bp.AddToHistory = true;
+                bp.OnSelect = ActionFlow.DoNothing();
+                bp.FakeChecks = new CheckData[0];
+                bp.AlignmentShift = new AlignmentShift() { Direction = AlignmentShiftDirection.TrueNeutral, Value = 0, Description = new LocalizedString() };
+            });
             init?.Invoke(result);
             return result;
         }
-
 
         public static LevelEntry LevelEntry(int level, BlueprintFeatureBase feature)
         {
@@ -147,36 +169,6 @@ namespace IsekaiMod.Utilities
             uiGroup.m_Features.AddRange(featureBaseReferenceArray);
             return new UIGroup[1] { uiGroup };
         }
-        public static BlueprintProgression CreateProgression(
-      string name,
-      string displayName,
-      string description,
-      FeatureGroup group,
-      params BlueprintComponent[] components)
-        {
-            BlueprintProgression blueprint = CreateBlueprint<BlueprintProgression>(name);
-            SetFeatureInfo(blueprint, displayName, description, group, components);
-            blueprint.m_UIDeterminatorsGroup = Array.Empty<BlueprintFeatureBaseReference>();
-            blueprint.UIGroups = Array.Empty<UIGroup>();
-            blueprint.m_Classes = Array.Empty<BlueprintProgression.ClassWithLevel>();
-            blueprint.m_Archetypes = Array.Empty<BlueprintProgression.ArchetypeWithLevel>();
-            return blueprint;
-        }
-
-        public static void SetFeatureInfo(
-          BlueprintFeature feat,
-          string displayName,
-          string description,
-
-          FeatureGroup group,
-          params BlueprintComponent[] components)
-        {
-            feat.SetComponents(components);
-            feat.Groups = new FeatureGroup[1] { group };
-            feat.SetNameDescription(displayName, description);
-
-        }
-
 
         public static ContextValue CreateContextValueRank(AbilityRankType value = AbilityRankType.Default) => value.CreateContextValue();
         public static ContextValue CreateContextValue(this AbilityRankType value)
@@ -288,8 +280,6 @@ namespace IsekaiMod.Utilities
             init?.Invoke(config);
             return config;
         }
-
-
 
         private class ObjectDeepCopier
         {

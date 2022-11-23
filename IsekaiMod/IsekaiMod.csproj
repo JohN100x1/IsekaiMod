@@ -69,9 +69,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Assets\Abilities\ICON_CHARM.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Assets\Deities\ICON_ADMIN_D.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -84,10 +81,22 @@
     <None Update="Assets\Deities\ICON_TRUCK.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Assets\Features\ICON_CHARM.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Features\ICON_CORRUPT_AURA.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Features\ICON_DROW_POISON.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\Features\ICON_EXCEPTIONAL_SUMMONING.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Features\ICON_GLORIOUS_AURA.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Features\ICON_GRACEFUL_COMBAT.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Features\ICON_HAREM.png">
@@ -123,19 +132,22 @@
     <None Update="Assets\Features\ICON_SIPHONING_AURA.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Features\ICON_SIPHONING_DEBUFF.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Assets\Features\ICON_SUPER_BUFF.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Features\ICON_TRUE_MAIN_CHARACTER.png">
+    <None Update="Assets\Features\ICON_HEROS_PRESENCE.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Features\ICON_WINNER.png">
+    <None Update="Assets\Features\ICON_TRUE_SMITE.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Heritages\ICON_ANGEL.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Heritages\ICON_DROW.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Heritages\ICON_SPRIGGAN.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Heritages\ICON_SUCCUBUS.png">

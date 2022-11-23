@@ -10,12 +10,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
 {
     class IsekaiFighterTraining
     {
-        // Icon
         private static readonly Sprite Icon_SwordSaintFighterTraining = Resources.GetBlueprint<BlueprintFeature>("9ab2ec65977cc524a99600babc7fe3b6").m_Icon;
-
-        // Class to Fake
         private static readonly BlueprintCharacterClass FighterClass = Resources.GetBlueprint<BlueprintCharacterClass>("48ac8db94d5de7645906c7d0ad3bcfbd");
-
         public static void Add()
         {
             var IsekaiFighterTraining = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiFighterTraining", bp => {

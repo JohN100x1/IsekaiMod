@@ -41,18 +41,30 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Edge Lord` (Isekai Protagonist Archetype)
 		- Has alot of extra attacks.
 		- Uses dexterity for damage and attack rolls.
+	- `Hero` (Isekai Protagonist Archetype)
+		- Has the `True Smite` ability (smite any alignment).
+		- Uses charisma for damage and attack rolls.
 	- `Villain` (Isekai Protagonist Archetype)
 		- Has studied target.
 		- Intelligence based caster that memorizes spells (becomes like wizard).
 - New Features
+	- `Exceptional feats`: Strong feats that can be chosen in place of a feat/bonus feat.
+		- `Mythic feat`: You can choose a mythic feat instead of a normal/bonus feat.
+		- `Effect Immunity`: You become immune to a specific effect. (e.g. poison, bleed, charm etc.)
+		- `Exceptional Summoning`: Your summons get +100 HP, +10 attack, AC, and saving throws.
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
 	- `Character Development Feats`: A selection of bonus feats which have very good effects.
 		- `Alpha Strike`: Automatically confirm crits.
 		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
-		- `Exceptional Summoning`: Your summons get +100 HP, +10 attack, AC, and saving throws.
-	- `Overpowered Ability`: Powerful 1st level feat.
+		- `Training Montage`: Get a +10 bonus to all attributes.
+		- `Body Strengthening`: Get a DR/— bonus equal to 10 + character level.
+		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
+		- `Extreme Speed`: Get a speed bonus equal to 5 times character level.
+		- `Channel Positive Energy`: You can channel positive energy (requires good alignment).
+		- `Channel Negative Energy`: You can channel negative energy (requires evil alignment).
+	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoEmpower`: Empowers every spell you cast.
 		- `AutoExtend`: Extends every spell you cast.
 		- `AutoMaximize`: Maximizes every spell you cast.
@@ -63,11 +75,10 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Perfect Roll`: Roll 20 on every d20 roll.
 		- `Super Buff`: Apply many powerful buffs on you and your allies.
 		- `Interdimensional Bag`: Get infinite carry capacity.
-		- `Winner`: Does nothing.
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities
-	- `Second Overpowered Ability`: Gives you another Overpowered Ability.
+	- `Mythic Overpowered Ability`: Gives you another Overpowered Ability.
 - New Backgrounds
 	- `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Lore and Knowledge skills use CHA instead of WIS/INT.
 	- `Martial Artist`: Get proficiency in all exotic weapons.
@@ -80,11 +91,16 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.
 	- `Isekai Vampire` (Dhampir Heritage): A powerful heritage for Dhampir.
+	- `Isekai Drow` (Elf Heritage): A powerful heritage for Elf that gives you the Drow Poison ability.
+	- `Isekai Spriggan` (Gnome Heritage): A powerful heritage for Gnome that gives you a size alteration ability.
 - New Deities
 	- `Truck-kun`: A god of transportation.
 	- `Aqua`: A goddess of water.
 	- `Ristarte`: A goddess of healing.
 	- `Administrator D`: An ultimate god of evil.
+- New Dialogue
+	- Prologue, speaking with Hulrun at Kenabres Festival.
+	- Act 1, Shield Maze after finding Radiance.
 
 ### Isekai Protagonist Spell progression
 #### Spells per Day table

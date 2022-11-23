@@ -148,6 +148,16 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     c.m_Facts = new BlueprintUnitFactReference[] { DeathsnatcherAnimateDeadAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
+            var DeathsnatcherAnimateDeadAdditionalUse = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherAnimateDeadAdditionalUse", bp => {
+                bp.SetName("Animate Dead — Additional Uses");
+                bp.SetDescription("At 10th level, the Deathsnatcher gains 2 additional uses of Animate Dead per day.");
+                bp.m_Icon = Icon_AnimateDead;
+                bp.IsClassFeature = true;
+                bp.AddComponent<IncreaseResourceAmount>(c => {
+                    c.m_Resource = DeathsnatcherAnimateDeadResource.ToReference<BlueprintAbilityResourceReference>();
+                    c.Value = 2;
+                });
+            });
         }
     }
 }

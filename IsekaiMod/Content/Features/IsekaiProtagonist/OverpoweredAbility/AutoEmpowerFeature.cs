@@ -8,14 +8,15 @@ using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class AutoEmpowerFeature
     {
+        private static readonly Sprite Icon_EmpowerSpell = Resources.GetBlueprint<BlueprintFeature>("a1de1e4f92195b442adb946f0e2b9d4e").m_Icon;
         public static void Add()
         {
-            var Icon_EmpowerSpell = Resources.GetBlueprint<BlueprintFeature>("a1de1e4f92195b442adb946f0e2b9d4e").m_Icon;
             var AutoEmpowerBuff = Helpers.CreateBlueprint<BlueprintBuff>("AutoEmpowerBuff", bp => {
                 bp.SetName("Overpowered Ability — Auto Empower");
                 bp.SetDescription("Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat.");
@@ -37,7 +38,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Buff = AutoEmpowerBuff.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.None;
                 bp.WeightInGroup = 1;
-                bp.IsOnByDefault = false;
+                bp.IsOnByDefault = true;
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
@@ -50,6 +51,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 });
                 bp.IsClassFeature = true;
             });
+
+            OverpoweredAbilitySelection.AddToSelection(AutoEmpowerFeature);
         }
     }
 }

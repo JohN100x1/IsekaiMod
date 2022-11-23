@@ -7,7 +7,6 @@ namespace IsekaiMod.Utilities
 {
     internal class AuraUtils
     {
-
         public static AbilityAreaEffectRunAction CreateUnconditionalAuraEffect(BlueprintBuffReference buff)
         {
             return new AbilityAreaEffectRunAction()

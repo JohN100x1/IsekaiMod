@@ -21,6 +21,19 @@
     // Isekai Vampire Heritage
     "IsekaiVampireHeritage": "0a619c37-6809-4b08-aaa9-5644273b531c",
 
+    // Isekai Spriggan Heritage
+    "SizeAlterationBuff": "a01692d3-a363-4bee-800f-65d9e6c4d926",
+    "SizeAlterationAbility": "1cfcc60f-ce65-406e-8325-2d1b91fc8707",
+    "SizeAlterationFeature": "6410e472-de88-4f4e-a617-ff9032091e95",
+    "IsekaiSprigganHeritage": "c153ef88-76a5-44f8-9c5d-7ffc03e9512f",
+
+    // Isekai Drow Heritage
+    "DrowPoisonResource": "a4f0753d-c44d-473f-ad54-c27be125cc96",
+    "DrowPoisonUnitProperty": "46ea8820-73d3-4820-969d-77c892addf31",
+    "DrowPoisonBuff": "b478001c-e548-4c2a-9269-b146c3d26ca7",
+    "DrowPoisonAbility": "ccf4ed15-373b-4cd5-83d0-91d84c61449e",
+    "IsekaiDrowHeritage": "aa48248f-484e-4651-b4bc-87d1b1cad68d",
+
     // Deities
     "IsekaiDeitySelection": "d7a574be-5e91-4420-b859-9f0ff708fdcf",
     "TruckKunFeature": "36513264-aae2-418f-8fd1-7525b143efd0",
@@ -38,9 +51,17 @@
     "BackgroundGamer": "2490f301-fc55-4be5-a726-34b8436e29e6",
     "IsekaiBackgroundSelection": "5400da49-2595-443c-b6ba-0574d8c191dd",
 
+    // Extra Feats
+    "ExceptionalFeatSelection": "f13b7a85-ea3c-450b-a2ef-c2f04b728515",
+    "ExceptionalSummoningSummonBuff": "1f017106-a0e3-4eef-a8f2-3bcb62256979",
+    "ExceptionalSummoningBuff": "1435e658-ec5c-4425-a087-21cd66aa756c",
+    "ExceptionalSummoningAbility": "91cf3dae-7106-46ff-8719-6bea757143a5",
+    "ExceptionalSummoningFeature": "9428fd68-a233-43a9-afac-1e1b54c1f037",
+
     // Archetypes
     "GodEmperorArchetype": "2ff78bd9-6224-4376-9f64-720ce94d0616",
     "EdgeLordArchetype": "900db658-4f20-4636-ae84-a198c2b50f58",
+    "HeroArchetype": "95b27caf-1d96-40f1-8388-aeb2a822e24b",
     "VillainArchetype": "7d9fa1f5-c8e2-4c68-adc7-bc493e94ae56",
 
     // Isekai Protagonist Class
@@ -82,40 +103,13 @@
     "HaremMagnetAbility": "1e6f1421-951c-48cc-8fa9-e279e3083e1c",
     "HaremMagnetFeature": "4145dc5a-358f-4057-affa-7ff4cc130c03",
 
-    // Selections
-    "TrainingArcSelection": "1313a25a-e9ba-4a67-b746-4c37a9629f19",
-    "BeachEpisodeSelection": "7697c19c-c07c-4411-ada4-5ece5b0a58fc",
-    "OverpoweredAbilitySelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
-    "OverpoweredAbilityMythicSelection": "46d086ef-4932-4fb1-8652-cd4afabada43",
-    "CharacterDevelopmentSelection1": "b5e98cc6-1828-4009-8a9d-ae8638eda059",
-    "CharacterDevelopmentSelection2": "26420865-8717-4d1a-97e4-b5f80d46d212",
-    "CharacterDevelopmentSelection3": "16f18340-0d22-4416-b171-5296348cdc29",
-    "CharacterDevelopmentSelection4": "f3adb893-53d2-4d50-8849-fb43fd962bba",
-    "CharacterDevelopmentSelection5": "5b7c1347-e3cf-4f8f-bf1b-014fa0c58a5d",
-
     // Character Development Features
+    "CharacterDevelopmentSelection": "b5e98cc6-1828-4009-8a9d-ae8638eda059",
     "AlphaStrike": "8f7a38b6-ab25-4578-83e2-0d095a247dcb",
     "BetaStrike": "290c88af-a0eb-43f8-88ac-e49a76ccec0c",
     "GammaStrike": "1c4edc77-1a1e-4bc8-add2-8784a14551b4",
     "MundaneAura": "2a36d826-f9de-478d-bd43-3932b63b9ad0",
-    "ExceptionalSummoningSummonBuff": "1f017106-a0e3-4eef-a8f2-3bcb62256979",
-    "ExceptionalSummoningBuff": "1435e658-ec5c-4425-a087-21cd66aa756c",
-    "ExceptionalSummoningAbility": "91cf3dae-7106-46ff-8719-6bea757143a5",
-    "ExceptionalSummoningFeature": "9428fd68-a233-43a9-afac-1e1b54c1f037",
-    "AcidImmunity": "66ea106a-bb0c-4a52-a1bd-4fa77955ae4a",
-    "ColdImmunity": "f956dd94-9198-4011-b836-465ef8b1eeb8",
-    "FireImmunity": "9762e6ff-bd61-4f91-83a0-1f8f1391d147",
-    "ElectricityImmunity": "ed887779-8eec-45df-99e6-6ea4a23ca904",
-    "SonicImmunity": "609acbad-a8df-490a-9a4d-b5fc4a0cdf8e",
     "InterdimensionalBagFeature": "72ad9cc8-3ef1-4286-b5e4-29b9597d54b8",
-
-    // Beach Episode Features
-    "HealthyBody": "c6165832-f997-40bb-b0af-145ea74670a4",
-    "InnerPower": "51c61f4f-a583-48dd-8824-3dc4864ef844",
-    "MasterSelf": "e18b657b-3167-4885-9ccc-cfcb2c4a3a4d",
-    "Tenacious": "cb9360d9-ea2e-418a-a75d-d0347c717280",
-
-    // Training Arc Features
     "TrainingMontage": "557a9018-bea9-4f2a-b110-27e9d332ab56",
     "BodyStrengthening": "f48b2667-6ac5-4971-b0a4-6e04d5082680",
     "SpellNegationBuff": "92a00da0-0ab7-42f7-9390-b8acacb3bf35",
@@ -124,8 +118,65 @@
     "ExtremeSpeedBuff": "2b57d0d0-20fd-479e-9bb8-95529a0ca8bf",
     "ExtremeSpeedAbility": "91e70095-88bd-467c-bd9c-ba6f980c7576",
     "ExtremeSpeedFeature": "51da3531-fc19-4e1a-abd2-804ce067c1f1",
+    "IsekaiChannelNegativeEnergyAbility": "3c96cd97-68f3-4830-b25b-67b0199f8bb8",
+    "IsekaiChannelNegativeHealAbility": "60ccdbf8-c344-45e1-b141-c53a902e59be",
+    "IsekaiChannelNegativeEnergyFeature": "f185f40b-228f-4cce-a0e7-aceb0fb53363",
+    "IsekaiChannelPositiveEnergyAbility": "2c70c4c3-89c4-4061-8f42-f6056e6d8512",
+    "IsekaiChannelPositiveHealAbility": "00402908-33cd-4a48-bc0b-1add315b0702",
+    "IsekaiChannelPositiveEnergyFeature": "c8737e26-15a5-4b4b-b44e-2323ee6f5f8c",
+
+    // Energy immunity
+    "EnergyImmunitySelection": "10fab0a2-6824-4181-9cf8-82aaad72c7ee",
+    "AcidImmunity": "66ea106a-bb0c-4a52-a1bd-4fa77955ae4a",
+    "ColdImmunity": "f956dd94-9198-4011-b836-465ef8b1eeb8",
+    "FireImmunity": "9762e6ff-bd61-4f91-83a0-1f8f1391d147",
+    "ElectricityImmunity": "ed887779-8eec-45df-99e6-6ea4a23ca904",
+    "SonicImmunity": "609acbad-a8df-490a-9a4d-b5fc4a0cdf8e",
+
+    // Effect immunity
+    "EffectImmunitySelection": "3da96f26-a8c7-4f58-8218-6ad192004c5b",
+    "BlindImmunity": "4e92c46e-49c3-463e-84a4-e3674f111a2c",
+    "NauseatedImmunity": "a37aeed0-797a-4f9c-941b-35429af86535",
+    "FatigueImmunity": "cdbe260e-85a1-4f95-b90b-7d054b37270d",
+    "ParalyzedImmunity": "c0251985-f38c-428d-9c4f-457c9bf039ec",
+    "StaggeredImmunity": "81876503-ce59-4a78-a11c-c94d720a007d",
+    "PetrifiedImmunity": "ebb1ca3e-8ffa-43db-89af-7f275af7e59d",
+    "DazedImmunity": "296b2398-e337-43a5-bcd3-c301d5736aaa",
+    "SlowImmunity": "a3474c27-5166-438c-936f-a57c4c587c20",
+    "EntangledImmunity": "1a8d50f8-5d7a-4354-862d-896e340b0453",
+    "FrightenedImmunity": "1a7f27ca-a0b1-4539-a71a-4d84554eae3a",
+    "SickenedImmunity": "83d1be73-aa82-44e6-856d-fc76290ef6f9",
+    "SleepImmunity": "97daaa9a-d8d5-4e71-9efc-9ad3273c934d",
+    "ShakenImmunity": "48c5b721-2c91-4f50-883e-b9f972ebc908",
+    "DazzledImmunity": "52a17692-52be-456f-a0d0-602de8b0816d",
+    "StunImmunity": "242905af-7046-498e-881d-03fb0ddd0b64",
+    "ConfusionImmunity": "059f7160-029e-472c-818a-8781f7d53447",
+    "MovementImpairingImmunity": "9f354540-2654-4838-adcf-e3366c610709",
+    "CoweringImmunity": "49c1fb42-3004-48f9-a588-b3bdb208371d",
+    "ExhaustedImmunity": "6532c023-46c4-41a3-99f5-0617224a5511",
+    "MindAffectingImmunity": "f7e5c3e4-6a52-4b45-a214-ef116fcdcc1f",
+    "FearImmunity": "f84a53e9-5467-41d0-8ef6-74ceeb38ce1c",
+    "CompulsionImmunity": "835d41c1-11eb-4f08-98a9-78b2700cdf65",
+    "PoisonImmunity": "4833da41-5f42-4390-afdf-508036d5cd39",
+    "DiseaseImmunity": "f8810cf7-b80b-4fd2-9f82-3f3a040ed4f7",
+    "CharmImmunity": "c33e1153-83ac-4492-bc1c-ec4abd83f2d7",
+    "CurseImmunity": "3b8233b9-2e9f-4af2-8ac4-64eaf365f102",
+    "DeathImmunity": "e3b3fa3f-9b10-4d54-8a75-b7aca3eba1e3",
+    "BleedImmunity": "3bedcb37-0103-4ca5-af11-eb56aac5ffbf",
+    "HexImmunity": "879a6f61-cf23-4ad5-9267-9912828e30da",
+
+    // Beach Episode Features
+    "BeachEpisodeSelection": "7697c19c-c07c-4411-ada4-5ece5b0a58fc",
+    "HealthyBody": "c6165832-f997-40bb-b0af-145ea74670a4",
+    "InnerPower": "51c61f4f-a583-48dd-8824-3dc4864ef844",
+    "MasterSelf": "e18b657b-3167-4885-9ccc-cfcb2c4a3a4d",
+    "Tenacious": "cb9360d9-ea2e-418a-a75d-d0347c717280",
 
     // Overpowered Abilities
+    "OverpoweredAbilitySelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
+    "OverpoweredAbilitySelection2": "2521c2df-33a9-4c67-bbf4-c3ea4125baad",
+    "OverpoweredAbilityMythicSelection": "46d086ef-4932-4fb1-8652-cd4afabada43",
+    "OverpoweredAbilitySelectionVillain": "b8fdf264-0691-4e02-bbcc-6969f0e31d6d",
     "AutoEmpowerBuff": "236781bd-b572-4dbf-bddd-a7b00d91a587",
     "AutoEmpowerAbility": "1291d796-c847-4f6e-a674-aaa8c472da6c",
     "AutoEmpowerFeature": "93906e16-de01-4a24-9163-33bdbe80c1a1",
@@ -141,7 +192,6 @@
     "AutoReachBuff": "5f9d2439-39f2-4d34-8772-1208f9be6796",
     "AutoReachAbility": "4a6f7cb7-4de7-4d86-803b-e7f076c11a40",
     "AutoReachFeature": "5c70e774-8e0b-4441-a67a-f08f483d66a3",
-    "GraspHeartUnitProperty": "5eb6dd86-6c66-4b33-8a9a-1eb451af73cc",
     "GraspHeartAbility": "55e06f68-8f56-4d4b-824f-f6bbaa46899d",
     "GraspHeartFeature": "d9c8316e-3a4f-4737-ae7c-56838eb42540",
     "DupeGoldAbility": "ec30bae3-78a1-4c58-81aa-4722f3dd9469",
@@ -151,8 +201,6 @@
     "PerfectRollFeature": "7b53443a-43b4-4c86-a1fc-3e57893333fa",
     "SuperBuffAbility": "a75ce3b1-221e-4a4c-bc8f-0c5235938705",
     "SuperBuffFeature": "a7d8ceeb-9ab6-4d8a-9a1b-001e5b413732",
-    "WinnerAbility": "5d39f2f1-a90d-4506-8d97-e0aa44a14724",
-    "WinnerFeature": "d7b02f2a-903c-494e-8ae9-e5586ff1c340",
 
     // God Emperor Features
     "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",
@@ -185,16 +233,36 @@
     "EdgeLordProficiencies": "08979809-7770-475e-934f-f69c270e3cf5",
     "SupersonicCombat": "89a4f509-0847-4956-9564-0b6a04645f77",
     "EdgeLordFastMovement": "087e0c42-d008-44c3-bb4b-d5b95387f862",
-    "ExtraStrike": "5c37047c-4030-47c7-ab09-dac2d523f8ce",
+    "ExtraStrike1": "5c37047c-4030-47c7-ab09-dac2d523f8ce",
+    "ExtraStrike2": "732f7a7a-1d80-4c42-bdc5-63e0148720be",
+    "ExtraStrike3": "cb0f22b0-7b56-4752-a657-d7c92590cf79",
+    "ExtraStrike4": "fc8408bc-bfae-4540-b55b-b43585821b3f",
+
+    // Hero Features
+    "HeroProficiencies": "52d94ea9-9301-4acd-a691-b4661dbac7f1",
+    "GracefulCombat": "bfe81697-dba2-42bd-ac5a-6c51b8f43004",
+    "TrueSmiteResource": "1d1029a9-d9ec-4fa2-8dd9-5e6bf449b019",
+    "TrueSmiteBuff": "bbb4182a-17a4-443c-88ba-28df72b218d2",
+    "TrueSmiteAbility": "516866eb-537d-4e16-9be6-585f7b237a10",
+    "TrueSmiteFeature": "5203aa1b-4553-4f24-aa9d-a1b238aa7495",
+    "TrueSmiteAdditionalUse": "96b4916b-dfdf-4cba-b1c0-96deeb9a0b6d",
+    "HerosPresenceBuff": "0719c960-ce1b-4ebf-bd45-b64d6bcbdd62",
+    "HerosPresenceArea": "28ad0556-3ec1-44a2-ae81-bef4a2ef5c98",
+    "HerosPresenceAreaBuff": "be14db2b-cf86-4bb2-bb12-7b34a45cecf9",
+    "HerosPresenceFeature": "230d2557-97cb-4935-a251-2939b525c7c2",
 
     // Villain Features
     "VillainSpellbook": "9f393ace-2006-436a-85f9-8b47f347d3cd",
     "VillainProficiencies": "b4d2cd29-c850-4716-95c1-74eca502a30c",
+    "CorruptAuraBuff": "d4968dff-22ad-435c-bd21-2b3f5afc69a0",
+    "CorruptAuraArea": "770151d3-c0d7-4baa-b856-b94b23fdfea6",
+    "CorruptAuraAreaBuff": "44a2f1f6-ec06-4f3d-8a41-c5debba18ea6",
+    "CorruptAuraAbility": "1ac5a96b-4861-4b77-8314-f2684d48a45f",
+    "CorruptAuraFeature": "3852c32f-e3ac-45dc-bb14-d868a87467ac",
     "SecondFormBuffEffect": "1204ffd1-2371-4497-bbde-e839ee202908",
     "SecondFormBuffTrigger": "7a626a0a-758a-4584-a90c-cb6032014bb7",
     "SecondFormBuff": "2601c5aa-4f9b-450f-8a50-69f36d694d3d",
     "SecondFormFeature": "56365f1f-cf02-4ad7-873f-5b6dd6becbb2",
-    "OverpoweredAbilitySelection2": "b8fdf264-0691-4e02-bbcc-6969f0e31d6d",
     "VillainQuickFooted": "2d0e8bf9-5978-45c3-bafc-9b3eefc573c7",
 
     // Patch Loremaster & Hellknight Signifier Spellbook
@@ -235,7 +303,8 @@
     "DeathsnatcherUndeadMaster": "1a25fc4a-b94d-4e92-9d75-eb598c3a9af8",
 
     // Dialogue
-    "AnswerIsekai": "068f20c2-6f38-4a36-8480-67a3df51249d"
+    "IsekaiDialogueHulrun": "068f20c2-6f38-4a36-8480-67a3df51249d",
+    "IsekaiDialogueRadiance": "6eb1b1a0-12ea-4cbd-960e-9bb3b9e619f5"
   },
   "AutoGenerated": {},
   "UnusedGUIDs": {}
