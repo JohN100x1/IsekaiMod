@@ -169,9 +169,10 @@ namespace IsekaiMod.Content
                 Backgrounds.MartialArtist.Add();
                 Backgrounds.Salaryman.Add();
                 Backgrounds.HighschoolStudent.Add();
-                Backgrounds.Otaku.Add();
                 Backgrounds.RebornDemonLord.Add();
+                Backgrounds.Otaku.Add();
                 Backgrounds.Gamer.Add();
+                Backgrounds.BetaTester.Add();
             }
             public static void AddIsekaiDeities()
             {

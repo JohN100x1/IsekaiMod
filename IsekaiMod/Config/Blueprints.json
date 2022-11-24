@@ -42,6 +42,7 @@
     "AdministratorDFeature": "8d9d6a11-57fd-404d-ba56-069039a7b8cb",
 
     // Backgrounds
+    "IsekaiBackgroundSelection": "5400da49-2595-443c-b6ba-0574d8c191dd",
     "BackgroundTabletopRPGPlayer": "d317a919-354f-4c40-a7ae-285f293f106b",
     "BackgroundMartialArtist": "f1502fbd-14dc-431d-9481-43e910425dc6",
     "BackgroundSalaryman": "e7151a7f-449c-4aa6-bda4-8fa41e1b489a",
@@ -49,7 +50,7 @@
     "BackgroundOtaku": "9929eb69-6f55-4670-9059-4006b9d11a17",
     "BackgroundRebornDemonLord": "b0cacd75-536f-4b30-b453-0c00730419d8",
     "BackgroundGamer": "2490f301-fc55-4be5-a726-34b8436e29e6",
-    "IsekaiBackgroundSelection": "5400da49-2595-443c-b6ba-0574d8c191dd",
+    "BackgroundBetaTester": "b02bce21-632d-4a54-b46e-de9620b8ebcd",
 
     // Extra Feats
     "ExceptionalFeatSelection": "f13b7a85-ea3c-450b-a2ef-c2f04b728515",

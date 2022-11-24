@@ -84,9 +84,10 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Martial Artist`: Get proficiency in all exotic weapons.
 	- `Salaryman`: Adds perception as a class skill. Perception uses CHA instead of WIS.
 	- `Highschool Student`: Get a +1 trait bonus to all attributes.
-	- `Otaku`: Adds all skills as class skills except Persuasion.
 	- `Reborn Demon Lord`: Get a +2 trait bonus to Strength and Electricity resistance 20.
+	- `Otaku`: Adds all skills as class skills except Persuasion.
 	- `Gamer`: Get a +4 competence bonus to all knowledge, lore, and perception checks.
+	- `Beta Tester`: Get +10 Initiative and add lore, knowledge and perceptions skills as class skills.
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.
