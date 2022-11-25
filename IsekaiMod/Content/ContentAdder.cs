@@ -76,18 +76,18 @@ namespace IsekaiMod.Content
 
                 // OP Ability
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.AutoBolsterFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.AutoEmpowerFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.AutoExtendFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.AutoMaximizeFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.AutoQuickenFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.AutoReachFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.GraspHeartFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.DupeGoldFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.PerfectRollFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.SuperBuffFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.UnlimitedPowerFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.InterdimensionalBagFeature.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoBolster.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoEmpower.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoExtend.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoMaximize.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoQuicken.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoReach.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.GraspHeart.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.DupeGold.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.PerfectRoll.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.SuperBuff.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.UnlimitedPower.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.InterdimensionalBag.Add();
 
                 // God Emperor Archetype
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.GodEmperorProficiencies.Add();

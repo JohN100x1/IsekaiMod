@@ -17,7 +17,7 @@ using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
-    class UnlimitedPowerFeature
+    class UnlimitedPower
     {
         public static void Add()
         {

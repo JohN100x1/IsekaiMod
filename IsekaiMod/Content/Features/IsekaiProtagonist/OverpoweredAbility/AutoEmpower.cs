@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
-    class AutoEmpowerFeature
+    class AutoEmpower
     {
         private static readonly Sprite Icon_EmpowerSpell = Resources.GetBlueprint<BlueprintFeature>("a1de1e4f92195b442adb946f0e2b9d4e").m_Icon;
         public static void Add()

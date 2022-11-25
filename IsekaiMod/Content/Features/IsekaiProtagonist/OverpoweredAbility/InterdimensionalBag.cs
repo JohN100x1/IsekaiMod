@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
-    class InterdimensionalBagFeature
+    class InterdimensionalBag
     {
         private static readonly Sprite Icon_LargeBagOfHolding = Resources.GetBlueprint<BlueprintItem>("6deaab0e39c6f16468c38ff8a32f57a1").m_Icon;
         public static void Add()

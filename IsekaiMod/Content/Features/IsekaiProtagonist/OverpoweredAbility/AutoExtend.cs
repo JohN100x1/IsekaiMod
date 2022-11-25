@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
-    class AutoExtendFeature
+    class AutoExtend
     {
         private static readonly Sprite Icon_ExtendSpell = Resources.GetBlueprint<BlueprintFeature>("f180e72e4a9cbaa4da8be9bc958132ef").m_Icon;
         public static void Add()

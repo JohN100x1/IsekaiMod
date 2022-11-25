@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
-    class AutoBolsterFeature
+    class AutoBolster
     {
         private static readonly Sprite Icon_BolsterSpell = Resources.GetBlueprint<BlueprintFeature>("fbf5d9ce931f47f3a0c818b3f8ef8414").m_Icon;
         public static void Add()

@@ -19,7 +19,7 @@ using System.Collections.Generic;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
-    class SuperBuffFeature
+    class SuperBuff
     {
         public static void Add()
         {

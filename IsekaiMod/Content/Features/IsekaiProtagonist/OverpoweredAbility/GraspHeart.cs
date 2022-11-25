@@ -22,7 +22,7 @@ using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
-    class GraspHeartFeature
+    class GraspHeart
     {
         // Checked facts
         private static readonly BlueprintFeature UndeadType = Resources.GetBlueprint<BlueprintFeature>("734a29b693e9ec346ba2951b27987e33");
