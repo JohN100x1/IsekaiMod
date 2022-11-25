@@ -46,6 +46,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.SetDescription("You use your mythic powers to gain an additional Overpowered Ability.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.AddComponent<PrerequisiteFeature>(c => {
+                    c.Group = Prerequisite.GroupType.All;
                     c.m_Feature = OverpoweredAbilitySelection.ToReference<BlueprintFeatureReference>();
                 });
                 bp.Ranks = 1;

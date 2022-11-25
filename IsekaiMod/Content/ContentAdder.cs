@@ -20,7 +20,9 @@ namespace IsekaiMod.Content
                 // Add Exceptional Feats
                 Features.ExceptionalFeats.ExceptionalFeatSelection.Add();
                 Features.ExceptionalFeats.EffectImmunitySelection.Add();
-                Features.ExceptionalFeats.ExceptionalSummoningFeature.Add();
+                Features.ExceptionalFeats.ExceptionalSummoning.Add();
+                Features.ExceptionalFeats.ForbiddenSummoning.Add();
+                Features.ExceptionalFeats.FerociousSummoning.Add();
 
                 if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
                 if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();

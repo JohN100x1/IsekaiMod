@@ -12,9 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Unlimited Power` Overpowered ability.
 - Added `Regeneration` Character Development feat.
 - Added `Beta Tester` background.
+- Added `Ferocious Summoning` exceptional feat.
+- Added `Forbidden Summoning` exceptional feat.
 ### Changed
 - Nerfed `Gamer` background to give +4 instead of +10.
 - Changed icon for `True Smite`.
+- Changed `Exceptional Summoning` to scale +10 hp, +1 attack, +1 AC, +1 saving throws per character level.
 ### Fixed
 - Fixed `Harem Magnet` immunity to be applied after fascinate effect ends.
 

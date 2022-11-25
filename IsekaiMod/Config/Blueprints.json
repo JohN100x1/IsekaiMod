@@ -52,12 +52,20 @@
     "BackgroundGamer": "2490f301-fc55-4be5-a726-34b8436e29e6",
     "BackgroundBetaTester": "b02bce21-632d-4a54-b46e-de9620b8ebcd",
 
-    // Extra Feats
+    // Exceptional Feats
     "ExceptionalFeatSelection": "f13b7a85-ea3c-450b-a2ef-c2f04b728515",
     "ExceptionalSummoningSummonBuff": "1f017106-a0e3-4eef-a8f2-3bcb62256979",
     "ExceptionalSummoningBuff": "1435e658-ec5c-4425-a087-21cd66aa756c",
     "ExceptionalSummoningAbility": "91cf3dae-7106-46ff-8719-6bea757143a5",
     "ExceptionalSummoningFeature": "9428fd68-a233-43a9-afac-1e1b54c1f037",
+    "ForbiddenSummoningSummonBuff": "16e3a425-5a23-408b-ac2d-60b26411225b",
+    "ForbiddenSummoningBuff": "8dd67af9-9ec5-4f2a-8c11-f1b452f95d93",
+    "ForbiddenSummoningAbility": "d9ebb672-cd50-4e52-8aa3-8ab29d4fd6ab",
+    "ForbiddenSummoningFeature": "b38b47ce-0bd1-4989-9b24-44f0d10ebe06",
+    "FerociousSummoningSummonBuff": "4d0572d4-da04-4fbb-bb65-7299c7ed1b9d",
+    "FerociousSummoningBuff": "b4705ca7-358c-4961-a0d5-119a2e1ba587",
+    "FerociousSummoningAbility": "556880d1-d257-4c1c-b63c-e67d39d6da77",
+    "FerociousSummoningFeature": "409eea83-086c-40bb-bf39-4f0d7743be1d",
 
     // Archetypes
     "GodEmperorArchetype": "2ff78bd9-6224-4376-9f64-720ce94d0616",

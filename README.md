@@ -51,7 +51,9 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Exceptional feats`: Strong feats that can be chosen in place of a feat/bonus feat.
 		- `Mythic feat`: You can choose a mythic feat instead of a normal/bonus feat.
 		- `Effect Immunity`: You become immune to a specific effect. (e.g. poison, bleed, charm etc.)
-		- `Exceptional Summoning`: Your summons get +100 HP, +10 attack, AC, and saving throws.
+		- `Exceptional Summoning`: Your summons get +10 HP, +1 attack, +1 AC, and +1 to saving throws per character level.
+		- `Forbidden Summoning`: Your summons get +10 HP, and +1 to all attributes per character level.
+		- `Ferocious Summoning`: Your summons have 2 more attacks and +10 speed. They also get +1 sneak attack per character level. (requires Exceptional Summoning and Forbidden Summoning).
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
 	- `Character Development Feats`: A selection of bonus feats which have very good effects.
 		- `Alpha Strike`: Automatically confirm crits.
