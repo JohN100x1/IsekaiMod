@@ -21,14 +21,15 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
 {
     class TrueSmite
     {
+        private static readonly Sprite Icon_SmiteEvil = Resources.GetBlueprint<BlueprintFeature>("3a6db57fce75b0244a6a5819528ddf26").m_Icon;
         public static void Add()
         {
-            var Icon_True_Smite = AssetLoader.LoadInternal("Features", "ICON_TRUE_SMITE.png");
             var TrueSmiteResource = Helpers.CreateBlueprint<BlueprintAbilityResource>("TrueSmiteResource", bp => {
                 bp.m_MaxAmount = new BlueprintAbilityResource.Amount
                 {
@@ -54,7 +55,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     + "automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier "
                     + "(if any) to her {g|Encyclopedia:Armor_Class}AC{/g} against attacks made by this creature.\nTrue smite lasts until this creature dies or the hero selects "
                     + "a new target.");
-                bp.m_Icon = Icon_True_Smite;
+                bp.m_Icon = Icon_SmiteEvil;
                 bp.AddComponent<AttackBonusAgainstTarget>(c => {
                     c.Value = new ContextValue()
                     {
@@ -101,7 +102,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     + "automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier "
                     + "(if any) to her {g|Encyclopedia:Armor_Class}AC{/g} against attacks made by the target of the smite.\nTrue smite lasts until the target dies or the hero selects "
                     + "a new target. At 4th level, and at every three levels thereafter, the hero may use true smite one additional time per day.");
-                bp.m_Icon = Icon_True_Smite;
+                bp.m_Icon = Icon_SmiteEvil;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Unknown;
                     c.Actions = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
@@ -205,7 +206,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     + "automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier "
                     + "(if any) to her {g|Encyclopedia:Armor_Class}AC{/g} against attacks made by the target of the smite.\nTrue smite lasts until the target dies or the hero selects "
                     + "a new target. At 4th level, and at every three levels thereafter, the hero may use true smite one additional time per day.");
-                bp.m_Icon = Icon_True_Smite;
+                bp.m_Icon = Icon_SmiteEvil;
                 bp.AddComponent<AddAbilityResources>(c => {
                     c.m_Resource = TrueSmiteResource.ToReference<BlueprintAbilityResourceReference>();
                     c.RestoreAmount = true;
@@ -225,7 +226,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     + "automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier "
                     + "(if any) to her {g|Encyclopedia:Armor_Class}AC{/g} against attacks made by the target of the smite.\nTrue smite lasts until the target dies or the hero selects "
                     + "a new target. At 4th level, and at every three levels thereafter, the hero may use true smite one additional time per day.");
-                bp.m_Icon = Icon_True_Smite;
+                bp.m_Icon = Icon_SmiteEvil;
                 bp.AddComponent<IncreaseResourceAmount>(c => {
                     c.m_Resource = TrueSmiteResource.ToReference<BlueprintAbilityResourceReference>();
                     c.Value = 1;

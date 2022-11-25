@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Beta Tester` background.
 ### Changed
 - Nerfed `Gamer` background to give +4 instead of +10.
+- Changed icon for `True Smite`.
 
 ## [2.0.1] - 2022-11-23
 ### Changed
