@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Beta Tester` background.
 - Added `Ferocious Summoning` exceptional feat.
 - Added `Forbidden Summoning` exceptional feat.
+- Added content group in UMM UI for exceptional feats.
 ### Changed
 - Nerfed `Gamer` background to give +4 instead of +10.
 - Changed icon for `True Smite`.

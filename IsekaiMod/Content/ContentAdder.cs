@@ -17,13 +17,7 @@ namespace IsekaiMod.Content
                 Features.ExtraWings.Add();
                 Features.ExoticWeaponProficiency.Add();
 
-                // Add Exceptional Feats
-                Features.ExceptionalFeats.ExceptionalFeatSelection.Add();
-                Features.ExceptionalFeats.EffectImmunitySelection.Add();
-                Features.ExceptionalFeats.ExceptionalSummoning.Add();
-                Features.ExceptionalFeats.ForbiddenSummoning.Add();
-                Features.ExceptionalFeats.FerociousSummoning.Add();
-
+                if (ModSettings.AddedContent.Classes.IsEnabled("Exceptional Feats")) AddExceptionalFeats();
                 if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
                 if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
                 if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
@@ -190,6 +184,16 @@ namespace IsekaiMod.Content
                 Deities.Aqua.Add();
                 Deities.Ristarte.Add();
                 Deities.AdministratorD.Add();
+            }
+            public static void AddExceptionalFeats()
+            {
+                // Add Exceptional Feats
+                Features.ExceptionalFeats.ExceptionalFeatSelection.Add();
+                Features.ExceptionalFeats.EffectImmunitySelection.Add();
+                Features.ExceptionalFeats.ExceptionalSummoning.Add();
+                Features.ExceptionalFeats.ForbiddenSummoning.Add();
+                Features.ExceptionalFeats.FerociousSummoning.Add();
+
             }
         }
     }
