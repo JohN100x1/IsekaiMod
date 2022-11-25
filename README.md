@@ -75,6 +75,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Perfect Roll`: Roll 20 on every d20 roll.
 		- `Super Buff`: Apply many powerful buffs on you and your allies.
 		- `Interdimensional Bag`: Get infinite carry capacity.
+		- `Unlimited Power`: Restore all ability and spell slots at will.
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities
@@ -87,7 +88,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Reborn Demon Lord`: Get a +2 trait bonus to Strength and Electricity resistance 20.
 	- `Otaku`: Adds all skills as class skills except Persuasion.
 	- `Gamer`: Get a +4 competence bonus to all knowledge, lore, and perception checks.
-	- `Beta Tester`: Get +10 Initiative and add lore, knowledge and perceptions skills as class skills.
+	- `Beta Tester`: Get +10 Initiative and adds lore, knowledge and perceptions skills as class skills.
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.

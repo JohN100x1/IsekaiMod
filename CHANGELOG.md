@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Added `Unlimited Power` Overpowered ability.
 - Added `Beta Tester` background.
 ### Changed
 - Nerfed `Gamer` background to give +4 instead of +10.
