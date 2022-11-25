@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Added mod support for `Spellbook Merge`.
 - Added `Unlimited Power` Overpowered ability.
 - Added `Beta Tester` background.
 ### Changed

@@ -159,6 +159,8 @@ If you have the `MysticalMayhem` mod, the `Isekai Protagonist` will have the 9th
 ### ExpandedContent (0.4.40)
 If you have the `ExpandedContent` mod, the `Isekai Protagonist` will have the following spells added to its spellbook: Hydraulic push, Slipstream, Scourge of the Horsemen, Rigor mortis, Hollow Blades, Goodberry, Steam Ray Fusillade, Inflict Pain, Inflict Pain Mass, Gloomblind Bolts, Fury of the Sun, Invoke Deity.
 You are also able to choose a drake companion as a pet.
+### SpellbookMerge (1.7.0)
+If you have the `SpellbookMerge` mod, the `Isekai Protagonist` will be able to merge its spellbook with Aeon, Azata, Demon, and Trickster.
 
 ## Credits
 Alot of the code was repurposed from the following repositories:
