@@ -58,7 +58,8 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
-		- `Training Montage`: Get a +10 bonus to all attributes.
+		- `Regeneration`: Get regeneration 20/acid or fire (requires character level 10).
+		- `Training Montage`: Get a +10 bonus to all attributes (requires character level 10).
 		- `Body Strengthening`: Get a DR/— bonus equal to 10 + character level.
 		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
 		- `Extreme Speed`: Get a speed bonus equal to 5 times character level.
