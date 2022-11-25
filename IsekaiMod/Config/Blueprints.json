@@ -208,6 +208,10 @@
     "SuperBuffFeature": "a7d8ceeb-9ab6-4d8a-9a1b-001e5b413732",
     "UnlimitedPowerAbility": "297c0daf-9cb3-49e8-aa50-9b4c711468c3",
     "UnlimitedPowerFeature": "be9871a9-0a70-4482-83a0-2b05f4584d84",
+    "MindControlImmunity": "56a15147-a3ef-4d58-a3da-db905cbaf3a6",
+    "MindControlBuff": "cf0f7bec-41eb-410a-bc27-edd0acbfc410",
+    "MindControlAbility": "9e58a241-2624-45d3-b288-fa01239b433e",
+    "MindControlFeature": "13c6bdb4-13b7-42f2-aa05-12e78f12e7d0",
 
     // God Emperor Features
     "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",

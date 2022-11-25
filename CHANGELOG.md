@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added mod support for `Spellbook Merge`.
 - Added `Auto Bolster` Overpowered ability.
+- Added `Mind Control` Overpowered ability.
 - Added `Unlimited Power` Overpowered ability.
 - Added `Regeneration` Character Development feat.
 - Added `Beta Tester` background.
