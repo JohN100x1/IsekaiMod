@@ -76,11 +76,12 @@ namespace IsekaiMod.Content
 
                 // OP Ability
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoBolsterFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoEmpowerFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoExtendFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoMaximizeFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoQuickenFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.AutoReachFeatureFeature.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoReachFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.GraspHeartFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.DupeGoldFeature.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.PerfectRollFeature.Add();

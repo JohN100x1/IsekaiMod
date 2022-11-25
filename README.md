@@ -65,6 +65,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Channel Positive Energy`: You can channel positive energy (requires good alignment).
 		- `Channel Negative Energy`: You can channel negative energy (requires evil alignment).
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
+		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.
 		- `AutoExtend`: Extends every spell you cast.
 		- `AutoMaximize`: Maximizes every spell you cast.
