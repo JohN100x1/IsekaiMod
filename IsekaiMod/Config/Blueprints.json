@@ -220,6 +220,11 @@
     "MindControlBuff": "cf0f7bec-41eb-410a-bc27-edd0acbfc410",
     "MindControlAbility": "9e58a241-2624-45d3-b288-fa01239b433e",
     "MindControlFeature": "13c6bdb4-13b7-42f2-aa05-12e78f12e7d0",
+    "SummonDevastator": "d2ed092c-5ee2-4d82-8ecd-069ff58b1196",
+    "SummonBaphomet": "577348de-29c4-4236-b8e4-286aa34c3aa4",
+    "SummonDemonLordDeskari": "2df13679-7f57-4c8a-b82e-438738e60100",
+    "SummonCalamityAbility": "e379c45c-2eef-4229-bcc2-7b7f95bab93e",
+    "SummonCalamityFeature": "0cbb549e-a311-4c52-b76e-033f7f1b5d20",
 
     // God Emperor Features
     "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",

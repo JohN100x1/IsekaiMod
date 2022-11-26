@@ -81,6 +81,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Interdimensional Bag`: Get infinite carry capacity.
 		- `Unlimited Power`: Restore all ability and spell slots at will.
 		- `Mind Control`: Control an enemy creature to fight for you.
+		- `Summon Calamity`: Summon a Devastator, Baphomet, or Deskari.
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities

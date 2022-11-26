@@ -4,12 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2.1.0] - 2022-11-26
 ### Added
 - Added mod support for `Spellbook Merge`.
 - Added `Auto Bolster` Overpowered ability.
 - Added `Mind Control` Overpowered ability.
 - Added `Unlimited Power` Overpowered ability.
+- Added `Summon Calamity` Overpowered ability.
 - Added `Regeneration` Character Development feat.
 - Added `Beta Tester` background.
 - Added `Ferocious Summoning` exceptional feat.
