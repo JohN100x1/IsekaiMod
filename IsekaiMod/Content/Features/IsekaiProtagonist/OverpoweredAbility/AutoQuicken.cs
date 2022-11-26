@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
-    class AutoQuickenFeature
+    class AutoQuicken
     {
         private static readonly Sprite Icon_QuickenSpell = Resources.GetBlueprint<BlueprintFeature>("ef7ece7bb5bb66a41b256976b27f424e").m_Icon;
         public static void Add()

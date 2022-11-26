@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
-    class AutoReachFeatureFeature
+    class AutoReach
     {
         private static readonly Sprite Icon_ReachSpell = Resources.GetBlueprint<BlueprintFeature>("46fad72f54a33dc4692d3b62eca7bb78").m_Icon;
         public static void Add()

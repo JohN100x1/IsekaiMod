@@ -17,15 +17,11 @@ namespace IsekaiMod.Content
                 Features.ExtraWings.Add();
                 Features.ExoticWeaponProficiency.Add();
 
-                // Add Exceptional Feats
-                Features.ExceptionalFeats.ExceptionalFeatSelection.Add();
-                Features.ExceptionalFeats.EffectImmunitySelection.Add();
-                Features.ExceptionalFeats.ExceptionalSummoningFeature.Add();
-
-                if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
-                if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
+                if (ModSettings.AddedContent.Feats.IsEnabled("Exceptional Feats")) AddExceptionalFeats();
                 if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
                 if (ModSettings.AddedContent.Deities.IsEnabled("Isekai Deities")) AddIsekaiDeities();
+                if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
+                if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
             }
 
             public static void AddIsekaiProtagonistClass()
@@ -66,6 +62,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.AlphaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.BetaStrike.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.GammaStrike.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.Regeneration.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.EnergyImmunitySelection.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.TrainingMontage.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.BodyStrengthening.Add();
@@ -76,16 +73,20 @@ namespace IsekaiMod.Content
 
                 // OP Ability
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.AutoEmpowerFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.AutoExtendFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.AutoMaximizeFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.AutoQuickenFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.AutoReachFeatureFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.GraspHeartFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.DupeGoldFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.PerfectRollFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.SuperBuffFeature.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.InterdimensionalBagFeature.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoBolster.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoEmpower.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoExtend.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoMaximize.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoQuicken.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoReach.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.GraspHeart.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.DupeGold.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.PerfectRoll.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.SuperBuff.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.UnlimitedPower.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.MindControl.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.SummonCalamity.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.InterdimensionalBag.Add();
 
                 // God Emperor Archetype
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.GodEmperorProficiencies.Add();
@@ -128,7 +129,7 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.LoremasterSpellbookSelection.Patch();
                 Classes.IsekaiProtagonist.HellknightSignifierSpellbookSelection.Patch();
 
-                // Deathsnatcher animal Companion
+                // Deathsnatcher animal Companion (Depends on IsekaiProtagonistClass)
                 Classes.Deathsnatcher.DeathsnatcherClass.Add();
                 Features.Deathsnatcher.DeathsnatcherSizeBaby.Add();
                 Features.Deathsnatcher.DeathsnatcherResistances.Add();
@@ -142,7 +143,7 @@ namespace IsekaiMod.Content
                 Classes.Deathsnatcher.DeathsnatcherClassProgression.Add();
                 Classes.Deathsnatcher.DeathsnatcherUnit.Add();
 
-                // Add extra dialogue
+                // Add extra dialogue (Depends on IsekaiProtagonistClass)
                 Dialogue.IsekaiHulrun.Add();
                 Dialogue.IsekaiRadiance.Add();
             }
@@ -169,9 +170,10 @@ namespace IsekaiMod.Content
                 Backgrounds.MartialArtist.Add();
                 Backgrounds.Salaryman.Add();
                 Backgrounds.HighschoolStudent.Add();
-                Backgrounds.Otaku.Add();
                 Backgrounds.RebornDemonLord.Add();
+                Backgrounds.Otaku.Add();
                 Backgrounds.Gamer.Add();
+                Backgrounds.BetaTester.Add();
             }
             public static void AddIsekaiDeities()
             {
@@ -183,6 +185,16 @@ namespace IsekaiMod.Content
                 Deities.Aqua.Add();
                 Deities.Ristarte.Add();
                 Deities.AdministratorD.Add();
+            }
+            public static void AddExceptionalFeats()
+            {
+                // Add Exceptional Feats
+                Features.ExceptionalFeats.ExceptionalFeatSelection.Add();
+                Features.ExceptionalFeats.EffectImmunitySelection.Add();
+                Features.ExceptionalFeats.ExceptionalSummoning.Add();
+                Features.ExceptionalFeats.ForbiddenSummoning.Add();
+                Features.ExceptionalFeats.FerociousSummoning.Add();
+
             }
         }
     }

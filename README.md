@@ -51,20 +51,24 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Exceptional feats`: Strong feats that can be chosen in place of a feat/bonus feat.
 		- `Mythic feat`: You can choose a mythic feat instead of a normal/bonus feat.
 		- `Effect Immunity`: You become immune to a specific effect. (e.g. poison, bleed, charm etc.)
-		- `Exceptional Summoning`: Your summons get +100 HP, +10 attack, AC, and saving throws.
+		- `Exceptional Summoning`: Your summons get +10 HP, +1 attack, +1 AC, and +1 to saving throws per character level.
+		- `Forbidden Summoning`: Your summons get +10 HP, and +1 to all attributes per character level.
+		- `Ferocious Summoning`: Your summons have 2 more attacks and +10 speed. They also get +1 sneak attack per character level. (requires Exceptional Summoning and Forbidden Summoning).
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
 	- `Character Development Feats`: A selection of bonus feats which have very good effects.
 		- `Alpha Strike`: Automatically confirm crits.
 		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
-		- `Training Montage`: Get a +10 bonus to all attributes.
+		- `Regeneration`: Get regeneration 20/acid or fire (requires character level 10).
+		- `Training Montage`: Get a +10 bonus to all attributes (requires character level 10).
 		- `Body Strengthening`: Get a DR/— bonus equal to 10 + character level.
 		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
 		- `Extreme Speed`: Get a speed bonus equal to 5 times character level.
 		- `Channel Positive Energy`: You can channel positive energy (requires good alignment).
 		- `Channel Negative Energy`: You can channel negative energy (requires evil alignment).
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
+		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.
 		- `AutoExtend`: Extends every spell you cast.
 		- `AutoMaximize`: Maximizes every spell you cast.
@@ -75,6 +79,9 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Perfect Roll`: Roll 20 on every d20 roll.
 		- `Super Buff`: Apply many powerful buffs on you and your allies.
 		- `Interdimensional Bag`: Get infinite carry capacity.
+		- `Unlimited Power`: Restore all ability and spell slots at will.
+		- `Mind Control`: Control an enemy creature to fight for you.
+		- `Summon Calamity`: Summon a Devastator, Baphomet, or Deskari.
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities
@@ -84,9 +91,10 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Martial Artist`: Get proficiency in all exotic weapons.
 	- `Salaryman`: Adds perception as a class skill. Perception uses CHA instead of WIS.
 	- `Highschool Student`: Get a +1 trait bonus to all attributes.
-	- `Otaku`: Adds all skills as class skills except Persuasion.
 	- `Reborn Demon Lord`: Get a +2 trait bonus to Strength and Electricity resistance 20.
-	- `Gamer`: Get a +10 bonus to all knowledge, lore, and perception checks.
+	- `Otaku`: Adds all skills as class skills except Persuasion.
+	- `Gamer`: Get a +4 competence bonus to all knowledge, lore, and perception checks.
+	- `Beta Tester`: Get +10 Initiative and adds lore, knowledge and perceptions skills as class skills.
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.
@@ -157,6 +165,8 @@ If you have the `MysticalMayhem` mod, the `Isekai Protagonist` will have the 9th
 ### ExpandedContent (0.4.40)
 If you have the `ExpandedContent` mod, the `Isekai Protagonist` will have the following spells added to its spellbook: Hydraulic push, Slipstream, Scourge of the Horsemen, Rigor mortis, Hollow Blades, Goodberry, Steam Ray Fusillade, Inflict Pain, Inflict Pain Mass, Gloomblind Bolts, Fury of the Sun, Invoke Deity.
 You are also able to choose a drake companion as a pet.
+### SpellbookMerge (1.7.0)
+If you have the `SpellbookMerge` mod, the `Isekai Protagonist` will be able to merge its spellbook with Aeon, Azata, Demon, and Trickster.
 
 ## Credits
 Alot of the code was repurposed from the following repositories:

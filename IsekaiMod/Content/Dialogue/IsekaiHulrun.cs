@@ -24,13 +24,14 @@ namespace IsekaiMod.Content.Dialogue
 
             // Answer
             var IsekaiDialogueHulrun = Helpers.CreateAnswer("IsekaiDialogueHulrun", bp => {
-                bp.Text = Helpers.CreateString("IsekaiDialogueHulrun.Text", "Other than being hit by a truck, I don't remember anything at all...");
+                bp.Text = Helpers.CreateString("IsekaiDialogueHulrun.Text", "(Isekai Protagonist) \"Other than being hit by a truck, I don't remember anything at all...\"");
                 bp.NextCue = new CueSelection()
                 {
                     Cues = new List<BlueprintCueBaseReference>() { DontRememberCue.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
-                bp.ShowConditions = ActionFlow.IfSingle<PlayerSignificantClassIs>(c => {
+                bp.ShowConditions = ActionFlow.IfSingle<PlayerSignificantClassIs>(c =>
+                {
                     c.Not = false;
                     c.CheckGroup = false;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();

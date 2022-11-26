@@ -2,11 +2,11 @@
   "Id": "IsekaiMod",
   "DisplayName": "Isekai Mod",
   "Author": "JohN100x1",
-  "Version": "2.0.1",
+  "Version": "2.1.0",
   "ManagerVersion": "0.24.0",
   "Requirements": [],
   "AssemblyName": "IsekaiMod.dll",
   "EntryMethod": "IsekaiMod.Main.Load",
-  "LoadAfter": [ "TabletopTweaks-Base", "ExpandedContent", "MysticalMayhem" ],
+  "LoadAfter": [ "ExpandedContent", "MysticalMayhem", "SpellbookMerge" ],
   "HomePage": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/398"
 }

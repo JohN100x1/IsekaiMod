@@ -16,7 +16,7 @@ using Kingmaker.Visual.Animation.Kingmaker.Actions;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
-    class DupeGoldFeature
+    class DupeGold
     {
         private static readonly BlueprintItem GoldCoins = Resources.GetBlueprint<BlueprintItem>("f2bc0997c24e573448c6c91d2be88afa");
         public static void Add()

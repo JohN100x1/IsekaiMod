@@ -1,15 +1,15 @@
-﻿using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes.Spells;
-using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.Blueprints.JsonSystem;
-using System.Linq;
-using static UnityModManagerNet.UnityModManager;
-using Kingmaker.Blueprints.Classes.Selection;
-using IsekaiMod.Extensions;
-using Kingmaker.Blueprints.Classes;
-using static Kingmaker.Blueprints.Classes.BlueprintProgression;
-using IsekaiMod.Content.Classes.IsekaiProtagonist;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist;
+using IsekaiMod.Extensions;
+using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.Blueprints.JsonSystem;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
+using System.Linq;
+using static Kingmaker.Blueprints.Classes.BlueprintProgression;
+using static UnityModManagerNet.UnityModManager;
 
 namespace IsekaiMod.Utilities
 {
@@ -17,6 +17,7 @@ namespace IsekaiMod.Utilities
     {
         protected static bool IsExpandedContentEnabled() { return IsModEnabled("ExpandedContent"); }
         protected static bool IsMysticalMayhemEnabled() { return IsModEnabled("MysticalMayhem"); }
+        protected static bool IsSpellbookMergeEnabled() { return IsModEnabled("SpellbookMerge"); }
         [HarmonyLib.HarmonyPatch(typeof(BlueprintsCache), "Init")]
         static class BlueprintsCache_Init_Patch
         {
@@ -39,6 +40,28 @@ namespace IsekaiMod.Utilities
                     Main.Log("Expanded Content 0.4.40 Support Enabled.");
                     AddExpandedContentSpells(IsekaiProtagonistSpellList.Get());
                     AddExpandedContentDrakes(IsekaiProtagonistClass.Get());
+                }
+                if (IsSpellbookMergeEnabled())
+                {
+                    Main.Log("Spellbook Merge 1.7.0 Support Enabled.");
+
+                    // Allow Spellbook to be merged with Aeon, Azata, Demon, and Trickster
+                    var AeonIncorporateSpellBook = Resources.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("2b7027ee76cb4c58b2cff0475bc69fbb");
+                    var AzataIncorporateSpellbook = Resources.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("83385d9f4d714e4e94618703be762a20");
+                    var DemonIncorporateSpellbook = Resources.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("f3ff8515355e4738b128c3d01483f1ca");
+                    var TricksterIncorporateSpellbook = Resources.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("c4ef6975167d4cf5acbfd66b60e63f9c");
+
+                    // Add Isekai Protagonist Spellbook
+                    AeonIncorporateSpellBook.m_AllowedSpellbooks = AeonIncorporateSpellBook.m_AllowedSpellbooks.AddToArray(IsekaiProtagonistSpellbook.GetReference());
+                    AzataIncorporateSpellbook.m_AllowedSpellbooks = AzataIncorporateSpellbook.m_AllowedSpellbooks.AddToArray(IsekaiProtagonistSpellbook.GetReference());
+                    DemonIncorporateSpellbook.m_AllowedSpellbooks = DemonIncorporateSpellbook.m_AllowedSpellbooks.AddToArray(IsekaiProtagonistSpellbook.GetReference());
+                    TricksterIncorporateSpellbook.m_AllowedSpellbooks = TricksterIncorporateSpellbook.m_AllowedSpellbooks.AddToArray(IsekaiProtagonistSpellbook.GetReference());
+
+                    // Add Villain Spellbook
+                    AeonIncorporateSpellBook.m_AllowedSpellbooks = AeonIncorporateSpellBook.m_AllowedSpellbooks.AddToArray(VillainSpellbook.GetReference());
+                    AzataIncorporateSpellbook.m_AllowedSpellbooks = AzataIncorporateSpellbook.m_AllowedSpellbooks.AddToArray(VillainSpellbook.GetReference());
+                    DemonIncorporateSpellbook.m_AllowedSpellbooks = DemonIncorporateSpellbook.m_AllowedSpellbooks.AddToArray(VillainSpellbook.GetReference());
+                    TricksterIncorporateSpellbook.m_AllowedSpellbooks = TricksterIncorporateSpellbook.m_AllowedSpellbooks.AddToArray(VillainSpellbook.GetReference());
                 }
             }
 

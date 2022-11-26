@@ -31,12 +31,22 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
         {
             var Icon_Harem = AssetLoader.LoadInternal("Features", "ICON_HAREM.png");
             var Icon_Harem_Immune = AssetLoader.LoadInternal("Features", "ICON_HAREM_IMMUNE.png");
+            var HaremMagnetImmunity = Helpers.CreateBlueprint<BlueprintBuff>("HaremMagnetImmunity", bp => {
+                bp.SetName("Harem Magnet Immunity");
+                bp.SetDescription("This creature is immune to Harem Magnet for 24 hours.");
+                bp.m_Icon = Icon_Harem;
+                bp.Stacking = StackingType.Replace;
+                bp.Frequency = DurationRate.Rounds;
+                bp.AddComponent<IsPositiveEffect>();
+                bp.FxOnStart = new PrefabLink();
+                bp.FxOnRemove = new PrefabLink();
+            });
             var HaremMagnetBuff = Helpers.CreateBlueprint<BlueprintBuff>("HaremMagnetBuff", bp => {
                 bp.SetName("Fascinated");
                 bp.SetDescription("This creature is Fascinated and can take no actions. Any {g|Encyclopedia:Damage}damage{/g} to the target automatically breaks the effect.");
                 bp.m_Icon = Icon_Harem_Immune;
                 bp.TickEachSecond = false;
-                bp.Stacking = StackingType.Replace;
+                bp.Stacking = StackingType.Ignore;
                 bp.Frequency = DurationRate.Rounds;
                 bp.m_AllowNonContextActions = false;
                 bp.FxOnStart = new PrefabLink() { AssetId = "396af91a93f6e2b468f5fa1a944fae8a" };
@@ -48,23 +58,34 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 });
                 bp.AddComponent<AddFactContextActions>(c => {
                     c.NewRound = ActionFlow.DoNothing();
-                    c.Deactivated = ActionFlow.DoNothing();
+                    c.Deactivated = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
+                        c.Permanent = false;
+                        c.m_Buff = HaremMagnetImmunity.ToReference<BlueprintBuffReference>();
+                        c.DurationValue = new ContextDurationValue()
+                        {
+                            Rate = DurationRate.Hours,
+                            DiceType = DiceType.Zero,
+                            DiceCountValue = 0,
+                            BonusValue = new ContextValue()
+                            {
+                                ValueType = ContextValueType.Simple,
+                                Value = 24,
+                                ValueRank = AbilityRankType.Default
+                            },
+                            m_IsExtendable = true
+                        };
+                        c.UseDurationSeconds = false;
+                        c.DurationSeconds = 0;
+                        c.IsFromSpell = false;
+                        c.ToCaster = false;
+                        c.AsChild = false;
+                    });
                     c.Activated = ActionFlow.DoSingle<ContextActionSpawnFx>(c => {
                         c.PrefabLink = new PrefabLink() { AssetId = "28b3cd92c1fdc194d9ee1e378c23be6b" };
                     });
                 });
                 bp.Ranks = 0;
                 bp.IsClassFeature = true;
-            });
-            var HaremMagnetImmunity = Helpers.CreateBlueprint<BlueprintBuff>("HaremMagnetImmunity", bp => {
-                bp.SetName("Harem Magnet Immunity");
-                bp.SetDescription("This creature is immune to Harem Magnet for 24 hours.");
-                bp.m_Icon = Icon_Harem;
-                bp.Stacking = StackingType.Replace;
-                bp.Frequency = DurationRate.Rounds;
-                bp.AddComponent<IsPositiveEffect>();
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
             var HaremMagnetAbility = Helpers.CreateBlueprint<BlueprintAbility>("HaremMagnetAbility", bp => {
                 bp.SetName("Harem Magnet");
@@ -74,23 +95,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Unknown;
                     c.Actions = ActionFlow.DoSingle<Conditional>(c => {
-                        c.ConditionsChecker = new ConditionsChecker()
-                        {
-                            Operation = Operation.And,
-                            Conditions = new Condition[] {
-                                new ContextConditionIsCaster() {
-                                    Not = true
-                                },
-                                new ContextConditionHasFact() {
-                                    Not = true,
-                                    m_Fact = HaremMagnetBuff.ToReference<BlueprintUnitFactReference>()
-                                },
-                                new ContextConditionHasFact() {
-                                    Not = true,
-                                    m_Fact = HaremMagnetImmunity.ToReference<BlueprintUnitFactReference>()
-                                }
-                            }
-                        };
+                        c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionHasFact>(c => {
+                            c.Not = true;
+                            c.m_Fact = HaremMagnetImmunity.ToReference<BlueprintUnitFactReference>();
+                        });
                         c.IfTrue = ActionFlow.DoSingle<ContextActionSavingThrow>(c => {
                             c.m_ConditionalDCIncrease = new ContextActionSavingThrow.ConditionalDCIncrease[0];
                             c.FromBuff = false;
@@ -157,7 +165,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.CanTargetPoint = false;
                 bp.CanTargetEnemies = true;
                 bp.CanTargetFriends = false;
-                bp.CanTargetSelf = true;
+                bp.CanTargetSelf = false;
                 bp.EffectOnAlly = AbilityEffectOnUnit.None;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.None;
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Self;

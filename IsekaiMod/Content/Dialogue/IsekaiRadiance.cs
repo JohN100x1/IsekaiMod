@@ -57,13 +57,15 @@ namespace IsekaiMod.Content.Dialogue
 
             // Answer
             var IsekaiDialogueRadiance = Helpers.CreateAnswer("IsekaiDialogueRadiance", bp => {
-                bp.Text = Helpers.CreateString("IsekaiDialogueRadiance.Text", "[Pound the sword repeatedly] \"You better power up right now or you're going to reincarnate as two daggers.\"");
+                bp.Text = Helpers.CreateString("IsekaiDialogueRadiance.Text", "(Isekai Protagonist) [Pound the sword repeatedly] \"You better power up right now or you're going to "
+                    + "reincarnate as a broken blade.\"");
                 bp.NextCue = new CueSelection()
                 {
                     Cues = new List<BlueprintCueBaseReference>() { UpgradeRadianceCue.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
-                bp.ShowConditions = ActionFlow.IfSingle<PlayerSignificantClassIs>(c => {
+                bp.ShowConditions = ActionFlow.IfSingle<PlayerSignificantClassIs>(c =>
+                {
                     c.Not = false;
                     c.CheckGroup = false;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();

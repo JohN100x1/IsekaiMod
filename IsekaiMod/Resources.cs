@@ -36,11 +36,6 @@ namespace IsekaiMod
         {
             AddBlueprint(blueprint, blueprint.AssetGuid);
         }
-        public static void AddBlueprint([NotNull] SimpleBlueprint blueprint, string assetId)
-        {
-            var Id = BlueprintGuid.Parse(assetId);
-            AddBlueprint(blueprint, Id);
-        }
         public static void AddBlueprint([NotNull] SimpleBlueprint blueprint, BlueprintGuid assetId)
         {
             var loadedBlueprint = ResourcesLibrary.TryGetBlueprint(assetId);

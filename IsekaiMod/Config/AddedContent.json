@@ -1,5 +1,16 @@
 {
   "NewSettingsOffByDefault": false,
+  "Feats": {
+    "DisableAll": false,
+    "Settings": {
+      "Exceptional Feats": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds Exceptional feats to feat selection."
+      }
+    },
+    "IsExpanded": true
+  },
   "Backgrounds": {
     "DisableAll": false,
     "Settings": {

@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2022-11-26
+### Added
+- Added mod support for `Spellbook Merge`.
+- Added `Auto Bolster` Overpowered ability.
+- Added `Mind Control` Overpowered ability.
+- Added `Unlimited Power` Overpowered ability.
+- Added `Summon Calamity` Overpowered ability.
+- Added `Regeneration` Character Development feat.
+- Added `Beta Tester` background.
+- Added `Ferocious Summoning` exceptional feat.
+- Added `Forbidden Summoning` exceptional feat.
+- Added content group in UMM UI for exceptional feats.
+### Changed
+- Nerfed `Gamer` background to give +4 instead of +10.
+- Changed icon for `True Smite`.
+- Changed `Exceptional Summoning` to scale +10 hp, +1 attack, +1 AC, +1 saving throws per character level.
+### Fixed
+- Fixed `Harem Magnet` immunity to be applied after fascinate effect ends.
+
 ## [2.0.1] - 2022-11-23
 ### Changed
 - Changed `Isekai Succubus` to give +2 DEX, +2 INT, +4 CHA, -2 STR instead of +4 DEX, +4 CHA, -2 STR.
