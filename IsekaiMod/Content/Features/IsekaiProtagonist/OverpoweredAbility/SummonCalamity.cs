@@ -113,7 +113,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             });
             var SummonBaphomet = Helpers.CreateBlueprint<BlueprintAbility>("SummonBaphomet", bp => {
                 bp.SetName("Overpowered Ability — Summon Calamity (Baphomet)");
-                bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons Deskari. Summoned monsters appear where you designate and act according to their "
+                bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Baphomet. Summoned monsters appear where you designate and act according to their "
                     + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Unknown;
@@ -191,7 +191,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
             });
             var SummonDemonLordDeskari = Helpers.CreateBlueprint<BlueprintAbility>("SummonDemonLordDeskari", bp => {
-                bp.SetName("Overpowered Ability — Summon Calamity (Demon Lord Deskari)");
+                bp.SetName("Overpowered Ability — Summon Calamity (Deskari)");
                 bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Deskari. Summoned monsters appear where you designate and act according to their "
                     + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
