@@ -1,9 +1,11 @@
-﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+﻿using IsekaiMod.Content.Backgrounds;
+using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
+using Kingmaker.UnitLogic.Mechanics.Conditions;
 using System.Collections.Generic;
 
 namespace IsekaiMod.Content.Dialogue
@@ -57,17 +59,25 @@ namespace IsekaiMod.Content.Dialogue
 
             // Answer
             var IsekaiDialogueRadiance = Helpers.CreateAnswer("IsekaiDialogueRadiance", bp => {
-                bp.Text = Helpers.CreateString("IsekaiDialogueRadiance.Text", "[Pound the sword repeatedly] \"You better power up right now or you're going to reincarnate as two daggers.\"");
+                bp.Text = Helpers.CreateString("IsekaiDialogueRadiance.Text", "(Isekai Protagonist) [Pound the sword repeatedly] \"You better power up right now or you're going to "
+                    + "reincarnate as a broken blade.\"");
                 bp.NextCue = new CueSelection()
                 {
                     Cues = new List<BlueprintCueBaseReference>() { UpgradeRadianceCue.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
-                bp.ShowConditions = ActionFlow.IfSingle<PlayerSignificantClassIs>(c => {
-                    c.Not = false;
-                    c.CheckGroup = false;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                });
+                bp.ShowConditions = ActionFlow.IfAny(
+                    new PlayerSignificantClassIs()
+                    {
+                        Not = false,
+                        CheckGroup = false,
+                        m_CharacterClass = IsekaiProtagonistClass.GetReference(),
+                    },
+                    new ContextConditionHasFact()
+                    {
+                        m_Fact = IsekaiBackgroundSelection.Get().ToReference<BlueprintUnitFactReference>(),
+                        Not = false
+                    });
             });
 
             // Add Answer to answers list
