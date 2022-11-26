@@ -17,11 +17,11 @@ namespace IsekaiMod.Content
                 Features.ExtraWings.Add();
                 Features.ExoticWeaponProficiency.Add();
 
-                if (ModSettings.AddedContent.Classes.IsEnabled("Exceptional Feats")) AddExceptionalFeats();
-                if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
-                if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
+                if (ModSettings.AddedContent.Feats.IsEnabled("Exceptional Feats")) AddExceptionalFeats();
                 if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
                 if (ModSettings.AddedContent.Deities.IsEnabled("Isekai Deities")) AddIsekaiDeities();
+                if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
+                if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
             }
 
             public static void AddIsekaiProtagonistClass()
@@ -85,6 +85,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.SuperBuff.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.UnlimitedPower.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.MindControl.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.SummonCalamity.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.InterdimensionalBag.Add();
 
                 // God Emperor Archetype
@@ -128,7 +129,7 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.LoremasterSpellbookSelection.Patch();
                 Classes.IsekaiProtagonist.HellknightSignifierSpellbookSelection.Patch();
 
-                // Deathsnatcher animal Companion
+                // Deathsnatcher animal Companion (Depends on IsekaiProtagonistClass)
                 Classes.Deathsnatcher.DeathsnatcherClass.Add();
                 Features.Deathsnatcher.DeathsnatcherSizeBaby.Add();
                 Features.Deathsnatcher.DeathsnatcherResistances.Add();
@@ -142,7 +143,7 @@ namespace IsekaiMod.Content
                 Classes.Deathsnatcher.DeathsnatcherClassProgression.Add();
                 Classes.Deathsnatcher.DeathsnatcherUnit.Add();
 
-                // Add extra dialogue
+                // Add extra dialogue (Depends on IsekaiProtagonistClass)
                 Dialogue.IsekaiHulrun.Add();
                 Dialogue.IsekaiRadiance.Add();
             }

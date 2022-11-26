@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Content.Backgrounds;
-using IsekaiMod.Content.Classes.IsekaiProtagonist;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Utilities;
 using Kingmaker.AreaLogic.Etudes;
 using Kingmaker.Blueprints;
@@ -7,7 +6,6 @@ using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
-using Kingmaker.UnitLogic.Mechanics.Conditions;
 using System.Collections.Generic;
 
 namespace IsekaiMod.Content.Dialogue
@@ -32,18 +30,12 @@ namespace IsekaiMod.Content.Dialogue
                     Cues = new List<BlueprintCueBaseReference>() { DontRememberCue.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
-                bp.ShowConditions = ActionFlow.IfAny(
-                    new PlayerSignificantClassIs()
-                    {
-                        Not = false,
-                        CheckGroup = false,
-                        m_CharacterClass = IsekaiProtagonistClass.GetReference(),
-                    },
-                    new ContextConditionHasFact()
-                    {
-                        m_Fact = IsekaiBackgroundSelection.Get().ToReference<BlueprintUnitFactReference>(),
-                        Not = false
-                    });
+                bp.ShowConditions = ActionFlow.IfSingle<PlayerSignificantClassIs>(c =>
+                {
+                    c.Not = false;
+                    c.CheckGroup = false;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                });
                 bp.OnSelect = ActionFlow.DoSingle<StartEtude>(c => {
                     c.Etude = DontRememberEtude.ToReference<BlueprintEtudeReference>();
                     c.Evaluate = false;
