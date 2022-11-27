@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace IsekaiMod.Content.Classes.Deathsnatcher
 {
-    class DeathsnatcherClassProgression
+    class DeathsnatcherProgression
     {
         // Animal Rank
         private static readonly BlueprintFeature AnimalCompanionRank = Resources.GetBlueprint<BlueprintFeature>("1670990255e4fe948a863bafd5dbda5d");
@@ -54,8 +54,11 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                         },
                     })
                     .ToArray();
+                bp.UIGroups = new UIGroup[0];
+                bp.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[0];
                 bp.ForAllOtherClasses = false;
                 bp.GiveFeaturesForPreviousLevels = true;
+                bp.m_FeaturesRankIncrease = new List<BlueprintFeatureReference>();
             });
 
             // Deathsnatcher Class Progression
@@ -64,33 +67,33 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.SetDescription("This bipedal jackal has vulture wings and a rat tail ending in a scorpion’s stinger. Each of its four arms ends in a clawed hand.");
                 bp.m_AllowNonContextActions = false;
                 bp.IsClassFeature = true;
-                bp.m_FeaturesRankIncrease = null;
+                bp.m_FeaturesRankIncrease = new List<BlueprintFeatureReference>();
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
                     new BlueprintProgression.ClassWithLevel {
                         m_Class = DeathsnatcherClass.GetReference(),
                         AdditionalLevel = 0
                     }
                 };
+                bp.LevelEntries = new LevelEntry[] {
+                    Helpers.LevelEntry(1, DeathsnatcherResistances, DeathsnatcherHiddenFacts, DeathsnatcherCommandUndeadFeature, DeathsnatcherSizeBabyFeature),
+                    Helpers.LevelEntry(2, Evasion),
+                    Helpers.LevelEntry(4, Pounce),
+                    Helpers.LevelEntry(7, DeathsnatcherAnimateDeadFeature),
+                    Helpers.LevelEntry(10, DeathsnatcherAnimateDeadAdditionalUse, DeathsnatcherPoisonSting),
+                    Helpers.LevelEntry(13, DeathsnatcherCreateUndeadFeature),
+                    Helpers.LevelEntry(15, DeathsnatcherSoulRendFeature, ImprovedEvasion),
+                    Helpers.LevelEntry(16, DeathsnatcherFingerOfDeathFeature),
+                    Helpers.LevelEntry(18, DeathsnatcherFastHealing),
+                    Helpers.LevelEntry(20, DeathsnatcherUndeadMaster),
+                };
+                bp.UIGroups = new UIGroup[] {
+                    Helpers.CreateUIGroup(DeathsnatcherCommandUndeadFeature, DeathsnatcherAnimateDeadFeature, DeathsnatcherAnimateDeadAdditionalUse, DeathsnatcherCreateUndeadFeature, DeathsnatcherFingerOfDeathFeature, DeathsnatcherUndeadMaster),
+                    Helpers.CreateUIGroup(DeathsnatcherSizeBabyFeature, Pounce, DeathsnatcherPoisonSting, DeathsnatcherSoulRendFeature, DeathsnatcherFastHealing),
+                };
+                bp.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
+                    DeathsnatcherResistances.ToReference<BlueprintFeatureBaseReference>()
+                };
             });
-            DeathsnatcherClassProgression.LevelEntries = new LevelEntry[] {
-                Helpers.LevelEntry(1, DeathsnatcherResistances, DeathsnatcherHiddenFacts, DeathsnatcherCommandUndeadFeature, DeathsnatcherSizeBabyFeature),
-                Helpers.LevelEntry(2, Evasion),
-                Helpers.LevelEntry(4, Pounce),
-                Helpers.LevelEntry(7, DeathsnatcherAnimateDeadFeature),
-                Helpers.LevelEntry(10, DeathsnatcherAnimateDeadAdditionalUse, DeathsnatcherPoisonSting),
-                Helpers.LevelEntry(13, DeathsnatcherCreateUndeadFeature),
-                Helpers.LevelEntry(15, DeathsnatcherSoulRendFeature, ImprovedEvasion),
-                Helpers.LevelEntry(16, DeathsnatcherFingerOfDeathFeature),
-                Helpers.LevelEntry(18, DeathsnatcherFastHealing),
-                Helpers.LevelEntry(20, DeathsnatcherUndeadMaster),
-            };
-            DeathsnatcherClassProgression.UIGroups = new UIGroup[] {
-                Helpers.CreateUIGroup(DeathsnatcherCommandUndeadFeature, DeathsnatcherAnimateDeadFeature, DeathsnatcherAnimateDeadAdditionalUse, DeathsnatcherCreateUndeadFeature, DeathsnatcherFingerOfDeathFeature, DeathsnatcherUndeadMaster),
-                Helpers.CreateUIGroup(DeathsnatcherSizeBabyFeature, Pounce, DeathsnatcherPoisonSting, DeathsnatcherSoulRendFeature, DeathsnatcherFastHealing),
-            };
-            DeathsnatcherClassProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
-                DeathsnatcherResistances.ToReference<BlueprintFeatureBaseReference>()
-            };
 
             // Register Deathsnatcher Class Progression
             DeathsnatcherClass.SetProgression(DeathsnatcherClassProgression);

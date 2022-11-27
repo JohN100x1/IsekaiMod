@@ -126,8 +126,8 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.IsekaiProtagonistProgression.Add();
 
                 // Patch Loremaster & Hellknight Signifier Spellbooks
-                Classes.IsekaiProtagonist.LoremasterSpellbookSelection.Patch();
-                Classes.IsekaiProtagonist.HellknightSignifierSpellbookSelection.Patch();
+                Classes.IsekaiProtagonist.LoremasterReplaceSpellbook.Patch();
+                Classes.IsekaiProtagonist.HellknightSignifierReplaceSpellbook.Patch();
 
                 // Deathsnatcher animal Companion (Depends on IsekaiProtagonistClass)
                 Classes.Deathsnatcher.DeathsnatcherClass.Add();
@@ -140,7 +140,7 @@ namespace IsekaiMod.Content
                 Features.Deathsnatcher.DeathsnatcherFastHealing.Add();
                 Features.Deathsnatcher.DeathsnatcherPoisonSting.Add();
                 Features.Deathsnatcher.DeathsnatcherUndeadMaster.Add();
-                Classes.Deathsnatcher.DeathsnatcherClassProgression.Add();
+                Classes.Deathsnatcher.DeathsnatcherProgression.Add();
                 Classes.Deathsnatcher.DeathsnatcherUnit.Add();
 
                 // Add extra dialogue (Depends on IsekaiProtagonistClass)
