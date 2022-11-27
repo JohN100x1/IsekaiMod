@@ -15,8 +15,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
         {
             var InnerPower = Helpers.CreateBlueprint<BlueprintFeature>("InnerPower", bp => {
                 bp.SetName("Inner Power");
-                bp.SetDescription("You gain immunity to shaken, frightened, cowering, fear, death effects, {g|Encyclopedia:Ability_Scores}ability score{/g} {g|Encyclopedia:Damage}damage{/g}, energy drain, and negative levels.");
-                bp.AddComponent<AddImmunityToAbilityScoreDamage>();
+                bp.SetDescription("You gain immunity to shaken, frightened, cowering, fear, death effects, {g|Encyclopedia:Ability_Scores}ability score{/g} drain, energy drain, and negative levels.");
+                bp.AddComponent<AddImmunityToAbilityScoreDamage>(c => {
+                    c.Drain = true;
+                });
                 bp.AddComponent<AddImmunityToEnergyDrain>();
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Shaken;
@@ -32,6 +34,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
                     | SpellDescriptor.Frightened
                     | SpellDescriptor.Fear
                     | SpellDescriptor.NegativeLevel
+                    | SpellDescriptor.StatDebuff
                     | SpellDescriptor.Death;
                 });
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
@@ -39,6 +42,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
                     | SpellDescriptor.Frightened
                     | SpellDescriptor.Fear
                     | SpellDescriptor.NegativeLevel
+                    | SpellDescriptor.StatDebuff
                     | SpellDescriptor.Death;
                 });
                 bp.m_Icon = Icon_BurningRenewal;
