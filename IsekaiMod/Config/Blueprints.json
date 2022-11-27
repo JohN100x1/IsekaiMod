@@ -225,6 +225,9 @@
     "SummonDemonLordDeskari": "2df13679-7f57-4c8a-b82e-438738e60100",
     "SummonCalamityAbility": "e379c45c-2eef-4229-bcc2-7b7f95bab93e",
     "SummonCalamityFeature": "0cbb549e-a311-4c52-b76e-033f7f1b5d20",
+    "KineticPowerBurnPerRoundResource": "01f231ad-3b6f-43d6-a2b8-12aa7dd8e4dc",
+    "KineticPowerBurn": "5d556d9c-b9ab-4354-8832-c12eb1e632fa",
+    "KineticPowerProgression": "f9eebf4a-d2f0-4c85-bb92-f38bde458a0f",
 
     // God Emperor Features
     "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",

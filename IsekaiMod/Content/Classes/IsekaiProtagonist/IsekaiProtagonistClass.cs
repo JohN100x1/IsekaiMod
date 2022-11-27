@@ -87,7 +87,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 bp.m_Difficulty = 1;
                 bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
                 bp.RecommendedAttributes = new StatType[] { StatType.Strength, StatType.Charisma};
-                bp.NotRecommendedAttributes = new StatType[] { StatType.Constitution };
+                bp.NotRecommendedAttributes = new StatType[] { };
                 bp.m_EquipmentEntities = new KingmakerEquipmentEntityReference[0];
                 bp.m_StartingItems = new BlueprintItemReference[0];
                 bp.SkillPoints = 4;

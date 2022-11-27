@@ -82,6 +82,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Unlimited Power`: Restore all ability and spell slots at will.
 		- `Mind Control`: Make an enemy creature fight for you.
 		- `Summon Calamity`: Summon a Devastator, Baphomet, or Deskari.
+		- `Kinetic Power`: Gain the ability to use kinetic blasts.
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities
