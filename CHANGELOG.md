@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added `Kinetic Power` Overpowered ability.
 ### Changed
-- Buffed `Inner Power` and `Godly Vessel` to protective from ability drain.
+- Buffed `Inner Power` and `Godly Vessel` to protect from ability drain.
 ### Fixed
 - Fixed `Ferocious Summoning` and `Forbidden Summoning` to reapply on level up.
 
