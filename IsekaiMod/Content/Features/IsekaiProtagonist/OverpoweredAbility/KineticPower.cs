@@ -23,6 +23,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class KineticPower
     {
+        // TODO: Fix DC of kineticist blasts/infusions
+        // TODO: Fix ability parameters calculated based on kineticist class.
+        // TODO: rework progression into archetype. progression is broken if not taken at level 1
+
         // Kinetic Power Burn
         private static readonly BlueprintAbilityResource BurnResource = Resources.GetBlueprint<BlueprintAbilityResource>("066ac4b762e32be4b953703174ed925c");
         private static readonly BlueprintBuff BurnEffectBuff = Resources.GetBlueprint<BlueprintBuff>("95b1c0d55f30996429a3a4eba4d2b4a6");
@@ -465,7 +469,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             {
                 infusion.AddComponent<ContextCalculateAbilityParamsBasedOnClass>(c => {
                     c.UseKineticistMainStat = true;
-                    c.StatType = StatType.Charisma;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                 });
             }
@@ -504,7 +507,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             {
                 area.AddComponent<ContextCalculateAbilityParamsBasedOnClass>(c => {
                     c.UseKineticistMainStat = true;
-                    c.StatType = StatType.Charisma;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                 });
             }
