@@ -40,6 +40,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class KineticPower
     {
+        // TODO: Fix gather power fx (replace gatherpowerbuff 1 2 and 3)
         // TODO: Fix DC of kineticist blasts/infusions
         // TODO: Fix ability parameters calculated based on kineticist class.
         // TODO: rework progression into archetype. progression is broken if not taken at level 1
@@ -56,6 +57,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         private static readonly BlueprintBuff GatherPowerBuffI = Resources.GetBlueprint<BlueprintBuff>("e6b8b31e1f8c524458dc62e8a763cfb1");
         private static readonly BlueprintBuff GatherPowerBuffII = Resources.GetBlueprint<BlueprintBuff>("3a2bfdc8bf74c5c4aafb97591f6e4282");
         private static readonly BlueprintBuff GatherPowerBuffIII = Resources.GetBlueprint<BlueprintBuff>("82eb0c274eddd8849bb89a8e6dbc65f8");
+        private static readonly BlueprintBuff KineticBladeEnableBuff = Resources.GetBlueprint<BlueprintBuff>("426a9c079ee7ac34aa8e0054f2218074");
+        private static readonly BlueprintBuff ElementalBastionBuff = Resources.GetBlueprint<BlueprintBuff>("99953956704788444964899b5b8e96ab");
         private static readonly BlueprintAbility AirBlastBase = Resources.GetBlueprint<BlueprintAbility>("0ab1552e2ebdacf44bb7b20f5393366d");
         private static readonly BlueprintAbility BlizzardBlastBase = Resources.GetBlueprint<BlueprintAbility>("16617b8c20688e4438a803effeeee8a6");
         private static readonly BlueprintAbility BlueFlameBlastBase = Resources.GetBlueprint<BlueprintAbility>("d29186edb20be6449b23660b39435398");
@@ -73,8 +76,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         private static readonly BlueprintAbility SteamBlastBase = Resources.GetBlueprint<BlueprintAbility>("3baf01649a92ae640927b0f633db7c11");
         private static readonly BlueprintAbility ThunderstormBlastBase = Resources.GetBlueprint<BlueprintAbility>("b813ceb82d97eed4486ddd86d3f7771b");
         private static readonly BlueprintAbility WaterBlastBase = Resources.GetBlueprint<BlueprintAbility>("d663a8d40be1e57478f34d6477a67270");
-        private static readonly BlueprintBuff KineticBladeEnableBuff = Resources.GetBlueprint<BlueprintBuff>("426a9c079ee7ac34aa8e0054f2218074");
-        private static readonly BlueprintBuff ElementalBastionBuff = Resources.GetBlueprint<BlueprintBuff>("99953956704788444964899b5b8e96ab");
+
+        // Gather Power Buffs
+        private static readonly BlueprintBuff GatherPowerAirBuff = Resources.GetBlueprint<BlueprintBuff>("633f147eb1567274e9ed4d4150d79d78");
+        private static readonly BlueprintBuff GatherPowerEarthBuff = Resources.GetBlueprint<BlueprintBuff>("28a39fc406a974748bd70ce3908efe61");
+        private static readonly BlueprintBuff GatherPowerFireBuff = Resources.GetBlueprint<BlueprintBuff>("3bcf793f91cbd104280efe590d6e4d0c");
+        private static readonly BlueprintBuff GatherPowerWaterBuff = Resources.GetBlueprint<BlueprintBuff>("8a59a1b6f3db18e4d831623718706a03");
+        private static readonly BlueprintBuff GatherPowerAirBuffEmpowered = Resources.GetBlueprint<BlueprintBuff>("0ddc64a1dc3bbf84c8d6aa33cf2b8607");
+        private static readonly BlueprintBuff GatherPowerEarthBuffEmpowered = Resources.GetBlueprint<BlueprintBuff>("82e8e3115e95d064685acc3c75053174");
+        private static readonly BlueprintBuff GatherPowerFireBuffEmpowered = Resources.GetBlueprint<BlueprintBuff>("63b8e8e8a453d874aa379428a089fc1f");
+        private static readonly BlueprintBuff GatherPowerWaterBuffEmpowered = Resources.GetBlueprint<BlueprintBuff>("68c1e339205d6c14e902aeb4c7ee2d2c");
 
         // Kinetic Power Progression
         private static readonly BlueprintFeature SuperCharge = Resources.GetBlueprint<BlueprintFeature>("5a13756fb4be25f46951bc3f16448276");
@@ -99,6 +110,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 
         // Kinetic Blasts
         private static readonly BlueprintAbility AirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("31f668b12011e344aa542aa07ab6c8d9");
+        private static readonly BlueprintAbility CycloneAirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("9fbc4fe045472984aa4a2d15d88bdaf9");
+        private static readonly BlueprintAbility ExtendRangeAirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("cae4cb39eb87a5d47b8ff35fd948dc4f");
+        private static readonly BlueprintAbility SpindleAirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("a28e54e4e5fafd1449dd9e926be85160");
+
+
+        private static readonly BlueprintAbility EarthBlastAbility = Resources.GetBlueprint<BlueprintAbility>("b28c336c10eb51c4a8ded0258d5742e1");
+        private static readonly BlueprintAbility FireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("7b4f0c9a06db79345b55c39b2d5fb510");
+        private static readonly BlueprintAbility WaterBlastAbility = Resources.GetBlueprint<BlueprintAbility>("e3f41966c2d662a4e9582a0497621c46");
 
         // Projectiles
         private static readonly BlueprintProjectile WindProjectile00 = Resources.GetBlueprint<BlueprintProjectile>("e093b08cd4cafe946962b339faf2310a");
@@ -106,10 +125,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         // Weapon
         private static readonly BlueprintItemWeapon KineticBlastPhysicalWeapon = Resources.GetBlueprint<BlueprintItemWeapon>("65951e1195848844b8ab8f46d942f6e8");
 
-        // Buffs
+        // DLC3 Ricochet
         private static readonly BlueprintBuff DLC3_KineticRicochetBuff = Resources.GetBlueprint<BlueprintBuff>("5f7d567ae4054cc291e42fc43ef5a046");
-
-        // Properties
         private static readonly BlueprintUnitProperty DLC3_KineticRicochetProperty = Resources.GetBlueprint<BlueprintUnitProperty>("4a18040254d040f78c298f10649eab71");
 
         public static void Add()
@@ -339,9 +356,316 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
+            var IsekaiAirBlastCyclone = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiAirBlastCyclone", bp => {
+                bp.m_DisplayName = CycloneAirBlastAbility.m_DisplayName;
+                bp.m_Description = CycloneAirBlastAbility.m_Description;
+                bp.m_Icon = CycloneAirBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.SavingThrowType = SavingThrowType.Reflex;
+                    c.Actions = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
+                        c.m_Type = ContextActionDealDamage.Type.Damage;
+                        c.DamageType = new DamageTypeDescription()
+                        {
+                            Type = DamageType.Physical,
+                            Common = new DamageTypeDescription.CommomData(),
+                            Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
+                        };
+                        c.Duration = new ContextDurationValue()
+                        {
+                            DiceType = DiceType.Zero,
+                            DiceCountValue = 0,
+                            BonusValue = 0,
+                            m_IsExtendable = true,
+                        };
+                        c.Value = new ContextDiceValue()
+                        {
+                            DiceType = DiceType.D6,
+                            DiceCountValue = new ContextValue()
+                            {
+                                ValueType = ContextValueType.Rank,
+                                ValueRank = AbilityRankType.DamageDice
+                            },
+                            BonusValue = new ContextValue()
+                            {
+                                ValueType = ContextValueType.Shared,
+                                ValueRank = AbilityRankType.DamageBonus
+                            }
+                        };
+                        c.Half = true;
+                        c.IsAoE = true;
+                        c.HalfIfSaved = true;
+                        c.UseWeaponDamageModifiers = true;
+                    });
+                });
+                bp.AddComponent<AbilityTargetsAround>(c => {
+                    c.m_Radius = new Feet(20);
+                    c.m_Condition = ActionFlow.EmptyCondition();
+                    c.m_SpreadSpeed = new Feet(0);
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageDice;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
+                    c.m_Stat = StatType.Constitution;
+                });
+                bp.AddComponent<ContextCalculateSharedValue>(c => {
+                    c.ValueType = AbilitySharedValue.Damage;
+                    c.Value = new ContextDiceValue()
+                    {
+                        DiceType = DiceType.One,
+                        DiceCountValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageDice
+                        },
+                        BonusValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageBonus
+                        }
+                    };
+                    c.Modifier = 1.0;
+                });
+                bp.AddComponent<ContextCalculateAbilityParams>(c => {
+                    c.StatType = StatType.Dexterity;
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 3;
+                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
+                        new AbilityKineticist.DamageInfo()
+                        {
+                            Value = new ContextDiceValue()
+                            {
+                                DiceType = DiceType.D6,
+                                DiceCountValue = new ContextValue()
+                                {
+                                    ValueType = ContextValueType.Rank,
+                                    ValueRank = AbilityRankType.DamageDice
+                                },
+                                BonusValue = new ContextValue()
+                                {
+                                    ValueType = ContextValueType.Shared,
+                                    ValueRank = AbilityRankType.DamageBonus
+                                }
+                            },
+                            Type = new DamageTypeDescription()
+                            {
+                                Type = DamageType.Physical,
+                                Common = new DamageTypeDescription.CommomData(),
+                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
+                            },
+                            Half = true
+                        }
+                    };
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "2483780330931b64f97cbb6bb7cbd352" };
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "a0b5b95a9a139944c965c593a0a77ff7" };
+                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "4daa50efa21f9564fb3c5cd35d022cbf" };
+                    c.Time = AbilitySpawnFxTime.OnStart;
+                });
+                bp.Type = AbilityType.Special;
+                bp.Range = AbilityRange.Personal;
+                bp.CanTargetSelf = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
+                bp.AvailableMetamagic = CycloneAirBlastAbility.AvailableMetamagic;
+                bp.ActionType = UnitCommand.CommandType.Standard;
+                bp.LocalizedDuration = new LocalizedString();
+                bp.LocalizedSavingThrow = new LocalizedString();
+            });
+            var IsekaiAirBlastExtendRange = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiAirBlastExtendRange", bp => {
+                bp.m_DisplayName = ExtendRangeAirBlastAbility.m_DisplayName;
+                bp.m_Description = ExtendRangeAirBlastAbility.m_Description;
+                bp.m_Icon = ExtendRangeAirBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.Actions = ActionFlow.DoSingle<Conditional>(c => {
+                        c.ConditionsChecker = ActionFlow.IfSingle<IsEqual>(c => {
+                            c.FirstValue = new DeliverEffectLayer();
+                            c.SecondValue = new IntConstant();
+                        });
+                        c.IfTrue = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
+                            c.m_Type = ContextActionDealDamage.Type.Damage;
+                            c.DamageType = new DamageTypeDescription()
+                            {
+                                Type = DamageType.Physical,
+                                Common = new DamageTypeDescription.CommomData(),
+                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
+                            };
+                            c.Duration = new ContextDurationValue()
+                            {
+                                DiceType = DiceType.Zero,
+                                DiceCountValue = 0,
+                                BonusValue = 0,
+                                m_IsExtendable = true,
+                            };
+                            c.Value = new ContextDiceValue()
+                            {
+                                DiceType = DiceType.D6,
+                                DiceCountValue = new ContextValue()
+                                {
+                                    ValueType = ContextValueType.Rank,
+                                    ValueRank = AbilityRankType.DamageDice
+                                },
+                                BonusValue = new ContextValue()
+                                {
+                                    ValueType = ContextValueType.Shared
+                                }
+                            };
+                            c.UseWeaponDamageModifiers = true;
+                        });
+                        c.IfFalse = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
+                            c.m_Type = ContextActionDealDamage.Type.Damage;
+                            c.DamageType = new DamageTypeDescription()
+                            {
+                                Type = DamageType.Physical,
+                                Common = new DamageTypeDescription.CommomData(),
+                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
+                            };
+                            c.Duration = new ContextDurationValue()
+                            {
+                                DiceType = DiceType.Zero,
+                                DiceCountValue = 0,
+                                BonusValue = 0,
+                                m_IsExtendable = true,
+                            };
+                            c.Value = new ContextDiceValue()
+                            {
+                                DiceType = DiceType.D6,
+                                DiceCountValue = new ContextValue()
+                                {
+                                    ValueType = ContextValueType.Rank,
+                                    ValueRank = AbilityRankType.DamageDice
+                                },
+                                BonusValue = new ContextValue()
+                                {
+                                    ValueType = ContextValueType.Shared
+                                }
+                            };
+                            c.Half = true;
+                            c.UseWeaponDamageModifiers = true;
+                        });
+                    });
+                });
+                bp.AddComponent<AbilityDeliverProjectile>(c => {
+                    c.m_Projectiles = new BlueprintProjectileReference[] { WindProjectile00.ToReference<BlueprintProjectileReference>() };
+                    c.m_Length = new Feet(0);
+                    c.m_LineWidth = new Feet(5);
+                    c.NeedAttackRoll = true;
+                    c.m_Weapon = KineticBlastPhysicalWeapon.ToReference<BlueprintItemWeaponReference>();
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageDice;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
+                    c.m_Stat = StatType.Constitution;
+                });
+                bp.AddComponent<ContextCalculateSharedValue>(c => {
+                    c.ValueType = AbilitySharedValue.Damage;
+                    c.Value = new ContextDiceValue()
+                    {
+                        DiceType = DiceType.One,
+                        DiceCountValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageDice
+                        },
+                        BonusValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageBonus
+                        }
+                    };
+                    c.Modifier = 1.0;
+                });
+                bp.AddComponent<ContextCalculateAbilityParams>(c => {
+                    c.StatType = StatType.Constitution;
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 1;
+                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
+                        new AbilityKineticist.DamageInfo()
+                        {
+                            Value = new ContextDiceValue()
+                            {
+                                DiceType = DiceType.D6,
+                                DiceCountValue = new ContextValue()
+                                {
+                                    ValueType = ContextValueType.Rank,
+                                    ValueRank = AbilityRankType.DamageDice
+                                },
+                                BonusValue = new ContextValue()
+                                {
+                                    ValueType = ContextValueType.Shared
+                                }
+                            },
+                            Type = new DamageTypeDescription()
+                            {
+                                Type = DamageType.Physical,
+                                Common = new DamageTypeDescription.CommomData(),
+                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
+                            }
+                        }
+                    };
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "a0b5b95a9a139944c965c593a0a77ff7" };
+                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "4daa50efa21f9564fb3c5cd35d022cbf" };
+                    c.Time = AbilitySpawnFxTime.OnStart;
+                });
+                bp.AddComponent<AbilityDeliverRicochet>(c => {
+                    c.m_Layer = 1;
+                    c.m_BeforeCondition = ActionFlow.IfSingle<ContextConditionHasBuff>(c => {
+                        c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
+                    });
+                    c.m_Projectile = WindProjectile00.ToReference<BlueprintProjectileReference>();
+                    c.TargetsCount = new ContextValue()
+                    {
+                        ValueType = ContextValueType.CasterCustomProperty,
+                        m_CustomProperty = DLC3_KineticRicochetProperty.ToReference<BlueprintUnitPropertyReference>()
+                    };
+                    c.Radius = new Feet(10);
+                    c.m_TargetCondition = ActionFlow.EmptyCondition();
+                });
+                bp.Type = AbilityType.Special;
+                bp.Range = AbilityRange.Long;
+                bp.CanTargetEnemies = true;
+                bp.ShouldTurnToTarget = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
+                bp.m_TargetMapObjects = true;
+                bp.AvailableMetamagic = ExtendRangeAirBlastAbility.AvailableMetamagic;
+                bp.ActionType = UnitCommand.CommandType.Standard;
+                bp.LocalizedDuration = new LocalizedString();
+                bp.LocalizedSavingThrow = new LocalizedString();
+            });
             var IsekaiAirBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiAirBlastFeature", bp => {
-                bp.m_DisplayName = AirBlastAbility.m_DisplayName;
-                bp.m_Description = AirBlastAbility.m_Description;
+                bp.SetName("Overpowered Ability — Air Avatar");
+                bp.SetDescription($"You gain the ability to use the Air Kinetic blast.\n{AirBlastAbility.m_Description}");
                 bp.m_Icon = AirBlastAbility.m_Icon;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -351,8 +675,41 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             });
             IsekaiAirBlastBase.AddComponent<AbilityVariants>(c => {
                 c.m_Variants = new BlueprintAbilityReference[] {
-                    IsekaiAirBlastAbility.ToReference<BlueprintAbilityReference>()
+                    IsekaiAirBlastAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiAirBlastCyclone.ToReference<BlueprintAbilityReference>(),
+                    IsekaiAirBlastExtendRange.ToReference<BlueprintAbilityReference>(),
                 };
+            });
+
+            var IsekaiEarthBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiEarthBlastFeature", bp => {
+                bp.m_DisplayName = EarthBlastAbility.m_DisplayName;
+                bp.m_Description = EarthBlastAbility.m_Description;
+                bp.m_Icon = EarthBlastAbility.m_Icon;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] { IsekaiAirBlastBase.ToReference<BlueprintUnitFactReference>() }; // TODO: change to earth
+                });
+            });
+            var IsekaiFireBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiFireBlastFeature", bp => {
+                bp.m_DisplayName = FireBlastAbility.m_DisplayName;
+                bp.m_Description = FireBlastAbility.m_Description;
+                bp.m_Icon = FireBlastAbility.m_Icon;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] { IsekaiAirBlastBase.ToReference<BlueprintUnitFactReference>() }; // TODO: change to Fire
+                });
+            });
+            var IsekaiWaterBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiWaterBlastFeature", bp => {
+                bp.m_DisplayName = WaterBlastAbility.m_DisplayName;
+                bp.m_Description = WaterBlastAbility.m_Description;
+                bp.m_Icon = WaterBlastAbility.m_Icon;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] { IsekaiAirBlastBase.ToReference<BlueprintUnitFactReference>() }; // TODO: change to Water
+                });
             });
 
             var KineticBlastProficiency = Helpers.CreateBlueprint<BlueprintFeature>("KineticBlastProficiency", bp => {
@@ -412,24 +769,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.m_GatherPowerBuff1 = GatherPowerBuffI.ToReference<BlueprintBuffReference>();
                     c.m_GatherPowerBuff2 = GatherPowerBuffII.ToReference<BlueprintBuffReference>();
                     c.m_GatherPowerBuff3 = GatherPowerBuffIII.ToReference<BlueprintBuffReference>();
-                    c.m_Blasts = new BlueprintAbilityReference[17] {
-                        AirBlastBase.ToReference<BlueprintAbilityReference>(),
-                        BlizzardBlastBase.ToReference<BlueprintAbilityReference>(),
-                        BlueFlameBlastBase.ToReference<BlueprintAbilityReference>(),
-                        ChargedWaterBlastBase.ToReference<BlueprintAbilityReference>(),
-                        ColdBlastBase.ToReference<BlueprintAbilityReference>(),
-                        EarthBlastBase.ToReference<BlueprintAbilityReference>(),
-                        ElectricBlastBase.ToReference<BlueprintAbilityReference>(),
-                        FireBlastBase.ToReference<BlueprintAbilityReference>(),
-                        IceBlastBase.ToReference<BlueprintAbilityReference>(),
-                        MagmaBlastBase.ToReference<BlueprintAbilityReference>(),
-                        MetalBlastBase.ToReference<BlueprintAbilityReference>(),
-                        MudBlastBase.ToReference<BlueprintAbilityReference>(),
-                        PlasmaBlastBase.ToReference<BlueprintAbilityReference>(),
-                        SandstormBlastBase.ToReference<BlueprintAbilityReference>(),
-                        SteamBlastBase.ToReference<BlueprintAbilityReference>(),
-                        ThunderstormBlastBase.ToReference<BlueprintAbilityReference>(),
-                        WaterBlastBase.ToReference<BlueprintAbilityReference>(),
+                    c.m_Blasts = new BlueprintAbilityReference[] {
+                        IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>(),
                     };
                     c.m_BladeActivatedBuff = KineticBladeEnableBuff.ToReference<BlueprintBuffReference>();
                     c.m_CanGatherPowerWithShieldBuff = ElementalBastionBuff.ToReference<BlueprintBuffReference>();
@@ -480,280 +821,18 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_AllFeatures = new BlueprintFeatureReference[] { IsekaiAirBlastFeature.ToReference<BlueprintFeatureReference>() };
             });
 
+            PatchGatherPowerBuffs(IsekaiAirBlastFeature);
+
             OverpoweredAbilitySelection.AddToSelection(KineticPowerSelection);
         }
-        private static void PatchProgressions()
+        private static void PatchGatherPowerBuffs(BlueprintFeature airBlastFeature)
         {
-            var progressions = new BlueprintProgression[]
+            BlueprintBuff[] buffs = new BlueprintBuff[] { GatherPowerBuffI, GatherPowerBuffII, GatherPowerBuffIII }; // TODO: patch other elements
+            foreach(BlueprintBuff buff in buffs)
             {
-                Resources.GetBlueprint<BlueprintProgression>("2bd0d44953a536f489082534c48f8e31"), // ElementalFocusAir
-                Resources.GetBlueprint<BlueprintProgression>("c6816ad80a3df9c4ea7d3b012b06bacd"), // ElementalFocusEarth
-                Resources.GetBlueprint<BlueprintProgression>("3d8d3d6678b901444a07984294a1bc24"), // ElementalFocusFire
-                Resources.GetBlueprint<BlueprintProgression>("7ab8947ce2e19c44a9edcf5fd1466686"), // ElementalFocusWater
-                Resources.GetBlueprint<BlueprintProgression>("659c39542b728c04b83e969c834782a9"), // SecondaryElementAir
-                Resources.GetBlueprint<BlueprintProgression>("956b65effbf37e5419c13100ab4385a3"), // SecondaryElementEarth
-                Resources.GetBlueprint<BlueprintProgression>("caa7edca64af1914d9e14785beb6a143"), // SecondaryElementFire
-                Resources.GetBlueprint<BlueprintProgression>("faa5f1233600d864fa998bc0afe351ab"), // SecondaryElementWater
-                Resources.GetBlueprint<BlueprintProgression>("651570c873e22b84f893f146ce2de502"), // ThirdElementAir
-                Resources.GetBlueprint<BlueprintProgression>("c43d9c2d23e56fb428a4eb60da9ba1cb"), // ThirdElementEarth
-                Resources.GetBlueprint<BlueprintProgression>("56e2fc3abed8f2247a621ac37e75f303"), // ThirdElementFire
-                Resources.GetBlueprint<BlueprintProgression>("86eff374d040404438ad97fedd7218bc"), // ThirdElementWater
-                Resources.GetBlueprint<BlueprintProgression>("6f1d86ae43adf1049834457ce5264003"), // AirBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("ba7767cb03f7f3949ad08bd3ff8a646f"), // ElecticBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("747a1f33ed0a17442b3273adc7797661"), // BlizzardBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("535a9c4dbe912924396ae50cc7fba8c4"), // BloodBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("cdf2a117e8a2ccc4ebabd2fcee1e4d09"), // BlueFlameBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("e717ae6647573bf4195ea168693c7be0"), // ChargedWaterBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("d6375ba9b52eca04a805a54765310976"), // IceBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("cb19d1cbf6daf7a46bf38c05af1c2fb0"), // MagmaBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("ccd26825e04f8044c881cfcef49f1872"), // MetalBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("648d3c01bcab7614595facd302e88184"), // MudBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("953fe61325983f244adbd7384903393d"), // PlasmaBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("f05a7bde1b2bf9e4e927b3b1aeca8bfb"), // SandstormBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("985fa6f168ea663488956713bc44a1e8"), // SteamBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("33217c1678c30bd4ea2748decaced223"), // ThunderstormBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("d945ac76fc6a06e44b890252824db30a"), // EarthBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("fbed3ca8c0d89124ebb3299ccf68c439"), // FireBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("dbb1159b0e8137c4ea20434a854ae6a8"), // ColdBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("e4027e0fec48e8048a172c6627d4eba9"), // WaterBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("30a5b8cf728bd4a4d8d90fc4953e322e"), // KineticBlastProgression
-                Resources.GetBlueprint<BlueprintProgression>("86beb0391653faf43aec60d5ec05b538"), // ElementalOverflowProgression
-                Resources.GetBlueprint<BlueprintProgression>("908286aeefa6be54e8c39e144cb87fdd"), // InfusionProgression
-                Resources.GetBlueprint<BlueprintProgression>("1f86ce843fbd2d548a8d88ea1b652452"), // InfusionSpecializationProgression
-            };
-
-            foreach (BlueprintProgression progression in progressions)
-            {
-                progression.m_Classes = progression.m_Classes.AddToArray(
-                    new BlueprintProgression.ClassWithLevel
-                    {
-                        m_Class = IsekaiProtagonistClass.GetReference(),
-                        AdditionalLevel = 0
-                    });
-            }
-        }
-        private static void PatchContextRankConfigs()
-        {
-            var blueprintsToPatch = new BlueprintUnitFact[] { 
-                Resources.GetBlueprint<BlueprintBuff>("b803fcd9da7b1564fb52978f08372767"),    // EnvelopingWindsBuff
-                Resources.GetBlueprint<BlueprintFeature>("a942347023fedb2419f8bdbb4450e528"), // FleshOfStoneEffectFeature
-                Resources.GetBlueprint<BlueprintFeature>("642bb6097c37b3b4b8be1f46d2d9296e"), // SearingFleshEffectFeature
-                Resources.GetBlueprint<BlueprintFeature>("1ff803cb49f63ea4185490fae2c43ca7"), // ShroudOfWaterArmorEffectFeature
-                Resources.GetBlueprint<BlueprintFeature>("4d8feca11d6e29a499ae761b90eacdba"), // ShroudOfWaterShieldEffectFeature
-                Resources.GetBlueprint<BlueprintFeature>("2496916d8465dbb4b9ddeafdf28c67d8"), // ElementalOverflowBonusFeature
-                Resources.GetBlueprint<BlueprintBuff>("61201f3a439781a4db776747043f4bee"),    // ElementalOverflowEffectFeatureBuff
-                Resources.GetBlueprint<BlueprintAbility>("80e7e30cdf96be0418a615ebb38ea4b9"), // Celerity
-                Resources.GetBlueprint<BlueprintBuff>("23c0f0417981608479131d25d4349f7d"),    // FlameShieldBuff
-                Resources.GetBlueprint<BlueprintAbility>("27f0127528bd96f44897987f339ae282"), // FoxFireAbility
-                Resources.GetBlueprint<BlueprintAbility>("db611ffeefb8f1e4f88e7d5393fc651d"), // HealingBurstAbility
-                Resources.GetBlueprint<BlueprintAbility>("eff667a3a43a77d45a193bb7c94b3a6c"), // KineticHealerAbility
-                Resources.GetBlueprint<BlueprintAbility>("0e370822d9e0ff54f897e7fdf24cffb8"), // KineticRevificationAbility
-                Resources.GetBlueprint<BlueprintBuff>("50d6b5b795c1e59418d3ad720a0e4004"),    // SkilledKineticistAirBuff
-                Resources.GetBlueprint<BlueprintBuff>("56b70109d78b0444cb3ad04be3b1ee9e"),    // SkilledKineticistBuff
-                Resources.GetBlueprint<BlueprintBuff>("a6a7bba1c2daae8419747c6ac2c2df91"),    // SkilledKineticistEarthBuff
-                Resources.GetBlueprint<BlueprintBuff>("984a3194cb267d04da689cb16f952d53"),    // SkilledKineticistFireBuff
-                Resources.GetBlueprint<BlueprintBuff>("ca26882a3c263e741a9fd60e7b9f3b19"),    // SkilledKineticistWaterBuff
-                Resources.GetBlueprint<BlueprintAbility>("3c030a62a0efa1c419ecf315a9d694ef"), // SlickAbility
-                Resources.GetBlueprint<BlueprintAbility>("566e989d7c1d1d14f8371e35f7c5d9b8"), // SlickShortAbility
-            };
-            foreach(BlueprintUnitFact blueprint in blueprintsToPatch)
-            {
-                foreach (ContextRankConfig config in blueprint.GetComponents<ContextRankConfig>())
-                {
-                    config.m_Class = config.m_Class.AddToArray(IsekaiProtagonistClass.GetReference());
-                }
-            }
-        }
-        private static void PatchResources()
-        {
-            var resources = new BlueprintAbilityResource[] {
-                Resources.GetBlueprint<BlueprintAbilityResource>("f3ed2974316feb344afacc0d7ada3ace"), // EnvelopingWindsResource
-                Resources.GetBlueprint<BlueprintAbilityResource>("7d3a708bc1dc6e345b70a5f66ab80bc3"), // FleshOfStoneResource
-                Resources.GetBlueprint<BlueprintAbilityResource>("4d3297d1e4505654c899c00f3eb39373"), // ShroudOfWaterArmorResource
-                Resources.GetBlueprint<BlueprintAbilityResource>("1f4eeef738e694c44aad070a0b3d64a2"), // ShroudOfWaterResource
-                Resources.GetBlueprint<BlueprintAbilityResource>("53c3fa21e16afe642a3b6f2ba43068fd"), // ShroudOfWaterShieldResource
-            };
-            foreach (BlueprintAbilityResource resource in resources)
-            {
-                resource.m_MaxAmount.m_Class = resource.m_MaxAmount.m_Class.AddToArray(IsekaiProtagonistClass.GetReference());
-                resource.m_MaxAmount.m_ClassDiv = resource.m_MaxAmount.m_ClassDiv.AddToArray(IsekaiProtagonistClass.GetReference());
-            }
-        }
-        private static void PatchContextCalculateAbilityParamsBasedOnClass()
-        {
-            var abilities = new BlueprintAbility[] {
-                Resources.GetBlueprint<BlueprintAbility>("31f668b12011e344aa542aa07ab6c8d9"), // AirBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("89cc522f2e1444b40ba1757320c58530"), // AirBlastKineticBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("9fbc4fe045472984aa4a2d15d88bdaf9"), // CycloneAirBladtAbility
-                Resources.GetBlueprint<BlueprintAbility>("a28e54e4e5fafd1449dd9e926be85160"), // SpindleAirBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("51ede1faa3cdb3b47a46f7579ca02b0a"), // TorrentAirBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("d0390bd9ff12cd242a40c384445546cd"), // WallAirBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("a41b8912878a4a4488084c2efc84f572"), // ChainElectricBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("24f26ac07d21a0e4492899085d1302f6"), // ElectricBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("ca608f545b07ec045954aee5ff94640a"), // ElectricBlastBladeAbility
-                Resources.GetBlueprint<BlueprintAbility>("b333573557f496746b754d0af246c0fe"), // SpindleElectricBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("a87fd82362ff7d247b998e68eecc087b"), // TorrentElectricBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("139558a1389f7034e88dca5bfa6d4d3b"), // WallElectricBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("27f582dcef8206142b01e27ad521e6a4"), // BlizzardBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("027ce0b3842170748a63ea04cb02cab7"), // BlizzardBlastBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("cca552f27c6ea4f458858fb857212df7"), // CycloneBlizzardBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("e4624a8398c3bdc44bbcbf2fb20fae47"), // SpindleBlizzardBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("d02fba9ae78f12642b4111a4bbbdc023"), // TorrentBlizzardBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("a34c55992021031438ca3f1a0406a9ef"), // WallBlizzardBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("ab6e3f470fba2d349b7b7ef0990b5476"), // BloodBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("0a386b1c2b4ae9b4f81ddf4557155810"), // BloodBlastBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("ec3741322559fc449ad1ace45d1ec58a"), // SpindleBloodBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("48ae2d5a6105bdb4abb9c23a3809f1c1"), // SprayBloodBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("e5b1f4d8995f3f0489a4fed250a178a0"), // TorrentBloodBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("97e1009a2e708eb4cb8b79bab253d32a"), // WallBloodBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("21ce8eb90232d27489dae1ae895cc3d7"), // WrackBloodBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("322911b79eabdb64f8b079c7a2d95e68"), // BlueFlameBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("a975a40b710833a468476564fa673cee"), // BlueFlameBlastBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("2ca478c57073c9f469beef873b001503"), // DetonationBlueFlameBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("0f70d9349ef23bf4089387edac18317c"), // EruptionBlueFlameBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("e3b3c7747e14f54458d27163f19761ae"), // FanOfFlamesBlueFlameBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("3442485bd9cdfeb4fb7faf1984dec5bb"), // SpindleBlueFlameBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("cc514f4604da850409f1af291e848e3a"), // TorrentBlueFlameBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("40681ea748d98f54ba7f5dc704507f39"), // ChargedWaterBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("ff24a4ac444afeb4bab5699828aa4e77"), // ChargedWaterBlastBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("680fe1162cff5294a8375f6eb32652ce"), // SpindleChargedWaterBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("53b701d71c0cde64e887f3b81a094682"), // SprayChargedWaterBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("3bbc16ca68378af4f88d33dbd364a9d9"), // TorrentChargedWaterBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("d7f06e36bff449d468ce8a1621b494a3"), // WallChargedWaterBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("519e36decde7c964d87c2ffe4d3d8459"), // IceBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("8c8dd4e7c07e468498a6f5ed2c01063f"), // IceBlastBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("415ce928decc2ac4fa551be49de86ceb"), // FragmentationIceBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("49246be3e43efc845a5c7ba5d6d5a353"), // SpindleIceBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("bbe6903c268f1104692c6d62d3e4858e"), // WallIceBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("a0f05637428cbca4bab8bc9122b9e3b9"), // MagmaBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("c49d2ddf72adf85478d6b3e09f52d32e"), // MagmaBlastBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("7cc353f52000d4742a2710fa38de7357"), // EruptionMagmaBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("300bcc4bac44b4a489c919590256b625"), // SpindleMagmaBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("2ae4a1c73e8c6ca4d8b20d0e6eb730bd"), // TorrentMagmaBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("665cfd3718c4f284d80538d85a2791c9"), // MetalBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("9cef404da5745314b88f49c1ee9fbab1"), // MetalBlastBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("44804ca6ba7d495439cc9d5ad6d6cfcf"), // DeadlyEarthMetalBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("3cf0a759bc612264fb9b03aa2f90b24b"), // FragmentationMetalBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("ff829a11544db914d89761c676397ef8"), // SpindleMetalBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("6551795d81a0e744ebc5785c1264b788"), // WallMetalBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("3236a9e26e23b364e8951ee9e92554e8"), // MudBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("f82cfcf11b94bef49bf1a8f57aad5c13"), // MudBlastBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("0be97d0e752060f468bbf62ce032b9f5"), // DeadlyEarthMudBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("bcce0961438aa524ebf0d6992c5bede1"), // SpindleMudBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("32a018b283bc9c3428ec66b745bd0b27"), // TorrentMudBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("c25f56632bd43e240b4349fef841efa2"), // WallMudBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("a5631955254ae5c4d9cc2d16870448a2"), // PlasmaBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("fc22c06d63a95154291272577daa0b4d"), // PlasmaBlastBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("1e2cff4d83b74ca468d4cea21665db2e"), // SpindlePlasmaBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("459dfd4225ac2fe48bdcb401b0f1dcc0"), // TorrentPlasmaBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("7b8a4a256d4f3dc4d99192bbaabcb307"), // SandstormBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("a41bfd708a7677f46aede02715f3100d"), // SandstormBlastBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("251af7913c0a0f442a38bc85ed5737a8"), // CloudSandstormBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("2d1f3ad47ce421745b80495b9ed8ddc9"), // CycloneSandstormBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("ecb202fa5e1d0c84095b6604a62884cb"), // SpindleSandstormBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("82db79a0b4e91dc4ea2938192e6fc7af"), // TorrentSandstormBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("9652dec009183db4d8c29c6a196200e8"), // WallSandstormBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("08eb2ade31670b843879d8841b32d629"), // SteamBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("77dc27ae2f48ffe4a8ab17154145f1d8"), // SteamBlastBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("f42bf8d4379d1b641b6163aa317ec80e"), // EruptionSteamBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("6d91306bce5524c4090c417efe7c538f"), // SpindleSteamBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("4d2e60cfd9902724d999758551020288"), // TorrentSteamBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("fc432e7a63f5a3545a93118af13bcb89"), // ThunderstormBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("833e3c01a1492d74588430249e6431af"), // ThunderstormBlastBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("3e5996148b4ff634ea7033e112710402"), // CycloneThunderstormBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("ad985f8975b9986409eae00ea87225ca"), // SpindleThunderstormBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("c073af2846b8e054fb28e6f72bc02749"), // TorrentThunderstormBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("11cb007605def4546a596bd582f746fc"), // WallThunderstormBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("d859e796f6177cf449679c677076c577"), // FragmentationEarthBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("44d37b2230390b24e8060fe821068984"), // SpindleEarthBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("f493e7b18b2a22c438df7ced760dd5b0"), // WallEarthBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("d651db4ffb7441548a06b11de5f163a1"), // DetontationFireBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("5b69fce8b7890de4b8b9ab973158fed8"), // EruptionFireBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("a240a6d61e1aee040bf7d132bfe1dc07"), // FanOfFlamesFireBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("6f299bc4320299c49a291f43a667496d"), // SpindleFireBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("5e4c7cb990de4034bbee9fb99be2e15d"), // TorrentFireBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("f6d32ecd20ebacb4e964e2ece1c70826"), // ColdBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("cb20c297b1db1cd4ea9430578c90246d"), // ColdBlastBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("920e4edc2df510444b016dd18038f2b7"), // SpindleColdBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("c8dda5accb6354b40aa3618484e91029"), // WallColdBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("e3f41966c2d662a4e9582a0497621c46"), // WaterBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("92724a6d6a6225d4895b41e35e973599"), // WaterBlastBladeDamage
-                Resources.GetBlueprint<BlueprintAbility>("7021bbe4dca437440a41da4552dce28e"), // SpindleWaterBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("963da934d652bdc41900ed68f63ca1fa"), // SprayWaterBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("93cc42235edc6824fa7d54b83ed4e1fe"), // TorrentWaterBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("1ab8c76ac4983174dbffa35e2a87e582"), // WallWaterBlastAbility
-                Resources.GetBlueprint<BlueprintAbility>("3c030a62a0efa1c419ecf315a9d694ef"), // SlickAbility
-                Resources.GetBlueprint<BlueprintAbility>("566e989d7c1d1d14f8371e35f7c5d9b8"), // SlickShortAbility
-                Resources.GetBlueprint<BlueprintAbility>("d8d451ed3c919a4438cde74cd145b981"), // TidalWaveAbility
-            };
-            foreach (BlueprintAbility ability in abilities)
-            {
-                ability.AddComponent<ContextCalculateAbilityParamsBasedOnClass>(c => {
-                    c.StatType = StatType.Dexterity;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                });
-            }
-            var infusions = new BlueprintBuff[] {
-                Resources.GetBlueprint<BlueprintBuff>("492a8156ecede6345a8e82475eed85ac"), // BleedingInfusionBuff
-                Resources.GetBlueprint<BlueprintBuff>("918b2524af5c3f647b5daa4f4e985411"), // BowlingInfusionBuff
-                Resources.GetBlueprint<BlueprintBuff>("74f5184d9bf809c419d040a1639cbe1b"), // BurningInfusionBuff
-                Resources.GetBlueprint<BlueprintBuff>("49fc69c05ff7c5d46b61745d361a72fb"), // ChillingInfusionBuff
-                Resources.GetBlueprint<BlueprintBuff>("ee8d9f5631c53684d8d627d715eb635c"), // DazzlingInfusionBuff
-                Resources.GetBlueprint<BlueprintBuff>("738120aad01eedb4f891eca5b784646a"), // EntanglingInfusionBuff
-                Resources.GetBlueprint<BlueprintBuff>("5d4db592f0fde214991ed27752cfce16"), // EntanglingInfusionSecondEffectBuff
-                Resources.GetBlueprint<BlueprintBuff>("50cf40b1cb3115546a3e9b44d7687384"), // FlashInfusionBuff
-                Resources.GetBlueprint<BlueprintBuff>("e671f173fcb75bf4aa78a4078d075792"), // FoxfireInfusionBuff
-                Resources.GetBlueprint<BlueprintBuff>("f69a66c0feaa4374b8ca2732ee91a373"), // GrapplingInfusionBuff
-                Resources.GetBlueprint<BlueprintBuff>("6d1b4436e500a4c4182dd5bc1ba6b208"), // GutWrenchingInfusionBuff
-                Resources.GetBlueprint<BlueprintBuff>("f795bede8baefaf4d9d7f404ede960ba"), // PushingInfusionBuff
-                Resources.GetBlueprint<BlueprintBuff>("67fc7492f198c8d4aace14d28e0ad438"), // SynapticInfusionBuff
-                Resources.GetBlueprint<BlueprintBuff>("cebd08ab72f1baa4eaacdd836207873a"), // UnravelingInfusionBuff
-                Resources.GetBlueprint<BlueprintBuff>("e50e653cff511cd49a55b979346699f1"), // VampiricInfusionBuff
-            };
-            foreach (BlueprintBuff infusion in infusions)
-            {
-                infusion.AddComponent<ContextCalculateAbilityParamsBasedOnClass>(c => {
-                    c.UseKineticistMainStat = true;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                });
-            }
-            var areas = new BlueprintAbilityAreaEffect[] {
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("2a90aa7f771677b4e9624fa77697fdc6"), // WallAirBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("740b3ba212b5bb448becf202a97cdbf4"), // WallElectricBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("6ea87a0ff5df41c459d641326f9973d5"), // CloudBlizzardBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("d12f759590ac61b40870a0725b92a985"), // WallBlizzardBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("b35085bcd37e8e14eb7cb6e36d57f99e"), // WallBloodBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("f3b3f32b7f9f35b4cb4114d633b6de6d"), // WallBlueFlameBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("a4d33389f2b7b824889169d227cab729"), // WallBlueFlameBlastAreaPure
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("724d174829a1c1949a4a7ba99cfb06a0"), // WallChargedWaterBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("3b65f77ec33ab764592803685fe6891e"), // WallIceBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("c26aa67475bdb64449b0e0be6a9ea823"), // DeadlyEarthMagmaBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("f92cdd3b43a744f4f8abeacb913c92fb"), // WallMagmaBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("38a2979db34ad0f45a449e5eb174729f"), // DeadlyEarthMetalBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("267f19ba174b21e4d9baf30afd589068"), // DeadlyEarthMetalBlastAreaRare
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("c6b4fc6e73c25de4f83378c959144dc8"), // WallMetalBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("9a9895cbb91a15d48a0368ee8d0f650e"), // WallMetalBlastAreaRare
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("0af604484b5fcbb41b328750797e3948"), // DeadlyEarthMudBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("2cad16fcffefe3240b2d6dc3d33ff580"), // WallMudBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("182de1c07ecb56d448cd6d3237ae4b81"), // WallPlasmaBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("48aa66d1a15515e40b07bc1f5fb80f64"), // CloudSandstormBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("2eef9ca9e79968547a01d06d3828e17f"), // WallSandstormBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("35a62ad81dd5ae3478956c61d6cd2d2e"), // CloudSteamBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("6a64cc20d5820dc4cb3907b36ce6ac13"), // WallSteamBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("3659ce23ae102ca47a7bf3a30dd98609"), // CloudThunderstormBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("757b40456bbe27a46bbf18a57d64f31b"), // WallThunderstormBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("4b19dd893a4b80a49905903bcd56b9e2"), // DeadlyEarthEarthBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("af830491079fea141ad5f46e2dcf93cf"), // WallEarthBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("edb2896d49015434bbbe401ee27338c3"), // WallFireBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("2414e5c126976604584ebcee90395eee"), // WallColdBlastArea
-                Resources.GetBlueprint<BlueprintAbilityAreaEffect>("bb4ddd5e7d64a4a49ba71fe8275d1552"), // WallWaterBlastArea
-            };
-            foreach (BlueprintAbilityAreaEffect area in areas)
-            {
-                area.AddComponent<ContextCalculateAbilityParamsBasedOnClass>(c => {
-                    c.UseKineticistMainStat = true;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                });
+                var airConditional = (Conditional)buff.GetComponent<AddFactContextActions>().Activated.Actions[0];
+                var airCondition = new ContextConditionHasFact() { m_Fact = airBlastFeature.ToReference<BlueprintUnitFactReference>() };
+                airConditional.ConditionsChecker.Conditions = airConditional.ConditionsChecker.Conditions.AddToArray(airCondition);
             }
         }
     }

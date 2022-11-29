@@ -231,7 +231,11 @@
     "KineticPowerSelection": "f9eebf4a-d2f0-4c85-bb92-f38bde458a0f",
     "IsekaiAirBlastBase": "92a95914-e848-425a-ae90-8285b82c0b69",
     "IsekaiAirBlastAbility": "9c7a42f2-f692-406c-9e67-b6328ef5ae0c",
+    "IsekaiAirBlastCyclone": "a7125cb0-52f3-4190-893e-26f5e975d26d",
     "IsekaiAirBlastFeature": "82dbd5d7-8d9f-4925-841a-82a575486aa1",
+    "IsekaiEarthBlastFeature": "df1a94fa-fb85-4912-8d98-bd53052b5159",
+    "IsekaiFireBlastFeature": "36421eb1-8f16-4182-a009-f1f58b3e16c4",
+    "IsekaiWaterBlastFeature": "56c00659-979f-4568-a856-5357c667da66",
 
     // God Emperor Features
     "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",
