@@ -225,9 +225,13 @@
     "SummonDemonLordDeskari": "2df13679-7f57-4c8a-b82e-438738e60100",
     "SummonCalamityAbility": "e379c45c-2eef-4229-bcc2-7b7f95bab93e",
     "SummonCalamityFeature": "0cbb549e-a311-4c52-b76e-033f7f1b5d20",
+    "KineticBlastProficiency": "22c92618-54f2-4f15-be22-5a911522445c",
     "KineticPowerBurnPerRoundResource": "01f231ad-3b6f-43d6-a2b8-12aa7dd8e4dc",
     "KineticPowerBurn": "5d556d9c-b9ab-4354-8832-c12eb1e632fa",
     "KineticPowerSelection": "f9eebf4a-d2f0-4c85-bb92-f38bde458a0f",
+    "IsekaiAirBlastBase": "92a95914-e848-425a-ae90-8285b82c0b69",
+    "IsekaiAirBlastAbility": "9c7a42f2-f692-406c-9e67-b6328ef5ae0c",
+    "IsekaiAirBlastFeature": "82dbd5d7-8d9f-4925-841a-82a575486aa1",
 
     // God Emperor Features
     "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",
