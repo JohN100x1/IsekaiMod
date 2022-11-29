@@ -5,6 +5,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Items;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -54,8 +55,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Quicken;
                 bp.m_TargetMapObjects = false;
-                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "");
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
+                bp.LocalizedDuration = new LocalizedString();
+                bp.LocalizedSavingThrow = new LocalizedString();
             });
             var DupeGoldFeature = Helpers.CreateBlueprint<BlueprintFeature>("DupeGoldFeature", bp => {
                 bp.SetName("Overpowered Ability — Dupe Gold");

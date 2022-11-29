@@ -15,6 +15,7 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using System.Collections.Generic;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.Localization;
 
 namespace IsekaiMod.Content.Heritages.IsekaiAngel
 {
@@ -102,8 +103,8 @@ namespace IsekaiMod.Content.Heritages.IsekaiAngel
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Maximize | Metamagic.Empower | Metamagic.CompletelyNormal;
                 bp.m_TargetMapObjects = false;
-                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "");
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
+                bp.LocalizedDuration = new LocalizedString();
+                bp.LocalizedSavingThrow = new LocalizedString();
             });
         }
     }

@@ -4,6 +4,7 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.ElementsSystem;
+using Kingmaker.Localization;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -139,7 +140,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.AvailableMetamagic = Metamagic.Reach;
                 bp.m_TargetMapObjects = false;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "24 hours");
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
+                bp.LocalizedSavingThrow = new LocalizedString();
             });
             var SuperBuffFeature = Helpers.CreateBlueprint<BlueprintFeature>("SuperBuffFeature", bp => {
                 bp.SetName("Overpowered Ability — Super Buff");

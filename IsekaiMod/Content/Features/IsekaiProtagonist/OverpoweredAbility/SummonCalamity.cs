@@ -5,6 +5,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.Localization;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -109,7 +110,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_TargetMapObjects = false;
                 bp.m_IsFullRoundAction = true;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
+                bp.LocalizedSavingThrow = new LocalizedString();
             });
             var SummonBaphomet = Helpers.CreateBlueprint<BlueprintAbility>("SummonBaphomet", bp => {
                 bp.SetName("Overpowered Ability — Summon Calamity (Baphomet)");
@@ -188,7 +189,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_TargetMapObjects = false;
                 bp.m_IsFullRoundAction = true;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
+                bp.LocalizedSavingThrow = new LocalizedString();
             });
             var SummonDemonLordDeskari = Helpers.CreateBlueprint<BlueprintAbility>("SummonDemonLordDeskari", bp => {
                 bp.SetName("Overpowered Ability — Summon Calamity (Deskari)");
@@ -267,7 +268,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_TargetMapObjects = false;
                 bp.m_IsFullRoundAction = true;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
+                bp.LocalizedSavingThrow = new LocalizedString();
             });
             var SummonCalamityAbility = Helpers.CreateBlueprint<BlueprintAbility>("SummonCalamityAbility", bp => {
                 bp.SetName("Overpowered Ability — Summon Calamity");
@@ -302,7 +303,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_TargetMapObjects = false;
                 bp.m_IsFullRoundAction = true;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
+                bp.LocalizedSavingThrow = new LocalizedString();
             });
             var SummonCalamityFeature = Helpers.CreateBlueprint<BlueprintFeature>("SummonCalamityFeature", bp => {
                 bp.SetName("Overpowered Ability — Summon Calamity");

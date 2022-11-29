@@ -6,6 +6,7 @@ using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
@@ -195,7 +196,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 bp.AvailableMetamagic = Metamagic.Heighten | Metamagic.Reach;
                 bp.m_TargetMapObjects = false;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "Until the target of the smite is dead");
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
+                bp.LocalizedSavingThrow = new LocalizedString();
             });
             var TrueSmiteFeature = Helpers.CreateBlueprint<BlueprintFeature>("TrueSmiteFeature", bp => {
                 bp.SetName("True Smite");

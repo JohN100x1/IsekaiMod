@@ -7,6 +7,7 @@ using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.Localization;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
@@ -92,7 +93,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 bp.m_TargetMapObjects = false;
                 bp.m_IsFullRoundAction = true;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
+                bp.LocalizedSavingThrow = new LocalizedString();
             });
             var DeathsnatcherCreateUndeadFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherCreateUndeadFeature", bp => {
                 bp.SetName("Create Undead");

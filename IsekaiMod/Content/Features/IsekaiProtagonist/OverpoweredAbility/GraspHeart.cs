@@ -4,6 +4,7 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
@@ -100,8 +101,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Reach | Metamagic.Quicken;
                 bp.m_TargetMapObjects = false;
-                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "");
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
+                bp.LocalizedDuration = new LocalizedString();
+                bp.LocalizedSavingThrow = new LocalizedString();
             });
             var GraspHeartFeature = Helpers.CreateBlueprint<BlueprintFeature>("GraspHeartFeature", bp => {
                 bp.SetName("Overpowered Ability — Grasp Heart");

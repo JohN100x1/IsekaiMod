@@ -14,6 +14,7 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System.Collections.Generic;
 using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
+using Kingmaker.Localization;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
@@ -61,8 +62,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.ActionType = UnitCommand.CommandType.Free;
                 bp.AvailableMetamagic = Metamagic.Quicken;
                 bp.m_TargetMapObjects = false;
-                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "");
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
+                bp.LocalizedDuration = new LocalizedString();
+                bp.LocalizedSavingThrow = new LocalizedString();
             });
             var UnlimitedPowerFeature = Helpers.CreateBlueprint<BlueprintFeature>("UnlimitedPowerFeature", bp => {
                 bp.SetName("Overpowered Ability — Unlimited Power");
