@@ -23,21 +23,18 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Conditions;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
-using UnityEngine;
 
 namespace IsekaiMod.Content.Features.Deathsnatcher
 {
     class DeathsnatcherCommandUndead
     {
-        private static readonly Sprite Icon_CommandUndead = Resources.GetBlueprint<BlueprintAbility>("0b101dd5618591e478f825f0eef155b4").m_Icon;
-
+        private static readonly BlueprintAbility CommandUndeadAbility = Resources.GetBlueprint<BlueprintAbility>("0b101dd5618591e478f825f0eef155b4");
         private static readonly BlueprintBuff CommandUndeadIntelligentBuff = Resources.GetBlueprint<BlueprintBuff>("07f4f8d2000a91c459c23c7fff8c74fb");
         private static readonly BlueprintBuff CommandUndeadBuff = Resources.GetBlueprint<BlueprintBuff>("7cd727ddd4cc4be498720e45f0c1f6f4");
         private static readonly BlueprintFeature UndeadType = Resources.GetBlueprint<BlueprintFeature>("734a29b693e9ec346ba2951b27987e33");
 
         public static void Add()
         {
-
             var DeathsnatcherCommandUndeadResource = Helpers.CreateBlueprint<BlueprintAbilityResource>("DeathsnatcherCommandUndeadResource", bp => {
                 bp.m_MaxAmount = new BlueprintAbilityResource.Amount
                 {
@@ -56,11 +53,9 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 };
             });
             var DeathsnatcherCommandUndeadAbility = Helpers.CreateBlueprint<BlueprintAbility>("DeathsnatcherCommandUndeadAbility", bp => {
-                bp.SetName("Command Undead");
-                bp.SetDescription("You can make any undead creature fight on your side as if it was your ally. It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its "
-                    + "ability. However {g|Encyclopedia:Intelligence}intelligent{/g} creatures will try to throw off the domination, making a {g|Encyclopedia:Saving_Throw}Will save{/g} "
-                    + "each {g|Encyclopedia:Combat_Round}round{/g}.");
-                bp.m_Icon = Icon_CommandUndead;
+                bp.m_DisplayName = CommandUndeadAbility.m_DisplayName;
+                bp.m_Description = CommandUndeadAbility.m_Description;
+                bp.m_Icon = CommandUndeadAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Will;
                     c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
@@ -173,7 +168,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 bp.EffectOnAlly = AbilityEffectOnUnit.None;
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Point;
                 bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.AvailableMetamagic = Metamagic.Heighten | Metamagic.Reach | Metamagic.Quicken | Metamagic.Extend | Metamagic.Persistent | Metamagic.CompletelyNormal;
+                bp.AvailableMetamagic = CommandUndeadAbility.AvailableMetamagic;
                 bp.m_TargetMapObjects = false;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
                 bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "Will negates (save each round)");
@@ -181,7 +176,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
             var DeathsnatcherCommandUndeadFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherCommandUndeadFeature", bp => {
                 bp.SetName("Command Undead");
                 bp.SetDescription("At 1st level, the Deathsnatcher gains Command Undead as a spell-like ability 10 times per day.");
-                bp.m_Icon = Icon_CommandUndead;
+                bp.m_Icon = CommandUndeadAbility.m_Icon;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddAbilityResources>(c => {
                     c.m_Resource = DeathsnatcherCommandUndeadResource.ToReference<BlueprintAbilityResourceReference>();

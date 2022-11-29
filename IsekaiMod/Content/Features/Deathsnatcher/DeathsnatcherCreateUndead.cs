@@ -8,21 +8,18 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.Localization;
-using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
-using UnityEngine;
 
 namespace IsekaiMod.Content.Features.Deathsnatcher
 {
     class DeathsnatcherCreateUndead
     {
-        private static readonly Sprite Icon_CreateUndead = Resources.GetBlueprint<BlueprintAbility>("76a11b460be25e44ca85904d6806e5a3").m_Icon;
-
+        private static readonly BlueprintAbility CreateUndeadAbility = Resources.GetBlueprint<BlueprintAbility>("76a11b460be25e44ca85904d6806e5a3");
         private static readonly BlueprintAbility CreateUndeadLivingArmor = Resources.GetBlueprint<BlueprintAbility>("43a1ea314c59c4a4eb2c193a1e17b805");
         private static readonly BlueprintAbility CreateUndeadGraveKnight = Resources.GetBlueprint<BlueprintAbility>("9b75cb3bd3108a24c81329a3734f2248");
 
@@ -46,10 +43,9 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 };
             });
             var DeathsnatcherCreateUndeadAbility = Helpers.CreateBlueprint<BlueprintAbility>("DeathsnatcherCreateUndeadAbility", bp => {
-                bp.SetName("Create Undead");
-                bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons a graveknight or a guardian armor. It appears where you designate and acts according to its "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. It {g|Encyclopedia:Attack}attacks{/g} your opponents to the best of its ability.");
-                bp.m_Icon = Icon_CreateUndead;
+                bp.m_DisplayName = CreateUndeadAbility.m_DisplayName;
+                bp.m_Description = CreateUndeadAbility.m_Description;
+                bp.m_Icon = CreateUndeadAbility.m_Icon;
                 bp.AddComponent<AbilityVariants>(c => {
                     c.m_Variants = new BlueprintAbilityReference[]
                     {
@@ -89,7 +85,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 bp.EffectOnAlly = AbilityEffectOnUnit.None;
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Point;
                 bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.AvailableMetamagic = Metamagic.Reach | Metamagic.Quicken | Metamagic.Extend | Metamagic.CompletelyNormal;
+                bp.AvailableMetamagic = CreateUndeadAbility.AvailableMetamagic;
                 bp.m_TargetMapObjects = false;
                 bp.m_IsFullRoundAction = true;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
@@ -98,7 +94,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
             var DeathsnatcherCreateUndeadFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherCreateUndeadFeature", bp => {
                 bp.SetName("Create Undead");
                 bp.SetDescription("At 13th level, the Deathsnatcher gains Create Undead as a spell-like ability once per day.");
-                bp.m_Icon = Icon_CreateUndead;
+                bp.m_Icon = CreateUndeadAbility.m_Icon;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddAbilityResources>(c => {
                     c.m_Resource = DeathsnatcherCreateUndeadResource.ToReference<BlueprintAbilityResourceReference>();
