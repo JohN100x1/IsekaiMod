@@ -113,6 +113,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         private static readonly BlueprintAbility CycloneAirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("9fbc4fe045472984aa4a2d15d88bdaf9");
         private static readonly BlueprintAbility ExtendRangeAirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("cae4cb39eb87a5d47b8ff35fd948dc4f");
         private static readonly BlueprintAbility SpindleAirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("a28e54e4e5fafd1449dd9e926be85160");
+        private static readonly BlueprintAbility TorrentAirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("51ede1faa3cdb3b47a46f7579ca02b0a");
+        private static readonly BlueprintAbility WallAirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("d0390bd9ff12cd242a40c384445546cd");
 
 
         private static readonly BlueprintAbility EarthBlastAbility = Resources.GetBlueprint<BlueprintAbility>("b28c336c10eb51c4a8ded0258d5742e1");
@@ -121,6 +123,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 
         // Projectiles
         private static readonly BlueprintProjectile WindProjectile00 = Resources.GetBlueprint<BlueprintProjectile>("e093b08cd4cafe946962b339faf2310a");
+        private static readonly BlueprintProjectile Kinetic_AirBlastLine00 = Resources.GetBlueprint<BlueprintProjectile>("03689858955c6bf409be06f35f09946a");
+
+        // Area Effects
+        private static readonly BlueprintAbilityAreaEffect WallAirBlastArea = Resources.GetBlueprint<BlueprintAbilityAreaEffect>("2a90aa7f771677b4e9624fa77697fdc6");
 
         // Weapon
         private static readonly BlueprintItemWeapon KineticBlastPhysicalWeapon = Resources.GetBlueprint<BlueprintItemWeapon>("65951e1195848844b8ab8f46d942f6e8");
@@ -596,7 +602,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Modifier = 1.0;
                 });
                 bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Constitution;
+                    c.StatType = StatType.Dexterity;
                 });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
@@ -798,6 +804,238 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
+            var IsekaiAirBlastTorrent = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiAirBlastTorrent", bp => {
+                bp.m_DisplayName = TorrentAirBlastAbility.m_DisplayName;
+                bp.m_Description = TorrentAirBlastAbility.m_Description;
+                bp.m_Icon = TorrentAirBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.SavingThrowType = SavingThrowType.Reflex;
+                    c.Actions = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
+                        c.m_Type = ContextActionDealDamage.Type.Damage;
+                        c.DamageType = new DamageTypeDescription()
+                        {
+                            Type = DamageType.Physical,
+                            Common = new DamageTypeDescription.CommomData(),
+                            Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
+                        };
+                        c.Duration = new ContextDurationValue()
+                        {
+                            DiceType = DiceType.Zero,
+                            DiceCountValue = 0,
+                            BonusValue = 0,
+                            m_IsExtendable = true,
+                        };
+                        c.Value = new ContextDiceValue()
+                        {
+                            DiceType = DiceType.D6,
+                            DiceCountValue = new ContextValue()
+                            {
+                                ValueType = ContextValueType.Rank,
+                                ValueRank = AbilityRankType.DamageDice
+                            },
+                            BonusValue = new ContextValue()
+                            {
+                                ValueType = ContextValueType.Shared
+                            }
+                        };
+                        c.Half = true;
+                        c.IsAoE = true;
+                        c.HalfIfSaved = true;
+                    });
+                });
+                bp.AddComponent<AbilityDeliverProjectile>(c => {
+                    c.m_Projectiles = new BlueprintProjectileReference[] { Kinetic_AirBlastLine00.ToReference<BlueprintProjectileReference>() };
+                    c.Type = AbilityProjectileType.Line;
+                    c.m_Length = new Feet(30);
+                    c.m_LineWidth = new Feet(5);
+                    c.NeedAttackRoll = true;
+                    c.m_Weapon = KineticBlastPhysicalWeapon.ToReference<BlueprintItemWeaponReference>();
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageDice;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
+                    c.m_Stat = StatType.Constitution;
+                });
+                bp.AddComponent<ContextCalculateSharedValue>(c => {
+                    c.ValueType = AbilitySharedValue.Damage;
+                    c.Value = new ContextDiceValue()
+                    {
+                        DiceType = DiceType.One,
+                        DiceCountValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageDice
+                        },
+                        BonusValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageBonus
+                        }
+                    };
+                    c.Modifier = 1.0;
+                });
+                bp.AddComponent<ContextCalculateAbilityParams>(c => {
+                    c.StatType = StatType.Dexterity;
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 2;
+                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
+                        new AbilityKineticist.DamageInfo()
+                        {
+                            Value = new ContextDiceValue()
+                            {
+                                DiceType = DiceType.D6,
+                                DiceCountValue = new ContextValue()
+                                {
+                                    ValueType = ContextValueType.Rank,
+                                    ValueRank = AbilityRankType.DamageDice
+                                },
+                                BonusValue = new ContextValue()
+                                {
+                                    ValueType = ContextValueType.Shared
+                                }
+                            },
+                            Type = new DamageTypeDescription()
+                            {
+                                Type = DamageType.Physical,
+                                Common = new DamageTypeDescription.CommomData(),
+                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
+                            },
+                            Half = true
+                        }
+                    };
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "a0b5b95a9a139944c965c593a0a77ff7" };
+                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "4daa50efa21f9564fb3c5cd35d022cbf" };
+                    c.Time = AbilitySpawnFxTime.OnStart;
+                });
+                bp.Type = AbilityType.Special;
+                bp.Range = AbilityRange.Close;
+                bp.CanTargetPoint = true;
+                bp.CanTargetEnemies = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
+                bp.AvailableMetamagic = TorrentAirBlastAbility.AvailableMetamagic;
+                bp.ActionType = UnitCommand.CommandType.Standard;
+                bp.LocalizedDuration = new LocalizedString();
+                bp.LocalizedSavingThrow = new LocalizedString();
+            });
+            var IsekaiAirBlastWall = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiAirBlastWall", bp => {
+                bp.m_DisplayName = WallAirBlastAbility.m_DisplayName;
+                bp.m_Description = WallAirBlastAbility.m_Description;
+                bp.m_Icon = WallAirBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.SavingThrowType = SavingThrowType.Reflex;
+                    c.Actions = ActionFlow.DoSingle<ContextActionSpawnAreaEffect>(c => {
+                        c.m_AreaEffect = WallAirBlastArea.ToReference<BlueprintAbilityAreaEffectReference>();
+                        c.DurationValue = new ContextDurationValue()
+                        {
+                            Rate = DurationRate.Rounds,
+                            DiceCountValue = 0,
+                            BonusValue = new ContextValue()
+                            {
+                                ValueType = ContextValueType.Rank,
+                                ValueRank = AbilityRankType.DamageBonus
+                            }
+                        };
+                    });
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageDice;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
+                    c.m_Stat = StatType.Constitution;
+                });
+                bp.AddComponent<ContextCalculateSharedValue>(c => {
+                    c.ValueType = AbilitySharedValue.Damage;
+                    c.Value = new ContextDiceValue()
+                    {
+                        DiceType = DiceType.One,
+                        DiceCountValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageDice
+                        },
+                        BonusValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageBonus
+                        }
+                    };
+                    c.Modifier = 1.0;
+                });
+                bp.AddComponent<ContextCalculateAbilityParams>(c => {
+                    c.StatType = StatType.Dexterity;
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 3;
+                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
+                        new AbilityKineticist.DamageInfo()
+                        {
+                            Value = new ContextDiceValue()
+                            {
+                                DiceType = DiceType.D6,
+                                DiceCountValue = new ContextValue()
+                                {
+                                    ValueType = ContextValueType.Rank,
+                                    ValueRank = AbilityRankType.DamageDice
+                                },
+                                BonusValue = new ContextValue()
+                                {
+                                    ValueType = ContextValueType.Shared,
+                                    ValueRank = AbilityRankType.DamageBonus
+                                }
+                            },
+                            Type = new DamageTypeDescription()
+                            {
+                                Type = DamageType.Physical,
+                                Common = new DamageTypeDescription.CommomData(),
+                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
+                            },
+                            Half = true
+                        }
+                    };
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "a0b5b95a9a139944c965c593a0a77ff7" };
+                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "4daa50efa21f9564fb3c5cd35d022cbf" };
+                    c.Time = AbilitySpawnFxTime.OnStart;
+                });
+                bp.Type = AbilityType.Special;
+                bp.Range = AbilityRange.Close;
+                bp.CanTargetPoint = true;
+                bp.CanTargetEnemies = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
+                bp.AvailableMetamagic = WallAirBlastAbility.AvailableMetamagic;
+                bp.ActionType = UnitCommand.CommandType.Standard;
+                bp.LocalizedDuration = new LocalizedString();
+                bp.LocalizedSavingThrow = new LocalizedString();
+            });
             var IsekaiAirBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiAirBlastFeature", bp => {
                 bp.SetName("Overpowered Ability — Air Avatar");
                 bp.SetDescription($"You gain the ability to use the Air Kinetic blast.\n{AirBlastAbility.m_Description}");
@@ -814,6 +1052,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     IsekaiAirBlastCyclone.ToReference<BlueprintAbilityReference>(),
                     IsekaiAirBlastExtendRange.ToReference<BlueprintAbilityReference>(),
                     IsekaiAirBlastSpindle.ToReference<BlueprintAbilityReference>(),
+                    IsekaiAirBlastTorrent.ToReference<BlueprintAbilityReference>(),
+                    IsekaiAirBlastWall.ToReference<BlueprintAbilityReference>(),
                 };
             });
 
@@ -906,7 +1146,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.m_GatherPowerBuff2 = GatherPowerBuffII.ToReference<BlueprintBuffReference>();
                     c.m_GatherPowerBuff3 = GatherPowerBuffIII.ToReference<BlueprintBuffReference>();
                     c.m_Blasts = new BlueprintAbilityReference[] {
-                        IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>(),
+                        IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>(), // TODO: add other elements later
                     };
                     c.m_BladeActivatedBuff = KineticBladeEnableBuff.ToReference<BlueprintBuffReference>();
                     c.m_CanGatherPowerWithShieldBuff = ElementalBastionBuff.ToReference<BlueprintBuffReference>();
