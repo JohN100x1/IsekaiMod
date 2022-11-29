@@ -21,6 +21,7 @@ using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Class.Kineticist;
@@ -104,6 +105,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         private static readonly BlueprintProgression KineticBlastProgression = Resources.GetBlueprint<BlueprintProgression>("30a5b8cf728bd4a4d8d90fc4953e322e");
         private static readonly BlueprintProgression ElementalOverflowProgression = Resources.GetBlueprint<BlueprintProgression>("86beb0391653faf43aec60d5ec05b538");
         private static readonly BlueprintProgression InfusionSpecializationProgression = Resources.GetBlueprint<BlueprintProgression>("1f86ce843fbd2d548a8d88ea1b652452");
+
+
+        private static readonly BlueprintFeature WallInfusion = Resources.GetBlueprint<BlueprintFeature>("c684335918896ce4ab13e96cec929796");
 
         // Kineticist Class
         private static readonly BlueprintCharacterClass KineticistClass = Resources.GetBlueprint<BlueprintCharacterClass>("42a455d9ec1ad924d889272429eb8391");
@@ -722,6 +726,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     };
                     c.Radius = new Feet(5);
                     c.m_Condition = ActionFlow.EmptyCondition();
+                    c.m_TargetType = TargetType.Any;
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.DamageDice;
@@ -933,23 +938,100 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
+            var IsekaiAirBlastWallArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("IsekaiAirBlastWallArea", bp => {
+                bp.AddComponent<AbilityAreaEffectRunAction>(c => {
+                    c.UnitEnter = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
+                        c.m_Type = ContextActionDealDamage.Type.Damage;
+                        c.DamageType = new DamageTypeDescription()
+                        {
+                            Type = DamageType.Physical,
+                            Common = new DamageTypeDescription.CommomData(),
+                            Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
+                        };
+                        c.Duration = new ContextDurationValue()
+                        {
+                            DiceType = DiceType.Zero,
+                            DiceCountValue = 0,
+                            BonusValue = 0,
+                            m_IsExtendable = true,
+                        };
+                        c.Value = new ContextDiceValue()
+                        {
+                            DiceType = DiceType.D6,
+                            DiceCountValue = new ContextValue()
+                            {
+                                ValueType = ContextValueType.Rank,
+                                ValueRank = AbilityRankType.DamageDice
+                            },
+                            BonusValue = new ContextValue()
+                            {
+                                ValueType = ContextValueType.Shared,
+                                ValueRank = AbilityRankType.DamageBonus
+                            }
+                        };
+                        c.Half = true;
+                    });
+                    c.UnitExit = ActionFlow.DoNothing();
+                    c.UnitMove = ActionFlow.DoNothing();
+                    c.Round = ActionFlow.DoNothing();
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageDice;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
+                    c.m_Stat = StatType.Constitution;
+                });
+                bp.AddComponent<ContextCalculateSharedValue>(c => {
+                    c.ValueType = AbilitySharedValue.Damage;
+                    c.Value = new ContextDiceValue()
+                    {
+                        DiceType = DiceType.One,
+                        DiceCountValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageDice
+                        },
+                        BonusValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageBonus
+                        }
+                    };
+                    c.Modifier = 1.0;
+                });
+                bp.AddComponent<ContextCalculateAbilityParams>(c => {
+                    c.StatType = StatType.Dexterity;
+                });
+                bp.m_Tags = AreaEffectTags.DestroyableInCutscene;
+                bp.AffectEnemies = true;
+                bp.AggroEnemies = true;
+                bp.Shape = AreaEffectShape.Wall;
+                bp.Size = new Feet(60);
+                bp.Fx = new PrefabLink() { AssetId = "4ffc8d2162a215e44a1a728752b762eb" };
+            });
             var IsekaiAirBlastWall = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiAirBlastWall", bp => {
                 bp.m_DisplayName = WallAirBlastAbility.m_DisplayName;
                 bp.m_Description = WallAirBlastAbility.m_Description;
                 bp.m_Icon = WallAirBlastAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.SavingThrowType = SavingThrowType.Reflex;
+                    c.SavingThrowType = SavingThrowType.Unknown;
                     c.Actions = ActionFlow.DoSingle<ContextActionSpawnAreaEffect>(c => {
-                        c.m_AreaEffect = WallAirBlastArea.ToReference<BlueprintAbilityAreaEffectReference>();
+                        c.m_AreaEffect = IsekaiAirBlastWallArea.ToReference<BlueprintAbilityAreaEffectReference>();
                         c.DurationValue = new ContextDurationValue()
                         {
                             Rate = DurationRate.Rounds,
+                            DiceType = DiceType.Zero,
                             DiceCountValue = 0,
                             BonusValue = new ContextValue()
                             {
                                 ValueType = ContextValueType.Rank,
                                 ValueRank = AbilityRankType.DamageBonus
-                            }
+                            },
+                            m_IsExtendable = true
                         };
                     });
                 });
@@ -1013,6 +1095,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                             Half = true
                         }
                     };
+                    c.CachedDamageSource = IsekaiAirBlastWallArea.ToReference<AnyBlueprintReference>();
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -1038,7 +1121,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             });
             var IsekaiAirBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiAirBlastFeature", bp => {
                 bp.SetName("Overpowered Ability — Air Avatar");
-                bp.SetDescription($"You gain the ability to use the Air Kinetic blast.\n{AirBlastAbility.m_Description}");
+                bp.SetDescription("You gain the ability to use the Air Kinetic blast and all its associated form infusions.");
                 bp.m_Icon = AirBlastAbility.m_Icon;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -1189,12 +1272,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                         KineticPowerBurn.ToReference<BlueprintUnitFactReference>(),
                         GatherPowerAbilitiesFeature.ToReference<BlueprintUnitFactReference>(),
                         DismissInfusionFeature.ToReference<BlueprintUnitFactReference>(),
+                        WallInfusion.ToReference<BlueprintUnitFactReference>(),
                     };
                 });
 
                 // Add features later
                 bp.m_Features = new BlueprintFeatureReference[0];
-                bp.m_AllFeatures = new BlueprintFeatureReference[] { IsekaiAirBlastFeature.ToReference<BlueprintFeatureReference>() };
+                bp.m_AllFeatures = new BlueprintFeatureReference[] { IsekaiAirBlastFeature.ToReference<BlueprintFeatureReference>() }; // TODO: add other elements
             });
 
             PatchGatherPowerBuffs(IsekaiAirBlastFeature);
