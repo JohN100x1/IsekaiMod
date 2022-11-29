@@ -23,20 +23,17 @@ namespace IsekaiMod.Content.Features
     class ExtraWings
     {
         // Wings
+        private static readonly BlueprintBuff WingsAngel = Resources.GetBlueprint<BlueprintBuff>("25699a90ed3299e438b6fd5548930809");
         private static readonly BlueprintBuff BuffWingsMutagen = Resources.GetBlueprint<BlueprintBuff>("e4979934bdb39d842b28bee614606823");
         private static readonly BlueprintBuff WingsAngelBlack = Resources.GetBlueprint<BlueprintBuff>("a19cda073f4c2b64ca1f8bf8fe285ece");
         private static readonly BlueprintBuff BuffWingsAngelGhost = Resources.GetBlueprint<BlueprintBuff>("bd6980649fd60fa4085c34aa74ac47f2");
         private static readonly BlueprintBuff BuffWingsDemon = Resources.GetBlueprint<BlueprintBuff>("3c958be25ab34dc448569331488bee27");
-
-        // Icon
-        private static readonly Sprite Icon_Wings = Resources.GetBlueprint<BlueprintBuff>("4113178a8d5bf4841b8f15b1b39e004f").m_Icon;
         public static void Add()
         {
             var BlackWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("BlackWingsAbility", bp => {
                 bp.SetName("Wings (Black)");
-                bp.SetDescription("You gain a pair of wings that grant a +3 dodge {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Armor_Class}AC{/g} "
-                    + "against {g|Encyclopedia:MeleeAttack}melee attacks{/g} and an immunity to ground based effects, such as difficult terrain.");
-                bp.m_Icon = Icon_Wings;
+                bp.m_Description = WingsAngel.m_Description;
+                bp.m_Icon = WingsAngel.m_Icon;
                 bp.AddComponent<RestrictionHasFact>(c => {
                     c.m_Feature = BuffWingsMutagen.ToReference<BlueprintUnitFactReference>();
                     c.Not = true;
@@ -50,9 +47,8 @@ namespace IsekaiMod.Content.Features
             });
             var GhostWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("GhostWingsAbility", bp => {
                 bp.SetName("Wings (Ghostly)");
-                bp.SetDescription("You gain a pair of wings that grant a +3 dodge {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Armor_Class}AC{/g} "
-                    + "against {g|Encyclopedia:MeleeAttack}melee attacks{/g} and an immunity to ground based effects, such as difficult terrain.");
-                bp.m_Icon = Icon_Wings;
+                bp.m_Description = WingsAngel.m_Description;
+                bp.m_Icon = WingsAngel.m_Icon;
                 bp.AddComponent<RestrictionHasFact>(c => {
                     c.m_Feature = BuffWingsMutagen.ToReference<BlueprintUnitFactReference>();
                     c.Not = true;
@@ -65,36 +61,26 @@ namespace IsekaiMod.Content.Features
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
 
-            var DevilWingsBuff = Helpers.CreateBlueprint<BlueprintBuff>("DevilWingsBuff", bp => {
+            var DevilWingsBuff = Helpers.CreateBuff("DevilWingsBuff", bp => {
                 bp.SetName("Wings");
-                bp.SetDescription("You gain a pair of wings that grant a +3 dodge {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Armor_Class}AC{/g} "
-                    + "against {g|Encyclopedia:MeleeAttack}melee attacks{/g} and an immunity to ground based effects, such as difficult terrain.");
+                bp.m_Description = WingsAngel.m_Description;
+                bp.m_Icon = WingsAngel.m_Icon;
                 bp.AddComponent<ACBonusAgainstAttacks>(c => {
                     c.AgainstMeleeOnly = true;
-                    c.AgainstRangedOnly = false;
-                    c.OnlySneakAttack = false;
-                    c.NotTouch = false;
-                    c.IsTouch = false;
-                    c.OnlyAttacksOfOpportunity = false;
-                    c.Value = 0;
                     c.ArmorClassBonus = 3;
                     c.Descriptor = ModifierDescriptor.Dodge;
-                    c.CheckArmorCategory = false;
                     c.NotArmorCategory = new ArmorProficiencyGroup[0];
-                    c.NoShield = false;
                 });
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.DifficultTerrain;
                 });
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.Ground;
-                    c.CheckFact = false;
                 });
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
                     c.Descriptor = SpellDescriptor.Ground;
                 });
                 bp.AddComponent<FormationACBonus>(c => {
-                    c.UnitProperty = false;
                     c.Bonus = 3;
                     c.m_IgnoreIfHasAnyFact = new BlueprintUnitFactReference[0];
                 });
@@ -103,18 +89,12 @@ namespace IsekaiMod.Content.Features
                 });
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
-                bp.Stacking = StackingType.Replace;
-                bp.Ranks = 0;
-                bp.TickEachSecond = false;
                 bp.Frequency = DurationRate.Rounds;
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
             var DevilWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("DevilWingsAbility", bp => {
                 bp.SetName("Wings (Devilish)");
-                bp.SetDescription("You gain a pair of wings that grant a +3 dodge {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Armor_Class}AC{/g} "
-                    + "against {g|Encyclopedia:MeleeAttack}melee attacks{/g} and an immunity to ground based effects, such as difficult terrain.");
-                bp.m_Icon = Icon_Wings;
+                bp.m_Description = WingsAngel.m_Description;
+                bp.m_Icon = WingsAngel.m_Icon;
                 bp.AddComponent<RestrictionHasFact>(c => {
                     c.m_Feature = BuffWingsMutagen.ToReference<BlueprintUnitFactReference>();
                     c.Not = true;
@@ -128,9 +108,8 @@ namespace IsekaiMod.Content.Features
             });
             var DemonWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("DemonWingsAbility", bp => {
                 bp.SetName("Wings (Demonic)");
-                bp.SetDescription("You gain a pair of wings that grant a +3 dodge {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Armor_Class}AC{/g} "
-                    + "against {g|Encyclopedia:MeleeAttack}melee attacks{/g} and an immunity to ground based effects, such as difficult terrain.");
-                bp.m_Icon = Icon_Wings;
+                bp.m_Description = WingsAngel.m_Description;
+                bp.m_Icon = WingsAngel.m_Icon;
                 bp.AddComponent<RestrictionHasFact>(c => {
                     c.m_Feature = BuffWingsMutagen.ToReference<BlueprintUnitFactReference>();
                     c.Not = true;
