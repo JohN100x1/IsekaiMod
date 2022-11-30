@@ -1127,7 +1127,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             });
             var IsekaiAirBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiAirBlastFeature", bp => {
                 bp.SetName("Overpowered Ability — Air Avatar");
-                bp.SetDescription("You gain the ability to use the Air Kinetic blast and all its associated form infusions.");
+                bp.SetDescription("You gain the ability to use the air blast and all its associated form infusions.");
                 bp.m_Icon = AirBlastAbility.m_Icon;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -2386,7 +2386,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             });
             var IsekaiEarthBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiEarthBlastFeature", bp => {
                 bp.SetName("Overpowered Ability — Earth Avatar");
-                bp.SetDescription("You gain the ability to use the Earth Kinetic blast and all its associated form infusions.");
+                bp.SetDescription("You gain the ability to use the earth blast and all its associated form infusions.");
                 bp.m_Icon = EarthBlastAbility.m_Icon;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
