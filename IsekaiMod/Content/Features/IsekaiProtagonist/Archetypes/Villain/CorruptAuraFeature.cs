@@ -20,7 +20,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
         public static void Add()
         {
             var Icon_Corrupt_Aura = AssetLoader.LoadInternal("Features", "ICON_CORRUPT_AURA.png");
-            var CorruptAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("CorruptAuraBuff", bp => {
+            var CorruptAuraBuff = Helpers.CreateBuff("CorruptAuraBuff", bp => {
                 bp.SetName("Corrupt Aura");
                 bp.SetDescription("This character has a +4 profane bonus to attack, damage, AC and saving throws. "
                     + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
@@ -60,8 +60,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                     c.AddAlignment = true;
                     c.Alignment = DamageAlignment.Evil;
                 });
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
             var CorruptAuraArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("CorruptAuraArea", bp => {
                 bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Ally;
@@ -73,7 +71,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(CorruptAuraBuff.ToReference<BlueprintBuffReference>()));
             });
-            var CorruptAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("CorruptAuraAreaBuff", bp => {
+            var CorruptAuraAreaBuff = Helpers.CreateBuff("CorruptAuraAreaBuff", bp => {
                 bp.SetName("Corrupt Aura");
                 bp.SetDescription("Allies within 40 feet of the Villain has a +4 profane bonus to attack, damage, AC and saving throws. "
                     + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
@@ -83,8 +81,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                 bp.AddComponent<AddAreaEffect>(c => {
                     c.m_AreaEffect = CorruptAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
             var CorruptAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("CorruptAuraAbility", bp => {
                 bp.SetName("Corrupt Aura");
