@@ -39,7 +39,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
 {
     class KineticPower
     {
@@ -105,8 +105,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         private static readonly BlueprintProgression ElementalOverflowProgression = Resources.GetBlueprint<BlueprintProgression>("86beb0391653faf43aec60d5ec05b538");
         private static readonly BlueprintProgression InfusionSpecializationProgression = Resources.GetBlueprint<BlueprintProgression>("1f86ce843fbd2d548a8d88ea1b652452");
 
-
-        private static readonly BlueprintFeature WallInfusion = Resources.GetBlueprint<BlueprintFeature>("c684335918896ce4ab13e96cec929796");
 
         // Kineticist Class
         private static readonly BlueprintCharacterClass KineticistClass = Resources.GetBlueprint<BlueprintCharacterClass>("42a455d9ec1ad924d889272429eb8391");
@@ -477,7 +475,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.AvailableMetamagic = WallAirBlastAbility.AvailableMetamagic;
             });
             var IsekaiAirBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiAirBlastFeature", bp => {
-                bp.SetName("Overpowered Ability — Air Avatar");
+                bp.SetName("Air Avatar");
                 bp.SetDescription("You gain the ability to use air blast and all its associated form infusions. "
                     + "Your air blast deals bludgeoning damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
                     + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
@@ -820,7 +818,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.AvailableMetamagic = WallEarthBlastAbility.AvailableMetamagic;
             });
             var IsekaiEarthBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiEarthBlastFeature", bp => {
-                bp.SetName("Overpowered Ability — Earth Avatar");
+                bp.SetName("Earth Avatar");
                 bp.SetDescription("You gain the ability to use earth blast and all its associated form infusions. "
                     + "Your earth blast deals physical damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
                     + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
@@ -1184,7 +1182,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.AvailableMetamagic = WallFireBlastAbility.AvailableMetamagic;
             });
             var IsekaiFireBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiFireBlastFeature", bp => {
-                bp.SetName("Overpowered Ability — Fire Avatar");
+                bp.SetName("Fire Avatar");
                 bp.SetDescription("You gain the ability to use fire blast and all its associated form infusions. "
                     + "Your fire blast deals fire damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
                     + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
@@ -1210,7 +1208,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 
 
             var IsekaiWaterBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiWaterBlastFeature", bp => {
-                bp.SetName("Overpowered Ability — Water Avatar");
+                bp.SetName("Water Avatar");
                 bp.SetDescription("You gain the ability to use water blast and all its associated form infusions.");
                 bp.m_Icon = WaterBlastAbility.m_Icon;
                 bp.Ranks = 1;
@@ -1291,7 +1289,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 });
             });
             var KineticPowerSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("KineticPowerSelection", bp => {
-                bp.SetName("Overpowered Ability — Kinetic Power");
+                bp.SetName("Kinetic Power");
                 bp.SetDescription("You gain the ability to use a kinetic blast.");
                 bp.m_Icon = Icon_InfusionSelection;
                 bp.Ranks = 1;
@@ -1308,7 +1306,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                         KineticPowerBurn.ToReference<BlueprintUnitFactReference>(),
                         GatherPowerAbilitiesFeature.ToReference<BlueprintUnitFactReference>(),
                         DismissInfusionFeature.ToReference<BlueprintUnitFactReference>(),
-                        WallInfusion.ToReference<BlueprintUnitFactReference>(),
                     };
                 });
 
@@ -1323,7 +1320,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 
             PatchGatherPowerBuffs(IsekaiAirBlastFeature, IsekaiEarthBlastFeature, IsekaiFireBlastFeature);
 
-            OverpoweredAbilitySelection.AddToSelection(KineticPowerSelection);
+            CharacterDevelopmentSelection.AddToSelection(KineticPowerSelection);
         }
         private static void PatchGatherPowerBuffs(BlueprintFeature airBlastFeature, BlueprintFeature earthBlastFeature, BlueprintFeature fireBlastFeature)
         {
