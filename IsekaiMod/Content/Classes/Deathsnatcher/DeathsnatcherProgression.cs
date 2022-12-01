@@ -34,7 +34,6 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
 
             // Deathsnatcher Level Progression
             var DeathsnatcherCompanionProgression = Helpers.CreateBlueprint<BlueprintProgression>("DeathsnatcherCompanionProgression", bp => {
-                bp.m_AllowNonContextActions = false;
                 bp.SetName("");
                 bp.SetDescription("");
                 bp.IsClassFeature = true;
@@ -56,7 +55,6 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     .ToArray();
                 bp.UIGroups = new UIGroup[0];
                 bp.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[0];
-                bp.ForAllOtherClasses = false;
                 bp.GiveFeaturesForPreviousLevels = true;
                 bp.m_FeaturesRankIncrease = new List<BlueprintFeatureReference>();
             });
@@ -65,7 +63,6 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
             var DeathsnatcherClassProgression = Helpers.CreateBlueprint<BlueprintProgression>("DeathsnatcherClassProgression", bp => {
                 bp.SetName("");
                 bp.SetDescription("This bipedal jackal has vulture wings and a rat tail ending in a scorpion’s stinger. Each of its four arms ends in a clawed hand.");
-                bp.m_AllowNonContextActions = false;
                 bp.IsClassFeature = true;
                 bp.m_FeaturesRankIncrease = new List<BlueprintFeatureReference>();
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
