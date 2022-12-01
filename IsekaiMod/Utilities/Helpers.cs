@@ -24,7 +24,6 @@ using IsekaiMod.Extensions;
 using IsekaiMod.Localization;
 using Kingmaker.DialogSystem.Blueprints;
 using Kingmaker.DialogSystem;
-using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.UnitLogic.Alignments;
 
 namespace IsekaiMod.Utilities
@@ -90,6 +89,16 @@ namespace IsekaiMod.Utilities
             var result = CreateBlueprint<BlueprintBuff>(name, bp => {
                 bp.FxOnStart = new PrefabLink();
                 bp.FxOnRemove = new PrefabLink();
+            });
+            init?.Invoke(result);
+            return result;
+        }
+
+        public static BlueprintFeature CreateFeature(string name, Action<BlueprintFeature> init = null)
+        {
+            var result = CreateBlueprint<BlueprintFeature>(name, bp => {
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
             });
             init?.Invoke(result);
             return result;
