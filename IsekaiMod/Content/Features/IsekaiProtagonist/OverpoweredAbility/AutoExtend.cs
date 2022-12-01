@@ -39,14 +39,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var AutoExtendFeature = Helpers.CreateBlueprint<BlueprintFeature>("AutoExtendFeature", bp => {
+            var AutoExtendFeature = Helpers.CreateFeature("AutoExtendFeature", bp => {
                 bp.SetName("Overpowered Ability — Auto Extend");
                 bp.SetDescription("Every time you cast a spell, it becomes extended, as though using the Extend Spell feat.");
                 bp.m_Icon = Icon_ExtendSpell;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { AutoExtendAbility.ToReference<BlueprintUnitFactReference>() };
                 });
-                bp.IsClassFeature = true;
             });
 
             OverpoweredAbilitySelection.AddToSelection(AutoExtendFeature);

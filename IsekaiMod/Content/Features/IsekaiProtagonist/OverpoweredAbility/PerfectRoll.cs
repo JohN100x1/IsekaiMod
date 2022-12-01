@@ -1,7 +1,6 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
@@ -40,14 +39,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var PerfectRollFeature = Helpers.CreateBlueprint<BlueprintFeature>("PerfectRollFeature", bp => {
+            var PerfectRollFeature = Helpers.CreateFeature("PerfectRollFeature", bp => {
                 bp.SetName("Overpowered Ability — Perfect Roll");
                 bp.SetDescription("You always {g|Encyclopedia:Dice}roll{/g} a 20 on all d20 rolls.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { PerfectRollAbility.ToReference<BlueprintUnitFactReference>() };
                 });
-                bp.IsClassFeature = true;
             });
 
             OverpoweredAbilitySelection.AddToSelection(PerfectRollFeature);

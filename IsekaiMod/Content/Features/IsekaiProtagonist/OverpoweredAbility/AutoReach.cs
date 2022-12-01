@@ -39,14 +39,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var AutoReachFeature = Helpers.CreateBlueprint<BlueprintFeature>("AutoReachFeature", bp => {
+            var AutoReachFeature = Helpers.CreateFeature("AutoReachFeature", bp => {
                 bp.SetName("Overpowered Ability — Auto Reach");
                 bp.SetDescription("Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat.");
                 bp.m_Icon = Icon_ReachSpell;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { AutoReachAbility.ToReference<BlueprintUnitFactReference>() };
                 });
-                bp.IsClassFeature = true;
             });
 
             OverpoweredAbilitySelection.AddToSelection(AutoReachFeature);

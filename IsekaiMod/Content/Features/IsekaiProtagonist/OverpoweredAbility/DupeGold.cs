@@ -1,7 +1,6 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Items;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
@@ -58,12 +57,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var DupeGoldFeature = Helpers.CreateBlueprint<BlueprintFeature>("DupeGoldFeature", bp => {
+            var DupeGoldFeature = Helpers.CreateFeature("DupeGoldFeature", bp => {
                 bp.SetName("Overpowered Ability — Dupe Gold");
                 bp.SetDescription("As a standard action, you gain 1 million gold.");
                 bp.m_Icon = Icon_Dupe_Gold;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { DupeGoldAbility.ToReference<BlueprintUnitFactReference>() };
                 });

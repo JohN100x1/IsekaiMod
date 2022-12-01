@@ -39,14 +39,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var AutoMaximizeFeature = Helpers.CreateBlueprint<BlueprintFeature>("AutoMaximizeFeature", bp => {
+            var AutoMaximizeFeature = Helpers.CreateFeature("AutoMaximizeFeature", bp => {
                 bp.SetName("Overpowered Ability — Auto Maximize");
                 bp.SetDescription("Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat.");
                 bp.m_Icon = Icon_MaximizeSpell;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { AutoMaximizeAbility.ToReference<BlueprintUnitFactReference>() };
                 });
-                bp.IsClassFeature = true;
             });
 
             OverpoweredAbilitySelection.AddToSelection(AutoMaximizeFeature);

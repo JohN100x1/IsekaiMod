@@ -48,7 +48,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                         c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
                             c.Succeed = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                                 c.m_Buff = Stunned.ToReference<BlueprintBuffReference>();
-                                c.UseDurationSeconds = false;
                                 c.DurationValue = new ContextDurationValue()
                                 {
                                     Rate = DurationRate.Rounds,
@@ -57,10 +56,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                                     BonusValue = 1,
                                     m_IsExtendable = true
                                 };
-                                c.DurationSeconds = 0;
-                                c.IsFromSpell = false;
-                                c.ToCaster = false;
-                                c.AsChild = false;
                             });
                             c.Failed = ActionFlow.DoSingle<ContextActionKill>();
                         });
@@ -90,7 +85,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Icon = Icon_DeathClutch;
                 bp.Type = AbilityType.SpellLike;
                 bp.Range = AbilityRange.Medium;
-                bp.CanTargetPoint = false;
                 bp.CanTargetEnemies = true;
                 bp.CanTargetFriends = true;
                 bp.CanTargetSelf = true;
@@ -100,16 +94,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Directional;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Reach | Metamagic.Quicken;
-                bp.m_TargetMapObjects = false;
                 bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var GraspHeartFeature = Helpers.CreateBlueprint<BlueprintFeature>("GraspHeartFeature", bp => {
+            var GraspHeartFeature = Helpers.CreateFeature("GraspHeartFeature", bp => {
                 bp.SetName("Overpowered Ability — Grasp Heart");
                 bp.SetDescription("You gain the Grasp Heart ability which can kill any creature if they fail a DC 50 fortitude saving throw, otherwise they are stunned for 1 round.");
                 bp.m_Icon = Icon_DeathClutch;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { GraspHeartAbility.ToReference<BlueprintUnitFactReference>() };
                 });

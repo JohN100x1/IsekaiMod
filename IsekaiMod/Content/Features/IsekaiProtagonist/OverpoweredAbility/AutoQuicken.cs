@@ -39,14 +39,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var AutoQuickenFeature = Helpers.CreateBlueprint<BlueprintFeature>("AutoQuickenFeature", bp => {
+            var AutoQuickenFeature = Helpers.CreateFeature("AutoQuickenFeature", bp => {
                 bp.SetName("Overpowered Ability — Auto Quicken");
                 bp.SetDescription("Every time you cast a spell, it becomes quickened, as though using the Quicken Spell feat.");
                 bp.m_Icon = Icon_QuickenSpell;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { AutoQuickenAbility.ToReference<BlueprintUnitFactReference>() };
                 });
-                bp.IsClassFeature = true;
             });
 
             OverpoweredAbilitySelection.AddToSelection(AutoQuickenFeature);

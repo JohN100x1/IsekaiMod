@@ -1,7 +1,6 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.ElementsSystem;
 using Kingmaker.Localization;
@@ -129,8 +128,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Icon = Icon_Super_Buff;
                 bp.Type = AbilityType.Supernatural;
                 bp.Range = AbilityRange.Personal;
-                bp.CanTargetPoint = false;
-                bp.CanTargetEnemies = false;
                 bp.CanTargetFriends = true;
                 bp.CanTargetSelf = true;
                 bp.EffectOnAlly = AbilityEffectOnUnit.Helpful;
@@ -138,11 +135,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Self;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Reach;
-                bp.m_TargetMapObjects = false;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "24 hours");
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var SuperBuffFeature = Helpers.CreateBlueprint<BlueprintFeature>("SuperBuffFeature", bp => {
+            var SuperBuffFeature = Helpers.CreateFeature("SuperBuffFeature", bp => {
                 bp.SetName("Overpowered Ability — Super Buff");
                 bp.SetDescription("You are able to buff you and your allies with the following effects for 24 hours: resist energy, protection from energy, protection from arrows, haste, "
                     + "mage armor, shield, shield of faith, veil of heaven, veil of positive energy, blur, bull's strength, cat's grace, bear's endurance, fox's cunning, owl's wisdom, "
@@ -155,7 +151,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { SuperBuffAbility.ToReference<BlueprintUnitFactReference>() };
                 });
-                bp.IsClassFeature = true;
             });
 
             OverpoweredAbilitySelection.AddToSelection(SuperBuffFeature);
@@ -165,7 +160,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         {
             return new ContextActionApplyBuff()
             {
-                Permanent = false,
                 m_Buff = buff.ToReference<BlueprintBuffReference>(),
                 DurationValue = new ContextDurationValue()
                 {
@@ -175,11 +169,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     BonusValue = 24,
                     m_IsExtendable = true
                 },
-                UseDurationSeconds = false,
-                DurationSeconds = 0,
-                IsFromSpell = false,
-                ToCaster = false,
-                AsChild = false,
             };
         }
     }

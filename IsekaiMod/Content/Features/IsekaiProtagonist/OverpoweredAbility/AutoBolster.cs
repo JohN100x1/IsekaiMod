@@ -39,14 +39,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var AutoBolsterFeature = Helpers.CreateBlueprint<BlueprintFeature>("AutoBolsterFeature", bp => {
+            var AutoBolsterFeature = Helpers.CreateFeature("AutoBolsterFeature", bp => {
                 bp.SetName("Overpowered Ability — Auto Bolster");
                 bp.SetDescription("Every time you cast a spell, it becomes bolstered, as though using the Bolster Spell feat.");
                 bp.m_Icon = Icon_BolsterSpell;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { AutoBolsterAbility.ToReference<BlueprintUnitFactReference>() };
                 });
-                bp.IsClassFeature = true;
             });
 
             OverpoweredAbilitySelection.AddToSelection(AutoBolsterFeature);

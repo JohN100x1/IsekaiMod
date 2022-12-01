@@ -1,7 +1,6 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities;
@@ -15,6 +14,7 @@ using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System.Collections.Generic;
 using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using Kingmaker.Localization;
+using Kingmaker.UnitLogic.Mechanics;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
@@ -30,8 +30,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Actions = Helpers.CreateActionList(
                         new ContextRestoreResource() {
                             m_IsFullRestoreAllResources = true,
-                            ContextValueRestoration = false,
-                            Value = 0
+                            Value = new ContextValue()
                         },
                         new ContextActionRestoreAllSpellSlots()
                         {
@@ -51,26 +50,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Icon = Icon_Unlimited_Power;
                 bp.Type = AbilityType.Special;
                 bp.Range = AbilityRange.Personal;
-                bp.CanTargetPoint = false;
-                bp.CanTargetEnemies = false;
-                bp.CanTargetFriends = false;
                 bp.CanTargetSelf = true;
-                bp.SpellResistance = false;
-                bp.EffectOnAlly = AbilityEffectOnUnit.None;
-                bp.EffectOnEnemy = AbilityEffectOnUnit.None;
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Self;
                 bp.ActionType = UnitCommand.CommandType.Free;
                 bp.AvailableMetamagic = Metamagic.Quicken;
-                bp.m_TargetMapObjects = false;
                 bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var UnlimitedPowerFeature = Helpers.CreateBlueprint<BlueprintFeature>("UnlimitedPowerFeature", bp => {
+            var UnlimitedPowerFeature = Helpers.CreateFeature("UnlimitedPowerFeature", bp => {
                 bp.SetName("Overpowered Ability — Unlimited Power");
                 bp.SetDescription("As a free action, you restore all abilities and spell slots.");
                 bp.m_Icon = Icon_Unlimited_Power;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { UnlimitedPowerAbility.ToReference<BlueprintUnitFactReference>() };
                 });
