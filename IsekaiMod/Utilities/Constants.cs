@@ -5,12 +5,20 @@ namespace IsekaiMod.Utilities
 {
     internal static class Constants
     {
-        internal static ContextDurationValue ZeroDuration = new()
+        public static readonly ContextDurationValue ZeroDuration = new()
         {
             Rate = DurationRate.Rounds,
             DiceType = DiceType.Zero,
             DiceCountValue = 0,
             BonusValue = 0,
+            m_IsExtendable = true,
+        };
+        public static readonly ContextDurationValue OneDay = new()
+        {
+            Rate = DurationRate.Hours,
+            DiceType = DiceType.Zero,
+            DiceCountValue = 0,
+            BonusValue = 24,
             m_IsExtendable = true,
         };
     }

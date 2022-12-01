@@ -161,14 +161,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             return new ContextActionApplyBuff()
             {
                 m_Buff = buff.ToReference<BlueprintBuffReference>(),
-                DurationValue = new ContextDurationValue()
-                {
-                    Rate = DurationRate.Hours,
-                    DiceType = DiceType.Zero,
-                    DiceCountValue = 0,
-                    BonusValue = 24,
-                    m_IsExtendable = true
-                },
+                DurationValue = Constants.OneDay,
             };
         }
     }

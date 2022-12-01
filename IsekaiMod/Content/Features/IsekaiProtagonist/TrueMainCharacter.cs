@@ -12,7 +12,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
         private static readonly Sprite Icon_PowerOfFaithTier1Feature = Resources.GetBlueprint<BlueprintFeature>("6a585dce1d94c9b4c8cf95dede6b0568").m_Icon;
         public static void Add()
         {
-            var TrueMainCharacter = Helpers.CreateBlueprint<BlueprintFeature>("TrueMainCharacter", bp => {
+            var TrueMainCharacter = Helpers.CreateFeature("TrueMainCharacter", bp => {
                 bp.SetName("True Main Character");
                 bp.SetDescription("You are the true main character of this world. Your health cannot go below 1 HP.\n"
                     + "Your attacks ignore {g|Encyclopedia:Damage_Reduction}damage reduction{/g}. "
@@ -22,7 +22,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.AddComponent<IgnoreSpellResistanceForSpells>();
                 bp.AddComponent<IgnoreDamageReductionOnAttack>();
                 bp.AddComponent<UnitHealthGuard>(c => { c.HealthPercent = 0; });
-                bp.IsClassFeature = true;
             });
         }
     }

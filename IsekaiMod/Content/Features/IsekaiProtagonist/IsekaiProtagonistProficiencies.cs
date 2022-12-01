@@ -19,13 +19,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
         private static readonly BlueprintFeature TowerShieldProficiency = Resources.GetBlueprint<BlueprintFeature>("6105f450bb2acbd458d277e71e19d835");
         public static void Add()
         {
-            var IsekaiProtagonistProficiencies = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies", bp => {
+            var IsekaiProtagonistProficiencies = Helpers.CreateFeature("IsekaiProtagonistProficiencies", bp => {
                 bp.SetName("Isekai Protagonist Proficiences");
                 bp.SetDescription("Isekai Protagonists are proficient with all simple and {g|Encyclopedia:Weapon_Proficiency}martial weapons{/g} and with all armor "
                     + "(heavy, light, and medium) and shields (including tower shields). They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor and shields "
                     + "(including tower shields) without incurring the normal {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell "
                     + "failure chance for arcane spells received from other classes.");
-                bp.m_Icon = null;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
                         LightArmorProficiency.ToReference<BlueprintUnitFactReference>(),
@@ -48,8 +47,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                         ArmorProficiencyGroup.TowerShield
                     };
                 });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
         }
     }

@@ -182,14 +182,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                     {
                         m_Buff = SecondFormBuffEffect.ToReference<BlueprintBuffReference>(),
                         Permanent = false,
-                        DurationValue = new ContextDurationValue()
-                        {
-                            Rate = DurationRate.Hours,
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = 24,
-                            m_IsExtendable = true
-                        },
+                        DurationValue = Constants.OneDay,
                         UseDurationSeconds = false,
                         DurationSeconds = 0,
                         IsFromSpell = false,

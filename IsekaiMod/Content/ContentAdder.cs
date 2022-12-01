@@ -35,7 +35,7 @@ namespace IsekaiMod.Content
 
                 // Isekai Protagonist Features
                 Features.IsekaiProtagonist.IsekaiProtagonistProficiencies.Add();
-                Features.IsekaiProtagonist.IsekaiProtagonistCantripsFeature.Add();
+                Features.IsekaiProtagonist.IsekaiProtagonistCantrips.Add();
                 Features.IsekaiProtagonist.IsekaiProtagonistBonusFeatSelection.Add();
                 Features.IsekaiProtagonist.IsekaiProtagonistTalentSelection.Add();
                 Features.IsekaiProtagonist.IsekaiPetSelection.Add();
@@ -70,6 +70,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.ExtremeSpeed.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.IsekaiChannelPositiveEnergy.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.IsekaiChannelNegativeEnergy.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.KineticPower.Add();
 
                 // OP Ability
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
@@ -87,7 +88,6 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.MindControl.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.SummonCalamity.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.InterdimensionalBag.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.KineticPower.Add();
 
                 // God Emperor Archetype
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.GodEmperorProficiencies.Add();

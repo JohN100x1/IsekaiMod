@@ -14,7 +14,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
         private static readonly BlueprintCharacterClass FighterClass = Resources.GetBlueprint<BlueprintCharacterClass>("48ac8db94d5de7645906c7d0ad3bcfbd");
         public static void Add()
         {
-            var IsekaiFighterTraining = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiFighterTraining", bp => {
+            var IsekaiFighterTraining = Helpers.CreateFeature("IsekaiFighterTraining", bp => {
                 bp.SetName("Fighter Training");
                 bp.SetDescription("At 3rd level, you count your class level as your fighter level for the purpose of qualifying for {g|Encyclopedia:Feat}feats{/g}. If you have levels in fighter, these levels stack.");
                 bp.m_Icon = Icon_SwordSaintFighterTraining;
@@ -22,10 +22,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                     c.m_FakeClass = FighterClass.ToReference<BlueprintCharacterClassReference>();
                     c.m_ActualClass = IsekaiProtagonistClass.GetReference();
                     c.Modifier = 1.0;
-                    c.Summand = 0;
                 });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
         }
     }

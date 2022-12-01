@@ -43,8 +43,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
 {
     class KineticPower
     {
-        // TODO: move to character development
-
         // Icons
         private static readonly Sprite Icon_InfusionSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("58d6f8e9eea63f6418b107ce64f315ea").m_Icon;
 
