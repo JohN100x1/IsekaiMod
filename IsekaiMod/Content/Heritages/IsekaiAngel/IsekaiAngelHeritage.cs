@@ -26,7 +26,7 @@ namespace IsekaiMod.Content.Heritages.IsekaiAngel
 
             // Angel Heritage
             var Icon_Angel = AssetLoader.LoadInternal("Heritages", "ICON_ANGEL.png");
-            var IsekaiAngelHeritage = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiAngelHeritage", bp => {
+            var IsekaiAngelHeritage = Helpers.CreateFeature("IsekaiAngelHeritage", bp => {
                 bp.SetName("Isekai Angel");
                 bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as an Angel have both extreme beauty and power. "
                     + "They serve as exemplars of good and light regardless of the myriad forms they may take.\n"
@@ -36,8 +36,6 @@ namespace IsekaiMod.Content.Heritages.IsekaiAngel
                     + "They have immunity to acid, cold, and petrification as well as fire and electricity resistance 20. "
                     + "They can also use the Angelic Bolt spell once per day.");
                 bp.m_Icon = Icon_Angel;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
 
                 // Attributes
                 bp.AddComponent<AddStatBonus>(c => {

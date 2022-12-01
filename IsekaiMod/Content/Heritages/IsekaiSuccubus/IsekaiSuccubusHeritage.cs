@@ -29,7 +29,7 @@ namespace IsekaiMod.Content.Heritages.IsekaiSuccubus
 
             // Succubus Heritage
             var Icon_Succubus = AssetLoader.LoadInternal("Heritages", "ICON_SUCCUBUS.png");
-            var IsekaiSuccubusHeritage = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiSuccubusHeritage", bp => {
+            var IsekaiSuccubusHeritage = Helpers.CreateFeature("IsekaiSuccubusHeritage", bp => {
                 bp.SetName("Isekai Succubus");
                 bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power, and often "
                     + "have a voracious appetite for sensory pleasures and carnal delights.\n"
@@ -41,8 +41,6 @@ namespace IsekaiMod.Content.Heritages.IsekaiSuccubus
                     + "They have immunity to fire, electricity, and poisons as well as acid and cold resistance 20. "
                     + "They can also use the Charm spell once per day.");
                 bp.m_Icon = Icon_Succubus;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
 
                 // Attributes
                 bp.AddComponent<AddStatBonusIfHasFact>(c => {
