@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.2.0] - 2022-12-01
 ### Added
 - Added 4 new Kinetic blast character development feats.
-- Added Nocticula and Mephistopheles to summon calamity ability.
+- Added Nocticula and Mephistopheles to `Summon Calamity` Overpowered ability.
 ### Changed
 - Buffed `Inner Power` and `Godly Vessel` to protect from ability drain.
 ### Fixed
