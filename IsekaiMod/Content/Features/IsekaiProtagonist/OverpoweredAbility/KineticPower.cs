@@ -11,6 +11,7 @@ using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.ElementsSystem;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
@@ -34,6 +35,7 @@ using Kingmaker.UnitLogic.Mechanics.Conditions;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Utility;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -125,6 +127,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         private static readonly BlueprintAbility WallEarthBlastAbility = Resources.GetBlueprint<BlueprintAbility>("f493e7b18b2a22c438df7ced760dd5b0");
 
         private static readonly BlueprintAbility FireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("7b4f0c9a06db79345b55c39b2d5fb510");
+        private static readonly BlueprintAbility DetonationFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("d651db4ffb7441548a06b11de5f163a1");
+        private static readonly BlueprintAbility EruptionFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("5b69fce8b7890de4b8b9ab973158fed8");
+        private static readonly BlueprintAbility ExtendedRangeFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("7bc1270b5bb78834192215bc03f161cc");
+        private static readonly BlueprintAbility FanOfFlamesFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("a240a6d61e1aee040bf7d132bfe1dc07");
+        private static readonly BlueprintAbility SpindleFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("6f299bc4320299c49a291f43a667496d");
+        private static readonly BlueprintAbility TorrentFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("5e4c7cb990de4034bbee9fb99be2e15d");
+        private static readonly BlueprintAbility WallFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("19309b5551a28d74288f4b6f7d8d838d");
+
+
         private static readonly BlueprintAbility WaterBlastAbility = Resources.GetBlueprint<BlueprintAbility>("e3f41966c2d662a4e9582a0497621c46");
 
         // Projectiles
@@ -132,73 +143,87 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         private static readonly BlueprintProjectile Kinetic_AirBlastLine00 = Resources.GetBlueprint<BlueprintProjectile>("03689858955c6bf409be06f35f09946a");
         private static readonly BlueprintProjectile Kinetic_EarthBlast00_Projectile = Resources.GetBlueprint<BlueprintProjectile>("c28e153e8c212c1458ec2ee4092a794f");
         private static readonly BlueprintProjectile Kinetic_EarthSphere00_Projectile = Resources.GetBlueprint<BlueprintProjectile>("3751a263d0386ef45807e0111de1a5de");
+        private static readonly BlueprintProjectile FireCommonProjectile00 = Resources.GetBlueprint<BlueprintProjectile>("30a5f408ea9d163418c86a7107fc4326");
+        private static readonly BlueprintProjectile ArrowFire00 = Resources.GetBlueprint<BlueprintProjectile>("cd6fbf24b5f625245960c4b8e6f58292");
+        private static readonly BlueprintProjectile FireLine00_Head = Resources.GetBlueprint<BlueprintProjectile>("7172842b720c3534897ebda2e0624c2d");
+        private static readonly BlueprintProjectile FireCone15Feet00 = Resources.GetBlueprint<BlueprintProjectile>("6dfc5e4c7d9ae3048984744222dbd0fa");
 
         // Buffs
         private static readonly BlueprintBuff VolcanicStormDifficultTerrainBuff = Resources.GetBlueprint<BlueprintBuff>("fe21bf21c3182f743a964de5bcd2033e");
 
-        // Area Effects
-        private static readonly BlueprintAbilityAreaEffect WallAirBlastArea = Resources.GetBlueprint<BlueprintAbilityAreaEffect>("2a90aa7f771677b4e9624fa77697fdc6");
-
         // Weapon
         private static readonly BlueprintItemWeapon KineticBlastPhysicalWeapon = Resources.GetBlueprint<BlueprintItemWeapon>("65951e1195848844b8ab8f46d942f6e8");
+        private static readonly BlueprintItemWeapon KineticBlastEnergyWeapon = Resources.GetBlueprint<BlueprintItemWeapon>("4d3265a5b9302ee4cab9c07adddb253f");
 
         // DLC3 Ricochet
         private static readonly BlueprintBuff DLC3_KineticRicochetBuff = Resources.GetBlueprint<BlueprintBuff>("5f7d567ae4054cc291e42fc43ef5a046");
         private static readonly BlueprintUnitProperty DLC3_KineticRicochetProperty = Resources.GetBlueprint<BlueprintUnitProperty>("4a18040254d040f78c298f10649eab71");
 
+        private static readonly DamageTypeDescription AirDamage = new()
+        {
+            Type = DamageType.Physical,
+            Common = new DamageTypeDescription.CommomData(),
+            Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
+        };
+        private static readonly DamageTypeDescription EarthDamage = new()
+        {
+            Type = DamageType.Physical,
+            Common = new DamageTypeDescription.CommomData(),
+            Physical = new DamageTypeDescription.PhysicalData()
+            {
+                Form = PhysicalDamageForm.Bludgeoning | PhysicalDamageForm.Piercing | PhysicalDamageForm.Slashing
+            }
+        };
+        private static readonly DamageTypeDescription FireDamage = new()
+        {
+            Type = DamageType.Energy,
+            Common = new DamageTypeDescription.CommomData(),
+            Physical = new DamageTypeDescription.PhysicalData(),
+            Energy = DamageEnergyType.Fire
+        };
+        private static readonly ContextDiceValue KineticBlastDamage = new()
+        {
+            DiceType = DiceType.D6,
+            DiceCountValue = new ContextValue()
+            {
+                ValueType = ContextValueType.Rank,
+                ValueRank = AbilityRankType.DamageDice
+            },
+            BonusValue = new ContextValue()
+            {
+                ValueType = ContextValueType.Shared,
+                ValueRank = AbilityRankType.DamageBonus
+            }
+        };
+        private static readonly ContextDurationValue KineticAreaDuration = new()
+        {
+            Rate = DurationRate.Rounds,
+            DiceType = DiceType.Zero,
+            DiceCountValue = 0,
+            BonusValue = new ContextValue()
+            {
+                ValueType = ContextValueType.Rank,
+                ValueRank = AbilityRankType.DamageBonus
+            },
+            m_IsExtendable = true
+        };
+
         public static void Add()
         {
             // Air Blast
-            var IsekaiAirBlastBase = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiAirBlastBase", bp => {
+            var IsekaiAirBlastBase = CreateKineticBlastAbility("IsekaiAirBlastBase", bp => {
                 bp.m_DisplayName = AirBlastAbility.m_DisplayName;
                 bp.m_Description = AirBlastAbility.m_Description;
                 bp.m_Icon = AirBlastAbility.m_Icon;
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Constitution;
-                });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>();
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
-                bp.Type = AbilityType.Special;
-                bp.Range = AbilityRange.Close;
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
                 bp.AvailableMetamagic = AirBlastAbility.AvailableMetamagic;
-                bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var IsekaiAirBlastAbility = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiAirBlastAbility", bp => {
+            var IsekaiAirBlastAbility = CreateAirBlastAbility("IsekaiAirBlastAbility", bp => {
                 bp.m_DisplayName = AirBlastAbility.m_DisplayName;
                 bp.m_Description = AirBlastAbility.m_Description;
                 bp.m_Icon = AirBlastAbility.m_Icon;
@@ -208,66 +233,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                             c.FirstValue = new DeliverEffectLayer();
                             c.SecondValue = new IntConstant();
                         });
-                        c.IfTrue = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                            c.m_Type = ContextActionDealDamage.Type.Damage;
-                            c.DamageType = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
-                            };
-                            c.Duration = new ContextDurationValue()
-                            {
-                                DiceType = DiceType.Zero,
-                                DiceCountValue = 0,
-                                BonusValue = 0,
-                                m_IsExtendable = true,
-                            };
-                            c.Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            };
-                            c.UseWeaponDamageModifiers = true;
+                        c.IfTrue = DealKineticBlastDamage(c => {
+                            c.DamageType = AirDamage;
                         });
-                        c.IfFalse = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                            c.m_Type = ContextActionDealDamage.Type.Damage;
-                            c.DamageType = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
-                            };
-                            c.Duration = new ContextDurationValue()
-                            {
-                                DiceType = DiceType.Zero,
-                                DiceCountValue = 0,
-                                BonusValue = 0,
-                                m_IsExtendable = true,
-                            };
-                            c.Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            };
+                        c.IfFalse = DealKineticBlastDamage(c => {
+                            c.DamageType = AirDamage;
                             c.Half = true;
-                            c.UseWeaponDamageModifiers = true;
                         });
                     });
                 });
@@ -278,73 +249,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.NeedAttackRoll = true;
                     c.m_Weapon = KineticBlastPhysicalWeapon.ToReference<BlueprintItemWeaponReference>();
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Constitution;
-                });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
-                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
-                        new AbilityKineticist.DamageInfo()
-                        {
-                            Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            },
-                            Type = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
-                            }
-                        }
-                    };
+                    c.CachedDamageInfo = InfusionDamageCache(AirDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "a0b5b95a9a139944c965c593a0a77ff7" };
-                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "4daa50efa21f9564fb3c5cd35d022cbf" };
-                    c.Time = AbilitySpawnFxTime.OnStart;
                 });
                 bp.AddComponent<AbilityDeliverRicochet>(c => {
                     c.m_Layer = 1;
@@ -360,151 +269,49 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Radius = new Feet(10);
                     c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
-                bp.Type = AbilityType.Special;
-                bp.Range = AbilityRange.Close;
                 bp.CanTargetEnemies = true;
                 bp.ShouldTurnToTarget = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
                 bp.m_Parent = IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>();
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
                 bp.m_TargetMapObjects = true;
                 bp.AvailableMetamagic = AirBlastAbility.AvailableMetamagic;
-                bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var IsekaiAirBlastCyclone = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiAirBlastCyclone", bp => {
+            var IsekaiAirBlastCyclone = CreateAirBlastAbility("IsekaiAirBlastCyclone", bp => {
                 bp.m_DisplayName = CycloneAirBlastAbility.m_DisplayName;
                 bp.m_Description = CycloneAirBlastAbility.m_Description;
                 bp.m_Icon = CycloneAirBlastAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Reflex;
-                    c.Actions = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                        c.m_Type = ContextActionDealDamage.Type.Damage;
-                        c.DamageType = new DamageTypeDescription()
-                        {
-                            Type = DamageType.Physical,
-                            Common = new DamageTypeDescription.CommomData(),
-                            Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
-                        };
-                        c.Duration = new ContextDurationValue()
-                        {
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = 0,
-                            m_IsExtendable = true,
-                        };
-                        c.Value = new ContextDiceValue()
-                        {
-                            DiceType = DiceType.D6,
-                            DiceCountValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Rank,
-                                ValueRank = AbilityRankType.DamageDice
-                            },
-                            BonusValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Shared,
-                                ValueRank = AbilityRankType.DamageBonus
-                            }
-                        };
+                    c.Actions = DealKineticBlastDamage(c => {
+                        c.DamageType = AirDamage;
                         c.Half = true;
                         c.IsAoE = true;
                         c.HalfIfSaved = true;
-                        c.UseWeaponDamageModifiers = true;
                     });
                 });
                 bp.AddComponent<AbilityTargetsAround>(c => {
+                    c.m_TargetType = TargetType.Any;
                     c.m_Radius = new Feet(20);
                     c.m_Condition = ActionFlow.EmptyCondition();
                     c.m_SpreadSpeed = new Feet(0);
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Dexterity;
-                });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 3;
-                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
-                        new AbilityKineticist.DamageInfo()
-                        {
-                            Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared,
-                                    ValueRank = AbilityRankType.DamageBonus
-                                }
-                            },
-                            Type = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
-                            },
-                            Half = true
-                        }
-                    };
+                    c.CachedDamageInfo = InfusionDamageCache(AirDamage, true);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
                 bp.AddComponent<AbilitySpawnFx>(c => {
                     c.PrefabLink = new PrefabLink() { AssetId = "2483780330931b64f97cbb6bb7cbd352" };
                 });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "a0b5b95a9a139944c965c593a0a77ff7" };
-                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "4daa50efa21f9564fb3c5cd35d022cbf" };
-                    c.Time = AbilitySpawnFxTime.OnStart;
-                });
-                bp.Type = AbilityType.Special;
                 bp.Range = AbilityRange.Personal;
                 bp.CanTargetSelf = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
                 bp.m_Parent = IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>();
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
                 bp.AvailableMetamagic = CycloneAirBlastAbility.AvailableMetamagic;
-                bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var IsekaiAirBlastExtendRange = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiAirBlastExtendRange", bp => {
+            var IsekaiAirBlastExtendRange = CreateAirBlastAbility("IsekaiAirBlastExtendRange", bp => {
                 bp.m_DisplayName = ExtendRangeAirBlastAbility.m_DisplayName;
                 bp.m_Description = ExtendRangeAirBlastAbility.m_Description;
                 bp.m_Icon = ExtendRangeAirBlastAbility.m_Icon;
@@ -514,66 +321,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                             c.FirstValue = new DeliverEffectLayer();
                             c.SecondValue = new IntConstant();
                         });
-                        c.IfTrue = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                            c.m_Type = ContextActionDealDamage.Type.Damage;
-                            c.DamageType = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
-                            };
-                            c.Duration = new ContextDurationValue()
-                            {
-                                DiceType = DiceType.Zero,
-                                DiceCountValue = 0,
-                                BonusValue = 0,
-                                m_IsExtendable = true,
-                            };
-                            c.Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            };
-                            c.UseWeaponDamageModifiers = true;
+                        c.IfTrue = DealKineticBlastDamage(c => {
+                            c.DamageType = AirDamage;
                         });
-                        c.IfFalse = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                            c.m_Type = ContextActionDealDamage.Type.Damage;
-                            c.DamageType = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
-                            };
-                            c.Duration = new ContextDurationValue()
-                            {
-                                DiceType = DiceType.Zero,
-                                DiceCountValue = 0,
-                                BonusValue = 0,
-                                m_IsExtendable = true,
-                            };
-                            c.Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            };
+                        c.IfFalse = DealKineticBlastDamage(c => {
+                            c.DamageType = AirDamage;
                             c.Half = true;
-                            c.UseWeaponDamageModifiers = true;
                         });
                     });
                 });
@@ -584,74 +337,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.NeedAttackRoll = true;
                     c.m_Weapon = KineticBlastPhysicalWeapon.ToReference<BlueprintItemWeaponReference>();
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Dexterity;
-                });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 1;
-                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
-                        new AbilityKineticist.DamageInfo()
-                        {
-                            Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            },
-                            Type = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
-                            }
-                        }
-                    };
+                    c.CachedDamageInfo = InfusionDamageCache(AirDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "a0b5b95a9a139944c965c593a0a77ff7" };
-                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "4daa50efa21f9564fb3c5cd35d022cbf" };
-                    c.Time = AbilitySpawnFxTime.OnStart;
                 });
                 bp.AddComponent<AbilityDeliverRicochet>(c => {
                     c.m_Layer = 1;
@@ -667,58 +358,24 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Radius = new Feet(10);
                     c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
-                bp.Type = AbilityType.Special;
                 bp.Range = AbilityRange.Long;
                 bp.CanTargetEnemies = true;
                 bp.ShouldTurnToTarget = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
                 bp.m_Parent = IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>();
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
                 bp.m_TargetMapObjects = true;
                 bp.AvailableMetamagic = ExtendRangeAirBlastAbility.AvailableMetamagic;
-                bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var IsekaiAirBlastSpindle = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiAirBlastSpindle", bp => {
+            var IsekaiAirBlastSpindle = CreateAirBlastAbility("IsekaiAirBlastSpindle", bp => {
                 bp.m_DisplayName = SpindleAirBlastAbility.m_DisplayName;
                 bp.m_Description = SpindleAirBlastAbility.m_Description;
                 bp.m_Icon = SpindleAirBlastAbility.m_Icon;
-                bp.AddComponent<SpellDescriptorComponent>(c => {
-                    c.Descriptor = SpellDescriptor.Electricity;
-                });
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Reflex;
                     c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
                         c.Succeed = ActionFlow.DoNothing();
-                        c.Failed = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                            c.m_Type = ContextActionDealDamage.Type.Damage;
-                            c.DamageType = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
-                            };
-                            c.Duration = new ContextDurationValue()
-                            {
-                                DiceType = DiceType.Zero,
-                                DiceCountValue = 0,
-                                BonusValue = 0,
-                                m_IsExtendable = true,
-                            };
-                            c.Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            };
+                        c.Failed = DealKineticBlastDamage(c => {
+                            c.DamageType = AirDamage;
                             c.Half = true;
                         });
                     });
@@ -735,121 +392,26 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.m_Condition = ActionFlow.EmptyCondition();
                     c.m_TargetType = TargetType.Any;
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Dexterity;
-                });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 2;
-                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
-                        new AbilityKineticist.DamageInfo()
-                        {
-                            Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            },
-                            Type = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
-                            },
-                            Half = true
-                        }
-                    };
+                    c.CachedDamageInfo = InfusionDamageCache(AirDamage, true);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "a0b5b95a9a139944c965c593a0a77ff7" };
-                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "4daa50efa21f9564fb3c5cd35d022cbf" };
-                    c.Time = AbilitySpawnFxTime.OnStart;
-                });
-                bp.Type = AbilityType.Special;
-                bp.Range = AbilityRange.Close;
                 bp.CanTargetEnemies = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
                 bp.m_Parent = IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>();
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
                 bp.AvailableMetamagic = SpindleAirBlastAbility.AvailableMetamagic;
-                bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var IsekaiAirBlastTorrent = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiAirBlastTorrent", bp => {
+            var IsekaiAirBlastTorrent = CreateAirBlastAbility("IsekaiAirBlastTorrent", bp => {
                 bp.m_DisplayName = TorrentAirBlastAbility.m_DisplayName;
                 bp.m_Description = TorrentAirBlastAbility.m_Description;
                 bp.m_Icon = TorrentAirBlastAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Reflex;
-                    c.Actions = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                        c.m_Type = ContextActionDealDamage.Type.Damage;
-                        c.DamageType = new DamageTypeDescription()
-                        {
-                            Type = DamageType.Physical,
-                            Common = new DamageTypeDescription.CommomData(),
-                            Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
-                        };
-                        c.Duration = new ContextDurationValue()
-                        {
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = 0,
-                            m_IsExtendable = true,
-                        };
-                        c.Value = new ContextDiceValue()
-                        {
-                            DiceType = DiceType.D6,
-                            DiceCountValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Rank,
-                                ValueRank = AbilityRankType.DamageDice
-                            },
-                            BonusValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Shared
-                            }
-                        };
+                    c.Actions = DealKineticBlastDamage(c => {
+                        c.DamageType = AirDamage;
                         c.Half = true;
                         c.IsAoE = true;
                         c.HalfIfSaved = true;
@@ -863,271 +425,62 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.NeedAttackRoll = true;
                     c.m_Weapon = KineticBlastPhysicalWeapon.ToReference<BlueprintItemWeaponReference>();
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Dexterity;
-                });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 2;
-                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
-                        new AbilityKineticist.DamageInfo()
-                        {
-                            Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            },
-                            Type = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
-                            },
-                            Half = true
-                        }
-                    };
+                    c.CachedDamageInfo = InfusionDamageCache(AirDamage, true);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "a0b5b95a9a139944c965c593a0a77ff7" };
-                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "4daa50efa21f9564fb3c5cd35d022cbf" };
-                    c.Time = AbilitySpawnFxTime.OnStart;
-                });
-                bp.Type = AbilityType.Special;
-                bp.Range = AbilityRange.Close;
                 bp.CanTargetPoint = true;
                 bp.CanTargetEnemies = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
                 bp.m_Parent = IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>();
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
                 bp.AvailableMetamagic = TorrentAirBlastAbility.AvailableMetamagic;
-                bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var IsekaiAirBlastWallArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("IsekaiAirBlastWallArea", bp => {
+            var IsekaiAirBlastWallArea = CreateKineticAreaEffect("IsekaiAirBlastWallArea", bp => {
                 bp.AddComponent<AbilityAreaEffectRunAction>(c => {
-                    c.UnitEnter = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                        c.m_Type = ContextActionDealDamage.Type.Damage;
-                        c.DamageType = new DamageTypeDescription()
-                        {
-                            Type = DamageType.Physical,
-                            Common = new DamageTypeDescription.CommomData(),
-                            Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
-                        };
-                        c.Duration = new ContextDurationValue()
-                        {
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = 0,
-                            m_IsExtendable = true,
-                        };
-                        c.Value = new ContextDiceValue()
-                        {
-                            DiceType = DiceType.D6,
-                            DiceCountValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Rank,
-                                ValueRank = AbilityRankType.DamageDice
-                            },
-                            BonusValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Shared,
-                                ValueRank = AbilityRankType.DamageBonus
-                            }
-                        };
+                    c.UnitEnter = DealKineticBlastDamage(c => {
+                        c.DamageType = AirDamage;
                         c.Half = true;
                     });
                     c.UnitExit = ActionFlow.DoNothing();
                     c.UnitMove = ActionFlow.DoNothing();
                     c.Round = ActionFlow.DoNothing();
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Dexterity;
-                });
-                bp.m_Tags = AreaEffectTags.DestroyableInCutscene;
-                bp.AffectEnemies = true;
-                bp.AggroEnemies = true;
                 bp.Shape = AreaEffectShape.Wall;
                 bp.Size = new Feet(60);
                 bp.Fx = new PrefabLink() { AssetId = "4ffc8d2162a215e44a1a728752b762eb" };
             });
-            var IsekaiAirBlastWall = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiAirBlastWall", bp => {
+            var IsekaiAirBlastWall = CreateAirBlastAbility("IsekaiAirBlastWall", bp => {
                 bp.m_DisplayName = WallAirBlastAbility.m_DisplayName;
                 bp.m_Description = WallAirBlastAbility.m_Description;
                 bp.m_Icon = WallAirBlastAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<ContextActionSpawnAreaEffect>(c => {
                         c.m_AreaEffect = IsekaiAirBlastWallArea.ToReference<BlueprintAbilityAreaEffectReference>();
-                        c.DurationValue = new ContextDurationValue()
-                        {
-                            Rate = DurationRate.Rounds,
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Rank,
-                                ValueRank = AbilityRankType.DamageBonus
-                            },
-                            m_IsExtendable = true
-                        };
+                        c.DurationValue = KineticAreaDuration;
                     });
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Dexterity;
                 });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 3;
-                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
-                        new AbilityKineticist.DamageInfo()
-                        {
-                            Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared,
-                                    ValueRank = AbilityRankType.DamageBonus
-                                }
-                            },
-                            Type = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
-                            },
-                            Half = true
-                        }
-                    };
+                    c.CachedDamageInfo = InfusionDamageCache(AirDamage, true);
                     c.CachedDamageSource = IsekaiAirBlastWallArea.ToReference<AnyBlueprintReference>();
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "a0b5b95a9a139944c965c593a0a77ff7" };
-                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "4daa50efa21f9564fb3c5cd35d022cbf" };
-                    c.Time = AbilitySpawnFxTime.OnStart;
-                });
-                bp.Type = AbilityType.Special;
-                bp.Range = AbilityRange.Close;
                 bp.CanTargetPoint = true;
                 bp.CanTargetEnemies = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
                 bp.m_Parent = IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>();
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
                 bp.AvailableMetamagic = WallAirBlastAbility.AvailableMetamagic;
-                bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
             });
             var IsekaiAirBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiAirBlastFeature", bp => {
                 bp.SetName("Overpowered Ability — Air Avatar");
-                bp.SetDescription("You gain the ability to use the air blast and all its associated form infusions.");
+                bp.SetDescription("You gain the ability to use air blast and all its associated form infusions. "
+                    + "Your air blast deals bludgeoning damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
+                    + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
                 bp.m_Icon = AirBlastAbility.m_Icon;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -1147,56 +500,19 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             });
 
             // Earth Blast
-            var IsekaiEarthBlastBase = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiEarthBlastBase", bp => {
+            var IsekaiEarthBlastBase = CreateKineticBlastAbility("IsekaiEarthBlastBase", bp => {
                 bp.m_DisplayName = EarthBlastAbility.m_DisplayName;
                 bp.m_Description = EarthBlastAbility.m_Description;
                 bp.m_Icon = EarthBlastAbility.m_Icon;
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Constitution;
-                });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>();
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
-                bp.Type = AbilityType.Special;
-                bp.Range = AbilityRange.Close;
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
                 bp.AvailableMetamagic = EarthBlastAbility.AvailableMetamagic;
-                bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var IsekaiEarthBlastAbility = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiEarthBlastAbility", bp => {
+            var IsekaiEarthBlastAbility = CreateEarthBlastAbility("IsekaiEarthBlastAbility", bp => {
                 bp.m_DisplayName = EarthBlastAbility.m_DisplayName;
                 bp.m_Description = EarthBlastAbility.m_Description;
                 bp.m_Icon = EarthBlastAbility.m_Icon;
@@ -1206,76 +522,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                             c.FirstValue = new DeliverEffectLayer();
                             c.SecondValue = new IntConstant();
                         });
-                        c.IfTrue = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                            c.m_Type = ContextActionDealDamage.Type.Damage;
-                            c.DamageType = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData()
-                                {
-                                    Form = PhysicalDamageForm.Bludgeoning
-                                    | PhysicalDamageForm.Piercing
-                                    | PhysicalDamageForm.Slashing
-                                }
-                            };
-                            c.Duration = new ContextDurationValue()
-                            {
-                                DiceType = DiceType.Zero,
-                                DiceCountValue = 0,
-                                BonusValue = 0,
-                                m_IsExtendable = true,
-                            };
-                            c.Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            };
-                            c.UseWeaponDamageModifiers = true;
+                        c.IfTrue = DealKineticBlastDamage(c => {
+                            c.DamageType = EarthDamage;
                         });
-                        c.IfFalse = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                            c.m_Type = ContextActionDealDamage.Type.Damage;
-                            c.DamageType = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData()
-                                {
-                                    Form = PhysicalDamageForm.Bludgeoning
-                                    | PhysicalDamageForm.Piercing
-                                    | PhysicalDamageForm.Slashing
-                                }
-                            };
-                            c.Duration = new ContextDurationValue()
-                            {
-                                DiceType = DiceType.Zero,
-                                DiceCountValue = 0,
-                                BonusValue = 0,
-                                m_IsExtendable = true,
-                            };
-                            c.Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            };
+                        c.IfFalse = DealKineticBlastDamage(c => {
+                            c.DamageType = EarthDamage;
                             c.Half = true;
-                            c.UseWeaponDamageModifiers = true;
                         });
                     });
                 });
@@ -1286,78 +538,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.NeedAttackRoll = true;
                     c.m_Weapon = KineticBlastPhysicalWeapon.ToReference<BlueprintItemWeaponReference>();
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Constitution;
-                });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
-                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
-                        new AbilityKineticist.DamageInfo()
-                        {
-                            Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            },
-                            Type = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData()
-                                {
-                                    Form = PhysicalDamageForm.Bludgeoning
-                                    | PhysicalDamageForm.Piercing
-                                    | PhysicalDamageForm.Slashing
-                                }
-                            }
-                        }
-                    };
+                    c.CachedDamageInfo = InfusionDamageCache(EarthDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "69a83b56c1265464f8626a2ab414364a" };
-                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "852b687aad7863e438c61339dd35d85d" };
-                    c.Time = AbilitySpawnFxTime.OnStart;
                 });
                 bp.AddComponent<AbilityDeliverRicochet>(c => {
                     c.m_Layer = 1;
@@ -1373,93 +558,23 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Radius = new Feet(10);
                     c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
-                bp.Type = AbilityType.Special;
-                bp.Range = AbilityRange.Close;
                 bp.CanTargetEnemies = true;
                 bp.ShouldTurnToTarget = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
                 bp.m_Parent = IsekaiEarthBlastBase.ToReference<BlueprintAbilityReference>();
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
                 bp.m_TargetMapObjects = true;
                 bp.AvailableMetamagic = EarthBlastAbility.AvailableMetamagic;
-                bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var IsekaiEarthBlastDeadlyEarthArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("IsekaiEarthBlastDeadlyEarthArea", bp => {
+            var IsekaiEarthBlastDeadlyEarthArea = CreateKineticAreaEffect("IsekaiEarthBlastDeadlyEarthArea", bp => {
                 bp.AddComponent<AbilityAreaEffectRunAction>(c => {
-                    c.UnitEnter = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                        c.m_Type = ContextActionDealDamage.Type.Damage;
-                        c.DamageType = new DamageTypeDescription()
-                        {
-                            Type = DamageType.Physical,
-                            Common = new DamageTypeDescription.CommomData(),
-                            Physical = new DamageTypeDescription.PhysicalData()
-                            {
-                                Form = PhysicalDamageForm.Bludgeoning
-                                    | PhysicalDamageForm.Piercing
-                                    | PhysicalDamageForm.Slashing
-                            }
-                        };
-                        c.Duration = new ContextDurationValue()
-                        {
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = 0,
-                            m_IsExtendable = true,
-                        };
-                        c.Value = new ContextDiceValue()
-                        {
-                            DiceType = DiceType.D6,
-                            DiceCountValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Rank,
-                                ValueRank = AbilityRankType.DamageDice
-                            },
-                            BonusValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Shared,
-                                ValueRank = AbilityRankType.DamageBonus
-                            }
-                        };
+                    c.UnitEnter = DealKineticBlastDamage(c => {
+                        c.DamageType = EarthDamage;
                         c.Half = true;
                     });
                     c.UnitExit = ActionFlow.DoNothing();
                     c.UnitMove = ActionFlow.DoNothing();
-                    c.Round = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                        c.m_Type = ContextActionDealDamage.Type.Damage;
-                        c.DamageType = new DamageTypeDescription()
-                        {
-                            Type = DamageType.Physical,
-                            Common = new DamageTypeDescription.CommomData(),
-                            Physical = new DamageTypeDescription.PhysicalData()
-                            {
-                                Form = PhysicalDamageForm.Bludgeoning
-                                    | PhysicalDamageForm.Piercing
-                                    | PhysicalDamageForm.Slashing
-                            }
-                        };
-                        c.Duration = new ContextDurationValue()
-                        {
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = 0,
-                            m_IsExtendable = true,
-                        };
-                        c.Value = new ContextDiceValue()
-                        {
-                            DiceType = DiceType.D6,
-                            DiceCountValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Rank,
-                                ValueRank = AbilityRankType.DamageDice
-                            },
-                            BonusValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Shared,
-                                ValueRank = AbilityRankType.DamageBonus
-                            }
-                        };
+                    c.Round = DealKineticBlastDamage(c => {
+                        c.DamageType = EarthDamage;
                         c.Half = true;
                     });
                 });
@@ -1467,96 +582,19 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Condition = ActionFlow.EmptyCondition();
                     c.m_Buff = VolcanicStormDifficultTerrainBuff.ToReference<BlueprintBuffReference>();
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Dexterity;
-                });
-                bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Any;
-                bp.m_Tags = AreaEffectTags.DestroyableInCutscene;
-                bp.AffectEnemies = true;
-                bp.AggroEnemies = true;
                 bp.Shape = AreaEffectShape.Cylinder;
                 bp.Size = new Feet(20);
                 bp.Fx = new PrefabLink() { AssetId = "11f5fe5f8ba029b49b5b04c40830e115" };
             });
-            var IsekaiEarthBlastDeadlyEarth = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiEarthBlastDeadlyEarth", bp => {
+            var IsekaiEarthBlastDeadlyEarth = CreateEarthBlastAbility("IsekaiEarthBlastDeadlyEarth", bp => {
                 bp.m_DisplayName = DeadlyEarthEarthBlastAbility.m_DisplayName;
                 bp.m_Description = DeadlyEarthEarthBlastAbility.m_Description;
                 bp.m_Icon = DeadlyEarthEarthBlastAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<ContextActionSpawnAreaEffect>(c => {
                         c.m_AreaEffect = IsekaiEarthBlastDeadlyEarthArea.ToReference<BlueprintAbilityAreaEffectReference>();
-                        c.DurationValue = new ContextDurationValue()
-                        {
-                            Rate = DurationRate.Rounds,
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Rank,
-                                ValueRank = AbilityRankType.DamageBonus
-                            },
-                            m_IsExtendable = true
-                        };
+                        c.DurationValue = KineticAreaDuration;
                     });
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Dexterity;
                 });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
@@ -1564,91 +602,32 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
                         new AbilityKineticist.DamageInfo()
                         {
-                            Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared,
-                                    ValueRank = AbilityRankType.DamageBonus
-                                }
-                            },
-                            Type = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData()
-                                {
-                                    Form = PhysicalDamageForm.Bludgeoning
-                                        | PhysicalDamageForm.Piercing
-                                        | PhysicalDamageForm.Slashing
-                                }
-                            },
+                            Value = KineticBlastDamage,
+                            Type = EarthDamage,
                             Half = true
                         },
                         new AbilityKineticist.DamageInfo()
                         {
-                            Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared,
-                                    ValueRank = AbilityRankType.DamageBonus
-                                }
-                            },
-                            Type = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData()
-                                {
-                                    Form = PhysicalDamageForm.Bludgeoning
-                                        | PhysicalDamageForm.Piercing
-                                        | PhysicalDamageForm.Slashing
-                                }
-                            },
+                            Value = KineticBlastDamage,
+                            Type = EarthDamage,
                             Half = true
-                        }
+                        },
                     };
                     c.CachedDamageSource = IsekaiEarthBlastDeadlyEarthArea.ToReference<AnyBlueprintReference>();
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "69a83b56c1265464f8626a2ab414364a" };
-                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "852b687aad7863e438c61339dd35d85d" };
-                    c.Time = AbilitySpawnFxTime.OnStart;
-                });
                 bp.AddComponent<AbilityAoERadius>(c => {
                     c.m_Radius = new Feet(20);
                     c.m_TargetType = TargetType.Any;
                 });
-                bp.Type = AbilityType.Special;
                 bp.Range = AbilityRange.Long;
                 bp.CanTargetPoint = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
                 bp.m_Parent = IsekaiEarthBlastBase.ToReference<BlueprintAbilityReference>();
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
                 bp.AvailableMetamagic = DeadlyEarthEarthBlastAbility.AvailableMetamagic;
-                bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var IsekaiEarthBlastExtendRange = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiEarthBlastExtendRange", bp => {
+            var IsekaiEarthBlastExtendRange = CreateEarthBlastAbility("IsekaiEarthBlastExtendRange", bp => {
                 bp.m_DisplayName = ExtendedRangeEarthBlastAbility.m_DisplayName;
                 bp.m_Description = ExtendedRangeEarthBlastAbility.m_Description;
                 bp.m_Icon = ExtendedRangeEarthBlastAbility.m_Icon;
@@ -1658,76 +637,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                             c.FirstValue = new DeliverEffectLayer();
                             c.SecondValue = new IntConstant();
                         });
-                        c.IfTrue = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                            c.m_Type = ContextActionDealDamage.Type.Damage;
-                            c.DamageType = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData()
-                                {
-                                    Form = PhysicalDamageForm.Bludgeoning
-                                    | PhysicalDamageForm.Piercing
-                                    | PhysicalDamageForm.Slashing
-                                }
-                            };
-                            c.Duration = new ContextDurationValue()
-                            {
-                                DiceType = DiceType.Zero,
-                                DiceCountValue = 0,
-                                BonusValue = 0,
-                                m_IsExtendable = true,
-                            };
-                            c.Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            };
-                            c.UseWeaponDamageModifiers = true;
+                        c.IfTrue = DealKineticBlastDamage(c => {
+                            c.DamageType = EarthDamage;
                         });
-                        c.IfFalse = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                            c.m_Type = ContextActionDealDamage.Type.Damage;
-                            c.DamageType = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData()
-                                {
-                                    Form = PhysicalDamageForm.Bludgeoning
-                                    | PhysicalDamageForm.Piercing
-                                    | PhysicalDamageForm.Slashing
-                                }
-                            };
-                            c.Duration = new ContextDurationValue()
-                            {
-                                DiceType = DiceType.Zero,
-                                DiceCountValue = 0,
-                                BonusValue = 0,
-                                m_IsExtendable = true,
-                            };
-                            c.Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            };
+                        c.IfFalse = DealKineticBlastDamage(c => {
+                            c.DamageType = EarthDamage;
                             c.Half = true;
-                            c.UseWeaponDamageModifiers = true;
                         });
                     });
                 });
@@ -1738,79 +653,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.NeedAttackRoll = true;
                     c.m_Weapon = KineticBlastPhysicalWeapon.ToReference<BlueprintItemWeaponReference>();
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Dexterity;
-                });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 1;
-                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
-                        new AbilityKineticist.DamageInfo()
-                        {
-                            Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            },
-                            Type = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData()
-                                {
-                                    Form = PhysicalDamageForm.Bludgeoning
-                                    | PhysicalDamageForm.Piercing
-                                    | PhysicalDamageForm.Slashing
-                                }
-                            }
-                        }
-                    };
+                    c.CachedDamageInfo = InfusionDamageCache(EarthDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "69a83b56c1265464f8626a2ab414364a" };
-                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "852b687aad7863e438c61339dd35d85d" };
-                    c.Time = AbilitySpawnFxTime.OnStart;
                 });
                 bp.AddComponent<AbilityDeliverRicochet>(c => {
                     c.m_Layer = 1;
@@ -1826,98 +674,30 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Radius = new Feet(10);
                     c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
-                bp.Type = AbilityType.Special;
                 bp.Range = AbilityRange.Long;
                 bp.CanTargetEnemies = true;
                 bp.ShouldTurnToTarget = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
                 bp.m_Parent = IsekaiEarthBlastBase.ToReference<BlueprintAbilityReference>();
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
                 bp.m_TargetMapObjects = true;
                 bp.AvailableMetamagic = ExtendedRangeEarthBlastAbility.AvailableMetamagic;
-                bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var IsekaiEarthBlastFragmentation = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiEarthBlastFragmentation", bp => {
+            var IsekaiEarthBlastFragmentation = CreateEarthBlastAbility("IsekaiEarthBlastFragmentation", bp => {
                 bp.m_DisplayName = FragmentationEarthBlastAbility.m_DisplayName;
                 bp.m_Description = FragmentationEarthBlastAbility.m_Description;
                 bp.m_Icon = FragmentationEarthBlastAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<Conditional>(c => {
                         c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionIsMainTarget>();
-                        c.IfTrue = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                            c.m_Type = ContextActionDealDamage.Type.Damage;
-                            c.DamageType = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData()
-                                {
-                                    Form = PhysicalDamageForm.Bludgeoning
-                                    | PhysicalDamageForm.Piercing
-                                    | PhysicalDamageForm.Slashing
-                                }
-                            };
-                            c.Duration = new ContextDurationValue()
-                            {
-                                DiceType = DiceType.Zero,
-                                DiceCountValue = 0,
-                                BonusValue = 0,
-                                m_IsExtendable = true,
-                            };
-                            c.Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            };
-                            c.WriteResultToSharedValue = true;
+                        c.IfTrue = DealKineticBlastDamage(c => {
+                            c.DamageType = EarthDamage;
                         });
                         c.IfFalse = ActionFlow.DoSingle<ContextActionSavingThrow>(c => {
                             c.Type = SavingThrowType.Reflex;
                             c.m_ConditionalDCIncrease = new ContextActionSavingThrow.ConditionalDCIncrease[0];
                             c.CustomDC = 0;
-                            c.Actions = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                                c.m_Type = ContextActionDealDamage.Type.Damage;
-                                c.DamageType = new DamageTypeDescription()
-                                {
-                                    Type = DamageType.Physical,
-                                    Common = new DamageTypeDescription.CommomData(),
-                                    Physical = new DamageTypeDescription.PhysicalData()
-                                    {
-                                        Form = PhysicalDamageForm.Bludgeoning
-                                        | PhysicalDamageForm.Piercing
-                                        | PhysicalDamageForm.Slashing
-                                    }
-                                };
-                                c.Duration = new ContextDurationValue()
-                                {
-                                    DiceType = DiceType.Zero,
-                                    DiceCountValue = 0,
-                                    BonusValue = 0,
-                                    m_IsExtendable = true,
-                                };
-                                c.Value = new ContextDiceValue()
-                                {
-                                    DiceType = DiceType.D6,
-                                    DiceCountValue = new ContextValue()
-                                    {
-                                        ValueType = ContextValueType.Rank,
-                                        ValueRank = AbilityRankType.DamageDice
-                                    },
-                                    BonusValue = new ContextValue()
-                                    {
-                                        ValueType = ContextValueType.Shared
-                                    }
-                                };
+                            c.Actions = DealKineticBlastDamage(c => {
+                                c.DamageType = EarthDamage;
                                 c.Half = true;
                                 c.IsAoE = true;
                                 c.HalfIfSaved = true;
@@ -1932,107 +712,24 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.NeedAttackRoll = true;
                     c.m_Weapon = KineticBlastPhysicalWeapon.ToReference<BlueprintItemWeaponReference>();
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Dexterity;
-                });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 4;
                     c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
                         new AbilityKineticist.DamageInfo()
                         {
-                            Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            },
-                            Type = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData()
-                                {
-                                    Form = PhysicalDamageForm.Bludgeoning
-                                    | PhysicalDamageForm.Piercing
-                                    | PhysicalDamageForm.Slashing
-                                }
-                            },
+                            Value = KineticBlastDamage,
+                            Type = EarthDamage,
                         },
                         new AbilityKineticist.DamageInfo()
                         {
-                            Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            },
-                            Type = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData()
-                                {
-                                    Form = PhysicalDamageForm.Bludgeoning
-                                    | PhysicalDamageForm.Piercing
-                                    | PhysicalDamageForm.Slashing
-                                }
-                            },
+                            Value = KineticBlastDamage,
+                            Type = EarthDamage,
                             Half = true
-                        }
+                        },
                     };
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "69a83b56c1265464f8626a2ab414364a" };
-                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "852b687aad7863e438c61339dd35d85d" };
-                    c.Time = AbilitySpawnFxTime.OnStart;
                 });
                 bp.AddComponent<AbilityTargetsAround>(c => {
                     c.m_Radius = new Feet(20);
@@ -2040,18 +737,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.m_Condition = ActionFlow.EmptyCondition();
                     c.m_SpreadSpeed = new Feet(0);
                 });
-                bp.Type = AbilityType.Special;
                 bp.Range = AbilityRange.Long;
                 bp.CanTargetEnemies = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
                 bp.m_Parent = IsekaiEarthBlastBase.ToReference<BlueprintAbilityReference>();
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
                 bp.AvailableMetamagic = FragmentationEarthBlastAbility.AvailableMetamagic;
-                bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var IsekaiEarthBlastSpindle = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiEarthBlastSpindle", bp => {
+            var IsekaiEarthBlastSpindle = CreateEarthBlastAbility("IsekaiEarthBlastSpindle", bp => {
                 bp.m_DisplayName = SpindleEarthBlastAbility.m_DisplayName;
                 bp.m_Description = SpindleEarthBlastAbility.m_Description;
                 bp.m_Icon = SpindleEarthBlastAbility.m_Icon;
@@ -2059,39 +751,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.SavingThrowType = SavingThrowType.Reflex;
                     c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
                         c.Succeed = ActionFlow.DoNothing();
-                        c.Failed = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                            c.m_Type = ContextActionDealDamage.Type.Damage;
-                            c.DamageType = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData()
-                                {
-                                    Form = PhysicalDamageForm.Bludgeoning
-                                    | PhysicalDamageForm.Piercing
-                                    | PhysicalDamageForm.Slashing
-                                }
-                            };
-                            c.Duration = new ContextDurationValue()
-                            {
-                                DiceType = DiceType.Zero,
-                                DiceCountValue = 0,
-                                BonusValue = 0,
-                                m_IsExtendable = true,
-                            };
-                            c.Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            };
+                        c.Failed = DealKineticBlastDamage(c => {
+                            c.DamageType = EarthDamage;
                             c.Half = true;
                         });
                     });
@@ -2108,285 +769,61 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.m_Condition = ActionFlow.EmptyCondition();
                     c.m_TargetType = TargetType.Any;
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Dexterity;
-                });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 2;
-                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
-                        new AbilityKineticist.DamageInfo()
-                        {
-                            Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared
-                                }
-                            },
-                            Type = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData()
-                                {
-                                    Form = PhysicalDamageForm.Bludgeoning
-                                    | PhysicalDamageForm.Piercing
-                                    | PhysicalDamageForm.Slashing
-                                }
-                            },
-                            Half = true
-                        }
-                    };
+                    c.CachedDamageInfo = InfusionDamageCache(EarthDamage, true);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "69a83b56c1265464f8626a2ab414364a" };
-                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "852b687aad7863e438c61339dd35d85d" };
-                    c.Time = AbilitySpawnFxTime.OnStart;
-                });
-                bp.Type = AbilityType.Special;
-                bp.Range = AbilityRange.Close;
                 bp.CanTargetEnemies = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
                 bp.m_Parent = IsekaiEarthBlastBase.ToReference<BlueprintAbilityReference>();
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
                 bp.AvailableMetamagic = SpindleEarthBlastAbility.AvailableMetamagic;
-                bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var IsekaiEarthBlastWallArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("IsekaiEarthBlastWallArea", bp => {
+            var IsekaiEarthBlastWallArea = CreateKineticAreaEffect("IsekaiEarthBlastWallArea", bp => {
                 bp.AddComponent<AbilityAreaEffectRunAction>(c => {
-                    c.UnitEnter = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                        c.m_Type = ContextActionDealDamage.Type.Damage;
-                        c.DamageType = new DamageTypeDescription()
-                        {
-                            Type = DamageType.Physical,
-                            Common = new DamageTypeDescription.CommomData(),
-                            Physical = new DamageTypeDescription.PhysicalData()
-                            {
-                                Form = PhysicalDamageForm.Bludgeoning
-                                    | PhysicalDamageForm.Piercing
-                                    | PhysicalDamageForm.Slashing
-                            }
-                        };
-                        c.Duration = new ContextDurationValue()
-                        {
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = 0,
-                            m_IsExtendable = true,
-                        };
-                        c.Value = new ContextDiceValue()
-                        {
-                            DiceType = DiceType.D6,
-                            DiceCountValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Rank,
-                                ValueRank = AbilityRankType.DamageDice
-                            },
-                            BonusValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Shared,
-                                ValueRank = AbilityRankType.DamageBonus
-                            }
-                        };
+                    c.UnitEnter = DealKineticBlastDamage(c => {
+                        c.DamageType = EarthDamage;
                         c.Half = true;
                     });
                     c.UnitExit = ActionFlow.DoNothing();
                     c.UnitMove = ActionFlow.DoNothing();
                     c.Round = ActionFlow.DoNothing();
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Dexterity;
-                });
-                bp.m_Tags = AreaEffectTags.DestroyableInCutscene;
-                bp.AffectEnemies = true;
-                bp.AggroEnemies = true;
                 bp.Shape = AreaEffectShape.Wall;
                 bp.Size = new Feet(60);
                 bp.Fx = new PrefabLink() { AssetId = "1f26aacd3ad314e4c820d4fe2ac3fd46" };
             });
-            var IsekaiEarthBlastWall = Helpers.CreateBlueprint<BlueprintAbility>("IsekaiEarthBlastWall", bp => {
+            var IsekaiEarthBlastWall = CreateEarthBlastAbility("IsekaiEarthBlastWall", bp => {
                 bp.m_DisplayName = WallEarthBlastAbility.m_DisplayName;
                 bp.m_Description = WallEarthBlastAbility.m_Description;
                 bp.m_Icon = WallEarthBlastAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<ContextActionSpawnAreaEffect>(c => {
                         c.m_AreaEffect = IsekaiEarthBlastWallArea.ToReference<BlueprintAbilityAreaEffectReference>();
-                        c.DurationValue = new ContextDurationValue()
-                        {
-                            Rate = DurationRate.Rounds,
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Rank,
-                                ValueRank = AbilityRankType.DamageBonus
-                            },
-                            m_IsExtendable = true
-                        };
+                        c.DurationValue = KineticAreaDuration;
                     });
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageDice;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.DamageBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
-                    c.m_Stat = StatType.Constitution;
-                });
-                bp.AddComponent<ContextCalculateSharedValue>(c => {
-                    c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
-                        DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
-                    };
-                    c.Modifier = 1.0;
-                });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.StatType = StatType.Dexterity;
                 });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 3;
-                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
-                        new AbilityKineticist.DamageInfo()
-                        {
-                            Value = new ContextDiceValue()
-                            {
-                                DiceType = DiceType.D6,
-                                DiceCountValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageDice
-                                },
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Shared,
-                                    ValueRank = AbilityRankType.DamageBonus
-                                }
-                            },
-                            Type = new DamageTypeDescription()
-                            {
-                                Type = DamageType.Physical,
-                                Common = new DamageTypeDescription.CommomData(),
-                                Physical = new DamageTypeDescription.PhysicalData()
-                                {
-                                    Form = PhysicalDamageForm.Bludgeoning
-                                        | PhysicalDamageForm.Piercing
-                                        | PhysicalDamageForm.Slashing
-                                }
-                            },
-                            Half = true
-                        }
-                    };
+                    c.CachedDamageInfo = InfusionDamageCache(EarthDamage, true);
                     c.CachedDamageSource = IsekaiEarthBlastWallArea.ToReference<AnyBlueprintReference>();
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "69a83b56c1265464f8626a2ab414364a" };
-                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "852b687aad7863e438c61339dd35d85d" };
-                    c.Time = AbilitySpawnFxTime.OnStart;
-                });
-                bp.Type = AbilityType.Special;
-                bp.Range = AbilityRange.Close;
                 bp.CanTargetPoint = true;
                 bp.CanTargetEnemies = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
                 bp.m_Parent = IsekaiEarthBlastBase.ToReference<BlueprintAbilityReference>();
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
                 bp.AvailableMetamagic = WallEarthBlastAbility.AvailableMetamagic;
-                bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
             });
             var IsekaiEarthBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiEarthBlastFeature", bp => {
                 bp.SetName("Overpowered Ability — Earth Avatar");
-                bp.SetDescription("You gain the ability to use the earth blast and all its associated form infusions.");
+                bp.SetDescription("You gain the ability to use earth blast and all its associated form infusions. "
+                    + "Your earth blast deals physical damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
+                    + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
                 bp.m_Icon = EarthBlastAbility.m_Icon;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -2405,19 +842,376 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 };
             });
 
-            var IsekaiFireBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiFireBlastFeature", bp => {
+            // Fire Blast
+            var IsekaiFireBlastBase = CreateKineticBlastAbility("IsekaiFireBlastBase", bp => {
                 bp.m_DisplayName = FireBlastAbility.m_DisplayName;
                 bp.m_Description = FireBlastAbility.m_Description;
+                bp.m_Icon = FireBlastAbility.m_Icon;
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>();
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.AddComponent<SpellDescriptorComponent>(c => {
+                    c.Descriptor = SpellDescriptor.Fire;
+                });
+                bp.CanTargetEnemies = true;
+                bp.SpellResistance = true;
+                bp.AvailableMetamagic = FireBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiFireBlastAbility = CreateFireBlastAbility("IsekaiFireBlastAbility", bp => {
+                bp.m_DisplayName = FireBlastAbility.m_DisplayName;
+                bp.m_Description = FireBlastAbility.m_Description;
+                bp.m_Icon = FireBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.Actions = ActionFlow.DoSingle<Conditional>(c => {
+                        c.ConditionsChecker = ActionFlow.IfSingle<IsEqual>(c => {
+                            c.FirstValue = new DeliverEffectLayer();
+                            c.SecondValue = new IntConstant();
+                        });
+                        c.IfTrue = DealKineticBlastDamage(c => {
+                            c.DamageType = FireDamage;
+                        });
+                        c.IfFalse = DealKineticBlastDamage(c => {
+                            c.DamageType = FireDamage;
+                            c.Half = true;
+                        });
+                    });
+                });
+                bp.AddComponent<AbilityDeliverProjectile>(c => {
+                    c.m_Projectiles = new BlueprintProjectileReference[] { FireCommonProjectile00.ToReference<BlueprintProjectileReference>() };
+                    c.m_Length = new Feet(0);
+                    c.m_LineWidth = new Feet(5);
+                    c.NeedAttackRoll = true;
+                    c.m_Weapon = KineticBlastEnergyWeapon.ToReference<BlueprintItemWeaponReference>();
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.AddComponent<AbilityDeliverRicochet>(c => {
+                    c.m_Layer = 1;
+                    c.m_BeforeCondition = ActionFlow.IfSingle<ContextConditionHasBuff>(c => {
+                        c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
+                    });
+                    c.m_Projectile = ArrowFire00.ToReference<BlueprintProjectileReference>();
+                    c.TargetsCount = new ContextValue()
+                    {
+                        ValueType = ContextValueType.CasterCustomProperty,
+                        m_CustomProperty = DLC3_KineticRicochetProperty.ToReference<BlueprintUnitPropertyReference>()
+                    };
+                    c.Radius = new Feet(10);
+                    c.m_TargetCondition = ActionFlow.EmptyCondition();
+                });
+                bp.CanTargetEnemies = true;
+                bp.ShouldTurnToTarget = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiFireBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.m_TargetMapObjects = true;
+                bp.AvailableMetamagic = FireBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiFireBlastDetonation = CreateFireBlastAbility("IsekaiFireBlastDetonation", bp => {
+                bp.m_DisplayName = DetonationFireBlastAbility.m_DisplayName;
+                bp.m_Description = DetonationFireBlastAbility.m_Description;
+                bp.m_Icon = DetonationFireBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.SavingThrowType = SavingThrowType.Reflex;
+                    c.Actions = ActionFlow.DoSingle<Conditional>(c => {
+                        c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionIsCaster>();
+                        c.IfTrue = ActionFlow.DoNothing();
+                        c.IfFalse = DealKineticBlastDamage(c => {
+                            c.DamageType = FireDamage;
+                            c.IsAoE = true;
+                            c.HalfIfSaved = true;
+                        });
+                    });
+                });
+                bp.AddComponent<AbilityTargetsAround>(c => {
+                    c.m_TargetType = TargetType.Any;
+                    c.m_Radius = new Feet(20);
+                    c.m_Condition = ActionFlow.EmptyCondition();
+                    c.m_SpreadSpeed = new Feet(0);
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "749ad3759dc93d64dba70a84d48135b5" };
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 3;
+                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.Range = AbilityRange.Personal;
+                bp.CanTargetEnemies = true;
+                bp.CanTargetSelf = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiFireBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.AvailableMetamagic = DetonationFireBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiFireBlastEruption = CreateFireBlastAbility("IsekaiFireBlastEruption", bp => {
+                bp.m_DisplayName = EruptionFireBlastAbility.m_DisplayName;
+                bp.m_Description = EruptionFireBlastAbility.m_Description;
+                bp.m_Icon = EruptionFireBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.SavingThrowType = SavingThrowType.Reflex;
+                    c.Actions = DealKineticBlastDamage(c => {
+                        c.DamageType = FireDamage;
+                        c.IsAoE = true;
+                        c.HalfIfSaved = true;
+                    });
+                });
+                bp.AddComponent<AbilityTargetsAround>(c => {
+                    c.m_TargetType = TargetType.Any;
+                    c.m_Radius = new Feet(10);
+                    c.m_Condition = ActionFlow.EmptyCondition();
+                    c.m_SpreadSpeed = new Feet(0);
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "a4464254a634f9f41a91a37cb8ef48fd" };
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 2;
+                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.Range = AbilityRange.Long;
+                bp.CanTargetPoint = true;
+                bp.CanTargetEnemies = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiFireBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.AvailableMetamagic = EruptionFireBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiFireBlastExtendRange = CreateFireBlastAbility("IsekaiFireBlastExtendRange", bp => {
+                bp.m_DisplayName = ExtendedRangeFireBlastAbility.m_DisplayName;
+                bp.m_Description = ExtendedRangeFireBlastAbility.m_Description;
+                bp.m_Icon = ExtendedRangeFireBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.Actions = ActionFlow.DoSingle<Conditional>(c => {
+                        c.ConditionsChecker = ActionFlow.IfSingle<IsEqual>(c => {
+                            c.FirstValue = new DeliverEffectLayer();
+                            c.SecondValue = new IntConstant();
+                        });
+                        c.IfTrue = DealKineticBlastDamage(c => {
+                            c.DamageType = FireDamage;
+                        });
+                        c.IfFalse = DealKineticBlastDamage(c => {
+                            c.DamageType = FireDamage;
+                            c.Half = true;
+                        });
+                    });
+                });
+                bp.AddComponent<AbilityDeliverProjectile>(c => {
+                    c.m_Projectiles = new BlueprintProjectileReference[] { FireCommonProjectile00.ToReference<BlueprintProjectileReference>() };
+                    c.m_Length = new Feet(0);
+                    c.m_LineWidth = new Feet(5);
+                    c.NeedAttackRoll = true;
+                    c.m_Weapon = KineticBlastEnergyWeapon.ToReference<BlueprintItemWeaponReference>();
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 1;
+                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.AddComponent<AbilityDeliverRicochet>(c => {
+                    c.m_Layer = 1;
+                    c.m_BeforeCondition = ActionFlow.IfSingle<ContextConditionHasBuff>(c => {
+                        c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
+                    });
+                    c.m_Projectile = ArrowFire00.ToReference<BlueprintProjectileReference>();
+                    c.TargetsCount = new ContextValue()
+                    {
+                        ValueType = ContextValueType.CasterCustomProperty,
+                        m_CustomProperty = DLC3_KineticRicochetProperty.ToReference<BlueprintUnitPropertyReference>()
+                    };
+                    c.Radius = new Feet(10);
+                    c.m_TargetCondition = ActionFlow.EmptyCondition();
+                });
+                bp.Range = AbilityRange.Long;
+                bp.CanTargetEnemies = true;
+                bp.ShouldTurnToTarget = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiFireBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.m_TargetMapObjects = true;
+                bp.AvailableMetamagic = ExtendedRangeFireBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiFireBlastFanOfFlames = CreateFireBlastAbility("IsekaiFireBlastFanOfFlames", bp => {
+                bp.m_DisplayName = FanOfFlamesFireBlastAbility.m_DisplayName;
+                bp.m_Description = FanOfFlamesFireBlastAbility.m_Description;
+                bp.m_Icon = FanOfFlamesFireBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.SavingThrowType = SavingThrowType.Reflex;
+                    c.Actions = DealKineticBlastDamage(c => {
+                        c.DamageType = FireDamage;
+                        c.IsAoE = true;
+                        c.HalfIfSaved = true;
+                    });
+                });
+                bp.AddComponent<AbilityDeliverProjectile>(c => {
+                    c.m_Projectiles = new BlueprintProjectileReference[] { FireCone15Feet00.ToReference<BlueprintProjectileReference>() };
+                    c.Type = AbilityProjectileType.Cone;
+                    c.m_Length = new Feet(15);
+                    c.m_LineWidth = new Feet(5);
+                    c.NeedAttackRoll = true;
+                    c.m_Weapon = KineticBlastEnergyWeapon.ToReference<BlueprintItemWeaponReference>();
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 1;
+                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.Range = AbilityRange.Projectile;
+                bp.CanTargetPoint = true;
+                bp.CanTargetEnemies = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiFireBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.AvailableMetamagic = FanOfFlamesFireBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiFireBlastSpindle = CreateFireBlastAbility("IsekaiFireBlastSpindle", bp => {
+                bp.m_DisplayName = SpindleFireBlastAbility.m_DisplayName;
+                bp.m_Description = SpindleFireBlastAbility.m_Description;
+                bp.m_Icon = SpindleFireBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.SavingThrowType = SavingThrowType.Reflex;
+                    c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
+                        c.Succeed = ActionFlow.DoNothing();
+                        c.Failed = DealKineticBlastDamage(c => {
+                            c.DamageType = FireDamage;
+                        });
+                    });
+                });
+                bp.AddComponent<AbilityDeliverChain>(c => {
+                    c.m_ProjectileFirst = FireCommonProjectile00.ToReference<BlueprintProjectileReference>();
+                    c.m_Projectile = FireCommonProjectile00.ToReference<BlueprintProjectileReference>();
+                    c.TargetsCount = new ContextValue()
+                    {
+                        Value = 70,
+                        ValueRank = AbilityRankType.ProjectilesCount
+                    };
+                    c.Radius = new Feet(5);
+                    c.m_Condition = ActionFlow.EmptyCondition();
+                    c.m_TargetType = TargetType.Any;
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 2;
+                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.CanTargetEnemies = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiFireBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.AvailableMetamagic = SpindleFireBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiFireBlastTorrent = CreateFireBlastAbility("IsekaiFireBlastTorrent", bp => {
+                bp.m_DisplayName = TorrentFireBlastAbility.m_DisplayName;
+                bp.m_Description = TorrentFireBlastAbility.m_Description;
+                bp.m_Icon = TorrentFireBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.SavingThrowType = SavingThrowType.Reflex;
+                    c.Actions = DealKineticBlastDamage(c => {
+                        c.DamageType = FireDamage;
+                        c.IsAoE = true;
+                        c.HalfIfSaved = true;
+                    });
+                });
+                bp.AddComponent<AbilityDeliverProjectile>(c => {
+                    c.m_Projectiles = new BlueprintProjectileReference[] { FireLine00_Head.ToReference<BlueprintProjectileReference>() };
+                    c.Type = AbilityProjectileType.Line;
+                    c.m_Length = new Feet(30);
+                    c.m_LineWidth = new Feet(5);
+                    c.NeedAttackRoll = true;
+                    c.m_Weapon = KineticBlastEnergyWeapon.ToReference<BlueprintItemWeaponReference>();
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 2;
+                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.CanTargetPoint = true;
+                bp.CanTargetEnemies = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiFireBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.AvailableMetamagic = TorrentFireBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiFireBlastWallArea = CreateKineticAreaEffect("IsekaiFireBlastWallArea", bp => {
+                bp.AddComponent<AbilityAreaEffectRunAction>(c => {
+                    c.UnitEnter = DealKineticBlastDamage(c => {
+                        c.DamageType = FireDamage;
+                    });
+                    c.UnitExit = ActionFlow.DoNothing();
+                    c.UnitMove = ActionFlow.DoNothing();
+                    c.Round = ActionFlow.DoNothing();
+                });
+                bp.Shape = AreaEffectShape.Wall;
+                bp.Size = new Feet(60);
+                bp.Fx = new PrefabLink() { AssetId = "098a29fefbbc4564281afa5a6887cd2c" };
+            });
+            var IsekaiFireBlastWall = CreateFireBlastAbility("IsekaiFireBlastWall", bp => {
+                bp.m_DisplayName = WallFireBlastAbility.m_DisplayName;
+                bp.m_Description = WallFireBlastAbility.m_Description;
+                bp.m_Icon = WallFireBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.Actions = ActionFlow.DoSingle<ContextActionSpawnAreaEffect>(c => {
+                        c.m_AreaEffect = IsekaiFireBlastWallArea.ToReference<BlueprintAbilityAreaEffectReference>();
+                        c.DurationValue = KineticAreaDuration;
+                    });
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 3;
+                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.CachedDamageSource = IsekaiFireBlastWallArea.ToReference<AnyBlueprintReference>();
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.CanTargetPoint = true;
+                bp.CanTargetEnemies = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiFireBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.AvailableMetamagic = WallFireBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiFireBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiFireBlastFeature", bp => {
+                bp.SetName("Overpowered Ability — Fire Avatar");
+                bp.SetDescription("You gain the ability to use fire blast and all its associated form infusions. "
+                    + "Your fire blast deals fire damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
+                    + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
                 bp.m_Icon = FireBlastAbility.m_Icon;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] { IsekaiAirBlastBase.ToReference<BlueprintUnitFactReference>() }; // TODO: change to Fire
+                    c.m_Facts = new BlueprintUnitFactReference[] { IsekaiFireBlastBase.ToReference<BlueprintUnitFactReference>() };
                 });
             });
+            IsekaiFireBlastBase.AddComponent<AbilityVariants>(c => {
+                c.m_Variants = new BlueprintAbilityReference[] {
+                    IsekaiFireBlastAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiFireBlastDetonation.ToReference<BlueprintAbilityReference>(),
+                    IsekaiFireBlastEruption.ToReference<BlueprintAbilityReference>(),
+                    IsekaiFireBlastExtendRange.ToReference<BlueprintAbilityReference>(),
+                    IsekaiFireBlastFanOfFlames.ToReference<BlueprintAbilityReference>(),
+                    IsekaiFireBlastSpindle.ToReference<BlueprintAbilityReference>(),
+                    IsekaiFireBlastTorrent.ToReference<BlueprintAbilityReference>(),
+                    IsekaiFireBlastWall.ToReference<BlueprintAbilityReference>(),
+                };
+            });
+
+
             var IsekaiWaterBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiWaterBlastFeature", bp => {
-                bp.m_DisplayName = WaterBlastAbility.m_DisplayName;
-                bp.m_Description = WaterBlastAbility.m_Description;
+                bp.SetName("Overpowered Ability — Water Avatar");
+                bp.SetDescription("You gain the ability to use water blast and all its associated form infusions.");
                 bp.m_Icon = WaterBlastAbility.m_Icon;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -2459,15 +1253,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 });
             var KineticPowerBurn = Helpers.CreateBlueprint<BlueprintFeature>("KineticPowerBurn", bp => {
                 bp.m_DisplayName = BurnFeature.m_DisplayName;
-                bp.SetDescription("At 1st level, a kineticist can overexert herself to channel more power than normal, pushing past the limit of what is safe for her body by accepting burn. "
-                    + "Some of her wild talents allow her to accept burn in exchange for a greater effect, while others require her to accept a certain amount of burn to use that talent at "
-                    + "all. For each point of burn she accepts, a kineticist takes (1 per {g|Encyclopedia:Character_Level}character level{/g}) points of nonlethal "
-                    + "{g|Encyclopedia:Damage}damage{/g}. This damage can't be {g|Encyclopedia:Healing}healed{/g} by any means other than getting a full night's "
-                    + "{g|Encyclopedia:Rest}rest{/g}, which removes all burn and associated nonlethal damage. Nonlethal damage from burn can't be reduced or redirected, and a kineticist "
-                    + "incapable of taking nonlethal damage can't accept burn. A kineticist can accept only 1 point of burn per {g|Encyclopedia:Combat_Round}round{/g}. This limit rises to "
-                    + "2 points of burn at 6th level, and rises by 1 additional point every 3 levels thereafter. A kineticist can't choose to accept burn if it would put her total number "
-                    + "of points of burn higher than (3 + her {g|Encyclopedia:Constitution}Constitution{/g} modifier), though she can be forced to accept more burn from a source outside "
-                    + "her control. A kineticist who has accepted burn never benefits from abilities that allow her to ignore or alter the effects she receives from nonlethal damage.");
+                bp.m_Description = BurnFeature.m_Description;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddAbilityResources>(c => {
@@ -2486,6 +1272,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.m_Blasts = new BlueprintAbilityReference[] {
                         IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>(), // TODO: add other elements later
                         IsekaiEarthBlastBase.ToReference<BlueprintAbilityReference>(),
+                        IsekaiFireBlastBase.ToReference<BlueprintAbilityReference>(),
                     };
                     c.m_BladeActivatedBuff = KineticBladeEnableBuff.ToReference<BlueprintBuffReference>();
                     c.m_CanGatherPowerWithShieldBuff = ElementalBastionBuff.ToReference<BlueprintBuffReference>();
@@ -2498,14 +1285,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Action = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.m_Buff = BurnEffectBuff.ToReference<BlueprintBuffReference>();
                         c.Permanent = true;
-                        c.DurationValue = new ContextDurationValue()
-                        {
-                            Rate = DurationRate.Rounds,
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = 0,
-                            m_IsExtendable = true,
-                        };
+                        c.DurationValue = Constants.ZeroDuration;
                         c.AsChild = true;
                     });
                 });
@@ -2537,14 +1317,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     IsekaiAirBlastFeature.ToReference<BlueprintFeatureReference>(), // TODO: add other elements
                     IsekaiEarthBlastFeature.ToReference<BlueprintFeatureReference>(),
+                    IsekaiFireBlastFeature.ToReference<BlueprintFeatureReference>(),
                 };
             });
 
-            PatchGatherPowerBuffs(IsekaiAirBlastFeature, IsekaiEarthBlastFeature);
+            PatchGatherPowerBuffs(IsekaiAirBlastFeature, IsekaiEarthBlastFeature, IsekaiFireBlastFeature);
 
             OverpoweredAbilitySelection.AddToSelection(KineticPowerSelection);
         }
-        private static void PatchGatherPowerBuffs(BlueprintFeature airBlastFeature, BlueprintFeature earthBlastFeature)
+        private static void PatchGatherPowerBuffs(BlueprintFeature airBlastFeature, BlueprintFeature earthBlastFeature, BlueprintFeature fireBlastFeature)
         {
             BlueprintBuff[] buffs = new BlueprintBuff[] { GatherPowerBuffI, GatherPowerBuffII, GatherPowerBuffIII }; // TODO: patch other elements
             foreach(BlueprintBuff buff in buffs)
@@ -2555,7 +1336,168 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 var earthConditional = (Conditional)buff.GetComponent<AddFactContextActions>().Activated.Actions[1];
                 var earthCondition = new ContextConditionHasFact() { m_Fact = earthBlastFeature.ToReference<BlueprintUnitFactReference>() };
                 earthConditional.ConditionsChecker.Conditions = earthConditional.ConditionsChecker.Conditions.AddToArray(earthCondition);
+                var fireConditional = (Conditional)buff.GetComponent<AddFactContextActions>().Activated.Actions[2];
+                var fireCondition = new ContextConditionHasFact() { m_Fact = fireBlastFeature.ToReference<BlueprintUnitFactReference>() };
+                fireConditional.ConditionsChecker.Conditions = fireConditional.ConditionsChecker.Conditions.AddToArray(fireCondition);
             }
+        }
+        private static BlueprintAbility CreateKineticBlastAbility(string name, Action<BlueprintAbility> init = null)
+        {
+            var result = Helpers.CreateBlueprint<BlueprintAbility>(name, bp => {
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageDice;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
+                    c.m_Stat = StatType.Constitution;
+                });
+                bp.AddComponent<ContextCalculateSharedValue>(c => {
+                    c.ValueType = AbilitySharedValue.Damage;
+                    c.Value = new ContextDiceValue()
+                    {
+                        DiceType = DiceType.One,
+                        DiceCountValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageDice
+                        },
+                        BonusValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageBonus
+                        }
+                    };
+                    c.Modifier = 1.0;
+                });
+                bp.AddComponent<ContextCalculateAbilityParams>(c => {
+                    c.StatType = StatType.Dexterity;
+                });
+                bp.Type = AbilityType.Special;
+                bp.Range = AbilityRange.Close;
+                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
+                bp.ActionType = UnitCommand.CommandType.Standard;
+                bp.LocalizedDuration = new LocalizedString();
+                bp.LocalizedSavingThrow = new LocalizedString();
+            });
+            init?.Invoke(result);
+            return result;
+        }
+        private static BlueprintAbility CreateAirBlastAbility(string name, Action<BlueprintAbility> init = null)
+        {
+            var result = CreateKineticBlastAbility(name, bp => {
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "a0b5b95a9a139944c965c593a0a77ff7" };
+                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "4daa50efa21f9564fb3c5cd35d022cbf" };
+                    c.Time = AbilitySpawnFxTime.OnStart;
+                });
+            });
+            init?.Invoke(result);
+            return result;
+        }
+        private static BlueprintAbility CreateEarthBlastAbility(string name, Action<BlueprintAbility> init = null)
+        {
+            var result = CreateKineticBlastAbility(name, bp => {
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "69a83b56c1265464f8626a2ab414364a" };
+                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "852b687aad7863e438c61339dd35d85d" };
+                    c.Time = AbilitySpawnFxTime.OnStart;
+                });
+            });
+            init?.Invoke(result);
+            return result;
+        }
+        private static BlueprintAbility CreateFireBlastAbility(string name, Action<BlueprintAbility> init = null)
+        {
+            var result = CreateKineticBlastAbility(name, bp => {
+                bp.AddComponent<SpellDescriptorComponent>(c => {
+                    c.Descriptor = SpellDescriptor.Fire;
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "d45354c34bdaa254bb597ce5222f2973" };
+                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "16e01c58cc00371448191803fc1e9368" };
+                    c.Time = AbilitySpawnFxTime.OnStart;
+                });
+                bp.SpellResistance = true;
+            });
+            init?.Invoke(result);
+            return result;
+        }
+        private static BlueprintAbilityAreaEffect CreateKineticAreaEffect(string name, Action<BlueprintAbilityAreaEffect> init = null)
+        {
+            var t = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(name, bp => {
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageDice;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
+                    c.m_Stat = StatType.Constitution;
+                });
+                bp.AddComponent<ContextCalculateSharedValue>(c => {
+                    c.ValueType = AbilitySharedValue.Damage;
+                    c.Value = new ContextDiceValue()
+                    {
+                        DiceType = DiceType.One,
+                        DiceCountValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageDice
+                        },
+                        BonusValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageBonus
+                        }
+                    };
+                    c.Modifier = 1.0;
+                });
+                bp.AddComponent<ContextCalculateAbilityParams>(c => {
+                    c.StatType = StatType.Dexterity;
+                });
+                bp.m_Tags = AreaEffectTags.DestroyableInCutscene;
+                bp.AffectEnemies = true;
+                bp.AggroEnemies = true;
+            });
+            init?.Invoke(t);
+            return t;
+        }
+        private static List<AbilityKineticist.DamageInfo> InfusionDamageCache(DamageTypeDescription damageType, bool half)
+        {
+            return new List<AbilityKineticist.DamageInfo>()
+            {
+                new AbilityKineticist.DamageInfo()
+                {
+                    Value = KineticBlastDamage,
+                    Type = damageType,
+                    Half = half
+                }
+            };
+        }
+        private static ActionList DealKineticBlastDamage(Action<ContextActionDealDamage> init = null)
+        {
+            var t = new ContextActionDealDamage()
+            {
+                m_Type = ContextActionDealDamage.Type.Damage,
+                Duration = Constants.ZeroDuration,
+                Value = KineticBlastDamage,
+                UseWeaponDamageModifiers = true
+            };
+            init?.Invoke(t);
+            return Helpers.CreateActionList(t);
         }
     }
 }
