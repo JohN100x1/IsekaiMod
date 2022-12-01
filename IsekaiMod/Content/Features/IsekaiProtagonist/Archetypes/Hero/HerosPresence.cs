@@ -77,12 +77,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     c.m_AreaEffect = HerosPresenceArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var HerosPresenceFeature = Helpers.CreateBlueprint<BlueprintFeature>("HerosPresenceFeature", bp => {
+            var HerosPresenceFeature = Helpers.CreateFeature("HerosPresenceFeature", bp => {
                 bp.SetName("Hero's Presence");
                 bp.SetDescription("At 20th level, allies within 40 feet of the Hero has a +10 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil.");
                 bp.m_Icon = Icon_Heros_Presence;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AuraFeatureComponent>(c => {
                     c.m_Buff = HerosPresenceAreaBuff.ToReference<BlueprintBuffReference>();
                 });

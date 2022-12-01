@@ -472,14 +472,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Parent = IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>();
                 bp.AvailableMetamagic = WallAirBlastAbility.AvailableMetamagic;
             });
-            var IsekaiAirBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiAirBlastFeature", bp => {
+            var IsekaiAirBlastFeature = Helpers.CreateFeature("IsekaiAirBlastFeature", bp => {
                 bp.SetName("Air Avatar");
                 bp.SetDescription("You gain the ability to use air blast and all its associated form infusions. "
                     + "Your air blast deals bludgeoning damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
                     + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
                 bp.m_Icon = AirBlastAbility.m_Icon;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { IsekaiAirBlastBase.ToReference<BlueprintUnitFactReference>() };
                 });
@@ -815,14 +813,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Parent = IsekaiEarthBlastBase.ToReference<BlueprintAbilityReference>();
                 bp.AvailableMetamagic = WallEarthBlastAbility.AvailableMetamagic;
             });
-            var IsekaiEarthBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiEarthBlastFeature", bp => {
+            var IsekaiEarthBlastFeature = Helpers.CreateFeature("IsekaiEarthBlastFeature", bp => {
                 bp.SetName("Earth Avatar");
                 bp.SetDescription("You gain the ability to use earth blast and all its associated form infusions. "
                     + "Your earth blast deals physical damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
                     + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
                 bp.m_Icon = EarthBlastAbility.m_Icon;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { IsekaiEarthBlastBase.ToReference<BlueprintUnitFactReference>() };
                 });
@@ -1179,14 +1175,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Parent = IsekaiFireBlastBase.ToReference<BlueprintAbilityReference>();
                 bp.AvailableMetamagic = WallFireBlastAbility.AvailableMetamagic;
             });
-            var IsekaiFireBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiFireBlastFeature", bp => {
+            var IsekaiFireBlastFeature = Helpers.CreateFeature("IsekaiFireBlastFeature", bp => {
                 bp.SetName("Fire Avatar");
                 bp.SetDescription("You gain the ability to use fire blast and all its associated form infusions. "
                     + "Your fire blast deals fire damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
                     + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
                 bp.m_Icon = FireBlastAbility.m_Icon;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { IsekaiFireBlastBase.ToReference<BlueprintUnitFactReference>() };
                 });
@@ -1205,22 +1199,18 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             });
 
 
-            var IsekaiWaterBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiWaterBlastFeature", bp => {
+            var IsekaiWaterBlastFeature = Helpers.CreateFeature("IsekaiWaterBlastFeature", bp => {
                 bp.SetName("Water Avatar");
                 bp.SetDescription("You gain the ability to use water blast and all its associated form infusions.");
                 bp.m_Icon = WaterBlastAbility.m_Icon;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { IsekaiAirBlastBase.ToReference<BlueprintUnitFactReference>() }; // TODO: change to Water
                 });
             });
 
-            var KineticBlastProficiency = Helpers.CreateBlueprint<BlueprintFeature>("KineticBlastProficiency", bp => {
+            var KineticBlastProficiency = Helpers.CreateFeature("KineticBlastProficiency", bp => {
                 bp.SetName("Kinetic Blast Proficiency");
                 bp.SetDescription("You gain the proficiency with kinetic blasts.");
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddProficiencies>(c => {
                     c.ArmorProficiencies = new ArmorProficiencyGroup[0];
                     c.WeaponProficiencies = new WeaponCategory[] { WeaponCategory.KineticBlast };
@@ -1247,11 +1237,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                         ResourceBonusStat = StatType.Unknown,
                     };
                 });
-            var KineticPowerBurn = Helpers.CreateBlueprint<BlueprintFeature>("KineticPowerBurn", bp => {
+            var KineticPowerBurn = Helpers.CreateFeature("KineticPowerBurn", bp => {
                 bp.m_DisplayName = BurnFeature.m_DisplayName;
                 bp.m_Description = BurnFeature.m_Description;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddAbilityResources>(c => {
                     c.m_Resource = BurnResource.ToReference<BlueprintAbilityResourceReference>();
                 });
@@ -1296,7 +1284,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.m_FakeClass = KineticistClass.ToReference<BlueprintCharacterClassReference>();
                     c.m_ActualClass = IsekaiProtagonistClass.GetReference();
                     c.Modifier = 1.0;
-                    c.Summand = 0;
                 });
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {

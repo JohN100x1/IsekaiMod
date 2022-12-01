@@ -105,24 +105,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     + "a new target. At 4th level, and at every three levels thereafter, the hero may use true smite one additional time per day.");
                 bp.m_Icon = Icon_SmiteEvil;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.SavingThrowType = SavingThrowType.Unknown;
                     c.Actions = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.Permanent = true;
                         c.m_Buff = TrueSmiteBuff.ToReference<BlueprintBuffReference>();
-                        c.DurationValue = new ContextDurationValue()
-                        {
-                            Rate = DurationRate.Rounds,
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = 0,
-                            m_IsExtendable = true
-                        };
+                        c.DurationValue = Constants.ZeroDuration;
                         c.IsNotDispelable = true;
-                        c.UseDurationSeconds = false;
-                        c.DurationSeconds = 0;
-                        c.IsFromSpell = false;
-                        c.ToCaster = false;
-                        c.AsChild = false;
                     });
                 });
                 bp.AddComponent<ContextCalculateSharedValue>(c => {
@@ -183,22 +170,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 });
                 bp.Type = AbilityType.Supernatural;
                 bp.Range = AbilityRange.Medium;
-                bp.m_AllowNonContextActions = false;
-                bp.CanTargetPoint = false;
                 bp.CanTargetEnemies = true;
-                bp.CanTargetFriends = false;
-                bp.CanTargetSelf = false;
-                bp.SpellResistance = false;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
                 bp.EffectOnAlly = AbilityEffectOnUnit.None;
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Point;
                 bp.ActionType = UnitCommand.CommandType.Swift;
                 bp.AvailableMetamagic = Metamagic.Heighten | Metamagic.Reach;
-                bp.m_TargetMapObjects = false;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "Until the target of the smite is dead");
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var TrueSmiteFeature = Helpers.CreateBlueprint<BlueprintFeature>("TrueSmiteFeature", bp => {
+            var TrueSmiteFeature = Helpers.CreateFeature("TrueSmiteFeature", bp => {
                 bp.SetName("True Smite");
                 bp.SetDescription("Once per day, the hero can call out her inner powers to aid her against her enemies. "
                     + "As a {g|Encyclopedia:Swift_Action}swift action{/g}, the hero chooses one target within sight to smite. The hero adds her {g|Encyclopedia:Charisma}Cha{/g} "
@@ -215,10 +196,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { TrueSmiteAbility.ToReference<BlueprintUnitFactReference>() };
                 });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
-            var TrueSmiteAdditionalUse = Helpers.CreateBlueprint<BlueprintFeature>("TrueSmiteAdditionalUse", bp => {
+            var TrueSmiteAdditionalUse = Helpers.CreateFeature("TrueSmiteAdditionalUse", bp => {
                 bp.SetName("True Smite — Additional Use");
                 bp.SetDescription("Once per day, the hero can call out her inner powers to aid her against her enemies. "
                     + "As a {g|Encyclopedia:Swift_Action}swift action{/g}, the hero chooses one target within sight to smite. The hero adds her {g|Encyclopedia:Charisma}Cha{/g} "
@@ -233,7 +212,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     c.Value = 1;
                 });
                 bp.Ranks = 10;
-                bp.IsClassFeature = true;
             });
         }
     }

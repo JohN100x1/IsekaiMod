@@ -21,5 +21,11 @@ namespace IsekaiMod.Utilities
             BonusValue = 24,
             m_IsExtendable = true,
         };
+        public static readonly ContextDiceValue ZeroDiceValue = new()
+        {
+            DiceType = DiceType.Zero,
+            DiceCountValue = 0,
+            BonusValue = 0,
+        };
     }
 }

@@ -18,10 +18,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
         private static readonly BlueprintFeature ShieldsProficiency = Resources.GetBlueprint<BlueprintFeature>("cb8686e7357a68c42bdd9d4e65334633");
         public static void Add()
         {
-            var HeroProficiencies = Helpers.CreateBlueprint<BlueprintFeature>("HeroProficiencies", bp => {
+            var HeroProficiencies = Helpers.CreateFeature("HeroProficiencies", bp => {
                 bp.SetName("Hero Proficiences");
-                bp.SetDescription("The Hero is proficient with all simple and martial weapons and with all armor (heavy, light, and medium) and shields (excluding tower shields). They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor and shields (excluding tower shields) without incurring the normal {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell failure chance for arcane spells received from other classes.");
-                bp.m_Icon = null;
+                bp.SetDescription("The Hero is proficient with all simple and martial weapons and with all armor (heavy, light, and medium) and shields (excluding tower shields). "
+                    + "They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor and shields (excluding tower shields) without incurring the normal "
+                    + "{g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell failure chance for arcane spells received from other classes.");
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
                         LightArmorProficiency.ToReference<BlueprintUnitFactReference>(),
@@ -42,8 +43,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                         ArmorProficiencyGroup.HeavyShield
                     };
                 });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
         }
     }

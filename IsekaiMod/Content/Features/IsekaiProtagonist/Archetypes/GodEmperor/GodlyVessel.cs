@@ -1,6 +1,5 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -13,12 +12,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
         public static void Add()
         {
             var Icon_PureForm = Resources.GetBlueprint<BlueprintAbility>("33e53b74891b4c34ba6ee3baa322beeb").m_Icon;
-            var GodlyVessel = Helpers.CreateBlueprint<BlueprintFeature>("GodlyVessel", bp => {
+            var GodlyVessel = Helpers.CreateFeature("GodlyVessel", bp => {
                 bp.SetName("Godly Vessel");
                 bp.SetDescription("At 15th level, the God Emperor gains immunity to sickening effects, nauseating effects, blindness, shaken effects, frightening effects, cowering, "
-                    + "paralysis, petrification, confusion, sleep effects, slow effects, staggered effects, stun, daze, dazzle, entanglement, fatigue, exhaustion, movement impairing conditions, "
-                    + "bleed, curses, hexes, posion, disease, fear effects, death effects, compulsion, charm, mind-affecting effects, emotion effects, {g|Encyclopedia:Ability_Scores}ability score{/g} drain, "
-                    + "energy drain, negative levels, sneak attack damage and {g|Encyclopedia:Critical}critical hits{/g}."
+                    + "paralysis, petrification, confusion, sleep effects, slow effects, staggered effects, stun, daze, dazzle, entanglement, fatigue, exhaustion, "
+                    + "movement impairing conditions, bleed, curses, hexes, posion, disease, fear effects, death effects, compulsion, charm, mind-affecting effects, emotion effects, "
+                    + "{g|Encyclopedia:Ability_Scores}ability score{/g} drain, energy drain, negative levels, sneak attack damage and {g|Encyclopedia:Critical}critical hits{/g}."
                     );
                 bp.m_Icon = Icon_PureForm;
                 bp.AddComponent<AddConditionImmunity>(c => {
@@ -149,7 +148,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.AddComponent<AddImmunityToEnergyDrain>();
                 bp.AddComponent<AddImmunityToCriticalHits>();
                 bp.AddComponent<AddImmunityToPrecisionDamage>();
-                bp.IsClassFeature = true;
             });
         }
     }
