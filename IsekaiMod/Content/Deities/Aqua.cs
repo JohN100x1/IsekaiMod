@@ -41,7 +41,7 @@ namespace IsekaiMod.Content.Deities
         public static void Add()
         {
             var Icon_Aqua = AssetLoader.LoadInternal("Deities", "ICON_AQUA.png");
-            var GoddessAquaFeature = Helpers.CreateBlueprint<BlueprintFeature>("GoddessAquaFeature", (bp => {
+            var GoddessAquaFeature = Helpers.CreateFeature("GoddessAquaFeature", (bp => {
                 bp.SetName("Aqua");
                 bp.SetDescription(
                     "Aqua is the goddess of water who guided humans in the afterlife and oversaw the reincarnation of people into other worlds. "
@@ -50,8 +50,6 @@ namespace IsekaiMod.Content.Deities
                     + "\nDomains: Water, Healing, Good, Protection"
                     + "\nFavoured Weapon: Quarterstaff");
                 bp.m_Icon = Icon_Aqua;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.HideInCharacterSheetAndLevelUp = false;
                 bp.Groups = new FeatureGroup[] { FeatureGroup.Deities };
 

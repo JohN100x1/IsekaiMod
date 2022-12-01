@@ -43,7 +43,7 @@ namespace IsekaiMod.Content.Deities
         public static void Add()
         {
             var Icon_Truck = AssetLoader.LoadInternal("Deities", "ICON_TRUCK.png");
-            var TruckKunFeature = Helpers.CreateBlueprint<BlueprintFeature>("TruckKunFeature", (bp => {
+            var TruckKunFeature = Helpers.CreateFeature("TruckKunFeature", (bp => {
                 bp.SetName("Truck-kun");
                 bp.SetDescription(
                     "Truck-kun is a menace of the streets, a killer that prowls the road before it smashes their victim so hard they get transported into another world. "
@@ -52,8 +52,6 @@ namespace IsekaiMod.Content.Deities
                     + "\nDomains: Artifice, Destruction, Repose, Travel"
                     + "\nFavoured Weapon: Heavy Shield Bash");
                 bp.m_Icon = Icon_Truck;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.HideInCharacterSheetAndLevelUp = false;
                 bp.Groups = new FeatureGroup[] { FeatureGroup.Deities };
 

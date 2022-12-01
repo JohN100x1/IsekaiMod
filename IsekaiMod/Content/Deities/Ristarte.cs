@@ -41,7 +41,7 @@ namespace IsekaiMod.Content.Deities
         public static void Add()
         {
             var Icon_Ristarte = AssetLoader.LoadInternal("Deities", "ICON_RISTARTE.png");
-            var GoddessRistarteFeature = Helpers.CreateBlueprint<BlueprintFeature>("GoddessRistarteFeature", (bp => {
+            var GoddessRistarteFeature = Helpers.CreateFeature("GoddessRistarteFeature", (bp => {
                 bp.SetName("Ristarte");
                 bp.SetDescription(
                     "Ristarte is the goddess of healing who aids reincarnated heroes in their journey to defeat the demon lord in their new world. "
@@ -49,8 +49,6 @@ namespace IsekaiMod.Content.Deities
                     + "\nDomains: Healing, Good, Travel, Luck"
                     + "\nFavoured Weapon: Longsword");
                 bp.m_Icon = Icon_Ristarte;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.HideInCharacterSheetAndLevelUp = false;
                 bp.Groups = new FeatureGroup[] { FeatureGroup.Deities };
 
