@@ -13,7 +13,7 @@ namespace IsekaiMod.Utilities
             BonusValue = 0,
             m_IsExtendable = true,
         };
-        public static readonly ContextDurationValue OneDay = new()
+        public static readonly ContextDurationValue OneDayDuration = new()
         {
             Rate = DurationRate.Hours,
             DiceType = DiceType.Zero,

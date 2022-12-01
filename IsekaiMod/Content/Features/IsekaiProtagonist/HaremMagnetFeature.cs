@@ -49,7 +49,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                     c.NewRound = ActionFlow.DoNothing();
                     c.Deactivated = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.m_Buff = HaremMagnetImmunity.ToReference<BlueprintBuffReference>();
-                        c.DurationValue = Constants.OneDay;
+                        c.DurationValue = Constants.OneDayDuration;
                     });
                     c.Activated = ActionFlow.DoSingle<ContextActionSpawnFx>(c => {
                         c.PrefabLink = new PrefabLink() { AssetId = "28b3cd92c1fdc194d9ee1e378c23be6b" };
@@ -77,7 +77,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                             c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
                                 c.Succeed = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                                     c.m_Buff = HaremMagnetImmunity.ToReference<BlueprintBuffReference>();
-                                    c.DurationValue = Constants.OneDay;
+                                    c.DurationValue = Constants.OneDayDuration;
                                 });
                                 c.Failed = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                                     c.m_Buff = HaremMagnetBuff.ToReference<BlueprintBuffReference>();

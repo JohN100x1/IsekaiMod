@@ -2,7 +2,6 @@
 using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
@@ -46,7 +45,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     c.Value = -4;
                 });
             });
-            var DeathsnatcherSizeBaby = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherSizeBaby", bp => {
+            var DeathsnatcherSizeBaby = Helpers.CreateFeature("DeathsnatcherSizeBaby", bp => {
                 bp.HideInUI = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
@@ -55,7 +54,9 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     };
                 });
             });
-            var DeathsnatcherNaturalArmor = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherNaturalArmor", bp => {
+            var DeathsnatcherNaturalArmor = Helpers.CreateFeature("DeathsnatcherNaturalArmor", bp => {
+                bp.SetName("Deathsnatcher Armor");
+                bp.SetDescription("The Deathsnatcher has +16 natural armor bonus to AC.");
                 bp.HideInUI = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
@@ -63,7 +64,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     };
                 });
             });
-            var DeathsnatcherSizeBabyFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherSizeBabyFeature", bp => {
+            var DeathsnatcherSizeBabyFeature = Helpers.CreateFeature("DeathsnatcherSizeBabyFeature", bp => {
                 bp.SetName("Baby Deathsnatcher");
                 bp.SetDescription("The Deathsnatcher matures at 4th level. When this occurs, the Deathsnatcher’s natural armor bonus to its AC increases by 6, and gains "
                     + "the following ability scores adjustments: Str +6, Dex –4, Con +4.");
