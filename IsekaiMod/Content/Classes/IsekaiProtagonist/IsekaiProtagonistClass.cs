@@ -30,8 +30,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         public static void Add()
         {
-            // TODO: rename corrupt aura and protectice aura
-            // TODO: add scaling natural armor, strength and dexterity (like animal companion) to deathsnatcher
+            // TODO: add scaling natural armor, strength and dexterity (like animal companion) to deathsnatcher?
             // TODO: add vampiric drain spell for isekai vampire heritage?
             // TODO: Load localisation instead of hardcoded strings
 
