@@ -259,6 +259,14 @@
     "IsekaiFireBlastWallArea": "4a0cf761-f2d3-41e9-812d-4f9a898a0df5",
     "IsekaiFireBlastWall": "a3c58142-e433-4bf8-9c39-9643eb4980d1",
     "IsekaiFireBlastFeature": "36421eb1-8f16-4182-a009-f1f58b3e16c4",
+    "IsekaiWaterBlastBase": "83d98a34-dcc5-4acf-bd05-2f1f4acf9135",
+    "IsekaiWaterBlastAbility": "6fb0b324-1c8c-4f85-91ca-253c4b40eaa7",
+    "IsekaiWaterBlastExtendRange": "f597ff80-65e0-47df-8cad-920a4fed7baa",
+    "IsekaiWaterBlastSpindle": "2a400687-b41d-40b9-bea5-5c246a420e62",
+    "IsekaiWaterBlastSpray": "ca848d3a-3072-47a9-8a88-04cfbefd264b",
+    "IsekaiWaterBlastTorrent": "ed027f25-ab4f-4fd4-9d1d-9d4a68975c96",
+    "IsekaiWaterBlastWallArea": "f976a087-4616-4f16-8449-3aef0aaffe63",
+    "IsekaiWaterBlastWall": "24796e70-4d84-4ba5-b3c5-5169b033e868",
     "IsekaiWaterBlastFeature": "56c00659-979f-4568-a856-5357c667da66",
 
     // God Emperor Features

@@ -43,6 +43,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
 {
     class KineticPower
     {
+        // Tutorial
+        // To add a new blast, a blast base and blast feature must be created
+        // New blast base must be added into the m_Blasts of AddKineticistPart in KineticPowerBurn
+        // New blast feature must be appended to KineticPowerSelection
+        // New blast feature must be patched by PatchGatherPowerBuffs if the blast feature is initially selectable
+
         // Icons
         private static readonly Sprite Icon_InfusionSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("58d6f8e9eea63f6418b107ce64f315ea").m_Icon;
 
@@ -57,52 +63,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
         private static readonly BlueprintBuff GatherPowerBuffIII = Resources.GetBlueprint<BlueprintBuff>("82eb0c274eddd8849bb89a8e6dbc65f8");
         private static readonly BlueprintBuff KineticBladeEnableBuff = Resources.GetBlueprint<BlueprintBuff>("426a9c079ee7ac34aa8e0054f2218074");
         private static readonly BlueprintBuff ElementalBastionBuff = Resources.GetBlueprint<BlueprintBuff>("99953956704788444964899b5b8e96ab");
-        private static readonly BlueprintAbility AirBlastBase = Resources.GetBlueprint<BlueprintAbility>("0ab1552e2ebdacf44bb7b20f5393366d");
-        private static readonly BlueprintAbility BlizzardBlastBase = Resources.GetBlueprint<BlueprintAbility>("16617b8c20688e4438a803effeeee8a6");
-        private static readonly BlueprintAbility BlueFlameBlastBase = Resources.GetBlueprint<BlueprintAbility>("d29186edb20be6449b23660b39435398");
-        private static readonly BlueprintAbility ChargedWaterBlastBase = Resources.GetBlueprint<BlueprintAbility>("4e2e066dd4dc8de4d8281ed5b3f4acb6");
-        private static readonly BlueprintAbility ColdBlastBase = Resources.GetBlueprint<BlueprintAbility>("7980e876b0749fc47ac49b9552e259c1");
-        private static readonly BlueprintAbility EarthBlastBase = Resources.GetBlueprint<BlueprintAbility>("e53f34fb268a7964caf1566afb82dadd");
-        private static readonly BlueprintAbility ElectricBlastBase = Resources.GetBlueprint<BlueprintAbility>("45eb571be891c4c4581b6fcddda72bcd");
-        private static readonly BlueprintAbility FireBlastBase = Resources.GetBlueprint<BlueprintAbility>("83d5873f306ac954cad95b6aeeeb2d8c");
-        private static readonly BlueprintAbility IceBlastBase = Resources.GetBlueprint<BlueprintAbility>("403bcf42f08ca70498432cf62abee434");
-        private static readonly BlueprintAbility MagmaBlastBase = Resources.GetBlueprint<BlueprintAbility>("8c25f52fce5113a4491229fd1265fc3c");
-        private static readonly BlueprintAbility MetalBlastBase = Resources.GetBlueprint<BlueprintAbility>("6276881783962284ea93298c1fe54c48");
-        private static readonly BlueprintAbility MudBlastBase = Resources.GetBlueprint<BlueprintAbility>("e2610c88664e07343b4f3fb6336f210c");
-        private static readonly BlueprintAbility PlasmaBlastBase = Resources.GetBlueprint<BlueprintAbility>("9afdc3eeca49c594aa7bf00e8e9803ac");
-        private static readonly BlueprintAbility SandstormBlastBase = Resources.GetBlueprint<BlueprintAbility>("b93e1f0540a4fa3478a6b47ae3816f32");
-        private static readonly BlueprintAbility SteamBlastBase = Resources.GetBlueprint<BlueprintAbility>("3baf01649a92ae640927b0f633db7c11");
-        private static readonly BlueprintAbility ThunderstormBlastBase = Resources.GetBlueprint<BlueprintAbility>("b813ceb82d97eed4486ddd86d3f7771b");
-        private static readonly BlueprintAbility WaterBlastBase = Resources.GetBlueprint<BlueprintAbility>("d663a8d40be1e57478f34d6477a67270");
 
-        // Gather Power Buffs
-        private static readonly BlueprintBuff GatherPowerAirBuff = Resources.GetBlueprint<BlueprintBuff>("633f147eb1567274e9ed4d4150d79d78");
-        private static readonly BlueprintBuff GatherPowerEarthBuff = Resources.GetBlueprint<BlueprintBuff>("28a39fc406a974748bd70ce3908efe61");
-        private static readonly BlueprintBuff GatherPowerFireBuff = Resources.GetBlueprint<BlueprintBuff>("3bcf793f91cbd104280efe590d6e4d0c");
-        private static readonly BlueprintBuff GatherPowerWaterBuff = Resources.GetBlueprint<BlueprintBuff>("8a59a1b6f3db18e4d831623718706a03");
-        private static readonly BlueprintBuff GatherPowerAirBuffEmpowered = Resources.GetBlueprint<BlueprintBuff>("0ddc64a1dc3bbf84c8d6aa33cf2b8607");
-        private static readonly BlueprintBuff GatherPowerEarthBuffEmpowered = Resources.GetBlueprint<BlueprintBuff>("82e8e3115e95d064685acc3c75053174");
-        private static readonly BlueprintBuff GatherPowerFireBuffEmpowered = Resources.GetBlueprint<BlueprintBuff>("63b8e8e8a453d874aa379428a089fc1f");
-        private static readonly BlueprintBuff GatherPowerWaterBuffEmpowered = Resources.GetBlueprint<BlueprintBuff>("68c1e339205d6c14e902aeb4c7ee2d2c");
-
-        // Kinetic Power Progression
-        private static readonly BlueprintFeature SuperCharge = Resources.GetBlueprint<BlueprintFeature>("5a13756fb4be25f46951bc3f16448276");
+        // Kinetic Power Features
         private static readonly BlueprintFeature DismissInfusionFeature = Resources.GetBlueprint<BlueprintFeature>("48bbbb16189443049663ca161bb3e338");
-        private static readonly BlueprintFeature MetakinesisEmpowerFeature = Resources.GetBlueprint<BlueprintFeature>("70322f5a2a294e54a9552f77ee85b0a7");
-        private static readonly BlueprintFeature MetakinesisMaximizedFeature = Resources.GetBlueprint<BlueprintFeature>("0306bc7c6930a5c4b879c7dea78208c2");
-        private static readonly BlueprintFeature MetakinesisQuickenFeature = Resources.GetBlueprint<BlueprintFeature>("4bb9d2328a3fdca419243d6116b337ac");
         private static readonly BlueprintFeature GatherPowerAbilitiesFeature = Resources.GetBlueprint<BlueprintFeature>("71f526b1d4b50b94582b0b9cbe12b0e0");
-        private static readonly BlueprintFeature ElementalOverflowBonusFeature = Resources.GetBlueprint<BlueprintFeature>("2496916d8465dbb4b9ddeafdf28c67d8");
-        private static readonly BlueprintFeature CompositeBlastSpecialisation = Resources.GetBlueprint<BlueprintFeature>("df8897708983d4846871ca72c4cbfc52");
-        private static readonly BlueprintFeatureSelection SecondaryElementalFocusSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("4204bc10b3d5db440b1f52f0c375848b");
-        private static readonly BlueprintFeatureSelection ThirdElementalFocusSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("e2c1718828fc843479f18ab4d75ded86");
-        private static readonly BlueprintFeatureSelection MetakinesisMaster = Resources.GetBlueprint<BlueprintFeatureSelection>("8c33002186eb2fd45a140eed1301e207");
-        private static readonly BlueprintFeatureSelection ElementalFocusSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("1f3a15a3ae8a5524ab8b97f469bf4e3d");
-        private static readonly BlueprintFeatureSelection WildTalentSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("5c883ae0cd6d7d5448b7a420f51f8459");
-        private static readonly BlueprintProgression KineticBlastProgression = Resources.GetBlueprint<BlueprintProgression>("30a5b8cf728bd4a4d8d90fc4953e322e");
-        private static readonly BlueprintProgression ElementalOverflowProgression = Resources.GetBlueprint<BlueprintProgression>("86beb0391653faf43aec60d5ec05b538");
-        private static readonly BlueprintProgression InfusionSpecializationProgression = Resources.GetBlueprint<BlueprintProgression>("1f86ce843fbd2d548a8d88ea1b652452");
-
 
         // Kineticist Class
         private static readonly BlueprintCharacterClass KineticistClass = Resources.GetBlueprint<BlueprintCharacterClass>("42a455d9ec1ad924d889272429eb8391");
@@ -131,8 +95,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
         private static readonly BlueprintAbility TorrentFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("5e4c7cb990de4034bbee9fb99be2e15d");
         private static readonly BlueprintAbility WallFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("19309b5551a28d74288f4b6f7d8d838d");
 
-
         private static readonly BlueprintAbility WaterBlastAbility = Resources.GetBlueprint<BlueprintAbility>("e3f41966c2d662a4e9582a0497621c46");
+        private static readonly BlueprintAbility ExtendedRangeWaterBlastAbility = Resources.GetBlueprint<BlueprintAbility>("11eba1184c7108846a665d8ca317963f");
+        private static readonly BlueprintAbility SpindleWaterBlastAbility = Resources.GetBlueprint<BlueprintAbility>("7021bbe4dca437440a41da4552dce28e");
+        private static readonly BlueprintAbility SprayWaterBlastAbility = Resources.GetBlueprint<BlueprintAbility>("963da934d652bdc41900ed68f63ca1fa");
+        private static readonly BlueprintAbility TorrentWaterBlastAbility = Resources.GetBlueprint<BlueprintAbility>("93cc42235edc6824fa7d54b83ed4e1fe");
+        private static readonly BlueprintAbility WallWaterBlastAbility = Resources.GetBlueprint<BlueprintAbility>("1ab8c76ac4983174dbffa35e2a87e582");
 
         // Projectiles
         private static readonly BlueprintProjectile WindProjectile00 = Resources.GetBlueprint<BlueprintProjectile>("e093b08cd4cafe946962b339faf2310a");
@@ -143,6 +111,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
         private static readonly BlueprintProjectile ArrowFire00 = Resources.GetBlueprint<BlueprintProjectile>("cd6fbf24b5f625245960c4b8e6f58292");
         private static readonly BlueprintProjectile FireLine00_Head = Resources.GetBlueprint<BlueprintProjectile>("7172842b720c3534897ebda2e0624c2d");
         private static readonly BlueprintProjectile FireCone15Feet00 = Resources.GetBlueprint<BlueprintProjectile>("6dfc5e4c7d9ae3048984744222dbd0fa");
+        private static readonly BlueprintProjectile Kinetic_WaterBlast00_Projectile = Resources.GetBlueprint<BlueprintProjectile>("06e268d6a2b5a3a438c2dd52d68bfef6");
+        private static readonly BlueprintProjectile Kinetic_WaterBlastCone00_30Feet_Aoe = Resources.GetBlueprint<BlueprintProjectile>("0ebec8e9eddc29e4496e163822f68ba5");
+        private static readonly BlueprintProjectile Kinetic_WaterLine00 = Resources.GetBlueprint<BlueprintProjectile>("f3566859ed1664543a18f1e235bc652c");
 
         // Buffs
         private static readonly BlueprintBuff VolcanicStormDifficultTerrainBuff = Resources.GetBlueprint<BlueprintBuff>("fe21bf21c3182f743a964de5bcd2033e");
@@ -154,8 +125,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
         // DLC3 Ricochet
         private static readonly BlueprintBuff DLC3_KineticRicochetBuff = Resources.GetBlueprint<BlueprintBuff>("5f7d567ae4054cc291e42fc43ef5a046");
         private static readonly BlueprintUnitProperty DLC3_KineticRicochetProperty = Resources.GetBlueprint<BlueprintUnitProperty>("4a18040254d040f78c298f10649eab71");
-
-        private static readonly DamageTypeDescription AirDamage = new()
+        
+        // Frequently used constants
+        private static readonly DamageTypeDescription BludgeoningDamage = new()
         {
             Type = DamageType.Physical,
             Common = new DamageTypeDescription.CommomData(),
@@ -177,7 +149,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             Physical = new DamageTypeDescription.PhysicalData(),
             Energy = DamageEnergyType.Fire
         };
-        private static readonly ContextDiceValue KineticBlastDamage = new()
+        private static readonly ContextDiceValue PhysicalBlastDamage = new()
         {
             DiceType = DiceType.D6,
             DiceCountValue = new ContextValue()
@@ -188,6 +160,20 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             BonusValue = new ContextValue()
             {
                 ValueType = ContextValueType.Shared,
+                ValueRank = AbilityRankType.DamageBonus
+            }
+        };
+        private static readonly ContextDiceValue EnergyBlastDamage = new()
+        {
+            DiceType = DiceType.D6,
+            DiceCountValue = new ContextValue()
+            {
+                ValueType = ContextValueType.Rank,
+                ValueRank = AbilityRankType.DamageDice
+            },
+            BonusValue = new ContextValue()
+            {
+                ValueType = ContextValueType.Rank,
                 ValueRank = AbilityRankType.DamageBonus
             }
         };
@@ -207,7 +193,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
         public static void Add()
         {
             // Air Blast
-            var IsekaiAirBlastBase = CreateKineticBlastAbility("IsekaiAirBlastBase", bp => {
+            var IsekaiAirBlastBase = CreatePhysicalBlastAbility("IsekaiAirBlastBase", bp => {
                 bp.m_DisplayName = AirBlastAbility.m_DisplayName;
                 bp.m_Description = AirBlastAbility.m_Description;
                 bp.m_Icon = AirBlastAbility.m_Icon;
@@ -229,11 +215,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                             c.FirstValue = new DeliverEffectLayer();
                             c.SecondValue = new IntConstant();
                         });
-                        c.IfTrue = DealKineticBlastDamage(c => {
-                            c.DamageType = AirDamage;
+                        c.IfTrue = DealPhysicalBlastDamage(c => {
+                            c.DamageType = BludgeoningDamage;
                         });
-                        c.IfFalse = DealKineticBlastDamage(c => {
-                            c.DamageType = AirDamage;
+                        c.IfFalse = DealPhysicalBlastDamage(c => {
+                            c.DamageType = BludgeoningDamage;
                             c.Half = true;
                         });
                     });
@@ -247,7 +233,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
-                    c.CachedDamageInfo = InfusionDamageCache(AirDamage, false);
+                    c.CachedDamageInfo = PhysicalDamageCache(BludgeoningDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -278,8 +264,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Icon = CycloneAirBlastAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Reflex;
-                    c.Actions = DealKineticBlastDamage(c => {
-                        c.DamageType = AirDamage;
+                    c.Actions = DealPhysicalBlastDamage(c => {
+                        c.DamageType = BludgeoningDamage;
                         c.Half = true;
                         c.IsAoE = true;
                         c.HalfIfSaved = true;
@@ -294,7 +280,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 3;
-                    c.CachedDamageInfo = InfusionDamageCache(AirDamage, true);
+                    c.CachedDamageInfo = PhysicalDamageCache(BludgeoningDamage, true);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -317,11 +303,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                             c.FirstValue = new DeliverEffectLayer();
                             c.SecondValue = new IntConstant();
                         });
-                        c.IfTrue = DealKineticBlastDamage(c => {
-                            c.DamageType = AirDamage;
+                        c.IfTrue = DealPhysicalBlastDamage(c => {
+                            c.DamageType = BludgeoningDamage;
                         });
-                        c.IfFalse = DealKineticBlastDamage(c => {
-                            c.DamageType = AirDamage;
+                        c.IfFalse = DealPhysicalBlastDamage(c => {
+                            c.DamageType = BludgeoningDamage;
                             c.Half = true;
                         });
                     });
@@ -336,7 +322,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 1;
-                    c.CachedDamageInfo = InfusionDamageCache(AirDamage, false);
+                    c.CachedDamageInfo = PhysicalDamageCache(BludgeoningDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -370,8 +356,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.SavingThrowType = SavingThrowType.Reflex;
                     c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
                         c.Succeed = ActionFlow.DoNothing();
-                        c.Failed = DealKineticBlastDamage(c => {
-                            c.DamageType = AirDamage;
+                        c.Failed = DealPhysicalBlastDamage(c => {
+                            c.DamageType = BludgeoningDamage;
                             c.Half = true;
                         });
                     });
@@ -391,7 +377,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 2;
-                    c.CachedDamageInfo = InfusionDamageCache(AirDamage, true);
+                    c.CachedDamageInfo = PhysicalDamageCache(BludgeoningDamage, true);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -406,8 +392,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Icon = TorrentAirBlastAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Reflex;
-                    c.Actions = DealKineticBlastDamage(c => {
-                        c.DamageType = AirDamage;
+                    c.Actions = DealPhysicalBlastDamage(c => {
+                        c.DamageType = BludgeoningDamage;
                         c.Half = true;
                         c.IsAoE = true;
                         c.HalfIfSaved = true;
@@ -424,7 +410,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 2;
-                    c.CachedDamageInfo = InfusionDamageCache(AirDamage, true);
+                    c.CachedDamageInfo = PhysicalDamageCache(BludgeoningDamage, true);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -434,10 +420,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Parent = IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>();
                 bp.AvailableMetamagic = TorrentAirBlastAbility.AvailableMetamagic;
             });
-            var IsekaiAirBlastWallArea = CreateKineticAreaEffect("IsekaiAirBlastWallArea", bp => {
+            var IsekaiAirBlastWallArea = CreatePhysicalAreaEffect("IsekaiAirBlastWallArea", bp => {
                 bp.AddComponent<AbilityAreaEffectRunAction>(c => {
-                    c.UnitEnter = DealKineticBlastDamage(c => {
-                        c.DamageType = AirDamage;
+                    c.UnitEnter = DealPhysicalBlastDamage(c => {
+                        c.DamageType = BludgeoningDamage;
                         c.Half = true;
                     });
                     c.UnitExit = ActionFlow.DoNothing();
@@ -461,7 +447,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 3;
-                    c.CachedDamageInfo = InfusionDamageCache(AirDamage, true);
+                    c.CachedDamageInfo = PhysicalDamageCache(BludgeoningDamage, true);
                     c.CachedDamageSource = IsekaiAirBlastWallArea.ToReference<AnyBlueprintReference>();
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
@@ -494,7 +480,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             });
 
             // Earth Blast
-            var IsekaiEarthBlastBase = CreateKineticBlastAbility("IsekaiEarthBlastBase", bp => {
+            var IsekaiEarthBlastBase = CreatePhysicalBlastAbility("IsekaiEarthBlastBase", bp => {
                 bp.m_DisplayName = EarthBlastAbility.m_DisplayName;
                 bp.m_Description = EarthBlastAbility.m_Description;
                 bp.m_Icon = EarthBlastAbility.m_Icon;
@@ -516,10 +502,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                             c.FirstValue = new DeliverEffectLayer();
                             c.SecondValue = new IntConstant();
                         });
-                        c.IfTrue = DealKineticBlastDamage(c => {
+                        c.IfTrue = DealPhysicalBlastDamage(c => {
                             c.DamageType = EarthDamage;
                         });
-                        c.IfFalse = DealKineticBlastDamage(c => {
+                        c.IfFalse = DealPhysicalBlastDamage(c => {
                             c.DamageType = EarthDamage;
                             c.Half = true;
                         });
@@ -534,7 +520,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
-                    c.CachedDamageInfo = InfusionDamageCache(EarthDamage, false);
+                    c.CachedDamageInfo = PhysicalDamageCache(EarthDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -559,15 +545,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_TargetMapObjects = true;
                 bp.AvailableMetamagic = EarthBlastAbility.AvailableMetamagic;
             });
-            var IsekaiEarthBlastDeadlyEarthArea = CreateKineticAreaEffect("IsekaiEarthBlastDeadlyEarthArea", bp => {
+            var IsekaiEarthBlastDeadlyEarthArea = CreatePhysicalAreaEffect("IsekaiEarthBlastDeadlyEarthArea", bp => {
                 bp.AddComponent<AbilityAreaEffectRunAction>(c => {
-                    c.UnitEnter = DealKineticBlastDamage(c => {
+                    c.UnitEnter = DealPhysicalBlastDamage(c => {
                         c.DamageType = EarthDamage;
                         c.Half = true;
                     });
                     c.UnitExit = ActionFlow.DoNothing();
                     c.UnitMove = ActionFlow.DoNothing();
-                    c.Round = DealKineticBlastDamage(c => {
+                    c.Round = DealPhysicalBlastDamage(c => {
                         c.DamageType = EarthDamage;
                         c.Half = true;
                     });
@@ -596,13 +582,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
                         new AbilityKineticist.DamageInfo()
                         {
-                            Value = KineticBlastDamage,
+                            Value = PhysicalBlastDamage,
                             Type = EarthDamage,
                             Half = true
                         },
                         new AbilityKineticist.DamageInfo()
                         {
-                            Value = KineticBlastDamage,
+                            Value = PhysicalBlastDamage,
                             Type = EarthDamage,
                             Half = true
                         },
@@ -631,10 +617,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                             c.FirstValue = new DeliverEffectLayer();
                             c.SecondValue = new IntConstant();
                         });
-                        c.IfTrue = DealKineticBlastDamage(c => {
+                        c.IfTrue = DealPhysicalBlastDamage(c => {
                             c.DamageType = EarthDamage;
                         });
-                        c.IfFalse = DealKineticBlastDamage(c => {
+                        c.IfFalse = DealPhysicalBlastDamage(c => {
                             c.DamageType = EarthDamage;
                             c.Half = true;
                         });
@@ -650,7 +636,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 1;
-                    c.CachedDamageInfo = InfusionDamageCache(EarthDamage, false);
+                    c.CachedDamageInfo = PhysicalDamageCache(EarthDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -683,14 +669,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<Conditional>(c => {
                         c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionIsMainTarget>();
-                        c.IfTrue = DealKineticBlastDamage(c => {
+                        c.IfTrue = DealPhysicalBlastDamage(c => {
                             c.DamageType = EarthDamage;
                         });
                         c.IfFalse = ActionFlow.DoSingle<ContextActionSavingThrow>(c => {
                             c.Type = SavingThrowType.Reflex;
                             c.m_ConditionalDCIncrease = new ContextActionSavingThrow.ConditionalDCIncrease[0];
                             c.CustomDC = 0;
-                            c.Actions = DealKineticBlastDamage(c => {
+                            c.Actions = DealPhysicalBlastDamage(c => {
                                 c.DamageType = EarthDamage;
                                 c.Half = true;
                                 c.IsAoE = true;
@@ -712,12 +698,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>() {
                         new AbilityKineticist.DamageInfo()
                         {
-                            Value = KineticBlastDamage,
+                            Value = PhysicalBlastDamage,
                             Type = EarthDamage,
                         },
                         new AbilityKineticist.DamageInfo()
                         {
-                            Value = KineticBlastDamage,
+                            Value = PhysicalBlastDamage,
                             Type = EarthDamage,
                             Half = true
                         },
@@ -745,7 +731,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.SavingThrowType = SavingThrowType.Reflex;
                     c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
                         c.Succeed = ActionFlow.DoNothing();
-                        c.Failed = DealKineticBlastDamage(c => {
+                        c.Failed = DealPhysicalBlastDamage(c => {
                             c.DamageType = EarthDamage;
                             c.Half = true;
                         });
@@ -766,7 +752,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 2;
-                    c.CachedDamageInfo = InfusionDamageCache(EarthDamage, true);
+                    c.CachedDamageInfo = PhysicalDamageCache(EarthDamage, true);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -775,9 +761,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Parent = IsekaiEarthBlastBase.ToReference<BlueprintAbilityReference>();
                 bp.AvailableMetamagic = SpindleEarthBlastAbility.AvailableMetamagic;
             });
-            var IsekaiEarthBlastWallArea = CreateKineticAreaEffect("IsekaiEarthBlastWallArea", bp => {
+            var IsekaiEarthBlastWallArea = CreatePhysicalAreaEffect("IsekaiEarthBlastWallArea", bp => {
                 bp.AddComponent<AbilityAreaEffectRunAction>(c => {
-                    c.UnitEnter = DealKineticBlastDamage(c => {
+                    c.UnitEnter = DealPhysicalBlastDamage(c => {
                         c.DamageType = EarthDamage;
                         c.Half = true;
                     });
@@ -802,7 +788,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 3;
-                    c.CachedDamageInfo = InfusionDamageCache(EarthDamage, true);
+                    c.CachedDamageInfo = PhysicalDamageCache(EarthDamage, true);
                     c.CachedDamageSource = IsekaiEarthBlastWallArea.ToReference<AnyBlueprintReference>();
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
@@ -835,7 +821,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             });
 
             // Fire Blast
-            var IsekaiFireBlastBase = CreateKineticBlastAbility("IsekaiFireBlastBase", bp => {
+            var IsekaiFireBlastBase = CreatePhysicalBlastAbility("IsekaiFireBlastBase", bp => {
                 bp.m_DisplayName = FireBlastAbility.m_DisplayName;
                 bp.m_Description = FireBlastAbility.m_Description;
                 bp.m_Icon = FireBlastAbility.m_Icon;
@@ -862,10 +848,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                             c.FirstValue = new DeliverEffectLayer();
                             c.SecondValue = new IntConstant();
                         });
-                        c.IfTrue = DealKineticBlastDamage(c => {
+                        c.IfTrue = DealEnergyBlastDamage(c => {
                             c.DamageType = FireDamage;
                         });
-                        c.IfFalse = DealKineticBlastDamage(c => {
+                        c.IfFalse = DealEnergyBlastDamage(c => {
                             c.DamageType = FireDamage;
                             c.Half = true;
                         });
@@ -880,7 +866,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 });
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
-                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.CachedDamageInfo = EnergyDamageCache(FireDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -914,7 +900,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.Actions = ActionFlow.DoSingle<Conditional>(c => {
                         c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionIsCaster>();
                         c.IfTrue = ActionFlow.DoNothing();
-                        c.IfFalse = DealKineticBlastDamage(c => {
+                        c.IfFalse = DealEnergyBlastDamage(c => {
                             c.DamageType = FireDamage;
                             c.IsAoE = true;
                             c.HalfIfSaved = true;
@@ -933,7 +919,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 3;
-                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.CachedDamageInfo = EnergyDamageCache(FireDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -950,7 +936,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Icon = EruptionFireBlastAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Reflex;
-                    c.Actions = DealKineticBlastDamage(c => {
+                    c.Actions = DealEnergyBlastDamage(c => {
                         c.DamageType = FireDamage;
                         c.IsAoE = true;
                         c.HalfIfSaved = true;
@@ -968,7 +954,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 2;
-                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.CachedDamageInfo = EnergyDamageCache(FireDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -989,10 +975,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                             c.FirstValue = new DeliverEffectLayer();
                             c.SecondValue = new IntConstant();
                         });
-                        c.IfTrue = DealKineticBlastDamage(c => {
+                        c.IfTrue = DealEnergyBlastDamage(c => {
                             c.DamageType = FireDamage;
                         });
-                        c.IfFalse = DealKineticBlastDamage(c => {
+                        c.IfFalse = DealEnergyBlastDamage(c => {
                             c.DamageType = FireDamage;
                             c.Half = true;
                         });
@@ -1008,7 +994,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 1;
-                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.CachedDamageInfo = EnergyDamageCache(FireDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -1040,7 +1026,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Icon = FanOfFlamesFireBlastAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Reflex;
-                    c.Actions = DealKineticBlastDamage(c => {
+                    c.Actions = DealEnergyBlastDamage(c => {
                         c.DamageType = FireDamage;
                         c.IsAoE = true;
                         c.HalfIfSaved = true;
@@ -1057,7 +1043,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 1;
-                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.CachedDamageInfo = EnergyDamageCache(FireDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -1076,7 +1062,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.SavingThrowType = SavingThrowType.Reflex;
                     c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
                         c.Succeed = ActionFlow.DoNothing();
-                        c.Failed = DealKineticBlastDamage(c => {
+                        c.Failed = DealEnergyBlastDamage(c => {
                             c.DamageType = FireDamage;
                         });
                     });
@@ -1096,7 +1082,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 2;
-                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.CachedDamageInfo = EnergyDamageCache(FireDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -1111,7 +1097,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Icon = TorrentFireBlastAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Reflex;
-                    c.Actions = DealKineticBlastDamage(c => {
+                    c.Actions = DealEnergyBlastDamage(c => {
                         c.DamageType = FireDamage;
                         c.IsAoE = true;
                         c.HalfIfSaved = true;
@@ -1128,7 +1114,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 2;
-                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.CachedDamageInfo = EnergyDamageCache(FireDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
@@ -1138,9 +1124,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Parent = IsekaiFireBlastBase.ToReference<BlueprintAbilityReference>();
                 bp.AvailableMetamagic = TorrentFireBlastAbility.AvailableMetamagic;
             });
-            var IsekaiFireBlastWallArea = CreateKineticAreaEffect("IsekaiFireBlastWallArea", bp => {
+            var IsekaiFireBlastWallArea = CreateEnergyAreaEffect("IsekaiFireBlastWallArea", bp => {
                 bp.AddComponent<AbilityAreaEffectRunAction>(c => {
-                    c.UnitEnter = DealKineticBlastDamage(c => {
+                    c.UnitEnter = DealEnergyBlastDamage(c => {
                         c.DamageType = FireDamage;
                     });
                     c.UnitExit = ActionFlow.DoNothing();
@@ -1164,7 +1150,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AbilityKineticist>(c => {
                     c.Amount = 1;
                     c.InfusionBurnCost = 3;
-                    c.CachedDamageInfo = InfusionDamageCache(FireDamage, false);
+                    c.CachedDamageInfo = EnergyDamageCache(FireDamage, false);
                     c.CachedDamageSource = IsekaiFireBlastWallArea.ToReference<AnyBlueprintReference>();
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
@@ -1178,7 +1164,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             var IsekaiFireBlastFeature = Helpers.CreateFeature("IsekaiFireBlastFeature", bp => {
                 bp.SetName("Fire Avatar");
                 bp.SetDescription("You gain the ability to use fire blast and all its associated form infusions. "
-                    + "Your fire blast deals fire damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
+                    + "Your fire blast deals fire damage equal to 1d6 + 1/2 your Constitution modifier, increasing by 1d6 for every 2 character levels beyond 1st. "
                     + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
                 bp.m_Icon = FireBlastAbility.m_Icon;
                 bp.AddComponent<AddFacts>(c => {
@@ -1198,16 +1184,296 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 };
             });
 
-
+            // Water Blast
+            var IsekaiWaterBlastBase = CreatePhysicalBlastAbility("IsekaiWaterBlastBase", bp => {
+                bp.m_DisplayName = WaterBlastAbility.m_DisplayName;
+                bp.m_Description = WaterBlastAbility.m_Description;
+                bp.m_Icon = WaterBlastAbility.m_Icon;
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.CachedDamageInfo = new List<AbilityKineticist.DamageInfo>();
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.AvailableMetamagic = WaterBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiWaterBlastAbility = CreateWaterBlastAbility("IsekaiWaterBlastAbility", bp => {
+                bp.m_DisplayName = WaterBlastAbility.m_DisplayName;
+                bp.m_Description = WaterBlastAbility.m_Description;
+                bp.m_Icon = WaterBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.Actions = ActionFlow.DoSingle<Conditional>(c => {
+                        c.ConditionsChecker = ActionFlow.IfSingle<IsEqual>(c => {
+                            c.FirstValue = new DeliverEffectLayer();
+                            c.SecondValue = new IntConstant();
+                        });
+                        c.IfTrue = DealPhysicalBlastDamage(c => {
+                            c.DamageType = BludgeoningDamage;
+                        });
+                        c.IfFalse = DealPhysicalBlastDamage(c => {
+                            c.DamageType = BludgeoningDamage;
+                            c.Half = true;
+                        });
+                    });
+                });
+                bp.AddComponent<AbilityDeliverProjectile>(c => {
+                    c.m_Projectiles = new BlueprintProjectileReference[] { Kinetic_WaterBlast00_Projectile.ToReference<BlueprintProjectileReference>() };
+                    c.m_Length = new Feet(0);
+                    c.m_LineWidth = new Feet(5);
+                    c.NeedAttackRoll = true;
+                    c.m_Weapon = KineticBlastPhysicalWeapon.ToReference<BlueprintItemWeaponReference>();
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.CachedDamageInfo = PhysicalDamageCache(BludgeoningDamage, false);
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.AddComponent<AbilityDeliverRicochet>(c => {
+                    c.m_Layer = 1;
+                    c.m_BeforeCondition = ActionFlow.IfSingle<ContextConditionHasBuff>(c => {
+                        c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
+                    });
+                    c.m_Projectile = Kinetic_WaterBlast00_Projectile.ToReference<BlueprintProjectileReference>();
+                    c.TargetsCount = new ContextValue()
+                    {
+                        ValueType = ContextValueType.CasterCustomProperty,
+                        m_CustomProperty = DLC3_KineticRicochetProperty.ToReference<BlueprintUnitPropertyReference>()
+                    };
+                    c.Radius = new Feet(10);
+                    c.m_TargetCondition = ActionFlow.EmptyCondition();
+                });
+                bp.CanTargetEnemies = true;
+                bp.ShouldTurnToTarget = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiWaterBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.m_TargetMapObjects = true;
+                bp.AvailableMetamagic = WaterBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiWaterBlastExtendRange = CreateWaterBlastAbility("IsekaiWaterBlastExtendRange", bp => {
+                bp.m_DisplayName = ExtendedRangeWaterBlastAbility.m_DisplayName;
+                bp.m_Description = ExtendedRangeWaterBlastAbility.m_Description;
+                bp.m_Icon = ExtendedRangeWaterBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.Actions = ActionFlow.DoSingle<Conditional>(c => {
+                        c.ConditionsChecker = ActionFlow.IfSingle<IsEqual>(c => {
+                            c.FirstValue = new DeliverEffectLayer();
+                            c.SecondValue = new IntConstant();
+                        });
+                        c.IfTrue = DealPhysicalBlastDamage(c => {
+                            c.DamageType = BludgeoningDamage;
+                        });
+                        c.IfFalse = DealPhysicalBlastDamage(c => {
+                            c.DamageType = BludgeoningDamage;
+                            c.Half = true;
+                        });
+                    });
+                });
+                bp.AddComponent<AbilityDeliverProjectile>(c => {
+                    c.m_Projectiles = new BlueprintProjectileReference[] { Kinetic_WaterBlast00_Projectile.ToReference<BlueprintProjectileReference>() };
+                    c.m_Length = new Feet(0);
+                    c.m_LineWidth = new Feet(5);
+                    c.NeedAttackRoll = true;
+                    c.m_Weapon = KineticBlastPhysicalWeapon.ToReference<BlueprintItemWeaponReference>();
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 1;
+                    c.CachedDamageInfo = PhysicalDamageCache(BludgeoningDamage, false);
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.AddComponent<AbilityDeliverRicochet>(c => {
+                    c.m_Layer = 1;
+                    c.m_BeforeCondition = ActionFlow.IfSingle<ContextConditionHasBuff>(c => {
+                        c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
+                    });
+                    c.m_Projectile = Kinetic_WaterBlast00_Projectile.ToReference<BlueprintProjectileReference>();
+                    c.TargetsCount = new ContextValue()
+                    {
+                        ValueType = ContextValueType.CasterCustomProperty,
+                        m_CustomProperty = DLC3_KineticRicochetProperty.ToReference<BlueprintUnitPropertyReference>()
+                    };
+                    c.Radius = new Feet(10);
+                    c.m_TargetCondition = ActionFlow.EmptyCondition();
+                });
+                bp.Range = AbilityRange.Long;
+                bp.CanTargetEnemies = true;
+                bp.ShouldTurnToTarget = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiWaterBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.m_TargetMapObjects = true;
+                bp.AvailableMetamagic = ExtendedRangeWaterBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiWaterBlastSpindle = CreateWaterBlastAbility("IsekaiWaterBlastSpindle", bp => {
+                bp.m_DisplayName = SpindleWaterBlastAbility.m_DisplayName;
+                bp.m_Description = SpindleWaterBlastAbility.m_Description;
+                bp.m_Icon = SpindleWaterBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.SavingThrowType = SavingThrowType.Reflex;
+                    c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
+                        c.Succeed = ActionFlow.DoNothing();
+                        c.Failed = DealPhysicalBlastDamage(c => {
+                            c.DamageType = BludgeoningDamage;
+                            c.Half = true;
+                        });
+                    });
+                });
+                bp.AddComponent<AbilityDeliverChain>(c => {
+                    c.m_ProjectileFirst = Kinetic_WaterBlast00_Projectile.ToReference<BlueprintProjectileReference>();
+                    c.m_Projectile = Kinetic_WaterBlast00_Projectile.ToReference<BlueprintProjectileReference>();
+                    c.TargetsCount = new ContextValue()
+                    {
+                        Value = 70,
+                        ValueRank = AbilityRankType.ProjectilesCount
+                    };
+                    c.Radius = new Feet(5);
+                    c.m_Condition = ActionFlow.EmptyCondition();
+                    c.m_TargetType = TargetType.Any;
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 2;
+                    c.CachedDamageInfo = PhysicalDamageCache(BludgeoningDamage, true);
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.CanTargetEnemies = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiWaterBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.AvailableMetamagic = SpindleWaterBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiWaterBlastSpray = CreateWaterBlastAbility("IsekaiWaterBlastSpray", bp => {
+                bp.m_DisplayName = SprayWaterBlastAbility.m_DisplayName;
+                bp.m_Description = SprayWaterBlastAbility.m_Description;
+                bp.m_Icon = SprayWaterBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.SavingThrowType = SavingThrowType.Reflex;
+                    c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
+                        c.Succeed = ActionFlow.DoNothing();
+                        c.Failed = DealPhysicalBlastDamage(c => {
+                            c.DamageType = BludgeoningDamage;
+                            c.Half = true;
+                            c.IsAoE = true;
+                            c.HalfIfSaved = true;
+                        });
+                    });
+                });
+                bp.AddComponent<AbilityDeliverProjectile>(c => {
+                    c.m_Projectiles = new BlueprintProjectileReference[] { Kinetic_WaterBlastCone00_30Feet_Aoe.ToReference<BlueprintProjectileReference>() };
+                    c.Type = AbilityProjectileType.Cone;
+                    c.m_Length = new Feet(30);
+                    c.m_LineWidth = new Feet(5);
+                    c.NeedAttackRoll = true;
+                    c.m_Weapon = KineticBlastPhysicalWeapon.ToReference<BlueprintItemWeaponReference>();
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 2;
+                    c.CachedDamageInfo = PhysicalDamageCache(BludgeoningDamage, true);
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.CanTargetPoint = true;
+                bp.CanTargetEnemies = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiWaterBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.AvailableMetamagic = SprayWaterBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiWaterBlastTorrent = CreateWaterBlastAbility("IsekaiWaterBlastTorrent", bp => {
+                bp.m_DisplayName = TorrentWaterBlastAbility.m_DisplayName;
+                bp.m_Description = TorrentWaterBlastAbility.m_Description;
+                bp.m_Icon = TorrentWaterBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.SavingThrowType = SavingThrowType.Reflex;
+                    c.Actions = DealPhysicalBlastDamage(c => {
+                        c.DamageType = BludgeoningDamage;
+                        c.Half = true;
+                        c.IsAoE = true;
+                        c.HalfIfSaved = true;
+                    });
+                });
+                bp.AddComponent<AbilityDeliverProjectile>(c => {
+                    c.m_Projectiles = new BlueprintProjectileReference[] { Kinetic_WaterLine00.ToReference<BlueprintProjectileReference>() };
+                    c.Type = AbilityProjectileType.Line;
+                    c.m_Length = new Feet(30);
+                    c.m_LineWidth = new Feet(5);
+                    c.NeedAttackRoll = true;
+                    c.m_Weapon = KineticBlastPhysicalWeapon.ToReference<BlueprintItemWeaponReference>();
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 2;
+                    c.CachedDamageInfo = PhysicalDamageCache(BludgeoningDamage, true);
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.CanTargetPoint = true;
+                bp.CanTargetEnemies = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiWaterBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.AvailableMetamagic = TorrentWaterBlastAbility.AvailableMetamagic;
+            });
+            var IsekaiWaterBlastWallArea = CreatePhysicalAreaEffect("IsekaiWaterBlastWallArea", bp => {
+                bp.AddComponent<AbilityAreaEffectRunAction>(c => {
+                    c.UnitEnter = DealPhysicalBlastDamage(c => {
+                        c.DamageType = BludgeoningDamage;
+                        c.Half = true;
+                    });
+                    c.UnitExit = ActionFlow.DoNothing();
+                    c.UnitMove = ActionFlow.DoNothing();
+                    c.Round = ActionFlow.DoNothing();
+                });
+                bp.Shape = AreaEffectShape.Wall;
+                bp.Size = new Feet(60);
+                bp.Fx = new PrefabLink() { AssetId = "b4dedddd430fced45be3ae71dae8c2d8" };
+            });
+            var IsekaiWaterBlastWall = CreateWaterBlastAbility("IsekaiWaterBlastWall", bp => {
+                bp.m_DisplayName = WallWaterBlastAbility.m_DisplayName;
+                bp.m_Description = WallWaterBlastAbility.m_Description;
+                bp.m_Icon = WallWaterBlastAbility.m_Icon;
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.Actions = ActionFlow.DoSingle<ContextActionSpawnAreaEffect>(c => {
+                        c.m_AreaEffect = IsekaiWaterBlastWallArea.ToReference<BlueprintAbilityAreaEffectReference>();
+                        c.DurationValue = KineticAreaDuration;
+                    });
+                });
+                bp.AddComponent<AbilityKineticist>(c => {
+                    c.Amount = 1;
+                    c.InfusionBurnCost = 3;
+                    c.CachedDamageInfo = PhysicalDamageCache(BludgeoningDamage, true);
+                    c.CachedDamageSource = IsekaiWaterBlastWallArea.ToReference<AnyBlueprintReference>();
+                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
+                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
+                });
+                bp.CanTargetPoint = true;
+                bp.CanTargetEnemies = true;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.m_Parent = IsekaiWaterBlastBase.ToReference<BlueprintAbilityReference>();
+                bp.AvailableMetamagic = WallWaterBlastAbility.AvailableMetamagic;
+            });
             var IsekaiWaterBlastFeature = Helpers.CreateFeature("IsekaiWaterBlastFeature", bp => {
                 bp.SetName("Water Avatar");
-                bp.SetDescription("You gain the ability to use water blast and all its associated form infusions.");
+                bp.SetDescription("You gain the ability to use water blast and all its associated form infusions. "
+                    + "Your water blast deals bludgeoning damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
+                    + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
                 bp.m_Icon = WaterBlastAbility.m_Icon;
                 bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] { IsekaiAirBlastBase.ToReference<BlueprintUnitFactReference>() }; // TODO: change to Water
+                    c.m_Facts = new BlueprintUnitFactReference[] { IsekaiWaterBlastBase.ToReference<BlueprintUnitFactReference>() };
                 });
             });
+            IsekaiWaterBlastBase.AddComponent<AbilityVariants>(c => {
+                c.m_Variants = new BlueprintAbilityReference[] {
+                    IsekaiWaterBlastAbility.ToReference<BlueprintAbilityReference>(),
+                    IsekaiWaterBlastExtendRange.ToReference<BlueprintAbilityReference>(),
+                    IsekaiWaterBlastSpindle.ToReference<BlueprintAbilityReference>(),
+                    IsekaiWaterBlastSpray.ToReference<BlueprintAbilityReference>(),
+                    IsekaiWaterBlastTorrent.ToReference<BlueprintAbilityReference>(),
+                    IsekaiWaterBlastWall.ToReference<BlueprintAbilityReference>(),
+                };
+            });
 
+            // Kinetic Power
             var KineticBlastProficiency = Helpers.CreateFeature("KineticBlastProficiency", bp => {
                 bp.SetName("Kinetic Blast Proficiency");
                 bp.SetDescription("You gain the proficiency with kinetic blasts.");
@@ -1254,9 +1520,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.m_GatherPowerBuff2 = GatherPowerBuffII.ToReference<BlueprintBuffReference>();
                     c.m_GatherPowerBuff3 = GatherPowerBuffIII.ToReference<BlueprintBuffReference>();
                     c.m_Blasts = new BlueprintAbilityReference[] {
-                        IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>(), // TODO: add other elements later
+                        IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>(),
                         IsekaiEarthBlastBase.ToReference<BlueprintAbilityReference>(),
                         IsekaiFireBlastBase.ToReference<BlueprintAbilityReference>(),
+                        IsekaiWaterBlastBase.ToReference<BlueprintAbilityReference>(),
                     };
                     c.m_BladeActivatedBuff = KineticBladeEnableBuff.ToReference<BlueprintBuffReference>();
                     c.m_CanGatherPowerWithShieldBuff = ElementalBastionBuff.ToReference<BlueprintBuffReference>();
@@ -1297,17 +1564,18 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 // Add features later
                 bp.m_Features = new BlueprintFeatureReference[0];
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                    IsekaiAirBlastFeature.ToReference<BlueprintFeatureReference>(), // TODO: add other elements
+                    IsekaiAirBlastFeature.ToReference<BlueprintFeatureReference>(),
                     IsekaiEarthBlastFeature.ToReference<BlueprintFeatureReference>(),
                     IsekaiFireBlastFeature.ToReference<BlueprintFeatureReference>(),
+                    IsekaiWaterBlastFeature.ToReference<BlueprintFeatureReference>(),
                 };
             });
 
-            PatchGatherPowerBuffs(IsekaiAirBlastFeature, IsekaiEarthBlastFeature, IsekaiFireBlastFeature);
+            PatchGatherPowerBuffs(IsekaiAirBlastFeature, IsekaiEarthBlastFeature, IsekaiFireBlastFeature, IsekaiWaterBlastFeature);
 
             CharacterDevelopmentSelection.AddToSelection(KineticPowerSelection);
         }
-        private static void PatchGatherPowerBuffs(BlueprintFeature airBlastFeature, BlueprintFeature earthBlastFeature, BlueprintFeature fireBlastFeature)
+        private static void PatchGatherPowerBuffs(BlueprintFeature airBlastFeature, BlueprintFeature earthBlastFeature, BlueprintFeature fireBlastFeature, BlueprintFeature waterBlastFeature)
         {
             BlueprintBuff[] buffs = new BlueprintBuff[] { GatherPowerBuffI, GatherPowerBuffII, GatherPowerBuffIII }; // TODO: patch other elements
             foreach(BlueprintBuff buff in buffs)
@@ -1321,9 +1589,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 var fireConditional = (Conditional)buff.GetComponent<AddFactContextActions>().Activated.Actions[2];
                 var fireCondition = new ContextConditionHasFact() { m_Fact = fireBlastFeature.ToReference<BlueprintUnitFactReference>() };
                 fireConditional.ConditionsChecker.Conditions = fireConditional.ConditionsChecker.Conditions.AddToArray(fireCondition);
+                var waterConditional = (Conditional)buff.GetComponent<AddFactContextActions>().Activated.Actions[3];
+                var waterCondition = new ContextConditionHasFact() { m_Fact = waterBlastFeature.ToReference<BlueprintUnitFactReference>() };
+                waterConditional.ConditionsChecker.Conditions = waterConditional.ConditionsChecker.Conditions.AddToArray(waterCondition);
             }
         }
-        private static BlueprintAbility CreateKineticBlastAbility(string name, Action<BlueprintAbility> init = null)
+        private static BlueprintAbility CreatePhysicalBlastAbility(string name, Action<BlueprintAbility> init = null)
         {
             var result = Helpers.CreateBlueprint<BlueprintAbility>(name, bp => {
                 bp.AddComponent<ContextRankConfig>(c => {
@@ -1367,9 +1638,55 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             init?.Invoke(result);
             return result;
         }
+        private static BlueprintAbility CreateEnergyBlastAbility(string name, Action<BlueprintAbility> init = null)
+        {
+            var result = Helpers.CreateBlueprint<BlueprintAbility>(name, bp => {
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageDice;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
+                    c.m_Progression = ContextRankProgression.Div2;
+                    c.m_Stat = StatType.Constitution;
+                });
+                bp.AddComponent<ContextCalculateSharedValue>(c => {
+                    c.ValueType = AbilitySharedValue.Damage;
+                    c.Value = new ContextDiceValue()
+                    {
+                        DiceType = DiceType.One,
+                        DiceCountValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageDice
+                        },
+                        BonusValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageBonus
+                        }
+                    };
+                    c.Modifier = 1.0;
+                });
+                bp.AddComponent<ContextCalculateAbilityParams>(c => {
+                    c.StatType = StatType.Dexterity;
+                });
+                bp.Type = AbilityType.Special;
+                bp.Range = AbilityRange.Close;
+                bp.SpellResistance = true;
+                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist;
+                bp.ActionType = UnitCommand.CommandType.Standard;
+                bp.LocalizedDuration = new LocalizedString();
+                bp.LocalizedSavingThrow = new LocalizedString();
+            });
+            init?.Invoke(result);
+            return result;
+        }
         private static BlueprintAbility CreateAirBlastAbility(string name, Action<BlueprintAbility> init = null)
         {
-            var result = CreateKineticBlastAbility(name, bp => {
+            var result = CreatePhysicalBlastAbility(name, bp => {
                 bp.AddComponent<AbilitySpawnFx>(c => {
                     c.PrefabLink = new PrefabLink() { AssetId = "a0b5b95a9a139944c965c593a0a77ff7" };
                     c.Time = AbilitySpawnFxTime.OnPrecastStart;
@@ -1384,7 +1701,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
         }
         private static BlueprintAbility CreateEarthBlastAbility(string name, Action<BlueprintAbility> init = null)
         {
-            var result = CreateKineticBlastAbility(name, bp => {
+            var result = CreatePhysicalBlastAbility(name, bp => {
                 bp.AddComponent<AbilitySpawnFx>(c => {
                     c.PrefabLink = new PrefabLink() { AssetId = "69a83b56c1265464f8626a2ab414364a" };
                     c.Time = AbilitySpawnFxTime.OnPrecastStart;
@@ -1399,7 +1716,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
         }
         private static BlueprintAbility CreateFireBlastAbility(string name, Action<BlueprintAbility> init = null)
         {
-            var result = CreateKineticBlastAbility(name, bp => {
+            var result = CreateEnergyBlastAbility(name, bp => {
                 bp.AddComponent<SpellDescriptorComponent>(c => {
                     c.Descriptor = SpellDescriptor.Fire;
                 });
@@ -1411,12 +1728,26 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.PrefabLink = new PrefabLink() { AssetId = "16e01c58cc00371448191803fc1e9368" };
                     c.Time = AbilitySpawnFxTime.OnStart;
                 });
-                bp.SpellResistance = true;
             });
             init?.Invoke(result);
             return result;
         }
-        private static BlueprintAbilityAreaEffect CreateKineticAreaEffect(string name, Action<BlueprintAbilityAreaEffect> init = null)
+        private static BlueprintAbility CreateWaterBlastAbility(string name, Action<BlueprintAbility> init = null)
+        {
+            var result = CreatePhysicalBlastAbility(name, bp => {
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "705bc7676de67a4449986d9c69876486" };
+                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.PrefabLink = new PrefabLink() { AssetId = "e05061bbc743af545b923c88662c9e65" };
+                    c.Time = AbilitySpawnFxTime.OnStart;
+                });
+            });
+            init?.Invoke(result);
+            return result;
+        }
+        private static BlueprintAbilityAreaEffect CreatePhysicalAreaEffect(string name, Action<BlueprintAbilityAreaEffect> init = null)
         {
             var t = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(name, bp => {
                 bp.AddComponent<ContextRankConfig>(c => {
@@ -1457,25 +1788,91 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             init?.Invoke(t);
             return t;
         }
-        private static List<AbilityKineticist.DamageInfo> InfusionDamageCache(DamageTypeDescription damageType, bool half)
+        private static BlueprintAbilityAreaEffect CreateEnergyAreaEffect(string name, Action<BlueprintAbilityAreaEffect> init = null)
+        {
+            var t = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(name, bp => {
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageDice;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.OnePlusDiv2;
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.DamageBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
+                    c.m_Progression = ContextRankProgression.Div2;
+                    c.m_Stat = StatType.Constitution;
+                });
+                bp.AddComponent<ContextCalculateSharedValue>(c => {
+                    c.ValueType = AbilitySharedValue.Damage;
+                    c.Value = new ContextDiceValue()
+                    {
+                        DiceType = DiceType.One,
+                        DiceCountValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageDice
+                        },
+                        BonusValue = new ContextValue()
+                        {
+                            ValueType = ContextValueType.Rank,
+                            ValueRank = AbilityRankType.DamageBonus
+                        }
+                    };
+                    c.Modifier = 1.0;
+                });
+                bp.AddComponent<ContextCalculateAbilityParams>(c => {
+                    c.StatType = StatType.Dexterity;
+                });
+                bp.m_Tags = AreaEffectTags.DestroyableInCutscene;
+                bp.AffectEnemies = true;
+                bp.AggroEnemies = true;
+            });
+            init?.Invoke(t);
+            return t;
+        }
+        private static List<AbilityKineticist.DamageInfo> PhysicalDamageCache(DamageTypeDescription damageType, bool half)
         {
             return new List<AbilityKineticist.DamageInfo>()
             {
                 new AbilityKineticist.DamageInfo()
                 {
-                    Value = KineticBlastDamage,
+                    Value = PhysicalBlastDamage,
                     Type = damageType,
                     Half = half
                 }
             };
         }
-        private static ActionList DealKineticBlastDamage(Action<ContextActionDealDamage> init = null)
+        private static List<AbilityKineticist.DamageInfo> EnergyDamageCache(DamageTypeDescription damageType, bool half)
+        {
+            return new List<AbilityKineticist.DamageInfo>()
+            {
+                new AbilityKineticist.DamageInfo()
+                {
+                    Value = EnergyBlastDamage,
+                    Type = damageType,
+                    Half = half
+                }
+            };
+        }
+        private static ActionList DealPhysicalBlastDamage(Action<ContextActionDealDamage> init = null)
         {
             var t = new ContextActionDealDamage()
             {
                 m_Type = ContextActionDealDamage.Type.Damage,
                 Duration = Constants.ZeroDuration,
-                Value = KineticBlastDamage,
+                Value = PhysicalBlastDamage,
+                UseWeaponDamageModifiers = true
+            };
+            init?.Invoke(t);
+            return Helpers.CreateActionList(t);
+        }
+        private static ActionList DealEnergyBlastDamage(Action<ContextActionDealDamage> init = null)
+        {
+            var t = new ContextActionDealDamage()
+            {
+                m_Type = ContextActionDealDamage.Type.Damage,
+                Duration = Constants.ZeroDuration,
+                Value = EnergyBlastDamage,
                 UseWeaponDamageModifiers = true
             };
             init?.Invoke(t);
