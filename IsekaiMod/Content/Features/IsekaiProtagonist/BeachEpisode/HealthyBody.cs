@@ -13,9 +13,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
         private static readonly Sprite Icon_PurityOfBody = Resources.GetBlueprint<BlueprintFeature>("9b02f77c96d6bba4daf9043eff876c76").m_Icon;
         public static void Add()
         {
-            var HealthyBody = Helpers.CreateBlueprint<BlueprintFeature>("HealthyBody", bp => {
+            var HealthyBody = Helpers.CreateFeature("HealthyBody", bp => {
                 bp.SetName("Healthy Body");
                 bp.SetDescription("You gain immunity to bleed, blindness, curses, poison, disease, sickened, and nauseated conditions.");
+                bp.m_Icon = Icon_PurityOfBody;
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Sickened;
                 });
@@ -43,9 +44,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
                     | SpellDescriptor.Disease
                     | SpellDescriptor.Poison;
                 });
-                bp.m_Icon = Icon_PurityOfBody;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
 
             BeachEpisodeSelection.AddToSelection(HealthyBody);

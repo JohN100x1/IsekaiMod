@@ -13,9 +13,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
         private static readonly Sprite Icon_BurningRenewal = Resources.GetBlueprint<BlueprintFeature>("7cf2a6bf35c422e4ea219fcc2eb564f5").m_Icon;
         public static void Add()
         {
-            var InnerPower = Helpers.CreateBlueprint<BlueprintFeature>("InnerPower", bp => {
+            var InnerPower = Helpers.CreateFeature("InnerPower", bp => {
                 bp.SetName("Inner Power");
                 bp.SetDescription("You gain immunity to shaken, frightened, cowering, fear, death effects, {g|Encyclopedia:Ability_Scores}ability score{/g} drain, energy drain, and negative levels.");
+                bp.m_Icon = Icon_BurningRenewal;
                 bp.AddComponent<AddImmunityToAbilityScoreDamage>(c => {
                     c.Drain = true;
                 });
@@ -45,9 +46,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
                     | SpellDescriptor.StatDebuff
                     | SpellDescriptor.Death;
                 });
-                bp.m_Icon = Icon_BurningRenewal;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
 
             BeachEpisodeSelection.AddToSelection(InnerPower);

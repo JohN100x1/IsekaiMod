@@ -1,6 +1,5 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -14,9 +13,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
         private static readonly Sprite Icon_Serenity = Resources.GetBlueprint<BlueprintAbility>("d316d3d94d20c674db2c24d7de96f6a7").m_Icon;
         public static void Add()
         {
-            var MasterSelf = Helpers.CreateBlueprint<BlueprintFeature>("MasterSelf", bp => {
+            var MasterSelf = Helpers.CreateFeature("MasterSelf", bp => {
                 bp.SetName("Master Self-Control");
                 bp.SetDescription("You gain immunity to dazed, dazzled, sleep, confusion, charm, emotion, complusion, and mind-affecting effects.");
+                bp.m_Icon = Icon_Serenity;
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Dazed;
                 });
@@ -49,9 +49,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
                     | SpellDescriptor.Confusion
                     | SpellDescriptor.Sleep;
                 });
-                bp.m_Icon = Icon_Serenity;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
 
             BeachEpisodeSelection.AddToSelection(MasterSelf);
