@@ -1577,7 +1577,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
         }
         private static void PatchGatherPowerBuffs(BlueprintFeature airBlastFeature, BlueprintFeature earthBlastFeature, BlueprintFeature fireBlastFeature, BlueprintFeature waterBlastFeature)
         {
-            BlueprintBuff[] buffs = new BlueprintBuff[] { GatherPowerBuffI, GatherPowerBuffII, GatherPowerBuffIII }; // TODO: patch other elements
+            BlueprintBuff[] buffs = new BlueprintBuff[] { GatherPowerBuffI, GatherPowerBuffII, GatherPowerBuffIII };
             foreach(BlueprintBuff buff in buffs)
             {
                 var airConditional = (Conditional)buff.GetComponent<AddFactContextActions>().Activated.Actions[0];
