@@ -75,6 +75,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `AutoMaximize`: Maximizes every spell you cast.
 		- `AutoQuicken`: Quickens every spell you cast.
 		- `AutoReach`: Gives more range on every spell you cast.
+		- `AutoSelective`: Exclude selected targets on every spell you cast.
 		- `Grasp Heart`: Kills target creature (no HP limit).
 		- `Dupe Gold`: Get infinite gold.
 		- `Perfect Roll`: Roll 20 on every d20 roll.
