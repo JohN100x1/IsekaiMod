@@ -2,6 +2,7 @@
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.ElementsSystem;
 using Kingmaker.Enums;
 using Kingmaker.Localization;
 using Kingmaker.RuleSystem;
@@ -26,6 +27,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         private static readonly BlueprintUnit Devastator = Resources.GetBlueprint<BlueprintUnit>("99c16c4360534129b45706841a7df3fe");
         private static readonly BlueprintUnit Baphomet = Resources.GetBlueprint<BlueprintUnit>("f8007503fe211da4eb027e070eeb3f8c");
         private static readonly BlueprintUnit DemonLordDeskari = Resources.GetBlueprint<BlueprintUnit>("5a75db49bf7aeaf4c9f0264cac3eed5c");
+        private static readonly BlueprintUnit Nocticula = Resources.GetBlueprint<BlueprintUnit>("0cca8c841d634d84fbec2609c8db3465");
+        private static readonly BlueprintUnit Mephistopheles = Resources.GetBlueprint<BlueprintUnit>("c3dfbb136aa27e74eb7a7b5159395a80");
 
         private static readonly BlueprintSummonPool SummonMonsterPool = Resources.GetBlueprint<BlueprintSummonPool>("d94c93e7240f10e41ae41db4c83d1cbe");
         private static readonly BlueprintBuff SummonedCreatureSpawnMonsterVI_IX = Resources.GetBlueprint<BlueprintBuff>("0dff842f06edace43baf8a2f44207045");
@@ -53,31 +56,18 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         {
             var SummonCalamityAbility = CreateSummonAbility("SummonCalamityAbility", bp => {
                 bp.SetName("Overpowered Ability — Summon Calamity");
-                bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons a Devastator, Baphomet, or Deskari. Summoned monsters appear where you designate and act according to their "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons a Devastator, Baphomet, Deskari, Nocticula, or Mephistopheles. "
+                    + "Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. "
+                    + "They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
             });
             var SummonDevastator = CreateSummonAbility("SummonDevastator", bp => {
                 bp.SetName("Overpowered Ability — Summon Calamity (Devastator)");
                 bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons a Devastator. Summoned monsters appear where you designate and act according to their "
                     + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.Actions = ActionFlow.DoSingle<ContextActionSpawnMonster>(c => {
+                    c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = Devastator.ToReference<BlueprintUnitReference>();
-                        c.m_SummonPool = SummonMonsterPool.ToReference<BlueprintSummonPoolReference>();
-                        c.DurationValue = RankDuration;
-                        c.CountValue = DiceValueOne;
-                        c.LevelValue = new ContextValue();
-                        c.AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
-                            c.Permanent = true;
-                            c.m_Buff = SummonedCreatureSpawnMonsterVI_IX.ToReference<BlueprintBuffReference>();
-                            c.DurationValue = Constants.ZeroDuration;
-                            c.IsNotDispelable = true;
-                        });
                     });
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.Default;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
                 });
             });
             var SummonBaphomet = CreateSummonAbility("SummonBaphomet", bp => {
@@ -85,23 +75,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Baphomet. Summoned monsters appear where you designate and act according to their "
                     + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.Actions = ActionFlow.DoSingle<ContextActionSpawnMonster>(c => {
+                    c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = Baphomet.ToReference<BlueprintUnitReference>();
-                        c.m_SummonPool = SummonMonsterPool.ToReference<BlueprintSummonPoolReference>();
-                        c.DurationValue = RankDuration;
-                        c.CountValue = DiceValueOne;
-                        c.LevelValue = new ContextValue();
-                        c.AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
-                            c.Permanent = true;
-                            c.m_Buff = SummonedCreatureSpawnMonsterVI_IX.ToReference<BlueprintBuffReference>();
-                            c.DurationValue = Constants.ZeroDuration;
-                            c.IsNotDispelable = true;
-                        });
                     });
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.Default;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
                 });
             });
             var SummonDemonLordDeskari = CreateSummonAbility("SummonDemonLordDeskari", bp => {
@@ -109,28 +85,35 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Deskari. Summoned monsters appear where you designate and act according to their "
                     + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.Actions = ActionFlow.DoSingle<ContextActionSpawnMonster>(c => {
+                    c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = DemonLordDeskari.ToReference<BlueprintUnitReference>();
-                        c.m_SummonPool = SummonMonsterPool.ToReference<BlueprintSummonPoolReference>();
-                        c.DurationValue = RankDuration;
-                        c.CountValue = DiceValueOne;
-                        c.LevelValue = new ContextValue();
-                        c.AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
-                            c.Permanent = true;
-                            c.m_Buff = SummonedCreatureSpawnMonsterVI_IX.ToReference<BlueprintBuffReference>();
-                            c.DurationValue = Constants.ZeroDuration;
-                            c.IsNotDispelable = true;
-                        });
                     });
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.Default;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+            });
+            var SummonDemonNocticula = CreateSummonAbility("SummonDemonNocticula", bp => {
+                bp.SetName("Overpowered Ability — Summon Calamity (Nocticula)");
+                bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Nocticula. Summoned monsters appear where you designate and act according to their "
+                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.Actions = SpawnCalamity(c => {
+                        c.m_Blueprint = Nocticula.ToReference<BlueprintUnitReference>();
+                    });
+                });
+            });
+            var SummonDemonMephistopheles = CreateSummonAbility("SummonDemonMephistopheles", bp => {
+                bp.SetName("Overpowered Ability — Summon Calamity (Mephistopheles)");
+                bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons Archdevil Mephistopheles. Summoned monsters appear where you designate and act according to their "
+                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.Actions = SpawnCalamity(c => {
+                        c.m_Blueprint = Mephistopheles.ToReference<BlueprintUnitReference>();
+                    });
                 });
             });
             var SummonCalamityFeature = Helpers.CreateFeature("SummonCalamityFeature", bp => {
                 bp.SetName("Overpowered Ability — Summon Calamity");
-                bp.SetDescription("As a full action, you summon a powerful being to bring calamity. You can summon one of the following: Devastator, Baphomet, or Deskari.");
+                bp.SetDescription("As a full action, you summon a powerful being to bring calamity. You can summon one of the following: Devastator, Baphomet, Deskari, Nocticula, "
+                    + "or Mephistopheles.");
                 bp.m_Icon = Icon_SummonMonsterIX;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { SummonCalamityAbility.ToReference<BlueprintUnitFactReference>() };
@@ -141,6 +124,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     SummonDevastator.ToReference<BlueprintAbilityReference>(),
                     SummonBaphomet.ToReference<BlueprintAbilityReference>(),
                     SummonDemonLordDeskari.ToReference<BlueprintAbilityReference>(),
+                    SummonDemonNocticula.ToReference<BlueprintAbilityReference>(),
+                    SummonDemonMephistopheles.ToReference<BlueprintAbilityReference>(),
                 };
             });
 
@@ -149,6 +134,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         private static BlueprintAbility CreateSummonAbility(string name, Action<BlueprintAbility> init = null)
         {
             var result = Helpers.CreateBlueprint<BlueprintAbility>(name, bp => {
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.Default;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                });
                 bp.AddComponent<SpellComponent>(c => {
                     c.School = SpellSchool.Conjuration;
                 });
@@ -169,6 +158,24 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             });
             init?.Invoke(result);
             return result;
+        }
+        private static ActionList SpawnCalamity(Action<ContextActionSpawnMonster> init = null)
+        {
+            var t = new ContextActionSpawnMonster()
+            {
+                m_SummonPool = SummonMonsterPool.ToReference<BlueprintSummonPoolReference>(),
+                DurationValue = RankDuration,
+                CountValue = DiceValueOne,
+                LevelValue = new ContextValue(),
+                AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
+                    c.Permanent = true;
+                    c.m_Buff = SummonedCreatureSpawnMonsterVI_IX.ToReference<BlueprintBuffReference>();
+                    c.DurationValue = Constants.ZeroDuration;
+                    c.IsNotDispelable = true;
+                }),
+            };
+            init?.Invoke(t);
+            return Helpers.CreateActionList(t);
         }
     }
 }
