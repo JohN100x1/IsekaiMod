@@ -15,7 +15,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
         private static readonly Sprite Icon_SwordSaintWeaponMastery = Resources.GetBlueprint<BlueprintFeature>("5b31af13868166d4c9bb452f19277f19").m_Icon;
         public static void Add()
         {
-            var SignatureAttack = Helpers.CreateBlueprint<BlueprintFeature>("SignatureAttack", bp => {
+            var SignatureAttack = Helpers.CreateFeature("SignatureAttack", bp => {
                 bp.SetName("Signature Attack");
                 bp.SetDescription("At 6th level, you gain a luck bonus to {g|Encyclopedia:BAB}attack{/g} and damage rolls equal to 1/2 your character level.");
                 bp.m_Icon = Icon_SwordSaintWeaponMastery;
@@ -42,7 +42,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
                     c.m_Progression = ContextRankProgression.OnePlusDiv2;
                 });
-                bp.IsClassFeature = true;
                 bp.ReapplyOnLevelUp = true;
             });
         }

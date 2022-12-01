@@ -23,7 +23,7 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
 
             // Drow Heritage
             var Icon_Drow = AssetLoader.LoadInternal("Heritages", "ICON_DROW.png");
-            var IsekaiDrowHeritage = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiDrowHeritage", bp => {
+            var IsekaiDrowHeritage = Helpers.CreateFeature("IsekaiDrowHeritage", bp => {
                 bp.SetName("Isekai Drow");
                 bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Drow have both extreme beauty and power. "
                     + "Also called Dark Elves, they are a cruel and cunning dark reflection of the elven race.\n"
@@ -32,8 +32,6 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                     + "They have spell resistance equal to 11 + their character level. "
                     + "They can also use the Drow Poison ability as a swift action a number of times per day equal to their Charisma modifier.");
                 bp.m_Icon = Icon_Drow;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
 
                 // Attributes
                 bp.AddComponent<AddStatBonus>(c => {
@@ -86,6 +84,7 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                 });
 
                 bp.Groups = new FeatureGroup[0];
+                bp.ReapplyOnLevelUp = true;
             });
 
             // Add to Elven Heritage Selection

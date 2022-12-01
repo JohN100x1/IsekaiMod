@@ -1,11 +1,8 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
-using Kingmaker.ElementsSystem;
 using Kingmaker.EntitySystem.Stats;
-using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic;
@@ -31,26 +28,18 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
         {
             var Icon_Harem = AssetLoader.LoadInternal("Features", "ICON_HAREM.png");
             var Icon_Harem_Immune = AssetLoader.LoadInternal("Features", "ICON_HAREM_IMMUNE.png");
-            var HaremMagnetImmunity = Helpers.CreateBlueprint<BlueprintBuff>("HaremMagnetImmunity", bp => {
+            var HaremMagnetImmunity = Helpers.CreateBuff("HaremMagnetImmunity", bp => {
                 bp.SetName("Harem Magnet Immunity");
                 bp.SetDescription("This creature is immune to Harem Magnet for 24 hours.");
                 bp.m_Icon = Icon_Harem;
-                bp.Stacking = StackingType.Replace;
-                bp.Frequency = DurationRate.Rounds;
                 bp.AddComponent<IsPositiveEffect>();
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
-            var HaremMagnetBuff = Helpers.CreateBlueprint<BlueprintBuff>("HaremMagnetBuff", bp => {
+            var HaremMagnetBuff = Helpers.CreateBuff("HaremMagnetBuff", bp => {
                 bp.SetName("Fascinated");
                 bp.SetDescription("This creature is Fascinated and can take no actions. Any {g|Encyclopedia:Damage}damage{/g} to the target automatically breaks the effect.");
                 bp.m_Icon = Icon_Harem_Immune;
-                bp.TickEachSecond = false;
                 bp.Stacking = StackingType.Ignore;
-                bp.Frequency = DurationRate.Rounds;
-                bp.m_AllowNonContextActions = false;
                 bp.FxOnStart = new PrefabLink() { AssetId = "396af91a93f6e2b468f5fa1a944fae8a" };
-                bp.FxOnRemove = new PrefabLink();
                 bp.AddComponent<AddCondition>(c => { c.Condition = UnitCondition.Dazed; });
                 bp.AddComponent<AddIncomingDamageTrigger>(c => {
                     c.TriggerOnStatDamageOrEnergyDrain = true;
@@ -59,32 +48,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.AddComponent<AddFactContextActions>(c => {
                     c.NewRound = ActionFlow.DoNothing();
                     c.Deactivated = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
-                        c.Permanent = false;
                         c.m_Buff = HaremMagnetImmunity.ToReference<BlueprintBuffReference>();
-                        c.DurationValue = new ContextDurationValue()
-                        {
-                            Rate = DurationRate.Hours,
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Simple,
-                                Value = 24,
-                                ValueRank = AbilityRankType.Default
-                            },
-                            m_IsExtendable = true
-                        };
-                        c.UseDurationSeconds = false;
-                        c.DurationSeconds = 0;
-                        c.IsFromSpell = false;
-                        c.ToCaster = false;
-                        c.AsChild = false;
+                        c.DurationValue = Constants.OneDay;
                     });
                     c.Activated = ActionFlow.DoSingle<ContextActionSpawnFx>(c => {
                         c.PrefabLink = new PrefabLink() { AssetId = "28b3cd92c1fdc194d9ee1e378c23be6b" };
                     });
                 });
-                bp.Ranks = 0;
                 bp.IsClassFeature = true;
             });
             var HaremMagnetAbility = Helpers.CreateBlueprint<BlueprintAbility>("HaremMagnetAbility", bp => {
@@ -93,7 +63,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                     + "{g|Encyclopedia:Saving_Throw}Will save{/g} loses any immunity to mind-affecting effects, charm effects, and compulsion effects, and becomes fascinated for "
                     + "{g|Encyclopedia:Dice}1d4{/g} {g|Encyclopedia:Combat_Round}rounds{/g}. Creatures that succeed at this saving throw are immune to this ability for 24 hours.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.SavingThrowType = SavingThrowType.Unknown;
                     c.Actions = ActionFlow.DoSingle<Conditional>(c => {
                         c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionHasFact>(c => {
                             c.Not = true;
@@ -101,50 +70,25 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                         });
                         c.IfTrue = ActionFlow.DoSingle<ContextActionSavingThrow>(c => {
                             c.m_ConditionalDCIncrease = new ContextActionSavingThrow.ConditionalDCIncrease[0];
-                            c.FromBuff = false;
                             c.Type = SavingThrowType.Will;
                             c.UseDCFromContextSavingThrow = true;
-                            c.CustomDC = 50;
                             c.HasCustomDC = true;
+                            c.CustomDC = 50;
                             c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
                                 c.Succeed = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
-                                    c.Permanent = false;
                                     c.m_Buff = HaremMagnetImmunity.ToReference<BlueprintBuffReference>();
-                                    c.DurationValue = new ContextDurationValue()
-                                    {
-                                        Rate = DurationRate.Hours,
-                                        DiceType = DiceType.Zero,
-                                        DiceCountValue = 0,
-                                        BonusValue = new ContextValue()
-                                        {
-                                            ValueType = ContextValueType.Simple,
-                                            Value = 24,
-                                            ValueRank = AbilityRankType.Default
-                                        },
-                                        m_IsExtendable = true
-                                    };
-                                    c.UseDurationSeconds = false;
-                                    c.DurationSeconds = 0;
-                                    c.IsFromSpell = false;
-                                    c.ToCaster = false;
-                                    c.AsChild = false;
+                                    c.DurationValue = Constants.OneDay;
                                 });
                                 c.Failed = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
-                                    c.Permanent = false;
                                     c.m_Buff = HaremMagnetBuff.ToReference<BlueprintBuffReference>();
                                     c.DurationValue = new ContextDurationValue()
                                     {
                                         Rate = DurationRate.Rounds,
                                         DiceType = DiceType.D4,
                                         DiceCountValue = 1,
-                                        BonusValue = new ContextValue(),
+                                        BonusValue = 0,
                                         m_IsExtendable = true
                                     };
-                                    c.UseDurationSeconds = false;
-                                    c.DurationSeconds = 0;
-                                    c.IsFromSpell = false;
-                                    c.ToCaster = false;
-                                    c.AsChild = false;
                                 });
                             });
                         });
@@ -162,28 +106,20 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.m_Icon = Icon_Harem;
                 bp.Type = AbilityType.Supernatural;
                 bp.Range = AbilityRange.Personal;
-                bp.CanTargetPoint = false;
                 bp.CanTargetEnemies = true;
-                bp.CanTargetFriends = false;
-                bp.CanTargetSelf = false;
-                bp.EffectOnAlly = AbilityEffectOnUnit.None;
-                bp.EffectOnEnemy = AbilityEffectOnUnit.None;
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Self;
                 bp.ActionType = UnitCommand.CommandType.Free;
                 bp.AvailableMetamagic = Metamagic.Reach;
-                bp.m_TargetMapObjects = false;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1d4 rounds");
                 bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "Will negates");
             });
-            var HaremMagnetFeature = Helpers.CreateBlueprint<BlueprintFeature>("HaremMagnetFeature", bp => {
+            var HaremMagnetFeature = Helpers.CreateFeature("HaremMagnetFeature", bp => {
                 bp.SetName("Harem Magnet");
                 bp.SetDescription("At 17th Level, you gain the ability to attract anyone. As a {g|Encyclopedia:Free_Action}free action{/g}, enemies within 60 feet who fails a "
                     + "{g|Encyclopedia:DC}DC{/g} 50 {g|Encyclopedia:Saving_Throw}Will save{/g} loses any immunity to mind-affecting effects, charm effects, and compulsion effects, "
                     + "and becomes fascinated for {g|Encyclopedia:Dice}1d4{/g} {g|Encyclopedia:Combat_Round}rounds{/g}. Creatures that succeed at this saving throw are immune to this "
                     + "ability for 24 hours.");
                 bp.m_Icon = Icon_Harem;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { HaremMagnetAbility.ToReference<BlueprintUnitFactReference>() };
                 });

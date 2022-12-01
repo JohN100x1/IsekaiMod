@@ -13,12 +13,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
         private static readonly Sprite Icon_Bravery = Resources.GetBlueprint<BlueprintFeature>("f6388946f9f472f4585591b80e9f2452").m_Icon;
         public static void Add()
         {
-            var OtherworldlyStamina = Helpers.CreateBlueprint<BlueprintFeature>("OtherworldlyStamina", bp => {
+            var OtherworldlyStamina = Helpers.CreateFeature("OtherworldlyStamina", bp => {
                 bp.SetName("Otherworldly Stamina");
                 bp.SetDescription("At 15th Level, you become immune to fatigue and exhaustion.");
                 bp.m_Icon = Icon_Bravery;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Fatigued;
                 });

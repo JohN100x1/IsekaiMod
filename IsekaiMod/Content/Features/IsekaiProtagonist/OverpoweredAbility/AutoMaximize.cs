@@ -3,7 +3,6 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
@@ -17,7 +16,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         private static readonly Sprite Icon_MaximizeSpell = Resources.GetBlueprint<BlueprintFeature>("7f2b282626862e345935bbea5e66424b").m_Icon;
         public static void Add()
         {
-            var AutoMaximizeBuff = Helpers.CreateBlueprint<BlueprintBuff>("AutoMaximizeBuff", bp => {
+            var AutoMaximizeBuff = Helpers.CreateBuff("AutoMaximizeBuff", bp => {
                 bp.SetName("Overpowered Ability — Auto Maximize");
                 bp.SetDescription("Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat.");
                 bp.m_Icon = Icon_MaximizeSpell;
@@ -28,8 +27,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
             var AutoMaximizeAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("AutoMaximizeAbility", bp => {
                 bp.SetName("Overpowered Ability — Auto Maximize");
@@ -42,14 +39,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var AutoMaximizeFeature = Helpers.CreateBlueprint<BlueprintFeature>("AutoMaximizeFeature", bp => {
+            var AutoMaximizeFeature = Helpers.CreateFeature("AutoMaximizeFeature", bp => {
                 bp.SetName("Overpowered Ability — Auto Maximize");
                 bp.SetDescription("Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat.");
                 bp.m_Icon = Icon_MaximizeSpell;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { AutoMaximizeAbility.ToReference<BlueprintUnitFactReference>() };
                 });
-                bp.IsClassFeature = true;
             });
 
             OverpoweredAbilitySelection.AddToSelection(AutoMaximizeFeature);

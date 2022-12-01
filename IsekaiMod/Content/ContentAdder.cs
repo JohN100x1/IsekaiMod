@@ -35,7 +35,7 @@ namespace IsekaiMod.Content
 
                 // Isekai Protagonist Features
                 Features.IsekaiProtagonist.IsekaiProtagonistProficiencies.Add();
-                Features.IsekaiProtagonist.IsekaiProtagonistCantripsFeature.Add();
+                Features.IsekaiProtagonist.IsekaiProtagonistCantrips.Add();
                 Features.IsekaiProtagonist.IsekaiProtagonistBonusFeatSelection.Add();
                 Features.IsekaiProtagonist.IsekaiProtagonistTalentSelection.Add();
                 Features.IsekaiProtagonist.IsekaiPetSelection.Add();
@@ -70,6 +70,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.ExtremeSpeed.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.IsekaiChannelPositiveEnergy.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.IsekaiChannelNegativeEnergy.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.KineticPower.Add();
 
                 // OP Ability
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
@@ -126,8 +127,8 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.IsekaiProtagonistProgression.Add();
 
                 // Patch Loremaster & Hellknight Signifier Spellbooks
-                Classes.IsekaiProtagonist.LoremasterSpellbookSelection.Patch();
-                Classes.IsekaiProtagonist.HellknightSignifierSpellbookSelection.Patch();
+                Classes.IsekaiProtagonist.LoremasterReplaceSpellbook.Patch();
+                Classes.IsekaiProtagonist.HellknightSignifierReplaceSpellbook.Patch();
 
                 // Deathsnatcher animal Companion (Depends on IsekaiProtagonistClass)
                 Classes.Deathsnatcher.DeathsnatcherClass.Add();
@@ -140,7 +141,7 @@ namespace IsekaiMod.Content
                 Features.Deathsnatcher.DeathsnatcherFastHealing.Add();
                 Features.Deathsnatcher.DeathsnatcherPoisonSting.Add();
                 Features.Deathsnatcher.DeathsnatcherUndeadMaster.Add();
-                Classes.Deathsnatcher.DeathsnatcherClassProgression.Add();
+                Classes.Deathsnatcher.DeathsnatcherProgression.Add();
                 Classes.Deathsnatcher.DeathsnatcherUnit.Add();
 
                 // Add extra dialogue (Depends on IsekaiProtagonistClass)

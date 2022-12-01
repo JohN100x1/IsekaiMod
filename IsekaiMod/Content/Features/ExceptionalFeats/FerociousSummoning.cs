@@ -88,6 +88,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.m_Feature = ForbiddenSummoning.GetReference();
                 });
                 bp.IsClassFeature = true;
+                bp.ReapplyOnLevelUp = true;
             });
             FerociousSummoningBuff.AddComponent<OnSpawnBuff>(c => {
                 c.m_IfHaveFact = FerociousSummoningFeature.ToReference<BlueprintFeatureReference>();

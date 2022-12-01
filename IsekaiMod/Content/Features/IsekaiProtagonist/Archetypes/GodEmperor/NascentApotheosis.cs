@@ -1,6 +1,5 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -15,7 +14,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
         public static void Add()
         {
             var Icon_Serenity = Resources.GetBlueprint<BlueprintAbility>("d316d3d94d20c674db2c24d7de96f6a7").m_Icon;
-            var NascentApotheosis = Helpers.CreateBlueprint<BlueprintFeature>("NascentApotheosis", bp => {
+            var NascentApotheosis = Helpers.CreateFeature("NascentApotheosis", bp => {
                 bp.SetName("Nascent Apotheosis");
                 bp.SetDescription("At 3rd level, the God Emperor gains an inherent bonus to all attributes equal to 1/2 their character level.");
                 bp.m_Icon = Icon_Serenity;
@@ -78,7 +77,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
                     c.m_Progression = ContextRankProgression.Div2;
                 });
-                bp.IsClassFeature = true;
                 bp.ReapplyOnLevelUp = true;
             });
         }

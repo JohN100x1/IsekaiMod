@@ -1,7 +1,6 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
@@ -21,7 +20,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
         public static void Add()
         {
             var Icon_SiphoningAura = AssetLoader.LoadInternal("Features", "ICON_SIPHONING_AURA.png");
-            var SiphoningAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("SiphoningAuraBuff", bp => {
+            var SiphoningAuraBuff = Helpers.CreateBuff("SiphoningAuraBuff", bp => {
                 bp.SetName("Siphoning Aura");
                 bp.SetDescription("This creature has a –4 penalty on all attributes.");
                 bp.IsClassFeature = true;
@@ -56,8 +55,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.Stat = StatType.Charisma;
                     c.Value = -4;
                 });
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
             var SiphoningAuraArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("SiphoningAuraArea", bp => {
                 bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Enemy;
@@ -69,7 +66,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(SiphoningAuraBuff.ToReference<BlueprintBuffReference>()));
             });
-            var SiphoningAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("SiphoningAuraAreaBuff", bp => {
+            var SiphoningAuraAreaBuff = Helpers.CreateBuff("SiphoningAuraAreaBuff", bp => {
                 bp.SetName("Siphoning Aura");
                 bp.SetDescription("Enemies within 40 feet of the God Emperor take a –4 penalty on all attributes.");
                 bp.m_Icon = Icon_SiphoningAura;
@@ -77,8 +74,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.AddComponent<AddAreaEffect>(c => {
                     c.m_AreaEffect = SiphoningAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
             var SiphoningAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("SiphoningAuraAbility", bp => {
                 bp.SetName("Siphoning Aura");
@@ -92,12 +87,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var SiphoningAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("SiphoningAuraFeature", bp => {
+            var SiphoningAuraFeature = Helpers.CreateFeature("SiphoningAuraFeature", bp => {
                 bp.SetName("Siphoning Aura");
                 bp.SetDescription("At 12th level, enemies within 40 feet of the God Emperor take a –4 penalty on all attributes.");
                 bp.m_Icon = Icon_SiphoningAura;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { SiphoningAuraAbility.ToReference<BlueprintUnitFactReference>() };
                 });

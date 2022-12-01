@@ -1,7 +1,6 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
@@ -20,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
         public static void Add()
         {
             var Icon_Corrupt_Aura = AssetLoader.LoadInternal("Features", "ICON_CORRUPT_AURA.png");
-            var CorruptAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("CorruptAuraBuff", bp => {
+            var CorruptAuraBuff = Helpers.CreateBuff("CorruptAuraBuff", bp => {
                 bp.SetName("Corrupt Aura");
                 bp.SetDescription("This character has a +4 profane bonus to attack, damage, AC and saving throws. "
                     + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
@@ -60,8 +59,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                     c.AddAlignment = true;
                     c.Alignment = DamageAlignment.Evil;
                 });
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
             var CorruptAuraArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("CorruptAuraArea", bp => {
                 bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Ally;
@@ -73,7 +70,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(CorruptAuraBuff.ToReference<BlueprintBuffReference>()));
             });
-            var CorruptAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("CorruptAuraAreaBuff", bp => {
+            var CorruptAuraAreaBuff = Helpers.CreateBuff("CorruptAuraAreaBuff", bp => {
                 bp.SetName("Corrupt Aura");
                 bp.SetDescription("Allies within 40 feet of the Villain has a +4 profane bonus to attack, damage, AC and saving throws. "
                     + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
@@ -83,8 +80,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                 bp.AddComponent<AddAreaEffect>(c => {
                     c.m_AreaEffect = CorruptAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
             var CorruptAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("CorruptAuraAbility", bp => {
                 bp.SetName("Corrupt Aura");
@@ -99,13 +94,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var CorruptAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("CorruptAuraFeature", bp => {
+            var CorruptAuraFeature = Helpers.CreateFeature("CorruptAuraFeature", bp => {
                 bp.SetName("Corrupt Aura");
                 bp.SetDescription("At 9th level, allies within 40 feet of the Villain has a +4 profane bonus to attack, damage, AC and saving throws. "
                     + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
                 bp.m_Icon = Icon_Corrupt_Aura;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { CorruptAuraAbility.ToReference<BlueprintUnitFactReference>() };
                 });

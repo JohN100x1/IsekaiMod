@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Heritages
         {
             // Vampire Heritage
             var Icon_Vampire = AssetLoader.LoadInternal("Heritages", "ICON_VAMPIRE.png");
-            var IsekaiVampireHeritage = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiVampireHeritage", bp => {
+            var IsekaiVampireHeritage = Helpers.CreateFeature("IsekaiVampireHeritage", bp => {
                 bp.SetName("Isekai Vampire");
                 bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Vampire have both extreme beauty and power. Incredibly beautiful but "
                     + "strikingly grim shades that straddle the line between humanity and vampirekind, they are often single-minded loners intent on a specific goal.\n"
@@ -32,8 +32,6 @@ namespace IsekaiMod.Content.Heritages
                     + "They have DR 10/Magic and Silver, and have fast healing equal to their character level. "
                     + "They have immunity to poison, disease, mind-affecting and death effects as well as cold and electricity resistance 20.");
                 bp.m_Icon = Icon_Vampire;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
 
                 // Attributes
                 bp.AddComponent<AddStatBonusIfHasFact>(c => {

@@ -13,9 +13,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
         private static readonly Sprite Icon_DextrousDuelist = Resources.GetBlueprint<BlueprintFeature>("b701196306bb4674bb902c9f1160180f").m_Icon;
         public static void Add()
         {
-            var Tenacious = Helpers.CreateBlueprint<BlueprintFeature>("Tenacious", bp => {
+            var Tenacious = Helpers.CreateFeature("Tenacious", bp => {
                 bp.SetName("Tenacious");
                 bp.SetDescription("You gain immunity to stunned, staggered, slowed, entangled, petrified, paralysis, and movement impairing effects.");
+                bp.m_Icon = Icon_DextrousDuelist;
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Slowed;
                 });
@@ -55,8 +56,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
                     | SpellDescriptor.MovementImpairing;
                 });
                 bp.m_Icon = Icon_DextrousDuelist;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
 
             BeachEpisodeSelection.AddToSelection(Tenacious);

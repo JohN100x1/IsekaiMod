@@ -120,6 +120,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.m_Facts = new BlueprintUnitFactReference[] { ExceptionalSummoningAbility.ToReference<BlueprintUnitFactReference>() };
                 });
                 bp.IsClassFeature = true;
+                bp.ReapplyOnLevelUp = true;
             });
             ExceptionalSummoningBuff.AddComponent<OnSpawnBuff>(c => {
                 c.m_IfHaveFact = ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>();

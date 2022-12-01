@@ -13,7 +13,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
         private static readonly Sprite Icon_FastMovement = Resources.GetBlueprint<BlueprintFeature>("d294a5dddd0120046aae7d4eb6cbc4fc").m_Icon;
         public static void Add()
         {
-            var IsekaiFastMovement = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiFastMovement", bp => {
+            var IsekaiFastMovement = Helpers.CreateFeature("IsekaiFastMovement", bp => {
                 bp.SetName("Fast Movement");
                 bp.SetDescription("At 8th level, you gain a +10 {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g}.");
                 bp.m_Icon = Icon_FastMovement;
@@ -22,7 +22,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                     c.Stat = StatType.Speed;
                     c.Value = 10;
                 });
-                bp.IsClassFeature = true;
             });
         }
     }

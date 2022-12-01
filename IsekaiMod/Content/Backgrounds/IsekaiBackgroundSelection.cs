@@ -14,7 +14,6 @@ namespace IsekaiMod.Content.Backgrounds
             var IsekaiBackgroundSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("IsekaiBackgroundSelection", bp => {
                 bp.SetName("Isekai");
                 bp.SetDescription("Before you were hit by a truck, you were a...");
-                bp.m_Icon = null;
                 bp.HideInUI = true;
                 bp.Groups = new FeatureGroup[] { FeatureGroup.BackgroundSelection };
 

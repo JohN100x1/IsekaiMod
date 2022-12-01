@@ -43,7 +43,7 @@ namespace IsekaiMod.Content.Deities
         public static void Add()
         {
             var Icon_AdministratorD = AssetLoader.LoadInternal("Deities", "ICON_ADMIN_D.png");
-            var AdministratorDFeature = Helpers.CreateBlueprint<BlueprintFeature>("AdministratorDFeature", (bp => {
+            var AdministratorDFeature = Helpers.CreateFeature("AdministratorDFeature", (bp => {
                 bp.SetName("Administrator D");
                 bp.SetDescription(
                     "Administrator D is a playful, self-proclaimed \"Ultimate evil god\" that does things simply for entertainment. "
@@ -51,8 +51,6 @@ namespace IsekaiMod.Content.Deities
                     + "\nDomains: Chaos, Evil, Knowledge, Death, Destruction"
                     + "\nFavoured Weapon: Scythe");
                 bp.m_Icon = Icon_AdministratorD;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.HideInCharacterSheetAndLevelUp = false;
                 bp.Groups = new FeatureGroup[] { FeatureGroup.Deities };
 

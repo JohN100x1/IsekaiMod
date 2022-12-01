@@ -8,10 +8,10 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules.Damage;
-using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
@@ -21,14 +21,12 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
-using UnityEngine;
 
 namespace IsekaiMod.Content.Features.Deathsnatcher
 {
     class DeathsnatcherFingerOfDeath
     {
-        private static readonly Sprite Icon_FingerOfDeath = Resources.GetBlueprint<BlueprintAbility>("6f1dcf6cfa92d1948a740195707c0dbe").m_Icon;
-
+        private static readonly BlueprintAbility FingerOfDeathAbility = Resources.GetBlueprint<BlueprintAbility>("6f1dcf6cfa92d1948a740195707c0dbe");
         public static void Add()
         {
             var DeathsnatcherFingerOfDeathResource = Helpers.CreateBlueprint<BlueprintAbilityResource>("DeathsnatcherFingerOfDeathResource", bp => {
@@ -49,11 +47,9 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 };
             });
             var DeathsnatcherFingerOfDeathAbility = Helpers.CreateBlueprint<BlueprintAbility>("DeathsnatcherFingerOfDeathAbility", bp => {
-                bp.SetName("Finger of Death");
-                bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} instantly delivers 10 points of {g|Encyclopedia:Damage}damage{/g} per {g|Encyclopedia:Caster_Level}caster level{/g}. "
-                    + "If the target's {g|Encyclopedia:Saving_Throw}Fortitude saving throw{/g} succeeds, it instead takes {g|Encyclopedia:Dice}3d6{/g} points of damage + 1 point per caster "
-                    + "level.");
-                bp.m_Icon = Icon_FingerOfDeath;
+                bp.m_DisplayName = FingerOfDeathAbility.m_DisplayName;
+                bp.m_Description = FingerOfDeathAbility.m_Description;
+                bp.m_Icon = FingerOfDeathAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Fortitude;
                     c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
@@ -162,15 +158,15 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 bp.EffectOnAlly = AbilityEffectOnUnit.Harmful;
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Directional;
                 bp.ActionType = UnitCommand.CommandType.Standard;
-                bp.AvailableMetamagic = Metamagic.Maximize | Metamagic.Heighten | Metamagic.Persistent | Metamagic.Bolstered | Metamagic.Reach | Metamagic.Quicken | Metamagic.Extend | Metamagic.Empower | Metamagic.CompletelyNormal;
+                bp.AvailableMetamagic = FingerOfDeathAbility.AvailableMetamagic;
                 bp.m_TargetMapObjects = false;
-                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "");
+                bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "Fortitude partial");
             });
             var DeathsnatcherFingerOfDeathFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherFingerOfDeathFeature", bp => {
                 bp.SetName("Finger of Death");
                 bp.SetDescription("At 16th level, the Deathsnatcher gains Finger of Death as a spell-like ability once per day.");
-                bp.m_Icon = Icon_FingerOfDeath;
+                bp.m_Icon = FingerOfDeathAbility.m_Icon;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddAbilityResources>(c => {
                     c.m_Resource = DeathsnatcherFingerOfDeathResource.ToReference<BlueprintAbilityResourceReference>();

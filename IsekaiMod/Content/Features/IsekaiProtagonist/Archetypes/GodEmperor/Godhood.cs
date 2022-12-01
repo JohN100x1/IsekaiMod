@@ -1,7 +1,6 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Enums.Damage;
@@ -14,7 +13,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
         public static void Add()
         {
             var Icon_Godhood = AssetLoader.LoadInternal("Features", "ICON_GODHOOD.png");
-            var Godhood = Helpers.CreateBlueprint<BlueprintFeature>("Godhood", bp => {
+            var Godhood = Helpers.CreateFeature("Godhood", bp => {
                 bp.SetName("Godhood");
                 bp.SetDescription("At 20th level, you become a god. You gain 100 spell resistance and are immune acid, cold, electricity, fire, sonic, and all "
                     + "{g|Encyclopedia:Physical_Damage}physical damage{/g}. Your attacks ignore concealment and damage reduction. Any critical threats you make are automatically confirmed. "
@@ -40,13 +39,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 });
                 bp.AddComponent<AddPhysicalImmunity>();
                 bp.AddComponent<IgnoreConcealment>();
-                bp.AddComponent<IgnoreDamageReductionOnAttack>(c => {
-                    c.OnlyOnFullAttack = false;
-                    c.OnlyOnFirstAttack = false;
-                    c.OnlyNaturalAttacks = false;
-                    c.CheckEnemyFact = false;
-                    c.CriticalHit = false;
-                });
+                bp.AddComponent<IgnoreDamageReductionOnAttack>();
                 bp.AddComponent<InitiatorCritAutoconfirm>();
                 bp.AddComponent<IgnoreSpellImmunity>(c => {
                     c.SpellDescriptor = SpellDescriptor.None;
@@ -55,7 +48,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.m_AbilityList = new BlueprintAbilityReference[0];
                     c.AllSpells = true;
                 });
-                bp.IsClassFeature = true;
             });
         }
     }

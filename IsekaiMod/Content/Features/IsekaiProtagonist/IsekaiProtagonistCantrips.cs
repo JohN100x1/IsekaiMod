@@ -2,20 +2,18 @@
 using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.UnitLogic.FactLogic;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist
 {
-    class IsekaiProtagonistCantripsFeature
+    class IsekaiProtagonistCantrips
     {
         public static void Add()
         {
-            var IsekaiProtagonistCantripsFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistCantripsFeature", bp => {
+            var IsekaiProtagonistCantripsFeature = Helpers.CreateFeature("IsekaiProtagonistCantripsFeature", bp => {
                 bp.SetName("Cantrips");
                 bp.SetDescription("You can cast a number of {g|Encyclopedia:Cantrips_Orisons}cantrips{/g}, or 0-level {g|Encyclopedia:Spell}spells{/g}. "
                     + "These spells are cast like any other spell, but they are not expended when cast and may be used again.");
-                bp.m_Icon = null;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[]
                     {
@@ -34,8 +32,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                         IsekaiProtagonistSpellList.VirtueAbility.ToReference<BlueprintUnitFactReference>()
                     };
                 });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
         }
     }

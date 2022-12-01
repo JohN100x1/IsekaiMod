@@ -7,7 +7,7 @@ using Kingmaker.Blueprints.Classes.Selection;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 {
-    class LoremasterSpellbookSelection
+    class LoremasterReplaceSpellbook
     {
         public static void Patch()
         {

@@ -248,7 +248,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     c.m_Feature = AnimalCompanionRank.ToReference<BlueprintFeatureReference>();
                 });
                 bp.AddComponent<AddFeatureOnApply>(c => {
-                    c.m_Feature = DeathsnatcherClassProgression.GetCompanionProgression().ToReference<BlueprintFeatureReference>();
+                    c.m_Feature = DeathsnatcherProgression.GetCompanionProgression().ToReference<BlueprintFeatureReference>();
                 });
                 bp.m_AllowNonContextActions = false;
                 bp.Ranks = 1;

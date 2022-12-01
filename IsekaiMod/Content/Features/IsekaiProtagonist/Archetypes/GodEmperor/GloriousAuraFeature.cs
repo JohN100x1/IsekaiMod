@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
         public static void Add()
         {
             var Icon_Glorious_Aura = AssetLoader.LoadInternal("Features", "ICON_GLORIOUS_AURA.png");
-            var GloriousAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("GloriousAuraBuff", bp => {
+            var GloriousAuraBuff = Helpers.CreateBuff("GloriousAuraBuff", bp => {
                 bp.SetName("Glorious Aura");
                 bp.SetDescription("This character has a +4 sacred bonus to all attributes.");
                 bp.IsClassFeature = true;
@@ -54,8 +54,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.Stat = StatType.Charisma;
                     c.Value = 4;
                 });
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
             var GloriousAuraArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("GloriousAuraArea", bp => {
                 bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Ally;
@@ -67,7 +65,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(GloriousAuraBuff.ToReference<BlueprintBuffReference>()));
             });
-            var GloriousAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("GloriousAuraAreaBuff", bp => {
+            var GloriousAuraAreaBuff = Helpers.CreateBuff("GloriousAuraAreaBuff", bp => {
                 bp.SetName("Glorious Aura");
                 bp.SetDescription("Allies within 40 feet of the God Emperor gain a +4 sacred bonus to all attributes.");
                 bp.m_Icon = Icon_Glorious_Aura;
@@ -76,8 +74,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.AddComponent<AddAreaEffect>(c => {
                     c.m_AreaEffect = GloriousAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
             var GloriousAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("GloriousAuraAbility", bp => {
                 bp.SetName("Glorious Aura");
@@ -91,12 +87,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var GloriousAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("GloriousAuraFeature", bp => {
+            var GloriousAuraFeature = Helpers.CreateFeature("GloriousAuraFeature", bp => {
                 bp.SetName("Glorious Aura");
                 bp.SetDescription("At 9th level, allies within 40 feet of the God Emperor gain a +4 sacred bonus to all attributes.");
                 bp.m_Icon = Icon_Glorious_Aura;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { GloriousAuraAbility.ToReference<BlueprintUnitFactReference>() };
                 });

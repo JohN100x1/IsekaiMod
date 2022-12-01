@@ -1,7 +1,6 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
@@ -25,7 +24,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
         {
             var Icon_SecondForm = AssetLoader.LoadInternal("Features", "ICON_SECOND_FORM.png");
             var Icon_SecondFormInactive = AssetLoader.LoadInternal("Features", "ICON_SECOND_FORM_INACTIVE.png");
-            var SecondFormBuffEffect = Helpers.CreateBlueprint<BlueprintBuff>("SecondFormBuffEffect", bp => {
+            var SecondFormBuffEffect = Helpers.CreateBuff("SecondFormBuffEffect", bp => {
                 bp.SetName("Second Form");
                 bp.SetDescription("You gain a +10 profane bonus to all attributes and your size increases by one size category for 24 hours.");
                 bp.m_Icon = Icon_SecondForm;
@@ -78,20 +77,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                     c.Value = -2;
                 });
                 bp.Stacking = StackingType.Replace;
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
-            var SecondFormBuffTrigger = Helpers.CreateBlueprint<BlueprintBuff>("SecondFormBuffTrigger", bp => {
+            var SecondFormBuffTrigger = Helpers.CreateBuff("SecondFormBuffTrigger", bp => {
                 bp.SetName("Second Form Trigger");
                 bp.SetDescription("");
-                bp.m_Icon = null;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
-            var SecondFormBuff = Helpers.CreateBlueprint<BlueprintBuff>("SecondFormBuff", bp => {
+            var SecondFormBuff = Helpers.CreateBuff("SecondFormBuff", bp => {
                 bp.SetName("Second Form");
                 bp.SetDescription("Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain. "
                     + "You also gain a +10 profane bonus to all attributes and your size also increases by one size category for 24 hours.");
@@ -115,8 +109,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                     c.NewRound = ActionFlow.DoNothing();
                 });
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
             SecondFormBuffTrigger.AddComponent<AddFactContextActions>(c => {
                 c.Activated = Helpers.CreateActionList(
@@ -128,31 +120,19 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                     },
                     new ContextActionHealStatDamage()
                     {
+                        HealDrain = true,
                         m_StatClass = ContextActionHealStatDamage.StatClass.Any,
                         m_HealType = ContextActionHealStatDamage.StatDamageHealType.HealAllDamage,
-                        HealDrain = true,
-                        WriteResultToSharedValue = false,
                         ResultSharedValue = AbilitySharedValue.Heal,
-                        Value = new ContextDiceValue()
-                        {
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = 0,
-                        }
+                        Value = Constants.ZeroDiceValue
                     },
                     new ContextActionHealStatDamage()
                     {
+                        HealDrain = false,
                         m_StatClass = ContextActionHealStatDamage.StatClass.Any,
                         m_HealType = ContextActionHealStatDamage.StatDamageHealType.HealAllDamage,
-                        HealDrain = false,
-                        WriteResultToSharedValue = false,
                         ResultSharedValue = AbilitySharedValue.Heal,
-                        Value = new ContextDiceValue()
-                        {
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = 0,
-                        }
+                        Value = Constants.ZeroDiceValue
                     },
                     new ContextActionHealEnergyDrain()
                     {
@@ -181,33 +161,18 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                     new ContextActionApplyBuff()
                     {
                         m_Buff = SecondFormBuffEffect.ToReference<BlueprintBuffReference>(),
-                        Permanent = false,
-                        DurationValue = new ContextDurationValue()
-                        {
-                            Rate = DurationRate.Hours,
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = 24,
-                            m_IsExtendable = true
-                        },
-                        UseDurationSeconds = false,
-                        DurationSeconds = 0,
-                        IsFromSpell = false,
-                        ToCaster = false,
-                        AsChild = false
+                        DurationValue = Constants.OneDay
                     },
                     new ContextActionRemoveSelf()
                     );
                 c.Deactivated = ActionFlow.DoNothing();
                 c.NewRound = ActionFlow.DoNothing();
             });
-            var SecondFormFeature = Helpers.CreateBlueprint<BlueprintFeature>("SecondFormFeature", bp => {
+            var SecondFormFeature = Helpers.CreateFeature("SecondFormFeature", bp => {
                 bp.SetName("Second Form");
                 bp.SetDescription("At 20th level, you become a boss. Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain. "
                     + "You also gain a +10 profane bonus to all attributes and your size also increases by one size category for 24 hours.");
                 bp.m_Icon = Icon_SecondForm;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddRestTrigger>(c => {
                     c.Action = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.m_Buff = SecondFormBuff.ToReference<BlueprintBuffReference>();

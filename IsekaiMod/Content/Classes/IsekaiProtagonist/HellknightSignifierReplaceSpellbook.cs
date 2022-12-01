@@ -7,7 +7,7 @@ using Kingmaker.Blueprints.Classes.Selection;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 {
-    class HellknightSignifierSpellbookSelection
+    class HellknightSignifierReplaceSpellbook
     {
         public static void Patch()
         {

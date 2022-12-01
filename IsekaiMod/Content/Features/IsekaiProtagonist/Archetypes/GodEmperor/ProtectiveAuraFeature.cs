@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
         public static void Add()
         {
             var Icon_Protective_Aura = AssetLoader.LoadInternal("Features", "ICON_PROTECTIVE_AURA.png");
-            var ProtectiveAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>("ProtectiveAuraBuff", bp => {
+            var ProtectiveAuraBuff = Helpers.CreateBuff("ProtectiveAuraBuff", bp => {
                 bp.SetName("Protective Aura");
                 bp.SetDescription("This character has a sacred bonus to AC and saving throws equal to 1/2 the God Emporer's character level.");
                 bp.IsClassFeature = true;
@@ -67,8 +67,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
                     c.m_Progression = ContextRankProgression.Div2;
                 });
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
             var ProtectiveAuraArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("ProtectiveAuraArea", bp => {
                 bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Ally;
@@ -80,7 +78,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(ProtectiveAuraBuff.ToReference<BlueprintBuffReference>()));
             });
-            var ProtectiveAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>("ProtectiveAuraAreaBuff", bp => {
+            var ProtectiveAuraAreaBuff = Helpers.CreateBuff("ProtectiveAuraAreaBuff", bp => {
                 bp.SetName("Protective Aura");
                 bp.SetDescription("Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emporer's character level.");
                 bp.m_Icon = Icon_Protective_Aura;
@@ -89,8 +87,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.AddComponent<AddAreaEffect>(c => {
                     c.m_AreaEffect = ProtectiveAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
-                bp.FxOnStart = new PrefabLink();
-                bp.FxOnRemove = new PrefabLink();
             });
             var ProtectiveAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("ProtectiveAuraAbility", bp => {
                 bp.SetName("Protective Aura");
@@ -104,12 +100,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var ProtectiveAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>("ProtectiveAuraFeature", bp => {
+            var ProtectiveAuraFeature = Helpers.CreateFeature("ProtectiveAuraFeature", bp => {
                 bp.SetName("Protective Aura");
                 bp.SetDescription("At 7th level, allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emporer's character level.");
                 bp.m_Icon = Icon_Protective_Aura;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { ProtectiveAuraAbility.ToReference<BlueprintUnitFactReference>() };
                 });

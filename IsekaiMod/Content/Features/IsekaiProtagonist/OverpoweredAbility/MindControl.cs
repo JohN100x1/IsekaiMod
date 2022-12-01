@@ -1,10 +1,9 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
-using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
@@ -33,8 +32,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.SetName("Mind Control Immunity");
                 bp.SetDescription("This creature cannot be mind controlled again.");
                 bp.m_Icon = Icon_Mind_Control_Immune;
-                bp.Stacking = StackingType.Replace;
-                bp.Frequency = DurationRate.Rounds;
                 bp.AddComponent<IsPositiveEffect>();
             });
             var MindControlBuff = Helpers.CreateBuff("MindControlBuff", bp => {
@@ -43,7 +40,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Icon = Icon_Mind_Control;
                 bp.AddComponent<ChangeFaction>(c => {
                     c.m_Type = ChangeFaction.ChangeType.ToCaster;
-                    c.m_AllowDirectControl = false;
                 });
                 bp.AddComponent<AddFactContextActions>(c => {
                     c.NewRound = ActionFlow.DoNothing();
@@ -53,15 +49,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Deactivated = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.m_Buff = MindControlImmunity.ToReference<BlueprintBuffReference>();
                         c.Permanent = true;
-                        c.DurationValue = new ContextDurationValue()
-                        {
-                            Rate = DurationRate.Rounds,
-                            m_IsExtendable = true,
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = 0,
-                        };
-                        c.IsFromSpell = false;
+                        c.DurationValue = Constants.ZeroDuration;
                     });
                 });
                 bp.Stacking = StackingType.Ignore;
@@ -76,34 +64,29 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     + " They will not resist.");
                 bp.m_Icon = Icon_Mind_Control;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.SavingThrowType = SavingThrowType.Unknown;
                     c.Actions = ActionFlow.DoSingle<Conditional>(c => {
                         c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionHasFact>(c => {
-                            c.Not = false;
                             c.m_Fact = MindControlImmunity.ToReference<BlueprintUnitFactReference>();
                         });
                         c.IfTrue = ActionFlow.DoNothing();
                         c.IfFalse = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                             c.m_Buff = MindControlBuff.ToReference<BlueprintBuffReference>();
-                            c.Permanent = false;
                             c.DurationValue = new ContextDurationValue()
                             {
                                 Rate = DurationRate.Rounds,
-                                m_IsExtendable = true,
                                 DiceType = DiceType.Zero,
                                 DiceCountValue = 0,
                                 BonusValue = new ContextValue()
                                 {
                                     Value = 0,
                                     ValueType = ContextValueType.Rank
-                                }
+                                },
+                                m_IsExtendable = true,
                             };
-                            c.IsFromSpell = false;
                         });
                     });
                 });
                 bp.AddComponent<SpellComponent>(c => {
-                    c.m_Flags = 0;
                     c.School = SpellSchool.Enchantment;
                 });
                 bp.AddComponent<AbilitySpawnFx>(c => {
@@ -113,29 +96,19 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 });
                 bp.Type = AbilityType.Supernatural;
                 bp.Range = AbilityRange.Medium;
-                bp.m_AllowNonContextActions = false;
-                bp.CanTargetPoint = false;
                 bp.CanTargetEnemies = true;
-                bp.CanTargetFriends = false;
-                bp.CanTargetSelf = false;
-                bp.SpellResistance = false;
-                bp.EffectOnEnemy = AbilityEffectOnUnit.None;
-                bp.EffectOnAlly = AbilityEffectOnUnit.None;
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Directional;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Reach | Metamagic.CompletelyNormal;
-                bp.m_TargetMapObjects = false;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "");
+                bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var MindControlFeature = Helpers.CreateBlueprint<BlueprintFeature>("MindControlFeature", bp => {
+            var MindControlFeature = Helpers.CreateFeature("MindControlFeature", bp => {
                 bp.SetName("Overpowered Ability — Mind Control");
                 bp.SetDescription("You can make any creature fight on your side as if it was your ally. "
                     + "It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its ability.\n"
                     + " They will not resist.");
                 bp.m_Icon = Icon_Mind_Control;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { MindControlAbility.ToReference<BlueprintUnitFactReference>() };
                 });
