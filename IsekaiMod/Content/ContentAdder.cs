@@ -71,6 +71,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.IsekaiChannelPositiveEnergy.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.IsekaiChannelNegativeEnergy.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.KineticPower.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.SneakyMagic.Add();
 
                 // OP Ability
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();

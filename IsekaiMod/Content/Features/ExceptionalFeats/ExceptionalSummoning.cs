@@ -112,14 +112,13 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var ExceptionalSummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>("ExceptionalSummoningFeature", bp => {
+            var ExceptionalSummoningFeature = Helpers.CreateFeature("ExceptionalSummoningFeature", bp => {
                 bp.SetName("Exceptional Summoning");
                 bp.SetDescription("Your summoned creatures get a +10 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, AC, and saving throws per character level.");
                 bp.m_Icon = Icon_ExceptionalSummoning;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { ExceptionalSummoningAbility.ToReference<BlueprintUnitFactReference>() };
                 });
-                bp.IsClassFeature = true;
                 bp.ReapplyOnLevelUp = true;
             });
             ExceptionalSummoningBuff.AddComponent<OnSpawnBuff>(c => {

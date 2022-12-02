@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
         public static void Add()
         {
             // Features
-            var AcidImmunity = Helpers.CreateBlueprint<BlueprintFeature>("AcidImmunity", bp => {
+            var AcidImmunity = Helpers.CreateFeature("AcidImmunity", bp => {
                 bp.SetName("Acid Immunity");
                 bp.SetDescription("You gain immunity to Acid.");
                 bp.m_Icon = Icon_ProtectionFromAcid;
@@ -35,10 +35,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
                     c.Descriptor = SpellDescriptor.Acid;
                 });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
-            var ColdImmunity = Helpers.CreateBlueprint<BlueprintFeature>("ColdImmunity", bp => {
+            var ColdImmunity = Helpers.CreateFeature("ColdImmunity", bp => {
                 bp.SetName("Cold Immunity");
                 bp.SetDescription("You gain immunity to Cold.");
                 bp.m_Icon = Icon_ProtectionFromCold;
@@ -51,10 +49,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
                     c.Descriptor = SpellDescriptor.Cold;
                 });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
-            var FireImmunity = Helpers.CreateBlueprint<BlueprintFeature>("FireImmunity", bp => {
+            var FireImmunity = Helpers.CreateFeature("FireImmunity", bp => {
                 bp.SetName("Fire Immunity");
                 bp.SetDescription("You gain immunity to Fire.");
                 bp.m_Icon = Icon_ProtectionFromFire;
@@ -67,10 +63,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
                     c.Descriptor = SpellDescriptor.Fire;
                 });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
-            var ElectricityImmunity = Helpers.CreateBlueprint<BlueprintFeature>("ElectricityImmunity", bp => {
+            var ElectricityImmunity = Helpers.CreateFeature("ElectricityImmunity", bp => {
                 bp.SetName("Electricity Immunity");
                 bp.SetDescription("You gain immunity to Electricity.");
                 bp.m_Icon = Icon_ProtectionFromElectricity;
@@ -83,10 +77,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
                     c.Descriptor = SpellDescriptor.Electricity;
                 });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
-            var SonicImmunity = Helpers.CreateBlueprint<BlueprintFeature>("SonicImmunity", bp => {
+            var SonicImmunity = Helpers.CreateFeature("SonicImmunity", bp => {
                 bp.SetName("Sonic Immunity");
                 bp.SetDescription("You gain immunity to Sonic.");
                 bp.m_Icon = Icon_ProtectionFromSonic;
@@ -99,8 +91,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
                     c.Descriptor = SpellDescriptor.Sonic;
                 });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
 
             var EnergyImmunityList = new BlueprintFeatureReference[] {

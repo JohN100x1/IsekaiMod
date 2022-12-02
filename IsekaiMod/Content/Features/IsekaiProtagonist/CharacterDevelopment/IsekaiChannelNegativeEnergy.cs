@@ -500,14 +500,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.Descriptor = SpellDescriptor.RestoreHP | SpellDescriptor.ChannelNegativeHeal;
                 });
             });
-            var IsekaiChannelNegativeEnergyFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiChannelNegativeEnergyFeature", bp => {
+            var IsekaiChannelNegativeEnergyFeature = Helpers.CreateFeature("IsekaiChannelNegativeEnergyFeature", bp => {
                 bp.SetName("Channel Negative Energy");
                 bp.SetDescription("You gain the supernatural ability to channel negative energy like a cleric. You use your character level as your effective cleric level when "
                     + "channeling negative energy. You can channel energy a number of times per day equal to 3 + your Charisma modifier.");
                 bp.m_Icon = ChannelNegativeEnergy.Icon;
-                bp.Ranks = 1;
                 bp.Groups = new FeatureGroup[0];
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
                         ChannelEnergyFact.ToReference<BlueprintUnitFactReference>(),

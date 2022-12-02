@@ -112,14 +112,13 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var ForbiddenSummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>("ForbiddenSummoningFeature", bp => {
+            var ForbiddenSummoningFeature = Helpers.CreateFeature("ForbiddenSummoningFeature", bp => {
                 bp.SetName("Forbidden Summoning");
                 bp.SetDescription("Your summoned creatures gain a +10 bonus to hit points per character level and a +1 bonus to all attributes per character level.");
                 bp.m_Icon = Icon_ForbiddenSummoning;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { ForbiddenSummoningAbility.ToReference<BlueprintUnitFactReference>() };
                 });
-                bp.IsClassFeature = true;
                 bp.ReapplyOnLevelUp = true;
             });
             ForbiddenSummoningBuff.AddComponent<OnSpawnBuff>(c => {

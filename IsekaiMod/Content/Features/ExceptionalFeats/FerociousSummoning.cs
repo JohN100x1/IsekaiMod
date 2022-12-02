@@ -1,7 +1,6 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Buffs;
@@ -71,7 +70,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var FerociousSummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>("FerociousSummoningFeature", bp => {
+            var FerociousSummoningFeature = Helpers.CreateFeature("FerociousSummoningFeature", bp => {
                 bp.SetName("Ferocious Summoning");
                 bp.SetDescription("Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level. "
                     + "This effect does not stack with other effects that grant additional attack.");
@@ -87,7 +86,6 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Group = Prerequisite.GroupType.All;
                     c.m_Feature = ForbiddenSummoning.GetReference();
                 });
-                bp.IsClassFeature = true;
                 bp.ReapplyOnLevelUp = true;
             });
             FerociousSummoningBuff.AddComponent<OnSpawnBuff>(c => {
