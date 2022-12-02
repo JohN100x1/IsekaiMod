@@ -9,6 +9,7 @@ using Kingmaker.Blueprints.Items.Weapons;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
@@ -110,6 +111,9 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.HideInUI = true;
             });
             var DeathsnatcherUnit = Helpers.CreateBlueprint<BlueprintUnit>("DeathsnatcherUnit", bp => {
+                bp.LocalizedName = new SharedStringAsset() {
+                    String = Helpers.CreateString($"DeathsnatcherUnit.Name", "Deathsnatcher")
+                };
                 bp.AddComponent<AddClassLevels>(c => {
                     c.m_CharacterClass = DeathsnatcherClass.GetReference();
                     c.RaceStat = StatType.Strength;
