@@ -66,6 +66,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.IsClassFeature = true;
                 bp.m_FeaturesRankIncrease = new List<BlueprintFeatureReference>();
                 bp.m_Archetypes = new BlueprintProgression.ArchetypeWithLevel[0];
+                bp.m_AlternateProgressionClasses = new BlueprintProgression.ClassWithLevel[0];
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
                     new BlueprintProgression.ClassWithLevel {
                         m_Class = DeathsnatcherClass.GetReference(),

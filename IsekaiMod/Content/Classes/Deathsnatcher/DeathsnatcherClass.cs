@@ -35,6 +35,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.m_ReflexSave = SavesHigh.ToReference<BlueprintStatProgressionReference>();
                 bp.m_WillSave = SavesHigh.ToReference<BlueprintStatProgressionReference>();
                 bp.m_Difficulty = 1;
+                bp.HideIfRestricted = true;
                 bp.m_Archetypes = new BlueprintArchetypeReference[0];
                 bp.RecommendedAttributes = new StatType[0];
                 bp.NotRecommendedAttributes = new StatType[0];
