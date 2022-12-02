@@ -6,9 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Added `Sneaky Magic` character development feat.
 - Added `Auto Selective` Overpowered ability.
 ### Fixed
-- Fixed `Deathsnatcher` name not showing after renaming.
+- Fixed `Deathsnatcher` default name.
 
 ## [2.2.0] - 2022-12-01
 ### Added

@@ -68,6 +68,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Channel Positive Energy`: You can channel positive energy (requires good alignment).
 		- `Channel Negative Energy`: You can channel negative energy (requires evil alignment).
 		- `Kinetic Power`: You can select a kinetic blast (air, earth, fire, water).
+		- `Sneaky Magic`: You can add your sneak attack damage to spells against flat-footed.
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.
