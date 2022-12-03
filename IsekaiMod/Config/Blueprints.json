@@ -1,6 +1,9 @@
 {
   "OverrideIds": false,
   "NewBlueprints": {
+    // Patching
+    "BaseElfRaceFeature": "b035f776-f8ee-46f0-ba6a-a7eaf21821f4",
+
     // Extra Wings
     "BlackWingsAbility": "c059b7c6-89b2-4472-a7eb-83bb6672c442",
     "GhostWingsAbility": "0a3c12e5-1dd8-44be-b67a-39fd445d8660",
@@ -27,12 +30,12 @@
     "SizeAlterationFeature": "6410e472-de88-4f4e-a617-ff9032091e95",
     "IsekaiSprigganHeritage": "c153ef88-76a5-44f8-9c5d-7ffc03e9512f",
 
-    // Isekai Drow Heritage
+    // Isekai Dark Elf Heritage
     "DrowPoisonResource": "a4f0753d-c44d-473f-ad54-c27be125cc96",
     "DrowPoisonUnitProperty": "46ea8820-73d3-4820-969d-77c892addf31",
     "DrowPoisonBuff": "b478001c-e548-4c2a-9269-b146c3d26ca7",
     "DrowPoisonAbility": "ccf4ed15-373b-4cd5-83d0-91d84c61449e",
-    "IsekaiDrowHeritage": "aa48248f-484e-4651-b4bc-87d1b1cad68d",
+    "IsekaiDarkElfHeritage": "aa48248f-484e-4651-b4bc-87d1b1cad68d",
 
     // Deities
     "IsekaiDeitySelection": "d7a574be-5e91-4420-b859-9f0ff708fdcf",

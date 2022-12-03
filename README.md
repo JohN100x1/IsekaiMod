@@ -104,7 +104,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.
 	- `Isekai Vampire` (Dhampir Heritage): A powerful heritage for Dhampir.
-	- `Isekai Drow` (Elf Heritage): A powerful heritage for Elf that gives you the Drow Poison ability.
+	- `Isekai Dark Elf` (Elf Heritage): A powerful heritage for Elf that gives you the Drow Poison ability.
 	- `Isekai Spriggan` (Gnome Heritage): A powerful heritage for Gnome that gives you a size alteration ability.
 - New Deities
 	- `Truck-kun`: A god of transportation.

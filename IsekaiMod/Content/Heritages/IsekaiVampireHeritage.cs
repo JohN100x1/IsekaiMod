@@ -46,7 +46,6 @@ namespace IsekaiMod.Content.Heritages
                     c.Stat = StatType.Dexterity;
                     c.Value = 4;
                 });
-
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Racial;
                     c.Stat = StatType.Charisma;

@@ -10,28 +10,30 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.Designers.Mechanics.Buffs;
 
-namespace IsekaiMod.Content.Heritages.IsekaiDrow
+namespace IsekaiMod.Content.Heritages.IsekaiDarkElf
 {
-    internal class IsekaiDrowHeritage
+    internal class IsekaiDarkElfHeritage
     {
+        private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = Resources.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
         public static void Add()
         {
-            // Drow Abilities
+            // Dark Elf Abilities
             var DrowPoisonAbility = Resources.GetModBlueprint<BlueprintAbility>("DrowPoisonAbility");
             var DrowPoisonResource = Resources.GetModBlueprint<BlueprintAbilityResource>("DrowPoisonResource");
 
-            // Drow Heritage
-            var Icon_Drow = AssetLoader.LoadInternal("Heritages", "ICON_DROW.png");
-            var IsekaiDrowHeritage = Helpers.CreateFeature("IsekaiDrowHeritage", bp => {
-                bp.SetName("Isekai Drow");
-                bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Drow have both extreme beauty and power. "
-                    + "Also called Dark Elves, they are a cruel and cunning dark reflection of the elven race.\n"
-                    + "The Isekai Drow has a +2 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Dexterity}Dexterity{/g}, {g|Encyclopedia:Intelligence}Intelligence{/g}, "
-                    + "{g|Encyclopedia:Wisdom}Wisdom{/g}, and {g|Encyclopedia:Charisma}Charisma{/g}. "
-                    + "They have spell resistance equal to 11 + their character level. "
-                    + "They can also use the Drow Poison ability as a swift action a number of times per day equal to their Charisma modifier.");
-                bp.m_Icon = Icon_Drow;
+            // Dark Elf Heritage
+            var Icon_Dark_Elf = AssetLoader.LoadInternal("Heritages", "ICON_DARK_ELF.png");
+            var IsekaiDarkElfHeritage = Helpers.CreateFeature("IsekaiDarkElfHeritage", bp => {
+                bp.SetName("Isekai Dark Elf");
+                bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Dark Elf have both extreme beauty and power. "
+                    + "They are a cruel and cunning dark reflection of the elven race.\n"
+                    + "The Isekai Dark Elf has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Intelligence}Intelligence{/g}, a +2 racial bonus to "
+                    + "{g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Wisdom}Wisdom{/g}, and a -2 penalty to Constitution."
+                    + "They have spell resistance equal to 10 + their character level. "
+                    + "They can also use the Drow Poison ability as a swift action a number of times per day equal to their Intelligence modifier.");
+                bp.m_Icon = Icon_Dark_Elf;
 
                 // Attributes
                 bp.AddComponent<AddStatBonus>(c => {
@@ -42,17 +44,19 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Racial;
                     c.Stat = StatType.Intelligence;
-                    c.Value = 2;
+                    c.Value = 4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Racial;
                     c.Stat = StatType.Wisdom;
                     c.Value = 2;
                 });
-                bp.AddComponent<AddStatBonus>(c => {
+                bp.AddComponent<AddStatBonusIfHasFact>(c => {
                     c.Descriptor = ModifierDescriptor.Racial;
-                    c.Stat = StatType.Charisma;
-                    c.Value = 2;
+                    c.Stat = StatType.Constitution;
+                    c.Value = -2;
+                    c.InvertCondition = true;
+                    c.m_CheckedFacts = new BlueprintUnitFactReference[] { DestinyBeyondBirthMythicFeat.ToReference<BlueprintUnitFactReference>() };
                 });
 
                 // Add Spell Resistance
@@ -67,7 +71,7 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                     c.m_Type = AbilityRankType.StatBonus;
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
                     c.m_Progression = ContextRankProgression.BonusValue;
-                    c.m_StepLevel = 11;
+                    c.m_StepLevel = 10;
                 });
 
                 // Add Resources
@@ -89,7 +93,7 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
 
             // Add to Elven Heritage Selection
             var ElvenHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("5482f879dcfd40f9a3168fdb48bc938c");
-            ElvenHeritageSelection.m_AllFeatures = ElvenHeritageSelection.m_AllFeatures.AddToArray(IsekaiDrowHeritage.ToReference<BlueprintFeatureReference>());
+            ElvenHeritageSelection.m_AllFeatures = ElvenHeritageSelection.m_AllFeatures.AddToArray(IsekaiDarkElfHeritage.ToReference<BlueprintFeatureReference>());
         }
     }
 }

@@ -11,11 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Sneaky Magic` character development feat.
 - Added `Auto Selective` Overpowered ability.
 ### Changed
-- Changed `Exceptional feats` to now always be recommended.
-- Changed exceptional summoning feats to be in a selection group.
+- Reworked `Isekai Drow` into `Isekai Dark Elf` which focuses on Intelligence.
 - Buffed `Training Montage` to no longer require character level 10.
 - Nerfed `Body Strengthening` to give DR 20/— and requires level 10.
 - Nerfed `Regeneration` hitpoint restoration from 20 to 10.
+- Changed `Exceptional feats` to now always be recommended.
+- Changed exceptional summoning feats to be in a selection group.
 ### Fixed
 - Fixed `Deathsnatcher` default name.
 - Fixed UI bug with selecting exceptional feats.

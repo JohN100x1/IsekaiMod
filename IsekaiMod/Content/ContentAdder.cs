@@ -153,6 +153,9 @@ namespace IsekaiMod.Content
             }
             public static void AddIsekaiHeritages()
             {
+                // Patch Heritages
+                Heritages.ElfHeritagePatcher.Patch();
+
                 // Add Heritages
                 Heritages.IsekaiSuccubus.SuccubusCharmAbility.Add();
                 Heritages.IsekaiSuccubus.IsekaiSuccubusHeritage.Add();
@@ -161,8 +164,8 @@ namespace IsekaiMod.Content
                 Heritages.IsekaiVampireHeritage.Add();
                 Heritages.IsekaiSpriggan.SizeAlterationAbility.Add();
                 Heritages.IsekaiSpriggan.IsekaiSprigganHeritage.Add();
-                Heritages.IsekaiDrow.DrowPoisonAbility.Add();
-                Heritages.IsekaiDrow.IsekaiDrowHeritage.Add();
+                Heritages.IsekaiDarkElf.DrowPoisonAbility.Add();
+                Heritages.IsekaiDarkElf.IsekaiDarkElfHeritage.Add();
             }
             public static void AddIsekaiBackgrounds()
             {

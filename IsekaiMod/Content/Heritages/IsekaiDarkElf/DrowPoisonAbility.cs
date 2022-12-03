@@ -16,7 +16,7 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 
-namespace IsekaiMod.Content.Heritages.IsekaiDrow
+namespace IsekaiMod.Content.Heritages.IsekaiDarkElf
 {
     internal class DrowPoisonAbility
     {
@@ -39,7 +39,7 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                     MinClassLevelIncrease = 0,
                     OtherClassesModifier = 0,
                     IncreasedByStat = true,
-                    ResourceBonusStat = StatType.Charisma,
+                    ResourceBonusStat = StatType.Intelligence,
                 };
             });
             var DrowPoisonUnitProperty = Helpers.CreateBlueprint<BlueprintUnitProperty>("DrowPoisonUnitProperty", bp => {
@@ -48,7 +48,7 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                     c.Property = UnitProperty.Level;
                 });
                 bp.AddComponent<SimplePropertyGetter>(c => {
-                    c.Property = UnitProperty.StatBonusCharisma;
+                    c.Property = UnitProperty.StatBonusIntelligence;
                 });
                 bp.BaseValue = 10;
                 bp.OperationOnComponents = BlueprintUnitProperty.MathOperation.Sum;
@@ -63,24 +63,6 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                 bp.AddComponent<AddInitiatorAttackWithWeaponTrigger>(c => {
                     c.WaitForAttackResolve = true;
                     c.OnlyHit = true;
-                    c.OnMiss = false;
-                    c.OnlyOnFullAttack = false;
-                    c.OnlyOnFirstAttack = false;
-                    c.OnlyOnFirstHit = false;
-                    c.CriticalHit = false;
-                    c.OnAttackOfOpportunity = false;
-                    c.NotCriticalHit = false;
-                    c.OnlySneakAttack = false;
-                    c.NotSneakAttack = false;
-                    c.CheckWeaponCategory = false;
-                    c.CheckWeaponRangeType = false;
-                    c.ActionsOnInitiator = false;
-                    c.ReduceHPToZero = false;
-                    c.CheckDistance = false;
-                    c.AllNaturalAndUnarmed = false;
-                    c.DuelistWeapon = false;
-                    c.NotExtraAttack = false;
-                    c.OnCharge = false;
                     c.Action = Helpers.CreateActionList(
                         new ContextActionSavingThrow()
                         {
@@ -97,7 +79,6 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                                 c.Succeed = ActionFlow.DoNothing();
                                 c.Failed = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                                     c.m_Buff = Unconsious.ToReference<BlueprintBuffReference>();
-                                    c.Permanent = false;
                                     c.DurationValue = new ContextDurationValue()
                                     {
                                         Rate = DurationRate.Minutes,
@@ -106,7 +87,6 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                                         DiceCountValue = 0,
                                         BonusValue = 1,
                                     };
-                                    c.IsFromSpell = false;
                                 });
                             })
                         },
@@ -124,22 +104,14 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
             var DrowPoisonAbility = Helpers.CreateBlueprint<BlueprintAbility>("DrowPoisonAbility", bp => {
                 bp.SetName("Drow Poison");
                 bp.SetDescription("As a swift action, you can coat your weapon with a special drow poison. Enemies hit by the poisoned weapon will need to make a Fortitude save "
-                    + "or become unconscious for 1 minute. This fortitude save is equal to 10 + your character level + your Charisma modifier.");
+                    + "or become unconscious for 1 minute. This fortitude save is equal to 10 + your character level + your Intelligence modifier.");
                 bp.m_Icon = Icon_DrowPoison;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.SavingThrowType = SavingThrowType.Unknown;
+                    c.SavingThrowType = SavingThrowType.Fortitude;
                     c.Actions = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.m_Buff = DrowPoisonBuff.ToReference<BlueprintBuffReference>();
                         c.Permanent = true;
-                        c.DurationValue = new ContextDurationValue()
-                        {
-                            Rate = DurationRate.Minutes,
-                            m_IsExtendable = true,
-                            DiceType = DiceType.Zero,
-                            DiceCountValue = 0,
-                            BonusValue = 0,
-                        };
-                        c.IsFromSpell = false;
+                        c.DurationValue = Constants.ZeroDuration;
                     });
                 });
                 bp.AddComponent<AbilitySpawnFx>(c => {
@@ -160,18 +132,10 @@ namespace IsekaiMod.Content.Heritages.IsekaiDrow
                 });
                 bp.Type = AbilityType.Special;
                 bp.Range = AbilityRange.Personal;
-                bp.m_AllowNonContextActions = false;
-                bp.CanTargetPoint = false;
-                bp.CanTargetEnemies = false;
-                bp.CanTargetFriends = false;
                 bp.CanTargetSelf = true;
-                bp.SpellResistance = false;
-                bp.EffectOnEnemy = AbilityEffectOnUnit.None;
-                bp.EffectOnAlly = AbilityEffectOnUnit.None;
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.EnchantWeapon;
                 bp.ActionType = UnitCommand.CommandType.Swift;
                 bp.AvailableMetamagic = Metamagic.Heighten;
-                bp.m_TargetMapObjects = false;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 minute");
                 bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "Fortitude negates");
             });

@@ -1610,13 +1610,13 @@
     },
     {
       "Key": "38411d31c86c42a9b39ad9a0f2693f05",
-      "SimpleName": "IsekaiDrowHeritage.Description",
+      "SimpleName": "IsekaiDarkElfHeritage.Description",
       "ProcessTemplates": true,
       "enGB": "Otherworldly entities who are reincarnated into the world of Golarion as a Drow have both extreme beauty and power. Also called Dark Elves, they are a cruel and cunning dark reflection of the elven race.\nThe Isekai Drow has a +2 racial bonus to Dexterity, Intelligence, Wisdom, and Charisma. They have spell resistance equal to 11 + their character level. They can also use the Drow Poison ability as a swift action a number of times per day equal to their Charisma modifier."
     },
     {
       "Key": "bf827d190dac469f93ac5373df7084ed",
-      "SimpleName": "IsekaiDrowHeritage.Name",
+      "SimpleName": "IsekaiDarkElfHeritage.Name",
       "ProcessTemplates": false,
       "enGB": "Isekai Drow"
     },
