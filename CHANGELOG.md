@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Added `Exceptional weapon` exceptional feats.
 - Added `Sneaky Magic` character development feat.
 - Added `Auto Selective` Overpowered ability.
 ### Fixed

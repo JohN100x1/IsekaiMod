@@ -54,6 +54,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Exceptional Summoning`: Your summons get +10 HP, +1 attack, +1 AC, and +1 to saving throws per character level.
 		- `Forbidden Summoning`: Your summons get +10 HP, and +1 to all attributes per character level.
 		- `Ferocious Summoning`: Your summons have 2 more attacks and +10 speed. They also get +1 sneak attack per character level. (requires Exceptional Summoning and Forbidden Summoning).
+		- `Exceptional Weapon`: Your attacks get an additional enchantment. (e.g. Corrosive, Flaming, Frost, etc.)
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
 	- `Character Development Feats`: A selection of bonus feats which have very good effects.
 		- `Alpha Strike`: Automatically confirm crits.
