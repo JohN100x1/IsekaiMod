@@ -6,7 +6,6 @@ using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
@@ -101,16 +100,11 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
             });
-            var ExceptionalSummoningAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("ExceptionalSummoningAbility", bp => {
+            var ExceptionalSummoningAbility = Helpers.CreateActivatableAbility("ExceptionalSummoningAbility", bp => {
                 bp.SetName("Exceptional Summoning");
                 bp.SetDescription("Your summoned creatures get a +10 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, AC, and saving throws per character level.");
                 bp.m_Icon = Icon_ExceptionalSummoning;
                 bp.m_Buff = ExceptionalSummoningBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.None;
-                bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
-                bp.DeactivateImmediately = true;
-                bp.ActivationType = AbilityActivationType.Immediately;
             });
             var ExceptionalSummoningFeature = Helpers.CreateFeature("ExceptionalSummoningFeature", bp => {
                 bp.SetName("Exceptional Summoning");

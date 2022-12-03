@@ -58,17 +58,12 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
             });
-            var FerociousSummoningAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("FerociousSummoningAbility", bp => {
+            var FerociousSummoningAbility = Helpers.CreateActivatableAbility("FerociousSummoningAbility", bp => {
                 bp.SetName("Ferocious Summoning");
                 bp.SetDescription("Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level. "
                     + "This effect does not stack with other effects that grant additional attack.");
                 bp.m_Icon = Icon_FerociousSummoning;
                 bp.m_Buff = FerociousSummoningBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.None;
-                bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
-                bp.DeactivateImmediately = true;
-                bp.ActivationType = AbilityActivationType.Immediately;
             });
             var FerociousSummoningFeature = Helpers.CreateFeature("FerociousSummoningFeature", bp => {
                 bp.SetName("Ferocious Summoning");

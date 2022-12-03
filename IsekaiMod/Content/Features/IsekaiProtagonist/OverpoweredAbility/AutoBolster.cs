@@ -4,7 +4,6 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.Abilities;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using UnityEngine;
@@ -28,16 +27,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoBolsterAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("AutoBolsterAbility", bp => {
+            var AutoBolsterAbility = Helpers.CreateActivatableAbility("AutoBolsterAbility", bp => {
                 bp.SetName("Overpowered Ability — Auto Bolster");
                 bp.SetDescription("Every time you cast a spell, it becomes bolstered, as though using the Bolster Spell feat.");
                 bp.m_Icon = Icon_BolsterSpell;
                 bp.m_Buff = AutoBolsterBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.None;
-                bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
-                bp.DeactivateImmediately = true;
-                bp.ActivationType = AbilityActivationType.Immediately;
             });
             var AutoBolsterFeature = Helpers.CreateFeature("AutoBolsterFeature", bp => {
                 bp.SetName("Overpowered Ability — Auto Bolster");

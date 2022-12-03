@@ -197,6 +197,7 @@ namespace IsekaiMod.Content
                 Features.ExceptionalFeats.ExceptionalSummoning.Add();
                 Features.ExceptionalFeats.ForbiddenSummoning.Add();
                 Features.ExceptionalFeats.FerociousSummoning.Add();
+                Features.ExceptionalFeats.ExceptionalWeaponSelection.Add();
 
             }
         }

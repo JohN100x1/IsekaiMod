@@ -67,6 +67,14 @@
     "FerociousSummoningAbility": "556880d1-d257-4c1c-b63c-e67d39d6da77",
     "FerociousSummoningFeature": "409eea83-086c-40bb-bf39-4f0d7743be1d",
 
+    // Elemental Weapon
+    "ExceptionalWeaponSelection": "0798a829-44db-40e7-b62e-b3514cfb4abf",
+    "CorrosiveWeaponFeature": "14a3c35e-fd57-478f-be0d-47b2180ffd1e",
+    "FrostWeaponFeature": "dfb63e55-ff95-4adf-a12a-3eea3428debf",
+    "ShockWeaponFeature": "d6b30fd8-2c63-4ac5-b3ce-5a492f5288be",
+    "FlamingWeaponFeature": "6d8ae869-50c1-43c0-b940-98efc9e1e751",
+    "ThunderingWeaponFeature": "2b6b0b52-7baa-423b-9dd4-04b7b9b13162",
+
     // Archetypes
     "GodEmperorArchetype": "2ff78bd9-6224-4376-9f64-720ce94d0616",
     "EdgeLordArchetype": "900db658-4f20-4636-ae84-a198c2b50f58",

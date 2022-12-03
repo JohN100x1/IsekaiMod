@@ -4,7 +4,6 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.Abilities;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using UnityEngine;
@@ -28,16 +27,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoEmpowerAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("AutoEmpowerAbility", bp => {
+            var AutoEmpowerAbility = Helpers.CreateActivatableAbility("AutoEmpowerAbility", bp => {
                 bp.SetName("Overpowered Ability — Auto Empower");
                 bp.SetDescription("Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat.");
                 bp.m_Icon = Icon_EmpowerSpell;
                 bp.m_Buff = AutoEmpowerBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.None;
-                bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
-                bp.DeactivateImmediately = true;
-                bp.ActivationType = AbilityActivationType.Immediately;
             });
             var AutoEmpowerFeature = Helpers.CreateFeature("AutoEmpowerFeature", bp => {
                 bp.SetName("Overpowered Ability — Auto Empower");

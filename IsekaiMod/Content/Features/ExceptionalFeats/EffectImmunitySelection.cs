@@ -372,7 +372,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
 
             // Effect Immunity Selection
             var EffectImmunitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("EffectImmunitySelection", bp => {
-                bp.SetName("Effect Immunity Selection");
+                bp.SetName("Effect Immunity");
                 bp.SetDescription("You gain immunity to a specific condition or effect.");
                 bp.m_Icon = null;
                 bp.Ranks = 1;

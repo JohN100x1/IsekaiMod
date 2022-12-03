@@ -3,7 +3,6 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
@@ -38,16 +37,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var SpellNegationAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("SpellNegationAbility", bp => {
+            var SpellNegationAbility = Helpers.CreateActivatableAbility("SpellNegationAbility", bp => {
                 bp.SetName("Spell Negation");
                 bp.SetDescription("You gain spell resistance equal to 10 + twice your character level.");
                 bp.m_Icon = Icon_SpellResistance;
                 bp.m_Buff = SpellNegationBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.None;
-                bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
-                bp.DeactivateImmediately = true;
-                bp.ActivationType = AbilityActivationType.Immediately;
             });
             var SpellNegationFeature = Helpers.CreateFeature("SpellNegationFeature", bp => {
                 bp.SetName("Spell Negation");

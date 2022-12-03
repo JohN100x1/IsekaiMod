@@ -15,7 +15,6 @@ using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Formations.Facts;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
-using UnityEngine;
 
 
 namespace IsekaiMod.Content.Features
@@ -30,7 +29,7 @@ namespace IsekaiMod.Content.Features
         private static readonly BlueprintBuff BuffWingsDemon = Resources.GetBlueprint<BlueprintBuff>("3c958be25ab34dc448569331488bee27");
         public static void Add()
         {
-            var BlackWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("BlackWingsAbility", bp => {
+            var BlackWingsAbility = Helpers.CreateActivatableAbility("BlackWingsAbility", bp => {
                 bp.SetName("Wings (Black)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -41,11 +40,8 @@ namespace IsekaiMod.Content.Features
                 bp.m_Buff = WingsAngelBlack.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.Wings;
                 bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
-                bp.DeactivateImmediately = true;
-                bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var GhostWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("GhostWingsAbility", bp => {
+            var GhostWingsAbility = Helpers.CreateActivatableAbility("GhostWingsAbility", bp => {
                 bp.SetName("Wings (Ghostly)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -56,9 +52,6 @@ namespace IsekaiMod.Content.Features
                 bp.m_Buff = BuffWingsAngelGhost.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.Wings;
                 bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
-                bp.DeactivateImmediately = true;
-                bp.ActivationType = AbilityActivationType.Immediately;
             });
 
             var DevilWingsBuff = Helpers.CreateBuff("DevilWingsBuff", bp => {
@@ -91,7 +84,7 @@ namespace IsekaiMod.Content.Features
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
                 bp.Frequency = DurationRate.Rounds;
             });
-            var DevilWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("DevilWingsAbility", bp => {
+            var DevilWingsAbility = Helpers.CreateActivatableAbility("DevilWingsAbility", bp => {
                 bp.SetName("Wings (Devilish)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -102,11 +95,8 @@ namespace IsekaiMod.Content.Features
                 bp.m_Buff = DevilWingsBuff.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.Wings;
                 bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
-                bp.DeactivateImmediately = true;
-                bp.ActivationType = AbilityActivationType.Immediately;
             });
-            var DemonWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("DemonWingsAbility", bp => {
+            var DemonWingsAbility = Helpers.CreateActivatableAbility("DemonWingsAbility", bp => {
                 bp.SetName("Wings (Demonic)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -117,9 +107,6 @@ namespace IsekaiMod.Content.Features
                 bp.m_Buff = BuffWingsDemon.ToReference<BlueprintBuffReference>();
                 bp.Group = ActivatableAbilityGroup.Wings;
                 bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
-                bp.DeactivateImmediately = true;
-                bp.ActivationType = AbilityActivationType.Immediately;
             });
 
             // Patch pit spells

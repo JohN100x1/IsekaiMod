@@ -55,15 +55,11 @@ namespace IsekaiMod.Content.Heritages.IsekaiSpriggan
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var SizeAlterationAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("SizeAlterationAbility", bp => {
+            var SizeAlterationAbility = Helpers.CreateActivatableAbility("SizeAlterationAbility", bp => {
                 bp.SetName("Size Alteration");
                 bp.SetDescription("As a standard action, increase your size by two size categories and gain +10 Speed, +12 Strength, -2 Dexterity, +6 Constitution, and a -2 penalty to AC.");
                 bp.m_Icon = Icon_Spriggan;
                 bp.m_Buff = SizeAlterationBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.None;
-                bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
-                bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.WithUnitCommand;
                 bp.m_ActivateWithUnitCommand = UnitCommand.CommandType.Standard;
             });

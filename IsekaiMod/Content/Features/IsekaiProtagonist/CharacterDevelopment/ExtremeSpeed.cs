@@ -4,7 +4,6 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
@@ -41,16 +40,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var ExtremeSpeedAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("ExtremeSpeedAbility", bp => {
+            var ExtremeSpeedAbility = Helpers.CreateActivatableAbility("ExtremeSpeedAbility", bp => {
                 bp.SetName("Extreme Speed");
                 bp.SetDescription("You gain a +5 {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} per character level.");
                 bp.m_Icon = Icon_SupersonicSpeed;
                 bp.m_Buff = ExtremeSpeedBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.None;
-                bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
-                bp.DeactivateImmediately = true;
-                bp.ActivationType = AbilityActivationType.Immediately;
             });
             var ExtremeSpeedFeature = Helpers.CreateFeature("ExtremeSpeedFeature", bp => {
                 bp.SetName("Extreme Speed");
