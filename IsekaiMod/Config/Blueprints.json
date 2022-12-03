@@ -54,6 +54,11 @@
 
     // Exceptional Feats
     "ExceptionalFeatSelection": "f13b7a85-ea3c-450b-a2ef-c2f04b728515",
+    "ExceptionalFeatBonusSelection": "c429b994-e70f-4f61-a65b-c3130e2266a9",
+
+    // Exceptional Summoning
+    "ExceptionalSummoningSelection": "d643aa89-079f-4af6-8c52-fea2a4292693",
+    "ExceptionalSummoningBonusSelection": "2469a345-5d08-4d53-9e28-ac0bc16783c3",
     "ExceptionalSummoningSummonBuff": "1f017106-a0e3-4eef-a8f2-3bcb62256979",
     "ExceptionalSummoningBuff": "1435e658-ec5c-4425-a087-21cd66aa756c",
     "ExceptionalSummoningAbility": "91cf3dae-7106-46ff-8719-6bea757143a5",
@@ -67,8 +72,9 @@
     "FerociousSummoningAbility": "556880d1-d257-4c1c-b63c-e67d39d6da77",
     "FerociousSummoningFeature": "409eea83-086c-40bb-bf39-4f0d7743be1d",
 
-    // Elemental Weapon
+    // Exceptional Weapon
     "ExceptionalWeaponSelection": "0798a829-44db-40e7-b62e-b3514cfb4abf",
+    "ExceptionalWeaponBonusSelection": "e87a1bb7-1a5a-4263-9837-93c9ca167914",
     "CorrosiveWeaponFeature": "14a3c35e-fd57-478f-be0d-47b2180ffd1e",
     "FrostWeaponFeature": "dfb63e55-ff95-4adf-a12a-3eea3428debf",
     "ShockWeaponFeature": "d6b30fd8-2c63-4ac5-b3ce-5a492f5288be",
@@ -200,6 +206,7 @@
 
     // Effect immunity
     "EffectImmunitySelection": "3da96f26-a8c7-4f58-8218-6ad192004c5b",
+    "EffectImmunityBonusSelection": "b2c198b0-8180-49c9-a1a8-a5c6112b37cc",
     "BlindImmunity": "4e92c46e-49c3-463e-84a4-e3674f111a2c",
     "NauseatedImmunity": "a37aeed0-797a-4f9c-941b-35429af86535",
     "FatigueImmunity": "cdbe260e-85a1-4f95-b90b-7d054b37270d",

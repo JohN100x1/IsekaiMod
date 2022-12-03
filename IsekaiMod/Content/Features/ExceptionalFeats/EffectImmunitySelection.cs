@@ -1,7 +1,6 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic;
@@ -374,13 +373,20 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
             var EffectImmunitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("EffectImmunitySelection", bp => {
                 bp.SetName("Effect Immunity");
                 bp.SetDescription("You gain immunity to a specific condition or effect.");
-                bp.m_Icon = null;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_Features = EffectImmunityList;
                 bp.m_AllFeatures = EffectImmunityList;
             });
-            ExceptionalFeatSelection.AddToSelection(EffectImmunitySelection);
+            var EffectImmunityBonusSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("EffectImmunityBonusSelection", bp => {
+                bp.SetName("Effect Immunity");
+                bp.SetDescription("You gain immunity to a specific condition or effect.");
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_Features = EffectImmunityList;
+                bp.m_AllFeatures = EffectImmunityList;
+            });
+            ExceptionalFeatSelection.AddToSelection(EffectImmunitySelection, EffectImmunityBonusSelection);
         }
     }
 }

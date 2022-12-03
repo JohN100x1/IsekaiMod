@@ -93,22 +93,32 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 });
             });
 
-            // Elemental Weapon Selection
+            var ExceptionalWeaponFeatures = new BlueprintFeatureReference[] {
+                CorrosiveWeaponFeature.ToReference<BlueprintFeatureReference>(),
+                FrostWeaponFeature.ToReference<BlueprintFeatureReference>(),
+                ShockWeaponFeature.ToReference<BlueprintFeatureReference>(),
+                FlamingWeaponFeature.ToReference<BlueprintFeatureReference>(),
+                ThunderingWeaponFeature.ToReference<BlueprintFeatureReference>(),
+            };
+
+            // Exceptional Weapon Selection
             var ExceptionalWeaponSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("ExceptionalWeaponSelection", bp => {
                 bp.SetName("Exceptional Weapon");
                 bp.SetDescription("Your attacks have an additional enchantment. This enchantment does not stack with existing enchantments on weapons.");
                 bp.m_Icon = Icon_ArcaneWeapon;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = new BlueprintFeatureReference[] {
-                    CorrosiveWeaponFeature.ToReference<BlueprintFeatureReference>(),
-                    FrostWeaponFeature.ToReference<BlueprintFeatureReference>(),
-                    ShockWeaponFeature.ToReference<BlueprintFeatureReference>(),
-                    FlamingWeaponFeature.ToReference<BlueprintFeatureReference>(),
-                    ThunderingWeaponFeature.ToReference<BlueprintFeatureReference>(),
-                };
+                bp.m_AllFeatures = ExceptionalWeaponFeatures;
             });
-            ExceptionalFeatSelection.AddToSelection(ExceptionalWeaponSelection);
+            var ExceptionalWeaponBonusSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("ExceptionalWeaponBonusSelection", bp => {
+                bp.SetName("Exceptional Weapon");
+                bp.SetDescription("Your attacks have an additional enchantment. This enchantment does not stack with existing enchantments on weapons.");
+                bp.m_Icon = Icon_ArcaneWeapon;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_AllFeatures = ExceptionalWeaponFeatures;
+            });
+            ExceptionalFeatSelection.AddToSelection(ExceptionalWeaponSelection, ExceptionalWeaponBonusSelection);
         }
     }
 }
