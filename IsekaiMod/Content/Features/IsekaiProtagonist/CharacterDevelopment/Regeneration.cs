@@ -13,11 +13,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
             var Icon_Regeneration = AssetLoader.LoadInternal("Features", "ICON_REGENERATION.png");
             var RegenerationFeature = Helpers.CreateFeature("RegenerationFeature", bp => {
                 bp.SetName("Regeneration");
-                bp.SetDescription("You regain 20 hit points per round and cannot die while regeneration is functioning. "
+                bp.SetDescription("You regain 10 hit points per round and cannot die while regeneration is functioning. "
                     + "Regeneration is disabled for 1 round when you are hit with an acid or fire attack. ");
                 bp.m_Icon = Icon_Regeneration;
                 bp.AddComponent<AddEffectRegeneration>(c => {
-                    c.Heal = 20;
+                    c.Heal = 10;
                     c.Unremovable = false;
                     c.CancelByMagicWeapon = false;
                     c.CancelDamageEnergyTypes = new DamageEnergyType[] { DamageEnergyType.Acid, DamageEnergyType.Fire };

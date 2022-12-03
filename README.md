@@ -61,15 +61,16 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
-		- `Regeneration`: Get regeneration 20/acid or fire (requires character level 10).
-		- `Training Montage`: Get a +10 bonus to all attributes (requires character level 10).
-		- `Body Strengthening`: Get a DR/— bonus equal to 10 + character level.
+		- `Regeneration`: Get regeneration 10/acid or fire (requires character level 10).
+		- `Training Montage`: Get a +10 bonus to all attributes.
+		- `Body Strengthening`: Get a DR 20/— (requires character level 10).
 		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
 		- `Extreme Speed`: Get a speed bonus equal to 5 times character level.
 		- `Channel Positive Energy`: You can channel positive energy (requires good alignment).
 		- `Channel Negative Energy`: You can channel negative energy (requires evil alignment).
 		- `Kinetic Power`: You can select a kinetic blast (air, earth, fire, water).
 		- `Sneaky Magic`: You can add your sneak attack damage to spells against flat-footed.
+		- `Spell Master`: Increase your spell DC by 4.
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.

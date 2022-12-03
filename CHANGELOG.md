@@ -7,8 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added `Exceptional weapon` exceptional feats.
+- Added `Spell Master` character development feat.
 - Added `Sneaky Magic` character development feat.
 - Added `Auto Selective` Overpowered ability.
+### Changed
+- Buffed `Training Montage` to no longer require character level 10.
+- Nerfed `Body Strengthening` to give DR 20/— and requires level 10.
+- Nerfed `Regeneration` hitpoint restoration from 20 to 10.
 ### Fixed
 - Fixed `Deathsnatcher` default name.
 

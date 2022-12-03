@@ -1,6 +1,5 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
-using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -47,9 +46,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.Descriptor = ModifierDescriptor.UntypedStackable;
                     c.Stat = StatType.Charisma;
                     c.Value = 10;
-                });
-                bp.AddComponent<PrerequisiteCharacterLevel>(c => {
-                    c.Level = 10;
                 });
             });
 
