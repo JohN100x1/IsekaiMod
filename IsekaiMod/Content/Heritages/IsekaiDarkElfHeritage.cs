@@ -154,7 +154,7 @@ namespace IsekaiMod.Content.Heritages
                 bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Dark Elf have both extreme beauty and power. "
                     + "They are a cruel and cunning dark reflection of the elven race.\n"
                     + "The Isekai Dark Elf has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Intelligence}Intelligence{/g}, a +2 racial bonus to "
-                    + "{g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Wisdom}Wisdom{/g}, and a -2 penalty to Constitution."
+                    + "{g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Wisdom}Wisdom{/g}, and a -2 penalty to Constitution. "
                     + "They have spell resistance equal to 10 + their character level. "
                     + "They can also use the Drow Poison ability as a swift action a number of times per day equal to their Intelligence modifier.");
                 bp.m_Icon = Icon_Dark_Elf;

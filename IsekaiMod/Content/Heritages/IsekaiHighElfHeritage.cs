@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Heritages
                 bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a High Elf have both extreme beauty and power. "
                     + "They are a refined and cultured reflection of the elven race.\n"
                     + "The Isekai High Elf has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Wisdom}Wisdom{/g}, a +2 racial bonus to "
-                    + "{g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Intelligence}Intelligence{/g}, and a -2 penalty to Constitution."
+                    + "{g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Intelligence}Intelligence{/g}, and a -2 penalty to Constitution. "
                     + "They have spell resistance equal to 10 + their character level. "
                     + "They can also cast 4 more spells per day for each spell rank.");
                 bp.m_Icon = Icon_TricksterCharmWhatever;
