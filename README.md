@@ -116,6 +116,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 - New Dialogue
 	- Prologue, speaking with Hulrun at Kenabres Festival.
 	- Act 1, Shield Maze after finding Radiance.
+	- RE, during drow ambush.
 
 ### Isekai Protagonist Spell progression
 #### Spells per Day table
