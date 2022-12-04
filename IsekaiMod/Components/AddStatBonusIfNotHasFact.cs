@@ -14,7 +14,7 @@ using UnityEngine;
 namespace IsekaiMod.Components
 {
     [TypeId("ef3cfeb920ad4483a7ab34d00f006bf4")]
-    [ComponentName("Add stat bonus if owner does not have Facts")]
+    [ComponentName("Add stat bonus if owner does not have any Facts")]
     [AllowedOn(typeof(BlueprintBuff), false)]
     [AllowMultipleComponents]
     public class AddStatBonusIfNotHasFact : UnitBuffComponentDelegate, IUnitGainFactHandler, IUnitSubscriber, ISubscriber, IUnitLostFactHandler

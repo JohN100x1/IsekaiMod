@@ -16,7 +16,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
             var Icon_Serenity = Resources.GetBlueprint<BlueprintAbility>("d316d3d94d20c674db2c24d7de96f6a7").m_Icon;
             var NascentApotheosis = Helpers.CreateFeature("NascentApotheosis", bp => {
                 bp.SetName("Nascent Apotheosis");
-                bp.SetDescription("At 3rd level, the God Emperor gains an inherent bonus to all attributes equal to 1/2 their character level.");
+                bp.SetDescription("At 3rd level, the God Emperor gains an inherent bonus to all attributes equal to 1/2 their character level. "
+                    + "They also gain {g|Encyclopedia:Damage_Reduction}DR{/g}/— equal to their character level.");
                 bp.m_Icon = Icon_Serenity;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Inherent;
@@ -76,6 +77,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.m_Type = AbilityRankType.StatBonus;
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
                     c.m_Progression = ContextRankProgression.Div2;
+                });
+                bp.AddComponent<AddDamageResistancePhysical>(c => {
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.Default
+                    };
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.Default;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
                 });
                 bp.ReapplyOnLevelUp = true;
             });

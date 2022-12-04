@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Auto Selective` Overpowered ability.
 ### Changed
 - Reworked `Isekai Drow` into `Isekai Dark Elf` which focuses on Intelligence.
+- Buffed `Nascent Apotheosis` feature to also give DR/— per level.
 - Buffed `Training Montage` to no longer require character level 10.
 - Nerfed `Body Strengthening` to give DR 20/— and requires level 10.
 - Nerfed `Regeneration` hitpoint restoration from 20 to 10.
