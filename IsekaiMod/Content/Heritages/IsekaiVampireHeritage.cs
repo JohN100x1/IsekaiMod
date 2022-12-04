@@ -13,7 +13,7 @@ using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Buffs.Components;
 
-namespace IsekaiMod.Content.Heritages.IsekaiVampire
+namespace IsekaiMod.Content.Heritages
 {
     internal class IsekaiVampireHeritage
     {

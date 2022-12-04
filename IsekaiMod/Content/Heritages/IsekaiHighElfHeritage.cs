@@ -13,7 +13,7 @@ using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Heritages.IsekaiHighElf
+namespace IsekaiMod.Content.Heritages
 {
     internal class IsekaiHighElfHeritage
     {

@@ -10,7 +10,7 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Designers.Mechanics.Buffs;
 
-namespace IsekaiMod.Content.Heritages.IsekaiWoodElf
+namespace IsekaiMod.Content.Heritages
 {
     internal class IsekaiWoodElfHeritage
     {
