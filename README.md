@@ -28,7 +28,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 - New Classes & Archetypes
 	- `Isekai Protagonist`
 		- Spontaneous caster that uses Charisma.
-		- Has a really powerful spellbook that has all the wizard, cleric, and druid spells.
+		- Has a really powerful spellbook that has spells from all other classes.
 		- Has sneak attack.
 		- Has extra feats like the fighter but not limited to combat feats.
 		- Starts of with the `Plot Armor` feature which make them hard to kill.
