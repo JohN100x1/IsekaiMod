@@ -16,15 +16,15 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var IsekaiProtagonistSpellsPerDay = Resources.GetModBlueprint<BlueprintSpellsTable>("IsekaiProtagonistSpellsPerDay");
             var VillainSpellbook = Helpers.CreateBlueprint<BlueprintSpellbook>("VillainSpellbook", bp => {
                 bp.Name = Helpers.CreateString("VillainSpellbook.Name", "Villain");
-                bp.Spontaneous = false;
+                bp.Spontaneous = true;
                 bp.CastingAttribute = StatType.Intelligence;
                 bp.CantripsType = CantripsType.Cantrips;
                 bp.IsArcane = false;
-                bp.IsArcanist = false;
+                bp.IsArcanist = true;
                 bp.m_SpellsPerDay = IsekaiProtagonistSpellsPerDay.ToReference<BlueprintSpellsTableReference>();
                 bp.m_SpellsKnown = null;
                 bp.m_SpellList = IsekaiProtagonistSpellList.ToReference<BlueprintSpellListReference>();
-                bp.m_SpellSlots = null;
+                bp.m_SpellSlots = IsekaiProtagonistSpellsPerDay.ToReference<BlueprintSpellsTableReference>();
                 bp.SpellsPerLevel = 4;
                 bp.AllSpellsKnown = false;
                 bp.CanCopyScrolls = true;

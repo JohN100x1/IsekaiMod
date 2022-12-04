@@ -46,7 +46,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- Uses charisma for damage and attack rolls.
 	- `Villain` (Isekai Protagonist Archetype)
 		- Has studied target.
-		- Intelligence based caster that memorizes spells (becomes like wizard).
+		- Intelligence based caster that memorizes spells (becomes like arcanist).
 - New Features
 	- `Exceptional feats`: Strong feats that can be chosen in place of a feat/bonus feat.
 		- `Mythic feat`: You can choose a mythic feat instead of a normal/bonus feat.
