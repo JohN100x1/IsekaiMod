@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
-- Changed `Villain` Archetype to cast spells like an Arcanist instead of Wizard. The Spell slots progression is the same as the spells per day progression.
+- Changed `Villain` Archetype to memorise spells like an Arcanist instead of Wizard. The Spell slots progression is the same as the spells per day progression.
 
 ## [2.4.0] - 2022-12-04
 ### Added
