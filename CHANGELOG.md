@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Buffed `Grasp Heart` DC from 50 to 99.
 - Nerfed `Super Buff` by removing Ice body, fiery body, and firebrand buffs.
+- Nerfed `Training Montage` from +10 bonus to +8.
+- Changed `Very Fast Movement` feature speed bonus from insight to untyped.
+- Changed `Isekai Protagonist` from divine caster to arcane (visual only).
 - Updated icon for `Drow Poison` feature.
 
 ## [2.3.0] - 2022-12-04

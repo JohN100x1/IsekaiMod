@@ -30,7 +30,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
             {
                 blueprintFeatureSelection.m_AllFeatures = blueprintFeatureSelection.m_AllFeatures
                     .RemoveFromArray(ExceptionalFeatSelection.ToReference<BlueprintFeatureReference>())
-                    .AddToArray(ExceptionalFeatBonusSelection.ToReference<BlueprintFeatureReference>());
+                    .AddToFirst(ExceptionalFeatBonusSelection.ToReference<BlueprintFeatureReference>());
             }
         }
     }
