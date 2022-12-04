@@ -161,7 +161,7 @@ namespace IsekaiMod.Content
                 Heritages.IsekaiSuccubus.IsekaiSuccubusHeritage.Add();
                 Heritages.IsekaiAngel.AngelicBoltAbility.Add();
                 Heritages.IsekaiAngel.IsekaiAngelHeritage.Add();
-                Heritages.IsekaiVampireHeritage.Add();
+                Heritages.IsekaiVampire.IsekaiVampireHeritage.Add();
                 Heritages.IsekaiSpriggan.SizeAlterationAbility.Add();
                 Heritages.IsekaiSpriggan.IsekaiSprigganHeritage.Add();
                 Heritages.IsekaiDarkElf.DrowPoisonAbility.Add();
