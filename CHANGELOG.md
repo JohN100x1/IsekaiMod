@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Nerfed `Training Montage` from +10 bonus to +8.
 - Changed `Very Fast Movement` feature speed bonus from insight to untyped.
 - Changed `Isekai Protagonist` from divine caster to arcane (visual only).
+- Changed `Sneaky Magic` to require sneak attack.
 - Updated icon for `Drow Poison` feature.
 
 ## [2.3.0] - 2022-12-04
