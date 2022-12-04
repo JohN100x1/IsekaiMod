@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
+- Buffed `Grasp Heart` DC from 50 to 99.
 - Nerfed `Super Buff` by removing Ice body, fiery body, and firebrand buffs.
 
 ## [2.3.0] - 2022-12-04
