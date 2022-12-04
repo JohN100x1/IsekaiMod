@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added new dialogue during drow ambush.
 ### Changed
+- Decreased mod file size significantly.
 - Buffed `Grasp Heart` DC from 50 to 99.
 - Nerfed `Super Buff` by removing Ice body, fiery body, and firebrand buffs.
 - Nerfed `Training Montage` from +10 bonus to +8.
