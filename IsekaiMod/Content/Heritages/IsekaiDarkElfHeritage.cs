@@ -21,6 +21,7 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Heritages
 {
@@ -28,10 +29,10 @@ namespace IsekaiMod.Content.Heritages
     {
         private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = Resources.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
         private static readonly BlueprintBuff Unconsious = Resources.GetBlueprint<BlueprintBuff>("31a468926d0f3ab439b714f15d794a8b");
+        private static readonly Sprite Icon_AcidBomb = Resources.GetBlueprint<BlueprintAbility>("fd101fbc4aacf5d48b76a65e3aa5db6d").m_Icon;
         public static void Add()
         {
             // Dark Elf Abilities
-            var Icon_DrowPoison = AssetLoader.LoadInternal("Features", "ICON_DROW_POISON.png");
             var DrowPoisonResource = Helpers.CreateBlueprint<BlueprintAbilityResource>("DrowPoisonResource", bp => {
                 bp.m_MaxAmount = new BlueprintAbilityResource.Amount
                 {
@@ -63,7 +64,7 @@ namespace IsekaiMod.Content.Heritages
             var DrowPoisonBuff = Helpers.CreateBuff("DrowPoisonBuff", bp => {
                 bp.SetName("Drow Poison");
                 bp.SetDescription("Drow Poison causes their target to become unconsious on a failed fortitude save.");
-                bp.m_Icon = Icon_DrowPoison;
+                bp.m_Icon = Icon_AcidBomb;
                 bp.IsClassFeature = true;
                 bp.Stacking = StackingType.Replace;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
@@ -112,7 +113,7 @@ namespace IsekaiMod.Content.Heritages
                 bp.SetName("Drow Poison");
                 bp.SetDescription("As a swift action, you can coat your weapon with a special drow poison. Enemies hit by the poisoned weapon will need to make a Fortitude save "
                     + "or become unconscious for 1 minute. This fortitude save is equal to 10 + your character level + your Intelligence modifier.");
-                bp.m_Icon = Icon_DrowPoison;
+                bp.m_Icon = Icon_AcidBomb;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Fortitude;
                     c.Actions = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {

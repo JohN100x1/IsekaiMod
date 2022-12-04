@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Buffed `Grasp Heart` DC from 50 to 99.
 - Nerfed `Super Buff` by removing Ice body, fiery body, and firebrand buffs.
+- Updated icon for `Drow Poison` feature.
 
 ## [2.3.0] - 2022-12-04
 ### Added
