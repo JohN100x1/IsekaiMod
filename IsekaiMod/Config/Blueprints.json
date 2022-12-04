@@ -1,9 +1,6 @@
 {
   "OverrideIds": false,
   "NewBlueprints": {
-    // Patching
-    "BaseElfRaceFeature": "b035f776-f8ee-46f0-ba6a-a7eaf21821f4",
-
     // Extra Wings
     "BlackWingsAbility": "c059b7c6-89b2-4472-a7eb-83bb6672c442",
     "GhostWingsAbility": "0a3c12e5-1dd8-44be-b67a-39fd445d8660",
@@ -39,6 +36,9 @@
 
     // Isekai High Elf Heritage
     "IsekaiHighElfHeritage": "e43cba05-c39e-4c09-b12d-125f0d4ca74c",
+
+    // Isekai Wood Elf Heritage
+    "IsekaiWoodElfHeritage": "07b30d8c-2ae5-4580-8e59-998e5959abd3",
 
     // Deities
     "IsekaiDeitySelection": "d7a574be-5e91-4420-b859-9f0ff708fdcf",

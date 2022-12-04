@@ -171,6 +171,9 @@
     <None Update="Assets\Heritages\ICON_VAMPIRE.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Assets\Heritages\ICON_WOOD_ELF.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\Portraits\DeathsnatcherFull.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
