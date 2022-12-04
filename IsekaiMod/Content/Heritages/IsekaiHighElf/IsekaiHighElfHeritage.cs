@@ -10,16 +10,18 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Designers.Mechanics.Buffs;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Heritages.IsekaiHighElf
 {
     internal class IsekaiHighElfHeritage
     {
         private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = Resources.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
+        private static readonly Sprite Icon_TricksterCharmWhatever = Resources.GetBlueprint<BlueprintAbility>("943328ac5bc8a734e85b5b2af3ae2bf7").m_Icon;
         public static void Add()
         {
             // High Elf Heritage
-            var Icon_High_Elf = AssetLoader.LoadInternal("Heritages", "ICON_HIGH_ELF.png");
             var IsekaiHighElfHeritage = Helpers.CreateFeature("IsekaiHighElfHeritage", bp => {
                 bp.SetName("Isekai High Elf");
                 bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a High Elf have both extreme beauty and power. "
@@ -28,7 +30,7 @@ namespace IsekaiMod.Content.Heritages.IsekaiHighElf
                     + "{g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Intelligence}Intelligence{/g}, and a -2 penalty to Constitution."
                     + "They have spell resistance equal to 10 + their character level. "
                     + "They can also cast 4 more spells per day for each spell rank.");
-                bp.m_Icon = Icon_High_Elf;
+                bp.m_Icon = Icon_TricksterCharmWhatever;
 
                 // Attributes
                 bp.AddComponent<AddStatBonus>(c => {
