@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.0] - 2022-12-04
+### Added
+- Added new dialogue during drow ambush.
+### Changed
+- Buffed `Grasp Heart` DC from 50 to 99.
+- Nerfed `Super Buff` by removing Ice body, fiery body, and firebrand buffs.
+- Nerfed `Training Montage` from +10 bonus to +8.
+- Changed `Very Fast Movement` feature speed bonus from insight to untyped.
+- Changed `Isekai Protagonist` from divine caster to arcane (visual only).
+- Changed `Sneaky Magic` to require sneak attack.
+- Updated icon for `Drow Poison` feature.
+
 ## [2.3.0] - 2022-12-04
 ### Added
 - Added `Isekai High Elf` heritage (Elf Heritage).

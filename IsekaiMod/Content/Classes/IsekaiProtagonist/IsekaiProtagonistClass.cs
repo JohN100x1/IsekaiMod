@@ -101,8 +101,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     StatType.SkillPersuasion,
                     StatType.SkillUseMagicDevice
                 };
-                bp.IsDivineCaster = true;
-                bp.IsArcaneCaster = false;
+                bp.IsDivineCaster = false;
+                bp.IsArcaneCaster = true;
                 bp.StartingGold = 69420;
                 bp.PrimaryColor = 9;
                 bp.SecondaryColor = 9;

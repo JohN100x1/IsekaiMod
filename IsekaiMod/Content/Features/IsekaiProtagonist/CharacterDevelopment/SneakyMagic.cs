@@ -1,6 +1,8 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.Designers.Mechanics.Prerequisites;
+using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using UnityEngine;
 
@@ -19,6 +21,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     + "the sneak attack damage.");
                 bp.m_Icon = Icon_InvisibilityAlmostGreater;
                 bp.AddComponent<SurpriseSpells>();
+                bp.AddComponent<PrerequisiteFullStatValue> (c => {
+                    c.Stat = StatType.SneakAttack;
+                    c.Value = 1;
+                });
             });
             CharacterDevelopmentSelection.AddToSelection(SneakyMagic);
         }

@@ -4,14 +4,12 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.ElementsSystem;
 using Kingmaker.Localization;
-using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.Utility;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
@@ -70,11 +68,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 Resources.GetBlueprint<BlueprintBuff>("50a77710a7c4914499d0254e76a808e5"), // SpellResistanceBuff
                 Resources.GetBlueprint<BlueprintBuff>("fb0ae0908b3d5c3459be94e11e0c1687"), // EagleSoulBuff
                 Resources.GetBlueprint<BlueprintBuff>("4ce640f9800d444418779a214598d0a3"), // LegendaryProportionsBuff
-                Resources.GetBlueprint<BlueprintBuff>("a6da7d6a5c9377047a7bd2680912860f"), // IceBodyBuff
+                // Resources.GetBlueprint<BlueprintBuff>("a6da7d6a5c9377047a7bd2680912860f"), // IceBodyBuff
                 Resources.GetBlueprint<BlueprintBuff>("906262fda0fbda442b27f9b0a04e5aa0"), // FrightfulAspectBuff
                 Resources.GetBlueprint<BlueprintBuff>("1c05dd3a1c78b0e4e9f7438a43e7a9fd"), // SeamantleBuff
                 Resources.GetBlueprint<BlueprintBuff>("8c385a7610aa409468f3a6c0f904ac92"), // ForesightBuff
-                Resources.GetBlueprint<BlueprintBuff>("b574e1583768798468335d8cdb77e94c"), // FieryBodyBuff
+                // Resources.GetBlueprint<BlueprintBuff>("b574e1583768798468335d8cdb77e94c"), // FieryBodyBuff
                 Resources.GetBlueprint<BlueprintBuff>("6603b27034f694e44a407a9cdf77c67e"), // UnbreakableHeartBuff
                 Resources.GetBlueprint<BlueprintBuff>("c5c86809a1c834e42a2eb33133e90a28"), // RemoveFearBuff
                 Resources.GetBlueprint<BlueprintBuff>("5d2833d39901b844b828f9f13a0353fe"), // DivineFavorBuff
@@ -92,7 +90,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 Resources.GetBlueprint<BlueprintBuff>("b8da3ec045ec04845a126948e1f4fc1a"), // HeroismGreaterBuff
                 Resources.GetBlueprint<BlueprintBuff>("cbfd2f5279f5946439fe82570fd61df2"), // EcholocationBuff
                 Resources.GetBlueprint<BlueprintBuff>("4aa87d3319124a2daf74d80ca5d4595e"), // LifeBubbleBuff
-                Resources.GetBlueprint<BlueprintBuff>("c6cc1c5356db4674dbd2be20ea205c86"), // FirebrandBuff
+                // Resources.GetBlueprint<BlueprintBuff>("c6cc1c5356db4674dbd2be20ea205c86"), // FirebrandBuff
                 Resources.GetBlueprint<BlueprintBuff>("e9947402c84e8bc4e958b9be08d7a720"), // ProtectionFromSpellsBuffSpell
                 Resources.GetBlueprint<BlueprintBuff>("4f0064bea5b14554f809f5e075a0070d"), // ProtectionFromSpellsBuffSpellLike
                 Resources.GetBlueprint<BlueprintBuff>("35f3724d4e8877845af488d167cb8a89"), // MindBlankBuff
@@ -111,9 +109,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     + "mage armor, shield, shield of faith, veil of heaven, veil of positive energy, blur, bull's strength, cat's grace, bear's endurance, fox's cunning, owl's wisdom, "
                     + "eagle's splendor, mirror image, false life, barkskin, aid, protection from evil, bestow grace, aura of greater courage, displacement, magical vestiment, "
                     + "delay poison, invisibility greater, stone skin, death ward, freedom of movement, false life greater, burst of glory, spell resistance, eagle soul, "
-                    + "legendary proportions, ice body, frightful aspect, seamantle, foresight, fiery body, unbreakable heart, remove fear, divine favor, magic fang, align weapon good, "
+                    + "legendary proportions, frightful aspect, seamantle, foresight, unbreakable heart, remove fear, divine favor, magic fang, align weapon good, "
                     + "crusaders edge, magic weapon greater, divine power, true seeing, shield of law, angelic aspect greater, winds of vengeance, hurricane bow, sense vitals, "
-                    + "heroism greater, echolocation, life bubble, firebrand, protection from spells, mind blank, and heroic invocation.");
+                    + "heroism greater, echolocation, life bubble, protection from spells, mind blank, and heroic invocation.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = new ActionList() { Actions = BuffActions.ToArray() };
                 });
@@ -144,9 +142,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     + "mage armor, shield, shield of faith, veil of heaven, veil of positive energy, blur, bull's strength, cat's grace, bear's endurance, fox's cunning, owl's wisdom, "
                     + "eagle's splendor, mirror image, false life, barkskin, aid, protection from evil, bestow grace, aura of greater courage, displacement, magical vestiment, "
                     + "delay poison, invisibility greater, stone skin, death ward, freedom of movement, false life greater, burst of glory, spell resistance, eagle soul, "
-                    + "legendary proportions, ice body, frightful aspect, seamantle, foresight, fiery body, unbreakable heart, remove fear, divine favor, magic fang, align weapon good, "
+                    + "legendary proportions, frightful aspect, seamantle, foresight, unbreakable heart, remove fear, divine favor, magic fang, align weapon good, "
                     + "crusaders edge, magic weapon greater, divine power, true seeing, shield of law, angelic aspect greater, winds of vengeance, hurricane bow, sense vitals, "
-                    + "heroism greater, echolocation, life bubble, firebrand, protection from spells, mind blank, and heroic invocation.");
+                    + "heroism greater, echolocation, life bubble, protection from spells, mind blank, and heroic invocation.");
                 bp.m_Icon = Icon_Super_Buff;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { SuperBuffAbility.ToReference<BlueprintUnitFactReference>() };

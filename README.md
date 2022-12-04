@@ -62,7 +62,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
 		- `Regeneration`: Get regeneration 10/acid or fire (requires character level 10).
-		- `Training Montage`: Get a +10 bonus to all attributes.
+		- `Training Montage`: Get a +8 bonus to all attributes.
 		- `Body Strengthening`: Get a DR 20/— (requires character level 10).
 		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
 		- `Extreme Speed`: Get a speed bonus equal to 5 times character level.
@@ -116,6 +116,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 - New Dialogue
 	- Prologue, speaking with Hulrun at Kenabres Festival.
 	- Act 1, Shield Maze after finding Radiance.
+	- Random encounter, during drow ambush.
 
 ### Isekai Protagonist Spell progression
 #### Spells per Day table

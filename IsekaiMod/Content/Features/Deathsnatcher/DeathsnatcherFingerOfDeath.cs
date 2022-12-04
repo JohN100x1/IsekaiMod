@@ -119,8 +119,6 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.Default;
                     c.m_BaseValueType = ContextRankBaseValueType.ClassLevel;
-                    c.m_Stat = StatType.Unknown;
-                    c.m_SpecificModifier = ModifierDescriptor.None;
                     c.m_Progression = ContextRankProgression.MultiplyByModifier;
                     c.m_StepLevel = 10;
                     c.m_Class = new BlueprintCharacterClassReference[] { DeathsnatcherClass.GetReference() };
@@ -128,8 +126,6 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.DamageBonus;
                     c.m_BaseValueType = ContextRankBaseValueType.ClassLevel;
-                    c.m_Stat = StatType.Unknown;
-                    c.m_SpecificModifier = ModifierDescriptor.None;
                     c.m_Progression = ContextRankProgression.AsIs;
                     c.m_StepLevel = 1;
                     c.m_Class = new BlueprintCharacterClassReference[] { DeathsnatcherClass.GetReference() };

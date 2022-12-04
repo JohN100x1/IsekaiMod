@@ -15,10 +15,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord
         {
             var EdgeLordFastMovement = Helpers.CreateFeature("EdgeLordFastMovement", bp => {
                 bp.SetName("Very Fast Movement");
-                bp.SetDescription("At 7th level, you gain an +20 insight {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g}.");
+                bp.SetDescription("At 7th level, you gain an +20 {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g}.");
                 bp.m_Icon = Icon_FastMovement;
                 bp.AddComponent<AddStatBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.Insight;
+                    c.Descriptor = ModifierDescriptor.UntypedStackable;
                     c.Stat = StatType.Speed;
                     c.Value = 20;
                 });

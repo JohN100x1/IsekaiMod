@@ -36,7 +36,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     + "some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively.");
                 bp.LocalizedDescriptionShort = Helpers.CreateString($"GodEmperorArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
                     + "some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively.");
-                bp.RemoveSpellbook = false;
+                bp.IsArcaneCaster = false;
+                bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies),
                     Helpers.LevelEntry(3, CharacterDevelopmentSelection),

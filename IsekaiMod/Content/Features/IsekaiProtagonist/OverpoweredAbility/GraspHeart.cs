@@ -38,7 +38,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         {
             var GraspHeartAbility = Helpers.CreateBlueprint<BlueprintAbility>("GraspHeartAbility", bp => {
                 bp.SetName("Overpowered Ability — Grasp Heart");
-                bp.SetDescription("Kills the targeted creature if they fail a DC 50 fortitude saving throw, otherwise they are stunned for 1 round.");
+                bp.SetDescription("Kills the targeted creature if they fail a DC 99 fortitude saving throw, otherwise they are stunned for 1 round.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<ContextActionSavingThrow>(c => {
                         c.Type = SavingThrowType.Fortitude;
@@ -80,7 +80,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Inverted = true;
                 });
                 bp.AddComponent<ContextSetAbilityParams>(c => {
-                    c.DC = 50;
+                    c.DC = 99;
                 });
                 bp.m_Icon = Icon_DeathClutch;
                 bp.Type = AbilityType.SpellLike;
@@ -99,7 +99,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             });
             var GraspHeartFeature = Helpers.CreateFeature("GraspHeartFeature", bp => {
                 bp.SetName("Overpowered Ability — Grasp Heart");
-                bp.SetDescription("You gain the Grasp Heart ability which can kill any creature if they fail a DC 50 fortitude saving throw, otherwise they are stunned for 1 round.");
+                bp.SetDescription("You gain the Grasp Heart ability which can kill any creature if they fail a DC 99 fortitude saving throw, otherwise they are stunned for 1 round.");
                 bp.m_Icon = Icon_DeathClutch;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { GraspHeartAbility.ToReference<BlueprintUnitFactReference>() };
