@@ -35,7 +35,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     + "despair of the inhabitants of the new world, the hero sets out to bring knowledge from their old world in order to save them.");
                 bp.LocalizedDescriptionShort = Helpers.CreateString($"HeroArchetype.Description", "Heroes use their newfound powers for good. After realising the suffering and "
                     + "despair of the inhabitants of the new world, the hero sets out to bring knowledge from their old world in order to save them.");
-                bp.RemoveSpellbook = false;
+                bp.IsArcaneCaster = false;
+                bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, SneakAttack),
                     Helpers.LevelEntry(3, SneakAttack, CharacterDevelopmentSelection),
