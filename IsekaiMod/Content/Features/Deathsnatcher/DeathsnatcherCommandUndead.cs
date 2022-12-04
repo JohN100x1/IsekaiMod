@@ -95,14 +95,6 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                             });
                             c.IfFalse = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                                 c.m_Buff = CommandUndeadBuff.ToReference<BlueprintBuffReference>();
-                                c.Permanent = false;
-                                c.UseDurationSeconds = false;
-                                c.DurationSeconds = 0;
-                                c.IsFromSpell = true;
-                                c.IsNotDispelable = false;
-                                c.ToCaster = false;
-                                c.AsChild = false;
-                                c.SameDuration = false;
                                 c.DurationValue = new ContextDurationValue()
                                 {
                                     Rate = DurationRate.Rounds,
@@ -117,12 +109,12 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                                     },
                                     m_IsExtendable = true
                                 };
+                                c.IsFromSpell = true;
                             });
                         });
                     });
                 });
                 bp.AddComponent<SpellComponent>(c => {
-                    c.m_Flags = 0;
                     c.School = SpellSchool.Necromancy;
                 });
                 bp.AddComponent<SpellDescriptorComponent>(c => {
@@ -132,12 +124,6 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     c.PrefabLink = new PrefabLink() { AssetId = "cbfe312cb8e63e240a859efaad8e467c" };
                     c.Time = AbilitySpawnFxTime.OnApplyEffect;
                     c.Anchor = AbilitySpawnFxAnchor.SelectedTarget;
-                    c.WeaponTarget = AbilitySpawnFxWeaponTarget.None;
-                    c.DestroyOnCast = false;
-                    c.Delay = 0;
-                    c.PositionAnchor = AbilitySpawnFxAnchor.None;
-                    c.OrientationAnchor = AbilitySpawnFxAnchor.None;
-                    c.OrientationMode = AbilitySpawnFxOrientation.Copy;
                 });
                 bp.AddComponent<AbilityTargetHasFact>(c => {
                     c.m_CheckedFacts = new BlueprintUnitFactReference[] { UndeadType.ToReference<BlueprintUnitFactReference>() };
@@ -158,26 +144,20 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 });
                 bp.Type = AbilityType.SpellLike;
                 bp.Range = AbilityRange.Close;
-                bp.m_AllowNonContextActions = false;
-                bp.CanTargetPoint = false;
                 bp.CanTargetEnemies = true;
-                bp.CanTargetFriends = false;
-                bp.CanTargetSelf = false;
                 bp.SpellResistance = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
                 bp.EffectOnAlly = AbilityEffectOnUnit.None;
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Point;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = CommandUndeadAbility.AvailableMetamagic;
-                bp.m_TargetMapObjects = false;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
                 bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "Will negates (save each round)");
             });
-            var DeathsnatcherCommandUndeadFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherCommandUndeadFeature", bp => {
+            var DeathsnatcherCommandUndeadFeature = Helpers.CreateFeature("DeathsnatcherCommandUndeadFeature", bp => {
                 bp.SetName("Command Undead");
                 bp.SetDescription("At 1st level, the Deathsnatcher gains Command Undead as a spell-like ability 10 times per day.");
                 bp.m_Icon = CommandUndeadAbility.m_Icon;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddAbilityResources>(c => {
                     c.m_Resource = DeathsnatcherCommandUndeadResource.ToReference<BlueprintAbilityResourceReference>();
                     c.RestoreAmount = true;

@@ -4,7 +4,6 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.Abilities;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using UnityEngine;
@@ -28,16 +27,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoReachAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("AutoReachAbility", bp => {
+            var AutoReachAbility = Helpers.CreateActivatableAbility("AutoReachAbility", bp => {
                 bp.SetName("Overpowered Ability — Auto Reach");
                 bp.SetDescription("Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat.");
                 bp.m_Icon = Icon_ReachSpell;
                 bp.m_Buff = AutoReachBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.None;
-                bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
-                bp.DeactivateImmediately = true;
-                bp.ActivationType = AbilityActivationType.Immediately;
             });
             var AutoReachFeature = Helpers.CreateFeature("AutoReachFeature", bp => {
                 bp.SetName("Overpowered Ability — Auto Reach");

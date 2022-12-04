@@ -34,17 +34,17 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
 
             // Deathsnatcher Level Progression
             var DeathsnatcherCompanionProgression = Helpers.CreateBlueprint<BlueprintProgression>("DeathsnatcherCompanionProgression", bp => {
-                bp.m_AllowNonContextActions = false;
                 bp.SetName("");
                 bp.SetDescription("");
                 bp.IsClassFeature = true;
+                bp.m_FeaturesRankIncrease = new List<BlueprintFeatureReference>();
+                bp.m_Archetypes = new BlueprintProgression.ArchetypeWithLevel[0];
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
                     new BlueprintProgression.ClassWithLevel {
                         m_Class = IsekaiProtagonistClass.GetReference(),
                         AdditionalLevel = 0
                     }
                 };
-                bp.m_Archetypes = new BlueprintProgression.ArchetypeWithLevel[0];
                 bp.LevelEntries = Enumerable.Range(2, 20)
                     .Select(i => new LevelEntry
                     {
@@ -56,18 +56,17 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     .ToArray();
                 bp.UIGroups = new UIGroup[0];
                 bp.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[0];
-                bp.ForAllOtherClasses = false;
                 bp.GiveFeaturesForPreviousLevels = true;
-                bp.m_FeaturesRankIncrease = new List<BlueprintFeatureReference>();
             });
 
             // Deathsnatcher Class Progression
             var DeathsnatcherClassProgression = Helpers.CreateBlueprint<BlueprintProgression>("DeathsnatcherClassProgression", bp => {
                 bp.SetName("");
                 bp.SetDescription("This bipedal jackal has vulture wings and a rat tail ending in a scorpion’s stinger. Each of its four arms ends in a clawed hand.");
-                bp.m_AllowNonContextActions = false;
                 bp.IsClassFeature = true;
                 bp.m_FeaturesRankIncrease = new List<BlueprintFeatureReference>();
+                bp.m_Archetypes = new BlueprintProgression.ArchetypeWithLevel[0];
+                bp.m_AlternateProgressionClasses = new BlueprintProgression.ClassWithLevel[0];
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
                     new BlueprintProgression.ClassWithLevel {
                         m_Class = DeathsnatcherClass.GetReference(),

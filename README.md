@@ -54,20 +54,23 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Exceptional Summoning`: Your summons get +10 HP, +1 attack, +1 AC, and +1 to saving throws per character level.
 		- `Forbidden Summoning`: Your summons get +10 HP, and +1 to all attributes per character level.
 		- `Ferocious Summoning`: Your summons have 2 more attacks and +10 speed. They also get +1 sneak attack per character level. (requires Exceptional Summoning and Forbidden Summoning).
+		- `Exceptional Weapon`: Your attacks get an additional enchantment. (e.g. Corrosive, Flaming, Frost, etc.)
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
 	- `Character Development Feats`: A selection of bonus feats which have very good effects.
 		- `Alpha Strike`: Automatically confirm crits.
 		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
-		- `Regeneration`: Get regeneration 20/acid or fire (requires character level 10).
-		- `Training Montage`: Get a +10 bonus to all attributes (requires character level 10).
-		- `Body Strengthening`: Get a DR/— bonus equal to 10 + character level.
+		- `Regeneration`: Get regeneration 10/acid or fire (requires character level 10).
+		- `Training Montage`: Get a +10 bonus to all attributes.
+		- `Body Strengthening`: Get a DR 20/— (requires character level 10).
 		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
 		- `Extreme Speed`: Get a speed bonus equal to 5 times character level.
 		- `Channel Positive Energy`: You can channel positive energy (requires good alignment).
 		- `Channel Negative Energy`: You can channel negative energy (requires evil alignment).
 		- `Kinetic Power`: You can select a kinetic blast (air, earth, fire, water).
+		- `Sneaky Magic`: You can add your sneak attack damage to spells against flat-footed.
+		- `Spell Master`: Increase your spell DC by 4.
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.
@@ -75,6 +78,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `AutoMaximize`: Maximizes every spell you cast.
 		- `AutoQuicken`: Quickens every spell you cast.
 		- `AutoReach`: Gives more range on every spell you cast.
+		- `AutoSelective`: Exclude selected targets on every spell you cast.
 		- `Grasp Heart`: Kills target creature (no HP limit).
 		- `Dupe Gold`: Get infinite gold.
 		- `Perfect Roll`: Roll 20 on every d20 roll.
@@ -100,7 +104,9 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.
 	- `Isekai Vampire` (Dhampir Heritage): A powerful heritage for Dhampir.
-	- `Isekai Drow` (Elf Heritage): A powerful heritage for Elf that gives you the Drow Poison ability.
+	- `Isekai Dark Elf` (Elf Heritage): A powerful heritage for Elf that gives you the Drow Poison ability.
+	- `Isekai High Elf` (Elf Heritage): A powerful heritage for Elf that increases the number of spells you can cast per day.
+	- `Isekai Wood Elf` (Elf Heritage): A powerful heritage for Elf that have extra speed.
 	- `Isekai Spriggan` (Gnome Heritage): A powerful heritage for Gnome that gives you a size alteration ability.
 - New Deities
 	- `Truck-kun`: A god of transportation.

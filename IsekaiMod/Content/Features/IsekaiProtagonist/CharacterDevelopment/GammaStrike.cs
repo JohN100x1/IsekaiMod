@@ -13,7 +13,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
         private static readonly Sprite Icon_BladeSense = Resources.GetBlueprint<BlueprintFeature>("112bf4c6943097942b24eadfa750215f").m_Icon;
         public static void Add()
         {
-            var GammaStrike = Helpers.CreateBlueprint<BlueprintFeature>("GammaStrike", bp => {
+            var GammaStrike = Helpers.CreateFeature("GammaStrike", bp => {
                 bp.SetName("Gamma Strike");
                 bp.SetDescription("Your attacks ignore concealment and are treated as adamantite for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
                 bp.m_Icon = Icon_BladeSense;
@@ -22,8 +22,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.AddMaterial = true;
                     c.Material = PhysicalDamageMaterial.Adamantite;
                 });
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
 
             CharacterDevelopmentSelection.AddToSelection(GammaStrike);

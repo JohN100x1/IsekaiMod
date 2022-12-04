@@ -5,7 +5,6 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
@@ -67,17 +66,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 });
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var DarkAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("DarkAuraAbility", bp => {
+            var DarkAuraAbility = Helpers.CreateActivatableAbility("DarkAuraAbility", bp => {
                 bp.SetName("Dark Aura");
                 bp.SetDescription("Enemies within 40 feet take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.m_Buff = DarkAuraAreaBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.None;
-                bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
                 bp.DoNotTurnOffOnRest = true;
-                bp.DeactivateImmediately = true;
-                bp.ActivationType = AbilityActivationType.Immediately;
             });
             var DarkAuraFeature = Helpers.CreateFeature("DarkAuraFeature", bp => {
                 bp.SetName("Dark Aura");

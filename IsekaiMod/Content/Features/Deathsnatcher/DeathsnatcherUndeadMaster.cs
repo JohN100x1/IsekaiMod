@@ -1,7 +1,6 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.FactLogic;
@@ -22,7 +21,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
             var DeathsnatcherFingerOfDeathResource = Resources.GetModBlueprint<BlueprintAbilityResource>("DeathsnatcherFingerOfDeathResource");
 
             // Feature
-            var DeathsnatcherUndeadMaster = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherUndeadMaster", bp => {
+            var DeathsnatcherUndeadMaster = Helpers.CreateFeature("DeathsnatcherUndeadMaster", bp => {
                 bp.SetName("Undead Master");
                 bp.SetDescription("At 20th level, the Deathsnatcher becomes a master of the undead.\n"
                     + "Command Undead has unlimited uses.\n"
@@ -30,7 +29,6 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     + "Create Undead has 2 additional uses per day.\n"
                     + "Finger of Death has 2 additional uses per day.");
                 bp.m_Icon = Icon_MasteryOfFlesh;
-                bp.IsClassFeature = true;
                 bp.AddComponent<IncreaseResourceAmount>(c => {
                     c.m_Resource = DeathsnatcherCreateUndeadResource.ToReference<BlueprintAbilityResourceReference>();
                     c.Value = 2;

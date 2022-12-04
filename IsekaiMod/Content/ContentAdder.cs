@@ -71,6 +71,8 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.CharacterDevelopment.IsekaiChannelPositiveEnergy.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.IsekaiChannelNegativeEnergy.Add();
                 Features.IsekaiProtagonist.CharacterDevelopment.KineticPower.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.SneakyMagic.Add();
+                Features.IsekaiProtagonist.CharacterDevelopment.SpellMaster.Add();
 
                 // OP Ability
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
@@ -80,6 +82,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoMaximize.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoQuicken.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoReach.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.AutoSelective.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.GraspHeart.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.DupeGold.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.PerfectRoll.Add();
@@ -151,15 +154,16 @@ namespace IsekaiMod.Content
             public static void AddIsekaiHeritages()
             {
                 // Add Heritages
-                Heritages.IsekaiSuccubus.SuccubusCharmAbility.Add();
-                Heritages.IsekaiSuccubus.IsekaiSuccubusHeritage.Add();
-                Heritages.IsekaiAngel.AngelicBoltAbility.Add();
-                Heritages.IsekaiAngel.IsekaiAngelHeritage.Add();
+                Heritages.IsekaiSuccubusHeritage.Add();
+                Heritages.IsekaiAngelHeritage.Add();
                 Heritages.IsekaiVampireHeritage.Add();
-                Heritages.IsekaiSpriggan.SizeAlterationAbility.Add();
-                Heritages.IsekaiSpriggan.IsekaiSprigganHeritage.Add();
-                Heritages.IsekaiDrow.DrowPoisonAbility.Add();
-                Heritages.IsekaiDrow.IsekaiDrowHeritage.Add();
+                Heritages.IsekaiSprigganHeritage.Add();
+                Heritages.IsekaiDarkElfHeritage.Add();
+                Heritages.IsekaiHighElfHeritage.Add();
+                Heritages.IsekaiWoodElfHeritage.Add();
+
+                // Patch Heritages
+                Heritages.ElfHeritagePatcher.Patch();
             }
             public static void AddIsekaiBackgrounds()
             {
@@ -192,9 +196,8 @@ namespace IsekaiMod.Content
                 // Add Exceptional Feats
                 Features.ExceptionalFeats.ExceptionalFeatSelection.Add();
                 Features.ExceptionalFeats.EffectImmunitySelection.Add();
-                Features.ExceptionalFeats.ExceptionalSummoning.Add();
-                Features.ExceptionalFeats.ForbiddenSummoning.Add();
-                Features.ExceptionalFeats.FerociousSummoning.Add();
+                Features.ExceptionalFeats.ExceptionalSummoningSelection.Add();
+                Features.ExceptionalFeats.ExceptionalWeaponSelection.Add();
 
             }
         }

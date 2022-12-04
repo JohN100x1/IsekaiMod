@@ -52,7 +52,6 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 bp.m_Description = AnimateDeadAbility.m_Description;
                 bp.m_Icon = AnimateDeadAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.SavingThrowType = SavingThrowType.Unknown;
                     c.Actions = ActionFlow.DoSingle<ContextActionSpawnMonster>(c => {
                         c.m_Blueprint = SummonedSkeletonChampion.ToReference<BlueprintUnitReference>();
                         c.m_SummonPool = SummonMonsterPool.ToReference<BlueprintSummonPoolReference>();
@@ -77,20 +76,8 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                         c.AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                             c.Permanent = true;
                             c.m_Buff = SummonedCreatureSpawnMonsterIV_VI.ToReference<BlueprintBuffReference>();
-                            c.DurationValue = new ContextDurationValue()
-                            {
-                                Rate = DurationRate.Rounds,
-                                DiceType = DiceType.Zero,
-                                DiceCountValue = 0,
-                                BonusValue = 0,
-                                m_IsExtendable = true
-                            };
+                            c.DurationValue = Constants.ZeroDuration;
                             c.IsNotDispelable = true;
-                            c.UseDurationSeconds = false;
-                            c.DurationSeconds = 0;
-                            c.IsFromSpell = false;
-                            c.ToCaster = false;
-                            c.AsChild = false;
                         });
                     });
                 });
@@ -116,26 +103,18 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 });
                 bp.Type = AbilityType.SpellLike;
                 bp.Range = AbilityRange.Close;
-                bp.m_AllowNonContextActions = false;
                 bp.CanTargetPoint = true;
-                bp.CanTargetEnemies = false;
-                bp.CanTargetFriends = false;
                 bp.CanTargetSelf = true;
-                bp.SpellResistance = false;
-                bp.EffectOnEnemy = AbilityEffectOnUnit.None;
-                bp.EffectOnAlly = AbilityEffectOnUnit.None;
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Point;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = AnimateDeadAbility.AvailableMetamagic;
-                bp.m_TargetMapObjects = false;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var DeathsnatcherAnimateDeadFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherAnimateDeadFeature", bp => {
+            var DeathsnatcherAnimateDeadFeature = Helpers.CreateFeature("DeathsnatcherAnimateDeadFeature", bp => {
                 bp.SetName("Animate Dead");
                 bp.SetDescription("At 7th level, the Deathsnatcher gains Animate Dead as a spell-like ability 3 times per day.");
                 bp.m_Icon = AnimateDeadAbility.m_Icon;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddAbilityResources>(c => {
                     c.m_Resource = DeathsnatcherAnimateDeadResource.ToReference<BlueprintAbilityResourceReference>();
                     c.RestoreAmount = true;
@@ -144,11 +123,10 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     c.m_Facts = new BlueprintUnitFactReference[] { DeathsnatcherAnimateDeadAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
-            var DeathsnatcherAnimateDeadAdditionalUse = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherAnimateDeadAdditionalUse", bp => {
+            var DeathsnatcherAnimateDeadAdditionalUse = Helpers.CreateFeature("DeathsnatcherAnimateDeadAdditionalUse", bp => {
                 bp.SetName("Animate Dead — Additional Uses");
                 bp.SetDescription("At 10th level, the Deathsnatcher gains 2 additional uses of Animate Dead per day.");
                 bp.m_Icon = AnimateDeadAbility.m_Icon;
-                bp.IsClassFeature = true;
                 bp.AddComponent<IncreaseResourceAmount>(c => {
                     c.m_Resource = DeathsnatcherAnimateDeadResource.ToReference<BlueprintAbilityResourceReference>();
                     c.Value = 2;

@@ -9,6 +9,7 @@ using Kingmaker.Blueprints.Items.Weapons;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
@@ -41,7 +42,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
         {
             var DeathsnatcherSizeBaby = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherSizeBaby");
 
-            var DeathsnatcherSlotFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherSlotFeature", bp => {
+            var DeathsnatcherSlotFeature = Helpers.CreateFeature("DeathsnatcherSlotFeature", bp => {
                 bp.SetName("Feature not available");
                 bp.AddComponent<LockEquipmentSlot>(c => {
                     c.m_SlotType = LockEquipmentSlot.SlotType.MainHand;
@@ -97,29 +98,22 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.AddComponent<LockEquipmentSlot>(c => {
                     c.m_SlotType = LockEquipmentSlot.SlotType.Cloak;
                 });
-                bp.m_AllowNonContextActions = false;
                 bp.HideInUI = true;
                 bp.HideInCharacterSheetAndLevelUp = true;
                 bp.HideNotAvailibleInUI = true;
-                bp.IsClassFeature = true;
             });
             var DeathsnatcherPortrait = Helpers.CreateBlueprint<BlueprintPortrait>("DeathsnatcherPortrait", bp => {
-                bp.Data = new PortraitData()
-                {
-                    PortraitCategory = PortraitCategory.None,
-                    IsDefault = false,
-                    InitiativePortrait = false
-                };
-
+                bp.Data = new PortraitData();
             });
-            var DeathsnatcherFact = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherFact", bp => {
+            var DeathsnatcherFact = Helpers.CreateFeature("DeathsnatcherFact", bp => {
                 bp.SetName("DeathsnatcherFact");
                 bp.SetDescription("");
-                bp.m_AllowNonContextActions = false;
                 bp.HideInUI = true;
-                bp.IsClassFeature = true;
             });
             var DeathsnatcherUnit = Helpers.CreateBlueprint<BlueprintUnit>("DeathsnatcherUnit", bp => {
+                bp.LocalizedName = new SharedStringAsset() {
+                    String = Helpers.CreateString($"DeathsnatcherUnit.Name", "Deathsnatcher")
+                };
                 bp.AddComponent<AddClassLevels>(c => {
                     c.m_CharacterClass = DeathsnatcherClass.GetReference();
                     c.RaceStat = StatType.Strength;
@@ -225,7 +219,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
             SmallPortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoader.LoadInternal("Portraits", "DeathsnatcherSmall.png", new Vector2Int(185, 242), TextureFormat.RGBA32);
             EyePortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoader.LoadInternal("Portraits", "DeathsnatcherPetEye.png", new Vector2Int(176, 24), TextureFormat.RGBA32);
 
-            var DeathsnatcherFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherFeature", bp => {
+            var DeathsnatcherFeature = Helpers.CreateFeature("DeathsnatcherFeature", bp => {
                 bp.SetName("Deathsnatcher");
                 bp.SetDescription("Deathsnatchers dwell amid the ruins of fallen civilizations, where they play at being godlings worshiped by undead slaves. "
                     + "Though self-aggrandizing, deathsnatchers are known to give homage to (and claim descent from) the various demon lords of darkness, the desert, and undeath.\n"
@@ -234,7 +228,6 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     + "{g|Encyclopedia:Strength}Str{/g} 17, {g|Encyclopedia:Dexterity}Dex{/g} 25, {g|Encyclopedia:Constitution}Con{/g} 28, {g|Encyclopedia:Intelligence}Int{/g} 16, "
                     + "{g|Encyclopedia:Wisdom}Wis{/g} 21, {g|Encyclopedia:Charisma}Cha{/g} 24\n"
                     + "At 4th level size becomes Medium, Str +6, Dex -4, Con +4, +6 natural armor, gains pounce.");
-                bp.m_Icon = null;
                 bp.AddComponent<AddPet>(c => {
                     c.Type = PetType.AnimalCompanion;
                     c.ProgressionType = PetProgressionType.AnimalCompanion;
@@ -250,11 +243,8 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.AddComponent<AddFeatureOnApply>(c => {
                     c.m_Feature = DeathsnatcherProgression.GetCompanionProgression().ToReference<BlueprintFeatureReference>();
                 });
-                bp.m_AllowNonContextActions = false;
-                bp.Ranks = 1;
                 bp.Groups = new FeatureGroup[] { FeatureGroup.AnimalCompanion };
                 bp.ReapplyOnLevelUp = true;
-                bp.IsClassFeature = true;
             });
 
             // Add Deathsnatcher to Pet Selection

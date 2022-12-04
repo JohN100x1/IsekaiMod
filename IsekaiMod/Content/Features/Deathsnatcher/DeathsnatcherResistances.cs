@@ -2,9 +2,7 @@
 using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
-using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.FactLogic;
@@ -18,12 +16,11 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
         public static void Add()
         {
             // Feature
-            var DeathsnatcherResistances = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherResistances", bp =>
+            var DeathsnatcherResistances = Helpers.CreateFeature("DeathsnatcherResistances", bp =>
             {
                 bp.SetName("Deathsnatcher Resistances");
                 bp.SetDescription("The Deathsnatcher is immune to negative energy and deaths effects, and has cold and fire resistance 30. "
                     + "It also has spell resistance equal to 10 + the Deathsnatcher's level.");
-                bp.m_Icon = null;
                 bp.AddComponent<BuffDescriptorImmunity>(c =>
                 {
                     c.Descriptor = SpellDescriptor.Death
@@ -61,13 +58,10 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 {
                     c.m_Type = AbilityRankType.StatBonus;
                     c.m_BaseValueType = ContextRankBaseValueType.ClassLevel;
-                    c.m_Stat = StatType.Unknown;
-                    c.m_SpecificModifier = ModifierDescriptor.None;
                     c.m_Progression = ContextRankProgression.BonusValue;
                     c.m_StepLevel = 10;
                     c.m_Class = new BlueprintCharacterClassReference[] { DeathsnatcherClass.GetReference() };
                 });
-                bp.IsClassFeature = true;
                 bp.ReapplyOnLevelUp = true;
             });
         }

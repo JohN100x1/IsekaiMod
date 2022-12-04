@@ -1,6 +1,12 @@
-﻿using JetBrains.Annotations;
+﻿using IsekaiMod.Config;
+using IsekaiMod.Extensions;
+using IsekaiMod.Localization;
+using JetBrains.Annotations;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Root;
+using Kingmaker.DialogSystem;
+using Kingmaker.DialogSystem.Blueprints;
 using Kingmaker.ElementsSystem;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
@@ -8,6 +14,8 @@ using Kingmaker.Localization;
 using Kingmaker.Localization.Shared;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities;
+using Kingmaker.UnitLogic.ActivatableAbilities;
+using Kingmaker.UnitLogic.Alignments;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
@@ -18,13 +26,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
-using IsekaiMod.Config;
-using Kingmaker.Blueprints.Root;
-using IsekaiMod.Extensions;
-using IsekaiMod.Localization;
-using Kingmaker.DialogSystem.Blueprints;
-using Kingmaker.DialogSystem;
-using Kingmaker.UnitLogic.Alignments;
 
 namespace IsekaiMod.Utilities
 {
@@ -89,6 +90,17 @@ namespace IsekaiMod.Utilities
             var result = CreateBlueprint<BlueprintBuff>(name, bp => {
                 bp.FxOnStart = new PrefabLink();
                 bp.FxOnRemove = new PrefabLink();
+            });
+            init?.Invoke(result);
+            return result;
+        }
+
+        public static BlueprintActivatableAbility CreateActivatableAbility(string name, Action<BlueprintActivatableAbility> init = null)
+        {
+            var result = CreateBlueprint<BlueprintActivatableAbility>(name, bp => {
+                bp.IsOnByDefault = true;
+                bp.DeactivateImmediately = true;
+                bp.ActivationType = AbilityActivationType.Immediately;
             });
             init?.Invoke(result);
             return result;

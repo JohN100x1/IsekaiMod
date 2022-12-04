@@ -5,7 +5,6 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
@@ -47,17 +46,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 });
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var FriendlyAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("FriendlyAuraAbility", bp => {
+            var FriendlyAuraAbility = Helpers.CreateActivatableAbility("FriendlyAuraAbility", bp => {
                 bp.SetName("Friendly Aura");
                 bp.SetDescription("Enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.");
                 bp.m_Icon = Icon_Friendly_Aura;
                 bp.m_Buff = FriendlyAuraAreaBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.None;
-                bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
                 bp.DoNotTurnOffOnRest = true;
-                bp.DeactivateImmediately = true;
-                bp.ActivationType = AbilityActivationType.Immediately;
             });
             var FriendlyAuraFeature = Helpers.CreateFeature("FriendlyAuraFeature", bp => {
                 bp.SetName("Friendly Aura");

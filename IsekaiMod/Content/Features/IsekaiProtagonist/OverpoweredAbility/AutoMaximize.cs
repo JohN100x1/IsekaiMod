@@ -4,7 +4,6 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.Abilities;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using UnityEngine;
@@ -28,16 +27,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoMaximizeAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>("AutoMaximizeAbility", bp => {
+            var AutoMaximizeAbility = Helpers.CreateActivatableAbility("AutoMaximizeAbility", bp => {
                 bp.SetName("Overpowered Ability — Auto Maximize");
                 bp.SetDescription("Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat.");
                 bp.m_Icon = Icon_MaximizeSpell;
                 bp.m_Buff = AutoMaximizeBuff.ToReference<BlueprintBuffReference>();
-                bp.Group = ActivatableAbilityGroup.None;
-                bp.WeightInGroup = 1;
-                bp.IsOnByDefault = true;
-                bp.DeactivateImmediately = true;
-                bp.ActivationType = AbilityActivationType.Immediately;
             });
             var AutoMaximizeFeature = Helpers.CreateFeature("AutoMaximizeFeature", bp => {
                 bp.SetName("Overpowered Ability — Auto Maximize");

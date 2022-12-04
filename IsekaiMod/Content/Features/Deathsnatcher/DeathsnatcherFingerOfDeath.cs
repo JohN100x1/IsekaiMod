@@ -2,7 +2,6 @@
 using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
@@ -104,7 +103,6 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     });
                 });
                 bp.AddComponent<SpellComponent>(c => {
-                    c.m_Flags = 0;
                     c.School = SpellSchool.Necromancy;
                 });
                 bp.AddComponent<SpellDescriptorComponent>(c => {
@@ -114,12 +112,6 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     c.PrefabLink = new PrefabLink() { AssetId = "e8569f4442d66ee42ad10502a100c1df" };
                     c.Time = AbilitySpawnFxTime.OnStart;
                     c.Anchor = AbilitySpawnFxAnchor.SelectedTarget;
-                    c.WeaponTarget = AbilitySpawnFxWeaponTarget.None;
-                    c.DestroyOnCast = false;
-                    c.Delay = 0;
-                    c.PositionAnchor = AbilitySpawnFxAnchor.None;
-                    c.OrientationAnchor = AbilitySpawnFxAnchor.None;
-                    c.OrientationMode = AbilitySpawnFxOrientation.Copy;
                 });
                 bp.AddComponent<AbilityDeliverDelay>(c => {
                     c.DelaySeconds = 0.65f;
@@ -148,10 +140,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 });
                 bp.Type = AbilityType.SpellLike;
                 bp.Range = AbilityRange.Close;
-                bp.m_AllowNonContextActions = false;
-                bp.CanTargetPoint = false;
                 bp.CanTargetEnemies = true;
-                bp.CanTargetFriends = false;
                 bp.CanTargetSelf = true;
                 bp.SpellResistance = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
@@ -159,15 +148,13 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Directional;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = FingerOfDeathAbility.AvailableMetamagic;
-                bp.m_TargetMapObjects = false;
                 bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "Fortitude partial");
             });
-            var DeathsnatcherFingerOfDeathFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherFingerOfDeathFeature", bp => {
+            var DeathsnatcherFingerOfDeathFeature = Helpers.CreateFeature("DeathsnatcherFingerOfDeathFeature", bp => {
                 bp.SetName("Finger of Death");
                 bp.SetDescription("At 16th level, the Deathsnatcher gains Finger of Death as a spell-like ability once per day.");
                 bp.m_Icon = FingerOfDeathAbility.m_Icon;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddAbilityResources>(c => {
                     c.m_Resource = DeathsnatcherFingerOfDeathResource.ToReference<BlueprintAbilityResourceReference>();
                     c.RestoreAmount = true;

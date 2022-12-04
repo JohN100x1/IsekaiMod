@@ -246,8 +246,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.PrefabLink = ChannelPositiveHeal.GetComponent<AbilitySpawnFx>().PrefabLink;
                     c.Time = AbilitySpawnFxTime.OnApplyEffect;
                     c.Anchor = AbilitySpawnFxAnchor.Caster;
-                    c.PositionAnchor = AbilitySpawnFxAnchor.None;
-                    c.OrientationAnchor = AbilitySpawnFxAnchor.None;
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.Default;
@@ -275,20 +273,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                         DiceCountValue = new ContextValue()
                         {
                             ValueType = ContextValueType.Rank,
-                            Value = 0,
-                            ValueRank = AbilityRankType.Default,
-                            ValueShared = AbilitySharedValue.Damage,
-                            Property = UnitProperty.None,
-                            m_AbilityParameter = AbilityParameterType.Level
+                            ValueRank = AbilityRankType.Default
                         },
                         BonusValue = new ContextValue()
                         {
                             ValueType = ContextValueType.Rank,
-                            Value = 0,
-                            ValueRank = AbilityRankType.DamageBonus,
-                            ValueShared = AbilitySharedValue.Damage,
-                            Property = UnitProperty.None,
-                            m_AbilityParameter = AbilityParameterType.Level
+                            ValueRank = AbilityRankType.DamageBonus
                         }
                     };
                     c.Modifier = 1;
@@ -298,23 +288,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.Value = new ContextDiceValue()
                     {
                         DiceType = DiceType.D6,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Simple,
-                            Value = 0,
-                            ValueRank = AbilityRankType.Default,
-                            ValueShared = AbilitySharedValue.Damage,
-                            Property = UnitProperty.None,
-                            m_AbilityParameter = AbilityParameterType.Level
-                        },
+                        DiceCountValue = 0,
                         BonusValue = new ContextValue()
                         {
                             ValueType = ContextValueType.Shared,
-                            Value = 0,
                             ValueRank = AbilityRankType.StatBonus,
-                            ValueShared = AbilitySharedValue.Heal,
-                            Property = UnitProperty.None,
-                            m_AbilityParameter = AbilityParameterType.Level
+                            ValueShared = AbilitySharedValue.Heal
                         }
                     };
                     c.Modifier = 0.5;
@@ -500,14 +479,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.Descriptor = SpellDescriptor.RestoreHP | SpellDescriptor.ChannelPositiveHeal;
                 });
             });
-            var IsekaiChannelPositiveEnergyFeature = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiChannelPositiveEnergyFeature", bp => {
+            var IsekaiChannelPositiveEnergyFeature = Helpers.CreateFeature("IsekaiChannelPositiveEnergyFeature", bp => {
                 bp.SetName("Channel Positive Energy");
                 bp.SetDescription("You gain the supernatural ability to channel positive energy like a cleric. You use your character level as your effective cleric level when "
                     + "channeling positive energy.  You can channel energy a number of times per day equal to 3 + your Charisma modifier.");
                 bp.m_Icon = ChannelPositiveHeal.Icon;
-                bp.Ranks = 1;
                 bp.Groups = new FeatureGroup[0];
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
                         ChannelEnergyFact.ToReference<BlueprintUnitFactReference>(),

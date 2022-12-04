@@ -54,7 +54,6 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     };
                 });
                 bp.AddComponent<SpellComponent>(c => {
-                    c.m_Flags = 0;
                     c.School = SpellSchool.Necromancy;
                 });
                 bp.AddComponent<SpellDescriptorComponent>(c => {
@@ -75,27 +74,19 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 });
                 bp.Type = AbilityType.SpellLike;
                 bp.Range = AbilityRange.Close;
-                bp.m_AllowNonContextActions = false;
                 bp.CanTargetPoint = true;
-                bp.CanTargetEnemies = false;
-                bp.CanTargetFriends = false;
                 bp.CanTargetSelf = true;
-                bp.SpellResistance = false;
-                bp.EffectOnEnemy = AbilityEffectOnUnit.None;
-                bp.EffectOnAlly = AbilityEffectOnUnit.None;
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Point;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = CreateUndeadAbility.AvailableMetamagic;
-                bp.m_TargetMapObjects = false;
                 bp.m_IsFullRoundAction = true;
                 bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var DeathsnatcherCreateUndeadFeature = Helpers.CreateBlueprint<BlueprintFeature>("DeathsnatcherCreateUndeadFeature", bp => {
+            var DeathsnatcherCreateUndeadFeature = Helpers.CreateFeature("DeathsnatcherCreateUndeadFeature", bp => {
                 bp.SetName("Create Undead");
                 bp.SetDescription("At 13th level, the Deathsnatcher gains Create Undead as a spell-like ability once per day.");
                 bp.m_Icon = CreateUndeadAbility.m_Icon;
-                bp.IsClassFeature = true;
                 bp.AddComponent<AddAbilityResources>(c => {
                     c.m_Resource = DeathsnatcherCreateUndeadResource.ToReference<BlueprintAbilityResourceReference>();
                     c.RestoreAmount = true;

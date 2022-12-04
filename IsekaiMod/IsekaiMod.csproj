@@ -38,9 +38,9 @@
     </PackageReference>
     <PackageReference Include="Lib.Harmony" Version="2.2.2" />
     <PackageReference Include="ModKit" Version="1.0.8" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
-    <PackageReference Include="WW-Blueprint-Core" Version="2.2.5" />
+    <PackageReference Include="WW-Blueprint-Core" Version="2.6.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -159,7 +159,7 @@
     <None Update="Assets\Heritages\ICON_ANGEL.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Heritages\ICON_DROW.png">
+    <None Update="Assets\Heritages\ICON_DARK_ELF.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Heritages\ICON_SPRIGGAN.png">
@@ -169,6 +169,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Heritages\ICON_VAMPIRE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Heritages\ICON_WOOD_ELF.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Portraits\DeathsnatcherFull.png">
