@@ -45,7 +45,6 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- Has the `True Smite` ability (smite any alignment).
 		- Uses charisma for damage and attack rolls.
 	- `Villain` (Isekai Protagonist Archetype)
-		- Has studied target.
 		- Intelligence based caster that memorizes spells like an arcanist.
 - New Features
 	- `Exceptional feats`: Strong feats that can be chosen in place of a feat/bonus feat.
