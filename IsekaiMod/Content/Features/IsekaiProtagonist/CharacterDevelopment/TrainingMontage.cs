@@ -15,37 +15,37 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
         {
             var TrainingMontage = Helpers.CreateFeature("TrainingMontage", bp => {
                 bp.SetName("Training Montage");
-                bp.SetDescription("After extensive training, you gain a +10 bonus to all attributes.");
+                bp.SetDescription("After extensive training, you gain a +8 bonus to all attributes.");
                 bp.m_Icon = Icon_LegendaryProportions;
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.UntypedStackable;
                     c.Stat = StatType.Strength;
-                    c.Value = 10;
+                    c.Value = 8;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.UntypedStackable;
                     c.Stat = StatType.Dexterity;
-                    c.Value = 10;
+                    c.Value = 8;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.UntypedStackable;
                     c.Stat = StatType.Constitution;
-                    c.Value = 10;
+                    c.Value = 8;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.UntypedStackable;
                     c.Stat = StatType.Intelligence;
-                    c.Value = 10;
+                    c.Value = 8;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.UntypedStackable;
                     c.Stat = StatType.Wisdom;
-                    c.Value = 10;
+                    c.Value = 8;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.UntypedStackable;
                     c.Stat = StatType.Charisma;
-                    c.Value = 10;
+                    c.Value = 8;
                 });
             });
 
