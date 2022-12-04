@@ -35,37 +35,29 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             // TODO: Load localisation instead of hardcoded strings
 
             // Class Signature Features
-            var IsekaiProtagonistBonusFeat = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistBonusFeat", bp => {
+            var IsekaiProtagonistBonusFeat = Helpers.CreateFeature("IsekaiProtagonistBonusFeat", bp => {
                 bp.SetName("Bonus Feat");
                 bp.SetDescription("Isekai Protagonists gain twice as many {g|Encyclopedia:Feat}feats{/g} as the other classes.");
                 bp.m_DescriptionShort = Helpers.CreateString("IsekaiProtagonistBonusFeat.DescriptionShort", "Isekai Protagonists gain twice as many {g|Encyclopedia:Feat}feats{/g} as the other classes.");
                 bp.m_Icon = Icon_BasicFeatSelection;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
-            var IsekaiProtagonistSneakFeat = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistSneakFeat", bp => {
+            var IsekaiProtagonistSneakFeat = Helpers.CreateFeature("IsekaiProtagonistSneakFeat", bp => {
                 bp.SetName("Sneak Attack");
                 bp.SetDescription("Most characters gain advantages when they {g|Encyclopedia:Flanking}flank{/g} an enemy, {g|Encyclopedia:Attack}attack{/g} an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional {g|Encyclopedia:Damage}damage{/g} in such a situation.");
                 bp.m_DescriptionShort = Helpers.CreateString("IsekaiProtagonistSneakFeat.DescriptionShort", "Most characters gain advantages when they {g|Encyclopedia:Flanking}flank{/g} an enemy, {g|Encyclopedia:Attack}attack{/g} an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional {g|Encyclopedia:Damage}damage{/g} in such a situation.");
                 bp.m_Icon = Icon_SneakAttack;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
-            var IsekaiProtagonistPlotArmorFeat = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistPlotArmorFeat", bp => {
+            var IsekaiProtagonistPlotArmorFeat = Helpers.CreateFeature("IsekaiProtagonistPlotArmorFeat", bp => {
                 bp.SetName("Plot Armor");
                 bp.SetDescription("Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
                 bp.m_DescriptionShort = Helpers.CreateString("PlotArmor.DescriptionShort", "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
                 bp.m_Icon = Icon_EdictOfImpenetrableFortress;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
-            var IsekaiProtagonistOverpoweredAbilityFeat = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistOverpoweredAbilityFeat", bp => {
+            var IsekaiProtagonistOverpoweredAbilityFeat = Helpers.CreateFeature("IsekaiProtagonistOverpoweredAbilityFeat", bp => {
                 bp.SetName("Overpowered Ability");
                 bp.SetDescription("Isekai Protagonists gain Overpowered Abilities as they increase their level.");
                 bp.m_DescriptionShort = Helpers.CreateString("IsekaiProtagonistOverpoweredAbilityFeat.DescriptionShort", "Isekai Protagonists gain Overpowered Abilities as they increase their level.");
                 bp.m_Icon = Icon_TrickFate;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
             });
 
             // Main Class
@@ -101,8 +93,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     StatType.SkillPersuasion,
                     StatType.SkillUseMagicDevice
                 };
-                bp.IsDivineCaster = false;
-                bp.IsArcaneCaster = true;
+                bp.IsDivineCaster = true;
+                bp.IsArcaneCaster = false;
                 bp.StartingGold = 69420;
                 bp.PrimaryColor = 9;
                 bp.SecondaryColor = 9;
