@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed exceptional summoning feats to be in a selection group.
 ### Fixed
 - Fixed `Deathsnatcher` default name.
-- Fixed UI bug with selecting exceptional feats.
+- Fixed UI bug when selecting multiple exceptional feats.
 
 ## [2.2.0] - 2022-12-01
 ### Added
