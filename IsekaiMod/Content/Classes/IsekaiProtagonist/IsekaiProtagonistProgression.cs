@@ -43,6 +43,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var SiphoningAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("SiphoningAuraFeature");
             var SupersonicCombat = Resources.GetModBlueprint<BlueprintFeature>("SupersonicCombat");
             var EdgeLordFastMovement = Resources.GetModBlueprint<BlueprintFeature>("EdgeLordFastMovement");
+            var SlayerStudyTargetFeature = Resources.GetBlueprint<BlueprintFeature>("09bdd9445ac38044389476689ae8d5a1");
+            var SlayerSwiftStudyTargetFeature = Resources.GetBlueprint<BlueprintFeature>("40d4f55a5ac0e4f469d67d36c0dfc40b");
             var ExtraStrike1 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike1");
             var ExtraStrike2 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike2");
             var ExtraStrike3 = Resources.GetModBlueprint<BlueprintFeature>("ExtraStrike3");
@@ -104,6 +106,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 Helpers.CreateUIGroup(SneakAttack, OverpoweredAbilitySelectionVillain),
                 Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike1, ExtraStrike2, ExtraStrike3, ExtraStrike4),
+                Helpers.CreateUIGroup(SlayerStudyTargetFeature, SlayerSwiftStudyTargetFeature),
                 Helpers.CreateUIGroup(GracefulCombat, TrueSmiteFeature, TrueSmiteAdditionalUse),
                 Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, NascentApotheosis, GodlyVessel, CorruptAuraFeature, CharacterDevelopmentSelection, ProtectiveAuraFeature, GloriousAuraFeature, SiphoningAuraFeature, Godhood, IsekaiChannelPositiveEnergyFeature, IsekaiChannelNegativeEnergyFeature),
                 Helpers.CreateUIGroup(PlotArmor, CripplingStrike, DispellingAttack, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter, SecondFormFeature, HerosPresenceFeature),

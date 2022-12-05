@@ -57,12 +57,15 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(20, TrueMainCharacter),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.LevelEntry(1, VillainProficiencies, OverpoweredAbilitySelectionVillain),
+                    Helpers.LevelEntry(1, VillainProficiencies, OverpoweredAbilitySelectionVillain, SlayerStudyTargetFeature),
                     Helpers.LevelEntry(3, IsekaiChannelNegativeEnergyFeature),
+                    Helpers.LevelEntry(5, SlayerStudyTargetFeature),
+                    Helpers.LevelEntry(7, SlayerSwiftStudyTargetFeature),
                     Helpers.LevelEntry(9, CorruptAuraFeature),
-                    Helpers.LevelEntry(10, DarkAuraFeature),
+                    Helpers.LevelEntry(10, SlayerStudyTargetFeature, DarkAuraFeature),
+                    Helpers.LevelEntry(15, SlayerStudyTargetFeature),
                     Helpers.LevelEntry(16, VillainQuickFooted),
-                    Helpers.LevelEntry(20, SecondFormFeature),
+                    Helpers.LevelEntry(20, SlayerStudyTargetFeature, SecondFormFeature),
                 };
                 bp.OverrideAttributeRecommendations = true;
                 bp.AddComponent<PrerequisiteAlignment>(c => {
