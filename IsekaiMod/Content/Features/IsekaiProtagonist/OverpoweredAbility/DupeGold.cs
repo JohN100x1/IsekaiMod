@@ -29,7 +29,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Actions = ActionFlow.DoSingle<AddItemToPlayer>(c => {
                         c.m_ItemToGive = GoldCoins.ToReference<BlueprintItemReference>();
                         c.Silent = false;
-                        c.Quantity = 100000;
+                        c.Quantity = 1_000_000;
                     });
                 });
                 bp.AddComponent<SpellComponent>(c => {

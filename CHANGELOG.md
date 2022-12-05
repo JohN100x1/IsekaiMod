@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `Villain` Archetype to memorise spells like an Arcanist instead of Wizard. The Spell slots progression is the same as the spells per day progression.
 ### Removed
 - Removed Studied target from `Villain` progression.
+### Fixed
+- Fixed `Dupe Gold` ability to correctly give 1 million gold instead of 100 thousand gold.
 
 ## [2.4.0] - 2022-12-04
 ### Added
