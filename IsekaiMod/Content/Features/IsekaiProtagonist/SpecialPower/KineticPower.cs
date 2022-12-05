@@ -40,7 +40,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class KineticPower
     {
@@ -1574,7 +1574,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
 
             PatchGatherPowerBuffs(IsekaiAirBlastFeature, IsekaiEarthBlastFeature, IsekaiFireBlastFeature, IsekaiWaterBlastFeature);
 
-            CharacterDevelopmentSelection.AddToSelection(KineticPowerSelection);
+            SpecialPowerSelection.AddToSelection(KineticPowerSelection);
         }
         private static void PatchGatherPowerBuffs(BlueprintFeature airBlastFeature, BlueprintFeature earthBlastFeature, BlueprintFeature fireBlastFeature, BlueprintFeature waterBlastFeature)
         {

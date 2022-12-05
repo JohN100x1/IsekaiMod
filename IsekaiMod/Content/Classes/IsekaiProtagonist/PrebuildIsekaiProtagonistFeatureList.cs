@@ -54,7 +54,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var OverpoweredAbilitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection");
             var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
             var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
-            var CharacterDevelopmentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection");
+            var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
 
             var AutoQuickenFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoQuickenFeature");
             var AutoMaximizeFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoMaximizeFeature");
@@ -141,7 +141,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                         },
                         new SelectionEntry()
                         {
-                            m_Selection = CharacterDevelopmentSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Selection = SpecialPowerSelection.ToReference<BlueprintFeatureSelectionReference>(),
                             m_Features = new BlueprintFeatureReference[]{
                                 AlphaStrike.ToReference<BlueprintFeatureReference>(),
                                 BetaStrike.ToReference<BlueprintFeatureReference>(),

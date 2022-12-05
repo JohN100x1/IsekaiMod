@@ -6,7 +6,7 @@ using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.FactLogic;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class GammaStrike
     {
@@ -24,7 +24,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 });
             });
 
-            CharacterDevelopmentSelection.AddToSelection(GammaStrike);
+            SpecialPowerSelection.AddToSelection(GammaStrike);
         }
     }
 }

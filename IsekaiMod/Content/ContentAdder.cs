@@ -56,23 +56,23 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.BeachEpisode.MasterSelf.Add();
                 Features.IsekaiProtagonist.BeachEpisode.Tenacious.Add();
 
-                // Character Development
-                Features.IsekaiProtagonist.CharacterDevelopment.CharacterDevelopmentSelection.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.MundaneAura.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.AlphaStrike.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.BetaStrike.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.GammaStrike.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.Regeneration.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.EnergyImmunitySelection.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.TrainingMontage.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.BodyStrengthening.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.SpellNegation.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.ExtremeSpeed.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.IsekaiChannelPositiveEnergy.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.IsekaiChannelNegativeEnergy.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.KineticPower.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.SneakyMagic.Add();
-                Features.IsekaiProtagonist.CharacterDevelopment.SpellMaster.Add();
+                // Special Power
+                Features.IsekaiProtagonist.SpecialPower.SpecialPowerSelection.Add();
+                Features.IsekaiProtagonist.SpecialPower.MundaneAura.Add();
+                Features.IsekaiProtagonist.SpecialPower.AlphaStrike.Add();
+                Features.IsekaiProtagonist.SpecialPower.BetaStrike.Add();
+                Features.IsekaiProtagonist.SpecialPower.GammaStrike.Add();
+                Features.IsekaiProtagonist.SpecialPower.Regeneration.Add();
+                Features.IsekaiProtagonist.SpecialPower.EnergyImmunitySelection.Add();
+                Features.IsekaiProtagonist.SpecialPower.TrainingMontage.Add();
+                Features.IsekaiProtagonist.SpecialPower.BodyStrengthening.Add();
+                Features.IsekaiProtagonist.SpecialPower.SpellNegation.Add();
+                Features.IsekaiProtagonist.SpecialPower.ExtremeSpeed.Add();
+                Features.IsekaiProtagonist.SpecialPower.IsekaiChannelPositiveEnergy.Add();
+                Features.IsekaiProtagonist.SpecialPower.IsekaiChannelNegativeEnergy.Add();
+                Features.IsekaiProtagonist.SpecialPower.KineticPower.Add();
+                Features.IsekaiProtagonist.SpecialPower.SneakyMagic.Add();
+                Features.IsekaiProtagonist.SpecialPower.SpellMaster.Add();
 
                 // OP Ability
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();

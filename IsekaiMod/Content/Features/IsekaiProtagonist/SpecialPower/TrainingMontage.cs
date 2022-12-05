@@ -6,7 +6,7 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class TrainingMontage
     {
@@ -49,7 +49,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 });
             });
 
-            CharacterDevelopmentSelection.AddToSelection(TrainingMontage);
+            SpecialPowerSelection.AddToSelection(TrainingMontage);
         }
     }
 }

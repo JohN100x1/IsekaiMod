@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
             var TrueMainCharacter = Resources.GetModBlueprint<BlueprintFeature>("TrueMainCharacter");
             var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
-            var CharacterDevelopmentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection");
+            var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
 
             // Archetype
             var EdgeLordArchetype = Helpers.CreateBlueprint<BlueprintArchetype>("EdgeLordArchetype", bp => {
@@ -43,9 +43,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(8, IsekaiFastMovement),
                     Helpers.LevelEntry(9, FriendlyAuraFeature),
                     Helpers.LevelEntry(10, OverpoweredAbilitySelection2),
-                    Helpers.LevelEntry(13, CharacterDevelopmentSelection),
+                    Helpers.LevelEntry(13, SpecialPowerSelection),
                     Helpers.LevelEntry(15, OverpoweredAbilitySelection2),
-                    Helpers.LevelEntry(17, CharacterDevelopmentSelection),
+                    Helpers.LevelEntry(17, SpecialPowerSelection),
                     Helpers.LevelEntry(20, TrueMainCharacter),
                 };
                 bp.AddFeatures = new LevelEntry[] {
@@ -54,8 +54,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(7, EdgeLordFastMovement),
                     Helpers.LevelEntry(8, CripplingStrike),
                     Helpers.LevelEntry(10, ExtraStrike2, DispellingAttack),
-                    Helpers.LevelEntry(11, CharacterDevelopmentSelection),
-                    Helpers.LevelEntry(15, ExtraStrike3, CharacterDevelopmentSelection),
+                    Helpers.LevelEntry(11, SpecialPowerSelection),
+                    Helpers.LevelEntry(15, ExtraStrike3, SpecialPowerSelection),
                     Helpers.LevelEntry(20, ExtraStrike4),
                 };
                 bp.OverrideAttributeRecommendations = true;

@@ -5,7 +5,7 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class BodyStrengthening
     {
@@ -25,7 +25,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.ReapplyOnLevelUp = true;
             });
 
-            CharacterDevelopmentSelection.AddToSelection(BodyStrengthening);
+            SpecialPowerSelection.AddToSelection(BodyStrengthening);
         }
     }
 }

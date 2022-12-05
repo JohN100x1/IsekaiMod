@@ -10,7 +10,7 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class ExtremeSpeed
     {
@@ -55,7 +55,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Icon = Icon_SupersonicSpeed;
             });
 
-            CharacterDevelopmentSelection.AddToSelection(ExtremeSpeedFeature);
+            SpecialPowerSelection.AddToSelection(ExtremeSpeedFeature);
         }
     }
 }

@@ -56,7 +56,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Ferocious Summoning`: Your summons have 2 more attacks and +10 speed. They also get +1 sneak attack per character level. (requires Exceptional Summoning and Forbidden Summoning).
 		- `Exceptional Weapon`: Your attacks get an additional enchantment. (e.g. Corrosive, Flaming, Frost, etc.)
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
-	- `Character Development Feats`: A selection of bonus feats which have very good effects.
+	- `Special Power Feats`: A selection of bonus feats which have very good effects.
 		- `Alpha Strike`: Automatically confirm crits.
 		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.

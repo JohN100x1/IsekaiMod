@@ -27,29 +27,29 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var TrueMainCharacter = Resources.GetModBlueprint<BlueprintFeature>("TrueMainCharacter");
 
             var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
-            var CharacterDevelopmentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection");
+            var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
 
             // Archetype
             var GodEmperorArchetype = Helpers.CreateBlueprint<BlueprintArchetype>("GodEmperorArchetype", bp => {
                 bp.LocalizedName = Helpers.CreateString($"GodEmperorArchetype.Name", "God Emperor");
                 bp.LocalizedDescription = Helpers.CreateString($"GodEmperorArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
-                    + "some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively.");
+                    + "some protagonists decide to become gods. They sacrifice their special powers and sneak attack to gain powerful auras and a journey toward godhood.");
                 bp.LocalizedDescriptionShort = Helpers.CreateString($"GodEmperorArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
-                    + "some protagonists decide to become gods. They sacrifice their character development feats and some sneak attack to gain auras which buff and debuff allies and enemies respectively.");
+                    + "some protagonists decide to become gods. They sacrifice their special powers and sneak attack to gain powerful auras and a journey toward godhood.");
                 bp.IsArcaneCaster = false;
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies),
-                    Helpers.LevelEntry(3, CharacterDevelopmentSelection),
+                    Helpers.LevelEntry(3, SpecialPowerSelection),
                     Helpers.LevelEntry(5, SneakAttack),
-                    Helpers.LevelEntry(7, CharacterDevelopmentSelection),
+                    Helpers.LevelEntry(7, SpecialPowerSelection),
                     Helpers.LevelEntry(9, SneakAttack, FriendlyAuraFeature),
                     Helpers.LevelEntry(10, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(12, BeachEpisodeSelection),
-                    Helpers.LevelEntry(13, SneakAttack, CharacterDevelopmentSelection),
+                    Helpers.LevelEntry(13, SneakAttack, SpecialPowerSelection),
                     Helpers.LevelEntry(15, OverpoweredAbilitySelection2, OtherworldlyStamina),
-                    Helpers.LevelEntry(17, SneakAttack, CharacterDevelopmentSelection),
-                    Helpers.LevelEntry(20, CharacterDevelopmentSelection, TrueMainCharacter),
+                    Helpers.LevelEntry(17, SneakAttack, SpecialPowerSelection),
+                    Helpers.LevelEntry(20, SpecialPowerSelection, TrueMainCharacter),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, GodEmperorProficiencies),

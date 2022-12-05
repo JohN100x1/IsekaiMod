@@ -4,7 +4,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.UnitLogic.FactLogic;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class MundaneAura
     {
@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.AddComponent<AddImmunityToPrecisionDamage>();
             });
 
-            CharacterDevelopmentSelection.AddToSelection(MundaneAura);
+            SpecialPowerSelection.AddToSelection(MundaneAura);
         }
     }
 }

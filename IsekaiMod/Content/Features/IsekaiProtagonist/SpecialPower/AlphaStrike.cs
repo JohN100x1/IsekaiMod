@@ -4,7 +4,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class AlphaStrike
     {
@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Icon = Icon_SneakStab;
                 bp.AddComponent<InitiatorCritAutoconfirm>();
             });
-            CharacterDevelopmentSelection.AddToSelection(AlphaStrike);
+            SpecialPowerSelection.AddToSelection(AlphaStrike);
         }
     }
 }

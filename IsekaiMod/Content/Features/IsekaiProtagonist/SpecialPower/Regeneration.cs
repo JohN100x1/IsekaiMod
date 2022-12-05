@@ -4,7 +4,7 @@ using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.Buffs.Components;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class Regeneration
     {
@@ -29,7 +29,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 });
             });
 
-            CharacterDevelopmentSelection.AddToSelection(RegenerationFeature);
+            SpecialPowerSelection.AddToSelection(RegenerationFeature);
         }
     }
 }

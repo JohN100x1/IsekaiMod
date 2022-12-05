@@ -9,7 +9,7 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class SpellNegation
     {
@@ -52,7 +52,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 });
             });
 
-            CharacterDevelopmentSelection.AddToSelection(SpellNegationFeature);
+            SpecialPowerSelection.AddToSelection(SpellNegationFeature);
         }
     }
 }

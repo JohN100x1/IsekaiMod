@@ -5,7 +5,7 @@ using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class SpellMaster
     {
@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.SpellsOnly = true;
                 });
             });
-            CharacterDevelopmentSelection.AddToSelection(SpellMaster);
+            SpecialPowerSelection.AddToSelection(SpellMaster);
         }
     }
 }

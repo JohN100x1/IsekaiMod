@@ -5,31 +5,31 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
-    class CharacterDevelopmentSelection
+    class SpecialPowerSelection
     {
         private static readonly Sprite Icon_Discovery = Resources.GetBlueprint<BlueprintFeatureSelection>("cd86c437488386f438dcc9ae727ea2a6").m_Icon;
         public static void Add()
         {
             var IsekaiProtagonistTalentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistTalentSelection");
-            var CharacterDevelopmentSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection", bp => {
-                bp.SetName("Character Development");
-                bp.SetDescription("As you increase your level, you can select powerful character development feats.");
+            var SpecialPowerSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection", bp => {
+                bp.SetName("Special Power");
+                bp.SetDescription("As you increase your level, you gain special powers that allow you to wreck your enemies more easily.");
                 bp.m_Icon = Icon_Discovery;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
 
-                // The rest of the character development feats are added in later
+                // Special Powers are added in later
                 bp.m_Features = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>() };
                 bp.m_AllFeatures = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>() };
             });
         }
         public static void AddToSelection(BlueprintFeature feature)
         {
-            var CharacterDevelopmentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection");
-            CharacterDevelopmentSelection.m_Features = CharacterDevelopmentSelection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
-            CharacterDevelopmentSelection.m_AllFeatures = CharacterDevelopmentSelection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
+            SpecialPowerSelection.m_Features = SpecialPowerSelection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            SpecialPowerSelection.m_AllFeatures = SpecialPowerSelection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
         }
     }
 }

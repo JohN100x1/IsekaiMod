@@ -33,7 +33,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var IsekaiQuickFooted = Resources.GetModBlueprint<BlueprintFeature>("IsekaiQuickFooted");
             var TrueMainCharacter = Resources.GetModBlueprint<BlueprintFeature>("TrueMainCharacter");
             var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
-            var CharacterDevelopmentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection");
+            var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
 
             // Archetype
             var VillainArchetype = Helpers.CreateBlueprint<BlueprintArchetype>("VillainArchetype", bp => {
@@ -47,7 +47,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, SneakAttack),
-                    Helpers.LevelEntry(3, CharacterDevelopmentSelection),
+                    Helpers.LevelEntry(3, SpecialPowerSelection),
                     Helpers.LevelEntry(5, SneakAttack, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(9, SneakAttack, FriendlyAuraFeature),
                     Helpers.LevelEntry(10, OverpoweredAbilitySelection2),

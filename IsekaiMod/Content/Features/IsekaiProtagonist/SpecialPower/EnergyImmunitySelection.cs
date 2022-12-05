@@ -8,7 +8,7 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class EnergyImmunitySelection
     {
@@ -110,7 +110,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                 bp.m_Features = EnergyImmunityList;
                 bp.m_AllFeatures = EnergyImmunityList;
             });
-            CharacterDevelopmentSelection.AddToSelection(EnergyImmunitySelection);
+            SpecialPowerSelection.AddToSelection(EnergyImmunitySelection);
         }
     }
 }

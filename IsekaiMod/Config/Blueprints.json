@@ -104,7 +104,7 @@
 
     // Signature abilities
     "IsekaiProtagonistBonusFeat": "414b5c1b-3b32-4e54-99e3-96505698a929",
-    "IsekaiProtagonistSneakFeat": "8f8b74df-5190-42e1-a7ae-ad797cb8430a",
+    "IsekaiProtagonistSpecialPowerFeat": "8f8b74df-5190-42e1-a7ae-ad797cb8430a",
     "IsekaiProtagonistPlotArmorFeat": "91751bce-90bc-42a2-b667-c807146a0cfb",
     "IsekaiProtagonistOverpoweredAbilityFeat": "107d5300-b827-4963-a84c-df0e61fa7107",
 
@@ -132,8 +132,8 @@
     "HaremMagnetAbility": "1e6f1421-951c-48cc-8fa9-e279e3083e1c",
     "HaremMagnetFeature": "4145dc5a-358f-4057-affa-7ff4cc130c03",
 
-    // Character Development Features
-    "CharacterDevelopmentSelection": "b5e98cc6-1828-4009-8a9d-ae8638eda059",
+    // Special Powers
+    "SpecialPowerSelection": "b5e98cc6-1828-4009-8a9d-ae8638eda059",
     "AlphaStrike": "8f7a38b6-ab25-4578-83e2-0d095a247dcb",
     "BetaStrike": "290c88af-a0eb-43f8-88ac-e49a76ccec0c",
     "GammaStrike": "1c4edc77-1a1e-4bc8-add2-8784a14551b4",

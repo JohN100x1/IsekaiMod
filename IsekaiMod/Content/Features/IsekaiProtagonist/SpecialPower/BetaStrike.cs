@@ -7,7 +7,7 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.FactLogic;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class BetaStrike
     {
@@ -28,7 +28,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.Value = -4;
                 });
             });
-            CharacterDevelopmentSelection.AddToSelection(BetaStrike);
+            SpecialPowerSelection.AddToSelection(BetaStrike);
         }
     }
 }

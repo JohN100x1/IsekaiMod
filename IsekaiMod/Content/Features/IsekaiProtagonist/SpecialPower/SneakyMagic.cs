@@ -6,7 +6,7 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using UnityEngine;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class SneakyMagic
     {
@@ -26,7 +26,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.CharacterDevelopment
                     c.Value = 1;
                 });
             });
-            CharacterDevelopmentSelection.AddToSelection(SneakyMagic);
+            SpecialPowerSelection.AddToSelection(SneakyMagic);
         }
     }
 }
