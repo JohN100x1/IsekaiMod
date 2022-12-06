@@ -1,8 +1,10 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
-using Kingmaker.Blueprints.Classes.Prerequisites;
+using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.UnitLogic.Mechanics;
+using Kingmaker.UnitLogic.Mechanics.Components;
 using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
@@ -14,13 +16,18 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
         {
             var BodyStrengthening = Helpers.CreateFeature("BodyStrengthening", bp => {
                 bp.SetName("Body Strengthening");
-                bp.SetDescription("After extensive strengthening of your body, you gain {g|Encyclopedia:Damage_Reduction}DR{/g} 20/—.");
+                bp.SetDescription("You gain {g|Encyclopedia:Damage_Reduction}DR{/g}/— equal to your character level.");
                 bp.m_Icon = Icon_IronBody;
                 bp.AddComponent<AddDamageResistancePhysical>(c => {
-                    c.Value = 20;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
                 });
-                bp.AddComponent<PrerequisiteCharacterLevel>(c => {
-                    c.Level = 10;
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.StatBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
                 });
                 bp.ReapplyOnLevelUp = true;
             });
