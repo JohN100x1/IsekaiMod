@@ -33,21 +33,21 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.LocalizedName = Helpers.CreateString($"HeroArchetype.Name", "Hero");
                 bp.LocalizedDescription = Helpers.CreateString($"HeroArchetype.Description", "Heroes use their newfound powers for good. After realising the suffering and "
                     + "despair of the inhabitants of the new world, the hero sets out to bring knowledge from their old world in order to save them.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString($"HeroArchetype.Description", "Heroes use their newfound powers for good. After realising the suffering and "
+                bp.LocalizedDescriptionShort = Helpers.CreateString($"HeroArchetype.DescriptionShort", "Heroes use their newfound powers for good. After realising the suffering and "
                     + "despair of the inhabitants of the new world, the hero sets out to bring knowledge from their old world in order to save them.");
                 bp.IsArcaneCaster = false;
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, SneakAttack),
-                    Helpers.LevelEntry(3, SneakAttack, SpecialPowerSelection),
+                    Helpers.LevelEntry(3, SneakAttack),
                     Helpers.LevelEntry(5, SneakAttack),
                     Helpers.LevelEntry(7, SneakAttack),
                     Helpers.LevelEntry(9, SneakAttack),
                     Helpers.LevelEntry(10, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(11, SneakAttack),
-                    Helpers.LevelEntry(13, SneakAttack, SpecialPowerSelection),
+                    Helpers.LevelEntry(13, SneakAttack),
                     Helpers.LevelEntry(15, SneakAttack, OverpoweredAbilitySelection2),
-                    Helpers.LevelEntry(17, SneakAttack, SpecialPowerSelection),
+                    Helpers.LevelEntry(17, SneakAttack),
                     Helpers.LevelEntry(19, SneakAttack),
                     Helpers.LevelEntry(20, TrueMainCharacter),
                 };
@@ -58,9 +58,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(4, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(7, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(10, TrueSmiteAdditionalUse),
-                    Helpers.LevelEntry(11, SpecialPowerSelection),
+                    Helpers.LevelEntry(11),
                     Helpers.LevelEntry(13, TrueSmiteAdditionalUse),
-                    Helpers.LevelEntry(15, SpecialPowerSelection),
+                    Helpers.LevelEntry(15),
                     Helpers.LevelEntry(16, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(19, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(20, HerosPresenceFeature),

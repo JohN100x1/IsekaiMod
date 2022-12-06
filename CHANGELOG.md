@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.4.0] - 2022-12-04
 ### Added
 - Added new dialogue during drow ambush.
+- Added `Special Powers` to show in class signature abilities.
 ### Changed
 - Decreased mod file size significantly.
 - Buffed `Grasp Heart` DC from 50 to 99.
@@ -23,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `Very Fast Movement` feature speed bonus from insight to untyped.
 - Changed `Isekai Protagonist` from divine caster to arcane (visual only).
 - Changed `Sneaky Magic` to require sneak attack.
+- Changed `Character Development` feats to now be called `Special Powers`.
 - Updated icon for `Drow Poison` feature.
 
 ## [2.3.0] - 2022-12-04

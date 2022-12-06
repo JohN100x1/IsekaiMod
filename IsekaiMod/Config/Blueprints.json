@@ -103,10 +103,11 @@
     "IsekaiProtagonistSpellsPerDay": "1f89acc7-f07c-4d76-b217-89fdd4f8414e",
 
     // Signature abilities
-    "IsekaiProtagonistBonusFeat": "414b5c1b-3b32-4e54-99e3-96505698a929",
     "IsekaiProtagonistSpecialPowerFeat": "8f8b74df-5190-42e1-a7ae-ad797cb8430a",
     "IsekaiProtagonistPlotArmorFeat": "91751bce-90bc-42a2-b667-c807146a0cfb",
     "IsekaiProtagonistOverpoweredAbilityFeat": "107d5300-b827-4963-a84c-df0e61fa7107",
+    "IsekaiProtagonistBonusFeat": "414b5c1b-3b32-4e54-99e3-96505698a929",
+    "IsekaiProtagonistSneakFeat": "409b95a4-31cc-4474-8886-d06050deb25c",
 
     // Isekai Protagonist Features
     "IsekaiProtagonistProficiencies": "f85b2b09-e16e-4cd6-acba-d262d2a27881",

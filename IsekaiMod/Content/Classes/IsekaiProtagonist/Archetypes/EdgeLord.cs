@@ -34,7 +34,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.LocalizedName = Helpers.CreateString($"EdgeLordArchetype.Name", "Edge Lord");
                 bp.LocalizedDescription = Helpers.CreateString($"EdgeLordArchetype.Description", "After reincarnating into Golarion, some protagonists use their newfound abilities "
                     + "to look cool and stylish. Their attacks become flashy and myriad, moving so fast that side characters would be lucky to even see the afterimage.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString($"EdgeLordArchetype.Description", "After reincarnating into Golarion, some protagonists use their newfound abilities "
+                bp.LocalizedDescriptionShort = Helpers.CreateString($"EdgeLordArchetype.DescriptionShort", "After reincarnating into Golarion, some protagonists use their newfound abilities "
                     + "to look cool and stylish. Their attacks become flashy and myriad, moving so fast that side characters would be lucky to even see the afterimage.");
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
@@ -43,19 +43,19 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(8, IsekaiFastMovement),
                     Helpers.LevelEntry(9, FriendlyAuraFeature),
                     Helpers.LevelEntry(10, OverpoweredAbilitySelection2),
-                    Helpers.LevelEntry(13, SpecialPowerSelection),
+                    Helpers.LevelEntry(13),
                     Helpers.LevelEntry(15, OverpoweredAbilitySelection2),
-                    Helpers.LevelEntry(17, SpecialPowerSelection),
-                    Helpers.LevelEntry(20, TrueMainCharacter),
+                    Helpers.LevelEntry(17),
+                    Helpers.LevelEntry(20, OverpoweredAbilitySelection2, TrueMainCharacter),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, EdgeLordProficiencies, SupersonicCombat),
-                    Helpers.LevelEntry(5, ExtraStrike1),
+                    Helpers.LevelEntry(5, SpecialPowerSelection, ExtraStrike1),
                     Helpers.LevelEntry(7, EdgeLordFastMovement),
                     Helpers.LevelEntry(8, CripplingStrike),
                     Helpers.LevelEntry(10, ExtraStrike2, DispellingAttack),
-                    Helpers.LevelEntry(11, SpecialPowerSelection),
-                    Helpers.LevelEntry(15, ExtraStrike3, SpecialPowerSelection),
+                    Helpers.LevelEntry(11),
+                    Helpers.LevelEntry(15, SpecialPowerSelection, ExtraStrike3),
                     Helpers.LevelEntry(20, ExtraStrike4),
                 };
                 bp.OverrideAttributeRecommendations = true;

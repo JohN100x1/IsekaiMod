@@ -90,9 +90,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 Helpers.LevelEntry(6, IsekaiProtagonistBonusFeatSelection, SignatureAttack),
                 Helpers.LevelEntry(7, SneakAttack, SpecialPowerSelection),
                 Helpers.LevelEntry(8, IsekaiProtagonistBonusFeatSelection, IsekaiFastMovement),
-                Helpers.LevelEntry(9, SneakAttack, FriendlyAuraFeature),
+                Helpers.LevelEntry(9, SneakAttack, SpecialPowerSelection, FriendlyAuraFeature),
                 Helpers.LevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2, ImprovedEvasion),
-                Helpers.LevelEntry(11, SneakAttack),
+                Helpers.LevelEntry(11, SneakAttack, SpecialPowerSelection),
                 Helpers.LevelEntry(12, IsekaiProtagonistBonusFeatSelection, BeachEpisodeSelection),
                 Helpers.LevelEntry(13, SneakAttack, SpecialPowerSelection),
                 Helpers.LevelEntry(14, IsekaiProtagonistBonusFeatSelection),
@@ -100,15 +100,16 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection),
                 Helpers.LevelEntry(17, SneakAttack, SpecialPowerSelection, HaremMagnetFeature),
                 Helpers.LevelEntry(18, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(19, SneakAttack),
-                Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, SpecialPowerSelection, TrueMainCharacter)
+                Helpers.LevelEntry(19, SneakAttack, SpecialPowerSelection),
+                Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2, TrueMainCharacter)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 Helpers.CreateUIGroup(SneakAttack, OverpoweredAbilitySelectionVillain),
                 Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike1, ExtraStrike2, ExtraStrike3, ExtraStrike4),
                 Helpers.CreateUIGroup(SlayerStudyTargetFeature, SlayerSwiftStudyTargetFeature),
                 Helpers.CreateUIGroup(GracefulCombat, TrueSmiteFeature, TrueSmiteAdditionalUse),
-                Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, NascentApotheosis, GodlyVessel, CorruptAuraFeature, SpecialPowerSelection, ProtectiveAuraFeature, GloriousAuraFeature, SiphoningAuraFeature, Godhood, IsekaiChannelPositiveEnergyFeature, IsekaiChannelNegativeEnergyFeature),
+                Helpers.CreateUIGroup(NascentApotheosis, ProtectiveAuraFeature, GloriousAuraFeature, SiphoningAuraFeature, GodlyVessel, Godhood),
+                Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, CorruptAuraFeature, SpecialPowerSelection, IsekaiChannelPositiveEnergyFeature, IsekaiChannelNegativeEnergyFeature),
                 Helpers.CreateUIGroup(PlotArmor, CripplingStrike, DispellingAttack, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter, SecondFormFeature, HerosPresenceFeature),
                 Helpers.CreateUIGroup(IsekaiPetSelection, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, VillainQuickFooted),
             };

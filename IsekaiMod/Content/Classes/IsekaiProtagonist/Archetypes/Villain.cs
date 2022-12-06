@@ -41,7 +41,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.LocalizedDescription = Helpers.CreateString($"VillainArchetype.Description", "After obtaining ungodly amounts of power, some protagonists become villains. "
                     + "They view the new world as theirs to play with, and the new inhabitants as theirs to torment. Villains seek to increase their power even further, "
                     + "often by establishing their own kingdom... or by setting up not-so-ethical research in joyous human farms.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString($"VillainArchetype.Description", "After obtaining ungodly amounts of power, some protagonists become villains. "
+                bp.LocalizedDescriptionShort = Helpers.CreateString($"VillainArchetype.DescriptionShort", "After obtaining ungodly amounts of power, some protagonists become villains. "
                     + "They view the new world as theirs to play with, and the new inhabitants as theirs to torment. Villains seek to increase their power even further, "
                     + "often by establishing their own kingdom... or by setting up not-so-ethical research in joyous human farms.");
                 bp.RemoveSpellbook = false;
