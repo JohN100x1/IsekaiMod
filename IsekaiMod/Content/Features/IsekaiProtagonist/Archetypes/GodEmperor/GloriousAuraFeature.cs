@@ -8,6 +8,8 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.UnitLogic.Mechanics;
+using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
@@ -19,38 +21,67 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
             var Icon_Glorious_Aura = AssetLoader.LoadInternal("Features", "ICON_GLORIOUS_AURA.png");
             var GloriousAuraBuff = Helpers.CreateBuff("GloriousAuraBuff", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("This character has a +4 sacred bonus to all attributes.");
+                bp.SetDescription("This character has a sacred bonus to all attributes equal to 1/2 the God Emperor's character level.");
                 bp.IsClassFeature = true;
                 bp.m_Icon = Icon_Glorious_Aura;
-                bp.AddComponent<AddStatBonus>(c => {
+                bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.Strength;
-                    c.Value = 4;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
                 });
-                bp.AddComponent<AddStatBonus>(c => {
+                bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.Dexterity;
-                    c.Value = 4;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
                 });
-                bp.AddComponent<AddStatBonus>(c => {
+                bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.Constitution;
-                    c.Value = 4;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
                 });
-                bp.AddComponent<AddStatBonus>(c => {
+                bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.Intelligence;
-                    c.Value = 4;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
                 });
-                bp.AddComponent<AddStatBonus>(c => {
+                bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.Wisdom;
-                    c.Value = 4;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
                 });
-                bp.AddComponent<AddStatBonus>(c => {
+                bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.Charisma;
-                    c.Value = 4;
+                    c.Value = new ContextValue()
+                    {
+                        ValueType = ContextValueType.Rank,
+                        ValueRank = AbilityRankType.StatBonus
+                    };
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.StatBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.Div2;
                 });
             });
             var GloriousAuraArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("GloriousAuraArea", bp => {
@@ -65,7 +96,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
             });
             var GloriousAuraAreaBuff = Helpers.CreateBuff("GloriousAuraAreaBuff", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emperor gain a +4 sacred bonus to all attributes.");
+                bp.SetDescription("Allies within 40 feet of the God Emperor gain a sacred bonus to all attributes equal to 1/2 the God Emperor's character level.");
                 bp.m_Icon = Icon_Glorious_Aura;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -82,7 +113,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
             });
             var GloriousAuraFeature = Helpers.CreateFeature("GloriousAuraFeature", bp => {
                 bp.SetName("Glorious Aura");
-                bp.SetDescription("At 9th level, allies within 40 feet of the God Emperor gain a +4 sacred bonus to all attributes.");
+                bp.SetDescription("At 9th level, allies within 40 feet of the God Emperor gain a sacred bonus to all attributes equal to 1/2 the God Emperor's character level.");
                 bp.m_Icon = Icon_Glorious_Aura;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { GloriousAuraAbility.ToReference<BlueprintUnitFactReference>() };
