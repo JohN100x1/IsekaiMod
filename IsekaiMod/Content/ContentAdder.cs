@@ -95,6 +95,7 @@ namespace IsekaiMod.Content
                 // God Emperor Archetype
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.GodEmperorProficiencies.Add();
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.NascentApotheosis.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.DivineArray.Add();
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.ProtectiveAuraFeature.Add();
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.DarkAuraFeature.Add();
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.GloriousAuraFeature.Add();

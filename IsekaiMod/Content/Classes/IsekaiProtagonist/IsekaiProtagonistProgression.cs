@@ -38,6 +38,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var Godhood = Resources.GetModBlueprint<BlueprintFeature>("Godhood");
             var GodlyVessel = Resources.GetModBlueprint<BlueprintFeature>("GodlyVessel");
             var NascentApotheosis = Resources.GetModBlueprint<BlueprintFeature>("NascentApotheosis");
+            var DivineArray = Resources.GetModBlueprint<BlueprintFeature>("DivineArray");
             var ProtectiveAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("ProtectiveAuraFeature");
             var GloriousAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("GloriousAuraFeature");
             var SiphoningAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("SiphoningAuraFeature");
@@ -108,7 +109,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike1, ExtraStrike2, ExtraStrike3, ExtraStrike4),
                 Helpers.CreateUIGroup(SlayerStudyTargetFeature, SlayerSwiftStudyTargetFeature),
                 Helpers.CreateUIGroup(GracefulCombat, TrueSmiteFeature, TrueSmiteAdditionalUse),
-                Helpers.CreateUIGroup(NascentApotheosis, ProtectiveAuraFeature, GloriousAuraFeature, SiphoningAuraFeature, GodlyVessel, Godhood),
+                Helpers.CreateUIGroup(NascentApotheosis, DivineArray, ProtectiveAuraFeature, GloriousAuraFeature, SiphoningAuraFeature, GodlyVessel, Godhood),
                 Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, CorruptAuraFeature, SpecialPowerSelection, IsekaiChannelPositiveEnergyFeature, IsekaiChannelNegativeEnergyFeature),
                 Helpers.CreateUIGroup(PlotArmor, CripplingStrike, DispellingAttack, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter, SecondFormFeature, HerosPresenceFeature),
                 Helpers.CreateUIGroup(IsekaiPetSelection, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, VillainQuickFooted),

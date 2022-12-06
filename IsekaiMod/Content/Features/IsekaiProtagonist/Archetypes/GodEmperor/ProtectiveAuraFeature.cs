@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
             var Icon_Protective_Aura = AssetLoader.LoadInternal("Features", "ICON_PROTECTIVE_AURA.png");
             var ProtectiveAuraBuff = Helpers.CreateBuff("ProtectiveAuraBuff", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("This character has a sacred bonus to AC and saving throws equal to 1/2 the God Emporer's character level.");
+                bp.SetDescription("This character has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.");
                 bp.IsClassFeature = true;
                 bp.m_Icon = Icon_Protective_Aura;
                 bp.AddComponent<AddContextStatBonus>(c => {
@@ -78,7 +78,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
             });
             var ProtectiveAuraAreaBuff = Helpers.CreateBuff("ProtectiveAuraAreaBuff", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emporer's character level.");
+                bp.SetDescription("Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.");
                 bp.m_Icon = Icon_Protective_Aura;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -88,14 +88,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
             });
             var ProtectiveAuraAbility = Helpers.CreateActivatableAbility("ProtectiveAuraAbility", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emporer's character level.");
+                bp.SetDescription("Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.");
                 bp.m_Icon = Icon_Protective_Aura;
                 bp.m_Buff = ProtectiveAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
             var ProtectiveAuraFeature = Helpers.CreateFeature("ProtectiveAuraFeature", bp => {
                 bp.SetName("Protective Aura");
-                bp.SetDescription("At 7th level, allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emporer's character level.");
+                bp.SetDescription("At 7th level, allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.");
                 bp.m_Icon = Icon_Protective_Aura;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { ProtectiveAuraAbility.ToReference<BlueprintUnitFactReference>() };

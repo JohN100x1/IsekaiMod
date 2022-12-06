@@ -87,6 +87,9 @@
     <None Update="Assets\Features\ICON_CORRUPT_AURA.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Assets\Features\ICON_ENERGY_ARRAY.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\Features\ICON_EXCEPTIONAL_SUMMONING.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

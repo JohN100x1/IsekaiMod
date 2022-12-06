@@ -11,6 +11,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             // Archetype features
             var GodEmperorProficiencies = Resources.GetModBlueprint<BlueprintFeature>("GodEmperorProficiencies");
             var NascentApotheosis = Resources.GetModBlueprint<BlueprintFeature>("NascentApotheosis");
+            var DivineArray = Resources.GetModBlueprint<BlueprintFeature>("DivineArray");
             var ProtectiveAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("ProtectiveAuraFeature");
             var DarkAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("DarkAuraFeature");
             var GloriousAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("GloriousAuraFeature");
@@ -54,8 +55,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(20, TrueMainCharacter),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.LevelEntry(1, GodEmperorProficiencies),
-                    Helpers.LevelEntry(3, NascentApotheosis),
+                    Helpers.LevelEntry(1, NascentApotheosis, GodEmperorProficiencies),
+                    Helpers.LevelEntry(3, DivineArray),
                     Helpers.LevelEntry(7, ProtectiveAuraFeature),
                     Helpers.LevelEntry(9, GloriousAuraFeature),
                     Helpers.LevelEntry(10, DarkAuraFeature),

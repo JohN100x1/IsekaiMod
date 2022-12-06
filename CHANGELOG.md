@@ -6,9 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Added `Divine Array` feature to `God Emperor` progression.
 - Added bard, ranger, paladin, and inquisitor spells into the `Isekai Protagonist` spellbook.
 ### Changed
 - Changed `Villain` Archetype to memorise spells like an Arcanist instead of Wizard. The Spell slots progression is the same as the spells per day progression.
+- Buffed `Nascent Apotheosis` to also give spell penetration and spell resistance.
 - Changed `Body Strengthening` to give DR/— per level.
 ### Fixed
 - Fixed `Dupe Gold` ability to correctly give 1 million gold instead of 100 thousand gold.
@@ -100,7 +102,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Reworked `Character Development` feats to no longer have bonus feats or feats from `Beach Episode` at later levels.
 - Reworked `Isekai Protagonist` class progression to have more Overpowered Abilities instead of training arc feats.
-- Reworked `Edge Lord` and `God Emporer` archetypes to have more evenly distributed character development feats.
+- Reworked `Edge Lord` and `God Emperor` archetypes to have more evenly distributed character development feats.
 - Reworked `Villain` to have `Channel Negative Energy`.
 - Buffed `Godhood` to give energy immunity against acid, cold, electricity, fire, and sonic.
 - Nerfed `Grasp Heart` to stun if the creature fails a DC 50 fortitude save.
@@ -136,9 +138,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Isekai Vampire` Heritage (Dhampir Heritage).
 ### Changed
 - Buffed `Isekai Succubus` with +4 racial bonus to Dexterity.
-- Buffed `God Emporer`'s `Glorious Aura` to give a 1/2 level competence bonus.
-- Buffed `God Emporer`'s `Protective Aura` to give a 1/2 level sacred bonus.
-- Buffed `God Emporer`'s `Siphoning Aura` to give a -4 penalty.
+- Buffed `God Emperor`'s `Glorious Aura` to give a 1/2 level competence bonus.
+- Buffed `God Emperor`'s `Protective Aura` to give a 1/2 level sacred bonus.
+- Buffed `God Emperor`'s `Siphoning Aura` to give a -4 penalty.
 - Changed `Highschool Student` background to give a trait bonus instead of untyped.
 - Changed `Reborn Demon Lord` background to give a trait bonus instead of untyped.
 - Updated icon for `Glorious Aura` feature.

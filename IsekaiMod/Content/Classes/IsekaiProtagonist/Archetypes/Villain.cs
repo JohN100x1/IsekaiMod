@@ -49,7 +49,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, SneakAttack),
                     Helpers.LevelEntry(3, SpecialPowerSelection),
                     Helpers.LevelEntry(5, SneakAttack, OverpoweredAbilitySelection2),
-                    Helpers.LevelEntry(9, SneakAttack, FriendlyAuraFeature),
+                    Helpers.LevelEntry(9, SpecialPowerSelection, SneakAttack, FriendlyAuraFeature),
                     Helpers.LevelEntry(10, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(13, SneakAttack),
                     Helpers.LevelEntry(15, OverpoweredAbilitySelection2, IsekaiQuickFooted),

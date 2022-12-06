@@ -39,7 +39,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, SneakAttack),
-                    Helpers.LevelEntry(3, SneakAttack),
+                    Helpers.LevelEntry(3, SneakAttack, SpecialPowerSelection),
                     Helpers.LevelEntry(5, SneakAttack),
                     Helpers.LevelEntry(7, SneakAttack),
                     Helpers.LevelEntry(9, SneakAttack),
