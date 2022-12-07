@@ -46,7 +46,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OtherworldlyStamina.Add();
                 Features.IsekaiProtagonist.IsekaiQuickFooted.Add();
                 Features.IsekaiProtagonist.FriendlyAuraFeature.Add();
-                Features.IsekaiProtagonist.HaremMagnetFeature.Add();
+                Features.IsekaiProtagonist.SummonHarem.Add();
                 Features.IsekaiProtagonist.TrueMainCharacter.Add();
 
                 // Beach Episode Selection

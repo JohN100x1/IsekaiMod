@@ -128,10 +128,8 @@
     "FriendlyAuraAreaBuff": "ce7fbc51-9904-4200-b15f-949b4d73e518",
     "FriendlyAuraAbility": "7b1b7ada-b0aa-4fb3-9768-be512e9b02f0",
     "FriendlyAuraFeature": "b509ab2b-7968-4280-807f-0e49e3ce777c",
-    "HaremMagnetBuff": "e7b76354-23fb-40ad-9598-74e81f209314",
-    "HaremMagnetImmunity": "2f6b1ba2-4fa1-4038-9c08-26eca9ab80c6",
-    "HaremMagnetAbility": "1e6f1421-951c-48cc-8fa9-e279e3083e1c",
-    "HaremMagnetFeature": "4145dc5a-358f-4057-affa-7ff4cc130c03",
+    "SummonHaremAbility": "7515ae38-dcb1-4bc7-9777-cb2805e68b86",
+    "SummonHaremFeature": "78eabb74-8980-4195-a198-1f0aa4f550ac",
 
     // Special Powers
     "SpecialPowerSelection": "b5e98cc6-1828-4009-8a9d-ae8638eda059",

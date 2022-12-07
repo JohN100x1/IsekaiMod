@@ -21,11 +21,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
             var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
             var PlotArmor = Resources.GetModBlueprint<BlueprintFeature>("PlotArmor");
+            var SummonHaremFeature = Resources.GetModBlueprint<BlueprintFeature>("SummonHaremFeature");
             var UncannyDodge = Resources.GetBlueprint<BlueprintFeature>("3c08d842e802c3e4eb19d15496145709");
             var ImprovedUncannyDodge = Resources.GetBlueprint<BlueprintFeature>("485a18c05792521459c7d06c63128c79");
             var Evasion = Resources.GetBlueprint<BlueprintFeature>("576933720c440aa4d8d42b0c54b77e80");
             var ImprovedEvasion = Resources.GetBlueprint<BlueprintFeature>("ce96af454a6137d47b9c6a1e02e66803");
-            var HaremMagnetFeature = Resources.GetModBlueprint<BlueprintFeature>("HaremMagnetFeature");
             var OtherworldlyStamina = Resources.GetModBlueprint<BlueprintFeature>("OtherworldlyStamina");
             var SignatureAttack = Resources.GetModBlueprint<BlueprintFeature>("SignatureAttack");
             var IsekaiFighterTraining = Resources.GetModBlueprint<BlueprintFeature>("IsekaiFighterTraining");
@@ -84,7 +84,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 };
             });
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
-                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, OverpoweredAbilitySelection, PlotArmor, IsekaiPetSelection),
+                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, OverpoweredAbilitySelection, PlotArmor, IsekaiPetSelection, SummonHaremFeature),
                 Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection, UncannyDodge),
                 Helpers.LevelEntry(3, SneakAttack, IsekaiFighterTraining, Evasion, SpecialPowerSelection),
                 Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection),
@@ -100,7 +100,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 Helpers.LevelEntry(14, IsekaiProtagonistBonusFeatSelection),
                 Helpers.LevelEntry(15, SneakAttack, OverpoweredAbilitySelection2, OtherworldlyStamina, IsekaiQuickFooted),
                 Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection),
-                Helpers.LevelEntry(17, SneakAttack, SpecialPowerSelection, HaremMagnetFeature),
+                Helpers.LevelEntry(17, SneakAttack, SpecialPowerSelection),
                 Helpers.LevelEntry(18, IsekaiProtagonistBonusFeatSelection),
                 Helpers.LevelEntry(19, SneakAttack, SpecialPowerSelection),
                 Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2, TrueMainCharacter)
@@ -112,7 +112,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 Helpers.CreateUIGroup(GracefulCombat, TrueSmiteFeature, TrueSmiteAdditionalUse),
                 Helpers.CreateUIGroup(NascentApotheosis, DivineArray, GodEmperorEnergySelection, ProtectiveAuraFeature, GloriousAuraFeature, SiphoningAuraFeature, GodlyVessel, Godhood),
                 Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, CorruptAuraFeature, SpecialPowerSelection, IsekaiChannelPositiveEnergyFeature, IsekaiChannelNegativeEnergyFeature),
-                Helpers.CreateUIGroup(PlotArmor, CripplingStrike, DispellingAttack, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, HaremMagnetFeature, TrueMainCharacter, SecondFormFeature, HerosPresenceFeature),
+                Helpers.CreateUIGroup(PlotArmor, CripplingStrike, DispellingAttack, IsekaiFighterTraining, SignatureAttack, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, TrueMainCharacter, SecondFormFeature, HerosPresenceFeature),
                 Helpers.CreateUIGroup(IsekaiPetSelection, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, VillainQuickFooted),
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {

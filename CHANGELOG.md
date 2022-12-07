@@ -6,13 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Added `Summon Harem` ability to `Isekai Protagonist` progression.
 - Added `Channel Energy` selection to `God Emperor` progression.
 - Added `Divine Array` feature to `God Emperor` progression.
 - Added bard, ranger, paladin, and inquisitor spells into the `Isekai Protagonist` spellbook.
 ### Changed
-- Changed `Villain` Archetype to memorise spells like an Arcanist instead of Wizard. The Spell slots progression is the same as the spells per day progression.
+- Reworked `Isekai Protagonist` class and all archetypes.
 - Buffed `Nascent Apotheosis` to also give spell penetration and spell resistance.
+- Changed `Villain` Archetype to memorise spells like an Arcanist instead of Wizard. The Spell slots progression is the same as the spells per day progression.
 - Changed `Body Strengthening` to give DR/— per level.
+### Removed
+- Removed `Harem Magnet` ability.
 ### Fixed
 - Fixed `Dupe Gold` ability to correctly give 1 million gold instead of 100 thousand gold.
 
