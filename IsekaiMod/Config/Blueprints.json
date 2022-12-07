@@ -333,10 +333,7 @@
     "EdgeLordProficiencies": "08979809-7770-475e-934f-f69c270e3cf5",
     "SupersonicCombat": "89a4f509-0847-4956-9564-0b6a04645f77",
     "EdgeLordFastMovement": "087e0c42-d008-44c3-bb4b-d5b95387f862",
-    "ExtraStrike1": "5c37047c-4030-47c7-ab09-dac2d523f8ce",
-    "ExtraStrike2": "732f7a7a-1d80-4c42-bdc5-63e0148720be",
-    "ExtraStrike3": "cb0f22b0-7b56-4752-a657-d7c92590cf79",
-    "ExtraStrike4": "fc8408bc-bfae-4540-b55b-b43585821b3f",
+    "ExtraStrike": "5c37047c-4030-47c7-ab09-dac2d523f8ce",
 
     // Hero Features
     "HeroProficiencies": "52d94ea9-9301-4acd-a691-b4661dbac7f1",
