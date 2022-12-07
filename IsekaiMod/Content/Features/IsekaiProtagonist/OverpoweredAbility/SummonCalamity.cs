@@ -25,6 +25,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
     {
         // Units
         private static readonly BlueprintUnit Devastator = Resources.GetBlueprint<BlueprintUnit>("99c16c4360534129b45706841a7df3fe");
+        private static readonly BlueprintUnit PlayfulDarkness = Resources.GetBlueprint<BlueprintUnit>("a1b06220efb4f0545a870ce52fadd678");
         private static readonly BlueprintUnit Baphomet = Resources.GetBlueprint<BlueprintUnit>("f8007503fe211da4eb027e070eeb3f8c");
         private static readonly BlueprintUnit DemonLordDeskari = Resources.GetBlueprint<BlueprintUnit>("5a75db49bf7aeaf4c9f0264cac3eed5c");
         private static readonly BlueprintUnit Nocticula = Resources.GetBlueprint<BlueprintUnit>("0cca8c841d634d84fbec2609c8db3465");
@@ -56,7 +57,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         {
             var SummonCalamityAbility = CreateSummonAbility("SummonCalamityAbility", bp => {
                 bp.SetName("Overpowered Ability — Summon Calamity");
-                bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons a Devastator, Baphomet, Deskari, Nocticula, or Mephistopheles. "
+                bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons a Devastator, Playful Darkness, Baphomet, Deskari, Nocticula, or Mephistopheles. "
                     + "Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. "
                     + "They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
             });
@@ -67,6 +68,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = Devastator.ToReference<BlueprintUnitReference>();
+                    });
+                });
+            });
+            var SummonPlayfulDarkness = CreateSummonAbility("SummonPlayfulDarkness", bp => {
+                bp.SetName("Overpowered Ability — Summon Calamity (Playful Darkness)");
+                bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons Playful Darkness. Summoned monsters appear where you designate and act according to their "
+                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.Actions = SpawnCalamity(c => {
+                        c.m_Blueprint = PlayfulDarkness.ToReference<BlueprintUnitReference>();
                     });
                 });
             });
@@ -112,8 +123,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             });
             var SummonCalamityFeature = Helpers.CreateFeature("SummonCalamityFeature", bp => {
                 bp.SetName("Overpowered Ability — Summon Calamity");
-                bp.SetDescription("As a full action, you summon a powerful being to bring calamity. You can summon one of the following: Devastator, Baphomet, Deskari, Nocticula, "
-                    + "or Mephistopheles.");
+                bp.SetDescription("As a full action, you summon a powerful being to bring calamity. You can summon one of the following: Devastator, Playful Darkness, "
+                    + "Baphomet, Deskari, Nocticula, or Mephistopheles.");
                 bp.m_Icon = Icon_SummonMonsterIX;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { SummonCalamityAbility.ToReference<BlueprintUnitFactReference>() };
