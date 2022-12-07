@@ -9,13 +9,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class SpellMaster
     {
-        private static readonly Sprite Icon_BatteringBlast = Resources.GetBlueprint<BlueprintAbility>("0a2f7c6aa81bc6548ac7780d8b70bcbc").m_Icon;
+        private static readonly Sprite Icon_TelekineticFist = Resources.GetBlueprint<BlueprintAbility>("810992c76efdde84db707a0444cf9a1c").m_Icon;
         public static void Add()
         {
             var SpellMaster = Helpers.CreateFeature("SpellMaster", bp => {
                 bp.SetName("Spell Master");
                 bp.SetDescription("The DC of spells you cast increases by 4.");
-                bp.m_Icon = Icon_BatteringBlast;
+                bp.m_Icon = Icon_TelekineticFist;
                 bp.AddComponent<IncreaseAllSpellsDC>(c => {
                     c.Descriptor = ModifierDescriptor.UntypedStackable;
                     c.Value = 4;

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Buffed `Nascent Apotheosis` to also give spell penetration and spell resistance.
 - Changed `Villain` Archetype to memorise spells like an Arcanist instead of Wizard. The Spell slots progression is the same as the spells per day progression.
 - Changed `Body Strengthening` to give DR/— per level.
+- Update `Spell Master` feature icon.
 ### Removed
 - Removed `Harem Magnet` ability.
 ### Fixed

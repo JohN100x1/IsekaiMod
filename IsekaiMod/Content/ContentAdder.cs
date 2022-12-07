@@ -41,7 +41,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.IsekaiPetSelection.Add();
                 Features.IsekaiProtagonist.PlotArmor.Add();
                 Features.IsekaiProtagonist.IsekaiFighterTraining.Add();
-                Features.IsekaiProtagonist.SignatureAttack.Add();
+                Features.IsekaiProtagonist.SignatureMoveSelection.Add();
                 Features.IsekaiProtagonist.IsekaiFastMovement.Add();
                 Features.IsekaiProtagonist.OtherworldlyStamina.Add();
                 Features.IsekaiProtagonist.IsekaiQuickFooted.Add();
