@@ -73,6 +73,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.SpecialPower.KineticPower.Add();
                 Features.IsekaiProtagonist.SpecialPower.SneakyMagic.Add();
                 Features.IsekaiProtagonist.SpecialPower.SpellMaster.Add();
+                Features.IsekaiProtagonist.SpecialPower.ArmorSaint.Add();
 
                 // OP Ability
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();

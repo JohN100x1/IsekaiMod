@@ -133,6 +133,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             SummonCalamityAbility.AddComponent<AbilityVariants>(c => {
                 c.m_Variants = new BlueprintAbilityReference[] {
                     SummonDevastator.ToReference<BlueprintAbilityReference>(),
+                    SummonPlayfulDarkness.ToReference<BlueprintAbilityReference>(),
                     SummonBaphomet.ToReference<BlueprintAbilityReference>(),
                     SummonDemonLordDeskari.ToReference<BlueprintAbilityReference>(),
                     SummonDemonNocticula.ToReference<BlueprintAbilityReference>(),

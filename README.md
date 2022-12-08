@@ -71,6 +71,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Kinetic Power`: You can select a kinetic blast (air, earth, fire, water).
 		- `Sneaky Magic`: You can add your sneak attack damage to spells against flat-footed.
 		- `Spell Master`: Increase your spell DC by 4.
+		- `Armor Saint`: You can move at normal speed while wearing armor, reduce your armor check penalty to zero, and increase your max dexterity bonus by 20.
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.
