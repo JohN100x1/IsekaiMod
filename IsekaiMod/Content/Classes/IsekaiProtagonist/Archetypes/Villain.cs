@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
             var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
             var IsekaiQuickFooted = Resources.GetModBlueprint<BlueprintFeature>("IsekaiQuickFooted");
-            var TrueMainCharacter = Resources.GetModBlueprint<BlueprintFeature>("TrueMainCharacter");
+            var SecondReincarnation = Resources.GetModBlueprint<BlueprintFeature>("SecondReincarnation");
             var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
             var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
 
@@ -54,7 +54,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(13, SneakAttack),
                     Helpers.LevelEntry(15, OverpoweredAbilitySelection2, IsekaiQuickFooted),
                     Helpers.LevelEntry(17, SneakAttack),
-                    Helpers.LevelEntry(20, TrueMainCharacter),
+                    Helpers.LevelEntry(20, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, VillainProficiencies, OverpoweredAbilitySelectionVillain, SlayerStudyTargetFeature),

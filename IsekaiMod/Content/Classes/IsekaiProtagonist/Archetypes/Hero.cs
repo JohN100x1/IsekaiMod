@@ -25,7 +25,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
             var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
             var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
-            var TrueMainCharacter = Resources.GetModBlueprint<BlueprintFeature>("TrueMainCharacter");
+            var SecondReincarnation = Resources.GetModBlueprint<BlueprintFeature>("SecondReincarnation");
 
 
             // Archetype
@@ -49,7 +49,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(15, SneakAttack, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(17, SneakAttack),
                     Helpers.LevelEntry(19, SneakAttack),
-                    Helpers.LevelEntry(20, TrueMainCharacter),
+                    Helpers.LevelEntry(20, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, HeroProficiencies, GracefulCombat),

@@ -8,11 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added `Armor Saint` Special power.
 - Added `Playful Darkness` to `Summon Calamity` Overpowered ability.
+- Added bard, ranger, paladin, and inquisitor spells into the `Isekai Protagonist` spellbook.
 - Added `Signature Ability` to `Isekai Protagonist` progression. This can be chosen instead of `Signature Attack`.
+- Added `Second Reincarnation` to `Isekai Protagonist` progression. This feature replaces `True Main Character`.
 - Added `Summon Harem` ability to `Isekai Protagonist` progression. This ability replaces `Harem Magnet`.
 - Added `Channel Energy` selection to `God Emperor` progression.
 - Added `Divine Array` feature to `God Emperor` progression.
-- Added bard, ranger, paladin, and inquisitor spells into the `Isekai Protagonist` spellbook.
 ### Changed
 - Reworked `Isekai Protagonist` class and all archetypes.
 - Buffed `Nascent Apotheosis` to also give spell penetration and spell resistance.
@@ -21,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update `Spell Master` feature icon.
 ### Removed
 - Removed `Harem Magnet` ability.
+- Removed `True Main Character` feature.
 ### Fixed
 - Fixed `Dupe Gold` ability to correctly give 1 million gold instead of 100 thousand gold.
 

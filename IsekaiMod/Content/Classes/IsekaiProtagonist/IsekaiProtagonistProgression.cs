@@ -34,7 +34,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var VillainQuickFooted = Resources.GetModBlueprint<BlueprintFeature>("VillainQuickFooted");
             var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
             var DarkAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("DarkAuraFeature");
-            var TrueMainCharacter = Resources.GetModBlueprint<BlueprintFeature>("TrueMainCharacter");
+            var SecondReincarnation = Resources.GetModBlueprint<BlueprintFeature>("SecondReincarnation");
             var Godhood = Resources.GetModBlueprint<BlueprintFeature>("Godhood");
             var GodlyVessel = Resources.GetModBlueprint<BlueprintFeature>("GodlyVessel");
             var NascentApotheosis = Resources.GetModBlueprint<BlueprintFeature>("NascentApotheosis");
@@ -100,7 +100,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 Helpers.LevelEntry(17, SneakAttack, SpecialPowerSelection, SummonHaremFeature),
                 Helpers.LevelEntry(18, IsekaiProtagonistBonusFeatSelection),
                 Helpers.LevelEntry(19, SneakAttack, SpecialPowerSelection),
-                Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2, TrueMainCharacter)
+                Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2, SecondReincarnation)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 Helpers.CreateUIGroup(SneakAttack, OverpoweredAbilitySelectionVillain),
@@ -109,7 +109,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 Helpers.CreateUIGroup(GracefulCombat, TrueSmiteFeature, TrueSmiteAdditionalUse),
                 Helpers.CreateUIGroup(NascentApotheosis, DivineArray, GodEmperorEnergySelection, ProtectiveAuraFeature, GloriousAuraFeature, SiphoningAuraFeature, GodlyVessel, Godhood),
                 Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, CorruptAuraFeature, SpecialPowerSelection, IsekaiChannelPositiveEnergyFeature, IsekaiChannelNegativeEnergyFeature),
-                Helpers.CreateUIGroup(PlotArmor, CripplingStrike, DispellingAttack, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, TrueMainCharacter, SecondFormFeature, HerosPresenceFeature),
+                Helpers.CreateUIGroup(PlotArmor, CripplingStrike, DispellingAttack, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation, SecondFormFeature, HerosPresenceFeature),
                 Helpers.CreateUIGroup(IsekaiPetSelection, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, VillainQuickFooted),
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {

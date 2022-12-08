@@ -26,7 +26,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
             var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
             var OtherworldlyStamina = Resources.GetModBlueprint<BlueprintFeature>("OtherworldlyStamina");
-            var TrueMainCharacter = Resources.GetModBlueprint<BlueprintFeature>("TrueMainCharacter");
+            var SecondReincarnation = Resources.GetModBlueprint<BlueprintFeature>("SecondReincarnation");
 
             var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
             var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
@@ -53,7 +53,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(15, SneakAttack, OverpoweredAbilitySelection2, OtherworldlyStamina),
                     Helpers.LevelEntry(17, SneakAttack, SpecialPowerSelection),
                     Helpers.LevelEntry(19, SneakAttack, SpecialPowerSelection),
-                    Helpers.LevelEntry(20, TrueMainCharacter),
+                    Helpers.LevelEntry(20, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, NascentApotheosis, GodEmperorProficiencies),

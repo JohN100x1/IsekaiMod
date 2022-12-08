@@ -47,7 +47,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.IsekaiQuickFooted.Add();
                 Features.IsekaiProtagonist.FriendlyAuraFeature.Add();
                 Features.IsekaiProtagonist.SummonHarem.Add();
-                Features.IsekaiProtagonist.TrueMainCharacter.Add();
+                Features.IsekaiProtagonist.SecondReincarnation.Add();
 
                 // Beach Episode Selection
                 Features.IsekaiProtagonist.BeachEpisode.BeachEpisodeSelection.Add();

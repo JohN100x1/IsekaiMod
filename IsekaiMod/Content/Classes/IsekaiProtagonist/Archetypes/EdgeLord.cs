@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
             var IsekaiFastMovement = Resources.GetModBlueprint<BlueprintFeature>("IsekaiFastMovement");
             var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
-            var TrueMainCharacter = Resources.GetModBlueprint<BlueprintFeature>("TrueMainCharacter");
+            var SecondReincarnation = Resources.GetModBlueprint<BlueprintFeature>("SecondReincarnation");
             var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
             var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
 
@@ -43,7 +43,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(13),
                     Helpers.LevelEntry(15, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(17),
-                    Helpers.LevelEntry(20, OverpoweredAbilitySelection2, TrueMainCharacter),
+                    Helpers.LevelEntry(20, OverpoweredAbilitySelection2, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, EdgeLordProficiencies, SupersonicCombat),
