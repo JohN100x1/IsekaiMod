@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Reworked `Isekai Protagonist` class and all archetypes.
 - Buffed `Nascent Apotheosis` to also give spell penetration and spell resistance.
+- Changed `Godhood` to have spell immunity instead of 100 spell resistance. Removed `ignore spell immunity` because it doesn't work.
 - Changed `Villain` Archetype to memorise spells like an Arcanist instead of Wizard. The Spell slots progression is the same as the spells per day progression.
 - Changed `Body Strengthening` to give DR/— per level.
 - Update `Spell Master` feature icon.
@@ -27,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed `True Main Character` feature.
 ### Fixed
 - Fixed `Dupe Gold` ability to correctly give 1 million gold instead of 100 thousand gold.
+- Fixed `Exceptional Summoning` feats not applying to summoned creatures from spells without the `Summoning` spell descriptor.
 
 ## [2.4.0] - 2022-12-04
 ### Added
