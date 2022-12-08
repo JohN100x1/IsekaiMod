@@ -330,6 +330,11 @@
     "SiphoningAuraAreaBuff": "47ef4a38-afbc-40eb-868f-f5f5af3ea04b",
     "SiphoningAuraAbility": "45e3f209-d90b-41bf-81c1-404b5ed577ab",
     "SiphoningAuraFeature": "ca467aba-ba1a-4ce4-a33f-a099f0813bbb",
+    "CelestialRealmBuff": "72c83033-906c-49fb-b808-04d5c5b9ffe1",
+    "CelestialRealmArea": "8fd93643-e7b0-4d65-99ba-9e54b13319de",
+    "CelestialRealmAreaBuff": "2d2d6956-caaa-4c71-b2d0-b7a576cc264a",
+    "CelestialRealmAbility": "454f97b6-a9a5-4fe7-946d-6ae46c830a73",
+    "CelestialRealmFeature": "2e6d56c2-ee78-4d74-b625-6c92fd3a4637",
 
     // Edge Lord Features
     "EdgeLordProficiencies": "08979809-7770-475e-934f-f69c270e3cf5",

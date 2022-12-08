@@ -103,6 +103,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.GloriousAuraFeature.Add();
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.GodlyVessel.Add();
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.SiphoningAuraFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.CelestialRealm.Add();
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.Godhood.Add();
                 Classes.IsekaiProtagonist.Archetypes.GodEmperor.Add();
 

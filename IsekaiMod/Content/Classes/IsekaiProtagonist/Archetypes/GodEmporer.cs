@@ -16,6 +16,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var ProtectiveAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("ProtectiveAuraFeature");
             var DarkAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("DarkAuraFeature");
             var GloriousAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("GloriousAuraFeature");
+            var CelestialRealmFeature = Resources.GetModBlueprint<BlueprintFeature>("CelestialRealmFeature");
             var Godhood = Resources.GetModBlueprint<BlueprintFeature>("Godhood");
             var GodlyVessel = Resources.GetModBlueprint<BlueprintFeature>("GodlyVessel");
             var SiphoningAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("SiphoningAuraFeature");
@@ -46,7 +47,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(5, SneakAttack, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(7, SneakAttack, SpecialPowerSelection),
                     Helpers.LevelEntry(9, SneakAttack, SpecialPowerSelection, FriendlyAuraFeature),
-                    Helpers.LevelEntry(10),
                     Helpers.LevelEntry(11, SneakAttack, SpecialPowerSelection),
                     Helpers.LevelEntry(12, BeachEpisodeSelection),
                     Helpers.LevelEntry(13, SneakAttack, SpecialPowerSelection),
@@ -58,13 +58,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, NascentApotheosis, GodEmperorProficiencies),
                     Helpers.LevelEntry(3, DivineArray),
-                    Helpers.LevelEntry(5, GodEmperorEnergySelection),
+                    Helpers.LevelEntry(5, GodEmperorEnergySelection, SpecialPowerSelection),
                     Helpers.LevelEntry(7, ProtectiveAuraFeature),
                     Helpers.LevelEntry(9, GloriousAuraFeature),
                     Helpers.LevelEntry(10, DarkAuraFeature),
                     Helpers.LevelEntry(12, SiphoningAuraFeature),
-                    Helpers.LevelEntry(15, GodlyVessel),
-                    Helpers.LevelEntry(18),
+                    Helpers.LevelEntry(15, GodlyVessel, SpecialPowerSelection),
+                    Helpers.LevelEntry(17, CelestialRealmFeature),
                     Helpers.LevelEntry(20, Godhood),
                 };
             });

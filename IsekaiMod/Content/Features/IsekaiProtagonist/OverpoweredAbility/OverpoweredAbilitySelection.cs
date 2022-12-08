@@ -34,7 +34,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             });
             var OverpoweredAbilitySelectionVillain = Helpers.CreateBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelectionVillain", bp => {
                 bp.SetName("Villainous Overpowered Ability");
-                bp.SetDescription("Villains get to select an additional 1st level Overpowered Ability.");
+                bp.SetDescription("Villains get to select an additional Overpowered Abilities.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
