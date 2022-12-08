@@ -12,8 +12,8 @@ namespace IsekaiMod.Components
 		public override void OnTurnOn()
 		{
 			base.OnTurnOn();
-			Owner.State.Features.ImmunityToMediumArmorSpeedPenalty.Release();
-			Owner.State.Features.ImmuneToArmorSpeedPenalty.Release();
+			Owner.State.Features.ImmunityToMediumArmorSpeedPenalty.Retain();
+			Owner.State.Features.ImmuneToArmorSpeedPenalty.Retain();
 			if (Owner.Body.Armor.HasArmor)
 			{
 				Owner.Body.Armor.Armor.RecalculateStats();
