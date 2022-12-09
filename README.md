@@ -92,6 +92,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities
 	- `Mythic Overpowered Ability`: Gives you another Overpowered Ability.
+	- `Mythic Special Power`: Gives you another Special Power.
 - New Backgrounds
 	- `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Lore and Knowledge skills use CHA instead of WIS/INT.
 	- `Martial Artist`: Get proficiency in all exotic weapons.

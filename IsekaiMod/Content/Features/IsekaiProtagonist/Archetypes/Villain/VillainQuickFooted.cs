@@ -15,7 +15,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
         {
             var VillainQuickFooted = Helpers.CreateFeature("VillainQuickFooted", bp => {
                 bp.SetName("Quick-Footed");
-                bp.SetDescription("At 16th level, you gain a competence {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}checks{/g} equal to your {g|Encyclopedia:Intelligence}Intelligence{/g} modifier.");
+                bp.SetDescription("At 15th level, you gain a competence {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Initiative}initiative{/g} "
+                    + "{g|Encyclopedia:Check}checks{/g} equal to your {g|Encyclopedia:Intelligence}Intelligence{/g} modifier.");
                 bp.m_Icon = Icon_ExpeditiousRetreat;
                 bp.AddComponent<DerivativeStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Competence;

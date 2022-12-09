@@ -49,7 +49,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, SneakAttack),
                     Helpers.LevelEntry(3, SpecialPowerSelection),
                     Helpers.LevelEntry(5, SneakAttack),
-                    Helpers.LevelEntry(9, SpecialPowerSelection, SneakAttack, FriendlyAuraFeature),
+                    Helpers.LevelEntry(9, SneakAttack, FriendlyAuraFeature),
                     Helpers.LevelEntry(10, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(13, SneakAttack),
                     Helpers.LevelEntry(15, IsekaiQuickFooted),
@@ -59,12 +59,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, VillainProficiencies, OverpoweredAbilitySelectionVillain, SlayerStudyTargetFeature),
                     Helpers.LevelEntry(3, IsekaiChannelNegativeEnergyFeature),
-                    Helpers.LevelEntry(5, SlayerStudyTargetFeature),
+                    Helpers.LevelEntry(5, SlayerStudyTargetFeature, OverpoweredAbilitySelectionVillain),
                     Helpers.LevelEntry(7, SlayerSwiftStudyTargetFeature),
-                    Helpers.LevelEntry(9, CorruptAuraFeature),
-                    Helpers.LevelEntry(10, SlayerStudyTargetFeature, DarkAuraFeature),
-                    Helpers.LevelEntry(15, SlayerStudyTargetFeature),
-                    Helpers.LevelEntry(16, VillainQuickFooted),
+                    Helpers.LevelEntry(9, OverpoweredAbilitySelectionVillain),
+                    Helpers.LevelEntry(10, CorruptAuraFeature, SlayerStudyTargetFeature, DarkAuraFeature),
+                    Helpers.LevelEntry(13, OverpoweredAbilitySelectionVillain),
+                    Helpers.LevelEntry(15, SlayerStudyTargetFeature, VillainQuickFooted),
+                    Helpers.LevelEntry(17, OverpoweredAbilitySelectionVillain),
                     Helpers.LevelEntry(20, SlayerStudyTargetFeature, SecondFormFeature),
                 };
                 bp.OverrideAttributeRecommendations = true;

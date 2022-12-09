@@ -90,7 +90,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
             });
             var CorruptAuraFeature = Helpers.CreateFeature("CorruptAuraFeature", bp => {
                 bp.SetName("Corrupt Aura");
-                bp.SetDescription("At 9th level, allies within 40 feet of the Villain has a +4 profane bonus to attack, damage, AC and saving throws. "
+                bp.SetDescription("At 10th level, allies within 40 feet of the Villain has a +4 profane bonus to attack, damage, AC and saving throws. "
                     + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
                 bp.m_Icon = Icon_Corrupt_Aura;
                 bp.AddComponent<AddFacts>(c => {
