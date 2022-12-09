@@ -9,13 +9,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class ArmorSaint
     {
-        private static readonly Sprite Icon_IndomitableStance = Resources.GetBlueprint<BlueprintFeature>("74c59090138e28f4687c8a3400030763").m_Icon;
+        private static readonly Sprite Icon_ArmorSaint = Resources.GetBlueprint<BlueprintFeature>("ae177f17cfb45264291d4d7c2cb64671").m_Icon;
         public static void Add()
         {
             var ArmorSaint = Helpers.CreateFeature("ArmorSaint", bp => {
                 bp.SetName("Armor Saint");
                 bp.SetDescription("You can move at normal speed while wearing armor. You also reduce your armor check penalty to zero and increase your max dexterity bonus by 20.");
-                bp.m_Icon = Icon_IndomitableStance;
+                bp.m_Icon = Icon_ArmorSaint;
                 bp.AddComponent<ArmorNoSpeedPenalty>();
                 bp.AddComponent<ArmorCheckPenaltyIncrease>(c => {
                     c.Bonus = 100;
