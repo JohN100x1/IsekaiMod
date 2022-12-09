@@ -14,9 +14,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord
             var ExtraStrike = Helpers.CreateFeature("ExtraStrike", bp => {
                 bp.SetName("Extra Strike");
                 bp.SetDescription("You gain additional attacks based on your level.\n"
-                    + "At 5th level and every 5 levels thereafter (10th, 15th, and 20th level), you gain 1 additional {g|Encyclopedia:Attack}attack{/g}.");
+                    + "At 5th level and every 5 levels thereafter (10th, 15th, and 20th level), you gain 1 additional {g|Encyclopedia:Attack}attack{/g}. "
+                    + "This also applies to your off-hand weapon if you are wielding a second weapon.");
                 bp.m_Icon = Icon_Extra_Strike;
                 bp.AddComponent<AddExtraAttack>(c => {
+                    c.Number = 1;
+                });
+                bp.AddComponent<AddExtraOffHandAttack>(c => {
                     c.Number = 1;
                 });
                 bp.Ranks = 20;

@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
         {
             var ExtremeSpeedBuff = Helpers.CreateBuff("ExtremeSpeedBuff", bp => {
                 bp.SetName("Extreme Speed");
-                bp.SetDescription("You gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times per character level.");
+                bp.SetDescription("You gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times your character level.");
                 bp.m_Icon = Icon_SupersonicSpeed;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.UntypedStackable;
@@ -42,13 +42,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             });
             var ExtremeSpeedAbility = Helpers.CreateActivatableAbility("ExtremeSpeedAbility", bp => {
                 bp.SetName("Extreme Speed");
-                bp.SetDescription("You gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times per character level.");
+                bp.SetDescription("You gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times your character level.");
                 bp.m_Icon = Icon_SupersonicSpeed;
                 bp.m_Buff = ExtremeSpeedBuff.ToReference<BlueprintBuffReference>();
             });
             var ExtremeSpeedFeature = Helpers.CreateFeature("ExtremeSpeedFeature", bp => {
                 bp.SetName("Extreme Speed");
-                bp.SetDescription("After extensive speed training, you gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times per character level.");
+                bp.SetDescription("After extensive speed training, you gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times your character level.");
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { ExtremeSpeedAbility.ToReference<BlueprintUnitFactReference>() };
                 });

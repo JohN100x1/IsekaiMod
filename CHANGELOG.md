@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Celestial Realm` feature to `God Emperor` progression.
 ### Changed
 - Reworked `Isekai Protagonist` class and all archetypes.
+- Buffed `Extra Strike` to apply to off-hand aswell if duel-wielding.
 - Buffed `Nascent Apotheosis` to also give spell penetration and spell resistance.
 - Changed `Godhood` to have spell immunity instead of 100 spell resistance. Removed `ignore spell immunity` because it doesn't work.
 - Changed `Villain` Archetype to memorise spells like an Arcanist instead of Wizard. The Spell slots progression is the same as the spells per day progression.
