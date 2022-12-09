@@ -6,26 +6,24 @@ using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic.Abilities;
-using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Properties;
-using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist
 {
     class SecondReincarnation
     {
-        private static readonly Sprite Icon_AngelPhoenixGift = Resources.GetBlueprint<BlueprintAbility>("af92783492851f445abb2c01d346c376").m_Icon;
         public static void Add()
         {
+            var Icon_SecondReincarnation = AssetLoader.LoadInternal("Features", "ICON_SECOND_REINCARNATION.png");
             var SecondReincarnationBuff = Helpers.CreateBuff("SecondReincarnationBuff", bp => {
                 bp.SetName("Second Reincarnation");
                 bp.SetDescription("Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.");
-                bp.m_Icon = Icon_AngelPhoenixGift;
+                bp.m_Icon = Icon_SecondReincarnation;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddImmortality>();
@@ -79,7 +77,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
             var SecondReincarnation = Helpers.CreateFeature("SecondReincarnation", bp => {
                 bp.SetName("Second Reincarnation");
                 bp.SetDescription("Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.");
-                bp.m_Icon = Icon_AngelPhoenixGift;
+                bp.m_Icon = Icon_SecondReincarnation;
                 bp.AddComponent<AddRestTrigger>(c => {
                     c.Action = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.m_Buff = SecondReincarnationBuff.ToReference<BlueprintBuffReference>();
