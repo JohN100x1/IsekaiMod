@@ -158,6 +158,12 @@
     "SneakyMagic": "41cd30e3-b874-4b55-9c0a-4899f15eb0d1",
     "SpellMaster": "04652042-c0bd-4977-816a-995b0fa41d7d",
     "ArmorSaint": "b82c92bd-3acf-40fd-a447-a0a730d65d70",
+    "SummonBeastAbility": "e336a11c-5385-46d9-968c-e8a05bdf4f79",
+    "SummonHydra": "6f58108e-c27b-4fec-afc9-661575859d2c",
+    "SummonOwlbear": "9a92ef44-bb94-4eb4-92a2-0fac062e652b",
+    "SummonRoc": "f7a14395-d201-4eef-b13d-58cc76ae4b22",
+    "SummonMinotaur": "b44886d5-c705-4051-b536-d5d31b3002c2",
+    "SummonBeastFeature": "fb18c7c0-d84f-45dd-85f9-aba5a12944e5",
 
     // Kinetic Power
     "KineticBlastProficiency": "22c92618-54f2-4f15-be22-5a911522445c",

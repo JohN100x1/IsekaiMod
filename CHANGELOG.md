@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Added `Summon Beast` Special power.
 - Added `Armor Saint` Special power.
 - Added `Playful Darkness` to `Summon Calamity` Overpowered ability.
 - Added bard, ranger, paladin, and inquisitor spells into the `Isekai Protagonist` spellbook.

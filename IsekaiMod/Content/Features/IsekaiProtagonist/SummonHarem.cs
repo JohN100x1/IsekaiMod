@@ -54,7 +54,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
         {
             var SummonHaremAbility = Helpers.CreateBlueprint<BlueprintAbility>("SummonHaremAbility", bp => {
                 bp.SetName("Summon Harem");
-                bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons a Succubus, Nymph, Astral Deva, and an Erinyes Devil. Summoned monsters appear where you designate and act according to their "
+                bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons a Succubus, Nymph, Astral Deva, and an Erinyes. Summoned monsters appear where you designate and act according to their "
                     + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = Helpers.CreateActionList(
@@ -96,7 +96,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
             });
             var SummonHaremFeature = Helpers.CreateFeature("SummonHaremFeature", bp => {
                 bp.SetName("Summon Harem");
-                bp.SetDescription("As a full action, you summon a Succubus, a Nymph, an Astral Deva, and an Erinyes Devil to aid you in battle.");
+                bp.SetDescription("As a full action, you summon a Succubus, a Nymph, an Astral Deva, and an Erinyes to aid you in battle.");
                 bp.m_Icon = Icon_SummonMonsterIX;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { SummonHaremAbility.ToReference<BlueprintUnitFactReference>() };
