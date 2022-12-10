@@ -45,7 +45,8 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- Has the `True Smite` ability (smite any alignment).
 		- Uses charisma for damage and attack rolls.
 	- `Villain` (Isekai Protagonist Archetype)
-		- Has study target feature.
+		- Has Study target.
+		- Has Much more Overpowered Abilities.
 		- Intelligence based caster that memorizes spells like an arcanist.
 - New Features
 	- `Exceptional feats`: Strong feats that can be chosen in place of a feat/bonus feat.
@@ -64,7 +65,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
 		- `Regeneration`: Get regeneration 10/acid or fire (requires character level 10).
 		- `Training Montage`: Get a +8 bonus to all attributes.
-		- `Body Strengthening`: Get a DR 20/— (requires character level 10).
+		- `Body Strengthening`: Get a DR/— equal to character level.
 		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
 		- `Extreme Speed`: Get a speed bonus equal to 5 times character level.
 		- `Channel Positive Energy`: You can channel positive energy (requires good alignment).
@@ -75,7 +76,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Armor Saint`: You can move at normal speed while wearing armor, reduce your armor check penalty to zero, and increase your max dexterity bonus by 20.
 		- `Fortress Style`: Get a natural armor bonus to AC equal to Strength modifier.
 		- `Summon Beast`: Summon a hydra, owlbear, roc, or minotaur.
-		- `Aura of Peerless Strength`: Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells.
+		- `Aura of Peerless Strength`: Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells (requires character level 15).
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.

@@ -47,7 +47,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(10, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(11, SneakAttack),
                     Helpers.LevelEntry(13, SneakAttack),
-                    Helpers.LevelEntry(15, SneakAttack, SpecialPowerSelection),
+                    Helpers.LevelEntry(15, SneakAttack, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(17, SneakAttack),
                     Helpers.LevelEntry(19, SneakAttack),
                     Helpers.LevelEntry(20, SecondReincarnation),
