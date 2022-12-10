@@ -118,6 +118,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.Archetypes.Hero.HeroProficiencies.Add();
                 Features.IsekaiProtagonist.Archetypes.Hero.GracefulCombat.Add();
                 Features.IsekaiProtagonist.Archetypes.Hero.TrueSmite.Add();
+                Features.IsekaiProtagonist.Archetypes.Hero.TrueMark.Add();
                 Features.IsekaiProtagonist.Archetypes.Hero.HerosPresence.Add();
                 Classes.IsekaiProtagonist.Archetypes.Hero.Add();
 

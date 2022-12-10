@@ -354,6 +354,9 @@
     "HerosPresenceArea": "28ad0556-3ec1-44a2-ae81-bef4a2ef5c98",
     "HerosPresenceAreaBuff": "be14db2b-cf86-4bb2-bb12-7b34a45cecf9",
     "HerosPresenceFeature": "230d2557-97cb-4935-a251-2939b525c7c2",
+    "TrueMarkBuff": "89e23f11-d32b-46ef-9836-d136ea224e53",
+    "TrueMarkAbility": "ba3e0f3b-55fd-4443-952a-f44d2586d2a9",
+    "TrueMarkFeature": "8956e383-fe4b-4b41-83f4-d426b40d487c",
 
     // Villain Features
     "VillainSpellbook": "9f393ace-2006-436a-85f9-8b47f347d3cd",

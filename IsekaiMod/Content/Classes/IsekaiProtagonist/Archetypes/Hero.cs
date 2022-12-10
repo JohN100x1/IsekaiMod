@@ -17,6 +17,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var GracefulCombat = Resources.GetModBlueprint<BlueprintFeature>("GracefulCombat");
             var TrueSmiteFeature = Resources.GetModBlueprint<BlueprintFeature>("TrueSmiteFeature");
             var TrueSmiteAdditionalUse = Resources.GetModBlueprint<BlueprintFeature>("TrueSmiteAdditionalUse");
+            var TrueMarkFeature = Resources.GetModBlueprint<BlueprintFeature>("TrueMarkFeature");
             var HerosPresenceFeature = Resources.GetModBlueprint<BlueprintFeature>("HerosPresenceFeature");
             var IsekaiChannelPositiveEnergyFeature = Resources.GetModBlueprint<BlueprintFeature>("IsekaiChannelPositiveEnergyFeature");
 
@@ -57,7 +58,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(3, IsekaiChannelPositiveEnergyFeature),
                     Helpers.LevelEntry(4, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(7, TrueSmiteAdditionalUse),
-                    Helpers.LevelEntry(10, TrueSmiteAdditionalUse),
+                    Helpers.LevelEntry(10, TrueMarkFeature, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(13, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(16, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(19, TrueSmiteAdditionalUse),

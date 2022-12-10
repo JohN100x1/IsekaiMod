@@ -28,6 +28,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
 
             // Removed features
             var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
+            var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
             var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
             var IsekaiQuickFooted = Resources.GetModBlueprint<BlueprintFeature>("IsekaiQuickFooted");
@@ -46,15 +47,23 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     + "often by establishing their own kingdom... or by setting up not-so-ethical research in joyous human farms.");
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, SneakAttack),
+                    Helpers.LevelEntry(1, IsekaiProtagonistBonusFeatSelection, IsekaiProtagonistProficiencies, SneakAttack),
+                    Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection),
                     Helpers.LevelEntry(3, SpecialPowerSelection),
+                    Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection),
                     Helpers.LevelEntry(5, SneakAttack),
+                    Helpers.LevelEntry(6, IsekaiProtagonistBonusFeatSelection),
+                    Helpers.LevelEntry(8, IsekaiProtagonistBonusFeatSelection),
                     Helpers.LevelEntry(9, SneakAttack, FriendlyAuraFeature),
-                    Helpers.LevelEntry(10, OverpoweredAbilitySelection2),
+                    Helpers.LevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2),
+                    Helpers.LevelEntry(12, IsekaiProtagonistBonusFeatSelection),
                     Helpers.LevelEntry(13, SneakAttack),
+                    Helpers.LevelEntry(14, IsekaiProtagonistBonusFeatSelection),
                     Helpers.LevelEntry(15, IsekaiQuickFooted),
+                    Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection),
                     Helpers.LevelEntry(17, SneakAttack),
-                    Helpers.LevelEntry(20, SecondReincarnation),
+                    Helpers.LevelEntry(18, IsekaiProtagonistBonusFeatSelection),
+                    Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, VillainProficiencies, OverpoweredAbilitySelectionVillain, SlayerStudyTargetFeature),
