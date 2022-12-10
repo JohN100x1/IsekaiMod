@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Channel Energy` selection to `God Emperor` progression.
 - Added `Divine Array` feature to `God Emperor` progression.
 - Added `Celestial Realm` feature to `God Emperor` progression.
+- Added `True Mark` ability to `Hero` progression.
 ### Changed
 - Reworked `Isekai Protagonist` class and all archetypes.
 - Buffed `Extra Strike` to apply to off-hand aswell if duel-wielding.
