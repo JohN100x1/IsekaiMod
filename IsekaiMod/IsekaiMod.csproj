@@ -105,7 +105,7 @@
     <None Update="Assets\Features\ICON_FORBIDDEN_SUMMONING.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Features\ICON_GLORIOUS_AURA.png">
+    <None Update="Assets\Features\ICON_AURA_MAJESTY.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Features\ICON_GRACEFUL_COMBAT.png">
@@ -132,7 +132,7 @@
     <None Update="Assets\Features\ICON_MIND_CONTROL_IMMUNE.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Features\ICON_PROTECTIVE_AURA.png">
+    <None Update="Assets\Features\ICON_AURA_GOLDEN_PROTECTION.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Features\ICON_REGENERATION.png">

@@ -14,16 +14,16 @@ using Kingmaker.Utility;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
 {
-    class GloriousAuraFeature
+    class AuraOfMajesty
     {
         public static void Add()
         {
-            var Icon_Glorious_Aura = AssetLoader.LoadInternal("Features", "ICON_GLORIOUS_AURA.png");
-            var GloriousAuraBuff = Helpers.CreateBuff("GloriousAuraBuff", bp => {
-                bp.SetName("Glorious Aura");
+            var Icon_AuraOfMajesty = AssetLoader.LoadInternal("Features", "ICON_AURA_MAJESTY.png");
+            var AuraOfMajestyBuff = Helpers.CreateBuff("AuraOfMajestyBuff", bp => {
+                bp.SetName("Aura of Majesty");
                 bp.SetDescription("This character has a sacred bonus to all attributes equal to 1/2 the God Emperor's character level.");
                 bp.IsClassFeature = true;
-                bp.m_Icon = Icon_Glorious_Aura;
+                bp.m_Icon = Icon_AuraOfMajesty;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.Strength;
@@ -84,7 +84,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.m_Progression = ContextRankProgression.Div2;
                 });
             });
-            var GloriousAuraArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("GloriousAuraArea", bp => {
+            var AuraOfMajestyArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("AuraOfMajestyArea", bp => {
                 bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Ally;
                 bp.SpellResistance = false;
                 bp.AggroEnemies = false;
@@ -92,31 +92,31 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.Shape = AreaEffectShape.Cylinder;
                 bp.Size = new Feet(40);
                 bp.Fx = new PrefabLink();
-                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(GloriousAuraBuff.ToReference<BlueprintBuffReference>()));
+                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(AuraOfMajestyBuff.ToReference<BlueprintBuffReference>()));
             });
-            var GloriousAuraAreaBuff = Helpers.CreateBuff("GloriousAuraAreaBuff", bp => {
-                bp.SetName("Glorious Aura");
+            var AuraOfMajestyAreaBuff = Helpers.CreateBuff("AuraOfMajestyAreaBuff", bp => {
+                bp.SetName("Aura of Majesty");
                 bp.SetDescription("Allies within 40 feet of the God Emperor gain a sacred bonus to all attributes equal to 1/2 the God Emperor's character level.");
-                bp.m_Icon = Icon_Glorious_Aura;
+                bp.m_Icon = Icon_AuraOfMajesty;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
                 bp.AddComponent<AddAreaEffect>(c => {
-                    c.m_AreaEffect = GloriousAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
+                    c.m_AreaEffect = AuraOfMajestyArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var GloriousAuraAbility = Helpers.CreateActivatableAbility("GloriousAuraAbility", bp => {
-                bp.SetName("Glorious Aura");
+            var AuraOfMajestyAbility = Helpers.CreateActivatableAbility("AuraOfMajestyAbility", bp => {
+                bp.SetName("Aura of Majesty");
                 bp.SetDescription("Allies within 40 feet of the God Emperor gain a +4 sacred bonus to all attributes.");
-                bp.m_Icon = Icon_Glorious_Aura;
-                bp.m_Buff = GloriousAuraAreaBuff.ToReference<BlueprintBuffReference>();
+                bp.m_Icon = Icon_AuraOfMajesty;
+                bp.m_Buff = AuraOfMajestyAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
-            var GloriousAuraFeature = Helpers.CreateFeature("GloriousAuraFeature", bp => {
-                bp.SetName("Glorious Aura");
+            var AuraOfMajestyFeature = Helpers.CreateFeature("AuraOfMajestyFeature", bp => {
+                bp.SetName("Aura of Majesty");
                 bp.SetDescription("At 9th level, allies within 40 feet of the God Emperor gain a sacred bonus to all attributes equal to 1/2 the God Emperor's character level.");
-                bp.m_Icon = Icon_Glorious_Aura;
+                bp.m_Icon = Icon_AuraOfMajesty;
                 bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] { GloriousAuraAbility.ToReference<BlueprintUnitFactReference>() };
+                    c.m_Facts = new BlueprintUnitFactReference[] { AuraOfMajestyAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
         }

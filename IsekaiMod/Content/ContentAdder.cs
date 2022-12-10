@@ -98,9 +98,9 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.NascentApotheosis.Add();
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.DivineArray.Add();
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.GodEmperorEnergySelection.Add();
-                Features.IsekaiProtagonist.Archetypes.GodEmperor.ProtectiveAuraFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.AuraOfGoldenProtection.Add();
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.DarkAuraFeature.Add();
-                Features.IsekaiProtagonist.Archetypes.GodEmperor.GloriousAuraFeature.Add();
+                Features.IsekaiProtagonist.Archetypes.GodEmperor.AuraOfMajesty.Add();
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.GodlyVessel.Add();
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.SiphoningAuraFeature.Add();
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.CelestialRealm.Add();

@@ -13,9 +13,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var NascentApotheosis = Resources.GetModBlueprint<BlueprintFeature>("NascentApotheosis");
             var DivineArray = Resources.GetModBlueprint<BlueprintFeature>("DivineArray");
             var GodEmperorEnergySelection = Resources.GetModBlueprint<BlueprintFeature>("GodEmperorEnergySelection");
-            var ProtectiveAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("ProtectiveAuraFeature");
+            var AuraOfGoldenProtectionFeature = Resources.GetModBlueprint<BlueprintFeature>("AuraOfGoldenProtectionFeature");
             var DarkAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("DarkAuraFeature");
-            var GloriousAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("GloriousAuraFeature");
+            var AuraOfMajestyFeature = Resources.GetModBlueprint<BlueprintFeature>("AuraOfMajestyFeature");
             var CelestialRealmFeature = Resources.GetModBlueprint<BlueprintFeature>("CelestialRealmFeature");
             var Godhood = Resources.GetModBlueprint<BlueprintFeature>("Godhood");
             var GodlyVessel = Resources.GetModBlueprint<BlueprintFeature>("GodlyVessel");
@@ -59,8 +59,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(1, NascentApotheosis, GodEmperorProficiencies),
                     Helpers.LevelEntry(3, DivineArray),
                     Helpers.LevelEntry(5, GodEmperorEnergySelection, SpecialPowerSelection),
-                    Helpers.LevelEntry(7, ProtectiveAuraFeature),
-                    Helpers.LevelEntry(9, GloriousAuraFeature),
+                    Helpers.LevelEntry(7, AuraOfGoldenProtectionFeature),
+                    Helpers.LevelEntry(9, AuraOfMajestyFeature),
                     Helpers.LevelEntry(10, DarkAuraFeature),
                     Helpers.LevelEntry(12, SiphoningAuraFeature),
                     Helpers.LevelEntry(15, GodlyVessel, SpecialPowerSelection),
