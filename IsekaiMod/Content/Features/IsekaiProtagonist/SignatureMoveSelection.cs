@@ -1,9 +1,9 @@
-﻿using IsekaiMod.Extensions;
+﻿using IsekaiMod.Components;
+using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
@@ -63,80 +63,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                         ValueRank = AbilityRankType.StatBonus
                     };
                 });
-                bp.AddComponent<IncreaseSpellSchoolDamage>(c => {
-                    c.School = SpellSchool.Abjuration;
-                    c.DamageBonus = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<IncreaseSpellSchoolDamage>(c => {
-                    c.School = SpellSchool.Conjuration;
-                    c.DamageBonus = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<IncreaseSpellSchoolDamage>(c => {
-                    c.School = SpellSchool.Divination;
-                    c.DamageBonus = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<IncreaseSpellSchoolDamage>(c => {
-                    c.School = SpellSchool.Enchantment;
-                    c.DamageBonus = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<IncreaseSpellSchoolDamage>(c => {
-                    c.School = SpellSchool.Evocation;
-                    c.DamageBonus = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<IncreaseSpellSchoolDamage>(c => {
-                    c.School = SpellSchool.Illusion;
-                    c.DamageBonus = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<IncreaseSpellSchoolDamage>(c => {
-                    c.School = SpellSchool.Necromancy;
-                    c.DamageBonus = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<IncreaseSpellSchoolDamage>(c => {
-                    c.School = SpellSchool.Transmutation;
-                    c.DamageBonus = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<IncreaseSpellSchoolDamage>(c => {
-                    c.School = SpellSchool.Universalist;
-                    c.DamageBonus = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<IncreaseSpellSchoolDamage>(c => {
-                    c.School = SpellSchool.None;
+                bp.AddComponent<IncreaseSpellDamage>(c => {
                     c.DamageBonus = new ContextValue()
                     {
                         ValueType = ContextValueType.Rank,

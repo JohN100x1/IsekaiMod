@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Added `Aura of Peerless Strength` Special power.
 - Added `Fortress Style` Special power.
 - Added `Omega Strike` Special power.
 - Added `Summon Beast` Special power.

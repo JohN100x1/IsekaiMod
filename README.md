@@ -75,6 +75,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Armor Saint`: You can move at normal speed while wearing armor, reduce your armor check penalty to zero, and increase your max dexterity bonus by 20.
 		- `Fortress Style`: Get a natural armor bonus to AC equal to Strength modifier.
 		- `Summon Beast`: Summon a hydra, owlbear, roc, or minotaur.
+		- `Aura of Peerless Strength`: Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells.
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.

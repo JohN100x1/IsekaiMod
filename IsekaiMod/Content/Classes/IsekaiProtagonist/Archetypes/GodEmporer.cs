@@ -22,6 +22,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var SiphoningAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("SiphoningAuraFeature");
             var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
             var ArmorSaint = Resources.GetModBlueprint<BlueprintFeature>("ArmorSaint");
+            var AuraOfPeerlessStrengthFeature = Resources.GetModBlueprint<BlueprintFeature>("AuraOfPeerlessStrengthFeature");
 
             // Removed features
             var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
@@ -64,7 +65,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(9, AuraOfMajestyFeature),
                     Helpers.LevelEntry(10, DarkAuraFeature),
                     Helpers.LevelEntry(12, SiphoningAuraFeature),
-                    Helpers.LevelEntry(15, GodlyVessel, SpecialPowerSelection),
+                    Helpers.LevelEntry(15, GodlyVessel, AuraOfPeerlessStrengthFeature),
                     Helpers.LevelEntry(17, CelestialRealmFeature),
                     Helpers.LevelEntry(20, Godhood),
                 };

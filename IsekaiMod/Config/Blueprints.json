@@ -166,6 +166,11 @@
     "SummonRoc": "f7a14395-d201-4eef-b13d-58cc76ae4b22",
     "SummonMinotaur": "b44886d5-c705-4051-b536-d5d31b3002c2",
     "SummonBeastFeature": "fb18c7c0-d84f-45dd-85f9-aba5a12944e5",
+    "AuraOfPeerlessStrengthBuff": "c184963a-4152-48a3-8aa8-6b55f67f706c",
+    "AuraOfPeerlessStrengthArea": "aefefed5-7400-42d8-8ccd-b40e23882864",
+    "AuraOfPeerlessStrengthAreaBuff": "ce2a1b16-c727-4119-96e4-f4713bde9ead",
+    "AuraOfPeerlessStrengthAbility": "f1286e3b-e722-4ac4-8d2c-d679416418ae",
+    "AuraOfPeerlessStrengthFeature": "587ffd94-f20b-4558-b9b4-30c59c9b6a79",
 
     // Kinetic Power
     "KineticBlastProficiency": "22c92618-54f2-4f15-be22-5a911522445c",

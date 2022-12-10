@@ -84,6 +84,9 @@
     <None Update="Assets\Deities\ICON_TRUCK.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Assets\Features\ICON_AURA_PEERLESS_STRENGTH.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\Features\ICON_CELESTIAL_REALM.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

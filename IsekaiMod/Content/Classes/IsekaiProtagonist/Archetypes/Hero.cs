@@ -20,6 +20,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var TrueMarkFeature = Resources.GetModBlueprint<BlueprintFeature>("TrueMarkFeature");
             var HerosPresenceFeature = Resources.GetModBlueprint<BlueprintFeature>("HerosPresenceFeature");
             var IsekaiChannelPositiveEnergyFeature = Resources.GetModBlueprint<BlueprintFeature>("IsekaiChannelPositiveEnergyFeature");
+            var AuraOfPeerlessStrengthFeature = Resources.GetModBlueprint<BlueprintFeature>("AuraOfPeerlessStrengthFeature");
 
             // Removed features
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
@@ -27,7 +28,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
             var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
             var SecondReincarnation = Resources.GetModBlueprint<BlueprintFeature>("SecondReincarnation");
-
 
             // Archetype
             var HeroArchetype = Helpers.CreateBlueprint<BlueprintArchetype>("HeroArchetype", bp => {
@@ -47,7 +47,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(10, OverpoweredAbilitySelection2),
                     Helpers.LevelEntry(11, SneakAttack),
                     Helpers.LevelEntry(13, SneakAttack),
-                    Helpers.LevelEntry(15, SneakAttack),
+                    Helpers.LevelEntry(15, SneakAttack, SpecialPowerSelection),
                     Helpers.LevelEntry(17, SneakAttack),
                     Helpers.LevelEntry(19, SneakAttack),
                     Helpers.LevelEntry(20, SecondReincarnation),
@@ -60,6 +60,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(7, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(10, TrueMarkFeature, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(13, TrueSmiteAdditionalUse),
+                    Helpers.LevelEntry(15, AuraOfPeerlessStrengthFeature),
                     Helpers.LevelEntry(16, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(19, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(20, HerosPresenceFeature),

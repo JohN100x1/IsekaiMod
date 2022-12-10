@@ -77,6 +77,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.SpecialPower.ArmorSaint.Add();
                 Features.IsekaiProtagonist.SpecialPower.FortressStyle.Add();
                 Features.IsekaiProtagonist.SpecialPower.SummonBeast.Add();
+                Features.IsekaiProtagonist.SpecialPower.AuraOfPeerlessStrength.Add();
 
                 // OP Ability
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
