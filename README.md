@@ -60,6 +60,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Alpha Strike`: Automatically confirm crits.
 		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
+		- `Omega Strike`: Increase your damage multipler by 1.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
 		- `Regeneration`: Get regeneration 10/acid or fire (requires character level 10).
 		- `Training Montage`: Get a +8 bonus to all attributes.
@@ -72,6 +73,8 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Sneaky Magic`: You can add your sneak attack damage to spells against flat-footed.
 		- `Spell Master`: Increase your spell DC by 4.
 		- `Armor Saint`: You can move at normal speed while wearing armor, reduce your armor check penalty to zero, and increase your max dexterity bonus by 20.
+		- `Fortress Style`: Get a natural armor bonus to AC equal to Strength modifier.
+		- `Summon Beast`: Summon a hydra, owlbear, roc, or minotaur.
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.

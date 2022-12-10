@@ -62,6 +62,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.SpecialPower.AlphaStrike.Add();
                 Features.IsekaiProtagonist.SpecialPower.BetaStrike.Add();
                 Features.IsekaiProtagonist.SpecialPower.GammaStrike.Add();
+                Features.IsekaiProtagonist.SpecialPower.OmegaStrike.Add();
                 Features.IsekaiProtagonist.SpecialPower.Regeneration.Add();
                 Features.IsekaiProtagonist.SpecialPower.EnergyImmunitySelection.Add();
                 Features.IsekaiProtagonist.SpecialPower.TrainingMontage.Add();
@@ -74,6 +75,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.SpecialPower.SneakyMagic.Add();
                 Features.IsekaiProtagonist.SpecialPower.SpellMaster.Add();
                 Features.IsekaiProtagonist.SpecialPower.ArmorSaint.Add();
+                Features.IsekaiProtagonist.SpecialPower.FortressStyle.Add();
                 Features.IsekaiProtagonist.SpecialPower.SummonBeast.Add();
 
                 // OP Ability

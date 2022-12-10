@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Added `Fortress Style` Special power.
+- Added `Omega Strike` Special power.
 - Added `Summon Beast` Special power.
 - Added `Armor Saint` Special power.
 - Added `Playful Darkness` to `Summon Calamity` Overpowered ability.
@@ -22,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Reworked `Isekai Protagonist` class and all archetypes.
 - Buffed `Extra Strike` to apply to off-hand aswell if duel-wielding.
 - Buffed `Nascent Apotheosis` to also give spell penetration and spell resistance.
-- Changed `Godhood` to have spell immunity instead of 100 spell resistance. Removed `ignore spell immunity` because it doesn't work.
+- Changed `Godhood` to have spell immunity instead of 100 spell resistance. Removed "ignore spell immunity" and "auto confirm critical hits".
 - Changed `Villain` Archetype to memorise spells like an Arcanist instead of Wizard. The Spell slots progression is the same as the spells per day progression.
 - Changed `Body Strengthening` to give DR/— per level.
 - Update `Spell Master` feature icon.
