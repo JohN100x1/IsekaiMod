@@ -49,6 +49,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var IsekaiFamiliarSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiFamiliarSelection");
             var CatFamiliarBondFeature = Resources.GetBlueprint<BlueprintFeature>("1cb0b559ca2e31e4d9dc65de012fa82f");
 
+            var StartingWeaponSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("StartingWeaponSelection");
             var IsekaiPetSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiPetSelection");
             var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
             var SignatureMoveSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SignatureMoveSelection");
@@ -57,6 +58,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
             var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
 
+            var StartingWeaponLongsword = Resources.GetModBlueprint<BlueprintFeature>("StartingWeaponLongsword");
             var SignatureAttack = Resources.GetModBlueprint<BlueprintFeature>("SignatureAttack");
             var AutoQuickenFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoQuickenFeature");
             var AutoMaximizeFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoMaximizeFeature");
@@ -191,6 +193,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                             m_Selection = BackgroundBaseSelection.ToReference<BlueprintFeatureSelectionReference>(),
                             m_Features = new BlueprintFeatureReference[]{
                                 BackgroundNone.ToReference<BlueprintFeatureReference>()
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = StartingWeaponSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                StartingWeaponLongsword.ToReference<BlueprintFeatureReference>()
                             }
                         },
                         new SelectionEntry()
