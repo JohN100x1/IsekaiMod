@@ -1,4 +1,3886 @@
 {
   "LocalizedStrings": [
+    {
+      "Key": "79158bd479fd4e3fae7fe9621c45d0c4",
+      "SimpleName": "$IsekaiProtagonistSpellbook.Name",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonist"
+    },
+    {
+      "Key": "64ba36323ccf426e9db1c0fdd899d7ee",
+      "SimpleName": "AcidImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to Acid."
+    },
+    {
+      "Key": "4cbb0c91f07d4c699c6f80b3ede7fa43",
+      "SimpleName": "AcidImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Acid Immunity"
+    },
+    {
+      "Key": "52d72d33da014b1c9eb2837439aa9597",
+      "SimpleName": "AdministratorDFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Administrator D is a playful, self-proclaimed \"Ultimate evil god\" that does things simply for entertainment. She is sadistic and enjoys watching the protagonist struggle for survival in the new world for her own amusement.\nDomains: Chaos, Evil, Knowledge, Death, Destruction\nFavoured Weapon: Scythe"
+    },
+    {
+      "Key": "4277f5117d184835a395894cca54144e",
+      "SimpleName": "AdministratorDFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Administrator D"
+    },
+    {
+      "Key": "a3c9ca97e53344e2b29ad01ff197e996",
+      "SimpleName": "AlphaStrike.Description",
+      "ProcessTemplates": true,
+      "enGB": "You have become an alpha. Your critical threats are automatically confirmed."
+    },
+    {
+      "Key": "306c394193b245798f5741dd249a8b92",
+      "SimpleName": "AlphaStrike.Name",
+      "ProcessTemplates": false,
+      "enGB": "Alpha Strike"
+    },
+    {
+      "Key": "6ad9df1ae074499ead5c4cefd6d0bd21",
+      "SimpleName": "AngelicBoltAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "You release a powerful stroke of energy that deals 2d6 points of holy damage per character level. The target needs to make a successful Reflex saving throw, or become prone.\nIf the target is evil, the spell instead deals 2d8 points of holy damage per character level. The target needs to make a successful Reflex saving throw, or become prone and suffer a -2 penalty to AC, attack rolls and saving throws.\nIf the target is an evil outsider or an undead creature, the spell instead deals 2d10 points of holy damage per character level. The target needs to make a successful Reflex saving throw, or become prone and suffer a -4 penalty to AC, attack rolls and saving throws.\nIf the target is a demon lord, an evil dragon or a lord of undead (a powerful undead creature like liches, undead dragons, nightshades and similar), the spell instead deals 2d12 points of holy damage per character level. The target suffers a -4 penalty to AC, attack rolls and saving throws. It also needs to make a successful Reflex saving throw, or become prone."
+    },
+    {
+      "Key": "5c28f63d1d4c45ceb486782289bdae73",
+      "SimpleName": "AngelicBoltAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Angelic Bolt"
+    },
+    {
+      "Key": "5f117022bc6e41bcb115e4e484c2c402",
+      "SimpleName": "ArmorOfStrength.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain a natural armor bonus to AC equal to your strength modifier."
+    },
+    {
+      "Key": "4cefbce610b142f4b1681e185e41ee7e",
+      "SimpleName": "ArmorOfStrength.Name",
+      "ProcessTemplates": false,
+      "enGB": "Armor of Strength"
+    },
+    {
+      "Key": "1e66c3e64ef5436ab93109a349e2384a",
+      "SimpleName": "ArmorSaint.Description",
+      "ProcessTemplates": true,
+      "enGB": "You can move at normal speed while wearing armor. You also reduce your armor check penalty to zero and increase your max dexterity bonus by 20."
+    },
+    {
+      "Key": "e653a89fa37b453fb4d1f86ef69210c0",
+      "SimpleName": "ArmorSaint.Name",
+      "ProcessTemplates": false,
+      "enGB": "Armor Saint"
+    },
+    {
+      "Key": "e6ea65eae0184e0d86ca8a9cf4f5c5e8",
+      "SimpleName": "AuraOfDivineFuryAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells."
+    },
+    {
+      "Key": "b0811c9b53dd47a09a1c523048b54488",
+      "SimpleName": "AuraOfDivineFuryAreaBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells."
+    },
+    {
+      "Key": "12e1f1f8611a4f06a6022791f5dc094d",
+      "SimpleName": "AuraOfDivineFuryBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This creature has a +10 sacred bonus to attack damage and hit point damage from spells."
+    },
+    {
+      "Key": "0894f48f58cc4f5085af28edc1fbe2e4",
+      "SimpleName": "AuraOfDivineFuryBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Aura of Divine Fury"
+    },
+    {
+      "Key": "e35c40df17174733a46d2fa27cbec766",
+      "SimpleName": "AuraOfDivineFuryFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells."
+    },
+    {
+      "Key": "f8a0859918f940a0a0b2041714c19a74",
+      "SimpleName": "AuraOfGoldenProtectionAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level."
+    },
+    {
+      "Key": "c3980de0a26740179525d97c70dc758b",
+      "SimpleName": "AuraOfGoldenProtectionAreaBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level."
+    },
+    {
+      "Key": "04777e73c392450680d020f459aacf37",
+      "SimpleName": "AuraOfGoldenProtectionBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This character has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level."
+    },
+    {
+      "Key": "06c45d1879ac4d099637126de4a165ca",
+      "SimpleName": "AuraOfGoldenProtectionBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Aura of Golden Protection"
+    },
+    {
+      "Key": "6212c280d2fa42e2aa2e2c5c0f50355d",
+      "SimpleName": "AuraOfGoldenProtectionFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 7th level, allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level."
+    },
+    {
+      "Key": "46354027edcd4fb8b8fcd02585741706",
+      "SimpleName": "AuraOfMajestyAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Allies within 40 feet of the God Emperor gain a +4 sacred bonus to all attributes."
+    },
+    {
+      "Key": "eb01013d66bc45c48e4c4cac5308520f",
+      "SimpleName": "AuraOfMajestyAreaBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Allies within 40 feet of the God Emperor gain a sacred bonus to all attributes equal to 1/2 the God Emperor's character level."
+    },
+    {
+      "Key": "106262088a4d4c009cfb5d6cd3850184",
+      "SimpleName": "AuraOfMajestyBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This character has a sacred bonus to all attributes equal to 1/2 the God Emperor's character level."
+    },
+    {
+      "Key": "8605e9eceb9b4f4aa20a36ff704c598a",
+      "SimpleName": "AuraOfMajestyBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Aura of Majesty"
+    },
+    {
+      "Key": "864e1b73edf54076bcfeb3ceca8c5c32",
+      "SimpleName": "AuraOfMajestyFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 9th level, allies within 40 feet of the God Emperor gain a sacred bonus to all attributes equal to 1/2 the God Emperor's character level."
+    },
+    {
+      "Key": "340c7cd7c8b64d758b60508fc91c820f",
+      "SimpleName": "AutoBolsterAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes bolstered, as though using the Bolster Spell feat."
+    },
+    {
+      "Key": "d70862c0d1c2459f84aa6fea85234d2c",
+      "SimpleName": "AutoBolsterBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes bolstered, as though using the Bolster Spell feat."
+    },
+    {
+      "Key": "c3b3c835f5724601a294ac9ae680b3e8",
+      "SimpleName": "AutoBolsterBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Bolster"
+    },
+    {
+      "Key": "d0e73a0a1b7e47ed8a32e38867c1c06e",
+      "SimpleName": "AutoBolsterFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes bolstered, as though using the Bolster Spell feat."
+    },
+    {
+      "Key": "c24b90ce9e8d40b58fddfb5a080285ee",
+      "SimpleName": "AutoEmpowerAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat."
+    },
+    {
+      "Key": "9afc7bd0993c4af4815a7e5c5521d919",
+      "SimpleName": "AutoEmpowerBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat."
+    },
+    {
+      "Key": "8c2cf45d991f4bb08891b64c8d7648e6",
+      "SimpleName": "AutoEmpowerBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Empower"
+    },
+    {
+      "Key": "1420adb9f7454b88b046a1c63b5516c6",
+      "SimpleName": "AutoEmpowerFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat."
+    },
+    {
+      "Key": "0514792a1d1743db812d64562799c1a1",
+      "SimpleName": "AutoExtendAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes extended, as though using the Extend Spell feat."
+    },
+    {
+      "Key": "c45e6bd7e847418495074f54dd11abaa",
+      "SimpleName": "AutoExtendBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes extended, as though using the Extend Spell feat."
+    },
+    {
+      "Key": "9ea8c7542902495c9426f4bcd266e7f4",
+      "SimpleName": "AutoExtendBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Extend"
+    },
+    {
+      "Key": "0af73c4a5de54d34968d648bea244839",
+      "SimpleName": "AutoExtendFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes extended, as though using the Extend Spell feat."
+    },
+    {
+      "Key": "daa294ce18b841e3bd208813cf9cc0cc",
+      "SimpleName": "AutoMaximizeAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat."
+    },
+    {
+      "Key": "1f843fb1b5194e26a3766adc574241a5",
+      "SimpleName": "AutoMaximizeBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat."
+    },
+    {
+      "Key": "b034fb9bb9814d0995d7ff071ab4a5c4",
+      "SimpleName": "AutoMaximizeBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Maximize"
+    },
+    {
+      "Key": "2b1e6912721c4934a87d58f4d74fc49a",
+      "SimpleName": "AutoMaximizeFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat."
+    },
+    {
+      "Key": "eea8514b894c4a63ba6b20194fd855e6",
+      "SimpleName": "AutoQuickenAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes quickened, as though using the Quicken Spell feat."
+    },
+    {
+      "Key": "44a2a3f6995d4b57b9b0ae20d5085455",
+      "SimpleName": "AutoQuickenBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes quickened, as though using the Quicken Spell feat."
+    },
+    {
+      "Key": "1f6ee90ef408442586f78fe31c7e3ab8",
+      "SimpleName": "AutoQuickenBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Quicken"
+    },
+    {
+      "Key": "c0f07d3e366d46b7a90551c01b002be4",
+      "SimpleName": "AutoQuickenFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it becomes quickened, as though using the Quicken Spell feat."
+    },
+    {
+      "Key": "6df57169e763434782203bdeec0e78e5",
+      "SimpleName": "AutoReachAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat."
+    },
+    {
+      "Key": "a9b97a5073a54a7387aa3a2342dec3fa",
+      "SimpleName": "AutoReachBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat."
+    },
+    {
+      "Key": "20d54bf0ab384d6faa667b48c90e1d42",
+      "SimpleName": "AutoReachBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Reach"
+    },
+    {
+      "Key": "6c220227ab4f4131b09340c351787d58",
+      "SimpleName": "AutoReachFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat."
+    },
+    {
+      "Key": "f2fdfc41c4e24419a87b8e860f952ea7",
+      "SimpleName": "AutoSelectiveAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can exclude targets from the effects of your spell, as though using the Selective Spell feat."
+    },
+    {
+      "Key": "01956175f8434d1e970a3f200f67ef8a",
+      "SimpleName": "AutoSelectiveBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can exclude targets from the effects of your spell, as though using the Selective Spell feat."
+    },
+    {
+      "Key": "04b981693b4242c9808af9c1e4341aad",
+      "SimpleName": "AutoSelectiveBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Selective"
+    },
+    {
+      "Key": "c5c2000893fb4002b4bcaf69bf199936",
+      "SimpleName": "AutoSelectiveFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can exclude targets from the effects of your spell, as though using the Selective Spell feat."
+    },
+    {
+      "Key": "97ae376c85854ea2b75f25c8a616e129",
+      "SimpleName": "BackgroundBetaTester.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Beta Tester has a +10 competence bonus to initiative and adds Lore (Nature), Lore (Religion), Knowledge (World), Knowledge (Arcana), and Perceptionto the list of her class skills.\nIf the character already has the class skill, weapon proficiency or armor proficiency granted by the selected background from her class during character creation, then the corresponding bonuses from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor Check Penalty reduction in case of armor proficiency."
+    },
+    {
+      "Key": "6f6bf9a801fe4eadb143bc46a67e01ab",
+      "SimpleName": "BackgroundBetaTester.Name",
+      "ProcessTemplates": false,
+      "enGB": "Beta Tester"
+    },
+    {
+      "Key": "5d5afd3f8a9147b4b7cc8d758a70cdfb",
+      "SimpleName": "BackgroundGamer.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Gamer has a +4 competence bonus to all knowledge, lore, and perception checks.\nIf the character already has the class skill, weapon proficiency or armor proficiency granted by the selected background from her class during character creation, then the corresponding bonuses from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor Check Penalty reduction in case of armor proficiency."
+    },
+    {
+      "Key": "0e2c4614d2bd4b2eb58835252a82b06e",
+      "SimpleName": "BackgroundGamer.Name",
+      "ProcessTemplates": false,
+      "enGB": "Gamer"
+    },
+    {
+      "Key": "e2483adb021547c7961200baea9cc424",
+      "SimpleName": "BackgroundHighschoolStudent.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Highschool Student gains a +1 bonus to all attributes.\nIf the character already has the class skill, weapon proficiency or armor proficiency granted by the selected background from her class during character creation, then the corresponding bonuses from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor Check Penalty reduction in case of armor proficiency."
+    },
+    {
+      "Key": "60f9a7664aad4f0aa8fff2c2dffaac9d",
+      "SimpleName": "BackgroundHighschoolStudent.Name",
+      "ProcessTemplates": false,
+      "enGB": "Highschool Student"
+    },
+    {
+      "Key": "13d61c3822b64fd7acd2d5233413dd66",
+      "SimpleName": "BackgroundMartialArtist.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Martial Artist is proficient with all exotic weapons.\nIf the character already has the class skill, weapon proficiency or armor proficiency granted by the selected background from her class during character creation, then the corresponding bonuses from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor Check Penalty reduction in case of armor proficiency."
+    },
+    {
+      "Key": "f81cb9bd1e1146ccbad45a53f601168c",
+      "SimpleName": "BackgroundMartialArtist.Name",
+      "ProcessTemplates": false,
+      "enGB": "Martial Artist"
+    },
+    {
+      "Key": "dd9c5cacac1d487eb9d2354efaea849c",
+      "SimpleName": "BackgroundOtaku.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Otaku adds all skills to the list of her class skills except Persuasion.\nIf the character already has the class skill, weapon proficiency or armor proficiency granted by the selected background from her class during character creation, then the corresponding bonuses from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor Check Penalty reduction in case of armor proficiency."
+    },
+    {
+      "Key": "a5e60981217f4fa0a1a170b9fdeaeab3",
+      "SimpleName": "BackgroundOtaku.Name",
+      "ProcessTemplates": false,
+      "enGB": "Otaku"
+    },
+    {
+      "Key": "38bf38add042457cbfa0e7fd8948d2a1",
+      "SimpleName": "BackgroundRebornDemonLord.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Reborn Demon Lord has a +2 bonus to strength and electricity resistance 20.\nIf the character already has the class skill, weapon proficiency or armor proficiency granted by the selected background from her class during character creation, then the corresponding bonuses from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor Check Penalty reduction in case of armor proficiency."
+    },
+    {
+      "Key": "a9d0e79500664a2a928546fbd5dc41d6",
+      "SimpleName": "BackgroundRebornDemonLord.Name",
+      "ProcessTemplates": false,
+      "enGB": "Reborn Demon Lord"
+    },
+    {
+      "Key": "0eac965a7bcf45a19f3e2de932044e15",
+      "SimpleName": "BackgroundSalaryman.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Salaryman adds Perception to the list of her class skills. She can also use her Charisma instead of Wisdom while attempting Perception checks.\nIf the character already has the class skill, weapon proficiency or armor proficiency granted by the selected background from her class during character creation, then the corresponding bonuses from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor Check Penalty reduction in case of armor proficiency."
+    },
+    {
+      "Key": "afc4a29a5a0148c48a8d3004757124a8",
+      "SimpleName": "BackgroundSalaryman.Name",
+      "ProcessTemplates": false,
+      "enGB": "Salaryman"
+    },
+    {
+      "Key": "43cfb1e4722c465aaafe8868004f252e",
+      "SimpleName": "BackgroundTabletopRPGPlayer.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Tabletop RPG Player adds Lore (Nature), Lore (Religion), Knowledge (World) and Knowledge (Arcana) to the list of her class skills and can use her Charisma instead of Intelligence or Wisdom while attempting Knowledge (World), Knowledge (Arcana), Lore (Religion), or Lore (Nature) checks.\nIf the character already has the class skill, weapon proficiency or armor proficiency granted by the selected background from her class during character creation, then the corresponding bonuses from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor Check Penalty reduction in case of armor proficiency."
+    },
+    {
+      "Key": "a2c87b3d081945d59f5867b3aeb9b87b",
+      "SimpleName": "BackgroundTabletopRPGPlayer.Name",
+      "ProcessTemplates": false,
+      "enGB": "Tabletop RPG Player"
+    },
+    {
+      "Key": "6324b81ba8e54ca6bb909019919fc3cf",
+      "SimpleName": "BeachEpisodeSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 12th level, you and your companions take a short intermission beside a large body of water. During this time, you begin a journey of self discovery."
+    },
+    {
+      "Key": "cc3f2592f1284e8593b04ffe36309155",
+      "SimpleName": "BeachEpisodeSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Beach Episode"
+    },
+    {
+      "Key": "6451d2d3ce9546c8a01dce3ede29d916",
+      "SimpleName": "BetaStrike.Description",
+      "ProcessTemplates": true,
+      "enGB": "You get an additional attack per round but take a –4 penalty to damage rolls."
+    },
+    {
+      "Key": "c5b3fa5b95fd4a17889af7e9a9e18a1b",
+      "SimpleName": "BetaStrike.Name",
+      "ProcessTemplates": false,
+      "enGB": "Beta Strike"
+    },
+    {
+      "Key": "ee5c31559b814406b14e52f3dca23083",
+      "SimpleName": "BlackWingsAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Wings (Black)"
+    },
+    {
+      "Key": "1d39cfa77b564cca85525fd4c1e65e8a",
+      "SimpleName": "BleedImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to bleed."
+    },
+    {
+      "Key": "232a7dc7705c491894e03986eeb65d33",
+      "SimpleName": "BleedImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Bleed Immunity"
+    },
+    {
+      "Key": "51f12c55f122405da38d52a7b35d071d",
+      "SimpleName": "BlindImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to blindness."
+    },
+    {
+      "Key": "7f536db0b9d841c6bd14b8ef960d96eb",
+      "SimpleName": "BlindImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Blind Immunity"
+    },
+    {
+      "Key": "fc91527aa060499a99cd304424c900e8",
+      "SimpleName": "BodyStrengthening.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain DR/— equal to your character level."
+    },
+    {
+      "Key": "7cc0dd49728e42d790c3c9f234cae21e",
+      "SimpleName": "BodyStrengthening.Name",
+      "ProcessTemplates": false,
+      "enGB": "Body Strengthening"
+    },
+    {
+      "Key": "257f261347804d94b1223ea4ee876f19",
+      "SimpleName": "CelestialRealmAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Allies within 40 feet of the God Emperor transform their damage type into divine."
+    },
+    {
+      "Key": "4eb3c97e299649649d210c0c4320e582",
+      "SimpleName": "CelestialRealmAreaBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Allies within 40 feet of the God Emperor transform their damage type into divine."
+    },
+    {
+      "Key": "452349ba7cd84cbb9217c16f0e892ac4",
+      "SimpleName": "CelestialRealmBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This character transforms their damage type into divine."
+    },
+    {
+      "Key": "d4e03e0087fe4ef7890b2a5606f38244",
+      "SimpleName": "CelestialRealmBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Celestial Realm"
+    },
+    {
+      "Key": "abb01a8e72184ce590f2eabddecfa747",
+      "SimpleName": "CelestialRealmFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 17th level, allies within 40 feet of the God Emperor transform their damage type into divine."
+    },
+    {
+      "Key": "5123ee6d7512438f915e31688dd441d0",
+      "SimpleName": "CharmImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to charm."
+    },
+    {
+      "Key": "bed8a804b1024b3a996e250265da47de",
+      "SimpleName": "CharmImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Charm Immunity"
+    },
+    {
+      "Key": "0898414593384fd5ad9e6694bb77ff0c",
+      "SimpleName": "ColdImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to Cold."
+    },
+    {
+      "Key": "027f023923f94dd29223b662085c2ae1",
+      "SimpleName": "ColdImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Cold Immunity"
+    },
+    {
+      "Key": "c527fb4eb2df4a4dab703dad67127366",
+      "SimpleName": "CompulsionImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to compulsion effects."
+    },
+    {
+      "Key": "ab65898bf908429391f1b1b3dd64dc3f",
+      "SimpleName": "CompulsionImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Compulsion Immunity"
+    },
+    {
+      "Key": "7409a236b53246f6b11cdb0ab1920aca",
+      "SimpleName": "ConfusionImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to confusion."
+    },
+    {
+      "Key": "692e96260c934f06b4bc59bada7b6edf",
+      "SimpleName": "ConfusionImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Confusion Immunity"
+    },
+    {
+      "Key": "a6be32dd0e8f45eeb89c093a23c01f9e",
+      "SimpleName": "CorrosiveWeaponAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Corrosive. They deal an additional 1d6 acid damage."
+    },
+    {
+      "Key": "c6e5739d6d464260b99b017f0277eadf",
+      "SimpleName": "CorrosiveWeaponBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Corrosive. They deal an additional 1d6 acid damage."
+    },
+    {
+      "Key": "9e2b329b91544ca7acd767cb23c5ad97",
+      "SimpleName": "CorrosiveWeaponBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Corrosive Weapon"
+    },
+    {
+      "Key": "94810a8baeee4c14b8ec7d24e35d0fbc",
+      "SimpleName": "CorrosiveWeaponFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Corrosive. They deal an additional 1d6 acid damage."
+    },
+    {
+      "Key": "43944ec6a58440e7870cd96d4a8484d1",
+      "SimpleName": "CorruptAuraAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Allies within 40 feet of the Villain has a +4 profane bonus to attack, damage, AC and saving throws. Their attacks are treated as evil for the purpose of overcoming damage reduction."
+    },
+    {
+      "Key": "d440968d24124941912b93b1134c0c5a",
+      "SimpleName": "CorruptAuraAreaBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Allies within 40 feet of the Villain has a +4 profane bonus to attack, damage, AC and saving throws. Their attacks are treated as evil for the purpose of overcoming damage reduction."
+    },
+    {
+      "Key": "18a4bc69e6f645de952b4443f0848f4a",
+      "SimpleName": "CorruptAuraBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This character has a +4 profane bonus to attack, damage, AC and saving throws. Their attacks are treated as evil for the purpose of overcoming damage reduction."
+    },
+    {
+      "Key": "261060115b1a43afba65d1e1c7245efc",
+      "SimpleName": "CorruptAuraBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Corrupt Aura"
+    },
+    {
+      "Key": "59622d2bed1b43a2adf60ffa9cd1b65c",
+      "SimpleName": "CorruptAuraFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 10th level, allies within 40 feet of the Villain has a +4 profane bonus to attack, damage, AC and saving throws. Their attacks are treated as evil for the purpose of overcoming damage reduction."
+    },
+    {
+      "Key": "3fd6c0e06d7040cd84a0093c1068e500",
+      "SimpleName": "CoweringImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to cowering."
+    },
+    {
+      "Key": "33274cbb9f274164ba00af8a59919848",
+      "SimpleName": "CoweringImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Cowering Immunity"
+    },
+    {
+      "Key": "21dfbccc9d004899aa284cb106ecf6f3",
+      "SimpleName": "CurseImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to curses."
+    },
+    {
+      "Key": "c1b90314582741948e750ec1eb93420b",
+      "SimpleName": "CurseImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Curse Immunity"
+    },
+    {
+      "Key": "57e06cb244b147a7a5fc0e1edad5be21",
+      "SimpleName": "DarkAuraAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Enemies within 40 feet take a –2 penalty on attack rolls, AC, and saving throws."
+    },
+    {
+      "Key": "cb52a57ecfa64e1ba2c724f8873e8a2f",
+      "SimpleName": "DarkAuraAreaBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Enemies within 40 feet take a –2 penalty on attack rolls, AC, and saving throws."
+    },
+    {
+      "Key": "184812f8d4094f4c856f35c1f9359907",
+      "SimpleName": "DarkAuraBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This creature has a –2 penalty on attack rolls, AC, and saving throws."
+    },
+    {
+      "Key": "27d2347d247744d0be89dc43816c974f",
+      "SimpleName": "DarkAuraBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Dark Aura"
+    },
+    {
+      "Key": "cf058bea0b8c4990bba743769bc73b68",
+      "SimpleName": "DarkAuraFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 10th level, enemies within 40 feet take a –2 penalty on attack rolls, AC, and saving throws."
+    },
+    {
+      "Key": "40a177355bb84568892703ef53fe22ba",
+      "SimpleName": "DazedImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to daze."
+    },
+    {
+      "Key": "c5b536d9f24b40bb90d3931b1fb8c8c3",
+      "SimpleName": "DazedImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Dazed Immunity"
+    },
+    {
+      "Key": "080d42e2a8fa426bb89a3019bed12a09",
+      "SimpleName": "DazzledImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to the dazzled condition."
+    },
+    {
+      "Key": "5cfa45f5bbfe43688e6f8b67bfd08bdb",
+      "SimpleName": "DazzledImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Dazzled Immunity"
+    },
+    {
+      "Key": "b6b14473b42544269b9f869801228d5a",
+      "SimpleName": "DeathImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to death effects."
+    },
+    {
+      "Key": "9c1a6f690bc24f51a400c4d3f50dd8e3",
+      "SimpleName": "DeathImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Death Immunity"
+    },
+    {
+      "Key": "ec7e6d95ebd0437295a80562b8ba7ec5",
+      "SimpleName": "DeathsnatcherAnimateDeadAdditionalUse.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 10th level, the Deathsnatcher gains 2 additional uses of Animate Dead per day."
+    },
+    {
+      "Key": "0192d7a587bc4fbbaefb60e0ca045be6",
+      "SimpleName": "DeathsnatcherAnimateDeadAdditionalUse.Name",
+      "ProcessTemplates": false,
+      "enGB": "Animate Dead — Additional Uses"
+    },
+    {
+      "Key": "780e0e96882c47e4b912a9db7ec7bb4e",
+      "SimpleName": "DeathsnatcherAnimateDeadFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 7th level, the Deathsnatcher gains Animate Dead as a spell-like ability 3 times per day."
+    },
+    {
+      "Key": "a93d392d57804310bdeacaedcf57b31a",
+      "SimpleName": "DeathsnatcherAnimateDeadFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Animate Dead"
+    },
+    {
+      "Key": "22afa76b989241f5a9d9a444d629f4da",
+      "SimpleName": "DeathsnatcherClass.Description",
+      "ProcessTemplates": true,
+      "enGB": "This bipedal jackal has vulture wings and a rat tail ending in a scorpion’s stinger. Each of its four arms ends in a clawed hand."
+    },
+    {
+      "Key": "5ead88ec2eb8464cb59e3f7605c43619",
+      "SimpleName": "DeathsnatcherClass.Name",
+      "ProcessTemplates": true,
+      "enGB": "Deathsnatcher"
+    },
+    {
+      "Key": "1db99da993884cd6a9797629f78ecf2c",
+      "SimpleName": "DeathsnatcherCommandUndeadAbility.SavingThrow",
+      "ProcessTemplates": true,
+      "enGB": "Will negates (save each round)"
+    },
+    {
+      "Key": "f81eeb8a71fd452fbc542883eb4db54b",
+      "SimpleName": "DeathsnatcherCommandUndeadFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 1st level, the Deathsnatcher gains Command Undead as a spell-like ability 10 times per day."
+    },
+    {
+      "Key": "528fb9641ddb40c8a2a09fb83db40f0a",
+      "SimpleName": "DeathsnatcherCommandUndeadFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Command Undead"
+    },
+    {
+      "Key": "2c98ceea9e0e4ca68890b23883037260",
+      "SimpleName": "DeathsnatcherCreateUndeadFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 13th level, the Deathsnatcher gains Create Undead as a spell-like ability once per day."
+    },
+    {
+      "Key": "2420c9244c8a453f98eb20b91927ff8f",
+      "SimpleName": "DeathsnatcherCreateUndeadFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Create Undead"
+    },
+    {
+      "Key": "d1471630ce844489ac5bb5711c67aa32",
+      "SimpleName": "DeathsnatcherFact.Name",
+      "ProcessTemplates": false,
+      "enGB": "DeathsnatcherFact"
+    },
+    {
+      "Key": "b9882e2758974ccca6ab117276d4fbcd",
+      "SimpleName": "DeathsnatcherFastHealing.Description",
+      "ProcessTemplates": true,
+      "enGB": "A creature with the fast healing special ability regains hit points at an exceptional rate. Fast healing continues to function even if the creature is unconscious or has less than zero hit points, as long as it's alive. If the creature dies, the effects of fast healing end immediately."
+    },
+    {
+      "Key": "9af5b5cd1473453fbc40d835f793f431",
+      "SimpleName": "DeathsnatcherFastHealing.Name",
+      "ProcessTemplates": false,
+      "enGB": "Fast Healing 10"
+    },
+    {
+      "Key": "fbb4881212ab4e89894e2091b7686d24",
+      "SimpleName": "DeathsnatcherFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Deathsnatchers dwell amid the ruins of fallen civilizations, where they play at being godlings worshiped by undead slaves. Though self-aggrandizing, deathsnatchers are known to give homage to (and claim descent from) the various demon lords of darkness, the desert, and undeath.\nSize: Tiny\nSpeed: 30 ft.\nAC: +10 natural armor\nAttack: 1 bite (2d6), 4 claws (1d6), 1 sting (1d4)\nAbility scores: Str 17, Dex 25, Con 28, Int 16, Wis 21, Cha 24\nAt 4th level size becomes Medium, Str +6, Dex -4, Con +4, +6 natural armor, gains pounce."
+    },
+    {
+      "Key": "1e90047d36ea4ba0970c09f564676319",
+      "SimpleName": "DeathsnatcherFingerOfDeathAbility.SavingThrow",
+      "ProcessTemplates": true,
+      "enGB": "Fortitude partial"
+    },
+    {
+      "Key": "7bc2f613486a484fb5909fa4145c1edd",
+      "SimpleName": "DeathsnatcherFingerOfDeathFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 16th level, the Deathsnatcher gains Finger of Death as a spell-like ability once per day."
+    },
+    {
+      "Key": "0c5b7173b8b14704a3197618a258426e",
+      "SimpleName": "DeathsnatcherFingerOfDeathFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Finger of Death"
+    },
+    {
+      "Key": "8aaa9e3d5d1048178548e80646c96e6d",
+      "SimpleName": "DeathsnatcherNaturalArmor.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Deathsnatcher has +16 natural armor bonus to AC."
+    },
+    {
+      "Key": "8e57efdd87de4b2ca4745edc9bf104dc",
+      "SimpleName": "DeathsnatcherNaturalArmor.Name",
+      "ProcessTemplates": false,
+      "enGB": "Deathsnatcher Armor"
+    },
+    {
+      "Key": "36f23b702f66497aa68672bd2ec6b6a5",
+      "SimpleName": "DeathsnatcherPoisonSting.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Deathsnatcher's sting attack becomes poisonous and inflicts 1d4 Constitution damage if the enemy fails a DC 28 Fortitude save."
+    },
+    {
+      "Key": "83a53659cf714b79a36197ea1c224df7",
+      "SimpleName": "DeathsnatcherPoisonSting.Name",
+      "ProcessTemplates": false,
+      "enGB": "Deathsnatcher Poison Sting"
+    },
+    {
+      "Key": "033fac303a47482c9ef02475a687beeb",
+      "SimpleName": "DeathsnatcherResistances.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Deathsnatcher is immune to negative energy and deaths effects, and has cold and fire resistance 30. It also has spell resistance equal to 10 + the Deathsnatcher's level."
+    },
+    {
+      "Key": "6d0804d54fab43c48f03f65d4375c617",
+      "SimpleName": "DeathsnatcherResistances.Name",
+      "ProcessTemplates": false,
+      "enGB": "Deathsnatcher Resistances"
+    },
+    {
+      "Key": "84e6b6d4ccb347be804305335ee8351d",
+      "SimpleName": "DeathsnatcherSizeBabyBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Deathsnatcher matures at 4th level. When this occurs, the Deathsnatcher’s natural armor bonus to its AC increases by 6, and gains the following ability scores adjustments: Str +6, Dex –4, Con +4."
+    },
+    {
+      "Key": "634948433fe74b78800d2253d83c172e",
+      "SimpleName": "DeathsnatcherSizeBabyBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Baby Deathsnatcher"
+    },
+    {
+      "Key": "1b8403e442e14a7ba24df9d9a1536c9f",
+      "SimpleName": "DeathsnatcherSizeBabyFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Deathsnatcher matures at 4th level. When this occurs, the Deathsnatcher’s natural armor bonus to its AC increases by 6, and gains the following ability scores adjustments: Str +6, Dex –4, Con +4."
+    },
+    {
+      "Key": "6d40c2e402b642a580b796e93032cbfd",
+      "SimpleName": "DeathsnatcherSlotFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Feature not available"
+    },
+    {
+      "Key": "c3dffaa5c70f4b56bed68ad1135788ee",
+      "SimpleName": "DeathsnatcherUndeadMaster.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 20th level, the Deathsnatcher becomes a master of the undead.\nCommand Undead has unlimited uses.\nAnimate Dead has unlimited uses.\nCreate Undead has 2 additional uses per day.\nFinger of Death has 2 additional uses per day."
+    },
+    {
+      "Key": "10fe8180942f4796a7da1ea5e49ecc86",
+      "SimpleName": "DeathsnatcherUndeadMaster.Name",
+      "ProcessTemplates": false,
+      "enGB": "Undead Master"
+    },
+    {
+      "Key": "046449fdde164fd7b00826878387a6d6",
+      "SimpleName": "DemonWingsAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Wings (Demonic)"
+    },
+    {
+      "Key": "d64e31040d7b4db3bbe0a168ba0517bc",
+      "SimpleName": "DevilWingsAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Wings (Devilish)"
+    },
+    {
+      "Key": "e870853fdcc14eb197cfd1a23361901c",
+      "SimpleName": "DevilWingsBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Wings"
+    },
+    {
+      "Key": "b4bd4290d55a4be4977f6ef41b2d4c7a",
+      "SimpleName": "DiseaseImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to disease."
+    },
+    {
+      "Key": "61eccddbcdd6498abf72276d600ea6bf",
+      "SimpleName": "DiseaseImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Disease Immunity"
+    },
+    {
+      "Key": "5600a260db5141c387f02afd56a46999",
+      "SimpleName": "DivineArray.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 3rd level, the God Emperor gains spell resistance, resistance to acid, cold, electricity, fire, and sonic equal to 5 times their character level."
+    },
+    {
+      "Key": "7d35e67756bc447292acd5abba29c9f6",
+      "SimpleName": "DivineArray.Name",
+      "ProcessTemplates": false,
+      "enGB": "Divine Array"
+    },
+    {
+      "Key": "88845727f0034cfb8a16accb407d24ad",
+      "SimpleName": "DrowPoisonAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "As a swift action, you can coat your weapon with a special drow poison. Enemies hit by the poisoned weapon will need to make a Fortitude save or become unconscious for 1 minute. This fortitude save is equal to 10 + your character level + your Intelligence modifier."
+    },
+    {
+      "Key": "0e5c48f1b99c402bbdb4cb4a7e1750af",
+      "SimpleName": "DrowPoisonAbility.Duration",
+      "ProcessTemplates": true,
+      "enGB": "1 minute"
+    },
+    {
+      "Key": "6df7b92d232c481d9c41209c2c39f9d2",
+      "SimpleName": "DrowPoisonAbility.SavingThrow",
+      "ProcessTemplates": true,
+      "enGB": "Fortitude negates"
+    },
+    {
+      "Key": "05bc492e7eed4e049043c8ddda4dfc41",
+      "SimpleName": "DrowPoisonBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Drow Poison causes their target to become unconsious on a failed fortitude save."
+    },
+    {
+      "Key": "7bc9813e95a74d4ea2c4efe40fa678e9",
+      "SimpleName": "DrowPoisonBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Drow Poison"
+    },
+    {
+      "Key": "73cd308784714189a6f2945a2d78145b",
+      "SimpleName": "DupeGoldAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "As a standard action, you gain 1 million gold."
+    },
+    {
+      "Key": "7be37ad54e15454e8149bcec74a4365e",
+      "SimpleName": "DupeGoldAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Dupe Gold"
+    },
+    {
+      "Key": "ca4d968c3b69444a9c6cb7237866aa6a",
+      "SimpleName": "DupeGoldFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "As a standard action, you gain 1 million gold."
+    },
+    {
+      "Key": "4de832060f5441d9895bb96060a813e0",
+      "SimpleName": "EdgeLordArchetype.Description",
+      "ProcessTemplates": true,
+      "enGB": "After reincarnating into Golarion, some protagonists use their newfound abilities to look cool and stylish. Their attacks become flashy and myriad, moving so fast that side characters would be lucky to even see the afterimage."
+    },
+    {
+      "Key": "33c8da75924041678ec9a39abd52979e",
+      "SimpleName": "EdgeLordArchetype.DescriptionShort",
+      "ProcessTemplates": true,
+      "enGB": "After reincarnating into Golarion, some protagonists use their newfound abilities to look cool and stylish. Their attacks become flashy and myriad, moving so fast that side characters would be lucky to even see the afterimage."
+    },
+    {
+      "Key": "8db1eacb5c25457fb011656eeadb5be9",
+      "SimpleName": "EdgeLordArchetype.Name",
+      "ProcessTemplates": true,
+      "enGB": "Edge Lord"
+    },
+    {
+      "Key": "8737fe9c96714204a16910b15fbe9e37",
+      "SimpleName": "EdgeLordFastMovement.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 7th level, you gain an +20 bonus to your speed."
+    },
+    {
+      "Key": "56dff86fee304ef5a78bcc871ea39457",
+      "SimpleName": "EdgeLordFastMovement.Name",
+      "ProcessTemplates": false,
+      "enGB": "Very Fast Movement"
+    },
+    {
+      "Key": "0728907fe04e466e9fbaecb9299d8416",
+      "SimpleName": "EdgeLordProficiencies.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Edge Lord is proficient with all simple and martial weapons as well as light and medium armor. They can cast spells from this class while wearing armor without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes."
+    },
+    {
+      "Key": "546eb040b36e460c9df5196a60076082",
+      "SimpleName": "EdgeLordProficiencies.Name",
+      "ProcessTemplates": false,
+      "enGB": "Edge Lord Proficiencies"
+    },
+    {
+      "Key": "805d1002ce54449faa5021aac927969a",
+      "SimpleName": "EffectImmunitySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to a specific condition or effect."
+    },
+    {
+      "Key": "83900d5fb3554010b636aca007723ae4",
+      "SimpleName": "EffectImmunitySelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Effect Immunity"
+    },
+    {
+      "Key": "eb83753ca8204f5b91c1bd94bf183386",
+      "SimpleName": "ElectricityImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to Electricity."
+    },
+    {
+      "Key": "d4efcb63e14e4e0896b06a3aac3e8aff",
+      "SimpleName": "ElectricityImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Electricity Immunity"
+    },
+    {
+      "Key": "563e55e410ec47f7bbdcbfb8db3e47fb",
+      "SimpleName": "EnergyImmunitySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain energy immunity of a particular type."
+    },
+    {
+      "Key": "fee3db6a9ddf4c0dabcb3bf3faa473cf",
+      "SimpleName": "EnergyImmunitySelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Energy Immunity Selection"
+    },
+    {
+      "Key": "5e5b46e5bbec4abcbfaf6663c44362f9",
+      "SimpleName": "EntangledImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to the entangled condition."
+    },
+    {
+      "Key": "348caee526294dafb3ee4b0c79434055",
+      "SimpleName": "EntangledImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Entangled Immunity"
+    },
+    {
+      "Key": "f3d17526c8274bbaa6e9792639871abe",
+      "SimpleName": "ExceptionalFeatBonusSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "Exceptional feats are feats that no ordinary NPC possess.\nSource: Isekai Mod"
+    },
+    {
+      "Key": "0f61a29f54fe4e6c89ed2da03bb56c58",
+      "SimpleName": "ExceptionalFeatSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "Exceptional feats are feats that no ordinary NPC possess.\nSource: Isekai Mod"
+    },
+    {
+      "Key": "e7ff40aa98a940f7b2c3bc01680f9581",
+      "SimpleName": "ExceptionalFeatSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Exceptional Feats"
+    },
+    {
+      "Key": "8f56b59fc8b041e1a70f28a97ef8a489",
+      "SimpleName": "ExceptionalSummoningAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your summoned creatures get a +10 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, AC, and saving throws per character level."
+    },
+    {
+      "Key": "4d18d0384439494e811946765c681d4a",
+      "SimpleName": "ExceptionalSummoningBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your summoned creatures a +10 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, AC, and saving throws per character level."
+    },
+    {
+      "Key": "5a6b0aa8fd714d10af758275526bb6a4",
+      "SimpleName": "ExceptionalSummoningBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Exceptional Summoning"
+    },
+    {
+      "Key": "921ee42ffaec44b492f19dc877a98ef8",
+      "SimpleName": "ExceptionalSummoningFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your summoned creatures get a +10 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, AC, and saving throws per character level."
+    },
+    {
+      "Key": "1693fa8080d94525aa556332beb8b820",
+      "SimpleName": "ExceptionalSummoningSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your summons become more powerful as you increase your level."
+    },
+    {
+      "Key": "2b1c9d935efa41658610c36276b0cbe4",
+      "SimpleName": "ExceptionalSummoningSummonBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This creature gets a +10 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, AC, and saving throws per character level."
+    },
+    {
+      "Key": "ec041276e0934b5197207b6e5bcb865b",
+      "SimpleName": "ExceptionalSummoningSummonBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Exceptional Summon"
+    },
+    {
+      "Key": "55849ca5f4e443168d47d7bbf9ee1b99",
+      "SimpleName": "ExceptionalWeaponBonusSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have an additional enchantment. This enchantment does not stack with existing enchantments on weapons."
+    },
+    {
+      "Key": "f8faba74619a49c59e3652826618a84a",
+      "SimpleName": "ExceptionalWeaponSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have an additional enchantment. This enchantment does not stack with existing enchantments on weapons."
+    },
+    {
+      "Key": "e0b77a7b0bdc4a729b23b56178f53a28",
+      "SimpleName": "ExceptionalWeaponSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Exceptional Weapon"
+    },
+    {
+      "Key": "caf55819116a40a5b662baad90dfb322",
+      "SimpleName": "ExhaustedImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to exhaustion."
+    },
+    {
+      "Key": "6d6fb31413244a189b2d565d202a97a2",
+      "SimpleName": "ExhaustedImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Exhausted Immunity"
+    },
+    {
+      "Key": "ac982a59cef841c79ed0512e2386180b",
+      "SimpleName": "ExoticWeaponProficiency.Description",
+      "ProcessTemplates": true,
+      "enGB": "You become proficient with all Exotic Weapons."
+    },
+    {
+      "Key": "ec45e83de62349aba19b59199104e288",
+      "SimpleName": "ExoticWeaponProficiency.Name",
+      "ProcessTemplates": false,
+      "enGB": "Exotic Weapon Proficiency"
+    },
+    {
+      "Key": "6b18382b15af4891b9ec6445c638f3f8",
+      "SimpleName": "ExtraStrike.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain additional attacks based on your level.\nAt 5th level and every 5 levels thereafter (10th, 15th, and 20th level), you gain 1 additional attack. This also applies to your off-hand weapon if you are wielding a second weapon."
+    },
+    {
+      "Key": "f5debeee24bc48f5999cf1e8123a5ad1",
+      "SimpleName": "ExtraStrike.Name",
+      "ProcessTemplates": false,
+      "enGB": "Extra Strike"
+    },
+    {
+      "Key": "a6f5dc71221b4cd9b42bb629277752aa",
+      "SimpleName": "ExtremeSpeedAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain a bonus to your speed equal to 5 times your character level."
+    },
+    {
+      "Key": "947f4ff06125467593ec14fd55ca7f8b",
+      "SimpleName": "ExtremeSpeedBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain a bonus to your speed equal to 5 times your character level."
+    },
+    {
+      "Key": "33c568d59ea94025a503c9d13245768d",
+      "SimpleName": "ExtremeSpeedBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Extreme Speed"
+    },
+    {
+      "Key": "6e10cb1c1abe49d09f83fc69cbbb1d0e",
+      "SimpleName": "ExtremeSpeedFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "After extensive speed training, you gain a bonus to your speed equal to 5 times your character level."
+    },
+    {
+      "Key": "85982332788741eeb4725e8de9bc0694",
+      "SimpleName": "FatigueImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to fatigue."
+    },
+    {
+      "Key": "eaba5f962e6e4c89b1fd917c55f9856f",
+      "SimpleName": "FatigueImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Fatigue Immunity"
+    },
+    {
+      "Key": "bf163faf5761466bac0cfc869baed9cc",
+      "SimpleName": "FearImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to fear effects."
+    },
+    {
+      "Key": "589436f3b1a841a9bbe0ee346fdacb5f",
+      "SimpleName": "FearImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Fear Immunity"
+    },
+    {
+      "Key": "483814dc2c5e43a6af8b79c317ee13c1",
+      "SimpleName": "FerociousSummoningAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level. This effect does not stack with other effects that grant additional attack."
+    },
+    {
+      "Key": "06b2f8916cef424cb247a589cac33bd5",
+      "SimpleName": "FerociousSummoningBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level. This effect does not stack with other effects that grant additional attack."
+    },
+    {
+      "Key": "19c572b1fee4426780235361607ebeac",
+      "SimpleName": "FerociousSummoningBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Ferocious Summoning"
+    },
+    {
+      "Key": "747bfea66404483881e6021620841b88",
+      "SimpleName": "FerociousSummoningFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level. This effect does not stack with other effects that grant additional attack."
+    },
+    {
+      "Key": "2c9b1bf28b0947459715b9283b69ae28",
+      "SimpleName": "FerociousSummoningSummonBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This creature has 2 additional attacks and gains a +10 bonus to speed. It also gains 1d6 sneak attack per character level. This effect does not stack with other effects that grant additional attack."
+    },
+    {
+      "Key": "e47bf091b3d6493aab91e5f89821b226",
+      "SimpleName": "FerociousSummoningSummonBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Ferocious Summon"
+    },
+    {
+      "Key": "84b99969d3ac434d9af2aec97625289e",
+      "SimpleName": "FireImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to Fire."
+    },
+    {
+      "Key": "6ec3686d03894e22b33cbc3bc445dedf",
+      "SimpleName": "FireImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Fire Immunity"
+    },
+    {
+      "Key": "1fbfaef5627d483ab80146ade907eaaf",
+      "SimpleName": "FlamingWeaponAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Flaming. They deal an additional 1d6 fire damage."
+    },
+    {
+      "Key": "b1938f47c5744b05add642ed77037f72",
+      "SimpleName": "FlamingWeaponBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Flaming. They deal an additional 1d6 fire damage."
+    },
+    {
+      "Key": "52d720e32ea44ec1b81aec3c105b2029",
+      "SimpleName": "FlamingWeaponBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Flaming Weapon"
+    },
+    {
+      "Key": "41b0ace14a8241e59e2e4cbf11fe134a",
+      "SimpleName": "FlamingWeaponFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Flaming. They deal an additional 1d6 fire damage."
+    },
+    {
+      "Key": "f94e9cea202b40e4b994d352dfd2dc7e",
+      "SimpleName": "ForbiddenSummoningAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your summoned creatures gain a +10 bonus to hit points per character level and a +1 bonus to all attributes per character level."
+    },
+    {
+      "Key": "bf4a77c87d2d444a86e8b7ab8def36c9",
+      "SimpleName": "ForbiddenSummoningBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your summoned creatures gain a +10 bonus to hit points per character level and a +1 bonus to all attributes per character level."
+    },
+    {
+      "Key": "214b91f6754844e892b4324a4f57f732",
+      "SimpleName": "ForbiddenSummoningBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Forbidden Summoning"
+    },
+    {
+      "Key": "ba28d0cd241241a0aece2872d732d825",
+      "SimpleName": "ForbiddenSummoningFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your summoned creatures gain a +10 bonus to hit points per character level and a +1 bonus to all attributes per character level."
+    },
+    {
+      "Key": "1cc9f358b4b04d8f80967d6473733d49",
+      "SimpleName": "ForbiddenSummoningSummonBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This creature gains a +10 bonus to maximum Hit Points per character level and a +1 bonus to all attributes per character level."
+    },
+    {
+      "Key": "a7501caec23f4e93ab2039884ff5b54e",
+      "SimpleName": "ForbiddenSummoningSummonBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Forbidden Summon"
+    },
+    {
+      "Key": "b97620bde68f4a928aee9a4b43e41ff0",
+      "SimpleName": "FriendlyAuraAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack rolls."
+    },
+    {
+      "Key": "959f3507c5ff4e2ba9c79cc2de3eca82",
+      "SimpleName": "FriendlyAuraAreaBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack rolls."
+    },
+    {
+      "Key": "c2860cdf4ef9436f840bf5c0d23b58b3",
+      "SimpleName": "FriendlyAuraBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This creature has a –4 penalty on attack rolls."
+    },
+    {
+      "Key": "f9c8a52fca4f4a838ad95370caf06b2a",
+      "SimpleName": "FriendlyAuraBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Friendly Aura"
+    },
+    {
+      "Key": "afebdb431d014d30813c89bae86498b9",
+      "SimpleName": "FriendlyAuraFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 9th level, enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack rolls."
+    },
+    {
+      "Key": "037cea3f5f6149219bf61ae02d2db6e3",
+      "SimpleName": "FrightenedImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to the frightened condition."
+    },
+    {
+      "Key": "0afadea35df842c8abfaf8db3eb5d0f4",
+      "SimpleName": "FrightenedImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Frightened Immunity"
+    },
+    {
+      "Key": "27a8f97a6b4747808ca7ee1aa9d8f675",
+      "SimpleName": "FrostWeaponAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Frost. They deal an additional 1d6 cold damage."
+    },
+    {
+      "Key": "5d244ddaac184963bb53a86949510d11",
+      "SimpleName": "FrostWeaponBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Frost. They deal an additional 1d6 cold damage."
+    },
+    {
+      "Key": "8dad24c5c56941cf80baf90036063f20",
+      "SimpleName": "FrostWeaponBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Frost Weapon"
+    },
+    {
+      "Key": "87bb7c2e4b02401cac7a76cd3a386c41",
+      "SimpleName": "FrostWeaponFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Frost. They deal an additional 1d6 cold damage."
+    },
+    {
+      "Key": "211219ca72b64400aab97c429f09c125",
+      "SimpleName": "GammaStrike.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks ignore concealment and are treated as adamantite for the purpose of overcoming damage reduction."
+    },
+    {
+      "Key": "26a1cb7c3bc6437ca1d2b54f5cf03773",
+      "SimpleName": "GammaStrike.Name",
+      "ProcessTemplates": false,
+      "enGB": "Gamma Strike"
+    },
+    {
+      "Key": "dae70195945d4c57b220e03add1e4ec8",
+      "SimpleName": "GhostWingsAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Wings (Ghostly)"
+    },
+    {
+      "Key": "5b89426d8b8046579ab7ed2e4c544fe7",
+      "SimpleName": "GoddessAquaFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Aqua is the goddess of water who guided humans in the afterlife and oversaw the reincarnation of people into other worlds. She is an extremely useful goddess, so much so that she worked multiple part-time jobs in another world. As a goddess that cries alot, it is said that her tears can purify the foulest waters and even the most wretched undead.\nDomains: Water, Healing, Good, Protection\nFavoured Weapon: Quarterstaff"
+    },
+    {
+      "Key": "ae9657bb7c31435b970ae1fb32b1fe43",
+      "SimpleName": "GoddessAquaFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Aqua"
+    },
+    {
+      "Key": "04d79c1656c64955bed5ca45d1c7be2e",
+      "SimpleName": "GoddessRistarteFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Ristarte is the goddess of healing who aids reincarnated heroes in their journey to defeat the demon lord in their new world. Though the healing abilities of Ristarte are only as good as a common herb, her kind and caring smile provide an even greater emotional healing.\nDomains: Healing, Good, Travel, Luck\nFavoured Weapon: Longsword"
+    },
+    {
+      "Key": "108b3c3c18cc4db4afff52871e7f2bac",
+      "SimpleName": "GoddessRistarteFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Ristarte"
+    },
+    {
+      "Key": "b64bb1f64bf64beab6bac8677ee68e6c",
+      "SimpleName": "GodEmperorArchetype.Description",
+      "ProcessTemplates": true,
+      "enGB": "Rather than wandering aimlessly, collecting harems, or defeating demon lords, some protagonists decide to become gods. They sacrifice their special powers and sneak attack to gain powerful auras and a journey towards godhood."
+    },
+    {
+      "Key": "925680ea5b9743db8f2281d219e1fb3e",
+      "SimpleName": "GodEmperorArchetype.DescriptionShort",
+      "ProcessTemplates": true,
+      "enGB": "Rather than wandering aimlessly, collecting harems, or defeating demon lords, some protagonists decide to become gods. They sacrifice their special powers and sneak attack to gain powerful auras and a journey towards godhood."
+    },
+    {
+      "Key": "dffd89c876cc4ccbb56a19e918597950",
+      "SimpleName": "GodEmperorArchetype.Name",
+      "ProcessTemplates": true,
+      "enGB": "God Emperor"
+    },
+    {
+      "Key": "d5fc72b3e88f475fbb7b684d1b668584",
+      "SimpleName": "GodEmperorEnergySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 5th level, the God Emperor is able to choose between channeling positive energy or negative energy."
+    },
+    {
+      "Key": "5e436a637a61436fa6a707c5066f42d1",
+      "SimpleName": "GodEmperorEnergySelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Channel Energy"
+    },
+    {
+      "Key": "3e767f84bda245c0a6c3c43accfff8ef",
+      "SimpleName": "GodEmperorProficiencies.Description",
+      "ProcessTemplates": true,
+      "enGB": "The God Emperor is proficient with all simple, martial, and exotic weapons and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast spells from this class while wearing armor and shields (including tower shields) without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes."
+    },
+    {
+      "Key": "133e93bbd8cb4ec58a3d6c8148fb4c0b",
+      "SimpleName": "GodEmperorProficiencies.Name",
+      "ProcessTemplates": false,
+      "enGB": "God Emperor Proficiences"
+    },
+    {
+      "Key": "cf1221f35c01400399201ad51930d383",
+      "SimpleName": "Godhood.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 20th level, you become a god. You are immune acid, cold, electricity, fire, sonic, spells and physical damage. Your attacks ignore concealment and damage reduction. Your spells ignore spell resistance."
+    },
+    {
+      "Key": "3fb070ce048040bb8861ab63ecf649bf",
+      "SimpleName": "Godhood.Name",
+      "ProcessTemplates": false,
+      "enGB": "Godhood"
+    },
+    {
+      "Key": "ec99884e64c14b678be34b246958a7e0",
+      "SimpleName": "GodlyVessel.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 15th level, the God Emperor gains immunity to sickening effects, nauseating effects, blindness, shaken effects, frightening effects, cowering, paralysis, petrification, confusion, sleep effects, slow effects, staggered effects, stun, daze, dazzle, entanglement, fatigue, exhaustion, movement impairing conditions, bleed, curses, hexes, posion, disease, fear effects, death effects, compulsion, charm, mind-affecting effects, emotion effects, ability score drain, energy drain, negative levels, sneak attack damage and critical hits."
+    },
+    {
+      "Key": "94969cf1a77e401ab2ed7552f110173f",
+      "SimpleName": "GodlyVessel.Name",
+      "ProcessTemplates": false,
+      "enGB": "Godly Vessel"
+    },
+    {
+      "Key": "196ee513e9774c28bb6ce2563d9ac02e",
+      "SimpleName": "GracefulCombat.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Hero uses their Charisma modifier for their melee attack and damage bonus instead of Strength. In addition, they may use their Charisma in place of their Strength for CMB and to qualify for any feat for which it is a prerequisite."
+    },
+    {
+      "Key": "bd479971a40c4beb8c1ab16fec27f596",
+      "SimpleName": "GracefulCombat.Name",
+      "ProcessTemplates": false,
+      "enGB": "Graceful Combat"
+    },
+    {
+      "Key": "293a3b4fc9c2443e8c46b47ee165c318",
+      "SimpleName": "GraspHeartAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Kills the targeted creature if they fail a DC 99 fortitude saving throw, otherwise they are stunned for 1 round."
+    },
+    {
+      "Key": "b237688096264f78a03c87d92e9f4d2d",
+      "SimpleName": "GraspHeartAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Grasp Heart"
+    },
+    {
+      "Key": "e2c761ded58b48b5a7662a9ee1c2640c",
+      "SimpleName": "GraspHeartFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain the Grasp Heart ability which can kill any creature if they fail a DC 99 fortitude saving throw, otherwise they are stunned for 1 round."
+    },
+    {
+      "Key": "a92985922d9045ef9919124a997052dd",
+      "SimpleName": "HealthyBody.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to bleed, blindness, curses, poison, disease, sickened, and nauseated conditions."
+    },
+    {
+      "Key": "a044b98c405f4dfdba64d18b9f93c3d7",
+      "SimpleName": "HealthyBody.Name",
+      "ProcessTemplates": false,
+      "enGB": "Healthy Body"
+    },
+    {
+      "Key": "cdeed89f09e9430f8d15ce1cea09adf0",
+      "SimpleName": "HellknightSignifierIsekai.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 1st level, and at every level thereafter, a Hellknight signifer gains new spells per day as if he had also gained a level in a spellcasting class he belonged to before adding the prestige class. He does not, however, gain any other benefit a character of that class would have gained, except for additional spells per day, spells known, and an increased effective level of spellcasting. If a character had more than one spellcasting class before becoming a Hellknight signifer, he must decide to which class he adds the new level for purposes of determining spells per day."
+    },
+    {
+      "Key": "0a5f820573b84ca3ae88974041fac236",
+      "SimpleName": "HellknightSignifierVillain.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 1st level, and at every level thereafter, a Hellknight signifer gains new spells per day as if he had also gained a level in a spellcasting class he belonged to before adding the prestige class. He does not, however, gain any other benefit a character of that class would have gained, except for additional spells per day, spells known, and an increased effective level of spellcasting. If a character had more than one spellcasting class before becoming a Hellknight signifer, he must decide to which class he adds the new level for purposes of determining spells per day."
+    },
+    {
+      "Key": "9d9b489fcbf546b3be54fca566fe594c",
+      "SimpleName": "HeroArchetype.Description",
+      "ProcessTemplates": true,
+      "enGB": "Heroes use their newfound powers for good. After realising the suffering and despair of the inhabitants of the new world, the hero sets out to bring knowledge from their old world in order to save them."
+    },
+    {
+      "Key": "7a50059d4ec64d5e8990bde12938f7b7",
+      "SimpleName": "HeroArchetype.Name",
+      "ProcessTemplates": true,
+      "enGB": "Hero"
+    },
+    {
+      "Key": "361c2b0dfd55470dae2616d31e37567d",
+      "SimpleName": "HeroProficiencies.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Hero is proficient with all simple and martial weapons and with all armor (heavy, light, and medium) and shields (excluding tower shields). They can cast spells from this class while wearing armor and shields (excluding tower shields) without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes."
+    },
+    {
+      "Key": "23be5f23ab514ee38dcad090efd47ee2",
+      "SimpleName": "HeroProficiencies.Name",
+      "ProcessTemplates": false,
+      "enGB": "Hero Proficiences"
+    },
+    {
+      "Key": "c635780d170040ad82820296b8c21bc0",
+      "SimpleName": "HerosPresenceAreaBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Allies within 40 feet of the Hero has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil."
+    },
+    {
+      "Key": "76c06457eed943b7a436744264f3eef8",
+      "SimpleName": "HerosPresenceBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This character has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil."
+    },
+    {
+      "Key": "ce73b8af68b742d093f926a2c7e123c1",
+      "SimpleName": "HerosPresenceBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Hero's Presence"
+    },
+    {
+      "Key": "1696cff84ba54e11ba43231be8a288d2",
+      "SimpleName": "HerosPresenceFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 20th level, allies within 40 feet of the Hero has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil."
+    },
+    {
+      "Key": "38c440d3904a44aa856a143544c08f7a",
+      "SimpleName": "HexImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to hexes."
+    },
+    {
+      "Key": "4d200991ce9a40608cabdad8c8e78ad1",
+      "SimpleName": "HexImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Hex Immunity"
+    },
+    {
+      "Key": "d6e1ecd22f7e44e2bf6756cbe5352fd3",
+      "SimpleName": "InfiniteInventoryFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You have an infinite carry capacity."
+    },
+    {
+      "Key": "e8a4555b7c134bc3b11244b5e0bea424",
+      "SimpleName": "InfiniteInventoryFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Infinite Inventory"
+    },
+    {
+      "Key": "a393d8dac5d942f49af03e9ec643168f",
+      "SimpleName": "InnerPower.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to shaken, frightened, cowering, fear, death effects, ability score drain, energy drain, and negative levels."
+    },
+    {
+      "Key": "88122ab100324e7eab2a139b27d5169d",
+      "SimpleName": "InnerPower.Name",
+      "ProcessTemplates": false,
+      "enGB": "Inner Power"
+    },
+    {
+      "Key": "7b911237a68244beb6b24e1b2dd9c1d5",
+      "SimpleName": "IsekaiAirBlastFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain the ability to use air blast and all its associated form infusions. Your air blast deals bludgeoning damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier."
+    },
+    {
+      "Key": "3c397f6cbc98451e91b61d539e3fabbe",
+      "SimpleName": "IsekaiAirBlastFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Air Avatar"
+    },
+    {
+      "Key": "e82fa1d5de9648469d382f694883a91a",
+      "SimpleName": "IsekaiAngelHeritage.Description",
+      "ProcessTemplates": true,
+      "enGB": "Otherworldly entities who are reincarnated into the world of Golarion as an Angel have both extreme beauty and power. They serve as exemplars of good and light regardless of the myriad forms they may take.\nThe Isekai Angel has a +4 racial bonus to Strength and Charisma, and a +2 racial bonus on Persuasion and Lore (religion) checks. They have DR 10/Evil, and have spell resistance equal to 10 + their character level. They have immunity to acid, cold, and petrification as well as fire and electricity resistance 20. They can also use the Angelic Bolt spell once per day."
+    },
+    {
+      "Key": "81d1569f2d0b45198d9c4ecee71d3c6c",
+      "SimpleName": "IsekaiAngelHeritage.Name",
+      "ProcessTemplates": false,
+      "enGB": "Isekai Angel"
+    },
+    {
+      "Key": "2133b6450637440081755605c2b85f4d",
+      "SimpleName": "IsekaiBackgroundSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "Before you were hit by a truck, you were a..."
+    },
+    {
+      "Key": "0536f1d294584466953d2f5728e172d8",
+      "SimpleName": "IsekaiBackgroundSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Isekai"
+    },
+    {
+      "Key": "4e37c961cea3445497d2b2f5253501e7",
+      "SimpleName": "IsekaiChannelNegativeEnergyAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Channeling negative energy causes a burst that damages every living creature in a 30-foot radius centered on the caster. The amount of damage inflicted is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on). Creatures that take damage from channeled energy receive a Will save to halve the damage. The DC of this save is equal to 10 + 1/2 the character level + Charisma modifier."
+    },
+    {
+      "Key": "62fc41b59bac4a92812d2ca6e28711e9",
+      "SimpleName": "IsekaiChannelNegativeEnergyAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Channel Negative Energy - Damage Living"
+    },
+    {
+      "Key": "82015d8d8f574ed1b3e39d3ce6f7a994",
+      "SimpleName": "IsekaiChannelNegativeEnergyFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain the supernatural ability to channel negative energy like a cleric. You use your character level as your effective cleric level when channeling negative energy. You can channel energy a number of times per day equal to 3 + your Charisma modifier."
+    },
+    {
+      "Key": "ad72322fb27a48d7b57f5698c61ec97e",
+      "SimpleName": "IsekaiChannelNegativeEnergyFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Channel Negative Energy"
+    },
+    {
+      "Key": "24ccab84ca9345379204c519f1c69e81",
+      "SimpleName": "IsekaiChannelNegativeHealAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Channeling negative energy causes a burst that heals every undead creature in a 30-foot radius centered on the caster. The amount of damage healed is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on)."
+    },
+    {
+      "Key": "13c33014701545619472d3c1234e714f",
+      "SimpleName": "IsekaiChannelNegativeHealAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Channel Negative Energy - Heal Undead"
+    },
+    {
+      "Key": "0dd049707ab940aa8abc08093242c144",
+      "SimpleName": "IsekaiChannelPositiveEnergyAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Channeling positive energy causes a burst that damages every undead creature in a 30-foot radius centered on the caster. The amount of damage inflicted is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on). Creatures that take damage from channeled energy receive a Will save to halve the damage. The DC of this save is equal to 10 + 1/2 the character level + Charisma modifier."
+    },
+    {
+      "Key": "79ba4eb7a82245b19105aeac4b358127",
+      "SimpleName": "IsekaiChannelPositiveEnergyAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Channel Positive Energy - Damage Undead"
+    },
+    {
+      "Key": "ebe48958598c4863985fc0ee341db407",
+      "SimpleName": "IsekaiChannelPositiveEnergyFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain the supernatural ability to channel positive energy like a cleric. You use your character level as your effective cleric level when channeling positive energy.  You can channel energy a number of times per day equal to 3 + your Charisma modifier."
+    },
+    {
+      "Key": "73eeab0fb68f4ad3aa5eab41e6ded59e",
+      "SimpleName": "IsekaiChannelPositiveEnergyFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Channel Positive Energy"
+    },
+    {
+      "Key": "75847796f86d4f4a89a70f311ce9706f",
+      "SimpleName": "IsekaiChannelPositiveHealAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Channeling positive energy causes a burst that heals every living creature in a 30-foot radius centered on the caster. The amount of damage healed is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on)."
+    },
+    {
+      "Key": "eabc2c2c27b24541a7575f45ba8cb483",
+      "SimpleName": "IsekaiChannelPositiveHealAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Channel Positive Energy - Heal Living"
+    },
+    {
+      "Key": "704fc753bb2949df80cd88939c17c9eb",
+      "SimpleName": "IsekaiDarkElfHeritage.Description",
+      "ProcessTemplates": true,
+      "enGB": "Otherworldly entities who are reincarnated into the world of Golarion as a Dark Elf have both extreme beauty and power. They are a cruel and cunning dark reflection of the elven race.\nThe Isekai Dark Elf has a +4 racial bonus to Intelligence, a +2 racial bonus to Dexterity and Wisdom, and a -2 penalty to Constitution. They have spell resistance equal to 10 + their character level. They can also use the Drow Poison ability as a swift action a number of times per day equal to their Intelligence modifier."
+    },
+    {
+      "Key": "947221f898554773a1f3b3a3319f4974",
+      "SimpleName": "IsekaiDarkElfHeritage.Name",
+      "ProcessTemplates": false,
+      "enGB": "Isekai Dark Elf"
+    },
+    {
+      "Key": "3c29cf56d96a44978bcea8b919256fcf",
+      "SimpleName": "IsekaiDeitySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "Gods from another world."
+    },
+    {
+      "Key": "f9e5c1862a3f4daaa073b1808453c93c",
+      "SimpleName": "IsekaiDialogueHulrun.Text",
+      "ProcessTemplates": true,
+      "enGB": "(Isekai Protagonist) \"Other than being hit by a truck, I don't remember anything at all...\""
+    },
+    {
+      "Key": "3157eca11a85439d887c6306b1c2f203",
+      "SimpleName": "IsekaiDialogueRadiance.Text",
+      "ProcessTemplates": true,
+      "enGB": "(Isekai Protagonist) [Pound the sword repeatedly] \"You better power up right now or you're going to reincarnate as a broken blade.\""
+    },
+    {
+      "Key": "db55a25faf114db89dc79756ead02de9",
+      "SimpleName": "IsekaiEarthBlastFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain the ability to use earth blast and all its associated form infusions. Your earth blast deals physical damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier."
+    },
+    {
+      "Key": "3c9a787172c14f39bc9e19ff3e4d2552",
+      "SimpleName": "IsekaiEarthBlastFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Earth Avatar"
+    },
+    {
+      "Key": "1169457a0b494c5e9cf5a876f39ceb48",
+      "SimpleName": "IsekaiFamiliarSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain the service of a familiar, which offers you some skill bonuses."
+    },
+    {
+      "Key": "007490659bb84558b448a8df5088ff2d",
+      "SimpleName": "IsekaiFamiliarSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Familiar Selection"
+    },
+    {
+      "Key": "e8a450892fa2458790b64099f865a934",
+      "SimpleName": "IsekaiFastMovement.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 8th level, you gain a +10 bonus to your speed."
+    },
+    {
+      "Key": "93864fdc39c04bcc9ca0784d902df2d4",
+      "SimpleName": "IsekaiFastMovement.Name",
+      "ProcessTemplates": false,
+      "enGB": "Fast Movement"
+    },
+    {
+      "Key": "ce5441bf7d90476ab0bedb6d71d2411c",
+      "SimpleName": "IsekaiFighterTraining.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 3rd level, you count your class level as your fighter level for the purpose of qualifying for feats. If you have levels in fighter, these levels stack."
+    },
+    {
+      "Key": "66d1abdf38b342e0afc1a5d3e607185b",
+      "SimpleName": "IsekaiFighterTraining.Name",
+      "ProcessTemplates": false,
+      "enGB": "Fighter Training"
+    },
+    {
+      "Key": "6547d0f4439844c49ea009c019d212a4",
+      "SimpleName": "IsekaiFireBlastFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain the ability to use fire blast and all its associated form infusions. Your fire blast deals fire damage equal to 1d6 + 1/2 your Constitution modifier, increasing by 1d6 for every 2 character levels beyond 1st. The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier."
+    },
+    {
+      "Key": "bcd2d8a0ff9c4af3b6f0526777c9924a",
+      "SimpleName": "IsekaiFireBlastFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Fire Avatar"
+    },
+    {
+      "Key": "83168e90d8124114b3fa202599674012",
+      "SimpleName": "IsekaiHighElfHeritage.Description",
+      "ProcessTemplates": true,
+      "enGB": "Otherworldly entities who are reincarnated into the world of Golarion as a High Elf have both extreme beauty and power. They are a refined and cultured reflection of the elven race.\nThe Isekai High Elf has a +4 racial bonus to Wisdom, a +2 racial bonus to Dexterity and Intelligence, and a -2 penalty to Constitution. They have spell resistance equal to 10 + their character level. They can also cast 4 more spells per day for each spell rank."
+    },
+    {
+      "Key": "1a0990ca5428464fb1714c54184e5c31",
+      "SimpleName": "IsekaiHighElfHeritage.Name",
+      "ProcessTemplates": false,
+      "enGB": "Isekai High Elf"
+    },
+    {
+      "Key": "ef5786d8c68d4d39a5aba9b696c35823",
+      "SimpleName": "IsekaiPetSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 1st level, you gain the service of either an animal companion or familiar, using your class level as your effective druid level."
+    },
+    {
+      "Key": "1dc4313ca2c94fbca02a526506f4ace4",
+      "SimpleName": "IsekaiPetSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Pet Selection"
+    },
+    {
+      "Key": "3472d906a0d6461f8e7fd319c52a73fb",
+      "SimpleName": "IsekaiProtagonistBonusFeat.Description",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonists gain twice as many feats as the other classes."
+    },
+    {
+      "Key": "157296f516d940069a1064f53042a68a",
+      "SimpleName": "IsekaiProtagonistBonusFeat.DescriptionShort",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonists gain twice as many feats as the other classes."
+    },
+    {
+      "Key": "9772e99f1dbb4d11bb9479929ea6e5c7",
+      "SimpleName": "IsekaiProtagonistBonusFeat.Name",
+      "ProcessTemplates": false,
+      "enGB": "Bonus Feat"
+    },
+    {
+      "Key": "7bd593cbb514407da6888a678a691b8c",
+      "SimpleName": "IsekaiProtagonistBonusFeatSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 1st level, and at every even level thereafter, you gain a bonus feat in addition to those gained from normal advancement."
+    },
+    {
+      "Key": "6d4d0796546d4a09a35486ee24ffbf2d",
+      "SimpleName": "IsekaiProtagonistCantripsFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You can cast a number of cantrips, or 0-level spells. These spells are cast like any other spell, but they are not expended when cast and may be used again."
+    },
+    {
+      "Key": "c06e0dbb11ab4eb6a0e85bbd038a3139",
+      "SimpleName": "IsekaiProtagonistCantripsFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Cantrips"
+    },
+    {
+      "Key": "61a9089c7b3a42dab0c311dd7db34b61",
+      "SimpleName": "IsekaiProtagonistClass.Descriptio",
+      "ProcessTemplates": true,
+      "enGB": "Isekai protagonists are people who have been reincarnated into the world of Golarion with overpowered abilities. As their story progresses, they gain more overpowered abilities to wreck every wannabe villain and side character they face."
+    },
+    {
+      "Key": "9fc578ceb5914cf2bb4867a1209120ef",
+      "SimpleName": "IsekaiProtagonistClass.Description",
+      "ProcessTemplates": true,
+      "enGB": "Isekai protagonists possess immense power, and are able to defeat every enemy with ease using their overpowered abilities. They also have plot armor, which make them hard to kill. They are the main character; everyone else are just NPCs."
+    },
+    {
+      "Key": "b7c42620cbef427aaf655d612f0cbea5",
+      "SimpleName": "IsekaiProtagonistOverpoweredAbilityFeat.Description",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonists gain Overpowered Abilities as they increase their level. These are extremely powerful abiilities that surpass even gods."
+    },
+    {
+      "Key": "9440be4d825949acb39b748d1660bbc5",
+      "SimpleName": "IsekaiProtagonistOverpoweredAbilityFeat.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Abilities"
+    },
+    {
+      "Key": "bb5165db13894171a0109523eda0d6fb",
+      "SimpleName": "IsekaiProtagonistPlotArmorFeat.Description",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonists gain a luck bonus to AC and all saving throws equal to their character level."
+    },
+    {
+      "Key": "482c1c2d40fa49b1b533eb8ad8afd3d1",
+      "SimpleName": "IsekaiProtagonistPlotArmorFeat.DescriptionShort",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonists gain a luck bonus to AC and all saving throws equal to their character level."
+    },
+    {
+      "Key": "b543cef793bf47f0be5355be9295bceb",
+      "SimpleName": "IsekaiProtagonistPlotArmorFeat.Name",
+      "ProcessTemplates": false,
+      "enGB": "Plot Armor"
+    },
+    {
+      "Key": "247ad347038949249f38a55a522da273",
+      "SimpleName": "IsekaiProtagonistProficiencies.Description",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonists are proficient with all simple and martial weapons and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast spells from this class while wearing armor and shields (including tower shields) without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes."
+    },
+    {
+      "Key": "19af1d6702db4bc8bebf86faa7d86410",
+      "SimpleName": "IsekaiProtagonistProficiencies.Name",
+      "ProcessTemplates": false,
+      "enGB": "Isekai Protagonist Proficiences"
+    },
+    {
+      "Key": "013ecc4c8b344a058ac1583dd9e7868d",
+      "SimpleName": "IsekaiProtagonistProgression.Description",
+      "ProcessTemplates": true,
+      "enGB": "Isekai protagonists are otherworldly entities who have been reincarnated into the world of Golarion with extraordinary abilities. As their story progresses, they gain more unexplained and overpowered abilities to overcome every challenge they face."
+    },
+    {
+      "Key": "2f709a1f814c440393a658ed68961a5b",
+      "SimpleName": "IsekaiProtagonistSneakFeat.Description",
+      "ProcessTemplates": true,
+      "enGB": "Most characters gain advantages when they flank an enemy, attack an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional damage in such a situation."
+    },
+    {
+      "Key": "e24dcac8c53143849aeee9d6b644030f",
+      "SimpleName": "IsekaiProtagonistSneakFeat.DescriptionShort",
+      "ProcessTemplates": true,
+      "enGB": "Most characters gain advantages when they flank an enemy, attack an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional damage in such a situation."
+    },
+    {
+      "Key": "193f26233b4d41b28cf20299a76f81a2",
+      "SimpleName": "IsekaiProtagonistSneakFeat.Name",
+      "ProcessTemplates": false,
+      "enGB": "Sneak Attack"
+    },
+    {
+      "Key": "e30a82c8d72840bcb5d51e99475e9c35",
+      "SimpleName": "IsekaiProtagonistSpecialPowerFeat.Description",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonists gain special powers as they increase their level. These are skills or abilities that greatly enhance the Isekai Protagonist's combat power."
+    },
+    {
+      "Key": "69df48a1718a456fbb09af794425f6f1",
+      "SimpleName": "IsekaiProtagonistSpecialPowerFeat.DescriptionShort",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Protagonists gain special powers as they increase their level. These are skills or abilities that greatly enhance the Isekai Protagonist's combat power."
+    },
+    {
+      "Key": "91aba29ee7af47a4b5b57c19b323fa00",
+      "SimpleName": "IsekaiProtagonistSpecialPowerFeat.Name",
+      "ProcessTemplates": false,
+      "enGB": "Special Powers"
+    },
+    {
+      "Key": "8d9b5b0c9792468ea328d4fd97316c83",
+      "SimpleName": "IsekaiProtagonistTalentSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "You can select a rogue talent from a limited set of rogue talents, ignoring any prerequisites for these talents."
+    },
+    {
+      "Key": "8308fb09773c498ab788b9bdb3e08c2c",
+      "SimpleName": "IsekaiProtagonistTalentSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Rogue Talents"
+    },
+    {
+      "Key": "a21c182eafca4b5aa20427befecd1b1f",
+      "SimpleName": "IsekaiQuickFooted.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 15th level, you gain a competence bonus to your initiative checks equal to your Charisma modifier."
+    },
+    {
+      "Key": "972c9396d64e4fbe9d9a7419525824f2",
+      "SimpleName": "IsekaiQuickFooted.Name",
+      "ProcessTemplates": false,
+      "enGB": "Quick-Footed"
+    },
+    {
+      "Key": "7bcfd37a56ac44d7bbf919b057a693d5",
+      "SimpleName": "IsekaiSprigganHeritage.Description",
+      "ProcessTemplates": true,
+      "enGB": "Otherworldly entities who are reincarnated into the world of Golarion as a Spriggan have both extreme beauty and power. Their shape changing abilities allow them to easily defeat everyone who would underestimate their power.\nThe Isekai Spriggan gains a +1 racial bonus on concentration checks and on the DC of all spells they cast. They add Athletics, Trickery, Stealth, and Perception to the list of their class skills. They are also able to use the Size alteration ability to increase their size by two size categories and gain +10 Speed, +12 Strength, -2 Dexterity, +6 Constitution, and a -2 penalty to AC."
+    },
+    {
+      "Key": "50907055e08348c4b983df3e7614fcf8",
+      "SimpleName": "IsekaiSprigganHeritage.Name",
+      "ProcessTemplates": false,
+      "enGB": "Isekai Spriggan"
+    },
+    {
+      "Key": "03a7f8f262a446088e9cf616a8dbe44f",
+      "SimpleName": "IsekaiSuccubusHeritage.Description",
+      "ProcessTemplates": true,
+      "enGB": "Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power, and often have a voracious appetite for sensory pleasures and carnal delights.\nThe Isekai Succubus has a +2 racial bonus to Dexterity and Intelligence, a +4 racial bonus to Charisma, a -2 penalty to Strength, and a +2 racial bonus on Persuasion and Perception checks. They have DR 10/Cold Iron or Good, and have spell resistance equal to 10 + their character level. They have immunity to fire, electricity, and poisons as well as acid and cold resistance 20. They can also use the Charm spell once per day."
+    },
+    {
+      "Key": "3ba5874f125f44eab48423f90637e432",
+      "SimpleName": "IsekaiSuccubusHeritage.Name",
+      "ProcessTemplates": false,
+      "enGB": "Isekai Succubus"
+    },
+    {
+      "Key": "de5cf687e96f445296d1c910bbd31e06",
+      "SimpleName": "IsekaiVampireHeritage.Description",
+      "ProcessTemplates": true,
+      "enGB": "Otherworldly entities who are reincarnated into the world of Golarion as a Vampire have both extreme beauty and power. Incredibly beautiful but strikingly grim shades that straddle the line between humanity and vampirekind, they are often single-minded loners intent on a specific goal.\nThe Isekai Vampire has a +4 racial bonus to Dexterity and Charisma, a -2 penalty to Constitution, and a +2 racial bonus on Persuasion and Perception checks. They have DR 10/Magic and Silver, and have fast healing equal to their character level. They have immunity to poison, disease, mind-affecting and death effects as well as cold and electricity resistance 20."
+    },
+    {
+      "Key": "8dacd68fff564529b9ac55ba6642991b",
+      "SimpleName": "IsekaiVampireHeritage.Name",
+      "ProcessTemplates": false,
+      "enGB": "Isekai Vampire"
+    },
+    {
+      "Key": "b5487fd605ed4e03b6103492d21a7a2d",
+      "SimpleName": "IsekaiWaterBlastFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain the ability to use water blast and all its associated form infusions. Your water blast deals bludgeoning damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier."
+    },
+    {
+      "Key": "edd3c18d466b4fc1b136d80f977bd204",
+      "SimpleName": "IsekaiWaterBlastFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Water Avatar"
+    },
+    {
+      "Key": "e6e0e8b6cd054424b621d817ff12857e",
+      "SimpleName": "IsekaiWoodElfHeritage.Description",
+      "ProcessTemplates": true,
+      "enGB": "Otherworldly entities who are reincarnated into the world of Golarion as a Wood Elf have both extreme beauty and power. They are a nimble and natural reflection of the elven race.\nThe Isekai Wood Elf has a +4 racial bonus to Dexterity, a +2 racial bonus to Wisdom and Intelligence, and a -2 penalty to Constitution. They have spell resistance equal to 10 + their character level. They can also move faster other elves and have a +10 bonus to speed."
+    },
+    {
+      "Key": "e9c82a5ee78e427c8bdf699ade0c91ef",
+      "SimpleName": "IsekaiWoodElfHeritage.Name",
+      "ProcessTemplates": false,
+      "enGB": "Isekai Wood Elf"
+    },
+    {
+      "Key": "2f30581a6a3d418fbaae1ebfc8e56e32",
+      "SimpleName": "KillingIntentAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Enemies within 40 feet of you who fails a DC 50 Will saving throw become shaken, frightened, and cowering for 1 round."
+    },
+    {
+      "Key": "00f257f1998e4ccea6bf6b046ddbc7d3",
+      "SimpleName": "KillingIntentAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Killing Intent"
+    },
+    {
+      "Key": "11bf77e477b0480388acbabc5c6e9106",
+      "SimpleName": "KillingIntentFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Once per Combat, as a free action, enemies within 40 feet of you who fails a DC 50 Will saving throw become shaken, frightened, and cowering for 1 round."
+    },
+    {
+      "Key": "24da71f227234d3ea0f5febaddfdc9af",
+      "SimpleName": "KineticBlastProficiency.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain the proficiency with kinetic blasts."
+    },
+    {
+      "Key": "8ea7e8315c2847cc8b49c93ff7de79db",
+      "SimpleName": "KineticBlastProficiency.Name",
+      "ProcessTemplates": false,
+      "enGB": "Kinetic Blast Proficiency"
+    },
+    {
+      "Key": "ada12e6c392b4f019d67ad30d6156df0",
+      "SimpleName": "KineticPowerSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain the ability to use a kinetic blast."
+    },
+    {
+      "Key": "0dab3f18d5af4452964225bb2b385c7b",
+      "SimpleName": "KineticPowerSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Kinetic Power"
+    },
+    {
+      "Key": "3e4dfa9433de4a0b981a62242fa941b3",
+      "SimpleName": "LoremasterIsekai.Description",
+      "ProcessTemplates": true,
+      "enGB": "When a new loremaster level is gained, the character gains new spells per day as if he had also gained a level in a spellcasting class he belonged to before adding the prestige class. He does not, however, gain other benefits a character of that class would have gained, except for additional spells per day, spells known (if he is a spontaneous spellcaster), and an increased effective level of spellcasting. If a character had more than one spellcasting class before becoming a loremaster, he must decide to which class he adds the new level for purposes of determining the number of spells per day."
+    },
+    {
+      "Key": "64884524175442fa87cbd4ee1eb4f7f6",
+      "SimpleName": "LoremasterVillain.Description",
+      "ProcessTemplates": true,
+      "enGB": "When a new loremaster level is gained, the character gains new spells per day as if he had also gained a level in a spellcasting class he belonged to before adding the prestige class. He does not, however, gain other benefits a character of that class would have gained, except for additional spells per day, spells known (if he is a spontaneous spellcaster), and an increased effective level of spellcasting. If a character had more than one spellcasting class before becoming a loremaster, he must decide to which class he adds the new level for purposes of determining the number of spells per day."
+    },
+    {
+      "Key": "a9bf69e4ee2e4001a926d9360bad7881",
+      "SimpleName": "LoremasterVillain.Name",
+      "ProcessTemplates": false,
+      "enGB": "Isekai Villain"
+    },
+    {
+      "Key": "b3b5e30f6c7446a08536c6b1005e395e",
+      "SimpleName": "MagicalAmplification.Description",
+      "ProcessTemplates": true,
+      "enGB": "Any spells dealing damage now change their dice to d12, if it was not d12 or greater. If it already was d12 or greater, instead the spell deals one additional point of damage per dice rolled."
+    },
+    {
+      "Key": "ed3b196fa9e649948e729fb16e400b49",
+      "SimpleName": "MagicalAmplification.Name",
+      "ProcessTemplates": false,
+      "enGB": "Magical Amplification"
+    },
+    {
+      "Key": "f6fb8a66e6e841b19c8d734ab61cea7a",
+      "SimpleName": "MasterSelf.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to dazed, dazzled, sleep, confusion, charm, emotion, complusion, and mind-affecting effects."
+    },
+    {
+      "Key": "b64e2843ae2f4331b26d44329e9f83a2",
+      "SimpleName": "MasterSelf.Name",
+      "ProcessTemplates": false,
+      "enGB": "Master Self-Control"
+    },
+    {
+      "Key": "da7cd8aceb714906993c669228d70f5d",
+      "SimpleName": "MindAffectingImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to mind affecting effects."
+    },
+    {
+      "Key": "a8b99069ced347459405a8bbb3df3bcf",
+      "SimpleName": "MindAffectingImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Mind Affecting Immunity"
+    },
+    {
+      "Key": "83a2a4bcb50a47a195480d3a6d6098d8",
+      "SimpleName": "MindControlAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "You can make any creature fight on your side as if it was your ally. It will attack your opponents to the best of its ability.\n They will not resist."
+    },
+    {
+      "Key": "d895447d491343e38b887a6527c40041",
+      "SimpleName": "MindControlAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Mind Control"
+    },
+    {
+      "Key": "b2cb6e63cae14f1c906bf1457e2f0023",
+      "SimpleName": "MindControlBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This creature has been mind controlled."
+    },
+    {
+      "Key": "f3f685b1647445e7a24ff9df9b76a7cc",
+      "SimpleName": "MindControlBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Mind Controlled"
+    },
+    {
+      "Key": "f98c83b3e3124d89a0b7ff9ca1db7280",
+      "SimpleName": "MindControlFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You can make any creature fight on your side as if it was your ally. It will attack your opponents to the best of its ability.\n They will not resist."
+    },
+    {
+      "Key": "e75874b3a53a4e9f862acd7be70ea31f",
+      "SimpleName": "MindControlImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "This creature cannot be mind controlled again."
+    },
+    {
+      "Key": "bb21fed7803d403bac3d3861099efefd",
+      "SimpleName": "MindControlImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Mind Control Immunity"
+    },
+    {
+      "Key": "12ba29d6db3b4977843b5b779424b912",
+      "SimpleName": "MovementImpairingImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to movement impairing effects."
+    },
+    {
+      "Key": "508b62c2bf35463eb7ec089f1ca9eac8",
+      "SimpleName": "MovementImpairingImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Movement Impairing Immunity"
+    },
+    {
+      "Key": "30913c3121d4492c9bac36b628a2dc74",
+      "SimpleName": "MundaneAura.Description",
+      "ProcessTemplates": true,
+      "enGB": "You emit a small aura of mundanity, giving you immunity to Sneak attack damage and critical hits."
+    },
+    {
+      "Key": "b1e5199f5e2a4c7ca6e668e2d0942560",
+      "SimpleName": "MundaneAura.Name",
+      "ProcessTemplates": false,
+      "enGB": "Mundane Aura"
+    },
+    {
+      "Key": "4a82a9e8731e486781d1b7b097d222b8",
+      "SimpleName": "NascentApotheosis.Description",
+      "ProcessTemplates": true,
+      "enGB": "The God Emperor gains an inherent bonus to all attributes and spell penetration equal to 1/2 their character level and DR/— equal to their character level."
+    },
+    {
+      "Key": "bd7db7dd35e5421ca777ed4d7e9a073c",
+      "SimpleName": "NascentApotheosis.Name",
+      "ProcessTemplates": false,
+      "enGB": "Nascent Apotheosis"
+    },
+    {
+      "Key": "027e4e0215ea4d9bb861e927a9c520ad",
+      "SimpleName": "NauseatedImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to the nauseated condition."
+    },
+    {
+      "Key": "340b0a8ecfce48539818807470339312",
+      "SimpleName": "NauseatedImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Nauseated Immunity"
+    },
+    {
+      "Key": "5263ad2c0c624e4190f9fd9e061c8f21",
+      "SimpleName": "OmegaStrike.Description",
+      "ProcessTemplates": true,
+      "enGB": "Any attacks you make have their damage multiplier increased by 1 (×2 becomes ×3, for example)."
+    },
+    {
+      "Key": "1dd93e72b1e34039b1a6fdc5efe216de",
+      "SimpleName": "OmegaStrike.Name",
+      "ProcessTemplates": false,
+      "enGB": "Omega Strike"
+    },
+    {
+      "Key": "15b7bafb2ec34ab380c75ceb36f34788",
+      "SimpleName": "OtherworldlyStamina.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 15th Level, you become immune to fatigue and exhaustion."
+    },
+    {
+      "Key": "786d76d339874aa88c6b902bbd374f25",
+      "SimpleName": "OtherworldlyStamina.Name",
+      "ProcessTemplates": false,
+      "enGB": "Otherworldly Stamina"
+    },
+    {
+      "Key": "4a3d7269786b4afe95ca29c78341a36b",
+      "SimpleName": "OverpoweredAbilityMythicSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "You use your mythic powers to gain an additional Overpowered Ability."
+    },
+    {
+      "Key": "e5daa055cbdb4a78b2e84a2bbe22e3eb",
+      "SimpleName": "OverpoweredAbilityMythicSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Mythic Overpowered Ability"
+    },
+    {
+      "Key": "e842a39cc7294922a77393aa60f06df9",
+      "SimpleName": "OverpoweredAbilitySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 1st level, you get to select an Overpowered Ability."
+    },
+    {
+      "Key": "c0c1e89a32de4acba8ad2bea8b6e7d51",
+      "SimpleName": "OverpoweredAbilitySelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability"
+    },
+    {
+      "Key": "aec070b0ccea43e9bfb507f90b6057e6",
+      "SimpleName": "OverpoweredAbilitySelection2.Description",
+      "ProcessTemplates": true,
+      "enGB": "You get to select an additional Overpowered Ability."
+    },
+    {
+      "Key": "c4fd16dcfd5d4f7e85ebaac1b9809056",
+      "SimpleName": "OverpoweredAbilitySelection2.Name",
+      "ProcessTemplates": false,
+      "enGB": "Additional Overpowered Ability"
+    },
+    {
+      "Key": "1e97e1a8c03a4c32a899ff4f67409d67",
+      "SimpleName": "OverpoweredAbilitySelectionVillain.Description",
+      "ProcessTemplates": true,
+      "enGB": "Villains get to select an additional Overpowered Abilities."
+    },
+    {
+      "Key": "5199107b5e7f4021bf79fdb196c072aa",
+      "SimpleName": "OverpoweredAbilitySelectionVillain.Name",
+      "ProcessTemplates": false,
+      "enGB": "Villainous Overpowered Ability"
+    },
+    {
+      "Key": "d4e73d080ec042b38ed6f0ee6e5337a6",
+      "SimpleName": "ParalyzedImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to paralysis."
+    },
+    {
+      "Key": "bea3cfc4f11648bc875867d7d3cee3c8",
+      "SimpleName": "ParalyzedImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Paralyzed Immunity"
+    },
+    {
+      "Key": "7df58bb314784a6fa516f2e3b79d6a60",
+      "SimpleName": "PerfectRollAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "You always roll a 20 on all d20 rolls."
+    },
+    {
+      "Key": "c4c830ec55f143c0852649b99e0e8c5f",
+      "SimpleName": "PerfectRollBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This character always rolls 20 on all d20 rolls."
+    },
+    {
+      "Key": "887eb1e0f1c0494cbebc8686bdf61fbd",
+      "SimpleName": "PerfectRollBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Perfect Roll"
+    },
+    {
+      "Key": "8c8cc4e74802411bb445cba98e1c2261",
+      "SimpleName": "PerfectRollFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You always roll a 20 on all d20 rolls."
+    },
+    {
+      "Key": "dd5068f5c0ce45bbaadc49e4b94f3534",
+      "SimpleName": "PetrifiedImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to petrification."
+    },
+    {
+      "Key": "d52b3c47f6b14a709ebae16949f4b976",
+      "SimpleName": "PetrifiedImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Petrified Immunity"
+    },
+    {
+      "Key": "25f8bbce6d4241f09912222ff40c7a47",
+      "SimpleName": "PlotArmor.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain a luck bonus to AC and all saving throws equal to your character level."
+    },
+    {
+      "Key": "b255178a569a4006b2dae8c63fb8f8d4",
+      "SimpleName": "PoisonImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to poison."
+    },
+    {
+      "Key": "29833b6aa4644b8db2de4f2dba3f4d9b",
+      "SimpleName": "PoisonImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Poison Immunity"
+    },
+    {
+      "Key": "153f143bacc8457f8d6895d08a4758be",
+      "SimpleName": "RegenerationFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You regain 10 hit points per round and cannot die while regeneration is functioning. Regeneration is disabled for 1 round when you are hit with an acid or fire attack. "
+    },
+    {
+      "Key": "f9aab1213be141d791569692b8e355c1",
+      "SimpleName": "RegenerationFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Regeneration"
+    },
+    {
+      "Key": "5f8d717893324b579a02d3921923b2b2",
+      "SimpleName": "SecondFormBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Once per day, when your HP drops to 0, you are restored to full HP, ability damage, and ability drain. You also gain a +10 profane bonus to all attributes and your size also increases by one size category for 24 hours."
+    },
+    {
+      "Key": "b5434a6f28164733932d882d889821fe",
+      "SimpleName": "SecondFormBuffEffect.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain a +10 profane bonus to all attributes and your size increases by one size category for 24 hours."
+    },
+    {
+      "Key": "8982b873ddd44c83bbc4647159a7f6a7",
+      "SimpleName": "SecondFormBuffEffect.Name",
+      "ProcessTemplates": false,
+      "enGB": "Second Form"
+    },
+    {
+      "Key": "82864cf3d28248929c0b66cd88793fdd",
+      "SimpleName": "SecondFormBuffTrigger.Description",
+      "ProcessTemplates": true,
+      "enGB": ""
+    },
+    {
+      "Key": "788aa9f27d844ff8a92ebaa1cbfb0319",
+      "SimpleName": "SecondFormBuffTrigger.Name",
+      "ProcessTemplates": false,
+      "enGB": "Second Form Trigger"
+    },
+    {
+      "Key": "10051b3b386e43c7a41b80a032f2adac",
+      "SimpleName": "SecondFormFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 20th level, you become a boss. Once per day, when your HP drops to 0, you are restored to full HP, ability damage, and ability drain. You also gain a +10 profane bonus to all attributes and your size also increases by one size category for 24 hours."
+    },
+    {
+      "Key": "ee7a605d5acb42249e41ba603d6c3f40",
+      "SimpleName": "SecondReincarnation.Description",
+      "ProcessTemplates": true,
+      "enGB": "Once per day, when your HP drops to 0, you are restored to full HP, ability damage, and ability drain.\nYour attacks ignore damage reduction and your spells ignore spell resistance."
+    },
+    {
+      "Key": "7e6b29c392f148119073e098c61ae2b0",
+      "SimpleName": "SecondReincarnationBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Once per day, when your HP drops to 0, you are restored to full HP, ability damage, and ability drain.\nYour attacks ignore damage reduction and your spells ignore spell resistance."
+    },
+    {
+      "Key": "469a4397ba99477e82a63d27530e9df4",
+      "SimpleName": "SecondReincarnationBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Second Reincarnation"
+    },
+    {
+      "Key": "78460bf4034d46d68e356b64e7f832fd",
+      "SimpleName": "ShakenImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to shaken effects."
+    },
+    {
+      "Key": "c13839f11b9b4efcb5ba4c788af6489c",
+      "SimpleName": "ShakenImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Shaken Immunity"
+    },
+    {
+      "Key": "8c8c099e698642cd8c515350a65f3d92",
+      "SimpleName": "ShockWeaponAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Shock. They deal an additional 1d6 electricity damage."
+    },
+    {
+      "Key": "c47e421cf57b4097a75edfd9bb4f78d5",
+      "SimpleName": "ShockWeaponBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Shock. They deal an additional 1d6 electricity damage."
+    },
+    {
+      "Key": "609c5507b3a445a99ac9206bb3eb423b",
+      "SimpleName": "ShockWeaponBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Shock Weapon"
+    },
+    {
+      "Key": "131db84fbec041e4a1c299885ae1b603",
+      "SimpleName": "ShockWeaponFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Shock. They deal an additional 1d6 electricity damage."
+    },
+    {
+      "Key": "dd81575ef4f7460198bf1acc6f3f1d7d",
+      "SimpleName": "SickenedImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to the sickened condition."
+    },
+    {
+      "Key": "3e6d8246fb0e41eeb1c85922a1fba603",
+      "SimpleName": "SickenedImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Sickened Immunity"
+    },
+    {
+      "Key": "77e3a1f212934780ba89c8dec880284d",
+      "SimpleName": "SignatureAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain a bonus to spell DC and spell hit point damage equal to 1/2 your character level."
+    },
+    {
+      "Key": "20a7a5285d964ad48ab031da6fa4740b",
+      "SimpleName": "SignatureAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Signature Ability"
+    },
+    {
+      "Key": "c19cecf4ef5a450aa7671d186d1fe4b9",
+      "SimpleName": "SignatureAttack.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain a luck bonus to attack and damage rolls equal to 1/2 your character level."
+    },
+    {
+      "Key": "ebe3987e092c4982b57523a3c66a1085",
+      "SimpleName": "SignatureAttack.Name",
+      "ProcessTemplates": false,
+      "enGB": "Signature Attack"
+    },
+    {
+      "Key": "a97b5109be4742c5a7580eb5265d47d3",
+      "SimpleName": "SignatureMoveSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 6th level, you choose to have either a signature attack or a signature ability."
+    },
+    {
+      "Key": "11f10baaca454f918c7bdc3e014ad96a",
+      "SimpleName": "SignatureMoveSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Signature Move"
+    },
+    {
+      "Key": "406f11aeff114b8aa1a39f9a669153ac",
+      "SimpleName": "SiphoningAuraAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Enemies within 40 feet of the God Emperor take a –4 penalty on all attributes."
+    },
+    {
+      "Key": "68c2bb8866014e72b83df2b52d22208e",
+      "SimpleName": "SiphoningAuraAreaBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Enemies within 40 feet of the God Emperor take a –4 penalty on all attributes."
+    },
+    {
+      "Key": "e0b21c7967d24db390cf29b63ee2bbe7",
+      "SimpleName": "SiphoningAuraBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This creature has a –4 penalty on all attributes."
+    },
+    {
+      "Key": "3f7f1a268d314466abab841e0e194296",
+      "SimpleName": "SiphoningAuraBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Siphoning Aura"
+    },
+    {
+      "Key": "0cc6f33cea1b4cc6a3ef931f53099c27",
+      "SimpleName": "SiphoningAuraFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 12th level, enemies within 40 feet of the God Emperor take a –4 penalty on all attributes."
+    },
+    {
+      "Key": "21fe9ff271dd4f908869d5f8f6f1659f",
+      "SimpleName": "SizeAlterationAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "As a standard action, increase your size by two size categories and gain +10 Speed, +12 Strength, -2 Dexterity, +6 Constitution, and a -2 penalty to AC."
+    },
+    {
+      "Key": "b6e8b8342baf4f85a42ea17ca131bf84",
+      "SimpleName": "SizeAlterationBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "This creature's size is increased by two size categories and they gain +10 Speed, +12 Strength, -2 Dexterity, +6 Constitution, and a -2 penalty to AC."
+    },
+    {
+      "Key": "11727b365232472bb9d8e5a4ea76582f",
+      "SimpleName": "SizeAlterationBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Size Alteration"
+    },
+    {
+      "Key": "db51cc81024f423cae31ce685bec22a6",
+      "SimpleName": "SleepImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to sleep."
+    },
+    {
+      "Key": "618f692934d942dc949634e473b9c97a",
+      "SimpleName": "SleepImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Sleep Immunity"
+    },
+    {
+      "Key": "17f745fc98a94f19a3f54e76d89395b5",
+      "SimpleName": "SlowImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to slow."
+    },
+    {
+      "Key": "618566ef7fb74fd28f7e5a023e511858",
+      "SimpleName": "SlowImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Slow Immunity"
+    },
+    {
+      "Key": "a4c338dafb87495e89c70e0666b8e2a2",
+      "SimpleName": "SneakyMagic.Description",
+      "ProcessTemplates": true,
+      "enGB": "You can add your sneak attack damage to any spell that deals damage, if the targets are flat-footed. This additional damage only applies to spells that deal hit point damage, and the additional damage is of the same type as the spell. If the spell allows a saving throw to negate or halve the damage, it also negates or halves the sneak attack damage."
+    },
+    {
+      "Key": "4123cf6ad5d54a2fa2c3bfabf86fbbec",
+      "SimpleName": "SneakyMagic.Name",
+      "ProcessTemplates": false,
+      "enGB": "Sneaky Magic"
+    },
+    {
+      "Key": "67c035d2470c4b9fa0533b9037df6243",
+      "SimpleName": "SonicImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to Sonic."
+    },
+    {
+      "Key": "29b2640bce9f44e0866b66872e6c7bf5",
+      "SimpleName": "SonicImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Sonic Immunity"
+    },
+    {
+      "Key": "c8f410d90fa24afcae22f5c1301b2b80",
+      "SimpleName": "SpecialPowerMythicSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "You use your mythic powers to gain an additional special power."
+    },
+    {
+      "Key": "4929060b823d45b7a889e29e608f426a",
+      "SimpleName": "SpecialPowerMythicSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Mythic Special Power"
+    },
+    {
+      "Key": "1555409fb4de42e98a2b14d92c8a065c",
+      "SimpleName": "SpecialPowerSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "As you increase your level, you gain special powers that allow you to wreck your enemies more easily."
+    },
+    {
+      "Key": "5433c811dea9458492698f29d595bb72",
+      "SimpleName": "SpecialPowerSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Special Power"
+    },
+    {
+      "Key": "32689ec335c34648976b502a8e467009",
+      "SimpleName": "SpellMaster.Description",
+      "ProcessTemplates": true,
+      "enGB": "The DC of spells you cast increases by 4."
+    },
+    {
+      "Key": "03569432033c4443af7cad6e605684ca",
+      "SimpleName": "SpellMaster.Name",
+      "ProcessTemplates": false,
+      "enGB": "Spell Master"
+    },
+    {
+      "Key": "ab4dd03d47bf416e9a707285031c7927",
+      "SimpleName": "SpellNegationAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain spell resistance equal to 10 + twice your character level."
+    },
+    {
+      "Key": "a38a1a0314bb4c4f921c05e69abfcc59",
+      "SimpleName": "SpellNegationBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain spell resistance equal to 10 + twice your character level."
+    },
+    {
+      "Key": "dd0946b28d4c46ad856ff455ac0b76a0",
+      "SimpleName": "SpellNegationBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Spell Negation"
+    },
+    {
+      "Key": "404022b85d124ea78dea26755f5d5ee8",
+      "SimpleName": "SpellNegationFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "After extensive studying of spells, you gain spell resistance equal to 10 + twice your character level."
+    },
+    {
+      "Key": "55025b781e584028ba904fff3ae54ccd",
+      "SimpleName": "StaggeredImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to the staggered condition."
+    },
+    {
+      "Key": "3375d679e026406db9314b426aefb15f",
+      "SimpleName": "StaggeredImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Staggered Immunity"
+    },
+    {
+      "Key": "c7935131270844f7a7d7c0eba0a45405",
+      "SimpleName": "StartingWeaponBardiche.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron bardiche."
+    },
+    {
+      "Key": "4d52850aa57f4aeabcb615e0151b0cf9",
+      "SimpleName": "StartingWeaponBardiche.Name",
+      "ProcessTemplates": false,
+      "enGB": "Bardiche"
+    },
+    {
+      "Key": "fc41d8236dfe4e9cb22a420277792130",
+      "SimpleName": "StartingWeaponBastardSword.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron bastard sword."
+    },
+    {
+      "Key": "684e8f49dd184e89b0b4ff1d32bca68d",
+      "SimpleName": "StartingWeaponBastardSword.Name",
+      "ProcessTemplates": false,
+      "enGB": "Bastard Sword"
+    },
+    {
+      "Key": "63df163d014448b687dc0bc24863b96b",
+      "SimpleName": "StartingWeaponBattleaxe.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron battleaxe."
+    },
+    {
+      "Key": "084c3ccf0e8640e29c957d2657319991",
+      "SimpleName": "StartingWeaponBattleaxe.Name",
+      "ProcessTemplates": false,
+      "enGB": "Battleaxe"
+    },
+    {
+      "Key": "a9d6159ef0e748edaa8601b441bbd43a",
+      "SimpleName": "StartingWeaponClub.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a club."
+    },
+    {
+      "Key": "5d741c9bf2c34de59725c049c138d02b",
+      "SimpleName": "StartingWeaponClub.Name",
+      "ProcessTemplates": false,
+      "enGB": "Club"
+    },
+    {
+      "Key": "15685a7b8cad46949183aba4b3bb23bb",
+      "SimpleName": "StartingWeaponDagger.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron dagger."
+    },
+    {
+      "Key": "849cd97c706e467683953c26a8360cbd",
+      "SimpleName": "StartingWeaponDagger.Name",
+      "ProcessTemplates": false,
+      "enGB": "Dagger"
+    },
+    {
+      "Key": "f7e839721e844c17af4e715e239e3652",
+      "SimpleName": "StartingWeaponDart.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron dart."
+    },
+    {
+      "Key": "ff67c5c89eda4692b147354d182d6ddb",
+      "SimpleName": "StartingWeaponDart.Name",
+      "ProcessTemplates": false,
+      "enGB": "Dart"
+    },
+    {
+      "Key": "502087ff22eb4eb8b932516be4f5ddbe",
+      "SimpleName": "StartingWeaponDoubleAxe.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron double axe."
+    },
+    {
+      "Key": "c1765194e6914a0685219ff6736d4ec4",
+      "SimpleName": "StartingWeaponDoubleAxe.Name",
+      "ProcessTemplates": false,
+      "enGB": "Double Axe"
+    },
+    {
+      "Key": "d9f1b1a379b542349f2903f2c0c50389",
+      "SimpleName": "StartingWeaponDoubleSword.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron double sword."
+    },
+    {
+      "Key": "17fda6834fb9406084a9e021e9b22fc1",
+      "SimpleName": "StartingWeaponDoubleSword.Name",
+      "ProcessTemplates": false,
+      "enGB": "Double Sword"
+    },
+    {
+      "Key": "ccbb24eb3215467c81a36434a28de403",
+      "SimpleName": "StartingWeaponDuelingSword.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron dueling sword."
+    },
+    {
+      "Key": "751492142e784d26b859aba0930bb0cc",
+      "SimpleName": "StartingWeaponDuelingSword.Name",
+      "ProcessTemplates": false,
+      "enGB": "Dueling Sword"
+    },
+    {
+      "Key": "4c452b2397bc46e9b2fb8b15631ca6c2",
+      "SimpleName": "StartingWeaponDwarvenWaraxe.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron dwarven waraxe."
+    },
+    {
+      "Key": "7d019048e9ba42579225aec7d1b2ff12",
+      "SimpleName": "StartingWeaponDwarvenWaraxe.Name",
+      "ProcessTemplates": false,
+      "enGB": "Dwarven Waraxe"
+    },
+    {
+      "Key": "9cab430fa31748f6bda75ad61f56956f",
+      "SimpleName": "StartingWeaponEarthbreaker.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron earthbreaker."
+    },
+    {
+      "Key": "85b2e5089c354686814caa5b9ff5d093",
+      "SimpleName": "StartingWeaponEarthbreaker.Name",
+      "ProcessTemplates": false,
+      "enGB": "Earthbreaker"
+    },
+    {
+      "Key": "92961b40c1a1487f909021c43349b9d1",
+      "SimpleName": "StartingWeaponElvenCurvedBlade.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron elven curved blade."
+    },
+    {
+      "Key": "a1b2869e1f3d4e18b2225781b69e0e63",
+      "SimpleName": "StartingWeaponElvenCurvedBlade.Name",
+      "ProcessTemplates": false,
+      "enGB": "Elven Curved Blade"
+    },
+    {
+      "Key": "31d227db9e2946f696155b5c74480b3d",
+      "SimpleName": "StartingWeaponEstoc.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron estoc."
+    },
+    {
+      "Key": "203d72b545b8463b9eee8cddba08f8c6",
+      "SimpleName": "StartingWeaponEstoc.Name",
+      "ProcessTemplates": false,
+      "enGB": "Estoc"
+    },
+    {
+      "Key": "82ee16b66f9f49d7aaccdce0a5b09062",
+      "SimpleName": "StartingWeaponFalcata.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron falcata."
+    },
+    {
+      "Key": "f88afb051bf14c12ab1bbb16a8fc5f4d",
+      "SimpleName": "StartingWeaponFalcata.Name",
+      "ProcessTemplates": false,
+      "enGB": "Falcata"
+    },
+    {
+      "Key": "79cb9d3024f04634a297e1c272fb8a37",
+      "SimpleName": "StartingWeaponFalchion.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron falchion."
+    },
+    {
+      "Key": "f1cda009190c4fd1b69dbbcfd618df36",
+      "SimpleName": "StartingWeaponFalchion.Name",
+      "ProcessTemplates": false,
+      "enGB": "Falchion"
+    },
+    {
+      "Key": "162dc0cf5d054633b6e39990f21e103e",
+      "SimpleName": "StartingWeaponFauchard.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron fauchard."
+    },
+    {
+      "Key": "80d15e852ed948c88bdb7dce4eb87d51",
+      "SimpleName": "StartingWeaponFauchard.Name",
+      "ProcessTemplates": false,
+      "enGB": "Fauchard"
+    },
+    {
+      "Key": "44c72de0c43743469141b56ca74eaf1d",
+      "SimpleName": "StartingWeaponFlail.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron flail."
+    },
+    {
+      "Key": "14c2d4f284e049be9f83abb66b29d61b",
+      "SimpleName": "StartingWeaponFlail.Name",
+      "ProcessTemplates": false,
+      "enGB": "Flail"
+    },
+    {
+      "Key": "451af9026cbf4a3d94cb332796d34b39",
+      "SimpleName": "StartingWeaponGlaive.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron glaive."
+    },
+    {
+      "Key": "250b0168b3ed4d42b7000c68c9aa634b",
+      "SimpleName": "StartingWeaponGlaive.Name",
+      "ProcessTemplates": false,
+      "enGB": "Glaive"
+    },
+    {
+      "Key": "0e1a46c84a5a4e4891fa7f962b23137b",
+      "SimpleName": "StartingWeaponGreataxe.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron greataxe."
+    },
+    {
+      "Key": "306942c0f5e94116ba5a4adae4993da7",
+      "SimpleName": "StartingWeaponGreataxe.Name",
+      "ProcessTemplates": false,
+      "enGB": "Greataxe"
+    },
+    {
+      "Key": "06825071366b47fb98bb2fa2e9756d30",
+      "SimpleName": "StartingWeaponGreatclub.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a greatclub."
+    },
+    {
+      "Key": "192aa248552440a0ba7da6af1c356919",
+      "SimpleName": "StartingWeaponGreatclub.Name",
+      "ProcessTemplates": false,
+      "enGB": "Greatclub"
+    },
+    {
+      "Key": "72c239b28c2d4623b98eacc4cfdf96e1",
+      "SimpleName": "StartingWeaponGreatsword.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron greatsword."
+    },
+    {
+      "Key": "e640db6c24244562b895b1b0932718f6",
+      "SimpleName": "StartingWeaponGreatsword.Name",
+      "ProcessTemplates": false,
+      "enGB": "Greatsword"
+    },
+    {
+      "Key": "1c72c22224714d0c8c8224dacf889263",
+      "SimpleName": "StartingWeaponHandaxe.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron handaxe."
+    },
+    {
+      "Key": "a63f61334e644528a33b027d3e3e764b",
+      "SimpleName": "StartingWeaponHandaxe.Name",
+      "ProcessTemplates": false,
+      "enGB": "Handaxe"
+    },
+    {
+      "Key": "cb9b032edcd040f887ee8f020fff9074",
+      "SimpleName": "StartingWeaponHeavyCrossbow.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a heavy crossbow."
+    },
+    {
+      "Key": "fb2a26b856b0409a84b2971851247221",
+      "SimpleName": "StartingWeaponHeavyCrossbow.Name",
+      "ProcessTemplates": false,
+      "enGB": "Heavy Crossbow"
+    },
+    {
+      "Key": "0c76a0defe67436eb8c27310e5a21df0",
+      "SimpleName": "StartingWeaponHeavyFlail.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron heavy flail."
+    },
+    {
+      "Key": "4e32f6b4e4f14009b5f02243a52e47b6",
+      "SimpleName": "StartingWeaponHeavyFlail.Name",
+      "ProcessTemplates": false,
+      "enGB": "Heavy Flail"
+    },
+    {
+      "Key": "470a8c24635249dc9125a6830763de32",
+      "SimpleName": "StartingWeaponHeavyMace.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron heavy mace."
+    },
+    {
+      "Key": "9cca88f3a540409ba72266e6e09f0dc5",
+      "SimpleName": "StartingWeaponHeavyMace.Name",
+      "ProcessTemplates": false,
+      "enGB": "Heavy Mace"
+    },
+    {
+      "Key": "5592e5a51a8e439a97fcd187affb9876",
+      "SimpleName": "StartingWeaponHeavyPick.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron heavy pick."
+    },
+    {
+      "Key": "dfee2af5a652419a80fcd087276af29b",
+      "SimpleName": "StartingWeaponHeavyPick.Name",
+      "ProcessTemplates": false,
+      "enGB": "Heavy Pick"
+    },
+    {
+      "Key": "1191fd766eae4502b7e51e9fb5261d03",
+      "SimpleName": "StartingWeaponHookedHammer.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron hooked hammer."
+    },
+    {
+      "Key": "8cc706bb16734fed9800000c79a9d10c",
+      "SimpleName": "StartingWeaponHookedHammer.Name",
+      "ProcessTemplates": false,
+      "enGB": "Hooked Hammer"
+    },
+    {
+      "Key": "4986d37dbaca43b488e3fb76e433cd7c",
+      "SimpleName": "StartingWeaponJavelin.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron javelin."
+    },
+    {
+      "Key": "1d66333145734fe78cfd762dc520519c",
+      "SimpleName": "StartingWeaponJavelin.Name",
+      "ProcessTemplates": false,
+      "enGB": "Javelin"
+    },
+    {
+      "Key": "670afc3761f24ea2a91502f9f40c3f80",
+      "SimpleName": "StartingWeaponKama.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron kama."
+    },
+    {
+      "Key": "c94c3772d1ca4d3d8768cf7b44966d8c",
+      "SimpleName": "StartingWeaponKama.Name",
+      "ProcessTemplates": false,
+      "enGB": "Kama"
+    },
+    {
+      "Key": "67efd950c7ad46288d79539a280ed448",
+      "SimpleName": "StartingWeaponKukri.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron kukri."
+    },
+    {
+      "Key": "5c8c3ea108194368875789df8f02e53b",
+      "SimpleName": "StartingWeaponKukri.Name",
+      "ProcessTemplates": false,
+      "enGB": "Kukri"
+    },
+    {
+      "Key": "bc26ca6c8ca146ba895d20b69fc43afb",
+      "SimpleName": "StartingWeaponLightCrossbow.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a light crossbow."
+    },
+    {
+      "Key": "c048194b7f2a45abbaf2e8ba53cea0df",
+      "SimpleName": "StartingWeaponLightCrossbow.Name",
+      "ProcessTemplates": false,
+      "enGB": "Light Crossbow"
+    },
+    {
+      "Key": "6882f53a556948ea87cb0cdd5361fb0e",
+      "SimpleName": "StartingWeaponLightHammer.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron light hammer."
+    },
+    {
+      "Key": "4b1a89e36c1d4af78f613784e72bb165",
+      "SimpleName": "StartingWeaponLightHammer.Name",
+      "ProcessTemplates": false,
+      "enGB": "Light Hammer"
+    },
+    {
+      "Key": "6340b2d57b524540b0fcf3b0f6f9acc8",
+      "SimpleName": "StartingWeaponLightMace.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron light mace."
+    },
+    {
+      "Key": "c5b00b938e984f8bbf73c8010f89f3cd",
+      "SimpleName": "StartingWeaponLightMace.Name",
+      "ProcessTemplates": false,
+      "enGB": "Light Mace"
+    },
+    {
+      "Key": "eac89e6177264fe09e0d0d99b6fca2c8",
+      "SimpleName": "StartingWeaponLightPick.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron light pick."
+    },
+    {
+      "Key": "9355278370f74c1dbd2688a123901eac",
+      "SimpleName": "StartingWeaponLightPick.Name",
+      "ProcessTemplates": false,
+      "enGB": "Light Pick"
+    },
+    {
+      "Key": "7cba7494e323424592039af501470638",
+      "SimpleName": "StartingWeaponLongbow.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a longbow."
+    },
+    {
+      "Key": "4588e4c17a0b4ca6855b1c13b1c7a52d",
+      "SimpleName": "StartingWeaponLongbow.Name",
+      "ProcessTemplates": false,
+      "enGB": "Longbow"
+    },
+    {
+      "Key": "79a61ebc0ce54fe7944ecdfdbd6e9d20",
+      "SimpleName": "StartingWeaponLongspear.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron longspear."
+    },
+    {
+      "Key": "8062e562c6f14e94bdd6a39ce3107352",
+      "SimpleName": "StartingWeaponLongspear.Name",
+      "ProcessTemplates": false,
+      "enGB": "Longspear"
+    },
+    {
+      "Key": "5d08b2f91e844e4e9d0bf315d46ff600",
+      "SimpleName": "StartingWeaponLongsword.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron longsword."
+    },
+    {
+      "Key": "2f139ecc32ed4215bdd6e93e7edab816",
+      "SimpleName": "StartingWeaponLongsword.Name",
+      "ProcessTemplates": false,
+      "enGB": "Longsword"
+    },
+    {
+      "Key": "22279a7ba42c4ca7adda8d2b40be7763",
+      "SimpleName": "StartingWeaponNunchaku.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron nunchaku."
+    },
+    {
+      "Key": "2175b933128d4ffb9f39d845f239ccc1",
+      "SimpleName": "StartingWeaponNunchaku.Name",
+      "ProcessTemplates": false,
+      "enGB": "Nunchaku"
+    },
+    {
+      "Key": "6dffed98773448b8a23739791a926831",
+      "SimpleName": "StartingWeaponPunchingDagger.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron punching dagger."
+    },
+    {
+      "Key": "e3d22202a5604feb8c9e80c5c7b4aee8",
+      "SimpleName": "StartingWeaponPunchingDagger.Name",
+      "ProcessTemplates": false,
+      "enGB": "Punching Dagger"
+    },
+    {
+      "Key": "6f0ab52918324e1e80343923883771c3",
+      "SimpleName": "StartingWeaponQuarterstaff.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a quarterstaff."
+    },
+    {
+      "Key": "d58c1370f7f4489fa7a413445205762f",
+      "SimpleName": "StartingWeaponQuarterstaff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Quarterstaff"
+    },
+    {
+      "Key": "580943ce66254117bd47dd99d3e62284",
+      "SimpleName": "StartingWeaponRapier.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron rapier."
+    },
+    {
+      "Key": "912aba0fefda4e9f9a3f4d5c7ee7e4e4",
+      "SimpleName": "StartingWeaponRapier.Name",
+      "ProcessTemplates": false,
+      "enGB": "Rapier"
+    },
+    {
+      "Key": "b4ba2307b9e94bc49540bc3c95540e63",
+      "SimpleName": "StartingWeaponSai.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron sai."
+    },
+    {
+      "Key": "d77d607dd9c648d5a0726fa5f2258f5d",
+      "SimpleName": "StartingWeaponSai.Name",
+      "ProcessTemplates": false,
+      "enGB": "Sai"
+    },
+    {
+      "Key": "2eb3bedec6304b96ad1713c93f137ddc",
+      "SimpleName": "StartingWeaponScimitar.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron scimitar."
+    },
+    {
+      "Key": "ac05dfee43c945c7b386a0ddb5a24bf2",
+      "SimpleName": "StartingWeaponScimitar.Name",
+      "ProcessTemplates": false,
+      "enGB": "Scimitar"
+    },
+    {
+      "Key": "b4227c57e29d44cb99aaf4080e1449a9",
+      "SimpleName": "StartingWeaponScythe.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron scythe."
+    },
+    {
+      "Key": "417be8d8a58249319ea3564a3d1d2827",
+      "SimpleName": "StartingWeaponScythe.Name",
+      "ProcessTemplates": false,
+      "enGB": "Scythe"
+    },
+    {
+      "Key": "7859cafaaf8d4d1bb79925db21028f1a",
+      "SimpleName": "StartingWeaponSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 1st level, you get to select a starting weapon. The weapon can be found in the Kenarbes festival chest."
+    },
+    {
+      "Key": "7bdc906b269a41389e8d233ed1335827",
+      "SimpleName": "StartingWeaponSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Starting Weapon"
+    },
+    {
+      "Key": "10d938bb672e4da9868c300da694d2d4",
+      "SimpleName": "StartingWeaponShortbow.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a shortbow."
+    },
+    {
+      "Key": "594375bf06444dcfadbcc80937178123",
+      "SimpleName": "StartingWeaponShortbow.Name",
+      "ProcessTemplates": false,
+      "enGB": "Shortbow"
+    },
+    {
+      "Key": "f1a1c19ee5d3487a81bebde88eca2e9f",
+      "SimpleName": "StartingWeaponShortspear.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron shortspear."
+    },
+    {
+      "Key": "13b4cb6f584544c2902f8caad8ea97c5",
+      "SimpleName": "StartingWeaponShortspear.Name",
+      "ProcessTemplates": false,
+      "enGB": "Shortspear"
+    },
+    {
+      "Key": "a8a408d1cfd84d34962ffecce52eacb9",
+      "SimpleName": "StartingWeaponShortsword.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron shortsword."
+    },
+    {
+      "Key": "7aa9a9001c474f6bb0b548d2efe08ff6",
+      "SimpleName": "StartingWeaponShortsword.Name",
+      "ProcessTemplates": false,
+      "enGB": "Shortsword"
+    },
+    {
+      "Key": "13dc0e734f3248d09de2925b8a46e4bf",
+      "SimpleName": "StartingWeaponSickle.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron sickle."
+    },
+    {
+      "Key": "de3d1c6011544b1296ec8ca0572aa509",
+      "SimpleName": "StartingWeaponSickle.Name",
+      "ProcessTemplates": false,
+      "enGB": "Sickle"
+    },
+    {
+      "Key": "864caf45a4ca452aa97d08ec3dd10a34",
+      "SimpleName": "StartingWeaponSpear.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron spear."
+    },
+    {
+      "Key": "01fd9c46fcf3452f8b4c5d399fd1799f",
+      "SimpleName": "StartingWeaponSpear.Name",
+      "ProcessTemplates": false,
+      "enGB": "Spear"
+    },
+    {
+      "Key": "84848a7c08f345bd8eab2f7f176b3fb8",
+      "SimpleName": "StartingWeaponStarknife.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron starknife."
+    },
+    {
+      "Key": "c66b9d56d3d44652ad7db6075d442624",
+      "SimpleName": "StartingWeaponStarknife.Name",
+      "ProcessTemplates": false,
+      "enGB": "Starknife"
+    },
+    {
+      "Key": "c88f5c3ac11c4a81aeccd2f799ac0057",
+      "SimpleName": "StartingWeaponThrowingAxe.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron throwing axe."
+    },
+    {
+      "Key": "33c3f398d1c948d5a614e283a98e6cd9",
+      "SimpleName": "StartingWeaponThrowingAxe.Name",
+      "ProcessTemplates": false,
+      "enGB": "Throwing Axe"
+    },
+    {
+      "Key": "daa37c6cabea4a4eb01b8c00ed1e6105",
+      "SimpleName": "StartingWeaponTongi.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron tongi."
+    },
+    {
+      "Key": "b3b7882bb67849af8736e5b990166b7c",
+      "SimpleName": "StartingWeaponTongi.Name",
+      "ProcessTemplates": false,
+      "enGB": "Tongi"
+    },
+    {
+      "Key": "3889ddc6bf3f46229310a9814cdc8cbd",
+      "SimpleName": "StartingWeaponTrident.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron trident."
+    },
+    {
+      "Key": "cc1253bb59ea4dbd819e9644553b42d5",
+      "SimpleName": "StartingWeaponTrident.Name",
+      "ProcessTemplates": false,
+      "enGB": "Trident"
+    },
+    {
+      "Key": "92b407c54f3f4dda94bad681261a6cdc",
+      "SimpleName": "StartingWeaponUrgrosh.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron urgrosh."
+    },
+    {
+      "Key": "deeb3de15ef84c37b24e9c54b712c06f",
+      "SimpleName": "StartingWeaponUrgrosh.Name",
+      "ProcessTemplates": false,
+      "enGB": "Urgrosh"
+    },
+    {
+      "Key": "291e1ee3bb4b4c2f822d55e0274f3049",
+      "SimpleName": "StartingWeaponWarhammer.Description",
+      "ProcessTemplates": true,
+      "enGB": "You start with a cold iron warhammer."
+    },
+    {
+      "Key": "beb4edd9e4904393b608ed8c6ca91994",
+      "SimpleName": "StartingWeaponWarhammer.Name",
+      "ProcessTemplates": false,
+      "enGB": "Warhammer"
+    },
+    {
+      "Key": "cbd7c4fb99ef4f868b2e5cd4f19ad154",
+      "SimpleName": "StunImmunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to stun effects."
+    },
+    {
+      "Key": "11e5176db73a44129ec460901c240903",
+      "SimpleName": "StunImmunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Stun Immunity"
+    },
+    {
+      "Key": "331d0ea6b512428e8c50411796d4118a",
+      "SimpleName": "SuccubusCharmAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "You can make any creature fight on your side as if it was your ally. It will attack your opponents to the best of its ability. However this creature will try to throw off the domination effect, making a Will save each round."
+    },
+    {
+      "Key": "d1e1a6f8338b430f94d3ec1a1772b30f",
+      "SimpleName": "SuccubusCharmAbility.Duration",
+      "ProcessTemplates": true,
+      "enGB": "1 minute/level"
+    },
+    {
+      "Key": "8fd04099c6d24893bdf9a06fd9a1d1ec",
+      "SimpleName": "SuccubusCharmAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Succubus Charm"
+    },
+    {
+      "Key": "8b495b9d99ae4b5b98d49c461895557e",
+      "SimpleName": "SuccubusCharmAbility.SavingThrow",
+      "ProcessTemplates": true,
+      "enGB": "Will negates"
+    },
+    {
+      "Key": "f5e79d0ef79e46b881f4b65f63bd5a65",
+      "SimpleName": "SummonBaphomet.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell summons Demon Lord Baphomet. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability."
+    },
+    {
+      "Key": "c753e701c371483bacbe2222716c8774",
+      "SimpleName": "SummonBaphomet.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Summon Calamity (Baphomet)"
+    },
+    {
+      "Key": "535d126bf45343f29c4ec2b109f4e6b0",
+      "SimpleName": "SummonBeastAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell summons a Hydra, an Owlbear, a Roc, or a Minotaur. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability."
+    },
+    {
+      "Key": "a81519fab6ec429bb77a398a995d8263",
+      "SimpleName": "SummonBeastAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Summon Beast"
+    },
+    {
+      "Key": "874fe40f012245a4ab6508664a00b568",
+      "SimpleName": "SummonBeastFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "As a full action, you summon a Hydra, an Owlbear, a Roc, or a Minotaur."
+    },
+    {
+      "Key": "84f118adf4c34e7b90688cebc6bfe463",
+      "SimpleName": "SummonCalamityAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell summons a Devastator, Playful Darkness, Baphomet, Deskari, Nocticula, or Mephistopheles. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability."
+    },
+    {
+      "Key": "e69ced43ebad4221a3daf6ceb43a8e98",
+      "SimpleName": "SummonCalamityAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Summon Calamity"
+    },
+    {
+      "Key": "35277cf4958b4e6a816d2a3e6fece33b",
+      "SimpleName": "SummonCalamityFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "As a full action, you summon a powerful being to bring calamity. You can summon one of the following: Devastator, Playful Darkness, Baphomet, Deskari, Nocticula, or Mephistopheles."
+    },
+    {
+      "Key": "3a923938aded4e588a6bad5aa9a25251",
+      "SimpleName": "SummonDemonLordDeskari.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell summons Demon Lord Deskari. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability."
+    },
+    {
+      "Key": "952d78d24fb74013b17505f725270334",
+      "SimpleName": "SummonDemonLordDeskari.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Summon Calamity (Deskari)"
+    },
+    {
+      "Key": "636bdbae94cc419bbf544371ed68c5bf",
+      "SimpleName": "SummonDemonMephistopheles.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell summons Archdevil Mephistopheles. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability."
+    },
+    {
+      "Key": "48301f7c001243a7af4e1f4d8138474f",
+      "SimpleName": "SummonDemonMephistopheles.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Summon Calamity (Mephistopheles)"
+    },
+    {
+      "Key": "bd2f5ce69cfa429c8b25c5d9faef9000",
+      "SimpleName": "SummonDemonNocticula.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell summons Demon Lord Nocticula. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability."
+    },
+    {
+      "Key": "a5b7ad97b1a44c6fb19a9bc2350c98aa",
+      "SimpleName": "SummonDemonNocticula.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Summon Calamity (Nocticula)"
+    },
+    {
+      "Key": "55adcceec9c64f15bc2ec16d46c611a5",
+      "SimpleName": "SummonDevastator.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell summons a Devastator. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability."
+    },
+    {
+      "Key": "c595e78798c5424a823e96381953e959",
+      "SimpleName": "SummonDevastator.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Summon Calamity (Devastator)"
+    },
+    {
+      "Key": "0087a19968314a24b6a1a00fdfb7d6a8",
+      "SimpleName": "SummonHaremAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell summons a Succubus, Nymph, Astral Deva, and an Erinyes. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability."
+    },
+    {
+      "Key": "0b555ad8d0054487a0138df119c05a1b",
+      "SimpleName": "SummonHaremAbility.Duration",
+      "ProcessTemplates": true,
+      "enGB": "1 round/level"
+    },
+    {
+      "Key": "76bccc96183a455496b5600aef23c11c",
+      "SimpleName": "SummonHaremAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Summon Harem"
+    },
+    {
+      "Key": "762ebe28a8c544598d8520219f761cfe",
+      "SimpleName": "SummonHaremFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "As a full action, you summon a Succubus, a Nymph, an Astral Deva, and an Erinyes to aid you in battle."
+    },
+    {
+      "Key": "a3464c805dfb48c4a66aaf1e1a3d7c43",
+      "SimpleName": "SummonHydra.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell summons a Hydra. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability."
+    },
+    {
+      "Key": "99473436efcb449095327f44b8a15e27",
+      "SimpleName": "SummonHydra.Name",
+      "ProcessTemplates": false,
+      "enGB": "Summon Beast (Hydra)"
+    },
+    {
+      "Key": "f954969978f349a3bde4cc3772d79f7d",
+      "SimpleName": "SummonMinotaur.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell summons a Minotaur. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability."
+    },
+    {
+      "Key": "4f5ac960c2754db1943a6ab84aa891b4",
+      "SimpleName": "SummonMinotaur.Name",
+      "ProcessTemplates": false,
+      "enGB": "Summon Beast (Minotaur)"
+    },
+    {
+      "Key": "0c7b2646d7024c068a8ab0244a573d2a",
+      "SimpleName": "SummonOwlbear.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell summons an Owlbear. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability."
+    },
+    {
+      "Key": "d80d9743196e4607a86a45dd9d68f1cc",
+      "SimpleName": "SummonOwlbear.Name",
+      "ProcessTemplates": false,
+      "enGB": "Summon Beast (Owlbear)"
+    },
+    {
+      "Key": "803d6216126c429081ae1cf7c8e27a06",
+      "SimpleName": "SummonPlayfulDarkness.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell summons Playful Darkness. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability."
+    },
+    {
+      "Key": "079bf1ce90e44d6295f30fdabceb34fd",
+      "SimpleName": "SummonPlayfulDarkness.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Summon Calamity (Playful Darkness)"
+    },
+    {
+      "Key": "cb236f2352c74e05a415df998df18c94",
+      "SimpleName": "SummonRoc.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell summons a Roc. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability."
+    },
+    {
+      "Key": "8fc0569752384aafa5a130408bd887f6",
+      "SimpleName": "SummonRoc.Name",
+      "ProcessTemplates": false,
+      "enGB": "Summon Beast (Roc)"
+    },
+    {
+      "Key": "e5910cb4425a4b4883a2744a3856bad4",
+      "SimpleName": "SuperBuffAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "You and your allies around you gain the following effects for 24 hours: resist energy, protection from energy, protection from arrows, haste, mage armor, shield, shield of faith, veil of heaven, veil of positive energy, blur, bull's strength, cat's grace, bear's endurance, fox's cunning, owl's wisdom, eagle's splendor, mirror image, false life, barkskin, aid, protection from evil, bestow grace, aura of greater courage, displacement, magical vestiment, delay poison, invisibility greater, stone skin, death ward, freedom of movement, false life greater, burst of glory, spell resistance, eagle soul, legendary proportions, frightful aspect, seamantle, foresight, unbreakable heart, remove fear, divine favor, magic fang, align weapon good, crusaders edge, magic weapon greater, divine power, true seeing, shield of law, angelic aspect greater, winds of vengeance, hurricane bow, sense vitals, heroism greater, echolocation, life bubble, protection from spells, mind blank, and heroic invocation."
+    },
+    {
+      "Key": "2695cdeffcc248fc9617b1d09250e8e5",
+      "SimpleName": "SuperBuffAbility.Duration",
+      "ProcessTemplates": true,
+      "enGB": "24 hours"
+    },
+    {
+      "Key": "14b5b043b082470ab35c6d6fe9519720",
+      "SimpleName": "SuperBuffAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Super Buff"
+    },
+    {
+      "Key": "a95141b6eae640ddb7c77570daccd98c",
+      "SimpleName": "SuperBuffFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You are able to buff you and your allies with the following effects for 24 hours: resist energy, protection from energy, protection from arrows, haste, mage armor, shield, shield of faith, veil of heaven, veil of positive energy, blur, bull's strength, cat's grace, bear's endurance, fox's cunning, owl's wisdom, eagle's splendor, mirror image, false life, barkskin, aid, protection from evil, bestow grace, aura of greater courage, displacement, magical vestiment, delay poison, invisibility greater, stone skin, death ward, freedom of movement, false life greater, burst of glory, spell resistance, eagle soul, legendary proportions, frightful aspect, seamantle, foresight, unbreakable heart, remove fear, divine favor, magic fang, align weapon good, crusaders edge, magic weapon greater, divine power, true seeing, shield of law, angelic aspect greater, winds of vengeance, hurricane bow, sense vitals, heroism greater, echolocation, life bubble, protection from spells, mind blank, and heroic invocation."
+    },
+    {
+      "Key": "c0d75ccda1a84cd5963c666a7bc85fd2",
+      "SimpleName": "SupersonicCombat.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Edge Lord uses their Dexterity modifier for their melee attack and damage bonus instead of Strength. In addition, they may use their Dexterity in place of their Strength for CMB and to qualify for any feat for which it is a prerequisite."
+    },
+    {
+      "Key": "2627be124e164a5b8cdf41e43c27ab0a",
+      "SimpleName": "SupersonicCombat.Name",
+      "ProcessTemplates": false,
+      "enGB": "Supersonic Combat"
+    },
+    {
+      "Key": "4a1b0bf6d38a4131b70224bda4f243f3",
+      "SimpleName": "SupremeBeing.Description",
+      "ProcessTemplates": true,
+      "enGB": "All your attributes have a base value of 30."
+    },
+    {
+      "Key": "6cef12f582354744bbb9da6a2d495e12",
+      "SimpleName": "SupremeBeing.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Supreme Being"
+    },
+    {
+      "Key": "cb55c338784244468d00adff68c118ff",
+      "SimpleName": "Tenacious.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain immunity to stunned, staggered, slowed, entangled, petrified, paralysis, and movement impairing effects."
+    },
+    {
+      "Key": "d74b06cead6f4d48acd0afd12c8abfb9",
+      "SimpleName": "Tenacious.Name",
+      "ProcessTemplates": false,
+      "enGB": "Tenacious"
+    },
+    {
+      "Key": "4765e3cf092c47d7988bc1d4f8b83c40",
+      "SimpleName": "ThunderingWeaponAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Thundering. They deal an additional 1d6 sonic damage."
+    },
+    {
+      "Key": "3d577144d6e74fd9b3c2c382f1714819",
+      "SimpleName": "ThunderingWeaponBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Thundering. They deal an additional 1d6 sonic damage."
+    },
+    {
+      "Key": "31d722bc27c7452b9fc6d389deb53296",
+      "SimpleName": "ThunderingWeaponBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Thundering Weapon"
+    },
+    {
+      "Key": "f4a701b0084640479b96b777c4a629cc",
+      "SimpleName": "ThunderingWeaponFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your attacks have Thundering. They deal an additional 1d6 sonic damage."
+    },
+    {
+      "Key": "ec076eceef8246c3902d67a648cff3b0",
+      "SimpleName": "TrainingMontage.Description",
+      "ProcessTemplates": true,
+      "enGB": "After extensive training, you gain a +8 bonus to all attributes."
+    },
+    {
+      "Key": "d385549a67ae4053ad022990cee49a16",
+      "SimpleName": "TrainingMontage.Name",
+      "ProcessTemplates": false,
+      "enGB": "Training Montage"
+    },
+    {
+      "Key": "2706ac821247400eb97d00bfd3d33b99",
+      "SimpleName": "TruckKunFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Truck-kun is a menace of the streets, a killer that prowls the road before it smashes their victim so hard they get transported into another world. Many fear death brought by Truck-kun, but there are some who believe that their reincarnation will bring them into a harem paradise. Beware of the streets, and look at both sides of the road, or else you might be its latest victim.\nDomains: Artifice, Destruction, Repose, Travel\nFavoured Weapon: Heavy Shield Bash"
+    },
+    {
+      "Key": "3a54f24cab9e4913aa4e650b32132d1d",
+      "SimpleName": "TruckKunFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Truck-kun"
+    },
+    {
+      "Key": "3e326c8bd75c432bb4d6962c60c86cba",
+      "SimpleName": "TrueMarkAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "The hero expends two uses of her true smite ability to grant the ability to true smite to all allies for 1 minute, using her bonuses. As a swift action, the paladin chooses one target within sight to smite. The hero's allies add her Charisma bonus (if any) to their attack rolls and add her character level to all damage rolls made against the target of her smite. True smite attacks automatically bypass any DR the creature might possess and automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero's allies gain a deflection bonus equal to her Charisma bonus (if any) to their AC against attacks made by the target of this smite."
+    },
+    {
+      "Key": "412ec39fe0d443b29a1589a6a71a6663",
+      "SimpleName": "TrueMarkAbility.Duration",
+      "ProcessTemplates": true,
+      "enGB": "Until the target of the Mark is dead"
+    },
+    {
+      "Key": "69c845f13545496c9a36df3ddd95c12c",
+      "SimpleName": "TrueMarkBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "The creature is easier to hit and takes more damage from the hero's allies."
+    },
+    {
+      "Key": "c6f2b43f56a4493c9934055900f744b8",
+      "SimpleName": "TrueMarkBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "True Mark"
+    },
+    {
+      "Key": "cfea5af654ec44859994ee67dc190f96",
+      "SimpleName": "TrueMarkFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 11th level, the hero can expend two uses of her true smite ability to grant the ability to true smite to all allies for 1 minute, using her bonuses. As a swift action, the paladin chooses one target within sight to smite. The hero's allies add her Charisma bonus (if any) to their attack rolls and add her character level to all damage rolls made against the target of her smite. True smite attacks automatically bypass any DR the creature might possess and automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero's allies gain a deflection bonus equal to her Charisma bonus (if any) to their AC against attacks made by the target of this smite."
+    },
+    {
+      "Key": "bcc63f06f4af4a4a95010b94a183bf85",
+      "SimpleName": "TrueResurrectionAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Restore life and complete strength to any deceased creature. Upon completion of this ability, the creature is immediately restored to full hit points, vigor, and health, with no loss of prepared spells.\nThis ability does not require diamonds."
+    },
+    {
+      "Key": "81205a999bc54352affac286f36163e7",
+      "SimpleName": "TrueResurrectionAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — True Resurrection"
+    },
+    {
+      "Key": "82020b6eae4b4e9e8a361e3b50adb5f2",
+      "SimpleName": "TrueResurrectionFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "As a full action, you can restore life and complete strength to any deceased creature. Upon completion of this ability, the creature is immediately restored to full hit points, vigor, and health, with no loss of prepared spells.\nThis ability does not require diamonds."
+    },
+    {
+      "Key": "466624027ba647a6b63621b552dd1102",
+      "SimpleName": "TrueSmiteAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Once per day, the hero can call out her inner powers to aid her against her enemies. As a swift action, the hero chooses one target within sight to smite. The hero adds her Cha bonus (if any) to her attack rolls and adds her character level to all damage rolls made against the target of her smite, true smite attacks automatically bypass any DR the creature might possess and automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier (if any) to her AC against attacks made by the target of the smite.\nTrue smite lasts until the target dies or the hero selects a new target. At 4th level, and at every three levels thereafter, the hero may use true smite one additional time per day."
+    },
+    {
+      "Key": "2ded7847abdd4c2987d0750c91766924",
+      "SimpleName": "TrueSmiteAbility.Duration",
+      "ProcessTemplates": true,
+      "enGB": "Until the target of the smite is dead"
+    },
+    {
+      "Key": "e918f4c168d248c0a7c0089dbb7964e2",
+      "SimpleName": "TrueSmiteAdditionalUse.Description",
+      "ProcessTemplates": true,
+      "enGB": "Once per day, the hero can call out her inner powers to aid her against her enemies. As a swift action, the hero chooses one target within sight to smite. The hero adds her Cha bonus (if any) to her attack rolls and adds her character level to all damage rolls made against the target of her smite, true smite attacks automatically bypass any DR the creature might possess and automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier (if any) to her AC against attacks made by the target of the smite.\nTrue smite lasts until the target dies or the hero selects a new target. At 4th level, and at every three levels thereafter, the hero may use true smite one additional time per day."
+    },
+    {
+      "Key": "901de47eec304788ad799e92cf2d6a8e",
+      "SimpleName": "TrueSmiteAdditionalUse.Name",
+      "ProcessTemplates": false,
+      "enGB": "True Smite — Additional Use"
+    },
+    {
+      "Key": "9e36338d64ce490a9c46d199c2413efe",
+      "SimpleName": "TrueSmiteBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "The hero adds her Cha bonus (if any) to her attack rolls against this creature and adds her character level to all damage rolls against this creature.Attacks against this creature automatically bypass any DR the creature might possess and automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier (if any) to her AC against attacks made by this creature.\nTrue smite lasts until this creature dies or the hero selects a new target."
+    },
+    {
+      "Key": "d7ba3a8230fd4d6db2c003a7382cd997",
+      "SimpleName": "TrueSmiteBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "True Smite"
+    },
+    {
+      "Key": "58e17b11e6d341789079992cb5043193",
+      "SimpleName": "TrueSmiteFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Once per day, the hero can call out her inner powers to aid her against her enemies. As a swift action, the hero chooses one target within sight to smite. The hero adds her Cha bonus (if any) to her attack rolls and adds her character level to all damage rolls made against the target of her smite, true smite attacks automatically bypass any DR the creature might possess and automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier (if any) to her AC against attacks made by the target of the smite.\nTrue smite lasts until the target dies or the hero selects a new target. At 4th level, and at every three levels thereafter, the hero may use true smite one additional time per day."
+    },
+    {
+      "Key": "330acdf86e4a4c658ce28447ba09529c",
+      "SimpleName": "UnlimitedPowerAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "As a free action, you restore all abilities and spell slots."
+    },
+    {
+      "Key": "b0d04c32d9bf4312a0a433d9b7a93df7",
+      "SimpleName": "UnlimitedPowerAbility.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Unlimited Power"
+    },
+    {
+      "Key": "e3aea7412ad9468ab878768fe84b945e",
+      "SimpleName": "UnlimitedPowerFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "As a free action, you restore all abilities and spell slots."
+    },
+    {
+      "Key": "7d7de2d75e6342cab069c615f2cb4dd4",
+      "SimpleName": "VillainArchetype.Description",
+      "ProcessTemplates": true,
+      "enGB": "After obtaining ungodly amounts of power, some protagonists become villains. They view the new world as theirs to play with, and the new inhabitants as theirs to torment. Villains seek to increase their power even further, often by establishing their own kingdom.\nYou cast spells like an Arcanist with a number of slots equal to your spells per day."
+    },
+    {
+      "Key": "81d87d1df8484a809aaa6e6186f4b8fd",
+      "SimpleName": "VillainArchetype.DescriptionShort",
+      "ProcessTemplates": true,
+      "enGB": "After obtaining ungodly amounts of power, some protagonists become villains. They view the new world as theirs to play with, and the new inhabitants as theirs to torment. Villains seek to increase their power even further, often by establishing their own kingdom.\nYou cast spells like an Arcanist with a number of slots equal to your spells per day."
+    },
+    {
+      "Key": "c93bfaf23d884a0e8e7e63a25cd0b1c7",
+      "SimpleName": "VillainProficiencies.Description",
+      "ProcessTemplates": true,
+      "enGB": "The Villain is proficient with all simple, martial, and exotic weapons and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast spells from this class while wearing armor and shields (including tower shields) without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes."
+    },
+    {
+      "Key": "288392cc993c435ea3d2bc6c091ca501",
+      "SimpleName": "VillainProficiencies.Name",
+      "ProcessTemplates": false,
+      "enGB": "Villain Proficiences"
+    },
+    {
+      "Key": "68c6b55e15c94c35a651d98c0b13e5b5",
+      "SimpleName": "VillainQuickFooted.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 15th level, you gain a competence bonus to your initiative checks equal to your Intelligence modifier."
+    },
+    {
+      "Key": "1dcea01277a149af80b32f4d0d3508d7",
+      "SimpleName": "VillainSpellbook.Name",
+      "ProcessTemplates": true,
+      "enGB": "Villain"
+    }
   ]
 }
