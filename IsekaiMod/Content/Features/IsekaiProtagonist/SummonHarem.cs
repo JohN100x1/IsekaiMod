@@ -58,35 +58,26 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons a Succubus, Nymph, Astral Deva, and an Erinyes. Summoned monsters appear where you designate and act according to their "
                     + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.Actions = Helpers.CreateActionList(
-                        SpawnMonster(c => {
-                            c.m_Blueprint = CR20_SuccubusAdvancedFighter.ToReference<BlueprintUnitReference>(); // TODO: place in different locations?
-                        }),
-                        new ContextActionOnNearbyPoint()
-                        {
-                            Actions = Helpers.CreateActionList(
-                                SpawnMonster(c => {
-                                    c.m_Blueprint = CR14_AstralDeva.ToReference<BlueprintUnitReference>();
-                                })
-                                )
-                        },
-                        new ContextActionOnNearbyPoint()
-                        {
-                            Actions = Helpers.CreateActionList(
-                                SpawnMonster(c => {
-                                    c.m_Blueprint = CR7_Nymph.ToReference<BlueprintUnitReference>();
-                                })
-                                )
-                        },
-                        new ContextActionOnNearbyPoint()
-                        {
-                            Actions = Helpers.CreateActionList(
-                                SpawnMonster(c => {
-                                    c.m_Blueprint = CR22_ErinyesDevilStandard.ToReference<BlueprintUnitReference>();
-                                })
-                                )
-                        }
-                        );
+                    c.Actions = ActionFlow.DoSingle<ContextActionOnNearbyPoint>(c => {
+                        c.Actions = Helpers.CreateActionList(
+                            SpawnMonster(c =>
+                            {
+                                c.m_Blueprint = CR20_SuccubusAdvancedFighter.ToReference<BlueprintUnitReference>();
+                            }),
+                            SpawnMonster(c =>
+                            {
+                                c.m_Blueprint = CR14_AstralDeva.ToReference<BlueprintUnitReference>();
+                            }),
+                            SpawnMonster(c =>
+                            {
+                                c.m_Blueprint = CR7_Nymph.ToReference<BlueprintUnitReference>();
+                            }),
+                            SpawnMonster(c =>
+                            {
+                                c.m_Blueprint = CR22_ErinyesDevilStandard.ToReference<BlueprintUnitReference>();
+                            })
+                            );
+                    });
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.Default;

@@ -20,11 +20,17 @@ namespace IsekaiMod.Components
 		}
 		public override void RunAction()
 		{
+			int actionNumber = Actions.Actions.Length;
 			Vector3 point = Context.MainTarget.Point;
 			point = ObstacleAnalyzer.GetNearestNode(point, null).position;
-			using (Context.GetDataScope(point))
-			{
-				Actions.Run();
+			FreePlaceSelector.PlaceSpawnPlaces(actionNumber, 1, point);
+			for (int i = 0; i < actionNumber; i++)
+            {
+				point = FreePlaceSelector.GetRelaxedPosition(i, true);
+				using (Context.GetDataScope(point))
+				{
+					Actions.Actions[i].RunAction();
+				}
 			}
 		}
 	}
