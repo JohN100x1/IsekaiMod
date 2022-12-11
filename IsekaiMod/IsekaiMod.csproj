@@ -129,6 +129,9 @@
     <None Update="Assets\Features\ICON_GODHOOD.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Assets\Features\ICON_INFINITE_INVENTORY.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\Features\ICON_MIND_CONTROL.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

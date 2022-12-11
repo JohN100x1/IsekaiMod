@@ -95,7 +95,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.UnlimitedPower.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.MindControl.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.SummonCalamity.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.InterdimensionalBag.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.InfiniteInventory.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.TrueResurrection.Add();
 
                 // God Emperor Archetype
