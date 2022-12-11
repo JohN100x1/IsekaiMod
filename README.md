@@ -95,6 +95,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Mind Control`: Make an enemy creature fight for you.
 		- `Summon Calamity`: Summon a Devastator, Baphomet, Deskari, Nocticula, or Mephistopheles.
 		- `True Resurrection`: Resurrect a dead companion (no diamond cost).
+		- `Supreme Being`: All your attributes have a base value of 30.
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities

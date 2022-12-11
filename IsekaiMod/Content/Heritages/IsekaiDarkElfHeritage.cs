@@ -119,7 +119,7 @@ namespace IsekaiMod.Content.Heritages
                     c.Actions = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.m_Buff = DrowPoisonBuff.ToReference<BlueprintBuffReference>();
                         c.Permanent = true;
-                        c.DurationValue = Constants.ZeroDuration;
+                        c.DurationValue = Constants.Duration.Zero;
                     });
                 });
                 bp.AddComponent<AbilitySpawnFx>(c => {

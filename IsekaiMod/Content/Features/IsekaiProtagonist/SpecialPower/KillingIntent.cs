@@ -3,7 +3,6 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
-using Kingmaker.Enums;
 using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities;
@@ -13,7 +12,6 @@ using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
@@ -50,8 +48,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             });
             var KillingIntentAbility = Helpers.CreateBlueprint<BlueprintAbility>("KillingIntentAbility", bp => {
                 bp.SetName("Killing Intent");
-                bp.SetDescription("Enemies within 40 feet of you who fails a Will saving throw become shaken, frightened, and cowering for 1 round. "
-                    + "The DC of the saving throw is equal to 10 + your character level + your casting attribute modifier.");
+                bp.SetDescription("Enemies within 40 feet of you who fails a DC 50 Will saving throw become shaken, frightened, and cowering for 1 round.");
                 bp.m_Icon = Icon_WitchHexEvilEyeAbility;
                 bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = new LocalizedString();
@@ -106,23 +103,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                         });
                     });
                 });
-                bp.AddComponent<ContextCalculateAbilityParams>(c => {
-                    c.ReplaceSpellLevel = true;
-                    c.SpellLevel = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.Default
-                    };
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.Default;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                bp.AddComponent<ContextSetAbilityParams>(c => {
+                    c.DC = 50;
                 });
             });
             var KillingIntentFeature = Helpers.CreateFeature("KillingIntentFeature", bp => {
                 bp.SetName("Killing Intent");
-                bp.SetDescription("Once per Combat, as a free action, enemies within 40 feet of you who fails a Will saving throw become shaken, frightened, and cowering for 1 round. "
-                    + "The DC of the saving throw is equal to 10 + your character level + your casting attribute modifier.");
+                bp.SetDescription("Once per Combat, as a free action, enemies within 40 feet of you who fails a DC 50 Will saving throw become shaken, frightened, and cowering for 1 round.");
                 bp.m_Icon = Icon_WitchHexEvilEyeAbility;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {

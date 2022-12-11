@@ -182,7 +182,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                     c.Permanent = true;
                     c.m_Buff = SummonedCreatureSpawnMonsterVI_IX.ToReference<BlueprintBuffReference>();
-                    c.DurationValue = Constants.ZeroDuration;
+                    c.DurationValue = Constants.Duration.Zero;
                     c.IsNotDispelable = true;
                 }),
             };

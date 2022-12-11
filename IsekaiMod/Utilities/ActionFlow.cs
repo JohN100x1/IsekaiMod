@@ -18,7 +18,7 @@ namespace IsekaiMod.Utilities
             var t = new ContextActionDealDamage()
             {
                 m_Type = ContextActionDealDamage.Type.Damage,
-                Duration = Constants.ZeroDuration,
+                Duration = Constants.Duration.Zero,
                 UseWeaponDamageModifiers = true
             };
             init?.Invoke(t);

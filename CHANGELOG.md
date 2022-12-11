@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Omega Strike` Special power.
 - Added `Summon Beast` Special power.
 - Added `Armor Saint` Special power.
+- Added `Supreme Being` Overpowered ability.
 - Added `True Resurrection` Overpowered ability.
 - Added `Playful Darkness` to `Summon Calamity` Overpowered ability.
 - Added bard, ranger, paladin, and inquisitor spells into the `Isekai Protagonist` spellbook.

@@ -161,7 +161,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                     new ContextActionApplyBuff()
                     {
                         m_Buff = SecondFormBuffEffect.ToReference<BlueprintBuffReference>(),
-                        DurationValue = Constants.OneDayDuration
+                        DurationValue = Constants.Duration.OneDay
                     },
                     new ContextActionRemoveSelf()
                     );

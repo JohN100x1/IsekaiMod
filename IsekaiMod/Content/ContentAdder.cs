@@ -98,6 +98,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.SummonCalamity.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.InfiniteInventory.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.TrueResurrection.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.SupremeBeing.Add();
 
                 // God Emperor Archetype
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.GodEmperorProficiencies.Add();
