@@ -81,10 +81,20 @@
     // Exceptional Weapon
     "ExceptionalWeaponSelection": "0798a829-44db-40e7-b62e-b3514cfb4abf",
     "ExceptionalWeaponBonusSelection": "e87a1bb7-1a5a-4263-9837-93c9ca167914",
+    "CorrosiveWeaponBuff": "031c57a6-181b-4a79-b36d-2a9c10af904e",
+    "CorrosiveWeaponAbility": "5eab1e05-908d-4dd5-8088-661caad3f6b6",
     "CorrosiveWeaponFeature": "14a3c35e-fd57-478f-be0d-47b2180ffd1e",
+    "FrostWeaponBuff": "b9261745-2da9-4dce-9c0e-208522eaff73",
+    "FrostWeaponAbility": "b1cb41ac-09dd-4a84-95a6-41dc414c6cb6",
     "FrostWeaponFeature": "dfb63e55-ff95-4adf-a12a-3eea3428debf",
+    "ShockWeaponBuff": "8fdfcd55-9b3a-4496-a5b3-8e3d0008d8b9",
+    "ShockWeaponAbility": "5e2d2de2-af68-4cf6-9960-ad001fc1ca9e",
     "ShockWeaponFeature": "d6b30fd8-2c63-4ac5-b3ce-5a492f5288be",
+    "FlamingWeaponBuff": "90b3fb4c-6b67-4e23-9e59-4e190dad7ea6",
+    "FlamingWeaponAbility": "a29f3c9e-8249-4be0-89fa-4aac8ba0a3c4",
     "FlamingWeaponFeature": "6d8ae869-50c1-43c0-b940-98efc9e1e751",
+    "ThunderingWeaponBuff": "b9934282-25e0-4141-a6f9-880588af92e5",
+    "ThunderingWeaponAbility": "9825f5e9-e462-41f3-afaa-e70dfd6444e6",
     "ThunderingWeaponFeature": "2b6b0b52-7baa-423b-9dd4-04b7b9b13162",
 
     // Archetypes
