@@ -3,7 +3,6 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
@@ -121,8 +120,6 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
             ExceptionalSummoningBuff.AddComponent<OnSpawnBuff>(c => {
                 c.m_IfHaveFact = ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>();
                 c.m_buff = ExceptionalSummoningSummonBuff.ToReference<BlueprintBuffReference>();
-                c.CheckDescriptor = true;
-                c.SpellDescriptor = SpellDescriptor.Summoning;
                 c.IsInfinity = true;
             });
 
@@ -228,8 +225,6 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
             ForbiddenSummoningBuff.AddComponent<OnSpawnBuff>(c => {
                 c.m_IfHaveFact = ForbiddenSummoningFeature.ToReference<BlueprintFeatureReference>();
                 c.m_buff = ForbiddenSummoningSummonBuff.ToReference<BlueprintBuffReference>();
-                c.CheckDescriptor = true;
-                c.SpellDescriptor = SpellDescriptor.Summoning;
                 c.IsInfinity = true;
             });
 
@@ -301,8 +296,6 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
             FerociousSummoningBuff.AddComponent<OnSpawnBuff>(c => {
                 c.m_IfHaveFact = FerociousSummoningFeature.ToReference<BlueprintFeatureReference>();
                 c.m_buff = FerociousSummoningSummonBuff.ToReference<BlueprintBuffReference>();
-                c.CheckDescriptor = true;
-                c.SpellDescriptor = SpellDescriptor.Summoning;
                 c.IsInfinity = true;
             });
 

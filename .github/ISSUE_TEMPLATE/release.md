@@ -5,17 +5,17 @@ title: ''
 labels: release
 assignees: ''
 ---
-### Implementations
+## Implementations
 - [ ] Implementing...
 
-### Release Tasks
+## Release Tasks
 - [ ] Copy localization
 - [ ] Update CHANGELOG.md
 - [ ] Update README.md
 - [ ] Update Info.json
 - [ ] Update Repository.json
 
-### Post-Release Tasks
+## Post-Release Tasks
 - Update mod description
 - Update mod version
 - New screenshots

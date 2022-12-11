@@ -15,13 +15,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
             var Icon_Godhood = AssetLoader.LoadInternal("Features", "ICON_GODHOOD.png");
             var Godhood = Helpers.CreateFeature("Godhood", bp => {
                 bp.SetName("Godhood");
-                bp.SetDescription("At 20th level, you become a god. You gain 100 spell resistance and are immune acid, cold, electricity, fire, sonic, and all "
-                    + "{g|Encyclopedia:Physical_Damage}physical damage{/g}. Your attacks ignore concealment and damage reduction. Any critical threats you make are automatically confirmed. "
-                    + "The spells you cast ignore spell resistance and spell immunity.");
+                bp.SetDescription("At 20th level, you become a god. You are immune acid, cold, electricity, fire, sonic, spells and "
+                    + "{g|Encyclopedia:Physical_Damage}physical damage{/g}. Your attacks ignore concealment and damage reduction. "
+                    + "Your spells ignore spell resistance.");
                 bp.m_Icon = Icon_Godhood;
-                bp.AddComponent<AddSpellResistance>(c => {
-                    c.Value = 100;
-                });
+                bp.AddComponent<AddSpellImmunity>();
+                bp.AddComponent<AreaEffectImmunity>();
+                bp.AddComponent<AddPhysicalImmunity>();
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Acid;
                 });
@@ -37,13 +37,38 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.AddComponent<AddEnergyImmunity>(c => {
                     c.Type = DamageEnergyType.Sonic;
                 });
-                bp.AddComponent<AddPhysicalImmunity>();
+                bp.AddComponent<BuffDescriptorImmunity>(c => {
+                    c.Descriptor = SpellDescriptor.Acid;
+                });
+                bp.AddComponent<BuffDescriptorImmunity>(c => {
+                    c.Descriptor = SpellDescriptor.Cold;
+                });
+                bp.AddComponent<BuffDescriptorImmunity>(c => {
+                    c.Descriptor = SpellDescriptor.Electricity;
+                });
+                bp.AddComponent<BuffDescriptorImmunity>(c => {
+                    c.Descriptor = SpellDescriptor.Fire;
+                });
+                bp.AddComponent<BuffDescriptorImmunity>(c => {
+                    c.Descriptor = SpellDescriptor.Sonic;
+                });
+                bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
+                    c.Descriptor = SpellDescriptor.Acid;
+                });
+                bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
+                    c.Descriptor = SpellDescriptor.Cold;
+                });
+                bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
+                    c.Descriptor = SpellDescriptor.Electricity;
+                });
+                bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
+                    c.Descriptor = SpellDescriptor.Fire;
+                });
+                bp.AddComponent<SpellImmunityToSpellDescriptor>(c => {
+                    c.Descriptor = SpellDescriptor.Sonic;
+                });
                 bp.AddComponent<IgnoreConcealment>();
                 bp.AddComponent<IgnoreDamageReductionOnAttack>();
-                bp.AddComponent<InitiatorCritAutoconfirm>();
-                bp.AddComponent<IgnoreSpellImmunity>(c => {
-                    c.SpellDescriptor = SpellDescriptor.None;
-                });
                 bp.AddComponent<IgnoreSpellResistanceForSpells>(c => {
                     c.m_AbilityList = new BlueprintAbilityReference[0];
                     c.AllSpells = true;

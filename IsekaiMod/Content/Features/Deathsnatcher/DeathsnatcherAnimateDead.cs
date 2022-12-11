@@ -76,7 +76,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                         c.AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                             c.Permanent = true;
                             c.m_Buff = SummonedCreatureSpawnMonsterIV_VI.ToReference<BlueprintBuffReference>();
-                            c.DurationValue = Constants.ZeroDuration;
+                            c.DurationValue = Constants.Duration.Zero;
                             c.IsNotDispelable = true;
                         });
                     });

@@ -159,7 +159,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             return new ContextActionApplyBuff()
             {
                 m_Buff = buff.ToReference<BlueprintBuffReference>(),
-                DurationValue = Constants.OneDayDuration,
+                DurationValue = Constants.Duration.OneDay,
             };
         }
     }

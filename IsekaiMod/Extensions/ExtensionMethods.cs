@@ -503,6 +503,11 @@ namespace IsekaiMod.Extensions
             var taggedDescription = DescriptionTools.TagEncyclopediaEntries(description);
             feature.m_Description = CreateString(feature.name + ".Description", taggedDescription);
         }
+        public static void SetShortDescription(this BlueprintUnitFact feature, String description)
+        {
+            var taggedDescription = DescriptionTools.TagEncyclopediaEntries(description);
+            feature.m_DescriptionShort = CreateString(feature.name + ".DescriptionShort", taggedDescription);
+        }
         public static void SetDescription(this BlueprintUnitFact feature, String description, bool shouldTag)
         {
             if (shouldTag)

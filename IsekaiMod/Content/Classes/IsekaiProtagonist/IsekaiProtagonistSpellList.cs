@@ -73,6 +73,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         public static readonly BlueprintAbility EntangleAbility = Resources.GetBlueprint<BlueprintAbility>("0fd00984a2c0e0a429cf1a911b4ec5ca");
         public static readonly BlueprintAbility FaerieFireAbility = Resources.GetBlueprint<BlueprintAbility>("4d9bf81b7939b304185d58a09960f589");
         public static readonly BlueprintAbility LongstriderAbility = Resources.GetBlueprint<BlueprintAbility>("14c90900b690cac429b229efdf416127");
+        public static readonly BlueprintAbility LeadBladesAbility = Resources.GetBlueprint<BlueprintAbility>("779179912e6c6fe458fa4cfb90d96e10");
+        public static readonly BlueprintAbility ChallengeEvilAbility = Resources.GetBlueprint<BlueprintAbility>("57aae1aa36b8022479e1cd39f3a85ef9");
+        public static readonly BlueprintAbility VeilOfHeavenAbility = Resources.GetBlueprint<BlueprintAbility>("72d9f5adda6387a40a63c49d7781bbbf");
+        public static readonly BlueprintAbility VeilOfPositiveEnergyAbility = Resources.GetBlueprint<BlueprintAbility>("6bb0533cd457d1f4eaccc73ab7680fb2");
 
         // Spells - 2
         public static readonly BlueprintAbility OwlsWisdomAbility = Resources.GetBlueprint<BlueprintAbility>("f0455c9295b53904f9e02fc571dd2ce1");
@@ -130,6 +134,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         public static readonly BlueprintAbility HoldAnimalAbility = Resources.GetBlueprint<BlueprintAbility>("41bab342089c0254ca222eb918e98cd4");
         public static readonly BlueprintAbility AspectOfTheBearAbility = Resources.GetBlueprint<BlueprintAbility>("a4ad1b8fa11e7c347a608c004efce9d5");
         public static readonly BlueprintAbility SickeningEntanglementAbility = Resources.GetBlueprint<BlueprintAbility>("6c7467f0344004d48848a43d8c078bf8");
+        public static readonly BlueprintAbility ChameleonStrideAbility = Resources.GetBlueprint<BlueprintAbility>("27bf851c585817c4fbd079c970a162fa");
+        public static readonly BlueprintAbility CastigateAbility = Resources.GetBlueprint<BlueprintAbility>("ce4c4e52c53473549ae033e2bb44b51a");
+        public static readonly BlueprintAbility CacophonousCallAbility = Resources.GetBlueprint<BlueprintAbility>("e6048d85fc3294f4c92b21c8d7526b1f");
+        public static readonly BlueprintAbility BestowGraceAbility = Resources.GetBlueprint<BlueprintAbility>("042aaa117e89c4d4b8cb41478dd3fca3");
 
         // Spells - 3
         public static readonly BlueprintAbility VampiricTouchAbility = Resources.GetBlueprint<BlueprintAbility>("8a28a811ca5d20d49a863e832c31cce1");
@@ -180,6 +188,14 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         public static readonly BlueprintAbility SoothingMudAbility = Resources.GetBlueprint<BlueprintAbility>("1a36c8b9ed655c249a9f9e8d4731f001");
         public static readonly BlueprintAbility SpikeGrowthAbility = Resources.GetBlueprint<BlueprintAbility>("29b0f9026ad05e14789d84e867cc6dff");
         public static readonly BlueprintAbility AnimalAspectGreaterAbility = Resources.GetBlueprint<BlueprintAbility>("c9c56af3b25be3942aa0ffd12f11cf35");
+        public static readonly BlueprintAbility ChameleonStrideGreaterAbility = Resources.GetBlueprint<BlueprintAbility>("7ec0ffdd8779c344f85337109af0c6c5");
+        public static readonly BlueprintAbility InstantEnemyAbility = Resources.GetBlueprint<BlueprintAbility>("42c78009dd5cb8e429b27c13d92152b7");
+        public static readonly BlueprintAbility FesterAbility = Resources.GetBlueprint<BlueprintAbility>("2dbe271c979d9104c8e2e6b42e208e32");
+        public static readonly BlueprintAbility LitanyOfEloquenceAbility = Resources.GetBlueprint<BlueprintAbility>("c9198d9dfd2515d4ba98335b57bb66c7");
+        public static readonly BlueprintAbility LitanyOfEntanglementAbility = Resources.GetBlueprint<BlueprintAbility>("16f7754287811724abe1e0ead88f74ca");
+        public static readonly BlueprintAbility GoodHopeAbility = Resources.GetBlueprint<BlueprintAbility>("a5e23522eda32dc45801e32c05dc9f96");
+        public static readonly BlueprintAbility ThunderingDrumsAbility = Resources.GetBlueprint<BlueprintAbility>("c26eeeeabf732914ba723f2b67fe9b9d");
+        public static readonly BlueprintAbility HolyWhisperAbility = Resources.GetBlueprint<BlueprintAbility>("5f1ca17be3ba44949be427f18e696d9b");
 
         // Spells - 4
         public static readonly BlueprintAbility OverwhelmingGriefAbility = Resources.GetBlueprint<BlueprintAbility>("dd2918e4a77c50044acba1ac93494c36");
@@ -233,6 +249,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         public static readonly BlueprintAbility SummonNaturesAllyIVAbility = Resources.GetBlueprint<BlueprintAbility>("c83db50513abdf74ca103651931fac4b");
         public static readonly BlueprintAbility FlameStrikeAbility = Resources.GetBlueprint<BlueprintAbility>("f9910c76efc34af41b6e43d5d8752f0f");
         public static readonly BlueprintAbility LifeBubbleAbility = Resources.GetBlueprint<BlueprintAbility>("265582bc494c4b12b5860b508a2f89a2");
+        public static readonly BlueprintAbility ForcedRepentanceAbility = Resources.GetBlueprint<BlueprintAbility>("cc0aeb74b35cb7147bff6c53538bbc76");
+        public static readonly BlueprintAbility ResoundingBlowAbility = Resources.GetBlueprint<BlueprintAbility>("9047cb1797639924487ec0ad566a3fea");
+        public static readonly BlueprintAbility OathOfPeaceAbility = Resources.GetBlueprint<BlueprintAbility>("cb3d70cc98b5f1540bddfff6f9667f73");
 
         // Spells - 5
         public static readonly BlueprintAbility AngelicAspectAbility = Resources.GetBlueprint<BlueprintAbility>("75a10d5a635986641bfbcceceec87217");
@@ -285,6 +304,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         public static readonly BlueprintAbility SummonNaturesAllyVAbility = Resources.GetBlueprint<BlueprintAbility>("8f98a22f35ca6684a983363d32e51bfe");
         public static readonly BlueprintAbility CaveFangsAbility = Resources.GetBlueprint<BlueprintAbility>("bacba2ff48d498b46b86384053945e83");
         public static readonly BlueprintAbility BlessingOfTheSalamanderAbility = Resources.GetBlueprint<BlueprintAbility>("9256a86aec14ad14e9497f6b60e26f3f");
+        public static readonly BlueprintAbility CastigateMassAbility = Resources.GetBlueprint<BlueprintAbility>("41236cf0e476d7043bc16a33a9f449bd");
+        public static readonly BlueprintAbility CacophonousCallMassAbility = Resources.GetBlueprint<BlueprintAbility>("1262284b6fa45b9458b8c3693edbd676");
+        public static readonly BlueprintAbility SongOfDiscordAbility = Resources.GetBlueprint<BlueprintAbility>("d38aaf487e29c3d43a3bffa4a4a55f8f");
 
         // Spells - 6
         public static readonly BlueprintAbility ChainsOfLightAbility = Resources.GetBlueprint<BlueprintAbility>("f8cea58227f59c64399044a82c9735c4");
@@ -333,6 +355,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         public static readonly BlueprintAbility PrimalRegressionAbility = Resources.GetBlueprint<BlueprintAbility>("07d577a74441a3a44890e3006efcf604");
         public static readonly BlueprintAbility SummonNaturesAllyVIAbility = Resources.GetBlueprint<BlueprintAbility>("55bbce9b3e76d4a4a8c8e0698d29002c");
         public static readonly BlueprintAbility PoisonBreathAbility = Resources.GetBlueprint<BlueprintAbility>("b5be90707c17a9643b90d90b7c4096e2");
+        public static readonly BlueprintAbility FesterMassAbility = Resources.GetBlueprint<BlueprintAbility>("52b8b14360a87104482b2735c7fc8606");
+        public static readonly BlueprintAbility LitanyOfMadnessAbility = Resources.GetBlueprint<BlueprintAbility>("435e73bcff18f304293484f9511b4672");
+        public static readonly BlueprintAbility BrilliantInspirationAbility = Resources.GetBlueprint<BlueprintAbility>("a5c56f0f699daec44b7aedd8b273b08a");
 
         // Spells - 7
         public static readonly BlueprintAbility UmbralStrikeAbility = Resources.GetBlueprint<BlueprintAbility>("474ed0aa656cc38499cc9a073d113716");
@@ -350,7 +375,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         public static readonly BlueprintAbility PrismaticSprayAbility = Resources.GetBlueprint<BlueprintAbility>("b22fd434bdb60fb4ba1068206402c4cf");
         public static readonly BlueprintAbility InvisibilityMassAbility = Resources.GetBlueprint<BlueprintAbility>("98310a099009bbd4dbdf66bcef58b4cd");
         public static readonly BlueprintAbility IceBodyAbility = Resources.GetBlueprint<BlueprintAbility>("89778dc261fe6094bb2445cb389842d2");
-        public static readonly BlueprintAbility WavesOfEctasyAbility = Resources.GetBlueprint<BlueprintAbility>("1e2d1489781b10a45a3b70192bba9be3");
+        public static readonly BlueprintAbility WavesOfEcstasyAbility = Resources.GetBlueprint<BlueprintAbility>("1e2d1489781b10a45a3b70192bba9be3");
         public static readonly BlueprintAbility HoldPersonMassAbility = Resources.GetBlueprint<BlueprintAbility>("defbbeaef79eda64abc645036228a31b");
         public static readonly BlueprintAbility SummonElementalGreaterAbility = Resources.GetBlueprint<BlueprintAbility>("8eb769e3b583f594faabe1cfdb0bb696");
         public static readonly BlueprintAbility CausticEruptionAbility = Resources.GetBlueprint<BlueprintAbility>("8c29e953190cc67429dc9c701b16b7c2");
@@ -506,6 +531,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                             EntangleAbility.ToReference<BlueprintAbilityReference>(),
                             FaerieFireAbility.ToReference<BlueprintAbilityReference>(),
                             LongstriderAbility.ToReference<BlueprintAbilityReference>(),
+                            LeadBladesAbility.ToReference<BlueprintAbilityReference>(),
+                            ChallengeEvilAbility.ToReference<BlueprintAbilityReference>(),
+                            VeilOfHeavenAbility.ToReference<BlueprintAbilityReference>(),
+                            VeilOfPositiveEnergyAbility.ToReference<BlueprintAbilityReference>(),
                         }
                     },
                     new SpellLevelList(2) {
@@ -564,7 +593,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                             BarkskinAbility.ToReference<BlueprintAbilityReference>(),
                             HoldAnimalAbility.ToReference<BlueprintAbilityReference>(),
                             AspectOfTheBearAbility.ToReference<BlueprintAbilityReference>(),
-                            SickeningEntanglementAbility.ToReference<BlueprintAbilityReference>()
+                            SickeningEntanglementAbility.ToReference<BlueprintAbilityReference>(),
+                            ChameleonStrideAbility.ToReference<BlueprintAbilityReference>(),
+                            CastigateAbility.ToReference<BlueprintAbilityReference>(),
+                            CacophonousCallAbility.ToReference<BlueprintAbilityReference>(),
+                            BestowGraceAbility.ToReference<BlueprintAbilityReference>(),
                         }
                     },
                     new SpellLevelList(3) {
@@ -616,7 +649,15 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                             SummonNaturesAllyIIIAbility.ToReference<BlueprintAbilityReference>(),
                             SoothingMudAbility.ToReference<BlueprintAbilityReference>(),
                             SpikeGrowthAbility.ToReference<BlueprintAbilityReference>(),
-                            AnimalAspectGreaterAbility.ToReference<BlueprintAbilityReference>()
+                            AnimalAspectGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                            ChameleonStrideGreaterAbility.ToReference<BlueprintAbilityReference>(),
+                            InstantEnemyAbility.ToReference<BlueprintAbilityReference>(),
+                            FesterAbility.ToReference<BlueprintAbilityReference>(),
+                            LitanyOfEloquenceAbility.ToReference<BlueprintAbilityReference>(),
+                            LitanyOfEntanglementAbility.ToReference<BlueprintAbilityReference>(),
+                            GoodHopeAbility.ToReference<BlueprintAbilityReference>(),
+                            ThunderingDrumsAbility.ToReference<BlueprintAbilityReference>(),
+                            HolyWhisperAbility.ToReference<BlueprintAbilityReference>(),
                         }
                     },
                     new SpellLevelList(4) {
@@ -671,7 +712,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                             SpikeStonesAbility.ToReference<BlueprintAbilityReference>(),
                             SummonNaturesAllyIVAbility.ToReference<BlueprintAbilityReference>(),
                             FlameStrikeAbility.ToReference<BlueprintAbilityReference>(),
-                            LifeBubbleAbility.ToReference<BlueprintAbilityReference>()
+                            LifeBubbleAbility.ToReference<BlueprintAbilityReference>(),
+                            ForcedRepentanceAbility.ToReference<BlueprintAbilityReference>(),
+                            ResoundingBlowAbility.ToReference<BlueprintAbilityReference>(),
+                            OathOfPeaceAbility.ToReference<BlueprintAbilityReference>(),
                         }
                     },
                     new SpellLevelList(5) {
@@ -725,7 +769,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                             AspectOfTheWolfAbility.ToReference<BlueprintAbilityReference>(),
                             SummonNaturesAllyVAbility.ToReference<BlueprintAbilityReference>(),
                             CaveFangsAbility.ToReference<BlueprintAbilityReference>(),
-                            BlessingOfTheSalamanderAbility.ToReference<BlueprintAbilityReference>()
+                            BlessingOfTheSalamanderAbility.ToReference<BlueprintAbilityReference>(),
+                            CastigateMassAbility.ToReference<BlueprintAbilityReference>(),
+                            CacophonousCallMassAbility.ToReference<BlueprintAbilityReference>(),
+                            SongOfDiscordAbility.ToReference<BlueprintAbilityReference>(),
                         }
                     },
                     new SpellLevelList(6) {
@@ -775,7 +822,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                             JoyfulRaptureAbility.ToReference<BlueprintAbilityReference>(),
                             PrimalRegressionAbility.ToReference<BlueprintAbilityReference>(),
                             SummonNaturesAllyVIAbility.ToReference<BlueprintAbilityReference>(),
-                            PoisonBreathAbility.ToReference<BlueprintAbilityReference>()
+                            PoisonBreathAbility.ToReference<BlueprintAbilityReference>(),
+                            FesterMassAbility.ToReference<BlueprintAbilityReference>(),
+                            LitanyOfMadnessAbility.ToReference<BlueprintAbilityReference>(),
+                            BrilliantInspirationAbility.ToReference<BlueprintAbilityReference>(),
                         }
                     },
                     new SpellLevelList(7) {
@@ -795,7 +845,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                             PrismaticSprayAbility.ToReference<BlueprintAbilityReference>(),
                             InvisibilityMassAbility.ToReference<BlueprintAbilityReference>(),
                             IceBodyAbility.ToReference<BlueprintAbilityReference>(),
-                            WavesOfEctasyAbility.ToReference<BlueprintAbilityReference>(),
+                            WavesOfEcstasyAbility.ToReference<BlueprintAbilityReference>(),
                             HoldPersonMassAbility.ToReference<BlueprintAbilityReference>(),
                             SummonElementalGreaterAbility.ToReference<BlueprintAbilityReference>(),
                             CausticEruptionAbility.ToReference<BlueprintAbilityReference>(),

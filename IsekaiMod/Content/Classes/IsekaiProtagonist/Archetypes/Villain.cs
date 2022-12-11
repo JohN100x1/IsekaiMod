@@ -28,43 +28,53 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
 
             // Removed features
             var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
+            var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
             var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
             var IsekaiQuickFooted = Resources.GetModBlueprint<BlueprintFeature>("IsekaiQuickFooted");
-            var TrueMainCharacter = Resources.GetModBlueprint<BlueprintFeature>("TrueMainCharacter");
+            var SecondReincarnation = Resources.GetModBlueprint<BlueprintFeature>("SecondReincarnation");
             var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
-            var CharacterDevelopmentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection");
+            var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
 
             // Archetype
             var VillainArchetype = Helpers.CreateBlueprint<BlueprintArchetype>("VillainArchetype", bp => {
                 bp.LocalizedName = Helpers.CreateString($"VillainArchetype.Name", "Villain");
                 bp.LocalizedDescription = Helpers.CreateString($"VillainArchetype.Description", "After obtaining ungodly amounts of power, some protagonists become villains. "
                     + "They view the new world as theirs to play with, and the new inhabitants as theirs to torment. Villains seek to increase their power even further, "
-                    + "often by establishing their own kingdom... or by setting up not-so-ethical research in joyous human farms.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString($"VillainArchetype.Description", "After obtaining ungodly amounts of power, some protagonists become villains. "
+                    + "often by establishing their own kingdom.\nYou cast spells like an Arcanist with a number of slots equal to your spells per day.");
+                bp.LocalizedDescriptionShort = Helpers.CreateString($"VillainArchetype.DescriptionShort", "After obtaining ungodly amounts of power, some protagonists become villains. "
                     + "They view the new world as theirs to play with, and the new inhabitants as theirs to torment. Villains seek to increase their power even further, "
-                    + "often by establishing their own kingdom... or by setting up not-so-ethical research in joyous human farms.");
+                    + "often by establishing their own kingdom.\nYou cast spells like an Arcanist with a number of slots equal to your spells per day.");
                 bp.RemoveSpellbook = false;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, SneakAttack),
-                    Helpers.LevelEntry(3, CharacterDevelopmentSelection),
+                    Helpers.LevelEntry(1, IsekaiProtagonistBonusFeatSelection, IsekaiProtagonistProficiencies, SneakAttack),
+                    Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection),
+                    Helpers.LevelEntry(3, SpecialPowerSelection),
+                    Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection),
                     Helpers.LevelEntry(5, SneakAttack),
+                    Helpers.LevelEntry(6, IsekaiProtagonistBonusFeatSelection),
+                    Helpers.LevelEntry(8, IsekaiProtagonistBonusFeatSelection),
                     Helpers.LevelEntry(9, SneakAttack, FriendlyAuraFeature),
-                    Helpers.LevelEntry(10, OverpoweredAbilitySelection2),
+                    Helpers.LevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2),
+                    Helpers.LevelEntry(12, IsekaiProtagonistBonusFeatSelection),
                     Helpers.LevelEntry(13, SneakAttack),
-                    Helpers.LevelEntry(15, OverpoweredAbilitySelection2, IsekaiQuickFooted),
+                    Helpers.LevelEntry(14, IsekaiProtagonistBonusFeatSelection),
+                    Helpers.LevelEntry(15, IsekaiQuickFooted),
+                    Helpers.LevelEntry(16, IsekaiProtagonistBonusFeatSelection),
                     Helpers.LevelEntry(17, SneakAttack),
-                    Helpers.LevelEntry(20, TrueMainCharacter),
+                    Helpers.LevelEntry(18, IsekaiProtagonistBonusFeatSelection),
+                    Helpers.LevelEntry(20, IsekaiProtagonistBonusFeatSelection, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, VillainProficiencies, OverpoweredAbilitySelectionVillain, SlayerStudyTargetFeature),
                     Helpers.LevelEntry(3, IsekaiChannelNegativeEnergyFeature),
-                    Helpers.LevelEntry(5, SlayerStudyTargetFeature),
+                    Helpers.LevelEntry(5, SlayerStudyTargetFeature, OverpoweredAbilitySelectionVillain),
                     Helpers.LevelEntry(7, SlayerSwiftStudyTargetFeature),
-                    Helpers.LevelEntry(9, CorruptAuraFeature),
-                    Helpers.LevelEntry(10, SlayerStudyTargetFeature, DarkAuraFeature),
-                    Helpers.LevelEntry(15, SlayerStudyTargetFeature),
-                    Helpers.LevelEntry(16, VillainQuickFooted),
+                    Helpers.LevelEntry(9, OverpoweredAbilitySelectionVillain),
+                    Helpers.LevelEntry(10, CorruptAuraFeature, SlayerStudyTargetFeature, DarkAuraFeature),
+                    Helpers.LevelEntry(13, OverpoweredAbilitySelectionVillain),
+                    Helpers.LevelEntry(15, SlayerStudyTargetFeature, VillainQuickFooted),
+                    Helpers.LevelEntry(17, OverpoweredAbilitySelectionVillain),
                     Helpers.LevelEntry(20, SlayerStudyTargetFeature, SecondFormFeature),
                 };
                 bp.OverrideAttributeRecommendations = true;

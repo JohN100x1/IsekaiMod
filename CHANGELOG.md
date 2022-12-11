@@ -4,9 +4,51 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.0] - 2022-12-11
+### Added
+- Added `Magical Amplification` Special power.
+- Added `Killing Intent` Special power.
+- Added `Aura of Divine Fury` Special power.
+- Added `Armor of Strength` Special power.
+- Added `Omega Strike` Special power.
+- Added `Summon Beast` Special power.
+- Added `Armor Saint` Special power.
+- Added `Supreme Being` Overpowered ability.
+- Added `True Resurrection` Overpowered ability.
+- Added `Playful Darkness` to `Summon Calamity` Overpowered ability.
+- Added bard, ranger, paladin, and inquisitor spells into the `Isekai Protagonist` spellbook.
+- Added `Mythic Special Power` to mythic ability selection.
+- Added `Starting Weapon` to `Isekai Protagonist` progression.
+- Added `Signature Ability` to `Isekai Protagonist` progression. This can be chosen instead of `Signature Attack`.
+- Added `Second Reincarnation` to `Isekai Protagonist` progression. This feature replaces `True Main Character`.
+- Added `Summon Harem` ability to `Isekai Protagonist` progression. This ability replaces `Harem Magnet`.
+- Added `Channel Energy` selection to `God Emperor` progression.
+- Added `Divine Array` feature to `God Emperor` progression.
+- Added `Celestial Realm` feature to `God Emperor` progression.
+- Added `True Mark` ability to `Hero` progression.
+### Changed
+- Reworked `Isekai Protagonist` class and all archetypes.
+- Buffed `Extra Strike` to apply to off-hand aswell if duel-wielding.
+- Buffed `Nascent Apotheosis` to also give spell penetration and spell resistance.
+- Changed `Godhood` to have spell immunity instead of 100 spell resistance. Removed "ignore spell immunity" and "auto confirm critical hits".
+- Changed `Villain` Archetype to memorise spells like an Arcanist instead of Wizard. The Spell slots progression is the same as the spells per day progression.
+- Changed `Body Strengthening` to give DR/— per level.
+- Changed `Exceptional Weapon` exceptional feats into activatable abilities.
+- Renamed `Protective Aura` to `Aura of Golden Protection`.
+- Renamed `Glorious Aura` to `Aura of Majesty`.
+- Renamed `Interdimensional Bag` to `Infinite Inventory` and updated icon.
+- Update `Graceful Combat` icon.
+### Removed
+- Removed `Harem Magnet` ability.
+- Removed `True Main Character` feature.
+### Fixed
+- Fixed `Dupe Gold` ability to correctly give 1 million gold instead of 100 thousand gold.
+- Fixed `Exceptional Summoning` feats not applying to summoned creatures from spells without the `Summoning` spell descriptor.
+
 ## [2.4.0] - 2022-12-04
 ### Added
 - Added new dialogue during drow ambush.
+- Added `Special Powers` to show in class signature abilities.
 ### Changed
 - Decreased mod file size significantly.
 - Buffed `Grasp Heart` DC from 50 to 99.
@@ -15,6 +57,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `Very Fast Movement` feature speed bonus from insight to untyped.
 - Changed `Isekai Protagonist` from divine caster to arcane (visual only).
 - Changed `Sneaky Magic` to require sneak attack.
+- Changed `Character Development` feats to now be called `Special Powers`.
 - Updated icon for `Drow Poison` feature.
 
 ## [2.3.0] - 2022-12-04
@@ -89,7 +132,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Reworked `Character Development` feats to no longer have bonus feats or feats from `Beach Episode` at later levels.
 - Reworked `Isekai Protagonist` class progression to have more Overpowered Abilities instead of training arc feats.
-- Reworked `Edge Lord` and `God Emporer` archetypes to have more evenly distributed character development feats.
+- Reworked `Edge Lord` and `God Emperor` archetypes to have more evenly distributed character development feats.
 - Reworked `Villain` to have `Channel Negative Energy`.
 - Buffed `Godhood` to give energy immunity against acid, cold, electricity, fire, and sonic.
 - Nerfed `Grasp Heart` to stun if the creature fails a DC 50 fortitude save.
@@ -125,9 +168,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Isekai Vampire` Heritage (Dhampir Heritage).
 ### Changed
 - Buffed `Isekai Succubus` with +4 racial bonus to Dexterity.
-- Buffed `God Emporer`'s `Glorious Aura` to give a 1/2 level competence bonus.
-- Buffed `God Emporer`'s `Protective Aura` to give a 1/2 level sacred bonus.
-- Buffed `God Emporer`'s `Siphoning Aura` to give a -4 penalty.
+- Buffed `God Emperor`'s `Glorious Aura` to give a 1/2 level competence bonus.
+- Buffed `God Emperor`'s `Protective Aura` to give a 1/2 level sacred bonus.
+- Buffed `God Emperor`'s `Siphoning Aura` to give a -4 penalty.
 - Changed `Highschool Student` background to give a trait bonus instead of untyped.
 - Changed `Reborn Demon Lord` background to give a trait bonus instead of untyped.
 - Updated icon for `Glorious Aura` feature.

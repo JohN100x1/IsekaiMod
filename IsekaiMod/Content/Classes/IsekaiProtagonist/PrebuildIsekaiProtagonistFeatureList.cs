@@ -49,21 +49,28 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var IsekaiFamiliarSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiFamiliarSelection");
             var CatFamiliarBondFeature = Resources.GetBlueprint<BlueprintFeature>("1cb0b559ca2e31e4d9dc65de012fa82f");
 
+            var StartingWeaponSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("StartingWeaponSelection");
             var IsekaiPetSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiPetSelection");
             var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
+            var SignatureMoveSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SignatureMoveSelection");
             var OverpoweredAbilitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection");
             var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
             var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
-            var CharacterDevelopmentSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("CharacterDevelopmentSelection");
+            var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
 
+            var StartingWeaponLongsword = Resources.GetModBlueprint<BlueprintFeature>("StartingWeaponLongsword");
+            var SignatureAttack = Resources.GetModBlueprint<BlueprintFeature>("SignatureAttack");
             var AutoQuickenFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoQuickenFeature");
             var AutoMaximizeFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoMaximizeFeature");
+            var AutoSelectiveFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoSelectiveFeature");
             var AutoEmpowerFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoEmpowerFeature");
             var AutoExtendFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoExtendFeature");
             var MasterSelf = Resources.GetModBlueprint<BlueprintFeature>("MasterSelf");
             var AlphaStrike = Resources.GetModBlueprint<BlueprintFeature>("AlphaStrike");
             var BetaStrike = Resources.GetModBlueprint<BlueprintFeature>("BetaStrike");
             var GammaStrike = Resources.GetModBlueprint<BlueprintFeature>("GammaStrike");
+            var OmegaStrike = Resources.GetModBlueprint<BlueprintFeature>("OmegaStrike");
+            var SneakyMagic = Resources.GetModBlueprint<BlueprintFeature>("SneakyMagic");
             var MundaneAura = Resources.GetModBlueprint<BlueprintFeature>("MundaneAura");
             var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
 
@@ -135,17 +142,20 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                             m_Selection = OverpoweredAbilitySelection2.ToReference<BlueprintFeatureSelectionReference>(),
                             m_Features = new BlueprintFeatureReference[]{
                                 AutoMaximizeFeature.ToReference<BlueprintFeatureReference>(),
+                                AutoSelectiveFeature.ToReference<BlueprintFeatureReference>(),
                                 AutoEmpowerFeature.ToReference<BlueprintFeatureReference>(),
                                 AutoExtendFeature.ToReference<BlueprintFeatureReference>(),
                             }
                         },
                         new SelectionEntry()
                         {
-                            m_Selection = CharacterDevelopmentSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Selection = SpecialPowerSelection.ToReference<BlueprintFeatureSelectionReference>(),
                             m_Features = new BlueprintFeatureReference[]{
                                 AlphaStrike.ToReference<BlueprintFeatureReference>(),
                                 BetaStrike.ToReference<BlueprintFeatureReference>(),
                                 GammaStrike.ToReference<BlueprintFeatureReference>(),
+                                OmegaStrike.ToReference<BlueprintFeatureReference>(),
+                                SneakyMagic.ToReference<BlueprintFeatureReference>(),
                                 MundaneAura.ToReference<BlueprintFeatureReference>(),
                                 TrainingMontage.ToReference<BlueprintFeatureReference>()
                             }
@@ -187,9 +197,23 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                         },
                         new SelectionEntry()
                         {
+                            m_Selection = StartingWeaponSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                StartingWeaponLongsword.ToReference<BlueprintFeatureReference>()
+                            }
+                        },
+                        new SelectionEntry()
+                        {
                             m_Selection = IsekaiPetSelection.ToReference<BlueprintFeatureSelectionReference>(),
                             m_Features = new BlueprintFeatureReference[]{
                                 IsekaiFamiliarSelection.ToReference<BlueprintFeatureReference>()
+                            }
+                        },
+                        new SelectionEntry()
+                        {
+                            m_Selection = SignatureMoveSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Features = new BlueprintFeatureReference[]{
+                                SignatureAttack.ToReference<BlueprintFeatureReference>()
                             }
                         },
                         new SelectionEntry()

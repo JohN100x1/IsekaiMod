@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
         private static readonly BlueprintItemEnchantment Thundering = Resources.GetBlueprint<BlueprintItemEnchantment>("690e762f7704e1f4aa1ac69ef0ce6a96");
         public static void Add()
         {
-            var CorrosiveWeaponFeature = Helpers.CreateFeature("CorrosiveWeaponFeature", bp => {
+            var CorrosiveWeaponBuff = Helpers.CreateBuff("CorrosiveWeaponBuff", bp => {
                 bp.SetName("Corrosive Weapon");
                 bp.SetDescription("Your attacks have Corrosive. They deal an additional 1d6 acid damage.");
                 bp.m_Icon = Icon_ArcaneWeaponUnholyBuff;
@@ -39,8 +39,30 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.m_EnchantmentBlueprint = Corrosive.ToReference<BlueprintItemEnchantmentReference>();
                     c.Slot = EquipSlotBase.SlotType.SecondaryHand;
                 });
+                bp.AddComponent<BuffEnchantAnyWeapon>(c => {
+                    c.m_EnchantmentBlueprint = Corrosive.ToReference<BlueprintItemEnchantmentReference>();
+                    c.Slot = EquipSlotBase.SlotType.AdditionalLimb;
+                });
+                bp.IsClassFeature = true;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var FrostWeaponFeature = Helpers.CreateFeature("FrostWeaponFeature", bp => {
+            var CorrosiveWeaponAbility = Helpers.CreateActivatableAbility("CorrosiveWeaponAbility", bp => {
+                bp.SetName("Corrosive Weapon");
+                bp.SetDescription("Your attacks have Corrosive. They deal an additional 1d6 acid damage.");
+                bp.m_Icon = Icon_ArcaneWeaponUnholyBuff;
+                bp.m_Buff = CorrosiveWeaponBuff.ToReference<BlueprintBuffReference>();
+            });
+            var CorrosiveWeaponFeature = Helpers.CreateFeature("CorrosiveWeaponFeature", bp => {
+                bp.SetName("Corrosive Weapon");
+                bp.SetDescription("Your attacks have Corrosive. They deal an additional 1d6 acid damage.");
+                bp.m_Icon = Icon_ArcaneWeaponUnholyBuff;
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] {
+                        CorrosiveWeaponAbility.ToReference<BlueprintUnitFactReference>()
+                    };
+                });
+            });
+            var FrostWeaponBuff = Helpers.CreateBuff("FrostWeaponBuff", bp => {
                 bp.SetName("Frost Weapon");
                 bp.SetDescription("Your attacks have Frost. They deal an additional 1d6 cold damage.");
                 bp.m_Icon = Icon_ArcaneWeaponFrostBuff;
@@ -52,8 +74,30 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.m_EnchantmentBlueprint = Frost.ToReference<BlueprintItemEnchantmentReference>();
                     c.Slot = EquipSlotBase.SlotType.SecondaryHand;
                 });
+                bp.AddComponent<BuffEnchantAnyWeapon>(c => {
+                    c.m_EnchantmentBlueprint = Frost.ToReference<BlueprintItemEnchantmentReference>();
+                    c.Slot = EquipSlotBase.SlotType.AdditionalLimb;
+                });
+                bp.IsClassFeature = true;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var ShockWeaponFeature = Helpers.CreateFeature("ShockWeaponFeature", bp => {
+            var FrostWeaponAbility = Helpers.CreateActivatableAbility("FrostWeaponAbility", bp => {
+                bp.SetName("Frost Weapon");
+                bp.SetDescription("Your attacks have Frost. They deal an additional 1d6 cold damage.");
+                bp.m_Icon = Icon_ArcaneWeaponFrostBuff;
+                bp.m_Buff = FrostWeaponBuff.ToReference<BlueprintBuffReference>();
+            });
+            var FrostWeaponFeature = Helpers.CreateFeature("FrostWeaponFeature", bp => {
+                bp.SetName("Frost Weapon");
+                bp.SetDescription("Your attacks have Frost. They deal an additional 1d6 cold damage.");
+                bp.m_Icon = Icon_ArcaneWeaponFrostBuff;
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] {
+                        FrostWeaponAbility.ToReference<BlueprintUnitFactReference>()
+                    };
+                });
+            });
+            var ShockWeaponBuff = Helpers.CreateBuff("ShockWeaponBuff", bp => {
                 bp.SetName("Shock Weapon");
                 bp.SetDescription("Your attacks have Shock. They deal an additional 1d6 electricity damage.");
                 bp.m_Icon = Icon_ArcaneWeaponShockBuff;
@@ -65,8 +109,30 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.m_EnchantmentBlueprint = Shock.ToReference<BlueprintItemEnchantmentReference>();
                     c.Slot = EquipSlotBase.SlotType.SecondaryHand;
                 });
+                bp.AddComponent<BuffEnchantAnyWeapon>(c => {
+                    c.m_EnchantmentBlueprint = Shock.ToReference<BlueprintItemEnchantmentReference>();
+                    c.Slot = EquipSlotBase.SlotType.AdditionalLimb;
+                });
+                bp.IsClassFeature = true;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var FlamingWeaponFeature = Helpers.CreateFeature("FlamingWeaponFeature", bp => {
+            var ShockWeaponAbility = Helpers.CreateActivatableAbility("ShockWeaponAbility", bp => {
+                bp.SetName("Shock Weapon");
+                bp.SetDescription("Your attacks have Shock. They deal an additional 1d6 electricity damage.");
+                bp.m_Icon = Icon_ArcaneWeaponShockBuff;
+                bp.m_Buff = ShockWeaponBuff.ToReference<BlueprintBuffReference>();
+            });
+            var ShockWeaponFeature = Helpers.CreateFeature("ShockWeaponFeature", bp => {
+                bp.SetName("Shock Weapon");
+                bp.SetDescription("Your attacks have Shock. They deal an additional 1d6 electricity damage.");
+                bp.m_Icon = Icon_ArcaneWeaponShockBuff;
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] {
+                        ShockWeaponAbility.ToReference<BlueprintUnitFactReference>()
+                    };
+                });
+            });
+            var FlamingWeaponBuff = Helpers.CreateBuff("FlamingWeaponBuff", bp => {
                 bp.SetName("Flaming Weapon");
                 bp.SetDescription("Your attacks have Flaming. They deal an additional 1d6 fire damage.");
                 bp.m_Icon = Icon_ArcaneWeaponFlamingBuff;
@@ -78,8 +144,30 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.m_EnchantmentBlueprint = Flaming.ToReference<BlueprintItemEnchantmentReference>();
                     c.Slot = EquipSlotBase.SlotType.SecondaryHand;
                 });
+                bp.AddComponent<BuffEnchantAnyWeapon>(c => {
+                    c.m_EnchantmentBlueprint = Flaming.ToReference<BlueprintItemEnchantmentReference>();
+                    c.Slot = EquipSlotBase.SlotType.AdditionalLimb;
+                });
+                bp.IsClassFeature = true;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var ThunderingWeaponFeature = Helpers.CreateFeature("ThunderingWeaponFeature", bp => {
+            var FlamingWeaponAbility = Helpers.CreateActivatableAbility("FlamingWeaponAbility", bp => {
+                bp.SetName("Flaming Weapon");
+                bp.SetDescription("Your attacks have Flaming. They deal an additional 1d6 fire damage.");
+                bp.m_Icon = Icon_ArcaneWeaponFlamingBuff;
+                bp.m_Buff = FlamingWeaponBuff.ToReference<BlueprintBuffReference>();
+            });
+            var FlamingWeaponFeature = Helpers.CreateFeature("FlamingWeaponFeature", bp => {
+                bp.SetName("Flaming Weapon");
+                bp.SetDescription("Your attacks have Flaming. They deal an additional 1d6 fire damage.");
+                bp.m_Icon = Icon_ArcaneWeaponFlamingBuff;
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] {
+                        FlamingWeaponAbility.ToReference<BlueprintUnitFactReference>()
+                    };
+                });
+            });
+            var ThunderingWeaponBuff = Helpers.CreateBuff("ThunderingWeaponBuff", bp => {
                 bp.SetName("Thundering Weapon");
                 bp.SetDescription("Your attacks have Thundering. They deal an additional 1d6 sonic damage.");
                 bp.m_Icon = Icon_ArcaneWeaponKeenBuff;
@@ -90,6 +178,28 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 bp.AddComponent<BuffEnchantAnyWeapon>(c => {
                     c.m_EnchantmentBlueprint = Thundering.ToReference<BlueprintItemEnchantmentReference>();
                     c.Slot = EquipSlotBase.SlotType.SecondaryHand;
+                });
+                bp.AddComponent<BuffEnchantAnyWeapon>(c => {
+                    c.m_EnchantmentBlueprint = Thundering.ToReference<BlueprintItemEnchantmentReference>();
+                    c.Slot = EquipSlotBase.SlotType.AdditionalLimb;
+                });
+                bp.IsClassFeature = true;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
+            });
+            var ThunderingWeaponAbility = Helpers.CreateActivatableAbility("ThunderingWeaponAbility", bp => {
+                bp.SetName("Thundering Weapon");
+                bp.SetDescription("Your attacks have Thundering. They deal an additional 1d6 sonic damage.");
+                bp.m_Icon = Icon_ArcaneWeaponKeenBuff;
+                bp.m_Buff = ThunderingWeaponBuff.ToReference<BlueprintBuffReference>();
+            });
+            var ThunderingWeaponFeature = Helpers.CreateFeature("ThunderingWeaponFeature", bp => {
+                bp.SetName("Thundering Weapon");
+                bp.SetDescription("Your attacks have Thundering. They deal an additional 1d6 sonic damage.");
+                bp.m_Icon = Icon_ArcaneWeaponKeenBuff;
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] {
+                        ThunderingWeaponAbility.ToReference<BlueprintUnitFactReference>()
+                    };
                 });
             });
 

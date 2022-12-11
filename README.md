@@ -28,7 +28,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 - New Classes & Archetypes
 	- `Isekai Protagonist`
 		- Spontaneous caster that uses Charisma.
-		- Has a really powerful spellbook that has all the wizard, cleric, and druid spells.
+		- Has a really powerful spellbook that has spells from all other classes.
 		- Has sneak attack.
 		- Has extra feats like the fighter but not limited to combat feats.
 		- Starts of with the `Plot Armor` feature which make them hard to kill.
@@ -45,8 +45,9 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- Has the `True Smite` ability (smite any alignment).
 		- Uses charisma for damage and attack rolls.
 	- `Villain` (Isekai Protagonist Archetype)
-		- Has studied target.
-		- Intelligence based caster that memorizes spells (becomes like wizard).
+		- Has Study target.
+		- Has Much more Overpowered Abilities.
+		- Intelligence based caster that memorizes spells like an arcanist.
 - New Features
 	- `Exceptional feats`: Strong feats that can be chosen in place of a feat/bonus feat.
 		- `Mythic feat`: You can choose a mythic feat instead of a normal/bonus feat.
@@ -56,14 +57,15 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Ferocious Summoning`: Your summons have 2 more attacks and +10 speed. They also get +1 sneak attack per character level. (requires Exceptional Summoning and Forbidden Summoning).
 		- `Exceptional Weapon`: Your attacks get an additional enchantment. (e.g. Corrosive, Flaming, Frost, etc.)
 	- `Plot Armor`: Get bonus on AC and Saving throws based on character level.
-	- `Character Development Feats`: A selection of bonus feats which have very good effects.
+	- `Special Power Feats`: A selection of bonus feats which have very good effects.
 		- `Alpha Strike`: Automatically confirm crits.
 		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
+		- `Omega Strike`: Increase your damage multipler by 1.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
 		- `Regeneration`: Get regeneration 10/acid or fire (requires character level 10).
 		- `Training Montage`: Get a +8 bonus to all attributes.
-		- `Body Strengthening`: Get a DR 20/— (requires character level 10).
+		- `Body Strengthening`: Get a DR/— equal to character level.
 		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
 		- `Extreme Speed`: Get a speed bonus equal to 5 times character level.
 		- `Channel Positive Energy`: You can channel positive energy (requires good alignment).
@@ -71,6 +73,12 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Kinetic Power`: You can select a kinetic blast (air, earth, fire, water).
 		- `Sneaky Magic`: You can add your sneak attack damage to spells against flat-footed.
 		- `Spell Master`: Increase your spell DC by 4.
+		- `Magical Amplification`: Your spell damage dice become d12.
+		- `Armor Saint`: You can move at normal speed while wearing armor, reduce your armor check penalty to zero, and increase your max dexterity bonus by 20.
+		- `Armor of Strength`: Get a natural armor bonus to AC equal to Strength modifier.
+		- `Summon Beast`: Summon a hydra, owlbear, roc, or minotaur.
+		- `Aura of Divine Fury`: Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells (requires character level 15).
+		- `Killing Intent`: Enemies within 40 feet who fail a will save become shaken, frightened, and cowering.
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.
@@ -87,10 +95,13 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Unlimited Power`: Restore all ability and spell slots at will.
 		- `Mind Control`: Make an enemy creature fight for you.
 		- `Summon Calamity`: Summon a Devastator, Baphomet, Deskari, Nocticula, or Mephistopheles.
+		- `True Resurrection`: Resurrect a dead companion (no diamond cost).
+		- `Supreme Being`: All your attributes have a base value of 30.
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities
 	- `Mythic Overpowered Ability`: Gives you another Overpowered Ability.
+	- `Mythic Special Power`: Gives you another Special Power.
 - New Backgrounds
 	- `Tabletop RPG Player`: Adds all Lore and Knowledge skills as class skills. Lore and Knowledge skills use CHA instead of WIS/INT.
 	- `Martial Artist`: Get proficiency in all exotic weapons.
