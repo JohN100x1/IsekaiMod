@@ -7,7 +7,6 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
-using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
@@ -17,7 +16,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
 {
     class SignatureMoveSelection
     {
-        private static readonly Sprite Icon_BatteringBlast = Resources.GetBlueprint<BlueprintAbility>("0a2f7c6aa81bc6548ac7780d8b70bcbc").m_Icon;
+        private static readonly Sprite Icon_MutagenResource = Resources.GetBlueprint<BlueprintAbilityResource>("3b163587f010382408142fc8a97852b6").m_Icon;
         private static readonly Sprite Icon_SwordSaintWeaponMastery = Resources.GetBlueprint<BlueprintFeature>("5b31af13868166d4c9bb452f19277f19").m_Icon;
         public static void Add()
         {
@@ -53,7 +52,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
             var SignatureAbility = Helpers.CreateFeature("SignatureAbility", bp => {
                 bp.SetName("Signature Ability");
                 bp.SetDescription("You gain a bonus to spell DC and spell hit point damage equal to 1/2 your character level.");
-                bp.m_Icon = Icon_BatteringBlast;
+                bp.m_Icon = Icon_MutagenResource;
                 bp.AddComponent<IncreaseAllSpellsDC>(c => {
                     c.SpellsOnly = true;
                     c.Descriptor = ModifierDescriptor.UntypedStackable;

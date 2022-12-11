@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Added `Magical Amplification` Special power.
 - Added `Killing Intent` Special power.
 - Added `Aura of Peerless Strength` Special power.
 - Added `Fortress Style` Special power.
@@ -31,7 +32,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `Godhood` to have spell immunity instead of 100 spell resistance. Removed "ignore spell immunity" and "auto confirm critical hits".
 - Changed `Villain` Archetype to memorise spells like an Arcanist instead of Wizard. The Spell slots progression is the same as the spells per day progression.
 - Changed `Body Strengthening` to give DR/— per level.
-- Update `Spell Master` feature icon.
 - Renamed `Protective Aura` to `Aura of Golden Protection`.
 - Renamed `Glorious Aura` to `Aura of Majesty`.
 - Renamed `Interdimensional Bag` to `Infinite Inventory` and updated icon.

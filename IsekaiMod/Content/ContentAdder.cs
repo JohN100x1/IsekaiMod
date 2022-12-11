@@ -79,6 +79,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.SpecialPower.SummonBeast.Add();
                 Features.IsekaiProtagonist.SpecialPower.AuraOfPeerlessStrength.Add();
                 Features.IsekaiProtagonist.SpecialPower.KillingIntent.Add();
+                Features.IsekaiProtagonist.SpecialPower.MagicalAmplification.Add();
 
                 // OP Ability
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
