@@ -1,6 +1,7 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
@@ -22,7 +23,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
             var Icon_SecondReincarnation = AssetLoader.LoadInternal("Features", "ICON_SECOND_REINCARNATION.png");
             var SecondReincarnationBuff = Helpers.CreateBuff("SecondReincarnationBuff", bp => {
                 bp.SetName("Second Reincarnation");
-                bp.SetDescription("Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.");
+                bp.SetDescription("Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.\n"
+                    + "Your attacks ignore damage reduction and your spells ignore spell resistance.");
                 bp.m_Icon = Icon_SecondReincarnation;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -76,8 +78,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
             });
             var SecondReincarnation = Helpers.CreateFeature("SecondReincarnation", bp => {
                 bp.SetName("Second Reincarnation");
-                bp.SetDescription("Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.");
+                bp.SetDescription("Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.\n"
+                    + "Your attacks ignore damage reduction and your spells ignore spell resistance.");
                 bp.m_Icon = Icon_SecondReincarnation;
+                bp.AddComponent<IgnoreDamageReductionOnAttack>();
+                bp.AddComponent<IgnoreSpellResistanceForSpells>(c => {
+                    c.m_AbilityList = new BlueprintAbilityReference[0];
+                    c.AllSpells = true;
+                });
                 bp.AddComponent<AddRestTrigger>(c => {
                     c.Action = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.m_Buff = SecondReincarnationBuff.ToReference<BlueprintBuffReference>();
