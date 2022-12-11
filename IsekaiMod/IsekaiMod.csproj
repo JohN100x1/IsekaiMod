@@ -108,9 +108,6 @@
     <None Update="Assets\Features\ICON_AURA_MAJESTY.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Features\ICON_GRACEFUL_COMBAT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Assets\Features\ICON_DARK_AURA.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

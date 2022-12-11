@@ -36,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renamed `Protective Aura` to `Aura of Golden Protection`.
 - Renamed `Glorious Aura` to `Aura of Majesty`.
 - Renamed `Interdimensional Bag` to `Infinite Inventory` and updated icon.
+- Update `Graceful Combat` icon.
 ### Removed
 - Removed `Harem Magnet` ability.
 - Removed `True Main Character` feature.
