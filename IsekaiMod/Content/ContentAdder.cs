@@ -76,7 +76,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.SpecialPower.SneakyMagic.Add();
                 Features.IsekaiProtagonist.SpecialPower.SpellMaster.Add();
                 Features.IsekaiProtagonist.SpecialPower.ArmorSaint.Add();
-                Features.IsekaiProtagonist.SpecialPower.FortressStyle.Add();
+                Features.IsekaiProtagonist.SpecialPower.ArmorOfStrength.Add();
                 Features.IsekaiProtagonist.SpecialPower.SummonBeast.Add();
                 Features.IsekaiProtagonist.SpecialPower.AuraOfPeerlessStrength.Add();
                 Features.IsekaiProtagonist.SpecialPower.KillingIntent.Add();

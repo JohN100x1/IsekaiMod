@@ -8,14 +8,14 @@ using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
-    class FortressStyle
+    class ArmorOfStrength
     {
         private static readonly Sprite Icon_ArmoredHulkIndomitableStance = Resources.GetBlueprint<BlueprintFeature>("74c59090138e28f4687c8a3400030763").m_Icon;
         public static void Add()
         {
-            var FortressStyle = Helpers.CreateFeature("FortressStyle", bp => {
-                bp.SetName("Fortress Style");
-                bp.SetDescription("You gain a natural armor bonus to AC equal to your strength.");
+            var ArmorOfStrength = Helpers.CreateFeature("ArmorOfStrength", bp => {
+                bp.SetName("Armor of Strength");
+                bp.SetDescription("You gain a natural armor bonus to AC equal to your strength modifier.");
                 bp.m_Icon = Icon_ArmoredHulkIndomitableStance;
                 bp.AddComponent<DerivativeStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.NaturalArmor;
@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 });
             });
 
-            SpecialPowerSelection.AddToSelection(FortressStyle);
+            SpecialPowerSelection.AddToSelection(ArmorOfStrength);
         }
     }
 }

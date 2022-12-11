@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Magical Amplification` Special power.
 - Added `Killing Intent` Special power.
 - Added `Aura of Peerless Strength` Special power.
-- Added `Fortress Style` Special power.
+- Added `Armor of Strength` Special power.
 - Added `Omega Strike` Special power.
 - Added `Summon Beast` Special power.
 - Added `Armor Saint` Special power.
