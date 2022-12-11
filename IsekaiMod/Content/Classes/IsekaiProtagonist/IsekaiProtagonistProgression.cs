@@ -21,6 +21,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
             var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
             var PlotArmor = Resources.GetModBlueprint<BlueprintFeature>("PlotArmor");
+            var StartingWeaponSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("StartingWeaponSelection");
             var SummonHaremFeature = Resources.GetModBlueprint<BlueprintFeature>("SummonHaremFeature");
             var UncannyDodge = Resources.GetBlueprint<BlueprintFeature>("3c08d842e802c3e4eb19d15496145709");
             var ImprovedUncannyDodge = Resources.GetBlueprint<BlueprintFeature>("485a18c05792521459c7d06c63128c79");
@@ -84,7 +85,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 };
             });
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
-                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, OverpoweredAbilitySelection, PlotArmor, IsekaiPetSelection),
+                Helpers.LevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, OverpoweredAbilitySelection, PlotArmor, StartingWeaponSelection, IsekaiPetSelection),
                 Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection, UncannyDodge),
                 Helpers.LevelEntry(3, SneakAttack, IsekaiFighterTraining, Evasion, SpecialPowerSelection),
                 Helpers.LevelEntry(4, IsekaiProtagonistBonusFeatSelection),
@@ -121,7 +122,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 GodEmperorProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 VillainProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiProtagonistProficiencies.ToReference<BlueprintFeatureBaseReference>(),
-                IsekaiProtagonistCantripsFeature.ToReference<BlueprintFeatureBaseReference>()
+                IsekaiProtagonistCantripsFeature.ToReference<BlueprintFeatureBaseReference>(),
+                StartingWeaponSelection.ToReference<BlueprintFeatureBaseReference>(),
             };
             IsekaiProtagonistClass.SetProgression(IsekaiProtagonistProgression);
         }

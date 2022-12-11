@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Playful Darkness` to `Summon Calamity` Overpowered ability.
 - Added bard, ranger, paladin, and inquisitor spells into the `Isekai Protagonist` spellbook.
 - Added `Mythic Special Power` to mythic ability selection.
+- Added `Starting Weapon` to `Isekai Protagonist` progression.
 - Added `Signature Ability` to `Isekai Protagonist` progression. This can be chosen instead of `Signature Attack`.
 - Added `Second Reincarnation` to `Isekai Protagonist` progression. This feature replaces `True Main Character`.
 - Added `Summon Harem` ability to `Isekai Protagonist` progression. This ability replaces `Harem Magnet`.

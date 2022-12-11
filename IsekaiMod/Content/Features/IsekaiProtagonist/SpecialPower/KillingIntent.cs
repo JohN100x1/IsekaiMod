@@ -23,7 +23,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class KillingIntent
     {
-        private static readonly Sprite Icon_WitchHexEvilEyeAbility = Resources.GetBlueprint<BlueprintAbility>("d25c72a92dd8d38449a6a371ef36413e").m_Icon;
+        private static readonly Sprite Icon_ConsumeFear = Resources.GetBlueprint<BlueprintAbility>("644d2c0d029e54d4188bc34216d9d8c0").m_Icon;
         private static readonly BlueprintBuff Shaken = Resources.GetBlueprint<BlueprintBuff>("25ec6cb6ab1845c48a95f9c20b034220");
         private static readonly BlueprintBuff Frightened = Resources.GetBlueprint<BlueprintBuff>("f08a7239aa961f34c8301518e71d4cdf");
         private static readonly BlueprintBuff Cowering = Resources.GetBlueprint<BlueprintBuff>("6062e3a8206a4284d867cbb7120dc091");
@@ -49,7 +49,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             var KillingIntentAbility = Helpers.CreateBlueprint<BlueprintAbility>("KillingIntentAbility", bp => {
                 bp.SetName("Killing Intent");
                 bp.SetDescription("Enemies within 40 feet of you who fails a DC 50 Will saving throw become shaken, frightened, and cowering for 1 round.");
-                bp.m_Icon = Icon_WitchHexEvilEyeAbility;
+                bp.m_Icon = Icon_ConsumeFear;
                 bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = new LocalizedString();
                 bp.AvailableMetamagic = Metamagic.Heighten | Metamagic.Extend | Metamagic.Heighten | Metamagic.Reach;
@@ -110,7 +110,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             var KillingIntentFeature = Helpers.CreateFeature("KillingIntentFeature", bp => {
                 bp.SetName("Killing Intent");
                 bp.SetDescription("Once per Combat, as a free action, enemies within 40 feet of you who fails a DC 50 Will saving throw become shaken, frightened, and cowering for 1 round.");
-                bp.m_Icon = Icon_WitchHexEvilEyeAbility;
+                bp.m_Icon = Icon_ConsumeFear;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
                         KillingIntentAbility.ToReference<BlueprintUnitFactReference>(),

@@ -86,7 +86,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 bp.RecommendedAttributes = new StatType[] { StatType.Strength, StatType.Charisma};
                 bp.NotRecommendedAttributes = new StatType[] { };
                 bp.m_EquipmentEntities = new KingmakerEquipmentEntityReference[0];
-                bp.m_StartingItems = new BlueprintItemReference[0];
+                bp.m_StartingItems = new BlueprintItemReference[] {
+                };
                 bp.SkillPoints = 4;
                 bp.ClassSkills = new StatType[11] {
                     StatType.SkillAthletics,
