@@ -1,4 +1,5 @@
-﻿using IsekaiMod.Extensions;
+﻿using IsekaiMod.Components;
+using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Spells;
@@ -61,15 +62,30 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                         SpawnMonster(c => {
                             c.m_Blueprint = CR20_SuccubusAdvancedFighter.ToReference<BlueprintUnitReference>(); // TODO: place in different locations?
                         }),
-                        SpawnMonster(c => {
-                            c.m_Blueprint = CR14_AstralDeva.ToReference<BlueprintUnitReference>();
-                        }),
-                        SpawnMonster(c => {
-                            c.m_Blueprint = CR7_Nymph.ToReference<BlueprintUnitReference>();
-                        }),
-                        SpawnMonster(c => {
-                            c.m_Blueprint = CR22_ErinyesDevilStandard.ToReference<BlueprintUnitReference>();
-                        })
+                        new ContextActionOnNearbyPoint()
+                        {
+                            Actions = Helpers.CreateActionList(
+                                SpawnMonster(c => {
+                                    c.m_Blueprint = CR14_AstralDeva.ToReference<BlueprintUnitReference>();
+                                })
+                                )
+                        },
+                        new ContextActionOnNearbyPoint()
+                        {
+                            Actions = Helpers.CreateActionList(
+                                SpawnMonster(c => {
+                                    c.m_Blueprint = CR7_Nymph.ToReference<BlueprintUnitReference>();
+                                })
+                                )
+                        },
+                        new ContextActionOnNearbyPoint()
+                        {
+                            Actions = Helpers.CreateActionList(
+                                SpawnMonster(c => {
+                                    c.m_Blueprint = CR22_ErinyesDevilStandard.ToReference<BlueprintUnitReference>();
+                                })
+                                )
+                        }
                         );
                 });
                 bp.AddComponent<ContextRankConfig>(c => {

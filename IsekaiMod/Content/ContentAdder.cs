@@ -212,7 +212,6 @@ namespace IsekaiMod.Content
                 Features.ExceptionalFeats.EffectImmunitySelection.Add();
                 Features.ExceptionalFeats.ExceptionalSummoningSelection.Add();
                 Features.ExceptionalFeats.ExceptionalWeaponSelection.Add();
-
             }
         }
     }

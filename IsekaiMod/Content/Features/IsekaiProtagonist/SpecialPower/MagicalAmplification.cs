@@ -1,14 +1,14 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
 using UnityEngine;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class MagicalAmplification
     {
-        private static readonly Sprite Icon_TelekineticStrike = Resources.GetBlueprint<BlueprintFeature>("1a33199538c31a14db23318fdb6e10cb").m_Icon;
+        private static readonly Sprite Icon_TelekineticStrike = Resources.GetBlueprint<BlueprintAbility>("1a33199538c31a14db23318fdb6e10cb").m_Icon;
         public static void Add()
         {
             var MagicalAmplification = Helpers.CreateFeature("MagicalAmplification", bp => {

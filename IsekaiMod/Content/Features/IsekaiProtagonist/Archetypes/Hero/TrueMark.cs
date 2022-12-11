@@ -14,7 +14,6 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
@@ -154,7 +153,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
             });
             var TrueMarkFeature = Helpers.CreateFeature("TrueMarkFeature", bp => {
                 bp.SetName("True Mark");
-                bp.SetDescription("At 10th level, the hero can expend two uses of her true smite ability to grant the ability to true smite to all allies for 1 minute, "
+                bp.SetDescription("At 11th level, the hero can expend two uses of her true smite ability to grant the ability to true smite to all allies for 1 minute, "
                     + "using her {g|Encyclopedia:Bonus}bonuses{/g}. As a {g|Encyclopedia:Swift_Action}swift action{/g}, the paladin chooses one target within sight to smite. "
                     + "The hero's allies add her {g|Encyclopedia:Charisma}Charisma{/g} bonus (if any) to their {g|Encyclopedia:Attack}attack rolls{/g} and add her character level to "
                     + "all {g|Encyclopedia:Damage}damage rolls{/g} made against the target of her smite. True smite attacks automatically bypass any {g|Encyclopedia:Damage_Reduction}DR{/g} "
