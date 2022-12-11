@@ -20,7 +20,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var TrueMarkFeature = Resources.GetModBlueprint<BlueprintFeature>("TrueMarkFeature");
             var HerosPresenceFeature = Resources.GetModBlueprint<BlueprintFeature>("HerosPresenceFeature");
             var IsekaiChannelPositiveEnergyFeature = Resources.GetModBlueprint<BlueprintFeature>("IsekaiChannelPositiveEnergyFeature");
-            var AuraOfPeerlessStrengthFeature = Resources.GetModBlueprint<BlueprintFeature>("AuraOfPeerlessStrengthFeature");
+            var AuraOfDivineFuryFeature = Resources.GetModBlueprint<BlueprintFeature>("AuraOfDivineFuryFeature");
 
             // Removed features
             var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
@@ -60,7 +60,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.LevelEntry(7, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(10, TrueMarkFeature, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(13, TrueSmiteAdditionalUse),
-                    Helpers.LevelEntry(15, AuraOfPeerlessStrengthFeature),
+                    Helpers.LevelEntry(15, AuraOfDivineFuryFeature),
                     Helpers.LevelEntry(16, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(19, TrueSmiteAdditionalUse),
                     Helpers.LevelEntry(20, HerosPresenceFeature),

@@ -14,16 +14,16 @@ using Kingmaker.Utility;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
-    class AuraOfPeerlessStrength
+    class AuraOfDivineFury
     {
         public static void Add()
         {
-            var Icon_AuraOfPeerlessStrength = AssetLoader.LoadInternal("Features", "ICON_AURA_GOLDEN_PROTECTION.png");
-            var AuraOfPeerlessStrengthBuff = Helpers.CreateBuff("AuraOfPeerlessStrengthBuff", bp => {
-                bp.SetName("Aura of Peerless Strength");
+            var Icon_AuraOfDivineFury = AssetLoader.LoadInternal("Features", "ICON_AURA_GOLDEN_PROTECTION.png");
+            var AuraOfDivineFuryBuff = Helpers.CreateBuff("AuraOfDivineFuryBuff", bp => {
+                bp.SetName("Aura of Divine Fury");
                 bp.SetDescription("This creature has a +10 sacred bonus to attack damage and hit point damage from spells.");
                 bp.IsClassFeature = true;
-                bp.m_Icon = Icon_AuraOfPeerlessStrength;
+                bp.m_Icon = Icon_AuraOfDivineFury;
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.AdditionalDamage;
@@ -33,39 +33,39 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.DamageBonus = 10;
                 });
             });
-            var AuraOfPeerlessStrengthArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("AuraOfPeerlessStrengthArea", bp => {
+            var AuraOfDivineFuryArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("AuraOfDivineFuryArea", bp => {
                 bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Ally;
                 bp.Shape = AreaEffectShape.Cylinder;
                 bp.Size = new Feet(40);
                 bp.Fx = new PrefabLink();
-                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(AuraOfPeerlessStrengthBuff.ToReference<BlueprintBuffReference>()));
+                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(AuraOfDivineFuryBuff.ToReference<BlueprintBuffReference>()));
             });
-            var AuraOfPeerlessStrengthAreaBuff = Helpers.CreateBuff("AuraOfPeerlessStrengthAreaBuff", bp => {
-                bp.SetName("Aura of Peerless Strength");
+            var AuraOfDivineFuryAreaBuff = Helpers.CreateBuff("AuraOfDivineFuryAreaBuff", bp => {
+                bp.SetName("Aura of Divine Fury");
                 bp.SetDescription("Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells.");
-                bp.m_Icon = Icon_AuraOfPeerlessStrength;
+                bp.m_Icon = Icon_AuraOfDivineFury;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
                 bp.AddComponent<AddAreaEffect>(c => {
-                    c.m_AreaEffect = AuraOfPeerlessStrengthArea.ToReference<BlueprintAbilityAreaEffectReference>();
+                    c.m_AreaEffect = AuraOfDivineFuryArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var AuraOfPeerlessStrengthAbility = Helpers.CreateActivatableAbility("AuraOfPeerlessStrengthAbility", bp => {
-                bp.SetName("Aura of Peerless Strength");
+            var AuraOfDivineFuryAbility = Helpers.CreateActivatableAbility("AuraOfDivineFuryAbility", bp => {
+                bp.SetName("Aura of Divine Fury");
                 bp.SetDescription("Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells.");
-                bp.m_Icon = Icon_AuraOfPeerlessStrength;
-                bp.m_Buff = AuraOfPeerlessStrengthAreaBuff.ToReference<BlueprintBuffReference>();
+                bp.m_Icon = Icon_AuraOfDivineFury;
+                bp.m_Buff = AuraOfDivineFuryAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
-            var AuraOfPeerlessStrengthFeature = Helpers.CreateFeature("AuraOfPeerlessStrengthFeature", bp => {
-                bp.SetName("Aura of Peerless Strength");
+            var AuraOfDivineFuryFeature = Helpers.CreateFeature("AuraOfDivineFuryFeature", bp => {
+                bp.SetName("Aura of Divine Fury");
                 bp.SetDescription("Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells.");
-                bp.m_Icon = Icon_AuraOfPeerlessStrength;
+                bp.m_Icon = Icon_AuraOfDivineFury;
                 bp.AddComponent<PrerequisiteCharacterLevel>(c => {
                     c.Level = 15;
                 });
                 bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] { AuraOfPeerlessStrengthAbility.ToReference<BlueprintUnitFactReference>() };
+                    c.m_Facts = new BlueprintUnitFactReference[] { AuraOfDivineFuryAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
         }

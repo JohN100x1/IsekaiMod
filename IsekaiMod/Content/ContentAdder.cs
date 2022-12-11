@@ -78,7 +78,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.SpecialPower.ArmorSaint.Add();
                 Features.IsekaiProtagonist.SpecialPower.ArmorOfStrength.Add();
                 Features.IsekaiProtagonist.SpecialPower.SummonBeast.Add();
-                Features.IsekaiProtagonist.SpecialPower.AuraOfPeerlessStrength.Add();
+                Features.IsekaiProtagonist.SpecialPower.AuraOfDivineFury.Add();
                 Features.IsekaiProtagonist.SpecialPower.KillingIntent.Add();
                 Features.IsekaiProtagonist.SpecialPower.MagicalAmplification.Add();
 
