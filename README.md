@@ -77,6 +77,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Fortress Style`: Get a natural armor bonus to AC equal to Strength modifier.
 		- `Summon Beast`: Summon a hydra, owlbear, roc, or minotaur.
 		- `Aura of Peerless Strength`: Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells (requires character level 15).
+		- `Killing Intent`: Enemies within 40 feet who fail a will save become shaken, frightened, and cowering.
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.
