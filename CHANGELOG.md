@@ -24,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Summon Harem` ability to `Isekai Protagonist` progression. This ability replaces `Harem Magnet`.
 - Added `Channel Energy` selection to `God Emperor` progression.
 - Added `Divine Array` feature to `God Emperor` progression.
-- Added `Celestial Realm` feature to `God Emperor` progression.
+- Added `Celestial Realm` feature to `God Emperor` and `Hero` progression.
 - Added `True Mark` ability to `Hero` progression.
 ### Changed
 - Reworked `Isekai Protagonist` class and all archetypes.
