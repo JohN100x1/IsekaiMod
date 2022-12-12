@@ -91,7 +91,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Dupe Gold`: Get infinite gold.
 		- `Perfect Roll`: Roll 20 on every d20 roll.
 		- `Super Buff`: Apply many powerful buffs on you and your allies.
-		- `Interdimensional Bag`: Get infinite carry capacity.
+		- `Infinite Inventory`: Get infinite carry capacity.
 		- `Unlimited Power`: Restore all ability and spell slots at will.
 		- `Mind Control`: Make an enemy creature fight for you.
 		- `Summon Calamity`: Summon a Devastator, Baphomet, Deskari, Nocticula, or Mephistopheles.
