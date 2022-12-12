@@ -9,11 +9,23 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 ### Testing
 - Create a folder called `IsekaiMod` in `C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods`.
 - After building your solution in Visual Studio, go to your project directory -> `bin` -> `Release` or `Debug` -> `IsekaiMod` -> `net472`.
-- Copy the files and folders from the image below and place them in the folder you created (ignore `UserSettings`).
+- Copy the files and folders from the diagram below and place them in the folder you created.
+- For the `UserSettings` folder, create it here and copy the `AddedContent.json` and the `Blueprints.json` files from the project and place them inside.
+```
+C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods\IsekaiMod
+.
+├── Assets/
+│   └── ...
+├── Localization/
+│   └── LocalizationPack.json
+├── UserSettings/
+│   ├── AddedContent.json
+│   └── Blueprints.json
+├── Info.json
+├── IsekaiMod.dll
+└── ModKit.dll
+```
 - For the Assets make sure you have the Portraits. Copy them from a [Release](https://github.com/JohN100x1/WOTR_IsekaiMod/releases).
-
-![](tutorial.png)
-- Create the `UserSettings` folder here and copy the `AddedContent.json` and the `Blueprints.json` files from the project and place them in this `UserSettings` folder.
 - Now you can start your game and test.
 
 On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
