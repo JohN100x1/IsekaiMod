@@ -13,6 +13,7 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 - You'll need to create the `UserSettings` folder. Copy the `AddedContent.json` and the `Blueprints.json` files from the project and place them inside.
 ```
 C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods\IsekaiMod
+
 IsekaiMod/
 ├── Assets/
 │   └── ...
