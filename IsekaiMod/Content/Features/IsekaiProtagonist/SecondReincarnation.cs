@@ -1,6 +1,7 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
@@ -24,7 +25,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
             var SecondReincarnationBuff = Helpers.CreateBuff("SecondReincarnationBuff", bp => {
                 bp.SetName("Second Reincarnation");
                 bp.SetDescription("Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.\n"
-                    + "Your attacks ignore damage reduction and your spells ignore spell resistance.");
+                    + "Your attacks ignore damage reduction and your spells ignore spell resistance and spell immunity.");
                 bp.m_Icon = Icon_SecondReincarnation;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -79,9 +80,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
             var SecondReincarnation = Helpers.CreateFeature("SecondReincarnation", bp => {
                 bp.SetName("Second Reincarnation");
                 bp.SetDescription("Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.\n"
-                    + "Your attacks ignore damage reduction and your spells ignore spell resistance.");
+                    + "Your attacks ignore damage reduction and your spells ignore spell resistance and spell immunity.");
                 bp.m_Icon = Icon_SecondReincarnation;
                 bp.AddComponent<IgnoreDamageReductionOnAttack>();
+                bp.AddComponent<IgnoreSpellImmunity>(c => {
+                    c.SpellDescriptor = SpellDescriptor.None;
+                });
                 bp.AddComponent<IgnoreSpellResistanceForSpells>(c => {
                     c.m_AbilityList = new BlueprintAbilityReference[0];
                     c.AllSpells = true;

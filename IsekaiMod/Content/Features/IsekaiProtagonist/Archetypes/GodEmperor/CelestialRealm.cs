@@ -41,7 +41,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
             });
             var CelestialRealmAreaBuff = Helpers.CreateBuff("CelestialRealmAreaBuff", bp => {
                 bp.SetName("Celestial Realm");
-                bp.SetDescription("Allies within 40 feet of the God Emperor transform their damage type into divine.");
+                bp.SetDescription("Allies within 40 feet of you transform their damage type into divine.");
                 bp.m_Icon = Icon_CelestialRealm;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -51,14 +51,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
             });
             var CelestialRealmAbility = Helpers.CreateActivatableAbility("CelestialRealmAbility", bp => {
                 bp.SetName("Celestial Realm");
-                bp.SetDescription("Allies within 40 feet of the God Emperor transform their damage type into divine.");
+                bp.SetDescription("Allies within 40 feet of you transform their damage type into divine.");
                 bp.m_Icon = Icon_CelestialRealm;
                 bp.m_Buff = CelestialRealmAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
             var CelestialRealmFeature = Helpers.CreateFeature("CelestialRealmFeature", bp => {
                 bp.SetName("Celestial Realm");
-                bp.SetDescription("At 17th level, allies within 40 feet of the God Emperor transform their damage type into divine.");
+                bp.SetDescription("At 17th level, allies within 40 feet of you transform their damage type into divine.");
                 bp.m_Icon = Icon_CelestialRealm;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { CelestialRealmAbility.ToReference<BlueprintUnitFactReference>() };
