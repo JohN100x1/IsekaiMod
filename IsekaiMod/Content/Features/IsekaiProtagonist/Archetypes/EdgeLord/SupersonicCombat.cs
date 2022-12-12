@@ -26,7 +26,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord
                 });
                 bp.AddComponent<AnyWeaponDamageStatReplacement>(c => {
                     c.Stat = StatType.Dexterity;
-                    c.OnlyMelee = true;
+                    c.OnlyMelee = false;
                     c.CheckSubCategory = false;
                 });
                 bp.AddComponent<ReplaceStatForPrerequisites>(c => {
