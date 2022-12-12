@@ -9,11 +9,11 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 ### Testing
 - Create a folder called `IsekaiMod` in `C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods`.
 - After building your solution in Visual Studio, go to your project directory -> `bin` -> `Release` or `Debug` -> `IsekaiMod` -> `net472`.
-- Copy the files and folders from the diagram below and place them in the folder you created.
-- For the `UserSettings` folder, create it here and copy the `AddedContent.json` and the `Blueprints.json` files from the project and place them inside.
+- Copy the files and folders from the diagram below and place them in the `IsekaiMod` folder you created.
+- You'll need to create the `UserSettings` folder. Copy the `AddedContent.json` and the `Blueprints.json` files from the project and place them inside.
 ```
 C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods\IsekaiMod
-.
+IsekaiMod/
 ├── Assets/
 │   └── ...
 ├── Localization/
