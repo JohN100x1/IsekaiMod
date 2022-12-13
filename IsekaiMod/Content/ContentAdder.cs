@@ -144,8 +144,7 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.IsekaiProtagonistProgression.Add();
 
                 // Patch Loremaster & Hellknight Signifier Spellbooks
-                Classes.IsekaiProtagonist.LoremasterReplaceSpellbook.Patch();
-                Classes.IsekaiProtagonist.HellknightSignifierReplaceSpellbook.Patch();
+                Classes.IsekaiProtagonist.PrestigeClassReplaceSpellbook.Patch();
 
                 // Deathsnatcher animal Companion (Depends on IsekaiProtagonistClass)
                 Classes.Deathsnatcher.DeathsnatcherClass.Add();

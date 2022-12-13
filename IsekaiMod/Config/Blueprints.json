@@ -463,9 +463,11 @@
 
     // Patch Loremaster & Hellknight Signifier Spellbook
     "LoremasterIsekai": "4133ad57-ec5b-4562-96d3-613e90418597",
-    "LoremasterVillain": "63d7461a-e50e-4cb7-9fe5-51b2bdf742b8",
     "HellknightSignifierIsekai": "0b417c38-5b73-4723-815d-d31021d83dee",
+    "ArcaneTricksterIsekai": "869bd1f3-b88c-4a65-a478-e2468816ea85",
+    "LoremasterVillain": "63d7461a-e50e-4cb7-9fe5-51b2bdf742b8",
     "HellknightSignifierVillain": "e40dd66f-a0de-4656-bdb6-f6ca23a93efe",
+    "ArcaneTricksterVillain": "28e0087b-56d1-4ff0-9cdf-b1781cf6c3b5",
 
     // Deathsnatcher
     "DeathsnatcherClass": "e44a0435-06db-43e8-8762-35cd775bfd86",
