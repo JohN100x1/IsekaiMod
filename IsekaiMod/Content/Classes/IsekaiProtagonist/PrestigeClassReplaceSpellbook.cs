@@ -12,6 +12,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         private static BlueprintFeatureSelection LoremasterSpellbookSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("7a28ab4dfc010834eabc770152997e87");
         private static BlueprintFeatureSelection HellknightSignifierSpellbook = Resources.GetBlueprint<BlueprintFeatureSelection>("68782aa7a302b6d43a42a71c6e9b5277");
         private static BlueprintFeatureSelection ArcaneTricksterSpellbookSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("ae04b7cdeb88b024b9fd3882cc7d3d76");
+        private static BlueprintFeatureSelection MysticTheurgeArcaneSpellbook = Resources.GetBlueprint<BlueprintFeatureSelection>("97f510c6483523c49bc779e93e4c4568");
+        private static BlueprintFeatureSelection MysticTheurgeDivineSpellbook = Resources.GetBlueprint<BlueprintFeatureSelection>("7cd057944ce7896479717778330a4933");
         public static void Patch()
         {
             PatchIsekai();
@@ -90,10 +92,54 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.m_Archetype = Archetypes.Villain.GetReference();
                 });
             });
+            var MysticTheurgeArcaneIsekai = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>("MysticTheurgeArcaneIsekai", bp => {
+                bp.SetName("Isekai Protagonist");
+                bp.SetDescription("At 1st level, the mystic theurge selects an arcane {g|Encyclopedia:Spell}spellcasting{/g} class she belonged to before adding the prestige class. "
+                    + "When a new mystic theurge level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.");
+                bp.HideInUI = true;
+                bp.HideNotAvailibleInUI = true;
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeArcaneSpellbook };
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
+                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.RequiredSpellLevel = 2;
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.Villain.GetReference();
+                });
+            });
+            var MysticTheurgeDivineIsekai = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>("MysticTheurgeDivineIsekai", bp => {
+                bp.SetName("Isekai Protagonist");
+                bp.SetDescription("At 1st level, the mystic theurge selects a divine {g|Encyclopedia:Spell}spellcasting{/g} class she belonged to before adding the prestige class. "
+                    + "When a new mystic theurge level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.");
+                bp.HideInUI = true;
+                bp.HideNotAvailibleInUI = true;
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeDivineSpellbook };
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
+                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.RequiredSpellLevel = 2;
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.Villain.GetReference();
+                });
+            });
 
             LoremasterSpellbookSelection.m_AllFeatures = LoremasterSpellbookSelection.m_AllFeatures.AddToArray(LoremasterIsekai.ToReference<BlueprintFeatureReference>());
             HellknightSignifierSpellbook.m_AllFeatures = HellknightSignifierSpellbook.m_AllFeatures.AddToArray(HellknightSignifierIsekai.ToReference<BlueprintFeatureReference>());
             ArcaneTricksterSpellbookSelection.m_AllFeatures = ArcaneTricksterSpellbookSelection.m_AllFeatures.AddToArray(ArcaneTricksterIsekai.ToReference<BlueprintFeatureReference>());
+            MysticTheurgeArcaneSpellbook.m_AllFeatures = MysticTheurgeArcaneSpellbook.m_AllFeatures.AddToArray(MysticTheurgeArcaneIsekai.ToReference<BlueprintFeatureReference>());
+            MysticTheurgeDivineSpellbook.m_AllFeatures = MysticTheurgeDivineSpellbook.m_AllFeatures.AddToArray(MysticTheurgeDivineIsekai.ToReference<BlueprintFeatureReference>());
         }
         public static void PatchVillain()
         {
@@ -170,10 +216,54 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.m_Archetype = Archetypes.Villain.GetReference();
                 });
             });
+            var MysticTheurgeArcaneVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>("MysticTheurgeArcaneVillain", bp => {
+                bp.SetName("Isekai Villain");
+                bp.SetDescription("At 1st level, the mystic theurge selects an arcane {g|Encyclopedia:Spell}spellcasting{/g} class she belonged to before adding the prestige class. "
+                    + "When a new mystic theurge level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.");
+                bp.HideInUI = true;
+                bp.HideNotAvailibleInUI = true;
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeArcaneSpellbook };
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_Spellbook = VillainSpellbook.GetReference();
+                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.RequiredSpellLevel = 2;
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.Villain.GetReference();
+                });
+            });
+            var MysticTheurgeDivineVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>("MysticTheurgeDivineVillain", bp => {
+                bp.SetName("Isekai Villain");
+                bp.SetDescription("At 1st level, the mystic theurge selects a divine {g|Encyclopedia:Spell}spellcasting{/g} class she belonged to before adding the prestige class. "
+                    + "When a new mystic theurge level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.");
+                bp.HideInUI = true;
+                bp.HideNotAvailibleInUI = true;
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeDivineSpellbook };
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_Spellbook = VillainSpellbook.GetReference();
+                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.RequiredSpellLevel = 2;
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.Villain.GetReference();
+                });
+            });
 
             LoremasterSpellbookSelection.m_AllFeatures = LoremasterSpellbookSelection.m_AllFeatures.AddToArray(LoremasterVillain.ToReference<BlueprintFeatureReference>());
             HellknightSignifierSpellbook.m_AllFeatures = HellknightSignifierSpellbook.m_AllFeatures.AddToArray(HellknightSignifierVillain.ToReference<BlueprintFeatureReference>());
             ArcaneTricksterSpellbookSelection.m_AllFeatures = ArcaneTricksterSpellbookSelection.m_AllFeatures.AddToArray(ArcaneTricksterVillain.ToReference<BlueprintFeatureReference>());
+            MysticTheurgeArcaneSpellbook.m_AllFeatures = MysticTheurgeArcaneSpellbook.m_AllFeatures.AddToArray(MysticTheurgeArcaneVillain.ToReference<BlueprintFeatureReference>());
+            MysticTheurgeDivineSpellbook.m_AllFeatures = MysticTheurgeDivineSpellbook.m_AllFeatures.AddToArray(MysticTheurgeDivineVillain.ToReference<BlueprintFeatureReference>());
         }
     }
 }

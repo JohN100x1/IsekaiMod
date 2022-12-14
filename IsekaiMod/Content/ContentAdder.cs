@@ -143,7 +143,7 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.PrebuildIsekaiProtagonistFeatureList.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistProgression.Add();
 
-                // Patch Loremaster & Hellknight Signifier Spellbooks
+                // Patch Prestige Class Spellbooks
                 Classes.IsekaiProtagonist.PrestigeClassReplaceSpellbook.Patch();
 
                 // Deathsnatcher animal Companion (Depends on IsekaiProtagonistClass)
