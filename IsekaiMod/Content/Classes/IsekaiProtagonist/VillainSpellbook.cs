@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 bp.Spontaneous = true;
                 bp.CastingAttribute = StatType.Intelligence;
                 bp.CantripsType = CantripsType.Cantrips;
-                bp.IsArcane = false;
+                bp.IsArcane = true;
                 bp.IsArcanist = true;
                 bp.m_SpellsPerDay = IsekaiProtagonistSpellsPerDay.ToReference<BlueprintSpellsTableReference>();
                 bp.m_SpellsKnown = null;

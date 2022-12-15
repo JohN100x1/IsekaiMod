@@ -218,7 +218,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         }
         public static void PatchVillain()
         {
-
             var LoremasterVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>("LoremasterVillain", bp => {
                 bp.SetName("Isekai Villain");
                 bp.SetDescription("When a new loremaster level is gained, the character gains new {g|Encyclopedia:Spell}spells{/g} per day as if he had also gained a level in a "
@@ -285,10 +284,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.RequiredSpellLevel = 2;
                 });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.m_Archetype = Archetypes.Villain.GetReference();
+                    c.Level = 1;
                 });
             });
             var MysticTheurgeArcaneVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>("MysticTheurgeArcaneVillain", bp => {
@@ -306,10 +306,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.RequiredSpellLevel = 2;
                 });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.m_Archetype = Archetypes.Villain.GetReference();
+                    c.Level = 1;
                 });
             });
             var MysticTheurgeDivineVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>("MysticTheurgeDivineVillain", bp => {
@@ -327,10 +328,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.RequiredSpellLevel = 2;
                 });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.m_Archetype = Archetypes.Villain.GetReference();
+                    c.Level = 1;
                 });
             });
             var DragonDiscipleVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>("DragonDiscipleVillain", bp => {
@@ -351,10 +353,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.RequiredSpellLevel = 2;
                 });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.m_Archetype = Archetypes.Villain.GetReference();
+                    c.Level = 1;
                 });
             });
             var EldritchKnightVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>("EldritchKnightVillain", bp => {
@@ -374,10 +377,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.RequiredSpellLevel = 2;
                 });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.m_Archetype = Archetypes.Villain.GetReference();
+                    c.Level = 1;
                 });
             });
             var WinterWitchVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>("WinterWitchVillain", bp => {
@@ -396,10 +400,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.RequiredSpellLevel = 2;
                 });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.m_Archetype = Archetypes.Villain.GetReference();
+                    c.Level = 1;
                 });
             });
 
