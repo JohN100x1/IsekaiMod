@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
+- Patched Prestige classes to allow `Isekai Protagonist` spellbook to be selected.
 - Changed `Supersonic Combat` and `Graceful Combat` to affect damage for ranged attacks.
 
 ## [3.0.1] - 2022-12-12
