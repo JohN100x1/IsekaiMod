@@ -16,6 +16,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         private static BlueprintFeatureSelection MysticTheurgeDivineSpellbook = Resources.GetBlueprint<BlueprintFeatureSelection>("7cd057944ce7896479717778330a4933");
         private static BlueprintFeatureSelection DragonDiscipleSpellbookSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("8c1ba14c0b6dcdb439c56341385ee474");
         private static BlueprintFeatureSelection EldritchKnightSpellbookSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("dc3ab8d0484467a4787979d93114ebc3");
+        private static BlueprintFeatureSelection WinterWitchSpellbookSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("ea20b26d9d0ede540af3c74246dade41");
         public static void Patch()
         {
             PatchIsekai();
@@ -183,6 +184,28 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.m_Archetype = Archetypes.Villain.GetReference();
                 });
             });
+            var WinterWitchIsekai = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>("WinterWitchIsekai", bp => {
+                bp.SetName("Isekai Protagonist");
+                bp.SetDescription("When a new winter witch level is gained, the character gains new {g|Encyclopedia:Spell}spells{/g} per day as if she had also gained a level in witch "
+                    + "or shaman spellcasting class she belonged to before she added the prestige class. Additionally, at 2nd level, and every two level after, a winter witch gets a "
+                    + "new hex depending on the chosen spellcasting class.");
+                bp.HideInUI = true;
+                bp.HideNotAvailibleInUI = true;
+                bp.Groups = new FeatureGroup[0];
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
+                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.RequiredSpellLevel = 2;
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.Villain.GetReference();
+                });
+            });
 
             LoremasterSpellbookSelection.m_AllFeatures = LoremasterSpellbookSelection.m_AllFeatures.AddToArray(LoremasterIsekai.ToReference<BlueprintFeatureReference>());
             HellknightSignifierSpellbook.m_AllFeatures = HellknightSignifierSpellbook.m_AllFeatures.AddToArray(HellknightSignifierIsekai.ToReference<BlueprintFeatureReference>());
@@ -191,6 +214,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             MysticTheurgeDivineSpellbook.m_AllFeatures = MysticTheurgeDivineSpellbook.m_AllFeatures.AddToArray(MysticTheurgeDivineIsekai.ToReference<BlueprintFeatureReference>());
             DragonDiscipleSpellbookSelection.m_AllFeatures = DragonDiscipleSpellbookSelection.m_AllFeatures.AddToArray(DragonDiscipleIsekai.ToReference<BlueprintFeatureReference>());
             EldritchKnightSpellbookSelection.m_AllFeatures = EldritchKnightSpellbookSelection.m_AllFeatures.AddToArray(EldritchKnightIsekai.ToReference<BlueprintFeatureReference>());
+            WinterWitchSpellbookSelection.m_AllFeatures = WinterWitchSpellbookSelection.m_AllFeatures.AddToArray(WinterWitchIsekai.ToReference<BlueprintFeatureReference>());
         }
         public static void PatchVillain()
         {
@@ -356,6 +380,28 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.m_Archetype = Archetypes.Villain.GetReference();
                 });
             });
+            var WinterWitchVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>("WinterWitchVillain", bp => {
+                bp.SetName("Isekai Villain");
+                bp.SetDescription("When a new winter witch level is gained, the character gains new {g|Encyclopedia:Spell}spells{/g} per day as if she had also gained a level in witch "
+                    + "or shaman spellcasting class she belonged to before she added the prestige class. Additionally, at 2nd level, and every two level after, a winter witch gets a "
+                    + "new hex depending on the chosen spellcasting class.");
+                bp.HideInUI = true;
+                bp.HideNotAvailibleInUI = true;
+                bp.Groups = new FeatureGroup[0];
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_Spellbook = VillainSpellbook.GetReference();
+                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.RequiredSpellLevel = 2;
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.Villain.GetReference();
+                });
+            });
 
             LoremasterSpellbookSelection.m_AllFeatures = LoremasterSpellbookSelection.m_AllFeatures.AddToArray(LoremasterVillain.ToReference<BlueprintFeatureReference>());
             HellknightSignifierSpellbook.m_AllFeatures = HellknightSignifierSpellbook.m_AllFeatures.AddToArray(HellknightSignifierVillain.ToReference<BlueprintFeatureReference>());
@@ -364,6 +410,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             MysticTheurgeDivineSpellbook.m_AllFeatures = MysticTheurgeDivineSpellbook.m_AllFeatures.AddToArray(MysticTheurgeDivineVillain.ToReference<BlueprintFeatureReference>());
             DragonDiscipleSpellbookSelection.m_AllFeatures = DragonDiscipleSpellbookSelection.m_AllFeatures.AddToArray(DragonDiscipleVillain.ToReference<BlueprintFeatureReference>());
             EldritchKnightSpellbookSelection.m_AllFeatures = EldritchKnightSpellbookSelection.m_AllFeatures.AddToArray(EldritchKnightVillain.ToReference<BlueprintFeatureReference>());
+            WinterWitchSpellbookSelection.m_AllFeatures = WinterWitchSpellbookSelection.m_AllFeatures.AddToArray(WinterWitchVillain.ToReference<BlueprintFeatureReference>());
         }
     }
 }

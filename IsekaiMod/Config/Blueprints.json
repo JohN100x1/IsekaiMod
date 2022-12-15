@@ -461,7 +461,7 @@
     "SecondFormFeature": "56365f1f-cf02-4ad7-873f-5b6dd6becbb2",
     "VillainQuickFooted": "2d0e8bf9-5978-45c3-bafc-9b3eefc573c7",
 
-    // Patch Loremaster & Hellknight Signifier Spellbook
+    // Patch Prestige Class Spellbook
     "LoremasterIsekai": "4133ad57-ec5b-4562-96d3-613e90418597",
     "HellknightSignifierIsekai": "0b417c38-5b73-4723-815d-d31021d83dee",
     "ArcaneTricksterIsekai": "869bd1f3-b88c-4a65-a478-e2468816ea85",
@@ -469,6 +469,7 @@
     "MysticTheurgeDivineIsekai": "70fbae81-888a-422e-9ff1-639d7e7ec670",
     "DragonDiscipleIsekai": "5459c7f4-5b56-4e77-89f4-b8332ddb4aa5",
     "EldritchKnightIsekai": "d8594b8b-7be0-4ed3-b08c-3c96af5e1475",
+    "WinterWitchIsekai": "a0413802-73fa-44c6-a9c8-bfeee0b20622",
     "LoremasterVillain": "63d7461a-e50e-4cb7-9fe5-51b2bdf742b8",
     "HellknightSignifierVillain": "e40dd66f-a0de-4656-bdb6-f6ca23a93efe",
     "ArcaneTricksterVillain": "28e0087b-56d1-4ff0-9cdf-b1781cf6c3b5",
@@ -476,6 +477,7 @@
     "MysticTheurgeDivineVillain": "5001b591-3223-4a91-88d6-bc5adc2d47eb",
     "DragonDiscipleVillain": "93177109-389c-4cb0-8662-f18364e1e265",
     "EldritchKnightVillain": "befb34db-255c-4523-ae30-6e2751b676c8",
+    "WinterWitchVillain": "6b71585a-95fd-4264-bf01-5649461cc8c5",
 
     // Deathsnatcher
     "DeathsnatcherClass": "e44a0435-06db-43e8-8762-35cd775bfd86",
