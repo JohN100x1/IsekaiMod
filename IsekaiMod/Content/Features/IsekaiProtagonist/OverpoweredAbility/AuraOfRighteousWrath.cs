@@ -59,7 +59,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.SneakAttack;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;

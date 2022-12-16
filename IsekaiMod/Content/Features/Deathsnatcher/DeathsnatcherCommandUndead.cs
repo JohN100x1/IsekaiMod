@@ -82,7 +82,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                                     Rate = DurationRate.Rounds,
                                     DiceType = DiceType.Zero,
                                     DiceCountValue = 0,
-                                    BonusValue = Values.ContextRankValue(AbilityRankType.DamageBonus),
+                                    BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus),
                                     m_IsExtendable = true
                                 };
                             });
@@ -93,7 +93,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                                     Rate = DurationRate.Rounds,
                                     DiceType = DiceType.Zero,
                                     DiceCountValue = 0,
-                                    BonusValue = Values.ContextRankValue(AbilityRankType.DamageBonus),
+                                    BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus),
                                     m_IsExtendable = true
                                 };
                                 c.IsFromSpell = true;

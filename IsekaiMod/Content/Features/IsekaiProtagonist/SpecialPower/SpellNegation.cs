@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.SetDescription("You gain spell resistance equal to 10 + twice your character level.");
                 bp.m_Icon = Icon_SpellResistance;
                 bp.AddComponent<AddSpellResistance>(c => {
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;

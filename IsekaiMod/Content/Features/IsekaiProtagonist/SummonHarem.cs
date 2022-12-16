@@ -38,7 +38,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
             Rate = DurationRate.Rounds,
             DiceType = DiceType.Zero,
             DiceCountValue = 0,
-            BonusValue = Values.ContextRankValue(AbilityRankType.Default),
+            BonusValue = Values.CreateContextRankValue(AbilityRankType.Default),
             m_IsExtendable = true
         };
         private static readonly ContextDiceValue DiceValueOne = new()

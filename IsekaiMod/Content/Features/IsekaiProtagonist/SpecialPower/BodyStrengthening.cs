@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.SetDescription("You gain {g|Encyclopedia:Damage_Reduction}DR{/g}/— equal to your character level.");
                 bp.m_Icon = Icon_IronBody;
                 bp.AddComponent<AddDamageResistancePhysical>(c => {
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;

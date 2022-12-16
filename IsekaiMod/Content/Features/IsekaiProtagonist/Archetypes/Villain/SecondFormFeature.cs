@@ -150,7 +150,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                         {
                             DiceType = DiceType.Zero,
                             DiceCountValue = 0,
-                            BonusValue = Values.ContextTargetPropertyValue(UnitProperty.MaxHP)
+                            BonusValue = Values.CreateContextTargetPropertyValue(UnitProperty.MaxHP)
                         }
                     },
                     new ContextActionApplyBuff()

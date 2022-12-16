@@ -51,7 +51,7 @@ namespace IsekaiMod.Utilities
                 BonusValue = 1,
             };
         }
-        public static ContextValue ContextRankValue(AbilityRankType rankType, int value = 0)
+        public static ContextValue CreateContextRankValue(AbilityRankType rankType, int value = 0)
         {
             return new ContextValue()
             {
@@ -60,7 +60,7 @@ namespace IsekaiMod.Utilities
                 Value = value
             };
         }
-        public static ContextValue ContextSharedValue(AbilitySharedValue sharedType)
+        public static ContextValue CreateContextSharedValue(AbilitySharedValue sharedType)
         {
             return new ContextValue()
             {
@@ -68,7 +68,7 @@ namespace IsekaiMod.Utilities
                 ValueShared = sharedType
             };
         }
-        public static ContextValue ContextTargetPropertyValue(UnitProperty unitProperty)
+        public static ContextValue CreateContextTargetPropertyValue(UnitProperty unitProperty)
         {
             return new ContextValue()
             {
@@ -76,7 +76,7 @@ namespace IsekaiMod.Utilities
                 Property = unitProperty
             };
         }
-        public static ContextValue ContextCasterCustomPropertyValue(BlueprintUnitProperty unitProperty)
+        public static ContextValue CreateContextCasterCustomPropertyValue(BlueprintUnitProperty unitProperty)
         {
             return new ContextValue()
             {

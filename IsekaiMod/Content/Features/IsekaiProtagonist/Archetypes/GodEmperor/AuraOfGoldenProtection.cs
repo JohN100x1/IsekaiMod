@@ -26,22 +26,22 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.AC;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.SaveFortitude;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.SaveReflex;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.SaveWill;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;

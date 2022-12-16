@@ -38,17 +38,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 bp.m_Icon = Icon_MarkOfJustice;
                 bp.AddComponent<AttackBonusAgainstTarget>(c => {
                     c.CheckCasterFriend = true;
-                    c.Value = Values.ContextSharedValue(AbilitySharedValue.StatBonus);
+                    c.Value = Values.CreateContextSharedValue(AbilitySharedValue.StatBonus);
                 });
                 bp.AddComponent<DamageBonusAgainstTarget>(c => {
                     c.CheckCasterFriend = true;
                     c.ApplyToSpellDamage = true;
-                    c.Value = Values.ContextSharedValue(AbilitySharedValue.DamageBonus);
+                    c.Value = Values.CreateContextSharedValue(AbilitySharedValue.DamageBonus);
                 });
                 bp.AddComponent<ACBonusAgainstTarget>(c => {
                     c.CheckCasterFriend = true;
                     c.Descriptor = ModifierDescriptor.Deflection;
-                    c.Value = Values.ContextSharedValue(AbilitySharedValue.StatBonus);
+                    c.Value = Values.CreateContextSharedValue(AbilitySharedValue.StatBonus);
                 });
                 bp.AddComponent<IgnoreTargetDR>(c => {
                     c.CheckCasterFriend = true;
@@ -81,7 +81,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     {
                         DiceType = DiceType.Zero,
                         DiceCountValue = 0,
-                        BonusValue = Values.ContextRankValue(AbilityRankType.StatBonus)
+                        BonusValue = Values.CreateContextRankValue(AbilityRankType.StatBonus)
                     };
                     c.Modifier = 1;
                 });
@@ -91,7 +91,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     {
                         DiceType = DiceType.Zero,
                         DiceCountValue = 0,
-                        BonusValue = Values.ContextRankValue(AbilityRankType.DamageBonus)
+                        BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
                 };
                     c.Modifier = 1;
                 });

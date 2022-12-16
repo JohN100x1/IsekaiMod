@@ -27,31 +27,31 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.HitPoints;
-                    c.Value = Values.ContextRankValue(AbilityRankType.Default);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.Default);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.AdditionalAttackBonus;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.AdditionalDamage;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.AC;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.SaveFortitude;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.SaveReflex;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.SaveWill;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.Default;
@@ -104,31 +104,31 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.HitPoints;
-                    c.Value = Values.ContextRankValue(AbilityRankType.Default);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.Default);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.Strength;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.Dexterity;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.Constitution;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.Intelligence;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.Wisdom;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.Charisma;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.Default;
@@ -190,7 +190,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.SneakAttack;
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;

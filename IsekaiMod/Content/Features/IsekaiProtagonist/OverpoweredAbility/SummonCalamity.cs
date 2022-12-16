@@ -40,7 +40,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             Rate = DurationRate.Rounds,
             DiceType = DiceType.Zero,
             DiceCountValue = 0,
-            BonusValue = Values.ContextRankValue(AbilityRankType.Default),
+            BonusValue = Values.CreateContextRankValue(AbilityRankType.Default),
             m_IsExtendable = true
         };
         public static void Add()

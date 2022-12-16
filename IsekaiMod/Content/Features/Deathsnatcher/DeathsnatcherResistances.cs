@@ -47,7 +47,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 // Add Spell Resistance
                 bp.AddComponent<AddSpellResistance>(c =>
                 {
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c =>
                 {

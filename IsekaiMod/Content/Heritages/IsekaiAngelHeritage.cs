@@ -75,7 +75,7 @@ namespace IsekaiMod.Content.Heritages
                     c.Anchor = AbilitySpawnFxAnchor.ClickedTarget;
                 });
                 bp.AddComponent<ContextSetAbilityParams>(c => {
-                    c.DC = Values.ContextCasterCustomPropertyValue(AngelicBoltUnitProperty);
+                    c.DC = Values.CreateContextCasterCustomPropertyValue(AngelicBoltUnitProperty);
                 });
                 bp.AddComponent<AbilityResourceLogic>(c => {
                     c.m_RequiredResource = AasimarSpellLikeResource.ToReference<BlueprintAbilityResourceReference>();
@@ -142,7 +142,7 @@ namespace IsekaiMod.Content.Heritages
 
                 // Add Spell Resistance
                 bp.AddComponent<AddSpellResistance>(c => {
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;

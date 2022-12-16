@@ -59,7 +59,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                             Rate = DurationRate.Rounds,
                             DiceType = DiceType.Zero,
                             DiceCountValue = 0,
-                            BonusValue = Values.ContextRankValue(AbilityRankType.Default)
+                            BonusValue = Values.CreateContextRankValue(AbilityRankType.Default)
                         };
                         c.CountValue = new ContextDiceValue()
                         {

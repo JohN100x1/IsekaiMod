@@ -137,8 +137,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                         c.Value = new ContextDiceValue()
                                         {
                                             DiceType = DiceType.D6,
-                                            DiceCountValue = Values.ContextRankValue(AbilityRankType.DamageDice),
-                                            BonusValue = Values.ContextRankValue(AbilityRankType.DamageBonus)
+                                            DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
+                                            BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
                                         };
                                         c.IsAoE = true;
                                         c.HalfIfSaved = true;
@@ -166,8 +166,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                         c.Value = new ContextDiceValue()
                                         {
                                             DiceType = DiceType.D6,
-                                            DiceCountValue = Values.ContextRankValue(AbilityRankType.DamageDice),
-                                            BonusValue = Values.ContextRankValue(AbilityRankType.DamageBonus)
+                                            DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
+                                            BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
                                         };
                                         c.IsAoE = true;
                                         c.HalfIfSaved = true;
@@ -238,8 +238,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.Value = new ContextDiceValue()
                     {
                         DiceType = DiceType.D6,
-                        DiceCountValue = Values.ContextRankValue(AbilityRankType.Default),
-                        BonusValue = Values.ContextRankValue(AbilityRankType.DamageBonus)
+                        DiceCountValue = Values.CreateContextRankValue(AbilityRankType.Default),
+                        BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
                 };
                     c.Modifier = 1;
                 });
@@ -249,7 +249,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     {
                         DiceType = DiceType.D6,
                         DiceCountValue = 0,
-                        BonusValue = Values.ContextSharedValue(AbilitySharedValue.Heal)
+                        BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.Heal)
                     };
                     c.Modifier = 0.5;
                 });
@@ -289,7 +289,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                         {
                                             DiceType = DiceType.Zero,
                                             DiceCountValue = 0,
-                                            BonusValue = Values.ContextSharedValue(AbilitySharedValue.Heal)
+                                            BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.Heal)
                                         }
                                     },
                                     new ContextActionSpawnFx()
@@ -314,7 +314,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                             {
                                                 DiceType = DiceType.Zero,
                                                 DiceCountValue = 0,
-                                                BonusValue = Values.ContextSharedValue(AbilitySharedValue.StatBonus)
+                                                BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.StatBonus)
                                             }
                                         },
                                         new ContextActionSpawnFx()
@@ -339,7 +339,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                         {
                                             DiceType = DiceType.Zero,
                                             DiceCountValue = 0,
-                                            BonusValue = Values.ContextSharedValue(AbilitySharedValue.StatBonus)
+                                            BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.StatBonus)
                                         }
                                     },
                                     new ContextActionSpawnFx()
@@ -353,7 +353,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                         {
                                             DiceType = DiceType.Zero,
                                             DiceCountValue = 0,
-                                            BonusValue = Values.ContextSharedValue(AbilitySharedValue.Heal)
+                                            BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.Heal)
                                         }
                                     },
                                     new ContextActionSpawnFx()

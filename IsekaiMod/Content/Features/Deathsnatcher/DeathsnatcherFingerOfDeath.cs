@@ -65,7 +65,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                             {
                                 DiceType = DiceType.D6,
                                 DiceCountValue = 3,
-                                BonusValue = Values.ContextRankValue(AbilityRankType.DamageBonus)
+                                BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
                             };
                         });
                         c.Failed = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
@@ -81,7 +81,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                             {
                                 DiceType = DiceType.Zero,
                                 DiceCountValue = 0,
-                                BonusValue = Values.ContextRankValue(AbilityRankType.Default)
+                                BonusValue = Values.CreateContextRankValue(AbilityRankType.Default)
                             };
                         });
                     });

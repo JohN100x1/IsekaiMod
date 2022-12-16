@@ -63,7 +63,7 @@ namespace IsekaiMod.Content.Heritages
                                 Rate = DurationRate.Minutes,
                                 m_IsExtendable = true,
                                 DiceCountValue = 0,
-                                BonusValue = Values.ContextRankValue(AbilityRankType.Default)
+                                BonusValue = Values.CreateContextRankValue(AbilityRankType.Default)
                             };
                         });
                     });
@@ -80,7 +80,7 @@ namespace IsekaiMod.Content.Heritages
                     c.Anchor = AbilitySpawnFxAnchor.SelectedTarget;
                 });
                 bp.AddComponent<ContextSetAbilityParams>(c => {
-                    c.DC = Values.ContextCasterCustomPropertyValue(SuccubusCharmUnitProperty);
+                    c.DC = Values.CreateContextCasterCustomPropertyValue(SuccubusCharmUnitProperty);
                 });
                 bp.AddComponent<AbilityResourceLogic>(c => {
                     c.m_RequiredResource = TieflingSpellLikeResource.ToReference<BlueprintAbilityResourceReference>();
@@ -165,7 +165,7 @@ namespace IsekaiMod.Content.Heritages
 
                 // Add Spell Resistance
                 bp.AddComponent<AddSpellResistance>(c => {
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;

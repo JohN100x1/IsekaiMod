@@ -77,7 +77,7 @@ namespace IsekaiMod.Content.Heritages
                             Type = SavingThrowType.Fortitude,
                             m_ConditionalDCIncrease = new ContextActionSavingThrow.ConditionalDCIncrease[0],
                             HasCustomDC = true,
-                            CustomDC = Values.ContextCasterCustomPropertyValue(DrowPoisonUnitProperty),
+                            CustomDC = Values.CreateContextCasterCustomPropertyValue(DrowPoisonUnitProperty),
                             FromBuff = false,
                             Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
                                 c.Succeed = ActionFlow.DoNothing();
@@ -98,7 +98,7 @@ namespace IsekaiMod.Content.Heritages
                         );
                 });
                 bp.AddComponent<ContextSetAbilityParams>(c => {
-                    c.DC = Values.ContextCasterCustomPropertyValue(DrowPoisonUnitProperty);
+                    c.DC = Values.CreateContextCasterCustomPropertyValue(DrowPoisonUnitProperty);
                 });
             });
             var DrowPoisonAbility = Helpers.CreateBlueprint<BlueprintAbility>("DrowPoisonAbility", bp => {
@@ -120,7 +120,7 @@ namespace IsekaiMod.Content.Heritages
                     c.Anchor = AbilitySpawnFxAnchor.Caster;
                 });
                 bp.AddComponent<ContextSetAbilityParams>(c => {
-                    c.DC = Values.ContextCasterCustomPropertyValue(DrowPoisonUnitProperty);
+                    c.DC = Values.CreateContextCasterCustomPropertyValue(DrowPoisonUnitProperty);
                 });
                 bp.AddComponent<AbilityResourceLogic>(c => {
                     c.m_RequiredResource = DrowPoisonResource.ToReference<BlueprintAbilityResourceReference>();
@@ -174,7 +174,7 @@ namespace IsekaiMod.Content.Heritages
 
                 // Add Spell Resistance
                 bp.AddComponent<AddSpellResistance>(c => {
-                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;
