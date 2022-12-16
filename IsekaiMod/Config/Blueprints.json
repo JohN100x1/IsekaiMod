@@ -210,7 +210,7 @@
     "OmegaStrike": "6aae0390-982e-4ce4-bc12-ab81f860d597",
     "MundaneAura": "2a36d826-f9de-478d-bd43-3932b63b9ad0",
     "RegenerationFeature": "e6b4fa55-3e01-46c7-9e6b-a3f1911b0b65",
-    "InfiniteInventoryFeature": "72ad9cc8-3ef1-4286-b5e4-29b9597d54b8",
+    "InfiniteSpaceFeature": "72ad9cc8-3ef1-4286-b5e4-29b9597d54b8",
     "TrainingMontage": "557a9018-bea9-4f2a-b110-27e9d332ab56",
     "BodyStrengthening": "f48b2667-6ac5-4971-b0a4-6e04d5082680",
     "SpellNegationBuff": "92a00da0-0ab7-42f7-9390-b8acacb3bf35",
@@ -390,6 +390,12 @@
     "TrueResurrectionAbility": "25c39cdd-c81f-43cc-8d14-c52c2adb3858",
     "TrueResurrectionFeature": "56cf33e8-6c2f-4759-ae2d-771c08ce17ff",
     "SupremeBeing": "241af16f-4b0e-4866-b44c-c9d7f6a6fa34",
+    "AuraOfRighteousWrathEnchantment": "a2217b5a-9cc0-4ddf-9f04-49dc180da423",
+    "AuraOfRighteousWrathBuff": "f7c3d96d-521b-4d3b-9cdc-fc73b4f48d58",
+    "AuraOfRighteousWrathArea": "342c439e-37b9-430e-a47f-e26bec5203dd",
+    "AuraOfRighteousWrathAreaBuff": "03c632a7-7829-496e-be90-f1605c252ddf",
+    "AuraOfRighteousWrathAbility": "a29e2b67-1e55-40a0-ab32-38ff7a231a7d",
+    "AuraOfRighteousWrathFeature": "fd680a28-f187-4884-b8ea-f6f084d8d5c1",
 
     // God Emperor Features
     "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",

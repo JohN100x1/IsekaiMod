@@ -1640,13 +1640,13 @@
     },
     {
       "Key": "5276f12c88b744f59b3e2c55db3dc6c6",
-      "SimpleName": "InfiniteInventoryFeature.Description",
+      "SimpleName": "InfiniteSpaceFeature.Description",
       "ProcessTemplates": true,
       "enGB": "You have an infinite carry capacity."
     },
     {
       "Key": "415f83fa675f4928bf6eb3d037c9e30c",
-      "SimpleName": "InfiniteInventoryFeature.Name",
+      "SimpleName": "InfiniteSpaceFeature.Name",
       "ProcessTemplates": false,
       "enGB": "Overpowered Ability — Infinite Inventory"
     },
