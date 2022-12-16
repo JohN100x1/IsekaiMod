@@ -1,6 +1,9 @@
-﻿using Kingmaker.Enums;
+﻿using Kingmaker.Blueprints;
+using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
+using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Mechanics;
+using Kingmaker.UnitLogic.Mechanics.Properties;
 
 namespace IsekaiMod.Utilities
 {
@@ -41,13 +44,44 @@ namespace IsekaiMod.Utilities
                 DiceCountValue = 0,
                 BonusValue = 0,
             };
+            public static readonly ContextDiceValue One = new()
+            {
+                DiceType = DiceType.Zero,
+                DiceCountValue = 0,
+                BonusValue = 1,
+            };
         }
-        public static ContextValue ContextRankValue(AbilityRankType rankType)
+        public static ContextValue ContextRankValue(AbilityRankType rankType, int value = 0)
         {
             return new ContextValue()
             {
                 ValueType = ContextValueType.Rank,
-                ValueRank = rankType
+                ValueRank = rankType,
+                Value = value
+            };
+        }
+        public static ContextValue ContextSharedValue(AbilitySharedValue sharedType)
+        {
+            return new ContextValue()
+            {
+                ValueType = ContextValueType.Shared,
+                ValueShared = sharedType
+            };
+        }
+        public static ContextValue ContextTargetPropertyValue(UnitProperty unitProperty)
+        {
+            return new ContextValue()
+            {
+                ValueType = ContextValueType.TargetProperty,
+                Property = unitProperty
+            };
+        }
+        public static ContextValue ContextCasterCustomPropertyValue(BlueprintUnitProperty unitProperty)
+        {
+            return new ContextValue()
+            {
+                ValueType = ContextValueType.CasterCustomProperty,
+                m_CustomProperty = unitProperty.ToReference<BlueprintUnitPropertyReference>()
             };
         }
     }

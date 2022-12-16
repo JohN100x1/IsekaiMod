@@ -27,20 +27,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Luck;
                     c.Stat = StatType.AdditionalAttackBonus;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Luck;
                     c.Stat = StatType.AdditionalDamage;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;
@@ -56,18 +48,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.AddComponent<IncreaseAllSpellsDC>(c => {
                     c.SpellsOnly = true;
                     c.Descriptor = ModifierDescriptor.UntypedStackable;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<IncreaseSpellDamage>(c => {
-                    c.DamageBonus = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.DamageBonus = Values.ContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;

@@ -63,11 +63,7 @@ namespace IsekaiMod.Content.Heritages
                                 Rate = DurationRate.Minutes,
                                 m_IsExtendable = true,
                                 DiceCountValue = 0,
-                                BonusValue = new ContextValue()
-                                {
-                                    Value = 0,
-                                    ValueType = ContextValueType.Rank
-                                }
+                                BonusValue = Values.ContextRankValue(AbilityRankType.Default)
                             };
                         });
                     });
@@ -84,11 +80,7 @@ namespace IsekaiMod.Content.Heritages
                     c.Anchor = AbilitySpawnFxAnchor.SelectedTarget;
                 });
                 bp.AddComponent<ContextSetAbilityParams>(c => {
-                    c.DC = new ContextValue()
-                    {
-                        ValueType = ContextValueType.CasterCustomProperty,
-                        m_CustomProperty = SuccubusCharmUnitProperty.ToReference<BlueprintUnitPropertyReference>()
-                    };
+                    c.DC = Values.ContextCasterCustomPropertyValue(SuccubusCharmUnitProperty);
                 });
                 bp.AddComponent<AbilityResourceLogic>(c => {
                     c.m_RequiredResource = TieflingSpellLikeResource.ToReference<BlueprintAbilityResourceReference>();
@@ -173,11 +165,7 @@ namespace IsekaiMod.Content.Heritages
 
                 // Add Spell Resistance
                 bp.AddComponent<AddSpellResistance>(c => {
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.ContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;

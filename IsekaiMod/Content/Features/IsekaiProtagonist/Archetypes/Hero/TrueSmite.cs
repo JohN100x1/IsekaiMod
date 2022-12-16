@@ -58,30 +58,18 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     + "a new target.");
                 bp.m_Icon = Icon_SmiteEvil;
                 bp.AddComponent<AttackBonusAgainstTarget>(c => {
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Shared,
-                        ValueShared = AbilitySharedValue.StatBonus
-                    };
+                    c.Value = Values.ContextSharedValue(AbilitySharedValue.StatBonus);
                     c.CheckCaster = true;
                 });
                 bp.AddComponent<DamageBonusAgainstTarget>(c => {
                     c.CheckCaster = true;
                     c.ApplyToSpellDamage = true;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Shared,
-                        ValueShared = AbilitySharedValue.DamageBonus
-                    };
+                    c.Value = Values.ContextSharedValue(AbilitySharedValue.DamageBonus);
                 });
                 bp.AddComponent<ACBonusAgainstTarget>(c => {
                     c.CheckCaster = true;
                     c.Descriptor = ModifierDescriptor.Deflection;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Shared,
-                        ValueShared = AbilitySharedValue.StatBonus
-                    };
+                    c.Value = Values.ContextSharedValue(AbilitySharedValue.StatBonus);
                 });
                 bp.AddComponent<RemoveBuffIfCasterIsMissing>(c => {
                     c.RemoveOnCasterDeath = true;
@@ -118,27 +106,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     {
                         DiceType = DiceType.Zero,
                         DiceCountValue = 0,
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.StatBonus,
-                            ValueShared = AbilitySharedValue.StatBonus
-                        },
-                    };
+                        BonusValue = Values.ContextRankValue(AbilityRankType.StatBonus)
+                };
                     c.Modifier = 1;
                 });
                 bp.AddComponent<ContextCalculateSharedValue>(c => {
                     c.ValueType = AbilitySharedValue.DamageBonus;
                     c.Value = new ContextDiceValue()
                     {
-                        DiceCountValue = new ContextValue(),
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus,
-                            ValueShared = AbilitySharedValue.DamageBonus
-                        },
-                    };
+                        DiceCountValue = 0,
+                        BonusValue = Values.ContextRankValue(AbilityRankType.DamageBonus)
+                };
                     c.Modifier = 1;
                 });
                 bp.AddComponent<ContextRankConfig>(c => {

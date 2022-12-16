@@ -30,7 +30,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Actions = Helpers.CreateActionList(
                         new ContextRestoreResource() {
                             m_IsFullRestoreAllResources = true,
-                            Value = new ContextValue()
+                            Value = 0
                         },
                         new ContextActionRestoreAllSpellSlots()
                         {

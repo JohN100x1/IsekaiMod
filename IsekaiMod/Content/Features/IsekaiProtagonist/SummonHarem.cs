@@ -38,11 +38,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
             Rate = DurationRate.Rounds,
             DiceType = DiceType.Zero,
             DiceCountValue = 0,
-            BonusValue = new ContextValue()
-            {
-                ValueType = ContextValueType.Rank,
-                ValueRank = AbilityRankType.Default
-            },
+            BonusValue = Values.ContextRankValue(AbilityRankType.Default),
             m_IsExtendable = true
         };
         private static readonly ContextDiceValue DiceValueOne = new()
@@ -117,7 +113,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 m_SummonPool = SummonMonsterPool.ToReference<BlueprintSummonPoolReference>(),
                 DurationValue = RankDuration,
                 CountValue = DiceValueOne,
-                LevelValue = new ContextValue(),
+                LevelValue = 0,
                 AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                     c.Permanent = true;
                     c.m_Buff = SummonedCreatureSpawnMonsterVI_IX.ToReference<BlueprintBuffReference>();

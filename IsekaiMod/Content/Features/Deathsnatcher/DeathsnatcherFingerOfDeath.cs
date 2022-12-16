@@ -60,11 +60,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                                 Energy = DamageEnergyType.Unholy
                             };
                             c.AbilityType = StatType.Unknown;
-                            c.Duration = new ContextDurationValue()
-                            {
-                                Rate = DurationRate.Rounds,
-                                DiceType = DiceType.Zero,
-                            };
+                            c.Duration = Values.Duration.Zero;
                             c.Value = new ContextDiceValue()
                             {
                                 DiceType = DiceType.D6,
@@ -80,11 +76,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                                 Energy = DamageEnergyType.Unholy
                             };
                             c.AbilityType = StatType.Unknown;
-                            c.Duration = new ContextDurationValue()
-                            {
-                                Rate = DurationRate.Rounds,
-                                DiceType = DiceType.Zero,
-                            };
+                            c.Duration = Values.Duration.Zero;
                             c.Value = new ContextDiceValue()
                             {
                                 DiceType = DiceType.Zero,

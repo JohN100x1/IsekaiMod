@@ -138,11 +138,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     Rate = DurationRate.Rounds,
                     DiceType = DiceType.Zero,
                     DiceCountValue = 0,
-                    BonusValue = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.Default
-                    },
+                    BonusValue = Values.ContextRankValue(AbilityRankType.Default),
                     m_IsExtendable = true
                 },
                 CountValue = new()
@@ -151,7 +147,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     DiceCountValue = 0,
                     BonusValue = 1
                 },
-                LevelValue = new ContextValue(),
+                LevelValue = 0,
                 AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                     c.Permanent = true;
                     c.m_Buff = SummonedCreatureSpawnMonsterVI_IX.ToReference<BlueprintBuffReference>();

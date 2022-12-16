@@ -48,14 +48,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                         c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
                             c.Succeed = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                                 c.m_Buff = Stunned.ToReference<BlueprintBuffReference>();
-                                c.DurationValue = new ContextDurationValue()
-                                {
-                                    Rate = DurationRate.Rounds,
-                                    DiceType = DiceType.Zero,
-                                    DiceCountValue = 0,
-                                    BonusValue = 1,
-                                    m_IsExtendable = true
-                                };
+                                c.DurationValue = Values.Duration.OneRound;
                             });
                             c.Failed = ActionFlow.DoSingle<ContextActionKill>();
                         });

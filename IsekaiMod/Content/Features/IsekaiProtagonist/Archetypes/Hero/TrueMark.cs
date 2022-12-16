@@ -38,29 +38,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 bp.m_Icon = Icon_MarkOfJustice;
                 bp.AddComponent<AttackBonusAgainstTarget>(c => {
                     c.CheckCasterFriend = true;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Shared,
-                        ValueShared = AbilitySharedValue.StatBonus
-                    };
+                    c.Value = Values.ContextSharedValue(AbilitySharedValue.StatBonus);
                 });
                 bp.AddComponent<DamageBonusAgainstTarget>(c => {
                     c.CheckCasterFriend = true;
                     c.ApplyToSpellDamage = true;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Shared,
-                        ValueShared = AbilitySharedValue.DamageBonus
-                    };
+                    c.Value = Values.ContextSharedValue(AbilitySharedValue.DamageBonus);
                 });
                 bp.AddComponent<ACBonusAgainstTarget>(c => {
                     c.CheckCasterFriend = true;
                     c.Descriptor = ModifierDescriptor.Deflection;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Shared,
-                        ValueShared = AbilitySharedValue.StatBonus
-                    };
+                    c.Value = Values.ContextSharedValue(AbilitySharedValue.StatBonus);
                 });
                 bp.AddComponent<IgnoreTargetDR>(c => {
                     c.CheckCasterFriend = true;
@@ -93,12 +81,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     {
                         DiceType = DiceType.Zero,
                         DiceCountValue = 0,
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.StatBonus,
-                            ValueShared = AbilitySharedValue.StatBonus
-                        },
+                        BonusValue = Values.ContextRankValue(AbilityRankType.StatBonus)
                     };
                     c.Modifier = 1;
                 });
@@ -107,14 +90,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     c.Value = new ContextDiceValue()
                     {
                         DiceType = DiceType.Zero,
-                        DiceCountValue = new ContextValue(),
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus,
-                            ValueShared = AbilitySharedValue.DamageBonus
-                        },
-                    };
+                        DiceCountValue = 0,
+                        BonusValue = Values.ContextRankValue(AbilityRankType.DamageBonus)
+                };
                     c.Modifier = 1;
                 });
                 bp.AddComponent<ContextRankConfig>(c => {

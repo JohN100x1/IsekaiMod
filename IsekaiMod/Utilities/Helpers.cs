@@ -201,16 +201,6 @@ namespace IsekaiMod.Utilities
             uiGroup.m_Features.AddRange(featureBaseReferenceArray);
             return new UIGroup[1] { uiGroup };
         }
-
-        public static ContextValue CreateContextValueRank(AbilityRankType value = AbilityRankType.Default) => value.CreateContextValue();
-        public static ContextValue CreateContextValue(this AbilityRankType value)
-        {
-            return new ContextValue() { ValueType = ContextValueType.Rank, ValueRank = value };
-        }
-        public static ContextValue CreateContextValue(this AbilitySharedValue value)
-        {
-            return new ContextValue() { ValueType = ContextValueType.Shared, ValueShared = value };
-        }
         public static ActionList CreateActionList(params GameAction[] actions)
         {
             if (actions == null || actions.Length == 1 && actions[0] == null) actions = Array.Empty<GameAction>();

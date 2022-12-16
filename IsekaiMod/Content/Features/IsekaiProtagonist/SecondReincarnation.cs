@@ -60,12 +60,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                             {
                                 DiceType = DiceType.Zero,
                                 DiceCountValue = 0,
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueRank = AbilityRankType.Default,
-                                    ValueType = ContextValueType.TargetProperty,
-                                    Property = UnitProperty.MaxHP
-                                }
+                                BonusValue = Values.ContextTargetPropertyValue(UnitProperty.MaxHP)
                             }
                         },
                         new ContextActionSpawnFx()
