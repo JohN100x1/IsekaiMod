@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added `Aura of Righteous Wrath` Overpowered ability.
 - Added `Magical Summoning` Exceptional summoning feat.
+- Added `Dismiss Super Buff` ability for `Super Buff` Overpowered ability.
 ### Changed
 - Patched Prestige classes to allow `Isekai Protagonist` spellbook to be selected.
 - Nerfed `Exceptional Summoning` to `Mighty Summoning`. Lowered HP buff to summons from +10 to +5, no saving throw bonus.
