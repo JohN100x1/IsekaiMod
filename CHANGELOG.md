@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Patched Prestige classes to allow `Isekai Protagonist` spellbook to be selected.
 - Changed `Isekai Protagonist` to count as both an arcane and divine caster.
+- Changed Isekai Protagonist spellbook spells to be counted as arcane spells rather than divine spells.
 - Changed `Supersonic Combat` and `Graceful Combat` to affect damage for ranged attacks.
 - Renamed `Infinite Inventory` to `Infinite Space`.
 
