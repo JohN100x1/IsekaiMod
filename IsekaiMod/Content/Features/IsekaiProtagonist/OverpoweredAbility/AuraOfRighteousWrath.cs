@@ -89,7 +89,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             var AuraOfRighteousWrathAreaBuff = Helpers.CreateBuff("AuraOfRighteousWrathAreaBuff", bp => {
                 bp.SetName("Overpowered Ability — Aura of Righteous Wrath");
                 bp.SetDescription("Allies within 120 feet of you has two extra attacks and deal an additional 5d6 physical damage. "
-                    + "They also gain a number of sneak attack dice equal to 1/2 your character level.");
+                    + "They also gain 1d6 sneak attack equal to 1/2 your character level.");
                 bp.m_Icon = Icon_AuraOfRighteousWrath;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -100,7 +100,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             var AuraOfRighteousWrathAbility = Helpers.CreateActivatableAbility("AuraOfRighteousWrathAbility", bp => {
                 bp.SetName("Overpowered Ability — Aura of Righteous Wrath");
                 bp.SetDescription("Allies within 120 feet of you has two extra attacks and deal an additional 5d6 physical damage. "
-                    + "They also gain a number of sneak attack dice equal to 1/2 your character level.");
+                    + "They also gain 1d6 sneak attack equal to 1/2 your character level.");
                 bp.m_Icon = Icon_AuraOfRighteousWrath;
                 bp.m_Buff = AuraOfRighteousWrathAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
@@ -108,7 +108,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             var AuraOfRighteousWrathFeature = Helpers.CreateFeature("AuraOfRighteousWrathFeature", bp => {
                 bp.SetName("Overpowered Ability — Aura of Righteous Wrath");
                 bp.SetDescription("Allies within 120 feet of you has two extra attacks and deal an additional 5d6 physical damage. "
-                    + "They also gain a number of sneak attack dice equal to 1/2 your character level.");
+                    + "They also gain 1d6 sneak attack equal to 1/2 your character level.");
                 bp.m_Icon = Icon_AuraOfRighteousWrath;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { AuraOfRighteousWrathAbility.ToReference<BlueprintUnitFactReference>() };
