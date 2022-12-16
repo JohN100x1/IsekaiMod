@@ -4,6 +4,7 @@ using IsekaiMod.Localization;
 using JetBrains.Annotations;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Items.Ecnchantments;
 using Kingmaker.Blueprints.Root;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
@@ -101,6 +102,16 @@ namespace IsekaiMod.Utilities
                 bp.IsOnByDefault = true;
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;
+            });
+            init?.Invoke(result);
+            return result;
+        }
+        public static BlueprintWeaponEnchantment CreateWeaponEnchantment(string name, Action<BlueprintWeaponEnchantment> init = null)
+        {
+            var result = CreateBlueprint<BlueprintWeaponEnchantment>(name, bp => {
+                bp.m_Prefix = new LocalizedString();
+                bp.m_Suffix = new LocalizedString();
+                bp.WeaponFxPrefab = new PrefabLink();
             });
             init?.Invoke(result);
             return result;

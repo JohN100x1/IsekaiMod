@@ -49,7 +49,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Deactivated = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.m_Buff = MindControlImmunity.ToReference<BlueprintBuffReference>();
                         c.Permanent = true;
-                        c.DurationValue = Constants.Duration.Zero;
+                        c.DurationValue = Values.Duration.Zero;
                     });
                 });
                 bp.Stacking = StackingType.Ignore;

@@ -2,7 +2,6 @@
 using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
@@ -60,11 +59,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                             Rate = DurationRate.Rounds,
                             DiceType = DiceType.Zero,
                             DiceCountValue = 0,
-                            BonusValue = new ContextValue()
-                            {
-                                ValueType = ContextValueType.Rank,
-                                ValueRank = AbilityRankType.Default
-                            }
+                            BonusValue = Values.ContextRankValue(AbilityRankType.Default)
                         };
                         c.CountValue = new ContextDiceValue()
                         {
@@ -76,7 +71,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                         c.AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                             c.Permanent = true;
                             c.m_Buff = SummonedCreatureSpawnMonsterIV_VI.ToReference<BlueprintBuffReference>();
-                            c.DurationValue = Constants.Duration.Zero;
+                            c.DurationValue = Values.Duration.Zero;
                             c.IsNotDispelable = true;
                         });
                     });

@@ -1537,7 +1537,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.Action = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.m_Buff = BurnEffectBuff.ToReference<BlueprintBuffReference>();
                         c.Permanent = true;
-                        c.DurationValue = Constants.Duration.Zero;
+                        c.DurationValue = Values.Duration.Zero;
                         c.AsChild = true;
                     });
                 });
@@ -1860,7 +1860,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             var t = new ContextActionDealDamage()
             {
                 m_Type = ContextActionDealDamage.Type.Damage,
-                Duration = Constants.Duration.Zero,
+                Duration = Values.Duration.Zero,
                 Value = PhysicalBlastDamage,
                 UseWeaponDamageModifiers = true
             };
@@ -1872,7 +1872,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             var t = new ContextActionDealDamage()
             {
                 m_Type = ContextActionDealDamage.Type.Damage,
-                Duration = Constants.Duration.Zero,
+                Duration = Values.Duration.Zero,
                 Value = EnergyBlastDamage,
                 UseWeaponDamageModifiers = true
             };

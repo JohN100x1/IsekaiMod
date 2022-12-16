@@ -108,7 +108,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     c.Actions = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.Permanent = true;
                         c.m_Buff = TrueSmiteBuff.ToReference<BlueprintBuffReference>();
-                        c.DurationValue = Constants.Duration.Zero;
+                        c.DurationValue = Values.Duration.Zero;
                         c.IsNotDispelable = true;
                     });
                 });

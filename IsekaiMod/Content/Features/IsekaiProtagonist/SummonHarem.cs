@@ -121,7 +121,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                     c.Permanent = true;
                     c.m_Buff = SummonedCreatureSpawnMonsterVI_IX.ToReference<BlueprintBuffReference>();
-                    c.DurationValue = Constants.Duration.Zero;
+                    c.DurationValue = Values.Duration.Zero;
                     c.IsNotDispelable = true;
                 }),
             };

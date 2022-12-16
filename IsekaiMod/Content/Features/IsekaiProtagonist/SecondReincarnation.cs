@@ -39,7 +39,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                             m_StatClass = ContextActionHealStatDamage.StatClass.Any,
                             m_HealType = ContextActionHealStatDamage.StatDamageHealType.HealAllDamage,
                             ResultSharedValue = AbilitySharedValue.Heal,
-                            Value = Constants.ZeroDiceValue
+                            Value = Values.Dice.Zero
                         },
                         new ContextActionHealStatDamage()
                         {
@@ -47,7 +47,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                             m_StatClass = ContextActionHealStatDamage.StatClass.Any,
                             m_HealType = ContextActionHealStatDamage.StatDamageHealType.HealAllDamage,
                             ResultSharedValue = AbilitySharedValue.Heal,
-                            Value = Constants.ZeroDiceValue
+                            Value = Values.Dice.Zero
                         },
                         new ContextActionHealEnergyDrain()
                         {

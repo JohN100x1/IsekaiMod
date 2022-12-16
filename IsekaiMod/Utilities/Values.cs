@@ -1,9 +1,10 @@
-﻿using Kingmaker.RuleSystem;
+﻿using Kingmaker.Enums;
+using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Mechanics;
 
 namespace IsekaiMod.Utilities
 {
-    internal static class Constants
+    internal static class Values
     {
         internal static class Duration
         {
@@ -32,11 +33,22 @@ namespace IsekaiMod.Utilities
                 m_IsExtendable = true,
             };
         }
-        public static readonly ContextDiceValue ZeroDiceValue = new()
+        internal static class Dice
         {
-            DiceType = DiceType.Zero,
-            DiceCountValue = 0,
-            BonusValue = 0,
-        };
+            public static readonly ContextDiceValue Zero = new()
+            {
+                DiceType = DiceType.Zero,
+                DiceCountValue = 0,
+                BonusValue = 0,
+            };
+        }
+        public static ContextValue ContextRankValue(AbilityRankType rankType)
+        {
+            return new ContextValue()
+            {
+                ValueType = ContextValueType.Rank,
+                ValueRank = rankType
+            };
+        }
     }
 }
