@@ -3,6 +3,7 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
+using Kingmaker.Enums;
 using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
@@ -49,7 +50,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.Deactivated = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.m_Buff = MindControlImmunity.ToReference<BlueprintBuffReference>();
                         c.Permanent = true;
-                        c.DurationValue = Constants.Duration.Zero;
+                        c.DurationValue = Values.Duration.Zero;
                     });
                 });
                 bp.Stacking = StackingType.Ignore;
@@ -76,11 +77,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                                 Rate = DurationRate.Rounds,
                                 DiceType = DiceType.Zero,
                                 DiceCountValue = 0,
-                                BonusValue = new ContextValue()
-                                {
-                                    Value = 0,
-                                    ValueType = ContextValueType.Rank
-                                },
+                                BonusValue = Values.CreateContextRankValue(AbilityRankType.Default),
                                 m_IsExtendable = true,
                             };
                         });
@@ -93,6 +90,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.PrefabLink = new PrefabLink() { AssetId = "c14a2f46018cb0e41bfeed61463510ff" };
                     c.Time = AbilitySpawnFxTime.OnApplyEffect;
                     c.Anchor = AbilitySpawnFxAnchor.SelectedTarget;
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.StatBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
                 });
                 bp.Type = AbilityType.Supernatural;
                 bp.Range = AbilityRange.Medium;

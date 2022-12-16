@@ -33,7 +33,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     + "to look cool and stylish. Their attacks become flashy and myriad, moving so fast that side characters would be lucky to even see the afterimage.");
                 bp.LocalizedDescriptionShort = Helpers.CreateString($"EdgeLordArchetype.DescriptionShort", "After reincarnating into Golarion, some protagonists use their newfound abilities "
                     + "to look cool and stylish. Their attacks become flashy and myriad, moving so fast that side characters would be lucky to even see the afterimage.");
-                bp.RemoveSpellbook = false;
+                bp.IsArcaneCaster = true;
+                bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistProficiencies),
                     Helpers.LevelEntry(5, OverpoweredAbilitySelection2),

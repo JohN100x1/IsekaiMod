@@ -1,4 +1,5 @@
-﻿using IsekaiMod.Extensions;
+﻿using IsekaiMod.Components;
+using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Prerequisites;
@@ -7,9 +8,9 @@ using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.Localization;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 
 namespace IsekaiMod.Content.Features.ExceptionalFeats
@@ -18,75 +19,35 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
     {
         public static void Add()
         {
-            // Exceptional Summoning
+            // Mighty Summoning
             var Icon_ExceptionalSummoning = AssetLoader.LoadInternal("Features", "ICON_EXCEPTIONAL_SUMMONING.png");
-            var ExceptionalSummoningSummonBuff = Helpers.CreateBuff("ExceptionalSummoningSummonBuff", bp => {
-                bp.SetName("Exceptional Summon");
-                bp.SetDescription("This creature gets a +10 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, AC, and saving throws per character level.");
+            var MightySummoningSummonBuff = Helpers.CreateBuff("MightySummoningSummonBuff", bp => {
+                bp.SetName("Mighty Summon");
+                bp.SetDescription("This creature gets a +5 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, and AC per character level.");
                 bp.m_Icon = Icon_ExceptionalSummoning;
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.HitPoints;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.Default
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.Default);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.AdditionalAttackBonus;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.AdditionalDamage;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.AC;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.SaveFortitude;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.SaveReflex;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.SaveWill;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.Default;
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
                     c.m_Progression = ContextRankProgression.MultiplyByModifier;
-                    c.m_StepLevel = 10;
+                    c.m_StepLevel = 5;
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;
@@ -94,32 +55,111 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.m_Progression = ContextRankProgression.AsIs;
                 });
             });
-            var ExceptionalSummoningBuff = Helpers.CreateBuff("ExceptionalSummoningBuff", bp => {
-                bp.SetName("Exceptional Summoning");
-                bp.SetDescription("Your summoned creatures a +10 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, AC, and saving throws per character level.");
+            var MightySummoningBuff = Helpers.CreateBuff("MightySummoningBuff", bp => {
+                bp.SetName("Mighty Summoning");
+                bp.m_Description = new LocalizedString();
                 bp.m_Icon = Icon_ExceptionalSummoning;
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
             });
-            var ExceptionalSummoningAbility = Helpers.CreateActivatableAbility("ExceptionalSummoningAbility", bp => {
-                bp.SetName("Exceptional Summoning");
-                bp.SetDescription("Your summoned creatures get a +10 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, AC, and saving throws per character level.");
+            var MightySummoningAbility = Helpers.CreateActivatableAbility("MightySummoningAbility", bp => {
+                bp.SetName("Mighty Summoning");
+                bp.SetDescription("Your summoned creatures get a +5 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, and AC per character level.");
                 bp.m_Icon = Icon_ExceptionalSummoning;
-                bp.m_Buff = ExceptionalSummoningBuff.ToReference<BlueprintBuffReference>();
+                bp.m_Buff = MightySummoningBuff.ToReference<BlueprintBuffReference>();
             });
-            var ExceptionalSummoningFeature = Helpers.CreateFeature("ExceptionalSummoningFeature", bp => {
-                bp.SetName("Exceptional Summoning");
-                bp.SetDescription("Your summoned creatures get a +10 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, AC, and saving throws per character level.");
+            var MightySummoningFeature = Helpers.CreateFeature("MightySummoningFeature", bp => {
+                bp.SetName("Mighty Summoning");
+                bp.SetDescription("Your summoned creatures get a +5 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, and AC per character level.");
                 bp.m_Icon = Icon_ExceptionalSummoning;
                 bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] { ExceptionalSummoningAbility.ToReference<BlueprintUnitFactReference>() };
+                    c.m_Facts = new BlueprintUnitFactReference[] { MightySummoningAbility.ToReference<BlueprintUnitFactReference>() };
                 });
                 bp.ReapplyOnLevelUp = true;
             });
-            ExceptionalSummoningBuff.AddComponent<OnSpawnBuff>(c => {
-                c.m_IfHaveFact = ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>();
-                c.m_buff = ExceptionalSummoningSummonBuff.ToReference<BlueprintBuffReference>();
+            MightySummoningBuff.AddComponent<OnSpawnBuff>(c => {
+                c.m_IfHaveFact = MightySummoningFeature.ToReference<BlueprintFeatureReference>();
+                c.m_buff = MightySummoningSummonBuff.ToReference<BlueprintBuffReference>();
+                c.IsInfinity = true;
+            });
+
+            // Magical Summoning
+            var MagicalSummoningSummonBuff = Helpers.CreateBuff("MagicalSummoningSummonBuff", bp => {
+                bp.SetName("Magical Summon");
+                bp.SetDescription("This creature gets a +5 bonus to maximum Hit Points per character level and a +1 bonus to spell penetration, spell DC, spell damage, "
+                    + "and saving throws per character level.");
+                bp.m_Icon = Icon_ExceptionalSummoning;
+                bp.Stacking = StackingType.Replace;
+                bp.IsClassFeature = true;
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Stat = StatType.HitPoints;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.Default);
+                });
+                bp.AddComponent<SpellPenetrationBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.UntypedStackable;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<IncreaseAllSpellsDC>(c => {
+                    c.SpellsOnly = true;
+                    c.Descriptor = ModifierDescriptor.UntypedStackable;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<IncreaseSpellDamage>(c => {
+                    c.DamageBonus = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Stat = StatType.SaveFortitude;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Stat = StatType.SaveReflex;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Stat = StatType.SaveWill;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.Default;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.MultiplyByModifier;
+                    c.m_StepLevel = 5;
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.StatBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.AsIs;
+                });
+            });
+            var MagicalSummoningBuff = Helpers.CreateBuff("MagicalSummoningBuff", bp => {
+                bp.SetName("Magical Summoning");
+                bp.m_Description = new LocalizedString();
+                bp.m_Icon = Icon_ExceptionalSummoning;
+                bp.Stacking = StackingType.Replace;
+                bp.IsClassFeature = true;
+                bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
+            });
+            var MagicalSummoningAbility = Helpers.CreateActivatableAbility("MagicalSummoningAbility", bp => {
+                bp.SetName("Magical Summoning");
+                bp.SetDescription("Your summoned creatures get a +5 bonus to maximum Hit Points per character level and a +1 bonus to spell penetration, spell DC, spell damage, "
+                    + "and saving throws per character level.");
+                bp.m_Icon = Icon_ExceptionalSummoning;
+                bp.m_Buff = MagicalSummoningBuff.ToReference<BlueprintBuffReference>();
+            });
+            var MagicalSummoningFeature = Helpers.CreateFeature("MagicalSummoningFeature", bp => {
+                bp.SetName("Magical Summoning");
+                bp.SetDescription("Your summoned creatures get a +5 bonus to maximum Hit Points per character level and a +1 bonus to spell penetration, spell DC, spell damage, "
+                    + "and saving throws per character level.");
+                bp.m_Icon = Icon_ExceptionalSummoning;
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] { MagicalSummoningAbility.ToReference<BlueprintUnitFactReference>() };
+                });
+                bp.ReapplyOnLevelUp = true;
+            });
+            MagicalSummoningBuff.AddComponent<OnSpawnBuff>(c => {
+                c.m_IfHaveFact = MagicalSummoningFeature.ToReference<BlueprintFeatureReference>();
+                c.m_buff = MagicalSummoningSummonBuff.ToReference<BlueprintBuffReference>();
                 c.IsInfinity = true;
             });
 
@@ -133,59 +173,31 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.HitPoints;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.Default
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.Default);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.Strength;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.Dexterity;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.Constitution;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.Intelligence;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.Wisdom;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.Charisma;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.Default;
@@ -201,7 +213,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
             });
             var ForbiddenSummoningBuff = Helpers.CreateBuff("ForbiddenSummoningBuff", bp => {
                 bp.SetName("Forbidden Summoning");
-                bp.SetDescription("Your summoned creatures gain a +10 bonus to hit points per character level and a +1 bonus to all attributes per character level.");
+                bp.m_Description = new LocalizedString();
                 bp.m_Icon = Icon_ForbiddenSummoning;
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
@@ -220,6 +232,14 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { ForbiddenSummoningAbility.ToReference<BlueprintUnitFactReference>() };
                 });
+                bp.AddComponent<PrerequisiteFeature>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_Feature = MightySummoningFeature.ToReference<BlueprintFeatureReference>();
+                });
+                bp.AddComponent<PrerequisiteFeature>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_Feature = MagicalSummoningFeature.ToReference<BlueprintFeatureReference>();
+                });
                 bp.ReapplyOnLevelUp = true;
             });
             ForbiddenSummoningBuff.AddComponent<OnSpawnBuff>(c => {
@@ -232,8 +252,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
             var Icon_FerociousSummoning = AssetLoader.LoadInternal("Features", "ICON_FEROCIOUS_SUMMONING.png");
             var FerociousSummoningSummonBuff = Helpers.CreateBuff("FerociousSummoningSummonBuff", bp => {
                 bp.SetName("Ferocious Summon");
-                bp.SetDescription("This creature has 2 additional attacks and gains a +10 bonus to speed. It also gains 1d6 sneak attack per character level. "
-                    + "This effect does not stack with other effects that grant additional attack.");
+                bp.SetDescription("This creature has 2 additional attacks and gains a +10 bonus to speed. It also gains 1d6 sneak attack per character level.");
                 bp.m_Icon = Icon_FerociousSummoning;
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
@@ -247,11 +266,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Stat = StatType.SneakAttack;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;
@@ -261,8 +276,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
             });
             var FerociousSummoningBuff = Helpers.CreateBuff("FerociousSummoningBuff", bp => {
                 bp.SetName("Ferocious Summoning");
-                bp.SetDescription("Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level. "
-                    + "This effect does not stack with other effects that grant additional attack.");
+                bp.m_Description = new LocalizedString();
                 bp.m_Icon = Icon_FerociousSummoning;
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
@@ -270,22 +284,16 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
             });
             var FerociousSummoningAbility = Helpers.CreateActivatableAbility("FerociousSummoningAbility", bp => {
                 bp.SetName("Ferocious Summoning");
-                bp.SetDescription("Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level. "
-                    + "This effect does not stack with other effects that grant additional attack.");
+                bp.SetDescription("Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level.");
                 bp.m_Icon = Icon_FerociousSummoning;
                 bp.m_Buff = FerociousSummoningBuff.ToReference<BlueprintBuffReference>();
             });
             var FerociousSummoningFeature = Helpers.CreateFeature("FerociousSummoningFeature", bp => {
                 bp.SetName("Ferocious Summoning");
-                bp.SetDescription("Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level. "
-                    + "This effect does not stack with other effects that grant additional attack.");
+                bp.SetDescription("Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level.");
                 bp.m_Icon = Icon_FerociousSummoning;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { FerociousSummoningAbility.ToReference<BlueprintUnitFactReference>() };
-                });
-                bp.AddComponent<PrerequisiteFeature>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_Feature = ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>();
                 });
                 bp.AddComponent<PrerequisiteFeature>(c => {
                     c.Group = Prerequisite.GroupType.All;
@@ -301,7 +309,8 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
 
             var ExceptionalSummoingFeatures = new BlueprintFeatureReference[]
             {
-                ExceptionalSummoningFeature.ToReference<BlueprintFeatureReference>(),
+                MightySummoningFeature.ToReference<BlueprintFeatureReference>(),
+                MagicalSummoningFeature.ToReference<BlueprintFeatureReference>(),
                 ForbiddenSummoningFeature.ToReference<BlueprintFeatureReference>(),
                 FerociousSummoningFeature.ToReference<BlueprintFeatureReference>(),
             };

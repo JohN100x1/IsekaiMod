@@ -24,11 +24,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.UntypedStackable;
                     c.Stat = StatType.Speed;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;

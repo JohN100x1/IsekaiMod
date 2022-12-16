@@ -84,7 +84,7 @@
     <None Update="Assets\Deities\ICON_TRUCK.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Features\ICON_AURA_ZEALOUS_WRATH.png">
+    <None Update="Assets\Features\ICON_AURA_RIGHTEOUS_WRATH.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Features\ICON_CELESTIAL_REALM.png">
@@ -126,7 +126,7 @@
     <None Update="Assets\Features\ICON_GODHOOD.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\Features\ICON_INFINITE_INVENTORY.png">
+    <None Update="Assets\Features\ICON_INFINITE_SPACE.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Features\ICON_MIND_CONTROL.png">
@@ -157,6 +157,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Features\ICON_HEROS_PRESENCE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Features\ICON_SUPER_BUFF_DISMISS.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Features\ICON_UNLIMITED_POWER.png">

@@ -11,7 +11,6 @@ using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.Designers.Mechanics.Recommendations;
 using Kingmaker.ElementsSystem;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
@@ -153,41 +152,21 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
         private static readonly ContextDiceValue PhysicalBlastDamage = new()
         {
             DiceType = DiceType.D6,
-            DiceCountValue = new ContextValue()
-            {
-                ValueType = ContextValueType.Rank,
-                ValueRank = AbilityRankType.DamageDice
-            },
-            BonusValue = new ContextValue()
-            {
-                ValueType = ContextValueType.Shared,
-                ValueRank = AbilityRankType.DamageBonus
-            }
+            DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
+            BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.Damage)
         };
         private static readonly ContextDiceValue EnergyBlastDamage = new()
         {
             DiceType = DiceType.D6,
-            DiceCountValue = new ContextValue()
-            {
-                ValueType = ContextValueType.Rank,
-                ValueRank = AbilityRankType.DamageDice
-            },
-            BonusValue = new ContextValue()
-            {
-                ValueType = ContextValueType.Rank,
-                ValueRank = AbilityRankType.DamageBonus
-            }
+            DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
+            BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
         };
         private static readonly ContextDurationValue KineticAreaDuration = new()
         {
             Rate = DurationRate.Rounds,
             DiceType = DiceType.Zero,
             DiceCountValue = 0,
-            BonusValue = new ContextValue()
-            {
-                ValueType = ContextValueType.Rank,
-                ValueRank = AbilityRankType.DamageBonus
-            },
+            BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus),
             m_IsExtendable = true
         };
 
@@ -244,11 +223,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                         c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
                     });
                     c.m_Projectile = WindProjectile00.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = new ContextValue()
-                    {
-                        ValueType = ContextValueType.CasterCustomProperty,
-                        m_CustomProperty = DLC3_KineticRicochetProperty.ToReference<BlueprintUnitPropertyReference>()
-                    };
+                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
                     c.Radius = new Feet(10);
                     c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
@@ -333,11 +308,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                         c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
                     });
                     c.m_Projectile = WindProjectile00.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = new ContextValue()
-                    {
-                        ValueType = ContextValueType.CasterCustomProperty,
-                        m_CustomProperty = DLC3_KineticRicochetProperty.ToReference<BlueprintUnitPropertyReference>()
-                    };
+                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
                     c.Radius = new Feet(10);
                     c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
@@ -366,11 +337,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.AddComponent<AbilityDeliverChain>(c => {
                     c.m_ProjectileFirst = WindProjectile00.ToReference<BlueprintProjectileReference>();
                     c.m_Projectile = WindProjectile00.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = new ContextValue()
-                    {
-                        Value = 70,
-                        ValueRank = AbilityRankType.ProjectilesCount
-                    };
+                    c.TargetsCount = Values.CreateContextRankValue(AbilityRankType.ProjectilesCount, 70);
                     c.Radius = new Feet(5);
                     c.m_Condition = ActionFlow.EmptyCondition();
                     c.m_TargetType = TargetType.Any;
@@ -531,11 +498,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                         c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
                     });
                     c.m_Projectile = Kinetic_EarthBlast00_Projectile.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = new ContextValue()
-                    {
-                        ValueType = ContextValueType.CasterCustomProperty,
-                        m_CustomProperty = DLC3_KineticRicochetProperty.ToReference<BlueprintUnitPropertyReference>()
-                    };
+                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
                     c.Radius = new Feet(10);
                     c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
@@ -647,11 +610,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                         c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
                     });
                     c.m_Projectile = Kinetic_EarthBlast00_Projectile.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = new ContextValue()
-                    {
-                        ValueType = ContextValueType.CasterCustomProperty,
-                        m_CustomProperty = DLC3_KineticRicochetProperty.ToReference<BlueprintUnitPropertyReference>()
-                    };
+                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
                     c.Radius = new Feet(10);
                     c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
@@ -741,11 +700,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.AddComponent<AbilityDeliverChain>(c => {
                     c.m_ProjectileFirst = Kinetic_EarthBlast00_Projectile.ToReference<BlueprintProjectileReference>();
                     c.m_Projectile = Kinetic_EarthBlast00_Projectile.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = new ContextValue()
-                    {
-                        Value = 70,
-                        ValueRank = AbilityRankType.ProjectilesCount
-                    };
+                    c.TargetsCount = Values.CreateContextRankValue(AbilityRankType.ProjectilesCount, 70);
                     c.Radius = new Feet(5);
                     c.m_Condition = ActionFlow.EmptyCondition();
                     c.m_TargetType = TargetType.Any;
@@ -877,11 +832,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                         c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
                     });
                     c.m_Projectile = ArrowFire00.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = new ContextValue()
-                    {
-                        ValueType = ContextValueType.CasterCustomProperty,
-                        m_CustomProperty = DLC3_KineticRicochetProperty.ToReference<BlueprintUnitPropertyReference>()
-                    };
+                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
                     c.Radius = new Feet(10);
                     c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
@@ -1005,11 +956,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                         c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
                     });
                     c.m_Projectile = ArrowFire00.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = new ContextValue()
-                    {
-                        ValueType = ContextValueType.CasterCustomProperty,
-                        m_CustomProperty = DLC3_KineticRicochetProperty.ToReference<BlueprintUnitPropertyReference>()
-                    };
+                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
                     c.Radius = new Feet(10);
                     c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
@@ -1071,11 +1018,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.AddComponent<AbilityDeliverChain>(c => {
                     c.m_ProjectileFirst = FireCommonProjectile00.ToReference<BlueprintProjectileReference>();
                     c.m_Projectile = FireCommonProjectile00.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = new ContextValue()
-                    {
-                        Value = 70,
-                        ValueRank = AbilityRankType.ProjectilesCount
-                    };
+                    c.TargetsCount = Values.CreateContextRankValue(AbilityRankType.ProjectilesCount, 70);
                     c.Radius = new Feet(5);
                     c.m_Condition = ActionFlow.EmptyCondition();
                     c.m_TargetType = TargetType.Any;
@@ -1236,11 +1179,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                         c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
                     });
                     c.m_Projectile = Kinetic_WaterBlast00_Projectile.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = new ContextValue()
-                    {
-                        ValueType = ContextValueType.CasterCustomProperty,
-                        m_CustomProperty = DLC3_KineticRicochetProperty.ToReference<BlueprintUnitPropertyReference>()
-                    };
+                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
                     c.Radius = new Feet(10);
                     c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
@@ -1290,11 +1229,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                         c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
                     });
                     c.m_Projectile = Kinetic_WaterBlast00_Projectile.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = new ContextValue()
-                    {
-                        ValueType = ContextValueType.CasterCustomProperty,
-                        m_CustomProperty = DLC3_KineticRicochetProperty.ToReference<BlueprintUnitPropertyReference>()
-                    };
+                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
                     c.Radius = new Feet(10);
                     c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
@@ -1323,11 +1258,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.AddComponent<AbilityDeliverChain>(c => {
                     c.m_ProjectileFirst = Kinetic_WaterBlast00_Projectile.ToReference<BlueprintProjectileReference>();
                     c.m_Projectile = Kinetic_WaterBlast00_Projectile.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = new ContextValue()
-                    {
-                        Value = 70,
-                        ValueRank = AbilityRankType.ProjectilesCount
-                    };
+                    c.TargetsCount = Values.CreateContextRankValue(AbilityRankType.ProjectilesCount, 70);
                     c.Radius = new Feet(5);
                     c.m_Condition = ActionFlow.EmptyCondition();
                     c.m_TargetType = TargetType.Any;
@@ -1537,7 +1468,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.Action = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.m_Buff = BurnEffectBuff.ToReference<BlueprintBuffReference>();
                         c.Permanent = true;
-                        c.DurationValue = Constants.Duration.Zero;
+                        c.DurationValue = Values.Duration.Zero;
                         c.AsChild = true;
                     });
                 });
@@ -1613,16 +1544,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.Value = new ContextDiceValue()
                     {
                         DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
+                        DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
+                        BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
                     };
                     c.Modifier = 1.0;
                 });
@@ -1658,16 +1581,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.Value = new ContextDiceValue()
                     {
                         DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
+                        DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
+                        BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
                     };
                     c.Modifier = 1.0;
                 });
@@ -1766,16 +1681,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.Value = new ContextDiceValue()
                     {
                         DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
+                        DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
+                        BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
                     };
                     c.Modifier = 1.0;
                 });
@@ -1808,16 +1715,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.Value = new ContextDiceValue()
                     {
                         DiceType = DiceType.One,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageDice
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            ValueRank = AbilityRankType.DamageBonus
-                        }
+                        DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
+                        BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
                     };
                     c.Modifier = 1.0;
                 });
@@ -1860,7 +1759,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             var t = new ContextActionDealDamage()
             {
                 m_Type = ContextActionDealDamage.Type.Damage,
-                Duration = Constants.Duration.Zero,
+                Duration = Values.Duration.Zero,
                 Value = PhysicalBlastDamage,
                 UseWeaponDamageModifiers = true
             };
@@ -1872,7 +1771,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             var t = new ContextActionDealDamage()
             {
                 m_Type = ContextActionDealDamage.Type.Damage,
-                Duration = Constants.Duration.Zero,
+                Duration = Values.Duration.Zero,
                 Value = EnergyBlastDamage,
                 UseWeaponDamageModifiers = true
             };

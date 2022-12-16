@@ -133,26 +133,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                             Physical = new DamageTypeDescription.PhysicalData(),
                                             Energy = DamageEnergyType.NegativeEnergy
                                         };
-                                        c.Duration = new ContextDurationValue()
-                                        {
-                                            DiceType = DiceType.Zero,
-                                            DiceCountValue = 0,
-                                            BonusValue = 0,
-                                            m_IsExtendable = true,
-                                        };
+                                        c.Duration = Values.Duration.Zero;
                                         c.Value = new ContextDiceValue()
                                         {
                                             DiceType = DiceType.D6,
-                                            DiceCountValue = new ContextValue()
-                                            {
-                                                ValueType = ContextValueType.Rank,
-                                                ValueRank = AbilityRankType.DamageDice
-                                            },
-                                            BonusValue = new ContextValue()
-                                            {
-                                                ValueType = ContextValueType.Rank,
-                                                ValueRank = AbilityRankType.DamageBonus
-                                            }
+                                            DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
+                                            BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
                                         };
                                         c.IsAoE = true;
                                         c.HalfIfSaved = true;
@@ -176,25 +162,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                             Physical = new DamageTypeDescription.PhysicalData(),
                                             Energy = DamageEnergyType.NegativeEnergy
                                         };
-                                        c.Duration = new ContextDurationValue()
-                                        {
-                                            m_IsExtendable = true,
-                                            DiceCountValue = 0,
-                                            BonusValue = 0,
-                                        };
+                                        c.Duration = Values.Duration.Zero;
                                         c.Value = new ContextDiceValue()
                                         {
                                             DiceType = DiceType.D6,
-                                            DiceCountValue = new ContextValue()
-                                            {
-                                                ValueType = ContextValueType.Rank,
-                                                ValueRank = AbilityRankType.DamageDice
-                                            },
-                                            BonusValue = new ContextValue()
-                                            {
-                                                ValueType = ContextValueType.Rank,
-                                                ValueRank = AbilityRankType.DamageBonus
-                                            }
+                                            DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
+                                            BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
                                         };
                                         c.IsAoE = true;
                                         c.HalfIfSaved = true;
@@ -265,25 +238,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.Value = new ContextDiceValue()
                     {
                         DiceType = DiceType.D6,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            Value = 0,
-                            ValueRank = AbilityRankType.Default,
-                            ValueShared = AbilitySharedValue.Damage,
-                            Property = UnitProperty.None,
-                            m_AbilityParameter = AbilityParameterType.Level
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Rank,
-                            Value = 0,
-                            ValueRank = AbilityRankType.DamageBonus,
-                            ValueShared = AbilitySharedValue.Damage,
-                            Property = UnitProperty.None,
-                            m_AbilityParameter = AbilityParameterType.Level
-                        }
-                    };
+                        DiceCountValue = Values.CreateContextRankValue(AbilityRankType.Default),
+                        BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
+                };
                     c.Modifier = 1;
                 });
                 bp.AddComponent<ContextCalculateSharedValue>(c => {
@@ -291,24 +248,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.Value = new ContextDiceValue()
                     {
                         DiceType = DiceType.D6,
-                        DiceCountValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Simple,
-                            Value = 0,
-                            ValueRank = AbilityRankType.Default,
-                            ValueShared = AbilitySharedValue.Damage,
-                            Property = UnitProperty.None,
-                            m_AbilityParameter = AbilityParameterType.Level
-                        },
-                        BonusValue = new ContextValue()
-                        {
-                            ValueType = ContextValueType.Shared,
-                            Value = 0,
-                            ValueRank = AbilityRankType.StatBonus,
-                            ValueShared = AbilitySharedValue.Heal,
-                            Property = UnitProperty.None,
-                            m_AbilityParameter = AbilityParameterType.Level
-                        }
+                        DiceCountValue = 0,
+                        BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.Heal)
                     };
                     c.Modifier = 0.5;
                 });
@@ -347,24 +288,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                         Value = new ContextDiceValue()
                                         {
                                             DiceType = DiceType.Zero,
-                                            DiceCountValue = new ContextValue()
-                                            {
-                                                ValueType = ContextValueType.Simple,
-                                                Value = 0,
-                                                ValueRank = AbilityRankType.Default,
-                                                ValueShared = AbilitySharedValue.Damage,
-                                                Property = UnitProperty.None,
-                                                m_AbilityParameter = AbilityParameterType.Level
-                                            },
-                                            BonusValue = new ContextValue()
-                                            {
-                                                ValueType = ContextValueType.Shared,
-                                                Value = 0,
-                                                ValueRank = AbilityRankType.Default,
-                                                ValueShared = AbilitySharedValue.Heal,
-                                                Property = UnitProperty.None,
-                                                m_AbilityParameter = AbilityParameterType.Level
-                                            }
+                                            DiceCountValue = 0,
+                                            BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.Heal)
                                         }
                                     },
                                     new ContextActionSpawnFx()
@@ -388,24 +313,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                             Value = new ContextDiceValue()
                                             {
                                                 DiceType = DiceType.Zero,
-                                                DiceCountValue = new ContextValue()
-                                                {
-                                                    ValueType = ContextValueType.Simple,
-                                                    Value = 0,
-                                                    ValueRank = AbilityRankType.Default,
-                                                    ValueShared = AbilitySharedValue.Damage,
-                                                    Property = UnitProperty.None,
-                                                    m_AbilityParameter = AbilityParameterType.Level
-                                                },
-                                                BonusValue = new ContextValue()
-                                                {
-                                                    ValueType = ContextValueType.Shared,
-                                                    Value = 0,
-                                                    ValueRank = AbilityRankType.Default,
-                                                    ValueShared = AbilitySharedValue.StatBonus,
-                                                    Property = UnitProperty.None,
-                                                    m_AbilityParameter = AbilityParameterType.Level
-                                                }
+                                                DiceCountValue = 0,
+                                                BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.StatBonus)
                                             }
                                         },
                                         new ContextActionSpawnFx()
@@ -429,24 +338,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                         Value = new ContextDiceValue()
                                         {
                                             DiceType = DiceType.Zero,
-                                            DiceCountValue = new ContextValue()
-                                            {
-                                                ValueType = ContextValueType.Simple,
-                                                Value = 0,
-                                                ValueRank = AbilityRankType.Default,
-                                                ValueShared = AbilitySharedValue.Damage,
-                                                Property = UnitProperty.None,
-                                                m_AbilityParameter = AbilityParameterType.Level
-                                            },
-                                            BonusValue = new ContextValue()
-                                            {
-                                                ValueType = ContextValueType.Shared,
-                                                Value = 0,
-                                                ValueRank = AbilityRankType.Default,
-                                                ValueShared = AbilitySharedValue.StatBonus,
-                                                Property = UnitProperty.None,
-                                                m_AbilityParameter = AbilityParameterType.Level
-                                            }
+                                            DiceCountValue = 0,
+                                            BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.StatBonus)
                                         }
                                     },
                                     new ContextActionSpawnFx()
@@ -459,24 +352,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                         Value = new ContextDiceValue()
                                         {
                                             DiceType = DiceType.Zero,
-                                            DiceCountValue = new ContextValue()
-                                            {
-                                                ValueType = ContextValueType.Simple,
-                                                Value = 0,
-                                                ValueRank = AbilityRankType.Default,
-                                                ValueShared = AbilitySharedValue.Damage,
-                                                Property = UnitProperty.None,
-                                                m_AbilityParameter = AbilityParameterType.Level
-                                            },
-                                            BonusValue = new ContextValue()
-                                            {
-                                                ValueType = ContextValueType.Shared,
-                                                Value = 0,
-                                                ValueRank = AbilityRankType.Default,
-                                                ValueShared = AbilitySharedValue.Heal,
-                                                Property = UnitProperty.None,
-                                                m_AbilityParameter = AbilityParameterType.Level
-                                            }
+                                            DiceCountValue = 0,
+                                            BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.Heal)
                                         }
                                     },
                                     new ContextActionSpawnFx()

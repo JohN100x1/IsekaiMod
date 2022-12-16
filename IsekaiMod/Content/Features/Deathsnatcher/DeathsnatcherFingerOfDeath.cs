@@ -60,20 +60,12 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                                 Energy = DamageEnergyType.Unholy
                             };
                             c.AbilityType = StatType.Unknown;
-                            c.Duration = new ContextDurationValue()
-                            {
-                                Rate = DurationRate.Rounds,
-                                DiceType = DiceType.Zero,
-                            };
+                            c.Duration = Values.Duration.Zero;
                             c.Value = new ContextDiceValue()
                             {
                                 DiceType = DiceType.D6,
                                 DiceCountValue = 3,
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.DamageBonus
-                                }
+                                BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
                             };
                         });
                         c.Failed = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
@@ -84,20 +76,12 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                                 Energy = DamageEnergyType.Unholy
                             };
                             c.AbilityType = StatType.Unknown;
-                            c.Duration = new ContextDurationValue()
-                            {
-                                Rate = DurationRate.Rounds,
-                                DiceType = DiceType.Zero,
-                            };
+                            c.Duration = Values.Duration.Zero;
                             c.Value = new ContextDiceValue()
                             {
                                 DiceType = DiceType.Zero,
                                 DiceCountValue = 0,
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueType = ContextValueType.Rank,
-                                    ValueRank = AbilityRankType.Default
-                                }
+                                BonusValue = Values.CreateContextRankValue(AbilityRankType.Default)
                             };
                         });
                     });

@@ -96,13 +96,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 Resources.GetBlueprint<BlueprintBuff>("35f3724d4e8877845af488d167cb8a89"), // MindBlankBuff
                 Resources.GetBlueprint<BlueprintBuff>("fd8fb2c1d622556468a04bea949eb7da")  // HeroicInvocationBuff
             };
-            List<GameAction> BuffActions = new();
-            foreach(BlueprintBuff buff in Buffs)
-            {
-                BuffActions.Add(GetApplyBuffOneDay(buff));
-            }
+            List<GameAction> ApplyBuffActions = CreateApplyBuffActionList(Buffs);
+            List<GameAction> RemoveBuffActions = CreateRemoveBuffActionList(Buffs);
 
-            var Icon_Super_Buff = AssetLoader.LoadInternal("Features", "ICON_SUPER_BUFF.png");
+            var Icon_SuperBuff = AssetLoader.LoadInternal("Features", "ICON_SUPER_BUFF.png");
+            var Icon_SuperBuffDismiss = AssetLoader.LoadInternal("Features", "ICON_SUPER_BUFF_DISMISS.png");
             var SuperBuffAbility = Helpers.CreateBlueprint<BlueprintAbility>("SuperBuffAbility", bp => {
                 bp.SetName("Overpowered Ability — Super Buff");
                 bp.SetDescription("You and your allies around you gain the following effects for 24 hours: resist energy, protection from energy, protection from arrows, haste, "
@@ -113,7 +111,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     + "crusaders edge, magic weapon greater, divine power, true seeing, shield of law, angelic aspect greater, winds of vengeance, hurricane bow, sense vitals, "
                     + "heroism greater, echolocation, life bubble, protection from spells, mind blank, and heroic invocation.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.Actions = new ActionList() { Actions = BuffActions.ToArray() };
+                    c.Actions = new ActionList() { Actions = ApplyBuffActions.ToArray() };
                 });
                 bp.AddComponent<AbilityTargetsAround>(c => {
                     c.m_Radius = new Feet(60);
@@ -123,7 +121,34 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.AddComponent<SpellComponent>(c => {
                     c.School = SpellSchool.Universalist;
                 });
-                bp.m_Icon = Icon_Super_Buff;
+                bp.m_Icon = Icon_SuperBuff;
+                bp.Type = AbilityType.Supernatural;
+                bp.Range = AbilityRange.Personal;
+                bp.CanTargetFriends = true;
+                bp.CanTargetSelf = true;
+                bp.EffectOnAlly = AbilityEffectOnUnit.Helpful;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.None;
+                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Self;
+                bp.ActionType = UnitCommand.CommandType.Standard;
+                bp.AvailableMetamagic = Metamagic.Reach;
+                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "24 hours");
+                bp.LocalizedSavingThrow = new LocalizedString();
+            });
+            var SuperBuffDismissAbility = Helpers.CreateBlueprint<BlueprintAbility>("SuperBuffDismissAbility", bp => {
+                bp.SetName("Dismiss Super Buff");
+                bp.SetDescription("You dispell all buffs from you and your allies.");
+                bp.AddComponent<AbilityEffectRunAction>(c => {
+                    c.Actions = new ActionList() { Actions = RemoveBuffActions.ToArray() };
+                });
+                bp.AddComponent<AbilityTargetsAround>(c => {
+                    c.m_Radius = new Feet(60);
+                    c.m_TargetType = TargetType.Ally;
+                    c.m_Condition = ActionFlow.EmptyCondition();
+                });
+                bp.AddComponent<SpellComponent>(c => {
+                    c.School = SpellSchool.Universalist;
+                });
+                bp.m_Icon = Icon_SuperBuffDismiss;
                 bp.Type = AbilityType.Supernatural;
                 bp.Range = AbilityRange.Personal;
                 bp.CanTargetFriends = true;
@@ -145,22 +170,44 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     + "legendary proportions, frightful aspect, seamantle, foresight, unbreakable heart, remove fear, divine favor, magic fang, align weapon good, "
                     + "crusaders edge, magic weapon greater, divine power, true seeing, shield of law, angelic aspect greater, winds of vengeance, hurricane bow, sense vitals, "
                     + "heroism greater, echolocation, life bubble, protection from spells, mind blank, and heroic invocation.");
-                bp.m_Icon = Icon_Super_Buff;
+                bp.m_Icon = Icon_SuperBuff;
                 bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] { SuperBuffAbility.ToReference<BlueprintUnitFactReference>() };
+                    c.m_Facts = new BlueprintUnitFactReference[] {
+                        SuperBuffAbility.ToReference<BlueprintUnitFactReference>(),
+                        SuperBuffDismissAbility.ToReference<BlueprintUnitFactReference>()
+                    };
                 });
             });
 
             OverpoweredAbilitySelection.AddToSelection(SuperBuffFeature);
         }
-
-        private static ContextActionApplyBuff GetApplyBuffOneDay(BlueprintBuff buff)
+        private static List<GameAction> CreateApplyBuffActionList(BlueprintBuff[] buffs)
         {
-            return new ContextActionApplyBuff()
+            List<GameAction> actions = new();
+            foreach (BlueprintBuff buff in buffs)
             {
-                m_Buff = buff.ToReference<BlueprintBuffReference>(),
-                DurationValue = Constants.Duration.OneDay,
-            };
+                actions.Add(
+                    new ContextActionApplyBuff()
+                    {
+                        m_Buff = buff.ToReference<BlueprintBuffReference>(),
+                        DurationValue = Values.Duration.OneDay,
+                    });
+            }
+            return actions;
+        }
+        private static List<GameAction> CreateRemoveBuffActionList(BlueprintBuff[] buffs)
+        {
+            List<GameAction> actions = new();
+            foreach (BlueprintBuff buff in buffs)
+            {
+                actions.Add(
+                    new ContextActionRemoveBuff()
+                    {
+                        m_Buff = buff.ToReference<BlueprintBuffReference>(),
+                        OnlyFromCaster = true
+                    });
+            }
+            return actions;
         }
     }
 }

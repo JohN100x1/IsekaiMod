@@ -45,7 +45,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.LocalizedDescriptionShort = Helpers.CreateString($"VillainArchetype.DescriptionShort", "After obtaining ungodly amounts of power, some protagonists become villains. "
                     + "They view the new world as theirs to play with, and the new inhabitants as theirs to torment. Villains seek to increase their power even further, "
                     + "often by establishing their own kingdom.\nYou cast spells like an Arcanist with a number of slots equal to your spells per day.");
-                bp.RemoveSpellbook = false;
+                bp.IsArcaneCaster = true;
+                bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.LevelEntry(1, IsekaiProtagonistBonusFeatSelection, IsekaiProtagonistProficiencies, SneakAttack),
                     Helpers.LevelEntry(2, IsekaiProtagonistBonusFeatSelection),

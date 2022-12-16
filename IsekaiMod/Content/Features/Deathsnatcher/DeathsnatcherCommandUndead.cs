@@ -10,7 +10,6 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
-using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
@@ -83,13 +82,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                                     Rate = DurationRate.Rounds,
                                     DiceType = DiceType.Zero,
                                     DiceCountValue = 0,
-                                    BonusValue = new ContextValue()
-                                    {
-                                        ValueType = ContextValueType.Rank,
-                                        Value = 0,
-                                        ValueShared = AbilitySharedValue.Damage,
-                                        ValueRank = AbilityRankType.DamageBonus
-                                    },
+                                    BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus),
                                     m_IsExtendable = true
                                 };
                             });
@@ -100,13 +93,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                                     Rate = DurationRate.Rounds,
                                     DiceType = DiceType.Zero,
                                     DiceCountValue = 0,
-                                    BonusValue = new ContextValue()
-                                    {
-                                        ValueType = ContextValueType.Rank,
-                                        Value = 0,
-                                        ValueShared = AbilitySharedValue.Damage,
-                                        ValueRank = AbilityRankType.DamageBonus
-                                    },
+                                    BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus),
                                     m_IsExtendable = true
                                 };
                                 c.IsFromSpell = true;

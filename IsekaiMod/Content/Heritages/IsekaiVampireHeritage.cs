@@ -75,11 +75,7 @@ namespace IsekaiMod.Content.Heritages
                 // Add Fast Healing
                 bp.AddComponent<AddEffectFastHealing>(c => {
                     c.Heal = 0;
-                    c.Bonus = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Bonus = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;

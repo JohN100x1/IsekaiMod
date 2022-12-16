@@ -124,7 +124,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                         m_StatClass = ContextActionHealStatDamage.StatClass.Any,
                         m_HealType = ContextActionHealStatDamage.StatDamageHealType.HealAllDamage,
                         ResultSharedValue = AbilitySharedValue.Heal,
-                        Value = Constants.ZeroDiceValue
+                        Value = Values.Dice.Zero
                     },
                     new ContextActionHealStatDamage()
                     {
@@ -132,7 +132,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                         m_StatClass = ContextActionHealStatDamage.StatClass.Any,
                         m_HealType = ContextActionHealStatDamage.StatDamageHealType.HealAllDamage,
                         ResultSharedValue = AbilitySharedValue.Heal,
-                        Value = Constants.ZeroDiceValue
+                        Value = Values.Dice.Zero
                     },
                     new ContextActionHealEnergyDrain()
                     {
@@ -150,18 +150,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                         {
                             DiceType = DiceType.Zero,
                             DiceCountValue = 0,
-                            BonusValue = new ContextValue()
-                            {
-                                ValueRank = AbilityRankType.Default,
-                                ValueType = ContextValueType.TargetProperty,
-                                Property = UnitProperty.MaxHP
-                            }
+                            BonusValue = Values.CreateContextTargetPropertyValue(UnitProperty.MaxHP)
                         }
                     },
                     new ContextActionApplyBuff()
                     {
                         m_Buff = SecondFormBuffEffect.ToReference<BlueprintBuffReference>(),
-                        DurationValue = Constants.Duration.OneDay
+                        DurationValue = Values.Duration.OneDay
                     },
                     new ContextActionRemoveSelf()
                     );

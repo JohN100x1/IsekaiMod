@@ -6,7 +6,6 @@ using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 
 namespace IsekaiMod.Content.Features.Deathsnatcher
@@ -48,11 +47,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 // Add Spell Resistance
                 bp.AddComponent<AddSpellResistance>(c =>
                 {
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c =>
                 {

@@ -39,7 +39,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                             m_StatClass = ContextActionHealStatDamage.StatClass.Any,
                             m_HealType = ContextActionHealStatDamage.StatDamageHealType.HealAllDamage,
                             ResultSharedValue = AbilitySharedValue.Heal,
-                            Value = Constants.ZeroDiceValue
+                            Value = Values.Dice.Zero
                         },
                         new ContextActionHealStatDamage()
                         {
@@ -47,7 +47,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                             m_StatClass = ContextActionHealStatDamage.StatClass.Any,
                             m_HealType = ContextActionHealStatDamage.StatDamageHealType.HealAllDamage,
                             ResultSharedValue = AbilitySharedValue.Heal,
-                            Value = Constants.ZeroDiceValue
+                            Value = Values.Dice.Zero
                         },
                         new ContextActionHealEnergyDrain()
                         {
@@ -60,12 +60,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                             {
                                 DiceType = DiceType.Zero,
                                 DiceCountValue = 0,
-                                BonusValue = new ContextValue()
-                                {
-                                    ValueRank = AbilityRankType.Default,
-                                    ValueType = ContextValueType.TargetProperty,
-                                    Property = UnitProperty.MaxHP
-                                }
+                                BonusValue = Values.CreateContextTargetPropertyValue(UnitProperty.MaxHP)
                             }
                         },
                         new ContextActionSpawnFx()

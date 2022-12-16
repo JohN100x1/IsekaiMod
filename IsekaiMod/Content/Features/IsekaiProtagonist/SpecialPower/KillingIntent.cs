@@ -88,17 +88,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                 new ContextActionApplyBuff()
                                 {
                                     m_Buff = Shaken.ToReference<BlueprintBuffReference>(),
-                                    DurationValue = Constants.Duration.OneRound
+                                    DurationValue = Values.Duration.OneRound
                                 },
                                 new ContextActionApplyBuff()
                                 {
                                     m_Buff = Frightened.ToReference<BlueprintBuffReference>(),
-                                    DurationValue = Constants.Duration.OneRound
+                                    DurationValue = Values.Duration.OneRound
                                 },
                                 new ContextActionApplyBuff()
                                 {
                                     m_Buff = Cowering.ToReference<BlueprintBuffReference>(),
-                                    DurationValue = Constants.Duration.OneRound
+                                    DurationValue = Values.Duration.OneRound
                                 });
                         });
                     });

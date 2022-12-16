@@ -23,64 +23,36 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Inherent;
                     c.Stat = StatType.Strength;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Inherent;
                     c.Stat = StatType.Dexterity;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Inherent;
                     c.Stat = StatType.Constitution;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Inherent;
                     c.Stat = StatType.Intelligence;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Inherent;
                     c.Stat = StatType.Wisdom;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Inherent;
                     c.Stat = StatType.Charisma;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<SpellPenetrationBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Inherent;
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;
@@ -88,11 +60,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.m_Progression = ContextRankProgression.Div2;
                 });
                 bp.AddComponent<AddDamageResistancePhysical>(c => {
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.Default
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.Default;

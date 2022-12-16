@@ -77,11 +77,7 @@ namespace IsekaiMod.Content.Heritages
                             Type = SavingThrowType.Fortitude,
                             m_ConditionalDCIncrease = new ContextActionSavingThrow.ConditionalDCIncrease[0],
                             HasCustomDC = true,
-                            CustomDC = new ContextValue()
-                            {
-                                ValueType = ContextValueType.CasterCustomProperty,
-                                m_CustomProperty = DrowPoisonUnitProperty.ToReference<BlueprintUnitPropertyReference>()
-                            },
+                            CustomDC = Values.CreateContextCasterCustomPropertyValue(DrowPoisonUnitProperty),
                             FromBuff = false,
                             Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
                                 c.Succeed = ActionFlow.DoNothing();
@@ -102,11 +98,7 @@ namespace IsekaiMod.Content.Heritages
                         );
                 });
                 bp.AddComponent<ContextSetAbilityParams>(c => {
-                    c.DC = new ContextValue()
-                    {
-                        ValueType = ContextValueType.CasterCustomProperty,
-                        m_CustomProperty = DrowPoisonUnitProperty.ToReference<BlueprintUnitPropertyReference>()
-                    };
+                    c.DC = Values.CreateContextCasterCustomPropertyValue(DrowPoisonUnitProperty);
                 });
             });
             var DrowPoisonAbility = Helpers.CreateBlueprint<BlueprintAbility>("DrowPoisonAbility", bp => {
@@ -119,7 +111,7 @@ namespace IsekaiMod.Content.Heritages
                     c.Actions = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                         c.m_Buff = DrowPoisonBuff.ToReference<BlueprintBuffReference>();
                         c.Permanent = true;
-                        c.DurationValue = Constants.Duration.Zero;
+                        c.DurationValue = Values.Duration.Zero;
                     });
                 });
                 bp.AddComponent<AbilitySpawnFx>(c => {
@@ -128,11 +120,7 @@ namespace IsekaiMod.Content.Heritages
                     c.Anchor = AbilitySpawnFxAnchor.Caster;
                 });
                 bp.AddComponent<ContextSetAbilityParams>(c => {
-                    c.DC = new ContextValue()
-                    {
-                        ValueType = ContextValueType.CasterCustomProperty,
-                        m_CustomProperty = DrowPoisonUnitProperty.ToReference<BlueprintUnitPropertyReference>()
-                    };
+                    c.DC = Values.CreateContextCasterCustomPropertyValue(DrowPoisonUnitProperty);
                 });
                 bp.AddComponent<AbilityResourceLogic>(c => {
                     c.m_RequiredResource = DrowPoisonResource.ToReference<BlueprintAbilityResourceReference>();
@@ -186,11 +174,7 @@ namespace IsekaiMod.Content.Heritages
 
                 // Add Spell Resistance
                 bp.AddComponent<AddSpellResistance>(c => {
-                    c.Value = new ContextValue()
-                    {
-                        ValueType = ContextValueType.Rank,
-                        ValueRank = AbilityRankType.StatBonus
-                    };
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;

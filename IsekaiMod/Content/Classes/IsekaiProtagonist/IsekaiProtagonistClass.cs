@@ -1,15 +1,15 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
+using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Blueprints.Classes;
-using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using UnityEngine;
-using Kingmaker.Blueprints.Facts;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
+using UnityEngine;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 {
@@ -104,7 +104,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     StatType.SkillUseMagicDevice
                 };
                 bp.IsDivineCaster = true;
-                bp.IsArcaneCaster = false;
+                bp.IsArcaneCaster = true;
                 bp.StartingGold = 69420;
                 bp.PrimaryColor = 9;
                 bp.SecondaryColor = 9;

@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.1.0] - 2022-12-16
+### Added
+- Added `Aura of Righteous Wrath` Overpowered ability.
+- Added `Magical Summoning` Exceptional summoning feat.
+- Added `Dismiss Super Buff` ability for `Super Buff` Overpowered ability.
+### Changed
+- Patched Prestige classes to allow `Isekai Protagonist` spellbook to be selected.
+- Nerfed `Exceptional Summoning` to `Mighty Summoning`. Lowered HP buff to summons from +10 to +5, no saving throw bonus.
+- Changed `Isekai Protagonist` to count as both an arcane and divine caster.
+- Changed Isekai Protagonist spellbook spells to be counted as arcane spells rather than divine spells.
+- Changed `Supersonic Combat` and `Graceful Combat` to affect damage for ranged attacks.
+- Changed `Forbidden Summoning` to require Mighty and Magical Summoning.
+- Renamed `Infinite Inventory` to `Infinite Space`.
+
 ## [3.0.1] - 2022-12-12
 ### Changed
 - Changed `Second Reincarnation` and `Godhood` to ignore spell immunity.
