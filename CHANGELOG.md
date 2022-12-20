@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Buffed `Extreme Speed` to work on allies within 40 feet.
 ### Fixed
 - Fixed `Second Reincarnation` missing buff.
+- Fixed `Kinetic Power` abilities breaking mod if missing DLC3.
 
 ## [3.1.0] - 2022-12-16
 ### Added
