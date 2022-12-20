@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Buffed `Extreme Speed` to work on allies within 40 feet.
+- Changed `Mythic Overpowered Ability` and `Mythic Special Power` to be selected without non-mythic prerequisites.
 ### Fixed
 - Fixed `Second Reincarnation` missing buff.
 - Fixed `Kinetic Power` abilities breaking mod if missing DLC3.
