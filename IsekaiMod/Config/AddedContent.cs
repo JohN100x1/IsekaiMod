@@ -3,6 +3,7 @@ namespace IsekaiMod.Config
 {
     public class AddedContent : IUpdatableSettings
     {
+        public bool ExcludeCompanionsFromIsekaiClass = false;
         public bool NewSettingsOffByDefault = false;
         public SettingGroup Feats = new();
         public SettingGroup Heritages = new();
@@ -17,6 +18,7 @@ namespace IsekaiMod.Config
         public void OverrideSettings(IUpdatableSettings userSettings)
         {
             var loadedSettings = userSettings as AddedContent;
+            ExcludeCompanionsFromIsekaiClass = loadedSettings.ExcludeCompanionsFromIsekaiClass;
             NewSettingsOffByDefault = loadedSettings.NewSettingsOffByDefault;
             Heritages.LoadSettingGroup(loadedSettings.Heritages, NewSettingsOffByDefault);
             Backgrounds.LoadSettingGroup(loadedSettings.Backgrounds, NewSettingsOffByDefault);

@@ -5,7 +5,6 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
@@ -60,7 +59,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.m_Progression = ContextRankProgression.Div2;
                 });
                 bp.AddComponent<AddDamageResistancePhysical>(c => {
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.Default);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.Default;

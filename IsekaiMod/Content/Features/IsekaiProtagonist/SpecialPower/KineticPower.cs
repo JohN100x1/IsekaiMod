@@ -121,10 +121,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
         // Weapon
         private static readonly BlueprintItemWeapon KineticBlastPhysicalWeapon = Resources.GetBlueprint<BlueprintItemWeapon>("65951e1195848844b8ab8f46d942f6e8");
         private static readonly BlueprintItemWeapon KineticBlastEnergyWeapon = Resources.GetBlueprint<BlueprintItemWeapon>("4d3265a5b9302ee4cab9c07adddb253f");
-
-        // DLC3 Ricochet
-        private static readonly BlueprintBuff DLC3_KineticRicochetBuff = Resources.GetBlueprint<BlueprintBuff>("5f7d567ae4054cc291e42fc43ef5a046");
-        private static readonly BlueprintUnitProperty DLC3_KineticRicochetProperty = Resources.GetBlueprint<BlueprintUnitProperty>("4a18040254d040f78c298f10649eab71");
         
         // Frequently used constants
         private static readonly DamageTypeDescription BludgeoningDamage = new()
@@ -217,16 +213,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
-                bp.AddComponent<AbilityDeliverRicochet>(c => {
-                    c.m_Layer = 1;
-                    c.m_BeforeCondition = ActionFlow.IfSingle<ContextConditionHasBuff>(c => {
-                        c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
-                    });
-                    c.m_Projectile = WindProjectile00.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
-                    c.Radius = new Feet(10);
-                    c.m_TargetCondition = ActionFlow.EmptyCondition();
-                });
                 bp.CanTargetEnemies = true;
                 bp.ShouldTurnToTarget = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
@@ -301,16 +287,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.CachedDamageInfo = PhysicalDamageCache(BludgeoningDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
-                });
-                bp.AddComponent<AbilityDeliverRicochet>(c => {
-                    c.m_Layer = 1;
-                    c.m_BeforeCondition = ActionFlow.IfSingle<ContextConditionHasBuff>(c => {
-                        c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
-                    });
-                    c.m_Projectile = WindProjectile00.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
-                    c.Radius = new Feet(10);
-                    c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
                 bp.Range = AbilityRange.Long;
                 bp.CanTargetEnemies = true;
@@ -492,16 +468,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
-                bp.AddComponent<AbilityDeliverRicochet>(c => {
-                    c.m_Layer = 1;
-                    c.m_BeforeCondition = ActionFlow.IfSingle<ContextConditionHasBuff>(c => {
-                        c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
-                    });
-                    c.m_Projectile = Kinetic_EarthBlast00_Projectile.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
-                    c.Radius = new Feet(10);
-                    c.m_TargetCondition = ActionFlow.EmptyCondition();
-                });
                 bp.CanTargetEnemies = true;
                 bp.ShouldTurnToTarget = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
@@ -603,16 +569,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.CachedDamageInfo = PhysicalDamageCache(EarthDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
-                });
-                bp.AddComponent<AbilityDeliverRicochet>(c => {
-                    c.m_Layer = 1;
-                    c.m_BeforeCondition = ActionFlow.IfSingle<ContextConditionHasBuff>(c => {
-                        c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
-                    });
-                    c.m_Projectile = Kinetic_EarthBlast00_Projectile.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
-                    c.Radius = new Feet(10);
-                    c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
                 bp.Range = AbilityRange.Long;
                 bp.CanTargetEnemies = true;
@@ -826,16 +782,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
-                bp.AddComponent<AbilityDeliverRicochet>(c => {
-                    c.m_Layer = 1;
-                    c.m_BeforeCondition = ActionFlow.IfSingle<ContextConditionHasBuff>(c => {
-                        c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
-                    });
-                    c.m_Projectile = ArrowFire00.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
-                    c.Radius = new Feet(10);
-                    c.m_TargetCondition = ActionFlow.EmptyCondition();
-                });
                 bp.CanTargetEnemies = true;
                 bp.ShouldTurnToTarget = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
@@ -949,16 +895,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.CachedDamageInfo = EnergyDamageCache(FireDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
-                });
-                bp.AddComponent<AbilityDeliverRicochet>(c => {
-                    c.m_Layer = 1;
-                    c.m_BeforeCondition = ActionFlow.IfSingle<ContextConditionHasBuff>(c => {
-                        c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
-                    });
-                    c.m_Projectile = ArrowFire00.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
-                    c.Radius = new Feet(10);
-                    c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
                 bp.Range = AbilityRange.Long;
                 bp.CanTargetEnemies = true;
@@ -1173,16 +1109,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
                 });
-                bp.AddComponent<AbilityDeliverRicochet>(c => {
-                    c.m_Layer = 1;
-                    c.m_BeforeCondition = ActionFlow.IfSingle<ContextConditionHasBuff>(c => {
-                        c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
-                    });
-                    c.m_Projectile = Kinetic_WaterBlast00_Projectile.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
-                    c.Radius = new Feet(10);
-                    c.m_TargetCondition = ActionFlow.EmptyCondition();
-                });
                 bp.CanTargetEnemies = true;
                 bp.ShouldTurnToTarget = true;
                 bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
@@ -1222,16 +1148,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.CachedDamageInfo = PhysicalDamageCache(BludgeoningDamage, false);
                     c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
                     c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
-                });
-                bp.AddComponent<AbilityDeliverRicochet>(c => {
-                    c.m_Layer = 1;
-                    c.m_BeforeCondition = ActionFlow.IfSingle<ContextConditionHasBuff>(c => {
-                        c.m_Buff = DLC3_KineticRicochetBuff.ToReference<BlueprintBuffReference>();
-                    });
-                    c.m_Projectile = Kinetic_WaterBlast00_Projectile.ToReference<BlueprintProjectileReference>();
-                    c.TargetsCount = Values.CreateContextCasterCustomPropertyValue(DLC3_KineticRicochetProperty);
-                    c.Radius = new Feet(10);
-                    c.m_TargetCondition = ActionFlow.EmptyCondition();
                 });
                 bp.Range = AbilityRange.Long;
                 bp.CanTargetEnemies = true;

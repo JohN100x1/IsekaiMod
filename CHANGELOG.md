@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.2.0] - 2022-12-24
+### Added
+- Added `Reflect` Special power.
+- Added option to disable `Isekai Protagonist` class for companions and mercenaries.
+### Changed
+- Buffed `Extreme Speed` to work on allies within 40 feet.
+- Changed `Grasp Heart` to `Instakill`. This is a buffed version that ignores death immunity.
+- Changed `Mythic Overpowered Ability` and `Mythic Special Power` to be selected without non-mythic prerequisites.
+### Fixed
+- Fixed `Nascent Apotheosis` DR per level.
+- Fixed `Second Reincarnation` missing buff.
+- Fixed `Kinetic Power` abilities breaking mod if missing DLC3.
+
 ## [3.1.0] - 2022-12-16
 ### Added
 - Added `Aura of Righteous Wrath` Overpowered ability.

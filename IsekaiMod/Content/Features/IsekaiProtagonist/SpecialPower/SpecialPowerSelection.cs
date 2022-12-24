@@ -32,9 +32,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.m_Icon = Icon_ForetellAidBuff;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.AddComponent<PrerequisiteFeature>(c => {
-                    c.m_Feature = SpecialPowerSelection.ToReference<BlueprintFeatureReference>();
-                });
 
                 // Special Powers are added in later
                 bp.m_Features = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>() };

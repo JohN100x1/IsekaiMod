@@ -82,7 +82,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Training Montage`: Get a +8 bonus to all attributes.
 		- `Body Strengthening`: Get a DR/— equal to character level.
 		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
-		- `Extreme Speed`: Get a speed bonus equal to 5 times character level.
+		- `Extreme Speed`: Allies within 40 feet of you get a speed bonus equal to 5 times your character level.
 		- `Channel Positive Energy`: You can channel positive energy (requires good alignment).
 		- `Channel Negative Energy`: You can channel negative energy (requires evil alignment).
 		- `Kinetic Power`: You can select a kinetic blast (air, earth, fire, water).
@@ -94,6 +94,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Summon Beast`: Summon a hydra, owlbear, roc, or minotaur.
 		- `Aura of Divine Fury`: Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells (requires character level 15).
 		- `Killing Intent`: Enemies within 40 feet who fail a will save become shaken, frightened, and cowering.
+		- `Reflect`: Deal damage to enemies equal to damage you receive.
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.
@@ -102,7 +103,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `AutoQuicken`: Quickens every spell you cast.
 		- `AutoReach`: Gives more range on every spell you cast.
 		- `AutoSelective`: Exclude selected targets on every spell you cast.
-		- `Grasp Heart`: Kills target creature (no HP limit).
+		- `Instakill`: Kills target creature (no HP limit).
 		- `Dupe Gold`: Get infinite gold.
 		- `Perfect Roll`: Roll 20 on every d20 roll.
 		- `Super Buff`: Apply many powerful buffs on you and your allies.
