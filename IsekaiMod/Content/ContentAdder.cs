@@ -81,6 +81,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.SpecialPower.AuraOfDivineFury.Add();
                 Features.IsekaiProtagonist.SpecialPower.KillingIntent.Add();
                 Features.IsekaiProtagonist.SpecialPower.MagicalAmplification.Add();
+                Features.IsekaiProtagonist.SpecialPower.Reflect.Add();
 
                 // OP Ability
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();

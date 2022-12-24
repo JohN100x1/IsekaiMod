@@ -94,6 +94,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Summon Beast`: Summon a hydra, owlbear, roc, or minotaur.
 		- `Aura of Divine Fury`: Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells (requires character level 15).
 		- `Killing Intent`: Enemies within 40 feet who fail a will save become shaken, frightened, and cowering.
+		- `Reflect`: Deal damage to enemies equal to damage you receive.
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.

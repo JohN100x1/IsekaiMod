@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Added `Reflect` Special power.
 ### Changed
 - Buffed `Extreme Speed` to work on allies within 40 feet.
 - Changed `Mythic Overpowered Ability` and `Mythic Special Power` to be selected without non-mythic prerequisites.
