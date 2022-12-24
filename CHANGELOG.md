@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added option to disable `Isekai Protagonist` class for companions and mercenaries.
 ### Changed
 - Buffed `Extreme Speed` to work on allies within 40 feet.
+- Changed `Grasp Heart` to `Instakill`. This is a buffed version that ignores death immunity.
 - Changed `Mythic Overpowered Ability` and `Mythic Special Power` to be selected without non-mythic prerequisites.
 ### Fixed
 - Fixed `Nascent Apotheosis` DR per level.

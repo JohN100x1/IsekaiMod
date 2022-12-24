@@ -103,7 +103,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `AutoQuicken`: Quickens every spell you cast.
 		- `AutoReach`: Gives more range on every spell you cast.
 		- `AutoSelective`: Exclude selected targets on every spell you cast.
-		- `Grasp Heart`: Kills target creature (no HP limit).
+		- `Instakill`: Kills target creature (no HP limit).
 		- `Dupe Gold`: Get infinite gold.
 		- `Perfect Roll`: Roll 20 on every d20 roll.
 		- `Super Buff`: Apply many powerful buffs on you and your allies.

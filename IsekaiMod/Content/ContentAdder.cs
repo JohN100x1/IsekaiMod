@@ -92,7 +92,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoQuicken.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoReach.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AutoSelective.Add();
-                Features.IsekaiProtagonist.OverpoweredAbility.GraspHeart.Add();
+                Features.IsekaiProtagonist.OverpoweredAbility.Instakill.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.DupeGold.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.PerfectRoll.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.SuperBuff.Add();
