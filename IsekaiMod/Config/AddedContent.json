@@ -1,5 +1,6 @@
 {
   "NewSettingsOffByDefault": false,
+  "ExcludeCompanionsFromIsekaiClass": false,
   "Feats": {
     "DisableAll": false,
     "Settings": {

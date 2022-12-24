@@ -1,10 +1,13 @@
-﻿using IsekaiMod.Extensions;
+﻿using IsekaiMod.Components;
+using IsekaiMod.Config;
+using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
+using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -84,7 +87,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 bp.m_WillSave = SavesHigh.ToReference<BlueprintStatProgressionReference>();
                 bp.m_Difficulty = 1;
                 bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
-                bp.RecommendedAttributes = new StatType[] { StatType.Strength, StatType.Charisma};
+                bp.RecommendedAttributes = new StatType[] { StatType.Strength, StatType.Charisma };
                 bp.NotRecommendedAttributes = new StatType[] { };
                 bp.m_EquipmentEntities = new KingmakerEquipmentEntityReference[0];
                 bp.m_StartingItems = new BlueprintItemReference[] {
@@ -124,6 +127,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.Not = true;
                     c.HideInUI = true;
                 });
+                if (ModSettings.AddedContent.ExcludeCompanionsFromIsekaiClass)
+                {
+                    bp.AddComponent<PrerequisiteIsMainCharacter>();
+                }
 
                 // Register Archetypes later using RegisterArchetype
                 bp.m_Archetypes = new BlueprintArchetypeReference[0];

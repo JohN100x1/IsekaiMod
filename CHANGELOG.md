@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added `Reflect` Special power.
+- Added option to disable `Isekai Protagonist` class for companions and mercenaries.
 ### Changed
 - Buffed `Extreme Speed` to work on allies within 40 feet.
 - Changed `Mythic Overpowered Ability` and `Mythic Special Power` to be selected without non-mythic prerequisites.
