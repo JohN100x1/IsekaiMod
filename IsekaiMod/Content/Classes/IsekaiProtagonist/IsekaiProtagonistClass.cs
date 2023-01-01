@@ -46,33 +46,31 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var IsekaiProtagonistPlotArmorFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistPlotArmorFeat", bp => {
                 bp.SetName(IsekaiContext, "Plot Armor");
                 bp.SetDescription(IsekaiContext, "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
-                //method no available in the interface, the field m_shortDescription stil exists on the object, TODO check if the short description is needed or shown anywhere
-                //bp.SetShortDescription("Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
+                bp.SetNameDescription(IsekaiContext, "Plot Armor", "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
+                bp.m_DescriptionShort = bp.m_Description;
                 bp.m_Icon = Icon_EdictOfImpenetrableFortress;
             });
             var IsekaiProtagonistSpecialPowerFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistSpecialPowerFeat", bp => {
                 bp.SetName(IsekaiContext, "Special Powers");
                 bp.SetDescription(IsekaiContext, "Isekai Protagonists gain special powers as they increase their level. These are skills or abilities that greatly enhance the Isekai Protagonist's combat power.");
-                //bp.SetShortDescription("Isekai Protagonists gain special powers as they increase their level. These are skills or abilities that greatly enhance the Isekai Protagonist's combat power.");
+                bp.m_DescriptionShort = bp.m_Description;
                 bp.m_Icon = Icon_ForetellAidBuff;
             });
             var IsekaiProtagonistOverpoweredAbilityFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistOverpoweredAbilityFeat", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Abilities");
                 bp.SetDescription(IsekaiContext, "Isekai Protagonists gain Overpowered Abilities as they increase their level. These are extremely powerful abiilities that surpass even gods.");
-                //bp.SetShortDescription("Isekai Protagonists gain Overpowered Abilities as they increase their level. These are extremely powerful abiilities that surpass even gods.");
+                bp.m_DescriptionShort = bp.m_Description; 
                 bp.m_Icon = Icon_TrickFate;
             });
             var IsekaiProtagonistBonusFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistBonusFeat", bp => {
                 bp.SetName(IsekaiContext, "Bonus Feat");
                 bp.SetDescription(IsekaiContext, "Isekai Protagonists gain twice as many {g|Encyclopedia:Feat}feats{/g} as the other classes.");
-                //bp.SetShortDescription(IsekaiContext, "Isekai Protagonists gain twice as many {g|Encyclopedia:Feat}feats{/g} as the other classes.");
-                bp.m_Icon = Icon_BasicFeatSelection;
+                bp.m_DescriptionShort = bp.m_Description; bp.m_Icon = Icon_BasicFeatSelection;
             });
             var IsekaiProtagonistSneakFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistSneakFeat", bp => {
                 bp.SetName(IsekaiContext, "Sneak Attack");
                 bp.SetDescription(IsekaiContext, "Most characters gain advantages when they {g|Encyclopedia:Flanking}flank{/g} an enemy, {g|Encyclopedia:Attack}attack{/g} an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional {g|Encyclopedia:Damage}damage{/g} in such a situation.");
-                //bp.SetShortDescription("Most characters gain advantages when they {g|Encyclopedia:Flanking}flank{/g} an enemy, {g|Encyclopedia:Attack}attack{/g} an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional {g|Encyclopedia:Damage}damage{/g} in such a situation.");
-                bp.m_Icon = Icon_SneakAttack;
+                bp.m_DescriptionShort = bp.m_Description; bp.m_Icon = Icon_SneakAttack;
             });
 
             // Main Class
