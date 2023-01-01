@@ -4,6 +4,9 @@ using Kingmaker.Blueprints;
 using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
+using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Localization;
+using Kingmaker.UnitLogic.Alignments;
 using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -20,7 +23,7 @@ namespace IsekaiMod.Content.Dialogue
              */
 
             // Answer
-            var IsekaiKaylessaDrowLeader = Helpers.CreateBlueprint<BlueprintAnswer>(IsekaiContext, "IsekaiKaylessaDrowLeader", bp => {
+            var IsekaiKaylessaDrowLeader = ThingsNotHandledByTTTCore.CreateAnswer("IsekaiKaylessaDrowLeader", bp => {
                 bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiKaylessaDrowLeader.Text", "(Isekai Protagonist) [Attack] \"Nice acting, Mr. background character. "
                     + "Now it's time for your unmomentous death scene.\"");
                 bp.NextCue = new CueSelection()

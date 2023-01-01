@@ -6,6 +6,9 @@ using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
+using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Localization;
+using Kingmaker.UnitLogic.Alignments;
 using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -23,9 +26,8 @@ namespace IsekaiMod.Content.Dialogue
             /* "Be quick about it, before it's too late!" {n}The old man leans over you.{/n}
              * "Now, who are you? I don't remember seeing you before, and I have an excellent memory for faces."
              */
-
             // Answer
-            var IsekaiDialogueHulrun = Helpers.CreateBlueprint<BlueprintAnswer>(IsekaiContext, "IsekaiDialogueHulrun", bp => {
+            var IsekaiDialogueHulrun = ThingsNotHandledByTTTCore.CreateAnswer("IsekaiDialogueHulrun", bp => {
                 bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiDialogueHulrun.Text", "(Isekai Protagonist) \"Other than being hit by a truck, I don't remember anything at all...\"");
                 bp.NextCue = new CueSelection()
                 {
@@ -46,6 +48,7 @@ namespace IsekaiMod.Content.Dialogue
 
             // Add Answer to answers list
             var AnswersList_0020 = BlueprintTools.GetBlueprint<BlueprintAnswersList>("e27807b731f3b1a4eb19c1a04fdfcf53");
+            
             AnswersList_0020.Answers.Insert(0, IsekaiDialogueHulrun.ToReference<BlueprintAnswerBaseReference>());
         }
     }

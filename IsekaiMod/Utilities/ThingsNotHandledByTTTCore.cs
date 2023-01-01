@@ -3,8 +3,11 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Root;
+using Kingmaker.DialogSystem.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.Utility;
+using Kingmaker.DialogSystem;
+using Kingmaker.UnitLogic.Alignments;
+using Kingmaker.EntitySystem.Stats;
 using System;
 using System.IO;
 using TabletopTweaks.Core.ModLogic;
@@ -12,6 +15,8 @@ using TabletopTweaks.Core.Utilities;
 using UnityEngine;
 using static IsekaiMod.Main;
 using static UnityModManagerNet.UnityModManager;
+using System.Collections.Generic;
+using Kingmaker.Localization;
 
 namespace IsekaiMod.Utilities {
     //Classname is a partial lie, some are just not handled well *coughs*
@@ -51,6 +56,30 @@ namespace IsekaiMod.Utilities {
             var result = new T[len + 1];
             Array.Copy(array, 0, result, 1, len);
             result[0] = itemToBeAdded;
+            return result;
+        }
+
+        public static BlueprintAnswer CreateAnswer(string name, Action<BlueprintAnswer> init = null) {
+            var result = Helpers.CreateBlueprint<BlueprintAnswer>(IsekaiContext, name, bp => {
+                bp.NextCue = new CueSelection() {
+                    Cues = new List<BlueprintCueBaseReference>(),
+                    Strategy = Strategy.First
+                };
+                bp.ShowOnce = false;
+                bp.ShowOnceCurrentDialog = false;
+                bp.ShowCheck = new ShowCheck() { Type = StatType.Unknown, DC = 0 };
+                bp.Experience = DialogExperience.NoExperience;
+                bp.DebugMode = false;
+                bp.CharacterSelection = new CharacterSelection() { SelectionType = CharacterSelection.Type.Clear, ComparisonStats = new StatType[0] };
+                bp.ShowConditions = ActionFlow.EmptyCondition();
+                bp.SelectConditions = ActionFlow.EmptyCondition();
+                bp.RequireValidCue = false;
+                bp.AddToHistory = true;
+                bp.OnSelect = ActionFlow.DoNothing();
+                bp.FakeChecks = new CheckData[0];
+                bp.AlignmentShift = new AlignmentShift() { Direction = AlignmentShiftDirection.TrueNeutral, Value = 0, Description = new LocalizedString() };
+            });
+            init?.Invoke(result);
             return result;
         }
 

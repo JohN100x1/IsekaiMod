@@ -4,6 +4,9 @@ using Kingmaker.Blueprints;
 using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
+using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Localization;
+using Kingmaker.UnitLogic.Alignments;
 using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -58,7 +61,7 @@ namespace IsekaiMod.Content.Dialogue
              */
 
             // Answer
-            var IsekaiDialogueRadiance = Helpers.CreateBlueprint<BlueprintAnswer>(IsekaiContext, "IsekaiDialogueRadiance", bp => {
+            var IsekaiDialogueRadiance = ThingsNotHandledByTTTCore.CreateAnswer("IsekaiDialogueRadiance", bp => {
                 bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiDialogueRadiance.Text", "(Isekai Protagonist) [Pound the sword repeatedly] \"You better power up right now or you're going to "
                     + "reincarnate as a broken blade.\"");
                 bp.NextCue = new CueSelection()
