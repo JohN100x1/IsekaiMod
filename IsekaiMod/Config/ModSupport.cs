@@ -65,10 +65,15 @@ namespace IsekaiMod.Utilities
                     ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(TricksterIncorporateSpellbook, VillainSpellbook.Get());
 
                 }
+                //done here because it should be done after all spells have been initialized and were added to the canon books
+                if (!IsekaiContext.AddedContent.Classes.IsDisabled("Merge Isekai Spelllist")) IsekaiProtagonistSpellList.MergeSpellLists();
             }
 
             public static void AddExpandedContentSpells(BlueprintSpellList spellList)
             {
+                //if enabled we grab these through the merge anyway
+                if (!IsekaiContext.AddedContent.Classes.IsDisabled("Merge Isekai Spelllist")) return;
+
                 BlueprintAbility FuryOftheSunAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("accc5584b62e4e73aa0a693f725ddf60");
                 BlueprintAbility GloomblindBoltsAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("e28f4633c0a2425d8895adf20cb22f8f");
                 BlueprintAbility GoodberryAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("f8774451760a427ab4694d10581cfda6");

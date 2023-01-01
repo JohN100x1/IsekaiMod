@@ -41,6 +41,11 @@
         "Enabled": true,
         "Homebrew": true,
         "Description": "Adds the Isekai Protagonist class."
+      },
+      "Merge Isekai Spelllist": {
+        "Enabled": false,
+        "Homebrew": true,
+        "Description": "Apply a merge function on all canon baseclass spellists to create the Isekai Spellist. Behold for I can learn all the spells!"
       }
     },
     "IsExpanded": true

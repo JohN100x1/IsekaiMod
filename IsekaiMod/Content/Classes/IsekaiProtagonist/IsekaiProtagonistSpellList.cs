@@ -1,7 +1,10 @@
 ﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.FactLogic;
+using System;
 using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -943,6 +946,110 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         public static BlueprintSpellList Get()
         {
             return BlueprintTools.GetModBlueprint<BlueprintSpellList>(IsekaiContext, "IsekaiProtagonistSpellList");
+        }
+        // spells that are technically their own spell but should be excluded because they are things like Protection From Chaos or Protection From Evil that are also covered by a more general spell that is a feature Selection
+        private static Boolean excludeSpell(BlueprintAbility spell) {
+            var GUIId = spell.AssetGuid.m_Guid.ToString("N");
+            if ("0ec75ec95d9e39d47a23610123ba1bad".Equals(GUIId)) return true;
+            if ("b6da529f710491b4fa789a5838c1ae8f".Equals(GUIId)) return true;
+            if ("3026de673d4d8fe45baf40e0b5edd718".Equals(GUIId)) return true;
+            if ("93f391b0c5a99e04e83bbfbe3bb6db64".Equals(GUIId)) return true;
+            if ("224f03e74d1dd4648a81242c01e65f41".Equals(GUIId)) return true;
+            if ("5bfd4cce1557d5744914f8f6d85959a4".Equals(GUIId)) return true;
+            if ("8b8ccc9763e3cc74bbf5acc9c98557b9".Equals(GUIId)) return true;
+            if ("1eaf1020e82028d4db55e6e464269e00".Equals(GUIId)) return true;
+            if ("b70104f09b3da794da923fbf248befc5".Equals(GUIId)) return true;
+            if ("c28f7234f5fb8c943a77621ad96ad8f9".Equals(GUIId)) return true;
+            if ("eee384c813b6d74498d1b9cc720d61f4".Equals(GUIId)) return true;
+            if ("07dccc8e4c4489c4d9de721dddaf12cc".Equals(GUIId)) return true;
+            if ("2ac7637daeb2aa143a3bae860095b63e".Equals(GUIId)) return true;
+            if ("c3aafbbb6e8fc754fb8c82ede3280051".Equals(GUIId)) return true;
+            //elemental swarms
+            if ("07e8f6479cbcc3f46a12696784805305".Equals(GUIId)) return true;
+            if ("a6c41f10be92dec488276ab079a296c8".Equals(GUIId)) return true;
+            if ("1c509c6f186528b49a291ab77f7f997d".Equals(GUIId)) return true;
+            if ("a0df3fc5fda5c7b4bbec8443e5bb315a".Equals(GUIId)) return true;
+            //elder fire
+            if ("e4926aa766a1cc048835237b3a97597d".Equals(GUIId)) return true;
+            //greater air
+            if ("a4849d6bd536ade48a3839a4ad960a8b".Equals(GUIId)) return true;
+            //elemental body
+            if ("ee63301f83c76694692d4704d8a05bdc".Equals(GUIId)) return true;
+            if ("facdc8851a0b3f44a8bed50f0199b83c".Equals(GUIId)) return true;
+            if ("c281eeecc554b72449fef43924e522ce".Equals(GUIId)) return true;
+            if ("96d2ab91f2d2329459a8dab496c5bede".Equals(GUIId)) return true;
+            //level 6 beast shape, body air, summon fire
+            if ("b140c323981ba0a45a3bee5a1a57f493".Equals(GUIId)) return true;
+            if ("cd4b858611f11ec44861f02505f9261d".Equals(GUIId)) return true;
+            if ("4814f8645d1d77447a70479c0be51c72".Equals(GUIId)) return true;
+            //dim door mass
+            if ("bdc37e4acfa209408334326076a43bc".Equals(GUIId)) return true;
+            return false;
+        }
+
+        public static void MergeSpellLists() {
+            var IsekaiSpellList = Get();
+            /* merge the three major first then everything else after*/
+            foreach (var spellLevel in SpellTools.SpellList.ClericSpellList.SpellsByLevel) {
+                foreach (var spell in spellLevel.Spells) {
+                    if (!excludeSpell(spell)) {
+                        ThingsNotHandledByTTTCore.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
+                    }
+                }
+            }
+            foreach (var spellLevel in SpellTools.SpellList.WizardSpellList.SpellsByLevel) {
+                foreach (var spell in spellLevel.Spells) {
+                    if (!excludeSpell(spell)) {
+                        ThingsNotHandledByTTTCore.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
+                    }
+                }
+            }
+            foreach (var spellLevel in SpellTools.SpellList.DruidSpellList.SpellsByLevel) {
+                foreach (var spell in spellLevel.Spells) {
+                    if (!excludeSpell(spell)) {
+                        ThingsNotHandledByTTTCore.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
+                    }
+                }
+            }
+            /* mostly redundant list as I think that all domain spells appear on at least one other spellist and the specialist wizard lists should be sub lists of the wizard, but it can't really hurt and someone might release a spell only available to necromancers*/
+            var mergeSpellLists = new BlueprintSpellList[70]
+            {
+                SpellTools.SpellList.AirDomainSpellList, SpellTools.SpellList.AnimalDomainSpellList, SpellTools.SpellList.ArmagsBladeSpellList, SpellTools.SpellList.ArtificeDomainSpellList, SpellTools.SpellList.BattleSpiritSpellList, 
+                SpellTools.SpellList.BloodragerSpellList, SpellTools.SpellList.BonesSpiritSpellList, SpellTools.SpellList.ChaosDomainSpellList, SpellTools.SpellList.CharmDomainSpellList, SpellTools.SpellList.CommunityDomainSpellList, 
+                SpellTools.SpellList.DarknessDomainSpellList, SpellTools.SpellList.DeathDomainSpellList,  SpellTools.SpellList.DestructionDomainSpellList, SpellTools.SpellList.EarthDomainSpellList, SpellTools.SpellList.EvilDomainSpellList, 
+                SpellTools.SpellList.FeyspeakerSpelllist, SpellTools.SpellList.FireDomainSpellList, SpellTools.SpellList.FlamesSpiritSpellList,  SpellTools.SpellList.FrostSpiritSpellList,
+                SpellTools.SpellList.GloryDomainSpellList, SpellTools.SpellList.GoodDomainSpellList, SpellTools.SpellList.HealingDomainSpellList,
+                SpellTools.SpellList.KnowledgeDomainSpellList, SpellTools.SpellList.LawDomainSpellList, SpellTools.SpellList.LiberationDomainSpellList, SpellTools.SpellList.LifeSpiritSpellList, SpellTools.SpellList.LuckDomainSpellList,
+                SpellTools.SpellList.MadnessDomainSpellList, SpellTools.SpellList.MagicDomainSpellList, SpellTools.SpellList.NatureSpiritSpellList, SpellTools.SpellList.NobilityDomainSpellList,
+                SpellTools.SpellList.PlantDomainSpellList, SpellTools.SpellList.ProtectionDomainSpellList, SpellTools.SpellList.RangerSpellList, SpellTools.SpellList.ReposeDomainSpellList,
+                SpellTools.SpellList.RuneDomainSpellList,  SpellTools.SpellList.ShamanSpelllist, SpellTools.SpellList.SpiritWardenSpellList, SpellTools.SpellList.StoneSpiritSpellList, SpellTools.SpellList.StrengthDomainSpellList,
+                SpellTools.SpellList.SunDomainSpellList, SpellTools.SpellList.ThassilonianAbjurationSpellList, SpellTools.SpellList.ThassilonianConjurationSpellList, SpellTools.SpellList.ThassilonianEnchantmentSpellList, SpellTools.SpellList.ThassilonianEvocationSpellList,
+                SpellTools.SpellList.ThassilonianIllusionSpellList, SpellTools.SpellList.ThassilonianNecromancySpellList, SpellTools.SpellList.ThassilonianTransmutationSpellList, SpellTools.SpellList.TravelDomainSpellList, SpellTools.SpellList.TrickeryDomainSpellList,
+                SpellTools.SpellList.WarDomainSpellList, SpellTools.SpellList.WarpriestSpelllist, SpellTools.SpellList.WaterDomainSpellList,
+                SpellTools.SpellList.WavesSpiritSpellList, SpellTools.SpellList.WeatherDomainSpellList, SpellTools.SpellList.WindSpiritSpellList, SpellTools.SpellList.WitchSpellList, SpellTools.SpellList.WizardAbjurationSpellList,
+                SpellTools.SpellList.WizardConjurationSpellList, SpellTools.SpellList.WizardDivinationSpellList, SpellTools.SpellList.WizardEnchantmentSpellList, SpellTools.SpellList.WizardEvocationSpellList, SpellTools.SpellList.WizardIllusionSpellList,
+                SpellTools.SpellList.WizardNecromancySpellList, SpellTools.SpellList.WizardTransmutationSpellList,
+                SpellTools.SpellList.BardSpellList, SpellTools.SpellList.PaladinSpellList, SpellTools.SpellList.HunterSpelllist, SpellTools.SpellList.InquisitorSpellList, SpellTools.SpellList.MagusSpellList
+            };
+            foreach (var spellList in mergeSpellLists) {
+                foreach (var spellLevel in spellList.SpellsByLevel) {
+                    foreach (var spell in spellLevel.Spells) {
+                        if (!excludeSpell(spell)) {
+                            ThingsNotHandledByTTTCore.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
+                        }
+                    }
+                }
+            }
+            var cantrips = IsekaiSpellList.GetSpells(0);
+            var IsekaiCantrips = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistCantripsFeature");
+            IsekaiCantrips.AddComponent<AddFacts>(c => {
+                c.m_Facts = new BlueprintUnitFactReference[0];
+                foreach (var spell in cantrips) {
+                    c.m_Facts = c.m_Facts.AppendToArray(spell.ToReference<BlueprintUnitFactReference>());
+                }
+            });
+
+
         }
     }
 }
