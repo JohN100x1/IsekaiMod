@@ -1,6 +1,7 @@
 ﻿using Kingmaker.ElementsSystem;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using System;
+using TabletopTweaks.Core.Utilities;
 
 namespace IsekaiMod.Utilities
 {

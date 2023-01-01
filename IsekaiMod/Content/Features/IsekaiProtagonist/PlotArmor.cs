@@ -7,17 +7,20 @@ using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using UnityEngine;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
+using Kingmaker.Blueprints.Classes;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist
 {
     class PlotArmor
     {
-        private static readonly Sprite Icon_EdictOfImpenetrableFortress = Resources.GetBlueprint<BlueprintAbility>("d7741c08ccf699e4a8a8f8ab2ed345f8").m_Icon;
+        private static readonly Sprite Icon_EdictOfImpenetrableFortress = BlueprintTools.GetBlueprint<BlueprintAbility>("d7741c08ccf699e4a8a8f8ab2ed345f8").m_Icon;
         public static void Add()
         {
-            var PlotArmor = Helpers.CreateFeature("PlotArmor", bp => {
-                bp.SetName("Plot Armor");
-                bp.SetDescription("You gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to your character level.");
+            var PlotArmor = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"PlotArmor", bp => {
+                bp.SetName(IsekaiContext, "Plot Armor");
+                bp.SetDescription(IsekaiContext, "You gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to your character level.");
                 bp.m_Icon = Icon_EdictOfImpenetrableFortress;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Luck;

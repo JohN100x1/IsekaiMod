@@ -1,6 +1,8 @@
 ﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
 {
@@ -9,65 +11,65 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
         public static void Add()
         {
             // Archetype features
-            var GodEmperorProficiencies = Resources.GetModBlueprint<BlueprintFeature>("GodEmperorProficiencies");
-            var NascentApotheosis = Resources.GetModBlueprint<BlueprintFeature>("NascentApotheosis");
-            var DivineArray = Resources.GetModBlueprint<BlueprintFeature>("DivineArray");
-            var GodEmperorEnergySelection = Resources.GetModBlueprint<BlueprintFeature>("GodEmperorEnergySelection");
-            var AuraOfGoldenProtectionFeature = Resources.GetModBlueprint<BlueprintFeature>("AuraOfGoldenProtectionFeature");
-            var DarkAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("DarkAuraFeature");
-            var AuraOfMajestyFeature = Resources.GetModBlueprint<BlueprintFeature>("AuraOfMajestyFeature");
-            var CelestialRealmFeature = Resources.GetModBlueprint<BlueprintFeature>("CelestialRealmFeature");
-            var Godhood = Resources.GetModBlueprint<BlueprintFeature>("Godhood");
-            var GodlyVessel = Resources.GetModBlueprint<BlueprintFeature>("GodlyVessel");
-            var SiphoningAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("SiphoningAuraFeature");
-            var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
-            var ArmorSaint = Resources.GetModBlueprint<BlueprintFeature>("ArmorSaint");
-            var AuraOfDivineFuryFeature = Resources.GetModBlueprint<BlueprintFeature>("AuraOfDivineFuryFeature");
+            var GodEmperorProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodEmperorProficiencies");
+            var NascentApotheosis = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "NascentApotheosis");
+            var DivineArray = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DivineArray");
+            var GodEmperorEnergySelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodEmperorEnergySelection");
+            var AuraOfGoldenProtectionFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfGoldenProtectionFeature");
+            var DarkAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DarkAuraFeature");
+            var AuraOfMajestyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfMajestyFeature");
+            var CelestialRealmFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CelestialRealmFeature");
+            var Godhood = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Godhood");
+            var GodlyVessel = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodlyVessel");
+            var SiphoningAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SiphoningAuraFeature");
+            var OverpoweredAbilitySelection2 = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2");
+            var ArmorSaint = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ArmorSaint");
+            var AuraOfDivineFuryFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfDivineFuryFeature");
 
             // Removed features
-            var SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
-            var IsekaiProtagonistProficiencies = Resources.GetModBlueprint<BlueprintFeature>("IsekaiProtagonistProficiencies");
-            var FriendlyAuraFeature = Resources.GetModBlueprint<BlueprintFeature>("FriendlyAuraFeature");
-            var OtherworldlyStamina = Resources.GetModBlueprint<BlueprintFeature>("OtherworldlyStamina");
-            var SecondReincarnation = Resources.GetModBlueprint<BlueprintFeature>("SecondReincarnation");
+            var SneakAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
+            var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
+            var FriendlyAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "FriendlyAuraFeature");
+            var OtherworldlyStamina = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OtherworldlyStamina");
+            var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
 
-            var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
-            var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
+            var BeachEpisodeSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeSelection");
+            var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
 
             // Archetype
-            var GodEmperorArchetype = Helpers.CreateBlueprint<BlueprintArchetype>("GodEmperorArchetype", bp => {
-                bp.LocalizedName = Helpers.CreateString($"GodEmperorArchetype.Name", "God Emperor");
-                bp.LocalizedDescription = Helpers.CreateString($"GodEmperorArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
+            var GodEmperorArchetype = Helpers.CreateBlueprint<BlueprintArchetype>(IsekaiContext,"GodEmperorArchetype", bp => {
+                bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"GodEmperorArchetype.Name", "God Emperor");
+                bp.LocalizedDescription = Helpers.CreateString(IsekaiContext, $"GodEmperorArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
                     + "some protagonists decide to become gods. They sacrifice their special powers and sneak attack to gain powerful auras and a journey towards godhood.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString($"GodEmperorArchetype.DescriptionShort", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
+                bp.LocalizedDescriptionShort = Helpers.CreateString(IsekaiContext, $"GodEmperorArchetype.DescriptionShort", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
                     + "some protagonists decide to become gods. They sacrifice their special powers and sneak attack to gain powerful auras and a journey towards godhood.");
                 bp.IsArcaneCaster = true;
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.LevelEntry(1, SneakAttack, IsekaiProtagonistProficiencies),
-                    Helpers.LevelEntry(3, SneakAttack, SpecialPowerSelection),
-                    Helpers.LevelEntry(5, SneakAttack, OverpoweredAbilitySelection2),
-                    Helpers.LevelEntry(7, SneakAttack, SpecialPowerSelection),
-                    Helpers.LevelEntry(9, SneakAttack, SpecialPowerSelection, FriendlyAuraFeature),
-                    Helpers.LevelEntry(11, SneakAttack, SpecialPowerSelection),
-                    Helpers.LevelEntry(12, BeachEpisodeSelection),
-                    Helpers.LevelEntry(13, SneakAttack, SpecialPowerSelection),
-                    Helpers.LevelEntry(15, SneakAttack, OverpoweredAbilitySelection2, OtherworldlyStamina),
-                    Helpers.LevelEntry(17, SneakAttack, SpecialPowerSelection),
-                    Helpers.LevelEntry(19, SneakAttack, SpecialPowerSelection),
-                    Helpers.LevelEntry(20, SecondReincarnation),
+                    Helpers.CreateLevelEntry(1, SneakAttack, IsekaiProtagonistProficiencies),
+                    Helpers.CreateLevelEntry(3, SneakAttack, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(5, SneakAttack, OverpoweredAbilitySelection2),
+                    Helpers.CreateLevelEntry(7, SneakAttack, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(9, SneakAttack, SpecialPowerSelection, FriendlyAuraFeature),
+                    Helpers.CreateLevelEntry(11, SneakAttack, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(12, BeachEpisodeSelection),
+                    Helpers.CreateLevelEntry(13, SneakAttack, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(15, SneakAttack, OverpoweredAbilitySelection2, OtherworldlyStamina),
+                    Helpers.CreateLevelEntry(17, SneakAttack, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(19, SneakAttack, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(20, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.LevelEntry(1, NascentApotheosis, GodEmperorProficiencies),
-                    Helpers.LevelEntry(3, DivineArray),
-                    Helpers.LevelEntry(5, GodEmperorEnergySelection, ArmorSaint),
-                    Helpers.LevelEntry(7, AuraOfGoldenProtectionFeature),
-                    Helpers.LevelEntry(9, AuraOfMajestyFeature),
-                    Helpers.LevelEntry(10, DarkAuraFeature),
-                    Helpers.LevelEntry(12, SiphoningAuraFeature),
-                    Helpers.LevelEntry(15, GodlyVessel, AuraOfDivineFuryFeature),
-                    Helpers.LevelEntry(17, CelestialRealmFeature),
-                    Helpers.LevelEntry(20, Godhood),
+                    Helpers.CreateLevelEntry(1, NascentApotheosis, GodEmperorProficiencies),
+                    Helpers.CreateLevelEntry(3, DivineArray),
+                    Helpers.CreateLevelEntry(5, GodEmperorEnergySelection, ArmorSaint),
+                    Helpers.CreateLevelEntry(7, AuraOfGoldenProtectionFeature),
+                    Helpers.CreateLevelEntry(9, AuraOfMajestyFeature),
+                    Helpers.CreateLevelEntry(10, DarkAuraFeature),
+                    Helpers.CreateLevelEntry(12, SiphoningAuraFeature),
+                    Helpers.CreateLevelEntry(15, GodlyVessel, AuraOfDivineFuryFeature),
+                    Helpers.CreateLevelEntry(17, CelestialRealmFeature),
+                    Helpers.CreateLevelEntry(20, Godhood),
                 };
             });
 

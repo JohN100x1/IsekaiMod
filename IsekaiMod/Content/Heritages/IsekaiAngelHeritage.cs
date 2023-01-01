@@ -1,4 +1,5 @@
-﻿using IsekaiMod.Extensions;
+﻿using HarmonyLib;
+using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -20,6 +21,8 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System.Collections.Generic;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Heritages
 {
@@ -27,14 +30,14 @@ namespace IsekaiMod.Content.Heritages
     {
         public static void Add()
         {
-            var AasimarSpellLikeResource = Resources.GetBlueprint<BlueprintAbilityResource>("a4ea5b9becd98dd47b51c8742aeb70ec");
-            var AngelBoltOfJusticeAbility = Resources.GetBlueprint<BlueprintAbility>("c82168800b665324f8b4807b531fea46");
-            var AngelWingsFeature = Resources.GetBlueprint<BlueprintFeature>("d9bd0fde6deb2e44a93268f2dfb3e169");
-            var BlackWingsAbility = Resources.GetModBlueprint<BlueprintActivatableAbility>("BlackWingsAbility");
-            var GhostWingsAbility = Resources.GetModBlueprint<BlueprintActivatableAbility>("GhostWingsAbility");
+            var AasimarSpellLikeResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("a4ea5b9becd98dd47b51c8742aeb70ec");
+            var AngelBoltOfJusticeAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("c82168800b665324f8b4807b531fea46");
+            var AngelWingsFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("d9bd0fde6deb2e44a93268f2dfb3e169");
+            var BlackWingsAbility = BlueprintTools.GetModBlueprint<BlueprintActivatableAbility>(IsekaiContext, "BlackWingsAbility");
+            var GhostWingsAbility = BlueprintTools.GetModBlueprint<BlueprintActivatableAbility>(IsekaiContext, "GhostWingsAbility");
 
             // Ability
-            var AngelicBoltUnitProperty = Helpers.CreateBlueprint<BlueprintUnitProperty>("AngelicBoltUnitProperty", bp => {
+            var AngelicBoltUnitProperty = Helpers.CreateBlueprint<BlueprintUnitProperty>(IsekaiContext, "AngelicBoltUnitProperty", bp => {
                 bp.name = "AngelicBoltUnitProperty";
                 bp.AddComponent<SimplePropertyGetter>(c => {
                     c.Property = UnitProperty.Level;
@@ -45,9 +48,9 @@ namespace IsekaiMod.Content.Heritages
                 bp.BaseValue = 10;
                 bp.OperationOnComponents = BlueprintUnitProperty.MathOperation.Sum;
             });
-            var AngelicBoltAbility = Helpers.CreateBlueprint<BlueprintAbility>("AngelicBoltAbility", bp => {
-                bp.SetName("Angelic Bolt");
-                bp.SetDescription("You release a powerful stroke of energy that deals {g|Encyclopedia:Dice}2d6{/g} points of holy {g|Encyclopedia:Damage}damage{/g} per "
+            var AngelicBoltAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "AngelicBoltAbility", bp => {
+                bp.SetName(IsekaiContext, "Angelic Bolt");
+                bp.SetDescription(IsekaiContext, "You release a powerful stroke of energy that deals {g|Encyclopedia:Dice}2d6{/g} points of holy {g|Encyclopedia:Damage}damage{/g} per "
                     + "character level. The target needs to make a successful Reflex saving throw, or become prone.\n"
                     + "If the target is evil, the {g|Encyclopedia:Spell}spell{/g} instead deals 2d8 points of holy {g|Encyclopedia:Energy_Damage}damage{/g} per character level. "
                     + "The target needs to make a successful Reflex saving throw, or become prone and suffer a -2 {g|Encyclopedia:Penalty}penalty{/g} to {g|Encyclopedia:Armor_Class}AC{/g}, "
@@ -98,10 +101,10 @@ namespace IsekaiMod.Content.Heritages
             });
 
             // Angel Heritage
-            var Icon_Angel = AssetLoader.LoadInternal("Heritages", "ICON_ANGEL.png");
-            var IsekaiAngelHeritage = Helpers.CreateFeature("IsekaiAngelHeritage", bp => {
-                bp.SetName("Isekai Angel");
-                bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as an Angel have both extreme beauty and power. "
+            var Icon_Angel = AssetLoader.LoadInternal(IsekaiContext, "Heritages", "ICON_ANGEL.png");
+            var IsekaiAngelHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiAngelHeritage", bp => {
+                bp.SetName(IsekaiContext, "Isekai Angel");
+                bp.SetDescription(IsekaiContext, "Otherworldly entities who are reincarnated into the world of Golarion as an Angel have both extreme beauty and power. "
                     + "They serve as exemplars of good and light regardless of the myriad forms they may take.\n"
                     + "The Isekai Angel has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Strength}Strength{/g} and {g|Encyclopedia:Charisma}Charisma{/g}, "
                     + "and a +2 racial bonus on {g|Encyclopedia:Persuasion}Persuasion{/g} and {g|Encyclopedia:Lore_Religion}Lore (religion){/g} checks. "
@@ -200,7 +203,7 @@ namespace IsekaiMod.Content.Heritages
             });
 
             // Add to Aasimar Heritage Selection
-            var AasimarHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("67aabcbce8f8ae643a9d08a6ca67cabd");
+            var AasimarHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("67aabcbce8f8ae643a9d08a6ca67cabd");
             AasimarHeritageSelection.m_AllFeatures = AasimarHeritageSelection.m_AllFeatures.AddToArray(IsekaiAngelHeritage.ToReference<BlueprintFeatureReference>());
         }
     }

@@ -5,37 +5,39 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using System.Collections.Generic;
 using System.Linq;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Classes.Deathsnatcher
 {
     class DeathsnatcherProgression
     {
         // Animal Rank
-        private static readonly BlueprintFeature AnimalCompanionRank = Resources.GetBlueprint<BlueprintFeature>("1670990255e4fe948a863bafd5dbda5d");
+        private static readonly BlueprintFeature AnimalCompanionRank = BlueprintTools.GetBlueprint<BlueprintFeature>("1670990255e4fe948a863bafd5dbda5d");
 
         public static void Add()
         {
-            var Pounce = Resources.GetBlueprint<BlueprintFeature>("1a8149c09e0bdfc48a305ee6ac3729a8");
-            var DeathsnatcherSoulRendFeature = Resources.GetBlueprint<BlueprintFeature>("c8b468508a76c5140a9a2af00077753d");
-            var Evasion = Resources.GetBlueprint<BlueprintFeature>("576933720c440aa4d8d42b0c54b77e80");
-            var ImprovedEvasion = Resources.GetBlueprint<BlueprintFeature>("ce96af454a6137d47b9c6a1e02e66803");
+            var Pounce = BlueprintTools.GetBlueprint<BlueprintFeature>("1a8149c09e0bdfc48a305ee6ac3729a8");
+            var DeathsnatcherSoulRendFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("c8b468508a76c5140a9a2af00077753d");
+            var Evasion = BlueprintTools.GetBlueprint<BlueprintFeature>("576933720c440aa4d8d42b0c54b77e80");
+            var ImprovedEvasion = BlueprintTools.GetBlueprint<BlueprintFeature>("ce96af454a6137d47b9c6a1e02e66803");
 
-            var DeathsnatcherPoisonSting = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherPoisonSting");
-            var DeathsnatcherResistances = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherResistances");
-            var DeathsnatcherHiddenFacts = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherHiddenFacts");
-            var DeathsnatcherFastHealing = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherFastHealing");
-            var DeathsnatcherSizeBabyFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherSizeBabyFeature");
-            var DeathsnatcherCommandUndeadFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherCommandUndeadFeature");
-            var DeathsnatcherAnimateDeadFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherAnimateDeadFeature");
-            var DeathsnatcherCreateUndeadFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherCreateUndeadFeature");
-            var DeathsnatcherFingerOfDeathFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherFingerOfDeathFeature");
-            var DeathsnatcherAnimateDeadAdditionalUse = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherAnimateDeadAdditionalUse");
-            var DeathsnatcherUndeadMaster = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherUndeadMaster");
+            var DeathsnatcherPoisonSting = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherPoisonSting");
+            var DeathsnatcherResistances = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherResistances");
+            var DeathsnatcherHiddenFacts = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherHiddenFacts");
+            var DeathsnatcherFastHealing = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFastHealing");
+            var DeathsnatcherSizeBabyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherSizeBabyFeature");
+            var DeathsnatcherCommandUndeadFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherCommandUndeadFeature");
+            var DeathsnatcherAnimateDeadFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherAnimateDeadFeature");
+            var DeathsnatcherCreateUndeadFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherCreateUndeadFeature");
+            var DeathsnatcherFingerOfDeathFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFingerOfDeathFeature");
+            var DeathsnatcherAnimateDeadAdditionalUse = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherAnimateDeadAdditionalUse");
+            var DeathsnatcherUndeadMaster = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherUndeadMaster");
 
             // Deathsnatcher Level Progression
-            var DeathsnatcherCompanionProgression = Helpers.CreateBlueprint<BlueprintProgression>("DeathsnatcherCompanionProgression", bp => {
-                bp.SetName("");
-                bp.SetDescription("");
+            var DeathsnatcherCompanionProgression = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "DeathsnatcherCompanionProgression", bp => {
+                bp.SetName(IsekaiContext, "");
+                bp.SetDescription(IsekaiContext, "");
                 bp.IsClassFeature = true;
                 bp.m_FeaturesRankIncrease = new List<BlueprintFeatureReference>();
                 bp.m_Archetypes = new BlueprintProgression.ArchetypeWithLevel[0];
@@ -60,9 +62,9 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
             });
 
             // Deathsnatcher Class Progression
-            var DeathsnatcherClassProgression = Helpers.CreateBlueprint<BlueprintProgression>("DeathsnatcherClassProgression", bp => {
-                bp.SetName("");
-                bp.SetDescription("This bipedal jackal has vulture wings and a rat tail ending in a scorpion’s stinger. Each of its four arms ends in a clawed hand.");
+            var DeathsnatcherClassProgression = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "DeathsnatcherClassProgression", bp => {
+                bp.SetName(IsekaiContext, "");
+                bp.SetDescription(IsekaiContext, "This bipedal jackal has vulture wings and a rat tail ending in a scorpion’s stinger. Each of its four arms ends in a clawed hand.");
                 bp.IsClassFeature = true;
                 bp.m_FeaturesRankIncrease = new List<BlueprintFeatureReference>();
                 bp.m_Archetypes = new BlueprintProgression.ArchetypeWithLevel[0];
@@ -74,16 +76,16 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     }
                 };
                 bp.LevelEntries = new LevelEntry[] {
-                    Helpers.LevelEntry(1, DeathsnatcherResistances, DeathsnatcherHiddenFacts, DeathsnatcherCommandUndeadFeature, DeathsnatcherSizeBabyFeature),
-                    Helpers.LevelEntry(2, Evasion),
-                    Helpers.LevelEntry(4, Pounce),
-                    Helpers.LevelEntry(7, DeathsnatcherAnimateDeadFeature),
-                    Helpers.LevelEntry(10, DeathsnatcherAnimateDeadAdditionalUse, DeathsnatcherPoisonSting),
-                    Helpers.LevelEntry(13, DeathsnatcherCreateUndeadFeature),
-                    Helpers.LevelEntry(15, DeathsnatcherSoulRendFeature, ImprovedEvasion),
-                    Helpers.LevelEntry(16, DeathsnatcherFingerOfDeathFeature),
-                    Helpers.LevelEntry(18, DeathsnatcherFastHealing),
-                    Helpers.LevelEntry(20, DeathsnatcherUndeadMaster),
+                    Helpers.CreateLevelEntry(1, DeathsnatcherResistances, DeathsnatcherHiddenFacts, DeathsnatcherCommandUndeadFeature, DeathsnatcherSizeBabyFeature),
+                    Helpers.CreateLevelEntry(2, Evasion),
+                    Helpers.CreateLevelEntry(4, Pounce),
+                    Helpers.CreateLevelEntry(7, DeathsnatcherAnimateDeadFeature),
+                    Helpers.CreateLevelEntry(10, DeathsnatcherAnimateDeadAdditionalUse, DeathsnatcherPoisonSting),
+                    Helpers.CreateLevelEntry(13, DeathsnatcherCreateUndeadFeature),
+                    Helpers.CreateLevelEntry(15, DeathsnatcherSoulRendFeature, ImprovedEvasion),
+                    Helpers.CreateLevelEntry(16, DeathsnatcherFingerOfDeathFeature),
+                    Helpers.CreateLevelEntry(18, DeathsnatcherFastHealing),
+                    Helpers.CreateLevelEntry(20, DeathsnatcherUndeadMaster),
                 };
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup(DeathsnatcherCommandUndeadFeature, DeathsnatcherAnimateDeadFeature, DeathsnatcherAnimateDeadAdditionalUse, DeathsnatcherCreateUndeadFeature, DeathsnatcherFingerOfDeathFeature, DeathsnatcherUndeadMaster),
@@ -99,7 +101,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
         }
         public static BlueprintProgression GetCompanionProgression()
         {
-            return Resources.GetModBlueprint<BlueprintProgression>("DeathsnatcherCompanionProgression");
+            return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "DeathsnatcherCompanionProgression");
         }
     }
 }

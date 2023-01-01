@@ -11,18 +11,20 @@ using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using UnityEngine;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist
 {
     class SignatureMoveSelection
     {
-        private static readonly Sprite Icon_MutagenResource = Resources.GetBlueprint<BlueprintAbilityResource>("3b163587f010382408142fc8a97852b6").m_Icon;
-        private static readonly Sprite Icon_SwordSaintWeaponMastery = Resources.GetBlueprint<BlueprintFeature>("5b31af13868166d4c9bb452f19277f19").m_Icon;
+        private static readonly Sprite Icon_MutagenResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("3b163587f010382408142fc8a97852b6").m_Icon;
+        private static readonly Sprite Icon_SwordSaintWeaponMastery = BlueprintTools.GetBlueprint<BlueprintFeature>("5b31af13868166d4c9bb452f19277f19").m_Icon;
         public static void Add()
         {
-            var SignatureAttack = Helpers.CreateFeature("SignatureAttack", bp => {
-                bp.SetName("Signature Attack");
-                bp.SetDescription("You gain a luck bonus to {g|Encyclopedia:BAB}attack{/g} and damage rolls equal to 1/2 your character level.");
+            var SignatureAttack = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"SignatureAttack", bp => {
+                bp.SetName(IsekaiContext, "Signature Attack");
+                bp.SetDescription(IsekaiContext, "You gain a luck bonus to {g|Encyclopedia:BAB}attack{/g} and damage rolls equal to 1/2 your character level.");
                 bp.m_Icon = Icon_SwordSaintWeaponMastery;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Luck;
@@ -41,9 +43,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 });
                 bp.ReapplyOnLevelUp = true;
             });
-            var SignatureAbility = Helpers.CreateFeature("SignatureAbility", bp => {
-                bp.SetName("Signature Ability");
-                bp.SetDescription("You gain a bonus to spell DC and spell hit point damage equal to 1/2 your character level.");
+            var SignatureAbility = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"SignatureAbility", bp => {
+                bp.SetName(IsekaiContext, "Signature Ability");
+                bp.SetDescription(IsekaiContext, "You gain a bonus to spell DC and spell hit point damage equal to 1/2 your character level.");
                 bp.m_Icon = Icon_MutagenResource;
                 bp.AddComponent<IncreaseAllSpellsDC>(c => {
                     c.SpellsOnly = true;
@@ -61,9 +63,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.ReapplyOnLevelUp = true;
             });
 
-            var SignatureMoveSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("SignatureMoveSelection", bp => {
-                bp.SetName("Signature Move");
-                bp.SetDescription("At 6th level, you choose to have either a signature attack or a signature ability.");
+            var SignatureMoveSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveSelection", bp => {
+                bp.SetName(IsekaiContext, "Signature Move");
+                bp.SetDescription(IsekaiContext, "At 6th level, you choose to have either a signature attack or a signature ability.");
                 bp.m_Icon = Icon_SwordSaintWeaponMastery;
                 bp.IgnorePrerequisites = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {

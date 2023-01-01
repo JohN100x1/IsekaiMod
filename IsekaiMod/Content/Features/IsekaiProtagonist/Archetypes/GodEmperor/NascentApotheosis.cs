@@ -1,11 +1,14 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
 {
@@ -13,10 +16,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
     {
         public static void Add()
         {
-            var Icon_Serenity = Resources.GetBlueprint<BlueprintAbility>("d316d3d94d20c674db2c24d7de96f6a7").m_Icon;
-            var NascentApotheosis = Helpers.CreateFeature("NascentApotheosis", bp => {
-                bp.SetName("Nascent Apotheosis");
-                bp.SetDescription("The God Emperor gains an inherent bonus to all attributes and spell penetration equal to 1/2 their character level and "
+            var Icon_Serenity = BlueprintTools.GetBlueprint<BlueprintAbility>("d316d3d94d20c674db2c24d7de96f6a7").m_Icon;
+            var NascentApotheosis = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"NascentApotheosis", bp => {
+                bp.SetName(IsekaiContext, "Nascent Apotheosis");
+                bp.SetDescription(IsekaiContext, "The God Emperor gains an inherent bonus to all attributes and spell penetration equal to 1/2 their character level and "
                     + "{g|Encyclopedia:Damage_Reduction}DR{/g}/— equal to their character level.");
                 bp.m_Icon = Icon_Serenity;
                 bp.AddComponent<AddContextStatBonus>(c => {

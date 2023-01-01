@@ -1,6 +1,7 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
@@ -10,6 +11,8 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
 {
@@ -17,10 +20,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
     {
         public static void Add()
         {
-            var Icon_Heros_Presence = AssetLoader.LoadInternal("Features", "ICON_HEROS_PRESENCE.png");
-            var HerosPresenceBuff = Helpers.CreateBuff("HerosPresenceBuff", bp => {
-                bp.SetName("Hero's Presence");
-                bp.SetDescription("This character has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil.");
+            var Icon_Heros_Presence = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_HEROS_PRESENCE.png");
+            var HerosPresenceBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "HerosPresenceBuff", bp => {
+                bp.SetName(IsekaiContext, "Hero's Presence");
+                bp.SetDescription(IsekaiContext, "This character has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil.");
                 bp.IsClassFeature = true;
                 bp.m_Icon = Icon_Heros_Presence;
                 bp.AddComponent<ArmorClassBonusAgainstAlignment>(c => {
@@ -56,7 +59,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     c.Alignment = DamageAlignment.Evil;
                 });
             });
-            var HerosPresenceArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("HerosPresenceArea", bp => {
+            var HerosPresenceArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, "HerosPresenceArea", bp => {
                 bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Ally;
                 bp.SpellResistance = false;
                 bp.AggroEnemies = false;
@@ -66,9 +69,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(HerosPresenceBuff.ToReference<BlueprintBuffReference>()));
             });
-            var HerosPresenceAreaBuff = Helpers.CreateBuff("HerosPresenceAreaBuff", bp => {
-                bp.SetName("Hero's Presence");
-                bp.SetDescription("Allies within 40 feet of the Hero has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil.");
+            var HerosPresenceAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "HerosPresenceAreaBuff", bp => {
+                bp.SetName(IsekaiContext, "Hero's Presence");
+                bp.SetDescription(IsekaiContext, "Allies within 40 feet of the Hero has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil.");
                 bp.m_Icon = Icon_Heros_Presence;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -76,9 +79,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     c.m_AreaEffect = HerosPresenceArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var HerosPresenceFeature = Helpers.CreateFeature("HerosPresenceFeature", bp => {
-                bp.SetName("Hero's Presence");
-                bp.SetDescription("At 20th level, allies within 40 feet of the Hero has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil.");
+            var HerosPresenceFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"HerosPresenceFeature", bp => {
+                bp.SetName(IsekaiContext, "Hero's Presence");
+                bp.SetDescription(IsekaiContext, "At 20th level, allies within 40 feet of the Hero has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil.");
                 bp.m_Icon = Icon_Heros_Presence;
                 bp.AddComponent<AuraFeatureComponent>(c => {
                     c.m_Buff = HerosPresenceAreaBuff.ToReference<BlueprintBuffReference>();

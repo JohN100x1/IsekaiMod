@@ -7,14 +7,16 @@ using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
 using System.Collections.Generic;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Dialogue
 {
     class IsekaiHulrun
     {
         // Next Cue and Etude
-        private static readonly BlueprintCue DontRememberCue = Resources.GetBlueprint<BlueprintCue>("ba9c82193a32275408973a8aebdb3a6d");
-        private static readonly BlueprintEtude DontRememberEtude = Resources.GetBlueprint<BlueprintEtude>("d6c6161d2cf0ac44786f9df67fca5ce9");
+        private static readonly BlueprintCue DontRememberCue = BlueprintTools.GetBlueprint<BlueprintCue>("ba9c82193a32275408973a8aebdb3a6d");
+        private static readonly BlueprintEtude DontRememberEtude = BlueprintTools.GetBlueprint<BlueprintEtude>("d6c6161d2cf0ac44786f9df67fca5ce9");
         public static void Add()
         {
             // Prompt (Hulrun, at Kenabres festival)
@@ -23,8 +25,8 @@ namespace IsekaiMod.Content.Dialogue
              */
 
             // Answer
-            var IsekaiDialogueHulrun = Helpers.CreateAnswer("IsekaiDialogueHulrun", bp => {
-                bp.Text = Helpers.CreateString("IsekaiDialogueHulrun.Text", "(Isekai Protagonist) \"Other than being hit by a truck, I don't remember anything at all...\"");
+            var IsekaiDialogueHulrun = Helpers.CreateBlueprint<BlueprintAnswer>(IsekaiContext, "IsekaiDialogueHulrun", bp => {
+                bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiDialogueHulrun.Text", "(Isekai Protagonist) \"Other than being hit by a truck, I don't remember anything at all...\"");
                 bp.NextCue = new CueSelection()
                 {
                     Cues = new List<BlueprintCueBaseReference>() { DontRememberCue.ToReference<BlueprintCueBaseReference>() },
@@ -43,7 +45,7 @@ namespace IsekaiMod.Content.Dialogue
             });
 
             // Add Answer to answers list
-            var AnswersList_0020 = Resources.GetBlueprint<BlueprintAnswersList>("e27807b731f3b1a4eb19c1a04fdfcf53");
+            var AnswersList_0020 = BlueprintTools.GetBlueprint<BlueprintAnswersList>("e27807b731f3b1a4eb19c1a04fdfcf53");
             AnswersList_0020.Answers.Insert(0, IsekaiDialogueHulrun.ToReference<BlueprintAnswerBaseReference>());
         }
     }

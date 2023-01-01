@@ -6,27 +6,30 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using UnityEngine;
 using static Kingmaker.Blueprints.Classes.BlueprintProgression;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
+using HarmonyLib;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist
 {
     class IsekaiPetSelection
     {
-        private static readonly Sprite Icon_FriendToAnimals = Resources.GetBlueprint<BlueprintFeature>("9a56368c28795544fbeb43fe70e1a40d").m_Icon;
-        private static readonly BlueprintFeatureSelection AnimalCompanionSelectionDomain = Resources.GetBlueprint<BlueprintFeatureSelection>("2ecd6c64683b59944a7fe544033bb533");
-        private static readonly BlueprintFeatureSelection WitchFamiliarSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("29a333b7ccad3214ea3a51943fa0d8e9");
+        private static readonly Sprite Icon_FriendToAnimals = BlueprintTools.GetBlueprint<BlueprintFeature>("9a56368c28795544fbeb43fe70e1a40d").m_Icon;
+        private static readonly BlueprintFeatureSelection AnimalCompanionSelectionDomain = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("2ecd6c64683b59944a7fe544033bb533");
+        private static readonly BlueprintFeatureSelection WitchFamiliarSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("29a333b7ccad3214ea3a51943fa0d8e9");
         public static void Add()
         {
-            var IsekaiFamiliarSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("IsekaiFamiliarSelection", bp => {
-                bp.SetName("Familiar Selection");
-                bp.SetDescription("You gain the service of a familiar, which offers you some skill bonuses.");
+            var IsekaiFamiliarSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiFamiliarSelection", bp => {
+                bp.SetName(IsekaiContext, "Familiar Selection");
+                bp.SetDescription(IsekaiContext, "You gain the service of a familiar, which offers you some skill bonuses.");
                 bp.m_Icon = Icon_FriendToAnimals;
                 bp.IsClassFeature = true;
                 bp.Ranks = 1;
                 bp.m_AllFeatures = WitchFamiliarSelection.m_AllFeatures;
             });
-            var IsekaiPetSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("IsekaiPetSelection", bp => {
-                bp.SetName("Pet Selection");
-                bp.SetDescription("At 1st level, you gain the service of either an animal companion or familiar, using your class level as your effective druid level.");
+            var IsekaiPetSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiPetSelection", bp => {
+                bp.SetName(IsekaiContext, "Pet Selection");
+                bp.SetDescription(IsekaiContext, "At 1st level, you gain the service of either an animal companion or familiar, using your class level as your effective druid level.");
                 bp.m_Icon = Icon_FriendToAnimals;
                 bp.IsClassFeature = true;
                 bp.Ranks = 1;
@@ -50,11 +53,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
         }
         public static BlueprintFeatureSelection Get()
         {
-            return Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiPetSelection");
+            return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiPetSelection");
         }
         public static void PatchDomainAnimalProgression()
         {
-            var DomainAnimalProgression = Resources.GetBlueprint<BlueprintProgression>("125af359f8bc9a145968b5d8fd8159b8");
+            var DomainAnimalProgression = BlueprintTools.GetBlueprint<BlueprintProgression>("125af359f8bc9a145968b5d8fd8159b8");
             DomainAnimalProgression.m_Classes = DomainAnimalProgression.m_Classes.AddToArray(
                 new ClassWithLevel()
                 {

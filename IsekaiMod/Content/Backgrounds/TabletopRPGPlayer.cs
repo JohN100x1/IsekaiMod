@@ -2,6 +2,9 @@
 using IsekaiMod.Extensions;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.EntitySystem.Stats;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
+using Kingmaker.Blueprints.Classes;
 
 namespace IsekaiMod.Content.Backgrounds
 {
@@ -10,9 +13,9 @@ namespace IsekaiMod.Content.Backgrounds
         public static void Add()
         {
             // Background
-            var BackgroundTabletopRPGPlayer = Helpers.CreateFeature("BackgroundTabletopRPGPlayer", bp => {
-                bp.SetName("Tabletop RPG Player");
-                bp.SetDescription("The Tabletop RPG Player adds {g|Encyclopedia:Lore_Nature}Lore (Nature){/g}, {g|Encyclopedia:Lore_Religion}Lore (Religion){/g}, "
+            var BackgroundTabletopRPGPlayer = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"BackgroundTabletopRPGPlayer", bp => {
+                bp.SetName(IsekaiContext, "Tabletop RPG Player");
+                bp.SetDescription(IsekaiContext, "The Tabletop RPG Player adds {g|Encyclopedia:Lore_Nature}Lore (Nature){/g}, {g|Encyclopedia:Lore_Religion}Lore (Religion){/g}, "
                     + "{g|Encyclopedia:Knowledge_World}Knowledge (World){/g} and {g|Encyclopedia:Knowledge_Arcana}Knowledge (Arcana){/g} to the list of her class {g|Encyclopedia:Skills}skills{/g} "
                     + "and can use her {g|Encyclopedia:Charisma}Charisma{/g} instead of {g|Encyclopedia:Intelligence}Intelligence{/g} or {g|Encyclopedia:Wisdom}Wisdom{/g} while attempting "
                     + "Knowledge (World), Knowledge (Arcana), Lore (Religion), or Lore (Nature) {g|Encyclopedia:Check}checks{/g}.\n"

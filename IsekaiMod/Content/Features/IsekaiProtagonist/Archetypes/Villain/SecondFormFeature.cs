@@ -1,6 +1,7 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
@@ -15,6 +16,8 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Properties;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
 {
@@ -22,11 +25,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
     {
         public static void Add()
         {
-            var Icon_SecondForm = AssetLoader.LoadInternal("Features", "ICON_SECOND_FORM.png");
-            var Icon_SecondFormInactive = AssetLoader.LoadInternal("Features", "ICON_SECOND_FORM_INACTIVE.png");
-            var SecondFormBuffEffect = Helpers.CreateBuff("SecondFormBuffEffect", bp => {
-                bp.SetName("Second Form");
-                bp.SetDescription("You gain a +10 profane bonus to all attributes and your size increases by one size category for 24 hours.");
+            var Icon_SecondForm = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SECOND_FORM.png");
+            var Icon_SecondFormInactive = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SECOND_FORM_INACTIVE.png");
+            var SecondFormBuffEffect = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "SecondFormBuffEffect", bp => {
+                bp.SetName(IsekaiContext, "Second Form");
+                bp.SetDescription(IsekaiContext, "You gain a +10 profane bonus to all attributes and your size increases by one size category for 24 hours.");
                 bp.m_Icon = Icon_SecondForm;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -78,16 +81,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                 });
                 bp.Stacking = StackingType.Replace;
             });
-            var SecondFormBuffTrigger = Helpers.CreateBuff("SecondFormBuffTrigger", bp => {
-                bp.SetName("Second Form Trigger");
-                bp.SetDescription("");
+            var SecondFormBuffTrigger = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "SecondFormBuffTrigger", bp => {
+                bp.SetName(IsekaiContext, "Second Form Trigger");
+                bp.SetDescription(IsekaiContext, "");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
             });
-            var SecondFormBuff = Helpers.CreateBuff("SecondFormBuff", bp => {
-                bp.SetName("Second Form");
-                bp.SetDescription("Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain. "
+            var SecondFormBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "SecondFormBuff", bp => {
+                bp.SetName(IsekaiContext, "Second Form");
+                bp.SetDescription(IsekaiContext, "Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain. "
                     + "You also gain a +10 profane bonus to all attributes and your size also increases by one size category for 24 hours.");
                 bp.m_Icon = Icon_SecondFormInactive;
                 bp.Ranks = 1;
@@ -163,9 +166,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                 c.Deactivated = ActionFlow.DoNothing();
                 c.NewRound = ActionFlow.DoNothing();
             });
-            var SecondFormFeature = Helpers.CreateFeature("SecondFormFeature", bp => {
-                bp.SetName("Second Form");
-                bp.SetDescription("At 20th level, you become a boss. Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain. "
+            var SecondFormFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"SecondFormFeature", bp => {
+                bp.SetName(IsekaiContext, "Second Form");
+                bp.SetDescription(IsekaiContext, "At 20th level, you become a boss. Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain. "
                     + "You also gain a +10 profane bonus to all attributes and your size also increases by one size category for 24 hours.");
                 bp.m_Icon = Icon_SecondForm;
                 bp.AddComponent<AddRestTrigger>(c => {

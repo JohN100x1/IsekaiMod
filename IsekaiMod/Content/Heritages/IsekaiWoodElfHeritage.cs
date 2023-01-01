@@ -9,19 +9,22 @@ using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Designers.Mechanics.Buffs;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
+using HarmonyLib;
 
 namespace IsekaiMod.Content.Heritages
 {
     internal class IsekaiWoodElfHeritage
     {
-        private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = Resources.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
+        private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = BlueprintTools.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
         public static void Add()
         {
             // Wood Elf Heritage
-            var Icon_Wood_Elf = AssetLoader.LoadInternal("Heritages", "ICON_WOOD_ELF.png");
-            var IsekaiWoodElfHeritage = Helpers.CreateFeature("IsekaiWoodElfHeritage", bp => {
-                bp.SetName("Isekai Wood Elf");
-                bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Wood Elf have both extreme beauty and power. "
+            var Icon_Wood_Elf = AssetLoader.LoadInternal(IsekaiContext, "Heritages", "ICON_WOOD_ELF.png");
+            var IsekaiWoodElfHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiWoodElfHeritage", bp => {
+                bp.SetName(IsekaiContext, "Isekai Wood Elf");
+                bp.SetDescription(IsekaiContext, "Otherworldly entities who are reincarnated into the world of Golarion as a Wood Elf have both extreme beauty and power. "
                     + "They are a nimble and natural reflection of the elven race.\n"
                     + "The Isekai Wood Elf has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Dexterity}Dexterity{/g}, a +2 racial bonus to "
                     + "{g|Encyclopedia:Wisdom}Wisdom{/g} and {g|Encyclopedia:Intelligence}Intelligence{/g}, and a -2 penalty to Constitution. "
@@ -76,7 +79,7 @@ namespace IsekaiMod.Content.Heritages
             });
 
             // Add to Elven Heritage Selection
-            var ElvenHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("5482f879dcfd40f9a3168fdb48bc938c");
+            var ElvenHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("5482f879dcfd40f9a3168fdb48bc938c");
             ElvenHeritageSelection.m_AllFeatures = ElvenHeritageSelection.m_AllFeatures.AddToArray(IsekaiWoodElfHeritage.ToReference<BlueprintFeatureReference>());
         }
     }

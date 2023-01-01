@@ -1,10 +1,13 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.FactLogic;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.ExceptionalFeats
 {
@@ -13,9 +16,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
         public static void Add()
         {
             // Features
-            var BlindImmunity = Helpers.CreateFeature("BlindImmunity", bp => {
-                bp.SetName("Blind Immunity");
-                bp.SetDescription("You gain immunity to blindness.");
+            var BlindImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"BlindImmunity", bp => {
+                bp.SetName(IsekaiContext, "Blind Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to blindness.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Blindness;
                 });
@@ -26,9 +29,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Blindness;
                 });
             });
-            var NauseatedImmunity = Helpers.CreateFeature("NauseatedImmunity", bp => {
-                bp.SetName("Nauseated Immunity");
-                bp.SetDescription("You gain immunity to the nauseated condition.");
+            var NauseatedImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"NauseatedImmunity", bp => {
+                bp.SetName(IsekaiContext, "Nauseated Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to the nauseated condition.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Nauseated;
                 });
@@ -39,9 +42,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Nauseated;
                 });
             });
-            var FatigueImmunity = Helpers.CreateFeature("FatigueImmunity", bp => {
-                bp.SetName("Fatigue Immunity");
-                bp.SetDescription("You gain immunity to fatigue.");
+            var FatigueImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"FatigueImmunity", bp => {
+                bp.SetName(IsekaiContext, "Fatigue Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to fatigue.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Fatigued;
                 });
@@ -52,9 +55,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Fatigue;
                 });
             });
-            var ParalyzedImmunity = Helpers.CreateFeature("ParalyzedImmunity", bp => {
-                bp.SetName("Paralyzed Immunity");
-                bp.SetDescription("You gain immunity to paralysis.");
+            var ParalyzedImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"ParalyzedImmunity", bp => {
+                bp.SetName(IsekaiContext, "Paralyzed Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to paralysis.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Paralyzed;
                 });
@@ -65,9 +68,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Paralysis;
                 });
             });
-            var StaggeredImmunity = Helpers.CreateFeature("StaggeredImmunity", bp => {
-                bp.SetName("Staggered Immunity");
-                bp.SetDescription("You gain immunity to the staggered condition.");
+            var StaggeredImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"StaggeredImmunity", bp => {
+                bp.SetName(IsekaiContext, "Staggered Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to the staggered condition.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Staggered;
                 });
@@ -78,9 +81,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Staggered;
                 });
             });
-            var PetrifiedImmunity = Helpers.CreateFeature("PetrifiedImmunity", bp =>{
-                bp.SetName("Petrified Immunity");
-                bp.SetDescription("You gain immunity to petrification.");
+            var PetrifiedImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"PetrifiedImmunity", bp =>{
+                bp.SetName(IsekaiContext, "Petrified Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to petrification.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Petrified;
                 });
@@ -91,9 +94,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Petrified;
                 });
             });
-            var DazedImmunity = Helpers.CreateFeature("DazedImmunity", bp => {
-                bp.SetName("Dazed Immunity");
-                bp.SetDescription("You gain immunity to daze.");
+            var DazedImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"DazedImmunity", bp => {
+                bp.SetName(IsekaiContext, "Dazed Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to daze.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Dazed;
                 });
@@ -104,23 +107,23 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Daze;
                 });
             });
-            var SlowImmunity = Helpers.CreateFeature("SlowImmunity", bp => {
-                bp.SetName("Slow Immunity");
-                bp.SetDescription("You gain immunity to slow.");
+            var SlowImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"SlowImmunity", bp => {
+                bp.SetName(IsekaiContext, "Slow Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to slow.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Slowed;
                 });
             });
-            var EntangledImmunity = Helpers.CreateFeature("EntangledImmunity", bp => {
-                bp.SetName("Entangled Immunity");
-                bp.SetDescription("You gain immunity to the entangled condition.");
+            var EntangledImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"EntangledImmunity", bp => {
+                bp.SetName(IsekaiContext, "Entangled Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to the entangled condition.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Entangled;
                 });
             });
-            var FrightenedImmunity = Helpers.CreateFeature("FrightenedImmunity", bp => {
-                bp.SetName("Frightened Immunity");
-                bp.SetDescription("You gain immunity to the frightened condition.");
+            var FrightenedImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"FrightenedImmunity", bp => {
+                bp.SetName(IsekaiContext, "Frightened Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to the frightened condition.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Frightened;
                 });
@@ -131,9 +134,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Frightened;
                 });
             });
-            var SickenedImmunity = Helpers.CreateFeature("SickenedImmunity", bp => {
-                bp.SetName("Sickened Immunity");
-                bp.SetDescription("You gain immunity to the sickened condition.");
+            var SickenedImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"SickenedImmunity", bp => {
+                bp.SetName(IsekaiContext, "Sickened Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to the sickened condition.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Sickened;
                 });
@@ -144,9 +147,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Sickened;
                 });
             });
-            var SleepImmunity = Helpers.CreateFeature("SleepImmunity", bp => {
-                bp.SetName("Sleep Immunity");
-                bp.SetDescription("You gain immunity to sleep.");
+            var SleepImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"SleepImmunity", bp => {
+                bp.SetName(IsekaiContext, "Sleep Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to sleep.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Sleeping;
                 });
@@ -157,9 +160,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Sleep;
                 });
             });
-            var ShakenImmunity = Helpers.CreateFeature("ShakenImmunity", bp => {
-                bp.SetName("Shaken Immunity");
-                bp.SetDescription("You gain immunity to shaken effects.");
+            var ShakenImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"ShakenImmunity", bp => {
+                bp.SetName(IsekaiContext, "Shaken Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to shaken effects.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Shaken;
                 });
@@ -170,16 +173,16 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Shaken;
                 });
             });
-            var DazzledImmunity = Helpers.CreateFeature("DazzledImmunity", bp => {
-                bp.SetName("Dazzled Immunity");
-                bp.SetDescription("You gain immunity to the dazzled condition.");
+            var DazzledImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"DazzledImmunity", bp => {
+                bp.SetName(IsekaiContext, "Dazzled Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to the dazzled condition.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Dazzled;
                 });
             });
-            var StunImmunity = Helpers.CreateFeature("StunImmunity", bp => {
-                bp.SetName("Stun Immunity");
-                bp.SetDescription("You gain immunity to stun effects.");
+            var StunImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"StunImmunity", bp => {
+                bp.SetName(IsekaiContext, "Stun Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to stun effects.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Stunned;
                 });
@@ -190,9 +193,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Stun;
                 });
             });
-            var ConfusionImmunity = Helpers.CreateFeature("ConfusionImmunity", bp => {
-                bp.SetName("Confusion Immunity");
-                bp.SetDescription("You gain immunity to confusion.");
+            var ConfusionImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"ConfusionImmunity", bp => {
+                bp.SetName(IsekaiContext, "Confusion Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to confusion.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Confusion;
                 });
@@ -203,9 +206,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Confusion;
                 });
             });
-            var MovementImpairingImmunity = Helpers.CreateFeature("MovementImpairingImmunity", bp => {
-                bp.SetName("Movement Impairing Immunity");
-                bp.SetDescription("You gain immunity to movement impairing effects.");
+            var MovementImpairingImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"MovementImpairingImmunity", bp => {
+                bp.SetName(IsekaiContext, "Movement Impairing Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to movement impairing effects.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.MovementBan;
                 });
@@ -216,16 +219,16 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.MovementImpairing;
                 });
             });
-            var CoweringImmunity = Helpers.CreateFeature("CoweringImmunity", bp => {
-                bp.SetName("Cowering Immunity");
-                bp.SetDescription("You gain immunity to cowering.");
+            var CoweringImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"CoweringImmunity", bp => {
+                bp.SetName(IsekaiContext, "Cowering Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to cowering.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Cowering;
                 });
             });
-            var ExhaustedImmunity = Helpers.CreateFeature("ExhaustedImmunity", bp => {
-                bp.SetName("Exhausted Immunity");
-                bp.SetDescription("You gain immunity to exhaustion.");
+            var ExhaustedImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"ExhaustedImmunity", bp => {
+                bp.SetName(IsekaiContext, "Exhausted Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to exhaustion.");
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Exhausted;
                 });
@@ -236,9 +239,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Exhausted;
                 });
             });
-            var MindAffectingImmunity = Helpers.CreateFeature("MindAffectingImmunity", bp => {
-                bp.SetName("Mind Affecting Immunity");
-                bp.SetDescription("You gain immunity to mind affecting effects.");
+            var MindAffectingImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"MindAffectingImmunity", bp => {
+                bp.SetName(IsekaiContext, "Mind Affecting Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to mind affecting effects.");
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.MindAffecting;
                 });
@@ -246,9 +249,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.MindAffecting;
                 });
             });
-            var FearImmunity = Helpers.CreateFeature("FearImmunity", bp => {
-                bp.SetName("Fear Immunity");
-                bp.SetDescription("You gain immunity to fear effects.");
+            var FearImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"FearImmunity", bp => {
+                bp.SetName(IsekaiContext, "Fear Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to fear effects.");
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.Fear;
                 });
@@ -256,9 +259,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Fear;
                 });
             });
-            var CompulsionImmunity = Helpers.CreateFeature("CompulsionImmunity", bp => {
-                bp.SetName("Compulsion Immunity");
-                bp.SetDescription("You gain immunity to compulsion effects.");
+            var CompulsionImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"CompulsionImmunity", bp => {
+                bp.SetName(IsekaiContext, "Compulsion Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to compulsion effects.");
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.Compulsion;
                 });
@@ -266,9 +269,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Compulsion;
                 });
             });
-            var PoisonImmunity = Helpers.CreateFeature("PoisonImmunity", bp => {
-                bp.SetName("Poison Immunity");
-                bp.SetDescription("You gain immunity to poison.");
+            var PoisonImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"PoisonImmunity", bp => {
+                bp.SetName(IsekaiContext, "Poison Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to poison.");
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.Poison;
                 });
@@ -276,9 +279,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Poison;
                 });
             });
-            var DiseaseImmunity = Helpers.CreateFeature("DiseaseImmunity", bp => {
-                bp.SetName("Disease Immunity");
-                bp.SetDescription("You gain immunity to disease.");
+            var DiseaseImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"DiseaseImmunity", bp => {
+                bp.SetName(IsekaiContext, "Disease Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to disease.");
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.Disease;
                 });
@@ -286,9 +289,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Disease;
                 });
             });
-            var CharmImmunity = Helpers.CreateFeature("CharmImmunity", bp => {
-                bp.SetName("Charm Immunity");
-                bp.SetDescription("You gain immunity to charm.");
+            var CharmImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"CharmImmunity", bp => {
+                bp.SetName(IsekaiContext, "Charm Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to charm.");
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.Charm;
                 });
@@ -296,9 +299,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Charm;
                 });
             });
-            var CurseImmunity = Helpers.CreateFeature("CurseImmunity", bp => {
-                bp.SetName("Curse Immunity");
-                bp.SetDescription("You gain immunity to curses.");
+            var CurseImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"CurseImmunity", bp => {
+                bp.SetName(IsekaiContext, "Curse Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to curses.");
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.Curse;
                 });
@@ -306,9 +309,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Curse;
                 });
             });
-            var DeathImmunity = Helpers.CreateFeature("DeathImmunity", bp => {
-                bp.SetName("Death Immunity");
-                bp.SetDescription("You gain immunity to death effects.");
+            var DeathImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"DeathImmunity", bp => {
+                bp.SetName(IsekaiContext, "Death Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to death effects.");
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.Death;
                 });
@@ -316,9 +319,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Death;
                 });
             });
-            var BleedImmunity = Helpers.CreateFeature("BleedImmunity", bp => {
-                bp.SetName("Bleed Immunity");
-                bp.SetDescription("You gain immunity to bleed.");
+            var BleedImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"BleedImmunity", bp => {
+                bp.SetName(IsekaiContext, "Bleed Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to bleed.");
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.Bleed;
                 });
@@ -326,9 +329,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.Descriptor = SpellDescriptor.Bleed;
                 });
             });
-            var HexImmunity = Helpers.CreateFeature("HexImmunity", bp => {
-                bp.SetName("Hex Immunity");
-                bp.SetDescription("You gain immunity to hexes.");
+            var HexImmunity = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"HexImmunity", bp => {
+                bp.SetName(IsekaiContext, "Hex Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to hexes.");
                 bp.AddComponent<BuffDescriptorImmunity>(c => {
                     c.Descriptor = SpellDescriptor.Hex;
                 });
@@ -370,17 +373,17 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
             };
 
             // Effect Immunity Selection
-            var EffectImmunitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("EffectImmunitySelection", bp => {
-                bp.SetName("Effect Immunity");
-                bp.SetDescription("You gain immunity to a specific condition or effect.");
+            var EffectImmunitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "EffectImmunitySelection", bp => {
+                bp.SetName(IsekaiContext, "Effect Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to a specific condition or effect.");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_Features = EffectImmunityList;
                 bp.m_AllFeatures = EffectImmunityList;
             });
-            var EffectImmunityBonusSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("EffectImmunityBonusSelection", bp => {
-                bp.SetName("Effect Immunity");
-                bp.SetDescription("You gain immunity to a specific condition or effect.");
+            var EffectImmunityBonusSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "EffectImmunityBonusSelection", bp => {
+                bp.SetName(IsekaiContext, "Effect Immunity");
+                bp.SetDescription(IsekaiContext, "You gain immunity to a specific condition or effect.");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_Features = EffectImmunityList;

@@ -23,15 +23,17 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System.Collections.Generic;
 using UnityEngine;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
 {
     class TrueSmite
     {
-        private static readonly Sprite Icon_SmiteEvil = Resources.GetBlueprint<BlueprintFeature>("3a6db57fce75b0244a6a5819528ddf26").m_Icon;
+        private static readonly Sprite Icon_SmiteEvil = BlueprintTools.GetBlueprint<BlueprintFeature>("3a6db57fce75b0244a6a5819528ddf26").m_Icon;
         public static void Add()
         {
-            var TrueSmiteResource = Helpers.CreateBlueprint<BlueprintAbilityResource>("TrueSmiteResource", bp => {
+            var TrueSmiteResource = Helpers.CreateBlueprint<BlueprintAbilityResource>(IsekaiContext, "TrueSmiteResource", bp => {
                 bp.m_MaxAmount = new BlueprintAbilityResource.Amount
                 {
                     BaseValue = 1,
@@ -48,9 +50,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     ResourceBonusStat = StatType.Unknown,
                 };
             });
-            var TrueSmiteBuff = Helpers.CreateBuff("TrueSmiteBuff", bp => {
-                bp.SetName("True Smite");
-                bp.SetDescription("The hero adds her {g|Encyclopedia:Charisma}Cha{/g} {g|Encyclopedia:Bonus}bonus{/g} (if any) to her {g|Encyclopedia:Attack}attack rolls{/g} against this "
+            var TrueSmiteBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "TrueSmiteBuff", bp => {
+                bp.SetName(IsekaiContext, "True Smite");
+                bp.SetDescription(IsekaiContext, "The hero adds her {g|Encyclopedia:Charisma}Cha{/g} {g|Encyclopedia:Bonus}bonus{/g} (if any) to her {g|Encyclopedia:Attack}attack rolls{/g} against this "
                     + "creature and adds her character level to all {g|Encyclopedia:Damage}damage rolls{/g} against this creature."
                     + "Attacks against this creature automatically bypass any {g|Encyclopedia:Damage_Reduction}DR{/g} the creature might possess and "
                     + "automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier "
@@ -82,9 +84,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 bp.Stacking = StackingType.Replace;
                 bp.FxOnStart = new PrefabLink() { AssetId = "5b4cdc22715305949a1bd80fab08302b" };
             });
-            var TrueSmiteAbility = Helpers.CreateBlueprint<BlueprintAbility>("TrueSmiteAbility", bp => {
-                bp.SetName("True Smite");
-                bp.SetDescription("Once per day, the hero can call out her inner powers to aid her against her enemies. "
+            var TrueSmiteAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "TrueSmiteAbility", bp => {
+                bp.SetName(IsekaiContext, "True Smite");
+                bp.SetDescription(IsekaiContext, "Once per day, the hero can call out her inner powers to aid her against her enemies. "
                     + "As a {g|Encyclopedia:Swift_Action}swift action{/g}, the hero chooses one target within sight to smite. The hero adds her {g|Encyclopedia:Charisma}Cha{/g} "
                     + "{g|Encyclopedia:Bonus}bonus{/g} (if any) to her {g|Encyclopedia:Attack}attack rolls{/g} and adds her character level to all {g|Encyclopedia:Damage}damage rolls{/g} "
                     + "made against the target of her smite, true smite attacks automatically bypass any {g|Encyclopedia:Damage_Reduction}DR{/g} the creature might possess and "
@@ -154,12 +156,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Point;
                 bp.ActionType = UnitCommand.CommandType.Swift;
                 bp.AvailableMetamagic = Metamagic.Heighten | Metamagic.Reach;
-                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "Until the target of the smite is dead");
+                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "Until the target of the smite is dead");
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var TrueSmiteFeature = Helpers.CreateFeature("TrueSmiteFeature", bp => {
-                bp.SetName("True Smite");
-                bp.SetDescription("Once per day, the hero can call out her inner powers to aid her against her enemies. "
+            var TrueSmiteFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"TrueSmiteFeature", bp => {
+                bp.SetName(IsekaiContext, "True Smite");
+                bp.SetDescription(IsekaiContext, "Once per day, the hero can call out her inner powers to aid her against her enemies. "
                     + "As a {g|Encyclopedia:Swift_Action}swift action{/g}, the hero chooses one target within sight to smite. The hero adds her {g|Encyclopedia:Charisma}Cha{/g} "
                     + "{g|Encyclopedia:Bonus}bonus{/g} (if any) to her {g|Encyclopedia:Attack}attack rolls{/g} and adds her character level to all {g|Encyclopedia:Damage}damage rolls{/g} "
                     + "made against the target of her smite, true smite attacks automatically bypass any {g|Encyclopedia:Damage_Reduction}DR{/g} the creature might possess and "
@@ -175,9 +177,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     c.m_Facts = new BlueprintUnitFactReference[] { TrueSmiteAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
-            var TrueSmiteAdditionalUse = Helpers.CreateFeature("TrueSmiteAdditionalUse", bp => {
-                bp.SetName("True Smite — Additional Use");
-                bp.SetDescription("Once per day, the hero can call out her inner powers to aid her against her enemies. "
+            var TrueSmiteAdditionalUse = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"TrueSmiteAdditionalUse", bp => {
+                bp.SetName(IsekaiContext, "True Smite — Additional Use");
+                bp.SetDescription(IsekaiContext, "Once per day, the hero can call out her inner powers to aid her against her enemies. "
                     + "As a {g|Encyclopedia:Swift_Action}swift action{/g}, the hero chooses one target within sight to smite. The hero adds her {g|Encyclopedia:Charisma}Cha{/g} "
                     + "{g|Encyclopedia:Bonus}bonus{/g} (if any) to her {g|Encyclopedia:Attack}attack rolls{/g} and adds her character level to all {g|Encyclopedia:Damage}damage rolls{/g} "
                     + "made against the target of her smite, true smite attacks automatically bypass any {g|Encyclopedia:Damage_Reduction}DR{/g} the creature might possess and "

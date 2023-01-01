@@ -5,13 +5,15 @@ using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
 using System.Collections.Generic;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Dialogue
 {
     class IsekaiRadiance
     {
         // Next Cue and Etude
-        private static readonly BlueprintCue UpgradeRadianceCue = Resources.GetBlueprint<BlueprintCue>("6603e3274d42438faa38af673024a832");
+        private static readonly BlueprintCue UpgradeRadianceCue = BlueprintTools.GetBlueprint<BlueprintCue>("6603e3274d42438faa38af673024a832");
         public static void Add()
         {
             // Prompt (Seelah, after finding Radiance)
@@ -56,8 +58,8 @@ namespace IsekaiMod.Content.Dialogue
              */
 
             // Answer
-            var IsekaiDialogueRadiance = Helpers.CreateAnswer("IsekaiDialogueRadiance", bp => {
-                bp.Text = Helpers.CreateString("IsekaiDialogueRadiance.Text", "(Isekai Protagonist) [Pound the sword repeatedly] \"You better power up right now or you're going to "
+            var IsekaiDialogueRadiance = Helpers.CreateBlueprint<BlueprintAnswer>(IsekaiContext, "IsekaiDialogueRadiance", bp => {
+                bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiDialogueRadiance.Text", "(Isekai Protagonist) [Pound the sword repeatedly] \"You better power up right now or you're going to "
                     + "reincarnate as a broken blade.\"");
                 bp.NextCue = new CueSelection()
                 {
@@ -73,7 +75,7 @@ namespace IsekaiMod.Content.Dialogue
             });
 
             // Add Answer to answers list
-            var AnswersList_0002 = Resources.GetBlueprint<BlueprintAnswersList>("d7669703a6d923d4e8b34bc56ec16c31");
+            var AnswersList_0002 = BlueprintTools.GetBlueprint<BlueprintAnswersList>("d7669703a6d923d4e8b34bc56ec16c31");
             AnswersList_0002.Answers.Insert(0, IsekaiDialogueRadiance.ToReference<BlueprintAnswerBaseReference>());
         }
     }

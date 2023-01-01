@@ -22,18 +22,21 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using UnityEngine;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
+using HarmonyLib;
 
 namespace IsekaiMod.Content.Heritages
 {
     internal class IsekaiDarkElfHeritage
     {
-        private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = Resources.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
-        private static readonly BlueprintBuff Unconsious = Resources.GetBlueprint<BlueprintBuff>("31a468926d0f3ab439b714f15d794a8b");
-        private static readonly Sprite Icon_AcidBomb = Resources.GetBlueprint<BlueprintAbility>("fd101fbc4aacf5d48b76a65e3aa5db6d").m_Icon;
+        private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = BlueprintTools.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
+        private static readonly BlueprintBuff Unconsious = BlueprintTools.GetBlueprint<BlueprintBuff>("31a468926d0f3ab439b714f15d794a8b");
+        private static readonly Sprite Icon_AcidBomb = BlueprintTools.GetBlueprint<BlueprintAbility>("fd101fbc4aacf5d48b76a65e3aa5db6d").m_Icon;
         public static void Add()
         {
             // Dark Elf Abilities
-            var DrowPoisonResource = Helpers.CreateBlueprint<BlueprintAbilityResource>("DrowPoisonResource", bp => {
+            var DrowPoisonResource = Helpers.CreateBlueprint<BlueprintAbilityResource>(IsekaiContext, "DrowPoisonResource", bp => {
                 bp.m_MaxAmount = new BlueprintAbilityResource.Amount
                 {
                     BaseValue = 0,
@@ -50,7 +53,7 @@ namespace IsekaiMod.Content.Heritages
                     ResourceBonusStat = StatType.Intelligence,
                 };
             });
-            var DrowPoisonUnitProperty = Helpers.CreateBlueprint<BlueprintUnitProperty>("DrowPoisonUnitProperty", bp => {
+            var DrowPoisonUnitProperty = Helpers.CreateBlueprint<BlueprintUnitProperty>(IsekaiContext, "DrowPoisonUnitProperty", bp => {
                 bp.name = "DrowPoisonUnitProperty";
                 bp.AddComponent<SimplePropertyGetter>(c => {
                     c.Property = UnitProperty.Level;
@@ -61,9 +64,9 @@ namespace IsekaiMod.Content.Heritages
                 bp.BaseValue = 10;
                 bp.OperationOnComponents = BlueprintUnitProperty.MathOperation.Sum;
             });
-            var DrowPoisonBuff = Helpers.CreateBuff("DrowPoisonBuff", bp => {
-                bp.SetName("Drow Poison");
-                bp.SetDescription("Drow Poison causes their target to become unconsious on a failed fortitude save.");
+            var DrowPoisonBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "DrowPoisonBuff", bp => {
+                bp.SetName(IsekaiContext, "Drow Poison");
+                bp.SetDescription(IsekaiContext, "Drow Poison causes their target to become unconsious on a failed fortitude save.");
                 bp.m_Icon = Icon_AcidBomb;
                 bp.IsClassFeature = true;
                 bp.Stacking = StackingType.Replace;
@@ -101,9 +104,9 @@ namespace IsekaiMod.Content.Heritages
                     c.DC = Values.CreateContextCasterCustomPropertyValue(DrowPoisonUnitProperty);
                 });
             });
-            var DrowPoisonAbility = Helpers.CreateBlueprint<BlueprintAbility>("DrowPoisonAbility", bp => {
-                bp.SetName("Drow Poison");
-                bp.SetDescription("As a swift action, you can coat your weapon with a special drow poison. Enemies hit by the poisoned weapon will need to make a Fortitude save "
+            var DrowPoisonAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "DrowPoisonAbility", bp => {
+                bp.SetName(IsekaiContext, "Drow Poison");
+                bp.SetDescription(IsekaiContext, "As a swift action, you can coat your weapon with a special drow poison. Enemies hit by the poisoned weapon will need to make a Fortitude save "
                     + "or become unconscious for 1 minute. This fortitude save is equal to 10 + your character level + your Intelligence modifier.");
                 bp.m_Icon = Icon_AcidBomb;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
@@ -132,15 +135,15 @@ namespace IsekaiMod.Content.Heritages
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.EnchantWeapon;
                 bp.ActionType = UnitCommand.CommandType.Swift;
                 bp.AvailableMetamagic = Metamagic.Heighten;
-                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 minute");
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "Fortitude negates");
+                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "1 minute");
+                bp.LocalizedSavingThrow = Helpers.CreateString(IsekaiContext, $"{bp.name}.SavingThrow", "Fortitude negates");
             });
 
             // Dark Elf Heritage
-            var Icon_Dark_Elf = AssetLoader.LoadInternal("Heritages", "ICON_DARK_ELF.png");
-            var IsekaiDarkElfHeritage = Helpers.CreateFeature("IsekaiDarkElfHeritage", bp => {
-                bp.SetName("Isekai Dark Elf");
-                bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Dark Elf have both extreme beauty and power. "
+            var Icon_Dark_Elf = AssetLoader.LoadInternal(IsekaiContext, "Heritages", "ICON_DARK_ELF.png");
+            var IsekaiDarkElfHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiDarkElfHeritage", bp => {
+                bp.SetName(IsekaiContext, "Isekai Dark Elf");
+                bp.SetDescription(IsekaiContext, "Otherworldly entities who are reincarnated into the world of Golarion as a Dark Elf have both extreme beauty and power. "
                     + "They are a cruel and cunning dark reflection of the elven race.\n"
                     + "The Isekai Dark Elf has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Intelligence}Intelligence{/g}, a +2 racial bonus to "
                     + "{g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Wisdom}Wisdom{/g}, and a -2 penalty to Constitution. "
@@ -201,7 +204,7 @@ namespace IsekaiMod.Content.Heritages
             });
 
             // Add to Elven Heritage Selection
-            var ElvenHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("5482f879dcfd40f9a3168fdb48bc938c");
+            var ElvenHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("5482f879dcfd40f9a3168fdb48bc938c");
             ElvenHeritageSelection.m_AllFeatures = ElvenHeritageSelection.m_AllFeatures.AddToArray(IsekaiDarkElfHeritage.ToReference<BlueprintFeatureReference>());
         }
     }

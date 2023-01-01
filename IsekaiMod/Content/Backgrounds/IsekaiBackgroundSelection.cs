@@ -1,8 +1,11 @@
-﻿using IsekaiMod.Extensions;
+﻿using HarmonyLib;
+using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Backgrounds
 {
@@ -11,9 +14,9 @@ namespace IsekaiMod.Content.Backgrounds
         public static void Add()
         {
             // Isekai Background Selection
-            var IsekaiBackgroundSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("IsekaiBackgroundSelection", bp => {
-                bp.SetName("Isekai");
-                bp.SetDescription("Before you were hit by a truck, you were a...");
+            var IsekaiBackgroundSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiBackgroundSelection", bp => {
+                bp.SetName(IsekaiContext, "Isekai");
+                bp.SetDescription(IsekaiContext, "Before you were hit by a truck, you were a...");
                 bp.HideInUI = true;
                 bp.Groups = new FeatureGroup[] { FeatureGroup.BackgroundSelection };
 
@@ -22,7 +25,7 @@ namespace IsekaiMod.Content.Backgrounds
             });
 
             // Add Isekai Background Selection to Background Selection
-            var BackgroundSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("f926dabeee7f8a54db8f2010b323383c");
+            var BackgroundSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("f926dabeee7f8a54db8f2010b323383c");
             BackgroundSelection.m_AllFeatures = BackgroundSelection.m_AllFeatures.AddToArray(IsekaiBackgroundSelection.ToReference<BlueprintFeatureReference>());
         }
         public static void Register(BlueprintFeature background)
@@ -32,7 +35,7 @@ namespace IsekaiMod.Content.Backgrounds
         }
         public static BlueprintFeatureSelection Get()
         {
-            return Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiBackgroundSelection");
+            return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiBackgroundSelection");
         }
     }
 }

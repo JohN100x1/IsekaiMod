@@ -1,4 +1,5 @@
-﻿using IsekaiMod.Extensions;
+﻿using HarmonyLib;
+using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -23,19 +24,21 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System.Collections.Generic;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Heritages
 {
     internal class IsekaiSuccubusHeritage
     {
-        private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = Resources.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
-        private static readonly BlueprintBuff DominatePersonBuff = Resources.GetBlueprint<BlueprintBuff>("c0f4e1c24c9cd334ca988ed1bd9d201f");
-        private static readonly BlueprintAbilityResource TieflingSpellLikeResource = Resources.GetBlueprint<BlueprintAbilityResource>("803d7e39e05fa2a47a7e2424d0e4b623");
+        private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = BlueprintTools.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
+        private static readonly BlueprintBuff DominatePersonBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("c0f4e1c24c9cd334ca988ed1bd9d201f");
+        private static readonly BlueprintAbilityResource TieflingSpellLikeResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("803d7e39e05fa2a47a7e2424d0e4b623");
         public static void Add()
         {
             // Succubus Abilities
-            var Icon_Charm = AssetLoader.LoadInternal("Features", "ICON_CHARM.png");
-            var SuccubusCharmUnitProperty = Helpers.CreateBlueprint<BlueprintUnitProperty>("SuccubusCharmUnitProperty", bp => {
+            var Icon_Charm = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_CHARM.png");
+            var SuccubusCharmUnitProperty = Helpers.CreateBlueprint<BlueprintUnitProperty>(IsekaiContext, "SuccubusCharmUnitProperty", bp => {
                 bp.name = "SuccubusCharmUnitProperty";
                 bp.AddComponent<SimplePropertyGetter>(c => {
                     c.Property = UnitProperty.Level;
@@ -46,9 +49,9 @@ namespace IsekaiMod.Content.Heritages
                 bp.BaseValue = 10;
                 bp.OperationOnComponents = BlueprintUnitProperty.MathOperation.Sum;
             });
-            var SuccubusCharmAbility = Helpers.CreateBlueprint<BlueprintAbility>("SuccubusCharmAbility", bp => {
-                bp.SetName("Succubus Charm");
-                bp.SetDescription("You can make any creature fight on your side as if it was your ally. "
+            var SuccubusCharmAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "SuccubusCharmAbility", bp => {
+                bp.SetName(IsekaiContext, "Succubus Charm");
+                bp.SetDescription(IsekaiContext, "You can make any creature fight on your side as if it was your ally. "
                     + "It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its ability. "
                     + "However this creature will try to throw off the domination effect, making a {g|Encyclopedia:Saving_Throw}Will save{/g} each {g|Encyclopedia:Combat_Round}round{/g}.");
                 bp.m_Icon = Icon_Charm;
@@ -97,18 +100,18 @@ namespace IsekaiMod.Content.Heritages
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Directional;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Heighten | Metamagic.Reach | Metamagic.CompletelyNormal;
-                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 minute/level");
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "Will negates");
+                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "1 minute/level");
+                bp.LocalizedSavingThrow = Helpers.CreateString(IsekaiContext, $"{bp.name}.SavingThrow", "Will negates");
             });
-            var DevilWingsAbility = Resources.GetModBlueprint<BlueprintActivatableAbility>("DevilWingsAbility");
-            var DemonWingsAbility = Resources.GetModBlueprint<BlueprintActivatableAbility>("DemonWingsAbility");
-            var BlackWingsAbility = Resources.GetModBlueprint<BlueprintActivatableAbility>("BlackWingsAbility");
+            var DevilWingsAbility = BlueprintTools.GetModBlueprint<BlueprintActivatableAbility>(IsekaiContext, "DevilWingsAbility");
+            var DemonWingsAbility = BlueprintTools.GetModBlueprint<BlueprintActivatableAbility>(IsekaiContext, "DemonWingsAbility");
+            var BlackWingsAbility = BlueprintTools.GetModBlueprint<BlueprintActivatableAbility>(IsekaiContext, "BlackWingsAbility");
 
             // Succubus Heritage
-            var Icon_Succubus = AssetLoader.LoadInternal("Heritages", "ICON_SUCCUBUS.png");
-            var IsekaiSuccubusHeritage = Helpers.CreateFeature("IsekaiSuccubusHeritage", bp => {
-                bp.SetName("Isekai Succubus");
-                bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power, and often "
+            var Icon_Succubus = AssetLoader.LoadInternal(IsekaiContext, "Heritages", "ICON_SUCCUBUS.png");
+            var IsekaiSuccubusHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiSuccubusHeritage", bp => {
+                bp.SetName(IsekaiContext, "Isekai Succubus");
+                bp.SetDescription(IsekaiContext, "Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power, and often "
                     + "have a voracious appetite for sensory pleasures and carnal delights.\n"
                     + "The Isekai Succubus has a +2 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Intelligence}Intelligence{/g}, "
                     + "a +4 racial bonus to {g|Encyclopedia:Charisma}Charisma{/g}, "
@@ -223,7 +226,7 @@ namespace IsekaiMod.Content.Heritages
             });
 
             // Add to Tiefling Heritage Selection
-            var TieflingHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("c862fd0e4046d2d4d9702dd60474a181");
+            var TieflingHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("c862fd0e4046d2d4d9702dd60474a181");
             TieflingHeritageSelection.m_AllFeatures = TieflingHeritageSelection.m_AllFeatures.AddToArray(IsekaiSuccubusHeritage.ToReference<BlueprintFeatureReference>());
         }
     }

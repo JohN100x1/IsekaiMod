@@ -38,6 +38,9 @@ using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
+using HarmonyLib;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
@@ -50,77 +53,77 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
         // New blast feature must be patched by PatchGatherPowerBuffs if the blast feature is initially selectable
 
         // Icons
-        private static readonly Sprite Icon_InfusionSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("58d6f8e9eea63f6418b107ce64f315ea").m_Icon;
+        private static readonly Sprite Icon_InfusionSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("58d6f8e9eea63f6418b107ce64f315ea").m_Icon;
 
         // Kinetic Power Burn
-        private static readonly BlueprintFeature BurnFeature = Resources.GetBlueprint<BlueprintFeature>("57e3577a0eb53294e9d7cc649d5239a3");
-        private static readonly BlueprintAbilityResource BurnResource = Resources.GetBlueprint<BlueprintAbilityResource>("066ac4b762e32be4b953703174ed925c");
-        private static readonly BlueprintBuff BurnEffectBuff = Resources.GetBlueprint<BlueprintBuff>("95b1c0d55f30996429a3a4eba4d2b4a6");
-        private static readonly BlueprintAbility GatherPower = Resources.GetBlueprint<BlueprintAbility>("6dcbffb8012ba2a4cb4ac374a33e2d9a");
-        private static readonly BlueprintFeature GatherPowerFeature = Resources.GetBlueprint<BlueprintFeature>("0601925a028b788469365d5f8f39e14a");
-        private static readonly BlueprintBuff GatherPowerBuffI = Resources.GetBlueprint<BlueprintBuff>("e6b8b31e1f8c524458dc62e8a763cfb1");
-        private static readonly BlueprintBuff GatherPowerBuffII = Resources.GetBlueprint<BlueprintBuff>("3a2bfdc8bf74c5c4aafb97591f6e4282");
-        private static readonly BlueprintBuff GatherPowerBuffIII = Resources.GetBlueprint<BlueprintBuff>("82eb0c274eddd8849bb89a8e6dbc65f8");
-        private static readonly BlueprintBuff KineticBladeEnableBuff = Resources.GetBlueprint<BlueprintBuff>("426a9c079ee7ac34aa8e0054f2218074");
-        private static readonly BlueprintBuff ElementalBastionBuff = Resources.GetBlueprint<BlueprintBuff>("99953956704788444964899b5b8e96ab");
+        private static readonly BlueprintFeature BurnFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("57e3577a0eb53294e9d7cc649d5239a3");
+        private static readonly BlueprintAbilityResource BurnResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("066ac4b762e32be4b953703174ed925c");
+        private static readonly BlueprintBuff BurnEffectBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("95b1c0d55f30996429a3a4eba4d2b4a6");
+        private static readonly BlueprintAbility GatherPower = BlueprintTools.GetBlueprint<BlueprintAbility>("6dcbffb8012ba2a4cb4ac374a33e2d9a");
+        private static readonly BlueprintFeature GatherPowerFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("0601925a028b788469365d5f8f39e14a");
+        private static readonly BlueprintBuff GatherPowerBuffI = BlueprintTools.GetBlueprint<BlueprintBuff>("e6b8b31e1f8c524458dc62e8a763cfb1");
+        private static readonly BlueprintBuff GatherPowerBuffII = BlueprintTools.GetBlueprint<BlueprintBuff>("3a2bfdc8bf74c5c4aafb97591f6e4282");
+        private static readonly BlueprintBuff GatherPowerBuffIII = BlueprintTools.GetBlueprint<BlueprintBuff>("82eb0c274eddd8849bb89a8e6dbc65f8");
+        private static readonly BlueprintBuff KineticBladeEnableBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("426a9c079ee7ac34aa8e0054f2218074");
+        private static readonly BlueprintBuff ElementalBastionBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("99953956704788444964899b5b8e96ab");
 
         // Kinetic Power Features
-        private static readonly BlueprintFeature DismissInfusionFeature = Resources.GetBlueprint<BlueprintFeature>("48bbbb16189443049663ca161bb3e338");
-        private static readonly BlueprintFeature GatherPowerAbilitiesFeature = Resources.GetBlueprint<BlueprintFeature>("71f526b1d4b50b94582b0b9cbe12b0e0");
+        private static readonly BlueprintFeature DismissInfusionFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("48bbbb16189443049663ca161bb3e338");
+        private static readonly BlueprintFeature GatherPowerAbilitiesFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("71f526b1d4b50b94582b0b9cbe12b0e0");
 
         // Kineticist Class
-        private static readonly BlueprintCharacterClass KineticistClass = Resources.GetBlueprint<BlueprintCharacterClass>("42a455d9ec1ad924d889272429eb8391");
+        private static readonly BlueprintCharacterClass KineticistClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("42a455d9ec1ad924d889272429eb8391");
 
         // Kinetic Blasts
-        private static readonly BlueprintAbility AirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("31f668b12011e344aa542aa07ab6c8d9");
-        private static readonly BlueprintAbility CycloneAirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("9fbc4fe045472984aa4a2d15d88bdaf9");
-        private static readonly BlueprintAbility ExtendRangeAirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("cae4cb39eb87a5d47b8ff35fd948dc4f");
-        private static readonly BlueprintAbility SpindleAirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("a28e54e4e5fafd1449dd9e926be85160");
-        private static readonly BlueprintAbility TorrentAirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("51ede1faa3cdb3b47a46f7579ca02b0a");
-        private static readonly BlueprintAbility WallAirBlastAbility = Resources.GetBlueprint<BlueprintAbility>("d0390bd9ff12cd242a40c384445546cd");
+        private static readonly BlueprintAbility AirBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("31f668b12011e344aa542aa07ab6c8d9");
+        private static readonly BlueprintAbility CycloneAirBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("9fbc4fe045472984aa4a2d15d88bdaf9");
+        private static readonly BlueprintAbility ExtendRangeAirBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("cae4cb39eb87a5d47b8ff35fd948dc4f");
+        private static readonly BlueprintAbility SpindleAirBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("a28e54e4e5fafd1449dd9e926be85160");
+        private static readonly BlueprintAbility TorrentAirBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("51ede1faa3cdb3b47a46f7579ca02b0a");
+        private static readonly BlueprintAbility WallAirBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("d0390bd9ff12cd242a40c384445546cd");
 
-        private static readonly BlueprintAbility EarthBlastAbility = Resources.GetBlueprint<BlueprintAbility>("b28c336c10eb51c4a8ded0258d5742e1");
-        private static readonly BlueprintAbility DeadlyEarthEarthBlastAbility = Resources.GetBlueprint<BlueprintAbility>("e29cf5372f89c40489227edc9ffc52be");
-        private static readonly BlueprintAbility ExtendedRangeEarthBlastAbility = Resources.GetBlueprint<BlueprintAbility>("7d4712812818f094297f7d7920d130b1");
-        private static readonly BlueprintAbility FragmentationEarthBlastAbility = Resources.GetBlueprint<BlueprintAbility>("d859e796f6177cf449679c677076c577");
-        private static readonly BlueprintAbility SpindleEarthBlastAbility = Resources.GetBlueprint<BlueprintAbility>("44d37b2230390b24e8060fe821068984");
-        private static readonly BlueprintAbility WallEarthBlastAbility = Resources.GetBlueprint<BlueprintAbility>("f493e7b18b2a22c438df7ced760dd5b0");
+        private static readonly BlueprintAbility EarthBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("b28c336c10eb51c4a8ded0258d5742e1");
+        private static readonly BlueprintAbility DeadlyEarthEarthBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("e29cf5372f89c40489227edc9ffc52be");
+        private static readonly BlueprintAbility ExtendedRangeEarthBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("7d4712812818f094297f7d7920d130b1");
+        private static readonly BlueprintAbility FragmentationEarthBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("d859e796f6177cf449679c677076c577");
+        private static readonly BlueprintAbility SpindleEarthBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("44d37b2230390b24e8060fe821068984");
+        private static readonly BlueprintAbility WallEarthBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("f493e7b18b2a22c438df7ced760dd5b0");
 
-        private static readonly BlueprintAbility FireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("7b4f0c9a06db79345b55c39b2d5fb510");
-        private static readonly BlueprintAbility DetonationFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("d651db4ffb7441548a06b11de5f163a1");
-        private static readonly BlueprintAbility EruptionFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("5b69fce8b7890de4b8b9ab973158fed8");
-        private static readonly BlueprintAbility ExtendedRangeFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("7bc1270b5bb78834192215bc03f161cc");
-        private static readonly BlueprintAbility FanOfFlamesFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("a240a6d61e1aee040bf7d132bfe1dc07");
-        private static readonly BlueprintAbility SpindleFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("6f299bc4320299c49a291f43a667496d");
-        private static readonly BlueprintAbility TorrentFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("5e4c7cb990de4034bbee9fb99be2e15d");
-        private static readonly BlueprintAbility WallFireBlastAbility = Resources.GetBlueprint<BlueprintAbility>("19309b5551a28d74288f4b6f7d8d838d");
+        private static readonly BlueprintAbility FireBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("7b4f0c9a06db79345b55c39b2d5fb510");
+        private static readonly BlueprintAbility DetonationFireBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("d651db4ffb7441548a06b11de5f163a1");
+        private static readonly BlueprintAbility EruptionFireBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("5b69fce8b7890de4b8b9ab973158fed8");
+        private static readonly BlueprintAbility ExtendedRangeFireBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("7bc1270b5bb78834192215bc03f161cc");
+        private static readonly BlueprintAbility FanOfFlamesFireBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("a240a6d61e1aee040bf7d132bfe1dc07");
+        private static readonly BlueprintAbility SpindleFireBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("6f299bc4320299c49a291f43a667496d");
+        private static readonly BlueprintAbility TorrentFireBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("5e4c7cb990de4034bbee9fb99be2e15d");
+        private static readonly BlueprintAbility WallFireBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("19309b5551a28d74288f4b6f7d8d838d");
 
-        private static readonly BlueprintAbility WaterBlastAbility = Resources.GetBlueprint<BlueprintAbility>("e3f41966c2d662a4e9582a0497621c46");
-        private static readonly BlueprintAbility ExtendedRangeWaterBlastAbility = Resources.GetBlueprint<BlueprintAbility>("11eba1184c7108846a665d8ca317963f");
-        private static readonly BlueprintAbility SpindleWaterBlastAbility = Resources.GetBlueprint<BlueprintAbility>("7021bbe4dca437440a41da4552dce28e");
-        private static readonly BlueprintAbility SprayWaterBlastAbility = Resources.GetBlueprint<BlueprintAbility>("963da934d652bdc41900ed68f63ca1fa");
-        private static readonly BlueprintAbility TorrentWaterBlastAbility = Resources.GetBlueprint<BlueprintAbility>("93cc42235edc6824fa7d54b83ed4e1fe");
-        private static readonly BlueprintAbility WallWaterBlastAbility = Resources.GetBlueprint<BlueprintAbility>("1ab8c76ac4983174dbffa35e2a87e582");
+        private static readonly BlueprintAbility WaterBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("e3f41966c2d662a4e9582a0497621c46");
+        private static readonly BlueprintAbility ExtendedRangeWaterBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("11eba1184c7108846a665d8ca317963f");
+        private static readonly BlueprintAbility SpindleWaterBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("7021bbe4dca437440a41da4552dce28e");
+        private static readonly BlueprintAbility SprayWaterBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("963da934d652bdc41900ed68f63ca1fa");
+        private static readonly BlueprintAbility TorrentWaterBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("93cc42235edc6824fa7d54b83ed4e1fe");
+        private static readonly BlueprintAbility WallWaterBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("1ab8c76ac4983174dbffa35e2a87e582");
 
         // Projectiles
-        private static readonly BlueprintProjectile WindProjectile00 = Resources.GetBlueprint<BlueprintProjectile>("e093b08cd4cafe946962b339faf2310a");
-        private static readonly BlueprintProjectile Kinetic_AirBlastLine00 = Resources.GetBlueprint<BlueprintProjectile>("03689858955c6bf409be06f35f09946a");
-        private static readonly BlueprintProjectile Kinetic_EarthBlast00_Projectile = Resources.GetBlueprint<BlueprintProjectile>("c28e153e8c212c1458ec2ee4092a794f");
-        private static readonly BlueprintProjectile Kinetic_EarthSphere00_Projectile = Resources.GetBlueprint<BlueprintProjectile>("3751a263d0386ef45807e0111de1a5de");
-        private static readonly BlueprintProjectile FireCommonProjectile00 = Resources.GetBlueprint<BlueprintProjectile>("30a5f408ea9d163418c86a7107fc4326");
-        private static readonly BlueprintProjectile ArrowFire00 = Resources.GetBlueprint<BlueprintProjectile>("cd6fbf24b5f625245960c4b8e6f58292");
-        private static readonly BlueprintProjectile FireLine00_Head = Resources.GetBlueprint<BlueprintProjectile>("7172842b720c3534897ebda2e0624c2d");
-        private static readonly BlueprintProjectile FireCone15Feet00 = Resources.GetBlueprint<BlueprintProjectile>("6dfc5e4c7d9ae3048984744222dbd0fa");
-        private static readonly BlueprintProjectile Kinetic_WaterBlast00_Projectile = Resources.GetBlueprint<BlueprintProjectile>("06e268d6a2b5a3a438c2dd52d68bfef6");
-        private static readonly BlueprintProjectile Kinetic_WaterBlastCone00_30Feet_Aoe = Resources.GetBlueprint<BlueprintProjectile>("0ebec8e9eddc29e4496e163822f68ba5");
-        private static readonly BlueprintProjectile Kinetic_WaterLine00 = Resources.GetBlueprint<BlueprintProjectile>("f3566859ed1664543a18f1e235bc652c");
+        private static readonly BlueprintProjectile WindProjectile00 = BlueprintTools.GetBlueprint<BlueprintProjectile>("e093b08cd4cafe946962b339faf2310a");
+        private static readonly BlueprintProjectile Kinetic_AirBlastLine00 = BlueprintTools.GetBlueprint<BlueprintProjectile>("03689858955c6bf409be06f35f09946a");
+        private static readonly BlueprintProjectile Kinetic_EarthBlast00_Projectile = BlueprintTools.GetBlueprint<BlueprintProjectile>("c28e153e8c212c1458ec2ee4092a794f");
+        private static readonly BlueprintProjectile Kinetic_EarthSphere00_Projectile = BlueprintTools.GetBlueprint<BlueprintProjectile>("3751a263d0386ef45807e0111de1a5de");
+        private static readonly BlueprintProjectile FireCommonProjectile00 = BlueprintTools.GetBlueprint<BlueprintProjectile>("30a5f408ea9d163418c86a7107fc4326");
+        private static readonly BlueprintProjectile ArrowFire00 = BlueprintTools.GetBlueprint<BlueprintProjectile>("cd6fbf24b5f625245960c4b8e6f58292");
+        private static readonly BlueprintProjectile FireLine00_Head = BlueprintTools.GetBlueprint<BlueprintProjectile>("7172842b720c3534897ebda2e0624c2d");
+        private static readonly BlueprintProjectile FireCone15Feet00 = BlueprintTools.GetBlueprint<BlueprintProjectile>("6dfc5e4c7d9ae3048984744222dbd0fa");
+        private static readonly BlueprintProjectile Kinetic_WaterBlast00_Projectile = BlueprintTools.GetBlueprint<BlueprintProjectile>("06e268d6a2b5a3a438c2dd52d68bfef6");
+        private static readonly BlueprintProjectile Kinetic_WaterBlastCone00_30Feet_Aoe = BlueprintTools.GetBlueprint<BlueprintProjectile>("0ebec8e9eddc29e4496e163822f68ba5");
+        private static readonly BlueprintProjectile Kinetic_WaterLine00 = BlueprintTools.GetBlueprint<BlueprintProjectile>("f3566859ed1664543a18f1e235bc652c");
 
         // Buffs
-        private static readonly BlueprintBuff VolcanicStormDifficultTerrainBuff = Resources.GetBlueprint<BlueprintBuff>("fe21bf21c3182f743a964de5bcd2033e");
+        private static readonly BlueprintBuff VolcanicStormDifficultTerrainBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("fe21bf21c3182f743a964de5bcd2033e");
 
         // Weapon
-        private static readonly BlueprintItemWeapon KineticBlastPhysicalWeapon = Resources.GetBlueprint<BlueprintItemWeapon>("65951e1195848844b8ab8f46d942f6e8");
-        private static readonly BlueprintItemWeapon KineticBlastEnergyWeapon = Resources.GetBlueprint<BlueprintItemWeapon>("4d3265a5b9302ee4cab9c07adddb253f");
+        private static readonly BlueprintItemWeapon KineticBlastPhysicalWeapon = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("65951e1195848844b8ab8f46d942f6e8");
+        private static readonly BlueprintItemWeapon KineticBlastEnergyWeapon = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("4d3265a5b9302ee4cab9c07adddb253f");
         
         // Frequently used constants
         private static readonly DamageTypeDescription BludgeoningDamage = new()
@@ -402,9 +405,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.m_Parent = IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>();
                 bp.AvailableMetamagic = WallAirBlastAbility.AvailableMetamagic;
             });
-            var IsekaiAirBlastFeature = Helpers.CreateFeature("IsekaiAirBlastFeature", bp => {
-                bp.SetName("Air Avatar");
-                bp.SetDescription("You gain the ability to use air blast and all its associated form infusions. "
+            var IsekaiAirBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiAirBlastFeature", bp => {
+                bp.SetName(IsekaiContext, "Air Avatar");
+                bp.SetDescription(IsekaiContext, "You gain the ability to use air blast and all its associated form infusions. "
                     + "Your air blast deals bludgeoning damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
                     + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
                 bp.m_Icon = AirBlastAbility.m_Icon;
@@ -711,9 +714,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.m_Parent = IsekaiEarthBlastBase.ToReference<BlueprintAbilityReference>();
                 bp.AvailableMetamagic = WallEarthBlastAbility.AvailableMetamagic;
             });
-            var IsekaiEarthBlastFeature = Helpers.CreateFeature("IsekaiEarthBlastFeature", bp => {
-                bp.SetName("Earth Avatar");
-                bp.SetDescription("You gain the ability to use earth blast and all its associated form infusions. "
+            var IsekaiEarthBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiEarthBlastFeature", bp => {
+                bp.SetName(IsekaiContext, "Earth Avatar");
+                bp.SetDescription(IsekaiContext, "You gain the ability to use earth blast and all its associated form infusions. "
                     + "Your earth blast deals physical damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
                     + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
                 bp.m_Icon = EarthBlastAbility.m_Icon;
@@ -1041,9 +1044,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.m_Parent = IsekaiFireBlastBase.ToReference<BlueprintAbilityReference>();
                 bp.AvailableMetamagic = WallFireBlastAbility.AvailableMetamagic;
             });
-            var IsekaiFireBlastFeature = Helpers.CreateFeature("IsekaiFireBlastFeature", bp => {
-                bp.SetName("Fire Avatar");
-                bp.SetDescription("You gain the ability to use fire blast and all its associated form infusions. "
+            var IsekaiFireBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiFireBlastFeature", bp => {
+                bp.SetName(IsekaiContext, "Fire Avatar");
+                bp.SetDescription(IsekaiContext, "You gain the ability to use fire blast and all its associated form infusions. "
                     + "Your fire blast deals fire damage equal to 1d6 + 1/2 your Constitution modifier, increasing by 1d6 for every 2 character levels beyond 1st. "
                     + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
                 bp.m_Icon = FireBlastAbility.m_Icon;
@@ -1300,9 +1303,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.m_Parent = IsekaiWaterBlastBase.ToReference<BlueprintAbilityReference>();
                 bp.AvailableMetamagic = WallWaterBlastAbility.AvailableMetamagic;
             });
-            var IsekaiWaterBlastFeature = Helpers.CreateFeature("IsekaiWaterBlastFeature", bp => {
-                bp.SetName("Water Avatar");
-                bp.SetDescription("You gain the ability to use water blast and all its associated form infusions. "
+            var IsekaiWaterBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiWaterBlastFeature", bp => {
+                bp.SetName(IsekaiContext, "Water Avatar");
+                bp.SetDescription(IsekaiContext, "You gain the ability to use water blast and all its associated form infusions. "
                     + "Your water blast deals bludgeoning damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
                     + "The DC of your blast is 10 + 1/2 your character level + your Dexterity modifier.");
                 bp.m_Icon = WaterBlastAbility.m_Icon;
@@ -1322,15 +1325,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             });
 
             // Kinetic Power
-            var KineticBlastProficiency = Helpers.CreateFeature("KineticBlastProficiency", bp => {
-                bp.SetName("Kinetic Blast Proficiency");
-                bp.SetDescription("You gain the proficiency with kinetic blasts.");
+            var KineticBlastProficiency = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"KineticBlastProficiency", bp => {
+                bp.SetName(IsekaiContext, "Kinetic Blast Proficiency");
+                bp.SetDescription(IsekaiContext, "You gain the proficiency with kinetic blasts.");
                 bp.AddComponent<AddProficiencies>(c => {
                     c.ArmorProficiencies = new ArmorProficiencyGroup[0];
                     c.WeaponProficiencies = new WeaponCategory[] { WeaponCategory.KineticBlast };
                 });
             });
-            var KineticPowerBurnPerRoundResource = Helpers.CreateBlueprint<BlueprintAbilityResource>("KineticPowerBurnPerRoundResource", bp => {
+            var KineticPowerBurnPerRoundResource = Helpers.CreateBlueprint<BlueprintAbilityResource>(IsekaiContext, "KineticPowerBurnPerRoundResource", bp => {
                     bp.m_MaxAmount = new BlueprintAbilityResource.Amount
                     {
                         BaseValue = 1,
@@ -1351,7 +1354,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                         ResourceBonusStat = StatType.Unknown,
                     };
                 });
-            var KineticPowerBurn = Helpers.CreateFeature("KineticPowerBurn", bp => {
+            var KineticPowerBurn = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"KineticPowerBurn", bp => {
                 bp.m_DisplayName = BurnFeature.m_DisplayName;
                 bp.m_Description = BurnFeature.m_Description;
                 bp.AddComponent<AddAbilityResources>(c => {
@@ -1389,9 +1392,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     });
                 });
             });
-            var KineticPowerSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>("KineticPowerSelection", bp => {
-                bp.SetName("Kinetic Power");
-                bp.SetDescription("You gain the ability to use a kinetic blast.");
+            var KineticPowerSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "KineticPowerSelection", bp => {
+                bp.SetName(IsekaiContext, "Kinetic Power");
+                bp.SetDescription(IsekaiContext, "You gain the ability to use a kinetic blast.");
                 bp.m_Icon = Icon_InfusionSelection;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -1444,7 +1447,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
         }
         private static BlueprintAbility CreatePhysicalBlastAbility(string name, Action<BlueprintAbility> init = null)
         {
-            var result = Helpers.CreateBlueprint<BlueprintAbility>(name, bp => {
+            var result = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, name, bp => {
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.DamageDice;
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
@@ -1480,7 +1483,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
         }
         private static BlueprintAbility CreateEnergyBlastAbility(string name, Action<BlueprintAbility> init = null)
         {
-            var result = Helpers.CreateBlueprint<BlueprintAbility>(name, bp => {
+            var result = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, name, bp => {
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.DamageDice;
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
@@ -1581,7 +1584,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
         }
         private static BlueprintAbilityAreaEffect CreatePhysicalAreaEffect(string name, Action<BlueprintAbilityAreaEffect> init = null)
         {
-            var t = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(name, bp => {
+            var t = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, name, bp => {
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.DamageDice;
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
@@ -1614,7 +1617,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
         }
         private static BlueprintAbilityAreaEffect CreateEnergyAreaEffect(string name, Action<BlueprintAbilityAreaEffect> init = null)
         {
-            var t = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(name, bp => {
+            var t = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, name, bp => {
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.DamageDice;
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;

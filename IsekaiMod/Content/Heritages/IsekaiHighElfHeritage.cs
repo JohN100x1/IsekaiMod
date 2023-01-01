@@ -12,19 +12,22 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using UnityEngine;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
+using HarmonyLib;
 
 namespace IsekaiMod.Content.Heritages
 {
     internal class IsekaiHighElfHeritage
     {
-        private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = Resources.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
-        private static readonly Sprite Icon_TricksterCharmWhatever = Resources.GetBlueprint<BlueprintAbility>("943328ac5bc8a734e85b5b2af3ae2bf7").m_Icon;
+        private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = BlueprintTools.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
+        private static readonly Sprite Icon_TricksterCharmWhatever = BlueprintTools.GetBlueprint<BlueprintAbility>("943328ac5bc8a734e85b5b2af3ae2bf7").m_Icon;
         public static void Add()
         {
             // High Elf Heritage
-            var IsekaiHighElfHeritage = Helpers.CreateFeature("IsekaiHighElfHeritage", bp => {
-                bp.SetName("Isekai High Elf");
-                bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a High Elf have both extreme beauty and power. "
+            var IsekaiHighElfHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiHighElfHeritage", bp => {
+                bp.SetName(IsekaiContext, "Isekai High Elf");
+                bp.SetDescription(IsekaiContext, "Otherworldly entities who are reincarnated into the world of Golarion as a High Elf have both extreme beauty and power. "
                     + "They are a refined and cultured reflection of the elven race.\n"
                     + "The Isekai High Elf has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Wisdom}Wisdom{/g}, a +2 racial bonus to "
                     + "{g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Intelligence}Intelligence{/g}, and a -2 penalty to Constitution. "
@@ -78,7 +81,7 @@ namespace IsekaiMod.Content.Heritages
             });
 
             // Add to Elven Heritage Selection
-            var ElvenHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("5482f879dcfd40f9a3168fdb48bc938c");
+            var ElvenHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("5482f879dcfd40f9a3168fdb48bc938c");
             ElvenHeritageSelection.m_AllFeatures = ElvenHeritageSelection.m_AllFeatures.AddToArray(IsekaiHighElfHeritage.ToReference<BlueprintFeatureReference>());
         }
     }

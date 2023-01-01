@@ -7,27 +7,29 @@ using Kingmaker.Blueprints.Root;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Classes.Deathsnatcher
 {
     class DeathsnatcherClass
     {
         // Creature Type
-        private static readonly BlueprintFeature MonstrousHumanoidType = Resources.GetBlueprint<BlueprintFeature>("57614b50e8d86b24395931fffc5e409b");
+        private static readonly BlueprintFeature MonstrousHumanoidType = BlueprintTools.GetBlueprint<BlueprintFeature>("57614b50e8d86b24395931fffc5e409b");
 
         // Stat Progression
-        private static readonly BlueprintStatProgression BABFull = Resources.GetBlueprint<BlueprintStatProgression>("b3057560ffff3514299e8b93e7648a9d");
-        private static readonly BlueprintStatProgression SavesHigh = Resources.GetBlueprint<BlueprintStatProgression>("ff4662bde9e75f145853417313842751");
-        private static readonly BlueprintStatProgression SavesLow = Resources.GetBlueprint<BlueprintStatProgression>("dc0c7c1aba755c54f96c089cdf7d14a3");
+        private static readonly BlueprintStatProgression BABFull = BlueprintTools.GetBlueprint<BlueprintStatProgression>("b3057560ffff3514299e8b93e7648a9d");
+        private static readonly BlueprintStatProgression SavesHigh = BlueprintTools.GetBlueprint<BlueprintStatProgression>("ff4662bde9e75f145853417313842751");
+        private static readonly BlueprintStatProgression SavesLow = BlueprintTools.GetBlueprint<BlueprintStatProgression>("dc0c7c1aba755c54f96c089cdf7d14a3");
 
         public static void Add()
         {
             // Add Deathsnatcher Class
-            var DeathsnatcherClass = Helpers.CreateBlueprint<BlueprintCharacterClass>("DeathsnatcherClass", bp => {
-                bp.LocalizedName = Helpers.CreateString($"DeathsnatcherClass.Name", "Deathsnatcher");
-                bp.LocalizedDescription = Helpers.CreateString($"DeathsnatcherClass.Description", "This bipedal jackal has vulture wings and a rat tail ending in a scorpion’s stinger. "
+            var DeathsnatcherClass = Helpers.CreateBlueprint<BlueprintCharacterClass>(IsekaiContext, "DeathsnatcherClass", bp => {
+                bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"DeathsnatcherClass.Name", "Deathsnatcher");
+                bp.LocalizedDescription = Helpers.CreateString(IsekaiContext, $"DeathsnatcherClass.Description", "This bipedal jackal has vulture wings and a rat tail ending in a scorpion’s stinger. "
                     + "Each of its four arms ends in a clawed hand.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString($"DeathsnatcherClass.DescriptionShort", "This bipedal jackal has vulture wings and a rat tail ending in a "
+                bp.LocalizedDescriptionShort = Helpers.CreateString(IsekaiContext, $"DeathsnatcherClass.DescriptionShort", "This bipedal jackal has vulture wings and a rat tail ending in a "
                     + "scorpion’s stinger. Each of its four arms ends in a clawed hand.");
                 bp.HitDie = DiceType.D10;
                 bp.m_BaseAttackBonus = BABFull.ToReference<BlueprintStatProgressionReference>();
@@ -71,12 +73,12 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
             });
 
             // Patch Animal Companion Class
-            var AnimalCompanionClass = Resources.GetBlueprint<BlueprintCharacterClass>("26b10d4340839004f960f9816f6109fe");
+            var AnimalCompanionClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("26b10d4340839004f960f9816f6109fe");
             AnimalCompanionClass.AddComponent<PrerequisiteNoFeature>(c => {
                 c.HideInUI = true;
                 c.m_Feature = MonstrousHumanoidType.ToReference<BlueprintFeatureReference>();
             });
-            var BlueprintRoot = Resources.GetBlueprint<BlueprintRoot>("2d77316c72b9ed44f888ceefc2a131f6");
+            var BlueprintRoot = BlueprintTools.GetBlueprint<BlueprintRoot>("2d77316c72b9ed44f888ceefc2a131f6");
             BlueprintRoot.Instance.Progression.m_PetClasses = BlueprintRoot.Instance.Progression.m_PetClasses.AppendToArray(DeathsnatcherClass.ToReference<BlueprintCharacterClassReference>());
         }
         public static void SetProgression(BlueprintProgression progression)
@@ -86,7 +88,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
         }
         public static BlueprintCharacterClass Get()
         {
-            return Resources.GetModBlueprint<BlueprintCharacterClass>("DeathsnatcherClass");
+            return BlueprintTools.GetModBlueprint<BlueprintCharacterClass>(IsekaiContext, "DeathsnatcherClass");
         }
         public static BlueprintCharacterClassReference GetReference()
         {

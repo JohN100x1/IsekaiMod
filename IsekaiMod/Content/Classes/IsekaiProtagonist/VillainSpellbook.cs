@@ -5,6 +5,8 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Localization;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 {
@@ -12,10 +14,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
     {
         public static void Add()
         {
-            var IsekaiProtagonistSpellList = Resources.GetModBlueprint<BlueprintSpellList>("IsekaiProtagonistSpellList");
-            var IsekaiProtagonistSpellsPerDay = Resources.GetModBlueprint<BlueprintSpellsTable>("IsekaiProtagonistSpellsPerDay");
-            var VillainSpellbook = Helpers.CreateBlueprint<BlueprintSpellbook>("VillainSpellbook", bp => {
-                bp.Name = Helpers.CreateString("VillainSpellbook.Name", "Villain");
+            var IsekaiProtagonistSpellList = BlueprintTools.GetModBlueprint<BlueprintSpellList>(IsekaiContext,"IsekaiProtagonistSpellList");
+            var IsekaiProtagonistSpellsPerDay = BlueprintTools.GetModBlueprint<BlueprintSpellsTable>(IsekaiContext,"IsekaiProtagonistSpellsPerDay");
+            var VillainSpellbook = Helpers.CreateBlueprint<BlueprintSpellbook>(IsekaiContext,"VillainSpellbook", bp => {
+                bp.Name = Helpers.CreateString(IsekaiContext, "VillainSpellbook.Name", "Villain");
                 bp.Spontaneous = true;
                 bp.CastingAttribute = StatType.Intelligence;
                 bp.CantripsType = CantripsType.Cantrips;
@@ -39,14 +41,14 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             });
 
             // Allow Spellbook to be merged with angel and lich
-            var AngelIncorporateSpellBook = Resources.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
-            var LichIncorporateSpellBook = Resources.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
-            AngelIncorporateSpellBook.m_AllowedSpellbooks = AngelIncorporateSpellBook.m_AllowedSpellbooks.AddToArray(VillainSpellbook.ToReference<BlueprintSpellbookReference>());
-            LichIncorporateSpellBook.m_AllowedSpellbooks = LichIncorporateSpellBook.m_AllowedSpellbooks.AddToArray(VillainSpellbook.ToReference<BlueprintSpellbookReference>());
+            var AngelIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
+            var LichIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
+            ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AngelIncorporateSpellBook, VillainSpellbook);
+            ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(LichIncorporateSpellBook,VillainSpellbook);
         }
         public static BlueprintSpellbook Get()
         {
-            return Resources.GetModBlueprint<BlueprintSpellbook>("VillainSpellbook");
+            return BlueprintTools.GetModBlueprint<BlueprintSpellbook>(IsekaiContext,"VillainSpellbook");
         }
         public static BlueprintSpellbookReference GetReference()
         {

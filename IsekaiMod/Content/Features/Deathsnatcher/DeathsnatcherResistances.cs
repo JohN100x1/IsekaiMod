@@ -2,11 +2,14 @@
 using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.Deathsnatcher
 {
@@ -15,10 +18,10 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
         public static void Add()
         {
             // Feature
-            var DeathsnatcherResistances = Helpers.CreateFeature("DeathsnatcherResistances", bp =>
+            var DeathsnatcherResistances = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"DeathsnatcherResistances", bp =>
             {
-                bp.SetName("Deathsnatcher Resistances");
-                bp.SetDescription("The Deathsnatcher is immune to negative energy and deaths effects, and has cold and fire resistance 30. "
+                bp.SetName(IsekaiContext, "Deathsnatcher Resistances");
+                bp.SetDescription(IsekaiContext, "The Deathsnatcher is immune to negative energy and deaths effects, and has cold and fire resistance 30. "
                     + "It also has spell resistance equal to 10 + the Deathsnatcher's level.");
                 bp.AddComponent<BuffDescriptorImmunity>(c =>
                 {

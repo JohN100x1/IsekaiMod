@@ -1,10 +1,13 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
 {
@@ -12,10 +15,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
     {
         public static void Add()
         {
-            var Icon_DivineArray = AssetLoader.LoadInternal("Features", "ICON_ENERGY_ARRAY.png");
-            var DivineArray = Helpers.CreateFeature("DivineArray", bp => {
-                bp.SetName("Divine Array");
-                bp.SetDescription("At 3rd level, the God Emperor gains spell resistance, resistance to acid, cold, electricity, fire, and sonic equal to 5 times their character level.");
+            var Icon_DivineArray = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_ENERGY_ARRAY.png");
+            var DivineArray = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"DivineArray", bp => {
+                bp.SetName(IsekaiContext, "Divine Array");
+                bp.SetDescription(IsekaiContext, "At 3rd level, the God Emperor gains spell resistance, resistance to acid, cold, electricity, fire, and sonic equal to 5 times their character level.");
                 bp.m_Icon = Icon_DivineArray;
                 bp.AddComponent<AddDamageResistanceEnergy>(c => {
                     c.Type = DamageEnergyType.Acid;

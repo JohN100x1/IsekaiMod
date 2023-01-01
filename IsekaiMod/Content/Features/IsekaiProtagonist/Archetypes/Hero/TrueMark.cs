@@ -22,19 +22,21 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System.Collections.Generic;
 using UnityEngine;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
 {
     class TrueMark
     {
-        private static readonly Sprite Icon_MarkOfJustice = Resources.GetBlueprint<BlueprintFeature>("9f13fdd044ccb8a439f27417481cb00e").m_Icon;
+        private static readonly Sprite Icon_MarkOfJustice = BlueprintTools.GetBlueprint<BlueprintFeature>("9f13fdd044ccb8a439f27417481cb00e").m_Icon;
         public static void Add()
         {
-            var TrueSmiteResource = Resources.GetModBlueprint<BlueprintAbilityResource>("TrueSmiteResource");
+            var TrueSmiteResource = BlueprintTools.GetModBlueprint<BlueprintAbilityResource>(IsekaiContext, "TrueSmiteResource");
 
-            var TrueMarkBuff = Helpers.CreateBuff("TrueMarkBuff", bp => {
-                bp.SetName("True Mark");
-                bp.SetDescription("The creature is easier to hit and takes more damage from the hero's allies.");
+            var TrueMarkBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "TrueMarkBuff", bp => {
+                bp.SetName(IsekaiContext, "True Mark");
+                bp.SetDescription(IsekaiContext, "The creature is easier to hit and takes more damage from the hero's allies.");
                 bp.m_Icon = Icon_MarkOfJustice;
                 bp.AddComponent<AttackBonusAgainstTarget>(c => {
                     c.CheckCasterFriend = true;
@@ -58,9 +60,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 bp.Stacking = StackingType.Replace;
                 bp.FxOnStart = new PrefabLink() { AssetId = "5b4cdc22715305949a1bd80fab08302b" };
             });
-            var TrueMarkAbility = Helpers.CreateBlueprint<BlueprintAbility>("TrueMarkAbility", bp => {
-                bp.SetName("True Mark");
-                bp.SetDescription("The hero expends two uses of her true smite ability to grant the ability to true smite to all allies for 1 minute, "
+            var TrueMarkAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "TrueMarkAbility", bp => {
+                bp.SetName(IsekaiContext, "True Mark");
+                bp.SetDescription(IsekaiContext, "The hero expends two uses of her true smite ability to grant the ability to true smite to all allies for 1 minute, "
                     + "using her {g|Encyclopedia:Bonus}bonuses{/g}. As a {g|Encyclopedia:Swift_Action}swift action{/g}, the paladin chooses one target within sight to smite. "
                     + "The hero's allies add her {g|Encyclopedia:Charisma}Charisma{/g} bonus (if any) to their {g|Encyclopedia:Attack}attack rolls{/g} and add her character level to "
                     + "all {g|Encyclopedia:Damage}damage rolls{/g} made against the target of her smite. True smite attacks automatically bypass any {g|Encyclopedia:Damage_Reduction}DR{/g} "
@@ -126,12 +128,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Point;
                 bp.ActionType = UnitCommand.CommandType.Swift;
                 bp.AvailableMetamagic = Metamagic.Extend | Metamagic.Heighten | Metamagic.Reach;
-                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "Until the target of the Mark is dead");
+                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "Until the target of the Mark is dead");
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var TrueMarkFeature = Helpers.CreateFeature("TrueMarkFeature", bp => {
-                bp.SetName("True Mark");
-                bp.SetDescription("At 11th level, the hero can expend two uses of her true smite ability to grant the ability to true smite to all allies for 1 minute, "
+            var TrueMarkFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"TrueMarkFeature", bp => {
+                bp.SetName(IsekaiContext, "True Mark");
+                bp.SetDescription(IsekaiContext, "At 11th level, the hero can expend two uses of her true smite ability to grant the ability to true smite to all allies for 1 minute, "
                     + "using her {g|Encyclopedia:Bonus}bonuses{/g}. As a {g|Encyclopedia:Swift_Action}swift action{/g}, the paladin chooses one target within sight to smite. "
                     + "The hero's allies add her {g|Encyclopedia:Charisma}Charisma{/g} bonus (if any) to their {g|Encyclopedia:Attack}attack rolls{/g} and add her character level to "
                     + "all {g|Encyclopedia:Damage}damage rolls{/g} made against the target of her smite. True smite attacks automatically bypass any {g|Encyclopedia:Damage_Reduction}DR{/g} "

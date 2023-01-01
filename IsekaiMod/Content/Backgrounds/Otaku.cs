@@ -2,6 +2,9 @@
 using IsekaiMod.Extensions;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.EntitySystem.Stats;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
+using Kingmaker.Blueprints.Classes;
 
 namespace IsekaiMod.Content.Backgrounds
 {
@@ -10,9 +13,9 @@ namespace IsekaiMod.Content.Backgrounds
         public static void Add()
         {
             // Background
-            var BackgroundOtaku = Helpers.CreateFeature("BackgroundOtaku", bp => {
-                bp.SetName("Otaku");
-                bp.SetDescription("The Otaku adds all skills to the list of her class skills except Persuasion.\n"
+            var BackgroundOtaku = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"BackgroundOtaku", bp => {
+                bp.SetName(IsekaiContext, "Otaku");
+                bp.SetDescription(IsekaiContext, "The Otaku adds all skills to the list of her class skills except Persuasion.\n"
                     + "If the character already has the class skill, {g|Encyclopedia:Weapon_Proficiency}weapon proficiency{/g} or armor proficiency granted by the selected background "
                     + "from her class during character creation, then the corresponding {g|Encyclopedia:Bonus}bonuses{/g} from background change to a +1 competence bonus in case of skills, "
                     + "a +1 enhancement bonus in case of weapon proficiency and a -1 Armor {g|Encyclopedia:Check}Check{/g} {g|Encyclopedia:Penalty}Penalty{/g} reduction in case of armor proficiency.");

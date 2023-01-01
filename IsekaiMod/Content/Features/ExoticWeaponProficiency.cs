@@ -6,6 +6,8 @@ using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.FactLogic;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features
 {
@@ -13,11 +15,11 @@ namespace IsekaiMod.Content.Features
     {
         public static void Add()
         {
-            var AnimalCompanionClass = Resources.GetBlueprint<BlueprintCharacterClass>("26b10d4340839004f960f9816f6109fe");
-            var Icon_ExcoticWeaponProficiency = Resources.GetBlueprint<BlueprintFeatureSelection>("9a01b6815d6c3684cb25f30b8bf20932").m_Icon;
-            var ExoticWeaponProficiency = Helpers.CreateBlueprint<BlueprintFeature>("ExoticWeaponProficiency", bp => {
-                bp.SetName("Exotic Weapon Proficiency");
-                bp.SetDescription("You become proficient with all Exotic Weapons.");
+            var AnimalCompanionClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("26b10d4340839004f960f9816f6109fe");
+            var Icon_ExcoticWeaponProficiency = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("9a01b6815d6c3684cb25f30b8bf20932").m_Icon;
+            var ExoticWeaponProficiency = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "ExoticWeaponProficiency", bp => {
+                bp.SetName(IsekaiContext, "Exotic Weapon Proficiency");
+                bp.SetDescription(IsekaiContext, "You become proficient with all Exotic Weapons.");
                 bp.m_Icon = Icon_ExcoticWeaponProficiency;
                 bp.AddComponent<AddProficiencies>(c => {
                     c.WeaponProficiencies = new WeaponCategory[]

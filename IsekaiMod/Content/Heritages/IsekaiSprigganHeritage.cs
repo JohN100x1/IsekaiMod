@@ -12,6 +12,9 @@ using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
+using HarmonyLib;
 
 namespace IsekaiMod.Content.Heritages
 {
@@ -20,10 +23,10 @@ namespace IsekaiMod.Content.Heritages
         public static void Add()
         {
             // Spriggan Abilities
-            var Icon_Spriggan = AssetLoader.LoadInternal("Heritages", "ICON_SPRIGGAN.png");
-            var SizeAlterationBuff = Helpers.CreateBuff("SizeAlterationBuff", bp => {
-                bp.SetName("Size Alteration");
-                bp.SetDescription("This creature's size is increased by two size categories and they gain +10 Speed, +12 Strength, -2 Dexterity, +6 Constitution, and a -2 penalty to AC.");
+            var Icon_Spriggan = AssetLoader.LoadInternal(IsekaiContext, "Heritages", "ICON_SPRIGGAN.png");
+            var SizeAlterationBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "SizeAlterationBuff", bp => {
+                bp.SetName(IsekaiContext, "Size Alteration");
+                bp.SetDescription(IsekaiContext, "This creature's size is increased by two size categories and they gain +10 Speed, +12 Strength, -2 Dexterity, +6 Constitution, and a -2 penalty to AC.");
                 bp.m_Icon = Icon_Spriggan;
                 bp.AddComponent<ChangeUnitSize>(c => {
                     c.m_Type = ChangeUnitSize.ChangeType.Delta;
@@ -58,9 +61,9 @@ namespace IsekaiMod.Content.Heritages
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var SizeAlterationAbility = Helpers.CreateActivatableAbility("SizeAlterationAbility", bp => {
-                bp.SetName("Size Alteration");
-                bp.SetDescription("As a standard action, increase your size by two size categories and gain +10 Speed, +12 Strength, -2 Dexterity, +6 Constitution, and a -2 penalty to AC.");
+            var SizeAlterationAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "SizeAlterationAbility", bp => {
+                bp.SetName(IsekaiContext, "Size Alteration");
+                bp.SetDescription(IsekaiContext, "As a standard action, increase your size by two size categories and gain +10 Speed, +12 Strength, -2 Dexterity, +6 Constitution, and a -2 penalty to AC.");
                 bp.m_Icon = Icon_Spriggan;
                 bp.m_Buff = SizeAlterationBuff.ToReference<BlueprintBuffReference>();
                 bp.ActivationType = AbilityActivationType.WithUnitCommand;
@@ -68,9 +71,9 @@ namespace IsekaiMod.Content.Heritages
             });
 
             // Spriggan Heritage
-            var IsekaiSprigganHeritage = Helpers.CreateFeature("IsekaiSprigganHeritage", bp => {
-                bp.SetName("Isekai Spriggan");
-                bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Spriggan have both extreme beauty and power. "
+            var IsekaiSprigganHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiSprigganHeritage", bp => {
+                bp.SetName(IsekaiContext, "Isekai Spriggan");
+                bp.SetDescription(IsekaiContext, "Otherworldly entities who are reincarnated into the world of Golarion as a Spriggan have both extreme beauty and power. "
                     + "Their shape changing abilities allow them to easily defeat everyone who would underestimate their power.\n"
                     + "The Isekai Spriggan gains a +1 racial bonus on concentration checks and on the {g|Encyclopedia:DC}DC{/g} of all "
                     + "{g|Encyclopedia:Spell}spells{/g} they cast. "
@@ -112,7 +115,7 @@ namespace IsekaiMod.Content.Heritages
             });
 
             // Add to Gnome Heritage Selection
-            var GnomeHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("584d8b50817b49b2bb7aab3d6add8d3a");
+            var GnomeHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("584d8b50817b49b2bb7aab3d6add8d3a");
             GnomeHeritageSelection.m_AllFeatures = GnomeHeritageSelection.m_AllFeatures.AddToArray(IsekaiSprigganHeritage.ToReference<BlueprintFeatureReference>());
         }
     }

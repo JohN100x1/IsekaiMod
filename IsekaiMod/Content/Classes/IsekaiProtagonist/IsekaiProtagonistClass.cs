@@ -1,37 +1,39 @@
-﻿using IsekaiMod.Components;
-using IsekaiMod.Config;
+﻿using IsekaiMod.Config;
 using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
+using IsekaiMod.Components;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
+using TabletopTweaks.Core.Utilities;
 using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using UnityEngine;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 {
     internal class IsekaiProtagonistClass
     {
         // Icons
-        private static readonly Sprite Icon_SneakAttack = Resources.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87").m_Icon;
-        private static readonly Sprite Icon_ForetellAidBuff = Resources.GetBlueprint<BlueprintBuff>("faf473e3a977fd4428cd3f1a526346d2").m_Icon;
-        private static readonly Sprite Icon_EdictOfImpenetrableFortress = Resources.GetBlueprint<BlueprintAbility>("d7741c08ccf699e4a8a8f8ab2ed345f8").m_Icon;
-        private static readonly Sprite Icon_TrickFate = Resources.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
-        private static readonly Sprite Icon_BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45").m_Icon;
+        private static readonly Sprite Icon_SneakAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87").m_Icon;
+        private static readonly Sprite Icon_ForetellAidBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("faf473e3a977fd4428cd3f1a526346d2").m_Icon;
+        private static readonly Sprite Icon_EdictOfImpenetrableFortress = BlueprintTools.GetBlueprint<BlueprintAbility>("d7741c08ccf699e4a8a8f8ab2ed345f8").m_Icon;
+        private static readonly Sprite Icon_TrickFate = BlueprintTools.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
+        private static readonly Sprite Icon_BasicFeatSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45").m_Icon;
 
         // Stat Progression
-        private static readonly BlueprintStatProgression BABFull = Resources.GetBlueprint<BlueprintStatProgression>("b3057560ffff3514299e8b93e7648a9d");
-        private static readonly BlueprintStatProgression SavesHigh = Resources.GetBlueprint<BlueprintStatProgression>("ff4662bde9e75f145853417313842751");
+        private static readonly BlueprintStatProgression BABFull = BlueprintTools.GetBlueprint<BlueprintStatProgression>("b3057560ffff3514299e8b93e7648a9d");
+        private static readonly BlueprintStatProgression SavesHigh = BlueprintTools.GetBlueprint<BlueprintStatProgression>("ff4662bde9e75f145853417313842751");
 
         // Used in Class
-        private static readonly BlueprintCharacterClass SlayerClass = Resources.GetBlueprint<BlueprintCharacterClass>("c75e0971973957d4dbad24bc7957e4fb");
-        private static readonly BlueprintCharacterClass AnimalClass = Resources.GetBlueprint<BlueprintCharacterClass>("4cd1757a0eea7694ba5c933729a53920");
+        private static readonly BlueprintCharacterClass SlayerClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("c75e0971973957d4dbad24bc7957e4fb");
+        private static readonly BlueprintCharacterClass AnimalClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("4cd1757a0eea7694ba5c933729a53920");
 
         public static void Add()
         {
@@ -41,43 +43,44 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             // TODO: Load localisation instead of hardcoded strings
 
             // Class Signature Features
-            var IsekaiProtagonistPlotArmorFeat = Helpers.CreateFeature("IsekaiProtagonistPlotArmorFeat", bp => {
-                bp.SetName("Plot Armor");
-                bp.SetDescription("Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
-                bp.SetShortDescription("Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
+            var IsekaiProtagonistPlotArmorFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistPlotArmorFeat", bp => {
+                bp.SetName(IsekaiContext, "Plot Armor");
+                bp.SetDescription(IsekaiContext, "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
+                //method no available in the interface, the field m_shortDescription stil exists on the object, TODO check if the short description is needed or shown anywhere
+                //bp.SetShortDescription("Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
                 bp.m_Icon = Icon_EdictOfImpenetrableFortress;
             });
-            var IsekaiProtagonistSpecialPowerFeat = Helpers.CreateFeature("IsekaiProtagonistSpecialPowerFeat", bp => {
-                bp.SetName("Special Powers");
-                bp.SetDescription("Isekai Protagonists gain special powers as they increase their level. These are skills or abilities that greatly enhance the Isekai Protagonist's combat power.");
-                bp.SetShortDescription("Isekai Protagonists gain special powers as they increase their level. These are skills or abilities that greatly enhance the Isekai Protagonist's combat power.");
+            var IsekaiProtagonistSpecialPowerFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistSpecialPowerFeat", bp => {
+                bp.SetName(IsekaiContext, "Special Powers");
+                bp.SetDescription(IsekaiContext, "Isekai Protagonists gain special powers as they increase their level. These are skills or abilities that greatly enhance the Isekai Protagonist's combat power.");
+                //bp.SetShortDescription("Isekai Protagonists gain special powers as they increase their level. These are skills or abilities that greatly enhance the Isekai Protagonist's combat power.");
                 bp.m_Icon = Icon_ForetellAidBuff;
             });
-            var IsekaiProtagonistOverpoweredAbilityFeat = Helpers.CreateFeature("IsekaiProtagonistOverpoweredAbilityFeat", bp => {
-                bp.SetName("Overpowered Abilities");
-                bp.SetDescription("Isekai Protagonists gain Overpowered Abilities as they increase their level. These are extremely powerful abiilities that surpass even gods.");
-                bp.SetShortDescription("Isekai Protagonists gain Overpowered Abilities as they increase their level. These are extremely powerful abiilities that surpass even gods.");
+            var IsekaiProtagonistOverpoweredAbilityFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistOverpoweredAbilityFeat", bp => {
+                bp.SetName(IsekaiContext, "Overpowered Abilities");
+                bp.SetDescription(IsekaiContext, "Isekai Protagonists gain Overpowered Abilities as they increase their level. These are extremely powerful abiilities that surpass even gods.");
+                //bp.SetShortDescription("Isekai Protagonists gain Overpowered Abilities as they increase their level. These are extremely powerful abiilities that surpass even gods.");
                 bp.m_Icon = Icon_TrickFate;
             });
-            var IsekaiProtagonistBonusFeat = Helpers.CreateFeature("IsekaiProtagonistBonusFeat", bp => {
-                bp.SetName("Bonus Feat");
-                bp.SetDescription("Isekai Protagonists gain twice as many {g|Encyclopedia:Feat}feats{/g} as the other classes.");
-                bp.SetShortDescription("Isekai Protagonists gain twice as many {g|Encyclopedia:Feat}feats{/g} as the other classes.");
+            var IsekaiProtagonistBonusFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistBonusFeat", bp => {
+                bp.SetName(IsekaiContext, "Bonus Feat");
+                bp.SetDescription(IsekaiContext, "Isekai Protagonists gain twice as many {g|Encyclopedia:Feat}feats{/g} as the other classes.");
+                //bp.SetShortDescription(IsekaiContext, "Isekai Protagonists gain twice as many {g|Encyclopedia:Feat}feats{/g} as the other classes.");
                 bp.m_Icon = Icon_BasicFeatSelection;
             });
-            var IsekaiProtagonistSneakFeat = Helpers.CreateBlueprint<BlueprintFeature>("IsekaiProtagonistSneakFeat", bp => {
-                bp.SetName("Sneak Attack");
-                bp.SetDescription("Most characters gain advantages when they {g|Encyclopedia:Flanking}flank{/g} an enemy, {g|Encyclopedia:Attack}attack{/g} an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional {g|Encyclopedia:Damage}damage{/g} in such a situation.");
-                bp.SetShortDescription("Most characters gain advantages when they {g|Encyclopedia:Flanking}flank{/g} an enemy, {g|Encyclopedia:Attack}attack{/g} an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional {g|Encyclopedia:Damage}damage{/g} in such a situation.");
+            var IsekaiProtagonistSneakFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistSneakFeat", bp => {
+                bp.SetName(IsekaiContext, "Sneak Attack");
+                bp.SetDescription(IsekaiContext, "Most characters gain advantages when they {g|Encyclopedia:Flanking}flank{/g} an enemy, {g|Encyclopedia:Attack}attack{/g} an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional {g|Encyclopedia:Damage}damage{/g} in such a situation.");
+                //bp.SetShortDescription("Most characters gain advantages when they {g|Encyclopedia:Flanking}flank{/g} an enemy, {g|Encyclopedia:Attack}attack{/g} an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional {g|Encyclopedia:Damage}damage{/g} in such a situation.");
                 bp.m_Icon = Icon_SneakAttack;
             });
 
             // Main Class
-            var IsekaiProtagonistClass = Helpers.CreateBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass", bp => {
-                bp.LocalizedName = Helpers.CreateString($"IsekaiProtagonistClass.Name", "Isekai Protagonist");
-                bp.LocalizedDescription = Helpers.CreateString($"IsekaiProtagonistClass.Description", "Isekai protagonists possess immense power, and are able to defeat every enemy "
+            var IsekaiProtagonistClass = Helpers.CreateBlueprint<BlueprintCharacterClass>(IsekaiContext, "IsekaiProtagonistClass", bp => {
+                bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"IsekaiProtagonistClass.Name", "Isekai Protagonist");
+                bp.LocalizedDescription = Helpers.CreateString(IsekaiContext, $"IsekaiProtagonistClass.Description", "Isekai protagonists possess immense power, and are able to defeat every enemy "
                     + "with ease using their overpowered abilities. They also have plot armor, which make them hard to kill. They are the main character; everyone else are just NPCs.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString($"IsekaiProtagonistClass.Descriptio",
+                bp.LocalizedDescriptionShort = Helpers.CreateString(IsekaiContext, $"IsekaiProtagonistClass.Descriptio",
                     "Isekai protagonists are people who have been reincarnated into the world of Golarion with overpowered abilities. "
                     + "As their story progresses, they gain more overpowered abilities to wreck every wannabe villain and side character they face.");
                 bp.HitDie = DiceType.D12;
@@ -127,7 +130,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                     c.Not = true;
                     c.HideInUI = true;
                 });
-                if (ModSettings.AddedContent.ExcludeCompanionsFromIsekaiClass)
+                if (IsekaiContext.AddedContent.ExcludeCompanionsFromIsekaiClass)
                 {
                     bp.AddComponent<PrerequisiteIsMainCharacter>();
                 }
@@ -144,7 +147,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             IsekaiProtagonistSpellbook.SetCharacterClass(IsekaiProtagonistClass);
 
             // Register Class
-            Helpers.RegisterClass(IsekaiProtagonistClass);
+            ThingsNotHandledByTTTCore.RegisterClass(IsekaiProtagonistClass);
         }
         public static void RegisterArchetype(BlueprintArchetype archetype)
         {
@@ -163,7 +166,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         }
         public static BlueprintCharacterClass Get()
         {
-            return Resources.GetModBlueprint<BlueprintCharacterClass>("IsekaiProtagonistClass");
+            return BlueprintTools.GetModBlueprint<BlueprintCharacterClass>(IsekaiContext, "IsekaiProtagonistClass");
         }
         public static BlueprintCharacterClassReference GetReference()
         {

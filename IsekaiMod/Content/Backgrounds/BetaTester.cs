@@ -3,6 +3,9 @@ using IsekaiMod.Extensions;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.Blueprints.Classes;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Backgrounds
 {
@@ -11,9 +14,9 @@ namespace IsekaiMod.Content.Backgrounds
         public static void Add()
         {
             // Background
-            var BackgroundBetaTester = Helpers.CreateFeature("BackgroundBetaTester", bp => {
-                bp.SetName("Beta Tester");
-                bp.SetDescription("The Beta Tester has a +10 competence bonus to initiative and adds {g|Encyclopedia:Lore_Nature}Lore (Nature){/g}, "
+            var BackgroundBetaTester = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"BackgroundBetaTester", bp => {
+                bp.SetName(IsekaiContext, "Beta Tester");
+                bp.SetDescription(IsekaiContext, "The Beta Tester has a +10 competence bonus to initiative and adds {g|Encyclopedia:Lore_Nature}Lore (Nature){/g}, "
                     + "{g|Encyclopedia:Lore_Religion}Lore (Religion){/g}, {g|Encyclopedia:Knowledge_World}Knowledge (World){/g}, {g|Encyclopedia:Knowledge_Arcana}Knowledge (Arcana){/g}, and "
                     + "{g|Encyclopedia:Perception}Perception{/g}to the list of her class {g|Encyclopedia:Skills}skills{/g}.\n"
                     + "If the character already has the class skill, {g|Encyclopedia:Weapon_Proficiency}weapon proficiency{/g} or armor proficiency granted by the selected background "

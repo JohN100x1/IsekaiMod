@@ -1,6 +1,7 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.ResourceLinks;
@@ -13,6 +14,8 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Properties;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist
 {
@@ -20,10 +23,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
     {
         public static void Add()
         {
-            var Icon_SecondReincarnation = AssetLoader.LoadInternal("Features", "ICON_SECOND_REINCARNATION.png");
-            var SecondReincarnationBuff = Helpers.CreateBuff("SecondReincarnationBuff", bp => {
-                bp.SetName("Second Reincarnation");
-                bp.SetDescription("Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.\n"
+            var Icon_SecondReincarnation = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SECOND_REINCARNATION.png");
+            var SecondReincarnationBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "SecondReincarnationBuff", bp => {
+                bp.SetName(IsekaiContext, "Second Reincarnation");
+                bp.SetDescription(IsekaiContext, "Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.\n"
                     + "Your attacks ignore damage reduction and your spells ignore spell resistance and spell immunity.");
                 bp.m_Icon = Icon_SecondReincarnation;
                 bp.Ranks = 1;
@@ -71,9 +74,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 });
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var SecondReincarnation = Helpers.CreateFeature("SecondReincarnation", bp => {
-                bp.SetName("Second Reincarnation");
-                bp.SetDescription("Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.\n"
+            var SecondReincarnation = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"SecondReincarnation", bp => {
+                bp.SetName(IsekaiContext, "Second Reincarnation");
+                bp.SetDescription(IsekaiContext, "Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.\n"
                     + "Your attacks ignore damage reduction and your spells ignore spell resistance and spell immunity.");
                 bp.m_Icon = Icon_SecondReincarnation;
                 bp.AddComponent<IgnoreDamageReductionOnAttack>();

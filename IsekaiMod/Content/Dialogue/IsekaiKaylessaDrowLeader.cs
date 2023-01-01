@@ -5,12 +5,14 @@ using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
 using System.Collections.Generic;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Dialogue
 {
     class IsekaiKaylessaDrowLeader
     {
-        private static readonly BlueprintCue Cue_0067 = Resources.GetBlueprint<BlueprintCue>("a8cc736feec11024eb6a5d3dbcb69f5c");
+        private static readonly BlueprintCue Cue_0067 = BlueprintTools.GetBlueprint<BlueprintCue>("a8cc736feec11024eb6a5d3dbcb69f5c");
         public static void Add()
         {
             // Prompt (Tran, at drow ambush)
@@ -18,8 +20,8 @@ namespace IsekaiMod.Content.Dialogue
              */
 
             // Answer
-            var IsekaiKaylessaDrowLeader = Helpers.CreateAnswer("IsekaiKaylessaDrowLeader", bp => {
-                bp.Text = Helpers.CreateString("IsekaiKaylessaDrowLeader.Text", "(Isekai Protagonist) [Attack] \"Nice acting, Mr. background character. "
+            var IsekaiKaylessaDrowLeader = Helpers.CreateBlueprint<BlueprintAnswer>(IsekaiContext, "IsekaiKaylessaDrowLeader", bp => {
+                bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiKaylessaDrowLeader.Text", "(Isekai Protagonist) [Attack] \"Nice acting, Mr. background character. "
                     + "Now it's time for your unmomentous death scene.\"");
                 bp.NextCue = new CueSelection()
                 {
@@ -35,7 +37,7 @@ namespace IsekaiMod.Content.Dialogue
             });
 
             // Add Answer to answers list
-            var AnswersList_0062 = Resources.GetBlueprint<BlueprintAnswersList>("b8e680587a76f064fac9a01034c02391");
+            var AnswersList_0062 = BlueprintTools.GetBlueprint<BlueprintAnswersList>("b8e680587a76f064fac9a01034c02391");
             AnswersList_0062.Answers.Add(IsekaiKaylessaDrowLeader.ToReference<BlueprintAnswerBaseReference>());
         }
     }

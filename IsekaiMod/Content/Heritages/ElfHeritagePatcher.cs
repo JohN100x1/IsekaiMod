@@ -6,21 +6,23 @@ using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.FactLogic;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Heritages
 {
     class ElfHeritagePatcher
     {
-        private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = Resources.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
+        private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = BlueprintTools.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
         public static void Patch()
         {
             // Get Isekai Heritages
-            var IsekaiDarkElfHeritage = Resources.GetModBlueprint<BlueprintFeature>("IsekaiDarkElfHeritage");
-            var IsekaiHighElfHeritage = Resources.GetModBlueprint<BlueprintFeature>("IsekaiHighElfHeritage");
-            var IsekaiWoodElfHeritage = Resources.GetModBlueprint<BlueprintFeature>("IsekaiWoodElfHeritage");
+            var IsekaiDarkElfHeritage = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiDarkElfHeritage");
+            var IsekaiHighElfHeritage = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiHighElfHeritage");
+            var IsekaiWoodElfHeritage = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiWoodElfHeritage");
 
             // Don't Add stat bonuses from Elf Race if Isekai Elf Heritage is selected
-            var ElfRace = Resources.GetBlueprint<BlueprintRace>("25a5878d125338244896ebd3238226c8");
+            var ElfRace = BlueprintTools.GetBlueprint<BlueprintRace>("25a5878d125338244896ebd3238226c8");
             ElfRace.RemoveComponents<AddStatBonus>();
             ElfRace.RemoveComponents<AddStatBonusIfHasFact>();
             ElfRace.AddComponent<AddStatBonusIfNotHasFact>(c => {

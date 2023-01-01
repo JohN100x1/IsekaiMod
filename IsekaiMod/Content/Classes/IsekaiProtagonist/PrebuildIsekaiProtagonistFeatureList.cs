@@ -4,6 +4,8 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.EntitySystem.Stats;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 {
@@ -12,69 +14,69 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         public static void Add()
         {
             // Prebuild Features
-            var PowerAttack = Resources.GetBlueprint<BlueprintFeature>("9972f33f977fc724c838e59641b2fca5");
-            var CombatReflexes = Resources.GetBlueprint<BlueprintFeature>("0f8939ae6f220984e8fb568abbdfba95");
-            var ImprovedInitiative = Resources.GetBlueprint<BlueprintFeature>("797f25d709f559546b29e7bcb181cc74");
-            var IronWill = Resources.GetBlueprint<BlueprintFeature>("175d1577bb6c9a04baf88eec99c66334");
-            var Outflank = Resources.GetBlueprint<BlueprintFeature>("422dab7309e1ad343935f33a4d6e9f11");
-            var IronWillImproved = Resources.GetBlueprint<BlueprintFeature>("3ea2215150a1c8a4a9bfed9d9023903e");
-            var Dodge = Resources.GetBlueprint<BlueprintFeature>("97e216dbb46ae3c4faef90cf6bbe6fd5");
-            var Toughness = Resources.GetBlueprint<BlueprintFeature>("d09b20029e9abfe4480b356c92095623");
-            var SpellPenetration = Resources.GetBlueprint<BlueprintFeature>("ee7dc126939e4d9438357fbd5980d459");
-            var GreaterSpellPenetration = Resources.GetBlueprint<BlueprintFeature>("1978c3f91cfbbc24b9c9b0d017f4beec");
+            var PowerAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("9972f33f977fc724c838e59641b2fca5");
+            var CombatReflexes = BlueprintTools.GetBlueprint<BlueprintFeature>("0f8939ae6f220984e8fb568abbdfba95");
+            var ImprovedInitiative = BlueprintTools.GetBlueprint<BlueprintFeature>("797f25d709f559546b29e7bcb181cc74");
+            var IronWill = BlueprintTools.GetBlueprint<BlueprintFeature>("175d1577bb6c9a04baf88eec99c66334");
+            var Outflank = BlueprintTools.GetBlueprint<BlueprintFeature>("422dab7309e1ad343935f33a4d6e9f11");
+            var IronWillImproved = BlueprintTools.GetBlueprint<BlueprintFeature>("3ea2215150a1c8a4a9bfed9d9023903e");
+            var Dodge = BlueprintTools.GetBlueprint<BlueprintFeature>("97e216dbb46ae3c4faef90cf6bbe6fd5");
+            var Toughness = BlueprintTools.GetBlueprint<BlueprintFeature>("d09b20029e9abfe4480b356c92095623");
+            var SpellPenetration = BlueprintTools.GetBlueprint<BlueprintFeature>("ee7dc126939e4d9438357fbd5980d459");
+            var GreaterSpellPenetration = BlueprintTools.GetBlueprint<BlueprintFeature>("1978c3f91cfbbc24b9c9b0d017f4beec");
 
-            var Cleave = Resources.GetBlueprint<BlueprintFeature>("d809b6c4ff2aaff4fa70d712a70f7d7b");
-            var CleavingFinish = Resources.GetBlueprint<BlueprintFeature>("59bd93899149fa44687ff4121389b3a9");
-            var PointBlankShot = Resources.GetBlueprint<BlueprintFeature>("0da0c194d6e1d43419eb8d990b28e0ab");
-            var PreciseShot = Resources.GetBlueprint<BlueprintFeature>("8f3d1e6b4be006f4d896081f2f889665");
-            var DeadlyAim = Resources.GetBlueprint<BlueprintFeature>("f47df34d53f8c904f9981a3ee8e84892");
-            var GreatFortitude = Resources.GetBlueprint<BlueprintFeature>("79042cb55f030614ea29956177977c52");
-            var GreatFortitudeImproved = Resources.GetBlueprint<BlueprintFeature>("f5db1cc7ad48d794f85252fa4a64157b");
-            var LightningReflexes = Resources.GetBlueprint<BlueprintFeature>("15e7da6645a7f3d41bdad7c8c4b9de1e");
-            var LightningReflexesImproved = Resources.GetBlueprint<BlueprintFeature>("1e813eb8159b67a459b1c975027866e5");
-            var MaximizeSpellFeat = Resources.GetBlueprint<BlueprintFeature>("7f2b282626862e345935bbea5e66424b");
-            var EmpowerSpellFeat = Resources.GetBlueprint<BlueprintFeature>("a1de1e4f92195b442adb946f0e2b9d4e");
+            var Cleave = BlueprintTools.GetBlueprint<BlueprintFeature>("d809b6c4ff2aaff4fa70d712a70f7d7b");
+            var CleavingFinish = BlueprintTools.GetBlueprint<BlueprintFeature>("59bd93899149fa44687ff4121389b3a9");
+            var PointBlankShot = BlueprintTools.GetBlueprint<BlueprintFeature>("0da0c194d6e1d43419eb8d990b28e0ab");
+            var PreciseShot = BlueprintTools.GetBlueprint<BlueprintFeature>("8f3d1e6b4be006f4d896081f2f889665");
+            var DeadlyAim = BlueprintTools.GetBlueprint<BlueprintFeature>("f47df34d53f8c904f9981a3ee8e84892");
+            var GreatFortitude = BlueprintTools.GetBlueprint<BlueprintFeature>("79042cb55f030614ea29956177977c52");
+            var GreatFortitudeImproved = BlueprintTools.GetBlueprint<BlueprintFeature>("f5db1cc7ad48d794f85252fa4a64157b");
+            var LightningReflexes = BlueprintTools.GetBlueprint<BlueprintFeature>("15e7da6645a7f3d41bdad7c8c4b9de1e");
+            var LightningReflexesImproved = BlueprintTools.GetBlueprint<BlueprintFeature>("1e813eb8159b67a459b1c975027866e5");
+            var MaximizeSpellFeat = BlueprintTools.GetBlueprint<BlueprintFeature>("7f2b282626862e345935bbea5e66424b");
+            var EmpowerSpellFeat = BlueprintTools.GetBlueprint<BlueprintFeature>("a1de1e4f92195b442adb946f0e2b9d4e");
 
             // Prebuild Selections
-            var BackgroundNone = Resources.GetBlueprint<BlueprintFeature>("7d300f497584d9245ac24c062dce0bd6");
-            var BackgroundBaseSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("f926dabeee7f8a54db8f2010b323383c");
-            var PitbornHeritage = Resources.GetBlueprint<BlueprintFeature>("c09ffb2657f6c2b41b5ed0ed607b362a");
-            var TieflingHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("c862fd0e4046d2d4d9702dd60474a181");
-            var AngelHeritage = Resources.GetBlueprint<BlueprintFeature>("ceedc840b113c3348a2f32b434df5fef");
-            var AasimarHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("67aabcbce8f8ae643a9d08a6ca67cabd");
-            var SkillFocusPhysique = Resources.GetBlueprint<BlueprintFeature>("9db907332bdaec1468cff3a99efef5b4");
-            var Adaptibility = Resources.GetBlueprint<BlueprintFeatureSelection>("26a668c5a8c22354bac67bcd42e09a3f");
-            var BasicFeatSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
+            var BackgroundNone = BlueprintTools.GetBlueprint<BlueprintFeature>("7d300f497584d9245ac24c062dce0bd6");
+            var BackgroundBaseSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("f926dabeee7f8a54db8f2010b323383c");
+            var PitbornHeritage = BlueprintTools.GetBlueprint<BlueprintFeature>("c09ffb2657f6c2b41b5ed0ed607b362a");
+            var TieflingHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("c862fd0e4046d2d4d9702dd60474a181");
+            var AngelHeritage = BlueprintTools.GetBlueprint<BlueprintFeature>("ceedc840b113c3348a2f32b434df5fef");
+            var AasimarHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("67aabcbce8f8ae643a9d08a6ca67cabd");
+            var SkillFocusPhysique = BlueprintTools.GetBlueprint<BlueprintFeature>("9db907332bdaec1468cff3a99efef5b4");
+            var Adaptibility = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("26a668c5a8c22354bac67bcd42e09a3f");
+            var BasicFeatSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
 
-            var IsekaiFamiliarSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiFamiliarSelection");
-            var CatFamiliarBondFeature = Resources.GetBlueprint<BlueprintFeature>("1cb0b559ca2e31e4d9dc65de012fa82f");
+            var IsekaiFamiliarSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiFamiliarSelection");
+            var CatFamiliarBondFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("1cb0b559ca2e31e4d9dc65de012fa82f");
 
-            var StartingWeaponSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("StartingWeaponSelection");
-            var IsekaiPetSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiPetSelection");
-            var IsekaiProtagonistBonusFeatSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("IsekaiProtagonistBonusFeatSelection");
-            var SignatureMoveSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SignatureMoveSelection");
-            var OverpoweredAbilitySelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection");
-            var OverpoweredAbilitySelection2 = Resources.GetModBlueprint<BlueprintFeatureSelection>("OverpoweredAbilitySelection2");
-            var BeachEpisodeSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("BeachEpisodeSelection");
-            var SpecialPowerSelection = Resources.GetModBlueprint<BlueprintFeatureSelection>("SpecialPowerSelection");
+            var StartingWeaponSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "StartingWeaponSelection");
+            var IsekaiPetSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiPetSelection");
+            var IsekaiProtagonistBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiProtagonistBonusFeatSelection");
+            var SignatureMoveSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveSelection");
+            var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
+            var OverpoweredAbilitySelection2 = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2");
+            var BeachEpisodeSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeSelection");
+            var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
 
-            var StartingWeaponLongsword = Resources.GetModBlueprint<BlueprintFeature>("StartingWeaponLongsword");
-            var SignatureAttack = Resources.GetModBlueprint<BlueprintFeature>("SignatureAttack");
-            var AutoQuickenFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoQuickenFeature");
-            var AutoMaximizeFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoMaximizeFeature");
-            var AutoSelectiveFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoSelectiveFeature");
-            var AutoEmpowerFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoEmpowerFeature");
-            var AutoExtendFeature = Resources.GetModBlueprint<BlueprintFeature>("AutoExtendFeature");
-            var MasterSelf = Resources.GetModBlueprint<BlueprintFeature>("MasterSelf");
-            var AlphaStrike = Resources.GetModBlueprint<BlueprintFeature>("AlphaStrike");
-            var BetaStrike = Resources.GetModBlueprint<BlueprintFeature>("BetaStrike");
-            var GammaStrike = Resources.GetModBlueprint<BlueprintFeature>("GammaStrike");
-            var OmegaStrike = Resources.GetModBlueprint<BlueprintFeature>("OmegaStrike");
-            var SneakyMagic = Resources.GetModBlueprint<BlueprintFeature>("SneakyMagic");
-            var MundaneAura = Resources.GetModBlueprint<BlueprintFeature>("MundaneAura");
-            var TrainingMontage = Resources.GetModBlueprint<BlueprintFeature>("TrainingMontage");
+            var StartingWeaponLongsword = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponLongsword");
+            var SignatureAttack = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureAttack");
+            var AutoQuickenFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AutoQuickenFeature");
+            var AutoMaximizeFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AutoMaximizeFeature");
+            var AutoSelectiveFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AutoSelectiveFeature");
+            var AutoEmpowerFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AutoEmpowerFeature");
+            var AutoExtendFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AutoExtendFeature");
+            var MasterSelf = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MasterSelf");
+            var AlphaStrike = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AlphaStrike");
+            var BetaStrike = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "BetaStrike");
+            var GammaStrike = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GammaStrike");
+            var OmegaStrike = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OmegaStrike");
+            var SneakyMagic = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SneakyMagic");
+            var MundaneAura = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MundaneAura");
+            var TrainingMontage = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrainingMontage");
 
-            var PrebuildIsekaiProtagonistFeatureList = Helpers.CreateBlueprint<BlueprintFeature>("PrebuildIsekaiProtagonistFeatureList", bp => {
+            var PrebuildIsekaiProtagonistFeatureList = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "PrebuildIsekaiProtagonistFeatureList", bp => {
                 bp.Ranks = 1;
                 bp.HideInUI = true;
                 bp.AddComponent<AddClassLevels>(c => {

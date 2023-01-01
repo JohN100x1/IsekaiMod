@@ -2,6 +2,9 @@
 using IsekaiMod.Config;
 using Kingmaker.Blueprints.JsonSystem;
 
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
+
 namespace IsekaiMod.Content
 {
     class ContentAdder {
@@ -17,11 +20,11 @@ namespace IsekaiMod.Content
                 Features.ExtraWings.Add();
                 Features.ExoticWeaponProficiency.Add();
 
-                if (ModSettings.AddedContent.Feats.IsEnabled("Exceptional Feats")) AddExceptionalFeats();
-                if (ModSettings.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
-                if (ModSettings.AddedContent.Deities.IsEnabled("Isekai Deities")) AddIsekaiDeities();
-                if (ModSettings.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
-                if (ModSettings.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
+                if (IsekaiContext.AddedContent.Feats.IsEnabled("Exceptional Feats")) AddExceptionalFeats();
+                if (IsekaiContext.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
+                if (IsekaiContext.AddedContent.Deities.IsEnabled("Isekai Deities")) AddIsekaiDeities();
+                if (IsekaiContext.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
+                if (IsekaiContext.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
             }
 
             public static void AddIsekaiProtagonistClass()

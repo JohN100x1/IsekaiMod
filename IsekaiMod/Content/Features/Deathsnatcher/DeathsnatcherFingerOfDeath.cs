@@ -2,6 +2,7 @@
 using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
@@ -20,15 +21,17 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.Deathsnatcher
 {
     class DeathsnatcherFingerOfDeath
     {
-        private static readonly BlueprintAbility FingerOfDeathAbility = Resources.GetBlueprint<BlueprintAbility>("6f1dcf6cfa92d1948a740195707c0dbe");
+        private static readonly BlueprintAbility FingerOfDeathAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("6f1dcf6cfa92d1948a740195707c0dbe");
         public static void Add()
         {
-            var DeathsnatcherFingerOfDeathResource = Helpers.CreateBlueprint<BlueprintAbilityResource>("DeathsnatcherFingerOfDeathResource", bp => {
+            var DeathsnatcherFingerOfDeathResource = Helpers.CreateBlueprint<BlueprintAbilityResource>(IsekaiContext, "DeathsnatcherFingerOfDeathResource", bp => {
                 bp.m_MaxAmount = new BlueprintAbilityResource.Amount
                 {
                     BaseValue = 1,
@@ -45,7 +48,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     ResourceBonusStat = StatType.Unknown,
                 };
             });
-            var DeathsnatcherFingerOfDeathAbility = Helpers.CreateBlueprint<BlueprintAbility>("DeathsnatcherFingerOfDeathAbility", bp => {
+            var DeathsnatcherFingerOfDeathAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "DeathsnatcherFingerOfDeathAbility", bp => {
                 bp.m_DisplayName = FingerOfDeathAbility.m_DisplayName;
                 bp.m_Description = FingerOfDeathAbility.m_Description;
                 bp.m_Icon = FingerOfDeathAbility.m_Icon;
@@ -129,11 +132,11 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = FingerOfDeathAbility.AvailableMetamagic;
                 bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = Helpers.CreateString($"{bp.name}.SavingThrow", "Fortitude partial");
+                bp.LocalizedSavingThrow = Helpers.CreateString(IsekaiContext, $"{bp.name}.SavingThrow", "Fortitude partial");
             });
-            var DeathsnatcherFingerOfDeathFeature = Helpers.CreateFeature("DeathsnatcherFingerOfDeathFeature", bp => {
-                bp.SetName("Finger of Death");
-                bp.SetDescription("At 16th level, the Deathsnatcher gains Finger of Death as a spell-like ability once per day.");
+            var DeathsnatcherFingerOfDeathFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"DeathsnatcherFingerOfDeathFeature", bp => {
+                bp.SetName(IsekaiContext, "Finger of Death");
+                bp.SetDescription(IsekaiContext, "At 16th level, the Deathsnatcher gains Finger of Death as a spell-like ability once per day.");
                 bp.m_Icon = FingerOfDeathAbility.m_Icon;
                 bp.AddComponent<AddAbilityResources>(c => {
                     c.m_Resource = DeathsnatcherFingerOfDeathResource.ToReference<BlueprintAbilityResourceReference>();

@@ -18,20 +18,23 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System;
 using UnityEngine;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
+using Kingmaker.Blueprints.Classes;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist
 {
     class SummonHarem
     {
         // Units
-        private static readonly BlueprintUnit CR20_SuccubusAdvancedFighter = Resources.GetBlueprint<BlueprintUnit>("2db556136eac2544fa9744314c2a5713");
-        private static readonly BlueprintUnit CR14_AstralDeva = Resources.GetBlueprint<BlueprintUnit>("8f3bd0ecea704277a9f2b09296a7b01e");
-        private static readonly BlueprintUnit CR7_Nymph = Resources.GetBlueprint<BlueprintUnit>("0cc7a2526e4557945b1d8eb277d1fb3a");
-        private static readonly BlueprintUnit CR22_ErinyesDevilStandard = Resources.GetBlueprint<BlueprintUnit>("b576f3eb0aa94af44a985f51eda9db7b");
+        private static readonly BlueprintUnit CR20_SuccubusAdvancedFighter = BlueprintTools.GetBlueprint<BlueprintUnit>("2db556136eac2544fa9744314c2a5713");
+        private static readonly BlueprintUnit CR14_AstralDeva = BlueprintTools.GetBlueprint<BlueprintUnit>("8f3bd0ecea704277a9f2b09296a7b01e");
+        private static readonly BlueprintUnit CR7_Nymph = BlueprintTools.GetBlueprint<BlueprintUnit>("0cc7a2526e4557945b1d8eb277d1fb3a");
+        private static readonly BlueprintUnit CR22_ErinyesDevilStandard = BlueprintTools.GetBlueprint<BlueprintUnit>("b576f3eb0aa94af44a985f51eda9db7b");
 
-        private static readonly BlueprintSummonPool SummonMonsterPool = Resources.GetBlueprint<BlueprintSummonPool>("d94c93e7240f10e41ae41db4c83d1cbe");
-        private static readonly BlueprintBuff SummonedCreatureSpawnMonsterVI_IX = Resources.GetBlueprint<BlueprintBuff>("0dff842f06edace43baf8a2f44207045");
-        private static readonly Sprite Icon_SummonMonsterIX = Resources.GetBlueprint<BlueprintAbility>("52b5df2a97df18242aec67610616ded0").m_Icon;
+        private static readonly BlueprintSummonPool SummonMonsterPool = BlueprintTools.GetBlueprint<BlueprintSummonPool>("d94c93e7240f10e41ae41db4c83d1cbe");
+        private static readonly BlueprintBuff SummonedCreatureSpawnMonsterVI_IX = BlueprintTools.GetBlueprint<BlueprintBuff>("0dff842f06edace43baf8a2f44207045");
+        private static readonly Sprite Icon_SummonMonsterIX = BlueprintTools.GetBlueprint<BlueprintAbility>("52b5df2a97df18242aec67610616ded0").m_Icon;
 
         private static readonly ContextDurationValue RankDuration = new()
         {
@@ -49,9 +52,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
         };
         public static void Add()
         {
-            var SummonHaremAbility = Helpers.CreateBlueprint<BlueprintAbility>("SummonHaremAbility", bp => {
-                bp.SetName("Summon Harem");
-                bp.SetDescription("This {g|Encyclopedia:Spell}spell{/g} summons a Succubus, Nymph, Astral Deva, and an Erinyes. Summoned monsters appear where you designate and act according to their "
+            var SummonHaremAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "SummonHaremAbility", bp => {
+                bp.SetName(IsekaiContext, "Summon Harem");
+                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Succubus, Nymph, Astral Deva, and an Erinyes. Summoned monsters appear where you designate and act according to their "
                     + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<ContextActionOnNearbyPoint>(c => {
@@ -94,12 +97,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Quicken;
                 bp.m_IsFullRoundAction = true;
-                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
+                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "1 round/level");
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var SummonHaremFeature = Helpers.CreateFeature("SummonHaremFeature", bp => {
-                bp.SetName("Summon Harem");
-                bp.SetDescription("As a full action, you summon a Succubus, a Nymph, an Astral Deva, and an Erinyes to aid you in battle.");
+            var SummonHaremFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"SummonHaremFeature", bp => {
+                bp.SetName(IsekaiContext, "Summon Harem");
+                bp.SetDescription(IsekaiContext, "As a full action, you summon a Succubus, a Nymph, an Astral Deva, and an Erinyes to aid you in battle.");
                 bp.m_Icon = Icon_SummonMonsterIX;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { SummonHaremAbility.ToReference<BlueprintUnitFactReference>() };

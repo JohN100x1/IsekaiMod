@@ -12,17 +12,20 @@ using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
 using UnityEngine;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
+using Kingmaker.UnitLogic.ActivatableAbilities;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 {
     class ExtremeSpeed
     {
-        private static readonly Sprite Icon_SupersonicSpeed = Resources.GetBlueprint<BlueprintFeature>("505456aa17dd18a4e8bd8172811a4fdc").m_Icon;
+        private static readonly Sprite Icon_SupersonicSpeed = BlueprintTools.GetBlueprint<BlueprintFeature>("505456aa17dd18a4e8bd8172811a4fdc").m_Icon;
         public static void Add()
         {
-            var ExtremeSpeedBuff = Helpers.CreateBuff("ExtremeSpeedBuff", bp => {
-                bp.SetName("Extreme Speed");
-                bp.SetDescription("This creature gains a {g|Encyclopedia:Bonus}bonus{/g} to their {g|Encyclopedia:Speed}speed{/g}.");
+            var ExtremeSpeedBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "ExtremeSpeedBuff", bp => {
+                bp.SetName(IsekaiContext, "Extreme Speed");
+                bp.SetDescription(IsekaiContext, "This creature gains a {g|Encyclopedia:Bonus}bonus{/g} to their {g|Encyclopedia:Speed}speed{/g}.");
                 bp.IsClassFeature = true;
                 bp.m_Icon = Icon_SupersonicSpeed;
                 bp.AddComponent<AddContextStatBonus>(c => {
@@ -37,16 +40,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.m_StepLevel = 5;
                 });
             });
-            var ExtremeSpeedArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>("ExtremeSpeedArea", bp => {
+            var ExtremeSpeedArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, "ExtremeSpeedArea", bp => {
                 bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Ally;
                 bp.Shape = AreaEffectShape.Cylinder;
                 bp.Size = new Feet(40);
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(ExtremeSpeedBuff.ToReference<BlueprintBuffReference>()));
             });
-            var ExtremeSpeedAreaBuff = Helpers.CreateBuff("ExtremeSpeedAreaBuff", bp => {
-                bp.SetName("Extreme Speed");
-                bp.SetDescription("Allies within 40 feet of you gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times your character level.");
+            var ExtremeSpeedAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "ExtremeSpeedAreaBuff", bp => {
+                bp.SetName(IsekaiContext, "Extreme Speed");
+                bp.SetDescription(IsekaiContext, "Allies within 40 feet of you gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times your character level.");
                 bp.m_Icon = Icon_SupersonicSpeed;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -54,16 +57,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.m_AreaEffect = ExtremeSpeedArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var ExtremeSpeedAbility = Helpers.CreateActivatableAbility("ExtremeSpeedAbility", bp => {
-                bp.SetName("Extreme Speed");
-                bp.SetDescription("Allies within 40 feet of you gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times your character level.");
+            var ExtremeSpeedAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "ExtremeSpeedAbility", bp => {
+                bp.SetName(IsekaiContext, "Extreme Speed");
+                bp.SetDescription(IsekaiContext, "Allies within 40 feet of you gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times your character level.");
                 bp.m_Icon = Icon_SupersonicSpeed;
                 bp.m_Buff = ExtremeSpeedAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
-            var ExtremeSpeedFeature = Helpers.CreateFeature("ExtremeSpeedFeature", bp => {
-                bp.SetName("Extreme Speed");
-                bp.SetDescription("Allies within 40 feet of you gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times your character level.");
+            var ExtremeSpeedFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"ExtremeSpeedFeature", bp => {
+                bp.SetName(IsekaiContext, "Extreme Speed");
+                bp.SetDescription(IsekaiContext, "Allies within 40 feet of you gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times your character level.");
                 bp.m_Icon = Icon_SupersonicSpeed;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { ExtremeSpeedAbility.ToReference<BlueprintUnitFactReference>() };

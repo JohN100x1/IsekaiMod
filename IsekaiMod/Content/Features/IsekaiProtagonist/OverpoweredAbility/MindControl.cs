@@ -1,6 +1,7 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.Enums;
@@ -20,6 +21,8 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Conditions;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
@@ -27,17 +30,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
     {
         public static void Add()
         {
-            var Icon_Mind_Control = AssetLoader.LoadInternal("Features", "ICON_MIND_CONTROL.png");
-            var Icon_Mind_Control_Immune = AssetLoader.LoadInternal("Features", "ICON_MIND_CONTROL_IMMUNE.png");
-            var MindControlImmunity = Helpers.CreateBuff("MindControlImmunity", bp => {
-                bp.SetName("Mind Control Immunity");
-                bp.SetDescription("This creature cannot be mind controlled again.");
+            var Icon_Mind_Control = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_MIND_CONTROL.png");
+            var Icon_Mind_Control_Immune = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_MIND_CONTROL_IMMUNE.png");
+            var MindControlImmunity = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "MindControlImmunity", bp => {
+                bp.SetName(IsekaiContext, "Mind Control Immunity");
+                bp.SetDescription(IsekaiContext, "This creature cannot be mind controlled again.");
                 bp.m_Icon = Icon_Mind_Control_Immune;
                 bp.AddComponent<IsPositiveEffect>();
             });
-            var MindControlBuff = Helpers.CreateBuff("MindControlBuff", bp => {
-                bp.SetName("Mind Controlled");
-                bp.SetDescription("This creature has been mind controlled.");
+            var MindControlBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "MindControlBuff", bp => {
+                bp.SetName(IsekaiContext, "Mind Controlled");
+                bp.SetDescription(IsekaiContext, "This creature has been mind controlled.");
                 bp.m_Icon = Icon_Mind_Control;
                 bp.AddComponent<ChangeFaction>(c => {
                     c.m_Type = ChangeFaction.ChangeType.ToCaster;
@@ -58,9 +61,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
                 bp.FxOnStart = new PrefabLink() { AssetId = "53975f48f933c534ea9c6bb97a3f64eb" };
             });
-            var MindControlAbility = Helpers.CreateBlueprint<BlueprintAbility>("MindControlAbility", bp => {
-                bp.SetName("Overpowered Ability — Mind Control");
-                bp.SetDescription("You can make any creature fight on your side as if it was your ally. "
+            var MindControlAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "MindControlAbility", bp => {
+                bp.SetName(IsekaiContext, "Overpowered Ability — Mind Control");
+                bp.SetDescription(IsekaiContext, "You can make any creature fight on your side as if it was your ally. "
                     + "It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its ability.\n"
                     + " They will not resist.");
                 bp.m_Icon = Icon_Mind_Control;
@@ -101,12 +104,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Directional;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Reach | Metamagic.CompletelyNormal;
-                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
+                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "1 round/level");
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var MindControlFeature = Helpers.CreateFeature("MindControlFeature", bp => {
-                bp.SetName("Overpowered Ability — Mind Control");
-                bp.SetDescription("You can make any creature fight on your side as if it was your ally. "
+            var MindControlFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"MindControlFeature", bp => {
+                bp.SetName(IsekaiContext, "Overpowered Ability — Mind Control");
+                bp.SetDescription(IsekaiContext, "You can make any creature fight on your side as if it was your ally. "
                     + "It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its ability.\n"
                     + " They will not resist.");
                 bp.m_Icon = Icon_Mind_Control;

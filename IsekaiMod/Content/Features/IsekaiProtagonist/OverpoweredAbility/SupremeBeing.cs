@@ -4,17 +4,20 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.EntitySystem.Stats;
 using UnityEngine;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
+using Kingmaker.Blueprints.Classes;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class SupremeBeing
     {
-        private static readonly Sprite Icon_KiPowerSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("3049386713ff04245a38b32483362551").m_Icon;
+        private static readonly Sprite Icon_KiPowerSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("3049386713ff04245a38b32483362551").m_Icon;
         public static void Add()
         {
-            var SupremeBeing = Helpers.CreateFeature("SupremeBeing", bp => {
-                bp.SetName("Overpowered Ability — Supreme Being");
-                bp.SetDescription("All your attributes have a base value of 30.");
+            var SupremeBeing = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"SupremeBeing", bp => {
+                bp.SetName(IsekaiContext, "Overpowered Ability — Supreme Being");
+                bp.SetDescription(IsekaiContext, "All your attributes have a base value of 30.");
                 bp.m_Icon = Icon_KiPowerSelection;
                 bp.AddComponent<SetBaseStat>(c => {
                     c.Stat = StatType.Strength;

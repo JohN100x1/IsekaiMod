@@ -12,19 +12,22 @@ using Kingmaker.Enums;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Buffs.Components;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
+using HarmonyLib;
 
 namespace IsekaiMod.Content.Heritages
 {
     internal class IsekaiVampireHeritage
     {
-        private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = Resources.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
+        private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = BlueprintTools.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
         public static void Add()
         {
             // Vampire Heritage
-            var Icon_Vampire = AssetLoader.LoadInternal("Heritages", "ICON_VAMPIRE.png");
-            var IsekaiVampireHeritage = Helpers.CreateFeature("IsekaiVampireHeritage", bp => {
-                bp.SetName("Isekai Vampire");
-                bp.SetDescription("Otherworldly entities who are reincarnated into the world of Golarion as a Vampire have both extreme beauty and power. Incredibly beautiful but "
+            var Icon_Vampire = AssetLoader.LoadInternal(IsekaiContext, "Heritages", "ICON_VAMPIRE.png");
+            var IsekaiVampireHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiVampireHeritage", bp => {
+                bp.SetName(IsekaiContext, "Isekai Vampire");
+                bp.SetDescription(IsekaiContext, "Otherworldly entities who are reincarnated into the world of Golarion as a Vampire have both extreme beauty and power. Incredibly beautiful but "
                     + "strikingly grim shades that straddle the line between humanity and vampirekind, they are often single-minded loners intent on a specific goal.\n"
                     + "The Isekai Vampire has a +4 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Charisma}Charisma{/g}, "
                     + "a -2 {g|Encyclopedia:Penalty}penalty{/g} to {g|Encyclopedia:Constitution}Constitution{/g}, and a +2 racial bonus on {g|Encyclopedia:Persuasion}Persuasion{/g} and "
@@ -113,7 +116,7 @@ namespace IsekaiMod.Content.Heritages
             });
 
             // Add to Dhampir Heritage Selection
-            var DhampirHeritageSelection = Resources.GetBlueprint<BlueprintFeatureSelection>("1246f548304a7654c97d8f2e9488e25f");
+            var DhampirHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("1246f548304a7654c97d8f2e9488e25f");
             DhampirHeritageSelection.m_AllFeatures = DhampirHeritageSelection.m_AllFeatures.AddToArray(IsekaiVampireHeritage.ToReference<BlueprintFeatureReference>());
         }
     }

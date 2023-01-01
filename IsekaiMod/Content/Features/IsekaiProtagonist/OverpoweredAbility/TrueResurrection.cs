@@ -1,6 +1,7 @@
 ﻿using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
@@ -14,17 +15,19 @@ using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using UnityEngine;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 {
     class TrueResurrection
     {
-        private static readonly Sprite Icon_Resurrection = Resources.GetBlueprint<BlueprintAbility>("80a1a388ee938aa4e90d427ce9a7a3e9").m_Icon;
+        private static readonly Sprite Icon_Resurrection = BlueprintTools.GetBlueprint<BlueprintAbility>("80a1a388ee938aa4e90d427ce9a7a3e9").m_Icon;
         public static void Add()
         {
-            var TrueResurrectionAbility = Helpers.CreateBlueprint<BlueprintAbility>("TrueResurrectionAbility", bp => {
-                bp.SetName("Overpowered Ability — True Resurrection");
-                bp.SetDescription("Restore life and complete {g|Encyclopedia:Strength}strength{/g} to any deceased creature. Upon completion of this ability, the creature is "
+            var TrueResurrectionAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "TrueResurrectionAbility", bp => {
+                bp.SetName(IsekaiContext, "Overpowered Ability — True Resurrection");
+                bp.SetDescription(IsekaiContext, "Restore life and complete {g|Encyclopedia:Strength}strength{/g} to any deceased creature. Upon completion of this ability, the creature is "
                     + "immediately restored to full {g|Encyclopedia:HP}hit points{/g}, vigor, and {g|Encyclopedia:Healing}health{/g}, with no loss of prepared spells.\n"
                     + "This ability does not require diamonds.");
                 bp.m_Icon = Icon_Resurrection;
@@ -50,12 +53,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.m_IsFullRoundAction = true;
                 bp.AvailableMetamagic = Metamagic.Quicken | Metamagic.Heighten | Metamagic.CompletelyNormal;
-                bp.LocalizedDuration = Helpers.CreateString($"{bp.name}.Duration", "1 round/level");
+                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "1 round/level");
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var TrueResurrectionFeature = Helpers.CreateFeature("TrueResurrectionFeature", bp => {
-                bp.SetName("Overpowered Ability — True Resurrection");
-                bp.SetDescription("As a full action, you can restore life and complete {g|Encyclopedia:Strength}strength{/g} to any deceased creature. Upon completion of this ability, "
+            var TrueResurrectionFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"TrueResurrectionFeature", bp => {
+                bp.SetName(IsekaiContext, "Overpowered Ability — True Resurrection");
+                bp.SetDescription(IsekaiContext, "As a full action, you can restore life and complete {g|Encyclopedia:Strength}strength{/g} to any deceased creature. Upon completion of this ability, "
                     + "the creature is immediately restored to full {g|Encyclopedia:HP}hit points{/g}, vigor, and {g|Encyclopedia:Healing}health{/g}, with no loss of prepared spells.\n"
                     + "This ability does not require diamonds.");
                 bp.m_Icon = Icon_Resurrection;
