@@ -24,6 +24,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.Type = WeaponRangeType.Ranged;
                     c.AdditionalMultiplier = 1;
                 });
+                bp.AddComponent<AttackTypeCriticalMultiplierIncrease>(c => {
+                    c.Type = WeaponRangeType.Touch;
+                    c.AdditionalMultiplier = 1;
+                });
             });
             SpecialPowerSelection.AddToSelection(OmegaStrike);
         }
