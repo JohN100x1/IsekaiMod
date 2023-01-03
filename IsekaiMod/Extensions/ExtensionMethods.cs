@@ -643,5 +643,26 @@ namespace IsekaiMod.Extensions
                 blueprint.AddComponent(newComponent);
             }
         }
+        private static bool Contains(this BlueprintSpellList list, BlueprintAbility spell)
+        {
+            foreach (var level in list.SpellsByLevel)
+            {
+                foreach (var comparespell in level.Spells)
+                {
+                    if (spell.AssetGuid.m_Guid.ToString("N").Equals(comparespell.AssetGuid.m_Guid.ToString("N")))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public static void AddUniqueAbility(this BlueprintSpellList list, int spellLevel, BlueprintAbility spell)
+        {
+            if (!list.Contains(spell))
+            {
+                list.SpellsByLevel[spellLevel].m_Spells.Add(spell.ToReference<BlueprintAbilityReference>());
+            }
+        }
     }
 }
