@@ -50,6 +50,27 @@
     },
     "IsExpanded": true
   },
+  "Archetypes": {
+    "DisableAll": false,
+    "Settings": {
+      "Isekai Kineticist": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Class variation with full Kineticist progression."
+      },
+      "Isekai Tactician": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Class variation with a heavier focus on tactical feats."
+      },
+      "Isekai Sorcerer": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "You wanted a bloodline? Then this is your archetype."
+      }
+    },
+    "IsExpanded": true
+  },
   "Deities": {
     "DisableAll": false,
     "Settings": {

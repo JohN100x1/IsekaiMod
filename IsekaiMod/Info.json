@@ -7,6 +7,22 @@
   "Requirements": [ "TabletopTweaks-Core-0.5.3" ],
   "AssemblyName": "IsekaiMod.dll",
   "EntryMethod": "IsekaiMod.Main.Load",
-  "LoadAfter": [ "ExpandedContent", "MysticalMayhem", "SpellbookMerge" ],
+  "LoadAfter": [
+    "ExpandedContent",
+    "MysticalMayhem",
+    "SpellbookMerge",
+    "TabletopTweaks-Core",
+    "TabletopTweaks-Base",
+    "TabletopTweaks-Reworks",
+    "TomeOfTheFirebird",
+    "AddedFeats",
+    "CharacterOptionsPlus",
+    "DarkCodex",
+    "KineticistElementsExpanded",
+    "MartialExcellence",
+    "MicroscopicContentExpansion",
+    "MysticalMayhem",
+    "SparsSorcerousSundries"
+  ],
   "HomePage": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/398"
 }

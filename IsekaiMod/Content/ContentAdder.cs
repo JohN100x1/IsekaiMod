@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using IsekaiMod.Config;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
 using Kingmaker.Blueprints.JsonSystem;
 
 using TabletopTweaks.Core.Utilities;
@@ -25,6 +26,12 @@ namespace IsekaiMod.Content
                 if (IsekaiContext.AddedContent.Deities.IsEnabled("Isekai Deities")) AddIsekaiDeities();
                 if (IsekaiContext.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
                 if (IsekaiContext.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
+
+                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Kineticist")) IsekaiKineticist.Add();
+                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Kineticist")) IsekaiKineticist.PatchArchetypeIntoKineticistProgression(IsekaiKineticist.Get());
+                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Tactician")) IsekaiTactician.Add();
+                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Sorcerer")) BloodboundProtagonist.Add();
+                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Sorcerer")) BloodboundProtagonist.PatchArchetypeIntoBloodlineSelection(BloodboundProtagonist.Get(), Classes.IsekaiProtagonist.IsekaiProtagonistClass.Get());
             }
 
             public static void AddIsekaiProtagonistClass()

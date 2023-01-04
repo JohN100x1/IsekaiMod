@@ -4037,6 +4037,47 @@
       "SimpleName": "WinterWitchVillain.Description",
       "ProcessTemplates": true,
       "enGB": "When a new winter witch level is gained, the character gains new spells per day as if she had also gained a level in witch or shaman spellcasting class she belonged to before she added the prestige class. Additionally, at 2nd level, and every two level after, a winter witch gets a new hex depending on the chosen spellcasting class."
+    },
+
+    {
+      "Key": "99999999000900010001000000000002",
+      "SimpleName": "IsekaiKineticistArchetype.Name",
+      "ProcessTemplates": true,
+      "enGB": "Kinetic Lord"
+    },
+    {
+      "Key": "99999999000900010001000000000003",
+      "SimpleName": "IsekaiKineticistArchetype.Description",
+      "ProcessTemplates": true,
+      "enGB": "Most Protagonists only occasionally use kinetic blasts when they think they would look cool.\n But you really loved them, and given that there is no other cantrip this overpowered why not?"
+    },
+
+    {
+      "Key": "99999999000900020001000000000002",
+      "SimpleName": "IsekaiTacticianArchetype.Name",
+      "ProcessTemplates": true,
+      "enGB": "Isekai Tactician"
+    },
+    {
+      "Key": "99999999000900020001000000000003",
+      "SimpleName": "IsekaiTacticianArchetype.Description",
+      "ProcessTemplates": true,
+      "enGB": "You are used to telling people what to do. \nYou were the tactician that lead your guild to first kill Onyxia. \nThis, as far as you are concerned, is just another raid to conquer with your brilliant tactics and perfect preparation..."
+    },
+
+    {
+      "Key": "99999999000900030001000000000002",
+      "SimpleName": "IsekaiSorcererArchetype.Name",
+      "ProcessTemplates": true,
+      "enGB": "Isekaied Sorcerer"
+    },
+    {
+      "Key": "99999999000900030001000000000003",
+      "SimpleName": "IsekaiSorcererArchetype.Description",
+      "ProcessTemplates": true,
+      "enGB": "When god asked you what you wanted the most as a starting cheat you immediatly knew what to ask for.\nAn epic bloodline worthy of the new you! \nI hope it is all you wished for."
     }
+
+
   ]
 }

@@ -1,4 +1,5 @@
-﻿using IsekaiMod.Extensions;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
+using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -118,6 +119,17 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, CorruptAuraFeature, SpecialPowerSelection, IsekaiChannelPositiveEnergyFeature, IsekaiChannelNegativeEnergyFeature, ArmorSaint, AuraOfDivineFuryFeature),
                 Helpers.CreateUIGroup(PlotArmor, CripplingStrike, DispellingAttack, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation, SecondFormFeature, HerosPresenceFeature),
                 Helpers.CreateUIGroup(IsekaiPetSelection, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, VillainQuickFooted),
+                //Kinetic groups
+                Helpers.CreateUIGroup(IsekaiKineticist.KineticInfusionSelection, BlueprintTools.GetBlueprint<BlueprintFeature>("5f64f446aef387d499a396b626d5fc51")),
+                Helpers.CreateUIGroup(IsekaiKineticist.KineticMetakinesisEmpower,IsekaiKineticist.KineticMetakinesisMaster,IsekaiKineticist.KineticMetakinesisMaximize,IsekaiKineticist.KineticMetakinesisQuicken),
+                Helpers.CreateUIGroup(IsekaiKineticist.KineticSuperCharge, IsekaiKineticist.KineticOverflowBonusFeature),
+                Helpers.CreateUIGroup(IsekaiKineticist.KineticCompBlastSpec,IsekaiKineticist.KineticThirdElementSelection,IsekaiKineticist.KineticSecElementSelection, IsekaiKineticist.KineticFocusSelection),
+                //Tactician
+                Helpers.CreateUIGroup(IsekaiTactician.SummonTactics,IsekaiTactician.SoloTactics,IsekaiTactician.Teamwork,IsekaiTactician.AnimalTeamwork, IsekaiTactician.ForesterTactics),
+                //Sorcerer
+                Helpers.CreateUIGroup(BloodboundProtagonist.BloodlineSelection,BloodboundProtagonist.FeatSelection),
+
+
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
                 HeroProficiencies.ToReference<BlueprintFeatureBaseReference>(),

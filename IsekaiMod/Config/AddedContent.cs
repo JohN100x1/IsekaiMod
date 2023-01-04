@@ -11,6 +11,7 @@ namespace IsekaiMod.Config
         public SettingGroup Backgrounds = new SettingGroup();
         public SettingGroup Classes = new SettingGroup();
         public SettingGroup Deities = new SettingGroup();
+        public SettingGroup Archetypes = new SettingGroup();
 
         public void Init() {
         }
@@ -24,6 +25,7 @@ namespace IsekaiMod.Config
             Classes.LoadSettingGroup(loadedSettings.Classes, NewSettingsOffByDefault);
             Deities.LoadSettingGroup(loadedSettings.Deities, NewSettingsOffByDefault);
             Feats.LoadSettingGroup(loadedSettings.Feats, NewSettingsOffByDefault);
+            Archetypes.LoadSettingGroup(loadedSettings.Archetypes, NewSettingsOffByDefault);
         }
     }
 }

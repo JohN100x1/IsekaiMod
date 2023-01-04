@@ -33,6 +33,7 @@ namespace IsekaiMod
                 SetttingUI.SettingGroup("Heritages", TabLevel, AddedContent.Heritages);
                 SetttingUI.SettingGroup("Backgrounds", TabLevel, AddedContent.Backgrounds);
                 SetttingUI.SettingGroup("Deities", TabLevel, AddedContent.Deities);
+                SetttingUI.SettingGroup("Archetypes", TabLevel, AddedContent.Archetypes);
             }
             UI.Toggle("Exclude Companions and Mercenaries from having the Isekai Protagonist Class (Requires Restart)", ref AddedContent.ExcludeCompanionsFromIsekaiClass);
         }
