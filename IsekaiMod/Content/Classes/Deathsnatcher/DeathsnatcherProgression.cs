@@ -22,7 +22,6 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
 
             var DeathsnatcherPoisonSting = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherPoisonSting");
             var DeathsnatcherResistances = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherResistances");
-            var DeathsnatcherHiddenFacts = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherHiddenFacts");
             var DeathsnatcherFastHealing = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherFastHealing");
             var DeathsnatcherSizeBabyFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherSizeBabyFeature");
             var DeathsnatcherCommandUndeadFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherCommandUndeadFeature");
@@ -74,7 +73,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     }
                 };
                 bp.LevelEntries = new LevelEntry[] {
-                    Helpers.LevelEntry(1, DeathsnatcherResistances, DeathsnatcherHiddenFacts, DeathsnatcherCommandUndeadFeature, DeathsnatcherSizeBabyFeature),
+                    Helpers.LevelEntry(1, DeathsnatcherResistances, DeathsnatcherCommandUndeadFeature, DeathsnatcherSizeBabyFeature),
                     Helpers.LevelEntry(2, Evasion),
                     Helpers.LevelEntry(4, Pounce),
                     Helpers.LevelEntry(7, DeathsnatcherAnimateDeadFeature),
