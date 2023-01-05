@@ -4069,13 +4069,91 @@
       "Key": "99999999000900030001000000000002",
       "SimpleName": "IsekaiSorcererArchetype.Name",
       "ProcessTemplates": true,
-      "enGB": "Isekaied Sorcerer"
+      "enGB": "Chimera"
     },
     {
       "Key": "99999999000900030001000000000003",
       "SimpleName": "IsekaiSorcererArchetype.Description",
       "ProcessTemplates": true,
-      "enGB": "When god asked you what you wanted the most as a starting cheat you immediatly knew what to ask for.\nAn epic bloodline worthy of the new you! \nI hope it is all you wished for."
+      "enGB": "Their otherworldly knowledge and point of view allows Chimeras to imbue themselves with different bloodlines in order to gain power and strength. \nThe Chimera is constantly seeking out new sources of power, and their ability to absorb and incorporate these different bloodlines allows them to become truly formidable foes. \nHowever, their constant experimentation with bloodlines can also lead to confusion and uncertainty about their own heritage and identity, as their original ancestry becomes harder to discern over time."
+    },
+
+    {
+      "Key": "99999999000900030004000000000002",
+      "SimpleName": "IsekaiBloodlineSelection.Name",
+      "ProcessTemplates": true,
+      "enGB": "Extra Bloodline"
+    },
+    {
+      "Key": "99999999000900030004000000000003",
+      "SimpleName": "IsekaiBloodlineSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "You can pick additional bloodlines as your chimera blood becomes stronger."
+    },
+
+    {
+      "Key": "99999999000900030004000000000002",
+      "SimpleName": "IsekaiSorcererSelection.Name",
+      "ProcessTemplates": true,
+      "enGB": "Bloodline Evolution"
+    },
+    {
+      "Key": "99999999000900030004000000000003",
+      "SimpleName": "IsekaiSorcererSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "As your chimera blood evolves you can pick a new bloodline feat or a new bloodline."
+    },
+
+    {
+      "Key": "99999999000900040001000000000002",
+      "SimpleName": "IsekaiOracleArchetype.Name",
+      "ProcessTemplates": true,
+      "enGB": "Seeker of Truth"
+    },
+    {
+      "Key": "99999999000900040001000000000003",
+      "SimpleName": "IsekaiOracleArchetype.Description",
+      "ProcessTemplates": true,
+      "enGB": "Seekers of Truth are driven by a desire to uncover the secrets behind the fundamental forces of nature. \nBecause of their unique perspective as otherworlders, they are able to approach the world with a fresh and unbiased eye, allowing them to see beyond the surface of things and seek out the deeper truth behind the world around them. \nThey are driven by a desire to uncover the secrets of the world that would otherwise remain hidden, and are not satisfied with simply accepting things at face value. \nThis allows them to uncover the secrets of the world that are often only revealed to mortals through revelations."
+    },
+
+    {
+      "Key": "99999999000900040002000000000002",
+      "SimpleName": "IsekaiOracleSelection.Name",
+      "ProcessTemplates": true,
+      "enGB": "Divine Inheritance"
+    },
+    {
+      "Key": "99999999000900040002000000000003",
+      "SimpleName": "IsekaiOracleSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "As you get closer and closer to the truth of divinity you gain a new Mystery, Revelation, or perhaps a curse from a jealous god?"
+    },
+
+    {
+      "Key": "99999999000900040003000000000002",
+      "SimpleName": "IsekaiOracleCurseSelection.Name",
+      "ProcessTemplates": true,
+      "enGB": "Divine Curse"
+    },
+    {
+      "Key": "99999999000900040003000000000003",
+      "SimpleName": "IsekaiOracleCurseSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "Gain a curse, but some curses are blessings in disguise."
+    },
+
+    {
+      "Key": "99999999000900040004000000000002",
+      "SimpleName": "IsekaiOracleMysterySelection.Name",
+      "ProcessTemplates": true,
+      "enGB": "Divine Mystery"
+    },
+    {
+      "Key": "99999999000900040004000000000003",
+      "SimpleName": "IsekaiOracleMysterySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "Master another part of reality..."
     }
 
 

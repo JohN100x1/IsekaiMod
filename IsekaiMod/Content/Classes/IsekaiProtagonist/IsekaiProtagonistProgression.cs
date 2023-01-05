@@ -127,7 +127,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 //Tactician
                 Helpers.CreateUIGroup(IsekaiTactician.SummonTactics,IsekaiTactician.SoloTactics,IsekaiTactician.Teamwork,IsekaiTactician.AnimalTeamwork, IsekaiTactician.ForesterTactics),
                 //Sorcerer
-                Helpers.CreateUIGroup(BloodboundProtagonist.BloodlineSelection,BloodboundProtagonist.FeatSelection),
+                Helpers.CreateUIGroup(BloodboundProtagonist.BloodlineSelection,ExtraBloodlineSelection.Get()),
+                //Oracle
+                Helpers.CreateUIGroup(ExtraOracleSelection.Get()),
 
 
             };

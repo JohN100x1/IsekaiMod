@@ -67,6 +67,11 @@
         "Enabled": true,
         "Homebrew": true,
         "Description": "You wanted a bloodline? Then this is your archetype."
+      },
+      "Isekai Oracle": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Now with divine Mysteries."
       }
     },
     "IsExpanded": true

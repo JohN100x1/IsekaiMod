@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using IsekaiMod.Config;
 using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
+using IsekaiMod.Content.Features.IsekaiProtagonist;
 using Kingmaker.Blueprints.JsonSystem;
 
 using TabletopTweaks.Core.Utilities;
@@ -30,8 +31,13 @@ namespace IsekaiMod.Content
                 if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Kineticist")) IsekaiKineticist.Add();
                 if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Kineticist")) IsekaiKineticist.PatchArchetypeIntoKineticistProgression(IsekaiKineticist.Get());
                 if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Tactician")) IsekaiTactician.Add();
+                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Sorcerer")) ArcanaSelection.Configure();
                 if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Sorcerer")) BloodboundProtagonist.Add();
                 if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Sorcerer")) BloodboundProtagonist.PatchArchetypeIntoBloodlineSelection(BloodboundProtagonist.Get(), Classes.IsekaiProtagonist.IsekaiProtagonistClass.Get());
+
+                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Oracle")) CursedProtagonist.Configure();
+                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Oracle")) CursedProtagonist.PatchArchetypeIntoOracleSelection(CursedProtagonist.Get(), Classes.IsekaiProtagonist.IsekaiProtagonistClass.Get());
+
             }
 
             public static void AddIsekaiProtagonistClass()
