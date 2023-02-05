@@ -25,7 +25,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
         {
             // Mighty Summoning
             var Icon_ExceptionalSummoning = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_EXCEPTIONAL_SUMMONING.png");
-            var MightySummoningSummonBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "MightySummoningSummonBuff", bp => {
+            var MightySummoningSummonBuff = ThingsNotHandledByTTTCore.CreateBuff("MightySummoningSummonBuff", bp => {
                 bp.SetName(IsekaiContext, "Mighty Summon");
                 bp.SetDescription(IsekaiContext, "This creature gets a +5 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, and AC per character level.");
                 bp.m_Icon = Icon_ExceptionalSummoning;
@@ -59,7 +59,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.m_Progression = ContextRankProgression.AsIs;
                 });
             });
-            var MightySummoningBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "MightySummoningBuff", bp => {
+            var MightySummoningBuff = ThingsNotHandledByTTTCore.CreateBuff("MightySummoningBuff", bp => {
                 bp.SetName(IsekaiContext, "Mighty Summoning");
                 bp.m_Description = new LocalizedString();
                 bp.m_Icon = Icon_ExceptionalSummoning;
@@ -89,7 +89,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
             });
 
             // Magical Summoning
-            var MagicalSummoningSummonBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "MagicalSummoningSummonBuff", bp => {
+            var MagicalSummoningSummonBuff = ThingsNotHandledByTTTCore.CreateBuff("MagicalSummoningSummonBuff", bp => {
                 bp.SetName(IsekaiContext, "Magical Summon");
                 bp.SetDescription(IsekaiContext, "This creature gets a +5 bonus to maximum Hit Points per character level and a +1 bonus to spell penetration, spell DC, spell damage, "
                     + "and saving throws per character level.");
@@ -136,7 +136,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.m_Progression = ContextRankProgression.AsIs;
                 });
             });
-            var MagicalSummoningBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "MagicalSummoningBuff", bp => {
+            var MagicalSummoningBuff = ThingsNotHandledByTTTCore.CreateBuff("MagicalSummoningBuff", bp => {
                 bp.SetName(IsekaiContext, "Magical Summoning");
                 bp.m_Description = new LocalizedString();
                 bp.m_Icon = Icon_ExceptionalSummoning;
@@ -169,7 +169,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
 
             // Forbidden Summoning
             var Icon_ForbiddenSummoning = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_FORBIDDEN_SUMMONING.png");
-            var ForbiddenSummoningSummonBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "ForbiddenSummoningSummonBuff", bp => {
+            var ForbiddenSummoningSummonBuff = ThingsNotHandledByTTTCore.CreateBuff("ForbiddenSummoningSummonBuff", bp => {
                 bp.SetName(IsekaiContext, "Forbidden Summon");
                 bp.SetDescription(IsekaiContext, "This creature gains a +10 bonus to maximum Hit Points per character level and a +1 bonus to all attributes per character level.");
                 bp.m_Icon = Icon_ForbiddenSummoning;
@@ -215,7 +215,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.m_Progression = ContextRankProgression.AsIs;
                 });
             });
-            var ForbiddenSummoningBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "ForbiddenSummoningBuff", bp => {
+            var ForbiddenSummoningBuff = ThingsNotHandledByTTTCore.CreateBuff("ForbiddenSummoningBuff", bp => {
                 bp.SetName(IsekaiContext, "Forbidden Summoning");
                 bp.m_Description = new LocalizedString();
                 bp.m_Icon = Icon_ForbiddenSummoning;
@@ -254,7 +254,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
 
             // Ferocious Summoning
             var Icon_FerociousSummoning = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_FEROCIOUS_SUMMONING.png");
-            var FerociousSummoningSummonBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "FerociousSummoningSummonBuff", bp => {
+            var FerociousSummoningSummonBuff = ThingsNotHandledByTTTCore.CreateBuff("FerociousSummoningSummonBuff", bp => {
                 bp.SetName(IsekaiContext, "Ferocious Summon");
                 bp.SetDescription(IsekaiContext, "This creature has 2 additional attacks and gains a +10 bonus to speed. It also gains 1d6 sneak attack per character level.");
                 bp.m_Icon = Icon_FerociousSummoning;
@@ -278,7 +278,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                     c.m_Progression = ContextRankProgression.AsIs;
                 });
             });
-            var FerociousSummoningBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "FerociousSummoningBuff", bp => {
+            var FerociousSummoningBuff = ThingsNotHandledByTTTCore.CreateBuff("FerociousSummoningBuff", bp => {
                 bp.SetName(IsekaiContext, "Ferocious Summoning");
                 bp.m_Description = new LocalizedString();
                 bp.m_Icon = Icon_FerociousSummoning;

@@ -24,7 +24,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
         private static readonly Sprite Icon_AngelBladeOfTheSun = BlueprintTools.GetBlueprint<BlueprintAbility>("cc8be337fff61284caabe3340fc48294").m_Icon;
         public static void Add()
         {
-            var AuraOfDivineFuryBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "AuraOfDivineFuryBuff", bp => {
+            var AuraOfDivineFuryBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfDivineFuryBuff", bp => {
                 bp.SetName(IsekaiContext, "Aura of Divine Fury");
                 bp.SetDescription(IsekaiContext, "This creature has a +10 sacred bonus to attack damage and hit point damage from spells.");
                 bp.IsClassFeature = true;
@@ -45,7 +45,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(AuraOfDivineFuryBuff.ToReference<BlueprintBuffReference>()));
             });
-            var AuraOfDivineFuryAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "AuraOfDivineFuryAreaBuff", bp => {
+            var AuraOfDivineFuryAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfDivineFuryAreaBuff", bp => {
                 bp.SetName(IsekaiContext, "Aura of Divine Fury");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells.");
                 bp.m_Icon = Icon_AngelBladeOfTheSun;

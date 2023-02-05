@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
         public static void Add()
         {
             var Icon_Corrupt_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_CORRUPT_AURA.png");
-            var CorruptAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "CorruptAuraBuff", bp => {
+            var CorruptAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("CorruptAuraBuff", bp => {
                 bp.SetName(IsekaiContext, "Corrupt Aura");
                 bp.SetDescription(IsekaiContext, "This character has a +4 profane bonus to attack, damage, AC and saving throws. "
                     + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
@@ -73,7 +73,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(CorruptAuraBuff.ToReference<BlueprintBuffReference>()));
             });
-            var CorruptAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "CorruptAuraAreaBuff", bp => {
+            var CorruptAuraAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("CorruptAuraAreaBuff", bp => {
                 bp.SetName(IsekaiContext, "Corrupt Aura");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of the Villain has a +4 profane bonus to attack, damage, AC and saving throws. "
                     + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");

@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
         public static void Add()
         {
             var Icon_Friendly_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_FRIENDLY_AURA.png");
-            var FriendlyAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "FriendlyAuraBuff", bp => {
+            var FriendlyAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("FriendlyAuraBuff", bp => {
                 bp.SetName(IsekaiContext, "Friendly Aura");
                 bp.SetDescription(IsekaiContext, "This creature has a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.");
                 bp.IsClassFeature = true;
@@ -40,7 +40,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(FriendlyAuraBuff.ToReference<BlueprintBuffReference>()));
             });
-            var FriendlyAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "FriendlyAuraAreaBuff", bp => {
+            var FriendlyAuraAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("FriendlyAuraAreaBuff", bp => {
                 bp.SetName(IsekaiContext, "Friendly Aura");
                 bp.SetDescription(IsekaiContext, "Enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.");
                 bp.m_Icon = Icon_Friendly_Aura;

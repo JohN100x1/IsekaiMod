@@ -56,7 +56,7 @@ namespace IsekaiMod.Content.Features
                 bp.WeightInGroup = 1;
             });
 
-            var DevilWingsBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "DevilWingsBuff", bp => {
+            var DevilWingsBuff = ThingsNotHandledByTTTCore.CreateBuff("DevilWingsBuff", bp => {
                 bp.SetName(IsekaiContext, "Wings");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;

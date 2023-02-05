@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
         {
             var Icon_SecondForm = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SECOND_FORM.png");
             var Icon_SecondFormInactive = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SECOND_FORM_INACTIVE.png");
-            var SecondFormBuffEffect = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "SecondFormBuffEffect", bp => {
+            var SecondFormBuffEffect = ThingsNotHandledByTTTCore.CreateBuff("SecondFormBuffEffect", bp => {
                 bp.SetName(IsekaiContext, "Second Form");
                 bp.SetDescription(IsekaiContext, "You gain a +10 profane bonus to all attributes and your size increases by one size category for 24 hours.");
                 bp.m_Icon = Icon_SecondForm;
@@ -81,14 +81,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                 });
                 bp.Stacking = StackingType.Replace;
             });
-            var SecondFormBuffTrigger = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "SecondFormBuffTrigger", bp => {
+            var SecondFormBuffTrigger = ThingsNotHandledByTTTCore.CreateBuff("SecondFormBuffTrigger", bp => {
                 bp.SetName(IsekaiContext, "Second Form Trigger");
                 bp.SetDescription(IsekaiContext, "");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
             });
-            var SecondFormBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "SecondFormBuff", bp => {
+            var SecondFormBuff = ThingsNotHandledByTTTCore.CreateBuff("SecondFormBuff", bp => {
                 bp.SetName(IsekaiContext, "Second Form");
                 bp.SetDescription(IsekaiContext, "Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain. "
                     + "You also gain a +10 profane bonus to all attributes and your size also increases by one size category for 24 hours.");

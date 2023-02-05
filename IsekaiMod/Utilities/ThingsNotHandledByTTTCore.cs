@@ -17,6 +17,10 @@ using static IsekaiMod.Main;
 using static UnityModManagerNet.UnityModManager;
 using System.Collections.Generic;
 using Kingmaker.Localization;
+using Kingmaker.Utility;
+using System.Linq;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.ResourceLinks;
 
 namespace IsekaiMod.Utilities {
     //Classname is a partial lie, some are just not handled well *coughs*
@@ -53,6 +57,14 @@ namespace IsekaiMod.Utilities {
         public static T[] AddToFirst<T>(T[] array, T itemToBeAdded) {
             // TODO: probably should check if item is already added here too but blueprints and blueprintreferences would require separate methods with different checks so leave it for a step 2
             var len = array.Length;
+//            if (itemToBeAdded is BlueprintFeature blueprintToBeAdded) {
+//                if (array.Contains(itemToBeAdded)) {
+//                    array.RemoveFromArray(itemToBeAdded);
+//                }
+//            }
+            if (array.Contains(itemToBeAdded)) {
+                array.RemoveFromArray(itemToBeAdded);
+            }
             var result = new T[len + 1];
             Array.Copy(array, 0, result, 1, len);
             result[0] = itemToBeAdded;
@@ -82,6 +94,17 @@ namespace IsekaiMod.Utilities {
             init?.Invoke(result);
             return result;
         }
+
+        public static BlueprintBuff CreateBuff(String name, Action<BlueprintBuff> init = null) {
+            var result = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, name, bp => {
+                bp.FxOnStart = new PrefabLink();
+                bp.FxOnRemove = new PrefabLink();
+            });
+            init?.Invoke(result);
+            return result;
+        }
+
+
 
 
         private static Boolean listContainsSpell(BlueprintSpellList list, BlueprintAbility spell) {

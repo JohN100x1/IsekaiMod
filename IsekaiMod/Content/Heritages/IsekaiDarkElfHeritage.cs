@@ -64,7 +64,7 @@ namespace IsekaiMod.Content.Heritages
                 bp.BaseValue = 10;
                 bp.OperationOnComponents = BlueprintUnitProperty.MathOperation.Sum;
             });
-            var DrowPoisonBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "DrowPoisonBuff", bp => {
+            var DrowPoisonBuff = ThingsNotHandledByTTTCore.CreateBuff("DrowPoisonBuff", bp => {
                 bp.SetName(IsekaiContext, "Drow Poison");
                 bp.SetDescription(IsekaiContext, "Drow Poison causes their target to become unconsious on a failed fortitude save.");
                 bp.m_Icon = Icon_AcidBomb;

@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         private static readonly Sprite Icon_ExtendSpell = BlueprintTools.GetBlueprint<BlueprintFeature>("f180e72e4a9cbaa4da8be9bc958132ef").m_Icon;
         public static void Add()
         {
-            var AutoExtendBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "AutoExtendBuff", bp => {
+            var AutoExtendBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoExtendBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Extend");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes extended, as though using the Extend Spell feat.");
                 bp.m_Icon = Icon_ExtendSpell;

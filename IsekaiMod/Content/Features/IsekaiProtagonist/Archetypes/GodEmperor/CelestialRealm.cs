@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
         public static void Add()
         {
             var Icon_CelestialRealm = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_CELESTIAL_REALM.png");
-            var CelestialRealmBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "CelestialRealmBuff", bp => {
+            var CelestialRealmBuff = ThingsNotHandledByTTTCore.CreateBuff("CelestialRealmBuff", bp => {
                 bp.SetName(IsekaiContext, "Celestial Realm");
                 bp.SetDescription(IsekaiContext, "This character transforms their damage type into divine.");
                 bp.IsClassFeature = true;
@@ -43,7 +43,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(CelestialRealmBuff.ToReference<BlueprintBuffReference>()));
             });
-            var CelestialRealmAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "CelestialRealmAreaBuff", bp => {
+            var CelestialRealmAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("CelestialRealmAreaBuff", bp => {
                 bp.SetName(IsekaiContext, "Celestial Realm");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of you transform their damage type into divine.");
                 bp.m_Icon = Icon_CelestialRealm;

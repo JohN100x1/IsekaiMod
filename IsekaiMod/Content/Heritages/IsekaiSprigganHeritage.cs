@@ -24,7 +24,7 @@ namespace IsekaiMod.Content.Heritages
         {
             // Spriggan Abilities
             var Icon_Spriggan = AssetLoader.LoadInternal(IsekaiContext, "Heritages", "ICON_SPRIGGAN.png");
-            var SizeAlterationBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "SizeAlterationBuff", bp => {
+            var SizeAlterationBuff = ThingsNotHandledByTTTCore.CreateBuff("SizeAlterationBuff", bp => {
                 bp.SetName(IsekaiContext, "Size Alteration");
                 bp.SetDescription(IsekaiContext, "This creature's size is increased by two size categories and they gain +10 Speed, +12 Strength, -2 Dexterity, +6 Constitution, and a -2 penalty to AC.");
                 bp.m_Icon = Icon_Spriggan;

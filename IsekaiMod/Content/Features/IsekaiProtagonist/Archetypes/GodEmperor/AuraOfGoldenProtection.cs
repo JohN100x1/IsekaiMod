@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
         public static void Add()
         {
             var Icon_AuraOfGoldenProtection = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_GOLDEN_PROTECTION.png");
-            var AuraOfGoldenProtectionBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "AuraOfGoldenProtectionBuff", bp => {
+            var AuraOfGoldenProtectionBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfGoldenProtectionBuff", bp => {
                 bp.SetName(IsekaiContext, "Aura of Golden Protection");
                 bp.SetDescription(IsekaiContext, "This character has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.");
                 bp.IsClassFeature = true;
@@ -60,7 +60,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(AuraOfGoldenProtectionBuff.ToReference<BlueprintBuffReference>()));
             });
-            var AuraOfGoldenProtectionAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "AuraOfGoldenProtectionAreaBuff", bp => {
+            var AuraOfGoldenProtectionAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfGoldenProtectionAreaBuff", bp => {
                 bp.SetName(IsekaiContext, "Aura of Golden Protection");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.");
                 bp.m_Icon = Icon_AuraOfGoldenProtection;

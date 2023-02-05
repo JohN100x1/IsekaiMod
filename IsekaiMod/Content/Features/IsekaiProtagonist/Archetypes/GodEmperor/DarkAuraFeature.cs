@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
         public static void Add()
         {
             var Icon_Dark_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_DARK_AURA.png");
-            var DarkAuraBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "DarkAuraBuff", bp => {
+            var DarkAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("DarkAuraBuff", bp => {
                 bp.SetName(IsekaiContext, "Dark Aura");
                 bp.SetDescription(IsekaiContext, "This creature has a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.IsClassFeature = true;
@@ -60,7 +60,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(DarkAuraBuff.ToReference<BlueprintBuffReference>()));
             });
-            var DarkAuraAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "DarkAuraAreaBuff", bp => {
+            var DarkAuraAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("DarkAuraAreaBuff", bp => {
                 bp.SetName(IsekaiContext, "Dark Aura");
                 bp.SetDescription(IsekaiContext, "Enemies within 40 feet take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.m_Icon = Icon_Dark_Aura;

@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         private static readonly Sprite Icon_TrickFate = BlueprintTools.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
         public static void Add()
         {
-            var PerfectRollBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "PerfectRollBuff", bp => {
+            var PerfectRollBuff = ThingsNotHandledByTTTCore.CreateBuff("PerfectRollBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Perfect Roll");
                 bp.SetDescription(IsekaiContext, "This character always {g|Encyclopedia:Dice}rolls{/g} 20 on all d20 rolls.");
                 bp.m_Icon = Icon_TrickFate;

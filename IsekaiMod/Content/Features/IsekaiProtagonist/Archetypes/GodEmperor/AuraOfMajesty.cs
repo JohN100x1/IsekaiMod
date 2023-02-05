@@ -23,7 +23,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
         public static void Add()
         {
             var Icon_AuraOfMajesty = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_MAJESTY.png");
-            var AuraOfMajestyBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "AuraOfMajestyBuff", bp => {
+            var AuraOfMajestyBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfMajestyBuff", bp => {
                 bp.SetName(IsekaiContext, "Aura of Majesty");
                 bp.SetDescription(IsekaiContext, "This character has a sacred bonus to all attributes equal to 1/2 the God Emperor's character level.");
                 bp.IsClassFeature = true;
@@ -74,7 +74,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(AuraOfMajestyBuff.ToReference<BlueprintBuffReference>()));
             });
-            var AuraOfMajestyAreaBuff = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, "AuraOfMajestyAreaBuff", bp => {
+            var AuraOfMajestyAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfMajestyAreaBuff", bp => {
                 bp.SetName(IsekaiContext, "Aura of Majesty");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of the God Emperor gain a sacred bonus to all attributes equal to 1/2 the God Emperor's character level.");
                 bp.m_Icon = Icon_AuraOfMajesty;
