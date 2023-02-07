@@ -1,4 +1,6 @@
-﻿using IsekaiMod.Extensions;
+﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
+using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
+using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
@@ -17,9 +19,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             // Archetype features
             var HeroProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HeroProficiencies");
             var GracefulCombat = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GracefulCombat");
-            var TrueSmiteFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteFeature");
-            var TrueSmiteAdditionalUse = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteAdditionalUse");
-            var TrueMarkFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueMarkFeature");
             var HerosPresenceFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HerosPresenceFeature");
             var IsekaiChannelPositiveEnergyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelPositiveEnergyFeature");
             var AuraOfDivineFuryFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfDivineFuryFeature");
@@ -27,7 +26,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
 
             // Removed features
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
-            var SneakAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
             var OverpoweredAbilitySelection2 = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2");
             var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
@@ -42,31 +40,18 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.IsArcaneCaster = true;
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, SneakAttack),
-                    Helpers.CreateLevelEntry(3, SneakAttack, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(5, SneakAttack),
-                    Helpers.CreateLevelEntry(7, SneakAttack),
-                    Helpers.CreateLevelEntry(9, SneakAttack),
+                    Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, LegacySelection.getClassFeature()),
+                    Helpers.CreateLevelEntry(3, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(10, OverpoweredAbilitySelection2),
-                    Helpers.CreateLevelEntry(11, SneakAttack),
-                    Helpers.CreateLevelEntry(13, SneakAttack),
-                    Helpers.CreateLevelEntry(15, SneakAttack),
-                    Helpers.CreateLevelEntry(17, SneakAttack, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(19, SneakAttack),
+                    Helpers.CreateLevelEntry(17,  SpecialPowerSelection),
                     Helpers.CreateLevelEntry(20, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, HeroProficiencies, GracefulCombat),
-                    Helpers.CreateLevelEntry(2, TrueSmiteFeature),
+                    Helpers.CreateLevelEntry(1, HeroProficiencies, GracefulCombat, HeroLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(3, IsekaiChannelPositiveEnergyFeature),
-                    Helpers.CreateLevelEntry(4, TrueSmiteAdditionalUse),
-                    Helpers.CreateLevelEntry(7, TrueSmiteAdditionalUse),
-                    Helpers.CreateLevelEntry(10, AuraOfDivineFuryFeature, TrueSmiteAdditionalUse),
-                    Helpers.CreateLevelEntry(11, TrueMarkFeature),
-                    Helpers.CreateLevelEntry(13, TrueSmiteAdditionalUse),
-                    Helpers.CreateLevelEntry(16, TrueSmiteAdditionalUse),
+                    Helpers.CreateLevelEntry(10, AuraOfDivineFuryFeature),
+                    
                     Helpers.CreateLevelEntry(17, CelestialRealmFeature),
-                    Helpers.CreateLevelEntry(19, TrueSmiteAdditionalUse),
                     Helpers.CreateLevelEntry(20, HerosPresenceFeature),
                 };
                 bp.AddComponent<PrerequisiteAlignment>(c => {

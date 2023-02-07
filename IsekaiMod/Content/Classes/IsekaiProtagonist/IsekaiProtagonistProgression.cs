@@ -1,4 +1,8 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
@@ -22,14 +26,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
             var IsekaiProtagonistCantripsFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistCantripsFeature");
             var IsekaiProtagonistBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiProtagonistBonusFeatSelection");
-            var SneakAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
             var PlotArmor = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "PlotArmor");
             var StartingWeaponSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "StartingWeaponSelection");
             var SummonHaremFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SummonHaremFeature");
-            var UncannyDodge = BlueprintTools.GetBlueprint<BlueprintFeature>("3c08d842e802c3e4eb19d15496145709");
-            var ImprovedUncannyDodge = BlueprintTools.GetBlueprint<BlueprintFeature>("485a18c05792521459c7d06c63128c79");
-            var Evasion = BlueprintTools.GetBlueprint<BlueprintFeature>("576933720c440aa4d8d42b0c54b77e80");
-            var ImprovedEvasion = BlueprintTools.GetBlueprint<BlueprintFeature>("ce96af454a6137d47b9c6a1e02e66803");
             var OtherworldlyStamina = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OtherworldlyStamina");
             var SignatureMoveSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureMoveSelection");
             var IsekaiFighterTraining = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiFighterTraining");
@@ -55,14 +54,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             var SlayerStudyTargetFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("09bdd9445ac38044389476689ae8d5a1");
             var SlayerSwiftStudyTargetFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("40d4f55a5ac0e4f469d67d36c0dfc40b");
             var ExtraStrike = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ExtraStrike");
-            var CripplingStrike = BlueprintTools.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
-            var DispellingAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
             var CorruptAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CorruptAuraFeature");
             var SecondFormFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondFormFeature");
             var GracefulCombat = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GracefulCombat");
-            var TrueSmiteFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteFeature");
-            var TrueSmiteAdditionalUse = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteAdditionalUse");
-            var TrueMarkFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueMarkFeature");
             var HerosPresenceFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HerosPresenceFeature");
             var IsekaiChannelPositiveEnergyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelPositiveEnergyFeature");
             var IsekaiChannelNegativeEnergyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelNegativeEnergyFeature");
@@ -89,48 +83,40 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 };
             });
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
-                Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, SneakAttack, OverpoweredAbilitySelection, PlotArmor, StartingWeaponSelection, IsekaiPetSelection),
-                Helpers.CreateLevelEntry(2, IsekaiProtagonistBonusFeatSelection, UncannyDodge),
-                Helpers.CreateLevelEntry(3, SneakAttack, IsekaiFighterTraining, Evasion, SpecialPowerSelection),
+                Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, PlotArmor, StartingWeaponSelection, IsekaiPetSelection, LegacySelection.getClassFeature()),
+                Helpers.CreateLevelEntry(2, IsekaiProtagonistBonusFeatSelection),
+                Helpers.CreateLevelEntry(3, IsekaiFighterTraining, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(4, IsekaiProtagonistBonusFeatSelection),
-                Helpers.CreateLevelEntry(5, SneakAttack, OverpoweredAbilitySelection2, ImprovedUncannyDodge),
+                Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection2),
                 Helpers.CreateLevelEntry(6, IsekaiProtagonistBonusFeatSelection, SignatureMoveSelection),
-                Helpers.CreateLevelEntry(7, SneakAttack, SpecialPowerSelection),
+                Helpers.CreateLevelEntry(7, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(8, IsekaiProtagonistBonusFeatSelection, IsekaiFastMovement),
-                Helpers.CreateLevelEntry(9, SneakAttack, SpecialPowerSelection, FriendlyAuraFeature),
-                Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2, ImprovedEvasion),
-                Helpers.CreateLevelEntry(11, SneakAttack, SpecialPowerSelection),
+                Helpers.CreateLevelEntry(9, SpecialPowerSelection, FriendlyAuraFeature),
+                Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2),
+                Helpers.CreateLevelEntry(11, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(12, IsekaiProtagonistBonusFeatSelection, BeachEpisodeSelection),
-                Helpers.CreateLevelEntry(13, SneakAttack, SpecialPowerSelection),
+                Helpers.CreateLevelEntry(13, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(14, IsekaiProtagonistBonusFeatSelection),
-                Helpers.CreateLevelEntry(15, SneakAttack, OverpoweredAbilitySelection2, OtherworldlyStamina, IsekaiQuickFooted),
+                Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection2, OtherworldlyStamina, IsekaiQuickFooted),
                 Helpers.CreateLevelEntry(16, IsekaiProtagonistBonusFeatSelection),
-                Helpers.CreateLevelEntry(17, SneakAttack, SpecialPowerSelection, SummonHaremFeature),
+                Helpers.CreateLevelEntry(17, SpecialPowerSelection, SummonHaremFeature),
                 Helpers.CreateLevelEntry(18, IsekaiProtagonistBonusFeatSelection),
-                Helpers.CreateLevelEntry(19, SneakAttack, SpecialPowerSelection),
+                Helpers.CreateLevelEntry(19, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(20, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2, SecondReincarnation)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
-                Helpers.CreateUIGroup(SneakAttack, OverpoweredAbilitySelectionVillain),
-                Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike),
+                Helpers.CreateUIGroup(OverpoweredAbilitySelectionVillain,  IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, VillainQuickFooted, SecondFormFeature),
+                Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike, EdgeLordFastMovement),
                 Helpers.CreateUIGroup(SlayerStudyTargetFeature, SlayerSwiftStudyTargetFeature),
-                Helpers.CreateUIGroup(GracefulCombat, TrueSmiteFeature, TrueSmiteAdditionalUse, TrueMarkFeature),
-                Helpers.CreateUIGroup(NascentApotheosis, DivineArray, GodEmperorEnergySelection, AuraOfGoldenProtectionFeature, AuraOfMajestyFeature, SiphoningAuraFeature, GodlyVessel, CelestialRealmFeature, Godhood),
-                Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, CorruptAuraFeature, SpecialPowerSelection, IsekaiChannelPositiveEnergyFeature, IsekaiChannelNegativeEnergyFeature, ArmorSaint, AuraOfDivineFuryFeature),
-                Helpers.CreateUIGroup(PlotArmor, CripplingStrike, DispellingAttack, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation, SecondFormFeature, HerosPresenceFeature),
-                Helpers.CreateUIGroup(IsekaiPetSelection, UncannyDodge, ImprovedUncannyDodge, Evasion, ImprovedEvasion, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, VillainQuickFooted),
-                //Kinetic groups
-                Helpers.CreateUIGroup(IsekaiKineticist.KineticInfusionSelection, BlueprintTools.GetBlueprint<BlueprintFeature>("5f64f446aef387d499a396b626d5fc51")),
-                Helpers.CreateUIGroup(IsekaiKineticist.KineticMetakinesisEmpower,IsekaiKineticist.KineticMetakinesisMaster,IsekaiKineticist.KineticMetakinesisMaximize,IsekaiKineticist.KineticMetakinesisQuicken),
-                Helpers.CreateUIGroup(IsekaiKineticist.KineticSuperCharge, IsekaiKineticist.KineticOverflowBonusFeature),
-                Helpers.CreateUIGroup(IsekaiKineticist.KineticCompBlastSpec,IsekaiKineticist.KineticThirdElementSelection,IsekaiKineticist.KineticSecElementSelection, IsekaiKineticist.KineticFocusSelection),
-                //Tactician
-                Helpers.CreateUIGroup(IsekaiTactician.SummonTactics,IsekaiTactician.SoloTactics,IsekaiTactician.Teamwork,IsekaiTactician.AnimalTeamwork, IsekaiTactician.ForesterTactics),
-                //Sorcerer
-                Helpers.CreateUIGroup(BloodboundProtagonist.BloodlineSelection,ExtraBloodlineSelection.Get()),
-                //Oracle
-                Helpers.CreateUIGroup(ExtraOracleSelection.Get()),
-
+                Helpers.CreateUIGroup(GracefulCombat, IsekaiChannelPositiveEnergyFeature, AuraOfDivineFuryFeature, CelestialRealmFeature, HerosPresenceFeature, ArmorSaint),
+                Helpers.CreateUIGroup(NascentApotheosis, DivineArray, GodEmperorEnergySelection, AuraOfGoldenProtectionFeature, AuraOfMajestyFeature, SiphoningAuraFeature, GodlyVessel, Godhood),
+                Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, SpecialPowerSelection),
+                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
+                Helpers.CreateUIGroup(IsekaiPetSelection, IsekaiFastMovement, IsekaiQuickFooted),
+                Helpers.CreateUIGroup(LegacySelection.getClassFeature()),
+                Helpers.CreateUIGroup(HeroLegacySelection.getClassFeature()),
+                Helpers.CreateUIGroup(VillainLegacySelection.getClassFeature()),
+                Helpers.CreateUIGroup(EdgeLordLegacySelection.getClassFeature())
 
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
@@ -140,7 +126,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 VillainProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiProtagonistProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiProtagonistCantripsFeature.ToReference<BlueprintFeatureBaseReference>(),
-                StartingWeaponSelection.ToReference<BlueprintFeatureBaseReference>(),
+                StartingWeaponSelection.ToReference<BlueprintFeatureBaseReference>()
             };
             IsekaiProtagonistClass.SetProgression(IsekaiProtagonistProgression);
         }

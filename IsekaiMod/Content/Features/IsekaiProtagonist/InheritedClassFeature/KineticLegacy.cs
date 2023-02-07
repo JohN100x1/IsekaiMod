@@ -1,15 +1,17 @@
-﻿using IsekaiMod.Utilities;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Designers.Mechanics.Facts;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-
-namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
-    internal class IsekaiKineticist {
-        // Archetype features
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+    internal class KineticLegacy {
         public static readonly BlueprintProgression KineticBlastProgression = BlueprintTools.GetBlueprint<BlueprintProgression>("30a5b8cf728bd4a4d8d90fc4953e322e");
         public static readonly BlueprintProgression KineticOverflowProgression = BlueprintTools.GetBlueprint<BlueprintProgression>("86beb0391653faf43aec60d5ec05b538");
         public static readonly BlueprintProgression KineticInfusionSpecProgression = BlueprintTools.GetBlueprint<BlueprintProgression>("1f86ce843fbd2d548a8d88ea1b652452");
@@ -32,31 +34,33 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
         public static readonly BlueprintFeature KineticCompBlastSpec = BlueprintTools.GetBlueprint<BlueprintFeature>("df8897708983d4846871ca72c4cbfc52");
         public static readonly BlueprintFeatureSelection KineticMetakinesisMaster = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("8c33002186eb2fd45a140eed1301e207");
 
+        public static void configure() {
+            var IsekaiKineticistTraining = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiKineticistTraining", bp => {
+                bp.SetName(IsekaiContext, "Kineticist Training");
+                bp.SetDescription(IsekaiContext, "You count your Isekai Hero Level to qualify for Kineticist feats. If you also have actual Kineticist Levels this ability stacks.");
+                bp.m_Icon = StaticReferences.SorcererArcana.m_Icon;
+                bp.AddComponent<ClassLevelsForPrerequisites>(c => {
+                    c.m_FakeClass = BlueprintTools.GetBlueprintReference<BlueprintCharacterClassReference>("42a455d9ec1ad924d889272429eb8391");
+                    c.m_ActualClass = IsekaiProtagonistClass.GetReference();
+                    c.Modifier = 1.0;
+                });
+            });
 
-        public static void Add() {
-
-
-            // Removed features
-            var SneakAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
-
-            // Archetype
-            var myArchetype = Helpers.CreateBlueprint<BlueprintArchetype>(IsekaiContext, "IsekaiKineticistArchetype", bp => {
-                bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"IsekaiKineticistArchetype.Name", "Kinetic Lord");
-                bp.LocalizedDescription = Helpers.CreateString(IsekaiContext, $"IsekaiKineticistArchetype.Description", "Most Protagonists only occasionally use kinetic blasts when they think they would look cool.\n But you really loved them, and given that there is no other cantrip this overpowered why not?");
-                bp.LocalizedDescriptionShort = bp.LocalizedDescription;
-                bp.IsArcaneCaster = true;
-                bp.IsDivineCaster = true;
-                bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, SneakAttack),
-                    Helpers.CreateLevelEntry(5, SneakAttack),
-                    Helpers.CreateLevelEntry(9, SneakAttack),
-                    Helpers.CreateLevelEntry(13, SneakAttack),
-                    Helpers.CreateLevelEntry(17, SneakAttack),
+            var prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "KineticLegacy", bp => {
+                bp.SetName(IsekaiContext, "Kineticist Legacy - Kinetic Lord");
+                bp.SetDescription(IsekaiContext, "Most Protagonists only occasionally use kinetic blasts when they think they would look cool.\n But you really loved them, and given that there is no other cantrip this overpowered why not?");
+                bp.GiveFeaturesForPreviousLevels = true;
+                bp.IsClassFeature = true;
+                bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
+                    new BlueprintProgression.ClassWithLevel {
+                        m_Class = IsekaiProtagonistClass.GetReference(),
+                        AdditionalLevel = 0
+                    }
                 };
-                bp.AddFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, KineticBlastProgression, KineticBurnFeature, KineticFocusSelection, KineticGatherPower, KineticInfusionSelection, KineticOverflowProgression, KineticInfusionSpecProgression, KineticDismissInfusion),
+                bp.LevelEntries = new LevelEntry[] {
+                    Helpers.CreateLevelEntry(1, KineticBlastProgression, KineticBurnFeature, KineticFocusSelection, KineticGatherPower, KineticInfusionSelection, KineticOverflowProgression, KineticInfusionSpecProgression, KineticDismissInfusion, IsekaiKineticistTraining),
                     Helpers.CreateLevelEntry(2, KineticWildSelection),
-                    Helpers.CreateLevelEntry(3,KineticInfusionSelection, KineticOverflowBonusFeature),
+                    Helpers.CreateLevelEntry(3,KineticInfusionSelection),
                     Helpers.CreateLevelEntry(4, KineticWildSelection),
                     Helpers.CreateLevelEntry(5, KineticInfusionSelection, KineticMetakinesisEmpower),
                     Helpers.CreateLevelEntry(6, KineticWildSelection),
@@ -74,24 +78,21 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(19, KineticInfusionSelection, KineticMetakinesisMaster),
                     Helpers.CreateLevelEntry(20, KineticWildSelection),
 
+            };
+                bp.UIGroups = new UIGroup[] {
+                    Helpers.CreateUIGroup(KineticInfusionSelection),
+                    Helpers.CreateUIGroup(KineticBurnFeature, KineticWildSelection),
+                    Helpers.CreateUIGroup(KineticOverflowProgression, KineticMetakinesisEmpower,KineticMetakinesisMaster,KineticMetakinesisMaximize,KineticMetakinesisQuicken),
+                    Helpers.CreateUIGroup(KineticBlastProgression, KineticCompBlastSpec,KineticThirdElementSelection,KineticSecElementSelection, KineticFocusSelection, KineticSuperCharge),
                 };
-                bp.OverrideAttributeRecommendations = true;
-                bp.RecommendedAttributes = new StatType[] { StatType.Constitution, StatType.Charisma };
+
             });
-
-            // Add Archetype to Class
-            IsekaiProtagonistClass.RegisterArchetype(myArchetype);
-            //patch into the progression later so other mods have a chance to add their own blasts to the progression first ;)
-            //patch command is: Features.PatchKineticist.KineticistProgression.PatchArchetypeIntoKineticistProgression(myArchetype);
+            LegacySelection.getClassFeature().AddFeatures(prog);
+            LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
+            VillainLegacySelection.getClassFeature().AddFeatures(prog);
         }
-        public static BlueprintArchetype Get() {
-            return BlueprintTools.GetModBlueprint<BlueprintArchetype>(IsekaiContext, "IsekaiKineticistArchetype");
-        }
-        public static BlueprintArchetypeReference GetReference() {
-            return Get().ToReference<BlueprintArchetypeReference>();
-        }
-
-        public static void PatchArchetypeIntoKineticistProgression(BlueprintArchetype archetype) {
+        public static void PatchKineticistProgression() {
+            BlueprintCharacterClass myClass = IsekaiProtagonistClass.Get();
             var KineticBlastProgression = BlueprintTools.GetBlueprint<BlueprintProgression>("30a5b8cf728bd4a4d8d90fc4953e322e");
             var KineticOverflowProgression = BlueprintTools.GetBlueprint<BlueprintProgression>("86beb0391653faf43aec60d5ec05b538");
             var KineticInfusionSpecProgression = BlueprintTools.GetBlueprint<BlueprintProgression>("1f86ce843fbd2d548a8d88ea1b652452");
@@ -100,31 +101,29 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var KineticSecElementSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("4204bc10b3d5db440b1f52f0c375848b");
             var KineticThirdElementSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("e2c1718828fc843479f18ab4d75ded86");
 
-            KineticBlastProgression.AddArchetype(archetype);
-            KineticOverflowProgression.AddArchetype(archetype);
-            KineticInfusionSpecProgression.AddArchetype(archetype);
+            KineticBlastProgression.AddClass(myClass);
+            KineticBlastProgression.GiveFeaturesForPreviousLevels = true;
+            KineticOverflowProgression.AddClass(myClass);
+            KineticOverflowProgression.GiveFeaturesForPreviousLevels = true;
+            KineticInfusionSpecProgression.AddClass(myClass);
+            KineticInfusionSpecProgression.GiveFeaturesForPreviousLevels = true;
 
 
             // the actual elemental blasts have to be progressions by definition, otherwise someone before me has already screwed up
             foreach (var elementalFocusRef in KineticFocusSelection.m_AllFeatures) {
                 var elementalFocus = BlueprintTools.GetBlueprint<BlueprintProgression>(elementalFocusRef.Guid);
-                elementalFocus.AddArchetype(archetype);
+                elementalFocus.AddClass(myClass);
+                elementalFocus.GiveFeaturesForPreviousLevels = true;
             }
             foreach (var elementalFocusRef in KineticSecElementSelection.m_AllFeatures) {
                 var elementalFocus = BlueprintTools.GetBlueprint<BlueprintProgression>(elementalFocusRef.Guid);
-                elementalFocus.AddArchetype(archetype);
+                elementalFocus.AddClass(myClass);
+                elementalFocus.GiveFeaturesForPreviousLevels = true;
             }
             foreach (var elementalFocusRef in KineticThirdElementSelection.m_AllFeatures) {
                 var elementalFocus = BlueprintTools.GetBlueprint<BlueprintProgression>(elementalFocusRef.Guid);
-                elementalFocus.AddArchetype(archetype);
-            }
-            if (ModSupport.IsExpandedElementEnabled()) {
-                /* Expanded Kineticist is one example of someone screwing the system because even though the mod is officially already enabled at this point everything is still a null reference
-                 * also, half the actual code is in dark codex as a mod instead
-                patchCodexLibReference(CodexLib.KineticistTree.Instance.FocusAether, archetype);
-                patchCodexLibReference(CodexLib.KineticistTree.Instance.FocusWood, archetype);
-                patchCodexLibReference(CodexLib.KineticistTree.Instance.FocusVoid, archetype);
-                */
+                elementalFocus.AddClass(myClass);
+                elementalFocus.GiveFeaturesForPreviousLevels = true;
             }
         }
     }

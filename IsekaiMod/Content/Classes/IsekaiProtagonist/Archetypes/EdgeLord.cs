@@ -1,4 +1,5 @@
-﻿using IsekaiMod.Utilities;
+﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -17,8 +18,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var SupersonicCombat = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SupersonicCombat");
             var EdgeLordFastMovement = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "EdgeLordFastMovement");
             var ExtraStrike = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ExtraStrike");
-            var CripplingStrike = BlueprintTools.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
-            var DispellingAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
 
             // Removed features
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
@@ -38,7 +37,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.IsArcaneCaster = true;
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies),
+                    Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, LegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection2),
                     Helpers.CreateLevelEntry(8, IsekaiFastMovement),
                     Helpers.CreateLevelEntry(9, FriendlyAuraFeature),
@@ -47,11 +46,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.CreateLevelEntry(20, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, EdgeLordProficiencies, SupersonicCombat),
+                    Helpers.CreateLevelEntry(1, EdgeLordProficiencies, SupersonicCombat, EdgeLordLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(5, SpecialPowerSelection, ExtraStrike),
                     Helpers.CreateLevelEntry(7, EdgeLordFastMovement),
-                    Helpers.CreateLevelEntry(8, CripplingStrike),
-                    Helpers.CreateLevelEntry(10, ExtraStrike, DispellingAttack),
+                    Helpers.CreateLevelEntry(10, ExtraStrike),
                     Helpers.CreateLevelEntry(15, SpecialPowerSelection, ExtraStrike),
                     Helpers.CreateLevelEntry(20, ExtraStrike),
                 };

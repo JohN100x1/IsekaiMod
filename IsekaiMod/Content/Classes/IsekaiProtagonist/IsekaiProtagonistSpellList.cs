@@ -983,7 +983,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             if ("cd4b858611f11ec44861f02505f9261d".Equals(GUIId)) return true;
             if ("4814f8645d1d77447a70479c0be51c72".Equals(GUIId)) return true;
             //dim door mass
-            if ("bdc37e4acfa209408334326076a43bc".Equals(GUIId)) return true;
+            if ("5bdc37e4acfa209408334326076a43bc".Equals(GUIId)) return true;
             return false;
         }
 

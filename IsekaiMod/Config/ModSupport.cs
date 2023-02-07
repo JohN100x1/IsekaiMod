@@ -21,6 +21,7 @@ namespace IsekaiMod.Utilities
         protected static bool IsExpandedContentEnabled() { return IsModEnabled("ExpandedContent"); }
         protected static bool IsMysticalMayhemEnabled() { return IsModEnabled("MysticalMayhem"); }
         protected static bool IsSpellbookMergeEnabled() { return IsModEnabled("SpellbookMerge"); }
+        public static bool IsExpandedElementEnabled() { return IsModEnabled("KineticistElementsExpanded"); }
         [HarmonyLib.HarmonyPatch(typeof(BlueprintsCache), "Init")]
         static class BlueprintsCache_Init_Patch
         {
@@ -65,8 +66,9 @@ namespace IsekaiMod.Utilities
                     ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(TricksterIncorporateSpellbook, VillainSpellbook.Get());
 
                 }
-                //done here because it should be done after all spells have been initialized and were added to the canon books
-                if (!IsekaiContext.AddedContent.Classes.IsDisabled("Merge Isekai Spelllist")) IsekaiProtagonistSpellList.MergeSpellLists();
+                
+               
+
             }
 
             public static void AddExpandedContentSpells(BlueprintSpellList spellList)

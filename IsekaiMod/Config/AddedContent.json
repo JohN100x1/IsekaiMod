@@ -8,6 +8,11 @@
         "Enabled": true,
         "Homebrew": true,
         "Description": "Adds Exceptional feats to feat selection."
+      },
+      "Overpowered - Mythic Blessing": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds an ability to select mythic traits from other classes."
       }
     },
     "IsExpanded": true
@@ -51,30 +56,10 @@
     "IsExpanded": true
   },
   "Archetypes": {
-    "DisableAll": false,
+    "DisableAll": true,
     "Settings": {
-      "Isekai Kineticist": {
-        "Enabled": true,
-        "Homebrew": true,
-        "Description": "Class variation with full Kineticist progression."
-      },
-      "Isekai Tactician": {
-        "Enabled": true,
-        "Homebrew": true,
-        "Description": "Class variation with a heavier focus on tactical feats."
-      },
-      "Isekai Sorcerer": {
-        "Enabled": true,
-        "Homebrew": true,
-        "Description": "You wanted a bloodline? Then this is your archetype."
-      },
-      "Isekai Oracle": {
-        "Enabled": true,
-        "Homebrew": true,
-        "Description": "Now with divine Mysteries."
-      }
     },
-    "IsExpanded": true
+    "IsExpanded": false
   },
   "Deities": {
     "DisableAll": false,

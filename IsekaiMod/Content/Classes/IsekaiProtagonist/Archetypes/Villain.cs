@@ -1,4 +1,6 @@
-﻿using IsekaiMod.Extensions;
+﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
+using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -29,7 +31,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var IsekaiChannelNegativeEnergyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelNegativeEnergyFeature");
 
             // Removed features
-            var SneakAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
             var IsekaiProtagonistBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiProtagonistBonusFeatSelection");
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
             var FriendlyAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "FriendlyAuraFeature");
@@ -50,26 +51,23 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.IsArcaneCaster = true;
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, IsekaiProtagonistBonusFeatSelection, IsekaiProtagonistProficiencies, SneakAttack),
+                    Helpers.CreateLevelEntry(1, IsekaiProtagonistBonusFeatSelection, IsekaiProtagonistProficiencies, LegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(2, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(3, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(4, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(5, SneakAttack),
                     Helpers.CreateLevelEntry(6, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(8, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(9, SneakAttack, FriendlyAuraFeature),
+                    Helpers.CreateLevelEntry(9, FriendlyAuraFeature),
                     Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2),
                     Helpers.CreateLevelEntry(12, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(13, SneakAttack),
                     Helpers.CreateLevelEntry(14, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(15, IsekaiQuickFooted),
                     Helpers.CreateLevelEntry(16, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(17, SneakAttack),
                     Helpers.CreateLevelEntry(18, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(20, IsekaiProtagonistBonusFeatSelection, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, VillainProficiencies, OverpoweredAbilitySelectionVillain, SlayerStudyTargetFeature),
+                    Helpers.CreateLevelEntry(1, VillainProficiencies, OverpoweredAbilitySelectionVillain, SlayerStudyTargetFeature, VillainLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(3, IsekaiChannelNegativeEnergyFeature),
                     Helpers.CreateLevelEntry(5, SlayerStudyTargetFeature, OverpoweredAbilitySelectionVillain),
                     Helpers.CreateLevelEntry(7, SlayerSwiftStudyTargetFeature),

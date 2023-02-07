@@ -1,7 +1,9 @@
 ﻿using HarmonyLib;
-using IsekaiMod.Config;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
-using IsekaiMod.Content.Features.IsekaiProtagonist;
+using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using Kingmaker.Blueprints.JsonSystem;
 
 using TabletopTweaks.Core.Utilities;
@@ -28,20 +30,17 @@ namespace IsekaiMod.Content
                 if (IsekaiContext.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
                 if (IsekaiContext.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
 
-                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Kineticist")) IsekaiKineticist.Add();
-                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Kineticist")) IsekaiKineticist.PatchArchetypeIntoKineticistProgression(IsekaiKineticist.Get());
-                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Tactician")) IsekaiTactician.Add();
-                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Sorcerer")) ArcanaSelection.Configure();
-                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Sorcerer")) BloodboundProtagonist.Add();
-                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Sorcerer")) BloodboundProtagonist.PatchArchetypeIntoBloodlineSelection(BloodboundProtagonist.Get(), Classes.IsekaiProtagonist.IsekaiProtagonistClass.Get());
-
-                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Oracle")) CursedProtagonist.Configure();
-                if (IsekaiContext.AddedContent.Archetypes.IsEnabled("Isekai Oracle")) CursedProtagonist.PatchArchetypeIntoOracleSelection(CursedProtagonist.Get(), Classes.IsekaiProtagonist.IsekaiProtagonistClass.Get());
+               
 
             }
 
             public static void AddIsekaiProtagonistClass()
             {
+
+                LegacySelection.configureStep1();
+                VillainLegacySelection.Configure();
+                EdgeLordLegacySelection.Configure();
+                HeroLegacySelection.Configure();
                 // Isekai Protagonist Class
                 Classes.IsekaiProtagonist.IsekaiProtagonistSpellList.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistSpellsPerDay.Add();
@@ -119,6 +118,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.TrueResurrection.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.SupremeBeing.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AuraOfRighteousWrath.Add();
+                if (IsekaiContext.AddedContent.Feats.IsEnabled("Overpowered - Mythic Blessing")) Features.IsekaiProtagonist.OverpoweredAbility.BlessingOfTheMythic.Configure();
 
                 // God Emperor Archetype
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.GodEmperorProficiencies.Add();
@@ -135,18 +135,18 @@ namespace IsekaiMod.Content
                 Classes.IsekaiProtagonist.Archetypes.GodEmperor.Add();
 
                 // Edge Lord Archetype
-                Features.IsekaiProtagonist.Archetypes.EdgeLord.EdgeLordProficiencies.Add();
-                Features.IsekaiProtagonist.Archetypes.EdgeLord.SupersonicCombat.Add();
-                Features.IsekaiProtagonist.Archetypes.EdgeLord.EdgeLordFastMovement.Add();
-                Features.IsekaiProtagonist.Archetypes.EdgeLord.ExtraStrike.Add();
+                EdgeLordProficiencies.Add();
+                SupersonicCombat.Add();
+                EdgeLordFastMovement.Add();
+                ExtraStrike.Add();
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
 
                 // Hero Archetype
-                Features.IsekaiProtagonist.Archetypes.Hero.HeroProficiencies.Add();
-                Features.IsekaiProtagonist.Archetypes.Hero.GracefulCombat.Add();
-                Features.IsekaiProtagonist.Archetypes.Hero.TrueSmite.Add();
-                Features.IsekaiProtagonist.Archetypes.Hero.TrueMark.Add();
-                Features.IsekaiProtagonist.Archetypes.Hero.HerosPresence.Add();
+                HeroProficiencies.Add();
+                GracefulCombat.Add();
+                TrueSmite.Add();
+                TrueMark.Add();
+                HerosPresence.Add();
                 Classes.IsekaiProtagonist.Archetypes.Hero.Add();
 
                 // Villain Archetype
@@ -181,6 +181,9 @@ namespace IsekaiMod.Content
                 // Add extra dialogue (Depends on IsekaiProtagonistClass)
                 Dialogue.IsekaiHulrun.Add();
                 Dialogue.IsekaiRadiance.Add();
+
+                LegacySelection.configureStep2();
+
             }
             public static void AddIsekaiHeritages()
             {
@@ -231,5 +234,26 @@ namespace IsekaiMod.Content
                 Features.ExceptionalFeats.ExceptionalWeaponSelection.Add();
             }
         }
+    }
+
+    [HarmonyPriority(Priority.Last)]    
+    [HarmonyPatch(typeof(StartGameLoader), "LoadAllJson")]
+    static class StartGameLoader_LoadAllJson {
+        private static bool Run = false;
+
+        static void Postfix() {
+            if (Run) return; 
+            Run = true;
+            if (IsekaiContext.AddedContent.Classes.IsDisabled("Isekai Protagonist")) return;
+            KineticLegacy.PatchKineticistProgression();
+            OracleLegacy.PatchClassOracleSelection();
+            SorcererLegacy.PatchSorcererBloodlines();
+            ShamanLegacy.PatchShamanProgressions();
+            //done here because it should be done after all spells have been initialized and were added to the canon books
+            if (IsekaiContext.AddedContent.Classes.IsEnabled("Merge Isekai Spelllist")) IsekaiProtagonistSpellList.MergeSpellLists();
+
+
+        }
+
     }
 }

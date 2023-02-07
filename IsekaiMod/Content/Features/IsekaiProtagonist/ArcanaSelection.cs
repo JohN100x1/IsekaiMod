@@ -1,25 +1,19 @@
-﻿using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
+﻿using IsekaiMod.Utilities;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.EntitySystem.Stats;
-using Kingmaker.UnitLogic;
-using Kingmaker.UnitLogic.FactLogic;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist {
     internal class ArcanaSelection {
-        public static BlueprintFeatureSelection BloodlineArcanaSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("20a2435574bdd7f4e947f405df2b25ce");
-        public static readonly BlueprintParametrizedFeature SorcererArcana = BlueprintTools.GetBlueprint<BlueprintParametrizedFeature>("4a2e8388c2f0dd3478811d9c947bebfb");
+        
 
         public static void Configure() {
             BlueprintParametrizedFeature IsekaiArcana = Helpers.CreateBlueprint<BlueprintParametrizedFeature>(IsekaiContext, "IsekaiProtagonistArcana", bp => {
-                bp.m_DisplayName = SorcererArcana.m_DisplayName;
-                bp.m_Description = SorcererArcana.m_Description;
-                bp.m_Icon = SorcererArcana.m_Icon;
+                bp.m_DisplayName = StaticReferences.SorcererArcana.m_DisplayName;
+                bp.m_Description = StaticReferences.SorcererArcana.m_Description;
+                bp.m_Icon = StaticReferences.SorcererArcana.m_Icon;
                 bp.Ranks = 1;
                 bp.ReapplyOnLevelUp = false;
                 bp.IsClassFeature= true;
@@ -38,9 +32,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                     c.SpellLevel = 0;
                 });
             });
+            InheritedClassFeature.ExtraBloodlineSelection.Get().AddFeatures(IsekaiArcana);
+            InheritedClassFeature.ExtraOracleSelection.Get().AddFeatures(IsekaiArcana);
+            InheritedClassFeature.ShamanSelection.Get().AddFeatures(IsekaiArcana);
+            StaticReferences.SorcererBloodlineArcanaSelection.AddFeatures(IsekaiArcana);
 
-            BloodlineArcanaSelection.m_AllFeatures = BloodlineArcanaSelection.m_AllFeatures.AppendToArray(IsekaiArcana.ToReference<BlueprintFeatureReference>());
-
+        }
+        public static BlueprintParametrizedFeature get() {
+            return BlueprintTools.GetModBlueprint<BlueprintParametrizedFeature>(IsekaiContext, "IsekaiProtagonistArcana");
+        }
+        public static BlueprintFeatureReference getReference() {
+            return BlueprintTools.GetModBlueprint<BlueprintParametrizedFeature>(IsekaiContext, "IsekaiProtagonistArcana").ToReference<BlueprintFeatureReference>();
         }
     }
 }

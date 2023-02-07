@@ -1,4 +1,5 @@
-﻿using IsekaiMod.Utilities;
+﻿using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
@@ -27,7 +28,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var AuraOfDivineFuryFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfDivineFuryFeature");
 
             // Removed features
-            var SneakAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
             var FriendlyAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "FriendlyAuraFeature");
             var OtherworldlyStamina = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OtherworldlyStamina");
@@ -46,17 +46,17 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                 bp.IsArcaneCaster = true;
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, SneakAttack, IsekaiProtagonistProficiencies),
-                    Helpers.CreateLevelEntry(3, SneakAttack, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(5, SneakAttack, OverpoweredAbilitySelection2),
-                    Helpers.CreateLevelEntry(7, SneakAttack, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(9, SneakAttack, SpecialPowerSelection, FriendlyAuraFeature),
-                    Helpers.CreateLevelEntry(11, SneakAttack, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, LegacySelection.getClassFeature()),
+                    Helpers.CreateLevelEntry(3, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection2),
+                    Helpers.CreateLevelEntry(7, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(9, SpecialPowerSelection, FriendlyAuraFeature),
+                    Helpers.CreateLevelEntry(11, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(12, BeachEpisodeSelection),
-                    Helpers.CreateLevelEntry(13, SneakAttack, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(15, SneakAttack, OverpoweredAbilitySelection2, OtherworldlyStamina),
-                    Helpers.CreateLevelEntry(17, SneakAttack, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(19, SneakAttack, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(13, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection2, OtherworldlyStamina),
+                    Helpers.CreateLevelEntry(17, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(19, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(20, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
