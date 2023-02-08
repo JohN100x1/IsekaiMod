@@ -11,6 +11,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class BardLegacy {
         public static void configure() {
             StaticReferences.BardPerformResource.m_MaxAmount.Class.m_Array.AppendToArray(IsekaiProtagonistClass.GetReference());
+            var BardPerformResourceFact = BlueprintTools.GetBlueprint<BlueprintFeature>("b92bfc201c6a79e49afd0b5cfbfc269f");
             var prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "BardLegacy", bp => {
                 bp.SetName(IsekaiContext, "Bard Legacy - Musical Prodige");
                 bp.SetDescription(IsekaiContext, "You know what is even more effective in gathering a great harem than being a great hero? \nThat is right, music the language of romance, there is a reason why so many males hate bards...");
@@ -23,7 +24,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     }
                 };
                 bp.LevelEntries = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, StaticReferences.BardInspireCourage),
+                    Helpers.CreateLevelEntry(1, StaticReferences.BardInspireCourage, BardPerformResourceFact),
                     Helpers.CreateLevelEntry(2, StaticReferences.BardWellVersed),
                     Helpers.CreateLevelEntry(3, StaticReferences.BardInspireCompetence),
                     Helpers.CreateLevelEntry(5, StaticReferences.BardInspireCourage),
