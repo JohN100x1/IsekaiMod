@@ -55,7 +55,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.m_AreaEffect = AuraOfDivineFuryArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var AuraOfDivineFuryAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "AuraOfDivineFuryAbility", bp => {
+            var AuraOfDivineFuryAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "AuraOfDivineFuryAbility", bp => {
                 bp.SetName(IsekaiContext, "Aura of Divine Fury");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells.");
                 bp.m_Icon = Icon_AngelBladeOfTheSun;

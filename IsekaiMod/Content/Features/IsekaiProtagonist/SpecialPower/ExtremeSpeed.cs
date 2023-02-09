@@ -57,7 +57,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.m_AreaEffect = ExtremeSpeedArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var ExtremeSpeedAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "ExtremeSpeedAbility", bp => {
+            var ExtremeSpeedAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "ExtremeSpeedAbility", bp => {
                 bp.SetName(IsekaiContext, "Extreme Speed");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of you gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times your character level.");
                 bp.m_Icon = Icon_SupersonicSpeed;

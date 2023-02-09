@@ -84,7 +84,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.m_AreaEffect = AuraOfMajestyArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var AuraOfMajestyAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "AuraOfMajestyAbility", bp => {
+            var AuraOfMajestyAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "AuraOfMajestyAbility", bp => {
                 bp.SetName(IsekaiContext, "Aura of Majesty");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of the God Emperor gain a +4 sacred bonus to all attributes.");
                 bp.m_Icon = Icon_AuraOfMajesty;

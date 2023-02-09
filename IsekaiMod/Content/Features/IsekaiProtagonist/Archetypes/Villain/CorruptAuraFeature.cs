@@ -84,7 +84,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                     c.m_AreaEffect = CorruptAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var CorruptAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "CorruptAuraAbility", bp => {
+            var CorruptAuraAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "CorruptAuraAbility", bp => {
                 bp.SetName(IsekaiContext, "Corrupt Aura");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of the Villain has a +4 profane bonus to attack, damage, AC and saving throws. "
                     + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");

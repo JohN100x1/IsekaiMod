@@ -30,7 +30,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoExtendAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "AutoExtendAbility", bp => {
+            var AutoExtendAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "AutoExtendAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Extend");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes extended, as though using the Extend Spell feat.");
                 bp.m_Icon = Icon_ExtendSpell;

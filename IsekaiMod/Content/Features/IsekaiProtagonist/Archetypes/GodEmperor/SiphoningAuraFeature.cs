@@ -78,7 +78,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.m_AreaEffect = SiphoningAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var SiphoningAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "SiphoningAuraAbility", bp => {
+            var SiphoningAuraAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "SiphoningAuraAbility", bp => {
                 bp.SetName(IsekaiContext, "Siphoning Aura");
                 bp.SetDescription(IsekaiContext, "Enemies within 40 feet of the God Emperor take a –4 penalty on all attributes.");
                 bp.m_Icon = Icon_SiphoningAura;

@@ -53,7 +53,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.m_AreaEffect = CelestialRealmArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var CelestialRealmAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "CelestialRealmAbility", bp => {
+            var CelestialRealmAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "CelestialRealmAbility", bp => {
                 bp.SetName(IsekaiContext, "Celestial Realm");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of you transform their damage type into divine.");
                 bp.m_Icon = Icon_CelestialRealm;

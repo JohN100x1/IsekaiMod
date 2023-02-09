@@ -70,7 +70,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.m_AreaEffect = AuraOfGoldenProtectionArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var AuraOfGoldenProtectionAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "AuraOfGoldenProtectionAbility", bp => {
+            var AuraOfGoldenProtectionAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "AuraOfGoldenProtectionAbility", bp => {
                 bp.SetName(IsekaiContext, "Aura of Golden Protection");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.");
                 bp.m_Icon = Icon_AuraOfGoldenProtection;

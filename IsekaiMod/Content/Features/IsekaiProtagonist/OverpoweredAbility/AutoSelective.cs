@@ -30,7 +30,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoSelectiveAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "AutoSelectiveAbility", bp => {
+            var AutoSelectiveAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "AutoSelectiveAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Selective");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, you can exclude targets from the effects of your spell, as though using the Selective Spell feat.");
                 bp.m_Icon = Icon_SelectiveSpell;

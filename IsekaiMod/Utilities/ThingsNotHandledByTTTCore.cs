@@ -21,6 +21,7 @@ using Kingmaker.Utility;
 using System.Linq;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.ResourceLinks;
+using Kingmaker.UnitLogic.ActivatableAbilities;
 
 namespace IsekaiMod.Utilities {
     //Classname is a partial lie, some are just not handled well *coughs*
@@ -104,8 +105,15 @@ namespace IsekaiMod.Utilities {
             return result;
         }
 
-
-
+        public static BlueprintActivatableAbility CreateActivatableAbility(string name, Action<BlueprintActivatableAbility> init = null) {
+            var result = ThingsNotHandledByTTTCore.CreateActivatableAbility( name, bp => {
+                bp.IsOnByDefault = true;
+                bp.DeactivateImmediately = true;
+                bp.ActivationType = AbilityActivationType.Immediately;
+            });
+            init?.Invoke(result);
+            return result;
+        }
 
         private static Boolean listContainsSpell(BlueprintSpellList list, BlueprintAbility spell) {
             foreach (var level in list.SpellsByLevel) {

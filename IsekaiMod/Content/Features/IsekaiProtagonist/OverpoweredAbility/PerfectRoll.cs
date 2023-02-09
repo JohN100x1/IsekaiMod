@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var PerfectRollAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "PerfectRollAbility", bp => {
+            var PerfectRollAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "PerfectRollAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Perfect Roll");
                 bp.SetDescription(IsekaiContext, "You always {g|Encyclopedia:Dice}roll{/g} a 20 on all d20 rolls.");
                 bp.m_Icon = Icon_TrickFate;

@@ -30,7 +30,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoReachAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "AutoReachAbility", bp => {
+            var AutoReachAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "AutoReachAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Reach");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat.");
                 bp.m_Icon = Icon_ReachSpell;

@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Features
         private static readonly BlueprintBuff BuffWingsDemon = BlueprintTools.GetBlueprint<BlueprintBuff>("3c958be25ab34dc448569331488bee27");
         public static void Add()
         {
-            var BlackWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "BlackWingsAbility", bp => {
+            var BlackWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "BlackWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Black)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -43,7 +43,7 @@ namespace IsekaiMod.Content.Features
                 bp.Group = ActivatableAbilityGroup.Wings;
                 bp.WeightInGroup = 1;
             });
-            var GhostWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "GhostWingsAbility", bp => {
+            var GhostWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "GhostWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Ghostly)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -86,7 +86,7 @@ namespace IsekaiMod.Content.Features
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
                 bp.Frequency = DurationRate.Rounds;
             });
-            var DevilWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "DevilWingsAbility", bp => {
+            var DevilWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "DevilWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Devilish)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -98,7 +98,7 @@ namespace IsekaiMod.Content.Features
                 bp.Group = ActivatableAbilityGroup.Wings;
                 bp.WeightInGroup = 1;
             });
-            var DemonWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "DemonWingsAbility", bp => {
+            var DemonWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "DemonWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Demonic)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;

@@ -70,7 +70,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 });
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var DarkAuraAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "DarkAuraAbility", bp => {
+            var DarkAuraAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "DarkAuraAbility", bp => {
                 bp.SetName(IsekaiContext, "Dark Aura");
                 bp.SetDescription(IsekaiContext, "Enemies within 40 feet take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.m_Icon = Icon_Dark_Aura;

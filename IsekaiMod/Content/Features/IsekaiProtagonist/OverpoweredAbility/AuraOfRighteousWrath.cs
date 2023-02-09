@@ -104,7 +104,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.m_AreaEffect = AuraOfRighteousWrathArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var AuraOfRighteousWrathAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "AuraOfRighteousWrathAbility", bp => {
+            var AuraOfRighteousWrathAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "AuraOfRighteousWrathAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Aura of Righteous Wrath");
                 bp.SetDescription(IsekaiContext, "Allies within 120 feet of you has two extra attacks and deal an additional 5d6 physical damage. "
                     + "They also gain 1d6 sneak attack equal to 1/2 your character level.");

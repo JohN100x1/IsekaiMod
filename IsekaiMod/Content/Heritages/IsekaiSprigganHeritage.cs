@@ -61,7 +61,7 @@ namespace IsekaiMod.Content.Heritages
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var SizeAlterationAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "SizeAlterationAbility", bp => {
+            var SizeAlterationAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "SizeAlterationAbility", bp => {
                 bp.SetName(IsekaiContext, "Size Alteration");
                 bp.SetDescription(IsekaiContext, "As a standard action, increase your size by two size categories and gain +10 Speed, +12 Strength, -2 Dexterity, +6 Constitution, and a -2 penalty to AC.");
                 bp.m_Icon = Icon_Spriggan;
