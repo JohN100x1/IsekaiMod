@@ -1,27 +1,23 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
-{
-    class AuraOfMajesty
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
+
+    internal class AuraOfMajesty {
+
+        public static void Add() {
             var Icon_AuraOfMajesty = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_MAJESTY.png");
             var AuraOfMajestyBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfMajestyBuff", bp => {
                 bp.SetName(IsekaiContext, "Aura of Majesty");
@@ -84,14 +80,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.m_AreaEffect = AuraOfMajestyArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var AuraOfMajestyAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "AuraOfMajestyAbility", bp => {
+            var AuraOfMajestyAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AuraOfMajestyAbility", bp => {
                 bp.SetName(IsekaiContext, "Aura of Majesty");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of the God Emperor gain a +4 sacred bonus to all attributes.");
                 bp.m_Icon = Icon_AuraOfMajesty;
                 bp.m_Buff = AuraOfMajestyAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
-            var AuraOfMajestyFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"AuraOfMajestyFeature", bp => {
+            var AuraOfMajestyFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfMajestyFeature", bp => {
                 bp.SetName(IsekaiContext, "Aura of Majesty");
                 bp.SetDescription(IsekaiContext, "At 9th level, allies within 40 feet of the God Emperor gain a sacred bonus to all attributes equal to 1/2 the God Emperor's character level.");
                 bp.m_Icon = Icon_AuraOfMajesty;

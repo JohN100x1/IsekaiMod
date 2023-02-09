@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -27,15 +26,14 @@ using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Heritages
-{
-    internal class IsekaiSuccubusHeritage
-    {
+namespace IsekaiMod.Content.Heritages {
+
+    internal class IsekaiSuccubusHeritage {
         private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = BlueprintTools.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
         private static readonly BlueprintBuff DominatePersonBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("c0f4e1c24c9cd334ca988ed1bd9d201f");
         private static readonly BlueprintAbilityResource TieflingSpellLikeResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("803d7e39e05fa2a47a7e2424d0e4b623");
-        public static void Add()
-        {
+
+        public static void Add() {
             // Succubus Abilities
             var Icon_Charm = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_CHARM.png");
             var SuccubusCharmUnitProperty = Helpers.CreateBlueprint<BlueprintUnitProperty>(IsekaiContext, "SuccubusCharmUnitProperty", bp => {
@@ -61,8 +59,7 @@ namespace IsekaiMod.Content.Heritages
                         c.Succeed = ActionFlow.DoNothing();
                         c.Failed = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                             c.m_Buff = DominatePersonBuff.ToReference<BlueprintBuffReference>();
-                            c.DurationValue = new ContextDurationValue()
-                            {
+                            c.DurationValue = new ContextDurationValue() {
                                 Rate = DurationRate.Minutes,
                                 m_IsExtendable = true,
                                 DiceCountValue = 0,
@@ -109,7 +106,7 @@ namespace IsekaiMod.Content.Heritages
 
             // Succubus Heritage
             var Icon_Succubus = AssetLoader.LoadInternal(IsekaiContext, "Heritages", "ICON_SUCCUBUS.png");
-            var IsekaiSuccubusHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiSuccubusHeritage", bp => {
+            var IsekaiSuccubusHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiSuccubusHeritage", bp => {
                 bp.SetName(IsekaiContext, "Isekai Succubus");
                 bp.SetDescription(IsekaiContext, "Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power, and often "
                     + "have a voracious appetite for sensory pleasures and carnal delights.\n"

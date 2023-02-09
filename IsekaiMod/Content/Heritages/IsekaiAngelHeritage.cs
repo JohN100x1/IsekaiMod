@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -16,7 +15,6 @@ using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
@@ -24,12 +22,11 @@ using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Heritages
-{
-    class IsekaiAngelHeritage
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Heritages {
+
+    internal class IsekaiAngelHeritage {
+
+        public static void Add() {
             var AasimarSpellLikeResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("a4ea5b9becd98dd47b51c8742aeb70ec");
             var AngelBoltOfJusticeAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("c82168800b665324f8b4807b531fea46");
             var AngelWingsFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("d9bd0fde6deb2e44a93268f2dfb3e169");
@@ -102,7 +99,7 @@ namespace IsekaiMod.Content.Heritages
 
             // Angel Heritage
             var Icon_Angel = AssetLoader.LoadInternal(IsekaiContext, "Heritages", "ICON_ANGEL.png");
-            var IsekaiAngelHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiAngelHeritage", bp => {
+            var IsekaiAngelHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAngelHeritage", bp => {
                 bp.SetName(IsekaiContext, "Isekai Angel");
                 bp.SetDescription(IsekaiContext, "Otherworldly entities who are reincarnated into the world of Golarion as an Angel have both extreme beauty and power. "
                     + "They serve as exemplars of good and light regardless of the myriad forms they may take.\n"

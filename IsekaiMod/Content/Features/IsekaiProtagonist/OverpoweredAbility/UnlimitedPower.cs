@@ -1,7 +1,8 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
+﻿using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -12,19 +13,14 @@ using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System.Collections.Generic;
-using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
-using Kingmaker.Localization;
-using Kingmaker.UnitLogic.Mechanics;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
-using Kingmaker.Blueprints.Classes;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
-{
-    class UnlimitedPower
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
+
+    internal class UnlimitedPower {
+
+        public static void Add() {
             var Icon_Unlimited_Power = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_UNLIMITED_POWER.png");
             var UnlimitedPowerAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "UnlimitedPowerAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Unlimited Power");
@@ -35,8 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                             m_IsFullRestoreAllResources = true,
                             Value = 0
                         },
-                        new ContextActionRestoreAllSpellSlots()
-                        {
+                        new ContextActionRestoreAllSpellSlots() {
                             m_Target = new ContextTargetUnit(),
                             m_UpToSpellLevel = 11,
                             m_ExcludeSpellbooks = new List<BlueprintSpellbookReference>()
@@ -60,7 +55,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var UnlimitedPowerFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"UnlimitedPowerFeature", bp => {
+            var UnlimitedPowerFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "UnlimitedPowerFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Unlimited Power");
                 bp.SetDescription(IsekaiContext, "As a free action, you restore all abilities and spell slots.");
                 bp.m_Icon = Icon_Unlimited_Power;

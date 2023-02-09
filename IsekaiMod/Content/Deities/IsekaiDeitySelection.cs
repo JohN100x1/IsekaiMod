@@ -1,18 +1,15 @@
 ﻿using HarmonyLib;
-using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Deities
-{
-    internal class IsekaiDeitySelection
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Deities {
+
+    internal class IsekaiDeitySelection {
+
+        public static void Add() {
             // Isekai Background Selection
             var IsekaiDeitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiDeitySelection", bp => {
                 bp.SetName(IsekaiContext, "Isekai");
@@ -28,8 +25,7 @@ namespace IsekaiMod.Content.Deities
             DeitySelection.m_AllFeatures = DeitySelection.m_AllFeatures.AddToArray(IsekaiDeitySelection.ToReference<BlueprintFeatureReference>());
         }
 
-        public static void AddToSelection(BlueprintFeature deityFeature)
-        {
+        public static void AddToSelection(BlueprintFeature deityFeature) {
             var IsekaiDeitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiDeitySelection");
             IsekaiDeitySelection.m_AllFeatures = IsekaiDeitySelection.m_AllFeatures.AddToArray(deityFeature.ToReference<BlueprintFeatureReference>());
         }

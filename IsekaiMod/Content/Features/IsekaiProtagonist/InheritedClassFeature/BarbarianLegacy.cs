@@ -1,6 +1,5 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -9,7 +8,9 @@ using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class BarbarianLegacy {
+
         public static void configure() {
             StaticReferences.BarbarianRageResource.m_MaxAmount.Class.m_Array.AppendToArray(IsekaiProtagonistClass.GetReference());
             var IsekaiBarbarianTraining = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "BarbarianTraining", bp => {
@@ -50,13 +51,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateLevelEntry(17, StaticReferences.BarbarianRageTireless),
                     Helpers.CreateLevelEntry(18, StaticReferences.BarbarianRagePower),
                     Helpers.CreateLevelEntry(19, StaticReferences.BarbarianDamageReduction),
-
             };
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup(StaticReferences.BarbarianRage, StaticReferences.BarbarianRageGreater, StaticReferences.BarbarianRageTireless, StaticReferences.BarbarianDamageReduction),
                     Helpers.CreateUIGroup(StaticReferences.BarbarianRagePower, IsekaiBarbarianTraining)
                 };
-
             });
             LegacySelection.getClassFeature().AddFeatures(prog);
             LegacySelection.getOverwhelmingFeature().AddFeatures(prog);

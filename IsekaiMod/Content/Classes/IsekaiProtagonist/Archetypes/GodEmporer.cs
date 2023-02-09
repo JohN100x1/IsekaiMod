@@ -1,16 +1,14 @@
 ﻿using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
-using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
-{
-    class GodEmperor
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
+
+    internal class GodEmperor {
+
+        public static void Add() {
             // Archetype features
             var GodEmperorProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodEmperorProficiencies");
             var NascentApotheosis = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "NascentApotheosis");
@@ -37,7 +35,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
 
             // Archetype
-            var GodEmperorArchetype = Helpers.CreateBlueprint<BlueprintArchetype>(IsekaiContext,"GodEmperorArchetype", bp => {
+            var GodEmperorArchetype = Helpers.CreateBlueprint<BlueprintArchetype>(IsekaiContext, "GodEmperorArchetype", bp => {
                 bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"GodEmperorArchetype.Name", "God Emperor");
                 bp.LocalizedDescription = Helpers.CreateString(IsekaiContext, $"GodEmperorArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
                     + "some protagonists decide to become gods. They sacrifice their special powers and sneak attack to gain powerful auras and a journey towards godhood.");

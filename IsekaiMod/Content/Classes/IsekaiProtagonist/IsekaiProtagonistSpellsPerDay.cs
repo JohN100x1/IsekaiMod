@@ -1,14 +1,12 @@
-﻿using IsekaiMod.Utilities;
-using Kingmaker.Blueprints.Classes.Spells;
+﻿using Kingmaker.Blueprints.Classes.Spells;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.IsekaiProtagonist
-{
-    class IsekaiProtagonistSpellsPerDay
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
+
+    internal class IsekaiProtagonistSpellsPerDay {
+
+        public static void Add() {
             var IsekaiProtagonistSpellsPerDay = Helpers.CreateBlueprint<BlueprintSpellsTable>(IsekaiContext, "IsekaiProtagonistSpellsPerDay", bp => {
                 bp.Levels = new SpellsLevelEntry[29] {
                     new SpellsLevelEntry() { Count = new int[] { } },

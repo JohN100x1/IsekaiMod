@@ -5,16 +5,15 @@ using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using Kingmaker.Blueprints.JsonSystem;
-
-using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content
-{
-    class ContentAdder {
+namespace IsekaiMod.Content {
+
+    internal class ContentAdder {
+
         [HarmonyPatch(typeof(BlueprintsCache), "Init")]
-        static class BlueprintsCache_Init_Patch {
-            static bool Initialized;
+        private static class BlueprintsCache_Init_Patch {
+            private static bool Initialized;
 
             [HarmonyPriority(Priority.First)]
             public static void Postfix() {
@@ -29,14 +28,9 @@ namespace IsekaiMod.Content
                 if (IsekaiContext.AddedContent.Deities.IsEnabled("Isekai Deities")) AddIsekaiDeities();
                 if (IsekaiContext.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
                 if (IsekaiContext.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
-
-               
-
             }
 
-            public static void AddIsekaiProtagonistClass()
-            {
-
+            public static void AddIsekaiProtagonistClass() {
                 LegacySelection.configureStep1();
                 VillainLegacySelection.Configure();
                 EdgeLordLegacySelection.Configure();
@@ -183,10 +177,9 @@ namespace IsekaiMod.Content
                 Dialogue.IsekaiRadiance.Add();
 
                 LegacySelection.configureStep2();
-
             }
-            public static void AddIsekaiHeritages()
-            {
+
+            public static void AddIsekaiHeritages() {
                 // Add Heritages
                 Heritages.IsekaiSuccubusHeritage.Add();
                 Heritages.IsekaiAngelHeritage.Add();
@@ -199,8 +192,8 @@ namespace IsekaiMod.Content
                 // Patch Heritages
                 Heritages.ElfHeritagePatcher.Patch();
             }
-            public static void AddIsekaiBackgrounds()
-            {
+
+            public static void AddIsekaiBackgrounds() {
                 // Add the Selection First
                 Backgrounds.IsekaiBackgroundSelection.Add();
 
@@ -214,8 +207,8 @@ namespace IsekaiMod.Content
                 Backgrounds.Gamer.Add();
                 Backgrounds.BetaTester.Add();
             }
-            public static void AddIsekaiDeities()
-            {
+
+            public static void AddIsekaiDeities() {
                 // Add the Selection First
                 Deities.IsekaiDeitySelection.Add();
 
@@ -225,8 +218,8 @@ namespace IsekaiMod.Content
                 Deities.Ristarte.Add();
                 Deities.AdministratorD.Add();
             }
-            public static void AddExceptionalFeats()
-            {
+
+            public static void AddExceptionalFeats() {
                 // Add Exceptional Feats
                 Features.ExceptionalFeats.ExceptionalFeatSelection.Add();
                 Features.ExceptionalFeats.EffectImmunitySelection.Add();
@@ -236,13 +229,13 @@ namespace IsekaiMod.Content
         }
     }
 
-    [HarmonyPriority(Priority.Last)]    
+    [HarmonyPriority(Priority.Last)]
     [HarmonyPatch(typeof(StartGameLoader), "LoadAllJson")]
-    static class StartGameLoader_LoadAllJson {
+    internal static class StartGameLoader_LoadAllJson {
         private static bool Run = false;
 
-        static void Postfix() {
-            if (Run) return; 
+        private static void Postfix() {
+            if (Run) return;
             Run = true;
             if (IsekaiContext.AddedContent.Classes.IsDisabled("Isekai Protagonist")) return;
             KineticLegacy.PatchKineticistProgression();
@@ -251,9 +244,6 @@ namespace IsekaiMod.Content
             ShamanLegacy.PatchShamanProgressions();
             //done here because it should be done after all spells have been initialized and were added to the canon books
             if (IsekaiContext.AddedContent.Classes.IsEnabled("Merge Isekai Spelllist")) IsekaiProtagonistSpellList.MergeSpellLists();
-
-
         }
-
     }
 }

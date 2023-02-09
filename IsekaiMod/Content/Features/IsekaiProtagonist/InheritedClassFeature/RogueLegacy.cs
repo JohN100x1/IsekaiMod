@@ -2,14 +2,14 @@
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Designers.Mechanics.Facts;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class RogueLegacy {
+
         public static void configure() {
             var prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "RogueLegacy", bp => {
                 bp.SetName(IsekaiContext, "Rogue Legacy - Supernatural Thief");
@@ -35,13 +35,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateLevelEntry(15, StaticReferences.RogueSneakAttack),
                     Helpers.CreateLevelEntry(17, StaticReferences.RogueSneakAttack),
                     Helpers.CreateLevelEntry(19, StaticReferences.RogueSneakAttack),
-
             };
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup(StaticReferences.RogueSneakAttack),
                     Helpers.CreateUIGroup(StaticReferences.RogueUncannyDodge, StaticReferences.RogueEvasion, StaticReferences.RogueImprovedUncannyDodge, StaticReferences.RogueImprovedEvasion)
                 };
-
             });
             LegacySelection.getClassFeature().AddFeatures(prog);
             LegacySelection.getOverwhelmingFeature().AddFeatures(prog);

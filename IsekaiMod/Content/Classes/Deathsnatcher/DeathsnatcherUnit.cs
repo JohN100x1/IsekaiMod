@@ -1,5 +1,4 @@
 ﻿using IsekaiMod.Content.Features.IsekaiProtagonist;
-using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.AI.Blueprints;
 using Kingmaker.Blueprints;
@@ -15,16 +14,17 @@ using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
 using Kingmaker.Visual.HitSystem;
 using Kingmaker.Visual.Sound;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.Deathsnatcher
-{
-    internal class DeathsnatcherUnit
-    {
+namespace IsekaiMod.Content.Classes.Deathsnatcher {
+
+    internal class DeathsnatcherUnit {
+
         // Deathsnatcher Unit Details
         private static readonly BlueprintFeature AnimalCompanionRank = BlueprintTools.GetBlueprint<BlueprintFeature>("1670990255e4fe948a863bafd5dbda5d");
+
         private static readonly BlueprintFaction Neutrals = BlueprintTools.GetBlueprint<BlueprintFaction>("d8de50cc80eb4dc409a983991e0b77ad");
         private static readonly BlueprintFeature MonstrousHumanoidType = BlueprintTools.GetBlueprint<BlueprintFeature>("57614b50e8d86b24395931fffc5e409b");
         private static readonly BlueprintFeature RightAndDoubleHandLocatorFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("b7b0360f2e384e55a6c4505242c843b6");
@@ -33,6 +33,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
 
         // Deathsnatcher Weapons
         private static readonly BlueprintItemWeapon WeaponEmptyHand = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("20375b5a0c9243d45966bd72c690ab74");
+
         private static readonly BlueprintItemWeapon Bite2d6 = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("2abc1dc6172759c42971bd04b8c115cb");
         private static readonly BlueprintItemWeapon Claw1d6 = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("65eb73689b94d894080d33a768cdf645");
         private static readonly BlueprintItemWeapon Sting1d4 = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("df44800dbe7b4ba43ac6e0e435041ed8");
@@ -40,11 +41,10 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
         // Deathsnatcher Facts
         private static readonly BlueprintFeature Airborne = BlueprintTools.GetBlueprint<BlueprintFeature>("70cffb448c132fa409e49156d013b175");
 
-        public static void Add()
-        {
+        public static void Add() {
             var DeathsnatcherSizeBaby = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherSizeBaby");
 
-            var DeathsnatcherSlotFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"DeathsnatcherSlotFeature", bp => {
+            var DeathsnatcherSlotFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherSlotFeature", bp => {
                 bp.SetName(IsekaiContext, "Feature not available");
                 bp.AddComponent<LockEquipmentSlot>(c => {
                     c.m_SlotType = LockEquipmentSlot.SlotType.MainHand;
@@ -104,10 +104,10 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.HideInCharacterSheetAndLevelUp = true;
                 bp.HideNotAvailibleInUI = true;
             });
-            var DeathsnatcherPortrait = Helpers.CreateBlueprint<BlueprintPortrait>(IsekaiContext,"DeathsnatcherPortrait", bp => {
+            var DeathsnatcherPortrait = Helpers.CreateBlueprint<BlueprintPortrait>(IsekaiContext, "DeathsnatcherPortrait", bp => {
                 bp.Data = new PortraitData();
             });
-            var DeathsnatcherFact = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"DeathsnatcherFact", bp => {
+            var DeathsnatcherFact = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFact", bp => {
                 bp.SetName(IsekaiContext, "DeathsnatcherFact");
                 bp.SetDescription(IsekaiContext, "");
                 bp.HideInUI = true;
@@ -134,8 +134,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.Alignment = Alignment.ChaoticEvil;
                 bp.m_Portrait = DeathsnatcherPortrait.ToReference<BlueprintPortraitReference>();
                 bp.Prefab = new UnitViewLink() { AssetId = "261c55913d512ad4aac907f43915183c" };
-                bp.Visual = new UnitVisualParams()
-                {
+                bp.Visual = new UnitVisualParams() {
                     BloodType = BloodType.Common,
                     FootprintType = FootprintType.Humanoid,
                     FootprintScale = 1,
@@ -160,8 +159,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.m_Faction = Neutrals.ToReference<BlueprintFactionReference>();
                 bp.FactionOverrides = new FactionOverrides() { m_AttackFactionsToAdd = new BlueprintFactionReference[0], m_AttackFactionsToRemove = new BlueprintFactionReference[0] };
                 bp.m_Brain = DeathsnatcherBrain.ToReference<BlueprintBrainReference>();
-                bp.Body = new BlueprintUnit.UnitBody()
-                {
+                bp.Body = new BlueprintUnit.UnitBody() {
                     DisableHands = false,
                     ActiveHandSet = 0,
                     m_EmptyHandWeapon = WeaponEmptyHand.ToReference<BlueprintItemWeaponReference>(),
@@ -189,8 +187,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                 bp.Wisdom = 21;
                 bp.Charisma = 24;
                 bp.Speed = new Feet(30);
-                bp.Skills = new BlueprintUnit.UnitSkills()
-                {
+                bp.Skills = new BlueprintUnit.UnitSkills() {
                     Acrobatics = 0,
                     Physique = 0,
                     Diplomacy = 0,
@@ -221,7 +218,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
             SmallPortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoaderExtension.LoadInternal(IsekaiContext, "Portraits", "DeathsnatcherSmall.png", new Vector2Int(185, 242));
             EyePortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoaderExtension.LoadInternal(IsekaiContext, "Portraits", "DeathsnatcherPetEye.png", new Vector2Int(176, 24));
 
-            var DeathsnatcherFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"DeathsnatcherFeature", bp => {
+            var DeathsnatcherFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFeature", bp => {
                 bp.SetName(IsekaiContext, "Deathsnatcher");
                 bp.SetDescription(IsekaiContext, "Deathsnatchers dwell amid the ruins of fallen civilizations, where they play at being godlings worshiped by undead slaves. "
                     + "Though self-aggrandizing, deathsnatchers are known to give homage to (and claim descent from) the various demon lords of darkness, the desert, and undeath.\n"

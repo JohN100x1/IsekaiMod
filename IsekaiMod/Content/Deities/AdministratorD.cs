@@ -1,6 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
+﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Spells;
@@ -11,12 +9,13 @@ using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Deities
-{
-    class AdministratorD
-    {
+namespace IsekaiMod.Content.Deities {
+
+    internal class AdministratorD {
+
         // Allowed Domain & Energy
         private static readonly BlueprintFeature ChaosDomainAllowed = BlueprintTools.GetBlueprint<BlueprintFeature>("8c7d778bc39fec642befc1435b00f613");
+
         private static readonly BlueprintFeature EvilDomainAllowed = BlueprintTools.GetBlueprint<BlueprintFeature>("351235ac5fc2b7e47801f63d117b656c");
         private static readonly BlueprintFeature KnowledgeDomainAllowed = BlueprintTools.GetBlueprint<BlueprintFeature>("443d44b3e0ea84046a9bf304c82a0425");
         private static readonly BlueprintFeature DeathDomainAllowed = BlueprintTools.GetBlueprint<BlueprintFeature>("a099afe1b0b32554199b230699a69525");
@@ -25,27 +24,30 @@ namespace IsekaiMod.Content.Deities
 
         // Excluded Archetypes
         private static readonly BlueprintArchetype FeralChampionArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>("f68ca492c9c15e241ab73735fbd0fb9f");
+
         private static readonly BlueprintArchetype PriestOfBalance = BlueprintTools.GetBlueprint<BlueprintArchetype>("a4560e3fb5d247d68fb1a2738fcc0855");
         private static readonly BlueprintArchetype AngelfireApostle = BlueprintTools.GetBlueprint<BlueprintArchetype>("857bc9fadf70f294795a9cba974a48b8");
 
         // Effective Class
         private static readonly BlueprintCharacterClass ClericClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("67819271767a9dd4fbfd4ae700befea0");
+
         private static readonly BlueprintCharacterClass InquistorClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("f1a70d9e1b0b41e49874e1fa9052a1ce");
         private static readonly BlueprintCharacterClass WarpriestClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("30b5e47d47a0e37438cc5a80c96cfb99");
 
         // Effective Spellbook
         private static readonly BlueprintSpellbook CrusaderSpellbook = BlueprintTools.GetBlueprint<BlueprintSpellbook>("673d39f7da699aa408cdda6282e7dcc0");
+
         private static readonly BlueprintSpellbook ClericSpellbook = BlueprintTools.GetBlueprint<BlueprintSpellbook>("4673d19a0cf2fab4f885cc4d1353da33");
         private static readonly BlueprintSpellbook InquisitorSpellbook = BlueprintTools.GetBlueprint<BlueprintSpellbook>("57fab75111f377248810ece84193a5a5");
 
         // Favored Weapon
         private static readonly BlueprintFeature ScytheProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("96c174b0ebca7b246b82d4bc4aac4574");
+
         private static readonly BlueprintItem ScythePlus1 = BlueprintTools.GetBlueprint<BlueprintItem>("8933943621eca2d45b99d851bd9100d9");
 
-        public static void Add()
-        {
+        public static void Add() {
             var Icon_AdministratorD = AssetLoader.LoadInternal(IsekaiContext, "Deities", "ICON_ADMIN_D.png");
-            var AdministratorDFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"AdministratorDFeature", (bp => {
+            var AdministratorDFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "AdministratorDFeature", (bp => {
                 bp.SetName(IsekaiContext, "Administrator D");
                 bp.SetDescription(IsekaiContext,
                     "Administrator D is a playful, self-proclaimed \"Ultimate evil god\" that does things simply for entertainment. "

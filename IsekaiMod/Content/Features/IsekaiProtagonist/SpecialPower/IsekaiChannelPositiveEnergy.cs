@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
@@ -31,10 +30,9 @@ using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
-{
-    class IsekaiChannelPositiveEnergy
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
+
+    internal class IsekaiChannelPositiveEnergy {
         private static readonly BlueprintFeature NegativeEnergyAffinity = BlueprintTools.GetBlueprint<BlueprintFeature>("d5ee498e19722854198439629c1841a5");
         private static readonly BlueprintAbility ChannelPositiveHarm = BlueprintTools.GetBlueprint<BlueprintAbility>("279447a6bf2d3544d93a0a39c3b8e91d");
         private static readonly BlueprintAbility ChannelPositiveHeal = BlueprintTools.GetBlueprint<BlueprintAbility>("f5fc9a1a2a3c1a946a31b320d1dd31b2");
@@ -44,8 +42,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
         private static readonly BlueprintUnitFact ChannelEnergyFact = BlueprintTools.GetBlueprint<BlueprintUnitFact>("93f062bc0bf70e84ebae436e325e30e8");
         private static readonly BlueprintAbilityResource ChannelEnergyResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("5e2bba3e07c37be42909a12945c27de7");
         private static readonly PrefabLink HealTargetFX = new() { AssetId = "61602c5b0ac793d489c008e9cb58f631" };
-        public static void Add()
-        {
+
+        public static void Add() {
             var ExtraChannel = BlueprintTools.GetBlueprint<BlueprintFeature>("cd9f19775bd9d3343a31a065e93f0c47");
             var SelectiveChannel = BlueprintTools.GetBlueprint<BlueprintFeature>("fd30c69417b434d47b6b03b9c1f568ff");
             var IsekaiChannelPositiveEnergyAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "IsekaiChannelPositiveEnergyAbility", bp => {
@@ -110,13 +108,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<Conditional>(c => {
                         c.ConditionsChecker = ActionFlow.IfAny(
-                            new ContextConditionHasFact()
-                            {
+                            new ContextConditionHasFact() {
                                 m_Fact = NegativeEnergyAffinity.ToReference<BlueprintUnitFactReference>(),
                                 Not = true
                             },
-                            new ContextConditionHasFact()
-                            {
+                            new ContextConditionHasFact() {
                                 m_Fact = DeathDomainGreaterUndead.ToReference<BlueprintUnitFactReference>(),
                                 Not = false
                             });
@@ -135,16 +131,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                     c.Type = SavingThrowType.Will;
                                     c.CustomDC = 0;
                                     c.Actions = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                                        c.DamageType = new DamageTypeDescription()
-                                        {
+                                        c.DamageType = new DamageTypeDescription() {
                                             Type = DamageType.Energy,
                                             Common = new DamageTypeDescription.CommomData(),
                                             Physical = new DamageTypeDescription.PhysicalData(),
                                             Energy = DamageEnergyType.PositiveEnergy
                                         };
                                         c.Duration = Values.Duration.Zero;
-                                        c.Value = new ContextDiceValue()
-                                        {
+                                        c.Value = new ContextDiceValue() {
                                             DiceType = DiceType.D6,
                                             DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
                                             BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
@@ -164,16 +158,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                     c.Type = SavingThrowType.Will;
                                     c.CustomDC = 0;
                                     c.Actions = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
-                                        c.DamageType = new DamageTypeDescription()
-                                        {
+                                        c.DamageType = new DamageTypeDescription() {
                                             Type = DamageType.Energy,
                                             Common = new DamageTypeDescription.CommomData(),
                                             Physical = new DamageTypeDescription.PhysicalData(),
                                             Energy = DamageEnergyType.PositiveEnergy
                                         };
                                         c.Duration = Values.Duration.Zero;
-                                        c.Value = new ContextDiceValue()
-                                        {
+                                        c.Value = new ContextDiceValue() {
                                             DiceType = DiceType.D6,
                                             DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
                                             BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
@@ -242,8 +234,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 });
                 bp.AddComponent<ContextCalculateSharedValue>(c => {
                     c.ValueType = AbilitySharedValue.Heal;
-                    c.Value = new ContextDiceValue()
-                    {
+                    c.Value = new ContextDiceValue() {
                         DiceType = DiceType.D6,
                         DiceCountValue = Values.CreateContextRankValue(AbilityRankType.Default),
                         BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
@@ -252,8 +243,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 });
                 bp.AddComponent<ContextCalculateSharedValue>(c => {
                     c.ValueType = AbilitySharedValue.StatBonus;
-                    c.Value = new ContextDiceValue()
-                    {
+                    c.Value = new ContextDiceValue() {
                         DiceType = DiceType.D6,
                         DiceCountValue = 0,
                         BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.Heal)
@@ -273,59 +263,49 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                             });
                             c.IfTrue = ActionFlow.DoSingle<Conditional>(c => {
                                 c.ConditionsChecker = ActionFlow.IfAll(
-                                    new ContextConditionIsAlly()
-                                    {
+                                    new ContextConditionIsAlly() {
                                         Not = false
                                     },
-                                    new ContextConditionHasFact()
-                                    {
+                                    new ContextConditionHasFact() {
                                         m_Fact = LifeDominantSoul.ToReference<BlueprintUnitFactReference>(),
                                         Not = true
                                     });
                                 c.IfTrue = Helpers.CreateActionList(
-                                    new ContextActionHealTarget()
-                                    {
-                                        Value = new ContextDiceValue()
-                                        {
+                                    new ContextActionHealTarget() {
+                                        Value = new ContextDiceValue() {
                                             DiceType = DiceType.Zero,
                                             DiceCountValue = 0,
                                             BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.Heal)
                                         }
                                     },
-                                    new ContextActionSpawnFx()
-                                    {
+                                    new ContextActionSpawnFx() {
                                         PrefabLink = HealTargetFX
                                     });
                                 c.IfFalse = ActionFlow.DoSingle<Conditional>(c => {
                                     c.ConditionsChecker = ActionFlow.IfAll(
-                                        new ContextConditionIsAlly()
-                                        {
+                                        new ContextConditionIsAlly() {
                                             Not = false
                                         },
-                                        new ContextConditionHasFact()
-                                        {
+                                        new ContextConditionHasFact() {
                                             m_Fact = LifeDominantSoul.ToReference<BlueprintUnitFactReference>(),
                                             Not = false
                                         });
                                     c.IfTrue = Helpers.CreateActionList(
-                                        new ContextActionHealTarget()
-                                        {
-                                            Value = new ContextDiceValue()
-                                            {
+                                        new ContextActionHealTarget() {
+                                            Value = new ContextDiceValue() {
                                                 DiceType = DiceType.Zero,
                                                 DiceCountValue = 0,
                                                 BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.StatBonus)
                                             }
                                         },
-                                        new ContextActionSpawnFx()
-                                        {
+                                        new ContextActionSpawnFx() {
                                             PrefabLink = HealTargetFX
                                         }
                                         );
                                     c.IfFalse = ActionFlow.DoNothing();
                                 }
                                     );
-                                }
+                            }
                             );
                             c.IfFalse = ActionFlow.DoSingle<Conditional>(c => {
                                 c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionHasFact>(c => {
@@ -333,37 +313,30 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                                     c.Not = false;
                                 });
                                 c.IfTrue = Helpers.CreateActionList(
-                                    new ContextActionHealTarget()
-                                    {
-                                        Value = new ContextDiceValue()
-                                        {
+                                    new ContextActionHealTarget() {
+                                        Value = new ContextDiceValue() {
                                             DiceType = DiceType.Zero,
                                             DiceCountValue = 0,
                                             BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.StatBonus)
                                         }
                                     },
-                                    new ContextActionSpawnFx()
-                                    {
+                                    new ContextActionSpawnFx() {
                                         PrefabLink = HealTargetFX
                                     });
                                 c.IfFalse = Helpers.CreateActionList(
-                                    new ContextActionHealTarget()
-                                    {
-                                        Value = new ContextDiceValue()
-                                        {
+                                    new ContextActionHealTarget() {
+                                        Value = new ContextDiceValue() {
                                             DiceType = DiceType.Zero,
                                             DiceCountValue = 0,
                                             BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.Heal)
                                         }
                                     },
-                                    new ContextActionSpawnFx()
-                                    {
+                                    new ContextActionSpawnFx() {
                                         PrefabLink = HealTargetFX
                                     });
                             });
                         });
                         c.IfFalse = ActionFlow.DoNothing();
-
                     });
                 });
                 bp.AddComponent<AbilityUseOnRest>(c => {
@@ -377,7 +350,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.Descriptor = SpellDescriptor.RestoreHP | SpellDescriptor.ChannelPositiveHeal;
                 });
             });
-            var IsekaiChannelPositiveEnergyFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiChannelPositiveEnergyFeature", bp => {
+            var IsekaiChannelPositiveEnergyFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelPositiveEnergyFeature", bp => {
                 bp.SetName(IsekaiContext, "Channel Positive Energy");
                 bp.SetDescription(IsekaiContext, "You gain the supernatural ability to channel positive energy like a cleric. You use your character level as your effective cleric level when "
                     + "channeling positive energy.  You can channel energy a number of times per day equal to 3 + your Charisma modifier.");

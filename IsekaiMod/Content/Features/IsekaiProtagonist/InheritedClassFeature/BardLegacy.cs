@@ -1,14 +1,14 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Designers.Mechanics.Facts;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class BardLegacy {
+
         public static void configure() {
             StaticReferences.BardPerformResource.m_MaxAmount.Class.m_Array.AppendToArray(IsekaiProtagonistClass.GetReference());
             var BardPerformResourceFact = BlueprintTools.GetBlueprint<BlueprintFeature>("b92bfc201c6a79e49afd0b5cfbfc269f");
@@ -36,14 +36,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateLevelEntry(15, StaticReferences.BardInspireCompetence, StaticReferences.BardInspireHeroics),
                     Helpers.CreateLevelEntry(17, StaticReferences.BardInspireCourage),
                     Helpers.CreateLevelEntry(19, StaticReferences.BardInspireCompetence),
-
             };
                 bp.UIGroups = new UIGroup[] {
-                    Helpers.CreateUIGroup(StaticReferences.BardInspireCourage, StaticReferences.BardMove, StaticReferences.BardSwift, 
+                    Helpers.CreateUIGroup(StaticReferences.BardInspireCourage, StaticReferences.BardMove, StaticReferences.BardSwift,
                         StaticReferences.BardWellVersed,StaticReferences.BardFascinate,StaticReferences.BardInspireGreatness, StaticReferences.BardInspireHeroics),
                     Helpers.CreateUIGroup(StaticReferences.BardInspireCompetence)
                 };
-
             });
             LegacySelection.getClassFeature().AddFeatures(prog);
             LegacySelection.getOverwhelmingFeature().AddFeatures(prog);

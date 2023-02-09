@@ -1,6 +1,4 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using System.Collections.Generic;
@@ -8,15 +6,14 @@ using System.Linq;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.Deathsnatcher
-{
-    class DeathsnatcherProgression
-    {
+namespace IsekaiMod.Content.Classes.Deathsnatcher {
+
+    internal class DeathsnatcherProgression {
+
         // Animal Rank
         private static readonly BlueprintFeature AnimalCompanionRank = BlueprintTools.GetBlueprint<BlueprintFeature>("1670990255e4fe948a863bafd5dbda5d");
 
-        public static void Add()
-        {
+        public static void Add() {
             var Pounce = BlueprintTools.GetBlueprint<BlueprintFeature>("1a8149c09e0bdfc48a305ee6ac3729a8");
             var DeathsnatcherSoulRendFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("c8b468508a76c5140a9a2af00077753d");
             var Evasion = BlueprintTools.GetBlueprint<BlueprintFeature>("576933720c440aa4d8d42b0c54b77e80");
@@ -48,8 +45,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
                     }
                 };
                 bp.LevelEntries = Enumerable.Range(2, 20)
-                    .Select(i => new LevelEntry
-                    {
+                    .Select(i => new LevelEntry {
                         Level = i,
                         m_Features = new List<BlueprintFeatureBaseReference> {
                             AnimalCompanionRank.ToReference<BlueprintFeatureBaseReference>()
@@ -99,8 +95,8 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
             // Register Deathsnatcher Class Progression
             DeathsnatcherClass.SetProgression(DeathsnatcherClassProgression);
         }
-        public static BlueprintProgression GetCompanionProgression()
-        {
+
+        public static BlueprintProgression GetCompanionProgression() {
             return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "DeathsnatcherCompanionProgression");
         }
     }

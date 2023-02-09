@@ -1,12 +1,10 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
@@ -14,12 +12,11 @@ using Kingmaker.Utility;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
-{
-    class DarkAuraFeature
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
+
+    internal class DarkAuraFeature {
+
+        public static void Add() {
             var Icon_Dark_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_DARK_AURA.png");
             var DarkAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("DarkAuraBuff", bp => {
                 bp.SetName(IsekaiContext, "Dark Aura");
@@ -70,14 +67,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                 });
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var DarkAuraAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "DarkAuraAbility", bp => {
+            var DarkAuraAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("DarkAuraAbility", bp => {
                 bp.SetName(IsekaiContext, "Dark Aura");
                 bp.SetDescription(IsekaiContext, "Enemies within 40 feet take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.m_Buff = DarkAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
-            var DarkAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"DarkAuraFeature", bp => {
+            var DarkAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DarkAuraFeature", bp => {
                 bp.SetName(IsekaiContext, "Dark Aura");
                 bp.SetDescription(IsekaiContext, "At 10th level, enemies within 40 feet take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.");
                 bp.m_Icon = Icon_Dark_Aura;

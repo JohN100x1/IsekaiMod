@@ -1,10 +1,5 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
-using IsekaiMod.Content.Features.IsekaiProtagonist;
-using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -16,6 +11,7 @@ using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class OracleLegacy {
 
         public static void configure() {
@@ -41,12 +37,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 Helpers.CreateLevelEntry(12, OracleSelection),
                 Helpers.CreateLevelEntry(15, OracleSelection),
                 Helpers.CreateLevelEntry(18, OracleSelection),
-
             };
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup(OracleSelection)
                 };
-
             });
             LegacySelection.getClassFeature().AddFeatures(prog);
             LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
@@ -79,11 +73,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                                     c.m_Spell = spellReference.value;
                                     c.SpellLevel = spellReference.level;
                                     c.m_CharacterClass = myClassRef;
-
                                 });
                             }
                         }
-
                     }
                 }
             }
@@ -108,7 +100,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                                 c.m_Spell = spellReference.value;
                                 c.SpellLevel = spellReference.level;
                                 c.m_CharacterClass = myClassRef;
-
                             });
                         }
                     }
@@ -128,15 +119,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                         c.m_Spell = spellReference.value;
                         c.SpellLevel = spellReference.level;
                         c.m_CharacterClass = myClassRef;
-
                     });
                 }
             }
         }
     }
-    internal class ExtraOracleSelection {
-        public static void Configure() {
 
+    internal class ExtraOracleSelection {
+
+        public static void Configure() {
             var CurseSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiOracleCurseSelection", bp => {
                 bp.SetName(IsekaiContext, "Divine Curse");
                 bp.SetDescription(IsekaiContext, "Gain a curse, but some curses are blessings in disguise.");
@@ -157,18 +148,19 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.SetDescription(IsekaiContext, "As you get closer and closer to the truth of divinity you gain a new Mystery, Revelation, or perhaps a curse from a jealous god?");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = new BlueprintFeatureReference[] { 
-                    CurseSelection.ToReference<BlueprintFeatureReference>(), 
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    CurseSelection.ToReference<BlueprintFeatureReference>(),
                     MysterySelection.ToReference<BlueprintFeatureReference>(),
                     StaticReferences.OracleRevelationSelection.ToReference<BlueprintFeatureReference>(),
-                    StaticReferences.OraclePositiveNegativeSelection.ToReference<BlueprintFeatureReference>() 
+                    StaticReferences.OraclePositiveNegativeSelection.ToReference<BlueprintFeatureReference>()
                 };
             });
-
         }
+
         public static BlueprintFeatureSelection Get() {
             return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiOracleSelection");
         }
+
         public static BlueprintFeatureReference GetReference() {
             return Get().ToReference<BlueprintFeatureReference>();
         }

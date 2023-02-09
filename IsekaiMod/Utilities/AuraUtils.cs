@@ -3,14 +3,12 @@ using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 
-namespace IsekaiMod.Utilities
-{
-    internal class AuraUtils
-    {
-        public static AbilityAreaEffectRunAction CreateUnconditionalAuraEffect(BlueprintBuffReference buff)
-        {
-            return new AbilityAreaEffectRunAction()
-            {
+namespace IsekaiMod.Utilities {
+
+    internal class AuraUtils {
+
+        public static AbilityAreaEffectRunAction CreateUnconditionalAuraEffect(BlueprintBuffReference buff) {
+            return new AbilityAreaEffectRunAction() {
                 UnitEnter = ActionFlow.DoSingle<ContextActionApplyBuff>(b => {
                     b.m_Buff = buff;
                     b.Permanent = true;

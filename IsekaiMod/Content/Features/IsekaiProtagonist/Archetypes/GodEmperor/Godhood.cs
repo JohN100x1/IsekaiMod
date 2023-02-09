@@ -1,6 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
+﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Facts;
@@ -9,14 +7,13 @@ using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
-{
-    class Godhood
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
+
+    internal class Godhood {
+
+        public static void Add() {
             var Icon_Godhood = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_GODHOOD.png");
-            var Godhood = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"Godhood", bp => {
+            var Godhood = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "Godhood", bp => {
                 bp.SetName(IsekaiContext, "Godhood");
                 bp.SetDescription(IsekaiContext, "At 20th level, you become a god. You are immune to acid, cold, electricity, fire, sonic, spells and "
                     + "{g|Encyclopedia:Physical_Damage}physical damage{/g}. Your attacks ignore concealment and damage reduction. "

@@ -1,7 +1,5 @@
 ﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
-using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -10,12 +8,11 @@ using Kingmaker.UnitLogic.Alignments;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
-{
-    class Hero
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
+
+    internal class Hero {
+
+        public static void Add() {
             // Archetype features
             var HeroProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HeroProficiencies");
             var GracefulCombat = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GracefulCombat");
@@ -31,7 +28,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
 
             // Archetype
-            var HeroArchetype = Helpers.CreateBlueprint<BlueprintArchetype>(IsekaiContext,"HeroArchetype", bp => {
+            var HeroArchetype = Helpers.CreateBlueprint<BlueprintArchetype>(IsekaiContext, "HeroArchetype", bp => {
                 bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"HeroArchetype.Name", "Hero");
                 bp.LocalizedDescription = Helpers.CreateString(IsekaiContext, $"HeroArchetype.Description", "Heroes use their newfound powers for good. After realising the suffering and "
                     + "despair of the inhabitants of the new world, the hero sets out to bring knowledge from their old world in order to save them.");
@@ -50,7 +47,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
                     Helpers.CreateLevelEntry(1, HeroProficiencies, GracefulCombat, HeroLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(3, IsekaiChannelPositiveEnergyFeature),
                     Helpers.CreateLevelEntry(10, AuraOfDivineFuryFeature),
-                    
+
                     Helpers.CreateLevelEntry(17, CelestialRealmFeature),
                     Helpers.CreateLevelEntry(20, HerosPresenceFeature),
                 };

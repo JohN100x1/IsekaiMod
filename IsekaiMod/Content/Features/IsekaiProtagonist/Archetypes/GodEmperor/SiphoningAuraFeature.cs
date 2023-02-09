@@ -1,6 +1,6 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
@@ -9,19 +9,16 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
-using Kingmaker.Blueprints.Classes;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
-{
-    class SiphoningAuraFeature
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
+
+    internal class SiphoningAuraFeature {
         private static readonly Sprite Icon_SiphoningDebuff = BlueprintTools.GetBlueprint<BlueprintBuff>("886c7407dc629dc499b9f1465ff382df").m_Icon;
-        public static void Add()
-        {
+
+        public static void Add() {
             var Icon_SiphoningAura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SIPHONING_AURA.png");
             var SiphoningAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("SiphoningAuraBuff", bp => {
                 bp.SetName(IsekaiContext, "Siphoning Aura");
@@ -78,14 +75,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.m_AreaEffect = SiphoningAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var SiphoningAuraAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "SiphoningAuraAbility", bp => {
+            var SiphoningAuraAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("SiphoningAuraAbility", bp => {
                 bp.SetName(IsekaiContext, "Siphoning Aura");
                 bp.SetDescription(IsekaiContext, "Enemies within 40 feet of the God Emperor take a –4 penalty on all attributes.");
                 bp.m_Icon = Icon_SiphoningAura;
                 bp.m_Buff = SiphoningAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
-            var SiphoningAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"SiphoningAuraFeature", bp => {
+            var SiphoningAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SiphoningAuraFeature", bp => {
                 bp.SetName(IsekaiContext, "Siphoning Aura");
                 bp.SetDescription(IsekaiContext, "At 12th level, enemies within 40 feet of the God Emperor take a –4 penalty on all attributes.");
                 bp.m_Icon = Icon_SiphoningAura;

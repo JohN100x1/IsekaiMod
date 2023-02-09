@@ -1,21 +1,18 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints.Classes;
+﻿using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.FactLogic;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
-{
-    class InnerPower
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode {
+
+    internal class InnerPower {
         private static readonly Sprite Icon_BurningRenewal = BlueprintTools.GetBlueprint<BlueprintFeature>("7cf2a6bf35c422e4ea219fcc2eb564f5").m_Icon;
-        public static void Add()
-        {
-            var InnerPower = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"InnerPower", bp => {
+
+        public static void Add() {
+            var InnerPower = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "InnerPower", bp => {
                 bp.SetName(IsekaiContext, "Inner Power");
                 bp.SetDescription(IsekaiContext, "You gain immunity to shaken, frightened, cowering, fear, death effects, {g|Encyclopedia:Ability_Scores}ability score{/g} drain, energy drain, and negative levels.");
                 bp.m_Icon = Icon_BurningRenewal;

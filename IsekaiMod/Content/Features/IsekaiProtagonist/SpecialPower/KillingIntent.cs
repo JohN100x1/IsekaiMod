@@ -1,6 +1,6 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Localization;
@@ -17,24 +17,21 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System.Collections.Generic;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
-using Kingmaker.Blueprints.Classes;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
-{
-    class KillingIntent
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
+
+    internal class KillingIntent {
         private static readonly Sprite Icon_ConsumeFear = BlueprintTools.GetBlueprint<BlueprintAbility>("644d2c0d029e54d4188bc34216d9d8c0").m_Icon;
         private static readonly BlueprintBuff Shaken = BlueprintTools.GetBlueprint<BlueprintBuff>("25ec6cb6ab1845c48a95f9c20b034220");
         private static readonly BlueprintBuff Frightened = BlueprintTools.GetBlueprint<BlueprintBuff>("f08a7239aa961f34c8301518e71d4cdf");
         private static readonly BlueprintBuff Cowering = BlueprintTools.GetBlueprint<BlueprintBuff>("6062e3a8206a4284d867cbb7120dc091");
-        public static void Add()
-        {
+
+        public static void Add() {
             var KillingIntentResource = Helpers.CreateBlueprint<BlueprintAbilityResource>(IsekaiContext, "KillingIntentResource", bp => {
-                bp.m_MaxAmount = new BlueprintAbilityResource.Amount
-                {
+                bp.m_MaxAmount = new BlueprintAbilityResource.Amount {
                     BaseValue = 1,
                     IncreasedByLevel = false,
                     LevelIncrease = 0,
@@ -88,18 +85,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                         c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
                             c.Succeed = ActionFlow.DoNothing();
                             c.Failed = Helpers.CreateActionList(
-                                new ContextActionApplyBuff()
-                                {
+                                new ContextActionApplyBuff() {
                                     m_Buff = Shaken.ToReference<BlueprintBuffReference>(),
                                     DurationValue = Values.Duration.OneRound
                                 },
-                                new ContextActionApplyBuff()
-                                {
+                                new ContextActionApplyBuff() {
                                     m_Buff = Frightened.ToReference<BlueprintBuffReference>(),
                                     DurationValue = Values.Duration.OneRound
                                 },
-                                new ContextActionApplyBuff()
-                                {
+                                new ContextActionApplyBuff() {
                                     m_Buff = Cowering.ToReference<BlueprintBuffReference>(),
                                     DurationValue = Values.Duration.OneRound
                                 });
@@ -110,7 +104,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.DC = 50;
                 });
             });
-            var KillingIntentFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"KillingIntentFeature", bp => {
+            var KillingIntentFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "KillingIntentFeature", bp => {
                 bp.SetName(IsekaiContext, "Killing Intent");
                 bp.SetDescription(IsekaiContext, "Once per Combat, as a free action, enemies within 40 feet of you who fails a DC 50 Will saving throw become shaken, frightened, and cowering for 1 round.");
                 bp.m_Icon = Icon_ConsumeFear;

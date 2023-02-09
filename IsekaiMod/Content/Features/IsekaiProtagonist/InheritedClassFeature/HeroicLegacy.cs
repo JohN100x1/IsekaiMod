@@ -6,12 +6,13 @@ using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class HeroicLegacy {
         private static BlueprintFeature TrueSmiteFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteFeature");
         private static BlueprintFeature TrueSmiteAdditionalUse = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteAdditionalUse");
         private static BlueprintFeature TrueMarkFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueMarkFeature");
-        public static void configure() {
 
+        public static void configure() {
             var prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "HeroicLegacy", bp => {
                 bp.SetName(IsekaiContext, "Paladin Legacy - Hero of Light");
                 bp.SetDescription(IsekaiContext, "You are a true hero, smighting your enemies wherever you go.");
@@ -32,12 +33,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateLevelEntry(13, TrueSmiteAdditionalUse),
                     Helpers.CreateLevelEntry(16, TrueSmiteAdditionalUse),
                     Helpers.CreateLevelEntry(19, TrueSmiteAdditionalUse),
-
             };
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup(TrueSmiteFeature,TrueSmiteAdditionalUse,TrueMarkFeature),
                 };
-
             });
             LegacySelection.getClassFeature().AddFeatures(prog);
             LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
@@ -46,4 +45,3 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         }
     }
 }
-

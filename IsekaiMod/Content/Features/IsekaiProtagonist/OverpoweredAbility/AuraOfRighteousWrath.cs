@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Items.Ecnchantments;
@@ -13,7 +12,6 @@ using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UI.GenericSlot;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
@@ -22,12 +20,11 @@ using Kingmaker.Utility;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
-{
-    class AuraOfRighteousWrath
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
+
+    internal class AuraOfRighteousWrath {
+
+        public static void Add() {
             var Icon_AuraOfRighteousWrath = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_RIGHTEOUS_WRATH.png");
             var AuraOfRighteousWrathEnchantment = Helpers.CreateBlueprint<BlueprintWeaponEnchantment>(IsekaiContext, "AuraOfRighteousWrathEnchantment", bp => {
                 bp.m_EnchantName = Helpers.CreateString(IsekaiContext, "AuraOfRighteousWrathEnchantment.Name", "Overpowered Ability — Aura of Righteous Wrath");
@@ -36,19 +33,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.SetPrefix(IsekaiContext, "");
                 bp.SetSuffix(IsekaiContext, "");
                 bp.AddComponent<WeaponConditionalDamageDice>(c => {
-                    c.Damage = new DamageDescription()
-                    {
-                        Dice = new DiceFormula()
-                        {
+                    c.Damage = new DamageDescription() {
+                        Dice = new DiceFormula() {
                             m_Dice = DiceType.D6,
                             m_Rolls = 5
                         },
-                        TypeDescription = new DamageTypeDescription()
-                        {
+                        TypeDescription = new DamageTypeDescription() {
                             Type = DamageType.Physical,
                             Common = new DamageTypeDescription.CommomData(),
-                            Physical = new DamageTypeDescription.PhysicalData()
-                            {
+                            Physical = new DamageTypeDescription.PhysicalData() {
                                 Form = PhysicalDamageForm.Bludgeoning | PhysicalDamageForm.Piercing | PhysicalDamageForm.Slashing
                             }
                         }
@@ -104,7 +97,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     c.m_AreaEffect = AuraOfRighteousWrathArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var AuraOfRighteousWrathAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "AuraOfRighteousWrathAbility", bp => {
+            var AuraOfRighteousWrathAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AuraOfRighteousWrathAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Aura of Righteous Wrath");
                 bp.SetDescription(IsekaiContext, "Allies within 120 feet of you has two extra attacks and deal an additional 5d6 physical damage. "
                     + "They also gain 1d6 sneak attack equal to 1/2 your character level.");
@@ -112,7 +105,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.m_Buff = AuraOfRighteousWrathAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
-            var AuraOfRighteousWrathFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"AuraOfRighteousWrathFeature", bp => {
+            var AuraOfRighteousWrathFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfRighteousWrathFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Aura of Righteous Wrath");
                 bp.SetDescription(IsekaiContext, "Allies within 120 feet of you has two extra attacks and deal an additional 5d6 physical damage. "
                     + "They also gain 1d6 sneak attack equal to 1/2 your character level.");

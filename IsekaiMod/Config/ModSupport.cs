@@ -1,6 +1,6 @@
-﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+﻿using HarmonyLib;
+using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist;
-using IsekaiMod.Extensions;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -9,44 +9,50 @@ using Kingmaker.Blueprints.JsonSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using System.Linq;
 using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 using static Kingmaker.Blueprints.Classes.BlueprintProgression;
 using static UnityModManagerNet.UnityModManager;
-using static IsekaiMod.Main;
-using HarmonyLib;
 
-namespace IsekaiMod.Utilities
-{
-    class ModSupport
-    {
-        protected static bool IsExpandedContentEnabled() { return IsModEnabled("ExpandedContent"); }
-        protected static bool IsMysticalMayhemEnabled() { return IsModEnabled("MysticalMayhem"); }
-        protected static bool IsSpellbookMergeEnabled() { return IsModEnabled("SpellbookMerge"); }
-        public static bool IsExpandedElementEnabled() { return IsModEnabled("KineticistElementsExpanded"); }
+namespace IsekaiMod.Utilities {
+
+    internal class ModSupport {
+
+        protected static bool IsExpandedContentEnabled() {
+            return IsModEnabled("ExpandedContent");
+        }
+
+        protected static bool IsMysticalMayhemEnabled() {
+            return IsModEnabled("MysticalMayhem");
+        }
+
+        protected static bool IsSpellbookMergeEnabled() {
+            return IsModEnabled("SpellbookMerge");
+        }
+
+        public static bool IsExpandedElementEnabled() {
+            return IsModEnabled("KineticistElementsExpanded");
+        }
+
         [HarmonyLib.HarmonyPatch(typeof(BlueprintsCache), "Init")]
-        static class BlueprintsCache_Init_Patch
-        {
-            static bool Initialized;
+        private static class BlueprintsCache_Init_Patch {
+            private static bool Initialized;
 
             [HarmonyLib.HarmonyAfter()]
-            public static void Postfix()
-            {
+            public static void Postfix() {
                 if (Initialized) return;
                 Initialized = true;
                 if (IsekaiContext.AddedContent.Classes.IsDisabled("Isekai Protagonist")) return;
-                if (IsMysticalMayhemEnabled())
-                {
+                if (IsMysticalMayhemEnabled()) {
                     Main.Log("Mystical Mayhem 0.1.3 Support Enabled.");
                     BlueprintAbility MeteorSwarmAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("d0cd103b15494866b0444c1a961bc40f");
                     IsekaiProtagonistSpellList.Get().SpellsByLevel[9].m_Spells.Add(MeteorSwarmAbility.ToReference<BlueprintAbilityReference>());
                 }
-                if (IsExpandedContentEnabled())
-                {
+                if (IsExpandedContentEnabled()) {
                     Main.Log("Expanded Content 0.4.40 Support Enabled.");
                     AddExpandedContentSpells(IsekaiProtagonistSpellList.Get());
                     AddExpandedContentDrakes(IsekaiProtagonistClass.Get());
                 }
-                if (IsSpellbookMergeEnabled())
-                {
+                if (IsSpellbookMergeEnabled()) {
                     Main.Log("Spellbook Merge 1.7.0 Support Enabled.");
 
                     // Allow Spellbook to be merged with Aeon, Azata, Demon, and Trickster
@@ -64,15 +70,10 @@ namespace IsekaiMod.Utilities
                     ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AzataIncorporateSpellbook, VillainSpellbook.Get());
                     ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(DemonIncorporateSpellbook, VillainSpellbook.Get());
                     ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(TricksterIncorporateSpellbook, VillainSpellbook.Get());
-
                 }
-                
-               
-
             }
 
-            public static void AddExpandedContentSpells(BlueprintSpellList spellList)
-            {
+            public static void AddExpandedContentSpells(BlueprintSpellList spellList) {
                 //if enabled we grab these through the merge anyway
                 if (!IsekaiContext.AddedContent.Classes.IsDisabled("Merge Isekai Spelllist")) return;
 
@@ -90,7 +91,7 @@ namespace IsekaiMod.Utilities
                 BlueprintAbility SteamRayFusilladeAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("a8be30ddf37042d5b56ffaa8eae976d6");
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, GoodberryAbility, 1);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, HydraulicPushAbility, 1);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, FuryOftheSunAbility,2);
+                ThingsNotHandledByTTTCore.RegisterSpell(spellList, FuryOftheSunAbility, 2);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, HollowBladesAbility, 2);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, InflictPainAbility, 2);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, SlipstreamAbility, 2);
@@ -102,13 +103,11 @@ namespace IsekaiMod.Utilities
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, ScourgeOfTheHorsemenAbility, 9);
             }
 
-            public static void AddExpandedContentDrakes(BlueprintCharacterClass characterClass)
-            {
+            public static void AddExpandedContentDrakes(BlueprintCharacterClass characterClass) {
                 // Add Isekai Protagonist Class to Drake Progression
                 var DrakeCompanionProgression = BlueprintTools.GetBlueprint<BlueprintProgression>("925c3ece6b9446efa9100fe2cf98542e");
                 DrakeCompanionProgression.m_Classes = DrakeCompanionProgression.m_Classes.AddToArray(
-                    new ClassWithLevel
-                    {
+                    new ClassWithLevel {
                         m_Class = characterClass.ToReference<BlueprintCharacterClassReference>(),
                         AdditionalLevel = 0
                     });
@@ -118,8 +117,8 @@ namespace IsekaiMod.Utilities
                 IsekaiPetSelection.AddToSelection(DrakeCompanionSelection);
             }
         }
-        protected static bool IsModEnabled(string modName)
-        {
+
+        protected static bool IsModEnabled(string modName) {
             return modEntries.Where(mod => mod.Info.Id.Equals(modName) && mod.Enabled && !mod.ErrorOnLoading).Any();
         }
     }

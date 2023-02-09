@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
@@ -16,18 +15,17 @@ using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
-{
-    class Instakill
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
+
+    internal class Instakill {
         private static readonly BlueprintBuff Stunned = BlueprintTools.GetBlueprint<BlueprintBuff>("09d39b38bb7c6014394b6daced9bacd3");
         private static readonly Sprite Icon_TwoHandedFighterDevastatingBlow = BlueprintTools.GetBlueprint<BlueprintFeature>("687aa977ef0d3f849af8bee2f40930df").m_Icon;
-        public static void Add()
-        {
+
+        public static void Add() {
             var InstakillAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "InstakillAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Instakill");
                 bp.SetDescription(IsekaiContext, "Kills the targeted creature if they fail a DC 99 fortitude saving throw, otherwise they are stunned for 1 round. "
@@ -73,7 +71,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var InstakillFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"InstakillFeature", bp => {
+            var InstakillFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "InstakillFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Instakill");
                 bp.SetDescription(IsekaiContext, "You can kill any creature if they fail a DC 99 fortitude saving throw, otherwise they are stunned for 1 round. "
                     + "This ability bypasses death immunity.");

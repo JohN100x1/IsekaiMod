@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
@@ -18,12 +17,11 @@ using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
-{
-    class SuperBuff
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
+
+    internal class SuperBuff {
+
+        public static void Add() {
             // Buffs
             BlueprintBuff[] Buffs = new BlueprintBuff[]
             {
@@ -164,7 +162,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "24 hours");
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var SuperBuffFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"SuperBuffFeature", bp => {
+            var SuperBuffFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SuperBuffFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Super Buff");
                 bp.SetDescription(IsekaiContext, "You are able to buff you and your allies with the following effects for 24 hours: resist energy, protection from energy, protection from arrows, haste, "
                     + "mage armor, shield, shield of faith, veil of heaven, veil of positive energy, blur, bull's strength, cat's grace, bear's endurance, fox's cunning, owl's wisdom, "
@@ -184,28 +182,24 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 
             OverpoweredAbilitySelection.AddToSelection(SuperBuffFeature);
         }
-        private static List<GameAction> CreateApplyBuffActionList(BlueprintBuff[] buffs)
-        {
+
+        private static List<GameAction> CreateApplyBuffActionList(BlueprintBuff[] buffs) {
             List<GameAction> actions = new();
-            foreach (BlueprintBuff buff in buffs)
-            {
+            foreach (BlueprintBuff buff in buffs) {
                 actions.Add(
-                    new ContextActionApplyBuff()
-                    {
+                    new ContextActionApplyBuff() {
                         m_Buff = buff.ToReference<BlueprintBuffReference>(),
                         DurationValue = Values.Duration.OneDay,
                     });
             }
             return actions;
         }
-        private static List<GameAction> CreateRemoveBuffActionList(BlueprintBuff[] buffs)
-        {
+
+        private static List<GameAction> CreateRemoveBuffActionList(BlueprintBuff[] buffs) {
             List<GameAction> actions = new();
-            foreach (BlueprintBuff buff in buffs)
-            {
+            foreach (BlueprintBuff buff in buffs) {
                 actions.Add(
-                    new ContextActionRemoveBuff()
-                    {
+                    new ContextActionRemoveBuff() {
                         m_Buff = buff.ToReference<BlueprintBuffReference>(),
                         OnlyFromCaster = true
                     });

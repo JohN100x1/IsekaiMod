@@ -1,5 +1,4 @@
 ﻿using IsekaiMod.Components;
-using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -10,19 +9,17 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.Localization;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.ExceptionalFeats
-{
-    class ExceptionalSummoningSelection
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Features.ExceptionalFeats {
+
+    internal class ExceptionalSummoningSelection {
+
+        public static void Add() {
             // Mighty Summoning
             var Icon_ExceptionalSummoning = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_EXCEPTIONAL_SUMMONING.png");
             var MightySummoningSummonBuff = ThingsNotHandledByTTTCore.CreateBuff("MightySummoningSummonBuff", bp => {
@@ -67,13 +64,13 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
             });
-            var MightySummoningAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "MightySummoningAbility", bp => {
+            var MightySummoningAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("MightySummoningAbility", bp => {
                 bp.SetName(IsekaiContext, "Mighty Summoning");
                 bp.SetDescription(IsekaiContext, "Your summoned creatures get a +5 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, and AC per character level.");
                 bp.m_Icon = Icon_ExceptionalSummoning;
                 bp.m_Buff = MightySummoningBuff.ToReference<BlueprintBuffReference>();
             });
-            var MightySummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"MightySummoningFeature", bp => {
+            var MightySummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "MightySummoningFeature", bp => {
                 bp.SetName(IsekaiContext, "Mighty Summoning");
                 bp.SetDescription(IsekaiContext, "Your summoned creatures get a +5 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, and AC per character level.");
                 bp.m_Icon = Icon_ExceptionalSummoning;
@@ -144,14 +141,14 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
             });
-            var MagicalSummoningAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "MagicalSummoningAbility", bp => {
+            var MagicalSummoningAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("MagicalSummoningAbility", bp => {
                 bp.SetName(IsekaiContext, "Magical Summoning");
                 bp.SetDescription(IsekaiContext, "Your summoned creatures get a +5 bonus to maximum Hit Points per character level and a +1 bonus to spell penetration, spell DC, spell damage, "
                     + "and saving throws per character level.");
                 bp.m_Icon = Icon_ExceptionalSummoning;
                 bp.m_Buff = MagicalSummoningBuff.ToReference<BlueprintBuffReference>();
             });
-            var MagicalSummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"MagicalSummoningFeature", bp => {
+            var MagicalSummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "MagicalSummoningFeature", bp => {
                 bp.SetName(IsekaiContext, "Magical Summoning");
                 bp.SetDescription(IsekaiContext, "Your summoned creatures get a +5 bonus to maximum Hit Points per character level and a +1 bonus to spell penetration, spell DC, spell damage, "
                     + "and saving throws per character level.");
@@ -223,13 +220,13 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
             });
-            var ForbiddenSummoningAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "ForbiddenSummoningAbility", bp => {
+            var ForbiddenSummoningAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("ForbiddenSummoningAbility", bp => {
                 bp.SetName(IsekaiContext, "Forbidden Summoning");
                 bp.SetDescription(IsekaiContext, "Your summoned creatures gain a +10 bonus to hit points per character level and a +1 bonus to all attributes per character level.");
                 bp.m_Icon = Icon_ForbiddenSummoning;
                 bp.m_Buff = ForbiddenSummoningBuff.ToReference<BlueprintBuffReference>();
             });
-            var ForbiddenSummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"ForbiddenSummoningFeature", bp => {
+            var ForbiddenSummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "ForbiddenSummoningFeature", bp => {
                 bp.SetName(IsekaiContext, "Forbidden Summoning");
                 bp.SetDescription(IsekaiContext, "Your summoned creatures gain a +10 bonus to hit points per character level and a +1 bonus to all attributes per character level.");
                 bp.m_Icon = Icon_ForbiddenSummoning;
@@ -286,13 +283,13 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
             });
-            var FerociousSummoningAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility( "FerociousSummoningAbility", bp => {
+            var FerociousSummoningAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("FerociousSummoningAbility", bp => {
                 bp.SetName(IsekaiContext, "Ferocious Summoning");
                 bp.SetDescription(IsekaiContext, "Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level.");
                 bp.m_Icon = Icon_FerociousSummoning;
                 bp.m_Buff = FerociousSummoningBuff.ToReference<BlueprintBuffReference>();
             });
-            var FerociousSummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"FerociousSummoningFeature", bp => {
+            var FerociousSummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "FerociousSummoningFeature", bp => {
                 bp.SetName(IsekaiContext, "Ferocious Summoning");
                 bp.SetDescription(IsekaiContext, "Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level.");
                 bp.m_Icon = Icon_FerociousSummoning;

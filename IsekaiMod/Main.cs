@@ -1,16 +1,14 @@
-﻿using UnityModManagerNet;
-using HarmonyLib;
-using IsekaiMod.Config;
-using TabletopTweaks.Core.Utilities;
+﻿using HarmonyLib;
 using IsekaiMod.ModLogic;
+using TabletopTweaks.Core.Utilities;
+using UnityModManagerNet;
 
-namespace IsekaiMod
-{
-    static class Main
-    {
+namespace IsekaiMod {
+
+    internal static class Main {
         public static ModContextTTTBase IsekaiContext;
-        public static bool Load(UnityModManager.ModEntry modEntry)
-        {
+
+        public static bool Load(UnityModManager.ModEntry modEntry) {
             var harmony = new Harmony(modEntry.Info.Id);
             IsekaiContext = new ModContextTTTBase(modEntry);
             IsekaiContext.ModEntry.OnSaveGUI = OnSaveGUI;
@@ -19,17 +17,17 @@ namespace IsekaiMod
             PostPatchInitializer.Initialize(IsekaiContext);
             return true;
         }
-        public static void Log(string msg)
-        {
+
+        public static void Log(string msg) {
             IsekaiContext.Logger.Log(msg);
         }
+
         [System.Diagnostics.Conditional("DEBUG")]
-        public static void LogDebug(string msg)
-        {
+        public static void LogDebug(string msg) {
             IsekaiContext.Logger.Log(msg);
         }
-        static void OnSaveGUI(UnityModManager.ModEntry modEntry)
-        {
+
+        private static void OnSaveGUI(UnityModManager.ModEntry modEntry) {
             IsekaiContext.SaveAllSettings();
         }
     }

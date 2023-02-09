@@ -1,30 +1,26 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
+﻿using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using System.Collections.Generic;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
-using Kingmaker.Blueprints.Classes;
 
-namespace IsekaiMod.Content.Features.Deathsnatcher
-{
-    class DeathsnatcherUndeadMaster
-    {
+namespace IsekaiMod.Content.Features.Deathsnatcher {
+
+    internal class DeathsnatcherUndeadMaster {
         private static readonly Sprite Icon_MasteryOfFlesh = BlueprintTools.GetBlueprint<BlueprintAbility>("921ed6a6751d71140b4e75ab7bcb9890").m_Icon;
 
-        public static void Add()
-        {
+        public static void Add() {
             var DeathsnatcherCommandUndeadAbility = BlueprintTools.GetModBlueprint<BlueprintAbility>(IsekaiContext, "DeathsnatcherCommandUndeadAbility");
             var DeathsnatcherAnimateDeadAbility = BlueprintTools.GetModBlueprint<BlueprintAbility>(IsekaiContext, "DeathsnatcherAnimateDeadAbility");
             var DeathsnatcherCreateUndeadResource = BlueprintTools.GetModBlueprint<BlueprintAbilityResource>(IsekaiContext, "DeathsnatcherCreateUndeadResource");
             var DeathsnatcherFingerOfDeathResource = BlueprintTools.GetModBlueprint<BlueprintAbilityResource>(IsekaiContext, "DeathsnatcherFingerOfDeathResource");
 
             // Feature
-            var DeathsnatcherUndeadMaster = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"DeathsnatcherUndeadMaster", bp => {
+            var DeathsnatcherUndeadMaster = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherUndeadMaster", bp => {
                 bp.SetName(IsekaiContext, "Undead Master");
                 bp.SetDescription(IsekaiContext, "At 20th level, the Deathsnatcher becomes a master of the undead.\n"
                     + "Command Undead has unlimited uses.\n"

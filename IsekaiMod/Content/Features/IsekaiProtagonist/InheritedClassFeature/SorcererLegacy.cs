@@ -4,16 +4,15 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UnitLogic.FactLogic;
-using System;
 using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class SorcererLegacy {
+
         public static void configure() {
             ExtraBloodlineSelection.Configure();
             var ExtraSelection = ExtraBloodlineSelection.Get();
@@ -27,7 +26,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                         m_Class = IsekaiProtagonistClass.GetReference(),
                         AdditionalLevel = 0
                     }
-
                 };
                 //do not place the bloodline at level 1, when inside a progression it does not like that and makes all options invalid, strangely for oracle it works and that is a progression too...
                 bp.LevelEntries = new LevelEntry[] {
@@ -38,7 +36,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateLevelEntry(12, ExtraSelection),
                     Helpers.CreateLevelEntry(15, ExtraSelection),
                     Helpers.CreateLevelEntry(18, ExtraSelection),
-
                 };
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup( ExtraSelection),
@@ -47,8 +44,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             LegacySelection.getClassFeature().AddFeatures(prog);
             LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
             VillainLegacySelection.getClassFeature().AddFeatures(prog);
-
         }
+
         public static void PatchSorcererBloodlines() {
             IsekaiContext.Logger.Log("trying to patch bloodlines:");
             BlueprintCharacterClass myClass = IsekaiProtagonistClass.Get();
@@ -74,11 +71,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                                     c.m_Spell = spellReference.value;
                                     c.SpellLevel = spellReference.level;
                                     c.m_CharacterClass = myClass.ToReference<BlueprintCharacterClassReference>();
-
                                 });
                             }
                         }
-
                     }
                 }
             }
@@ -87,6 +82,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
     internal class ExtraBloodlineSelection {
         private static BlueprintFeatureSelection IsekaiSorcererSelection;
+
         public static void Configure() {
             var IsekaiBloodlineSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiBloodlineSelection", bp => {
                 bp.SetName(IsekaiContext, "Bloodline");
@@ -108,12 +104,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     StaticReferences.SorcererFeatSelection.ToReference<BlueprintFeatureReference>(),
                 };
             });
-
         }
+
         public static BlueprintFeatureSelection Get() {
             if (IsekaiSorcererSelection != null) return IsekaiSorcererSelection;
             return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiSorcererSelection");
         }
+
         public static BlueprintFeatureReference GetReference() {
             return Get().ToReference<BlueprintFeatureReference>();
         }

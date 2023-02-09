@@ -1,20 +1,17 @@
-﻿using IsekaiMod.Utilities;
-using IsekaiMod.Extensions;
-using Kingmaker.UnitLogic.FactLogic;
+﻿using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
-using Kingmaker.Blueprints.Classes;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Backgrounds
-{
-    internal class HighschoolStudent
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Backgrounds {
+
+    internal class HighschoolStudent {
+
+        public static void Add() {
             // Background
-            var BackgroundHighschoolStudent = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"BackgroundHighschoolStudent", bp => {
+            var BackgroundHighschoolStudent = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "BackgroundHighschoolStudent", bp => {
                 bp.SetName(IsekaiContext, "Highschool Student");
                 bp.SetDescription(IsekaiContext, "The Highschool Student gains a +1 bonus to all attributes.\n"
                     + "If the character already has the class skill, {g|Encyclopedia:Weapon_Proficiency}weapon proficiency{/g} or armor proficiency granted by the selected background "

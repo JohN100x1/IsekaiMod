@@ -1,18 +1,15 @@
 ﻿using HarmonyLib;
-using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Backgrounds
-{
-    internal class IsekaiBackgroundSelection
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Backgrounds {
+
+    internal class IsekaiBackgroundSelection {
+
+        public static void Add() {
             // Isekai Background Selection
             var IsekaiBackgroundSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiBackgroundSelection", bp => {
                 bp.SetName(IsekaiContext, "Isekai");
@@ -28,13 +25,13 @@ namespace IsekaiMod.Content.Backgrounds
             var BackgroundSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("f926dabeee7f8a54db8f2010b323383c");
             BackgroundSelection.m_AllFeatures = BackgroundSelection.m_AllFeatures.AddToArray(IsekaiBackgroundSelection.ToReference<BlueprintFeatureReference>());
         }
-        public static void Register(BlueprintFeature background)
-        {
+
+        public static void Register(BlueprintFeature background) {
             BlueprintFeatureSelection backgroundSelection = Get();
             backgroundSelection.m_AllFeatures = backgroundSelection.m_AllFeatures.AddToArray(background.ToReference<BlueprintFeatureReference>());
         }
-        public static BlueprintFeatureSelection Get()
-        {
+
+        public static BlueprintFeatureSelection Get() {
             return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiBackgroundSelection");
         }
     }

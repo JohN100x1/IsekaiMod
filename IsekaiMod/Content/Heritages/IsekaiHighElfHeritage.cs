@@ -1,31 +1,28 @@
-﻿using IsekaiMod.Utilities;
-using IsekaiMod.Extensions;
+﻿using HarmonyLib;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Designers.Mechanics.Buffs;
+using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
-using Kingmaker.UnitLogic.Mechanics;
-using Kingmaker.UnitLogic.Mechanics.Components;
-using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using UnityEngine;
+using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.UnitLogic.Mechanics.Components;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
-using HarmonyLib;
 
-namespace IsekaiMod.Content.Heritages
-{
-    internal class IsekaiHighElfHeritage
-    {
+namespace IsekaiMod.Content.Heritages {
+
+    internal class IsekaiHighElfHeritage {
         private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = BlueprintTools.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
         private static readonly Sprite Icon_TricksterCharmWhatever = BlueprintTools.GetBlueprint<BlueprintAbility>("943328ac5bc8a734e85b5b2af3ae2bf7").m_Icon;
-        public static void Add()
-        {
+
+        public static void Add() {
             // High Elf Heritage
-            var IsekaiHighElfHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiHighElfHeritage", bp => {
+            var IsekaiHighElfHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiHighElfHeritage", bp => {
                 bp.SetName(IsekaiContext, "Isekai High Elf");
                 bp.SetDescription(IsekaiContext, "Otherworldly entities who are reincarnated into the world of Golarion as a High Elf have both extreme beauty and power. "
                     + "They are a refined and cultured reflection of the elven race.\n"

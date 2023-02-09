@@ -5,12 +5,12 @@ using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class LegacySelection {
         private static BlueprintFeatureSelection ClassSelection;
         private static BlueprintFeatureSelection AbilitySelection;
 
         public static void configureStep1() {
-
             if (ClassSelection != null) {
                 IsekaiContext.Logger.LogWarning("repeated configuration of =LegacyClassSelection");
                 return;
@@ -33,14 +33,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.m_AllFeatures = new BlueprintFeatureReference[0];
                 bp.m_Features = new BlueprintFeatureReference[0];
             });
-
         }
+
         public static BlueprintFeatureSelection getClassFeature() {
             if (ClassSelection != null) {
                 return ClassSelection;
             }
             return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "LegacyClassSelection");
         }
+
         public static BlueprintFeatureSelection getOverwhelmingFeature() {
             if (AbilitySelection != null) {
                 return AbilitySelection;
@@ -61,7 +62,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             //always do this last to ensure any legacy that might get an arcana goes before
             ArcanaSelection.Configure();
             OverpoweredAbilitySelection.AddToSelection(getOverwhelmingFeature());
-            
         }
     }
 }

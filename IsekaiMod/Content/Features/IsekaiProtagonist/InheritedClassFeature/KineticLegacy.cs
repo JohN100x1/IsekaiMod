@@ -1,6 +1,4 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
@@ -12,6 +10,7 @@ using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class KineticLegacy {
         public static readonly BlueprintProgression KineticBlastProgression = BlueprintTools.GetBlueprint<BlueprintProgression>("30a5b8cf728bd4a4d8d90fc4953e322e");
         public static readonly BlueprintProgression KineticOverflowProgression = BlueprintTools.GetBlueprint<BlueprintProgression>("86beb0391653faf43aec60d5ec05b538");
@@ -20,7 +19,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static readonly BlueprintFeature KineticDismissInfusion = BlueprintTools.GetBlueprint<BlueprintFeature>("48bbbb16189443049663ca161bb3e338");
         public static readonly BlueprintFeature KineticBurnFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("57e3577a0eb53294e9d7cc649d5239a3");
         public static readonly BlueprintFeature KineticGatherPower = BlueprintTools.GetBlueprint<BlueprintFeature>("71f526b1d4b50b94582b0b9cbe12b0e0");
-
 
         public static readonly BlueprintFeatureSelection KineticFocusSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("1f3a15a3ae8a5524ab8b97f469bf4e3d");
         public static readonly BlueprintFeatureSelection KineticInfusionSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("58d6f8e9eea63f6418b107ce64f315ea");
@@ -34,7 +32,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static readonly BlueprintFeatureSelection KineticThirdElementSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("e2c1718828fc843479f18ab4d75ded86");
         public static readonly BlueprintFeature KineticCompBlastSpec = BlueprintTools.GetBlueprint<BlueprintFeature>("df8897708983d4846871ca72c4cbfc52");
         public static readonly BlueprintFeatureSelection KineticMetakinesisMaster = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("8c33002186eb2fd45a140eed1301e207");
-
 
         public static void configure() {
             var IsekaiKineticistTraining = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiKineticistTraining", bp => {
@@ -82,7 +79,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateLevelEntry(18, KineticWildSelection),
                     Helpers.CreateLevelEntry(19, KineticInfusionSelection, KineticMetakinesisMaster),
                     Helpers.CreateLevelEntry(20, KineticWildSelection),
-
             };
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup(KineticInfusionSelection),
@@ -90,12 +86,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateUIGroup(KineticOverflowProgression, KineticMetakinesisEmpower,KineticMetakinesisMaster,KineticMetakinesisMaximize,KineticMetakinesisQuicken),
                     Helpers.CreateUIGroup(KineticBlastProgression, KineticCompBlastSpec,KineticThirdElementSelection,KineticSecElementSelection, KineticFocusSelection, KineticSuperCharge),
                 };
-
             });
             LegacySelection.getClassFeature().AddFeatures(prog);
             LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
             VillainLegacySelection.getClassFeature().AddFeatures(prog);
         }
+
         public static void PatchKineticistProgression() {
             BlueprintCharacterClass myClass = IsekaiProtagonistClass.Get();
             var KineticBlastProgression = BlueprintTools.GetBlueprint<BlueprintProgression>("30a5b8cf728bd4a4d8d90fc4953e322e");
@@ -112,7 +108,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             KineticOverflowProgression.GiveFeaturesForPreviousLevels = true;
             KineticInfusionSpecProgression.AddClass(myClass);
             KineticInfusionSpecProgression.GiveFeaturesForPreviousLevels = true;
-
 
             // the actual elemental blasts have to be progressions by definition, otherwise someone before me has already screwed up
             foreach (var elementalFocusRef in KineticFocusSelection.m_AllFeatures) {

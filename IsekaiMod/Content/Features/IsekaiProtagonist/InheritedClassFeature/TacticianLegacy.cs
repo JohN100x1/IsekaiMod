@@ -2,13 +2,12 @@
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Designers.Mechanics.Facts;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class TacticianLegacy {
 
         public static void Configure() {
@@ -34,15 +33,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateLevelEntry(12,StaticReferences.Teamwork),
                     Helpers.CreateLevelEntry(16,StaticReferences.Teamwork),
                     Helpers.CreateLevelEntry(18,StaticReferences.Teamwork),
-
             };
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup(StaticReferences.SoloTactics, StaticReferences.Teamwork, StaticReferences.ForesterTactics, StaticReferences.AnimalTeamwork,StaticReferences.SummonTactics)
                 };
-
             });
             LegacySelection.getClassFeature().AddFeatures(prog);
-            LegacySelection.getOverwhelmingFeature().AddFeatures(prog); 
+            LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
             HeroLegacySelection.getClassFeature().AddFeatures(prog);
             VillainLegacySelection.getClassFeature().AddFeatures(prog);
         }

@@ -1,13 +1,15 @@
 ﻿using HarmonyLib;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
-using Kingmaker.Blueprints.Classes.Selection;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
+
     internal class BlessingOfTheMythic {
+
         public static void Configure() {
             var MythicAeonSpellsKnown = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "AeonSpellsKnown", bp => {
                 bp.SetName(IsekaiContext, "Mythic Aeon Spells");
@@ -155,7 +157,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 .AddRangeToArray<BlueprintFeatureReference>(BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("e0ce40968bf0007408b11089a10f36cf").m_AllFeatures)
                 ;
             });
-
 
             var MythicSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BlessingOfTheMythic", bp => {
                 bp.SetName(IsekaiContext, "Mythic Class Feature");
