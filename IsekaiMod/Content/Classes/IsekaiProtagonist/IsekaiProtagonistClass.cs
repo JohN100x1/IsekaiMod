@@ -16,14 +16,13 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using UnityEngine;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.IsekaiProtagonist
-{
-    internal class IsekaiProtagonistClass
-    {
+namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
+    internal class IsekaiProtagonistClass {
         private static BlueprintCharacterClass isekaiProtagonistClass;
 
         // Icons
         private static readonly Sprite Icon_SneakAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87").m_Icon;
+
         private static readonly Sprite Icon_ForetellAidBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("faf473e3a977fd4428cd3f1a526346d2").m_Icon;
         private static readonly Sprite Icon_EdictOfImpenetrableFortress = BlueprintTools.GetBlueprint<BlueprintAbility>("d7741c08ccf699e4a8a8f8ab2ed345f8").m_Icon;
         private static readonly Sprite Icon_TrickFate = BlueprintTools.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
@@ -31,14 +30,15 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 
         // Stat Progression
         private static readonly BlueprintStatProgression BABFull = BlueprintTools.GetBlueprint<BlueprintStatProgression>("b3057560ffff3514299e8b93e7648a9d");
+
         private static readonly BlueprintStatProgression SavesHigh = BlueprintTools.GetBlueprint<BlueprintStatProgression>("ff4662bde9e75f145853417313842751");
 
         // Used in Class
         private static readonly BlueprintCharacterClass SlayerClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("c75e0971973957d4dbad24bc7957e4fb");
+
         private static readonly BlueprintCharacterClass AnimalClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("4cd1757a0eea7694ba5c933729a53920");
 
-        public static void Add()
-        {
+        public static void Add() {
             // TODO: rename Hero's Presence to Heroic Aspect?
             // TODO: add scaling natural armor, strength and dexterity (like animal companion) to deathsnatcher?
             // TODO: add vampiric drain spell for isekai vampire heritage?
@@ -149,28 +149,25 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             // Register Class
             ThingsNotHandledByTTTCore.RegisterClass(isekaiProtagonistClass);
         }
-        public static void RegisterArchetype(BlueprintArchetype archetype)
-        {
+        public static void RegisterArchetype(BlueprintArchetype archetype) {
             BlueprintCharacterClass IsekaiProtagonistClass = Get();
             IsekaiProtagonistClass.m_Archetypes = IsekaiProtagonistClass.m_Archetypes.AppendToArray(archetype.ToReference<BlueprintArchetypeReference>());
         }
-        public static void SetProgression(BlueprintProgression progression)
-        {
+        public static void SetProgression(BlueprintProgression progression) {
             BlueprintCharacterClass IsekaiProtagonistClass = Get();
             IsekaiProtagonistClass.m_Progression = progression.ToReference<BlueprintProgressionReference>();
         }
-        public static void SetDefaultBuild(BlueprintUnitFact prebuildFeatureList)
-        {
+        public static void SetDefaultBuild(BlueprintUnitFact prebuildFeatureList) {
             BlueprintCharacterClass IsekaiProtagonistClass = Get();
             IsekaiProtagonistClass.m_DefaultBuild = prebuildFeatureList.ToReference<BlueprintUnitFactReference>();
         }
-        public static BlueprintCharacterClass Get()
-        {
-            if (isekaiProtagonistClass != null) { return isekaiProtagonistClass; }
+        public static BlueprintCharacterClass Get() {
+            if (isekaiProtagonistClass != null) { 
+                return isekaiProtagonistClass; 
+            }
             return BlueprintTools.GetModBlueprint<BlueprintCharacterClass>(IsekaiContext, "IsekaiProtagonistClass");
         }
-        public static BlueprintCharacterClassReference GetReference()
-        {
+        public static BlueprintCharacterClassReference GetReference() {
             return Get().ToReference<BlueprintCharacterClassReference>();
         }
     }
