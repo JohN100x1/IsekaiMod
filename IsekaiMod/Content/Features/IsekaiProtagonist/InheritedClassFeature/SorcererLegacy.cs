@@ -14,10 +14,11 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class SorcererLegacy {
+        private static BlueprintProgression prog;
         public static void configure() {
             ExtraBloodlineSelection.Configure();
             var ExtraSelection = ExtraBloodlineSelection.Get();
-            var prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "SorcererLegacyProgression", bp => {
+            prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "SorcererLegacyProgression", bp => {
                 bp.SetName(IsekaiContext, "Sorcerer Legacy - Chimera");
                 bp.SetDescription(IsekaiContext, "Their otherworldly knowledge and point of view allows Chimeras to imbue themselves with different bloodlines in order to gain power and strength. \nThe Chimera is constantly seeking out new sources of power, and their ability to absorb and incorporate these different bloodlines allows them to become truly formidable foes. \nHowever, their constant experimentation with bloodlines can also lead to confusion and uncertainty about their own heritage and identity, as their original ancestry becomes harder to discern over time.");
                 bp.GiveFeaturesForPreviousLevels = false;
@@ -51,37 +52,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         }
         public static void PatchSorcererBloodlines() {
             IsekaiContext.Logger.Log("trying to patch bloodlines:");
-            BlueprintCharacterClass myClass = IsekaiProtagonistClass.Get();
-            foreach (BlueprintProgression prog in StaticReferences.SorcererBloodlineSelection.m_AllFeatures) {
-                prog.GiveFeaturesForPreviousLevels = true;
-                prog.AddClass(myClass);
-                //check all levelentries of the progression and their features
-                foreach (var levelItem in prog.LevelEntries) {
-                    foreach (var potentialFeature in levelItem.m_Features) {
-                        if (potentialFeature.Get() is BlueprintFeature feature) {
-                            var mySet = new HashSet<SpellReference>();
-                            foreach (var component in feature.Components) {
-                                //if so are any of its components adding known spells
-                                if (component is AddKnownSpell asSpell) {
-                                    //don't re add spells already added for my class
-                                    if (asSpell.m_CharacterClass != myClass.ToReference<BlueprintCharacterClassReference>()) {
-                                        mySet.Add(new SpellReference(asSpell.SpellLevel, asSpell.m_Spell));
-                                    }
-                                }
-                            }
-                            foreach (var spellReference in mySet) {
-                                feature.AddComponent<AddKnownSpell>(c => {
-                                    c.m_Spell = spellReference.value;
-                                    c.SpellLevel = spellReference.level;
-                                    c.m_CharacterClass = myClass.ToReference<BlueprintCharacterClassReference>();
+            BlueprintCharacterClassReference refClass = ClassTools.Classes.SorcererClass.ToReference<BlueprintCharacterClassReference>();
+            BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
+            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.SorcererBloodlineSelection, myClass, refClass, 0);
+        }
 
-                                });
-                            }
-                        }
-
-                    }
-                }
-            }
+        public static BlueprintProgression Get() {
+            if (prog != null) return prog;
+            return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "SorcererLegacyProgression");
         }
     }
 

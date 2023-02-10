@@ -14,10 +14,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static BlueprintFeatureSelection shamanSpirit = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("00c8c566d1825dd4a871250f35285982");
         public static BlueprintFeatureSelection shamanHex = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("4223fe18c75d4d14787af196a04e14e7");
 
+        private static BlueprintProgression prog;
+
         public static void Configure() {
             ShamanSelection.Configure();
             var shamanFeat = ShamanSelection.Get();
-            var prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "ShamanLegacy", bp => {
+            prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "ShamanLegacy", bp => {
                 bp.SetName(IsekaiContext, "Shaman Legacy - Spirit Beacons");
                 bp.SetDescription(IsekaiContext, "As a person who have originated from the other world Spirit Beacon has an unique aura. \nThis aura is particularly attractive to spirits, and they have learned to harness the power of these spirits by forming contracts with them. \nDespite their reliance on spirits, Spirit Beacons are not bound by the will of these supernatural beings. \nThey are able to maintain their independence and make their own decisions, using the power of the spirits as a tool rather than being controlled by them.");
                 bp.GiveFeaturesForPreviousLevels = true;
@@ -52,13 +54,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static void PatchShamanProgressions() {
             ShamanSelection.GetHex().m_AllFeatures = shamanHex.m_AllFeatures;            
 
-            BlueprintCharacterClass myClass = IsekaiProtagonistClass.Get();
-            foreach (BlueprintProgression shamanSpiritProg in shamanSpirit.m_AllFeatures) {
-                shamanSpiritProg.AddClass(myClass);
-                shamanSpiritProg.GiveFeaturesForPreviousLevels = true;
-            }
-
+            BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
+            BlueprintCharacterClassReference refClass = ClassTools.Classes.ShamanClass.ToReference<BlueprintCharacterClassReference>();
+            StaticReferences.PatchClassIntoFeatureOfReferenceClass(shamanSpirit, myClass, refClass, 0);
+            StaticReferences.PatchClassIntoFeatureOfReferenceClass(shamanHex, myClass, refClass, 0);
             ShamanSelection.GetSpirit().m_AllFeatures = shamanSpirit.m_AllFeatures;
+        }
+
+        public static BlueprintProgression Get() {
+            if (prog != null) return prog;
+            return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "ShamanLegacy");
         }
     }
     internal class ShamanSelection {

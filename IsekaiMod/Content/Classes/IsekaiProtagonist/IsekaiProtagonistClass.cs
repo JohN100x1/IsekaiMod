@@ -20,6 +20,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
 {
     internal class IsekaiProtagonistClass
     {
+        private static BlueprintCharacterClass isekaiProtagonistClass;
+
         // Icons
         private static readonly Sprite Icon_SneakAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87").m_Icon;
         private static readonly Sprite Icon_ForetellAidBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("faf473e3a977fd4428cd3f1a526346d2").m_Icon;
@@ -74,7 +76,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             });
 
             // Main Class
-            var IsekaiProtagonistClass = Helpers.CreateBlueprint<BlueprintCharacterClass>(IsekaiContext, "IsekaiProtagonistClass", bp => {
+            isekaiProtagonistClass = Helpers.CreateBlueprint<BlueprintCharacterClass>(IsekaiContext, "IsekaiProtagonistClass", bp => {
                 bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"IsekaiProtagonistClass.Name", "Isekai Protagonist");
                 bp.LocalizedDescription = Helpers.CreateString(IsekaiContext, $"IsekaiProtagonistClass.Description", "Isekai protagonists possess immense power, and are able to defeat every enemy "
                     + "with ease using their overpowered abilities. They also have plot armor, which make them hard to kill. They are the main character; everyone else are just NPCs.");
@@ -142,10 +144,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 // Set Default Build later using SetDefaultBuild
                 bp.m_DefaultBuild = null;
             });
-            IsekaiProtagonistSpellbook.SetCharacterClass(IsekaiProtagonistClass);
+            IsekaiProtagonistSpellbook.SetCharacterClass(isekaiProtagonistClass);
 
             // Register Class
-            ThingsNotHandledByTTTCore.RegisterClass(IsekaiProtagonistClass);
+            ThingsNotHandledByTTTCore.RegisterClass(isekaiProtagonistClass);
         }
         public static void RegisterArchetype(BlueprintArchetype archetype)
         {
@@ -164,6 +166,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
         }
         public static BlueprintCharacterClass Get()
         {
+            if (isekaiProtagonistClass != null) { return isekaiProtagonistClass; }
             return BlueprintTools.GetModBlueprint<BlueprintCharacterClass>(IsekaiContext, "IsekaiProtagonistClass");
         }
         public static BlueprintCharacterClassReference GetReference()

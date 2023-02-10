@@ -18,10 +18,15 @@ namespace IsekaiMod.Utilities
 {
     class ModSupport
     {
-        protected static bool IsExpandedContentEnabled() { return IsModEnabled("ExpandedContent"); }
-        protected static bool IsMysticalMayhemEnabled() { return IsModEnabled("MysticalMayhem"); }
-        protected static bool IsSpellbookMergeEnabled() { return IsModEnabled("SpellbookMerge"); }
+        public static bool IsExpandedContentEnabled() { return IsModEnabled("ExpandedContent"); }
+        public static bool IsMysticalMayhemEnabled() { return IsModEnabled("MysticalMayhem"); }
+        public static bool IsSpellbookMergeEnabled() { return IsModEnabled("SpellbookMerge"); }
         public static bool IsExpandedElementEnabled() { return IsModEnabled("KineticistElementsExpanded"); }
+
+        public static bool IsHomebrewArchetypesEnabled() { return IsModEnabled("HomebrewArchetypes"); }
+
+        public static bool isTableTopTweakCoreEnabled() { return IsModEnabled("TabletopTweaks-Core"); }
+
         [HarmonyLib.HarmonyPatch(typeof(BlueprintsCache), "Init")]
         static class BlueprintsCache_Init_Patch
         {
@@ -74,7 +79,7 @@ namespace IsekaiMod.Utilities
             public static void AddExpandedContentSpells(BlueprintSpellList spellList)
             {
                 //if enabled we grab these through the merge anyway
-                if (!IsekaiContext.AddedContent.Classes.IsDisabled("Merge Isekai Spelllist")) return;
+                if (IsekaiContext.AddedContent.Classes.IsEnabled("Merge Isekai Spelllist")) return;
 
                 BlueprintAbility FuryOftheSunAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("accc5584b62e4e73aa0a693f725ddf60");
                 BlueprintAbility GloomblindBoltsAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("e28f4633c0a2425d8895adf20cb22f8f");

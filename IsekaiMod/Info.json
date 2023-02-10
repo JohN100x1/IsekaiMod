@@ -2,7 +2,7 @@
   "Id": "IsekaiMod",
   "DisplayName": "Isekai Mod",
   "Author": "JohN100x1",
-  "Version": "3.2.1",
+  "Version": "3.2.2",
   "ManagerVersion": "0.24.0",
   "Requirements": [ "TabletopTweaks-Core-0.5.3" ],
   "AssemblyName": "IsekaiMod.dll",
@@ -20,6 +20,7 @@
     "DarkCodex",
     "KineticistElementsExpanded",
     "MartialExcellence",
+    "HomebrewArchetypes",
     "MicroscopicContentExpansion",
     "MysticalMayhem",
     "SparsSorcerousSundries"

@@ -58,9 +58,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             BarbarianLegacy.configure();
             HeroicLegacy.configure();
             ShamanLegacy.Configure();
+            MagusLegacy.Configure();
             //always do this last to ensure any legacy that might get an arcana goes before
             ArcanaSelection.Configure();
             OverpoweredAbilitySelection.AddToSelection(getOverwhelmingFeature());
+            SpecialPower.SpecialPowerSelection.AddToSelection(getOverwhelmingFeature());
             
         }
     }

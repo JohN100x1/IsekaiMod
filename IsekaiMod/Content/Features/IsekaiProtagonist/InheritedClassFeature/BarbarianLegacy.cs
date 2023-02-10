@@ -4,12 +4,14 @@ using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Facts;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class BarbarianLegacy {
+        private static BlueprintProgression prog;
         public static void configure() {
             StaticReferences.BarbarianRageResource.m_MaxAmount.Class.m_Array.AppendToArray(IsekaiProtagonistClass.GetReference());
             var IsekaiBarbarianTraining = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "BarbarianTraining", bp => {
@@ -17,12 +19,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.SetDescription(IsekaiContext, "Well, if you actually dare to call what barbarians do training, either way your experience in both classes stacks for the sake of qualifications...");
                 bp.m_Icon = StaticReferences.SorcererArcana.m_Icon;
                 bp.AddComponent<ClassLevelsForPrerequisites>(c => {
-                    c.m_FakeClass = BlueprintTools.GetBlueprintReference<BlueprintCharacterClassReference>("f7d7eb166b3dd594fb330d085df41853");
+                    c.m_FakeClass = ClassTools.ClassReferences.BarbarianClass;
                     c.m_ActualClass = IsekaiProtagonistClass.GetReference();
                     c.Modifier = 1.0;
                 });
             });
-            var prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "BarbarianLegacy", bp => {
+            prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "BarbarianLegacy", bp => {
                 bp.SetName(IsekaiContext, "Barbarian Legacy - Ball of Rage");
                 bp.SetDescription(IsekaiContext, "You really are just a walking bundle of issues waiting to explode at anyone getting too close aren't you?");
                 bp.GiveFeaturesForPreviousLevels = true;
@@ -61,6 +63,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             LegacySelection.getClassFeature().AddFeatures(prog);
             LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
             EdgeLordLegacySelection.getClassFeature().AddFeatures(prog);
+        }
+        public static BlueprintProgression Get() {
+            if (prog != null) return prog;
+            return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "BarbarianLegacy");
         }
     }
 }
