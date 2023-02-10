@@ -1,5 +1,5 @@
-﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Extensions;
+﻿using HarmonyLib;
+using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -32,20 +32,17 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Conditions;
-using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Utility;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
-using HarmonyLib;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
-{
-    class KineticPower
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
+
+    internal class KineticPower {
         // Tutorial
         // To add a new blast, a blast base and blast feature must be created
         // New blast base must be added into the m_Blasts of AddKineticistPart in KineticPowerBurn
@@ -57,6 +54,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 
         // Kinetic Power Burn
         private static readonly BlueprintFeature BurnFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("57e3577a0eb53294e9d7cc649d5239a3");
+
         private static readonly BlueprintAbilityResource BurnResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("066ac4b762e32be4b953703174ed925c");
         private static readonly BlueprintBuff BurnEffectBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("95b1c0d55f30996429a3a4eba4d2b4a6");
         private static readonly BlueprintAbility GatherPower = BlueprintTools.GetBlueprint<BlueprintAbility>("6dcbffb8012ba2a4cb4ac374a33e2d9a");
@@ -69,6 +67,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 
         // Kinetic Power Features
         private static readonly BlueprintFeature DismissInfusionFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("48bbbb16189443049663ca161bb3e338");
+
         private static readonly BlueprintFeature GatherPowerAbilitiesFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("71f526b1d4b50b94582b0b9cbe12b0e0");
 
         // Kineticist Class
@@ -76,6 +75,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 
         // Kinetic Blasts
         private static readonly BlueprintAbility AirBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("31f668b12011e344aa542aa07ab6c8d9");
+
         private static readonly BlueprintAbility CycloneAirBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("9fbc4fe045472984aa4a2d15d88bdaf9");
         private static readonly BlueprintAbility ExtendRangeAirBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("cae4cb39eb87a5d47b8ff35fd948dc4f");
         private static readonly BlueprintAbility SpindleAirBlastAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("a28e54e4e5fafd1449dd9e926be85160");
@@ -107,6 +107,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 
         // Projectiles
         private static readonly BlueprintProjectile WindProjectile00 = BlueprintTools.GetBlueprint<BlueprintProjectile>("e093b08cd4cafe946962b339faf2310a");
+
         private static readonly BlueprintProjectile Kinetic_AirBlastLine00 = BlueprintTools.GetBlueprint<BlueprintProjectile>("03689858955c6bf409be06f35f09946a");
         private static readonly BlueprintProjectile Kinetic_EarthBlast00_Projectile = BlueprintTools.GetBlueprint<BlueprintProjectile>("c28e153e8c212c1458ec2ee4092a794f");
         private static readonly BlueprintProjectile Kinetic_EarthSphere00_Projectile = BlueprintTools.GetBlueprint<BlueprintProjectile>("3751a263d0386ef45807e0111de1a5de");
@@ -123,45 +124,44 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 
         // Weapon
         private static readonly BlueprintItemWeapon KineticBlastPhysicalWeapon = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("65951e1195848844b8ab8f46d942f6e8");
+
         private static readonly BlueprintItemWeapon KineticBlastEnergyWeapon = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("4d3265a5b9302ee4cab9c07adddb253f");
-        
+
         // Frequently used constants
-        private static readonly DamageTypeDescription BludgeoningDamage = new()
-        {
+        private static readonly DamageTypeDescription BludgeoningDamage = new() {
             Type = DamageType.Physical,
             Common = new DamageTypeDescription.CommomData(),
             Physical = new DamageTypeDescription.PhysicalData() { Form = PhysicalDamageForm.Bludgeoning }
         };
-        private static readonly DamageTypeDescription EarthDamage = new()
-        {
+
+        private static readonly DamageTypeDescription EarthDamage = new() {
             Type = DamageType.Physical,
             Common = new DamageTypeDescription.CommomData(),
-            Physical = new DamageTypeDescription.PhysicalData()
-            {
+            Physical = new DamageTypeDescription.PhysicalData() {
                 Form = PhysicalDamageForm.Bludgeoning | PhysicalDamageForm.Piercing | PhysicalDamageForm.Slashing
             }
         };
-        private static readonly DamageTypeDescription FireDamage = new()
-        {
+
+        private static readonly DamageTypeDescription FireDamage = new() {
             Type = DamageType.Energy,
             Common = new DamageTypeDescription.CommomData(),
             Physical = new DamageTypeDescription.PhysicalData(),
             Energy = DamageEnergyType.Fire
         };
-        private static readonly ContextDiceValue PhysicalBlastDamage = new()
-        {
+
+        private static readonly ContextDiceValue PhysicalBlastDamage = new() {
             DiceType = DiceType.D6,
             DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
             BonusValue = Values.CreateContextSharedValue(AbilitySharedValue.Damage)
         };
-        private static readonly ContextDiceValue EnergyBlastDamage = new()
-        {
+
+        private static readonly ContextDiceValue EnergyBlastDamage = new() {
             DiceType = DiceType.D6,
             DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
             BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
         };
-        private static readonly ContextDurationValue KineticAreaDuration = new()
-        {
+
+        private static readonly ContextDurationValue KineticAreaDuration = new() {
             Rate = DurationRate.Rounds,
             DiceType = DiceType.Zero,
             DiceCountValue = 0,
@@ -169,8 +169,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             m_IsExtendable = true
         };
 
-        public static void Add()
-        {
+        public static void Add() {
             // Air Blast
             var IsekaiAirBlastBase = CreatePhysicalBlastAbility("IsekaiAirBlastBase", bp => {
                 bp.m_DisplayName = AirBlastAbility.m_DisplayName;
@@ -405,7 +404,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.m_Parent = IsekaiAirBlastBase.ToReference<BlueprintAbilityReference>();
                 bp.AvailableMetamagic = WallAirBlastAbility.AvailableMetamagic;
             });
-            var IsekaiAirBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiAirBlastFeature", bp => {
+            var IsekaiAirBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAirBlastFeature", bp => {
                 bp.SetName(IsekaiContext, "Air Avatar");
                 bp.SetDescription(IsekaiContext, "You gain the ability to use air blast and all its associated form infusions. "
                     + "Your air blast deals bludgeoning damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
@@ -714,7 +713,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.m_Parent = IsekaiEarthBlastBase.ToReference<BlueprintAbilityReference>();
                 bp.AvailableMetamagic = WallEarthBlastAbility.AvailableMetamagic;
             });
-            var IsekaiEarthBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiEarthBlastFeature", bp => {
+            var IsekaiEarthBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiEarthBlastFeature", bp => {
                 bp.SetName(IsekaiContext, "Earth Avatar");
                 bp.SetDescription(IsekaiContext, "You gain the ability to use earth blast and all its associated form infusions. "
                     + "Your earth blast deals physical damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
@@ -1044,7 +1043,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.m_Parent = IsekaiFireBlastBase.ToReference<BlueprintAbilityReference>();
                 bp.AvailableMetamagic = WallFireBlastAbility.AvailableMetamagic;
             });
-            var IsekaiFireBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiFireBlastFeature", bp => {
+            var IsekaiFireBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiFireBlastFeature", bp => {
                 bp.SetName(IsekaiContext, "Fire Avatar");
                 bp.SetDescription(IsekaiContext, "You gain the ability to use fire blast and all its associated form infusions. "
                     + "Your fire blast deals fire damage equal to 1d6 + 1/2 your Constitution modifier, increasing by 1d6 for every 2 character levels beyond 1st. "
@@ -1303,7 +1302,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.m_Parent = IsekaiWaterBlastBase.ToReference<BlueprintAbilityReference>();
                 bp.AvailableMetamagic = WallWaterBlastAbility.AvailableMetamagic;
             });
-            var IsekaiWaterBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiWaterBlastFeature", bp => {
+            var IsekaiWaterBlastFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiWaterBlastFeature", bp => {
                 bp.SetName(IsekaiContext, "Water Avatar");
                 bp.SetDescription(IsekaiContext, "You gain the ability to use water blast and all its associated form infusions. "
                     + "Your water blast deals bludgeoning damage equal to 1d6+1 + your Constitution modifier, increasing by 1d6+1 for every 2 character levels beyond 1st. "
@@ -1325,7 +1324,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             });
 
             // Kinetic Power
-            var KineticBlastProficiency = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"KineticBlastProficiency", bp => {
+            var KineticBlastProficiency = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "KineticBlastProficiency", bp => {
                 bp.SetName(IsekaiContext, "Kinetic Blast Proficiency");
                 bp.SetDescription(IsekaiContext, "You gain the proficiency with kinetic blasts.");
                 bp.AddComponent<AddProficiencies>(c => {
@@ -1334,27 +1333,26 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 });
             });
             var KineticPowerBurnPerRoundResource = Helpers.CreateBlueprint<BlueprintAbilityResource>(IsekaiContext, "KineticPowerBurnPerRoundResource", bp => {
-                    bp.m_MaxAmount = new BlueprintAbilityResource.Amount
-                    {
-                        BaseValue = 1,
-                        IncreasedByLevel = true,
-                        m_Class = new BlueprintCharacterClassReference[] { IsekaiProtagonistClass.GetReference() },
-                        m_Archetypes = new BlueprintArchetypeReference[0],
-                        LevelIncrease = 0,
-                        IncreasedByLevelStartPlusDivStep = true,
-                        StartingLevel = 6,
-                        StartingIncrease = 1,
-                        LevelStep = 3,
-                        PerStepIncrease = 1,
-                        MinClassLevelIncrease = 0,
-                        m_ClassDiv = new BlueprintCharacterClassReference[] { IsekaiProtagonistClass.GetReference() },
-                        m_ArchetypesDiv = new BlueprintArchetypeReference[0],
-                        OtherClassesModifier = 0.0f,
-                        IncreasedByStat = false,
-                        ResourceBonusStat = StatType.Unknown,
-                    };
-                });
-            var KineticPowerBurn = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"KineticPowerBurn", bp => {
+                bp.m_MaxAmount = new BlueprintAbilityResource.Amount {
+                    BaseValue = 1,
+                    IncreasedByLevel = true,
+                    m_Class = new BlueprintCharacterClassReference[] { IsekaiProtagonistClass.GetReference() },
+                    m_Archetypes = new BlueprintArchetypeReference[0],
+                    LevelIncrease = 0,
+                    IncreasedByLevelStartPlusDivStep = true,
+                    StartingLevel = 6,
+                    StartingIncrease = 1,
+                    LevelStep = 3,
+                    PerStepIncrease = 1,
+                    MinClassLevelIncrease = 0,
+                    m_ClassDiv = new BlueprintCharacterClassReference[] { IsekaiProtagonistClass.GetReference() },
+                    m_ArchetypesDiv = new BlueprintArchetypeReference[0],
+                    OtherClassesModifier = 0.0f,
+                    IncreasedByStat = false,
+                    ResourceBonusStat = StatType.Unknown,
+                };
+            });
+            var KineticPowerBurn = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "KineticPowerBurn", bp => {
                 bp.m_DisplayName = BurnFeature.m_DisplayName;
                 bp.m_Description = BurnFeature.m_Description;
                 bp.AddComponent<AddAbilityResources>(c => {
@@ -1426,11 +1424,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 
             SpecialPowerSelection.AddToSelection(KineticPowerSelection);
         }
-        private static void PatchGatherPowerBuffs(BlueprintFeature airBlastFeature, BlueprintFeature earthBlastFeature, BlueprintFeature fireBlastFeature, BlueprintFeature waterBlastFeature)
-        {
+
+        private static void PatchGatherPowerBuffs(BlueprintFeature airBlastFeature, BlueprintFeature earthBlastFeature, BlueprintFeature fireBlastFeature, BlueprintFeature waterBlastFeature) {
             BlueprintBuff[] buffs = new BlueprintBuff[] { GatherPowerBuffI, GatherPowerBuffII, GatherPowerBuffIII };
-            foreach(BlueprintBuff buff in buffs)
-            {
+            foreach (BlueprintBuff buff in buffs) {
                 var airConditional = (Conditional)buff.GetComponent<AddFactContextActions>().Activated.Actions[0];
                 var airCondition = new ContextConditionHasFact() { m_Fact = airBlastFeature.ToReference<BlueprintUnitFactReference>() };
                 airConditional.ConditionsChecker.Conditions = airConditional.ConditionsChecker.Conditions.AddToArray(airCondition);
@@ -1445,8 +1442,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 waterConditional.ConditionsChecker.Conditions = waterConditional.ConditionsChecker.Conditions.AddToArray(waterCondition);
             }
         }
-        private static BlueprintAbility CreatePhysicalBlastAbility(string name, Action<BlueprintAbility> init = null)
-        {
+
+        private static BlueprintAbility CreatePhysicalBlastAbility(string name, Action<BlueprintAbility> init = null) {
             var result = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, name, bp => {
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.DamageDice;
@@ -1460,8 +1457,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 });
                 bp.AddComponent<ContextCalculateSharedValue>(c => {
                     c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
+                    c.Value = new ContextDiceValue() {
                         DiceType = DiceType.One,
                         DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
                         BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
@@ -1481,8 +1477,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             init?.Invoke(result);
             return result;
         }
-        private static BlueprintAbility CreateEnergyBlastAbility(string name, Action<BlueprintAbility> init = null)
-        {
+
+        private static BlueprintAbility CreateEnergyBlastAbility(string name, Action<BlueprintAbility> init = null) {
             var result = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, name, bp => {
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.DamageDice;
@@ -1497,8 +1493,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 });
                 bp.AddComponent<ContextCalculateSharedValue>(c => {
                     c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
+                    c.Value = new ContextDiceValue() {
                         DiceType = DiceType.One,
                         DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
                         BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
@@ -1519,8 +1514,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             init?.Invoke(result);
             return result;
         }
-        private static BlueprintAbility CreateAirBlastAbility(string name, Action<BlueprintAbility> init = null)
-        {
+
+        private static BlueprintAbility CreateAirBlastAbility(string name, Action<BlueprintAbility> init = null) {
             var result = CreatePhysicalBlastAbility(name, bp => {
                 bp.AddComponent<AbilitySpawnFx>(c => {
                     c.PrefabLink = new PrefabLink() { AssetId = "a0b5b95a9a139944c965c593a0a77ff7" };
@@ -1534,8 +1529,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             init?.Invoke(result);
             return result;
         }
-        private static BlueprintAbility CreateEarthBlastAbility(string name, Action<BlueprintAbility> init = null)
-        {
+
+        private static BlueprintAbility CreateEarthBlastAbility(string name, Action<BlueprintAbility> init = null) {
             var result = CreatePhysicalBlastAbility(name, bp => {
                 bp.AddComponent<AbilitySpawnFx>(c => {
                     c.PrefabLink = new PrefabLink() { AssetId = "69a83b56c1265464f8626a2ab414364a" };
@@ -1549,8 +1544,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             init?.Invoke(result);
             return result;
         }
-        private static BlueprintAbility CreateFireBlastAbility(string name, Action<BlueprintAbility> init = null)
-        {
+
+        private static BlueprintAbility CreateFireBlastAbility(string name, Action<BlueprintAbility> init = null) {
             var result = CreateEnergyBlastAbility(name, bp => {
                 bp.AddComponent<SpellDescriptorComponent>(c => {
                     c.Descriptor = SpellDescriptor.Fire;
@@ -1567,8 +1562,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             init?.Invoke(result);
             return result;
         }
-        private static BlueprintAbility CreateWaterBlastAbility(string name, Action<BlueprintAbility> init = null)
-        {
+
+        private static BlueprintAbility CreateWaterBlastAbility(string name, Action<BlueprintAbility> init = null) {
             var result = CreatePhysicalBlastAbility(name, bp => {
                 bp.AddComponent<AbilitySpawnFx>(c => {
                     c.PrefabLink = new PrefabLink() { AssetId = "705bc7676de67a4449986d9c69876486" };
@@ -1582,8 +1577,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             init?.Invoke(result);
             return result;
         }
-        private static BlueprintAbilityAreaEffect CreatePhysicalAreaEffect(string name, Action<BlueprintAbilityAreaEffect> init = null)
-        {
+
+        private static BlueprintAbilityAreaEffect CreatePhysicalAreaEffect(string name, Action<BlueprintAbilityAreaEffect> init = null) {
             var t = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, name, bp => {
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.DamageDice;
@@ -1597,8 +1592,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 });
                 bp.AddComponent<ContextCalculateSharedValue>(c => {
                     c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
+                    c.Value = new ContextDiceValue() {
                         DiceType = DiceType.One,
                         DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
                         BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
@@ -1615,8 +1609,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             init?.Invoke(t);
             return t;
         }
-        private static BlueprintAbilityAreaEffect CreateEnergyAreaEffect(string name, Action<BlueprintAbilityAreaEffect> init = null)
-        {
+
+        private static BlueprintAbilityAreaEffect CreateEnergyAreaEffect(string name, Action<BlueprintAbilityAreaEffect> init = null) {
             var t = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, name, bp => {
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.DamageDice;
@@ -1631,8 +1625,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 });
                 bp.AddComponent<ContextCalculateSharedValue>(c => {
                     c.ValueType = AbilitySharedValue.Damage;
-                    c.Value = new ContextDiceValue()
-                    {
+                    c.Value = new ContextDiceValue() {
                         DiceType = DiceType.One,
                         DiceCountValue = Values.CreateContextRankValue(AbilityRankType.DamageDice),
                         BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
@@ -1649,8 +1642,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             init?.Invoke(t);
             return t;
         }
-        private static List<AbilityKineticist.DamageInfo> PhysicalDamageCache(DamageTypeDescription damageType, bool half)
-        {
+
+        private static List<AbilityKineticist.DamageInfo> PhysicalDamageCache(DamageTypeDescription damageType, bool half) {
             return new List<AbilityKineticist.DamageInfo>()
             {
                 new AbilityKineticist.DamageInfo()
@@ -1661,8 +1654,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 }
             };
         }
-        private static List<AbilityKineticist.DamageInfo> EnergyDamageCache(DamageTypeDescription damageType, bool half)
-        {
+
+        private static List<AbilityKineticist.DamageInfo> EnergyDamageCache(DamageTypeDescription damageType, bool half) {
             return new List<AbilityKineticist.DamageInfo>()
             {
                 new AbilityKineticist.DamageInfo()
@@ -1673,10 +1666,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 }
             };
         }
-        private static ActionList DealPhysicalBlastDamage(Action<ContextActionDealDamage> init = null)
-        {
-            var t = new ContextActionDealDamage()
-            {
+
+        private static ActionList DealPhysicalBlastDamage(Action<ContextActionDealDamage> init = null) {
+            var t = new ContextActionDealDamage() {
                 m_Type = ContextActionDealDamage.Type.Damage,
                 Duration = Values.Duration.Zero,
                 Value = PhysicalBlastDamage,
@@ -1685,10 +1677,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             init?.Invoke(t);
             return Helpers.CreateActionList(t);
         }
-        private static ActionList DealEnergyBlastDamage(Action<ContextActionDealDamage> init = null)
-        {
-            var t = new ContextActionDealDamage()
-            {
+
+        private static ActionList DealEnergyBlastDamage(Action<ContextActionDealDamage> init = null) {
+            var t = new ContextActionDealDamage() {
                 m_Type = ContextActionDealDamage.Type.Damage,
                 Duration = Values.Duration.Zero,
                 Value = EnergyBlastDamage,

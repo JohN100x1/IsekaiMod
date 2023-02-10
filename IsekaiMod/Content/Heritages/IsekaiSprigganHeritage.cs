@@ -1,27 +1,25 @@
-﻿using IsekaiMod.Utilities;
-using IsekaiMod.Extensions;
+﻿using HarmonyLib;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Designers.Mechanics.Buffs;
+using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
-using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.ActivatableAbilities;
-using Kingmaker.Designers.Mechanics.Buffs;
-using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.Commands.Base;
+using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
-using HarmonyLib;
 
-namespace IsekaiMod.Content.Heritages
-{
-    internal class IsekaiSprigganHeritage
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Heritages {
+
+    internal class IsekaiSprigganHeritage {
+
+        public static void Add() {
             // Spriggan Abilities
             var Icon_Spriggan = AssetLoader.LoadInternal(IsekaiContext, "Heritages", "ICON_SPRIGGAN.png");
             var SizeAlterationBuff = ThingsNotHandledByTTTCore.CreateBuff("SizeAlterationBuff", bp => {
@@ -61,7 +59,7 @@ namespace IsekaiMod.Content.Heritages
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var SizeAlterationAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "SizeAlterationAbility", bp => {
+            var SizeAlterationAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("SizeAlterationAbility", bp => {
                 bp.SetName(IsekaiContext, "Size Alteration");
                 bp.SetDescription(IsekaiContext, "As a standard action, increase your size by two size categories and gain +10 Speed, +12 Strength, -2 Dexterity, +6 Constitution, and a -2 penalty to AC.");
                 bp.m_Icon = Icon_Spriggan;
@@ -71,7 +69,7 @@ namespace IsekaiMod.Content.Heritages
             });
 
             // Spriggan Heritage
-            var IsekaiSprigganHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiSprigganHeritage", bp => {
+            var IsekaiSprigganHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiSprigganHeritage", bp => {
                 bp.SetName(IsekaiContext, "Isekai Spriggan");
                 bp.SetDescription(IsekaiContext, "Otherworldly entities who are reincarnated into the world of Golarion as a Spriggan have both extreme beauty and power. "
                     + "Their shape changing abilities allow them to easily defeat everyone who would underestimate their power.\n"

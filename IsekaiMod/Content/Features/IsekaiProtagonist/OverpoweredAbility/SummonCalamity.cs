@@ -1,6 +1,6 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.ElementsSystem;
 using Kingmaker.Enums;
@@ -17,17 +17,17 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
-using Kingmaker.Blueprints.Classes;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
-{
-    class SummonCalamity
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
+
+    internal class SummonCalamity {
+
         // Units
         private static readonly BlueprintUnit Devastator = BlueprintTools.GetBlueprint<BlueprintUnit>("99c16c4360534129b45706841a7df3fe");
+
         private static readonly BlueprintUnit PlayfulDarkness = BlueprintTools.GetBlueprint<BlueprintUnit>("a1b06220efb4f0545a870ce52fadd678");
         private static readonly BlueprintUnit Baphomet = BlueprintTools.GetBlueprint<BlueprintUnit>("f8007503fe211da4eb027e070eeb3f8c");
         private static readonly BlueprintUnit DemonLordDeskari = BlueprintTools.GetBlueprint<BlueprintUnit>("5a75db49bf7aeaf4c9f0264cac3eed5c");
@@ -38,16 +38,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
         private static readonly BlueprintBuff SummonedCreatureSpawnMonsterVI_IX = BlueprintTools.GetBlueprint<BlueprintBuff>("0dff842f06edace43baf8a2f44207045");
         private static readonly Sprite Icon_SummonMonsterIX = BlueprintTools.GetBlueprint<BlueprintAbility>("52b5df2a97df18242aec67610616ded0").m_Icon;
 
-        private static readonly ContextDurationValue RankDuration = new()
-        {
+        private static readonly ContextDurationValue RankDuration = new() {
             Rate = DurationRate.Rounds,
             DiceType = DiceType.Zero,
             DiceCountValue = 0,
             BonusValue = Values.CreateContextRankValue(AbilityRankType.Default),
             m_IsExtendable = true
         };
-        public static void Add()
-        {
+
+        public static void Add() {
             var SummonCalamityAbility = CreateSummonAbility("SummonCalamityAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity");
                 bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Devastator, Playful Darkness, Baphomet, Deskari, Nocticula, or Mephistopheles. "
@@ -114,7 +113,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                     });
                 });
             });
-            var SummonCalamityFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"SummonCalamityFeature", bp => {
+            var SummonCalamityFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SummonCalamityFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity");
                 bp.SetDescription(IsekaiContext, "As a full action, you summon a powerful being to bring calamity. You can summon one of the following: Devastator, Playful Darkness, "
                     + "Baphomet, Deskari, Nocticula, or Mephistopheles.");
@@ -136,8 +135,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
 
             OverpoweredAbilitySelection.AddToSelection(SummonCalamityFeature);
         }
-        private static BlueprintAbility CreateSummonAbility(string name, Action<BlueprintAbility> init = null)
-        {
+
+        private static BlueprintAbility CreateSummonAbility(string name, Action<BlueprintAbility> init = null) {
             var result = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, name, bp => {
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.Default;
@@ -164,10 +163,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
             init?.Invoke(result);
             return result;
         }
-        private static ActionList SpawnCalamity(Action<ContextActionSpawnMonster> init = null)
-        {
-            var t = new ContextActionSpawnMonster()
-            {
+
+        private static ActionList SpawnCalamity(Action<ContextActionSpawnMonster> init = null) {
+            var t = new ContextActionSpawnMonster() {
                 m_SummonPool = SummonMonsterPool.ToReference<BlueprintSummonPoolReference>(),
                 DurationValue = RankDuration,
                 CountValue = Values.Dice.One,

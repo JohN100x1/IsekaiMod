@@ -1,17 +1,14 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
+﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist
-{
-    class IsekaiProtagonistTalentSelection
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist {
+
+    internal class IsekaiProtagonistTalentSelection {
+
+        public static void Add() {
             // Rogure talents
             var CripplingStrike = BlueprintTools.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
             var DispellingAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");

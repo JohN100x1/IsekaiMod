@@ -1,6 +1,4 @@
 ﻿using IsekaiMod.Content.Classes.Deathsnatcher;
-using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
@@ -17,19 +15,16 @@ using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.Deathsnatcher
-{
-    class DeathsnatcherCreateUndead
-    {
+namespace IsekaiMod.Content.Features.Deathsnatcher {
+
+    internal class DeathsnatcherCreateUndead {
         private static readonly BlueprintAbility CreateUndeadAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("76a11b460be25e44ca85904d6806e5a3");
         private static readonly BlueprintAbility CreateUndeadLivingArmor = BlueprintTools.GetBlueprint<BlueprintAbility>("43a1ea314c59c4a4eb2c193a1e17b805");
         private static readonly BlueprintAbility CreateUndeadGraveKnight = BlueprintTools.GetBlueprint<BlueprintAbility>("9b75cb3bd3108a24c81329a3734f2248");
 
-        public static void Add()
-        {
+        public static void Add() {
             var DeathsnatcherCreateUndeadResource = Helpers.CreateBlueprint<BlueprintAbilityResource>(IsekaiContext, "DeathsnatcherCreateUndeadResource", bp => {
-                bp.m_MaxAmount = new BlueprintAbilityResource.Amount
-                {
+                bp.m_MaxAmount = new BlueprintAbilityResource.Amount {
                     BaseValue = 1,
                     IncreasedByLevel = false,
                     LevelIncrease = 1,
@@ -83,7 +78,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "1 round/level");
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var DeathsnatcherCreateUndeadFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"DeathsnatcherCreateUndeadFeature", bp => {
+            var DeathsnatcherCreateUndeadFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherCreateUndeadFeature", bp => {
                 bp.SetName(IsekaiContext, "Create Undead");
                 bp.SetDescription(IsekaiContext, "At 13th level, the Deathsnatcher gains Create Undead as a spell-like ability once per day.");
                 bp.m_Icon = CreateUndeadAbility.m_Icon;

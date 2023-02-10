@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Buffs;
@@ -19,12 +18,11 @@ using Kingmaker.UnitLogic.Mechanics.Properties;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
-{
-    class SecondFormFeature
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain {
+
+    internal class SecondFormFeature {
+
+        public static void Add() {
             var Icon_SecondForm = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SECOND_FORM.png");
             var Icon_SecondFormInactive = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SECOND_FORM_INACTIVE.png");
             var SecondFormBuffEffect = ThingsNotHandledByTTTCore.CreateBuff("SecondFormBuffEffect", bp => {
@@ -115,49 +113,41 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
             });
             SecondFormBuffTrigger.AddComponent<AddFactContextActions>(c => {
                 c.Activated = Helpers.CreateActionList(
-                    new ContextActionRemoveBuff()
-                    {
+                    new ContextActionRemoveBuff() {
                         m_Buff = SecondFormBuff.ToReference<BlueprintBuffReference>(),
                         ToCaster = false,
                         RemoveRank = false
                     },
-                    new ContextActionHealStatDamage()
-                    {
+                    new ContextActionHealStatDamage() {
                         HealDrain = true,
                         m_StatClass = ContextActionHealStatDamage.StatClass.Any,
                         m_HealType = ContextActionHealStatDamage.StatDamageHealType.HealAllDamage,
                         ResultSharedValue = AbilitySharedValue.Heal,
                         Value = Values.Dice.Zero
                     },
-                    new ContextActionHealStatDamage()
-                    {
+                    new ContextActionHealStatDamage() {
                         HealDrain = false,
                         m_StatClass = ContextActionHealStatDamage.StatClass.Any,
                         m_HealType = ContextActionHealStatDamage.StatDamageHealType.HealAllDamage,
                         ResultSharedValue = AbilitySharedValue.Heal,
                         Value = Values.Dice.Zero
                     },
-                    new ContextActionHealEnergyDrain()
-                    {
+                    new ContextActionHealEnergyDrain() {
                         TemporaryNegativeLevelsHeal = EnergyDrainHealType.All,
                         PermanentNegativeLevelsHeal = EnergyDrainHealType.All,
                     },
                     new ContextActionRemoveDeathDoor(),
-                    new ContextActionSpawnFx()
-                    {
+                    new ContextActionSpawnFx() {
                         PrefabLink = new PrefabLink() { AssetId = "14ba08b903ee28b41a779a616d905397" }
                     },
-                    new ContextActionHealTarget()
-                    {
-                        Value = new ContextDiceValue()
-                        {
+                    new ContextActionHealTarget() {
+                        Value = new ContextDiceValue() {
                             DiceType = DiceType.Zero,
                             DiceCountValue = 0,
                             BonusValue = Values.CreateContextTargetPropertyValue(UnitProperty.MaxHP)
                         }
                     },
-                    new ContextActionApplyBuff()
-                    {
+                    new ContextActionApplyBuff() {
                         m_Buff = SecondFormBuffEffect.ToReference<BlueprintBuffReference>(),
                         DurationValue = Values.Duration.OneDay
                     },
@@ -166,7 +156,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
                 c.Deactivated = ActionFlow.DoNothing();
                 c.NewRound = ActionFlow.DoNothing();
             });
-            var SecondFormFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"SecondFormFeature", bp => {
+            var SecondFormFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SecondFormFeature", bp => {
                 bp.SetName(IsekaiContext, "Second Form");
                 bp.SetDescription(IsekaiContext, "At 20th level, you become a boss. Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain. "
                     + "You also gain a +10 profane bonus to all attributes and your size also increases by one size category for 24 hours.");

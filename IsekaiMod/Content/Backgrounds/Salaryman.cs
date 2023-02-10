@@ -1,19 +1,16 @@
-﻿using IsekaiMod.Utilities;
-using IsekaiMod.Extensions;
-using Kingmaker.UnitLogic.FactLogic;
+﻿using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
-using Kingmaker.Blueprints.Classes;
 
-namespace IsekaiMod.Content.Backgrounds
-{
-    internal class Salaryman
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Backgrounds {
+
+    internal class Salaryman {
+
+        public static void Add() {
             // Background
-            var BackgroundSalaryman = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"BackgroundSalaryman", bp => {
+            var BackgroundSalaryman = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "BackgroundSalaryman", bp => {
                 bp.SetName(IsekaiContext, "Salaryman");
                 bp.SetDescription(IsekaiContext, "The Salaryman adds Perception to the list of her class skills. She can also use her Charisma instead of Wisdom while attempting Perception checks.\n"
                     + "If the character already has the class skill, {g|Encyclopedia:Weapon_Proficiency}weapon proficiency{/g} or armor proficiency granted by the selected background "

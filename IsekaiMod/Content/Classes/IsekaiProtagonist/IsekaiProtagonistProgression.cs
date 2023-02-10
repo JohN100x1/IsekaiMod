@@ -1,22 +1,18 @@
-﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
-using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.IsekaiProtagonist
-{
-    class IsekaiProtagonistProgression
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
+
+    internal class IsekaiProtagonistProgression {
+
+        public static void Add() {
             // Isekai Protagonist Features
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
             var EdgeLordProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "EdgeLordProficiencies");
@@ -117,7 +113,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
                 Helpers.CreateUIGroup(HeroLegacySelection.getClassFeature()),
                 Helpers.CreateUIGroup(VillainLegacySelection.getClassFeature()),
                 Helpers.CreateUIGroup(EdgeLordLegacySelection.getClassFeature())
-
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
                 HeroProficiencies.ToReference<BlueprintFeatureBaseReference>(),

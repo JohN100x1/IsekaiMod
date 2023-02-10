@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Buffs;
@@ -21,17 +20,16 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System.Collections.Generic;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
-{
-    class TrueMark
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
+
+    internal class TrueMark {
         private static readonly Sprite Icon_MarkOfJustice = BlueprintTools.GetBlueprint<BlueprintFeature>("9f13fdd044ccb8a439f27417481cb00e").m_Icon;
-        public static void Add()
-        {
+
+        public static void Add() {
             var TrueSmiteResource = BlueprintTools.GetModBlueprint<BlueprintAbilityResource>(IsekaiContext, "TrueSmiteResource");
 
             var TrueMarkBuff = ThingsNotHandledByTTTCore.CreateBuff("TrueMarkBuff", bp => {
@@ -79,8 +77,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 });
                 bp.AddComponent<ContextCalculateSharedValue>(c => {
                     c.ValueType = AbilitySharedValue.StatBonus;
-                    c.Value = new ContextDiceValue()
-                    {
+                    c.Value = new ContextDiceValue() {
                         DiceType = DiceType.Zero,
                         DiceCountValue = 0,
                         BonusValue = Values.CreateContextRankValue(AbilityRankType.StatBonus)
@@ -89,12 +86,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 });
                 bp.AddComponent<ContextCalculateSharedValue>(c => {
                     c.ValueType = AbilitySharedValue.DamageBonus;
-                    c.Value = new ContextDiceValue()
-                    {
+                    c.Value = new ContextDiceValue() {
                         DiceType = DiceType.Zero,
                         DiceCountValue = 0,
                         BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
-                };
+                    };
                     c.Modifier = 1;
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
@@ -131,7 +127,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "Until the target of the Mark is dead");
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var TrueMarkFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"TrueMarkFeature", bp => {
+            var TrueMarkFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "TrueMarkFeature", bp => {
                 bp.SetName(IsekaiContext, "True Mark");
                 bp.SetDescription(IsekaiContext, "At 11th level, the hero can expend two uses of her true smite ability to grant the ability to true smite to all allies for 1 minute, "
                     + "using her {g|Encyclopedia:Bonus}bonuses{/g}. As a {g|Encyclopedia:Swift_Action}swift action{/g}, the paladin chooses one target within sight to smite. "

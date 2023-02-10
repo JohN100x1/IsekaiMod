@@ -1,6 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
+﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Root;
@@ -10,20 +8,20 @@ using Kingmaker.RuleSystem;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.Deathsnatcher
-{
-    class DeathsnatcherClass
-    {
+namespace IsekaiMod.Content.Classes.Deathsnatcher {
+
+    internal class DeathsnatcherClass {
+
         // Creature Type
         private static readonly BlueprintFeature MonstrousHumanoidType = BlueprintTools.GetBlueprint<BlueprintFeature>("57614b50e8d86b24395931fffc5e409b");
 
         // Stat Progression
         private static readonly BlueprintStatProgression BABFull = BlueprintTools.GetBlueprint<BlueprintStatProgression>("b3057560ffff3514299e8b93e7648a9d");
+
         private static readonly BlueprintStatProgression SavesHigh = BlueprintTools.GetBlueprint<BlueprintStatProgression>("ff4662bde9e75f145853417313842751");
         private static readonly BlueprintStatProgression SavesLow = BlueprintTools.GetBlueprint<BlueprintStatProgression>("dc0c7c1aba755c54f96c089cdf7d14a3");
 
-        public static void Add()
-        {
+        public static void Add() {
             // Add Deathsnatcher Class
             var DeathsnatcherClass = Helpers.CreateBlueprint<BlueprintCharacterClass>(IsekaiContext, "DeathsnatcherClass", bp => {
                 bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"DeathsnatcherClass.Name", "Deathsnatcher");
@@ -81,17 +79,17 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher
             var BlueprintRoot = BlueprintTools.GetBlueprint<BlueprintRoot>("2d77316c72b9ed44f888ceefc2a131f6");
             BlueprintRoot.Instance.Progression.m_PetClasses = BlueprintRoot.Instance.Progression.m_PetClasses.AppendToArray(DeathsnatcherClass.ToReference<BlueprintCharacterClassReference>());
         }
-        public static void SetProgression(BlueprintProgression progression)
-        {
+
+        public static void SetProgression(BlueprintProgression progression) {
             BlueprintCharacterClass DeathsnatcherClass = Get();
             DeathsnatcherClass.m_Progression = progression.ToReference<BlueprintProgressionReference>();
         }
-        public static BlueprintCharacterClass Get()
-        {
+
+        public static BlueprintCharacterClass Get() {
             return BlueprintTools.GetModBlueprint<BlueprintCharacterClass>(IsekaiContext, "DeathsnatcherClass");
         }
-        public static BlueprintCharacterClassReference GetReference()
-        {
+
+        public static BlueprintCharacterClassReference GetReference() {
             return Get().ToReference<BlueprintCharacterClassReference>();
         }
     }

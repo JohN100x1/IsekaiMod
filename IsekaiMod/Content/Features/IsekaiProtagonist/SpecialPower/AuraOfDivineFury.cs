@@ -1,7 +1,7 @@
 ﻿using IsekaiMod.Components;
-using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
@@ -11,19 +11,16 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
-using Kingmaker.UnitLogic.ActivatableAbilities;
-using Kingmaker.Blueprints.Classes;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
-{
-    class AuraOfDivineFury
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
+
+    internal class AuraOfDivineFury {
         private static readonly Sprite Icon_AngelBladeOfTheSun = BlueprintTools.GetBlueprint<BlueprintAbility>("cc8be337fff61284caabe3340fc48294").m_Icon;
-        public static void Add()
-        {
+
+        public static void Add() {
             var AuraOfDivineFuryBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfDivineFuryBuff", bp => {
                 bp.SetName(IsekaiContext, "Aura of Divine Fury");
                 bp.SetDescription(IsekaiContext, "This creature has a +10 sacred bonus to attack damage and hit point damage from spells.");
@@ -55,14 +52,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     c.m_AreaEffect = AuraOfDivineFuryArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var AuraOfDivineFuryAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "AuraOfDivineFuryAbility", bp => {
+            var AuraOfDivineFuryAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AuraOfDivineFuryAbility", bp => {
                 bp.SetName(IsekaiContext, "Aura of Divine Fury");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells.");
                 bp.m_Icon = Icon_AngelBladeOfTheSun;
                 bp.m_Buff = AuraOfDivineFuryAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
-            var AuraOfDivineFuryFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"AuraOfDivineFuryFeature", bp => {
+            var AuraOfDivineFuryFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfDivineFuryFeature", bp => {
                 bp.SetName(IsekaiContext, "Aura of Divine Fury");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells.");
                 bp.m_Icon = Icon_AngelBladeOfTheSun;

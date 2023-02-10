@@ -6,8 +6,8 @@ using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist {
+
     internal class ArcanaSelection {
-        
 
         public static void Configure() {
             BlueprintParametrizedFeature IsekaiArcana = Helpers.CreateBlueprint<BlueprintParametrizedFeature>(IsekaiContext, "IsekaiProtagonistArcana", bp => {
@@ -16,14 +16,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.m_Icon = StaticReferences.SorcererArcana.m_Icon;
                 bp.Ranks = 1;
                 bp.ReapplyOnLevelUp = false;
-                bp.IsClassFeature= true;
+                bp.IsClassFeature = true;
                 bp.ParameterType = FeatureParameterType.LearnSpell;
                 bp.m_SpellcasterClass = Classes.IsekaiProtagonist.IsekaiProtagonistClass.GetReference();
                 bp.m_SpellList = Classes.IsekaiProtagonist.IsekaiProtagonistSpellList.Get().ToReference<BlueprintSpellListReference>();
                 bp.SpecificSpellLevel = false;
-                bp.SpellLevelPenalty= 0;
+                bp.SpellLevelPenalty = 0;
                 bp.SpellLevel = 0;
-                bp.DisallowSpellsInSpellList= false;
+                bp.DisallowSpellsInSpellList = false;
                 bp.AddComponent<LearnSpellParametrized>(c => {
                     c.m_SpellcasterClass = Classes.IsekaiProtagonist.IsekaiProtagonistClass.GetReference();
                     c.m_SpellList = Classes.IsekaiProtagonist.IsekaiProtagonistSpellList.Get().ToReference<BlueprintSpellListReference>();
@@ -36,11 +36,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             InheritedClassFeature.ExtraOracleSelection.Get().AddFeatures(IsekaiArcana);
             InheritedClassFeature.ShamanSelection.Get().AddFeatures(IsekaiArcana);
             StaticReferences.SorcererBloodlineArcanaSelection.AddFeatures(IsekaiArcana);
-
         }
+
         public static BlueprintParametrizedFeature get() {
             return BlueprintTools.GetModBlueprint<BlueprintParametrizedFeature>(IsekaiContext, "IsekaiProtagonistArcana");
         }
+
         public static BlueprintFeatureReference getReference() {
             return BlueprintTools.GetModBlueprint<BlueprintParametrizedFeature>(IsekaiContext, "IsekaiProtagonistArcana").ToReference<BlueprintFeatureReference>();
         }

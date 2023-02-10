@@ -1,5 +1,4 @@
 ﻿using IsekaiMod.Content.Classes.Deathsnatcher;
-using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -24,16 +23,14 @@ using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.Deathsnatcher
-{
-    class DeathsnatcherFingerOfDeath
-    {
+namespace IsekaiMod.Content.Features.Deathsnatcher {
+
+    internal class DeathsnatcherFingerOfDeath {
         private static readonly BlueprintAbility FingerOfDeathAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("6f1dcf6cfa92d1948a740195707c0dbe");
-        public static void Add()
-        {
+
+        public static void Add() {
             var DeathsnatcherFingerOfDeathResource = Helpers.CreateBlueprint<BlueprintAbilityResource>(IsekaiContext, "DeathsnatcherFingerOfDeathResource", bp => {
-                bp.m_MaxAmount = new BlueprintAbilityResource.Amount
-                {
+                bp.m_MaxAmount = new BlueprintAbilityResource.Amount {
                     BaseValue = 1,
                     IncreasedByLevel = false,
                     LevelIncrease = 1,
@@ -57,15 +54,13 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                     c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
                         c.Succeed = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
                             c.m_Type = ContextActionDealDamage.Type.Damage;
-                            c.DamageType = new DamageTypeDescription()
-                            {
+                            c.DamageType = new DamageTypeDescription() {
                                 Type = DamageType.Energy,
                                 Energy = DamageEnergyType.Unholy
                             };
                             c.AbilityType = StatType.Unknown;
                             c.Duration = Values.Duration.Zero;
-                            c.Value = new ContextDiceValue()
-                            {
+                            c.Value = new ContextDiceValue() {
                                 DiceType = DiceType.D6,
                                 DiceCountValue = 3,
                                 BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
@@ -73,15 +68,13 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                         });
                         c.Failed = ActionFlow.DoSingle<ContextActionDealDamage>(c => {
                             c.m_Type = ContextActionDealDamage.Type.Damage;
-                            c.DamageType = new DamageTypeDescription()
-                            {
+                            c.DamageType = new DamageTypeDescription() {
                                 Type = DamageType.Energy,
                                 Energy = DamageEnergyType.Unholy
                             };
                             c.AbilityType = StatType.Unknown;
                             c.Duration = Values.Duration.Zero;
-                            c.Value = new ContextDiceValue()
-                            {
+                            c.Value = new ContextDiceValue() {
                                 DiceType = DiceType.Zero,
                                 DiceCountValue = 0,
                                 BonusValue = Values.CreateContextRankValue(AbilityRankType.Default)
@@ -134,7 +127,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher
                 bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = Helpers.CreateString(IsekaiContext, $"{bp.name}.SavingThrow", "Fortitude partial");
             });
-            var DeathsnatcherFingerOfDeathFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"DeathsnatcherFingerOfDeathFeature", bp => {
+            var DeathsnatcherFingerOfDeathFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFingerOfDeathFeature", bp => {
                 bp.SetName(IsekaiContext, "Finger of Death");
                 bp.SetDescription(IsekaiContext, "At 16th level, the Deathsnatcher gains Finger of Death as a spell-like ability once per day.");
                 bp.m_Icon = FingerOfDeathAbility.m_Icon;

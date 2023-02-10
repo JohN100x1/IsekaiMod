@@ -1,6 +1,6 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.ElementsSystem;
 using Kingmaker.Enums;
@@ -17,17 +17,17 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
-using Kingmaker.Blueprints.Classes;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
-{
-    class SummonBeast
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
+
+    internal class SummonBeast {
+
         // Units
         private static readonly BlueprintUnit CR7_HydraAdvanced = BlueprintTools.GetBlueprint<BlueprintUnit>("e135463f804adb541b402bae3f657af4");
+
         private static readonly BlueprintUnit CR9_OwlbearAdvanced = BlueprintTools.GetBlueprint<BlueprintUnit>("7d3bd11169778c845b2631d22d27d465");
         private static readonly BlueprintUnit CR9_RocStandard = BlueprintTools.GetBlueprint<BlueprintUnit>("12d33b211fa5b394fb214e202a2db300");
         private static readonly BlueprintUnit CR10_FiendishMinotaur_Guard = BlueprintTools.GetBlueprint<BlueprintUnit>("962427b9ddb354947ac92655dc637e0c");
@@ -36,8 +36,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
         private static readonly BlueprintBuff SummonedCreatureSpawnMonsterVI_IX = BlueprintTools.GetBlueprint<BlueprintBuff>("0dff842f06edace43baf8a2f44207045");
         private static readonly Sprite Icon_SummonMonsterVII = BlueprintTools.GetBlueprint<BlueprintAbility>("ab167fd8203c1314bac6568932f1752f").m_Icon;
 
-        public static void Add()
-        {
+        public static void Add() {
             var SummonBeastAbility = CreateSummonAbility("SummonBeastAbility", bp => {
                 bp.SetName(IsekaiContext, "Summon Beast");
                 bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Hydra, an Owlbear, a Roc, or a Minotaur. "
@@ -84,7 +83,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                     });
                 });
             });
-            var SummonBeastFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"SummonBeastFeature", bp => {
+            var SummonBeastFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SummonBeastFeature", bp => {
                 bp.SetName(IsekaiContext, "Summon Beast");
                 bp.SetDescription(IsekaiContext, "As a full action, you summon a Hydra, an Owlbear, a Roc, or a Minotaur.");
                 bp.m_Icon = Icon_SummonMonsterVII;
@@ -103,8 +102,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
 
             SpecialPowerSelection.AddToSelection(SummonBeastFeature);
         }
-        private static BlueprintAbility CreateSummonAbility(string name, Action<BlueprintAbility> init = null)
-        {
+
+        private static BlueprintAbility CreateSummonAbility(string name, Action<BlueprintAbility> init = null) {
             var result = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, name, bp => {
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.Default;
@@ -131,21 +130,18 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
             init?.Invoke(result);
             return result;
         }
-        private static ActionList SpawnBeast(Action<ContextActionSpawnMonster> init = null)
-        {
-            var t = new ContextActionSpawnMonster()
-            {
+
+        private static ActionList SpawnBeast(Action<ContextActionSpawnMonster> init = null) {
+            var t = new ContextActionSpawnMonster() {
                 m_SummonPool = SummonMonsterPool.ToReference<BlueprintSummonPoolReference>(),
-                DurationValue = new()
-                {
+                DurationValue = new() {
                     Rate = DurationRate.Rounds,
                     DiceType = DiceType.Zero,
                     DiceCountValue = 0,
                     BonusValue = Values.CreateContextRankValue(AbilityRankType.Default),
                     m_IsExtendable = true
                 },
-                CountValue = new()
-                {
+                CountValue = new() {
                     DiceType = DiceType.Zero,
                     DiceCountValue = 0,
                     BonusValue = 1

@@ -1,15 +1,14 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
-using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Designers.Mechanics.Facts;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class ShamanLegacy {
         public static BlueprintFeatureSelection shamanSpirit = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("00c8c566d1825dd4a871250f35285982");
         public static BlueprintFeatureSelection shamanHex = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("4223fe18c75d4d14787af196a04e14e7");
@@ -39,20 +38,19 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateLevelEntry(12, shamanFeat),
                     Helpers.CreateLevelEntry(16, shamanFeat),
                     Helpers.CreateLevelEntry(18, shamanFeat),
-
             };
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup(shamanFeat)
                 };
-
             });
             LegacySelection.getClassFeature().AddFeatures(prog);
             LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
             HeroLegacySelection.getClassFeature().AddFeatures(prog);
             VillainLegacySelection.getClassFeature().AddFeatures(prog);
         }
+
         public static void PatchShamanProgressions() {
-            ShamanSelection.GetHex().m_AllFeatures = shamanHex.m_AllFeatures;            
+            ShamanSelection.GetHex().m_AllFeatures = shamanHex.m_AllFeatures;
 
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
             BlueprintCharacterClassReference refClass = ClassTools.Classes.ShamanClass.ToReference<BlueprintCharacterClassReference>();
@@ -66,11 +64,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "ShamanLegacy");
         }
     }
+
     internal class ShamanSelection {
-        
         private static BlueprintFeatureSelection myfeat;
         private static BlueprintFeatureSelection isekaiHex;
         private static BlueprintFeatureSelection isekaiSpirit;
+
         public static void Configure() {
             isekaiHex = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiHexSelection", bp => {
                 bp.SetName(IsekaiContext, "Hex");
@@ -97,22 +96,23 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     isekaiHex.ToReference<BlueprintFeatureReference>(),
                     isekaiSpirit.ToReference<BlueprintFeatureReference>()
-
                 };
             });
         }
+
         public static BlueprintFeatureSelection Get() {
             if (myfeat != null) return myfeat;
             return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiShamanSelection");
         }
+
         public static BlueprintFeatureSelection GetHex() {
             if (isekaiHex != null) return isekaiHex;
             return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiHexSelection");
         }
+
         public static BlueprintFeatureSelection GetSpirit() {
             if (isekaiSpirit != null) return isekaiSpirit;
             return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiSpiritSelection");
         }
     }
-
 }

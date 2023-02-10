@@ -1,20 +1,17 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints.Classes;
+﻿using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Enums.Damage;
 using Kingmaker.UnitLogic.Buffs.Components;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
-{
-    class Regeneration
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
+
+    internal class Regeneration {
+
+        public static void Add() {
             var Icon_Regeneration = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_REGENERATION.png");
-            var RegenerationFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"RegenerationFeature", bp => {
+            var RegenerationFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "RegenerationFeature", bp => {
                 bp.SetName(IsekaiContext, "Regeneration");
                 bp.SetDescription(IsekaiContext, "You regain 10 hit points per round and cannot die while regeneration is functioning. "
                     + "Regeneration is disabled for 1 round when you are hit with an acid or fire attack. ");

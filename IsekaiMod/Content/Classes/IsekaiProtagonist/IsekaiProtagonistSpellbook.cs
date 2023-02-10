@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
@@ -8,12 +7,11 @@ using Kingmaker.Localization;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.IsekaiProtagonist
-{
-    class IsekaiProtagonistSpellbook
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
+
+    internal class IsekaiProtagonistSpellbook {
+
+        public static void Add() {
             var IsekaiProtagonistSpellList = BlueprintTools.GetModBlueprint<BlueprintSpellList>(IsekaiContext, "IsekaiProtagonistSpellList");
             var IsekaiProtagonistSpellsPerDay = BlueprintTools.GetModBlueprint<BlueprintSpellsTable>(IsekaiContext, "IsekaiProtagonistSpellsPerDay");
             var IsekaiProtagonistSpellsKnown = BlueprintTools.GetModBlueprint<BlueprintSpellsTable>(IsekaiContext, "IsekaiProtagonistSpellsKnown");
@@ -47,17 +45,17 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist
             ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(LichIncorporateSpellBook, IsekaiProtagonistSpellbook);
             ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AngelIncorporateSpellBook, IsekaiProtagonistSpellbook);
         }
-        public static void SetCharacterClass(BlueprintCharacterClass characterClass)
-        {
+
+        public static void SetCharacterClass(BlueprintCharacterClass characterClass) {
             BlueprintSpellbook SpellBook = Get();
             SpellBook.m_CharacterClass = characterClass.ToReference<BlueprintCharacterClassReference>();
         }
-        public static BlueprintSpellbook Get()
-        {
-            return BlueprintTools.GetModBlueprint<BlueprintSpellbook>( IsekaiContext, "IsekaiProtagonistSpellbook");
+
+        public static BlueprintSpellbook Get() {
+            return BlueprintTools.GetModBlueprint<BlueprintSpellbook>(IsekaiContext, "IsekaiProtagonistSpellbook");
         }
-        public static BlueprintSpellbookReference GetReference()
-        {
+
+        public static BlueprintSpellbookReference GetReference() {
             return Get().ToReference<BlueprintSpellbookReference>();
         }
     }

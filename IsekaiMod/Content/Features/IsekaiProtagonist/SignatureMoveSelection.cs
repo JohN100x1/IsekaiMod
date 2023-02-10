@@ -1,5 +1,4 @@
 ﻿using IsekaiMod.Components;
-using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -8,21 +7,19 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist
-{
-    class SignatureMoveSelection
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist {
+
+    internal class SignatureMoveSelection {
         private static readonly Sprite Icon_MutagenResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("3b163587f010382408142fc8a97852b6").m_Icon;
         private static readonly Sprite Icon_SwordSaintWeaponMastery = BlueprintTools.GetBlueprint<BlueprintFeature>("5b31af13868166d4c9bb452f19277f19").m_Icon;
-        public static void Add()
-        {
-            var SignatureAttack = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"SignatureAttack", bp => {
+
+        public static void Add() {
+            var SignatureAttack = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SignatureAttack", bp => {
                 bp.SetName(IsekaiContext, "Signature Attack");
                 bp.SetDescription(IsekaiContext, "You gain a luck bonus to {g|Encyclopedia:BAB}attack{/g} and damage rolls equal to 1/2 your character level.");
                 bp.m_Icon = Icon_SwordSaintWeaponMastery;
@@ -43,7 +40,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist
                 });
                 bp.ReapplyOnLevelUp = true;
             });
-            var SignatureAbility = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"SignatureAbility", bp => {
+            var SignatureAbility = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SignatureAbility", bp => {
                 bp.SetName(IsekaiContext, "Signature Ability");
                 bp.SetDescription(IsekaiContext, "You gain a bonus to spell DC and spell hit point damage equal to 1/2 your character level.");
                 bp.m_Icon = Icon_MutagenResource;

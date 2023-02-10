@@ -1,37 +1,37 @@
-﻿using IsekaiMod.Utilities;
-using IsekaiMod.Extensions;
+﻿using HarmonyLib;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
-using Kingmaker.UnitLogic.ActivatableAbilities;
-using Kingmaker.UnitLogic.ActivatableAbilities.Restrictions;
-using Kingmaker.UnitLogic.Mechanics;
-using Kingmaker.ResourceLinks;
+using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.Blueprints.Items.Armors;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Enums;
-using Kingmaker.Blueprints.Items.Armors;
-using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic;
-using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Formations.Facts;
+using Kingmaker.ResourceLinks;
+using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
+using Kingmaker.UnitLogic.ActivatableAbilities;
+using Kingmaker.UnitLogic.ActivatableAbilities.Restrictions;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.UnitLogic.Mechanics;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
-using HarmonyLib;
 
-namespace IsekaiMod.Content.Features
-{
-    class ExtraWings
-    {
+namespace IsekaiMod.Content.Features {
+
+    internal class ExtraWings {
+
         // Wings
         private static readonly BlueprintBuff WingsAngel = BlueprintTools.GetBlueprint<BlueprintBuff>("25699a90ed3299e438b6fd5548930809");
+
         private static readonly BlueprintBuff BuffWingsMutagen = BlueprintTools.GetBlueprint<BlueprintBuff>("e4979934bdb39d842b28bee614606823");
         private static readonly BlueprintBuff WingsAngelBlack = BlueprintTools.GetBlueprint<BlueprintBuff>("a19cda073f4c2b64ca1f8bf8fe285ece");
         private static readonly BlueprintBuff BuffWingsAngelGhost = BlueprintTools.GetBlueprint<BlueprintBuff>("bd6980649fd60fa4085c34aa74ac47f2");
         private static readonly BlueprintBuff BuffWingsDemon = BlueprintTools.GetBlueprint<BlueprintBuff>("3c958be25ab34dc448569331488bee27");
-        public static void Add()
-        {
-            var BlackWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "BlackWingsAbility", bp => {
+
+        public static void Add() {
+            var BlackWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("BlackWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Black)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -43,7 +43,7 @@ namespace IsekaiMod.Content.Features
                 bp.Group = ActivatableAbilityGroup.Wings;
                 bp.WeightInGroup = 1;
             });
-            var GhostWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "GhostWingsAbility", bp => {
+            var GhostWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("GhostWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Ghostly)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -86,7 +86,7 @@ namespace IsekaiMod.Content.Features
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
                 bp.Frequency = DurationRate.Rounds;
             });
-            var DevilWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "DevilWingsAbility", bp => {
+            var DevilWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("DevilWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Devilish)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -98,7 +98,7 @@ namespace IsekaiMod.Content.Features
                 bp.Group = ActivatableAbilityGroup.Wings;
                 bp.WeightInGroup = 1;
             });
-            var DemonWingsAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "DemonWingsAbility", bp => {
+            var DemonWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("DemonWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Demonic)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -114,8 +114,8 @@ namespace IsekaiMod.Content.Features
             // Patch pit spells
             PatchPitAreaEffects(DevilWingsBuff);
         }
-        private static void PatchPitAreaEffects(BlueprintBuff wingsBuff)
-        {
+
+        private static void PatchPitAreaEffects(BlueprintBuff wingsBuff) {
             BlueprintAbilityAreaEffect[] pitAbilityAreaEffects = new BlueprintAbilityAreaEffect[]
             {
                 BlueprintTools.GetBlueprint<BlueprintAbilityAreaEffect>("b905a3c987f22cb49a246f0ab211f34c"), // PitOfDespairArea
@@ -126,12 +126,10 @@ namespace IsekaiMod.Content.Features
                 BlueprintTools.GetBlueprint<BlueprintAbilityAreaEffect>("d086b1aeb367a5b43808d34c321955d1"), // HungryPitArea
                 BlueprintTools.GetBlueprint<BlueprintAbilityAreaEffect>("9b51157a5305dbf4184bf15bdad39226")  // RiftOfRuinArea
             };
-            foreach (BlueprintAbilityAreaEffect pitAbilityAreaEffect in pitAbilityAreaEffects)
-            {
+            foreach (BlueprintAbilityAreaEffect pitAbilityAreaEffect in pitAbilityAreaEffects) {
                 var areaEffectPit = pitAbilityAreaEffect.GetComponent<AreaEffectPit>();
                 areaEffectPit.m_EffectsImmunityFacts = areaEffectPit.m_EffectsImmunityFacts.AddToArray(wingsBuff.ToReference<BlueprintUnitFactReference>());
             }
         }
-
     }
 }

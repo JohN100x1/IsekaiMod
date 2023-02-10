@@ -1,12 +1,10 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
@@ -15,12 +13,11 @@ using Kingmaker.Utility;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
-{
-    class AuraOfGoldenProtection
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
+
+    internal class AuraOfGoldenProtection {
+
+        public static void Add() {
             var Icon_AuraOfGoldenProtection = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_GOLDEN_PROTECTION.png");
             var AuraOfGoldenProtectionBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfGoldenProtectionBuff", bp => {
                 bp.SetName(IsekaiContext, "Aura of Golden Protection");
@@ -70,14 +67,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor
                     c.m_AreaEffect = AuraOfGoldenProtectionArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var AuraOfGoldenProtectionAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "AuraOfGoldenProtectionAbility", bp => {
+            var AuraOfGoldenProtectionAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AuraOfGoldenProtectionAbility", bp => {
                 bp.SetName(IsekaiContext, "Aura of Golden Protection");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.");
                 bp.m_Icon = Icon_AuraOfGoldenProtection;
                 bp.m_Buff = AuraOfGoldenProtectionAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
-            var AuraOfGoldenProtectionFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"AuraOfGoldenProtectionFeature", bp => {
+            var AuraOfGoldenProtectionFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfGoldenProtectionFeature", bp => {
                 bp.SetName(IsekaiContext, "Aura of Golden Protection");
                 bp.SetDescription(IsekaiContext, "At 7th level, allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.");
                 bp.m_Icon = Icon_AuraOfGoldenProtection;

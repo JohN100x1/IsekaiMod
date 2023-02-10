@@ -1,7 +1,6 @@
 using TabletopTweaks.Core.Config;
 
-namespace IsekaiMod.Config
-{
+namespace IsekaiMod.Config {
 
     public class AddedContent : IUpdatableSettings {
         public bool NewSettingsOffByDefault = false;

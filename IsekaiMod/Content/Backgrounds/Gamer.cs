@@ -1,20 +1,17 @@
-﻿using IsekaiMod.Utilities;
-using IsekaiMod.Extensions;
-using Kingmaker.UnitLogic.FactLogic;
+﻿using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
-using Kingmaker.Blueprints.Classes;
+using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Backgrounds
-{
-    internal class Gamer
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Backgrounds {
+
+    internal class Gamer {
+
+        public static void Add() {
             // Background
-            var BackgroundGamer = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"BackgroundGamer", bp => {
+            var BackgroundGamer = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "BackgroundGamer", bp => {
                 bp.SetName(IsekaiContext, "Gamer");
                 bp.SetDescription(IsekaiContext, "The Gamer has a +4 competence bonus to all knowledge, lore, and perception checks.\n"
                     + "If the character already has the class skill, {g|Encyclopedia:Weapon_Proficiency}weapon proficiency{/g} or armor proficiency granted by the selected background "

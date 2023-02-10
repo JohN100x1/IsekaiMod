@@ -1,22 +1,19 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
-using Kingmaker.Blueprints.Classes;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain
-{
-    class VillainQuickFooted
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain {
+
+    internal class VillainQuickFooted {
         private static readonly Sprite Icon_ExpeditiousRetreat = BlueprintTools.GetBlueprint<BlueprintAbility>("4f8181e7a7f1d904fbaea64220e83379").m_Icon;
-        public static void Add()
-        {
-            var VillainQuickFooted = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"VillainQuickFooted", bp => {
+
+        public static void Add() {
+            var VillainQuickFooted = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "VillainQuickFooted", bp => {
                 bp.SetName(IsekaiContext, "Quick-Footed");
                 bp.SetDescription(IsekaiContext, "At 15th level, you gain a competence {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Initiative}initiative{/g} "
                     + "{g|Encyclopedia:Check}checks{/g} equal to your {g|Encyclopedia:Intelligence}Intelligence{/g} modifier.");

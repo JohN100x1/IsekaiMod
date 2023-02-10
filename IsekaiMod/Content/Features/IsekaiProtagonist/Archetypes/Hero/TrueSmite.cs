@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Buffs;
@@ -22,20 +21,18 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System.Collections.Generic;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
-{
-    class TrueSmite
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
+
+    internal class TrueSmite {
         private static readonly Sprite Icon_SmiteEvil = BlueprintTools.GetBlueprint<BlueprintFeature>("3a6db57fce75b0244a6a5819528ddf26").m_Icon;
-        public static void Add()
-        {
+
+        public static void Add() {
             var TrueSmiteResource = Helpers.CreateBlueprint<BlueprintAbilityResource>(IsekaiContext, "TrueSmiteResource", bp => {
-                bp.m_MaxAmount = new BlueprintAbilityResource.Amount
-                {
+                bp.m_MaxAmount = new BlueprintAbilityResource.Amount {
                     BaseValue = 1,
                     IncreasedByLevel = false,
                     LevelIncrease = 1,
@@ -104,21 +101,19 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 });
                 bp.AddComponent<ContextCalculateSharedValue>(c => {
                     c.ValueType = AbilitySharedValue.StatBonus;
-                    c.Value = new ContextDiceValue()
-                    {
+                    c.Value = new ContextDiceValue() {
                         DiceType = DiceType.Zero,
                         DiceCountValue = 0,
                         BonusValue = Values.CreateContextRankValue(AbilityRankType.StatBonus)
-                };
+                    };
                     c.Modifier = 1;
                 });
                 bp.AddComponent<ContextCalculateSharedValue>(c => {
                     c.ValueType = AbilitySharedValue.DamageBonus;
-                    c.Value = new ContextDiceValue()
-                    {
+                    c.Value = new ContextDiceValue() {
                         DiceCountValue = 0,
                         BonusValue = Values.CreateContextRankValue(AbilityRankType.DamageBonus)
-                };
+                    };
                     c.Modifier = 1;
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
@@ -159,7 +154,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                 bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "Until the target of the smite is dead");
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var TrueSmiteFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"TrueSmiteFeature", bp => {
+            var TrueSmiteFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteFeature", bp => {
                 bp.SetName(IsekaiContext, "True Smite");
                 bp.SetDescription(IsekaiContext, "Once per day, the hero can call out her inner powers to aid her against her enemies. "
                     + "As a {g|Encyclopedia:Swift_Action}swift action{/g}, the hero chooses one target within sight to smite. The hero adds her {g|Encyclopedia:Charisma}Cha{/g} "
@@ -177,7 +172,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     c.m_Facts = new BlueprintUnitFactReference[] { TrueSmiteAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
-            var TrueSmiteAdditionalUse = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"TrueSmiteAdditionalUse", bp => {
+            var TrueSmiteAdditionalUse = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteAdditionalUse", bp => {
                 bp.SetName(IsekaiContext, "True Smite — Additional Use");
                 bp.SetDescription(IsekaiContext, "Once per day, the hero can call out her inner powers to aid her against her enemies. "
                     + "As a {g|Encyclopedia:Swift_Action}swift action{/g}, the hero chooses one target within sight to smite. The hero adds her {g|Encyclopedia:Charisma}Cha{/g} "

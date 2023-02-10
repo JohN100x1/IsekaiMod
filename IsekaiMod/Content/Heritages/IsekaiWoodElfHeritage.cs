@@ -1,28 +1,25 @@
-﻿using IsekaiMod.Utilities;
-using IsekaiMod.Extensions;
+﻿using HarmonyLib;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
-using Kingmaker.UnitLogic.Mechanics;
+using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
-using Kingmaker.Designers.Mechanics.Buffs;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
-using HarmonyLib;
 
-namespace IsekaiMod.Content.Heritages
-{
-    internal class IsekaiWoodElfHeritage
-    {
+namespace IsekaiMod.Content.Heritages {
+
+    internal class IsekaiWoodElfHeritage {
         private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = BlueprintTools.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
-        public static void Add()
-        {
+
+        public static void Add() {
             // Wood Elf Heritage
             var Icon_Wood_Elf = AssetLoader.LoadInternal(IsekaiContext, "Heritages", "ICON_WOOD_ELF.png");
-            var IsekaiWoodElfHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"IsekaiWoodElfHeritage", bp => {
+            var IsekaiWoodElfHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiWoodElfHeritage", bp => {
                 bp.SetName(IsekaiContext, "Isekai Wood Elf");
                 bp.SetDescription(IsekaiContext, "Otherworldly entities who are reincarnated into the world of Golarion as a Wood Elf have both extreme beauty and power. "
                     + "They are a nimble and natural reflection of the elven race.\n"

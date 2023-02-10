@@ -1,18 +1,15 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
+﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.EntitySystem.Stats;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.IsekaiProtagonist
-{
-    class PrebuildIsekaiProtagonistFeatureList
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
+
+    internal class PrebuildIsekaiProtagonistFeatureList {
+
+        public static void Add() {
             // Prebuild Features
             var PowerAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("9972f33f977fc724c838e59641b2fca5");
             var CombatReflexes = BlueprintTools.GetBlueprint<BlueprintFeature>("0f8939ae6f220984e8fb568abbdfba95");

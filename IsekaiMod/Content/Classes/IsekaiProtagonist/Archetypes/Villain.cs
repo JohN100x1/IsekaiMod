@@ -1,7 +1,5 @@
 ﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
-using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
@@ -12,12 +10,11 @@ using Kingmaker.UnitLogic.Alignments;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
-{
-    class Villain
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
+
+    internal class Villain {
+
+        public static void Add() {
             // Archetype features
             var VillainSpellbook = BlueprintTools.GetModBlueprint<BlueprintSpellbook>(IsekaiContext, "VillainSpellbook");
             var VillainProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "VillainProficiencies");
@@ -92,12 +89,12 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             // Add Archetype to Class
             IsekaiProtagonistClass.RegisterArchetype(VillainArchetype);
         }
-        public static BlueprintArchetype Get()
-        {
+
+        public static BlueprintArchetype Get() {
             return BlueprintTools.GetModBlueprint<BlueprintArchetype>(IsekaiContext, "VillainArchetype");
         }
-        public static BlueprintArchetypeReference GetReference()
-        {
+
+        public static BlueprintArchetypeReference GetReference() {
             return Get().ToReference<BlueprintArchetypeReference>();
         }
     }

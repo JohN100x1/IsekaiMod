@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
@@ -14,17 +13,16 @@ using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
-{
-    class TrueResurrection
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
+
+    internal class TrueResurrection {
         private static readonly Sprite Icon_Resurrection = BlueprintTools.GetBlueprint<BlueprintAbility>("80a1a388ee938aa4e90d427ce9a7a3e9").m_Icon;
-        public static void Add()
-        {
+
+        public static void Add() {
             var TrueResurrectionAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "TrueResurrectionAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — True Resurrection");
                 bp.SetDescription(IsekaiContext, "Restore life and complete {g|Encyclopedia:Strength}strength{/g} to any deceased creature. Upon completion of this ability, the creature is "
@@ -56,7 +54,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility
                 bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "1 round/level");
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
-            var TrueResurrectionFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"TrueResurrectionFeature", bp => {
+            var TrueResurrectionFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "TrueResurrectionFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — True Resurrection");
                 bp.SetDescription(IsekaiContext, "As a full action, you can restore life and complete {g|Encyclopedia:Strength}strength{/g} to any deceased creature. Upon completion of this ability, "
                     + "the creature is immediately restored to full {g|Encyclopedia:HP}hit points{/g}, vigor, and {g|Encyclopedia:Healing}health{/g}, with no loss of prepared spells.\n"

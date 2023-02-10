@@ -1,6 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
+﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -9,12 +7,11 @@ using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features
-{
-    class ExoticWeaponProficiency
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Features {
+
+    internal class ExoticWeaponProficiency {
+
+        public static void Add() {
             var AnimalCompanionClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("26b10d4340839004f960f9816f6109fe");
             var Icon_ExcoticWeaponProficiency = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("9a01b6815d6c3684cb25f30b8bf20932").m_Icon;
             var ExoticWeaponProficiency = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "ExoticWeaponProficiency", bp => {

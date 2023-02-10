@@ -1,25 +1,21 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
-using Kingmaker.UnitLogic.ActivatableAbilities;
-using Kingmaker.Blueprints.Classes;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
-{
-    class SpellNegation
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
+
+    internal class SpellNegation {
         private static readonly Sprite Icon_SpellResistance = BlueprintTools.GetBlueprint<BlueprintAbility>("0a5ddfbcfb3989543ac7c936fc256889").m_Icon;
-        public static void Add()
-        {
+
+        public static void Add() {
             var SpellNegationBuff = ThingsNotHandledByTTTCore.CreateBuff("SpellNegationBuff", bp => {
                 bp.SetName(IsekaiContext, "Spell Negation");
                 bp.SetDescription(IsekaiContext, "You gain spell resistance equal to 10 + twice your character level.");
@@ -37,13 +33,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var SpellNegationAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, "SpellNegationAbility", bp => {
+            var SpellNegationAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("SpellNegationAbility", bp => {
                 bp.SetName(IsekaiContext, "Spell Negation");
                 bp.SetDescription(IsekaiContext, "You gain spell resistance equal to 10 + twice your character level.");
                 bp.m_Icon = Icon_SpellResistance;
                 bp.m_Buff = SpellNegationBuff.ToReference<BlueprintBuffReference>();
             });
-            var SpellNegationFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"SpellNegationFeature", bp => {
+            var SpellNegationFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SpellNegationFeature", bp => {
                 bp.SetName(IsekaiContext, "Spell Negation");
                 bp.SetDescription(IsekaiContext, "After extensive studying of spells, you gain spell resistance equal to 10 + twice your character level.");
                 bp.m_Icon = Icon_SpellResistance;

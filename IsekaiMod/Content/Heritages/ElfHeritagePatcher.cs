@@ -1,5 +1,4 @@
 ﻿using IsekaiMod.Components;
-using IsekaiMod.Extensions;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Buffs;
@@ -9,13 +8,12 @@ using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Heritages
-{
-    class ElfHeritagePatcher
-    {
+namespace IsekaiMod.Content.Heritages {
+
+    internal class ElfHeritagePatcher {
         private static readonly BlueprintFeature DestinyBeyondBirthMythicFeat = BlueprintTools.GetBlueprint<BlueprintFeature>("325f078c584318849bfe3da9ea245b9d");
-        public static void Patch()
-        {
+
+        public static void Patch() {
             // Get Isekai Heritages
             var IsekaiDarkElfHeritage = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiDarkElfHeritage");
             var IsekaiHighElfHeritage = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiHighElfHeritage");

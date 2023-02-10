@@ -1,21 +1,18 @@
-﻿using IsekaiMod.Utilities;
-using IsekaiMod.Extensions;
+﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.Blueprints;
 using Kingmaker.Enums;
+using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Backgrounds
-{
-    internal class MartialArtist
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Backgrounds {
+
+    internal class MartialArtist {
+
+        public static void Add() {
             // Background
             var ExoticWeaponProficiency = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ExoticWeaponProficiency");
-            var BackgroundMartialArtist = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"BackgroundMartialArtist", bp => {
+            var BackgroundMartialArtist = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "BackgroundMartialArtist", bp => {
                 bp.SetName(IsekaiContext, "Martial Artist");
                 bp.SetDescription(IsekaiContext, "The Martial Artist is proficient with all exotic weapons.\n"
                     + "If the character already has the class skill, {g|Encyclopedia:Weapon_Proficiency}weapon proficiency{/g} or armor proficiency granted by the selected background "

@@ -1,19 +1,16 @@
-﻿using IsekaiMod.Utilities;
-using IsekaiMod.Extensions;
-using Kingmaker.UnitLogic.FactLogic;
+﻿using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
-using Kingmaker.Blueprints.Classes;
 
-namespace IsekaiMod.Content.Backgrounds
-{
-    internal class Otaku
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Backgrounds {
+
+    internal class Otaku {
+
+        public static void Add() {
             // Background
-            var BackgroundOtaku = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"BackgroundOtaku", bp => {
+            var BackgroundOtaku = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "BackgroundOtaku", bp => {
                 bp.SetName(IsekaiContext, "Otaku");
                 bp.SetDescription(IsekaiContext, "The Otaku adds all skills to the list of her class skills except Persuasion.\n"
                     + "If the character already has the class skill, {g|Encyclopedia:Weapon_Proficiency}weapon proficiency{/g} or armor proficiency granted by the selected background "

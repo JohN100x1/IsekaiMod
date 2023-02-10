@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
@@ -14,12 +13,11 @@ using Kingmaker.Utility;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
-{
-    class HerosPresence
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
+
+    internal class HerosPresence {
+
+        public static void Add() {
             var Icon_Heros_Presence = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_HEROS_PRESENCE.png");
             var HerosPresenceBuff = ThingsNotHandledByTTTCore.CreateBuff("HerosPresenceBuff", bp => {
                 bp.SetName(IsekaiContext, "Hero's Presence");
@@ -79,7 +77,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero
                     c.m_AreaEffect = HerosPresenceArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var HerosPresenceFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext ,"HerosPresenceFeature", bp => {
+            var HerosPresenceFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "HerosPresenceFeature", bp => {
                 bp.SetName(IsekaiContext, "Hero's Presence");
                 bp.SetDescription(IsekaiContext, "At 20th level, allies within 40 feet of the Hero has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil.");
                 bp.m_Icon = Icon_Heros_Presence;

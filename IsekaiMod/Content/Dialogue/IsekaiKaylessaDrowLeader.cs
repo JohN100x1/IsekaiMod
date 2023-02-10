@@ -4,20 +4,16 @@ using Kingmaker.Blueprints;
 using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
-using Kingmaker.EntitySystem.Stats;
-using Kingmaker.Localization;
-using Kingmaker.UnitLogic.Alignments;
 using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Dialogue
-{
-    class IsekaiKaylessaDrowLeader
-    {
+namespace IsekaiMod.Content.Dialogue {
+
+    internal class IsekaiKaylessaDrowLeader {
         private static readonly BlueprintCue Cue_0067 = BlueprintTools.GetBlueprint<BlueprintCue>("a8cc736feec11024eb6a5d3dbcb69f5c");
-        public static void Add()
-        {
+
+        public static void Add() {
             // Prompt (Tran, at drow ambush)
             /* \"Lady Anemora desires your head! And we'll gladly deliver it!\" {n}The elf, whose voice as Tran was so convincing, lets out a repulsive snicker.{/n}
              */
@@ -26,13 +22,11 @@ namespace IsekaiMod.Content.Dialogue
             var IsekaiKaylessaDrowLeader = ThingsNotHandledByTTTCore.CreateAnswer("IsekaiKaylessaDrowLeader", bp => {
                 bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiKaylessaDrowLeader.Text", "(Isekai Protagonist) [Attack] \"Nice acting, Mr. background character. "
                     + "Now it's time for your unmomentous death scene.\"");
-                bp.NextCue = new CueSelection()
-                {
+                bp.NextCue = new CueSelection() {
                     Cues = new List<BlueprintCueBaseReference>() { Cue_0067.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
-                bp.ShowConditions = ActionFlow.IfSingle<PlayerSignificantClassIs>(c =>
-                {
+                bp.ShowConditions = ActionFlow.IfSingle<PlayerSignificantClassIs>(c => {
                     c.Not = false;
                     c.CheckGroup = false;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();

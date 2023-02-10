@@ -1,21 +1,18 @@
-﻿using IsekaiMod.Extensions;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints.Classes;
+﻿using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.FactLogic;
-using UnityEngine;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode
-{
-    class Tenacious
-    {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode {
+
+    internal class Tenacious {
         private static readonly Sprite Icon_DextrousDuelist = BlueprintTools.GetBlueprint<BlueprintFeature>("b701196306bb4674bb902c9f1160180f").m_Icon;
-        public static void Add()
-        {
-            var Tenacious = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"Tenacious", bp => {
+
+        public static void Add() {
+            var Tenacious = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "Tenacious", bp => {
                 bp.SetName(IsekaiContext, "Tenacious");
                 bp.SetDescription(IsekaiContext, "You gain immunity to stunned, staggered, slowed, entangled, petrified, paralysis, and movement impairing effects.");
                 bp.m_Icon = Icon_DextrousDuelist;

@@ -1,19 +1,16 @@
-﻿using IsekaiMod.Utilities;
-using IsekaiMod.Extensions;
-using Kingmaker.UnitLogic.FactLogic;
+﻿using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
-using Kingmaker.Blueprints.Classes;
 
-namespace IsekaiMod.Content.Backgrounds
-{
-    internal class TabletopRPGPlayer
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Backgrounds {
+
+    internal class TabletopRPGPlayer {
+
+        public static void Add() {
             // Background
-            var BackgroundTabletopRPGPlayer = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext,"BackgroundTabletopRPGPlayer", bp => {
+            var BackgroundTabletopRPGPlayer = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "BackgroundTabletopRPGPlayer", bp => {
                 bp.SetName(IsekaiContext, "Tabletop RPG Player");
                 bp.SetDescription(IsekaiContext, "The Tabletop RPG Player adds {g|Encyclopedia:Lore_Nature}Lore (Nature){/g}, {g|Encyclopedia:Lore_Religion}Lore (Religion){/g}, "
                     + "{g|Encyclopedia:Knowledge_World}Knowledge (World){/g} and {g|Encyclopedia:Knowledge_Arcana}Knowledge (Arcana){/g} to the list of her class {g|Encyclopedia:Skills}skills{/g} "

@@ -2,10 +2,10 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace IsekaiMod.Utilities
-{
-    static class DescriptionTools
-    {
+namespace IsekaiMod.Utilities {
+
+    internal static class DescriptionTools {
+
         private static readonly EncyclopediaEntry[] EncyclopediaEntries = new EncyclopediaEntry[] {
             new EncyclopediaEntry {
                 Entry = "Strength",
@@ -308,41 +308,34 @@ namespace IsekaiMod.Utilities
             }
         };
 
-        public static string TagEncyclopediaEntries(string description)
-        {
+        public static string TagEncyclopediaEntries(string description) {
             var result = description;
             result = result.StripHTML();
-            foreach (var entry in EncyclopediaEntries)
-            {
-                foreach (var pattern in entry.Patterns)
-                {
+            foreach (var entry in EncyclopediaEntries) {
+                foreach (var pattern in entry.Patterns) {
                     result = result.ApplyTags(pattern, entry);
                 }
             }
             return result;
         }
 
-        private class EncyclopediaEntry
-        {
+        private class EncyclopediaEntry {
             public string Entry = "";
             public List<string> Patterns = new List<string>();
 
-            public string Tag(string keyword)
-            {
+            public string Tag(string keyword) {
                 return $"{{g|Encyclopedia:{Entry}}}{keyword}{{/g}}";
             }
         }
 
-        private static string ApplyTags(this string str, string from, EncyclopediaEntry entry)
-        {
+        private static string ApplyTags(this string str, string from, EncyclopediaEntry entry) {
             var pattern = from.EnforceSolo().ExcludeTagged();
             var matches = Regex.Matches(str, pattern, RegexOptions.IgnoreCase)
                 .OfType<Match>()
                 .Select(m => m.Value)
                 .Distinct();
             var firstMatch = matches.FirstOrDefault();
-            if (!string.IsNullOrEmpty(firstMatch))
-            {
+            if (!string.IsNullOrEmpty(firstMatch)) {
                 var resultPattern = new Regex(Regex.Escape(firstMatch).EnforceSolo().ExcludeTagged(), RegexOptions.IgnoreCase);
                 str = resultPattern.Replace(str, entry.Tag(firstMatch), 1);
             }
@@ -353,20 +346,20 @@ namespace IsekaiMod.Utilities
             */
             return str;
         }
-        public static string StripHTML(this string str)
-        {
+
+        public static string StripHTML(this string str) {
             return Regex.Replace(str, "<.*?>", string.Empty);
         }
-        public static string StripEncyclopediaTags(this string str)
-        {
+
+        public static string StripEncyclopediaTags(this string str) {
             return Regex.Replace(str, "{.*?}", string.Empty);
         }
-        private static string ExcludeTagged(this string str)
-        {
+
+        private static string ExcludeTagged(this string str) {
             return $"{@"(?<!{g\|Encyclopedia:\w+}[^}]*)"}{str}{@"(?![^{]*{\/g})"}";
         }
-        private static string EnforceSolo(this string str)
-        {
+
+        private static string EnforceSolo(this string str) {
             return $"{@"(?<![\w>]+)"}{str}{@"(?![^\s\.,""'<)]+)"}";
         }
     }

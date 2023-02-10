@@ -7,12 +7,11 @@ using Kingmaker.EntitySystem.Stats;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
-{
-    class EdgeLord
-    {
-        public static void Add()
-        {
+namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
+
+    internal class EdgeLord {
+
+        public static void Add() {
             // Archetype features
             var EdgeLordProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "EdgeLordProficiencies");
             var SupersonicCombat = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SupersonicCombat");
@@ -60,12 +59,12 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes
             // Add Archetype to Class
             IsekaiProtagonistClass.RegisterArchetype(EdgeLordArchetype);
         }
-        public static BlueprintArchetype Get()
-        {
+
+        public static BlueprintArchetype Get() {
             return BlueprintTools.GetModBlueprint<BlueprintArchetype>(IsekaiContext, "EdgeLordArchetype");
         }
-        public static BlueprintArchetypeReference GetReference()
-        {
+
+        public static BlueprintArchetypeReference GetReference() {
             return Get().ToReference<BlueprintArchetypeReference>();
         }
     }
