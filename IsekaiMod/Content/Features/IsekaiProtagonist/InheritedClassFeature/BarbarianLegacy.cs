@@ -1,18 +1,17 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Facts;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class BarbarianLegacy {
         private static BlueprintProgression prog;
-        public static void configure() {
+
+        public static void Configure() {
             StaticReferences.BarbarianRageResource.m_MaxAmount.Class.m_Array.AppendToArray(IsekaiProtagonistClass.GetReference());
             var IsekaiBarbarianTraining = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "BarbarianTraining", bp => {
                 bp.SetName(IsekaiContext, "Barbarian Training");
@@ -60,8 +59,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 };
 
             });
-            LegacySelection.getClassFeature().AddFeatures(prog);
-            LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
+            LegacySelection.GetClassFeature().AddFeatures(prog);
+            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
             EdgeLordLegacySelection.getClassFeature().AddFeatures(prog);
         }
         public static BlueprintProgression Get() {

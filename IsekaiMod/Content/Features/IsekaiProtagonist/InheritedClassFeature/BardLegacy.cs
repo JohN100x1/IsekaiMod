@@ -1,16 +1,16 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Designers.Mechanics.Facts;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class BardLegacy {
         private static BlueprintProgression prog;
-        public static void configure() {
+
+        public static void Configure() {
             StaticReferences.BardPerformResource.m_MaxAmount.Class.m_Array.AppendToArray(IsekaiProtagonistClass.GetReference());
             var BardPerformResourceFact = BlueprintTools.GetBlueprint<BlueprintFeature>("b92bfc201c6a79e49afd0b5cfbfc269f");
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "BardLegacy", bp => {
@@ -40,14 +40,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             };
                 bp.UIGroups = new UIGroup[] {
-                    Helpers.CreateUIGroup(StaticReferences.BardInspireCourage, StaticReferences.BardMove, StaticReferences.BardSwift, 
+                    Helpers.CreateUIGroup(StaticReferences.BardInspireCourage, StaticReferences.BardMove, StaticReferences.BardSwift,
                         StaticReferences.BardWellVersed,StaticReferences.BardFascinate,StaticReferences.BardInspireGreatness, StaticReferences.BardInspireHeroics),
                     Helpers.CreateUIGroup(StaticReferences.BardInspireCompetence)
                 };
 
             });
-            LegacySelection.getClassFeature().AddFeatures(prog);
-            LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
+            LegacySelection.GetClassFeature().AddFeatures(prog);
+            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
             HeroLegacySelection.getClassFeature().AddFeatures(prog);
         }
         public static BlueprintProgression Get() {

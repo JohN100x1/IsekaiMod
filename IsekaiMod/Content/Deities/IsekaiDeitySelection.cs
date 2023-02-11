@@ -11,13 +11,10 @@ using System.Runtime.CompilerServices;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Deities
-{
-    internal class IsekaiDeitySelection
-    {
+namespace IsekaiMod.Content.Deities {
+    internal class IsekaiDeitySelection {
         private static BlueprintFeatureSelection DeitySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("59e7a76987fe3b547b9cce045f4db3e4");
-        public static void Add()
-        {
+        public static void Add() {
             // Isekai Background Selection
             var IsekaiDeitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiDeitySelection", bp => {
                 bp.SetName(IsekaiContext, "Isekai");
@@ -31,10 +28,8 @@ namespace IsekaiMod.Content.Deities
             // Add to Deity Selection
             
             DeitySelection.AddFeatures(IsekaiDeitySelection);
-
-            
-
         }
+
         /** wasn't us that broke it but I am adding the patch here anyway 
          * because one of my other mods seriously messed with this and created a recursion that adds the selection to itself and every subselection and it is really irritating because of bloating,
          * so we might as well be the good guys and fix it for them */
@@ -85,8 +80,10 @@ namespace IsekaiMod.Content.Deities
                     }
                 }
             }
-            if (nextLevel.Count == 0) { return; }
-            level = level + 1;
+            if (nextLevel.Count == 0) { 
+                return; 
+            }
+            level++;
             if (level > 10) {
                 IsekaiContext.Logger.LogError("Deity List Patching has reached 10 levels of depth, emergency aborting attempt to fix the levels, even with recursion this should not be possible unless someone purposfully fucked with the deity list, please doublecheck ingame");
                 return;
@@ -95,8 +92,7 @@ namespace IsekaiMod.Content.Deities
             FlattenSelection(knownselections, knownDeities, level);
         }
 
-        public static void AddToSelection(BlueprintFeature deityFeature)
-        {
+        public static void AddToSelection(BlueprintFeature deityFeature) {
             var IsekaiDeitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiDeitySelection");
             IsekaiDeitySelection.m_AllFeatures = IsekaiDeitySelection.m_AllFeatures.AddToArray(deityFeature.ToReference<BlueprintFeatureReference>());
         }

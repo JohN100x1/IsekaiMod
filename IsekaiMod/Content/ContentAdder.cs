@@ -6,21 +6,17 @@ using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
-using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Blueprints.Classes;
-using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.JsonSystem;
-using static IsekaiMod.Main;
-using static Kingmaker.Blueprints.Classes.BlueprintProgression;
-using TabletopTweaks.Core.Utilities;
 using IsekaiMod.Utilities;
+using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Blueprints.JsonSystem;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content
-{
-    class ContentAdder {
+namespace IsekaiMod.Content {
+    internal class ContentAdder {
         [HarmonyPatch(typeof(BlueprintsCache), "Init")]
-        static class BlueprintsCache_Init_Patch {
-            static bool Initialized;
+        private static class BlueprintsCache_Init_Patch {
+            private static bool Initialized;
 
             [HarmonyPriority(Priority.First)]
             public static void Postfix() {
@@ -35,15 +31,11 @@ namespace IsekaiMod.Content
                 if (IsekaiContext.AddedContent.Deities.IsEnabled("Isekai Deities")) AddIsekaiDeities();
                 if (IsekaiContext.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
                 if (IsekaiContext.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
-
-               
-
             }
 
-            public static void AddIsekaiProtagonistClass()
-            {
+            public static void AddIsekaiProtagonistClass() {
 
-                LegacySelection.configureStep1();
+                LegacySelection.ConfigureStep1();
                 VillainLegacySelection.Configure();
                 EdgeLordLegacySelection.Configure();
                 HeroLegacySelection.Configure();
@@ -125,7 +117,7 @@ namespace IsekaiMod.Content
                 Features.IsekaiProtagonist.OverpoweredAbility.SupremeBeing.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AuraOfRighteousWrath.Add();
                 if (IsekaiContext.AddedContent.Feats.IsEnabled("Overpowered - Mythic Blessing")) Features.IsekaiProtagonist.OverpoweredAbility.BlessingOfTheMythic.Configure();
-                if (IsekaiContext.AddedContent.Feats.IsEnabled("Overpowered - Mythic Blessing")) Features.IsekaiProtagonist.OverpoweredAbility.IsekaidZippyMagic.Configure();
+                //if (IsekaiContext.AddedContent.Feats.IsEnabled("Overpowered - Mythic Blessing")) Features.IsekaiProtagonist.OverpoweredAbility.IsekaidZippyMagic.Configure();
 
                 // God Emperor Archetype
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.GodEmperorProficiencies.Add();
@@ -189,11 +181,10 @@ namespace IsekaiMod.Content
                 Dialogue.IsekaiHulrun.Add();
                 Dialogue.IsekaiRadiance.Add();
 
-                LegacySelection.configureStep2();
+                LegacySelection.ConfigureStep2();
 
             }
-            public static void AddIsekaiHeritages()
-            {
+            public static void AddIsekaiHeritages() {
                 // Add Heritages
                 Heritages.IsekaiSuccubusHeritage.Add();
                 Heritages.IsekaiAngelHeritage.Add();
@@ -206,8 +197,7 @@ namespace IsekaiMod.Content
                 // Patch Heritages
                 Heritages.ElfHeritagePatcher.Patch();
             }
-            public static void AddIsekaiBackgrounds()
-            {
+            public static void AddIsekaiBackgrounds() {
                 // Add the Selection First
                 Backgrounds.IsekaiBackgroundSelection.Add();
 
@@ -221,8 +211,7 @@ namespace IsekaiMod.Content
                 Backgrounds.Gamer.Add();
                 Backgrounds.BetaTester.Add();
             }
-            public static void AddIsekaiDeities()
-            {
+            public static void AddIsekaiDeities() {
                 // Add the Selection First
                 Deities.IsekaiDeitySelection.Add();
 
@@ -232,8 +221,7 @@ namespace IsekaiMod.Content
                 Deities.Ristarte.Add();
                 Deities.AdministratorD.Add();
             }
-            public static void AddExceptionalFeats()
-            {
+            public static void AddExceptionalFeats() {
                 // Add Exceptional Feats
                 Features.ExceptionalFeats.ExceptionalFeatSelection.Add();
                 Features.ExceptionalFeats.EffectImmunitySelection.Add();
@@ -245,10 +233,10 @@ namespace IsekaiMod.Content
 
     [HarmonyPriority(Priority.Last)]    
     [HarmonyPatch(typeof(StartGameLoader), "LoadAllJson")]
-    static class StartGameLoader_LoadAllJson {
+    internal static class StartGameLoader_LoadAllJson {
         private static bool Run = false;
 
-        static void Postfix() {
+        private static void Postfix() {
             if (Run) return; 
             Run = true;
             IsekaiDeitySelection.PatchDeitySelection();
@@ -265,27 +253,14 @@ namespace IsekaiMod.Content
             //done here because it should be done after all spells have been initialized and were added to the canon books
             if (IsekaiContext.AddedContent.Classes.IsEnabled("Merge Isekai Spelllist")) IsekaiProtagonistSpellList.MergeSpellLists();
 
-            if (ModSupport.IsHomebrewArchetypesEnabled()) {
-                PatchHomebrewArchetypes();
-            }
             if (ModSupport.isTableTopTweakCoreEnabled()) {
                 PatchTableTopTweakCore();
             }
             if (ModSupport.IsExpandedContentEnabled()) { 
                 DreadKnightLegacy.Configure();
             }
-
-
         }
 
-        private static void PatchHomebrewArchetypes() {
-            var CompanionSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("54daf202ddf3a714fb9c15ff22fab8ac");
-            if (CompanionSelection == null) {
-                IsekaiContext.Logger.Log("Skeletal Companion not patched because it was null");
-                return;
-            }
-            IsekaiPetSelection.AddToSelection(CompanionSelection);
-        }
         private static void PatchTableTopTweakCore() {
             var barbariancapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("c9a1d2ace58a403c994a0df1b72f5614");
             var bardcapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("112097ea789246c9840af6b08faeaba1");

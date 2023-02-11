@@ -1,6 +1,4 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
@@ -12,6 +10,7 @@ using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class KineticLegacy {
         public static BlueprintProgression KineticBlastProgression = BlueprintTools.GetBlueprint<BlueprintProgression>("30a5b8cf728bd4a4d8d90fc4953e322e");
         public static BlueprintProgression KineticOverflowProgression = BlueprintTools.GetBlueprint<BlueprintProgression>("86beb0391653faf43aec60d5ec05b538");
@@ -20,7 +19,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static BlueprintFeature KineticDismissInfusion = BlueprintTools.GetBlueprint<BlueprintFeature>("48bbbb16189443049663ca161bb3e338");
         public static BlueprintFeature KineticBurnFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("57e3577a0eb53294e9d7cc649d5239a3");
         public static BlueprintFeature KineticGatherPower = BlueprintTools.GetBlueprint<BlueprintFeature>("71f526b1d4b50b94582b0b9cbe12b0e0");
-
 
         public static BlueprintFeatureSelection KineticFocusSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("1f3a15a3ae8a5524ab8b97f469bf4e3d");
         public static BlueprintFeatureSelection KineticInfusionSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("58d6f8e9eea63f6418b107ce64f315ea");
@@ -37,8 +35,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
         private static BlueprintProgression prog;
 
-
-        public static void configure() {
+        public static void Configure() {
             var IsekaiKineticistTraining = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiKineticistTraining", bp => {
                 bp.SetName(IsekaiContext, "Kineticist Training");
                 bp.SetDescription(IsekaiContext, "You count your Isekai Hero Level to qualify for Kineticist feats. If you also have actual Kineticist Levels this ability stacks.");
@@ -93,8 +90,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 };
 
             });
-            LegacySelection.getClassFeature().AddFeatures(prog);
-            LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
+            LegacySelection.GetClassFeature().AddFeatures(prog);
+            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
             VillainLegacySelection.getClassFeature().AddFeatures(prog);
         }
         public static void PatchKineticistProgression() {

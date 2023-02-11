@@ -85,8 +85,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 };
 
             });
-            LegacySelection.getClassFeature().AddFeatures(prog);
-            LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
+            LegacySelection.GetClassFeature().AddFeatures(prog);
+            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
             HeroLegacySelection.getClassFeature().AddFeatures(prog);
             EdgeLordLegacySelection.getClassFeature().AddFeatures(prog);
         }

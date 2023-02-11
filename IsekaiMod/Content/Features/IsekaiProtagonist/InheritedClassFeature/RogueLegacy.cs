@@ -2,16 +2,16 @@
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Designers.Mechanics.Facts;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class RogueLegacy {
         private static BlueprintProgression prog;
-        public static void configure() {
+
+        public static void Configure() {
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "RogueLegacy", bp => {
                 bp.SetName(IsekaiContext, "Rogue Legacy - Supernatural Thief");
                 bp.SetDescription(IsekaiContext, "Your reincarnation gave you great power, that is no reason to forget the usefulness of a simple backstab.");
@@ -36,16 +36,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateLevelEntry(15, StaticReferences.RogueSneakAttack),
                     Helpers.CreateLevelEntry(17, StaticReferences.RogueSneakAttack),
                     Helpers.CreateLevelEntry(19, StaticReferences.RogueSneakAttack),
-
-            };
+                };
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup(StaticReferences.RogueSneakAttack),
                     Helpers.CreateUIGroup(StaticReferences.RogueUncannyDodge, StaticReferences.RogueEvasion, StaticReferences.RogueImprovedUncannyDodge, StaticReferences.RogueImprovedEvasion)
                 };
 
             });
-            LegacySelection.getClassFeature().AddFeatures(prog);
-            LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
+            LegacySelection.GetClassFeature().AddFeatures(prog);
+            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
 
             EdgeLordLegacySelection.getClassFeature().AddFeatures(prog);
             VillainLegacySelection.getClassFeature().AddFeatures(prog);

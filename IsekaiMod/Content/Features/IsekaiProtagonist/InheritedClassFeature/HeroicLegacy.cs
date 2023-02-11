@@ -7,13 +7,15 @@ using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class HeroicLegacy {
         private static BlueprintProgression prog;
 
         private static BlueprintFeature TrueSmiteFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteFeature");
         private static BlueprintFeature TrueSmiteAdditionalUse = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteAdditionalUse");
         private static BlueprintFeature TrueMarkFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueMarkFeature");
-        public static void configure() {
+
+        public static void Configure() {
 
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "HeroicLegacy", bp => {
                 bp.SetName(IsekaiContext, "Paladin Legacy - Hero of Light");
@@ -43,8 +45,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 };
 
             });
-            LegacySelection.getClassFeature().AddFeatures(prog);
-            LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
+            LegacySelection.GetClassFeature().AddFeatures(prog);
+            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
             HeroLegacySelection.getClassFeature().AddFeatures(prog);
             EdgeLordLegacySelection.getClassFeature().AddFeatures(prog);
         }

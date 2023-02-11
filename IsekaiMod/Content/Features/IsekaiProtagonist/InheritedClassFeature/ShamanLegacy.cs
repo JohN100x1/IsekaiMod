@@ -44,8 +44,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateUIGroup(shamanFeat)
                 };
             });
-            LegacySelection.getClassFeature().AddFeatures(prog);
-            LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
+            LegacySelection.GetClassFeature().AddFeatures(prog);
+            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
             HeroLegacySelection.getClassFeature().AddFeatures(prog);
             VillainLegacySelection.getClassFeature().AddFeatures(prog);
         }

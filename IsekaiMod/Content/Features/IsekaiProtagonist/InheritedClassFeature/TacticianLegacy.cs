@@ -38,8 +38,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateUIGroup(StaticReferences.SoloTactics, StaticReferences.Teamwork, StaticReferences.ForesterTactics, StaticReferences.AnimalTeamwork,StaticReferences.SummonTactics)
                 };
             });
-            LegacySelection.getClassFeature().AddFeatures(prog);
-            LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
+            LegacySelection.GetClassFeature().AddFeatures(prog);
+            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
             HeroLegacySelection.getClassFeature().AddFeatures(prog);
             VillainLegacySelection.getClassFeature().AddFeatures(prog);
         }

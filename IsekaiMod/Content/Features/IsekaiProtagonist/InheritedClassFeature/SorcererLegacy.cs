@@ -4,18 +4,15 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.EntitySystem.Stats;
-using Kingmaker.UnitLogic.FactLogic;
-using System;
-using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class SorcererLegacy {
         private static BlueprintProgression prog;
-        public static void configure() {
+
+        public static void Configure() {
             ExtraBloodlineSelection.Configure();
             var ExtraSelection = ExtraBloodlineSelection.Get();
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "SorcererLegacyProgression", bp => {
@@ -39,14 +36,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateLevelEntry(12, ExtraSelection),
                     Helpers.CreateLevelEntry(15, ExtraSelection),
                     Helpers.CreateLevelEntry(18, ExtraSelection),
-
                 };
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup( ExtraSelection),
                 };
             });
-            LegacySelection.getClassFeature().AddFeatures(prog);
-            LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
+            LegacySelection.GetClassFeature().AddFeatures(prog);
+            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
             VillainLegacySelection.getClassFeature().AddFeatures(prog);
 
         }
@@ -65,6 +61,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
     internal class ExtraBloodlineSelection {
         private static BlueprintFeatureSelection IsekaiSorcererSelection;
+
         public static void Configure() {
             var IsekaiBloodlineSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiBloodlineSelection", bp => {
                 bp.SetName(IsekaiContext, "Bloodline");
@@ -88,10 +85,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             });
 
         }
+
         public static BlueprintFeatureSelection Get() {
             if (IsekaiSorcererSelection != null) return IsekaiSorcererSelection;
             return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiSorcererSelection");
         }
+
         public static BlueprintFeatureReference GetReference() {
             return Get().ToReference<BlueprintFeatureReference>();
         }

@@ -37,7 +37,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     }
                 };
                 LevelEntry level1;
-                if (EnergizeWeapon != null) {
+                if (ModSupport.IsExpandedElementEnabled() && EnergizeWeapon != null) {
                     level1 = Helpers.CreateLevelEntry(1, KineticBlastProgression, KineticBurnFeature, KineticKnightFocus, KineticBlade, EnergizeWeapon, KineticGatherPower, KineticOverflowProgression, KineticInfusionSpecProgression, KineticDismissInfusion, IsekaiKineticistTraining);
                     
                 } else {
@@ -73,8 +73,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 
 
             });
-            LegacySelection.getClassFeature().AddFeatures(prog);
-            LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
+            LegacySelection.GetClassFeature().AddFeatures(prog);
+            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
             EdgeLordLegacySelection.getClassFeature().AddFeatures(prog);
             HeroLegacySelection.getClassFeature().AddFeatures(prog);
         }

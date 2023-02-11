@@ -1,25 +1,18 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
-using IsekaiMod.Content.Features.IsekaiProtagonist;
-using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.UnitLogic.FactLogic;
-using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
+
     internal class OracleLegacy {
         private static BlueprintProgression prog;
 
-        public static void configure() {
+        public static void Configure() {
             ExtraOracleSelection.Configure();
             var OracleSelection = ExtraOracleSelection.Get();
 
@@ -35,22 +28,21 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     }
                 };
                 bp.LevelEntries = new LevelEntry[] {
-                Helpers.CreateLevelEntry(1,  OracleSelection),
-                Helpers.CreateLevelEntry(3, OracleSelection),
-                Helpers.CreateLevelEntry(6, OracleSelection),
-                Helpers.CreateLevelEntry(9, OracleSelection),
-                Helpers.CreateLevelEntry(12, OracleSelection),
-                Helpers.CreateLevelEntry(15, OracleSelection),
-                Helpers.CreateLevelEntry(18, OracleSelection),
-
-            };
+                    Helpers.CreateLevelEntry(1,  OracleSelection),
+                    Helpers.CreateLevelEntry(3, OracleSelection),
+                    Helpers.CreateLevelEntry(6, OracleSelection),
+                    Helpers.CreateLevelEntry(9, OracleSelection),
+                    Helpers.CreateLevelEntry(12, OracleSelection),
+                    Helpers.CreateLevelEntry(15, OracleSelection),
+                    Helpers.CreateLevelEntry(18, OracleSelection),
+                };
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup(OracleSelection)
                 };
 
             });
-            LegacySelection.getClassFeature().AddFeatures(prog);
-            LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
+            LegacySelection.GetClassFeature().AddFeatures(prog);
+            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
             VillainLegacySelection.getClassFeature().AddFeatures(prog);
         }
 
@@ -92,11 +84,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.SetDescription(IsekaiContext, "As you get closer and closer to the truth of divinity you gain a new Mystery, Revelation, or perhaps a curse from a jealous god?");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = new BlueprintFeatureReference[] { 
-                    CurseSelection.ToReference<BlueprintFeatureReference>(), 
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    CurseSelection.ToReference<BlueprintFeatureReference>(),
                     MysterySelection.ToReference<BlueprintFeatureReference>(),
                     StaticReferences.OracleRevelationSelection.ToReference<BlueprintFeatureReference>(),
-                    StaticReferences.OraclePositiveNegativeSelection.ToReference<BlueprintFeatureReference>() 
+                    StaticReferences.OraclePositiveNegativeSelection.ToReference<BlueprintFeatureReference>()
                 };
             });
 
