@@ -8,11 +8,12 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
     internal class BardLegacy {
+        private static BlueprintProgression prog;
 
-        public static void configure() {
+        public static void Configure() {
             StaticReferences.BardPerformResource.m_MaxAmount.Class.m_Array.AppendToArray(IsekaiProtagonistClass.GetReference());
             var BardPerformResourceFact = BlueprintTools.GetBlueprint<BlueprintFeature>("b92bfc201c6a79e49afd0b5cfbfc269f");
-            var prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "BardLegacy", bp => {
+            prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "BardLegacy", bp => {
                 bp.SetName(IsekaiContext, "Bard Legacy - Musical Prodige");
                 bp.SetDescription(IsekaiContext, "You know what is even more effective in gathering a great harem than being a great hero? \nThat is right, music the language of romance, there is a reason why so many males hate bards...");
                 bp.GiveFeaturesForPreviousLevels = true;
@@ -36,16 +37,22 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateLevelEntry(15, StaticReferences.BardInspireCompetence, StaticReferences.BardInspireHeroics),
                     Helpers.CreateLevelEntry(17, StaticReferences.BardInspireCourage),
                     Helpers.CreateLevelEntry(19, StaticReferences.BardInspireCompetence),
+
             };
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup(StaticReferences.BardInspireCourage, StaticReferences.BardMove, StaticReferences.BardSwift,
                         StaticReferences.BardWellVersed,StaticReferences.BardFascinate,StaticReferences.BardInspireGreatness, StaticReferences.BardInspireHeroics),
                     Helpers.CreateUIGroup(StaticReferences.BardInspireCompetence)
                 };
+
             });
-            LegacySelection.getClassFeature().AddFeatures(prog);
-            LegacySelection.getOverwhelmingFeature().AddFeatures(prog);
+            LegacySelection.GetClassFeature().AddFeatures(prog);
+            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
             HeroLegacySelection.getClassFeature().AddFeatures(prog);
+        }
+        public static BlueprintProgression Get() {
+            if (prog != null) return prog;
+            return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "BardLegacy");
         }
     }
 }

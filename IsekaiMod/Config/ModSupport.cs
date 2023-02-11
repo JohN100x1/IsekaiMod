@@ -1,5 +1,4 @@
-﻿using HarmonyLib;
-using IsekaiMod.Content.Classes.IsekaiProtagonist;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -9,33 +8,33 @@ using Kingmaker.Blueprints.JsonSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using System.Linq;
 using TabletopTweaks.Core.Utilities;
-using static IsekaiMod.Main;
 using static Kingmaker.Blueprints.Classes.BlueprintProgression;
 using static UnityModManagerNet.UnityModManager;
+using static IsekaiMod.Main;
+using HarmonyLib;
 
 namespace IsekaiMod.Utilities {
-
-    internal class ModSupport {
-
-        protected static bool IsExpandedContentEnabled() {
-            return IsModEnabled("ExpandedContent");
+    class ModSupport {
+        public static bool IsExpandedContentEnabled() { 
+            return IsModEnabled("ExpandedContent"); 
+        }
+        public static bool IsMysticalMayhemEnabled() { 
+            return IsModEnabled("MysticalMayhem"); 
+        }
+        public static bool IsSpellbookMergeEnabled() { 
+            return IsModEnabled("SpellbookMerge"); 
+        }
+        public static bool IsExpandedElementEnabled() { 
+            return IsModEnabled("KineticistElementsExpanded"); 
         }
 
-        protected static bool IsMysticalMayhemEnabled() {
-            return IsModEnabled("MysticalMayhem");
-        }
-
-        protected static bool IsSpellbookMergeEnabled() {
-            return IsModEnabled("SpellbookMerge");
-        }
-
-        public static bool IsExpandedElementEnabled() {
-            return IsModEnabled("KineticistElementsExpanded");
+        public static bool isTableTopTweakCoreEnabled() { 
+            return IsModEnabled("TabletopTweaks-Core"); 
         }
 
         [HarmonyLib.HarmonyPatch(typeof(BlueprintsCache), "Init")]
-        private static class BlueprintsCache_Init_Patch {
-            private static bool Initialized;
+        static class BlueprintsCache_Init_Patch {
+            static bool Initialized;
 
             [HarmonyLib.HarmonyAfter()]
             public static void Postfix() {
@@ -70,12 +69,16 @@ namespace IsekaiMod.Utilities {
                     ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AzataIncorporateSpellbook, VillainSpellbook.Get());
                     ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(DemonIncorporateSpellbook, VillainSpellbook.Get());
                     ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(TricksterIncorporateSpellbook, VillainSpellbook.Get());
+
                 }
+
+
+
             }
 
             public static void AddExpandedContentSpells(BlueprintSpellList spellList) {
                 //if enabled we grab these through the merge anyway
-                if (!IsekaiContext.AddedContent.Classes.IsDisabled("Merge Isekai Spelllist")) return;
+                if (IsekaiContext.AddedContent.Classes.IsEnabled("Merge Isekai Spelllist")) return;
 
                 BlueprintAbility FuryOftheSunAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("accc5584b62e4e73aa0a693f725ddf60");
                 BlueprintAbility GloomblindBoltsAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("e28f4633c0a2425d8895adf20cb22f8f");

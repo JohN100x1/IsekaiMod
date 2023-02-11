@@ -14,7 +14,12 @@ namespace IsekaiMod.Components {
         public int Number = 1;
 
         public void OnEventAboutToTrigger(RuleCalculateAttacksCount evt) {
-            if (!evt.Initiator.Body.PrimaryHand.HasWeapon || !evt.Initiator.Body.SecondaryHand.HasWeapon || evt.Initiator.Body.PrimaryHand.Weapon.Blueprint.IsNatural || evt.Initiator.Body.SecondaryHand.Weapon.Blueprint.IsNatural || evt.Initiator.Body.PrimaryHand.Weapon == evt.Initiator.Body.EmptyHandWeapon || evt.Initiator.Body.SecondaryHand.Weapon == evt.Initiator.Body.EmptyHandWeapon) {
+            if (!evt.Initiator.Body.PrimaryHand.HasWeapon 
+                || !evt.Initiator.Body.SecondaryHand.HasWeapon 
+                || evt.Initiator.Body.PrimaryHand.Weapon.Blueprint.IsNatural 
+                || evt.Initiator.Body.SecondaryHand.Weapon.Blueprint.IsNatural 
+                || evt.Initiator.Body.PrimaryHand.Weapon == evt.Initiator.Body.EmptyHandWeapon 
+                || evt.Initiator.Body.SecondaryHand.Weapon == evt.Initiator.Body.EmptyHandWeapon) {
                 return;
             }
             evt.Result.SecondaryHand.AdditionalAttacks += Number * Fact.GetRank();

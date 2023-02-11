@@ -1,21 +1,24 @@
-﻿using IsekaiMod.Components;
+﻿using IsekaiMod.Config;
+using IsekaiMod.Extensions;
 using IsekaiMod.Utilities;
+using IsekaiMod.Components;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
+using TabletopTweaks.Core.Utilities;
+using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using TabletopTweaks.Core.Utilities;
 using UnityEngine;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
-
     internal class IsekaiProtagonistClass {
+        private static BlueprintCharacterClass isekaiProtagonistClass;
 
         // Icons
         private static readonly Sprite Icon_SneakAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87").m_Icon;
@@ -58,7 +61,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var IsekaiProtagonistOverpoweredAbilityFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistOverpoweredAbilityFeat", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Abilities");
                 bp.SetDescription(IsekaiContext, "Isekai Protagonists gain Overpowered Abilities as they increase their level. These are extremely powerful abiilities that surpass even gods.");
-                bp.m_DescriptionShort = bp.m_Description;
+                bp.m_DescriptionShort = bp.m_Description; 
                 bp.m_Icon = Icon_TrickFate;
             });
             var IsekaiProtagonistBonusFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistBonusFeat", bp => {
@@ -73,7 +76,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             });
 
             // Main Class
-            var IsekaiProtagonistClass = Helpers.CreateBlueprint<BlueprintCharacterClass>(IsekaiContext, "IsekaiProtagonistClass", bp => {
+            isekaiProtagonistClass = Helpers.CreateBlueprint<BlueprintCharacterClass>(IsekaiContext, "IsekaiProtagonistClass", bp => {
                 bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"IsekaiProtagonistClass.Name", "Isekai Protagonist");
                 bp.LocalizedDescription = Helpers.CreateString(IsekaiContext, $"IsekaiProtagonistClass.Description", "Isekai protagonists possess immense power, and are able to defeat every enemy "
                     + "with ease using their overpowered abilities. They also have plot armor, which make them hard to kill. They are the main character; everyone else are just NPCs.");
@@ -127,7 +130,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                     c.Not = true;
                     c.HideInUI = true;
                 });
-                if (IsekaiContext.AddedContent.ExcludeCompanionsFromIsekaiClass) {
+                if (IsekaiContext.AddedContent.ExcludeCompanionsFromIsekaiClass)
+                {
                     bp.AddComponent<PrerequisiteIsMainCharacter>();
                 }
 
@@ -140,31 +144,29 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 // Set Default Build later using SetDefaultBuild
                 bp.m_DefaultBuild = null;
             });
-            IsekaiProtagonistSpellbook.SetCharacterClass(IsekaiProtagonistClass);
+            IsekaiProtagonistSpellbook.SetCharacterClass(isekaiProtagonistClass);
 
             // Register Class
-            ThingsNotHandledByTTTCore.RegisterClass(IsekaiProtagonistClass);
+            ThingsNotHandledByTTTCore.RegisterClass(isekaiProtagonistClass);
         }
-
         public static void RegisterArchetype(BlueprintArchetype archetype) {
             BlueprintCharacterClass IsekaiProtagonistClass = Get();
             IsekaiProtagonistClass.m_Archetypes = IsekaiProtagonistClass.m_Archetypes.AppendToArray(archetype.ToReference<BlueprintArchetypeReference>());
         }
-
         public static void SetProgression(BlueprintProgression progression) {
             BlueprintCharacterClass IsekaiProtagonistClass = Get();
             IsekaiProtagonistClass.m_Progression = progression.ToReference<BlueprintProgressionReference>();
         }
-
         public static void SetDefaultBuild(BlueprintUnitFact prebuildFeatureList) {
             BlueprintCharacterClass IsekaiProtagonistClass = Get();
             IsekaiProtagonistClass.m_DefaultBuild = prebuildFeatureList.ToReference<BlueprintUnitFactReference>();
         }
-
         public static BlueprintCharacterClass Get() {
+            if (isekaiProtagonistClass != null) { 
+                return isekaiProtagonistClass; 
+            }
             return BlueprintTools.GetModBlueprint<BlueprintCharacterClass>(IsekaiContext, "IsekaiProtagonistClass");
         }
-
         public static BlueprintCharacterClassReference GetReference() {
             return Get().ToReference<BlueprintCharacterClassReference>();
         }

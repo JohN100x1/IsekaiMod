@@ -105,7 +105,7 @@ namespace IsekaiMod.Utilities {
         }
 
         public static BlueprintActivatableAbility CreateActivatableAbility(string name, Action<BlueprintActivatableAbility> init = null) {
-            var result = ThingsNotHandledByTTTCore.CreateActivatableAbility(name, bp => {
+            var result = Helpers.CreateBlueprint<BlueprintActivatableAbility>(IsekaiContext, name, bp => {
                 bp.IsOnByDefault = true;
                 bp.DeactivateImmediately = true;
                 bp.ActivationType = AbilityActivationType.Immediately;

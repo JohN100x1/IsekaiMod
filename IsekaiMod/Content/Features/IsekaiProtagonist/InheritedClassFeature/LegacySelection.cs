@@ -10,7 +10,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         private static BlueprintFeatureSelection ClassSelection;
         private static BlueprintFeatureSelection AbilitySelection;
 
-        public static void configureStep1() {
+        public static void ConfigureStep1() {
+
             if (ClassSelection != null) {
                 IsekaiContext.Logger.LogWarning("repeated configuration of =LegacyClassSelection");
                 return;
@@ -33,35 +34,37 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.m_AllFeatures = new BlueprintFeatureReference[0];
                 bp.m_Features = new BlueprintFeatureReference[0];
             });
-        }
 
-        public static BlueprintFeatureSelection getClassFeature() {
+        }
+        public static BlueprintFeatureSelection GetClassFeature() {
             if (ClassSelection != null) {
                 return ClassSelection;
             }
             return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "LegacyClassSelection");
         }
-
-        public static BlueprintFeatureSelection getOverwhelmingFeature() {
+        public static BlueprintFeatureSelection GetOverwhelmingFeature() {
             if (AbilitySelection != null) {
                 return AbilitySelection;
             }
             return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "LegacyAbilitySelection");
         }
 
-        public static void configureStep2() {
-            OracleLegacy.configure();
-            SorcererLegacy.configure();
-            RogueLegacy.configure();
+        public static void ConfigureStep2() {
+            OracleLegacy.Configure();
+            SorcererLegacy.Configure();
+            RogueLegacy.Configure();
             TacticianLegacy.Configure();
-            KineticLegacy.configure();
-            BardLegacy.configure();
-            BarbarianLegacy.configure();
-            HeroicLegacy.configure();
+            KineticLegacy.Configure();
+            BardLegacy.Configure();
+            BarbarianLegacy.Configure();
+            HeroicLegacy.Configure();
             ShamanLegacy.Configure();
+            MagusLegacy.Configure();
             //always do this last to ensure any legacy that might get an arcana goes before
             ArcanaSelection.Configure();
-            OverpoweredAbilitySelection.AddToSelection(getOverwhelmingFeature());
+            OverpoweredAbilitySelection.AddToSelection(GetOverwhelmingFeature());
+            SpecialPower.SpecialPowerSelection.AddToSelection(GetOverwhelmingFeature());
+            
         }
     }
 }
