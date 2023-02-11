@@ -19,6 +19,16 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
             var Evasion = BlueprintTools.GetBlueprint<BlueprintFeature>("576933720c440aa4d8d42b0c54b77e80");
             var ImprovedEvasion = BlueprintTools.GetBlueprint<BlueprintFeature>("ce96af454a6137d47b9c6a1e02e66803");
 
+            var DeathsnatcherPoisonSting = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherPoisonSting");
+            var DeathsnatcherResistances = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherResistances");
+            var DeathsnatcherFastHealing = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherFastHealing");
+            var DeathsnatcherSizeBabyFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherSizeBabyFeature");
+            var DeathsnatcherCommandUndeadFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherCommandUndeadFeature");
+            var DeathsnatcherAnimateDeadFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherAnimateDeadFeature");
+            var DeathsnatcherCreateUndeadFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherCreateUndeadFeature");
+            var DeathsnatcherFingerOfDeathFeature = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherFingerOfDeathFeature");
+            var DeathsnatcherAnimateDeadAdditionalUse = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherAnimateDeadAdditionalUse");
+            var DeathsnatcherUndeadMaster = Resources.GetModBlueprint<BlueprintFeature>("DeathsnatcherUndeadMaster");
             var DeathsnatcherPoisonSting = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherPoisonSting");
             var DeathsnatcherResistances = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherResistances");
             //var DeathsnatcherHiddenFacts = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherHiddenFacts");
