@@ -28,7 +28,34 @@
       "Key": "9bd912a2c9314349b726426ef6744143",
       "SimpleName": "AdministratorDFeature.Name",
       "ProcessTemplates": false,
-      "enGB": "Administrator D"
+      "enGB": "Administrator D",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "721144c6f1bf4e6ebbe0f20d18611a47",
+      "SimpleName": "AeonSpellsKnown.Description",
+      "ProcessTemplates": true,
+      "enGB": "Gain the Spells of an Aeon",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "2c870202143f4199b1b64b4408afa802",
+      "SimpleName": "AeonSpellsKnown.Name",
+      "ProcessTemplates": false,
+      "enGB": "Mythic Aeon Spells",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "e810cf5e269c40cda885b9d6739322de",
@@ -52,7 +79,34 @@
       "Key": "df4899cc947f4b1288090ae353c4dadc",
       "SimpleName": "AngelicBoltAbility.Name",
       "ProcessTemplates": false,
-      "enGB": "Angelic Bolt"
+      "enGB": "Angelic Bolt",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "c7c574e951734c659e8560f2a9a5146c",
+      "SimpleName": "AngelSpellsKnown.Description",
+      "ProcessTemplates": true,
+      "enGB": "Gain the Spells of an Angel",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "ae9e885a079845ff895903c60c12467b",
+      "SimpleName": "AngelSpellsKnown.Name",
+      "ProcessTemplates": false,
+      "enGB": "Mythic Angel Spells",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "f750b4c15a9c49c594c95a55751937f3",
@@ -382,7 +436,56 @@
       "Key": "136bc445bc3d4c12ab9a40f12b6e743d",
       "SimpleName": "AutoSelectiveFeature.Description",
       "ProcessTemplates": true,
-      "enGB": "Every time you cast a spell, you can exclude targets from the effects of your spell, as though using the Selective Spell feat."
+      "enGB": "Every time you cast a spell, you can exclude targets from the effects of your spell, as though using the Selective Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "6caf0b9187534620ac9bd2f7d0b2e64e",
+      "SimpleName": "AutoZippyBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Wait, what do you mean this was supposed to be a single target spell?",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "a26b0ea1a23c4552bbb17d57b6bb7320",
+      "SimpleName": "AutoZippyBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Zippy Magic",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "27b9e28e68b246afa83ba355ef94a71f",
+      "SimpleName": "AzataSpellsKnown.Description",
+      "ProcessTemplates": true,
+      "enGB": "Gain the Spells of an Azata",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "3fcc9a5e9f40433da3bf859282dfc75a",
+      "SimpleName": "AzataSpellsKnown.Name",
+      "ProcessTemplates": false,
+      "enGB": "Mythic Azata Spells",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "95631f7931894a96b21e59706085a6a3",
@@ -478,7 +581,78 @@
       "Key": "08e765d7e66d4693868cd55ab1c512c8",
       "SimpleName": "BackgroundTabletopRPGPlayer.Name",
       "ProcessTemplates": false,
-      "enGB": "Tabletop RPG Player"
+      "enGB": "Tabletop RPG Player",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "20be5c08a15f4a56a689fa57374006c2",
+      "SimpleName": "BarbarianLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You really are just a walking bundle of issues waiting to explode at anyone getting too close aren't you?",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "6844fcb027e842f4ad129b44e5e6e60e",
+      "SimpleName": "BarbarianLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Barbarian Legacy - Ball of Rage",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "3d6b9b785d194d6897f1bca57c3ebca5",
+      "SimpleName": "BarbarianTraining.Description",
+      "ProcessTemplates": true,
+      "enGB": "Well, if you actually dare to call what barbarians do training, either way your experience in both classes stacks for the sake of qualifications...",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "7876bf3cb0db4e1887eab2b66e165142",
+      "SimpleName": "BarbarianTraining.Name",
+      "ProcessTemplates": false,
+      "enGB": "Barbarian Training",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "ef11b290b7da493498917bc617a884ee",
+      "SimpleName": "BardLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You know what is even more effective in gathering a great harem than being a great hero? \nThat is right, music the language of romance, there is a reason why so many males hate bards...",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "d06b1dc81f3e453d9ed0c0a6fd8b4696",
+      "SimpleName": "BardLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Bard Legacy - Musical Prodige",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "8ae99adf92fe4a0dad76f4edbc32b872",
@@ -520,7 +694,122 @@
       "Key": "d02df7635d8f4dd5aaac0c184e436de7",
       "SimpleName": "BleedImmunity.Name",
       "ProcessTemplates": false,
-      "enGB": "Bleed Immunity"
+      "enGB": "Bleed Immunity",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "4c043d9749114d51a7969a79d9903d60",
+      "SimpleName": "BlessingOfTheAngel.Description",
+      "ProcessTemplates": true,
+      "enGB": "Behold the blessing of the Angel.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "5d75e166abe7479385f13d126312931a",
+      "SimpleName": "BlessingOfTheAngel.Name",
+      "ProcessTemplates": false,
+      "enGB": "Angel Mythic Class Feature",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "a1cf7bbdf1d54de7880a2d713b31e06d",
+      "SimpleName": "BlessingOfTheAzata.Description",
+      "ProcessTemplates": true,
+      "enGB": "Let me show you something fun!",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "83acb1eaf04c4f9e9779b90371b3d92a",
+      "SimpleName": "BlessingOfTheAzata.Name",
+      "ProcessTemplates": false,
+      "enGB": "Azata Mythic Class Feature",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "4a09c310f8dc4c488c8c88568b55b835",
+      "SimpleName": "BlessingOfTheLich.Description",
+      "ProcessTemplates": true,
+      "enGB": "What?\nA bit of undeath never hurt anyone...",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "e5db8399086c4d3da55e8793c4792e14",
+      "SimpleName": "BlessingOfTheLich.Name",
+      "ProcessTemplates": false,
+      "enGB": "Lich Mythic Class Feature",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "6a8781b6247745ba85c319e8ce463190",
+      "SimpleName": "BlessingOfTheMythic.Description",
+      "ProcessTemplates": true,
+      "enGB": "So I am an angel, is that really a reason not to cast demonic spells? \nOr to deny myself some of those sweet abilities of the trickster?\nSome of you Aeons are far too unflexible.\nSpeaking of Aeons, you got some great spells as well didn't you?\nLet me quickly learn them...",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "1c37a670eef04435aa3c5fd9bfd44f9f",
+      "SimpleName": "BlessingOfTheMythic.Name",
+      "ProcessTemplates": false,
+      "enGB": "Mythic Class Feature",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "122af465eb4844b5830bd76081c04a90",
+      "SimpleName": "BlessingOfTheTrickster.Description",
+      "ProcessTemplates": true,
+      "enGB": "A feat worthy of a trickster",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "40ddaef97c9b45f7afb4fbad9f50bb77",
+      "SimpleName": "BlessingOfTheTrickster.Name",
+      "ProcessTemplates": false,
+      "enGB": "Trickster Mythic Class Feature",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "6a4414a072de4cb79e460042c2a14adb",
@@ -946,7 +1235,34 @@
       "Key": "dc70906793f24f028cbd379ed0daf1b6",
       "SimpleName": "DeathsnatcherUndeadMaster.Name",
       "ProcessTemplates": false,
-      "enGB": "Undead Master"
+      "enGB": "Undead Master",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "2f1aca2278584ae793ab0fc0075e923e",
+      "SimpleName": "DemonSpellsKnown.Description",
+      "ProcessTemplates": true,
+      "enGB": "Gain the Spells of an Demon",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "05bf329f96924bd9964fceae8feb8be3",
+      "SimpleName": "DemonSpellsKnown.Name",
+      "ProcessTemplates": false,
+      "enGB": "Mythic Demon Spells",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "de175d89d2014edcaa3fb4e7955200de",
@@ -1078,7 +1394,34 @@
       "Key": "73adf24e432146ef88a02faee5ae5fa2",
       "SimpleName": "EdgeLordFastMovement.Name",
       "ProcessTemplates": false,
-      "enGB": "Very Fast Movement"
+      "enGB": "Very Fast Movement",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "d201e159527e4a6db895c155dbee2b8e",
+      "SimpleName": "EdgeLordLegacySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "To truly look cool and stylish only a melee focus will really do...",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "a800bbf185714a8da98af7ce18c437e9",
+      "SimpleName": "EdgeLordLegacySelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Edgy Legacy",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "79fa4b1f9abd4812bc09ffaf7eae57a9",
@@ -1606,7 +1949,56 @@
       "Key": "22b9128bf428453abb0c64e04df9fab5",
       "SimpleName": "HeroArchetype.Name",
       "ProcessTemplates": true,
-      "enGB": "Hero"
+      "enGB": "Hero",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "5a22216c3b1e4d74b6cafb1e50bdf028",
+      "SimpleName": "HeroicLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You are a true hero, smighting your enemies wherever you go.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "5a2ab19b3d9a4fbfa9a5370e2f7fcff7",
+      "SimpleName": "HeroicLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Paladin Legacy - Hero of Light",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "e7f0bf744b924f4f9aaa37e5fc6a3151",
+      "SimpleName": "HeroLegacySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "You are a shining beacon of Light. The beacon that shows the way through the darkness and your legacy reflects that.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "7cf33c388bac481fab78ad8c4c58dc13",
+      "SimpleName": "HeroLegacySelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Heroic Legacy",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "aadae8aeffac4d62ae42b2fe56a5a8e2",
@@ -1732,7 +2124,34 @@
       "Key": "13ee94f6bfad465593976d4c4692fd4c",
       "SimpleName": "IsekaiBackgroundSelection.Name",
       "ProcessTemplates": false,
-      "enGB": "Isekai"
+      "enGB": "Isekai",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "bce5bbe587224448af3380c945331b1c",
+      "SimpleName": "IsekaiBloodlineSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "You can pick additional bloodlines as your chimera blood becomes stronger.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "1e50ef5e8ba745978048ddd0c072da64",
+      "SimpleName": "IsekaiBloodlineSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Bloodline",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "84f22d12c81147d1ac8d187a7f30e96b",
@@ -1894,7 +2313,34 @@
       "Key": "6fa594f04f314240a9a7f6bddf35f2ae",
       "SimpleName": "IsekaiFireBlastFeature.Name",
       "ProcessTemplates": false,
-      "enGB": "Fire Avatar"
+      "enGB": "Fire Avatar",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "f2d0c1ac180c447eb3e441baac845f29",
+      "SimpleName": "IsekaiHexSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "Gain an additional Hex.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "e938ca18ac7b4183b2ece8e63bf805e9",
+      "SimpleName": "IsekaiHexSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Hex",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "37de84abae094b438694afd86603b407",
@@ -1906,7 +2352,122 @@
       "Key": "2fe3e05f9d154db79e37e0b642a3282a",
       "SimpleName": "IsekaiHighElfHeritage.Name",
       "ProcessTemplates": false,
-      "enGB": "Isekai High Elf"
+      "enGB": "Isekai High Elf",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "0034b33be5be4e768b696244e8b790e1",
+      "SimpleName": "IsekaiKineticistTraining.Description",
+      "ProcessTemplates": true,
+      "enGB": "You count your Isekai Hero Level to qualify for Kineticist feats. If you also have actual Kineticist Levels this ability stacks.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "847494ef3afb4540b6ec755d979ad19d",
+      "SimpleName": "IsekaiKineticistTraining.Name",
+      "ProcessTemplates": false,
+      "enGB": "Kineticist Training",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "f99c0c4dc1ab468ea59c2a0bf2b0158f",
+      "SimpleName": "IsekaiKMagusTraining.Description",
+      "ProcessTemplates": true,
+      "enGB": "You count your Isekai Hero Level to qualify for Magus feats. If you also have actual Magus Levels this ability stacks.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "50a76d652622478894e239d0889cf38d",
+      "SimpleName": "IsekaiKMagusTraining.Name",
+      "ProcessTemplates": false,
+      "enGB": "Magus Training",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "c238499bce084dde8b86e4e4913333d1",
+      "SimpleName": "IsekaiOracleCurseSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "Gain a curse, but some curses are blessings in disguise.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "1c816ab1d3694d7b87dbe421a8399e4f",
+      "SimpleName": "IsekaiOracleCurseSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Divine Curse",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "3ef47feaa7ac4f39af5241b569de8046",
+      "SimpleName": "IsekaiOracleMysterySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "Master another part of reality...",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "49aab0b2446d461ca7422cb3c1ccb960",
+      "SimpleName": "IsekaiOracleMysterySelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Divine Mystery",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "c67a815867e54926bd2ba72bede781ef",
+      "SimpleName": "IsekaiOracleSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "As you get closer and closer to the truth of divinity you gain a new Mystery, Revelation, or perhaps a curse from a jealous god?",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "13c0df8fdad143279ee367bca69328f7",
+      "SimpleName": "IsekaiOracleSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Divine Inheritance",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "3db1ee504baa4723a0da5ed841302ea5",
@@ -2074,7 +2635,56 @@
       "Key": "da4dfb9f05be4d52ae7f567426b660a2",
       "SimpleName": "IsekaiQuickFooted.Name",
       "ProcessTemplates": false,
-      "enGB": "Quick-Footed"
+      "enGB": "Quick-Footed",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "c86ce36472d347249206307d5f0c66e4",
+      "SimpleName": "IsekaiShamanSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "As you grow so does your connection to the spirits and the power you derive from them. \nAllowing you to connect with more spirits or gain more powers from them.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "5d23dccfacaa445aa7153244bb914b1f",
+      "SimpleName": "IsekaiShamanSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Spirit Blessing",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "190bd18cc04645fbb25f94697ca57eeb",
+      "SimpleName": "IsekaiSorcererSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "As your chimera blood evolves you can pick a new bloodline feat or a new bloodline.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "7705d4d5726b47c7b41bd359221a2a63",
+      "SimpleName": "IsekaiSorcererSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Bloodline Evolution",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "c8cf332983cd4fdc80e8e2820c4f5258",
@@ -2164,7 +2774,34 @@
       "Key": "06672e25c7e046ca8348d9f24937ec6e",
       "SimpleName": "KineticBlastProficiency.Name",
       "ProcessTemplates": false,
-      "enGB": "Kinetic Blast Proficiency"
+      "enGB": "Kinetic Blast Proficiency",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "45e5ea12b2204dd28e490c96d4ea3067",
+      "SimpleName": "KineticLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Most Protagonists only occasionally use kinetic blasts when they think they would look cool.\n But you really loved them, and given that there is no other cantrip this overpowered why not?",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "dcaa46f9abaf4707af127d64f2087edf",
+      "SimpleName": "KineticLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Kineticist Legacy - Kinetic Lord",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "00c35221441c4cefbd50f0ad4ce3fbf7",
@@ -2176,7 +2813,56 @@
       "Key": "161203e344fe48b289c5b7f1ab9ab6d2",
       "SimpleName": "KineticPowerSelection.Name",
       "ProcessTemplates": false,
-      "enGB": "Kinetic Power"
+      "enGB": "Kinetic Power",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "0d83c14c59f64544a88c1b643e093c1a",
+      "SimpleName": "LegacyClassSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "If not for the gods reincarnating you as an Isekai Hero with great mystic power you would have been...",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "448aef6879ce48b8bba03efb606a6282",
+      "SimpleName": "LegacyClassSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Legacy Class Feature",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "70fe06f612034a28b798fc9226807190",
+      "SimpleName": "LichSpellsKnown.Description",
+      "ProcessTemplates": true,
+      "enGB": "Gain the Spells of an Lich",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "41659e3e389f4741b694b03fb7ff9164",
+      "SimpleName": "LichSpellsKnown.Name",
+      "ProcessTemplates": false,
+      "enGB": "Mythic Lich Spells",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "58109d07535740fc89d2f97a03a54156",
@@ -2236,7 +2922,34 @@
       "Key": "19c7373ec6f744448542cfa4cedd42eb",
       "SimpleName": "MagicalSummoningSummonBuff.Name",
       "ProcessTemplates": false,
-      "enGB": "Magical Summon"
+      "enGB": "Magical Summon",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "c055d63f59a84d47b2cec6c7b539a03b",
+      "SimpleName": "MagusLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Meh let us be honest, Kinetic Knights only wish they were us, the true masters of melee spellcasting.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "9eb6574007a6444ebb43fd275dd154a3",
+      "SimpleName": "MagusLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Magus Legacy - Spellblade",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "8e695e8eb3644ff8a727d358a0a0cbc5",
@@ -2416,7 +3129,34 @@
       "Key": "7db199a68cd34cf28aee22aa2f7a0f6d",
       "SimpleName": "OmegaStrike.Name",
       "ProcessTemplates": false,
-      "enGB": "Omega Strike"
+      "enGB": "Omega Strike",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "f9e588dea62d4fe0aa6469517e7408a2",
+      "SimpleName": "OracleLegacyProgression.Description",
+      "ProcessTemplates": true,
+      "enGB": "Seekers of Truth are driven by a desire to uncover the secrets behind the fundamental forces of nature. \nBecause of their unique perspective as otherworlders, they are able to approach the world with a fresh and unbiased eye, allowing them to see beyond the surface of things and seek out the deeper truth behind the world around them. \nThey are driven by a desire to uncover the secrets of the world that would otherwise remain hidden, and are not satisfied with simply accepting things at face value. \nThis allows them to uncover the secrets of the world that are often only revealed to mortals through revelations.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "faf99f887cbf4b5cbffce453f461e2aa",
+      "SimpleName": "OracleLegacyProgression.Name",
+      "ProcessTemplates": false,
+      "enGB": "Oracle Legacy - Seeker of Truth",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "c68548df17f64265aa56938499d9b217",
@@ -2566,7 +3306,34 @@
       "Key": "b769c84a3056471cac36166dc2a720b7",
       "SimpleName": "RegenerationFeature.Name",
       "ProcessTemplates": false,
-      "enGB": "Regeneration"
+      "enGB": "Regeneration",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "a22d82907be14df398491be628aa6f04",
+      "SimpleName": "RogueLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your reincarnation gave you great power, that is no reason to forget the usefulness of a simple backstab.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "8541383567d042199074b05bfd1b1f5b",
+      "SimpleName": "RogueLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Rogue Legacy - Supernatural Thief",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "d6069b2c9c7a4c55a42730bf436f0644",
@@ -2632,7 +3399,34 @@
       "Key": "76defda0e7b44dac8775743acd3443dd",
       "SimpleName": "ShakenImmunity.Name",
       "ProcessTemplates": false,
-      "enGB": "Shaken Immunity"
+      "enGB": "Shaken Immunity",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "19f7c04c321e41268c98bd7f56678b79",
+      "SimpleName": "ShamanLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "As a person who have originated from the other world Spirit Beacon has an unique aura. \nThis aura is particularly attractive to spirits, and they have learned to harness the power of these spirits by forming contracts with them. \nDespite their reliance on spirits, Spirit Beacons are not bound by the will of these supernatural beings. \nThey are able to maintain their independence and make their own decisions, using the power of the spirits as a tool rather than being controlled by them.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "ade160ca210343e0925dca254f07a55b",
+      "SimpleName": "ShamanLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Shaman Legacy - Spirit Beacons",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "29a3df21da52403aa6566b4074ce4f7c",
@@ -2800,7 +3594,34 @@
       "Key": "646aff3145624ea699f89ee7e96adaeb",
       "SimpleName": "SonicImmunity.Name",
       "ProcessTemplates": false,
-      "enGB": "Sonic Immunity"
+      "enGB": "Sonic Immunity",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "709aee2c6e4c4b6688d2d63cd71d3337",
+      "SimpleName": "SorcererLegacyProgression.Description",
+      "ProcessTemplates": true,
+      "enGB": "Their otherworldly knowledge and point of view allows Chimeras to imbue themselves with different bloodlines in order to gain power and strength. \nThe Chimera is constantly seeking out new sources of power, and their ability to absorb and incorporate these different bloodlines allows them to become truly formidable foes. \nHowever, their constant experimentation with bloodlines can also lead to confusion and uncertainty about their own heritage and identity, as their original ancestry becomes harder to discern over time.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "224ef89c90744290a393078f3584e561",
+      "SimpleName": "SorcererLegacyProgression.Name",
+      "ProcessTemplates": false,
+      "enGB": "Sorcerer Legacy - Chimera",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "ab6b9d3d99534e9db30fac7321e88a5c",
@@ -3820,7 +4641,34 @@
       "Key": "a8dc54e0346a4143a0305f78a4a10d14",
       "SimpleName": "SupremeBeing.Name",
       "ProcessTemplates": false,
-      "enGB": "Overpowered Ability — Supreme Being"
+      "enGB": "Overpowered Ability — Supreme Being",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "84cb3eda34da41b0b337548f65fc33f4",
+      "SimpleName": "TacticianLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You are used to telling people what to do. \nYou were the tactician that lead your guild to first kill Onyxia. \nThis, as far as you are concerned, is just another raid to conquer with your brilliant tactics and perfect preparation...",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "15b9551f6d424553bd9a45d19217e1be",
+      "SimpleName": "TacticianLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Tactician Legacy - Isekai Tactician",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "aa833946d7924168b0f9015f917495f0",
@@ -3868,7 +4716,34 @@
       "Key": "7c2908a78c5b42eca2193221985f6bd5",
       "SimpleName": "TrainingMontage.Name",
       "ProcessTemplates": false,
-      "enGB": "Training Montage"
+      "enGB": "Training Montage",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "51d8687542de44adb94ff90a5bc547cf",
+      "SimpleName": "TricksterSpellsKnown.Description",
+      "ProcessTemplates": true,
+      "enGB": "Gain the Spells of an Trickster",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "8ab5f79e39214bd99ce8931a720457c9",
+      "SimpleName": "TricksterSpellsKnown.Name",
+      "ProcessTemplates": false,
+      "enGB": "Mythic Trickster Spells",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "f9844b68cb1b46aba2af3f42428b46d0",
@@ -4000,7 +4875,34 @@
       "Key": "4490b818e6df49bdb4940763ede876f1",
       "SimpleName": "VillainArchetype.DescriptionShort",
       "ProcessTemplates": true,
-      "enGB": "After obtaining ungodly amounts of power, some protagonists become villains. They view the new world as theirs to play with, and the new inhabitants as theirs to torment. Villains seek to increase their power even further, often by establishing their own kingdom.\nYou cast spells like an Arcanist with a number of slots equal to your spells per day."
+      "enGB": "After obtaining ungodly amounts of power, some protagonists become villains. They view the new world as theirs to play with, and the new inhabitants as theirs to torment. Villains seek to increase their power even further, often by establishing their own kingdom.\nYou cast spells like an Arcanist with a number of slots equal to your spells per day.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "640834c5f4dc4c189b659246e2bcc9f2",
+      "SimpleName": "VillainLegacySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "This is neither disney, nor are you the kind to lose your mind...",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "c5463f79c6054254a873c585804a61bb",
+      "SimpleName": "VillainLegacySelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Villainous Legacy",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "919313e989454529bf64d3ca4d42b2c4",
@@ -4037,6 +4939,42 @@
       "SimpleName": "WinterWitchVillain.Description",
       "ProcessTemplates": true,
       "enGB": "When a new winter witch level is gained, the character gains new spells per day as if she had also gained a level in witch or shaman spellcasting class she belonged to before she added the prestige class. Additionally, at 2nd level, and every two level after, a winter witch gets a new hex depending on the chosen spellcasting class."
+    },
+    {
+      "Key": "4a3de7ea17e94578b19103758e63c527",
+      "SimpleName": "KineticKnightLegacy.Name",
+      "ProcessTemplates": true,
+      "enGB": "Kineticist Legacy - Kinetic Knight"
+    },
+    {
+      "Key": "ed9bf94573fa430288f32e725f9ba6a9",
+      "SimpleName": "KineticKnightLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Just like all Kinetic Knights your sanity is somewhat questionable, after all you willingly choose to forego fighting at range and instead choose to use energy blasts as melee weapons...\nAnd why? Because the burning blade looked cool."
+    },
+    {
+      "Key": "85009dd1f5964580b9e24f649759cf20",
+      "SimpleName": "DreadKnightLegacy.Name",
+      "ProcessTemplates": true,
+      "enGB": "Dread Knight Legacy - Dread Lord"
+    },
+    {
+      "Key": "241826d2b4124191a9c47f49bfd70c81",
+      "SimpleName": "DreadKnightLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "*Blinks and slowly backs away*, Uhm are you certain you want to play this? I mean Dread Knights are kind of evil, you know? \n As in the they are the opposite of anything a paladin represents..."
+    },
+    {
+      "Key": "59ed558c83884491866ca8686fe47861",
+      "SimpleName": "LegacyAbilitySelection.Name",
+      "ProcessTemplates": true,
+      "enGB": "Dual Class - Legacy Class Feature"
+    },
+    {
+      "Key": "4de7609f8308433d91076c1e6a98f769",
+      "SimpleName": "LegacyAbilitySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "So first I joined the bardic college of Wintermoon, then 3 years leater when I got bored with that I accidentally stumbled into the thiefs guild of Whitesnow...\nWhatever the backstory is, you get access to another legacy class feature.\nOr if you are a God Emperor your first."
     }
 
   ]

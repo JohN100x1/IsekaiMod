@@ -40,7 +40,8 @@ namespace IsekaiMod.Utilities {
             // Core method check if spell already exists uses a simple contains check that fails if multiple instances of the spell were created (for example if it exists in multiple spellbooks)
             // the Core method does a few other nice things though, like correctly adding the spell to specialist lists so should be called after ones own security check
             if (listContainsSpell(list, spell)) {
-                IsekaiContext.Logger.LogWarning("spell already registered= " + spell.name + " gui id=" + spell.AssetGuid.m_Guid.ToString("N"));
+                //Comment back in if you are trying to fix bugs in the spelllist but otherwise this just blows up the log for no good purpose
+                //IsekaiContext.Logger.LogWarning("spell already registered= " + spell.name + " gui id=" + spell.AssetGuid.m_Guid.ToString("N"));
                 return;
             }
             spell.AddToSpellList(list, level);
