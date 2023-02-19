@@ -7,24 +7,28 @@ using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using IsekaiMod.Utilities;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.JsonSystem;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content {
-    internal class ContentAdder {
+    class ContentAdder {
         [HarmonyPatch(typeof(BlueprintsCache), "Init")]
-        private static class BlueprintsCache_Init_Patch {
+        static class BlueprintsCache_Init_Patch {
             private static bool Initialized;
 
             [HarmonyPriority(Priority.First)]
             public static void Postfix() {
                 if (Initialized) return;
                 Initialized = true;
+                Main.LogDebug("first init call");
 
                 Features.ExtraWings.Add();
+                Main.LogDebug("first init call wings patched");
                 Features.ExoticWeaponProficiency.Add();
+                Main.LogDebug("first init call start if block");
 
                 if (IsekaiContext.AddedContent.Feats.IsEnabled("Exceptional Feats")) AddExceptionalFeats();
                 if (IsekaiContext.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
@@ -34,7 +38,7 @@ namespace IsekaiMod.Content {
             }
 
             public static void AddIsekaiProtagonistClass() {
-
+                Main.LogDebug("Class: Start");
                 LegacySelection.ConfigureStep1();
                 VillainLegacySelection.Configure();
                 EdgeLordLegacySelection.Configure();
@@ -45,6 +49,7 @@ namespace IsekaiMod.Content {
                 Classes.IsekaiProtagonist.IsekaiProtagonistSpellsKnown.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistSpellbook.Add();
                 Classes.IsekaiProtagonist.IsekaiProtagonistClass.Add();
+                Main.LogDebug("Class: Configured");
 
                 // Isekai Protagonist Features
                 Features.IsekaiProtagonist.IsekaiProtagonistProficiencies.Add();
@@ -62,6 +67,7 @@ namespace IsekaiMod.Content {
                 Features.IsekaiProtagonist.FriendlyAuraFeature.Add();
                 Features.IsekaiProtagonist.SummonHarem.Add();
                 Features.IsekaiProtagonist.SecondReincarnation.Add();
+                Main.LogDebug("Class: Features");
 
                 // Beach Episode Selection
                 Features.IsekaiProtagonist.BeachEpisode.BeachEpisodeSelection.Add();
@@ -69,6 +75,7 @@ namespace IsekaiMod.Content {
                 Features.IsekaiProtagonist.BeachEpisode.InnerPower.Add();
                 Features.IsekaiProtagonist.BeachEpisode.MasterSelf.Add();
                 Features.IsekaiProtagonist.BeachEpisode.Tenacious.Add();
+                Main.LogDebug("Class: BeachEpisode");
 
                 // Special Power
                 Features.IsekaiProtagonist.SpecialPower.SpecialPowerSelection.Add();
@@ -95,6 +102,7 @@ namespace IsekaiMod.Content {
                 Features.IsekaiProtagonist.SpecialPower.KillingIntent.Add();
                 Features.IsekaiProtagonist.SpecialPower.MagicalAmplification.Add();
                 Features.IsekaiProtagonist.SpecialPower.Reflect.Add();
+                Main.LogDebug("Class: SpecialPower");
 
                 // OP Ability
                 Features.IsekaiProtagonist.OverpoweredAbility.OverpoweredAbilitySelection.Add();
@@ -118,6 +126,8 @@ namespace IsekaiMod.Content {
                 Features.IsekaiProtagonist.OverpoweredAbility.AuraOfRighteousWrath.Add();
                 if (IsekaiContext.AddedContent.Feats.IsEnabled("Overpowered - Mythic Blessing")) Features.IsekaiProtagonist.OverpoweredAbility.BlessingOfTheMythic.Configure();
                 //if (IsekaiContext.AddedContent.Feats.IsEnabled("Overpowered - Mythic Blessing")) Features.IsekaiProtagonist.OverpoweredAbility.IsekaidZippyMagic.Configure();
+                
+                Main.LogDebug("Class: OP");
 
                 // God Emperor Archetype
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.GodEmperorProficiencies.Add();
@@ -132,6 +142,7 @@ namespace IsekaiMod.Content {
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.CelestialRealm.Add();
                 Features.IsekaiProtagonist.Archetypes.GodEmperor.Godhood.Add();
                 Classes.IsekaiProtagonist.Archetypes.GodEmperor.Add();
+                Main.LogDebug("Class: Emperor");
 
                 // Edge Lord Archetype
                 EdgeLordProficiencies.Add();
@@ -139,6 +150,7 @@ namespace IsekaiMod.Content {
                 EdgeLordFastMovement.Add();
                 ExtraStrike.Add();
                 Classes.IsekaiProtagonist.Archetypes.EdgeLord.Add();
+                Main.LogDebug("Class: EdgeLord");
 
                 // Hero Archetype
                 HeroProficiencies.Add();
@@ -147,6 +159,7 @@ namespace IsekaiMod.Content {
                 TrueMark.Add();
                 HerosPresence.Add();
                 Classes.IsekaiProtagonist.Archetypes.Hero.Add();
+                Main.LogDebug("Class: Hero");
 
                 // Villain Archetype
                 Features.IsekaiProtagonist.Archetypes.Villain.VillainProficiencies.Add();
@@ -155,6 +168,7 @@ namespace IsekaiMod.Content {
                 Features.IsekaiProtagonist.Archetypes.Villain.SecondFormFeature.Add();
                 Classes.IsekaiProtagonist.VillainSpellbook.Add();
                 Classes.IsekaiProtagonist.Archetypes.Villain.Add();
+                Main.LogDebug("Class: Villain");
 
                 // Add Progression & Prebuild after Class and class-dependent features are added
                 Classes.IsekaiProtagonist.PrebuildIsekaiProtagonistFeatureList.Add();
@@ -162,6 +176,7 @@ namespace IsekaiMod.Content {
 
                 // Patch Prestige Class Spellbooks
                 Classes.IsekaiProtagonist.PrestigeClassReplaceSpellbook.Patch();
+                Main.LogDebug("Class: Prestige");
 
                 // Deathsnatcher animal Companion (Depends on IsekaiProtagonistClass)
                 Classes.Deathsnatcher.DeathsnatcherClass.Add();
@@ -176,12 +191,15 @@ namespace IsekaiMod.Content {
                 Features.Deathsnatcher.DeathsnatcherUndeadMaster.Add();
                 Classes.Deathsnatcher.DeathsnatcherProgression.Add();
                 Classes.Deathsnatcher.DeathsnatcherUnit.Add();
+                Main.LogDebug("Class: Deathsnatcher");
 
                 // Add extra dialogue (Depends on IsekaiProtagonistClass)
                 Dialogue.IsekaiHulrun.Add();
                 Dialogue.IsekaiRadiance.Add();
+                Main.LogDebug("Class: Dialogue");
 
                 LegacySelection.ConfigureStep2();
+                Main.LogDebug("Class: Done");
 
             }
             public static void AddIsekaiHeritages() {
@@ -231,24 +249,31 @@ namespace IsekaiMod.Content {
         }
     }
 
-    [HarmonyPriority(Priority.Last)]    
+    [HarmonyPriority(-100)]    
     [HarmonyPatch(typeof(StartGameLoader), "LoadAllJson")]
-    internal static class StartGameLoader_LoadAllJson {
+    static class StartGameLoader_LoadAllJson {
         private static bool Run = false;
 
-        private static void Postfix() {
+        static void Postfix() {
             if (Run) return; 
             Run = true;
+            Main.LogDebug("Postfix Patching: Start");
             IsekaiDeitySelection.PatchDeitySelection();
+            Main.LogDebug("Postfix Patching: Deities fixed");
 
             if (IsekaiContext.AddedContent.Classes.IsDisabled("Isekai Protagonist")) return;
-            KineticLegacy.PatchKineticistProgression();
-            OracleLegacy.PatchClassOracleSelection();
-            SorcererLegacy.PatchSorcererBloodlines();
-            ShamanLegacy.PatchShamanProgressions();
 
+            KineticLegacy.PatchKineticistProgression();
+            Main.LogDebug("Postfix Patching: Kineticist Patched");
+            OracleLegacy.PatchClassOracleSelection();
+            Main.LogDebug("Postfix Patching: Oracle Patched");
+            SorcererLegacy.PatchSorcererBloodlines();
+            Main.LogDebug("Postfix Patching: Sorcerer Patched");
+            ShamanLegacy.PatchShamanProgressions();
+            Main.LogDebug("Postfix Patching: Shaman Patched");
             KineticKnightLegacy.configure();
             KineticKnightLegacy.PatchKineticistProgression();
+            Main.LogDebug("Postfix Patching: Kinetic Knight Patched");
 
             //done here because it should be done after all spells have been initialized and were added to the canon books
             if (IsekaiContext.AddedContent.Classes.IsEnabled("Merge Isekai Spelllist")) IsekaiProtagonistSpellList.MergeSpellLists();
@@ -272,28 +297,28 @@ namespace IsekaiMod.Content {
             var sorcerercapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("40f13b4925c24e50bc8f3d5fe4d42a05");
             
             if (barbariancapstone != null) {
-                BarbarianLegacy.Get().LevelEntries.AddItem(Helpers.CreateLevelEntry(20, barbariancapstone));
+                BarbarianLegacy.Get().LevelEntries = BarbarianLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, barbariancapstone));
             }
             if (bardcapstone!= null) {
-                BardLegacy.Get().LevelEntries.AddItem(Helpers.CreateLevelEntry(20,bardcapstone));
+                BardLegacy.Get().LevelEntries = BardLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20,bardcapstone));
             }
             if (paladincapstone != null) {
-                HeroicLegacy.Get().LevelEntries.AddItem(Helpers.CreateLevelEntry(20, paladincapstone));
+                HeroicLegacy.Get().LevelEntries = HeroicLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, paladincapstone));
             }
             if (kineticistcapstone != null) {
-                KineticLegacy.Get().LevelEntries.AddItem(Helpers.CreateLevelEntry(20, kineticistcapstone));
+                KineticLegacy.Get().LevelEntries = KineticLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, kineticistcapstone));
             }
             if (oraclecapstone != null) {
-                OracleLegacy.Get().LevelEntries.AddItem(Helpers.CreateLevelEntry(20, oraclecapstone));
+                OracleLegacy.Get().LevelEntries = OracleLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, oraclecapstone));
             }
             if (roguecapstone != null) {
-                RogueLegacy.Get().LevelEntries.AddItem(Helpers.CreateLevelEntry(20, roguecapstone));
+                RogueLegacy.Get().LevelEntries = RogueLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, roguecapstone));
             }
             if (shamancapstone != null) {
-                ShamanLegacy.Get().LevelEntries.AddItem(Helpers.CreateLevelEntry(20, shamancapstone));
+                ShamanLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, shamancapstone));
             }
             if (sorcerercapstone != null) {
-                SorcererLegacy.Get().LevelEntries.AddItem(Helpers.CreateLevelEntry(20, sorcerercapstone));
+                SorcererLegacy.Get().LevelEntries = SorcererLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, sorcerercapstone));
             }
         }
 

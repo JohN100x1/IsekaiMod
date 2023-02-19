@@ -31,6 +31,7 @@ namespace IsekaiMod.Content.Features {
         private static readonly BlueprintBuff BuffWingsDemon = BlueprintTools.GetBlueprint<BlueprintBuff>("3c958be25ab34dc448569331488bee27");
 
         public static void Add() {
+            Main.LogDebug("Patch Black Wings Start");
             var BlackWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("BlackWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Black)");
                 bp.m_Description = WingsAngel.m_Description;
@@ -43,6 +44,7 @@ namespace IsekaiMod.Content.Features {
                 bp.Group = ActivatableAbilityGroup.Wings;
                 bp.WeightInGroup = 1;
             });
+            Main.LogDebug("Patch Ghost Wings Start");
             var GhostWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("GhostWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Ghostly)");
                 bp.m_Description = WingsAngel.m_Description;
@@ -55,6 +57,8 @@ namespace IsekaiMod.Content.Features {
                 bp.Group = ActivatableAbilityGroup.Wings;
                 bp.WeightInGroup = 1;
             });
+
+            Main.LogDebug("Patch Devil Wings Start");
 
             var DevilWingsBuff = ThingsNotHandledByTTTCore.CreateBuff("DevilWingsBuff", bp => {
                 bp.SetName(IsekaiContext, "Wings");
@@ -86,6 +90,9 @@ namespace IsekaiMod.Content.Features {
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
                 bp.Frequency = DurationRate.Rounds;
             });
+
+            Main.LogDebug("Patch Devil Wings Buff");
+
             var DevilWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("DevilWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Devilish)");
                 bp.m_Description = WingsAngel.m_Description;
@@ -111,13 +118,15 @@ namespace IsekaiMod.Content.Features {
                 bp.WeightInGroup = 1;
             });
 
+            Main.LogDebug("Patch Wings done");
             // Patch pit spells
             PatchPitAreaEffects(DevilWingsBuff);
+
+            Main.LogDebug("Patch Wings Pit");
         }
 
         private static void PatchPitAreaEffects(BlueprintBuff wingsBuff) {
-            BlueprintAbilityAreaEffect[] pitAbilityAreaEffects = new BlueprintAbilityAreaEffect[]
-            {
+            BlueprintAbilityAreaEffect[] pitAbilityAreaEffects = new BlueprintAbilityAreaEffect[] {
                 BlueprintTools.GetBlueprint<BlueprintAbilityAreaEffect>("b905a3c987f22cb49a246f0ab211f34c"), // PitOfDespairArea
                 BlueprintTools.GetBlueprint<BlueprintAbilityAreaEffect>("bf68ec704dc186549a7c6fbf22d3d661"), // TricksterRecreationalPitArea
                 BlueprintTools.GetBlueprint<BlueprintAbilityAreaEffect>("cf742a1d377378e4c8799f6a3afff1ba"), // CreatePitArea
