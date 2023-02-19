@@ -113,9 +113,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
                 bp.HideInUI = true;
             });
             var DeathsnatcherUnit = Helpers.CreateBlueprint<BlueprintUnit>(IsekaiContext, "DeathsnatcherUnit", bp => {
-                bp.LocalizedName = new SharedStringAsset() {
-                    String = Helpers.CreateString(IsekaiContext, $"DeathsnatcherUnit.Name", "Deathsnatcher")
-                };
+                bp.SetName(IsekaiContext, "Deathsnatcher");
                 bp.AddComponent<AddClassLevels>(c => {
                     c.m_CharacterClass = DeathsnatcherClass.GetReference();
                     c.RaceStat = StatType.Strength;
