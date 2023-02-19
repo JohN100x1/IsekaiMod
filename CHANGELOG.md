@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
 ## [4.0.0] - 2023-02-19
 ### Changed
 - Major Class Progression rework, thief feats removed from all archetypes that had them, instead players can now select a base class from which their Isekai Hero Class descends
@@ -26,6 +27,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	10. Shaman Legacy 		- Spirit Beacons
 	11. Sorcerer Legacy 	- Chimera, grants
 	12. Tactician Legacy 	- Isekai Tactician
+	
+### Fixed
+- Fixed `Omega Strike` to apply to touch attacks.
 
 ## [3.2.0] - 2022-12-24
 ### Added

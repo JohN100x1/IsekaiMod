@@ -159,7 +159,6 @@
     <Compile Include="Content\*\*\*\*\*.cs" />
     <Compile Include="Content\*\*\*\*\*\*.cs" />
     <Compile Include="Components\*.cs" />
-    <Compile Include="Extensions\*.cs" />
     <Compile Include="Utilities\*.cs" />
   </ItemGroup>
   <ItemGroup>

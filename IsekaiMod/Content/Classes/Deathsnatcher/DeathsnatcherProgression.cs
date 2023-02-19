@@ -21,7 +21,6 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
 
             var DeathsnatcherPoisonSting = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherPoisonSting");
             var DeathsnatcherResistances = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherResistances");
-            //var DeathsnatcherHiddenFacts = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherHiddenFacts");
             var DeathsnatcherFastHealing = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFastHealing");
             var DeathsnatcherSizeBabyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherSizeBabyFeature");
             var DeathsnatcherCommandUndeadFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherCommandUndeadFeature");
