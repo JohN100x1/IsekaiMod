@@ -37,7 +37,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.IsArcaneCaster = true;
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, LegacySelection.getClassFeature()),
+                    Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, LegacySelection.GetClassFeature()),
                     Helpers.CreateLevelEntry(3, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(10, OverpoweredAbilitySelection2),
                     Helpers.CreateLevelEntry(17,  SpecialPowerSelection),

@@ -79,7 +79,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 };
             });
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
-                Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, PlotArmor, StartingWeaponSelection, IsekaiPetSelection, LegacySelection.getClassFeature()),
+                Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, PlotArmor, StartingWeaponSelection, IsekaiPetSelection, LegacySelection.GetClassFeature()),
                 Helpers.CreateLevelEntry(2, IsekaiProtagonistBonusFeatSelection),
                 Helpers.CreateLevelEntry(3, IsekaiFighterTraining, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(4, IsekaiProtagonistBonusFeatSelection),
@@ -109,7 +109,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, SpecialPowerSelection),
                 Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
                 Helpers.CreateUIGroup(IsekaiPetSelection, IsekaiFastMovement, IsekaiQuickFooted),
-                Helpers.CreateUIGroup(LegacySelection.getClassFeature()),
+                Helpers.CreateUIGroup(LegacySelection.GetClassFeature()),
                 Helpers.CreateUIGroup(HeroLegacySelection.getClassFeature()),
                 Helpers.CreateUIGroup(VillainLegacySelection.getClassFeature()),
                 Helpers.CreateUIGroup(EdgeLordLegacySelection.getClassFeature())
