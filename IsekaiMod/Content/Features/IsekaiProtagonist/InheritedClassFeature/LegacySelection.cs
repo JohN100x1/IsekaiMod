@@ -26,8 +26,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.m_Features = new BlueprintFeatureReference[0];
             });
             AbilitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "LegacyAbilitySelection", bp => {
-                bp.SetName(IsekaiContext, "Legacy Class Feature");
-                bp.SetDescription(IsekaiContext, "If not for the gods reincarnating you as an Isekai Hero with great mystic power you would have been...");
+                bp.SetName(IsekaiContext, "Dual Class - Legacy Class Feature");
+                bp.SetDescription(IsekaiContext, "So first I joined the bardic college of Wintermoon, then 3 years leater when I got bored with that I accidentally stumbled into the thiefs guild of Whitesnow...\nWhatever the backstory is, you get access to another legacy class feature.\nOr if you are a God Emperor your first.");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.IgnorePrerequisites = false;

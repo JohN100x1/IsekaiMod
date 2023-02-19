@@ -49,12 +49,14 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- Has Overpowered Abilities.
 		- Can merge their spellbook with angel or lich.
 		- Can choose a familiar or animal companion... or a deathsnatcher.
+		- Has a legacy class feature from the list below.
 	- `God Emperor` (Isekai Protagonist Archetype)
 		- Has powerful auras that buff allies and debuff enemies.
 		- Has powerful immunities in the late game.
 	- `Edge Lord` (Isekai Protagonist Archetype)
 		- Has alot of extra attacks.
 		- Uses dexterity for damage and attack rolls.
+		- Can pick a melee focused legacy class feature.
 	- `Hero` (Isekai Protagonist Archetype)
 		- Has the `True Smite` ability (smite any alignment).
 		- Uses charisma for damage and attack rolls.
@@ -62,6 +64,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- Has Study target.
 		- Has Much more Overpowered Abilities.
 		- Intelligence based caster that memorizes spells like an arcanist.
+		- Can pick a non-heroic, non-disney, non-Barbarian legacy class feature.
 - New Features
 	- `Exceptional feats`: Strong feats that can be chosen in place of a feat/bonus feat.
 		- `Mythic feat`: You can choose a mythic feat instead of a normal/bonus feat.
@@ -95,6 +98,8 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Aura of Divine Fury`: Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells (requires character level 15).
 		- `Killing Intent`: Enemies within 40 feet who fail a will save become shaken, frightened, and cowering.
 		- `Reflect`: Deal damage to enemies equal to damage you receive.
+		- `Mythic Class Feature`: see below
+		- `Dual Class - Legacy Class Feature`: as Legacy Class Feature below, pick a second base class to get abilities from, or in the case of the God Emperor your first.
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.
@@ -113,6 +118,32 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 		- `Summon Calamity`: Summon a Devastator, Baphomet, Deskari, Nocticula, or Mephistopheles.
 		- `True Resurrection`: Resurrect a dead companion (no diamond cost).
 		- `Supreme Being`: All your attributes have a base value of 30.
+		- `Mythic Class Feature`: see below
+		- `Dual Class - Legacy Class Feature`: as Legacy Class Feature below, pick a second base class to get abilities from, or in the case of the God Emperor your first.
+	- `Mythic Class Feature`: Access to a mythic class feature not your own
+		- `Angel Mythic Class Feature`: possible selections include the angelic halo and sword of heaven and their buffs
+		- `Azata Mythic Class Feature`: the superpowers
+		- `Lich Mythic Class Feature` : the lich powers
+		- `Trickster Mythic Class Feature`: the trickster skill specializations
+		- `Mythic Aeon Spells`: Aeon Spells in Protagonist Spellbook
+		- `Mythic Angel Spells`: as above but for Angel
+		- `Mythic Azata Spells`: as above but for Azata
+		- `Mythic Demon Spells`: as above but for Demon
+		- `Mythic Lich Spells`: as above but for Lich
+		- `Mythic Trickster Spells`: as above but for Trickster
+	- `Legacy Class Feature`: if the gods had not interfered and made you into an overpowered spellcasting hero you would have been:
+		- `Barbarian Legacy - Ball of Rage`
+		- `Bard Legacy - Musical Prodige`
+		- `Dread Knight Legacy - Dread Lord`
+		- `Paladin Legacy - Hero of Light`
+		- `Kineticist Legacy - Kinetic Knight`
+		- `Kineticist Legacy - Kinetic Lord`
+		- `Magus Legacy - Spellblade`: Attention Still requires any form of descent testing, so only use it if you are willing to essentially be the betatester for the Legacy at the moment
+		- `Oracle Legacy - Seeker of Truth`: does not grant its selections retroactivly, so best picked early.
+		- `Rogue Legacy - Supernatural Thief`
+		- `Shaman Legacy - Spirit Beacons`: Also still a Beta release
+		- `Sorcerer Legacy - Chimera`: does not grant its selections retroactivly, so best picked early.
+		- `Tactician Legacy - Isekai Tactician`: not a baseclass by itself but rather a mixture of several like hunter and Monster Tactician to create a path focused around tactical feats
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities

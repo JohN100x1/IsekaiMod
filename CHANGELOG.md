@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.0] - 2023-02-19
+### Changed
+- Major Class Progression rework, thief feats removed from all archetypes that had them, instead players can now select a base class from which their Isekai Hero Class descends
+- internal logic switch to directly use TTCCore where possible rather than code "inspired" from them (this adds a TTCCore dependency)
+
+### Added
+- merge spellbook logic to merge the spellbooks of the major classes into the isekai book rather than add each spell manually, this automatically adds support for any spell added by a mod loaded before this mod is loaded (optional toggle)
+- patch for some other mod that turned deity selection into a recursive selection call onto itself which made it hard to select deities
+- BlessingOfTheMythic: Mythic Class Feature, adds an option to OverpoweredAbilities and Special Powers to select a mytchic class feature despie not being a member of this mythic class, limited selection options so far
+- Heroic Legacies, please refer to github page for more details:
+	1.  Barbarian Legacy 	- Ball of Rage
+	2.  Bard Legacy 		- Musical Prodige
+	3.  Dread Knight Legacy - Dread Lord, only available with Expanded Content installed, the anti paladin
+	4.  Paladin Legacy 		- Hero of Light
+	5.  Kineticist Legacy 	- Kinetic Knight, melee fighter Kineticist (while not required I advice installing Expandended Element as their energize weapon feat is what really makes this archetype even work)
+	6.  Kineticist Legacy 	- Kinetic Lord
+	7.  Magus Legacy 		- Spellblade, Attention Still requires any form of descent testing, so only use it if you are willing to essentially be the betatester for the Legacy at the moment
+	8.  Oracle Legacy 		- Seeker of Truth
+	9.  Rogue Legacy 		- Supernatural Thief
+	10. Shaman Legacy 		- Spirit Beacons
+	11. Sorcerer Legacy 	- Chimera, grants
+	12. Tactician Legacy 	- Isekai Tactician
+
 ## [3.2.0] - 2022-12-24
 ### Added
 - Added `Reflect` Special power.
