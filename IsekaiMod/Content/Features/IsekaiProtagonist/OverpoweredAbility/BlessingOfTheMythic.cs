@@ -178,6 +178,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 };
             });
             OverpoweredAbilitySelection.AddToSelection(MythicSelection);
+            SpecialPower.SpecialPowerSelection.AddToSelection(MythicSelection);
         }
     }
 }
