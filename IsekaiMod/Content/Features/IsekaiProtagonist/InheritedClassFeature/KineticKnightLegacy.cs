@@ -7,7 +7,6 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 using static IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature.KineticLegacy;
@@ -79,7 +78,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             HeroLegacySelection.getClassFeature().AddFeatures(prog);
         }
         public static void PatchKineticistProgression() {
-            //please not that this only patches the knight progression so this only works in combination of the already done patch by the other version
+            //please note that this only patches the knight progression so this only works in combination of the already done patch by the other version
 
             BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.KineticistClass;
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
