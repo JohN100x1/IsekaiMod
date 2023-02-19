@@ -35,9 +35,19 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 ## Mod Information
 ### Requirements
 - [Unity Mod Manager](https://www.nexusmods.com/site/mods/21).
+- TTCCore because the code has been changed over to use it as much as possible rather than just use classes repurposed from it, so credit and dependency where it is due
 ### Installation
 - Open Unity Mod Manager and go to the 'Mods' tab.
 - Drag and Drop the IsekaiMod.zip file into Unity Mod Manager.
+If you use ModFinder rather than Unity Mod Manager just replace the name mentally in your head, instructions are otherwise identical.
+
+### Downward Compatibility Warning for version 4.0.0
+The rogue abilities the protagonist, villain, and edge lord got and the paladin abilities the hero got were moved into progression features with plenty of additional options added (see below).
+This means a rather heavy change in the classes progression trees for all four of those options, if you are updating with an existing savegame using something like barleyFlours Respec Mod (https://github.com/BarleyFlour/RespecMod) is highly advisable.
+Otherwise you will miss out on things when leveling up.
+Exception to this is the God Emperor as all options that were changed were not part of its original definition so you are only missing out on some additional options for overwhelming abilities you could have picked at level one.
+
+
 ### New Content
 - New Classes & Archetypes
 	- `Isekai Protagonist`
@@ -233,6 +243,11 @@ If you have the `ExpandedContent` mod, the `Isekai Protagonist` will have the fo
 You are also able to choose a drake companion as a pet.
 ### SpellbookMerge (1.7.0)
 If you have the `SpellbookMerge` mod, the `Isekai Protagonist` will be able to merge its spellbook with Aeon, Azata, Demon, and Trickster.
+
+### Any Mod adding spells to the base classes
+As of version 4.0.0 there is an option to create the Isekai spell list by merging most of the non mythic ingame spell lists. That means that as long as the mod loads in before this one and adds the spell to at least one of those lists the Isekai Protagonist gets it too.
+The list of spell lists we merge for this is fairly comprehensive, Cleric, Wizard, Druid,all the base game domains, all the different wizard specialisation lists, Witch, ...
+As such almost no spell should need work on our part to add support for it, if you find one please let us know.
 
 ## Credits
 Alot of the code was repurposed from the following repositories:
