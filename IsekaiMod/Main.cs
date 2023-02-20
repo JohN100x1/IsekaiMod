@@ -6,6 +6,7 @@ using UnityModManagerNet;
 namespace IsekaiMod {
 
     internal static class Main {
+
         public static ModContextTTTBase IsekaiContext;
 
         public static bool Load(UnityModManager.ModEntry modEntry) {
