@@ -25,20 +25,26 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 };
                 bp.LevelEntries = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, StaticReferences.RogueSneakAttack),
-                    Helpers.CreateLevelEntry(2, StaticReferences.RogueUncannyDodge),
+                    Helpers.CreateLevelEntry(2, StaticReferences.RogueUncannyDodge, StaticReferences.RogueTalentSelection),
                     Helpers.CreateLevelEntry(3, StaticReferences.RogueSneakAttack, StaticReferences.RogueEvasion),
+                    Helpers.CreateLevelEntry(4, StaticReferences.RogueTalentSelection),
                     Helpers.CreateLevelEntry(5, StaticReferences.RogueSneakAttack, StaticReferences.RogueImprovedUncannyDodge),
+                    Helpers.CreateLevelEntry(6, StaticReferences.RogueTalentSelection),
                     Helpers.CreateLevelEntry(7, StaticReferences.RogueSneakAttack),
+                    Helpers.CreateLevelEntry(8, StaticReferences.RogueTalentSelection),
                     Helpers.CreateLevelEntry(9, StaticReferences.RogueSneakAttack),
-                    Helpers.CreateLevelEntry(10, StaticReferences.RogueImprovedEvasion),
+                    Helpers.CreateLevelEntry(10, StaticReferences.RogueImprovedEvasion, StaticReferences.RogueAdvancedTalents),
                     Helpers.CreateLevelEntry(11, StaticReferences.RogueSneakAttack),
+                    Helpers.CreateLevelEntry(12, StaticReferences.RogueTalentSelection),
                     Helpers.CreateLevelEntry(13, StaticReferences.RogueSneakAttack),
+                    Helpers.CreateLevelEntry(14, StaticReferences.RogueTalentSelection),
                     Helpers.CreateLevelEntry(15, StaticReferences.RogueSneakAttack),
                     Helpers.CreateLevelEntry(17, StaticReferences.RogueSneakAttack),
+                    Helpers.CreateLevelEntry(18, StaticReferences.RogueTalentSelection),
                     Helpers.CreateLevelEntry(19, StaticReferences.RogueSneakAttack),
                 };
                 bp.UIGroups = new UIGroup[] {
-                    Helpers.CreateUIGroup(StaticReferences.RogueSneakAttack),
+                    Helpers.CreateUIGroup(StaticReferences.RogueSneakAttack, StaticReferences.RogueTalentSelection, StaticReferences.RogueAdvancedTalents),
                     Helpers.CreateUIGroup(StaticReferences.RogueUncannyDodge, StaticReferences.RogueEvasion, StaticReferences.RogueImprovedUncannyDodge, StaticReferences.RogueImprovedEvasion)
                 };
 

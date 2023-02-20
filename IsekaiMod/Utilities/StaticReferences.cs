@@ -34,6 +34,8 @@ namespace IsekaiMod.Utilities {
         public static BlueprintFeature RogueImprovedUncannyDodge = BlueprintTools.GetBlueprint<BlueprintFeature>("485a18c05792521459c7d06c63128c79");
         public static BlueprintFeature RogueEvasion = BlueprintTools.GetBlueprint<BlueprintFeature>("576933720c440aa4d8d42b0c54b77e80");
         public static BlueprintFeature RogueImprovedEvasion = BlueprintTools.GetBlueprint<BlueprintFeature>("ce96af454a6137d47b9c6a1e02e66803");
+        public static BlueprintFeatureSelection RogueTalentSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("c074a5d615200494b8f2a9c845799d93");
+        public static BlueprintFeature RogueAdvancedTalents = BlueprintTools.GetBlueprint<BlueprintFeature>("a33b99f95322d6741af83e9381b2391c");
 
         //Tactician
         public static BlueprintFeature Teamwork = BlueprintTools.GetBlueprint<BlueprintFeature>("01046afc774beee48abde8e35da0f4ba");
@@ -100,8 +102,16 @@ namespace IsekaiMod.Utilities {
                     //check if component is addSpell
                     if (component is AddKnownSpell asSpell) {
                         //don't re add spells already added for my class
-                        if (asSpell.m_CharacterClass != myClass) {
+                        if (asSpell.m_CharacterClass == referenceClass) {
                             mySpellSet.Add(new SpellReference(asSpell.SpellLevel, asSpell.m_Spell));
+                        }
+                    }
+                    // we do not have a special spell list, so just add all such spells to spells known
+                    if (component is AddSpecialSpellList asSpellList && asSpellList.m_CharacterClass == referenceClass) {
+                        foreach (var level2 in asSpellList.SpellList.SpellsByLevel) {
+                            foreach (var spell in level2.m_Spells) {
+                                mySpellSet.Add(new SpellReference(level2.SpellLevel, spell));
+                            }
                         }
                     }
                     //check if component is AddFeature
