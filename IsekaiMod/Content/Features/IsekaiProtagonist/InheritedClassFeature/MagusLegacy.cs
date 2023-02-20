@@ -13,10 +13,12 @@ using static IsekaiMod.Main;
 using static IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature.KineticLegacy;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using HarmonyLib;
+using TabletopTweaks.Core.NewComponents.AbilitySpecific;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class MagusLegacy {
         private static BlueprintProgression prog;
+        private static BlueprintFeature training;
 
         private static BlueprintFeature SpellStrike = BlueprintTools.GetBlueprint<BlueprintFeature>("be50f4e97fff8a24ba92561f1694a945");
         private static BlueprintFeature SpellCombat = BlueprintTools.GetBlueprint<BlueprintFeature>("2464ba53317c7fc4d88f383fac2b45f9");
@@ -50,6 +52,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     c.Modifier = 1.0;
                 });
             });
+            training = IsekaiKMagusTraining;
             ArcanaPoolResource.m_MaxAmount.m_ClassDiv.AppendToArray(IsekaiProtagonistClass.GetReference());
 
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "MagusLegacy", bp => {
@@ -93,6 +96,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static BlueprintProgression Get() {
             if (prog != null) return prog;
             return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "MagusLegacy");
+        }
+
+        public static void PatchForBroadStudy() {
+            if (training == null) {
+                training = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiKMagusTraining");
+            }
+            training.AddComponent<BroadStudyComponent>(c => {
+                c.CharacterClass = IsekaiProtagonistClass.GetReference();
+            });
         }
     }
 }

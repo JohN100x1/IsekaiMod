@@ -28,8 +28,8 @@ namespace IsekaiMod.Utilities {
             return IsModEnabled("KineticistElementsExpanded"); 
         }
 
-        public static bool isTableTopTweakCoreEnabled() { 
-            return IsModEnabled("TabletopTweaks-Core"); 
+        public static bool isTableTopTweakBaseEnabled() { 
+            return IsModEnabled("TabletopTweaks-Base"); 
         }
 
         [HarmonyLib.HarmonyPatch(typeof(BlueprintsCache), "Init")]

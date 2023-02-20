@@ -125,7 +125,7 @@ namespace IsekaiMod.Content {
                 Features.IsekaiProtagonist.OverpoweredAbility.SupremeBeing.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AuraOfRighteousWrath.Add();
                 if (IsekaiContext.AddedContent.Feats.IsEnabled("Overpowered - Mythic Blessing")) Features.IsekaiProtagonist.OverpoweredAbility.BlessingOfTheMythic.Configure();
-                //if (IsekaiContext.AddedContent.Feats.IsEnabled("Overpowered - Mythic Blessing")) Features.IsekaiProtagonist.OverpoweredAbility.IsekaidZippyMagic.Configure();
+                if (IsekaiContext.AddedContent.Feats.IsEnabled("Overpowered - Mythic Blessing")) Features.IsekaiProtagonist.OverpoweredAbility.IsekaidZippyMagic.Configure();
                 
                 Main.LogDebug("Class: OP");
 
@@ -278,7 +278,7 @@ namespace IsekaiMod.Content {
             //done here because it should be done after all spells have been initialized and were added to the canon books
             if (IsekaiContext.AddedContent.Classes.IsEnabled("Merge Isekai Spelllist")) IsekaiProtagonistSpellList.MergeSpellLists();
 
-            if (ModSupport.isTableTopTweakCoreEnabled()) {
+            if (ModSupport.isTableTopTweakBaseEnabled()) {
                 PatchTableTopTweakCore();
             }
             if (ModSupport.IsExpandedContentEnabled()) { 
@@ -320,6 +320,7 @@ namespace IsekaiMod.Content {
             if (sorcerercapstone != null) {
                 SorcererLegacy.Get().LevelEntries = SorcererLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, sorcerercapstone));
             }
+            MagusLegacy.PatchForBroadStudy();
         }
 
     }
