@@ -69,7 +69,6 @@ namespace IsekaiMod.Content.Heritages
                 bp.Stacking = StackingType.Replace;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
                 bp.AddComponent<AddInitiatorAttackWithWeaponTrigger>(c => {
-                    c.WaitForAttackResolve = true;
                     c.OnlyHit = true;
                     c.Action = Helpers.CreateActionList(
                         new ContextActionSavingThrow()
