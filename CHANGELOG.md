@@ -31,6 +31,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fixed `Omega Strike` to apply to touch attacks.
 
+
+## [3.2.2] - 2023-03-10
+### Fixed
+- Fixed non-loading issue due to outdated blueprint core.
+
+## [3.2.1] - 2023-03-09
+### Fixed
+- Fixed infinite loading for game version 2.1.0u
+
 ## [3.2.0] - 2022-12-24
 ### Added
 - Added `Reflect` Special power.
