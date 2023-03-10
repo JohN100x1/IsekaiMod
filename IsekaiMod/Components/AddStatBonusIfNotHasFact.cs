@@ -31,11 +31,11 @@ namespace IsekaiMod.Components {
             }
         }
 
-        protected override void OnTurnOn() {
+        public override void OnTurnOn() {
             Update();
         }
 
-        protected override void OnTurnOff() {
+        public override void OnTurnOff() {
             Cancel();
         }
 

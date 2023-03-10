@@ -7,13 +7,12 @@ namespace IsekaiMod.Components {
 
     [TypeId("d80265e4a2ec40988c60eb2241910c97")]
     public class PrerequisiteIsMainCharacter : Prerequisite {
-        public bool Companion;
 
-        protected override bool CheckInternal(FeatureSelectionState selectionState, UnitDescriptor unit, LevelUpState state) {
-            return unit.Unit.IsMainCharacter != this.Companion;
+        public override bool CheckInternal(FeatureSelectionState selectionState, UnitDescriptor unit, LevelUpState state) {
+            return unit.Unit.IsMainCharacter;
         }
 
-        protected override string GetUITextInternal(UnitDescriptor unit) {
+        public override string GetUITextInternal(UnitDescriptor unit) {
             return "Is Main Character";
         }
     }
