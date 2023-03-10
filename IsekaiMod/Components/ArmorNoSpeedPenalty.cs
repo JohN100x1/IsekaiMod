@@ -9,7 +9,7 @@ namespace IsekaiMod.Components {
     [AllowedOn(typeof(BlueprintFeature), false)]
     public class ArmorNoSpeedPenalty : UnitFactComponentDelegate {
 
-        public override void OnTurnOn() {
+        protected override void OnTurnOn() {
             base.OnTurnOn();
             Owner.State.Features.ImmunityToMediumArmorSpeedPenalty.Retain();
             Owner.State.Features.ImmuneToArmorSpeedPenalty.Retain();
@@ -18,7 +18,7 @@ namespace IsekaiMod.Components {
             }
         }
 
-        public override void OnTurnOff() {
+        protected override void OnTurnOff() {
             base.OnTurnOff();
             Owner.State.Features.ImmunityToMediumArmorSpeedPenalty.Release();
             Owner.State.Features.ImmuneToArmorSpeedPenalty.Release();

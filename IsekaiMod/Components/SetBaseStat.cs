@@ -22,16 +22,16 @@ namespace IsekaiMod.Components {
             public int BaseStatValue;
         }
 
-        public override void OnActivate() {
+        protected override void OnActivate() {
             Data.BaseStatValue = Owner.Stats.GetStat(Stat).BaseValue;
             OnTurnOn();
         }
 
-        public override void OnDeactivate() {
+        protected override void OnDeactivate() {
             OnTurnOff();
         }
 
-        public override void OnTurnOn() {
+        protected override void OnTurnOn() {
             ModifiableValue baseStat = Owner.Stats.GetStat(Stat);
             if (baseStat == null) {
                 return;
@@ -39,7 +39,7 @@ namespace IsekaiMod.Components {
             baseStat.BaseValue = Value;
         }
 
-        public override void OnTurnOff() {
+        protected override void OnTurnOff() {
             Owner.Stats.GetStat(Stat).BaseValue = Data.BaseStatValue;
         }
     }
