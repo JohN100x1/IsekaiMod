@@ -43,7 +43,7 @@ If you use ModFinder rather than Unity Mod Manager just replace the name mentall
 
 ### Downward Compatibility Warning for version 4.0.0
 The rogue abilities the protagonist, villain, and edge lord got and the paladin abilities the hero got were moved into progression features with plenty of additional options added (see below).
-This means a rather heavy change in the classes progression trees for all four of those options, if you are updating with an existing savegame using something like barleyFlours Respec Mod (https://github.com/BarleyFlour/RespecMod) is highly advisable.
+This means a rather heavy change in the classes progression trees for all four of those options, if you are updating with an existing savegame using something like [barleyFlours Respec Mod](https://github.com/BarleyFlour/RespecMod) is highly advisable.
 Otherwise you will miss out on things when leveling up.
 Exception to this is the God Emperor as all options that were changed were not part of its original definition so you are only missing out on some additional options for overwhelming abilities you could have picked at level one.
 
