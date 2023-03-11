@@ -1,11 +1,8 @@
 ﻿using HarmonyLib;
-using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.Dungeon.Blueprints;
-using Kingmaker.UI.MVVM._PCView.Rest;
 using Kingmaker.UnitLogic.FactLogic;
 using System;
 using System.Collections.Generic;

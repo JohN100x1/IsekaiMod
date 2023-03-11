@@ -1,19 +1,14 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.UnitLogic.FactLogic;
+using TabletopTweaks.Core.NewComponents.AbilitySpecific;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
-using static IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature.KineticLegacy;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using HarmonyLib;
-using TabletopTweaks.Core.NewComponents.AbilitySpecific;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class MagusLegacy {
