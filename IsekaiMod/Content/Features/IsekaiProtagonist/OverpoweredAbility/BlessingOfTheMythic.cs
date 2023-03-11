@@ -138,9 +138,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.IsClassFeature = true;
                 bp.IgnorePrerequisites = false;
                 bp.m_AllFeatures = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("1f646b820a37d3d4a8ab116a24ee0022").m_AllFeatures
-                .AddToArray<BlueprintFeatureReference>(BlueprintTools.GetBlueprint<BlueprintFeature>("9703d79082dc75e4aaaa4387b9c95229").ToReference<BlueprintFeatureReference>())
-                .AddToArray<BlueprintFeatureReference>(BlueprintTools.GetBlueprint<BlueprintFeature>("eea98a8c70c68ff489967c6f9cf1876c").ToReference<BlueprintFeatureReference>())
-                .AddToArray<BlueprintFeatureReference>(BlueprintTools.GetBlueprint<BlueprintFeature>("eea98a8c70c68ff489967c6f9cf1876c").ToReference<BlueprintFeatureReference>())
+                .AddToArray(BlueprintTools.GetBlueprint<BlueprintFeature>("9703d79082dc75e4aaaa4387b9c95229").ToReference<BlueprintFeatureReference>())
+                .AddToArray(BlueprintTools.GetBlueprint<BlueprintFeature>("eea98a8c70c68ff489967c6f9cf1876c").ToReference<BlueprintFeatureReference>())
+                .AddToArray(BlueprintTools.GetBlueprint<BlueprintFeature>("eea98a8c70c68ff489967c6f9cf1876c").ToReference<BlueprintFeatureReference>())
                 ;
             });
             var AngelSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BlessingOfTheAngel", bp => {
@@ -150,11 +150,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.IsClassFeature = true;
                 bp.IgnorePrerequisites = false;
                 bp.m_AllFeatures = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("bdbc41e2bad92a640bd58acf74e2af8b").m_AllFeatures
-                .AddToArray<BlueprintFeatureReference>(BlueprintTools.GetBlueprint<BlueprintFeature>("bdddaa78f8795024081f2d1eb8b4bd78").ToReference<BlueprintFeatureReference>())
-                .AddToArray<BlueprintFeatureReference>(BlueprintTools.GetBlueprint<BlueprintFeature>("dd9648afaaba516488b6aeb8ff86b70a").ToReference<BlueprintFeatureReference>())
-                .AddToArray<BlueprintFeatureReference>(BlueprintTools.GetBlueprint<BlueprintFeature>("e4d0a00fb70cd3f4384db0687ef88964").ToReference<BlueprintFeatureReference>())
-                .AddToArray<BlueprintFeatureReference>(BlueprintTools.GetBlueprint<BlueprintFeature>("7a6080461eaa278428fe3f12df75c8d0").ToReference<BlueprintFeatureReference>())
-                .AddRangeToArray<BlueprintFeatureReference>(BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("e0ce40968bf0007408b11089a10f36cf").m_AllFeatures)
+                .AddToArray(BlueprintTools.GetBlueprint<BlueprintFeature>("bdddaa78f8795024081f2d1eb8b4bd78").ToReference<BlueprintFeatureReference>())
+                .AddToArray(BlueprintTools.GetBlueprint<BlueprintFeature>("dd9648afaaba516488b6aeb8ff86b70a").ToReference<BlueprintFeatureReference>())
+                .AddToArray(BlueprintTools.GetBlueprint<BlueprintFeature>("e4d0a00fb70cd3f4384db0687ef88964").ToReference<BlueprintFeatureReference>())
+                .AddToArray(BlueprintTools.GetBlueprint<BlueprintFeature>("7a6080461eaa278428fe3f12df75c8d0").ToReference<BlueprintFeatureReference>())
+                .AddRangeToArray(BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("e0ce40968bf0007408b11089a10f36cf").m_AllFeatures)
                 ;
             });
 

@@ -1,16 +1,15 @@
-﻿using IsekaiMod.Utilities;
-using IsekaiMod.Components;
+﻿using IsekaiMod.Components;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
-using TabletopTweaks.Core.Utilities;
-using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
+using TabletopTweaks.Core.Utilities;
 using UnityEngine;
 using static IsekaiMod.Main;
 
@@ -37,9 +36,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
         private static readonly BlueprintCharacterClass AnimalClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("4cd1757a0eea7694ba5c933729a53920");
 
         public static void Add() {
-            // TODO: rename Hero's Presence to Heroic Aspect?
-            // TODO: add scaling natural armor, strength and dexterity (like animal companion) to deathsnatcher?
-            // TODO: add vampiric drain spell for isekai vampire heritage?
             // TODO: Load localisation instead of hardcoded strings
 
             // Class Signature Features

@@ -1,13 +1,12 @@
 ﻿using HarmonyLib;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Deities;
-using IsekaiMod.Content.Features.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using IsekaiMod.Utilities;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.JsonSystem;
 using TabletopTweaks.Core.Utilities;
@@ -44,11 +43,11 @@ namespace IsekaiMod.Content {
                 EdgeLordLegacySelection.Configure();
                 HeroLegacySelection.Configure();
                 // Isekai Protagonist Class
-                Classes.IsekaiProtagonist.IsekaiProtagonistSpellList.Add();
-                Classes.IsekaiProtagonist.IsekaiProtagonistSpellsPerDay.Add();
-                Classes.IsekaiProtagonist.IsekaiProtagonistSpellsKnown.Add();
-                Classes.IsekaiProtagonist.IsekaiProtagonistSpellbook.Add();
-                Classes.IsekaiProtagonist.IsekaiProtagonistClass.Add();
+                IsekaiProtagonistSpellList.Add();
+                IsekaiProtagonistSpellsPerDay.Add();
+                IsekaiProtagonistSpellsKnown.Add();
+                IsekaiProtagonistSpellbook.Add();
+                IsekaiProtagonistClass.Add();
                 Main.LogDebug("Class: Configured");
 
                 // Isekai Protagonist Features
@@ -130,17 +129,17 @@ namespace IsekaiMod.Content {
                 Main.LogDebug("Class: OP");
 
                 // God Emperor Archetype
-                Features.IsekaiProtagonist.Archetypes.GodEmperor.GodEmperorProficiencies.Add();
-                Features.IsekaiProtagonist.Archetypes.GodEmperor.NascentApotheosis.Add();
-                Features.IsekaiProtagonist.Archetypes.GodEmperor.DivineArray.Add();
-                Features.IsekaiProtagonist.Archetypes.GodEmperor.GodEmperorEnergySelection.Add();
-                Features.IsekaiProtagonist.Archetypes.GodEmperor.AuraOfGoldenProtection.Add();
-                Features.IsekaiProtagonist.Archetypes.GodEmperor.DarkAuraFeature.Add();
-                Features.IsekaiProtagonist.Archetypes.GodEmperor.AuraOfMajesty.Add();
-                Features.IsekaiProtagonist.Archetypes.GodEmperor.GodlyVessel.Add();
-                Features.IsekaiProtagonist.Archetypes.GodEmperor.SiphoningAuraFeature.Add();
-                Features.IsekaiProtagonist.Archetypes.GodEmperor.CelestialRealm.Add();
-                Features.IsekaiProtagonist.Archetypes.GodEmperor.Godhood.Add();
+                GodEmperorProficiencies.Add();
+                NascentApotheosis.Add();
+                DivineArray.Add();
+                GodEmperorEnergySelection.Add();
+                AuraOfGoldenProtection.Add();
+                DarkAuraFeature.Add();
+                AuraOfMajesty.Add();
+                GodlyVessel.Add();
+                SiphoningAuraFeature.Add();
+                CelestialRealm.Add();
+                Godhood.Add();
                 Classes.IsekaiProtagonist.Archetypes.GodEmperor.Add();
                 Main.LogDebug("Class: Emperor");
 
@@ -162,20 +161,20 @@ namespace IsekaiMod.Content {
                 Main.LogDebug("Class: Hero");
 
                 // Villain Archetype
-                Features.IsekaiProtagonist.Archetypes.Villain.VillainProficiencies.Add();
-                Features.IsekaiProtagonist.Archetypes.Villain.CorruptAuraFeature.Add();
-                Features.IsekaiProtagonist.Archetypes.Villain.VillainQuickFooted.Add();
-                Features.IsekaiProtagonist.Archetypes.Villain.SecondFormFeature.Add();
-                Classes.IsekaiProtagonist.VillainSpellbook.Add();
+                VillainProficiencies.Add();
+                CorruptAuraFeature.Add();
+                VillainQuickFooted.Add();
+                SecondFormFeature.Add();
+                VillainSpellbook.Add();
                 Classes.IsekaiProtagonist.Archetypes.Villain.Add();
                 Main.LogDebug("Class: Villain");
 
                 // Add Progression & Prebuild after Class and class-dependent features are added
-                Classes.IsekaiProtagonist.PrebuildIsekaiProtagonistFeatureList.Add();
-                Classes.IsekaiProtagonist.IsekaiProtagonistProgression.Add();
+                PrebuildIsekaiProtagonistFeatureList.Add();
+                IsekaiProtagonistProgression.Add();
 
                 // Patch Prestige Class Spellbooks
-                Classes.IsekaiProtagonist.PrestigeClassReplaceSpellbook.Patch();
+                PrestigeClassReplaceSpellbook.Patch();
                 Main.LogDebug("Class: Prestige");
 
                 // Deathsnatcher animal Companion (Depends on IsekaiProtagonistClass)
@@ -231,13 +230,13 @@ namespace IsekaiMod.Content {
             }
             public static void AddIsekaiDeities() {
                 // Add the Selection First
-                Deities.IsekaiDeitySelection.Add();
+                IsekaiDeitySelection.Add();
 
                 // Add Deities to the Isekai Deity Selection
-                Deities.TruckKun.Add();
-                Deities.Aqua.Add();
-                Deities.Ristarte.Add();
-                Deities.AdministratorD.Add();
+                TruckKun.Add();
+                Aqua.Add();
+                Ristarte.Add();
+                AdministratorD.Add();
             }
             public static void AddExceptionalFeats() {
                 // Add Exceptional Feats
@@ -297,28 +296,28 @@ namespace IsekaiMod.Content {
             var sorcerercapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("40f13b4925c24e50bc8f3d5fe4d42a05");
             
             if (barbariancapstone != null) {
-                BarbarianLegacy.Get().LevelEntries = BarbarianLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, barbariancapstone));
+                BarbarianLegacy.Get().LevelEntries = BarbarianLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, barbariancapstone));
             }
             if (bardcapstone!= null) {
-                BardLegacy.Get().LevelEntries = BardLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20,bardcapstone));
+                BardLegacy.Get().LevelEntries = BardLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20,bardcapstone));
             }
             if (paladincapstone != null) {
-                HeroicLegacy.Get().LevelEntries = HeroicLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, paladincapstone));
+                HeroicLegacy.Get().LevelEntries = HeroicLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, paladincapstone));
             }
             if (kineticistcapstone != null) {
-                KineticLegacy.Get().LevelEntries = KineticLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, kineticistcapstone));
+                KineticLegacy.Get().LevelEntries = KineticLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, kineticistcapstone));
             }
             if (oraclecapstone != null) {
-                OracleLegacy.Get().LevelEntries = OracleLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, oraclecapstone));
+                OracleLegacy.Get().LevelEntries = OracleLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, oraclecapstone));
             }
             if (roguecapstone != null) {
-                RogueLegacy.Get().LevelEntries = RogueLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, roguecapstone));
+                RogueLegacy.Get().LevelEntries = RogueLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, roguecapstone));
             }
             if (shamancapstone != null) {
-                ShamanLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, shamancapstone));
+                ShamanLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, shamancapstone));
             }
             if (sorcerercapstone != null) {
-                SorcererLegacy.Get().LevelEntries = SorcererLegacy.Get().LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(20, sorcerercapstone));
+                SorcererLegacy.Get().LevelEntries = SorcererLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, sorcerercapstone));
             }
             MagusLegacy.PatchForBroadStudy();
         }
