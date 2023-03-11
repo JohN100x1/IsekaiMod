@@ -5,7 +5,7 @@ This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Ise
 - Visual Studio 2019 (You can use the latest version if you know what you're doing)
 ### Setup
 - Add `WrathPath` as an environment variable with the value `C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure` or wherever your game directory is.
-- Open Visual Studio and [publicize your assemblies](https://github.com/WittleWolfie/OwlcatModdingWiki/wiki/Publicize-Assemblies) (`SolutionDir` can be replaced with `WrathPath`).
+- Open Visual Studio and [publicize your assemblies](https://github.com/WittleWolfie/OwlcatModdingWiki/wiki/Publicize-Assemblies).
 ### Testing
 - Create a folder called `IsekaiMod` in `C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods`.
 - After building your solution in Visual Studio, go to your project directory -> `bin` -> `Release` or `Debug` -> `IsekaiMod` -> `net472`.
