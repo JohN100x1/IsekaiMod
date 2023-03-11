@@ -35,7 +35,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 ## Mod Information
 ### Requirements
 - [Unity Mod Manager](https://www.nexusmods.com/site/mods/21).
-- TTCCore because the code has been changed over to use it as much as possible rather than just use classes repurposed from it, so credit and dependency where it is due
+- [TabletopTweaks-Core](https://github.com/Vek17/TabletopTweaks-Core/releases).
 ### Installation
 - Open Unity Mod Manager and go to the 'Mods' tab.
 - Drag and Drop the IsekaiMod.zip file into Unity Mod Manager.
@@ -250,6 +250,7 @@ The list of spell lists we merge for this is fairly comprehensive, Cleric, Wizar
 As such almost no spell should need work on our part to add support for it, if you find one please let us know.
 
 ## Credits
+Thanks to kjk001 for contributing alot to this repository, improving the code to use TabletopTweaks-Core as well as adding the `Legacy Class Feature` content.
 Alot of the code was repurposed from the following repositories:
 - https://github.com/Vek17/TabletopTweaks-Base
 - https://github.com/ka-dyn/ExpandedContent
