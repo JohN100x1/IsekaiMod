@@ -29,7 +29,7 @@ namespace IsekaiMod.Utilities {
 
         public static void RegisterClass(BlueprintCharacterClass classToRegister) {
             var existingClasses = ClassTools.Classes.AllClasses;
-            if (containsClass(existingClasses, classToRegister)) {
+            if (ContainsClass(existingClasses, classToRegister)) {
                 IsekaiContext.Logger.LogWarning("class already registered= " + classToRegister.name + " gui id=" + classToRegister.AssetGuid.m_Guid.ToString("N"));
                 return;
             }
@@ -39,7 +39,7 @@ namespace IsekaiMod.Utilities {
         public static void RegisterSpell(BlueprintSpellList list, BlueprintAbility spell, int level) {
             // Core method check if spell already exists uses a simple contains check that fails if multiple instances of the spell were created (for example if it exists in multiple spellbooks)
             // the Core method does a few other nice things though, like correctly adding the spell to specialist lists so should be called after ones own security check
-            if (listContainsSpell(list, spell)) {
+            if (ListContainsSpell(list, spell)) {
                 //Comment back in if you are trying to fix bugs in the spelllist but otherwise this just blows up the log for no good purpose
                 //IsekaiContext.Logger.LogWarning("spell already registered= " + spell.name + " gui id=" + spell.AssetGuid.m_Guid.ToString("N"));
                 return;
@@ -48,7 +48,7 @@ namespace IsekaiMod.Utilities {
         }
 
         public static void RegisterForPrestigeSpellbook(BlueprintFeatureSelectMythicSpellbook mythicSpellbook, BlueprintSpellbook spellBook) {
-            if (containsSpellbook(mythicSpellbook.AllowedSpellbooks, spellBook)) {
+            if (ContainsSpellbook(mythicSpellbook.AllowedSpellbooks, spellBook)) {
                 IsekaiContext.Logger.LogWarning("spellbook already registered= " + spellBook.name + " gui id=" + spellBook.AssetGuid.m_Guid.ToString("N") + " for mythic= " + mythicSpellbook.Name);
                 return;
             }
@@ -96,7 +96,7 @@ namespace IsekaiMod.Utilities {
             return result;
         }
 
-        public static BlueprintBuff CreateBuff(String name, Action<BlueprintBuff> init = null) {
+        public static BlueprintBuff CreateBuff(string name, Action<BlueprintBuff> init = null) {
             var result = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, name, bp => {
                 bp.FxOnStart = new PrefabLink();
                 bp.FxOnRemove = new PrefabLink();
@@ -115,7 +115,7 @@ namespace IsekaiMod.Utilities {
             return result;
         }
 
-        private static Boolean listContainsSpell(BlueprintSpellList list, BlueprintAbility spell) {
+        private static bool ListContainsSpell(BlueprintSpellList list, BlueprintAbility spell) {
             foreach (var level in list.SpellsByLevel) {
                 foreach (var comparespell in level.Spells) {
                     if (spell.AssetGuid.m_Guid.ToString("N").Equals(comparespell.AssetGuid.m_Guid.ToString("N"))) {
@@ -126,14 +126,14 @@ namespace IsekaiMod.Utilities {
             return false;
         }
 
-        private static Boolean containsClass(BlueprintCharacterClass[] array, BlueprintCharacterClass classToCheck) {
+        private static bool ContainsClass(BlueprintCharacterClass[] array, BlueprintCharacterClass classToCheck) {
             foreach (var arrayClass in array) {
                 if (arrayClass.AssetGuid.m_Guid.ToString("N").Equals(classToCheck.AssetGuid.m_Guid.ToString("N"))) { return true; }
             }
             return false;
         }
 
-        private static Boolean containsSpellbook(BlueprintSpellbookReference[] array, BlueprintSpellbook classToCheck) {
+        private static bool ContainsSpellbook(BlueprintSpellbookReference[] array, BlueprintSpellbook classToCheck) {
             foreach (var arrayClass in array) {
                 if (arrayClass != null && arrayClass.Guid != null) {
                     if (arrayClass.Guid.Equals(classToCheck.AssetGuid.m_Guid.ToString("N"))) { return true; }
