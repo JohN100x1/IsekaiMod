@@ -5,11 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## [4.0.0] - 2023-02-19
-### Changed
-- Major Class Progression rework, thief feats removed from all archetypes that had them, instead players can now select a base class from which their Isekai Hero Class descends
-- internal logic switch to directly use TTCCore where possible rather than code "inspired" from them (this adds a TTCCore dependency)
-
+## [4.0.0] - 2023-03-12
 ### Added
 - merge spellbook logic to merge the spellbooks of the major classes into the isekai book rather than add each spell manually, this automatically adds support for any spell added by a mod loaded before this mod is loaded (optional toggle)
 - patch for some other mod that turned deity selection into a recursive selection call onto itself which made it hard to select deities
@@ -27,7 +23,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	10. Shaman Legacy 		- Spirit Beacons
 	11. Sorcerer Legacy 	- Chimera, grants
 	12. Tactician Legacy 	- Isekai Tactician
-	
+### Changed
+- Major Class Progression rework, thief feats removed from all archetypes that had them, instead players can now select a base class from which their Isekai Hero Class descends
+- internal logic switch to directly use TTCCore where possible rather than code "inspired" from them (this adds a TTCCore dependency)
 ### Fixed
 - Fixed `Omega Strike` to apply to touch attacks.
 
