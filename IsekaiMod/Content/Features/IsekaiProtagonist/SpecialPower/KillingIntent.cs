@@ -5,6 +5,7 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
+using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
@@ -12,6 +13,7 @@ using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
@@ -48,7 +50,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             });
             var KillingIntentAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "KillingIntentAbility", bp => {
                 bp.SetName(IsekaiContext, "Killing Intent");
-                bp.SetDescription(IsekaiContext, "Enemies within 40 feet of you who fails a DC 50 Will saving throw become shaken, frightened, and cowering for 1 round.");
+                bp.SetDescription(IsekaiContext, "Enemies within 40 feet of you who fails a DC 50 Will saving throw become shaken, frightened, and cowering for 1d4 rounds.");
                 bp.m_Icon = Icon_ConsumeFear;
                 bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = new LocalizedString();
@@ -87,15 +89,33 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                             c.Failed = Helpers.CreateActionList(
                                 new ContextActionApplyBuff() {
                                     m_Buff = Shaken.ToReference<BlueprintBuffReference>(),
-                                    DurationValue = Values.Duration.OneRound
+                                    DurationValue = new() {
+                                        Rate = DurationRate.Rounds,
+                                        DiceType = DiceType.D4,
+                                        DiceCountValue = 1,
+                                        BonusValue = 0,
+                                        m_IsExtendable = true,
+                                    }
                                 },
                                 new ContextActionApplyBuff() {
                                     m_Buff = Frightened.ToReference<BlueprintBuffReference>(),
-                                    DurationValue = Values.Duration.OneRound
+                                    DurationValue = new() {
+                                        Rate = DurationRate.Rounds,
+                                        DiceType = DiceType.D4,
+                                        DiceCountValue = 1,
+                                        BonusValue = 0,
+                                        m_IsExtendable = true,
+                                    }
                                 },
                                 new ContextActionApplyBuff() {
                                     m_Buff = Cowering.ToReference<BlueprintBuffReference>(),
-                                    DurationValue = Values.Duration.OneRound
+                                    DurationValue = new() {
+                                        Rate = DurationRate.Rounds,
+                                        DiceType = DiceType.D4,
+                                        DiceCountValue = 1,
+                                        BonusValue = 0,
+                                        m_IsExtendable = true,
+                                    }
                                 });
                         });
                     });
@@ -106,7 +126,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             });
             var KillingIntentFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "KillingIntentFeature", bp => {
                 bp.SetName(IsekaiContext, "Killing Intent");
-                bp.SetDescription(IsekaiContext, "Once per Combat, as a free action, enemies within 40 feet of you who fails a DC 50 Will saving throw become shaken, frightened, and cowering for 1 round.");
+                bp.SetDescription(IsekaiContext, "Once per Combat, as a free action, enemies within 40 feet of you who fails a DC 50 Will saving throw become shaken, frightened, and cowering for 1d4 rounds.");
                 bp.m_Icon = Icon_ConsumeFear;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
