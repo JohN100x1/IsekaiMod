@@ -4,6 +4,7 @@ using Kingmaker.Blueprints.JsonSystem;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UnitLogic;
 using Newtonsoft.Json;
+using System;
 
 namespace IsekaiMod.Components {
 
@@ -36,7 +37,7 @@ namespace IsekaiMod.Components {
             if (baseStat == null) {
                 return;
             }
-            baseStat.BaseValue = Value;
+            baseStat.BaseValue = Math.Max(baseStat.BaseValue, Value);
         }
 
         public override void OnTurnOff() {
