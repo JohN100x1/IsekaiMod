@@ -53,7 +53,6 @@ Exception to this is the God Emperor as all options that were changed were not p
 	- `Isekai Protagonist`
 		- Spontaneous caster that uses Charisma.
 		- Has a really powerful spellbook that has spells from all other classes.
-		- Has sneak attack.
 		- Has extra feats like the fighter but not limited to combat feats.
 		- Starts of with the `Plot Armor` feature which make them hard to kill.
 		- Has Overpowered Abilities.
@@ -250,7 +249,7 @@ The list of spell lists we merge for this is fairly comprehensive, Cleric, Wizar
 As such almost no spell should need work on our part to add support for it, if you find one please let us know.
 
 ## Credits
-Thanks to kjk001 for contributing alot to this repository, improving the code to use TabletopTweaks-Core as well as adding the `Legacy Class Feature` content.
+Thanks to kjk001 for contributing alot to this repository, improving the code to use TabletopTweaks-Core as well as adding lots of content.
 Alot of the code was repurposed from the following repositories:
 - https://github.com/Vek17/TabletopTweaks-Base
 - https://github.com/ka-dyn/ExpandedContent
