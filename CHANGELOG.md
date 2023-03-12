@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added `Areshkagal` to `Summon Calamity` ability.
+### Changed
+- Renamed `Legacy Class Feature` to `Legacy Class`.
+- Renamed `Dual Class - Legacy Class` Feature to `Dual Legacy Class`.
 ### Fixed
 - Fixed Deathsnatcher default name.
 - Fixed `Supreme Being` to allow base stat increases.
