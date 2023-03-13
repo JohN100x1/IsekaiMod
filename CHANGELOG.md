@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added `Areshkagal` to `Summon Calamity` ability.
+- Added `Legacy` as a listed Isekai Protagonist signature class feature.
+- Added icons for `Legacy` and `Dual Legacy` selections.
 ### Changed
 - Buffed `Killing Intent` Special power fear duration from 1 round to 1d4 rounds.
 - Renamed `Legacy Class Feature` to `Legacy`.
@@ -16,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed `Supreme Being` to allow base stat increases.
 - Fixed `Instakill` Spell penetration modifier.
 ### Removed
-- Removed `Sneak Attack` as a listed Isekai Protagonist signature class feature
+- Removed `Sneak Attack` as a listed Isekai Protagonist signature class feature.
 
 ## [4.0.0] - 2023-03-12
 ### Added
