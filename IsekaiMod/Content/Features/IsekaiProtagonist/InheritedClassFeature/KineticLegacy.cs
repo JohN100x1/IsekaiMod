@@ -3,6 +3,7 @@ using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.FactLogic;
@@ -104,6 +105,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             StaticReferences.PatchClassIntoFeatureOfReferenceClass(KineticFocusSelection, myClass, refClass, 0);
             StaticReferences.PatchClassIntoFeatureOfReferenceClass(KineticSecElementSelection, myClass, refClass, 0);
             StaticReferences.PatchClassIntoFeatureOfReferenceClass(KineticThirdElementSelection, myClass, refClass, 0);
+            prog.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = KineticKnightLegacy.Get().ToReference<BlueprintFeatureReference>(); });
         }
         public static BlueprintProgression Get() {
             if (prog != null) return prog;
