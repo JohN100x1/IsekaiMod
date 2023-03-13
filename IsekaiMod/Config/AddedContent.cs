@@ -5,12 +5,12 @@ namespace IsekaiMod.Config {
     public class AddedContent : IUpdatableSettings {
         public bool NewSettingsOffByDefault = false;
         public bool ExcludeCompanionsFromIsekaiClass = false;
-        public SettingGroup Feats = new SettingGroup();
-        public SettingGroup Heritages = new SettingGroup();
-        public SettingGroup Backgrounds = new SettingGroup();
-        public SettingGroup Classes = new SettingGroup();
-        public SettingGroup Deities = new SettingGroup();
-        public SettingGroup Archetypes = new SettingGroup();
+        public SettingGroup Feats = new();
+        public SettingGroup Heritages = new();
+        public SettingGroup Backgrounds = new();
+        public SettingGroup Classes = new();
+        public SettingGroup Deities = new();
+        public SettingGroup Archetypes = new();
 
         public void Init() {
         }
