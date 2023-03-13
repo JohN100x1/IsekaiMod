@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed `Supreme Being` to allow base stat increases.
 - Fixed `Instakill` Spell penetration modifier.
 ### Removed
-- Removed `Sneak Attack` as a listed Isekai Protagonist signature ability
+- Removed `Sneak Attack` as a listed Isekai Protagonist signature class feature
 
 ## [4.0.0] - 2023-03-12
 ### Added
