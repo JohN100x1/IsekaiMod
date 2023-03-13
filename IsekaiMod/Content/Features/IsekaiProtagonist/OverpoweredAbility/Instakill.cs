@@ -54,7 +54,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                     c.Anchor = AbilitySpawnFxAnchor.SelectedTarget;
                 });
                 bp.AddComponent<ContextSetAbilityParams>(c => {
+                    c.Add10ToDC = false;
                     c.DC = 99;
+                    c.CasterLevel = -1;
+                    c.Concentration = -1;
+                    c.SpellLevel = 10;
                 });
                 bp.m_Icon = Icon_TwoHandedFighterDevastatingBlow;
                 bp.Type = AbilityType.SpellLike;
