@@ -141,6 +141,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                     SummonDemonLordDeskari.ToReference<BlueprintAbilityReference>(),
                     SummonDemonNocticula.ToReference<BlueprintAbilityReference>(),
                     SummonDemonMephistopheles.ToReference<BlueprintAbilityReference>(),
+                    SummonAreshkagal.ToReference<BlueprintAbilityReference>(),
                 };
             });
 
