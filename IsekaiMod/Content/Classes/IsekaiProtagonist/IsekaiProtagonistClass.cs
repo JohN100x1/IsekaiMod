@@ -63,11 +63,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 bp.SetDescription(IsekaiContext, "Isekai Protagonists gain twice as many {g|Encyclopedia:Feat}feats{/g} as the other classes.");
                 bp.m_DescriptionShort = bp.m_Description; bp.m_Icon = Icon_BasicFeatSelection;
             });
-            var IsekaiProtagonistSneakFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistSneakFeat", bp => {
-                bp.SetName(IsekaiContext, "Sneak Attack");
-                bp.SetDescription(IsekaiContext, "Most characters gain advantages when they {g|Encyclopedia:Flanking}flank{/g} an enemy, {g|Encyclopedia:Attack}attack{/g} an enemy who can't see them or enjoy a similar fortunate position. Isekai Protagonists deal a tremendous amount of additional {g|Encyclopedia:Damage}damage{/g} in such a situation.");
-                bp.m_DescriptionShort = bp.m_Description; bp.m_Icon = Icon_SneakAttack;
-            });
 
             // Main Class
             isekaiProtagonistClass = Helpers.CreateBlueprint<BlueprintCharacterClass>(IsekaiContext, "IsekaiProtagonistClass", bp => {
@@ -110,12 +105,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 bp.SecondaryColor = 9;
                 bp.MaleEquipmentEntities = SlayerClass.MaleEquipmentEntities;
                 bp.FemaleEquipmentEntities = SlayerClass.FemaleEquipmentEntities;
-                bp.m_SignatureAbilities = new BlueprintFeatureReference[5] {
+                bp.m_SignatureAbilities = new BlueprintFeatureReference[4] {
                     IsekaiProtagonistPlotArmorFeat.ToReference<BlueprintFeatureReference>(),
                     IsekaiProtagonistSpecialPowerFeat.ToReference<BlueprintFeatureReference>(),
                     IsekaiProtagonistOverpoweredAbilityFeat.ToReference<BlueprintFeatureReference>(),
                     IsekaiProtagonistBonusFeat.ToReference<BlueprintFeatureReference>(),
-                    IsekaiProtagonistSneakFeat.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.AddComponent<PrerequisiteNoClassLevel>(c => {
                     c.m_CharacterClass = AnimalClass.ToReference<BlueprintCharacterClassReference>();
