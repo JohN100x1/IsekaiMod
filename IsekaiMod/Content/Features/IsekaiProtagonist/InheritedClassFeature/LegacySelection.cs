@@ -1,6 +1,7 @@
 ﻿using IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
@@ -39,6 +40,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.m_AllFeatures = new BlueprintFeatureReference[0];
                 bp.m_Features = new BlueprintFeatureReference[0];
             });
+            AbilitySelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = AbilitySelection.ToReference<BlueprintFeatureReference>(); });
         }
         public static BlueprintFeatureSelection GetClassFeature() {
             if (ClassSelection != null) {
