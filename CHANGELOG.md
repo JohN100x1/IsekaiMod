@@ -9,8 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Areshkagal` to `Summon Calamity` ability.
 ### Changed
 - Buffed `Killing Intent` Special power fear duration from 1 round to 1d4 rounds.
-- Renamed `Legacy Class Feature` to `Legacy Class`.
-- Renamed `Dual Class - Legacy Class` Feature to `Dual Legacy Class`.
+- Renamed `Legacy Class Feature` to `Legacy`.
+- Renamed `Dual Class - Legacy Class` Feature to `Dual Legacy`.
 ### Fixed
 - Fixed Deathsnatcher default name.
 - Fixed `Supreme Being` to allow base stat increases.

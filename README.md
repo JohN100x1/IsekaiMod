@@ -140,7 +140,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Mythic Demon Spells`: as above but for Demon
 		- `Mythic Lich Spells`: as above but for Lich
 		- `Mythic Trickster Spells`: as above but for Trickster
-	- `Legacy Class Feature`: if the gods had not interfered and made you into an overpowered spellcasting hero you would have been:
+	- `Legacy`: if the gods had not interfered and made you into an overpowered spellcasting hero you would have been:
 		- `Barbarian Legacy - Ball of Rage`
 		- `Bard Legacy - Musical Prodige`
 		- `Dread Knight Legacy - Dread Lord`
