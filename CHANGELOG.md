@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed Deathsnatcher default name.
 - Fixed `Supreme Being` to allow base stat increases.
 - Fixed `Instakill` Spell penetration modifier.
+- Fixed `Dread Knight Legacy - Dread Lord` not appearing in selection.
 ### Removed
 - Removed `Sneak Attack` as a listed Isekai Protagonist signature class feature.
 
