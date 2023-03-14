@@ -170,11 +170,12 @@ Exception to this is the God Emperor as all options that were changed were not p
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.
-	- `Isekai Vampire` (Dhampir Heritage): A powerful heritage for Dhampir.
+	- `Isekai Vampire` (Dhampir Heritage): A powerful heritage for Dhampir that has fast healing and many immunities.
 	- `Isekai Dark Elf` (Elf Heritage): A powerful heritage for Elf that gives you the Drow Poison ability.
 	- `Isekai High Elf` (Elf Heritage): A powerful heritage for Elf that increases the number of spells you can cast per day.
 	- `Isekai Wood Elf` (Elf Heritage): A powerful heritage for Elf that have extra speed.
 	- `Isekai Spriggan` (Gnome Heritage): A powerful heritage for Gnome that gives you a size alteration ability.
+	- `Isekai Furry` (Kitsune Heritage): A powerful heritage for Kitsune that has fast healing and extra speed.
 - New Deities
 	- `Truck-kun`: A god of transportation.
 	- `Aqua`: A goddess of water.

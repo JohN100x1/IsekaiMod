@@ -210,6 +210,7 @@ namespace IsekaiMod.Content {
                 Heritages.IsekaiDarkElfHeritage.Add();
                 Heritages.IsekaiHighElfHeritage.Add();
                 Heritages.IsekaiWoodElfHeritage.Add();
+                Heritages.IsekaiFurryHeritage.Add();
 
                 // Patch Heritages
                 Heritages.ElfHeritagePatcher.Patch();
