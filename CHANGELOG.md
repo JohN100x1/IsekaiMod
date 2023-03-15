@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added `Isekai Furry` heritage (kitsune heritage).
 - Added `Areshkagal` to `Summon Calamity` ability.
+- Added `None` option for Isekai Protagonist pet selection.
 - Added `Legacy` as a listed Isekai Protagonist signature class feature.
 - Added icons for `Legacy` and `Dual Legacy` selections.
 ### Changed
