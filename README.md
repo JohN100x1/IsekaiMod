@@ -108,7 +108,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Killing Intent`: Enemies within 40 feet who fail a will save become shaken, frightened, and cowering.
 		- `Reflect`: Deal damage to enemies equal to damage you receive.
 		- `Mythic Class Feature`: see below
-		- `Dual Class - Legacy Class Feature`: as Legacy Class Feature below, pick a second base class to get abilities from, or in the case of the God Emperor your first.
+		- `Dual Legacy`: Pick a second base class to get abilities from, or in the case of the God Emperor your first.
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.
@@ -128,7 +128,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `True Resurrection`: Resurrect a dead companion (no diamond cost).
 		- `Supreme Being`: All your attributes have a base value of 30.
 		- `Mythic Class Feature`: see below
-		- `Dual Class - Legacy Class Feature`: as Legacy Class Feature below, pick a second base class to get abilities from, or in the case of the God Emperor your first.
+		- `Dual Legacy`: Pick a second base class to get abilities from, or in the case of the God Emperor your first.
 	- `Mythic Class Feature`: Access to a mythic class feature not your own
 		- `Angel Mythic Class Feature`: possible selections include the angelic halo and sword of heaven and their buffs
 		- `Azata Mythic Class Feature`: the superpowers
