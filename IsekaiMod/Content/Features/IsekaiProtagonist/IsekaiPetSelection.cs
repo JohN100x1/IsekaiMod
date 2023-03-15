@@ -39,10 +39,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     AnimalCompanionSelectionDomain.ToReference<BlueprintFeatureReference>(),
                     IsekaiFamiliarSelection.ToReference<BlueprintFeatureReference>(),
+                    IsekaiNoPetFeature.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.m_Features = new BlueprintFeatureReference[] {
                     AnimalCompanionSelectionDomain.ToReference<BlueprintFeatureReference>(),
                     IsekaiFamiliarSelection.ToReference<BlueprintFeatureReference>(),
+                    IsekaiNoPetFeature.ToReference<BlueprintFeatureReference>(),
                 };
             });
 
