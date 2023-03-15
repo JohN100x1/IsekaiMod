@@ -40,6 +40,9 @@
     // Isekai Wood Elf Heritage
     "IsekaiWoodElfHeritage": "07b30d8c-2ae5-4580-8e59-998e5959abd3",
 
+    // Isekai Furry Heritage
+    "IsekaiFurryHeritage": "f7131b02-7a40-4eac-914f-05bbeaac9582",
+
     // Deities
     "IsekaiDeitySelection": "d7a574be-5e91-4420-b859-9f0ff708fdcf",
     "TruckKunFeature": "36513264-aae2-418f-8fd1-7525b143efd0",
@@ -121,13 +124,14 @@
     "IsekaiProtagonistPlotArmorFeat": "91751bce-90bc-42a2-b667-c807146a0cfb",
     "IsekaiProtagonistOverpoweredAbilityFeat": "107d5300-b827-4963-a84c-df0e61fa7107",
     "IsekaiProtagonistBonusFeat": "414b5c1b-3b32-4e54-99e3-96505698a929",
-    "IsekaiProtagonistSneakFeat": "409b95a4-31cc-4474-8886-d06050deb25c",
+    "IsekaiProtagonistLegacyFeat": "409b95a4-31cc-4474-8886-d06050deb25c",
 
     // Isekai Protagonist Features
     "IsekaiProtagonistProficiencies": "f85b2b09-e16e-4cd6-acba-d262d2a27881",
     "IsekaiProtagonistCantripsFeature": "7075cc91-de39-47f0-bbfe-e47b679ce1d0",
     "IsekaiProtagonistTalentSelection": "b27a3573-9bbd-4653-bee5-9c022008c490",
     "IsekaiProtagonistBonusFeatSelection": "039dec4f-d83c-4e4b-9be9-e4aae6fe4b5b",
+    "IsekaiNoPetFeature": "c11cf805-dfa1-4c07-b054-fa32335b4201",
     "IsekaiFamiliarSelection": "6988b26a-2bc0-4a9e-9411-e7cce90fb134",
     "IsekaiPetSelection": "de3b6f1a-73a1-4a24-aa58-53af47f8e550",
     "PlotArmor": "8acca981-65f0-4933-8093-3f788ec9d2c6",
@@ -394,6 +398,7 @@
     "SummonDemonLordDeskari": "2df13679-7f57-4c8a-b82e-438738e60100",
     "SummonDemonNocticula": "211f19a3-25b3-48a4-abcb-a78c531810e2",
     "SummonDemonMephistopheles": "d6b05e3f-ac55-4844-82c9-c66d4f489b69",
+    "SummonAreshkagal": "2ad40a24-1e3b-49c3-9639-4bedc2b73be5",
     "SummonCalamityAbility": "e379c45c-2eef-4229-bcc2-7b7f95bab93e",
     "SummonCalamityFeature": "0cbb549e-a311-4c52-b76e-033f7f1b5d20",
     "TrueResurrectionAbility": "25c39cdd-c81f-43cc-8d14-c52c2adb3858",

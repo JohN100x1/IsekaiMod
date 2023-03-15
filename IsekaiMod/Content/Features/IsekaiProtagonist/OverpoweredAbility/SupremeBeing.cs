@@ -14,7 +14,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         public static void Add() {
             var SupremeBeing = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SupremeBeing", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Supreme Being");
-                bp.SetDescription(IsekaiContext, "All your attributes have a base value of 30.");
+                bp.SetDescription(IsekaiContext, "All your attributes have at least a base value of 30.");
                 bp.m_Icon = Icon_KiPowerSelection;
                 bp.AddComponent<SetBaseStat>(c => {
                     c.Stat = StatType.Strength;

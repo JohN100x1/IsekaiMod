@@ -124,7 +124,6 @@ namespace IsekaiMod.Content {
                 Features.IsekaiProtagonist.OverpoweredAbility.SupremeBeing.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AuraOfRighteousWrath.Add();
                 if (IsekaiContext.AddedContent.Feats.IsEnabled("Overpowered - Mythic Blessing")) Features.IsekaiProtagonist.OverpoweredAbility.BlessingOfTheMythic.Configure();
-                //if (IsekaiContext.AddedContent.Feats.IsEnabled("Overpowered - Mythic Blessing")) Features.IsekaiProtagonist.OverpoweredAbility.IsekaidZippyMagic.Configure();
                 
                 Main.LogDebug("Class: OP");
 
@@ -210,6 +209,7 @@ namespace IsekaiMod.Content {
                 Heritages.IsekaiDarkElfHeritage.Add();
                 Heritages.IsekaiHighElfHeritage.Add();
                 Heritages.IsekaiWoodElfHeritage.Add();
+                Heritages.IsekaiFurryHeritage.Add();
 
                 // Patch Heritages
                 Heritages.ElfHeritagePatcher.Patch();
