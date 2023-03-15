@@ -147,12 +147,12 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Paladin Legacy - Hero of Light`
 		- `Kineticist Legacy - Kinetic Knight`
 		- `Kineticist Legacy - Kinetic Lord`
-		- `Magus Legacy - Spellblade`: Attention Still requires any form of descent testing, so only use it if you are willing to essentially be the betatester for the Legacy at the moment
+		- `Magus Legacy - Spellblade`: Still requires testing, so only use it if you are willing to essentially be the betatester for the Legacy at the moment
 		- `Oracle Legacy - Seeker of Truth`: does not grant its selections retroactivly, so best picked early.
 		- `Rogue Legacy - Supernatural Thief`
 		- `Shaman Legacy - Spirit Beacons`: Also still a Beta release
 		- `Sorcerer Legacy - Chimera`: does not grant its selections retroactivly, so best picked early.
-		- `Tactician Legacy - Isekai Tactician`: not a baseclass by itself but rather a mixture of several like hunter and Monster Tactician to create a path focused around tactical feats
+		- `Tactician Legacy - Isekai Tactician`: A mixture from several classes like hunter and Monster Tactician to create a path focused around tactical feats
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities
