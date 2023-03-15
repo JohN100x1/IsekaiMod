@@ -16,7 +16,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         private static readonly BlueprintFeatureSelection WitchFamiliarSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("29a333b7ccad3214ea3a51943fa0d8e9");
 
         public static void Add() {
-            var IsekaiNoPetFeature = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiNoPetFeature", bp => {
+            var IsekaiNoPetFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiNoPetFeature", bp => {
                 bp.SetName(IsekaiContext, "None");
                 bp.SetDescription(IsekaiContext, "Only a true edgelord would choose to walk alone.");
                 bp.IsClassFeature = true;
