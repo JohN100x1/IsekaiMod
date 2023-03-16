@@ -278,7 +278,7 @@ namespace IsekaiMod.Content {
             //done here because it should be done after all spells have been initialized and were added to the canon books
             if (IsekaiContext.AddedContent.Classes.IsEnabled("Merge Isekai Spelllist")) IsekaiProtagonistSpellList.MergeSpellLists();
 
-            if (ModSupport.isTableTopTweakBaseEnabled()) {
+            if (ModSupport.IsTableTopTweakBaseEnabled()) {
                 PatchTableTopTweakCore();
             }
             if (ModSupport.IsExpandedContentEnabled()) { 

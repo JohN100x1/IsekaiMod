@@ -1,5 +1,7 @@
-﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+﻿using HarmonyLib;
+using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist;
+using IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -8,10 +10,9 @@ using Kingmaker.Blueprints.JsonSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using System.Linq;
 using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 using static Kingmaker.Blueprints.Classes.BlueprintProgression;
 using static UnityModManagerNet.UnityModManager;
-using static IsekaiMod.Main;
-using HarmonyLib;
 
 namespace IsekaiMod.Utilities {
     class ModSupport {
@@ -27,20 +28,23 @@ namespace IsekaiMod.Utilities {
         public static bool IsExpandedElementEnabled() { 
             return IsModEnabled("KineticistElementsExpanded"); 
         }
-
-        public static bool isTableTopTweakBaseEnabled() { 
+        public static bool IsTableTopTweakBaseEnabled() { 
             return IsModEnabled("TabletopTweaks-Base"); 
         }
 
-        [HarmonyLib.HarmonyPatch(typeof(BlueprintsCache), "Init")]
+        [HarmonyPatch(typeof(BlueprintsCache), "Init")]
         static class BlueprintsCache_Init_Patch {
             static bool Initialized;
 
-            [HarmonyLib.HarmonyAfter()]
+            [HarmonyAfter()]
             public static void Postfix() {
                 if (Initialized) return;
                 Initialized = true;
                 if (IsekaiContext.AddedContent.Classes.IsDisabled("Isekai Protagonist")) return;
+                if (IsTableTopTweakBaseEnabled()) {
+                    Main.Log("TabletopTweaks-Base 2.5.2 Support Enabled.");
+                    AutoRime.Add();
+                }
                 if (IsMysticalMayhemEnabled()) {
                     Main.Log("Mystical Mayhem 0.1.5 Support Enabled.");
                     BlueprintAbility MeteorSwarmAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("d0cd103b15494866b0444c1a961bc40f");

@@ -411,6 +411,11 @@
     "AuraOfRighteousWrathAbility": "a29e2b67-1e55-40a0-ab32-38ff7a231a7d",
     "AuraOfRighteousWrathFeature": "fd680a28-f187-4884-b8ea-f6f084d8d5c1",
 
+    // TabletopTweaks-Base OP abilities
+    "AutoRimeBuff": "e1b63a2c-23e9-49e3-acaf-6ee89aeabc99",
+    "AutoRimeAbility": "f9831ed2-c84a-4692-8597-e0c017bb510a",
+    "AutoRimeFeature": "75b0ba47-4248-43fd-b657-b7116d08b03f",
+
     // God Emperor Features
     "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",
     "GodEmperorProficiencies": "1f112bb6-3b8e-44ca-8158-325436f6b308",
