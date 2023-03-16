@@ -8,7 +8,7 @@ assignees: ''
 ## Implementations
 - [ ] Implementing...
 
-## Release Tasks
+## Pre-Release Tasks
 - [ ] Copy localization
 - [ ] Update CHANGELOG.md
 - [ ] Update README.md
