@@ -194,6 +194,7 @@ namespace IsekaiMod.Content {
                 // Add extra dialogue (Depends on IsekaiProtagonistClass)
                 Dialogue.IsekaiHulrun.Add();
                 Dialogue.IsekaiRadiance.Add();
+                Dialogue.IsekaiKaylessaDrowLeader.Add();
                 Main.LogDebug("Class: Dialogue");
 
                 LegacySelection.ConfigureStep2();
