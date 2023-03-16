@@ -236,12 +236,11 @@ Exception to this is the God Emperor as all options that were changed were not p
 
 ## Mod Support
 This mod has support for the following mods.
-### MysticalMayhem (0.1.3)
+### MysticalMayhem (0.1.5)
 If you have the `MysticalMayhem` mod, the `Isekai Protagonist` will have the 9th level `Meteor Swarm` spell added to its spellbook.
-### ExpandedContent (0.4.40)
-If you have the `ExpandedContent` mod, the `Isekai Protagonist` will have the following spells added to its spellbook: Hydraulic push, Slipstream, Scourge of the Horsemen, Rigor mortis, Hollow Blades, Goodberry, Steam Ray Fusillade, Inflict Pain, Inflict Pain Mass, Gloomblind Bolts, Fury of the Sun, Invoke Deity.
-You are also able to choose a drake companion as a pet.
-### SpellbookMerge (1.7.0)
+### ExpandedContent (0.5.2)
+If you have the `ExpandedContent` mod, the `Isekai Protagonist` will have all the new spells add to its spellbook.
+### SpellbookMerge (1.7.1)
 If you have the `SpellbookMerge` mod, the `Isekai Protagonist` will be able to merge its spellbook with Aeon, Azata, Demon, and Trickster.
 
 ### Any Mod adding spells to the base classes

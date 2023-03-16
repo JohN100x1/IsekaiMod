@@ -42,17 +42,17 @@ namespace IsekaiMod.Utilities {
                 Initialized = true;
                 if (IsekaiContext.AddedContent.Classes.IsDisabled("Isekai Protagonist")) return;
                 if (IsMysticalMayhemEnabled()) {
-                    Main.Log("Mystical Mayhem 0.1.3 Support Enabled.");
+                    Main.Log("Mystical Mayhem 0.1.5 Support Enabled.");
                     BlueprintAbility MeteorSwarmAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("d0cd103b15494866b0444c1a961bc40f");
                     IsekaiProtagonistSpellList.Get().SpellsByLevel[9].m_Spells.Add(MeteorSwarmAbility.ToReference<BlueprintAbilityReference>());
                 }
                 if (IsExpandedContentEnabled()) {
-                    Main.Log("Expanded Content 0.4.40 Support Enabled.");
+                    Main.Log("Expanded Content 0.5.2 Support Enabled.");
                     AddExpandedContentSpells(IsekaiProtagonistSpellList.Get());
                     AddExpandedContentDrakes(IsekaiProtagonistClass.Get());
                 }
                 if (IsSpellbookMergeEnabled()) {
-                    Main.Log("Spellbook Merge 1.7.0 Support Enabled.");
+                    Main.Log("Spellbook Merge 1.7.1 Support Enabled.");
 
                     // Allow Spellbook to be merged with Aeon, Azata, Demon, and Trickster
                     var AeonIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("2b7027ee76cb4c58b2cff0475bc69fbb");
@@ -71,9 +71,6 @@ namespace IsekaiMod.Utilities {
                     ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(TricksterIncorporateSpellbook, VillainSpellbook.Get());
 
                 }
-
-
-
             }
 
             public static void AddExpandedContentSpells(BlueprintSpellList spellList) {
@@ -92,16 +89,43 @@ namespace IsekaiMod.Utilities {
                 BlueprintAbility ScourgeOfTheHorsemenAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("dafdc0eef4374785aa827bf5b2059bf0");
                 BlueprintAbility SlipstreamAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("fe43fadb91b040b38718e88dd5744413");
                 BlueprintAbility SteamRayFusilladeAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("a8be30ddf37042d5b56ffaa8eae976d6");
+                BlueprintAbility WallOfFireAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("80189142f7c640f39195defdc9777b27");
+                BlueprintAbility ZephyrsFleetnessAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("a49ee6f1ec6744a6b16e3476a504e2a9");
+                BlueprintAbility HypnoticPatternAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("56b8f0304a704a67b3c35cbe8c774854");
+                BlueprintAbility ClaySkinAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("31ed0a88513246afac5b0bea60a728a9");
+                BlueprintAbility EntropicShieldAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("ff9b4a7437d44c5fa29a7573a63728f5");
+                BlueprintAbility ShieldOfFortificationAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("5a20c33fce1c4d90b0d8e71d7918d699");
+                BlueprintAbility ShieldOfFortificationGreaterAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("a848a5aeb1be4bbdbdf79041c5890098");
+                BlueprintAbility DanceOfAHundredCutsAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("7a7877faca0c4e98a5452d29967677e6");
+                BlueprintAbility DanceOfAThousandCutsAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("a4fd2673b9d44b8c8d20714b2ee51df6");
+
+                BlueprintAbility RevivingFinaleAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("9f8ab280738a4578a294ccb8f0b25fa7");
+                BlueprintAbility DeadlyFinaleAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("3385edd23aad4795861425acfa798d64");
+                BlueprintAbility PurgingFinaleAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("6eff7010684143c5bcd47120718c75ef");
+                BlueprintAbility StunningFinaleAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("a1f0d4c3ce2c4c2eb705b18861f14708");
+                ThingsNotHandledByTTTCore.RegisterSpell(spellList, ShieldOfFortificationAbility, 1);
+                ThingsNotHandledByTTTCore.RegisterSpell(spellList, EntropicShieldAbility, 1);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, GoodberryAbility, 1);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, HydraulicPushAbility, 1);
+                ThingsNotHandledByTTTCore.RegisterSpell(spellList, HypnoticPatternAbility, 2);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, FuryOftheSunAbility, 2);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, HollowBladesAbility, 2);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, InflictPainAbility, 2);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, SlipstreamAbility, 2);
+                ThingsNotHandledByTTTCore.RegisterSpell(spellList, ShieldOfFortificationGreaterAbility, 3);
+                ThingsNotHandledByTTTCore.RegisterSpell(spellList, ClaySkinAbility, 3);
+                ThingsNotHandledByTTTCore.RegisterSpell(spellList, ZephyrsFleetnessAbility, 3);
+                ThingsNotHandledByTTTCore.RegisterSpell(spellList, RevivingFinaleAbility, 3);
+                ThingsNotHandledByTTTCore.RegisterSpell(spellList, PurgingFinaleAbility, 3);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, GloomblindBoltsAbility, 3);
+                ThingsNotHandledByTTTCore.RegisterSpell(spellList, DanceOfAHundredCutsAbility, 4);
+                ThingsNotHandledByTTTCore.RegisterSpell(spellList, WallOfFireAbility, 4);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, InvokeDeityAbility, 4);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, RigorMortisAbility, 4);
+                ThingsNotHandledByTTTCore.RegisterSpell(spellList, StunningFinaleAbility, 5);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, InflictPainMassAbility, 5);
+                ThingsNotHandledByTTTCore.RegisterSpell(spellList, DanceOfAThousandCutsAbility, 6);
+                ThingsNotHandledByTTTCore.RegisterSpell(spellList, DeadlyFinaleAbility, 6);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, SteamRayFusilladeAbility, 7);
                 ThingsNotHandledByTTTCore.RegisterSpell(spellList, ScourgeOfTheHorsemenAbility, 9);
             }
