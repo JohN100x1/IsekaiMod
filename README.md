@@ -130,6 +130,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Mythic Class Feature`: see below
 		- `Dual Legacy`: Pick a second base class to get abilities from, or in the case of the God Emperor your first.
 		- `AutoRime`: Rimes every spell you cast (requires TabletopTweaks-Base).
+		- `AutoBurning`: Causes burning with every spell you cast (requires TabletopTweaks-Base).
 	- `Mythic Class Feature`: Access to a mythic class feature not your own
 		- `Angel Mythic Class Feature`: possible selections include the angelic halo and sword of heaven and their buffs
 		- `Azata Mythic Class Feature`: the superpowers
@@ -238,7 +239,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 ## Mod Support
 This mod has support for the following mods.
 ### TabletopTweaks-Base (2.5.2)
-If you have the `TabletopTweaks-Base` mod, the `Isekai Protagonist` will have `AutoRime` as OP ability options.
+If you have the `TabletopTweaks-Base` mod, the `Isekai Protagonist` will have `Auto Rime`, `Auto Burning` as OP ability options.
 ### MysticalMayhem (0.1.5)
 If you have the `MysticalMayhem` mod, the `Isekai Protagonist` will have the 9th level `Meteor Swarm` spell added to its spellbook.
 ### ExpandedContent (0.5.2)

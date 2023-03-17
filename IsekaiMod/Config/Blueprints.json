@@ -415,6 +415,9 @@
     "AutoRimeBuff": "e1b63a2c-23e9-49e3-acaf-6ee89aeabc99",
     "AutoRimeAbility": "f9831ed2-c84a-4692-8597-e0c017bb510a",
     "AutoRimeFeature": "75b0ba47-4248-43fd-b657-b7116d08b03f",
+    "AutoBurningBuff": "cd504148-9eb2-4760-a8a8-ba2ba0b3a156",
+    "AutoBurningAbility": "f56d73e2-4b97-4ef2-b893-767eb589cf14",
+    "AutoBurningFeature": "b8bffd54-349f-487b-a4ba-9e407973b383",
 
     // God Emperor Features
     "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",

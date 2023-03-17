@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Unreleased]
 ### Added
 - Added `AutoRime` OP ability (requires TabletopTweaks-Base).
+- Added `AutoBurning` OP ability (requires TabletopTweaks-Base).
 - Updated mod support for ExpandedContent.
 ### Fixed
 - Fixed missing dialogue for drow ambush encounter.

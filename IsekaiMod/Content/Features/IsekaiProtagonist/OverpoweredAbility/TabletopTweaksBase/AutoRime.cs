@@ -10,7 +10,7 @@ using UnityEngine;
 using static IsekaiMod.Main;
 using static TabletopTweaks.Core.MechanicsChanges.MetamagicExtention;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.TabletopTweaksBase {
 
     internal class AutoRime {
         private static readonly Sprite Icon_RimeSpell = BlueprintTools.GetBlueprint<BlueprintFeature>("192b00c671a64c4c8643f7c18bd1542e").m_Icon;

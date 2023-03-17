@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist;
-using IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility;
+using IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.TabletopTweaksBase;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -44,6 +44,7 @@ namespace IsekaiMod.Utilities {
                 if (IsTableTopTweakBaseEnabled()) {
                     Main.Log("TabletopTweaks-Base 2.5.2 Support Enabled.");
                     AutoRime.Add();
+                    AutoBurning.Add();
                 }
                 if (IsMysticalMayhemEnabled()) {
                     Main.Log("Mystical Mayhem 0.1.5 Support Enabled.");
