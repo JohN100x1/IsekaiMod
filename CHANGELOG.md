@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fixed missing dialogue for drow ambush encounter.
 
+## [4.1.1] - 2023-03-17
+### Fixed
+- Fixed `Supreme Being` to allow base stat increases (for real this time).
+
 ## [4.1.0] - 2023-03-15
 ### Added
 - Added `Isekai Furry` heritage (kitsune heritage).
