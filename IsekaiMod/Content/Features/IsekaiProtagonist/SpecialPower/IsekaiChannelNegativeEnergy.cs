@@ -187,8 +187,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.Type = AbilityType.Special;
                 bp.CanTargetEnemies = true;
                 bp.CanTargetFriends = true;
-                bp.EffectOnAlly = AbilityEffectOnUnit.Harmful;
-                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.EffectOnAlly = AbilityEffectOnUnit.Helpful;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Helpful;
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Omni;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.ResourceAssetIds = ChannelNegativeHeal.ResourceAssetIds;
