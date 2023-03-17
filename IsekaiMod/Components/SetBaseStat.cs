@@ -37,7 +37,7 @@ namespace IsekaiMod.Components {
             if (baseStat == null) {
                 return;
             }
-            baseStat.BaseValue = Math.Max(baseStat.BaseValue, Value);
+            baseStat.BaseValue = Math.Max(baseStat.BaseValue, Math.Max(baseStat.m_BaseValue, Value));
         }
 
         public override void OnTurnOff() {
