@@ -255,10 +255,5 @@ As such almost no spell should need work on our part to add support for it, if y
 
 ## Credits
 Thanks to kjk001 for contributing alot to this repository, improving the code to use TabletopTweaks-Core as well as adding lots of content.
-Alot of the code was repurposed from the following repositories:
-- https://github.com/Vek17/TabletopTweaks-Base
-- https://github.com/ka-dyn/ExpandedContent
-
-Thanks to Vek17, ka-dyn, bittercranberry, WittleWolfie and all other other contributors for their code.
-Special thanks to WittleWolfie for creating this modding guide that helped me get started:
+Thanks to WittleWolfie for creating this modding guide that helped me get started:
 - https://github.com/WittleWolfie/OwlcatModdingWiki/wiki
