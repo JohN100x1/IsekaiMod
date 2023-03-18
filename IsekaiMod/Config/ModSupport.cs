@@ -45,6 +45,7 @@ namespace IsekaiMod.Utilities {
                     Main.Log("TabletopTweaks-Base 2.5.2 Support Enabled.");
                     AutoRime.Add();
                     AutoBurning.Add();
+                    AutoFlaring.Add();
                 }
                 if (IsMysticalMayhemEnabled()) {
                     Main.Log("Mystical Mayhem 0.1.5 Support Enabled.");
