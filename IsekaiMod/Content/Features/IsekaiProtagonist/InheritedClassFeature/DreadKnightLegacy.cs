@@ -13,7 +13,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         private static BlueprintFeature sinfulabsolution = BlueprintTools.GetBlueprint<BlueprintFeature>("5bdcb8eaee8c42c988731fc23e075f73");
         private static BlueprintFeature sinfulabsolution2 = BlueprintTools.GetBlueprint<BlueprintFeature>("c0f985c802504593af9c96c0636c7692");
         private static BlueprintFeature auraofAbsolution = BlueprintTools.GetBlueprint<BlueprintFeature>("cddb5febac6848e3919d8775628e8cc8");
-        private static BlueprintFeatureSelection crueltySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("402fccae3c2147e78da4ff9f6f061461");
+        private static BlueprintFeatureSelection crueltySelection1 = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("80fd53ab1674470ebd7b2ab9f7c2510e");
         private static BlueprintFeatureSelection crueltySelection2 = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("f5334c9f58ae4aa0be821613dd1ef6d2");
         private static BlueprintFeatureSelection crueltySelection3 = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("8a1f32662b4241feada7a4ba604e996e");
         private static BlueprintFeatureSelection crueltySelection4 = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("eae1f9f3226f49a4aaea7cbc7b286007");
@@ -29,7 +29,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             //only add this stereotype if the Dread Knight Class has been added
             if (!ModSupport.IsExpandedContentEnabled()
                 || sinfulabsolution == null
-                || crueltySelection == null) return;
+                || crueltySelection1 == null) return;
 
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "DreadKnightLegacy", bp => {
                 bp.SetName(IsekaiContext, "Dread Knight Legacy - Dread Lord");
@@ -46,7 +46,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.LevelEntries = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, sinfulabsolution),
                     Helpers.CreateLevelEntry(2,profCorruption),
-                    Helpers.CreateLevelEntry(3, crueltySelection),
+                    Helpers.CreateLevelEntry(3, crueltySelection1),
                     Helpers.CreateLevelEntry(4, sinfulabsolution2, profCorruptionExtra),
                     Helpers.CreateLevelEntry(6, crueltySelection2, profCorruptionExtra),
                     Helpers.CreateLevelEntry(7, sinfulabsolution2,profCorruptionChannel),
@@ -65,7 +65,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             };
                 bp.UIGroups = new UIGroup[] {
-                    Helpers.CreateUIGroup(sinfulabsolution,sinfulabsolution2,auraofAbsolution,crueltySelection,crueltySelection2,crueltySelection3,crueltySelection4),
+                    Helpers.CreateUIGroup(sinfulabsolution,sinfulabsolution2,auraofAbsolution,crueltySelection1,crueltySelection2,crueltySelection3,crueltySelection4),
                     Helpers.CreateUIGroup(profCorruption,profCorruptionChannel, profCorruptionExtra)
                 };
 

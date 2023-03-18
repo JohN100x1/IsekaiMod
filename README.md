@@ -108,7 +108,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Killing Intent`: Enemies within 40 feet who fail a will save become shaken, frightened, and cowering.
 		- `Reflect`: Deal damage to enemies equal to damage you receive.
 		- `Mythic Class Feature`: see below
-		- `Dual Class - Legacy Class Feature`: as Legacy Class Feature below, pick a second base class to get abilities from, or in the case of the God Emperor your first.
+		- `Dual Legacy`: Pick a second base class to get abilities from, or in the case of the God Emperor your first.
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.
@@ -128,7 +128,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `True Resurrection`: Resurrect a dead companion (no diamond cost).
 		- `Supreme Being`: All your attributes have a base value of 30.
 		- `Mythic Class Feature`: see below
-		- `Dual Class - Legacy Class Feature`: as Legacy Class Feature below, pick a second base class to get abilities from, or in the case of the God Emperor your first.
+		- `Dual Legacy`: Pick a second base class to get abilities from, or in the case of the God Emperor your first.
 	- `Mythic Class Feature`: Access to a mythic class feature not your own
 		- `Angel Mythic Class Feature`: possible selections include the angelic halo and sword of heaven and their buffs
 		- `Azata Mythic Class Feature`: the superpowers
@@ -147,12 +147,12 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Paladin Legacy - Hero of Light`
 		- `Kineticist Legacy - Kinetic Knight`
 		- `Kineticist Legacy - Kinetic Lord`
-		- `Magus Legacy - Spellblade`: Attention Still requires any form of descent testing, so only use it if you are willing to essentially be the betatester for the Legacy at the moment
+		- `Magus Legacy - Spellblade`: Still requires testing, so only use it if you are willing to essentially be the betatester for the Legacy at the moment
 		- `Oracle Legacy - Seeker of Truth`: does not grant its selections retroactivly, so best picked early.
 		- `Rogue Legacy - Supernatural Thief`
 		- `Shaman Legacy - Spirit Beacons`: Also still a Beta release
 		- `Sorcerer Legacy - Chimera`: does not grant its selections retroactivly, so best picked early.
-		- `Tactician Legacy - Isekai Tactician`: not a baseclass by itself but rather a mixture of several like hunter and Monster Tactician to create a path focused around tactical feats
+		- `Tactician Legacy - Isekai Tactician`: A mixture from several classes like hunter and Monster Tactician to create a path focused around tactical feats
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities
@@ -170,11 +170,12 @@ Exception to this is the God Emperor as all options that were changed were not p
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.
-	- `Isekai Vampire` (Dhampir Heritage): A powerful heritage for Dhampir.
+	- `Isekai Vampire` (Dhampir Heritage): A powerful heritage for Dhampir that has fast healing and many immunities.
 	- `Isekai Dark Elf` (Elf Heritage): A powerful heritage for Elf that gives you the Drow Poison ability.
 	- `Isekai High Elf` (Elf Heritage): A powerful heritage for Elf that increases the number of spells you can cast per day.
 	- `Isekai Wood Elf` (Elf Heritage): A powerful heritage for Elf that have extra speed.
 	- `Isekai Spriggan` (Gnome Heritage): A powerful heritage for Gnome that gives you a size alteration ability.
+	- `Isekai Furry` (Kitsune Heritage): A powerful heritage for Kitsune that has fast healing and extra speed.
 - New Deities
 	- `Truck-kun`: A god of transportation.
 	- `Aqua`: A goddess of water.
