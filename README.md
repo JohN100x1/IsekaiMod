@@ -239,7 +239,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 ## Mod Support
 This mod has support for the following mods.
 ### TabletopTweaks-Base (2.5.2)
-If you have the `TabletopTweaks-Base` mod, the `Isekai Protagonist` will have `Auto Rime`, `Auto Burning`, `Auto Flaring` as OP ability options.
+If you have the `TabletopTweaks-Base` mod, the `Isekai Protagonist` will have `Auto Rime`, `Auto Burning`, `Auto Flaring`, `Auto Piercing` as OP ability options.
 ### MysticalMayhem (0.1.5)
 If you have the `MysticalMayhem` mod, the `Isekai Protagonist` will have the 9th level `Meteor Swarm` spell added to its spellbook.
 ### ExpandedContent (0.5.2)
