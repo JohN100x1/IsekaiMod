@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated mod support for ExpandedContent.
 ### Fixed
 - Fixed missing dialogue for drow ambush encounter.
+- Fixed `Channel Energy` and other features class level scaling in legacy progressions.
 - Fixed `Channel Positive Energy` Special Power to apply selectively with the selective channel feat.
 
 ## [4.1.1] - 2023-03-17
