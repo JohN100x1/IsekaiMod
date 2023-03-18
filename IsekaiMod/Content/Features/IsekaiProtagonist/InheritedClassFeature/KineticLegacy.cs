@@ -105,8 +105,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             StaticReferences.PatchClassIntoFeatureOfReferenceClass(KineticFocusSelection, myClass, refClass, 0);
             StaticReferences.PatchClassIntoFeatureOfReferenceClass(KineticSecElementSelection, myClass, refClass, 0);
             StaticReferences.PatchClassIntoFeatureOfReferenceClass(KineticThirdElementSelection, myClass, refClass, 0);
-            prog.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = KineticKnightLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            
         }
+        public static void MakeKineticProgsExclusive() {
+            prog.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = KineticKnightLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            KineticKnightLegacy.Get().AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = prog.ToReference<BlueprintFeatureReference>(); });
+        }
+
         public static BlueprintProgression Get() {
             if (prog != null) return prog;
             return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "KineticLegacy");

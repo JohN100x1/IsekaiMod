@@ -272,6 +272,7 @@ namespace IsekaiMod.Content {
             KineticKnightLegacy.configure();
             KineticKnightLegacy.PatchKineticistProgression();
             Main.LogDebug("Postfix Patching: Kinetic Knight Patched");
+            KineticLegacy.MakeKineticProgsExclusive();
 
             //done here because it should be done after all spells have been initialized and were added to the canon books
             if (IsekaiContext.AddedContent.Classes.IsEnabled("Merge Isekai Spelllist")) IsekaiProtagonistSpellList.MergeSpellLists();
