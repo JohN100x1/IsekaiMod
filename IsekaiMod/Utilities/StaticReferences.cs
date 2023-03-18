@@ -199,7 +199,7 @@ namespace IsekaiMod.Utilities {
                                 c.m_StepLevel= sample.m_StepLevel;
                                 c.m_ExceptClasses= sample.m_ExceptClasses;
                             });
-                            Main.Log("rank progression patched= " + ability.AssetGuid + " added class= " + myClass.Guid + " for ref= " + referenceClass.Guid);
+                            //Main.Log("rank progression patched= " + ability.AssetGuid + " added class= " + myClass.Guid + " for ref= " + referenceClass.Guid);
                         }
                     }
                 }
@@ -218,7 +218,7 @@ namespace IsekaiMod.Utilities {
                     }
                     if (classlocked && !alreadyPatched) { 
                         res.m_MaxAmount.m_ClassDiv.AddItem(myClass); 
-                        Main.Log("class resource patched= " + resRef.Guid); 
+                        //Main.Log("class resource patched= " + resRef.Guid); 
                     }
                 }
             }
