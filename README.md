@@ -135,6 +135,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 			- `Auto Flaring`: Light, fire, and electricity spells cause the dazzled condition.
 			- `Auto Piercing`: Spells treat target's SR as 5 lower than actual SR.
 			- `Auto Solid Shadows`: Shadow spells are 20% more real.
+			- `Auto Encouraging`: Increase spells' morale bonus by 1.
 	- `Mythic Class Feature`: Access to a mythic class feature not your own
 		- `Angel Mythic Class Feature`: possible selections include the angelic halo and sword of heaven and their buffs
 		- `Azata Mythic Class Feature`: the superpowers
@@ -244,7 +245,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 This mod has support for the following mods.
 ### TabletopTweaks-Base (2.5.2)
 If you have the `TabletopTweaks-Base` mod, the `Isekai Protagonist` will have `Auto Rime`, `Auto Burning`, `Auto Flaring`,
-`Auto Piercing`, `Auto Solid Shadows` as OP ability options.
+`Auto Piercing`, `Auto Solid Shadows`, `Auto Encouraging` as OP ability options.
 ### MysticalMayhem (0.1.5)
 If you have the `MysticalMayhem` mod, the `Isekai Protagonist` will have the 9th level `Meteor Swarm` spell added to its spellbook.
 ### ExpandedContent (0.5.2)

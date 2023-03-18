@@ -427,6 +427,9 @@
     "AutoSolidShadowsBuff": "8670ff56-b7ce-46a5-9647-8148843eadee",
     "AutoSolidShadowsAbility": "92d27bb5-d15f-45e0-b43c-f0153011bd55",
     "AutoSolidShadowsFeature": "44f95e73-458d-4970-b589-bf1c5f10f5d3",
+    "AutoEncouragingBuff": "faab8a70-1b55-41a5-9634-c32de3f0ac3c",
+    "AutoEncouragingAbility": "7b18ca86-1b5d-44d3-b233-6cf343972098",
+    "AutoEncouragingFeature": "5756078b-7a76-49a1-9145-7d5c8d5c0b42",
 
     // God Emperor Features
     "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",

@@ -48,6 +48,7 @@ namespace IsekaiMod.Utilities {
                     AutoFlaring.Add();
                     AutoPiercing.Add();
                     AutoSolidShadows.Add();
+                    AutoEncouraging.Add();
                 }
                 if (IsMysticalMayhemEnabled()) {
                     Main.Log("Mystical Mayhem 0.1.5 Support Enabled.");
