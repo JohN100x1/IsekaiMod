@@ -38,6 +38,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 - [TabletopTweaks-Core](https://github.com/Vek17/TabletopTweaks-Core/releases).
 ### Installation
 - Open Unity Mod Manager and go to the 'Mods' tab.
+- Drag and Drop the [TabletopTweaks-Core.zip](https://github.com/Vek17/TabletopTweaks-Core/releases)﻿ file into Unity Mod Manager.
 - Drag and Drop the IsekaiMod.zip file into Unity Mod Manager.
 If you use ModFinder rather than Unity Mod Manager just replace the name mentally in your head, instructions are otherwise identical.
 
