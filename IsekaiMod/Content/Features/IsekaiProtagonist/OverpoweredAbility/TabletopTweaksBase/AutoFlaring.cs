@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
         public static void Add() {
             var AutoFlaringBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoFlaringBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Flaring");
-                bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes Flaring, as though using the Flaring Spell feat.");
+                bp.SetDescription(IsekaiContext, "Every time you cast a light, fire, or electricity spell, it causes the dazzling condition, as though using the Flaring Spell feat.");
                 bp.m_Icon = Icon_FlaringSpell;
                 bp.AddComponent<AutoMetamagic>(c => {
                     c.m_AllowedAbilities = AutoMetamagic.AllowedType.SpellOnly;
@@ -30,13 +30,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
             });
             var AutoFlaringAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoFlaringAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Flaring");
-                bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes Flaring, as though using the Flaring Spell feat.");
+                bp.SetDescription(IsekaiContext, "Every time you cast a light, fire, or electricity spell, it causes the dazzling condition, as though using the Flaring Spell feat.");
                 bp.m_Icon = Icon_FlaringSpell;
                 bp.m_Buff = AutoFlaringBuff.ToReference<BlueprintBuffReference>();
             });
             var AutoFlaringFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "AutoFlaringFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Flaring");
-                bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes Flaring, as though using the Flaring Spell feat.");
+                bp.SetDescription(IsekaiContext, "Every time you cast a light, fire, or electricity spell, it causes the dazzling condition, as though using the Flaring Spell feat.");
                 bp.m_Icon = Icon_FlaringSpell;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { AutoFlaringAbility.ToReference<BlueprintUnitFactReference>() };

@@ -129,9 +129,12 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Supreme Being`: All your attributes have a base value of 30.
 		- `Mythic Class Feature`: see below
 		- `Dual Legacy`: Pick a second base class to get abilities from, or in the case of the God Emperor your first.
-		- `Auto Rime`: Rimes every spell you cast (requires TabletopTweaks-Base).
-		- `Auto Burning`: Causes burning with every spell you cast (requires TabletopTweaks-Base).
-		- `Auto Piercing`: Pierce with every spell you cast (requires TabletopTweaks-Base).
+		- Requires TabletopTweaks-Base
+			- `Auto Rime`: Cold spells entangle the target for a number of rounds.
+			- `Auto Burning`: Acid and fire spells cause acid or fire damage on the next round.
+			- `Auto Flaring`: Light, fire, and electricity spells cause the dazzled condition.
+			- `Auto Piercing`: Spells treat target's SR as 5 lower than actual SR.
+			- `Auto Solid Shadows`: Shadow spells are 20% more real.
 	- `Mythic Class Feature`: Access to a mythic class feature not your own
 		- `Angel Mythic Class Feature`: possible selections include the angelic halo and sword of heaven and their buffs
 		- `Azata Mythic Class Feature`: the superpowers
@@ -240,7 +243,8 @@ Exception to this is the God Emperor as all options that were changed were not p
 ## Mod Support
 This mod has support for the following mods.
 ### TabletopTweaks-Base (2.5.2)
-If you have the `TabletopTweaks-Base` mod, the `Isekai Protagonist` will have `Auto Rime`, `Auto Burning`, `Auto Flaring`, `Auto Piercing` as OP ability options.
+If you have the `TabletopTweaks-Base` mod, the `Isekai Protagonist` will have `Auto Rime`, `Auto Burning`, `Auto Flaring`,
+`Auto Piercing`, `Auto Solid Shadows` as OP ability options.
 ### MysticalMayhem (0.1.5)
 If you have the `MysticalMayhem` mod, the `Isekai Protagonist` will have the 9th level `Meteor Swarm` spell added to its spellbook.
 ### ExpandedContent (0.5.2)

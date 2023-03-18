@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
         public static void Add() {
             var AutoRimeBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoRimeBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Rime");
-                bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes Rimed, as though using the Rime Spell feat.");
+                bp.SetDescription(IsekaiContext, "Every time you cast a cold spell, it entangles the target, as though using the Rime Spell feat.");
                 bp.m_Icon = Icon_RimeSpell;
                 bp.AddComponent<AutoMetamagic>(c => {
                     c.m_AllowedAbilities = AutoMetamagic.AllowedType.SpellOnly;
@@ -30,13 +30,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
             });
             var AutoRimeAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoRimeAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Rime");
-                bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes Rimed, as though using the Rime Spell feat.");
+                bp.SetDescription(IsekaiContext, "Every time you cast a cold spell, it entangles the target, as though using the Rime Spell feat.");
                 bp.m_Icon = Icon_RimeSpell;
                 bp.m_Buff = AutoRimeBuff.ToReference<BlueprintBuffReference>();
             });
             var AutoRimeFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "AutoRimeFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Rime");
-                bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes Rimed, as though using the Rime Spell feat.");
+                bp.SetDescription(IsekaiContext, "Every time you cast a cold spell, it entangles the target, as though using the Rime Spell feat.");
                 bp.m_Icon = Icon_RimeSpell;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { AutoRimeAbility.ToReference<BlueprintUnitFactReference>() };

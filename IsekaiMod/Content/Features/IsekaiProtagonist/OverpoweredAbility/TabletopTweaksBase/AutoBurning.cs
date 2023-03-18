@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
         public static void Add() {
             var AutoBurningBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoBurningBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Burning");
-                bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes Burning, as though using the Burning Spell feat.");
+                bp.SetDescription(IsekaiContext, "Every time you cast a acid of fire spell, it causes acid or fire damage on the next round, as though using the Burning Spell feat.");
                 bp.m_Icon = Icon_BurningSpell;
                 bp.AddComponent<AutoMetamagic>(c => {
                     c.m_AllowedAbilities = AutoMetamagic.AllowedType.SpellOnly;
@@ -30,13 +30,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
             });
             var AutoBurningAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoBurningAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Burning");
-                bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes Burning, as though using the Burning Spell feat.");
+                bp.SetDescription(IsekaiContext, "Every time you cast a acid of fire spell, it causes acid or fire damage on the next round, as though using the Burning Spell feat.");
                 bp.m_Icon = Icon_BurningSpell;
                 bp.m_Buff = AutoBurningBuff.ToReference<BlueprintBuffReference>();
             });
             var AutoBurningFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "AutoBurningFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Burning");
-                bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes Burning, as though using the Burning Spell feat.");
+                bp.SetDescription(IsekaiContext, "Every time you cast a acid of fire spell, it causes acid or fire damage on the next round, as though using the Burning Spell feat.");
                 bp.m_Icon = Icon_BurningSpell;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { AutoBurningAbility.ToReference<BlueprintUnitFactReference>() };

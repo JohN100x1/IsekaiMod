@@ -18,7 +18,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
         public static void Add() {
             var AutoPiercingBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoPiercingBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Piercing");
-                bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes Piercing, as though using the Piercing Spell feat.");
+                bp.SetDescription(IsekaiContext, "Every time you cast a spell against a target, it treats the spell resistance of the target as 5 lower than its actual SR, "
+                    + "as though using the Piercing Spell feat.");
                 bp.m_Icon = Icon_PiercingSpell;
                 bp.AddComponent<AutoMetamagic>(c => {
                     c.m_AllowedAbilities = AutoMetamagic.AllowedType.SpellOnly;
@@ -30,13 +31,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
             });
             var AutoPiercingAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoPiercingAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Piercing");
-                bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes Piercing, as though using the Piercing Spell feat.");
+                bp.SetDescription(IsekaiContext, "Every time you cast a spell against a target, it treats the spell resistance of the target as 5 lower than its actual SR, "
+                    + "as though using the Piercing Spell feat.");
                 bp.m_Icon = Icon_PiercingSpell;
                 bp.m_Buff = AutoPiercingBuff.ToReference<BlueprintBuffReference>();
             });
             var AutoPiercingFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "AutoPiercingFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Piercing");
-                bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes Piercing, as though using the Piercing Spell feat.");
+                bp.SetDescription(IsekaiContext, "Every time you cast a spell against a target, it treats the spell resistance of the target as 5 lower than its actual SR, "
+                    + "as though using the Piercing Spell feat.");
                 bp.m_Icon = Icon_PiercingSpell;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { AutoPiercingAbility.ToReference<BlueprintUnitFactReference>() };
