@@ -1,4 +1,5 @@
-﻿using TabletopTweaks.Core.UMMTools;
+﻿using IsekaiMod.Config;
+using TabletopTweaks.Core.UMMTools;
 using UnityModManagerNet;
 using static IsekaiMod.Main;
 
@@ -11,31 +12,29 @@ namespace IsekaiMod {
             UI.AutoWidth();
             UI.TabBar(ref selectedTab,
                     () => UI.Label("Select your preferred settings and restart your game.".yellow().bold()),
-                   new NamedAction("Added Content", () => SettingsTabs.AddedContent())
+                   new NamedAction("Added Content", () => SettingsTabs.AddedContent()),
+                   new NamedAction("Settings", () => SettingsTabs.Settings())
             );
         }
     }
 
     internal static class SettingsTabs {
-
+        private static readonly AddedContent addedContent = IsekaiContext.AddedContent;
         public static void AddedContent() {
             var TabLevel = SetttingUI.TabLevel.Zero;
-            var AddedContent = IsekaiContext.AddedContent;
-            UI.Div(0, 15);
+            UI.Div();
+            UI.Toggle("New Settings Off By Default".bold(), ref addedContent.NewSettingsOffByDefault);
             using (UI.VerticalScope()) {
-                UI.Toggle("New Settings Off By Default".bold(), ref AddedContent.NewSettingsOffByDefault);
-                UI.Space(25);
-                SetttingUI.SettingGroup("Exceptional Feats", TabLevel, AddedContent.Feats);
-                SetttingUI.SettingGroup("Classes", TabLevel, AddedContent.Classes);
-                SetttingUI.SettingGroup("Heritages", TabLevel, AddedContent.Heritages);
-                SetttingUI.SettingGroup("Backgrounds", TabLevel, AddedContent.Backgrounds);
-                SetttingUI.SettingGroup("Deities", TabLevel, AddedContent.Deities);
-                SetttingUI.SettingGroup("Archetypes", TabLevel, AddedContent.Archetypes);
+                SetttingUI.SettingGroup("Isekai", TabLevel, addedContent.Isekai);
+                SetttingUI.SettingGroup("Other", TabLevel, addedContent.Other);
             }
-            UI.Label("Options");
-            UI.Toggle("Exclude Companions and Mercenaries from having the Isekai Protagonist Class (Requires Restart)", ref AddedContent.ExcludeCompanionsFromIsekaiClass);
-            UI.Toggle("Allow multiple Mythic Overpowered Abilities to be selected (Requires Restart)", ref AddedContent.MultipleMythicOPAbility);
-            UI.Toggle("Allow multiple Mythic Special Powers to be selected (Requires Restart)", ref AddedContent.MultipleMythicSpecialPower);
+        }
+        public static void Settings() {
+            UI.Div();
+            UI.Toggle("Exclude Companions and Mercenaries from having the Isekai Protagonist Class.", ref addedContent.ExcludeCompanionsFromIsekaiClass);
+            UI.Toggle("Allow multiple Mythic Overpowered Abilities to be selected.", ref addedContent.MultipleMythicOPAbility);
+            UI.Toggle("Allow multiple Mythic Special Powers to be selected.", ref addedContent.MultipleMythicSpecialPower);
+            UI.Toggle("Apply a merge function on all canon baseclass spell lists to create the Isekai Spell list.", ref addedContent.MergeIsekaiSpellList);
         }
     }
 }

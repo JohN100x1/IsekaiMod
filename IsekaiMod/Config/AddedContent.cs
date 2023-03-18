@@ -7,28 +7,22 @@ namespace IsekaiMod.Config {
         public bool ExcludeCompanionsFromIsekaiClass = false;
         public bool MultipleMythicOPAbility = false;
         public bool MultipleMythicSpecialPower = false;
-        public SettingGroup Feats = new();
-        public SettingGroup Heritages = new();
-        public SettingGroup Backgrounds = new();
-        public SettingGroup Classes = new();
-        public SettingGroup Deities = new();
-        public SettingGroup Archetypes = new();
+        public bool MergeIsekaiSpellList = false;
+        public SettingGroup Isekai = new();
+        public SettingGroup Other = new();
 
         public void Init() {
         }
 
         public void OverrideSettings(IUpdatableSettings userSettings) {
             var loadedSettings = userSettings as AddedContent;
+            NewSettingsOffByDefault = loadedSettings.NewSettingsOffByDefault;
             ExcludeCompanionsFromIsekaiClass = loadedSettings.ExcludeCompanionsFromIsekaiClass;
             MultipleMythicOPAbility = loadedSettings.MultipleMythicOPAbility;
             MultipleMythicSpecialPower = loadedSettings.MultipleMythicSpecialPower;
-            NewSettingsOffByDefault = loadedSettings.NewSettingsOffByDefault;
-            Heritages.LoadSettingGroup(loadedSettings.Heritages, NewSettingsOffByDefault);
-            Backgrounds.LoadSettingGroup(loadedSettings.Backgrounds, NewSettingsOffByDefault);
-            Classes.LoadSettingGroup(loadedSettings.Classes, NewSettingsOffByDefault);
-            Deities.LoadSettingGroup(loadedSettings.Deities, NewSettingsOffByDefault);
-            Feats.LoadSettingGroup(loadedSettings.Feats, NewSettingsOffByDefault);
-            Archetypes.LoadSettingGroup(loadedSettings.Archetypes, NewSettingsOffByDefault);
+            MergeIsekaiSpellList = loadedSettings.MergeIsekaiSpellList;
+            Isekai.LoadSettingGroup(loadedSettings.Isekai, NewSettingsOffByDefault);
+            Other.LoadSettingGroup(loadedSettings.Other, NewSettingsOffByDefault);
         }
     }
 }

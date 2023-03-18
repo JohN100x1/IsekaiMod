@@ -29,11 +29,11 @@ namespace IsekaiMod.Content {
                 Features.ExoticWeaponProficiency.Add();
                 Main.LogDebug("first init call start if block");
 
-                if (IsekaiContext.AddedContent.Feats.IsEnabled("Exceptional Feats")) AddExceptionalFeats();
-                if (IsekaiContext.AddedContent.Backgrounds.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
-                if (IsekaiContext.AddedContent.Deities.IsEnabled("Isekai Deities")) AddIsekaiDeities();
-                if (IsekaiContext.AddedContent.Heritages.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
-                if (IsekaiContext.AddedContent.Classes.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
+                if (IsekaiContext.AddedContent.Other.IsEnabled("Exceptional Feats")) AddExceptionalFeats();
+                if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
+                if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Deities")) AddIsekaiDeities();
+                if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
+                if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
             }
 
             public static void AddIsekaiProtagonistClass() {
@@ -123,7 +123,7 @@ namespace IsekaiMod.Content {
                 Features.IsekaiProtagonist.OverpoweredAbility.TrueResurrection.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.SupremeBeing.Add();
                 Features.IsekaiProtagonist.OverpoweredAbility.AuraOfRighteousWrath.Add();
-                if (IsekaiContext.AddedContent.Feats.IsEnabled("Overpowered - Mythic Blessing")) Features.IsekaiProtagonist.OverpoweredAbility.BlessingOfTheMythic.Configure();
+                if (IsekaiContext.AddedContent.Other.IsEnabled("Mythic Class Feature")) Features.IsekaiProtagonist.OverpoweredAbility.BlessingOfTheMythic.Configure();
                 
                 Main.LogDebug("Class: OP");
 
@@ -261,7 +261,7 @@ namespace IsekaiMod.Content {
             IsekaiDeitySelection.PatchDeitySelection();
             Main.LogDebug("Postfix Patching: Deities fixed");
 
-            if (IsekaiContext.AddedContent.Classes.IsDisabled("Isekai Protagonist")) return;
+            if (IsekaiContext.AddedContent.Isekai.IsDisabled("Isekai Protagonist")) return;
 
             KineticLegacy.PatchKineticistProgression();
             Main.LogDebug("Postfix Patching: Kineticist Patched");
@@ -276,7 +276,7 @@ namespace IsekaiMod.Content {
             Main.LogDebug("Postfix Patching: Kinetic Knight Patched");
 
             //done here because it should be done after all spells have been initialized and were added to the canon books
-            if (IsekaiContext.AddedContent.Classes.IsEnabled("Merge Isekai Spelllist")) IsekaiProtagonistSpellList.MergeSpellLists();
+            if (IsekaiContext.AddedContent.MergeIsekaiSpellList) IsekaiProtagonistSpellList.MergeSpellLists();
 
             if (ModSupport.IsTableTopTweakBaseEnabled()) {
                 PatchTableTopTweakCore();

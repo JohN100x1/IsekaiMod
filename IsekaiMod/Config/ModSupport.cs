@@ -40,7 +40,7 @@ namespace IsekaiMod.Utilities {
             public static void Postfix() {
                 if (Initialized) return;
                 Initialized = true;
-                if (IsekaiContext.AddedContent.Classes.IsDisabled("Isekai Protagonist")) return;
+                if (IsekaiContext.AddedContent.Isekai.IsDisabled("Isekai Protagonist")) return;
                 if (IsTableTopTweakBaseEnabled()) {
                     Main.Log("TabletopTweaks-Base 2.5.2 Support Enabled.");
                     AutoRime.Add();
@@ -50,8 +50,10 @@ namespace IsekaiMod.Utilities {
                 }
                 if (IsMysticalMayhemEnabled()) {
                     Main.Log("Mystical Mayhem 0.1.5 Support Enabled.");
-                    BlueprintAbility MeteorSwarmAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("d0cd103b15494866b0444c1a961bc40f");
-                    IsekaiProtagonistSpellList.Get().SpellsByLevel[9].m_Spells.Add(MeteorSwarmAbility.ToReference<BlueprintAbilityReference>());
+                    if (!IsekaiContext.AddedContent.MergeIsekaiSpellList) {
+                        BlueprintAbility MeteorSwarmAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("d0cd103b15494866b0444c1a961bc40f");
+                        IsekaiProtagonistSpellList.Get().SpellsByLevel[9].m_Spells.Add(MeteorSwarmAbility.ToReference<BlueprintAbilityReference>());
+                    }
                 }
                 if (IsExpandedContentEnabled()) {
                     Main.Log("Expanded Content 0.5.2 Support Enabled.");
@@ -82,7 +84,7 @@ namespace IsekaiMod.Utilities {
 
             public static void AddExpandedContentSpells(BlueprintSpellList spellList) {
                 //if enabled we grab these through the merge anyway
-                if (IsekaiContext.AddedContent.Classes.IsEnabled("Merge Isekai Spelllist")) return;
+                if (IsekaiContext.AddedContent.MergeIsekaiSpellList) return;
 
                 BlueprintAbility FuryOftheSunAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("accc5584b62e4e73aa0a693f725ddf60");
                 BlueprintAbility GloomblindBoltsAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("e28f4633c0a2425d8895adf20cb22f8f");
