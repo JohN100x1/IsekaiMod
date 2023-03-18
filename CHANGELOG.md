@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Auto Solid Shadows` OP ability (requires TabletopTweaks-Base).
 - Added `Auto Encouraging` OP ability (requires TabletopTweaks-Base).
 - Added `Auto Intensified` OP ability (requires TabletopTweaks-Base).
+- Added `Auto Elemental` OP abilities (requires TabletopTweaks-Base).
 - Added UMM option to allow for multiple Mythic OP abilities and Mythic special powers.
 - Updated mod support for ExpandedContent.
 ### Changed

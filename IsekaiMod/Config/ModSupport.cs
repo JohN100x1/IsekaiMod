@@ -50,6 +50,7 @@ namespace IsekaiMod.Utilities {
                     AutoSolidShadows.Add();
                     AutoEncouraging.Add();
                     AutoIntensified.Add();
+                    AutoElemental.Add();
                 }
                 if (IsMysticalMayhemEnabled()) {
                     Main.Log("Mystical Mayhem 0.1.5 Support Enabled.");

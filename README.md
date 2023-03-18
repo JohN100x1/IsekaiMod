@@ -137,6 +137,10 @@ Exception to this is the God Emperor as all options that were changed were not p
 			- `Auto Solid Shadows`: Shadow spells are 20% more real.
 			- `Auto Encouraging`: Increase spells' morale bonus by 1.
 			- `Auto Intensified`: Increase spells' max damage dice by 5.
+			- `Auto Elemental (Acid)`: Replace or split spells' damage with acid.
+			- `Auto Elemental (Cold)`: Replace or split spells' damage with cold.
+			- `Auto Elemental (Electricity)`: Replace or split spells' damage with electricity.
+			- `Auto Elemental (Fire)`: Replace or split spells' damage with fire.
 	- `Mythic Class Feature`: Access to a mythic class feature not your own
 		- `Angel Mythic Class Feature`: possible selections include the angelic halo and sword of heaven and their buffs
 		- `Azata Mythic Class Feature`: the superpowers
@@ -246,7 +250,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 This mod has support for the following mods.
 ### TabletopTweaks-Base (2.5.2)
 If you have the `TabletopTweaks-Base` mod, the `Isekai Protagonist` will have `Auto Rime`, `Auto Burning`, `Auto Flaring`,
-`Auto Piercing`, `Auto Solid Shadows`, `Auto Encouraging`, `Auto Intensified` as OP ability options.
+`Auto Piercing`, `Auto Solid Shadows`, `Auto Encouraging`, `Auto Intensified`, and `Auto Elemental` OP ability options.
 ### MysticalMayhem (0.1.5)
 If you have the `MysticalMayhem` mod, the `Isekai Protagonist` will have the 9th level `Meteor Swarm` spell added to its spellbook.
 ### ExpandedContent (0.5.2)
