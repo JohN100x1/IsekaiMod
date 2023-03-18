@@ -5,6 +5,8 @@ namespace IsekaiMod.Config {
     public class AddedContent : IUpdatableSettings {
         public bool NewSettingsOffByDefault = false;
         public bool ExcludeCompanionsFromIsekaiClass = false;
+        public bool MultipleMythicOPAbility = false;
+        public bool MultipleMythicSpecialPower = false;
         public SettingGroup Feats = new();
         public SettingGroup Heritages = new();
         public SettingGroup Backgrounds = new();
@@ -18,6 +20,8 @@ namespace IsekaiMod.Config {
         public void OverrideSettings(IUpdatableSettings userSettings) {
             var loadedSettings = userSettings as AddedContent;
             ExcludeCompanionsFromIsekaiClass = loadedSettings.ExcludeCompanionsFromIsekaiClass;
+            MultipleMythicOPAbility = loadedSettings.MultipleMythicOPAbility;
+            MultipleMythicSpecialPower = loadedSettings.MultipleMythicSpecialPower;
             NewSettingsOffByDefault = loadedSettings.NewSettingsOffByDefault;
             Heritages.LoadSettingGroup(loadedSettings.Heritages, NewSettingsOffByDefault);
             Backgrounds.LoadSettingGroup(loadedSettings.Backgrounds, NewSettingsOffByDefault);

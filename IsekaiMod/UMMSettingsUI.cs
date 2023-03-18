@@ -32,7 +32,10 @@ namespace IsekaiMod {
                 SetttingUI.SettingGroup("Deities", TabLevel, AddedContent.Deities);
                 SetttingUI.SettingGroup("Archetypes", TabLevel, AddedContent.Archetypes);
             }
+            UI.Label("Options");
             UI.Toggle("Exclude Companions and Mercenaries from having the Isekai Protagonist Class (Requires Restart)", ref AddedContent.ExcludeCompanionsFromIsekaiClass);
+            UI.Toggle("Allow multiple Mythic Overpowered Abilities to be selected (Requires Restart)", ref AddedContent.MultipleMythicOPAbility);
+            UI.Toggle("Allow multiple Mythic Special Powers to be selected (Requires Restart)", ref AddedContent.MultipleMythicSpecialPower);
         }
     }
 }

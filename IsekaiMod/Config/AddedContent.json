@@ -1,6 +1,8 @@
 {
   "NewSettingsOffByDefault": false,
   "ExcludeCompanionsFromIsekaiClass": false,
+  "MultipleMythicOPAbility": false,
+  "MultipleMythicSpecialPower": false,
   "Feats": {
     "DisableAll": false,
     "Settings": {

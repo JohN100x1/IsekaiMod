@@ -38,8 +38,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.m_AllFeatures = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.ToReference<BlueprintFeatureReference>() };
             });
 
-            // You can't select another Special Power from Mythic Abilities
-            SpecialPowerMythicSelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = SpecialPowerMythicSelection.ToReference<BlueprintFeatureReference>(); });
+            if (!IsekaiContext.AddedContent.MultipleMythicSpecialPower) {
+                // You can't select another Special Power from Mythic Abilities
+                SpecialPowerMythicSelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = SpecialPowerMythicSelection.ToReference<BlueprintFeatureReference>(); });
+            }
 
             // Add selection to mythic ability selection
             var MythicAbilitySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ba0e5a900b775be4a99702f1ed08914d");

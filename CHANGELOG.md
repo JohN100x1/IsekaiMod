@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Auto Burning` OP ability (requires TabletopTweaks-Base).
 - Added `Auto Flaring` OP ability (requires TabletopTweaks-Base).
 - Added `Auto Piercing` OP ability (requires TabletopTweaks-Base).
+- Added UMM option to allow for multiple Mythic OP abilities and Mythic special powers.
 - Updated mod support for ExpandedContent.
 ### Fixed
 - Fixed missing dialogue for drow ambush encounter.

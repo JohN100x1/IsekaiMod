@@ -51,8 +51,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.m_Features = new BlueprintFeatureReference[0];
             });
 
-            // You can't select another Overpowered Ability from Mythic Abilities
-            OverpoweredAbilityMythicSelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = OverpoweredAbilityMythicSelection.ToReference<BlueprintFeatureReference>(); });
+            if (!IsekaiContext.AddedContent.MultipleMythicOPAbility) {
+                // You can't select another Overpowered Ability from Mythic Abilities
+                OverpoweredAbilityMythicSelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = OverpoweredAbilityMythicSelection.ToReference<BlueprintFeatureReference>(); });
+            }
 
             // Add selection to mythic ability selection
             var MythicAbilitySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ba0e5a900b775be4a99702f1ed08914d");
