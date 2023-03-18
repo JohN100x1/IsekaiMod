@@ -129,8 +129,9 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Supreme Being`: All your attributes have a base value of 30.
 		- `Mythic Class Feature`: see below
 		- `Dual Legacy`: Pick a second base class to get abilities from, or in the case of the God Emperor your first.
-		- `AutoRime`: Rimes every spell you cast (requires TabletopTweaks-Base).
-		- `AutoBurning`: Causes burning with every spell you cast (requires TabletopTweaks-Base).
+		- `Auto Rime`: Rimes every spell you cast (requires TabletopTweaks-Base).
+		- `Auto Burning`: Causes burning with every spell you cast (requires TabletopTweaks-Base).
+		- `Auto Piercing`: Pierce with every spell you cast (requires TabletopTweaks-Base).
 	- `Mythic Class Feature`: Access to a mythic class feature not your own
 		- `Angel Mythic Class Feature`: possible selections include the angelic halo and sword of heaven and their buffs
 		- `Azata Mythic Class Feature`: the superpowers
