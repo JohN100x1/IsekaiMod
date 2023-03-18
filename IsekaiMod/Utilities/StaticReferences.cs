@@ -2,8 +2,11 @@
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Blueprints.Facts;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.UnitLogic.Mechanics.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -97,29 +100,7 @@ namespace IsekaiMod.Utilities {
                 var mySpellSet = new HashSet<SpellReference>();
                 foreach (var component in feature.Components) {
                     //check if component is addSpell
-                    if (component is AddKnownSpell asSpell) {
-                        //don't re add spells already added for my class
-                        if (asSpell.m_CharacterClass == referenceClass) {
-                            mySpellSet.Add(new SpellReference(asSpell.SpellLevel, asSpell.m_Spell));
-                        }
-                    }
-                    // we do not have a special spell list, so just add all such spells to spells known
-                    if (component is AddSpecialSpellList asSpellList && asSpellList.m_CharacterClass == referenceClass) {
-                        foreach (var level2 in asSpellList.SpellList.SpellsByLevel) {
-                            foreach (var spell in level2.m_Spells) {
-                                mySpellSet.Add(new SpellReference(level2.SpellLevel, spell));
-                            }
-                        }
-                    }
-                    //check if component is AddFeature
-                    if (component is AddFeatureOnClassLevel asFeat) {
-                        PatchClassIntoFeatureOfReferenceClass(asFeat.m_Feature.Get(), myClass, referenceClass, level);
-                        //only add our class as an additional class if the original entry was not valid for all classes but was restricted to the correct base class
-                        if (asFeat.m_Class != null && asFeat.m_Class == referenceClass
-                            && (asFeat.m_AdditionalClasses == null || !asFeat.m_AdditionalClasses.Contains<BlueprintCharacterClassReference>(myClass))) {
-                            asFeat.m_AdditionalClasses.AddItem(myClass);
-                        }
-                    }
+                    HandleComponent(myClass, referenceClass, level, mySpellSet, component);
                 }
                 foreach (var spellReference in mySpellSet) {
                     feature.AddComponent<AddKnownSpell>(c => {
@@ -131,82 +112,193 @@ namespace IsekaiMod.Utilities {
                 }
             }
         }
+
+        private static void HandleComponent(BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level, HashSet<SpellReference> mySpellSet, BlueprintComponent component) {
+            level = level++;
+            if (level > 20) {
+                IsekaiContext.Logger.LogError("Attempt to patch Progression Tree stopped at Level 20 to prevent endless loop, if you see this message please report so we can figure out if someone created a loop here or if this limit needs to be higher");
+                return;
+            }
+            if (component is AddKnownSpell asSpell) {
+                //don't re add spells already added for my class
+                if (asSpell.m_CharacterClass == referenceClass) {
+                    mySpellSet.Add(new SpellReference(asSpell.SpellLevel, asSpell.m_Spell));
+                }
+            }
+            // we do not have a special spell list, so just add all such spells to spells known
+            if (component is AddSpecialSpellList asSpellList && asSpellList.m_CharacterClass == referenceClass) {
+                foreach (var level2 in asSpellList.SpellList.SpellsByLevel) {
+                    foreach (var spell in level2.m_Spells) {
+                        mySpellSet.Add(new SpellReference(level2.SpellLevel, spell));
+                    }
+                }
+            }
+            //check if component is AddFeature
+            if (component is AddFeatureOnClassLevel asFeat) {
+                PatchClassIntoFeatureOfReferenceClass(asFeat.m_Feature.Get(), myClass, referenceClass, level);
+                //only add our class as an additional class if the original entry was not valid for all classes but was restricted to the correct base class
+                if (asFeat.m_Class != null && asFeat.m_Class == referenceClass
+                    && (asFeat.m_AdditionalClasses == null || !asFeat.m_AdditionalClasses.Contains<BlueprintCharacterClassReference>(myClass))) {
+                    asFeat.m_AdditionalClasses.AddItem(myClass);
+                }
+            }
+            // check if component is add facts because features could also be added as facts rather than on level...
+            if (component is AddFacts addFact) {
+                foreach (var factRef in addFact.Facts) {
+                    if (factRef is BlueprintFeature feature2) {
+                        PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, level);
+                    }
+                    if (factRef is BlueprintProgression progression2) {
+                        PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, level);
+                    }
+                    if (factRef is BlueprintUnitFact unitFact) {
+                        foreach (var component2 in unitFact.Components) {
+                            HandleComponent(myClass, referenceClass, level, mySpellSet, component2);
+                        }
+                    }
+                    if (factRef is BlueprintAbility ability) {
+                        ContextRankConfig sample = null;
+                        bool alreadyPatched = false;
+                        foreach (var component2 in ability.Components) {
+                            if (component2 is ContextRankConfig rankConfig && rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel && rankConfig.m_Class.Contains(referenceClass)) {
+                                sample = rankConfig;
+                                bool classlocked = false;
+                                
+                                if (rankConfig.m_Class != null && rankConfig.m_Class.Length > 0) {
+                                    if (rankConfig.m_Class.Contains(referenceClass)) {
+                                        classlocked = true;
+                                    }
+                                    if (rankConfig.m_Class.Contains(myClass)) {
+                                        alreadyPatched = true;
+                                    }
+                                }
+                                if (classlocked && !alreadyPatched) {
+                                    rankConfig.m_Class.AddItem(myClass);
+
+                                    
+                                }
+                            } else {
+                                if (component2 is ContextRankConfig rankConfig2 && rankConfig2.m_BaseValueType == ContextRankBaseValueType.ClassLevel && rankConfig2.m_Class.Contains(myClass)) {
+                                    alreadyPatched = true;
+                                }
+                            }
+                        }
+                        if (sample != null && !alreadyPatched) {
+                            ability.AddComponent<ContextRankConfig>(c => {
+                                c.m_BaseValueType = ContextRankBaseValueType.ClassLevel;
+                                c.m_Type = sample.m_Type;
+                                c.m_StartLevel = sample.m_StartLevel;
+                                c.m_Progression = sample.m_Progression;
+                                c.m_Flags = sample.m_Flags;
+                                c.m_BuffRankMultiplier = sample.m_BuffRankMultiplier;
+                                c.m_Class = new BlueprintCharacterClassReference[] { myClass };
+                                c.m_CustomProgression= sample.m_CustomProgression;
+                                c.m_Max = sample.m_Max;
+                                c.m_Min = sample.m_Min;
+                                c.m_Stat= sample.m_Stat;
+                                c.m_StepLevel= sample.m_StepLevel;
+                                c.m_ExceptClasses= sample.m_ExceptClasses;
+                            });
+                            Main.Log("rank progression patched= " + ability.AssetGuid + " added class= " + myClass.Guid + " for ref= " + referenceClass.Guid);
+                        }
+                    }
+                }
+            }
+            if (component is AddAbilityResources addResource) {
+                BlueprintAbilityResourceReference resRef = addResource.m_Resource;
+                if (resRef != null) {
+                    BlueprintAbilityResource res = resRef.Get();
+                    Boolean classlocked = false;
+                    Boolean alreadyPatched = false;
+                    if (res.m_MaxAmount.m_ClassDiv != null && res.m_MaxAmount.m_ClassDiv.Contains<BlueprintCharacterClassReference>(referenceClass)) {
+                        classlocked = true;
+                    }
+                    if (res.m_MaxAmount.m_ClassDiv != null && res.m_MaxAmount.m_ClassDiv.Contains<BlueprintCharacterClassReference>(myClass)) {
+                        alreadyPatched = true;
+                    }
+                    if (classlocked && !alreadyPatched) { 
+                        res.m_MaxAmount.m_ClassDiv.AddItem(myClass); 
+                        Main.Log("class resource patched= " + resRef.Guid); 
+                    }
+                }
+            }
+        }
+
+        internal class SpellReference {
+            public int level;
+            public BlueprintAbilityReference value;
+            public SpellReference(int inLevel, BlueprintAbilityReference inValue) {
+                level = inLevel;
+                value = inValue;
+            }
+            public override bool Equals(object p) {
+                if (p is null) {
+                    return false;
+                }
+
+                // Optimization for a common success case.
+                if (Object.ReferenceEquals(this, p)) {
+                    return true;
+                }
+
+                // If run-time types are not exactly the same, return false.
+                if (this.GetType() != p.GetType()) {
+                    return false;
+                }
+
+                // Return true if the fields match.
+                // Note that the base class is not invoked because it is
+                // System.Object, which defines Equals as reference equality.
+                return value.Guid.ToString() == ((SpellReference)p).value.Guid.ToString();
+            }
+            public static bool operator ==(SpellReference left, SpellReference right) {
+                if (left is null && right is null) return true;
+                if (!(left is null)) {
+                    return left.Equals(right);
+                }
+                return false;
+            }
+            public static bool operator !=(SpellReference left, SpellReference right) { return !(left == right); }
+            public override int GetHashCode() => value.GetHashCode();
+        }
+
+        internal class FeatureOnLevelReference {
+            public int level;
+            public BlueprintFeatureReference value;
+            public FeatureOnLevelReference(int inLevel, BlueprintFeatureReference inValue) {
+                level = inLevel;
+                value = inValue;
+            }
+            public override bool Equals(object p) {
+                if (p is null) {
+                    return false;
+                }
+
+                // Optimization for a common success case.
+                if (Object.ReferenceEquals(this, p)) {
+                    return true;
+                }
+
+                // If run-time types are not exactly the same, return false.
+                if (this.GetType() != p.GetType()) {
+                    return false;
+                }
+
+                // Return true if the fields match.
+                // Note that the base class is not invoked because it is
+                // System.Object, which defines Equals as reference equality.
+                return value.Guid.ToString() == ((FeatureOnLevelReference)p).value.Guid.ToString();
+            }
+            public static bool operator ==(FeatureOnLevelReference left, FeatureOnLevelReference right) {
+                if (left is null && right is null) return true;
+                if (!(left is null)) {
+                    return left.Equals(right);
+                }
+                return false;
+            }
+            public static bool operator !=(FeatureOnLevelReference left, FeatureOnLevelReference right) { return !(left == right); }
+            public override int GetHashCode() => value.GetHashCode();
+        }
+
     }
-    internal class SpellReference {
-        public int level;
-        public BlueprintAbilityReference value;
-        public SpellReference(int inLevel, BlueprintAbilityReference inValue) {
-            level = inLevel;
-            value = inValue;
-        }
-        public override bool Equals(object p) {
-            if (p is null) {
-                return false;
-            }
-
-            // Optimization for a common success case.
-            if (Object.ReferenceEquals(this, p)) {
-                return true;
-            }
-
-            // If run-time types are not exactly the same, return false.
-            if (this.GetType() != p.GetType()) {
-                return false;
-            }
-
-            // Return true if the fields match.
-            // Note that the base class is not invoked because it is
-            // System.Object, which defines Equals as reference equality.
-            return value.Guid.ToString() == ((SpellReference)p).value.Guid.ToString();
-        }
-        public static bool operator ==(SpellReference left, SpellReference right) {
-            if (left is null && right is null) return true;
-            if (!(left is null)) {
-                return left.Equals(right);
-            }
-            return false;
-        }
-        public static bool operator !=(SpellReference left, SpellReference right) { return !(left == right); }
-        public override int GetHashCode() => value.GetHashCode();
-    }
-
-    internal class FeatureOnLevelReference {
-        public int level;
-        public BlueprintFeatureReference value;
-        public FeatureOnLevelReference(int inLevel, BlueprintFeatureReference inValue) {
-            level = inLevel;
-            value = inValue;
-        }
-        public override bool Equals(object p) {
-            if (p is null) {
-                return false;
-            }
-
-            // Optimization for a common success case.
-            if (Object.ReferenceEquals(this, p)) {
-                return true;
-            }
-
-            // If run-time types are not exactly the same, return false.
-            if (this.GetType() != p.GetType()) {
-                return false;
-            }
-
-            // Return true if the fields match.
-            // Note that the base class is not invoked because it is
-            // System.Object, which defines Equals as reference equality.
-            return value.Guid.ToString() == ((FeatureOnLevelReference)p).value.Guid.ToString();
-        }
-        public static bool operator ==(FeatureOnLevelReference left, FeatureOnLevelReference right) {
-            if (left is null && right is null) return true;
-            if (!(left is null)) {
-                return left.Equals(right);
-            }
-            return false;
-        }
-        public static bool operator !=(FeatureOnLevelReference left, FeatureOnLevelReference right) { return !(left == right); }
-        public override int GetHashCode() => value.GetHashCode();
-    }
-
-
 }
