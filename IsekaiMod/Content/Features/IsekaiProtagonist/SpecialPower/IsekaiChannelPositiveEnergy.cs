@@ -118,7 +118,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                             });
                         c.IfTrue = ActionFlow.DoNothing();
                         c.IfFalse = ActionFlow.DoSingle<Conditional>(c => {
-                            c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionHasFact>(c => {
+                            c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionCasterHasFact>(c => {
                                 c.m_Fact = SelectiveChannel.ToReference<BlueprintUnitFactReference>();
                                 c.Not = false;
                             });
@@ -257,7 +257,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                             c.Not = true;
                         });
                         c.IfTrue = ActionFlow.DoSingle<Conditional>(c => {
-                            c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionHasFact>(c => {
+                            c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionCasterHasFact>(c => {
                                 c.m_Fact = SelectiveChannel.ToReference<BlueprintUnitFactReference>();
                                 c.Not = false;
                             });
