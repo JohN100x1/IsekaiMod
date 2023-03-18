@@ -430,6 +430,9 @@
     "AutoEncouragingBuff": "faab8a70-1b55-41a5-9634-c32de3f0ac3c",
     "AutoEncouragingAbility": "7b18ca86-1b5d-44d3-b233-6cf343972098",
     "AutoEncouragingFeature": "5756078b-7a76-49a1-9145-7d5c8d5c0b42",
+    "AutoIntensifiedBuff": "3cd2d372-6c67-4320-8016-b6f32b0d57ee",
+    "AutoIntensifiedAbility": "ae81a96d-0776-4258-9a4f-58bec2bb46bf",
+    "AutoIntensifiedFeature": "379d63d3-75d6-4295-bfc0-67c849c4709a",
 
     // God Emperor Features
     "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",
