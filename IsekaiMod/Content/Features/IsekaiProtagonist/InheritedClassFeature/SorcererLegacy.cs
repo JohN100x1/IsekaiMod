@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             var ExtraSelection = ExtraBloodlineSelection.Get();
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "SorcererLegacyProgression", bp => {
                 bp.SetName(IsekaiContext, "Sorcerer Legacy - Chimera");
-                bp.SetDescription(IsekaiContext, "Their otherworldly knowledge and point of view allows Chimeras to imbue themselves with different bloodlines in order to gain power and strength. \nThe Chimera is constantly seeking out new sources of power, and their ability to absorb and incorporate these different bloodlines allows them to become truly formidable foes. \nHowever, their constant experimentation with bloodlines can also lead to confusion and uncertainty about their own heritage and identity, as their original ancestry becomes harder to discern over time.");
+                bp.SetDescription(IsekaiContext, "Their otherworldly knowledge and point of view allow Chimeras to imbue themselves with different bloodlines in order to gain power and strength. \nChimeras are constantly seeking out new sources of power, and their ability to absorb and incorporate these different bloodlines allows them to become truly formidable foes. \nHowever, their constant experimentation with bloodlines can also lead to confusion and uncertainty about their own heritage and identity, as their original ancestry becomes harder to discern over time.");
                 bp.GiveFeaturesForPreviousLevels = false;
                 bp.IsClassFeature = true;
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {

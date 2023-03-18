@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Reworked UMM settings.
 ### Fixed
+- Fixed typos and grammar.
 - Fixed missing dialogue for drow ambush encounter.
 - Fixed `Channel Energy` and other features class level scaling in legacy progressions.
 - Fixed `Channel Positive Energy` Special Power to apply selectively with the selective channel feat.

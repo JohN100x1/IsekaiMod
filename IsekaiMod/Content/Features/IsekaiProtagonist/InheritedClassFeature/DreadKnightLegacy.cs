@@ -33,7 +33,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "DreadKnightLegacy", bp => {
                 bp.SetName(IsekaiContext, "Dread Knight Legacy - Dread Lord");
-                bp.SetDescription(IsekaiContext, "*Blinks and slowly backs away*, Uhm are you certain you want to play this? I mean Dread Knights are kind of evil, you know? \n As in the they are the opposite of anything a paladin represents...");
+                bp.SetDescription(IsekaiContext, "*Blinks and slowly backs away*, Uhm, are you certain you want to play this? I mean Dread Knights are kind of evil, you know? \n As in they are the opposite of anything a paladin represents...");
                 bp.GiveFeaturesForPreviousLevels = true;
                 bp.IsClassFeature = true;
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {

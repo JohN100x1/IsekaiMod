@@ -14,7 +14,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static void Configure() {
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "RogueLegacy", bp => {
                 bp.SetName(IsekaiContext, "Rogue Legacy - Supernatural Thief");
-                bp.SetDescription(IsekaiContext, "Your reincarnation gave you great power, that is no reason to forget the usefulness of a simple backstab.");
+                bp.SetDescription(IsekaiContext, "Your reincarnation gave you great power; that is no reason to forget the usefulness of a simple backstab.");
                 bp.GiveFeaturesForPreviousLevels = true;
                 bp.IsClassFeature = true;
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
