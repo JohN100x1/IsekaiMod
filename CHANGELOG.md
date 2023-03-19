@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Reworked UMM settings.
 ### Fixed
-- Fixed typos and grammar.
+- Fixed typos and grammar in multiple legacy descriptions.
 - Fixed missing dialogue for drow ambush encounter.
 - Fixed `Martial Artist` Nunchaku weapon proficiency.
 - Fixed `Kinetic Power` fire avatar eruption ability animation.
