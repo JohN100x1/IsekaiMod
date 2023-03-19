@@ -32,7 +32,7 @@ namespace IsekaiMod.Content.Deities {
         public static void PatchDeitySelection() {
             var myDeityList = new Dictionary<int, HashSet<BlueprintFeatureSelection>>();
             var levelList = new HashSet<BlueprintFeatureSelection> {
-                ThingsNotHandledByTTTCore.DeitySelection
+                StaticReferences.Selections.DeitySelection
             };
             myDeityList.Add(1, levelList);
             var knownDeities = new HashSet<BlueprintFeature>();
