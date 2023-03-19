@@ -5,7 +5,6 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.UI.MVVM._PCView.Rest;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
@@ -15,7 +14,6 @@ using System.Collections.Generic;
 using System.Linq;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
-using static Pathfinding.Util.RetainedGizmos;
 
 namespace IsekaiMod.Utilities {
 
