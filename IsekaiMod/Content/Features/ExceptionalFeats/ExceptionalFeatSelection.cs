@@ -52,8 +52,8 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
         public static void AddToSelection(BlueprintFeatureSelection selection, BlueprintFeatureSelection bonusSelection) {
             var ExceptionalFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalFeatSelection");
             var ExceptionalFeatBonusSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalFeatBonusSelection");
-            ExceptionalFeatSelection.m_AllFeatures = ExceptionalFeatSelection.m_AllFeatures.AddToArray(selection.ToReference<BlueprintFeatureReference>());
-            ExceptionalFeatBonusSelection.m_AllFeatures = ExceptionalFeatBonusSelection.m_AllFeatures.AddToArray(bonusSelection.ToReference<BlueprintFeatureReference>());
+            ExceptionalFeatSelection.AddToSelection(selection);
+            ExceptionalFeatBonusSelection.AddToSelection(bonusSelection);
         }
     }
 }

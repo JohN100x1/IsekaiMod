@@ -1,5 +1,4 @@
-﻿using HarmonyLib;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -25,12 +24,8 @@ namespace IsekaiMod.Content.Backgrounds {
         }
 
         public static void AddToSelection(BlueprintFeature background) {
-            BlueprintFeatureSelection backgroundSelection = Get();
-            backgroundSelection.m_AllFeatures = backgroundSelection.m_AllFeatures.AddToArray(background.ToReference<BlueprintFeatureReference>());
-        }
-
-        public static BlueprintFeatureSelection Get() {
-            return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiBackgroundSelection");
+            var backgroundSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiBackgroundSelection");
+            backgroundSelection.AddToSelection(background);
         }
     }
 }

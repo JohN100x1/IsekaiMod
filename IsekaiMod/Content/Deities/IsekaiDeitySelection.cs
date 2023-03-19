@@ -90,7 +90,7 @@ namespace IsekaiMod.Content.Deities {
 
         public static void AddToSelection(BlueprintFeature deityFeature) {
             var IsekaiDeitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiDeitySelection");
-            IsekaiDeitySelection.m_AllFeatures = IsekaiDeitySelection.m_AllFeatures.AddToArray(deityFeature.ToReference<BlueprintFeatureReference>());
+            IsekaiDeitySelection.AddToSelection(deityFeature);
         }
     }
 }
