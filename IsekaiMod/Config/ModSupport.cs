@@ -15,26 +15,32 @@ using static Kingmaker.Blueprints.Classes.BlueprintProgression;
 using static UnityModManagerNet.UnityModManager;
 
 namespace IsekaiMod.Utilities {
-    class ModSupport {
-        public static bool IsExpandedContentEnabled() { 
-            return IsModEnabled("ExpandedContent"); 
+
+    internal class ModSupport {
+
+        public static bool IsExpandedContentEnabled() {
+            return IsModEnabled("ExpandedContent");
         }
-        public static bool IsMysticalMayhemEnabled() { 
-            return IsModEnabled("MysticalMayhem"); 
+
+        public static bool IsMysticalMayhemEnabled() {
+            return IsModEnabled("MysticalMayhem");
         }
-        public static bool IsSpellbookMergeEnabled() { 
-            return IsModEnabled("SpellbookMerge"); 
+
+        public static bool IsSpellbookMergeEnabled() {
+            return IsModEnabled("SpellbookMerge");
         }
-        public static bool IsExpandedElementEnabled() { 
-            return IsModEnabled("KineticistElementsExpanded"); 
+
+        public static bool IsExpandedElementEnabled() {
+            return IsModEnabled("KineticistElementsExpanded");
         }
-        public static bool IsTableTopTweakBaseEnabled() { 
-            return IsModEnabled("TabletopTweaks-Base"); 
+
+        public static bool IsTableTopTweakBaseEnabled() {
+            return IsModEnabled("TabletopTweaks-Base");
         }
 
         [HarmonyPatch(typeof(BlueprintsCache), "Init")]
-        static class BlueprintsCache_Init_Patch {
-            static bool Initialized;
+        private static class BlueprintsCache_Init_Patch {
+            private static bool Initialized;
 
             [HarmonyAfter()]
             public static void Postfix() {
@@ -82,7 +88,6 @@ namespace IsekaiMod.Utilities {
                     ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AzataIncorporateSpellbook, VillainSpellbook.Get());
                     ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(DemonIncorporateSpellbook, VillainSpellbook.Get());
                     ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(TricksterIncorporateSpellbook, VillainSpellbook.Get());
-
                 }
             }
 
