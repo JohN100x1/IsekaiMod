@@ -9,7 +9,7 @@ assignees: ''
 - [ ] Implementing...
 
 ## Pre-Release Tasks
-- [ ] Update localization
+- [ ] Update LocalizationPack.json
 - [ ] Update CHANGELOG.md
 - [ ] Update README.md
 - [ ] Update Info.json
