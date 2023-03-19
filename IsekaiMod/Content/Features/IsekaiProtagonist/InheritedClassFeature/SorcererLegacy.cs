@@ -46,11 +46,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             VillainLegacySelection.getClassFeature().AddFeatures(prog);
 
         }
-        public static void PatchSorcererBloodlines() {
+        public static void PatchProgression() {
             IsekaiContext.Logger.Log("trying to patch bloodlines:");
             BlueprintCharacterClassReference refClass = ClassTools.Classes.SorcererClass.ToReference<BlueprintCharacterClassReference>();
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
-            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.SorcererBloodlineSelection, myClass, refClass, 0);
+            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.SorcererBloodlineSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
         }
 
         public static BlueprintProgression Get() {

@@ -50,13 +50,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             VillainLegacySelection.getClassFeature().AddFeatures(prog);
         }
 
-        public static void PatchShamanProgressions() {
+        public static void PatchProgression() {
             ShamanSelection.GetHex().m_AllFeatures = shamanHex.m_AllFeatures;
 
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
             BlueprintCharacterClassReference refClass = ClassTools.Classes.ShamanClass.ToReference<BlueprintCharacterClassReference>();
-            StaticReferences.PatchClassIntoFeatureOfReferenceClass(shamanSpirit, myClass, refClass, 0);
-            StaticReferences.PatchClassIntoFeatureOfReferenceClass(shamanHex, myClass, refClass, 0);
+            StaticReferences.PatchClassIntoFeatureOfReferenceClass(shamanSpirit, myClass, refClass, 0, new BlueprintFeatureBase[] { });
+            StaticReferences.PatchClassIntoFeatureOfReferenceClass(shamanHex, myClass, refClass, 0, new BlueprintFeatureBase[] { });
             ShamanSelection.GetSpirit().m_AllFeatures = shamanSpirit.m_AllFeatures;
         }
 

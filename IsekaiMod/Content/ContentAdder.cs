@@ -19,7 +19,8 @@ namespace IsekaiMod.Content {
             private static bool Initialized;
 
             [HarmonyPriority(Priority.First)]
-            public static void Postfix() {
+            [HarmonyPostfix]
+            public static void CreateNewBlueprints() {
                 if (Initialized) return;
                 Initialized = true;
                 Main.LogDebug("first init call");
@@ -262,16 +263,20 @@ namespace IsekaiMod.Content {
 
             if (IsekaiContext.AddedContent.Classes.IsDisabled("Isekai Protagonist")) return;
 
-            KineticLegacy.PatchKineticistProgression();
+            BarbarianLegacy.PatchProgression();
+            BardLegacy.PatchProgression();
+            FighterBasicLegacy.PatchProgression();
+            RogueLegacy.PatchProgression();
+            KineticLegacy.PatchProgression();
             Main.LogDebug("Postfix Patching: Kineticist Patched");
-            OracleLegacy.PatchClassOracleSelection();
+            OracleLegacy.PatchProgression();
             Main.LogDebug("Postfix Patching: Oracle Patched");
-            SorcererLegacy.PatchSorcererBloodlines();
+            SorcererLegacy.PatchProgression();
             Main.LogDebug("Postfix Patching: Sorcerer Patched");
-            ShamanLegacy.PatchShamanProgressions();
+            ShamanLegacy.PatchProgression();
             Main.LogDebug("Postfix Patching: Shaman Patched");
             KineticKnightLegacy.configure();
-            KineticKnightLegacy.PatchKineticistProgression();
+            KineticKnightLegacy.PatchProgression();
             Main.LogDebug("Postfix Patching: Kinetic Knight Patched");
             KineticLegacy.MakeKineticProgsExclusive();
 

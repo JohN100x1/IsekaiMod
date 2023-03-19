@@ -63,6 +63,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             KineticLegacy.Configure();
             BardLegacy.Configure();
             BarbarianLegacy.Configure();
+            FighterBasicLegacy.Configure();
             HeroicLegacy.Configure();
             ShamanLegacy.Configure();
             MagusLegacy.Configure();
@@ -70,6 +71,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             ArcanaSelection.Configure();
             OverpoweredAbilitySelection.AddToSelection(GetOverwhelmingFeature());
             SpecialPower.SpecialPowerSelection.AddToSelection(GetOverwhelmingFeature());
+
+            //declaration solely to get guid, real configure follows later
+            DreadKnightLegacy.ConfigureEmptyShell();
+            KineticKnightLegacy.ConfigureEmptyShell();
             
         }
     }
