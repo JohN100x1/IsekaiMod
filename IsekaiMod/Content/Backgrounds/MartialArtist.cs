@@ -96,6 +96,11 @@ namespace IsekaiMod.Content.Backgrounds {
                     c.StackBonusType = ModifierDescriptor.Enhancement;
                     c.StackBonus = 1;
                 });
+                bp.AddComponent<AddBackgroundWeaponProficiency>(c => {
+                    c.Proficiency = WeaponCategory.Nunchaku;
+                    c.StackBonusType = ModifierDescriptor.Enhancement;
+                    c.StackBonus = 1;
+                });
             });
 
             // Register Background
