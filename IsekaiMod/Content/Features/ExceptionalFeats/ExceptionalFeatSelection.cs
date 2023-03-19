@@ -13,6 +13,11 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
         private static readonly BlueprintFeatureSelection ExtraMythicAbilityMythicFeat = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("8a6a511c55e67d04db328cc49aaad2b8");
 
         public static void Add() {
+            // Add more Exceptional feats later
+            var ExceptionalFeatures = MythicFeatSelection.m_AllFeatures
+                    .RemoveFromArray(ExtraFeatMythicFeat.ToReference<BlueprintFeatureReference>())
+                    .RemoveFromArray(ExtraMythicAbilityMythicFeat.ToReference<BlueprintFeatureReference>());
+
             // The reason for two copies is to avoid a UI bug when exceptional feats are selected both in feat and bonus feat.
             var ExceptionalFeatSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalFeatSelection", bp => {
                 bp.SetName(IsekaiContext, "Exceptional Feats");
@@ -22,11 +27,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                 bp.AddComponent<PureRecommendation>(c => {
                     c.Priority = RecommendationPriority.Good;
                 });
-
-                // Add more Exceptional feats later
-                bp.m_AllFeatures = MythicFeatSelection.m_AllFeatures
-                    .RemoveFromArray(ExtraFeatMythicFeat.ToReference<BlueprintFeatureReference>())
-                    .RemoveFromArray(ExtraMythicAbilityMythicFeat.ToReference<BlueprintFeatureReference>());
+                bp.m_AllFeatures = ExceptionalFeatures;
             });
             var ExceptionalFeatBonusSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalFeatBonusSelection", bp => {
                 bp.SetName(IsekaiContext, "Exceptional Feats");
@@ -36,11 +37,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                 bp.AddComponent<PureRecommendation>(c => {
                     c.Priority = RecommendationPriority.Good;
                 });
-
-                // Add more Exceptional feats later
-                bp.m_AllFeatures = MythicFeatSelection.m_AllFeatures
-                    .RemoveFromArray(ExtraFeatMythicFeat.ToReference<BlueprintFeatureReference>())
-                    .RemoveFromArray(ExtraMythicAbilityMythicFeat.ToReference<BlueprintFeatureReference>());
+                bp.m_AllFeatures = ExceptionalFeatures;
             });
 
             StaticReferences.Selections.BasicFeatSelection.AddToFirst(ExceptionalFeatSelection);
