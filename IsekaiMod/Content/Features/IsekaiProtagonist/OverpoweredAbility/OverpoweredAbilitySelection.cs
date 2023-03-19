@@ -5,15 +5,15 @@ using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
     internal class OverpoweredAbilitySelection {
-
+        private static readonly Sprite Icon_TrickFate = BlueprintTools.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
         public static void Add() {
             // Overpowered Ability Selection
-            var Icon_TrickFate = BlueprintTools.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
             var OverpoweredAbilitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability");
                 bp.SetDescription(IsekaiContext, "At 1st level, you get to select an Overpowered Ability.");
@@ -62,18 +62,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         }
 
         public static void AddToSelection(BlueprintFeature feature) {
-            var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
-            var OverpoweredAbilitySelection2 = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2");
-            var OverpoweredAbilitySelectionVillain = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionVillain");
-            var OverpoweredAbilityMythicSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilityMythicSelection");
-            OverpoweredAbilitySelection.m_Features = OverpoweredAbilitySelection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
-            OverpoweredAbilitySelection.m_AllFeatures = OverpoweredAbilitySelection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
-            OverpoweredAbilitySelection2.m_Features = OverpoweredAbilitySelection2.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
-            OverpoweredAbilitySelection2.m_AllFeatures = OverpoweredAbilitySelection2.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
-            OverpoweredAbilitySelectionVillain.m_Features = OverpoweredAbilitySelectionVillain.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
-            OverpoweredAbilitySelectionVillain.m_AllFeatures = OverpoweredAbilitySelectionVillain.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
-            OverpoweredAbilityMythicSelection.m_Features = OverpoweredAbilityMythicSelection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
-            OverpoweredAbilityMythicSelection.m_AllFeatures = OverpoweredAbilityMythicSelection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            var OverpoweredAbilitySelections = new BlueprintFeatureSelection[] {
+                BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection"),
+                BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2"),
+                BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionVillain"),
+                BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilityMythicSelection"),
+            };
+            foreach(BlueprintFeatureSelection selection in OverpoweredAbilitySelections) {
+                selection.m_Features = selection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+                selection.m_AllFeatures = selection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            }
         }
     }
 }
