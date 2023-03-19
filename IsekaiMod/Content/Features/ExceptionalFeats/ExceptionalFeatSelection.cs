@@ -49,5 +49,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
             ExceptionalFeatSelection.AddToSelection(selection);
             ExceptionalFeatBonusSelection.AddToSelection(bonusSelection);
         }
+
+        public static BlueprintFeatureSelection Get() {
+            return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalFeatSelection");
+        }
     }
 }

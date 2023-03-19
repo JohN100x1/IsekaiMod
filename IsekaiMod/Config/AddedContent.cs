@@ -5,6 +5,7 @@ namespace IsekaiMod.Config {
     public class AddedContent : IUpdatableSettings {
         public bool NewSettingsOffByDefault = false;
         public bool ExcludeCompanionsFromIsekaiClass = false;
+        public bool RestrictExceptionalFeats = false;
         public bool MultipleMythicOPAbility = false;
         public bool MultipleMythicSpecialPower = false;
         public bool MergeIsekaiSpellList = false;
@@ -18,6 +19,7 @@ namespace IsekaiMod.Config {
             var loadedSettings = userSettings as AddedContent;
             NewSettingsOffByDefault = loadedSettings.NewSettingsOffByDefault;
             ExcludeCompanionsFromIsekaiClass = loadedSettings.ExcludeCompanionsFromIsekaiClass;
+            RestrictExceptionalFeats = loadedSettings.RestrictExceptionalFeats;
             MultipleMythicOPAbility = loadedSettings.MultipleMythicOPAbility;
             MultipleMythicSpecialPower = loadedSettings.MultipleMythicSpecialPower;
             MergeIsekaiSpellList = loadedSettings.MergeIsekaiSpellList;

@@ -1,14 +1,18 @@
 ﻿using HarmonyLib;
+using IsekaiMod.Config;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Deities;
+using IsekaiMod.Content.Features.ExceptionalFeats;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using IsekaiMod.Utilities;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.JsonSystem;
+using TabletopTweaks.Core.Config;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
@@ -17,6 +21,9 @@ namespace IsekaiMod.Content {
         [HarmonyPatch(typeof(BlueprintsCache), "Init")]
         static class BlueprintsCache_Init_Patch {
             private static bool Initialized;
+            private static readonly AddedContent AddedContent = IsekaiContext.AddedContent;
+            private static readonly SettingGroup Other = IsekaiContext.AddedContent.Other;
+            private static readonly SettingGroup Isekai = IsekaiContext.AddedContent.Isekai;
 
             [HarmonyPriority(Priority.First)]
             public static void Postfix() {
@@ -29,11 +36,12 @@ namespace IsekaiMod.Content {
                 Features.ExoticWeaponProficiency.Add();
                 Main.LogDebug("first init call start if block");
 
-                if (IsekaiContext.AddedContent.Other.IsEnabled("Exceptional Feats")) AddExceptionalFeats();
-                if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
-                if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Deities")) AddIsekaiDeities();
-                if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
-                if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
+                if (Other.IsEnabled("Exceptional Feats")) AddExceptionalFeats();
+                if (Isekai.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
+                if (Isekai.IsEnabled("Isekai Deities")) AddIsekaiDeities();
+                if (Isekai.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
+                if (Isekai.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
+                if (Other.IsEnabled("Exceptional Feats") && Isekai.IsEnabled("Isekai Protagonist") && AddedContent.RestrictExceptionalFeats) RestrictExceptionalFeats();
             }
 
             public static void AddIsekaiProtagonistClass() {
@@ -241,10 +249,16 @@ namespace IsekaiMod.Content {
             }
             public static void AddExceptionalFeats() {
                 // Add Exceptional Feats
-                Features.ExceptionalFeats.ExceptionalFeatSelection.Add();
-                Features.ExceptionalFeats.EffectImmunitySelection.Add();
-                Features.ExceptionalFeats.ExceptionalSummoningSelection.Add();
-                Features.ExceptionalFeats.ExceptionalWeaponSelection.Add();
+                ExceptionalFeatSelection.Add();
+                EffectImmunitySelection.Add();
+                ExceptionalSummoningSelection.Add();
+                ExceptionalWeaponSelection.Add();
+            }
+            public static void RestrictExceptionalFeats() {
+                ExceptionalFeatSelection.Get().AddPrerequisite<PrerequisiteClassLevel>(c => {
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.Level = 1;
+                });
             }
         }
     }
