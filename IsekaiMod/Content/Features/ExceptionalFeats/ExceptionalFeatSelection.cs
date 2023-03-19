@@ -43,8 +43,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                     .RemoveFromArray(ExtraMythicAbilityMythicFeat.ToReference<BlueprintFeatureReference>());
             });
 
-            BlueprintFeatureSelection BasicFeatSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
-            BasicFeatSelection.m_AllFeatures = ThingsNotHandledByTTTCore.AddToFirst(BasicFeatSelection.m_AllFeatures, ExceptionalFeatSelection.ToReference<BlueprintFeatureReference>());
+            StaticReferences.Selections.BasicFeatSelection.AddToFirst(ExceptionalFeatSelection);
         }
 
         public static void AddToSelection(BlueprintFeatureSelection selection, BlueprintFeatureSelection bonusSelection) {

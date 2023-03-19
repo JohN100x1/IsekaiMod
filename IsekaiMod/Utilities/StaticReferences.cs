@@ -309,6 +309,7 @@ namespace IsekaiMod.Utilities {
             public static BlueprintFeatureSelection DhampirHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("1246f548304a7654c97d8f2e9488e25f");
             public static BlueprintFeatureSelection KitsuneHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ec40cc350b18c8c47a59b782feb91d1f");
             public static BlueprintFeatureSelection DeitySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("59e7a76987fe3b547b9cce045f4db3e4");
+            public static BlueprintFeatureSelection BasicFeatSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
             public static BlueprintFeatureSelection MythicAbilitySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ba0e5a900b775be4a99702f1ed08914d");
         }
     }
