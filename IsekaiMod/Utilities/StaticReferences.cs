@@ -300,5 +300,16 @@ namespace IsekaiMod.Utilities {
             public override int GetHashCode() => value.GetHashCode();
         }
 
+        internal class Selections {
+            public static BlueprintFeatureSelection BackgroundSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("f926dabeee7f8a54db8f2010b323383c");
+            public static BlueprintFeatureSelection AasimarHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("67aabcbce8f8ae643a9d08a6ca67cabd");
+            public static BlueprintFeatureSelection TieflingHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("c862fd0e4046d2d4d9702dd60474a181");
+            public static BlueprintFeatureSelection ElvenHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("5482f879dcfd40f9a3168fdb48bc938c");
+            public static BlueprintFeatureSelection GnomeHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("584d8b50817b49b2bb7aab3d6add8d3a");
+            public static BlueprintFeatureSelection DhampirHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("1246f548304a7654c97d8f2e9488e25f");
+            public static BlueprintFeatureSelection KitsuneHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ec40cc350b18c8c47a59b782feb91d1f");
+            public static BlueprintFeatureSelection DeitySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("59e7a76987fe3b547b9cce045f4db3e4");
+            public static BlueprintFeatureSelection MythicAbilitySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ba0e5a900b775be4a99702f1ed08914d");
+        }
     }
 }

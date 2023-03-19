@@ -45,16 +45,8 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                     .RemoveFromArray(ExtraMythicAbilityMythicFeat.ToReference<BlueprintFeatureReference>());
             });
 
-            // Add to Basic Feat Selection
-            var BasicFeatSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
-            BasicFeatSelection.m_AllFeatures = ThingsNotHandledByTTTCore.AddToFirst<BlueprintFeatureReference>(BasicFeatSelection.m_AllFeatures, ExceptionalFeatSelection.ToReference<BlueprintFeatureReference>());
-        }
-
-        public static void AddToSelection(BlueprintFeature feature) {
-            var ExceptionalFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalFeatSelection");
-            var ExceptionalFeatBonusSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalFeatBonusSelection");
-            ExceptionalFeatSelection.m_AllFeatures = ExceptionalFeatSelection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
-            ExceptionalFeatBonusSelection.m_AllFeatures = ExceptionalFeatBonusSelection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            BlueprintFeatureSelection BasicFeatSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
+            BasicFeatSelection.m_AllFeatures = ThingsNotHandledByTTTCore.AddToFirst(BasicFeatSelection.m_AllFeatures, ExceptionalFeatSelection.ToReference<BlueprintFeatureReference>());
         }
 
         public static void AddToSelection(BlueprintFeatureSelection selection, BlueprintFeatureSelection bonusSelection) {

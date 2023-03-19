@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
@@ -21,7 +22,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
 
-                // Special Powers are added in later
+                // Special Powers are added in later (IsekaiProtagonistTalentSelection is added here because it was defined before SpecialPowerSelection)
                 bp.m_Features = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.GetReference() };
                 bp.m_AllFeatures = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.GetReference() };
             });
@@ -32,7 +33,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
 
-                // Special Powers are added in later
+                // Special Powers are added in later (IsekaiProtagonistTalentSelection is added here because it was defined before SpecialPowerSelection)
                 bp.m_Features = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.GetReference() };
                 bp.m_AllFeatures = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.GetReference() };
             });
@@ -42,9 +43,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 SpecialPowerMythicSelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = SpecialPowerMythicSelection.ToReference<BlueprintFeatureReference>(); });
             }
 
-            // Add selection to mythic ability selection
-            var MythicAbilitySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ba0e5a900b775be4a99702f1ed08914d");
-            MythicAbilitySelection.m_AllFeatures = MythicAbilitySelection.m_AllFeatures.AppendToArray(SpecialPowerMythicSelection.ToReference<BlueprintFeatureReference>());
+            StaticReferences.Selections.MythicAbilitySelection.AddToSelection(SpecialPowerMythicSelection);
         }
 
         public static void AddToSelection(BlueprintFeature feature) {

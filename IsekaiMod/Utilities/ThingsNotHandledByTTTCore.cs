@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Root;
 using Kingmaker.DialogSystem;
@@ -26,6 +27,11 @@ namespace IsekaiMod.Utilities {
 
     //Classname is a partial lie, some are just not handled well *coughs*
     internal class ThingsNotHandledByTTTCore {
+        public static BlueprintFeatureSelection BackgroundSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("f926dabeee7f8a54db8f2010b323383c");
+        public static BlueprintFeatureSelection AasimarHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("67aabcbce8f8ae643a9d08a6ca67cabd");
+        public static BlueprintFeatureSelection ElvenHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("5482f879dcfd40f9a3168fdb48bc938c");
+        public static BlueprintFeatureSelection DeitySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("59e7a76987fe3b547b9cce045f4db3e4");
+        public static BlueprintFeatureSelection MythicAbilitySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ba0e5a900b775be4a99702f1ed08914d");
 
         public static void RegisterClass(BlueprintCharacterClass classToRegister) {
             var existingClasses = ClassTools.Classes.AllClasses;

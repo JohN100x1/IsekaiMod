@@ -199,9 +199,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.ReapplyOnLevelUp = true;
             });
 
-            // Add to Aasimar Heritage Selection
-            var AasimarHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("67aabcbce8f8ae643a9d08a6ca67cabd");
-            AasimarHeritageSelection.m_AllFeatures = AasimarHeritageSelection.m_AllFeatures.AddToArray(IsekaiAngelHeritage.ToReference<BlueprintFeatureReference>());
+            StaticReferences.Selections.AasimarHeritageSelection.AddToSelection(IsekaiAngelHeritage);
         }
     }
 }

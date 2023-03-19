@@ -29,7 +29,7 @@ namespace IsekaiMod.Content.Backgrounds {
             });
 
             // Register Background
-            IsekaiBackgroundSelection.Register(BackgroundSalaryman);
+            IsekaiBackgroundSelection.AddToSelection(BackgroundSalaryman);
         }
     }
 }

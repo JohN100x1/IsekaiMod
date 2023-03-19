@@ -112,9 +112,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.ReapplyOnLevelUp = true;
             });
 
-            // Add to Dhampir Heritage Selection
-            var DhampirHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("1246f548304a7654c97d8f2e9488e25f");
-            DhampirHeritageSelection.m_AllFeatures = DhampirHeritageSelection.m_AllFeatures.AddToArray(IsekaiVampireHeritage.ToReference<BlueprintFeatureReference>());
+            StaticReferences.Selections.DhampirHeritageSelection.AddToSelection(IsekaiVampireHeritage);
         }
     }
 }

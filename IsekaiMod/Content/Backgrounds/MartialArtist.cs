@@ -104,7 +104,7 @@ namespace IsekaiMod.Content.Backgrounds {
             });
 
             // Register Background
-            IsekaiBackgroundSelection.Register(BackgroundMartialArtist);
+            IsekaiBackgroundSelection.AddToSelection(BackgroundMartialArtist);
         }
     }
 }

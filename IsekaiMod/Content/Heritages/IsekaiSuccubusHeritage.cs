@@ -222,9 +222,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.ReapplyOnLevelUp = true;
             });
 
-            // Add to Tiefling Heritage Selection
-            var TieflingHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("c862fd0e4046d2d4d9702dd60474a181");
-            TieflingHeritageSelection.m_AllFeatures = TieflingHeritageSelection.m_AllFeatures.AddToArray(IsekaiSuccubusHeritage.ToReference<BlueprintFeatureReference>());
+            StaticReferences.Selections.TieflingHeritageSelection.AddToSelection(IsekaiSuccubusHeritage);
         }
     }
 }

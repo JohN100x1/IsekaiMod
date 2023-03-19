@@ -45,7 +45,7 @@ namespace IsekaiMod.Content.Backgrounds {
             });
 
             // Register Background
-            IsekaiBackgroundSelection.Register(BackgroundGamer);
+            IsekaiBackgroundSelection.AddToSelection(BackgroundGamer);
         }
     }
 }

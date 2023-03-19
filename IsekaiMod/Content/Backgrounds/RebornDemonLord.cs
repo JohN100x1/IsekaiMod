@@ -30,7 +30,7 @@ namespace IsekaiMod.Content.Backgrounds {
             });
 
             // Register Background
-            IsekaiBackgroundSelection.Register(BackgroundRebornDemonLord);
+            IsekaiBackgroundSelection.AddToSelection(BackgroundRebornDemonLord);
         }
     }
 }

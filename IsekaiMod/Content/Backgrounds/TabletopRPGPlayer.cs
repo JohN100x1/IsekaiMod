@@ -62,7 +62,7 @@ namespace IsekaiMod.Content.Backgrounds {
             });
 
             // Register Background
-            IsekaiBackgroundSelection.Register(BackgroundTabletopRPGPlayer);
+            IsekaiBackgroundSelection.AddToSelection(BackgroundTabletopRPGPlayer);
         }
     }
 }

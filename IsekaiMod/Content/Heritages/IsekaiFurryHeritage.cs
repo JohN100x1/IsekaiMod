@@ -74,9 +74,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.ReapplyOnLevelUp = true;
             });
 
-            // Add to Kitsune Heritage Selection
-            var KitsuneHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ec40cc350b18c8c47a59b782feb91d1f");
-            KitsuneHeritageSelection.m_AllFeatures = KitsuneHeritageSelection.m_AllFeatures.AddToArray(IsekaiFurryHeritage.ToReference<BlueprintFeatureReference>());
+            StaticReferences.Selections.KitsuneHeritageSelection.AddToSelection(IsekaiFurryHeritage);
         }
     }
 }

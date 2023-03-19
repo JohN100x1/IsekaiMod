@@ -79,7 +79,7 @@ namespace IsekaiMod.Content.Backgrounds {
             });
 
             // Register Background
-            IsekaiBackgroundSelection.Register(BackgroundOtaku);
+            IsekaiBackgroundSelection.AddToSelection(BackgroundOtaku);
         }
     }
 }
