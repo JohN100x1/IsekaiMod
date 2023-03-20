@@ -101,14 +101,30 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateLevelEntry(20, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2, SecondReincarnation)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
-                Helpers.CreateUIGroup(OverpoweredAbilitySelectionVillain,  IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, VillainQuickFooted, SecondFormFeature),
-                Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike, EdgeLordFastMovement),
-                Helpers.CreateUIGroup(SlayerStudyTargetFeature, SlayerSwiftStudyTargetFeature),
-                Helpers.CreateUIGroup(GracefulCombat, IsekaiChannelPositiveEnergyFeature, AuraOfDivineFuryFeature, CelestialRealmFeature, HerosPresenceFeature, ArmorSaint),
-                Helpers.CreateUIGroup(NascentApotheosis, DivineArray, GodEmperorEnergySelection, AuraOfGoldenProtectionFeature, AuraOfMajestyFeature, SiphoningAuraFeature, GodlyVessel, Godhood),
-                Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, SpecialPowerSelection),
+                
+                // Isekai UI group
                 Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
-                Helpers.CreateUIGroup(IsekaiPetSelection, IsekaiFastMovement, IsekaiQuickFooted),
+                
+                // Edge Lord UI group
+                Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike),
+                
+                // God Emperor UI group
+                Helpers.CreateUIGroup(NascentApotheosis, DivineArray, GodEmperorEnergySelection, AuraOfGoldenProtectionFeature, AuraOfMajestyFeature, SiphoningAuraFeature, GodlyVessel, Godhood,
+                
+                // Hero UI group
+                GracefulCombat, IsekaiChannelPositiveEnergyFeature, AuraOfDivineFuryFeature, CelestialRealmFeature, HerosPresenceFeature, ArmorSaint),
+                
+                // Villain UI group
+                Helpers.CreateUIGroup(OverpoweredAbilitySelectionVillain,  IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, SecondFormFeature),
+                Helpers.CreateUIGroup(SlayerStudyTargetFeature, SlayerSwiftStudyTargetFeature),
+                
+                // OP ability and Special Power UI group
+                Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, SpecialPowerSelection),
+
+                // Movement UI group
+                Helpers.CreateUIGroup(IsekaiPetSelection, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, VillainQuickFooted),
+
+                // Legacy UI groups
                 Helpers.CreateUIGroup(LegacySelection.GetClassFeature()),
                 Helpers.CreateUIGroup(HeroLegacySelection.getClassFeature()),
                 Helpers.CreateUIGroup(VillainLegacySelection.getClassFeature()),
