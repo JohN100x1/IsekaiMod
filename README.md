@@ -39,7 +39,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 ### Installation
 - Open Unity Mod Manager and go to the 'Mods' tab.
 - Drag and Drop the [TabletopTweaks-Core.zip](https://github.com/Vek17/TabletopTweaks-Core/releases)﻿ file into Unity Mod Manager.
-- Drag and Drop the IsekaiMod.zip file into Unity Mod Manager.
+- Drag and Drop the [IsekaiMod.zip](https://github.com/JohN100x1/WOTR_IsekaiMod/releases) file into Unity Mod Manager.
 If you use ModFinder rather than Unity Mod Manager just replace the name mentally in your head, instructions are otherwise identical.
 
 ### Downward Compatibility Warning for version 4.0.0
@@ -125,12 +125,12 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Infinite Inventory`: Get infinite carry capacity.
 		- `Unlimited Power`: Restore all ability and spell slots at will.
 		- `Mind Control`: Make an enemy creature fight for you.
-		- `Summon Calamity`: Summon a Devastator, Baphomet, Deskari, Nocticula, or Mephistopheles.
+		- `Summon Calamity`: Summon a Devastator, Baphomet, Deskari, Nocticula, Mephistopheles, or Areshkagal.
 		- `True Resurrection`: Resurrect a dead companion (no diamond cost).
 		- `Supreme Being`: All your attributes have a base value of 30.
 		- `Mythic Class Feature`: see below
 		- `Dual Legacy`: Pick a second base class to get abilities from, or in the case of the God Emperor your first.
-		- Requires TabletopTweaks-Base
+		- The following requires TabletopTweaks-Base:
 			- `Auto Rime`: Cold spells entangle the target for a number of rounds.
 			- `Auto Burning`: Acid and fire spells cause acid or fire damage on the next round.
 			- `Auto Flaring`: Light, fire, and electricity spells cause the dazzled condition.
@@ -261,12 +261,11 @@ Exception to this is the God Emperor as all options that were changed were not p
 ## Mod Support
 This mod has support for the following mods.
 ### TabletopTweaks-Base (2.5.2)
-If you have the `TabletopTweaks-Base` mod, the `Isekai Protagonist` will have `Auto Rime`, `Auto Burning`, `Auto Flaring`,
-`Auto Piercing`, `Auto Solid Shadows`, `Auto Encouraging`, `Auto Intensified`, and `Auto Elemental` OP ability options.
+If you have the `TabletopTweaks-Base` mod, the Isekai Protagonist will have all extra metamagics as OP ability options.
 ### MysticalMayhem (0.1.5)
 If you have the `MysticalMayhem` mod, the `Isekai Protagonist` will have the 9th level `Meteor Swarm` spell added to its spellbook.
 ### ExpandedContent (0.5.2)
-If you have the `ExpandedContent` mod, the `Isekai Protagonist` will have all the new spells add to its spellbook.
+If you have the `ExpandedContent` mod, the `Isekai Protagonist` will have all the new spells add to its spellbook. You also get to choose drake companions.
 ### SpellbookMerge (1.7.1)
 If you have the `SpellbookMerge` mod, the `Isekai Protagonist` will be able to merge its spellbook with Aeon, Azata, Demon, and Trickster.
 
