@@ -21,7 +21,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.SetDescription(IsekaiContext,
                     "You have a dragon in your dantian!");
                 bp.GiveFeaturesForPreviousLevels = true;
-                bp.AddComponent<PrerequisiteAlignment>(c => { c.Alignment = Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Lawful; });
+                bp.AddComponent<PrerequisiteAlignment>(c => {
+                    c.Alignment =
+                      Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Lawful
+                    | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.TrueNeutral
+                    | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.NeutralEvil
+                    | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.NeutralGood;
+                });
             });
 
 
