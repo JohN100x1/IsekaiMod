@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-# [Unreleased]
+# [4.2.0] - 2023-03-20
 ### Added
 - Added `Auto Rime` OP ability (requires TabletopTweaks-Base).
 - Added `Auto Burning` OP ability (requires TabletopTweaks-Base).
@@ -18,6 +18,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added UMM option to restrict Exceptional Feats to the Isekai Protagonist Class.
 - Added UMM option to restrict Mythic Overpowered Abilities to the Isekai Protagonist Class.
 - Added UMM option to restrict Mythic Special Powers to the Isekai Protagonist Class.
+- Added new legacies:
+	1. Kinetic Legacy - Soulbinder
+	2. Kinetic Legacy - Noble Soul
+	3. Fighter Legacy - Basic Fighter
+	4. Monk Legacy - Daoist Martial Artist
+	5. Monk Legacy - Fist of a Dragon
+	6. Skald Legacy - Metal Singer
+	7. Skald Legacy - Silver Tongue
+	8. Skald Legacy - The Voice
+	9. Shifter Legacy - Ditto
+	10. Shifter Legacy - Stinger
+	11. Shifter Legacy - Shapeshifted Baby Dragon
 - Updated mod support for ExpandedContent.
 ### Changed
 - Reworked UMM settings.
