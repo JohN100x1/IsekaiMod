@@ -155,10 +155,10 @@
       "esES": null
     },
     {
-      "Key": "f750b4c15a9c49c594c95a55751937f3",
+      "Key": "87c792effcbf4025a7dd294b396faf95",
       "SimpleName": "ArcaneTricksterIsekai.Description",
       "ProcessTemplates": true,
-      "enGB": "At 1st level, an arcane trickster selects an arcane spellcasting class she belonged to before adding the prestige class. When a new arcane trickster level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.",
+      "enGB": "At 1st level, an arcane trickster selects an arcane {g|Encyclopedia:Spell}spellcasting{/g} class she belonged to before adding the prestige class. When a new arcane trickster level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -166,10 +166,10 @@
       "esES": null
     },
     {
-      "Key": "87c792effcbf4025a7dd294b396faf95",
+      "Key": "f750b4c15a9c49c594c95a55751937f3",
       "SimpleName": "ArcaneTricksterIsekai.Description",
       "ProcessTemplates": true,
-      "enGB": "At 1st level, an arcane trickster selects an arcane {g|Encyclopedia:Spell}spellcasting{/g} class she belonged to before adding the prestige class. When a new arcane trickster level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.",
+      "enGB": "At 1st level, an arcane trickster selects an arcane spellcasting class she belonged to before adding the prestige class. When a new arcane trickster level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -1090,6 +1090,17 @@
       "esES": null
     },
     {
+      "Key": "f66b9c5a80324283963a3e6b345803b2",
+      "SimpleName": "BarbarianLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You really are just a walking bundle of issues waiting to explode at anyone getting too close, aren't you?",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "20be5c08a15f4a56a689fa57374006c2",
       "SimpleName": "BarbarianLegacy.Description",
       "ProcessTemplates": true,
@@ -1310,6 +1321,17 @@
       "esES": null
     },
     {
+      "Key": "ba372daeb48d42e2a3939e8b18eb0804",
+      "SimpleName": "BlessingOfTheMythic.Description",
+      "ProcessTemplates": true,
+      "enGB": "So I am an angel, is that really a reason not to cast demonic spells? \nOr to deny myself some of those sweet abilities of the trickster?\nSome of you Aeons are far too unflexible.\nSpeaking of Aeons, you got some great spells as well, didn't you?\nLet me quickly learn them...",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "6a8781b6247745ba85c319e8ce463190",
       "SimpleName": "BlessingOfTheMythic.Description",
       "ProcessTemplates": true,
@@ -1376,10 +1398,10 @@
       "esES": null
     },
     {
-      "Key": "e5fcc57276b647ff82cfa1ccdedc1afd",
+      "Key": "9844ac03b4084698ad09709f96e77ccc",
       "SimpleName": "BodyStrengthening.Description",
       "ProcessTemplates": true,
-      "enGB": "You gain {g|Encyclopedia:Damage_Reduction}DR{/g}/— equal to your character level.",
+      "enGB": "You gain DR/— equal to your character level.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -1387,10 +1409,10 @@
       "esES": null
     },
     {
-      "Key": "9844ac03b4084698ad09709f96e77ccc",
+      "Key": "e5fcc57276b647ff82cfa1ccdedc1afd",
       "SimpleName": "BodyStrengthening.Description",
       "ProcessTemplates": true,
-      "enGB": "You gain DR/— equal to your character level.",
+      "enGB": "You gain {g|Encyclopedia:Damage_Reduction}DR{/g}/— equal to your character level.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -1783,10 +1805,10 @@
       "esES": null
     },
     {
-      "Key": "1fe7d19b6f754fe488899ca5c20756ac",
+      "Key": "0372893dea954d39a9cd7de2ecc37bdc",
       "SimpleName": "DarkAuraBuff.Description",
       "ProcessTemplates": true,
-      "enGB": "This creature has a –2 penalty on attack rolls, AC, and saving throws.",
+      "enGB": "This creature has a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -1794,10 +1816,10 @@
       "esES": null
     },
     {
-      "Key": "0372893dea954d39a9cd7de2ecc37bdc",
+      "Key": "1fe7d19b6f754fe488899ca5c20756ac",
       "SimpleName": "DarkAuraBuff.Description",
       "ProcessTemplates": true,
-      "enGB": "This creature has a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.",
+      "enGB": "This creature has a –2 penalty on attack rolls, AC, and saving throws.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -1816,10 +1838,10 @@
       "esES": null
     },
     {
-      "Key": "2d5b47dd01634d68b6441b7e98603433",
+      "Key": "d4260dff90644b798e7cc0c95b2007b3",
       "SimpleName": "DarkAuraFeature.Description",
       "ProcessTemplates": true,
-      "enGB": "At 10th level, enemies within 40 feet take a –2 penalty on attack rolls, AC, and saving throws.",
+      "enGB": "At 10th level, enemies within 40 feet take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -1827,10 +1849,10 @@
       "esES": null
     },
     {
-      "Key": "d4260dff90644b798e7cc0c95b2007b3",
+      "Key": "2d5b47dd01634d68b6441b7e98603433",
       "SimpleName": "DarkAuraFeature.Description",
       "ProcessTemplates": true,
-      "enGB": "At 10th level, enemies within 40 feet take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.",
+      "enGB": "At 10th level, enemies within 40 feet take a –2 penalty on attack rolls, AC, and saving throws.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -2366,10 +2388,10 @@
       "esES": null
     },
     {
-      "Key": "9646a9e7f19645eebb7469264f63124d",
+      "Key": "7d586d840a5a4a4d8a33954797a34e2f",
       "SimpleName": "DragonDiscipleVillain.Description",
       "ProcessTemplates": true,
-      "enGB": "At 2nd level, and at every level thereafter, with an exception for 5th and 9th levels, a Dragon Disciple gains new {g|Encyclopedia:Spell}spells{/g} per day as if he had also gained a level in an arcane spellcasting class he belonged to before adding the prestige class. He does not, however, gain any other benefit a character of that class would have gained, except for additional spells per day, spells known, and an increased effective level of spellcasting. If a character had more than one arcane spellcasting class before becoming an Dragon Disciple, he must decide to which class he adds the new level for purposes of determining spells per day.",
+      "enGB": "At 2nd level, and at every level thereafter, with an exception for 5th and 9th levels, a Dragon Disciple gains new spells per day as if he had also gained a level in an arcane spellcasting class he belonged to before adding the prestige class. He does not, however, gain any other benefit a character of that class would have gained, except for additional spells per day, spells known, and an increased effective level of spellcasting. If a character had more than one arcane spellcasting class before becoming an Dragon Disciple, he must decide to which class he adds the new level for purposes of determining spells per day.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -2377,10 +2399,10 @@
       "esES": null
     },
     {
-      "Key": "7d586d840a5a4a4d8a33954797a34e2f",
+      "Key": "9646a9e7f19645eebb7469264f63124d",
       "SimpleName": "DragonDiscipleVillain.Description",
       "ProcessTemplates": true,
-      "enGB": "At 2nd level, and at every level thereafter, with an exception for 5th and 9th levels, a Dragon Disciple gains new spells per day as if he had also gained a level in an arcane spellcasting class he belonged to before adding the prestige class. He does not, however, gain any other benefit a character of that class would have gained, except for additional spells per day, spells known, and an increased effective level of spellcasting. If a character had more than one arcane spellcasting class before becoming an Dragon Disciple, he must decide to which class he adds the new level for purposes of determining spells per day.",
+      "enGB": "At 2nd level, and at every level thereafter, with an exception for 5th and 9th levels, a Dragon Disciple gains new {g|Encyclopedia:Spell}spells{/g} per day as if he had also gained a level in an arcane spellcasting class he belonged to before adding the prestige class. He does not, however, gain any other benefit a character of that class would have gained, except for additional spells per day, spells known, and an increased effective level of spellcasting. If a character had more than one arcane spellcasting class before becoming an Dragon Disciple, he must decide to which class he adds the new level for purposes of determining spells per day.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -2586,10 +2608,10 @@
       "esES": null
     },
     {
-      "Key": "85f81cb0cf8048f4bce9a3b860d07e2c",
+      "Key": "79fa4b1f9abd4812bc09ffaf7eae57a9",
       "SimpleName": "EdgeLordProficiencies.Description",
       "ProcessTemplates": true,
-      "enGB": "The Edge Lord is proficient with all simple and martial weapons as well as light and medium armor. They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor without incurring the normal {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
+      "enGB": "The Edge Lord is proficient with all simple and martial weapons as well as light and medium armor. They can cast spells from this class while wearing armor without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -2597,10 +2619,10 @@
       "esES": null
     },
     {
-      "Key": "79fa4b1f9abd4812bc09ffaf7eae57a9",
+      "Key": "85f81cb0cf8048f4bce9a3b860d07e2c",
       "SimpleName": "EdgeLordProficiencies.Description",
       "ProcessTemplates": true,
-      "enGB": "The Edge Lord is proficient with all simple and martial weapons as well as light and medium armor. They can cast spells from this class while wearing armor without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
+      "enGB": "The Edge Lord is proficient with all simple and martial weapons as well as light and medium armor. They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor without incurring the normal {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -3543,10 +3565,10 @@
       "esES": null
     },
     {
-      "Key": "cdbb369b0bac48b3aeb53465a1a74e3a",
+      "Key": "9af0003d789243378ba93745e05c48d9",
       "SimpleName": "GodEmperorProficiencies.Description",
       "ProcessTemplates": true,
-      "enGB": "The God Emperor is proficient with all simple, martial, and exotic weapons and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast spells from this class while wearing armor and shields (including tower shields) without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
+      "enGB": "The God Emperor is proficient with all simple, martial, and exotic weapons and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor and shields (including tower shields) without incurring the normal {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -3554,10 +3576,10 @@
       "esES": null
     },
     {
-      "Key": "9af0003d789243378ba93745e05c48d9",
+      "Key": "cdbb369b0bac48b3aeb53465a1a74e3a",
       "SimpleName": "GodEmperorProficiencies.Description",
       "ProcessTemplates": true,
-      "enGB": "The God Emperor is proficient with all simple, martial, and exotic weapons and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor and shields (including tower shields) without incurring the normal {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
+      "enGB": "The God Emperor is proficient with all simple, martial, and exotic weapons and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast spells from this class while wearing armor and shields (including tower shields) without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -3763,6 +3785,17 @@
       "esES": null
     },
     {
+      "Key": "2e02138c05714715ae32777ab1e6ad08",
+      "SimpleName": "HeroicLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You are a true hero, smiting your enemies wherever you go.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "5a2ab19b3d9a4fbfa9a5370e2f7fcff7",
       "SimpleName": "HeroicLegacy.Name",
       "ProcessTemplates": false,
@@ -3796,10 +3829,10 @@
       "esES": null
     },
     {
-      "Key": "aadae8aeffac4d62ae42b2fe56a5a8e2",
+      "Key": "fe9670b5b057481392347d80673d1be8",
       "SimpleName": "HeroProficiencies.Description",
       "ProcessTemplates": true,
-      "enGB": "The Hero is proficient with all simple and martial weapons and with all armor (heavy, light, and medium) and shields (excluding tower shields). They can cast spells from this class while wearing armor and shields (excluding tower shields) without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
+      "enGB": "The Hero is proficient with all simple and martial weapons and with all armor (heavy, light, and medium) and shields (excluding tower shields). They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor and shields (excluding tower shields) without incurring the normal {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -3807,10 +3840,10 @@
       "esES": null
     },
     {
-      "Key": "fe9670b5b057481392347d80673d1be8",
+      "Key": "aadae8aeffac4d62ae42b2fe56a5a8e2",
       "SimpleName": "HeroProficiencies.Description",
       "ProcessTemplates": true,
-      "enGB": "The Hero is proficient with all simple and martial weapons and with all armor (heavy, light, and medium) and shields (excluding tower shields). They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor and shields (excluding tower shields) without incurring the normal {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
+      "enGB": "The Hero is proficient with all simple and martial weapons and with all armor (heavy, light, and medium) and shields (excluding tower shields). They can cast spells from this class while wearing armor and shields (excluding tower shields) without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -4489,6 +4522,17 @@
       "esES": null
     },
     {
+      "Key": "a9b62cad531e4fe7906a424bd7d98ff2",
+      "SimpleName": "IsekaiKaylessaDrowLeader.Text",
+      "ProcessTemplates": false,
+      "enGB": "(Isekai Protagonist) [Attack] \"Nice acting, Mr. background character. Now it's time for your unmomentous death scene.\"",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "0034b33be5be4e768b696244e8b790e1",
       "SimpleName": "IsekaiKineticistTraining.Description",
       "ProcessTemplates": true,
@@ -4709,17 +4753,6 @@
       "esES": null
     },
     {
-      "Key": "240217a35bc64332b2902a7d68c60e01",
-      "SimpleName": "IsekaiProtagonistBonusFeatSelection.Description",
-      "ProcessTemplates": true,
-      "enGB": "At 1st level, and at every even level thereafter, you gain a bonus {g|Encyclopedia:Feat}feat{/g} in addition to those gained from normal advancement.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
-    },
-    {
       "Key": "49261feb6a8a4dc8b27f8f12e986fc74",
       "SimpleName": "IsekaiProtagonistBonusFeatSelection.Description",
       "ProcessTemplates": true,
@@ -4731,10 +4764,10 @@
       "esES": null
     },
     {
-      "Key": "bb1aa65650e047258252f7d08b827fb4",
-      "SimpleName": "IsekaiProtagonistCantripsFeature.Description",
+      "Key": "240217a35bc64332b2902a7d68c60e01",
+      "SimpleName": "IsekaiProtagonistBonusFeatSelection.Description",
       "ProcessTemplates": true,
-      "enGB": "You can cast a number of cantrips, or 0-level spells. These spells are cast like any other spell, but they are not expended when cast and may be used again.",
+      "enGB": "At 1st level, and at every even level thereafter, you gain a bonus {g|Encyclopedia:Feat}feat{/g} in addition to those gained from normal advancement.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -4746,6 +4779,17 @@
       "SimpleName": "IsekaiProtagonistCantripsFeature.Description",
       "ProcessTemplates": true,
       "enGB": "You can cast a number of {g|Encyclopedia:Cantrips_Orisons}cantrips{/g}, or 0-level {g|Encyclopedia:Spell}spells{/g}. These spells are cast like any other spell, but they are not expended when cast and may be used again.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "bb1aa65650e047258252f7d08b827fb4",
+      "SimpleName": "IsekaiProtagonistCantripsFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You can cast a number of cantrips, or 0-level spells. These spells are cast like any other spell, but they are not expended when cast and may be used again.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -4819,10 +4863,10 @@
       "esES": null
     },
     {
-      "Key": "092de80e0b98474699bc590f8f1e41c2",
+      "Key": "01ab438de5dd4672823709fd12665dab",
       "SimpleName": "IsekaiProtagonistPlotArmorFeat.Description",
       "ProcessTemplates": true,
-      "enGB": "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.",
+      "enGB": "Isekai Protagonists gain a luck bonus to AC and all saving throws equal to their character level.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -4841,10 +4885,10 @@
       "esES": null
     },
     {
-      "Key": "01ab438de5dd4672823709fd12665dab",
+      "Key": "092de80e0b98474699bc590f8f1e41c2",
       "SimpleName": "IsekaiProtagonistPlotArmorFeat.Description",
       "ProcessTemplates": true,
-      "enGB": "Isekai Protagonists gain a luck bonus to AC and all saving throws equal to their character level.",
+      "enGB": "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -4874,10 +4918,10 @@
       "esES": null
     },
     {
-      "Key": "e666104ca98449268f1a8c916c89331b",
+      "Key": "60a056a870a44308b521cbdc684297d0",
       "SimpleName": "IsekaiProtagonistProficiencies.Description",
       "ProcessTemplates": true,
-      "enGB": "Isekai Protagonists are proficient with all simple and {g|Encyclopedia:Weapon_Proficiency}martial weapons{/g} and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor and shields (including tower shields) without incurring the normal {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
+      "enGB": "Isekai Protagonists are proficient with all simple and martial weapons and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast spells from this class while wearing armor and shields (including tower shields) without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -4885,10 +4929,10 @@
       "esES": null
     },
     {
-      "Key": "60a056a870a44308b521cbdc684297d0",
+      "Key": "e666104ca98449268f1a8c916c89331b",
       "SimpleName": "IsekaiProtagonistProficiencies.Description",
       "ProcessTemplates": true,
-      "enGB": "Isekai Protagonists are proficient with all simple and martial weapons and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast spells from this class while wearing armor and shields (including tower shields) without incurring the normal arcane spell failure chance, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
+      "enGB": "Isekai Protagonists are proficient with all simple and {g|Encyclopedia:Weapon_Proficiency}martial weapons{/g} and with all armor (heavy, light, and medium) and shields (including tower shields). They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor and shields (including tower shields) without incurring the normal {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell failure chance for arcane spells received from other classes.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -5006,10 +5050,10 @@
       "esES": null
     },
     {
-      "Key": "d999b2d4aa484183bbcdfa87898cd46c",
+      "Key": "8e4a0535df8d4854b259091ba9dd6bfa",
       "SimpleName": "IsekaiQuickFooted.Description",
       "ProcessTemplates": true,
-      "enGB": "At 15th level, you gain a competence bonus to your initiative checks equal to your Charisma modifier.",
+      "enGB": "At 15th level, you gain a competence {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}checks{/g} equal to your {g|Encyclopedia:Charisma}Charisma{/g} modifier.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -5017,10 +5061,10 @@
       "esES": null
     },
     {
-      "Key": "8e4a0535df8d4854b259091ba9dd6bfa",
+      "Key": "d999b2d4aa484183bbcdfa87898cd46c",
       "SimpleName": "IsekaiQuickFooted.Description",
       "ProcessTemplates": true,
-      "enGB": "At 15th level, you gain a competence {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}checks{/g} equal to your {g|Encyclopedia:Charisma}Charisma{/g} modifier.",
+      "enGB": "At 15th level, you gain a competence bonus to your initiative checks equal to your Charisma modifier.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -5116,10 +5160,10 @@
       "esES": null
     },
     {
-      "Key": "798fca207b5446e1b5358833796885d8",
+      "Key": "a555911bbb3f46d8aa7121185c4b2ae4",
       "SimpleName": "IsekaiSuccubusHeritage.Description",
       "ProcessTemplates": true,
-      "enGB": "Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power, and often have a voracious appetite for sensory pleasures and carnal delights.\nThe Isekai Succubus has a +2 racial bonus to Dexterity and Intelligence, a +4 racial bonus to Charisma, a -2 penalty to Strength, and a +2 racial bonus on Persuasion and Perception checks. They have DR 10/Cold Iron or Good, and have spell resistance equal to 10 + their character level. They have immunity to fire, electricity, and poisons as well as acid and cold resistance 20. They can also use the Charm spell once per day.",
+      "enGB": "Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power, and often have a voracious appetite for sensory pleasures and carnal delights.\nThe Isekai Succubus has a +2 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Intelligence}Intelligence{/g}, a +4 racial bonus to {g|Encyclopedia:Charisma}Charisma{/g}, a -2 {g|Encyclopedia:Penalty}penalty{/g} to {g|Encyclopedia:Strength}Strength{/g}, and a +2 racial bonus on {g|Encyclopedia:Persuasion}Persuasion{/g} and {g|Encyclopedia:Perception}Perception checks{/g}. They have DR 10/Cold Iron or Good, and have spell resistance equal to 10 + their character level. They have immunity to fire, electricity, and poisons as well as acid and cold resistance 20. They can also use the Charm spell once per day.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -5127,10 +5171,10 @@
       "esES": null
     },
     {
-      "Key": "a555911bbb3f46d8aa7121185c4b2ae4",
+      "Key": "798fca207b5446e1b5358833796885d8",
       "SimpleName": "IsekaiSuccubusHeritage.Description",
       "ProcessTemplates": true,
-      "enGB": "Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power, and often have a voracious appetite for sensory pleasures and carnal delights.\nThe Isekai Succubus has a +2 racial {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Dexterity}Dexterity{/g} and {g|Encyclopedia:Intelligence}Intelligence{/g}, a +4 racial bonus to {g|Encyclopedia:Charisma}Charisma{/g}, a -2 {g|Encyclopedia:Penalty}penalty{/g} to {g|Encyclopedia:Strength}Strength{/g}, and a +2 racial bonus on {g|Encyclopedia:Persuasion}Persuasion{/g} and {g|Encyclopedia:Perception}Perception checks{/g}. They have DR 10/Cold Iron or Good, and have spell resistance equal to 10 + their character level. They have immunity to fire, electricity, and poisons as well as acid and cold resistance 20. They can also use the Charm spell once per day.",
+      "enGB": "Otherworldly entities who are reincarnated into the world of Golarion as a Succubus have both extreme beauty and power, and often have a voracious appetite for sensory pleasures and carnal delights.\nThe Isekai Succubus has a +2 racial bonus to Dexterity and Intelligence, a +4 racial bonus to Charisma, a -2 penalty to Strength, and a +2 racial bonus on Persuasion and Perception checks. They have DR 10/Cold Iron or Good, and have spell resistance equal to 10 + their character level. They have immunity to fire, electricity, and poisons as well as acid and cold resistance 20. They can also use the Charm spell once per day.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -5358,6 +5402,17 @@
       "esES": null
     },
     {
+      "Key": "c745a81c232540cebd50bc282af31cbf",
+      "SimpleName": "KineticLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Most Protagonists only occasionally use kinetic blasts when they think they would look cool.\n But you really love them, and given that there is no other cantrip this overpowered why not?",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "45e5ea12b2204dd28e490c96d4ea3067",
       "SimpleName": "KineticLegacy.Description",
       "ProcessTemplates": true,
@@ -5424,6 +5479,17 @@
       "esES": null
     },
     {
+      "Key": "8d7f781cf53b43669305a9a1c9c0038b",
+      "SimpleName": "LegacyAbilitySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "First, I joined the bardic college of Wintermoon, then 3 years later, when I got bored with that, I accidentally stumbled into the theives' guild of Whitesnow...\nWhatever the backstory is, you get access to another legacy class feature.\nOr if you are a God Emperor your first.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "4de7609f8308433d91076c1e6a98f769",
       "SimpleName": "LegacyAbilitySelection.Description",
       "ProcessTemplates": true,
@@ -5468,10 +5534,10 @@
       "esES": null
     },
     {
-      "Key": "6e20a13e945f49b385f7c29093203e66",
+      "Key": "448aef6879ce48b8bba03efb606a6282",
       "SimpleName": "LegacyClassSelection.Name",
       "ProcessTemplates": false,
-      "enGB": "Legacy",
+      "enGB": "Legacy Class Feature",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -5479,10 +5545,10 @@
       "esES": null
     },
     {
-      "Key": "448aef6879ce48b8bba03efb606a6282",
+      "Key": "6e20a13e945f49b385f7c29093203e66",
       "SimpleName": "LegacyClassSelection.Name",
       "ProcessTemplates": false,
-      "enGB": "Legacy Class Feature",
+      "enGB": "Legacy",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -5655,6 +5721,17 @@
       "esES": null
     },
     {
+      "Key": "b17883c679c74bc0822189ccb89e76f7",
+      "SimpleName": "MagusLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Meh, let us be honest, Kinetic Knights only wish they were us, the true masters of melee spellcasting.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "c055d63f59a84d47b2cec6c7b539a03b",
       "SimpleName": "MagusLegacy.Description",
       "ProcessTemplates": true,
@@ -5776,10 +5853,10 @@
       "esES": null
     },
     {
-      "Key": "79e1c074e8444a408a513cde63a147ad",
+      "Key": "daec5032da864ea28d23a45e4408fe1e",
       "SimpleName": "MindControlAbility.Description",
       "ProcessTemplates": true,
-      "enGB": "You can make any creature fight on your side as if it was your ally. It will attack your opponents to the best of its ability.\n They will not resist.",
+      "enGB": "You can make any creature fight on your side as if it was your ally. It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its ability.\n They will not resist.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -5787,10 +5864,10 @@
       "esES": null
     },
     {
-      "Key": "daec5032da864ea28d23a45e4408fe1e",
+      "Key": "79e1c074e8444a408a513cde63a147ad",
       "SimpleName": "MindControlAbility.Description",
       "ProcessTemplates": true,
-      "enGB": "You can make any creature fight on your side as if it was your ally. It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its ability.\n They will not resist.",
+      "enGB": "You can make any creature fight on your side as if it was your ally. It will attack your opponents to the best of its ability.\n They will not resist.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -5930,10 +6007,10 @@
       "esES": null
     },
     {
-      "Key": "48d48b67ba3a4525a7bf1115bc748ff2",
+      "Key": "ae3b9c03ef0546089bd29d750ecc499f",
       "SimpleName": "MundaneAura.Description",
       "ProcessTemplates": true,
-      "enGB": "You emit a small aura of mundanity, giving you immunity to Sneak attack damage and critical hits.",
+      "enGB": "You emit a small aura of mundanity, giving you immunity to Sneak attack damage and {g|Encyclopedia:Critical}critical hits{/g}.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -5941,10 +6018,10 @@
       "esES": null
     },
     {
-      "Key": "ae3b9c03ef0546089bd29d750ecc499f",
+      "Key": "48d48b67ba3a4525a7bf1115bc748ff2",
       "SimpleName": "MundaneAura.Description",
       "ProcessTemplates": true,
-      "enGB": "You emit a small aura of mundanity, giving you immunity to Sneak attack damage and {g|Encyclopedia:Critical}critical hits{/g}.",
+      "enGB": "You emit a small aura of mundanity, giving you immunity to Sneak attack damage and critical hits.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -6007,17 +6084,6 @@
       "esES": null
     },
     {
-      "Key": "e77b77f38f1f42f38b68b85fadf865ae",
-      "SimpleName": "MysticTheurgeDivineIsekai.Description",
-      "ProcessTemplates": true,
-      "enGB": "At 1st level, the mystic theurge selects a divine spellcasting class she belonged to before adding the prestige class. When a new mystic theurge level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
-    },
-    {
       "Key": "dc190166633e415b83bc874e9b4598cd",
       "SimpleName": "MysticTheurgeDivineIsekai.Description",
       "ProcessTemplates": true,
@@ -6029,10 +6095,10 @@
       "esES": null
     },
     {
-      "Key": "0bb5da98c04d4b23a46ffd341c0fc60b",
-      "SimpleName": "MysticTheurgeDivineVillain.Description",
+      "Key": "e77b77f38f1f42f38b68b85fadf865ae",
+      "SimpleName": "MysticTheurgeDivineIsekai.Description",
       "ProcessTemplates": true,
-      "enGB": "At 1st level, the mystic theurge selects a divine {g|Encyclopedia:Spell}spellcasting{/g} class she belonged to before adding the prestige class. When a new mystic theurge level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.",
+      "enGB": "At 1st level, the mystic theurge selects a divine spellcasting class she belonged to before adding the prestige class. When a new mystic theurge level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -6051,10 +6117,10 @@
       "esES": null
     },
     {
-      "Key": "ddc098f367004839a94530f4dc084b33",
-      "SimpleName": "NascentApotheosis.Description",
+      "Key": "0bb5da98c04d4b23a46ffd341c0fc60b",
+      "SimpleName": "MysticTheurgeDivineVillain.Description",
       "ProcessTemplates": true,
-      "enGB": "The God Emperor gains an inherent bonus to all attributes and spell penetration equal to 1/2 their character level and DR/— equal to their character level.",
+      "enGB": "At 1st level, the mystic theurge selects a divine {g|Encyclopedia:Spell}spellcasting{/g} class she belonged to before adding the prestige class. When a new mystic theurge level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -6066,6 +6132,17 @@
       "SimpleName": "NascentApotheosis.Description",
       "ProcessTemplates": true,
       "enGB": "The God Emperor gains an inherent bonus to all attributes and spell penetration equal to 1/2 their character level and {g|Encyclopedia:Damage_Reduction}DR{/g}/— equal to their character level.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "ddc098f367004839a94530f4dc084b33",
+      "SimpleName": "NascentApotheosis.Description",
+      "ProcessTemplates": true,
+      "enGB": "The God Emperor gains an inherent bonus to all attributes and spell penetration equal to 1/2 their character level and DR/— equal to their character level.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -6106,10 +6183,10 @@
       "esES": null
     },
     {
-      "Key": "471921694b6b469a80ef3bc01d16215d",
+      "Key": "be8613e516cb49a09328a968f08deff7",
       "SimpleName": "OmegaStrike.Description",
       "ProcessTemplates": true,
-      "enGB": "Any {g|Encyclopedia:Attack}attacks{/g} you make have their {g|Encyclopedia:Damage}damage{/g} multiplier increased by 1 (×2 becomes ×3, for example).",
+      "enGB": "Any attacks you make have their damage multiplier increased by 1 (×2 becomes ×3, for example).",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -6117,10 +6194,10 @@
       "esES": null
     },
     {
-      "Key": "be8613e516cb49a09328a968f08deff7",
+      "Key": "471921694b6b469a80ef3bc01d16215d",
       "SimpleName": "OmegaStrike.Description",
       "ProcessTemplates": true,
-      "enGB": "Any attacks you make have their damage multiplier increased by 1 (×2 becomes ×3, for example).",
+      "enGB": "Any {g|Encyclopedia:Attack}attacks{/g} you make have their {g|Encyclopedia:Damage}damage{/g} multiplier increased by 1 (×2 becomes ×3, for example).",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -6491,6 +6568,17 @@
       "esES": null
     },
     {
+      "Key": "b9da9b642b0c4503ae16753ed5ad4553",
+      "SimpleName": "RogueLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your reincarnation gave you great power; that is no reason to forget the usefulness of a simple backstab.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "8541383567d042199074b05bfd1b1f5b",
       "SimpleName": "RogueLegacy.Name",
       "ProcessTemplates": false,
@@ -6590,10 +6678,10 @@
       "esES": null
     },
     {
-      "Key": "a3b248ccab2849709911e2d003f9dca0",
+      "Key": "0a5e7e0c6bfc4665ac72acd3a50792da",
       "SimpleName": "SecondReincarnation.Description",
       "ProcessTemplates": true,
-      "enGB": "Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.\nYour attacks ignore damage reduction and your spells ignore spell resistance and spell immunity.",
+      "enGB": "Once per day, when your HP drops to 0, you are restored to full HP, ability damage, and ability drain.\nYour attacks ignore damage reduction and your spells ignore spell resistance and spell immunity.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -6601,10 +6689,10 @@
       "esES": null
     },
     {
-      "Key": "0a5e7e0c6bfc4665ac72acd3a50792da",
+      "Key": "a3b248ccab2849709911e2d003f9dca0",
       "SimpleName": "SecondReincarnation.Description",
       "ProcessTemplates": true,
-      "enGB": "Once per day, when your HP drops to 0, you are restored to full HP, ability damage, and ability drain.\nYour attacks ignore damage reduction and your spells ignore spell resistance and spell immunity.",
+      "enGB": "Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.\nYour attacks ignore damage reduction and your spells ignore spell resistance and spell immunity.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -6671,6 +6759,17 @@
       "SimpleName": "ShamanLegacy.Description",
       "ProcessTemplates": true,
       "enGB": "As a person who have originated from the other world Spirit Beacon has an unique aura. \nThis aura is particularly attractive to spirits, and they have learned to harness the power of these spirits by forming contracts with them. \nDespite their reliance on spirits, Spirit Beacons are not bound by the will of these supernatural beings. \nThey are able to maintain their independence and make their own decisions, using the power of the spirits as a tool rather than being controlled by them.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "78951c7ab3b441a398825813bc8e4e5a",
+      "SimpleName": "ShamanLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "As persons who originated from the other worlds, Spirit Beacons have an unique aura. \nThis aura is particularly attractive to spirits, and they have learned to harness the power of these spirits by forming contracts with them. \nDespite their reliance on spirits, Spirit Beacons are not bound by the will of these supernatural beings. \nThey are able to maintain their independence and make their own decisions, using the power of the spirits as a tool rather than being controlled by them.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -7144,6 +7243,17 @@
       "SimpleName": "SonicImmunity.Name",
       "ProcessTemplates": false,
       "enGB": "Sonic Immunity",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "102f634b98e247d89c6c23936f014d69",
+      "SimpleName": "SorcererLegacyProgression.Description",
+      "ProcessTemplates": true,
+      "enGB": "Their otherworldly knowledge and point of view allow Chimeras to imbue themselves with different bloodlines in order to gain power and strength. \nChimeras are constantly seeking out new sources of power, and their ability to absorb and incorporate these different bloodlines allows them to become truly formidable foes. \nHowever, their constant experimentation with bloodlines can also lead to confusion and uncertainty about their own heritage and identity, as their original ancestry becomes harder to discern over time.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8669,10 +8779,10 @@
       "esES": null
     },
     {
-      "Key": "3237c77ce5be4fae9e58e329e7837c96",
+      "Key": "b69d6f5a35b5448a89b08b927a280589",
       "SimpleName": "SummonBeastAbility.Description",
       "ProcessTemplates": true,
-      "enGB": "This spell summons a Hydra, an Owlbear, a Roc, or a Minotaur. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.",
+      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons a Hydra, an Owlbear, a Roc, or a Minotaur. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8680,10 +8790,10 @@
       "esES": null
     },
     {
-      "Key": "b69d6f5a35b5448a89b08b927a280589",
+      "Key": "3237c77ce5be4fae9e58e329e7837c96",
       "SimpleName": "SummonBeastAbility.Description",
       "ProcessTemplates": true,
-      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons a Hydra, an Owlbear, a Roc, or a Minotaur. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
+      "enGB": "This spell summons a Hydra, an Owlbear, a Roc, or a Minotaur. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8746,17 +8856,6 @@
       "esES": null
     },
     {
-      "Key": "d56e002182ca4faa894b2d281bf69115",
-      "SimpleName": "SummonCalamityFeature.Description",
-      "ProcessTemplates": true,
-      "enGB": "As a full action, you summon a powerful being to bring calamity. You can summon one of the following: Devastator, Playful Darkness, Baphomet, Deskari, Nocticula, or Mephistopheles.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
-    },
-    {
       "Key": "7b062427acc84f2484007703be88ddfb",
       "SimpleName": "SummonCalamityFeature.Description",
       "ProcessTemplates": true,
@@ -8768,10 +8867,10 @@
       "esES": null
     },
     {
-      "Key": "d5b94c260cf646d5bb717a2a81c006e0",
-      "SimpleName": "SummonDemonLordDeskari.Description",
+      "Key": "d56e002182ca4faa894b2d281bf69115",
+      "SimpleName": "SummonCalamityFeature.Description",
       "ProcessTemplates": true,
-      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Deskari. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
+      "enGB": "As a full action, you summon a powerful being to bring calamity. You can summon one of the following: Devastator, Playful Darkness, Baphomet, Deskari, Nocticula, or Mephistopheles.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8790,10 +8889,10 @@
       "esES": null
     },
     {
-      "Key": "8fd7f6481d694bee9f68e9414f119905",
-      "SimpleName": "SummonDemonLordDeskari.Name",
-      "ProcessTemplates": false,
-      "enGB": "Overpowered Ability — Summon Calamity (Deskari)",
+      "Key": "d5b94c260cf646d5bb717a2a81c006e0",
+      "SimpleName": "SummonDemonLordDeskari.Description",
+      "ProcessTemplates": true,
+      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Deskari. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8801,10 +8900,10 @@
       "esES": null
     },
     {
-      "Key": "f30cb10b757e4c68a33f30f5082729a3",
-      "SimpleName": "SummonDemonMephistopheles.Description",
-      "ProcessTemplates": true,
-      "enGB": "This spell summons Archdevil Mephistopheles. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.",
+      "Key": "8fd7f6481d694bee9f68e9414f119905",
+      "SimpleName": "SummonDemonLordDeskari.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Summon Calamity (Deskari)",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8823,10 +8922,10 @@
       "esES": null
     },
     {
-      "Key": "36dbd0396e434a009da776d8c6fddb99",
-      "SimpleName": "SummonDemonMephistopheles.Name",
-      "ProcessTemplates": false,
-      "enGB": "Overpowered Ability — Summon Calamity (Mephistopheles)",
+      "Key": "f30cb10b757e4c68a33f30f5082729a3",
+      "SimpleName": "SummonDemonMephistopheles.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell summons Archdevil Mephistopheles. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8834,10 +8933,10 @@
       "esES": null
     },
     {
-      "Key": "d741a98919ed466f909f39e5be730bb7",
-      "SimpleName": "SummonDemonNocticula.Description",
-      "ProcessTemplates": true,
-      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Nocticula. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
+      "Key": "36dbd0396e434a009da776d8c6fddb99",
+      "SimpleName": "SummonDemonMephistopheles.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Summon Calamity (Mephistopheles)",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8856,10 +8955,10 @@
       "esES": null
     },
     {
-      "Key": "9325f883e1074a80b7bac49ae6febad5",
-      "SimpleName": "SummonDemonNocticula.Name",
-      "ProcessTemplates": false,
-      "enGB": "Overpowered Ability — Summon Calamity (Nocticula)",
+      "Key": "d741a98919ed466f909f39e5be730bb7",
+      "SimpleName": "SummonDemonNocticula.Description",
+      "ProcessTemplates": true,
+      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Nocticula. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8867,10 +8966,10 @@
       "esES": null
     },
     {
-      "Key": "aa3ae5dda0fc4630bc40aad8d1afadab",
-      "SimpleName": "SummonDevastator.Description",
-      "ProcessTemplates": true,
-      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons a Devastator. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
+      "Key": "9325f883e1074a80b7bac49ae6febad5",
+      "SimpleName": "SummonDemonNocticula.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Summon Calamity (Nocticula)",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8889,6 +8988,17 @@
       "esES": null
     },
     {
+      "Key": "aa3ae5dda0fc4630bc40aad8d1afadab",
+      "SimpleName": "SummonDevastator.Description",
+      "ProcessTemplates": true,
+      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons a Devastator. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "6c5c9b17ec7f456890960c1eefc27ba6",
       "SimpleName": "SummonDevastator.Name",
       "ProcessTemplates": false,
@@ -8900,10 +9010,10 @@
       "esES": null
     },
     {
-      "Key": "601eaea2927a407fb5d086beb22dc255",
+      "Key": "5e82acc023704ecaa23438448e8180ee",
       "SimpleName": "SummonHaremAbility.Description",
       "ProcessTemplates": true,
-      "enGB": "This spell summons a Succubus, Nymph, Astral Deva, and an Erinyes. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.",
+      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons a Succubus, Nymph, Astral Deva, and an Erinyes. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8911,10 +9021,10 @@
       "esES": null
     },
     {
-      "Key": "5e82acc023704ecaa23438448e8180ee",
+      "Key": "601eaea2927a407fb5d086beb22dc255",
       "SimpleName": "SummonHaremAbility.Description",
       "ProcessTemplates": true,
-      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons a Succubus, Nymph, Astral Deva, and an Erinyes. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
+      "enGB": "This spell summons a Succubus, Nymph, Astral Deva, and an Erinyes. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8955,10 +9065,10 @@
       "esES": null
     },
     {
-      "Key": "2ab941d3f91d4d91b2c114964c441198",
+      "Key": "0ab009521e664002827370f8e84c016c",
       "SimpleName": "SummonHydra.Description",
       "ProcessTemplates": true,
-      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons a Hydra. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
+      "enGB": "This spell summons a Hydra. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8966,10 +9076,10 @@
       "esES": null
     },
     {
-      "Key": "0ab009521e664002827370f8e84c016c",
+      "Key": "2ab941d3f91d4d91b2c114964c441198",
       "SimpleName": "SummonHydra.Description",
       "ProcessTemplates": true,
-      "enGB": "This spell summons a Hydra. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.",
+      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons a Hydra. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8988,10 +9098,10 @@
       "esES": null
     },
     {
-      "Key": "481d7bc96c1b4fb1be10c9746fece8b1",
+      "Key": "2e1400fb3ecc4eaa92b51a04e9108143",
       "SimpleName": "SummonMinotaur.Description",
       "ProcessTemplates": true,
-      "enGB": "This spell summons a Minotaur. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.",
+      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons a Minotaur. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -8999,10 +9109,10 @@
       "esES": null
     },
     {
-      "Key": "2e1400fb3ecc4eaa92b51a04e9108143",
+      "Key": "481d7bc96c1b4fb1be10c9746fece8b1",
       "SimpleName": "SummonMinotaur.Description",
       "ProcessTemplates": true,
-      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons a Minotaur. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
+      "enGB": "This spell summons a Minotaur. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9021,10 +9131,10 @@
       "esES": null
     },
     {
-      "Key": "93c5accdf9174e68bb9eb4f6039bd494",
+      "Key": "0028b53097af42608edb8add7af31cad",
       "SimpleName": "SummonOwlbear.Description",
       "ProcessTemplates": true,
-      "enGB": "This spell summons an Owlbear. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.",
+      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons an Owlbear. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9032,10 +9142,10 @@
       "esES": null
     },
     {
-      "Key": "0028b53097af42608edb8add7af31cad",
+      "Key": "93c5accdf9174e68bb9eb4f6039bd494",
       "SimpleName": "SummonOwlbear.Description",
       "ProcessTemplates": true,
-      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons an Owlbear. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
+      "enGB": "This spell summons an Owlbear. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9087,10 +9197,10 @@
       "esES": null
     },
     {
-      "Key": "bad69f62f395448bb15dda1865d5ac87",
+      "Key": "1ef1bbbeddb64413a66cee9e0ce95e1d",
       "SimpleName": "SummonRoc.Description",
       "ProcessTemplates": true,
-      "enGB": "This spell summons a Roc. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.",
+      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons a Roc. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9098,10 +9208,10 @@
       "esES": null
     },
     {
-      "Key": "1ef1bbbeddb64413a66cee9e0ce95e1d",
+      "Key": "bad69f62f395448bb15dda1865d5ac87",
       "SimpleName": "SummonRoc.Description",
       "ProcessTemplates": true,
-      "enGB": "This {g|Encyclopedia:Spell}spell{/g} summons a Roc. Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.",
+      "enGB": "This spell summons a Roc. Summoned monsters appear where you designate and act according to their initiative check results. They attack your opponents to the best of their ability.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9208,10 +9318,10 @@
       "esES": null
     },
     {
-      "Key": "e830bb44fba5461593a394ac920a9c73",
+      "Key": "540684c6f1034dc688a687f657e95e7d",
       "SimpleName": "SupremeBeing.Description",
       "ProcessTemplates": true,
-      "enGB": "All your attributes have a base value of 30.",
+      "enGB": "All your attributes have at least a base value of 30.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9219,10 +9329,10 @@
       "esES": null
     },
     {
-      "Key": "540684c6f1034dc688a687f657e95e7d",
+      "Key": "e830bb44fba5461593a394ac920a9c73",
       "SimpleName": "SupremeBeing.Description",
       "ProcessTemplates": true,
-      "enGB": "All your attributes have at least a base value of 30.",
+      "enGB": "All your attributes have a base value of 30.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9245,6 +9355,17 @@
       "SimpleName": "TacticianLegacy.Description",
       "ProcessTemplates": true,
       "enGB": "You are used to telling people what to do. \nYou were the tactician that lead your guild to first kill Onyxia. \nThis, as far as you are concerned, is just another raid to conquer with your brilliant tactics and perfect preparation...",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "284e8e2c6f5c4111bdf5adcca73e4833",
+      "SimpleName": "TacticianLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You are used to telling people what to do. \nYou were the tactician who led your guild to first kill Onyxia. \nThis, as far as you are concerned, is just another raid to conquer with your brilliant tactics and perfect preparation...",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9560,10 +9681,10 @@
       "esES": null
     },
     {
-      "Key": "707e43ee673d4d11a05f12d617857498",
+      "Key": "e8e62333a7044a0fa4de1f7c9d10a70e",
       "SimpleName": "TrueSmiteAdditionalUse.Description",
       "ProcessTemplates": true,
-      "enGB": "Once per day, the hero can call out her inner powers to aid her against her enemies. As a {g|Encyclopedia:Swift_Action}swift action{/g}, the hero chooses one target within sight to smite. The hero adds her {g|Encyclopedia:Charisma}Cha{/g} {g|Encyclopedia:Bonus}bonus{/g} (if any) to her {g|Encyclopedia:Attack}attack rolls{/g} and adds her character level to all {g|Encyclopedia:Damage}damage rolls{/g} made against the target of her smite, true smite attacks automatically bypass any {g|Encyclopedia:Damage_Reduction}DR{/g} the creature might possess and automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier (if any) to her {g|Encyclopedia:Armor_Class}AC{/g} against attacks made by the target of the smite.\nTrue smite lasts until the target dies or the hero selects a new target. At 4th level, and at every three levels thereafter, the hero may use true smite one additional time per day.",
+      "enGB": "Once per day, the hero can call out her inner powers to aid her against her enemies. As a swift action, the hero chooses one target within sight to smite. The hero adds her Cha bonus (if any) to her attack rolls and adds her character level to all damage rolls made against the target of her smite, true smite attacks automatically bypass any DR the creature might possess and automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier (if any) to her AC against attacks made by the target of the smite.\nTrue smite lasts until the target dies or the hero selects a new target. At 4th level, and at every three levels thereafter, the hero may use true smite one additional time per day.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9571,10 +9692,10 @@
       "esES": null
     },
     {
-      "Key": "e8e62333a7044a0fa4de1f7c9d10a70e",
+      "Key": "707e43ee673d4d11a05f12d617857498",
       "SimpleName": "TrueSmiteAdditionalUse.Description",
       "ProcessTemplates": true,
-      "enGB": "Once per day, the hero can call out her inner powers to aid her against her enemies. As a swift action, the hero chooses one target within sight to smite. The hero adds her Cha bonus (if any) to her attack rolls and adds her character level to all damage rolls made against the target of her smite, true smite attacks automatically bypass any DR the creature might possess and automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier (if any) to her AC against attacks made by the target of the smite.\nTrue smite lasts until the target dies or the hero selects a new target. At 4th level, and at every three levels thereafter, the hero may use true smite one additional time per day.",
+      "enGB": "Once per day, the hero can call out her inner powers to aid her against her enemies. As a {g|Encyclopedia:Swift_Action}swift action{/g}, the hero chooses one target within sight to smite. The hero adds her {g|Encyclopedia:Charisma}Cha{/g} {g|Encyclopedia:Bonus}bonus{/g} (if any) to her {g|Encyclopedia:Attack}attack rolls{/g} and adds her character level to all {g|Encyclopedia:Damage}damage rolls{/g} made against the target of her smite, true smite attacks automatically bypass any {g|Encyclopedia:Damage_Reduction}DR{/g} the creature might possess and automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier (if any) to her {g|Encyclopedia:Armor_Class}AC{/g} against attacks made by the target of the smite.\nTrue smite lasts until the target dies or the hero selects a new target. At 4th level, and at every three levels thereafter, the hero may use true smite one additional time per day.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9593,10 +9714,10 @@
       "esES": null
     },
     {
-      "Key": "d5525786abf3400b85921ca39ca8782f",
+      "Key": "f78a4b1d8a1047a688846e873fbedd72",
       "SimpleName": "TrueSmiteBuff.Description",
       "ProcessTemplates": true,
-      "enGB": "The hero adds her {g|Encyclopedia:Charisma}Cha{/g} {g|Encyclopedia:Bonus}bonus{/g} (if any) to her {g|Encyclopedia:Attack}attack rolls{/g} against this creature and adds her character level to all {g|Encyclopedia:Damage}damage rolls{/g} against this creature.Attacks against this creature automatically bypass any {g|Encyclopedia:Damage_Reduction}DR{/g} the creature might possess and automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier (if any) to her {g|Encyclopedia:Armor_Class}AC{/g} against attacks made by this creature.\nTrue smite lasts until this creature dies or the hero selects a new target.",
+      "enGB": "The hero adds her Cha bonus (if any) to her attack rolls against this creature and adds her character level to all damage rolls against this creature.Attacks against this creature automatically bypass any DR the creature might possess and automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier (if any) to her AC against attacks made by this creature.\nTrue smite lasts until this creature dies or the hero selects a new target.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9604,10 +9725,10 @@
       "esES": null
     },
     {
-      "Key": "f78a4b1d8a1047a688846e873fbedd72",
+      "Key": "d5525786abf3400b85921ca39ca8782f",
       "SimpleName": "TrueSmiteBuff.Description",
       "ProcessTemplates": true,
-      "enGB": "The hero adds her Cha bonus (if any) to her attack rolls against this creature and adds her character level to all damage rolls against this creature.Attacks against this creature automatically bypass any DR the creature might possess and automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier (if any) to her AC against attacks made by this creature.\nTrue smite lasts until this creature dies or the hero selects a new target.",
+      "enGB": "The hero adds her {g|Encyclopedia:Charisma}Cha{/g} {g|Encyclopedia:Bonus}bonus{/g} (if any) to her {g|Encyclopedia:Attack}attack rolls{/g} against this creature and adds her character level to all {g|Encyclopedia:Damage}damage rolls{/g} against this creature.Attacks against this creature automatically bypass any {g|Encyclopedia:Damage_Reduction}DR{/g} the creature might possess and automatically confirms all critical threats against them. In addition, while true smite is in effect, the hero gains a deflection bonus equal to her Charisma modifier (if any) to her {g|Encyclopedia:Armor_Class}AC{/g} against attacks made by this creature.\nTrue smite lasts until this creature dies or the hero selects a new target.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9758,10 +9879,10 @@
       "esES": null
     },
     {
-      "Key": "f2bf04e9b5ff4895a7ea77aab7ea01ac",
+      "Key": "cba3123792ef4a89a7c7958738b76ce9",
       "SimpleName": "VillainQuickFooted.Description",
       "ProcessTemplates": true,
-      "enGB": "At 15th level, you gain a competence {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}checks{/g} equal to your {g|Encyclopedia:Intelligence}Intelligence{/g} modifier.",
+      "enGB": "At 15th level, you gain a competence bonus to your initiative checks equal to your Intelligence modifier.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9769,10 +9890,10 @@
       "esES": null
     },
     {
-      "Key": "cba3123792ef4a89a7c7958738b76ce9",
+      "Key": "f2bf04e9b5ff4895a7ea77aab7ea01ac",
       "SimpleName": "VillainQuickFooted.Description",
       "ProcessTemplates": true,
-      "enGB": "At 15th level, you gain a competence bonus to your initiative checks equal to your Intelligence modifier.",
+      "enGB": "At 15th level, you gain a competence {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}checks{/g} equal to your {g|Encyclopedia:Intelligence}Intelligence{/g} modifier.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9791,10 +9912,10 @@
       "esES": null
     },
     {
-      "Key": "5503cea1c3b94ce4a7dd33ebb6ae455d",
+      "Key": "4eaadf4544b84805a39e58e04554b980",
       "SimpleName": "WinterWitchIsekai.Description",
       "ProcessTemplates": true,
-      "enGB": "When a new winter witch level is gained, the character gains new {g|Encyclopedia:Spell}spells{/g} per day as if she had also gained a level in witch or shaman spellcasting class she belonged to before she added the prestige class. Additionally, at 2nd level, and every two level after, a winter witch gets a new hex depending on the chosen spellcasting class.",
+      "enGB": "When a new winter witch level is gained, the character gains new spells per day as if she had also gained a level in witch or shaman spellcasting class she belonged to before she added the prestige class. Additionally, at 2nd level, and every two level after, a winter witch gets a new hex depending on the chosen spellcasting class.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9802,10 +9923,10 @@
       "esES": null
     },
     {
-      "Key": "4eaadf4544b84805a39e58e04554b980",
+      "Key": "5503cea1c3b94ce4a7dd33ebb6ae455d",
       "SimpleName": "WinterWitchIsekai.Description",
       "ProcessTemplates": true,
-      "enGB": "When a new winter witch level is gained, the character gains new spells per day as if she had also gained a level in witch or shaman spellcasting class she belonged to before she added the prestige class. Additionally, at 2nd level, and every two level after, a winter witch gets a new hex depending on the chosen spellcasting class.",
+      "enGB": "When a new winter witch level is gained, the character gains new {g|Encyclopedia:Spell}spells{/g} per day as if she had also gained a level in witch or shaman spellcasting class she belonged to before she added the prestige class. Additionally, at 2nd level, and every two level after, a winter witch gets a new hex depending on the chosen spellcasting class.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
