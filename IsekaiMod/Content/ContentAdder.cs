@@ -29,7 +29,8 @@ namespace IsekaiMod.Content {
             private static readonly SettingGroup Isekai = IsekaiContext.AddedContent.Isekai;
 
             [HarmonyPriority(Priority.First)]
-            public static void Postfix() {
+            [HarmonyPostfix]
+            public static void CreateNewBlueprints() {
                 if (Initialized) return;
                 Initialized = true;
                 Main.LogDebug("first init call");
@@ -280,17 +281,41 @@ namespace IsekaiMod.Content {
 
             if (IsekaiContext.AddedContent.Isekai.IsDisabled("Isekai Protagonist")) return;
 
-            KineticLegacy.PatchKineticistProgression();
+            BarbarianLegacy.PatchProgression();
+            BardLegacy.PatchProgression();
+            FighterBasicLegacy.PatchProgression();
+            MonkLegacy.PatchProgression();
+            RogueLegacy.PatchProgression();
+            SkaldBaseLegacy.PatchProgression();
+            KineticLegacy.PatchProgression();
+            ShifterBaseLegacy.PatchProgression();
             Main.LogDebug("Postfix Patching: Kineticist Patched");
-            OracleLegacy.PatchClassOracleSelection();
+            OracleLegacy.PatchProgression();
             Main.LogDebug("Postfix Patching: Oracle Patched");
-            SorcererLegacy.PatchSorcererBloodlines();
+            SorcererLegacy.PatchProgression();
             Main.LogDebug("Postfix Patching: Sorcerer Patched");
-            ShamanLegacy.PatchShamanProgressions();
+            ShamanLegacy.PatchProgression();
             Main.LogDebug("Postfix Patching: Shaman Patched");
             KineticKnightLegacy.configure();
-            KineticKnightLegacy.PatchKineticistProgression();
-            Main.LogDebug("Postfix Patching: Kinetic Knight Patched");
+
+            KineticKnightLegacy.PatchProgression();
+            KineticOverwhelmingSoulLegacy.PatchProgression();
+            KineticDarkElementalistLegacy.PatchProgression();
+            KineticLegacy.MakeKineticProgsExclusive();
+            Main.LogDebug("Postfix Patching: Kinetic Archetypes Patched");
+
+            MonkScaledFistLegacy.PatchProgression();
+            MonkLegacy.MakeProgsExclusive();
+
+            SkaldSilverTongueLegacy.PatchProgression();
+            SkaldVoiceLegacy.PatchProgression();
+            SkaldBaseLegacy.MakeProgsExclusive();
+
+            ShifterStingerLegacy.PatchProgression();
+            ShifterDragonLegacy.PatchProgression();
+            ShifterBaseLegacy.MakeProgsExclusive();
+
+
 
             //done here because it should be done after all spells have been initialized and were added to the canon books
             if (IsekaiContext.AddedContent.MergeIsekaiSpellList) IsekaiProtagonistSpellList.MergeSpellLists();

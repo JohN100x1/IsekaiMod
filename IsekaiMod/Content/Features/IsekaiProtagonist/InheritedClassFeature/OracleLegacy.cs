@@ -46,14 +46,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             VillainLegacySelection.getClassFeature().AddFeatures(prog);
         }
 
-        public static void PatchClassOracleSelection() {
-            IsekaiContext.Logger.Log("trying to patch oracle features:");
+        public static void PatchProgression() {
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
             BlueprintCharacterClassReference refClass = ClassTools.Classes.OracleClass.ToReference<BlueprintCharacterClassReference>();
-            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.OracleCurseSelection, myClass, refClass, 0);
-            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.OracleMysterySelection, myClass, refClass, 0);
-            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.OracleRevelationSelection, myClass, refClass, 0);
-            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.OraclePositiveNegativeSelection, myClass, refClass, 0);
+            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.OracleCurseSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
+            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.OracleMysterySelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
+            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.OracleRevelationSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
+            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.OraclePositiveNegativeSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
 
         }
         public static BlueprintProgression Get() {

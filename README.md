@@ -166,6 +166,17 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Shaman Legacy - Spirit Beacons`: Also still a Beta release
 		- `Sorcerer Legacy - Chimera`: does not grant its selections retroactivly, so best picked early.
 		- `Tactician Legacy - Isekai Tactician`: A mixture from several classes like hunter and Monster Tactician to create a path focused around tactical feats
+		- `Kinetic Legacy - Soulbinder`
+		- `Kinetic Legacy - Noble Soul`
+		- `Fighter Legacy - Basic Fighter`
+		- `Monk Legacy - Daoist Martial Artist`
+		- `Monk Legacy - Fist of a Dragon`
+		- `Skald Legacy - Metal Singer`
+		- `Skald Legacy - Silver Tongue`
+		- `Skald Legacy - The Voice`
+		- `Shifter Legacy - Ditto`
+		- `Shifter Legacy - Stinger`
+		- `Shifter Legacy - Shapeshifted Baby Dragon`
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities

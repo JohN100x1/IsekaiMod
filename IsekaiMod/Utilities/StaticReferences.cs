@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -7,6 +8,7 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using Kingmaker.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,81 +46,227 @@ namespace IsekaiMod.Utilities {
         public static BlueprintFeature SoloTactics = BlueprintTools.GetBlueprint<BlueprintFeature>("87d6de4d30adc7244b7a3427d041dcaa");
         public static BlueprintFeature ForesterTactics = BlueprintTools.GetBlueprint<BlueprintFeature>("994db4abfa0d6194eb3c847605e6f148");
 
-        //bard
-        public static BlueprintAbilityResource BardPerformResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("e190ba276831b5c4fa28737e5e49e6a6");
-        public static BlueprintFeature BardInspireCourage = BlueprintTools.GetBlueprint<BlueprintFeature>("acb4df34b25ca9043a6aba1a4c92bc69");
-        public static BlueprintFeature BardInspireCompetence = BlueprintTools.GetBlueprint<BlueprintFeature>("6d3fcfab6d935754c918eb0e004b5ef7");
-        public static BlueprintFeature BardInspireGreatness = BlueprintTools.GetBlueprint<BlueprintFeature>("9ae0f32c72f8df84dab023d1b34641dc");
-        public static BlueprintFeature BardInspireHeroics = BlueprintTools.GetBlueprint<BlueprintFeature>("199d6fa0de149d044a8ab622a542cc79");
-        public static BlueprintFeature BardWellVersed = BlueprintTools.GetBlueprint<BlueprintFeature>("8f4060852a4c8604290037365155662f");
-        public static BlueprintFeature BardFascinate = BlueprintTools.GetBlueprint<BlueprintFeature>("ddaec3a5845bc7d4191792529b687d65");
-        public static BlueprintFeature BardMove = BlueprintTools.GetBlueprint<BlueprintFeature>("36931765983e96d4bb07ce7844cd897e");
-        public static BlueprintFeature BardSwift = BlueprintTools.GetBlueprint<BlueprintFeature>("fd4ec50bc895a614194df6b9232004b9");
+        public static readonly BlueprintFeatureBase[] FeaturesIgnoredWhenPatching = new BlueprintFeatureBase[] { FeatTools.Selections.BasicFeatSelection, FeatTools.Selections.FighterFeatSelection, FeatTools.Selections.CombatTrick, FeatTools.Selections.SkaldFeatSelection };
 
-        //barbarian
-        public static BlueprintAbilityResource BarbarianRageResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("24353fcf8096ea54684a72bf58dedbc9");
-        public static BlueprintFeature BarbarianRage = BlueprintTools.GetBlueprint<BlueprintFeature>("2479395977cfeeb46b482bc3385f4647");
-        public static BlueprintFeature BarbarianRageGreater = BlueprintTools.GetBlueprint<BlueprintFeature>("ce49c579fe0bcc647a32c96929fae982");
-        public static BlueprintFeature BarbarianRageTireless = BlueprintTools.GetBlueprint<BlueprintFeature>("ca9343d75a83a2745a22fa11c383153a");
-        public static BlueprintFeature BarbarianRagePower = BlueprintTools.GetBlueprint<BlueprintFeature>("28710502f46848d48b3f0d6132817c4e");
-        public static BlueprintFeature BarbarianDamageReduction = BlueprintTools.GetBlueprint<BlueprintFeature>("cffb5cddefab30140ac133699d52a8f8");
+        private static BlueprintProgression PatchPatchClassProgressionBasedOnRefClassStep1(BlueprintProgression prog, BlueprintCharacterClass refClass) {
+            prog.IsClassFeature = true;
+            prog.m_Classes = new BlueprintProgression.ClassWithLevel[] {
+                    new BlueprintProgression.ClassWithLevel {
+                        m_Class = IsekaiProtagonistClass.GetReference(),
+                        AdditionalLevel = 0
+                    }
+                };
+            prog.AddComponent<ClassLevelsForPrerequisites>(c => {
+                c.m_FakeClass = refClass.ToReference<BlueprintCharacterClassReference>();
+                c.m_ActualClass = IsekaiProtagonistClass.GetReference();
+                c.Modifier = 1.0;
+            });
+            prog.LevelEntries = new LevelEntry[] { };
+            var referenceUIGroups = refClass.Progression.UIGroups;
+            prog.UIGroups = new UIGroup[] {
+                };
+            foreach (var referenceUIGroup in referenceUIGroups) {
+                prog.UIGroups = prog.UIGroups.AddToArray<UIGroup>(referenceUIGroup);
+            }
+            prog.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] { };
+            var referenceUIDeterminators = refClass.Progression.UIDeterminatorsGroup;
+            foreach (var UIDetermin in referenceUIDeterminators) {
+                prog.m_UIDeterminatorsGroup = prog.m_UIDeterminatorsGroup.AddToArray<BlueprintFeatureBaseReference>(UIDetermin.ToReference<BlueprintFeatureBaseReference>());
+            }
+            return prog;
+        }
+        public static BlueprintProgression PatchClassProgressionBasedOnRefClass(BlueprintProgression prog, BlueprintCharacterClass refClass) {
+            prog = PatchPatchClassProgressionBasedOnRefClassStep1(prog, refClass);
+            var referenceLevels = refClass.Progression.LevelEntries;            
+            foreach (var referenceLevel in referenceLevels) {
+                BlueprintFeatureBaseReference[] features = referenceLevel.m_Features.ToArray();
+                prog.LevelEntries = prog.LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(referenceLevel.Level, features));
+            };            
+            return prog;
+        }
 
-        public static void PatchClassIntoFeatureOfReferenceClass(BlueprintFeature feature, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level) {
-            level = level++;
-            if (level > 20) {
+        public static BlueprintProgression PatchClassProgressionBasedonRefArchetype(BlueprintProgression prog, BlueprintCharacterClass refClass, BlueprintArchetype refArchetype, LevelEntry[] additionalReference) {
+            prog = PatchPatchClassProgressionBasedOnRefClassStep1(prog, refClass);
+            var referenceLevels = refClass.Progression.LevelEntries;
+            BlueprintFeatureBase[] MissingUIGroup = new BlueprintFeatureBase[] { };
+            foreach (var referenceLevel in referenceLevels) {
+                BlueprintFeatureBaseReference[] features = new BlueprintFeatureBaseReference[] { };
+                var addItems = referenceLevel.m_Features.ToArray() ;
+                BlueprintFeatureBaseReference[] removed = new BlueprintFeatureBaseReference[] { };
+                foreach (var candidate in refArchetype.RemoveFeatures) {
+                    if(candidate.Level == referenceLevel.Level) {
+                        removed = removed.AddRangeToArray(candidate.m_Features.ToArray());
+                    }
+                }
+                foreach ( var feature in addItems) {
+                    if (!removed.Contains(feature)) {
+                        features = features.AddToArray(feature);
+                    }
+                }
+                BlueprintFeatureBaseReference[] added = new BlueprintFeatureBaseReference[] { };
+                foreach (var candidate in refArchetype.AddFeatures) {
+                    if (candidate.Level == referenceLevel.Level) {
+                        added = added.AddRangeToArray(candidate.m_Features.ToArray());
+                    }
+                }
+                if (added != null && added.Length > 0) {
+                    foreach (var feature in added) {
+                        features = features.AddToArray(feature);
+                        if (!MissingUIGroup.Contains(feature)) { MissingUIGroup = MissingUIGroup.AddToArray(feature); }
+                    }
+                }
+                if (additionalReference != null) {
+                    LevelEntry additionalFeatures= null;
+                    foreach (var candidate in additionalReference) {
+                        if (candidate.Level == referenceLevel.Level) {
+                            additionalFeatures = candidate;
+                        }
+                    }
+                    if (additionalFeatures != null) {
+                        foreach (var feature in additionalFeatures.m_Features) {
+                            features = features.AddToArray(feature);
+                            if (!MissingUIGroup.Contains(feature)) { MissingUIGroup = MissingUIGroup.AddToArray(feature); }
+                        }
+                    }
+                }
+                prog.LevelEntries = prog.LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(referenceLevel.Level, features));
+            };
+            //run through them again to get references to levels that had no features previously
+            if (additionalReference != null) {
+                foreach (var level in additionalReference) {
+                    bool found = false;
+                    foreach (var refLevel in prog.LevelEntries) {
+                        if (refLevel.Level== level.Level) {
+                            found = true;
+                        }
+                    }
+                    if (!found) {
+                        prog.LevelEntries = prog.LevelEntries.AddToArray<LevelEntry>(level);
+                        foreach (var feature in level.m_Features) { if (!MissingUIGroup.Contains(feature)) { MissingUIGroup = MissingUIGroup.AddToArray(feature); } }
+                    }
+                }
+            }
+            if (MissingUIGroup.Length> 0) {
+                prog.UIGroups = prog.UIGroups.AddToArray(Helpers.CreateUIGroup(MissingUIGroup));
+            }
+            return prog;
+        }
+
+        public static void PatchProgressionFeaturesBasedOnReferenceArchetype(BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, BlueprintArchetype refArchetype) {
+            var features = new HashSet<BlueprintFeatureBase>();
+            foreach (LevelEntry levelEntry in refArchetype.AddFeatures) {
+                foreach (var levelitem in levelEntry.Features) {
+                    if (!features.Contains(levelitem)) { features.Add(levelitem); }
+                }
+            }
+            foreach (BlueprintFeatureBase levelitem in features) {
+                if (levelitem is BlueprintProgression progression) {
+                    PatchClassIntoFeatureOfReferenceClass(progression, myClass, referenceClass, 0, new BlueprintFeatureBase[] { });
+                } else {
+                    if (levelitem is BlueprintFeature feature) {
+                        PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass, 0, new BlueprintFeatureBase[] { });
+                    }
+                }
+            }
+        }
+
+        public static void PatchProgressionFeaturesBasedOnReferenceClass(BlueprintProgression prog, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass) {
+            var features = new HashSet<BlueprintFeatureBase>();
+            foreach (LevelEntry levelEntry in prog.LevelEntries) { 
+                foreach (var levelitem in levelEntry.Features) {
+                    if (!features.Contains(levelitem)) { features.Add(levelitem); }
+                }
+            }
+            foreach (BlueprintFeatureBase levelitem in features) {
+                if (levelitem is BlueprintProgression progression) {
+                    PatchClassIntoFeatureOfReferenceClass(progression, myClass, referenceClass, 0, new BlueprintFeatureBase[] { });
+                } else {
+                    if (levelitem is BlueprintFeature feature) {
+                        PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass, 0, new BlueprintFeatureBase[] {});
+                    }
+                }
+            }
+        }
+
+        public static void PatchClassIntoFeatureOfReferenceClass(BlueprintFeature feature, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level, BlueprintFeatureBase[] loopPrevention) {
+            var mylevel = level+1;
+            if (mylevel > 20) {
                 IsekaiContext.Logger.LogError("Attempt to patch Progression Tree stopped at Level 20 to prevent endless loop, if you see this message please report so we can figure out if someone created a loop here or if this limit needs to be higher");
+                if (feature.Name != null) {
+                    IsekaiContext.Logger.LogError("reference class= "+ referenceClass.guid+" Stop Feature= " + feature.AssetGuid + " name= " + feature.Name);
+                } else {
+                    IsekaiContext.Logger.LogError("reference class= " + referenceClass.guid + " Stop Feature= " + feature.AssetGuid);
+                }
                 return;
             }
             if (feature == null || myClass == null || referenceClass == null) {
                 IsekaiContext.Logger.LogError("Call to add feature but one of the three parameters is null");
                 return;
             }
-            if (feature is BlueprintProgression progression) {
-                progression.GiveFeaturesForPreviousLevels = true;
-                progression.AddClass(myClass);
-                foreach (LevelEntry item in progression.LevelEntries) {
-                    foreach (var levelitem in item.Features) {
-                        if (levelitem is BlueprintProgression progression2) {
-                            PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, level);
-                        } else {
-                            if (levelitem is BlueprintFeature feature2) {
-                                PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, level);
+            if (FeaturesIgnoredWhenPatching.Contains(feature)) {
+                //these lists are to be ignored by definition because they are essentially the basic feat list granted by specific classes
+                return;
+            }
+            if (loopPrevention.Contains(feature)) {
+                IsekaiContext.Logger.Log("reference class= " + referenceClass.guid + " feature re-encountered at level= " + mylevel + " guid= " + feature.AssetGuid + " name= " + feature.Name);
+            } else {
+                loopPrevention = loopPrevention.AddToArray(feature);
+            }
+            try {
+                if (feature is BlueprintProgression progression) {
+                    progression.GiveFeaturesForPreviousLevels = true;
+                    progression.AddClass(myClass);
+                    foreach (LevelEntry item in progression.LevelEntries) {
+                        foreach (var levelitem in item.Features) {
+                            if (levelitem is BlueprintProgression progression2) {
+                                PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, mylevel, loopPrevention);
+                            } else {
+                                if (levelitem is BlueprintFeature feature2) {
+                                    PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
+                                }
                             }
                         }
+
                     }
+                }
+                if (feature is BlueprintFeatureSelection selection) {
+                    foreach (var feature2 in selection.m_AllFeatures) {
+                        PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
+                    }
+                }
+                //components is null for BlueprintProgressions despite the fact that they implement Blueprintfeature, that will cause a nullpointer,
+                //and since the cast to Blueptintfeature will work since it "supposedly" implements it checking if the field is null is the safest solution
+                if (feature.Components != null) {
+                    var mySpellSet = new HashSet<SpellReference>();
+                    foreach (var component in feature.Components) {
+                        //check if component is addSpell or addFeat
+                        HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component, loopPrevention);
+                    }
+                    foreach (var spellReference in mySpellSet) {
+                        feature.AddComponent<AddKnownSpell>(c => {
+                            c.m_Spell = spellReference.value;
+                            c.SpellLevel = spellReference.level;
+                            c.m_CharacterClass = myClass;
 
+                        });
+                    }
                 }
-            }
-            if (feature is BlueprintFeatureSelection selection) {
-                foreach (var feature2 in selection.m_AllFeatures) {
-                    PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, level);
-                }
-            }
-            //components is null for BlueprintProgressions despite the fact that they implement Blueprintfeature, that will cause a nullpointer,
-            //and since the cast to Blueptintfeature will work since it "supposedly" implements it checking if the field is null is the safest solution
-            if (feature.Components != null) {
-                var mySpellSet = new HashSet<SpellReference>();
-                foreach (var component in feature.Components) {
-                    //check if component is addSpell
-                    HandleComponent(myClass, referenceClass, level, mySpellSet, component);
-                }
-                foreach (var spellReference in mySpellSet) {
-                    feature.AddComponent<AddKnownSpell>(c => {
-                        c.m_Spell = spellReference.value;
-                        c.SpellLevel = spellReference.level;
-                        c.m_CharacterClass = myClass;
-
-                    });
+            } catch(NullReferenceException e)  {
+                if (feature.Name != null) { 
+                    IsekaiContext.Logger.LogError("Unpatachable Feature= " + feature.AssetGuid + "name= "+feature.Name+" at level= " + mylevel + " reason= " + e.Message); 
+                } else { 
+                    IsekaiContext.Logger.LogError("Unpatachable Feature= " + feature.AssetGuid + " at level= " + mylevel + " reason= " + e.Message); 
                 }
             }
         }
 
-        private static void HandleComponent(BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level, HashSet<SpellReference> mySpellSet, BlueprintComponent component) {
-            level = level++;
-            if (level > 20) {
+        private static void HandleComponent(BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level, HashSet<SpellReference> mySpellSet, BlueprintComponent component, BlueprintFeatureBase[] loopPrevention) {
+            var mylevel = level+1;
+            if (mylevel > 20) {
                 IsekaiContext.Logger.LogError("Attempt to patch Progression Tree stopped at Level 20 to prevent endless loop, if you see this message please report so we can figure out if someone created a loop here or if this limit needs to be higher");
                 return;
             }
+            if (component == null) { return; }
             if (component is AddKnownSpell asSpell) {
                 //don't re add spells already added for my class
                 if (asSpell.m_CharacterClass == referenceClass) {
@@ -135,7 +283,7 @@ namespace IsekaiMod.Utilities {
             }
             //check if component is AddFeature
             if (component is AddFeatureOnClassLevel asFeat) {
-                PatchClassIntoFeatureOfReferenceClass(asFeat.m_Feature.Get(), myClass, referenceClass, level);
+                PatchClassIntoFeatureOfReferenceClass(asFeat.m_Feature.Get(), myClass, referenceClass, mylevel, loopPrevention);
                 //only add our class as an additional class if the original entry was not valid for all classes but was restricted to the correct base class
                 if (asFeat.m_Class != null && asFeat.m_Class == referenceClass
                     && (asFeat.m_AdditionalClasses == null || !asFeat.m_AdditionalClasses.Contains<BlueprintCharacterClassReference>(myClass))) {
@@ -146,14 +294,14 @@ namespace IsekaiMod.Utilities {
             if (component is AddFacts addFact) {
                 foreach (var factRef in addFact.Facts) {
                     if (factRef is BlueprintFeature feature2) {
-                        PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, level);
+                        PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
                     }
                     if (factRef is BlueprintProgression progression2) {
-                        PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, level);
+                        PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, mylevel, loopPrevention);
                     }
                     if (factRef is BlueprintUnitFact unitFact) {
                         foreach (var component2 in unitFact.Components) {
-                            HandleComponent(myClass, referenceClass, level, mySpellSet, component2);
+                            HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component2, loopPrevention);
                         }
                     }
                     if (factRef is BlueprintAbility ability) {
@@ -199,7 +347,7 @@ namespace IsekaiMod.Utilities {
                                 c.m_StepLevel= sample.m_StepLevel;
                                 c.m_ExceptClasses= sample.m_ExceptClasses;
                             });
-                            Main.Log("rank progression patched= " + ability.AssetGuid + " added class= " + myClass.Guid + " for ref= " + referenceClass.Guid);
+                            //Main.Log("rank progression patched= " + ability.AssetGuid + " added class= " + myClass.Guid + " for ref= " + referenceClass.Guid);
                         }
                     }
                 }
@@ -218,7 +366,7 @@ namespace IsekaiMod.Utilities {
                     }
                     if (classlocked && !alreadyPatched) { 
                         res.m_MaxAmount.m_ClassDiv.AddItem(myClass); 
-                        Main.Log("class resource patched= " + resRef.Guid); 
+                        //Main.Log("class resource patched= " + resRef.Guid); 
                     }
                 }
             }
