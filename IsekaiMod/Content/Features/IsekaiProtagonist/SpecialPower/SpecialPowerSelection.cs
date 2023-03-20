@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -40,7 +41,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
 
             // If MultipleMythicSpecialPower setting is disabled, Mythic Special Power can only be selected once
             if (!IsekaiContext.AddedContent.MultipleMythicSpecialPower) {
-                SpecialPowerMythicSelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = SpecialPowerMythicSelection.ToReference<BlueprintFeatureReference>(); });
+                SpecialPowerMythicSelection.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = SpecialPowerMythicSelection.ToReference<BlueprintFeatureReference>(); });
+            }
+
+            // If RestrictMythicSpecialPower is enabled, Mythic Special Power can only be selected by the Isekai Protagonist
+            if (IsekaiContext.AddedContent.RestrictMythicSpecialPower) {
+                SpecialPowerMythicSelection.AddPrerequisite<PrerequisiteClassLevel>(c => {
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.Level = 1;
+                });
             }
 
             StaticReferences.Selections.MythicAbilitySelection.AddToSelection(SpecialPowerMythicSelection);

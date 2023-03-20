@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -55,6 +56,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             // If MultipleMythicOPAbility setting is disabled, Mythic Overpowered Ability can only be selected once
             if (!IsekaiContext.AddedContent.MultipleMythicOPAbility) {
                 OverpoweredAbilityMythicSelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = OverpoweredAbilityMythicSelection.ToReference<BlueprintFeatureReference>(); });
+            }
+
+            // If RestrictMythicOPAbility is enabled, Mythic Overpowered Ability can only be selected by the Isekai Protagonist
+            if (IsekaiContext.AddedContent.RestrictMythicOPAbility) {
+                OverpoweredAbilityMythicSelection.AddPrerequisite<PrerequisiteClassLevel>(c => {
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.Level = 1;
+                });
             }
 
             StaticReferences.Selections.MythicAbilitySelection.AddToSelection(OverpoweredAbilityMythicSelection);
