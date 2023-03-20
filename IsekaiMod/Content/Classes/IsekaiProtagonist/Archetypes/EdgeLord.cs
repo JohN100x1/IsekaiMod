@@ -47,7 +47,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, EdgeLordProficiencies, SupersonicCombat, EdgeLordLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(5, SpecialPowerSelection, ExtraStrike),
-                    Helpers.CreateLevelEntry(7, EdgeLordFastMovement),
+                    Helpers.CreateLevelEntry(8, EdgeLordFastMovement),
                     Helpers.CreateLevelEntry(10, ExtraStrike),
                     Helpers.CreateLevelEntry(15, SpecialPowerSelection, ExtraStrike),
                     Helpers.CreateLevelEntry(20, ExtraStrike),

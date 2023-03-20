@@ -56,7 +56,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
             var FriendlyAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "FriendlyAuraFeature", bp => {
                 bp.SetName(IsekaiContext, "Friendly Aura");
-                bp.SetDescription(IsekaiContext, "At 9th level, enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.");
+                bp.SetDescription(IsekaiContext, "At 10th level, enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.");
                 bp.m_Icon = Icon_Friendly_Aura;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { FriendlyAuraAbility.ToReference<BlueprintUnitFactReference>() };

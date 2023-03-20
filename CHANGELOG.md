@@ -6,7 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Unreleased
 ### Changed
-- Changed `Isekai Protagonist`'s `Quicked-Footed` obtained from level 15 -> 16
+- Changed `Isekai Protagonist`'s `Friendly Aura` obtained from level 9 -> 10.
+- Changed `Isekai Protagonist` and `Villain`'s '`Quicked-Footed` obtained from level 15 -> 16.
+- Changed `Edge Lord`'s `Fast Movement` obtained from level 7 -> 8.
 - Changed `God Emperor`'s `Aura Of Divine Fury` obtained from level 15 -> 14.
 - Changed `God Emperor`'s `Armor Saint` obtained from level 5 -> 4.
 
