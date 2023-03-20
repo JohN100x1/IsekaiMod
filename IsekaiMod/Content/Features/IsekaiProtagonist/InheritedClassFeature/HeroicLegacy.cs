@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "HeroicLegacy", bp => {
                 bp.SetName(IsekaiContext, "Paladin Legacy - Hero of Light");
-                bp.SetDescription(IsekaiContext, "You are a true hero, smighting your enemies wherever you go.");
+                bp.SetDescription(IsekaiContext, "You are a true hero, smiting your enemies wherever you go.");
                 bp.GiveFeaturesForPreviousLevels = true;
                 bp.IsClassFeature = true;
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {

@@ -12,11 +12,9 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Alignments;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using Kingmaker.Utility;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using TabletopTweaks.Core.ModLogic;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
@@ -26,7 +24,6 @@ namespace IsekaiMod.Utilities {
 
     //Classname is a partial lie, some are just not handled well *coughs*
     internal class ThingsNotHandledByTTTCore {
-
         public static void RegisterClass(BlueprintCharacterClass classToRegister) {
             var existingClasses = ClassTools.Classes.AllClasses;
             if (ContainsClass(existingClasses, classToRegister)) {
@@ -53,23 +50,6 @@ namespace IsekaiMod.Utilities {
                 return;
             }
             mythicSpellbook.m_AllowedSpellbooks = mythicSpellbook.m_AllowedSpellbooks.AddToArray(spellBook.ToReference<BlueprintSpellbookReference>());
-        }
-
-        public static T[] AddToFirst<T>(T[] array, T itemToBeAdded) {
-            // TODO: probably should check if item is already added here too but blueprints and blueprintreferences would require separate methods with different checks so leave it for a step 2
-            var len = array.Length;
-            //            if (itemToBeAdded is BlueprintFeature blueprintToBeAdded) {
-            //                if (array.Contains(itemToBeAdded)) {
-            //                    array.RemoveFromArray(itemToBeAdded);
-            //                }
-            //            }
-            if (array.Contains(itemToBeAdded)) {
-                array.RemoveFromArray(itemToBeAdded);
-            }
-            var result = new T[len + 1];
-            Array.Copy(array, 0, result, 1, len);
-            result[0] = itemToBeAdded;
-            return result;
         }
 
         public static BlueprintAnswer CreateAnswer(string name, Action<BlueprintAnswer> init = null) {

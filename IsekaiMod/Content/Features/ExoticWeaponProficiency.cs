@@ -36,6 +36,7 @@ namespace IsekaiMod.Content.Features {
                         WeaponCategory.DoubleSword,
                         WeaponCategory.Urgrosh,
                         WeaponCategory.HookedHammer,
+                        WeaponCategory.Nunchaku,
                     };
                 });
                 bp.AddComponent<PrerequisiteNotProficient>(c => {
@@ -58,6 +59,7 @@ namespace IsekaiMod.Content.Features {
                         WeaponCategory.DoubleSword,
                         WeaponCategory.Urgrosh,
                         WeaponCategory.HookedHammer,
+                        WeaponCategory.Nunchaku,
                     };
                 });
                 bp.AddComponent<PrerequisiteClassLevel>(c => {

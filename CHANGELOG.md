@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [Unreleased]
+### Added
+- Added `Auto Rime` OP ability (requires TabletopTweaks-Base).
+- Added `Auto Burning` OP ability (requires TabletopTweaks-Base).
+- Added `Auto Flaring` OP ability (requires TabletopTweaks-Base).
+- Added `Auto Piercing` OP ability (requires TabletopTweaks-Base).
+- Added `Auto Solid Shadows` OP ability (requires TabletopTweaks-Base).
+- Added `Auto Encouraging` OP ability (requires TabletopTweaks-Base).
+- Added `Auto Intensified` OP ability (requires TabletopTweaks-Base).
+- Added `Auto Elemental` OP abilities (requires TabletopTweaks-Base).
+- Added UMM option to allow for multiple Mythic OP abilities and Mythic special powers.
+- Added UMM option to restrict Exceptional Feats to the Isekai Protagonist Class.
+- Added UMM option to restrict Mythic Overpowered Abilities to the Isekai Protagonist Class.
+- Added UMM option to restrict Mythic Special Powers to the Isekai Protagonist Class.
+- Updated mod support for ExpandedContent.
+### Changed
+- Reworked UMM settings.
+### Fixed
+- Fixed typos and grammar in multiple legacy descriptions.
+- Fixed missing dialogue for drow ambush encounter.
+- Fixed `Martial Artist` Nunchaku weapon proficiency.
+- Fixed `Kinetic Power` fire avatar eruption ability animation.
+- Fixed `Channel Energy` and other features class level scaling in legacy progressions.
+- Fixed `Channel Positive Energy` Special Power to apply selectively with the selective channel feat.
+
 ## [4.1.1] - 2023-03-17
 ### Fixed
 - Fixed `Supreme Being` to allow base stat increases (for real this time).

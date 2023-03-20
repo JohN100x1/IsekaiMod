@@ -1,5 +1,4 @@
 ﻿using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
@@ -27,8 +26,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             var ExceptionalFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalFeatSelection");
             var ExceptionalFeatBonusSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalFeatBonusSelection");
             if (ExceptionalFeatSelection != null && ExceptionalFeatBonusSelection != null) {
-                blueprintFeatureSelection.m_AllFeatures = ThingsNotHandledByTTTCore.AddToFirst<BlueprintFeatureReference>(blueprintFeatureSelection.m_AllFeatures
-                    .RemoveFromArray(ExceptionalFeatSelection.ToReference<BlueprintFeatureReference>()), ExceptionalFeatBonusSelection.ToReference<BlueprintFeatureReference>());
+                blueprintFeatureSelection.RemoveFromSelection(ExceptionalFeatSelection);
+                blueprintFeatureSelection.AddToFirst(ExceptionalFeatBonusSelection);
             }
         }
     }

@@ -50,7 +50,7 @@ namespace IsekaiMod.Content.Backgrounds {
             });
 
             // Register Background
-            IsekaiBackgroundSelection.Register(BackgroundHighschoolStudent);
+            IsekaiBackgroundSelection.AddToSelection(BackgroundHighschoolStudent);
         }
     }
 }

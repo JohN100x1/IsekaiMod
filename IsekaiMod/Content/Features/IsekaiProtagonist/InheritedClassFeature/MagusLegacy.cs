@@ -52,7 +52,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "MagusLegacy", bp => {
                 bp.SetName(IsekaiContext, "Magus Legacy - Spellblade");
-                bp.SetDescription(IsekaiContext, "Meh let us be honest, Kinetic Knights only wish they were us, the true masters of melee spellcasting.");
+                bp.SetDescription(IsekaiContext, "Meh, let us be honest, Kinetic Knights only wish they were us, the true masters of melee spellcasting.");
                 bp.GiveFeaturesForPreviousLevels = true;
                 bp.IsClassFeature = true;
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {

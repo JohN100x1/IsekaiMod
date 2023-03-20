@@ -52,13 +52,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         }
 
         public static void AddToSelection(BlueprintFeature feature) {
-            var IsekaiPetSelection = Get();
+            var IsekaiPetSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiPetSelection");
             IsekaiPetSelection.m_AllFeatures = IsekaiPetSelection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
             IsekaiPetSelection.m_Features = IsekaiPetSelection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
-        }
-
-        public static BlueprintFeatureSelection Get() {
-            return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiPetSelection");
         }
 
         public static void PatchDomainAnimalProgression() {

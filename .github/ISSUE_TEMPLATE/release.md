@@ -8,8 +8,8 @@ assignees: ''
 ## Implementations
 - [ ] Implementing...
 
-## Release Tasks
-- [ ] Copy localization
+## Pre-Release Tasks
+- [ ] Update LocalizationPack.json
 - [ ] Update CHANGELOG.md
 - [ ] Update README.md
 - [ ] Update Info.json

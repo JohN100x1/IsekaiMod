@@ -24,7 +24,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "KineticKnightLegacy", bp => {
                 bp.SetName(IsekaiContext, "Kineticist Legacy - Kinetic Knight");
-                bp.SetDescription(IsekaiContext, "Just like all Kinetic Knights your sanity is somewhat questionable, after all you willingly choose to forego fighting at range and instead choose to use energy blasts as melee weapons...\nAnd why? Because the burning blade looked cool.");
+                bp.SetDescription(IsekaiContext, "Just like all, Kinetic Knights your sanity is somewhat questionable. After all you willingly chose to forego fighting at range and instead chose to use energy blasts as melee weapons...\nAnd why? Because the burning blade looked cool.");
                 bp.GiveFeaturesForPreviousLevels = true;
                 bp.IsClassFeature = true;
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {

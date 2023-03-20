@@ -38,6 +38,7 @@ On subsequent tests you'll only need to copy the `IsekaiMod.dll`.
 - [TabletopTweaks-Core](https://github.com/Vek17/TabletopTweaks-Core/releases).
 ### Installation
 - Open Unity Mod Manager and go to the 'Mods' tab.
+- Drag and Drop the [TabletopTweaks-Core.zip](https://github.com/Vek17/TabletopTweaks-Core/releases)﻿ file into Unity Mod Manager.
 - Drag and Drop the IsekaiMod.zip file into Unity Mod Manager.
 If you use ModFinder rather than Unity Mod Manager just replace the name mentally in your head, instructions are otherwise identical.
 
@@ -129,6 +130,18 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Supreme Being`: All your attributes have a base value of 30.
 		- `Mythic Class Feature`: see below
 		- `Dual Legacy`: Pick a second base class to get abilities from, or in the case of the God Emperor your first.
+		- Requires TabletopTweaks-Base
+			- `Auto Rime`: Cold spells entangle the target for a number of rounds.
+			- `Auto Burning`: Acid and fire spells cause acid or fire damage on the next round.
+			- `Auto Flaring`: Light, fire, and electricity spells cause the dazzled condition.
+			- `Auto Piercing`: Spells treat target's SR as 5 lower than actual SR.
+			- `Auto Solid Shadows`: Shadow spells are 20% more real.
+			- `Auto Encouraging`: Increase spells' morale bonus by 1.
+			- `Auto Intensified`: Increase spells' max damage dice by 5.
+			- `Auto Elemental (Acid)`: Replace or split spells' damage with acid.
+			- `Auto Elemental (Cold)`: Replace or split spells' damage with cold.
+			- `Auto Elemental (Electricity)`: Replace or split spells' damage with electricity.
+			- `Auto Elemental (Fire)`: Replace or split spells' damage with fire.
 	- `Mythic Class Feature`: Access to a mythic class feature not your own
 		- `Angel Mythic Class Feature`: possible selections include the angelic halo and sword of heaven and their buffs
 		- `Azata Mythic Class Feature`: the superpowers
@@ -236,12 +249,14 @@ Exception to this is the God Emperor as all options that were changed were not p
 
 ## Mod Support
 This mod has support for the following mods.
-### MysticalMayhem (0.1.3)
+### TabletopTweaks-Base (2.5.2)
+If you have the `TabletopTweaks-Base` mod, the `Isekai Protagonist` will have `Auto Rime`, `Auto Burning`, `Auto Flaring`,
+`Auto Piercing`, `Auto Solid Shadows`, `Auto Encouraging`, `Auto Intensified`, and `Auto Elemental` OP ability options.
+### MysticalMayhem (0.1.5)
 If you have the `MysticalMayhem` mod, the `Isekai Protagonist` will have the 9th level `Meteor Swarm` spell added to its spellbook.
-### ExpandedContent (0.4.40)
-If you have the `ExpandedContent` mod, the `Isekai Protagonist` will have the following spells added to its spellbook: Hydraulic push, Slipstream, Scourge of the Horsemen, Rigor mortis, Hollow Blades, Goodberry, Steam Ray Fusillade, Inflict Pain, Inflict Pain Mass, Gloomblind Bolts, Fury of the Sun, Invoke Deity.
-You are also able to choose a drake companion as a pet.
-### SpellbookMerge (1.7.0)
+### ExpandedContent (0.5.2)
+If you have the `ExpandedContent` mod, the `Isekai Protagonist` will have all the new spells add to its spellbook.
+### SpellbookMerge (1.7.1)
 If you have the `SpellbookMerge` mod, the `Isekai Protagonist` will be able to merge its spellbook with Aeon, Azata, Demon, and Trickster.
 
 ### Any Mod adding spells to the base classes
@@ -251,10 +266,5 @@ As such almost no spell should need work on our part to add support for it, if y
 
 ## Credits
 Thanks to kjk001 for contributing alot to this repository, improving the code to use TabletopTweaks-Core as well as adding lots of content.
-Alot of the code was repurposed from the following repositories:
-- https://github.com/Vek17/TabletopTweaks-Base
-- https://github.com/ka-dyn/ExpandedContent
-
-Thanks to Vek17, ka-dyn, bittercranberry, WittleWolfie and all other other contributors for their code.
-Special thanks to WittleWolfie for creating this modding guide that helped me get started:
+Thanks to WittleWolfie for creating this modding guide that helped me get started:
 - https://github.com/WittleWolfie/OwlcatModdingWiki/wiki

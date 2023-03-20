@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             var shamanFeat = ShamanSelection.Get();
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "ShamanLegacy", bp => {
                 bp.SetName(IsekaiContext, "Shaman Legacy - Spirit Beacons");
-                bp.SetDescription(IsekaiContext, "As a person who have originated from the other world Spirit Beacon has an unique aura. \nThis aura is particularly attractive to spirits, and they have learned to harness the power of these spirits by forming contracts with them. \nDespite their reliance on spirits, Spirit Beacons are not bound by the will of these supernatural beings. \nThey are able to maintain their independence and make their own decisions, using the power of the spirits as a tool rather than being controlled by them.");
+                bp.SetDescription(IsekaiContext, "As persons who originated from the other worlds, Spirit Beacons have an unique aura. \nThis aura is particularly attractive to spirits, and they have learned to harness the power of these spirits by forming contracts with them. \nDespite their reliance on spirits, Spirit Beacons are not bound by the will of these supernatural beings. \nThey are able to maintain their independence and make their own decisions, using the power of the spirits as a tool rather than being controlled by them.");
                 bp.GiveFeaturesForPreviousLevels = true;
                 bp.IsClassFeature = true;
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
