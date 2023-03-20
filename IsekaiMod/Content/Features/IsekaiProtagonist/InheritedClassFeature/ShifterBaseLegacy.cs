@@ -6,7 +6,6 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
-using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 

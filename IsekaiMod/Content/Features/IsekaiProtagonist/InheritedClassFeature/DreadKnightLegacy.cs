@@ -4,8 +4,6 @@ using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Blueprints.Classes.Prerequisites;
-using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 

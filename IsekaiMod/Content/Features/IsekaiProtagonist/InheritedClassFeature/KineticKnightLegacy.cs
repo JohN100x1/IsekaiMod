@@ -4,10 +4,9 @@ using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
-using HarmonyLib;
-using Kingmaker.UnitLogic.FactLogic;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class KineticKnightLegacy {

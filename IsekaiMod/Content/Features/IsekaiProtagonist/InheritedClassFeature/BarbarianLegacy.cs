@@ -3,8 +3,6 @@ using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
