@@ -93,8 +93,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateLevelEntry(12, IsekaiProtagonistBonusFeatSelection, BeachEpisodeSelection),
                 Helpers.CreateLevelEntry(13, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(14, IsekaiProtagonistBonusFeatSelection),
-                Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection2, OtherworldlyStamina, IsekaiQuickFooted),
-                Helpers.CreateLevelEntry(16, IsekaiProtagonistBonusFeatSelection),
+                Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection2, OtherworldlyStamina),
+                Helpers.CreateLevelEntry(16, IsekaiProtagonistBonusFeatSelection, IsekaiQuickFooted),
                 Helpers.CreateLevelEntry(17, SpecialPowerSelection, SummonHaremFeature),
                 Helpers.CreateLevelEntry(18, IsekaiProtagonistBonusFeatSelection),
                 Helpers.CreateLevelEntry(19, SpecialPowerSelection),
@@ -103,7 +103,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 
                 // Isekai UI group
-                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
+                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, FriendlyAuraFeature, DarkAuraFeature,
+                IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, VillainQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
                 
                 // Edge Lord UI group
                 Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike),
@@ -121,9 +122,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 // OP ability and Special Power UI group
                 Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, SpecialPowerSelection),
 
-                // Movement UI group
-                Helpers.CreateUIGroup(IsekaiPetSelection, IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, VillainQuickFooted),
-
                 // Legacy UI groups
                 Helpers.CreateUIGroup(LegacySelection.GetClassFeature()),
                 Helpers.CreateUIGroup(HeroLegacySelection.getClassFeature()),
@@ -137,7 +135,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 VillainProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiProtagonistProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiProtagonistCantripsFeature.ToReference<BlueprintFeatureBaseReference>(),
-                StartingWeaponSelection.ToReference<BlueprintFeatureBaseReference>()
+                StartingWeaponSelection.ToReference<BlueprintFeatureBaseReference>(),
+                IsekaiPetSelection.ToReference<BlueprintFeatureBaseReference>()
             };
             IsekaiProtagonistClass.SetProgression(IsekaiProtagonistProgression);
         }
