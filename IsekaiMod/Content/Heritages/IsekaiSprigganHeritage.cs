@@ -112,9 +112,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.Groups = new FeatureGroup[0];
             });
 
-            // Add to Gnome Heritage Selection
-            var GnomeHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("584d8b50817b49b2bb7aab3d6add8d3a");
-            GnomeHeritageSelection.m_AllFeatures = GnomeHeritageSelection.m_AllFeatures.AddToArray(IsekaiSprigganHeritage.ToReference<BlueprintFeatureReference>());
+            StaticReferences.Selections.GnomeHeritageSelection.AddToSelection(IsekaiSprigganHeritage);
         }
     }
 }

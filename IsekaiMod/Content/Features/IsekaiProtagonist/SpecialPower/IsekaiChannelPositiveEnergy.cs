@@ -118,7 +118,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                             });
                         c.IfTrue = ActionFlow.DoNothing();
                         c.IfFalse = ActionFlow.DoSingle<Conditional>(c => {
-                            c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionHasFact>(c => {
+                            c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionCasterHasFact>(c => {
                                 c.m_Fact = SelectiveChannel.ToReference<BlueprintUnitFactReference>();
                                 c.Not = false;
                             });
@@ -192,8 +192,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.Type = AbilityType.Special;
                 bp.CanTargetEnemies = true;
                 bp.CanTargetFriends = true;
-                bp.EffectOnAlly = AbilityEffectOnUnit.Harmful;
-                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+                bp.EffectOnAlly = AbilityEffectOnUnit.Helpful;
+                bp.EffectOnEnemy = AbilityEffectOnUnit.Helpful;
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Omni;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.ResourceAssetIds = ChannelPositiveHeal.ResourceAssetIds;
@@ -257,7 +257,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                             c.Not = true;
                         });
                         c.IfTrue = ActionFlow.DoSingle<Conditional>(c => {
-                            c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionHasFact>(c => {
+                            c.ConditionsChecker = ActionFlow.IfSingle<ContextConditionCasterHasFact>(c => {
                                 c.m_Fact = SelectiveChannel.ToReference<BlueprintUnitFactReference>();
                                 c.Not = false;
                             });

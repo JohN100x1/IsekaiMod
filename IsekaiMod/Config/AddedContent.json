@@ -1,45 +1,13 @@
 {
   "NewSettingsOffByDefault": false,
   "ExcludeCompanionsFromIsekaiClass": false,
-  "Feats": {
-    "DisableAll": false,
-    "Settings": {
-      "Exceptional Feats": {
-        "Enabled": true,
-        "Homebrew": true,
-        "Description": "Adds Exceptional feats to feat selection."
-      },
-      "Overpowered - Mythic Blessing": {
-        "Enabled": true,
-        "Homebrew": true,
-        "Description": "Adds an ability to select mythic traits from other classes."
-      }
-    },
-    "IsExpanded": true
-  },
-  "Backgrounds": {
-    "DisableAll": false,
-    "Settings": {
-      "Isekai Backgrounds": {
-        "Enabled": true,
-        "Homebrew": true,
-        "Description": "Adds all the Isekai Backgrounds."
-      }
-    },
-    "IsExpanded": true
-  },
-  "Heritages": {
-    "DisableAll": false,
-    "Settings": {
-      "Isekai Heritages": {
-        "Enabled": true,
-        "Homebrew": true,
-        "Description": "Adds Isekai Heritages."
-      }
-    },
-    "IsExpanded": true
-  },
-  "Classes": {
+  "RestrictExceptionalFeats": false,
+  "RestrictMythicOPAbility": false,
+  "RestrictMythicSpecialPower": false,
+  "MultipleMythicOPAbility": false,
+  "MultipleMythicSpecialPower": false,
+  "MergeIsekaiSpellList": false,
+  "Isekai": {
     "DisableAll": false,
     "Settings": {
       "Isekai Protagonist": {
@@ -47,27 +15,36 @@
         "Homebrew": true,
         "Description": "Adds the Isekai Protagonist class."
       },
-      "Merge Isekai Spelllist": {
-        "Enabled": false,
+      "Isekai Heritages": {
+        "Enabled": true,
         "Homebrew": true,
-        "Description": "Apply a merge function on all canon baseclass spellists to create the Isekai Spellist. Behold for I can learn all the spells!"
-      }
-    },
-    "IsExpanded": true
-  },
-  "Archetypes": {
-    "DisableAll": true,
-    "Settings": {
-    },
-    "IsExpanded": false
-  },
-  "Deities": {
-    "DisableAll": false,
-    "Settings": {
+        "Description": "Adds Isekai Heritages."
+      },
+      "Isekai Backgrounds": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds Isekai Backgrounds."
+      },
       "Isekai Deities": {
         "Enabled": true,
         "Homebrew": true,
         "Description": "Adds Isekai Gods."
+      }
+    },
+    "IsExpanded": true
+  },
+  "Other": {
+    "DisableAll": false,
+    "Settings": {
+      "Exceptional Feats": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds Exceptional feats to feat selection."
+      },
+      "Mythic Class Feature": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds the ability to select mythic traits from other classes to Mythic Overpowered Ability and Mythic Special Power Selection."
       }
     },
     "IsExpanded": true

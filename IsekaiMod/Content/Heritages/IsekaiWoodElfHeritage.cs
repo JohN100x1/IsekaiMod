@@ -75,9 +75,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.ReapplyOnLevelUp = true;
             });
 
-            // Add to Elven Heritage Selection
-            var ElvenHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("5482f879dcfd40f9a3168fdb48bc938c");
-            ElvenHeritageSelection.m_AllFeatures = ElvenHeritageSelection.m_AllFeatures.AddToArray(IsekaiWoodElfHeritage.ToReference<BlueprintFeatureReference>());
+            StaticReferences.Selections.ElvenHeritageSelection.AddToSelection(IsekaiWoodElfHeritage);
         }
     }
 }

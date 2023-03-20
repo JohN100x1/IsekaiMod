@@ -160,7 +160,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
             var MythicSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BlessingOfTheMythic", bp => {
                 bp.SetName(IsekaiContext, "Mythic Class Feature");
-                bp.SetDescription(IsekaiContext, "So I am an angel, is that really a reason not to cast demonic spells? \nOr to deny myself some of those sweet abilities of the trickster?\nSome of you Aeons are far too unflexible.\nSpeaking of Aeons, you got some great spells as well didn't you?\nLet me quickly learn them...");
+                bp.SetDescription(IsekaiContext, "So I am an angel, is that really a reason not to cast demonic spells? \nOr to deny myself some of those sweet abilities of the trickster?\nSome of you Aeons are far too unflexible.\nSpeaking of Aeons, you got some great spells as well, didn't you?\nLet me quickly learn them...");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.IgnorePrerequisites = false;

@@ -26,7 +26,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "KineticLegacy", bp => {
                 bp.SetName(IsekaiContext, "Kineticist Legacy - Kinetic Lord");
-                bp.SetDescription(IsekaiContext, "Most Protagonists only occasionally use kinetic blasts when they think they would look cool.\n But you really loved them, and given that there is no other cantrip this overpowered why not?");
+                bp.SetDescription(IsekaiContext, "Most Protagonists only occasionally use kinetic blasts when they think they would look cool.\n But you really love them, and given that there is no other cantrip this overpowered why not?");
                 bp.GiveFeaturesForPreviousLevels = true;
                 bp.AddComponent<AddProficiencies>(c => {
                     c.WeaponProficiencies = new Kingmaker.Enums.WeaponCategory[] { Kingmaker.Enums.WeaponCategory.KineticBlast };

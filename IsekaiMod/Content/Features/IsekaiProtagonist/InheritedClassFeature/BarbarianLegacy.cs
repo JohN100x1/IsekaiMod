@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             });
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "BarbarianLegacy", bp => {
                 bp.SetName(IsekaiContext, "Barbarian Legacy - Ball of Rage");
-                bp.SetDescription(IsekaiContext, "You really are just a walking bundle of issues waiting to explode at anyone getting too close aren't you?");
+                bp.SetDescription(IsekaiContext, "You really are just a walking bundle of issues waiting to explode at anyone getting too close, aren't you?");
                 bp.GiveFeaturesForPreviousLevels = true;
                 
             });

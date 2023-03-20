@@ -849,6 +849,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                     c.m_SpreadSpeed = new Feet(0);
                 });
                 bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.Time = AbilitySpawnFxTime.OnPrecastStart;
+                    c.Anchor = AbilitySpawnFxAnchor.Caster;
+                    c.PrefabLink = new PrefabLink() { AssetId = "d45354c34bdaa254bb597ce5222f2973" };
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.Time = AbilitySpawnFxTime.OnStart;
+                    c.Anchor = AbilitySpawnFxAnchor.Caster;
+                    c.PrefabLink = new PrefabLink() { AssetId = "16e01c58cc00371448191803fc1e9368" };
+                });
+                bp.AddComponent<AbilitySpawnFx>(c => {
+                    c.Anchor = AbilitySpawnFxAnchor.ClickedTarget;
                     c.PrefabLink = new PrefabLink() { AssetId = "a4464254a634f9f41a91a37cb8ef48fd" };
                 });
                 bp.AddComponent<AbilityKineticist>(c => {
