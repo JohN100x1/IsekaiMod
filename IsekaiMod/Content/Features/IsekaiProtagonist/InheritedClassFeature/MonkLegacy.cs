@@ -6,6 +6,7 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
+using Kingmaker.UI.Tooltip;
 using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -25,8 +26,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     "Reading chinese cultivation novels in the spare time left. \n" +
                     "Being reborn and getting access to Ki as such was a dream come true.");
                 bp.GiveFeaturesForPreviousLevels = true;
+                bp.AddComponent<PrerequisiteAlignment>(c => {
+                    c.Alignment =
+                      Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Lawful
+                    | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.TrueNeutral
+                    | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.NeutralEvil
+                    | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.NeutralGood;
+                });
             });
-            prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.MonkClass);
             LegacySelection.GetClassFeature().AddFeatures(prog);
             LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
             VillainLegacySelection.getClassFeature().AddFeatures(prog);
@@ -35,7 +42,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         }
         public static void PatchProgression() {
             if (prog != null) {
-                prog.AddComponent<PrerequisiteAlignment>(c => { c.Alignment = Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Lawful; });
+                prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.MonkClass);
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
                 StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.MonkClass);
             }            
