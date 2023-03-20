@@ -47,7 +47,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         }
 
         public static void PatchProgression() {
-            IsekaiContext.Logger.Log("trying to patch oracle features:");
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
             BlueprintCharacterClassReference refClass = ClassTools.Classes.OracleClass.ToReference<BlueprintCharacterClassReference>();
             StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.OracleCurseSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });

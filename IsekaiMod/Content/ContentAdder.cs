@@ -266,8 +266,11 @@ namespace IsekaiMod.Content {
             BarbarianLegacy.PatchProgression();
             BardLegacy.PatchProgression();
             FighterBasicLegacy.PatchProgression();
+            MonkLegacy.PatchProgression();
             RogueLegacy.PatchProgression();
+            SkaldBaseLegacy.PatchProgression();
             KineticLegacy.PatchProgression();
+            ShifterBaseLegacy.PatchProgression();
             Main.LogDebug("Postfix Patching: Kineticist Patched");
             OracleLegacy.PatchProgression();
             Main.LogDebug("Postfix Patching: Oracle Patched");
@@ -276,9 +279,25 @@ namespace IsekaiMod.Content {
             ShamanLegacy.PatchProgression();
             Main.LogDebug("Postfix Patching: Shaman Patched");
             KineticKnightLegacy.configure();
+
             KineticKnightLegacy.PatchProgression();
-            Main.LogDebug("Postfix Patching: Kinetic Knight Patched");
+            KineticOverwhelmingSoulLegacy.PatchProgression();
+            KineticDarkElementalistLegacy.PatchProgression();
             KineticLegacy.MakeKineticProgsExclusive();
+            Main.LogDebug("Postfix Patching: Kinetic Archetypes Patched");
+
+            MonkScaledFistLegacy.PatchProgression();
+            MonkLegacy.MakeProgsExclusive();
+
+            SkaldSilverTongueLegacy.PatchProgression();
+            SkaldVoiceLegacy.PatchProgression();
+            SkaldBaseLegacy.MakeProgsExclusive();
+
+            ShifterStingerLegacy.PatchProgression();
+            ShifterDragonLegacy.PatchProgression();
+            ShifterBaseLegacy.MakeProgsExclusive();
+
+
 
             //done here because it should be done after all spells have been initialized and were added to the canon books
             if (IsekaiContext.AddedContent.Classes.IsEnabled("Merge Isekai Spelllist")) IsekaiProtagonistSpellList.MergeSpellLists();

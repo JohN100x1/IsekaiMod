@@ -3092,6 +3092,28 @@
       "esES": null
     },
     {
+      "Key": "b22371e9b85a47ef8050b5aa9491967c",
+      "SimpleName": "FighterBasicIsekaiLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Sure others make fun of you for being basic.\nWhat they fail to understand is that they are the basic ones, they play an auto optimized build that only allows them some little choice on what feature to use in each fight.\nYou are carefully crafted at each level to ensure the optimal combination of feats.\nThey completely fail to see the hours of planning it takes to ensure that when the time for battle comes your attack will always do the optimum damage, even if it is just repeatedly smashing the hammer into the enemies face.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "cf41e7d1219746269687392c45fa2c90",
+      "SimpleName": "FighterBasicIsekaiLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Fighter Legacy - Basic Fighter",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "c8e11eb89f7940efb71132f96a1ba008",
       "SimpleName": "FireImmunity.Description",
       "ProcessTemplates": true,
@@ -4478,6 +4500,28 @@
       "esES": null
     },
     {
+      "Key": "7b24441ba82a4bdea74b467fa5524d15",
+      "SimpleName": "IsekaiKineticistTraining.Description",
+      "ProcessTemplates": true,
+      "enGB": "Old Feature, reference kept so your save won't crash!",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "9af83e663c794f7e865298949952b37e",
+      "SimpleName": "IsekaiKineticistTraining.Name",
+      "ProcessTemplates": false,
+      "enGB": "Deprecated",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "847494ef3afb4540b6ec755d979ad19d",
       "SimpleName": "IsekaiKineticistTraining.Name",
       "ProcessTemplates": false,
@@ -5270,6 +5314,28 @@
       "esES": null
     },
     {
+      "Key": "c1af196196ab48d592a75ca3d4c43a33",
+      "SimpleName": "KineticDarkElementalistLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You have discovered a dark secret of elemental manipulation: you can use the souls of your enemies as fuel for your powers. \nInstead of straining your own body, you can use souls of those who oppose you and unleash devastating blasts of elemental energy. \nYou are a master of soulbinding, a technique that some consider to be unnatural and morbid. \nBut you don’t care about such moral qualms; you only care about your own survival and dominance.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "7bced26fb8d746cc8f6e2146c8988d38",
+      "SimpleName": "KineticDarkElementalistLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Kinetic Legacy - Soulbinder",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "ed9bf94573fa430288f32e725f9ba6a9",
       "SimpleName": "KineticKnightLegacy.Description",
       "ProcessTemplates": true,
@@ -5307,6 +5373,28 @@
       "SimpleName": "KineticLegacy.Name",
       "ProcessTemplates": false,
       "enGB": "Kineticist Legacy - Kinetic Lord",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "d8e91382eb724a8e86d7cc196a881357",
+      "SimpleName": "KineticOverwhelmingSoulLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your soul is stronger than most, for you hail from another world.\nYou command the elements with ease and grace, while others struggle and suffer.\nYou are a noble soul, a revered and feared master of elemental power.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "907b9340b6e54d1ba827e61e9f7595b0",
+      "SimpleName": "KineticOverwhelmingSoulLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Kinetic Legacy - Noble Soul",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -5769,6 +5857,50 @@
       "SimpleName": "MindControlImmunity.Name",
       "ProcessTemplates": false,
       "enGB": "Mind Control Immunity",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "fcf6c9513d7b41a495049d9c3f7b97fa",
+      "SimpleName": "MonkBaseLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You practiced your martial arts day and night. \nReading chinese cultivation novels in the spare time left. \nBeing reborn and getting access to Ki as such was a dream come true.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "65e2458b752c4a85905b95d88aa56c90",
+      "SimpleName": "MonkBaseLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Monk Legacy - Daoist Martial Artist",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "44ad522151284b27b326ff27fe6b3239",
+      "SimpleName": "MonkScaledFistLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You have a dragon in your dantian!",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "bad243055b4d467090a2a6ce9cddc1f4",
+      "SimpleName": "MonkScaledFistLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Monk Legacy - Fist of a Dragon",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -6557,6 +6689,72 @@
       "esES": null
     },
     {
+      "Key": "6966c7b293884cf581c34bd558573b37",
+      "SimpleName": "ShifterBaseLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Some hard facts : you did not choose to reincarnate on this world, nor could you choose your new body. \nNothing can be done for the fist part but you can change the latter ! \nBy learning druidic secrets you can finally choose your own form and pay tribut to Neko-chan (a two tons tiger with five inches fangs can be rather cute).",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "8d469705b89344059891c76e9c0fc013",
+      "SimpleName": "ShifterBaseLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Shifter Legacy - Ditto",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "c0e375bfc6f0464aa9774eae1ccf00ae",
+      "SimpleName": "ShifterDragonLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "When reincaranting you wanted to be a dragon. \nBecause dragons are cool! \nBut sadly  that would have been too balancebreaking according to the god of reincarnation. \nWeirdly enough being a shapeshifted baby dragon that learns to reassume his natural form with time is not. \nSo one day you will soar through the sky in your draconic form. \nDragon Claws are useful in the meantime...",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "f653f8ef813a4a29a6a01f5dc265f88a",
+      "SimpleName": "ShifterDragonLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Shifter Legacy - Shapeshifted Baby Dragon",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "8963201660a94d2ebbb053b9451e815c",
+      "SimpleName": "ShifterStingerLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Some things cannot be easily forgotten, and in your dreaded former life you were called a hedgehog... \nBut this new world shall be respectful to your newfound stingers, as they are even more dangerous than your sharp tongue.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "73c92307953f4d2c92bf8f5c16a46c78",
+      "SimpleName": "ShifterStingerLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Shifter Legacy - Stinger",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "29a3df21da52403aa6566b4074ce4f7c",
       "SimpleName": "ShockWeaponAbility.Description",
       "ProcessTemplates": true,
@@ -6781,6 +6979,72 @@
       "SimpleName": "SizeAlterationBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Size Alteration",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "cd4b336e6ba94ee596d90d7d21db9509",
+      "SimpleName": "SkaldBaseLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your songs scream out your rage at the world. \nInspiring your allies to rage along with your songs.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "37fb77652282411c8ef33c0096693138",
+      "SimpleName": "SkaldBaseLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Skald Legacy - Metal Singer",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "27bd677b5d8a48259b9e7d8220b58d81",
+      "SimpleName": "SkaldSilverTongueLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You were a flatterer in your past life, and lean to hone your skills to a ridiculous level. \nNo Queen can resist you, and that's a real advantage in those dark times.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "bb3516516bd74ca3b17b69cebc99db0b",
+      "SimpleName": "SkaldSilverTongueLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Skald Legacy - Silver Tongue",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "5586a72e7e904be2bb5079f19611bded",
+      "SimpleName": "SkaldVoiceLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You had a hidden passion for karaoke and were devastated seeing that no such thing exist in Golarion. \nAs an ever - ready person you decide to train nonetheless since killing demonic armies only with your voice would show your talent to the entire world.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "b2a4817d982f4d21b43ef78fec87c27e",
+      "SimpleName": "SkaldVoiceLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Skald Legacy - The Voice",
       "ruRU": null,
       "deDE": null,
       "frFR": null,

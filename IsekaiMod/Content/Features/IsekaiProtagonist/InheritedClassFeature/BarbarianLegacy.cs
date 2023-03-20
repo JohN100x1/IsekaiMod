@@ -25,7 +25,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.GiveFeaturesForPreviousLevels = true;
                 
             });
-            prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.BarbarianClass);
+            
 
             LegacySelection.GetClassFeature().AddFeatures(prog);
             LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
@@ -33,6 +33,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         }
         public static void PatchProgression() {
             if (prog != null) {
+                prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.BarbarianClass);
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
                 StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.BarbarianClass);
             }

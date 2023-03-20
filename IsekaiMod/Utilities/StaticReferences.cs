@@ -46,7 +46,7 @@ namespace IsekaiMod.Utilities {
         public static BlueprintFeature SoloTactics = BlueprintTools.GetBlueprint<BlueprintFeature>("87d6de4d30adc7244b7a3427d041dcaa");
         public static BlueprintFeature ForesterTactics = BlueprintTools.GetBlueprint<BlueprintFeature>("994db4abfa0d6194eb3c847605e6f148");
 
-        public static readonly BlueprintFeatureBase[] FeaturesIgnoredWhenPatching = new BlueprintFeatureBase[] { FeatTools.Selections.BasicFeatSelection, FeatTools.Selections.FighterFeatSelection, FeatTools.Selections.CombatTrick };
+        public static readonly BlueprintFeatureBase[] FeaturesIgnoredWhenPatching = new BlueprintFeatureBase[] { FeatTools.Selections.BasicFeatSelection, FeatTools.Selections.FighterFeatSelection, FeatTools.Selections.CombatTrick, FeatTools.Selections.SkaldFeatSelection };
 
         private static BlueprintProgression PatchPatchClassProgressionBasedOnRefClassStep1(BlueprintProgression prog, BlueprintCharacterClass refClass) {
             prog.IsClassFeature = true;
@@ -92,25 +92,25 @@ namespace IsekaiMod.Utilities {
             foreach (var referenceLevel in referenceLevels) {
                 BlueprintFeatureBaseReference[] features = new BlueprintFeatureBaseReference[] { };
                 var addItems = referenceLevel.m_Features.ToArray() ;
-                LevelEntry removeItems = null;
+                BlueprintFeatureBaseReference[] removed = new BlueprintFeatureBaseReference[] { };
                 foreach (var candidate in refArchetype.RemoveFeatures) {
-                    if(candidate.Level== referenceLevel.Level) {
-                        removeItems = candidate;
+                    if(candidate.Level == referenceLevel.Level) {
+                        removed = removed.AddRangeToArray(candidate.m_Features.ToArray());
                     }
                 }
                 foreach ( var feature in addItems) {
-                    if (removeItems == null || !removeItems.m_Features.Contains(feature)) {
+                    if (!removed.Contains(feature)) {
                         features = features.AddToArray(feature);
                     }
                 }
-                LevelEntry archeTypeFeatures = null;
+                BlueprintFeatureBaseReference[] added = new BlueprintFeatureBaseReference[] { };
                 foreach (var candidate in refArchetype.AddFeatures) {
                     if (candidate.Level == referenceLevel.Level) {
-                        archeTypeFeatures = candidate;
+                        added = added.AddRangeToArray(candidate.m_Features.ToArray());
                     }
                 }
-                if (archeTypeFeatures != null) {
-                    foreach (var feature in archeTypeFeatures.m_Features) {
+                if (added != null && added.Length > 0) {
+                    foreach (var feature in added) {
                         features = features.AddToArray(feature);
                         if (!MissingUIGroup.Contains(feature)) { MissingUIGroup = MissingUIGroup.AddToArray(feature); }
                     }

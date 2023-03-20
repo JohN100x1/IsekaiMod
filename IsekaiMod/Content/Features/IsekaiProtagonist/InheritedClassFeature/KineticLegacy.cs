@@ -1,11 +1,10 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
-using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -33,20 +32,43 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     c.WeaponProficiencies = new Kingmaker.Enums.WeaponCategory[] { Kingmaker.Enums.WeaponCategory.KineticBlast };
                 });
             });
-            prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.KineticistClass);
             LegacySelection.GetClassFeature().AddFeatures(prog);
             LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
+            HeroLegacySelection.getClassFeature().AddFeatures(prog);
             VillainLegacySelection.getClassFeature().AddFeatures(prog);
         }
         public static void PatchProgression() {
             if (prog != null) {
+                prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.KineticistClass);
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
                 StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.KineticistClass);
             }            
         }
         public static void MakeKineticProgsExclusive() {
-            prog.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = KineticKnightLegacy.Get().ToReference<BlueprintFeatureReference>(); });
-            KineticKnightLegacy.Get().AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = prog.ToReference<BlueprintFeatureReference>(); });
+            BlueprintProgression Knight = KineticKnightLegacy.Get();
+            BlueprintProgression OS = KineticOverwhelmingSoulLegacy.Get();
+            BlueprintProgression DE = KineticDarkElementalistLegacy.Get();
+
+            BlueprintFeatureReference BaseRef = prog.ToReference<BlueprintFeatureReference>();
+            BlueprintFeatureReference KnightRef = Knight.ToReference<BlueprintFeatureReference>();
+            BlueprintFeatureReference OSRef = OS.ToReference<BlueprintFeatureReference>();
+            BlueprintFeatureReference DERef = DE.ToReference<BlueprintFeatureReference>();
+
+            prog.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = KnightRef; });
+            prog.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = OSRef; });
+            prog.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = DERef; });
+
+            Knight.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = BaseRef; });
+            Knight.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = OSRef; });
+            Knight.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = DERef; });
+
+            OS.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = BaseRef; });
+            OS.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = KnightRef; });
+            OS.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = DERef; });
+
+            DE.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = BaseRef; });
+            DE.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = KnightRef; });
+            DE.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = OSRef; });
         }
 
         public static BlueprintProgression Get() {

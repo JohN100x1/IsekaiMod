@@ -64,18 +64,32 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             BardLegacy.Configure();
             BarbarianLegacy.Configure();
             FighterBasicLegacy.Configure();
+            MonkLegacy.Configure();
             HeroicLegacy.Configure();
             ShamanLegacy.Configure();
             MagusLegacy.Configure();
+            SkaldBaseLegacy.Configure();
+            ShifterBaseLegacy.Configure();
+            //declaration solely to prevent guid from being considered unused, real configure follows later
+            DreadKnightLegacy.ConfigureEmptyShell();
+
+            KineticKnightLegacy.ConfigureEmptyShell();
+
+            KineticOverwhelmingSoulLegacy.Configure();
+            KineticDarkElementalistLegacy.Configure();
+
+            MonkScaledFistLegacy.Configure();
+
+            SkaldSilverTongueLegacy.Configure();
+            SkaldVoiceLegacy.Configure();
+
+            ShifterStingerLegacy.Configure();
+            ShifterDragonLegacy.Configure();
             //always do this last to ensure any legacy that might get an arcana goes before
             ArcanaSelection.Configure();
             OverpoweredAbilitySelection.AddToSelection(GetOverwhelmingFeature());
             SpecialPower.SpecialPowerSelection.AddToSelection(GetOverwhelmingFeature());
 
-            //declaration solely to get guid, real configure follows later
-            DreadKnightLegacy.ConfigureEmptyShell();
-            KineticKnightLegacy.ConfigureEmptyShell();
-            
         }
     }
 }

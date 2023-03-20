@@ -18,7 +18,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.SetDescription(IsekaiContext, "Your reincarnation gave you great power, that is no reason to forget the usefulness of a simple backstab.");
                 bp.GiveFeaturesForPreviousLevels = true;
             });
-            prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.RogueClass);
 
             LegacySelection.GetClassFeature().AddFeatures(prog);
             LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
@@ -28,6 +27,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         }
         public static void PatchProgression() {
             if (prog != null) {
+                prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.RogueClass);
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
                 StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.RogueClass);
             }
