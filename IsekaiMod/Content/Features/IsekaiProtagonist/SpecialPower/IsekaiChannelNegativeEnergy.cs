@@ -367,7 +367,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 });
                 bp.AddComponent<PrerequisiteAlignment>(c => {
                     c.Group = Prerequisite.GroupType.Any;
-                    c.Alignment = AlignmentMaskType.Evil;
+                    c.Alignment = AlignmentMaskType.Evil | AlignmentMaskType.ChaoticNeutral | AlignmentMaskType.TrueNeutral | AlignmentMaskType.LawfulNeutral;
                 });
             });
 
