@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `God Emperor`'s `Aura Of Divine Fury` obtained from level 15 -> 14.
 - Changed `God Emperor`'s `Armor Saint` obtained from level 5 -> 4.
 - Updated description for `Unlimited Power` OP ability.
+- Updated description for `Kinetic Power` Special Power with deprecation message.
 
 # [4.2.0] - 2023-03-20
 ### Added

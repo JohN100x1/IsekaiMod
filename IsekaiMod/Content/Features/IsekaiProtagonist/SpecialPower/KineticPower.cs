@@ -1403,7 +1403,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             });
             var KineticPowerSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "KineticPowerSelection", bp => {
                 bp.SetName(IsekaiContext, "Kinetic Power");
-                bp.SetDescription(IsekaiContext, "You gain the ability to use a kinetic blast.");
+                bp.SetDescription(IsekaiContext, "You gain the ability to use a kinetic blast.\nWARNING: This is a deprecated feature and will be removed in version 5.0.0.");
                 bp.m_Icon = Icon_InfusionSelection;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
