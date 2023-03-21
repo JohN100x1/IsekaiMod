@@ -1,4 +1,7 @@
 ﻿using IsekaiMod.Config;
+using IsekaiMod.Utilities;
+using Kingmaker.Localization.Shared;
+using System.Linq;
 using TabletopTweaks.Core.UMMTools;
 using UnityModManagerNet;
 using static IsekaiMod.Main;
@@ -13,6 +16,7 @@ namespace IsekaiMod {
             UI.TabBar(ref selectedTab,
                     () => UI.Label("Select your preferred settings and restart your game.".yellow().bold()),
                    new NamedAction("Added Content", () => SettingsTabs.AddedContent()),
+                   new NamedAction("Appearance", () => SettingsTabs.Appearance()),
                    new NamedAction("Settings", () => SettingsTabs.Settings())
             );
         }
@@ -27,6 +31,16 @@ namespace IsekaiMod {
             using (UI.VerticalScope()) {
                 SetttingUI.SettingGroup("Isekai", TabLevel, addedContent.Isekai);
                 SetttingUI.SettingGroup("Other", TabLevel, addedContent.Other);
+            }
+        }
+        public static void Appearance() {
+            UI.Div();
+            UI.Label($"Set the Isekai Protagonist's default clothes. {"Remember to restart!".orange()}");
+            using (UI.HorizontalScope()) {
+                var selected = addedContent.IsekaiDefaultClothes;
+                var classNames = StaticReferences.Classes.BaseClasses.Select(c => c.LocalizedName.ToString()).ToArray();
+                var titles = classNames.Select((a, i) => i == selected ? a.orange().bold() : a).ToArray();
+                addedContent.IsekaiDefaultClothes = UnityEngine.GUILayout.SelectionGrid(selected, titles, 5, UI.Width(600));
             }
         }
         public static void Settings() {

@@ -177,7 +177,14 @@
     <Compile Include="Content\*\*\*\*\*.cs" />
     <Compile Include="Content\*\*\*\*\*\*.cs" />
     <Compile Include="Components\*.cs" />
-    <Compile Include="Utilities\*.cs" />
+    <Compile Include="Utilities\ActionFlow.cs" />
+    <Compile Include="Utilities\AuraUtils.cs" />
+    <Compile Include="Utilities\DescriptionTools.cs" />
+    <Compile Include="Utilities\ExtensionMethods.cs" />
+    <Compile Include="Utilities\PortraitInjector.cs" />
+    <Compile Include="Utilities\StaticReferences.cs" />
+    <Compile Include="Utilities\ThingsNotHandledByTTTCore.cs" />
+    <Compile Include="Utilities\Values.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
