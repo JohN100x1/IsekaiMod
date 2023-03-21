@@ -1,6 +1,5 @@
 ﻿using IsekaiMod.Config;
 using IsekaiMod.Utilities;
-using Kingmaker.Localization.Shared;
 using System.Linq;
 using TabletopTweaks.Core.UMMTools;
 using UnityModManagerNet;
