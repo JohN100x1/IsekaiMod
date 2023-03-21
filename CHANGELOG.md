@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added UMM option to change the default clothes on the Isekai Protagonist Class.
 ### Changed
+- Changed `Channel Positive Energy` Special Power to allow neutral users.
+- Changed `Channel Negative Energy` Special Power to allow neutral users.
 - Changed `Reflect` Special Power to be a toggle ability.
 - Changed `Isekai Protagonist`'s `Friendly Aura` obtained from level 9 -> 10.
 - Changed `Isekai Protagonist` and `Villain`'s '`Quicked-Footed` obtained from level 15 -> 16.

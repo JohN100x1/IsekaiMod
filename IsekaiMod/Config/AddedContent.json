@@ -16,6 +16,11 @@
         "Homebrew": true,
         "Description": "Adds the Isekai Protagonist class."
       },
+      "Isekai Dialogue": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds extra dialogue for the Isekai Protagonist."
+      },
       "Isekai Heritages": {
         "Enabled": true,
         "Homebrew": true,
