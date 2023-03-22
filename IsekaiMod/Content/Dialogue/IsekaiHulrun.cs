@@ -44,7 +44,6 @@ namespace IsekaiMod.Content.Dialogue {
 
             // Add Answer to answers list
             var AnswersList_0020 = BlueprintTools.GetBlueprint<BlueprintAnswersList>("e27807b731f3b1a4eb19c1a04fdfcf53");
-
             AnswersList_0020.Answers.Insert(0, IsekaiDialogueHulrun.ToReference<BlueprintAnswerBaseReference>());
         }
     }
