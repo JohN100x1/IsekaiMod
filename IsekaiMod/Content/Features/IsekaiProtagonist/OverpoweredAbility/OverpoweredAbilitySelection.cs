@@ -53,7 +53,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.m_Features = new BlueprintFeatureReference[0];
             });
 
-            // If MultipleMythicOPAbility setting is disabled, Mythic Overpowered Ability can only be selected once
+            // If MultipleMythicOPAbility is disabled, Mythic Overpowered Ability can only be selected once
             if (!IsekaiContext.AddedContent.MultipleMythicOPAbility) {
                 OverpoweredAbilityMythicSelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = OverpoweredAbilityMythicSelection.ToReference<BlueprintFeatureReference>(); });
             }

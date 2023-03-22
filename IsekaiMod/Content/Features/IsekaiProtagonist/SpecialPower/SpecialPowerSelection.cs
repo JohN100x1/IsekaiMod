@@ -39,7 +39,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.m_AllFeatures = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.GetReference() };
             });
 
-            // If MultipleMythicSpecialPower setting is disabled, Mythic Special Power can only be selected once
+            // If MultipleMythicSpecialPower is disabled, Mythic Special Power can only be selected once
             if (!IsekaiContext.AddedContent.MultipleMythicSpecialPower) {
                 SpecialPowerMythicSelection.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = SpecialPowerMythicSelection.ToReference<BlueprintFeatureReference>(); });
             }
