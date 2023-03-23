@@ -62,6 +62,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
                 });
                 bp.AddComponent<DamageBonusAgainstTarget>(c => {
                     c.CheckCaster = true;
+                    c.CheckCasterFriend = true;
                     c.ApplyToSpellDamage = true;
                     c.Value = Values.CreateContextSharedValue(AbilitySharedValue.DamageBonus);
                 });
