@@ -11,39 +11,39 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
-    internal class PerfectRoll {
-        private static readonly Sprite Icon_TrickFate = BlueprintTools.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
+    internal class MetaLuck {
+        private static readonly Sprite Icon_Fortune = BlueprintTools.GetBlueprint<BlueprintAbility>("eaf7077a8ff35644883df6d4f7b2084c").m_Icon;
 
         public static void Add() {
-            var PerfectRollBuff = ThingsNotHandledByTTTCore.CreateBuff("PerfectRollBuff", bp => {
-                bp.SetName(IsekaiContext, "Overpowered Ability — Perfect Roll");
-                bp.SetDescription(IsekaiContext, "This character always {g|Encyclopedia:Dice}rolls{/g} 20 on all d20 rolls.");
-                bp.m_Icon = Icon_TrickFate;
+            var MetaLuckBuff = ThingsNotHandledByTTTCore.CreateBuff("MetaLuckBuff", bp => {
+                bp.SetName(IsekaiContext, "Overpowered Ability — Meta Luck");
+                bp.SetDescription(IsekaiContext, "This character always takes the higher of three d20 rolls.");
+                bp.m_Icon = Icon_Fortune;
                 bp.AddComponent<ModifyD20>(c => {
                     c.Rule = RuleType.All;
-                    c.Replace = true;
-                    c.RollResult = 20;
+                    c.RollsAmount = 1;
+                    c.TakeBest = true;
                 });
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var PerfectRollAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("PerfectRollAbility", bp => {
-                bp.SetName(IsekaiContext, "Overpowered Ability — Perfect Roll");
-                bp.SetDescription(IsekaiContext, "You always {g|Encyclopedia:Dice}roll{/g} a 20 on all d20 rolls.");
-                bp.m_Icon = Icon_TrickFate;
-                bp.m_Buff = PerfectRollBuff.ToReference<BlueprintBuffReference>();
+            var MetaLuckAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("MetaLuckAbility", bp => {
+                bp.SetName(IsekaiContext, "Overpowered Ability — Meta Luck");
+                bp.SetDescription(IsekaiContext, "You always take the higher of three d20 rolls.");
+                bp.m_Icon = Icon_Fortune;
+                bp.m_Buff = MetaLuckBuff.ToReference<BlueprintBuffReference>();
             });
-            var PerfectRollFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "PerfectRollFeature", bp => {
-                bp.SetName(IsekaiContext, "Overpowered Ability — Perfect Roll");
-                bp.SetDescription(IsekaiContext, "You always {g|Encyclopedia:Dice}roll{/g} a 20 on all d20 rolls.");
-                bp.m_Icon = Icon_TrickFate;
+            var MetaLuckFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "MetaLuckFeature", bp => {
+                bp.SetName(IsekaiContext, "Overpowered Ability — Meta Luck");
+                bp.SetDescription(IsekaiContext, "You always take the higher of three d20 rolls.");
+                bp.m_Icon = Icon_Fortune;
                 bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] { PerfectRollAbility.ToReference<BlueprintUnitFactReference>() };
+                    c.m_Facts = new BlueprintUnitFactReference[] { MetaLuckAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(PerfectRollFeature);
+            OverpoweredAbilitySelection.AddToSelection(MetaLuckFeature);
         }
     }
 }

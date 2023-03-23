@@ -137,6 +137,7 @@ namespace IsekaiMod.Content {
                 InfiniteSpace.Add();
                 TrueResurrection.Add();
                 SupremeBeing.Add();
+                MetaLuck.Add();
                 AuraOfRighteousWrath.Add();
                 if (Other.IsEnabled("Mythic Class Feature")) BlessingOfTheMythic.Configure();
                 
