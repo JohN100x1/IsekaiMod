@@ -344,7 +344,7 @@ namespace IsekaiMod.Content {
             }
             
             if (shamancapstone != null) {
-                ShamanLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, shamancapstone));
+                ShamanLegacy.Get().LevelEntries =ShamanLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, shamancapstone));
             }
             if (sorcerercapstone != null) {
                 SorcererLegacy.Get().LevelEntries = SorcererLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, sorcerercapstone));
