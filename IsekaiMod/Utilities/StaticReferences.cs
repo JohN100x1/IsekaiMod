@@ -6,6 +6,7 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components.CasterCheckers;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
@@ -14,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
+using static Kingmaker.UnitLogic.Abilities.Components.AbilityApplyFact;
 
 namespace IsekaiMod.Utilities {
 
@@ -46,7 +48,14 @@ namespace IsekaiMod.Utilities {
         public static BlueprintFeature SoloTactics = BlueprintTools.GetBlueprint<BlueprintFeature>("87d6de4d30adc7244b7a3427d041dcaa");
         public static BlueprintFeature ForesterTactics = BlueprintTools.GetBlueprint<BlueprintFeature>("994db4abfa0d6194eb3c847605e6f148");
 
-        public static readonly BlueprintFeatureBase[] FeaturesIgnoredWhenPatching = new BlueprintFeatureBase[] { FeatTools.Selections.BasicFeatSelection, FeatTools.Selections.FighterFeatSelection, FeatTools.Selections.CombatTrick, FeatTools.Selections.SkaldFeatSelection };
+        public static readonly BlueprintFeatureBase[] FeaturesIgnoredWhenPatching = new BlueprintFeatureBase[] { 
+            FeatTools.Selections.BasicFeatSelection, 
+            FeatTools.Selections.FighterFeatSelection, 
+            FeatTools.Selections.CombatTrick, 
+            FeatTools.Selections.SkaldFeatSelection,
+            FeatTools.Selections.AnimalCompanionSelectionDomain,
+            FeatTools.Selections.WarDomainGreaterFeatSelection
+        };
 
         private static BlueprintProgression PatchPatchClassProgressionBasedOnRefClassStep1(BlueprintProgression prog, BlueprintCharacterClass refClass) {
             prog.IsClassFeature = true;
@@ -83,6 +92,13 @@ namespace IsekaiMod.Utilities {
                 prog.LevelEntries = prog.LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(referenceLevel.Level, features));
             };            
             return prog;
+        }
+
+        public static BlueprintProgression PatchClassProgressionBasedOnSeparateLists(BlueprintProgression prog, BlueprintCharacterClass refClass, LevelEntry[] additionalReference, LevelEntry[] removedReference) {
+            BlueprintArchetype archetype = new BlueprintArchetype();
+            archetype.RemoveFeatures = removedReference;
+            archetype.AddFeatures = additionalReference;
+            return PatchClassProgressionBasedonRefArchetype(prog, refClass, archetype, null);
         }
 
         public static BlueprintProgression PatchClassProgressionBasedonRefArchetype(BlueprintProgression prog, BlueprintCharacterClass refClass, BlueprintArchetype refArchetype, LevelEntry[] additionalReference) {
@@ -190,12 +206,15 @@ namespace IsekaiMod.Utilities {
 
         public static void PatchClassIntoFeatureOfReferenceClass(BlueprintFeature feature, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level, BlueprintFeatureBase[] loopPrevention) {
             var mylevel = level+1;
-            if (mylevel > 20) {
-                IsekaiContext.Logger.LogError("Attempt to patch Progression Tree stopped at Level 20 to prevent endless loop, if you see this message please report so we can figure out if someone created a loop here or if this limit needs to be higher");
+            if (mylevel > 10) {
+                IsekaiContext.Logger.LogError("Attempt to patch Progression Tree stopped at Level 10 to prevent endless loop, if you see this message please report so we can figure out if someone created a loop here or if this limit needs to be higher");
                 if (feature.Name != null) {
-                    IsekaiContext.Logger.LogError("reference class= "+ referenceClass.guid+" Stop Feature= " + feature.AssetGuid + " name= " + feature.Name);
+                    IsekaiContext.Logger.LogError("reference class= "+ referenceClass.Guid+" Stop Feature= " + feature.AssetGuid + " name= " + feature.Name);
+                    foreach(BlueprintFeatureBase calltrace in loopPrevention) {
+                        IsekaiContext.Logger.LogError("guid= "+calltrace.AssetGuid);
+                    }
                 } else {
-                    IsekaiContext.Logger.LogError("reference class= " + referenceClass.guid + " Stop Feature= " + feature.AssetGuid);
+                    IsekaiContext.Logger.LogError("reference class= " + referenceClass.Guid + " Stop Feature= " + feature.AssetGuid);
                 }
                 return;
             }
@@ -208,7 +227,7 @@ namespace IsekaiMod.Utilities {
                 return;
             }
             if (loopPrevention.Contains(feature)) {
-                IsekaiContext.Logger.Log("reference class= " + referenceClass.guid + " feature re-encountered at level= " + mylevel + " guid= " + feature.AssetGuid + " name= " + feature.Name);
+                IsekaiContext.Logger.Log("reference class= " + referenceClass.Guid + " feature re-encountered at level= " + mylevel + " guid= " + feature.AssetGuid + " name= " + feature.Name);
             } else {
                 loopPrevention = loopPrevention.AddToArray(feature);
             }
@@ -307,7 +326,7 @@ namespace IsekaiMod.Utilities {
                     if (factRef is BlueprintAbility ability) {
                         ContextRankConfig sample = null;
                         bool alreadyPatched = false;
-                        foreach (var component2 in ability.Components) {
+                        foreach (var component2 in ability.Components) { 
                             if (component2 is ContextRankConfig rankConfig && rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel && rankConfig.m_Class.Contains(referenceClass)) {
                                 sample = rankConfig;
                                 bool classlocked = false;

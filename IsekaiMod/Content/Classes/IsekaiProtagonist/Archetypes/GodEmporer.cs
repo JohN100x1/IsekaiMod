@@ -1,4 +1,6 @@
-﻿using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
+﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
+using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
@@ -58,7 +60,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(20, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, NascentApotheosis, GodEmperorProficiencies),
+                    Helpers.CreateLevelEntry(1, NascentApotheosis, GodEmperorProficiencies, GodEmperorLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(3, DivineArray),
                     Helpers.CreateLevelEntry(5, GodEmperorEnergySelection, ArmorSaint),
                     Helpers.CreateLevelEntry(7, AuraOfGoldenProtectionFeature),
@@ -73,6 +75,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
             // Add Archetype to Class
             IsekaiProtagonistClass.RegisterArchetype(GodEmperorArchetype);
+        }
+        public static BlueprintArchetype Get() {
+            return BlueprintTools.GetModBlueprint<BlueprintArchetype>(IsekaiContext, "GodEmperorArchetype");
+        }
+
+        public static BlueprintArchetypeReference GetReference() {
+            return Get().ToReference<BlueprintArchetypeReference>();
         }
     }
 }

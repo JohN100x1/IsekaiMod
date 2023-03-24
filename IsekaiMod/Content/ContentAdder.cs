@@ -51,9 +51,6 @@ namespace IsekaiMod.Content {
             public static void AddIsekaiProtagonistClass() {
                 Main.LogDebug("Class: Start");
                 LegacySelection.ConfigureStep1();
-                VillainLegacySelection.Configure();
-                EdgeLordLegacySelection.Configure();
-                HeroLegacySelection.Configure();
                 // Isekai Protagonist Class
                 IsekaiProtagonistSpellList.Add();
                 IsekaiProtagonistSpellsPerDay.Add();
@@ -281,39 +278,7 @@ namespace IsekaiMod.Content {
 
             if (IsekaiContext.AddedContent.Isekai.IsDisabled("Isekai Protagonist")) return;
 
-            BarbarianLegacy.PatchProgression();
-            BardLegacy.PatchProgression();
-            FighterBasicLegacy.PatchProgression();
-            MonkLegacy.PatchProgression();
-            RogueLegacy.PatchProgression();
-            SkaldBaseLegacy.PatchProgression();
-            KineticLegacy.PatchProgression();
-            ShifterBaseLegacy.PatchProgression();
-            Main.LogDebug("Postfix Patching: Kineticist Patched");
-            OracleLegacy.PatchProgression();
-            Main.LogDebug("Postfix Patching: Oracle Patched");
-            SorcererLegacy.PatchProgression();
-            Main.LogDebug("Postfix Patching: Sorcerer Patched");
-            ShamanLegacy.PatchProgression();
-            Main.LogDebug("Postfix Patching: Shaman Patched");
-            KineticKnightLegacy.configure();
-
-            KineticKnightLegacy.PatchProgression();
-            KineticOverwhelmingSoulLegacy.PatchProgression();
-            KineticDarkElementalistLegacy.PatchProgression();
-            KineticLegacy.MakeKineticProgsExclusive();
-            Main.LogDebug("Postfix Patching: Kinetic Archetypes Patched");
-
-            MonkScaledFistLegacy.PatchProgression();
-            MonkLegacy.MakeProgsExclusive();
-
-            SkaldSilverTongueLegacy.PatchProgression();
-            SkaldVoiceLegacy.PatchProgression();
-            SkaldBaseLegacy.MakeProgsExclusive();
-
-            ShifterStingerLegacy.PatchProgression();
-            ShifterDragonLegacy.PatchProgression();
-            ShifterBaseLegacy.MakeProgsExclusive();
+            LegacySelection.ConfigureStep3();
 
 
 
@@ -324,7 +289,7 @@ namespace IsekaiMod.Content {
                 PatchTableTopTweakCore();
             }
             if (ModSupport.IsExpandedContentEnabled()) { 
-                DreadKnightLegacy.Configure();
+                DreadKnightLegacy.PatchProgression();
             }
         }
 
@@ -344,7 +309,7 @@ namespace IsekaiMod.Content {
             }
             
             if (shamancapstone != null) {
-                ShamanLegacy.Get().LevelEntries =ShamanLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, shamancapstone));
+                ShamanLegacy.Get().LevelEntries = ShamanLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, shamancapstone));
             }
             if (sorcerercapstone != null) {
                 SorcererLegacy.Get().LevelEntries = SorcererLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, sorcerercapstone));

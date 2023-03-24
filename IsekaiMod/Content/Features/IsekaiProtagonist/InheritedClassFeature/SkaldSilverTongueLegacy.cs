@@ -1,9 +1,12 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
@@ -17,24 +20,30 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "SkaldSilverTongueLegacy", bp => {
                 bp.SetName(IsekaiContext, "Skald Legacy - Silver Tongue");
                 bp.SetDescription(IsekaiContext,
-                    "You were a flatterer in your past life, and lean to hone your skills to a ridiculous level. \n" +
-                    "No Queen can resist you, and that's a real advantage in those dark times.");
+                    "You were a flatterer in your past life, and learned to hone your skills to a ridiculous level. \n" +
+                    "No Queen can resist you, and that's a real advantage in these dark times.");
                 bp.GiveFeaturesForPreviousLevels = true;
             });
 
-            LegacySelection.GetClassFeature().AddFeatures(prog);
-            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
-            VillainLegacySelection.getClassFeature().AddFeatures(prog);
-            HeroLegacySelection.getClassFeature().AddFeatures(prog);
+            LegacySelection.Register(prog);
+            EdgeLordLegacySelection.Prohibit(prog);
+            HeroLegacySelection.Register(prog);
+            VillainLegacySelection.Register(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
         }
 
         public static void PatchProgression() {
-            //please note that this only patches the knight progression so this only works in combination of the already done patch by the other version
+             
 
             prog = StaticReferences.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.SkaldClass, BaseArchetype, null);
-            BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.KineticistClass;
+            BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.SkaldClass;
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
             StaticReferences.PatchProgressionFeaturesBasedOnReferenceArchetype(myClass, refClass, BaseArchetype);
+
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BardLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BarbarianLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = SkaldVoiceLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = SkaldBaseLegacy.Get().ToReference<BlueprintFeatureReference>(); });
         }
 
         public static BlueprintProgression Get() {

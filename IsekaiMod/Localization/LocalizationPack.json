@@ -518,6 +518,248 @@
       "esES": null
     },
     {
+      "Key": "20302d0231744e8bbb95b6d059d08ea2",
+      "SimpleName": "AutoBurningAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a acid of fire spell, it causes acid or fire damage on the next round, as though using the Burning Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "a07d01e8bb854ec8921206a7e475b8c5",
+      "SimpleName": "AutoBurningBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a acid of fire spell, it causes acid or fire damage on the next round, as though using the Burning Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "6ff66813e4cc4677a2b0a7537d593a21",
+      "SimpleName": "AutoBurningBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Burning",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "46790a81715741cc964326c1058504f8",
+      "SimpleName": "AutoBurningFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a acid of fire spell, it causes acid or fire damage on the next round, as though using the Burning Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "92cb45854cfd4165bd36667446054a09",
+      "SimpleName": "AutoElementalAcidAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with acid damage, as though using the Elemental Spell (Acid) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "4fc6c9ba75bf4fbdb896abb1aa3c82ce",
+      "SimpleName": "AutoElementalAcidBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with acid damage, as though using the Elemental Spell (Acid) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "3c12ef1a22e8417aa171172342026475",
+      "SimpleName": "AutoElementalAcidBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Elemental (Acid)",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "1189c90ef22a412a83afdc29ba659907",
+      "SimpleName": "AutoElementalAcidFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with acid damage, as though using the Elemental Spell (Acid) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "cf820a676198499a9fb8eec11559c79d",
+      "SimpleName": "AutoElementalColdAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with cold damage, as though using the Elemental Spell (Cold) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "0aaee7d3799945449a438812acd2aa00",
+      "SimpleName": "AutoElementalColdBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with cold damage, as though using the Elemental Spell (Cold) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "8ed26a38a8c7464193f274dc706a193f",
+      "SimpleName": "AutoElementalColdBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Elemental (Cold)",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "75da3174c06547c197b1a1df8b468cd5",
+      "SimpleName": "AutoElementalColdFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with cold damage, as though using the Elemental Spell (Cold) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "2b235da8fd4d4043a765dd807378003e",
+      "SimpleName": "AutoElementalElectricityAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with electricity damage, as though using the Elemental Spell (Electricity) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "44b9c765cf814d2f95eecfdf6a3c75b3",
+      "SimpleName": "AutoElementalElectricityBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with electricity damage, as though using the Elemental Spell (Electricity) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "b4cb29e0574b4fa8aba3e41b28667b61",
+      "SimpleName": "AutoElementalElectricityBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Elemental (Electricity)",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "d7ee8dd59e7a4f15914c6ba70cb66147",
+      "SimpleName": "AutoElementalElectricityFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with electricity damage, as though using the Elemental Spell (Electricity) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "7d6430d0b065469f9077b94c50d6d1b2",
+      "SimpleName": "AutoElementalFireAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with fire damage, as though using the Elemental Spell (Fire) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "2e396d58985446668e763bd36f6258fa",
+      "SimpleName": "AutoElementalFireBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with fire damage, as though using the Elemental Spell (Fire) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "df99bb57fe22410caf137feb9fe902fe",
+      "SimpleName": "AutoElementalFireBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Elemental (Fire)",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "0a9f7644e3264998b198033d9de47da5",
+      "SimpleName": "AutoElementalFireFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with fire damage, as though using the Elemental Spell (Fire) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "df523047a8074c6a96ae64bacc3dbdfc",
+      "SimpleName": "AutoElementalSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "You can manipulate the elemental nature of your spells.\nBenefit: Choose one energy type: acid, cold, electricity, or fire. You may replace a spell’s normal damage with that energy type or split the spell’s damage, so that half is of that energy type and half is of its normal type.\nSpecial: You can gain this feat multiple times. Each time you must choose a different energy type.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "0eb5cd4b7a044a06a0d6ccfcd8679fc2",
+      "SimpleName": "AutoElementalSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Elemental",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "fadf5f216c9042279fce36fc24e4802b",
       "SimpleName": "AutoEmpowerAbility.Description",
       "ProcessTemplates": true,
@@ -555,6 +797,50 @@
       "SimpleName": "AutoEmpowerFeature.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "6448a60746dd48808851645d1dd5404a",
+      "SimpleName": "AutoEncouragingAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, increase its morale bonus by 1, as though using the Encouraging Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "1d9427a9fd5945e996b26987446cce52",
+      "SimpleName": "AutoEncouragingBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, increase its morale bonus by 1, as though using the Encouraging Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "865c75354d7b4505a7ff6c271dc5250f",
+      "SimpleName": "AutoEncouragingBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Encouraging",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "ed2fc7d03fa542a5b562f33a14c46b57",
+      "SimpleName": "AutoEncouragingFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, increase its morale bonus by 1, as though using the Encouraging Spell feat.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -606,6 +892,94 @@
       "esES": null
     },
     {
+      "Key": "013150d28d244aeea75655688834024f",
+      "SimpleName": "AutoFlaringAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a light, fire, or electricity spell, it causes the dazzling condition, as though using the Flaring Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "ec9571ae1eee45e18b842158f2867f05",
+      "SimpleName": "AutoFlaringBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a light, fire, or electricity spell, it causes the dazzling condition, as though using the Flaring Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "8cb22b0628a243a481b6ef22e4ab4731",
+      "SimpleName": "AutoFlaringBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Flaring",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "f3aee97acf2643feb45927eeb194525c",
+      "SimpleName": "AutoFlaringFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a light, fire, or electricity spell, it causes the dazzling condition, as though using the Flaring Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "e3b3118f60ae4a09a8873b1a73debf26",
+      "SimpleName": "AutoIntensifiedAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, increase its maximum damage dice by 5, as though using the Intensified Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "3b31290392d441fca2d3f87ca1f084fd",
+      "SimpleName": "AutoIntensifiedBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, increase its maximum damage dice by 5, as though using the Intensified Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "ca78b1922b434debba723e6adbb469ae",
+      "SimpleName": "AutoIntensifiedBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Intensified",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "e143bdfdd49a4ffa947a5ec5d52d974d",
+      "SimpleName": "AutoIntensifiedFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell, increase its maximum damage dice by 5, as though using the Intensified Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "d31a71c4b8bc44aa954182f44f335fa2",
       "SimpleName": "AutoMaximizeAbility.Description",
       "ProcessTemplates": true,
@@ -643,6 +1017,50 @@
       "SimpleName": "AutoMaximizeFeature.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "b32e263a21f14ff4a138c94fc5552c6c",
+      "SimpleName": "AutoPiercingAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell against a target, it treats the spell resistance of the target as 5 lower than its actual SR, as though using the Piercing Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "f1f45da2b7ac41a482331c50fd878b3e",
+      "SimpleName": "AutoPiercingBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell against a target, it treats the spell resistance of the target as 5 lower than its actual SR, as though using the Piercing Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "48eab66dd1ef477da1ff405d791702a0",
+      "SimpleName": "AutoPiercingBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Piercing",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "782548caa57540d1b92d07e8f349c5c0",
+      "SimpleName": "AutoPiercingFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a spell against a target, it treats the spell resistance of the target as 5 lower than its actual SR, as though using the Piercing Spell feat.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -738,6 +1156,50 @@
       "esES": null
     },
     {
+      "Key": "8213cb8e38f64ff8a8c8b1089871e7e4",
+      "SimpleName": "AutoRimeAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a cold spell, it entangles the target, as though using the Rime Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "086aea5ab73047839c664149dfce56ae",
+      "SimpleName": "AutoRimeBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a cold spell, it entangles the target, as though using the Rime Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "881c7138052245ad814de93e29af733f",
+      "SimpleName": "AutoRimeBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Rime",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "ed6e8fb34cc44163ac856d55d20270c2",
+      "SimpleName": "AutoRimeFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a cold spell, it entangles the target, as though using the Rime Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "3de8161a2b57475cb4608fff292d1a47",
       "SimpleName": "AutoSelectiveAbility.Description",
       "ProcessTemplates": true,
@@ -775,6 +1237,50 @@
       "SimpleName": "AutoSelectiveFeature.Description",
       "ProcessTemplates": true,
       "enGB": "Every time you cast a spell, you can exclude targets from the effects of your spell, as though using the Selective Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "8e198ee0d56548eb907f6f9638195ad5",
+      "SimpleName": "AutoSolidShadowsAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a shadow spell, it becomes 20% more real, as though using the Solid Shadows Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "a4864686f7ba48cbbea4723170154bc7",
+      "SimpleName": "AutoSolidShadowsBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a shadow spell, it becomes 20% more real, as though using the Solid Shadows Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "8e9e377e58244dc2a630655664b88293",
+      "SimpleName": "AutoSolidShadowsBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Solid Shadows",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "bc54d02d93f64d27b99d0b366bc1f98d",
+      "SimpleName": "AutoSolidShadowsFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "Every time you cast a shadow spell, it becomes 20% more real, as though using the Solid Shadows Spell feat.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -2487,6 +2993,28 @@
       "esES": null
     },
     {
+      "Key": "15656376859f43ed9dd24a8bb08fdb96",
+      "SimpleName": "DruidBaseLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You were a nature lover in your previous world, but you lived in a polluted and crowded city that stifled your connection to the natural world. \nYou dreamed of escaping to a place where you could be free and wild, and one day you got your wish. \nYou have been reincarnated in a world where nature is abundant and diverse, and you have learned how to tap into its primal magic. \nYou can cast spells that manipulate the elements, summon creatures, and enhance your own abilities. \nYou are a protector of nature and a friend to all living.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "426db40621884b2fbd2edf6ec7f838c1",
+      "SimpleName": "DruidBaseLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Druid Legacy - Nature Mage",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "46d0d3476e584a12bc90c63befa0ab24",
       "SimpleName": "DupeGoldAbility.Description",
       "ProcessTemplates": true,
@@ -3114,6 +3642,28 @@
       "esES": null
     },
     {
+      "Key": "27281e8ae05444e988fe237e59ece142",
+      "SimpleName": "Fighter2HandedLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "What is cooler than swinging a sword at a speed the eye can barely follow?\nSwinging a massive two handed sword at that speed and watching your enemy as he runs in fear at the sheer size of your weapon and the speed at which you wield it.\nEven better if it is an elven blade or estoc so you can stack sneak attack on top for some truly critical hits...",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "276cb4a4cd694d7d99c01ef02a565cbc",
+      "SimpleName": "Fighter2HandedLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Fighter Legacy - Two Handed Fighter",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "b22371e9b85a47ef8050b5aa9491967c",
       "SimpleName": "FighterBasicIsekaiLegacy.Description",
       "ProcessTemplates": true,
@@ -3129,6 +3679,28 @@
       "SimpleName": "FighterBasicIsekaiLegacy.Name",
       "ProcessTemplates": false,
       "enGB": "Fighter Legacy - Basic Fighter",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "616ba690b528452a82e412588b00cc7b",
+      "SimpleName": "FighterShieldLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You are the shield guarding your party.\n With your trusty shield in hand no enemy can break your defense.\nJust let the fool's try...",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "d0d56410cc434b3799bc6b14efb5b60d",
+      "SimpleName": "FighterShieldLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Fighter Legacy - Guardian Shield",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -3565,6 +4137,28 @@
       "esES": null
     },
     {
+      "Key": "dc9a1d94011a49bdbb4255eb82f2a0e1",
+      "SimpleName": "GodEmperorLegacySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your increasing divine power also manifests as the following features from a lesser class.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "84e66a79229449c1a66de25550e1a3a4",
+      "SimpleName": "GodEmperorLegacySelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Divine Legacy",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "9af0003d789243378ba93745e05c48d9",
       "SimpleName": "GodEmperorProficiencies.Description",
       "ProcessTemplates": true,
@@ -3796,6 +4390,17 @@
       "esES": null
     },
     {
+      "Key": "dfe03b65904641ada618b9a905be5512",
+      "SimpleName": "HeroicLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Deprecated version kept for save compatibility. Will be removed in future release.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "5a2ab19b3d9a4fbfa9a5370e2f7fcff7",
       "SimpleName": "HeroicLegacy.Name",
       "ProcessTemplates": false,
@@ -3976,6 +4581,72 @@
       "SimpleName": "InnerPower.Name",
       "ProcessTemplates": false,
       "enGB": "Inner Power",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "6307e0a8acab4a7ab204ccf4b751b894",
+      "SimpleName": "InquisitorDomainLordLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Your reincarnation by divine means has strengthened your divine connection above that of normal people. \nThe difference might not be easily visible at the beginning. \nBut as time passes it will slowly grow, granting you access to more and more domains.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "0a49322abbdd4b71bec8a38fc6cd511c",
+      "SimpleName": "InquisitorDomainLordLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Inquisitor Legacy - Domain Lord",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "21f797ef876247a6899cbba59baaa224",
+      "SimpleName": "InquisitorJudgeLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You were a judge in your previous world, but you were killed by a corrupt system that twisted the law to serve its own interests. \nYou have been reborn in a world where law is often ignored or perverted, and you have sworn to uphold the law and punish the lawbreakers. \nYou can use your judgements more often and more effectively than normal inquisitors, enhancing your abilities and weakening your foes. \nYou are a champion of law and order, and a scourge of chaos and anarchy.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "a88f4be5da2c45b794d3f31ef83dc163",
+      "SimpleName": "InquisitorJudgeLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Inquisitor Legacy - Judge",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "16e0c42193ea45cd8ea4a01485d2d488",
+      "SimpleName": "InquisitorTacticianLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You are used to telling people what to do. \nYou were the tactician who led your guild to first kill Onyxia. \nThis, as far as you are concerned, is just another raid to conquer with your brilliant tactics and perfect preparation... \nUsing your good Judgement you can quickly spot the weaknesses of the opponent and exploit them even as you tactically help your allies to avoid their own.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "b1d41cfbad9540ef97e5f2874ca1d809",
+      "SimpleName": "InquisitorTacticianLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Inquisitor Legacy - Tactician",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -5248,6 +5919,28 @@
       "esES": null
     },
     {
+      "Key": "e8daac614b8342719958689ffbf3f46c",
+      "SimpleName": "IsekaiWitchSelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "As you grow so does your ability to make new pacts with otherworldy beings other gain other benefits from your existing ones.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "a1f490fc83e948528882ca7d670212f1",
+      "SimpleName": "IsekaiWitchSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Patrons Blessing",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "a74ed243b0b041d0b421b1fb00d35b77",
       "SimpleName": "IsekaiWoodElfHeritage.Description",
       "ProcessTemplates": true,
@@ -5424,6 +6117,17 @@
       "esES": null
     },
     {
+      "Key": "ab1f524030014f4eb1bd2c80da385445",
+      "SimpleName": "KineticLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Kinetic Legacy - Kinetic Lord",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "dcaa46f9abaf4707af127d64f2087edf",
       "SimpleName": "KineticLegacy.Name",
       "ProcessTemplates": false,
@@ -5494,6 +6198,17 @@
       "SimpleName": "LegacyAbilitySelection.Description",
       "ProcessTemplates": true,
       "enGB": "So first I joined the bardic college of Wintermoon, then 3 years leater when I got bored with that I accidentally stumbled into the thiefs guild of Whitesnow...\nWhatever the backstory is, you get access to another legacy class feature.\nOr if you are a God Emperor your first.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "7f5b4935d4d74dc89a3bcc4a71ab571e",
+      "SimpleName": "LegacyAbilitySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "First, I joined the bardic college of Wintermoon. \nThen 3 years later, when I got bored with that, I accidentally stumbled into the theives' guild of Whitesnow...\nWhatever the backstory is, you get access to another legacy class feature.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -6348,6 +7063,17 @@
       "esES": null
     },
     {
+      "Key": "b0369b2b12c840628d6b086d11be44b1",
+      "SimpleName": "PaladinBaseLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You are a true hero, representing all that is good and holy in the world.\nProtecting the innocent and smiting the evil.\nLess benevolent people might actually throw up a little just from talking to you just because of how inherently good you are.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "d2ce9bcb676445d7b15bb1177e5bfdff",
       "SimpleName": "ParalyzedImmunity.Description",
       "ProcessTemplates": true,
@@ -6799,6 +7525,17 @@
       "esES": null
     },
     {
+      "Key": "53e3e19fceb74301be240e9671a084f4",
+      "SimpleName": "ShifterBaseLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Some hard facts : you did not choose to reincarnate on this world, nor could you choose your new body. \nNothing can be done for the fist part but you can change the latter ! \nBy learning druidic secrets you can finally choose your own form.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "8d469705b89344059891c76e9c0fc013",
       "SimpleName": "ShifterBaseLegacy.Name",
       "ProcessTemplates": false,
@@ -7111,6 +7848,17 @@
       "SimpleName": "SkaldSilverTongueLegacy.Description",
       "ProcessTemplates": true,
       "enGB": "You were a flatterer in your past life, and lean to hone your skills to a ridiculous level. \nNo Queen can resist you, and that's a real advantage in those dark times.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "c2eae5b1b61743ceaa8d361d94e63d80",
+      "SimpleName": "SkaldSilverTongueLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You were a flatterer in your past life, and learned to hone your skills to a ridiculous level. \nNo Queen can resist you, and that's a real advantage in these dark times.",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -9938,6 +10686,28 @@
       "SimpleName": "WinterWitchVillain.Description",
       "ProcessTemplates": true,
       "enGB": "When a new winter witch level is gained, the character gains new spells per day as if she had also gained a level in witch or shaman spellcasting class she belonged to before she added the prestige class. Additionally, at 2nd level, and every two level after, a winter witch gets a new hex depending on the chosen spellcasting class.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "a2a918186af344c69328be4adadd6fa6",
+      "SimpleName": "WitchBaseLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "You were once an ordinary person in your original world, until you were summoned by a mysterious entity to another world full of magic and monsters. \nThere, you learned how to make pacts with various beings, from spirits and demons to dragons and gods. \nYou use your pacts to gain power, knowledge, and allies in this strange new world. \nBut beware, for every pact has a price, and some beings may not be so willing to cooperate with you.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "069d3ed47cca49748d11532c386d9a41",
+      "SimpleName": "WitchBaseLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Witch Legacy - Pactmaker",
       "ruRU": null,
       "deDE": null,
       "frFR": null,

@@ -1,9 +1,12 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -21,7 +24,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             var shamanFeat = ShamanSelection.Get();
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "ShamanLegacy", bp => {
                 bp.SetName(IsekaiContext, "Shaman Legacy - Spirit Beacons");
-                bp.SetDescription(IsekaiContext, "As persons who originated from the other worlds, Spirit Beacons have an unique aura. \nThis aura is particularly attractive to spirits, and they have learned to harness the power of these spirits by forming contracts with them. \nDespite their reliance on spirits, Spirit Beacons are not bound by the will of these supernatural beings. \nThey are able to maintain their independence and make their own decisions, using the power of the spirits as a tool rather than being controlled by them.");
+                bp.SetDescription(IsekaiContext, "As persons who originated from the other worlds, Spirit Beacons have an unique aura. \n" +
+                    "This aura is particularly attractive to spirits, and they have learned to harness the power of these spirits by forming contracts with them. \n" +
+                    "Despite their reliance on spirits, Spirit Beacons are not bound by the will of these supernatural beings. \n" +
+                    "They are able to maintain their independence and make their own decisions, using the power of the spirits as a tool rather than being controlled by them.");
                 bp.GiveFeaturesForPreviousLevels = true;
                 bp.IsClassFeature = true;
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
@@ -44,10 +50,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateUIGroup(shamanFeat)
                 };
             });
-            LegacySelection.GetClassFeature().AddFeatures(prog);
-            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
-            HeroLegacySelection.getClassFeature().AddFeatures(prog);
-            VillainLegacySelection.getClassFeature().AddFeatures(prog);
+            LegacySelection.Register(prog);
+            EdgeLordLegacySelection.Prohibit(prog);
+            HeroLegacySelection.Register(prog);
+            VillainLegacySelection.Register(prog);
+            GodEmperorLegacySelection.Register(prog);
         }
 
         public static void PatchProgression() {
@@ -58,6 +65,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             StaticReferences.PatchClassIntoFeatureOfReferenceClass(shamanSpirit, myClass, refClass, 0, new BlueprintFeatureBase[] { });
             StaticReferences.PatchClassIntoFeatureOfReferenceClass(shamanHex, myClass, refClass, 0, new BlueprintFeatureBase[] { });
             ShamanSelection.GetSpirit().m_AllFeatures = shamanSpirit.m_AllFeatures;
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = WitchBaseLegacy.Get().ToReference<BlueprintFeatureReference>(); });
         }
 
         public static BlueprintProgression Get() {

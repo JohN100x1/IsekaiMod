@@ -2,24 +2,24 @@
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
+using Steamworks;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord {
-
-    internal class EdgeLordLegacySelection {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
+    internal class GodEmperorLegacySelection {
         private static BlueprintFeatureSelection ClassSelection;
         private static BlueprintProgression[] registered = new BlueprintProgression[] { };
         private static BlueprintProgression[] prohibited = new BlueprintProgression[] { };
 
         public static void Configure() {
             if (ClassSelection != null) {
-                IsekaiContext.Logger.LogWarning("repeated configuration of =EdgeLordLegacySelection");
+                IsekaiContext.Logger.LogWarning("repeated configuration of =GodEmperorLegacySelection");
                 return;
             }
-            ClassSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "EdgeLordLegacySelection", bp => {
-                bp.SetName(IsekaiContext, "Edgy Legacy");
-                bp.SetDescription(IsekaiContext, "To truly look cool and stylish only a melee focus will really do...");
+            ClassSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "GodEmperorLegacySelection", bp => {
+                bp.SetName(IsekaiContext, "Divine Legacy");
+                bp.SetDescription(IsekaiContext, "Your increasing divine power also manifests as the following features from a lesser class.");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.IgnorePrerequisites = false;
@@ -32,8 +32,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord {
             if (ClassSelection != null) {
                 return ClassSelection;
             }
-            return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "EdgeLordLegacySelection");
+            return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "GodEmperorLegacySelection");
         }
+
         public static void Register(BlueprintProgression prog) {
             registered = registered.AppendToArray(prog);
         }
@@ -46,7 +47,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord {
                 ClassSelection.AddFeatures(feature);
             }
             if (IsekaiContext.AddedContent.Other.IsDisabled("Relax Legacy Choices")) {
-                BlueprintArchetypeReference myRef = Classes.IsekaiProtagonist.Archetypes.EdgeLord.GetReference();
+                BlueprintArchetypeReference myRef = Classes.IsekaiProtagonist.Archetypes.GodEmperor.GetReference();
                 foreach (BlueprintFeature feature in prohibited) {
                     feature.AddComponent<PrerequisiteNoArchetype>(c => { c.m_Archetype = myRef; });
                 }
