@@ -49,7 +49,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             EdgeLordLegacySelection.Prohibit(prog);
             HeroLegacySelection.Register(prog);
             VillainLegacySelection.Register(prog);
-            GodEmperorLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Register(prog);
 
         }
         public static void PatchProgression() {
