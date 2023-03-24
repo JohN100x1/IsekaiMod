@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated description for `Unlimited Power` OP ability.
 - Updated description for `Kinetic Power` Special Power with deprecation message.
 ### Fixed
+- Fixed white background for `Deathsnatcher` small portrait.
 - Fixed `True Smite` damage bonus applies correctly on allies.
 
 # [4.2.0] - 2023-03-20
