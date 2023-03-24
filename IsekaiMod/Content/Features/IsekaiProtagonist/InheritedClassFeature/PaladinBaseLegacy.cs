@@ -38,8 +38,21 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             GodEmperorLegacySelection.Register(prog);
         }
         public static void PatchProgression() {
+            BlueprintFeature TrueSmiteFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteFeature");
+            BlueprintFeature TrueSmiteAdditionalUse = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteAdditionalUse");
+            BlueprintFeature TrueMarkFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueMarkFeature");
             if (prog != null) {
-                LevelEntry[] addentries = new LevelEntry[] { };
+                LevelEntry[] addentries = new LevelEntry[] {
+                    Helpers.CreateLevelEntry(1, TrueSmiteFeature),
+                    Helpers.CreateLevelEntry(4, TrueSmiteAdditionalUse),
+                    Helpers.CreateLevelEntry(7, TrueSmiteAdditionalUse),
+                    Helpers.CreateLevelEntry(10, TrueSmiteAdditionalUse),
+                    Helpers.CreateLevelEntry(11, TrueMarkFeature),
+                    Helpers.CreateLevelEntry(13, TrueSmiteAdditionalUse),
+                    Helpers.CreateLevelEntry(16, TrueSmiteAdditionalUse),
+                    Helpers.CreateLevelEntry(19, TrueSmiteAdditionalUse),
+
+                };
                 LevelEntry[] removeentries = new LevelEntry[] { };
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(1, BlueprintTools.GetBlueprint<BlueprintFeature>("24e78475f0a243e1a810452d14d0a1bd")));
                 removeentries = removeentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(1, BlueprintTools.GetBlueprint<BlueprintFeature>("f8c91c0135d5fc3458fcc131c4b77e96")));
