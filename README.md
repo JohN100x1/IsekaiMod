@@ -68,7 +68,6 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- Uses dexterity for damage and attack rolls.
 		- Can pick a melee focused legacy class feature.
 	- `Hero` (Isekai Protagonist Archetype)
-		- Has the `True Smite` ability (smite any alignment).
 		- Uses charisma for damage and attack rolls.
 	- `Villain` (Isekai Protagonist Archetype)
 		- Has Study target.
@@ -109,7 +108,6 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Killing Intent`: Enemies within 40 feet who fail a will save become shaken, frightened, and cowering.
 		- `Reflect`: Deal damage to enemies equal to damage you receive.
 		- `Mythic Class Feature`: see below
-		- `Dual Legacy`: Pick a second base class to get abilities from, or in the case of the God Emperor your first.
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
 		- `AutoEmpower`: Empowers every spell you cast.
@@ -156,27 +154,33 @@ Exception to this is the God Emperor as all options that were changed were not p
 	- `Legacy`: if the gods had not interfered and made you into an overpowered spellcasting hero you would have been:
 		- `Barbarian Legacy - Ball of Rage`
 		- `Bard Legacy - Musical Prodige`
-		- `Dread Knight Legacy - Dread Lord`
+		- `Dread Knight Legacy - Dread Lord` requires Expanded Content
 		- `Paladin Legacy - Hero of Light`
 		- `Kineticist Legacy - Kinetic Knight`
 		- `Kineticist Legacy - Kinetic Lord`
-		- `Magus Legacy - Spellblade`: Still requires testing, so only use it if you are willing to essentially be the betatester for the Legacy at the moment
+		- `Kinetic Legacy - Soulbinder`
+		- `Kinetic Legacy - Noble Soul`		
+		- `Magus Legacy - Spellblade`
 		- `Oracle Legacy - Seeker of Truth`: does not grant its selections retroactivly, so best picked early.
 		- `Rogue Legacy - Supernatural Thief`
-		- `Shaman Legacy - Spirit Beacons`: Also still a Beta release
+		- `Shaman Legacy - Spirit Beacons`
 		- `Sorcerer Legacy - Chimera`: does not grant its selections retroactivly, so best picked early.
-		- `Tactician Legacy - Isekai Tactician`: A mixture from several classes like hunter and Monster Tactician to create a path focused around tactical feats
-		- `Kinetic Legacy - Soulbinder`
-		- `Kinetic Legacy - Noble Soul`
 		- `Fighter Legacy - Basic Fighter`
+		- `Fighter Legacy - Two Handed Fighter`
+		- `Fighter Legacy - Guardian Shield`
 		- `Monk Legacy - Daoist Martial Artist`
 		- `Monk Legacy - Fist of a Dragon`
 		- `Skald Legacy - Metal Singer`
 		- `Skald Legacy - Silver Tongue`
 		- `Skald Legacy - The Voice`
+		- `Druid Legacy - Nature Mage`
 		- `Shifter Legacy - Ditto`
 		- `Shifter Legacy - Stinger`
 		- `Shifter Legacy - Shapeshifted Baby Dragon`
+		- `Inquisitor Legacy - Domain Lord`
+		- `Inquisitor Legacy - Judge`
+		- `Inquisitor Legacy - Tactician` (thematically replaces `Tactician Legacy - Isekai Tactician`)
+		- `Witch Legacy - Pactmaker`
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities
