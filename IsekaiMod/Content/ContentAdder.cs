@@ -311,11 +311,9 @@ namespace IsekaiMod.Content {
             if (paladincapstone != null) {
                 HeroicLegacy.Get().LevelEntries = HeroicLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, paladincapstone));
             }
-            
             if (oraclecapstone != null) {
                 OracleLegacy.Get().LevelEntries = OracleLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, oraclecapstone));
             }
-            
             if (shamancapstone != null) {
                 ShamanLegacy.Get().LevelEntries = ShamanLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, shamancapstone));
             }
