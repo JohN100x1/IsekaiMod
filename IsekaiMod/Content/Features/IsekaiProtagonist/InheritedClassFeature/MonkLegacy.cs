@@ -34,28 +34,20 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.NeutralGood;
                 });
             });
-            LegacySelection.GetClassFeature().AddFeatures(prog);
-            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
-            VillainLegacySelection.getClassFeature().AddFeatures(prog);
-            HeroLegacySelection.getClassFeature().AddFeatures(prog);
-            EdgeLordLegacySelection.getClassFeature().AddFeatures(prog);
+            LegacySelection.Register(prog);
+            EdgeLordLegacySelection.Register(prog);
+            HeroLegacySelection.Register(prog);
+            VillainLegacySelection.Prohibit(prog);
+            //GodEmperorLegacySelection.Register(prog);
         }
         public static void PatchProgression() {
             if (prog != null) {
                 prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.MonkClass);
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
                 StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.MonkClass);
+
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = MonkScaledFistLegacy.Get().ToReference<BlueprintFeatureReference>(); });
             }            
-        }
-        public static void MakeProgsExclusive() {
-            BlueprintProgression ScaledFist = MonkScaledFistLegacy.Get();
-
-            BlueprintFeatureReference BaseRef = prog.ToReference<BlueprintFeatureReference>();
-            BlueprintFeatureReference ScaledFistRef = ScaledFist.ToReference<BlueprintFeatureReference>();
-
-            prog.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = ScaledFistRef; });
-
-            ScaledFist.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = BaseRef; });
         }
 
         public static BlueprintProgression Get() {

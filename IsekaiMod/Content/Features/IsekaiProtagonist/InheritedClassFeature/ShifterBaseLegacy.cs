@@ -1,5 +1,6 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
@@ -23,7 +24,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.SetDescription(IsekaiContext, 
                     "Some hard facts : you did not choose to reincarnate on this world, nor could you choose your new body. \n" +
                     "Nothing can be done for the fist part but you can change the latter ! \n" +
-                    "By learning druidic secrets you can finally choose your own form and pay tribut to Neko-chan (a two tons tiger with five inches fangs can be rather cute).");
+                    "By learning druidic secrets you can finally choose your own form.");
                 bp.GiveFeaturesForPreviousLevels = true;
             });
         }
@@ -38,31 +39,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.ShifterClass);
 
 
-                LegacySelection.GetClassFeature().AddFeatures(prog);
-                LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
-                EdgeLordLegacySelection.getClassFeature().AddFeatures(prog);
-                HeroLegacySelection.getClassFeature().AddFeatures(prog);
-                VillainLegacySelection.getClassFeature().AddFeatures(prog);
+                LegacySelection.Register(prog);
+                EdgeLordLegacySelection.Register(prog);
+                HeroLegacySelection.Register(prog);
+                VillainLegacySelection.Prohibit(prog);
+                GodEmperorLegacySelection.Prohibit(prog);
+
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterStingerLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterDragonLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = DruidBaseLegacy.Get().ToReference<BlueprintFeatureReference>(); });
             }            
-        }
-        public static void MakeProgsExclusive() {
-            if (ClassTools.Classes.ShifterClass == null) { return; }
-
-            BlueprintProgression Stinger = ShifterStingerLegacy.Get();
-            BlueprintProgression Dragon = ShifterDragonLegacy.Get();
-
-            BlueprintFeatureReference BaseRef = prog.ToReference<BlueprintFeatureReference>();
-            BlueprintFeatureReference StingerRef = Stinger.ToReference<BlueprintFeatureReference>();
-            BlueprintFeatureReference DragonRef = Dragon.ToReference<BlueprintFeatureReference>();
-
-            prog.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = StingerRef; });
-            prog.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = DragonRef; });
-
-            Stinger.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = BaseRef; });
-            Stinger.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = StingerRef; });
-
-            Stinger.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = BaseRef; });
-            Stinger.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = DragonRef; });
         }
 
         public static BlueprintProgression Get() {

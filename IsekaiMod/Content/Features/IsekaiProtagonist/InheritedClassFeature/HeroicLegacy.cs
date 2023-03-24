@@ -6,6 +6,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
@@ -27,7 +28,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "HeroicLegacy", bp => {
                 bp.SetName(IsekaiContext, "Paladin Legacy - Hero of Light");
-                bp.SetDescription(IsekaiContext, "You are a true hero, smiting your enemies wherever you go.");
+                bp.SetDescription(IsekaiContext, "Deprecated version kept for save compatibility. Will be removed in future release.");
                 bp.GiveFeaturesForPreviousLevels = true;
                 bp.IsClassFeature = true;
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
@@ -36,6 +37,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                         AdditionalLevel = 0
                     }
                 };
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] { BlueprintTools.GetBlueprintReference<BlueprintUnitFactReference>("24e78475f0a243e1a810452d14d0a1bd") };
+                });
                 bp.AddComponent<ClassLevelsForPrerequisites>(c => {
                     c.m_FakeClass = ClassTools.ClassReferences.PaladinClass;
                     c.m_ActualClass = IsekaiProtagonistClass.GetReference();
@@ -65,10 +69,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 };
 
             });
-            LegacySelection.GetClassFeature().AddFeatures(prog);
-            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
-            HeroLegacySelection.getClassFeature().AddFeatures(prog);
-            EdgeLordLegacySelection.getClassFeature().AddFeatures(prog);
         }
         public static BlueprintProgression Get() {
             if (prog != null) return prog;
