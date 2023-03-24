@@ -6,7 +6,6 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Abilities.Components.CasterCheckers;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
@@ -15,7 +14,6 @@ using System.Collections.Generic;
 using System.Linq;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
-using static Kingmaker.UnitLogic.Abilities.Components.AbilityApplyFact;
 
 namespace IsekaiMod.Utilities {
 
@@ -75,29 +73,30 @@ namespace IsekaiMod.Utilities {
             prog.UIGroups = new UIGroup[] {
                 };
             foreach (var referenceUIGroup in referenceUIGroups) {
-                prog.UIGroups = prog.UIGroups.AddToArray<UIGroup>(referenceUIGroup);
+                prog.UIGroups = prog.UIGroups.AddToArray(referenceUIGroup);
             }
             prog.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] { };
             var referenceUIDeterminators = refClass.Progression.UIDeterminatorsGroup;
             foreach (var UIDetermin in referenceUIDeterminators) {
-                prog.m_UIDeterminatorsGroup = prog.m_UIDeterminatorsGroup.AddToArray<BlueprintFeatureBaseReference>(UIDetermin.ToReference<BlueprintFeatureBaseReference>());
+                prog.m_UIDeterminatorsGroup = prog.m_UIDeterminatorsGroup.AddToArray(UIDetermin.ToReference<BlueprintFeatureBaseReference>());
             }
             return prog;
         }
         public static BlueprintProgression PatchClassProgressionBasedOnRefClass(BlueprintProgression prog, BlueprintCharacterClass refClass) {
             prog = PatchPatchClassProgressionBasedOnRefClassStep1(prog, refClass);
-            var referenceLevels = refClass.Progression.LevelEntries;            
+            var referenceLevels = refClass.Progression.LevelEntries;
             foreach (var referenceLevel in referenceLevels) {
                 BlueprintFeatureBaseReference[] features = referenceLevel.m_Features.ToArray();
-                prog.LevelEntries = prog.LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(referenceLevel.Level, features));
+                prog.LevelEntries = prog.LevelEntries.AddToArray(Helpers.CreateLevelEntry(referenceLevel.Level, features));
             };            
             return prog;
         }
 
         public static BlueprintProgression PatchClassProgressionBasedOnSeparateLists(BlueprintProgression prog, BlueprintCharacterClass refClass, LevelEntry[] additionalReference, LevelEntry[] removedReference) {
-            BlueprintArchetype archetype = new BlueprintArchetype();
-            archetype.RemoveFeatures = removedReference;
-            archetype.AddFeatures = additionalReference;
+            BlueprintArchetype archetype = new BlueprintArchetype {
+                RemoveFeatures = removedReference,
+                AddFeatures = additionalReference
+            };
             return PatchClassProgressionBasedonRefArchetype(prog, refClass, archetype, null);
         }
 
@@ -145,7 +144,7 @@ namespace IsekaiMod.Utilities {
                         }
                     }
                 }
-                prog.LevelEntries = prog.LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(referenceLevel.Level, features));
+                prog.LevelEntries = prog.LevelEntries.AddToArray(Helpers.CreateLevelEntry(referenceLevel.Level, features));
             };
             //run through them again to get references to levels that had no features previously
             if (additionalReference != null) {
@@ -157,7 +156,7 @@ namespace IsekaiMod.Utilities {
                         }
                     }
                     if (!found) {
-                        prog.LevelEntries = prog.LevelEntries.AddToArray<LevelEntry>(level);
+                        prog.LevelEntries = prog.LevelEntries.AddToArray(level);
                         foreach (var feature in level.m_Features) { if (!MissingUIGroup.Contains(feature)) { MissingUIGroup = MissingUIGroup.AddToArray(feature); } }
                     }
                 }
@@ -198,7 +197,7 @@ namespace IsekaiMod.Utilities {
                     PatchClassIntoFeatureOfReferenceClass(progression, myClass, referenceClass, 0, new BlueprintFeatureBase[] { });
                 } else {
                     if (levelitem is BlueprintFeature feature) {
-                        PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass, 0, new BlueprintFeatureBase[] {});
+                        PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass, 0, new BlueprintFeatureBase[] { });
                     }
                 }
             }
@@ -375,12 +374,12 @@ namespace IsekaiMod.Utilities {
                 BlueprintAbilityResourceReference resRef = addResource.m_Resource;
                 if (resRef != null) {
                     BlueprintAbilityResource res = resRef.Get();
-                    Boolean classlocked = false;
-                    Boolean alreadyPatched = false;
-                    if (res.m_MaxAmount.m_ClassDiv != null && res.m_MaxAmount.m_ClassDiv.Contains<BlueprintCharacterClassReference>(referenceClass)) {
+                    bool classlocked = false;
+                    bool alreadyPatched = false;
+                    if (res.m_MaxAmount.m_ClassDiv != null && res.m_MaxAmount.m_ClassDiv.Contains(referenceClass)) {
                         classlocked = true;
                     }
-                    if (res.m_MaxAmount.m_ClassDiv != null && res.m_MaxAmount.m_ClassDiv.Contains<BlueprintCharacterClassReference>(myClass)) {
+                    if (res.m_MaxAmount.m_ClassDiv != null && res.m_MaxAmount.m_ClassDiv.Contains(myClass)) {
                         alreadyPatched = true;
                     }
                     if (classlocked && !alreadyPatched) { 
