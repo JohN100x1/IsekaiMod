@@ -2,7 +2,6 @@
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
-using Steamworks;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
