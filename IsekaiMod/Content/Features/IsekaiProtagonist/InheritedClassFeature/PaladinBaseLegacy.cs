@@ -9,9 +9,6 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
-using Kingmaker.UnitLogic.Abilities.Components.CasterCheckers;
-using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
-using System.Runtime.InteropServices;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
