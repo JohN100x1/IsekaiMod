@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Unreleased]
 ### Added
 - Added `Meta Luck` OP ability.
+- Added Isekai Protagonist dialogue with Horgus when asking for help escaping the Kenabres caves.
 - Added UMM option to change the default clothes on the Isekai Protagonist Class.
 ### Changed
 - Changed `Channel Positive Energy` Special Power to allow neutral users.

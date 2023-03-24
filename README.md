@@ -207,6 +207,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 	- `Administrator D`: An ultimate god of evil.
 - New Dialogue
 	- Prologue, speaking with Hulrun at Kenabres Festival.
+	- Prologue, speaking with Horgus at Neathholm.
 	- Act 1, Shield Maze after finding Radiance.
 	- Random encounter, during drow ambush.
 

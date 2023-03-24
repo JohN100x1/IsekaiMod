@@ -75,6 +75,26 @@ namespace IsekaiMod.Utilities {
             init?.Invoke(result);
             return result;
         }
+        public static BlueprintCue CreateCue(string name, Action<BlueprintCue> init = null) {
+            var result = Helpers.CreateBlueprint<BlueprintCue>(IsekaiContext, name, bp => {
+                bp.ShowOnce = false;
+                bp.ShowOnceCurrentDialog = false;
+                bp.Conditions = ActionFlow.EmptyCondition();
+                bp.Experience = DialogExperience.NoExperience;
+                bp.TurnSpeaker = true;
+                bp.Animation = DialogAnimation.None;
+                bp.OnShow = ActionFlow.DoNothing();
+                bp.OnStop = ActionFlow.DoNothing();
+                bp.AlignmentShift = new AlignmentShift() { Direction = AlignmentShiftDirection.TrueNeutral, Value = 0, Description = new LocalizedString() };
+                bp.Answers = new List<BlueprintAnswerBaseReference>();
+                bp.Continue = new CueSelection() {
+                    Cues = new List<BlueprintCueBaseReference>(),
+                    Strategy = Strategy.First
+                };
+            });
+            init?.Invoke(result);
+            return result;
+        }
 
         public static BlueprintBuff CreateBuff(string name, Action<BlueprintBuff> init = null) {
             var result = Helpers.CreateBlueprint<BlueprintBuff>(IsekaiContext, name, bp => {
