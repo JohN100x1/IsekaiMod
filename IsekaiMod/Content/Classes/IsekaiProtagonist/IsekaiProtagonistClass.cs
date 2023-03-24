@@ -29,14 +29,17 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
         private static readonly BlueprintStatProgression BABFull = BlueprintTools.GetBlueprint<BlueprintStatProgression>("b3057560ffff3514299e8b93e7648a9d");
         private static readonly BlueprintStatProgression SavesHigh = BlueprintTools.GetBlueprint<BlueprintStatProgression>("ff4662bde9e75f145853417313842751");
 
+        // Animal Class
+        private static readonly BlueprintCharacterClass AnimalClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("4cd1757a0eea7694ba5c933729a53920");
+
         public static void Add() {
             // TODO: Load localisation instead of hardcoded strings
 
             // Decide which default clothes to use (default 20 is the Slayer Class' clothes)
             var defaultClothesIndex = 20;
             var clothesIndex = IsekaiContext.AddedContent.IsekaiDefaultClothes;
-            var maxClothesIndex = StaticReferences.Classes.BaseClasses.Length;
-            var clothesClass = StaticReferences.Classes.BaseClasses[clothesIndex > 0 && clothesIndex < maxClothesIndex ? clothesIndex : defaultClothesIndex];
+            var maxClothesIndex = StaticReferences.BaseClasses.Length;
+            var clothesClass = StaticReferences.BaseClasses[clothesIndex > 0 && clothesIndex < maxClothesIndex ? clothesIndex : defaultClothesIndex];
 
             // Class Signature Features
             var IsekaiProtagonistPlotArmorFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistPlotArmorFeat", bp => {
@@ -120,7 +123,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                     IsekaiProtagonistLegacyFeat.ToReference<BlueprintFeatureReference>(),
                 };
                 bp.AddComponent<PrerequisiteNoClassLevel>(c => {
-                    c.m_CharacterClass = StaticReferences.Classes.AnimalClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_CharacterClass = AnimalClass.ToReference<BlueprintCharacterClassReference>();
                 });
                 bp.AddComponent<PrerequisiteIsPet>(c => {
                     c.Not = true;

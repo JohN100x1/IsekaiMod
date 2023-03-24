@@ -18,6 +18,35 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Utilities {
 
     public class StaticReferences {
+        // Base Classes
+        public static readonly BlueprintCharacterClass[] BaseClasses = new BlueprintCharacterClass[25] {
+                ClassTools.Classes.AlchemistClass,
+                ClassTools.Classes.ArcanistClass,
+                ClassTools.Classes.BarbarianClass,
+                ClassTools.Classes.BardClass,
+                ClassTools.Classes.BloodragerClass,
+                ClassTools.Classes.CavalierClass,
+                ClassTools.Classes.ClericClass,
+                ClassTools.Classes.DruidClass,
+                ClassTools.Classes.FighterClass,
+                ClassTools.Classes.HunterClass,
+                ClassTools.Classes.InquisitorClass,
+                ClassTools.Classes.KineticistClass,
+                ClassTools.Classes.MagusClass,
+                ClassTools.Classes.MonkClass,
+                ClassTools.Classes.OracleClass,
+                ClassTools.Classes.PaladinClass,
+                ClassTools.Classes.RangerClass,
+                ClassTools.Classes.RogueClass,
+                ClassTools.Classes.ShamanClass,
+                ClassTools.Classes.SkaldClass,
+                ClassTools.Classes.SlayerClass,
+                ClassTools.Classes.SorcererClass,
+                ClassTools.Classes.WarpriestClass,
+                ClassTools.Classes.WitchClass,
+                ClassTools.Classes.WizardClass
+            };
+
         //Oracle
         public static BlueprintFeatureSelection OracleCurseSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("b0a5118b4fb793241bc7042464b23fab");
         public static BlueprintFeatureSelection OracleMysterySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("5531b975dcdf0e24c98f1ff7e017e741");
@@ -465,37 +494,6 @@ namespace IsekaiMod.Utilities {
             public static bool operator !=(FeatureOnLevelReference left, FeatureOnLevelReference right) { return !(left == right); }
             public override int GetHashCode() => value.GetHashCode();
         }
-
-        internal class Classes {
-            public static readonly BlueprintCharacterClass[] BaseClasses = new BlueprintCharacterClass[25] {
-                ClassTools.Classes.AlchemistClass,
-                ClassTools.Classes.ArcanistClass,
-                ClassTools.Classes.BarbarianClass,
-                ClassTools.Classes.BardClass,
-                ClassTools.Classes.BloodragerClass,
-                ClassTools.Classes.CavalierClass,
-                ClassTools.Classes.ClericClass,
-                ClassTools.Classes.DruidClass,
-                ClassTools.Classes.FighterClass,
-                ClassTools.Classes.HunterClass,
-                ClassTools.Classes.InquisitorClass,
-                ClassTools.Classes.KineticistClass,
-                ClassTools.Classes.MagusClass,
-                ClassTools.Classes.MonkClass,
-                ClassTools.Classes.OracleClass,
-                ClassTools.Classes.PaladinClass,
-                ClassTools.Classes.RangerClass,
-                ClassTools.Classes.RogueClass,
-                ClassTools.Classes.ShamanClass,
-                ClassTools.Classes.SkaldClass,
-                ClassTools.Classes.SlayerClass,
-                ClassTools.Classes.SorcererClass,
-                ClassTools.Classes.WarpriestClass,
-                ClassTools.Classes.WitchClass,
-                ClassTools.Classes.WizardClass
-            };
-        }
-
         internal class Selections {
             public static BlueprintFeatureSelection BackgroundSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("f926dabeee7f8a54db8f2010b323383c");
             public static BlueprintFeatureSelection AasimarHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("67aabcbce8f8ae643a9d08a6ca67cabd");

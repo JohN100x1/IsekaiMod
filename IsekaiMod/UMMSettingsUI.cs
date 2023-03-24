@@ -37,7 +37,7 @@ namespace IsekaiMod {
             UI.Label($"Set the Isekai Protagonist's default clothes. {"Remember to restart!".orange()}");
             using (UI.HorizontalScope()) {
                 var selected = addedContent.IsekaiDefaultClothes;
-                var classNames = StaticReferences.Classes.BaseClasses.Select(c => c.LocalizedName.ToString()).ToArray();
+                var classNames = StaticReferences.BaseClasses.Select(c => c.LocalizedName.ToString()).ToArray();
                 var titles = classNames.Select((a, i) => i == selected ? a.orange().bold() : a).ToArray();
                 addedContent.IsekaiDefaultClothes = UnityEngine.GUILayout.SelectionGrid(selected, titles, 5, UI.Width(600));
             }
