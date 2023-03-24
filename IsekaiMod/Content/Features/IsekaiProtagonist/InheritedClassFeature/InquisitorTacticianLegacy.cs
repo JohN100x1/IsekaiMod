@@ -32,6 +32,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.SetName(FeatTools.Selections.DomainsSelection.m_DisplayName);
                 bp.SetDescription(FeatTools.Selections.DomainsSelection.m_Description);
                 bp.Ranks = 1;
+                bp.IgnorePrerequisites= true;
                 bp.IsClassFeature = true;
             });
 
@@ -57,7 +58,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
                 BlueprintFeature share = BlueprintTools.GetBlueprint<BlueprintFeature>("93e78cad499b1b54c859a970cbe4f585");
                 BlueprintFeature shareswift = BlueprintTools.GetBlueprint<BlueprintFeature>("4ca47c023f1c158428bd55deb44c735f");
-                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(2, domains));
+                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(1, domains));
                 // Animal Teamwork
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(3, BlueprintTools.GetBlueprint<BlueprintFeature>("1b9916f7675d6ef4fb427081250d49de"), share));
                 //Summon Tactics

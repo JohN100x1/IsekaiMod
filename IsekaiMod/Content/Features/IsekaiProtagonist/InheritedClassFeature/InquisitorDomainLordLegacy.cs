@@ -40,7 +40,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 LevelEntry[] removeentries = new LevelEntry[] { };
 
                 removeentries = removeentries.AppendToArray(Helpers.CreateLevelEntry(1, FeatTools.Selections.DomainsSelection));
-                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(2, InquisitorTacticianLegacy.GetDomains()));
+                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(1, InquisitorTacticianLegacy.GetDomains()));
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(5, InquisitorTacticianLegacy.GetDomains()));
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(10, InquisitorTacticianLegacy.GetDomains()));
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(15, InquisitorTacticianLegacy.GetDomains()));
