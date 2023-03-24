@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	6. `Inquisitor Legacy - Tactician` (replaces `Tactician Legacy - Isekai Tactician`)
 	7. `Paladin Legacy - Hero of Light` (replaces a legacy of the same name, see Fixed below for more details)
 	8. `Witch Legacy - Pactmaker`
+	9. `Bloodrager Legacy - Chimeric Rager`
+	10. `Player Legacy - Computer Nerd`
+	11. `Player Legacy - Part Timer`
 - legacy selection for `God Emperor`
 
 ### Changed

@@ -181,6 +181,9 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Inquisitor Legacy - Judge`
 		- `Inquisitor Legacy - Tactician` (thematically replaces `Tactician Legacy - Isekai Tactician`)
 		- `Witch Legacy - Pactmaker`
+		- `Bloodrager Legacy - Chimeric Rager`
+		- `Player Legacy - Computer Nerd`
+		- `Player Legacy - Part Timer`
 - New Animal Companion
 	- `Deathsnatcher`: A chaotic evil monstrous humanoid companion that can cast the animate dead spell. (Warning: very unbalanced)
 - New Mythic abilities
