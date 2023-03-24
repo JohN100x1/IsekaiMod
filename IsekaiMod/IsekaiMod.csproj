@@ -227,13 +227,13 @@
     <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\Instakill.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\MindControl.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\OverpoweredAbilitySelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\PerfectRoll.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\MetaLuck.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\SummonCalamity.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\SuperBuff.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\SupremeBeing.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\TrueResurrection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\UnlimitedPower.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\UnnaturalLuck.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\PerfectRoll.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\AlphaStrike.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\ArmorOfStrength.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\ArmorSaint.cs" />
