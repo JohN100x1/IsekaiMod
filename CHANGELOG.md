@@ -4,9 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-
-# [4.3.0] - not yet released
+# [Unreleased]
 ### Added
+- Added `Meta Luck` OP ability.
+- Added Isekai Protagonist dialogue with Horgus when asking for help escaping the Kenabres caves.
+- Added UMM option to change the default clothes on the Isekai Protagonist Class.
 - Added new legacies:
 	1. `Druid Legacy - Nature Mage`
 	2. `Fighter Legacy - Two Handed Fighter`
@@ -19,27 +21,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	9. `Bloodrager Legacy - Chimeric Rager`
 	10. `Player Legacy - Computer Nerd`
 	11. `Player Legacy - Part Timer`
-- legacy selection for `God Emperor`
-
+- Added legacy selection for `God Emperor`
 ### Changed
-- `Dual Legacy` feature restricted to require IP as a class so people that jsut use the OP feats through mythic feats don't accidentally pick it
-- `Dual Legacy` now requires at least level 5
-- `Dual Legacy` removed from special powers selection,now can only be gained through `Overpowered Ability`
+- Changed `Dual Legacy` restriction to require IP as a class so people that jsut use the OP feats through mythic feats don't accidentally pick it
+- Changed `Dual Legacy` to now require at least level 5
+- Changed `Dual Legacy` to be removed from special powers selection, now can only be gained through `Overpowered Ability`
 - added more restrictions on what is available for each archetype as a legacy and added a toggle so people can choose if they actually want to enforce that restriction on the dual legacy
 - properly added restrictions on overlapping archetypes(bard with skald, skald with bard and barbarian, fighter subtypes, etc.)
 - old versions of `Paladin Legacy - Hero of Light` and `Tactician Legacy - Isekai Tactician` removed from the selection so people don't accidentally pick them instead of the new buffed versions replacing them, the progressions themself are still there to ensure downwards compatibility for people already using them
-
-### Fixed
-- old `Paladin Legacy - Hero of Light` legacy bug fixed as much as possible so people should be able to use it without having to use a respec mod on it
-- fixed restrictions on `Channel Energy` so neutral characters actually can pick rather than get nothing
-- shaman legacy capstone is part of the legacy again if TabletopTweaks-Base is installed and the feature is enabled
-
-# [Unreleased]
-### Added
-- Added `Meta Luck` OP ability.
-- Added Isekai Protagonist dialogue with Horgus when asking for help escaping the Kenabres caves.
-- Added UMM option to change the default clothes on the Isekai Protagonist Class.
-### Changed
 - Changed `Channel Positive Energy` Special Power to allow neutral users.
 - Changed `Channel Negative Energy` Special Power to allow neutral users.
 - Changed `Reflect` Special Power to be a toggle ability.
@@ -54,6 +43,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fixed white background for `Deathsnatcher` small portrait.
 - Fixed `True Smite` damage bonus applies correctly on allies.
+- Fixed `Paladin Legacy - Hero of Light` legacy bug fixed as much as possible so people should be able to use it without having to use a respec mod on it
+- Fixed shaman legacy capstone is part of the legacy again if TabletopTweaks-Base is installed and the feature is enabled
 
 # [4.2.0] - 2023-03-20
 ### Added
