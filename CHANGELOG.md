@@ -37,6 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `Edge Lord`'s `Fast Movement` obtained from level 7 -> 8.
 - Changed `God Emperor`'s `Aura Of Divine Fury` obtained from level 15 -> 14.
 - Changed `God Emperor`'s `Armor Saint` obtained from level 5 -> 4.
+- Updated description for `Dupe Gold` OP ability.
 - Updated description for `Supreme Being` OP ability.
 - Updated description for `Unlimited Power` OP ability.
 - Updated description for `Kinetic Power` Special Power with deprecation message.
