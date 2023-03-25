@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
         public static void Add() {
             var MetaLuckDebuff = ThingsNotHandledByTTTCore.CreateBuff("MetaLuckDebuff", bp => {
-                bp.SetName(IsekaiContext, "Overpowered Ability — Meta Luck");
+                bp.SetName(IsekaiContext, "Overpowered Ability — Meta Luck (Debuff)");
                 bp.SetDescription(IsekaiContext, "This creature takes the lower of two d20 rolls.");
                 bp.m_Icon = Icon_Fortune;
                 bp.AddComponent<ModifyD20>(c => {
@@ -29,7 +29,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.IsClassFeature = true;
             });
             var MetaLuckBuff = ThingsNotHandledByTTTCore.CreateBuff("MetaLuckBuff", bp => {
-                bp.SetName(IsekaiContext, "Overpowered Ability — Meta Luck");
+                bp.SetName(IsekaiContext, "Overpowered Ability — Meta Luck (Buff)");
                 bp.SetDescription(IsekaiContext, "This character always takes the higher of two d20 rolls.");
                 bp.m_Icon = Icon_Fortune;
                 bp.AddComponent<ModifyD20>(c => {
@@ -49,15 +49,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var MetaLuckAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("MetaLuckAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Meta Luck");
-                bp.SetDescription(IsekaiContext, "You always take the higher of two d20 rolls."
-                    + "\nEnemies that attack you take the lower of two d20 rolls for one round.");
+                bp.SetDescription(IsekaiContext, "Everyone mistakes you for a prodigal genius, treating every action you make as part of your 1000 year plan. "
+                    + "Enemies tremble in fear as meet you, hallucinating a universe-sized gap between them your power level."
+                    + "\nBenefit: You always take the higher of two d20 rolls. Enemies that attack you take the lower of two d20 rolls for one round.");
                 bp.m_Icon = Icon_Fortune;
                 bp.m_Buff = MetaLuckBuff.ToReference<BlueprintBuffReference>();
             });
             var MetaLuckFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "MetaLuckFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Meta Luck");
-                bp.SetDescription(IsekaiContext, "You always take the higher of two d20 rolls."
-                    + "\nEnemies that attack you take the lower of two d20 rolls for one round.");
+                bp.SetDescription(IsekaiContext, "Everyone mistakes you for a prodigal genius, treating every action you make as part of your 1000 year plan. "
+                    + "Enemies tremble in fear as meet you, hallucinating a universe-sized gap between them your power level."
+                    + "\nBenefit: You always take the higher of two d20 rolls. Enemies that attack you take the lower of two d20 rolls for one round.");
                 bp.m_Icon = Icon_Fortune;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { MetaLuckAbility.ToReference<BlueprintUnitFactReference>() };

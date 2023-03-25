@@ -23,7 +23,6 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Utilities {
 
-    //Classname is a partial lie, some are just not handled well *coughs*
     internal class ThingsNotHandledByTTTCore {
         public static void RegisterClass(BlueprintCharacterClass classToRegister) {
             var existingClasses = ClassTools.Classes.AllClasses;
