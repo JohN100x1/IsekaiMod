@@ -9,7 +9,7 @@ namespace IsekaiMod.Content.Heritages {
     internal class IsekaiHighHumanHeritage {
 
         public static void Add() {
-            var ourHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "HumanIsekaiHighHumanLegacy", bp => {
+            var ourHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiHighHumanHeritage", bp => {
                 bp.SetName(IsekaiContext, "Isekai High Human");
                 bp.SetDescription(IsekaiContext, "TBD");
 
