@@ -234,7 +234,9 @@ namespace IsekaiMod.Utilities {
             try {
                 if (feature is BlueprintProgression progression) {
                     progression.GiveFeaturesForPreviousLevels = true;
-                    progression.AddClass(myClass);
+                    if (progression.m_Classes != null && progression.m_Classes.Length > 0) {
+                        progression.AddClass(myClass);
+                     }
                     foreach (LevelEntry item in progression.LevelEntries) {
                         foreach (var levelitem in item.Features) {
                             if (levelitem is BlueprintProgression progression2) {
