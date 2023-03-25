@@ -4,6 +4,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+# [4.3.0] - not yet released
+### Added
+- Added new legacies:
+	1. `Druid Legacy - Nature Mage`
+	2. `Fighter Legacy - Two Handed Fighter`
+	3. `Fighter Legacy - Guardian Shield`
+	4. `Inquisitor Legacy - Domain Lord`
+	5. `Inquisitor Legacy - Judge`
+	6. `Inquisitor Legacy - Tactician` (replaces `Tactician Legacy - Isekai Tactician`)
+	7. `Paladin Legacy - Hero of Light` (replaces a legacy of the same name, see Fixed below for more details)
+	8. `Witch Legacy - Pactmaker`
+	9. `Bloodrager Legacy - Chimeric Rager`
+	10. `Player Legacy - Computer Nerd`
+	11. `Player Legacy - Part Timer`
+- legacy selection for `God Emperor`
+
+### Changed
+- `Dual Legacy` feature restricted to require IP as a class so people that jsut use the OP feats through mythic feats don't accidentally pick it
+- `Dual Legacy` now requires at least level 5
+- `Dual Legacy` removed from special powers selection,now can only be gained through `Overpowered Ability`
+- added more restrictions on what is available for each archetype as a legacy and added a toggle so people can choose if they actually want to enforce that restriction on the dual legacy
+- properly added restrictions on overlapping archetypes(bard with skald, skald with bard and barbarian, fighter subtypes, etc.)
+- old versions of `Paladin Legacy - Hero of Light` and `Tactician Legacy - Isekai Tactician` removed from the selection so people don't accidentally pick them instead of the new buffed versions replacing them, the progressions themself are still there to ensure downwards compatibility for people already using them
+
+### Fixed
+- old `Paladin Legacy - Hero of Light` legacy bug fixed as much as possible so people should be able to use it without having to use a respec mod on it
+- fixed restrictions on `Channel Energy` so neutral characters actually can pick rather than get nothing
+- shaman legacy capstone is part of the legacy again if TabletopTweaks-Base is installed and the feature is enabled
+
 # [Unreleased]
 ### Added
 - Added `Meta Luck` OP ability.

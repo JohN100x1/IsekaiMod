@@ -107,6 +107,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             InquisitorTacticianLegacy.Configure();
             InquisitorJudgeLegacy.Configure();
             InquisitorDomainLordLegacy.Configure();
+            BloodragerChimeraLegacy.Configure();
+            PlayerComputerNerdLegacy.Configure();
+            PlayerPartTimeWorkerLegacy.Configure();
             //always do this last to ensure any legacy that might get an arcana goes before
             ArcanaSelection.Configure();
             OverpoweredAbilitySelection.AddToSelection(GetOverwhelmingFeature());
@@ -141,6 +144,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             InquisitorTacticianLegacy.PatchProgression();
             InquisitorJudgeLegacy.PatchProgression();
             InquisitorDomainLordLegacy.PatchProgression();
+            BloodragerChimeraLegacy.PatchProgression();
+            PlayerComputerNerdLegacy.PatchProgression();
+            PlayerPartTimeWorkerLegacy.PatchProgression();
 
             VillainLegacySelection.Finish();
             EdgeLordLegacySelection.Finish();

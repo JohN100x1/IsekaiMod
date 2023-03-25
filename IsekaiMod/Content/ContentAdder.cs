@@ -220,6 +220,7 @@ namespace IsekaiMod.Content {
             }
             public static void AddIsekaiHeritages() {
                 // Add Heritages
+                Heritages.HumanHeritageSelection.CreateDummy();
                 Heritages.IsekaiSuccubusHeritage.Add();
                 Heritages.IsekaiAngelHeritage.Add();
                 Heritages.IsekaiVampireHeritage.Add();
@@ -228,6 +229,8 @@ namespace IsekaiMod.Content {
                 Heritages.IsekaiHighElfHeritage.Add();
                 Heritages.IsekaiWoodElfHeritage.Add();
                 Heritages.IsekaiFurryHeritage.Add();
+
+                Heritages.HumanIsekaiHighHumanLegacy.Add();
 
                 // Patch Heritages
                 Heritages.ElfHeritagePatcher.Patch();
@@ -283,6 +286,8 @@ namespace IsekaiMod.Content {
             Main.LogDebug("Postfix Patching: Start");
             Deities.IsekaiDeitySelection.PatchDeitySelection();
             Main.LogDebug("Postfix Patching: Deities fixed");
+
+            if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Heritages")) Heritages.HumanHeritageSelection.Patch();
 
             if (IsekaiContext.AddedContent.Isekai.IsDisabled("Isekai Protagonist")) return;
 
