@@ -24,6 +24,8 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
     internal class SummonCalamity {
+        private const string StandardSummonDescription = "Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} "
+            + "{g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability."
 
         // Units
         private static readonly BlueprintUnit Devastator = BlueprintTools.GetBlueprint<BlueprintUnit>("99c16c4360534129b45706841a7df3fe");
@@ -51,13 +53,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             var SummonCalamityAbility = CreateSummonAbility("SummonCalamityAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity");
                 bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Devastator, Playful Darkness, Baphomet, Deskari, Nocticula, Mephistopheles, or Areshkagal."
-                    + "Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. "
-                    + "They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                    + StandardSummonDescription);
             });
             var SummonDevastator = CreateSummonAbility("SummonDevastator", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity (Devastator)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Devastator. Summoned monsters appear where you designate and act according to their "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Devastator. " + StandardSummonDescription);
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = Devastator.ToReference<BlueprintUnitReference>();
@@ -66,8 +66,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var SummonPlayfulDarkness = CreateSummonAbility("SummonPlayfulDarkness", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity (Playful Darkness)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Playful Darkness. Summoned monsters appear where you designate and act according to their "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Playful Darkness. " + StandardSummonDescription);
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = PlayfulDarkness.ToReference<BlueprintUnitReference>();
@@ -76,8 +75,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var SummonBaphomet = CreateSummonAbility("SummonBaphomet", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity (Baphomet)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Baphomet. Summoned monsters appear where you designate and act according to their "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Baphomet. " + StandardSummonDescription);
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = Baphomet.ToReference<BlueprintUnitReference>();
@@ -86,8 +84,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var SummonDemonLordDeskari = CreateSummonAbility("SummonDemonLordDeskari", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity (Deskari)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Deskari. Summoned monsters appear where you designate and act according to their "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Deskari. " + StandardSummonDescription);
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = DemonLordDeskari.ToReference<BlueprintUnitReference>();
@@ -96,8 +93,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var SummonDemonNocticula = CreateSummonAbility("SummonDemonNocticula", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity (Nocticula)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Nocticula. Summoned monsters appear where you designate and act according to their "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Nocticula. " + StandardSummonDescription);
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = Nocticula.ToReference<BlueprintUnitReference>();
@@ -106,8 +102,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var SummonDemonMephistopheles = CreateSummonAbility("SummonDemonMephistopheles", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity (Mephistopheles)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Archdevil Mephistopheles. Summoned monsters appear where you designate and act according to their "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Archdevil Mephistopheles. " + StandardSummonDescription);
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = Mephistopheles.ToReference<BlueprintUnitReference>();
@@ -116,8 +111,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var SummonAreshkagal = CreateSummonAbility("SummonAreshkagal", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity (Areshkagal)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Areshkagal. Summoned monsters appear where you designate and act according to their "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Areshkagal. " + StandardSummonDescription);
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = Areshkagal.ToReference<BlueprintUnitReference>();
@@ -126,8 +120,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var SummonCalamityFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SummonCalamityFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity");
-                bp.SetDescription(IsekaiContext, "As a full action, you summon a powerful being to bring calamity. You can summon one of the following: Devastator, Playful Darkness, "
-                    + "Baphomet, Deskari, Nocticula, Mephistopheles, or Areshkagal.");
+                bp.SetDescription(IsekaiContext, "There is nothing you cannot summon. Your commands are absolute; your calls are heeded. "
+                    + "Even demon lords show no negligence... and tremblingly obey."
+                    + "\nBenefit: As a full action, you summon a powerful being to bring calamity. "
+                    + "You can summon one of the following: Devastator, Playful Darkness, Baphomet, Deskari, Nocticula, Mephistopheles, or Areshkagal.");
                 bp.m_Icon = Icon_SummonMonsterIX;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { SummonCalamityAbility.ToReference<BlueprintUnitFactReference>() };
