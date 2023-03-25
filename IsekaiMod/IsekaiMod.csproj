@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <!-- any TTW Based Mod -->
+    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\BloodragerChimeraLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\DruidBaseLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\Fighter2HandedLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\FighterShieldLegacy.cs" />
@@ -171,6 +172,8 @@
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\InquisitorJudgeLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\InquisitorTacticianLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\PaladinBaseLegacy.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\PlayerComputerNerdLegacy.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\PlayerPartTimeWorkerLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\WitchBaseLegacy.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="UMMSettingsUI.cs" />

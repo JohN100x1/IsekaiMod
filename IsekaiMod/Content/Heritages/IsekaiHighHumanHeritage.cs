@@ -1,23 +1,17 @@
-﻿using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
-using Kingmaker.Designers.Mechanics.Buffs;
-using Kingmaker.Designers.Mechanics.Facts;
+﻿using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics.Components;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Heritages {
-    internal class HumanIsekaiHighHumanLegacy {
+    internal class IsekaiHighHumanHeritage {
 
         public static void Add() {
             var ourHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "HumanIsekaiHighHumanLegacy", bp => {
                 bp.SetName(IsekaiContext, "Isekai High Human");
-                bp.SetDescription(IsekaiContext, 
-                    "TBD");               
+                bp.SetDescription(IsekaiContext, "TBD");
 
                 // Attributes
                 bp.AddComponent<AddStatBonus>(c => {
