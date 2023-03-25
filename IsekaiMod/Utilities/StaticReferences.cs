@@ -216,7 +216,7 @@ namespace IsekaiMod.Utilities {
 
         public static void PatchProgressionFeaturesBasedOnReferenceClass(BlueprintProgression prog, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass) {
             var features = new HashSet<BlueprintFeatureBase>();
-            foreach (LevelEntry levelEntry in prog.LevelEntries) { 
+            foreach (LevelEntry levelEntry in prog.LevelEntries) {
                 foreach (var levelitem in levelEntry.Features) {
                     if (!features.Contains(levelitem)) { features.Add(levelitem); }
                 }
@@ -273,7 +273,6 @@ namespace IsekaiMod.Utilities {
                                 }
                             }
                         }
-
                     }
                 }
                 if (feature is BlueprintFeatureSelection selection) {
