@@ -120,7 +120,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var SummonCalamityFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SummonCalamityFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity");
-                bp.SetDescription(IsekaiContext, "There is nothing you cannot summon. Your commands are absolute; your calls are heeded. "
+                bp.SetDescription(IsekaiContext, "There is nothing you cannot summon. Your calls are heeded; your commands are absolute. "
                     + "Even demon lords show no negligence... and tremblingly obey."
                     + "\nBenefit: As a full action, you summon a powerful being to bring calamity. "
                     + "You can summon one of the following: Devastator, Playful Darkness, Baphomet, Deskari, Nocticula, Mephistopheles, or Areshkagal.");
