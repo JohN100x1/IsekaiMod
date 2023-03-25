@@ -25,7 +25,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
     internal class SummonCalamity {
         private const string StandardSummonDescription = "Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} "
-            + "{g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability."
+            + "{g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.";
 
         // Units
         private static readonly BlueprintUnit Devastator = BlueprintTools.GetBlueprint<BlueprintUnit>("99c16c4360534129b45706841a7df3fe");
