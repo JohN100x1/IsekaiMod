@@ -2,7 +2,6 @@
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
-using Steamworks;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
@@ -49,7 +48,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
             if (IsekaiContext.AddedContent.Other.IsDisabled("Relax Legacy Choices")) {
                 BlueprintArchetypeReference myRef = Classes.IsekaiProtagonist.Archetypes.GodEmperor.GetReference();
                 foreach (BlueprintFeature feature in prohibited) {
-                    feature.AddComponent<PrerequisiteNoArchetype>(c => { c.m_Archetype = myRef; });
+                    feature.AddComponent<PrerequisiteNoArchetype>(c => { 
+                        c.m_Archetype = myRef;
+                        c.m_CharacterClass = Classes.IsekaiProtagonist.IsekaiProtagonistClass.GetReference();
+                    });
                 }
             }
         }
