@@ -39,6 +39,7 @@ namespace IsekaiMod.Content.Dialogue {
                     c.m_flag = Horgus_GetMeOut_price.ToReference<BlueprintUnlockableFlagReference>();
                     c.flagValue = 2000;
                 });
+                bp.Answers = AnswersList_0009.Answers;
             });
             // Answer
             var IsekaiDialogueHorgus = ThingsNotHandledByTTTCore.CreateAnswer("IsekaiDialogueHorgus", bp => {
@@ -61,7 +62,7 @@ namespace IsekaiMod.Content.Dialogue {
             });
 
             // Ptach "Two Thousand gold." answer in dialogue
-            Answer_0011.ShowConditions.Conditions.AppendToArray(
+            Answer_0011.ShowConditions.Conditions = Answer_0011.ShowConditions.Conditions.AppendToArray(
                 new AnswerSelected() {
                     Not = true,
                     m_Answer = IsekaiDialogueHorgus.ToReference<BlueprintAnswerReference>()
