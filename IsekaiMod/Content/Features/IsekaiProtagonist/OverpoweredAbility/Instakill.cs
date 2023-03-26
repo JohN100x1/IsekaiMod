@@ -28,7 +28,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         public static void Add() {
             var InstakillAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "InstakillAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Instakill");
-                bp.SetDescription(IsekaiContext, "Kills the targeted creature if they fail a DC 99 fortitude saving throw, otherwise they are stunned for 1 round. "
+                bp.SetDescription(IsekaiContext, "Who will live and who will die? This power to change fate lay within your hands. Will you use this power sparingly? "
+                    + "Or will you become god of the new world?"
+                    + "\nBenefit: Kills the targeted creature if they fail a DC 99 fortitude saving throw, otherwise they are stunned for 1 round. "
                     + "This ability bypasses death immunity.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<ContextActionSavingThrow>(c => {
@@ -77,7 +79,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var InstakillFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "InstakillFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Instakill");
-                bp.SetDescription(IsekaiContext, "You can kill any creature if they fail a DC 99 fortitude saving throw, otherwise they are stunned for 1 round. "
+                bp.SetDescription(IsekaiContext, "Who will live and who will die? This power to change fate lay within your hands. Will you use this power sparingly? "
+                    + "Or will you become god of the new world?"
+                    + "\nBenefit: Kills the targeted creature if they fail a DC 99 fortitude saving throw, otherwise they are stunned for 1 round. "
                     + "This ability bypasses death immunity.");
                 bp.m_Icon = Icon_TwoHandedFighterDevastatingBlow;
                 bp.AddComponent<AddFacts>(c => {
