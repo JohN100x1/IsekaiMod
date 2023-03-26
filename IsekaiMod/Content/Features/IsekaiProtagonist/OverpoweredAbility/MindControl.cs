@@ -61,9 +61,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var MindControlAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "MindControlAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Mind Control");
-                bp.SetDescription(IsekaiContext, "You can make any creature fight on your side as if it was your ally. "
-                    + "It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its ability.\n"
-                    + " They will not resist.");
+                bp.SetDescription(IsekaiContext, "Behold the power of a king! All will listen and obey!"
+                    + "\nBenefit: You can make any creature fight on your side as if it was your ally. "
+                    + "It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its ability.");
                 bp.m_Icon = Icon_Mind_Control;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<Conditional>(c => {
@@ -106,9 +106,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var MindControlFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "MindControlFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Mind Control");
-                bp.SetDescription(IsekaiContext, "You can make any creature fight on your side as if it was your ally. "
-                    + "It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its ability.\n"
-                    + " They will not resist.");
+                bp.SetDescription(IsekaiContext, "Behold the power of a king! All will listen and obey!"
+                    + "\nBenefit: You can make any creature fight on your side as if it was your ally. "
+                    + "It will {g|Encyclopedia:Attack}attack{/g} your opponents to the best of its ability.");
                 bp.m_Icon = Icon_Mind_Control;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { MindControlAbility.ToReference<BlueprintUnitFactReference>() };
