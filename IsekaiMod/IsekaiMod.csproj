@@ -62,15 +62,8 @@
     <Publicise InputAssemblies="@(PubliciseUniRx)" OutputPath="$(SolutionDir)lib/" PubliciseCompilerGenerated="true" />
     <Publicise InputAssemblies="@(PubliciseRuntimeUI)" OutputPath="$(SolutionDir)lib/" PubliciseCompilerGenerated="true" />
   </Target>
-  <Target Name="Publicize" AfterTargets="Clean">
-    <ItemGroup>
-      <Assemblies Include="$(WrathPath)\Wrath_Data\Managed\Assembly-CSharp.dll" />
-      <PublicAssembly Include="$(SolutionDir)\lib\Assembly-CSharp_public.dll" />
-      <RenamedAssembly Include="$(SolutionDir)\lib\Assembly-CSharp.dll" />
-    </ItemGroup>
-    <RemoveDir Directories="$(SolutionDir)lib/" />
-    <PublicizeTask InputAssemblies="@(Assemblies)" OutputDir="$(SolutionDir)lib/" />
-    <Move SourceFiles="@(PublicAssembly)" DestinationFiles="@(RenamedAssembly)" />
+  <Target Name="RenameAssembly" AfterTargets="Publicise" Condition="Exists('$(SolutionDir)lib/Assembly-CSharp_public.dll')">
+    <Move SourceFiles="$(SolutionDir)lib/Assembly-CSharp_public.dll" DestinationFiles="$(SolutionDir)\lib\Assembly-CSharp.dll" />
   </Target>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
