@@ -578,6 +578,10 @@
     "IsekaiKaylessaDrowLeader": "6bea7b0f-8b20-43ac-87a3-8ec8cd6615ae",
     "IsekaiDialogueHorgusReply": "4f6ce8ab-dea7-46bd-9bcc-c40b634b5a95",
     "IsekaiDialogueHorgus": "168a41f4-4099-4231-a41e-7b5eba064ab0",
+    "IsekaiDialogueMinaghoSeelahReply": "22f89628-f708-4322-969c-483de01313d5",
+    "IsekaiDialogueMinaghoCamelliaReply": "9bfd01aa-1441-4bd0-acbe-4cd8418591c4",
+    "IsekaiDialogueMinaghoIrabethReply": "c2e7cf67-c86c-4fa9-9b97-7616dbbca40f",
+    "IsekaiDialogueMinagho": "2da45ce0-6612-4b02-9b9f-9945b5be2e20",
 
     //AddedDefinitions
     "AeonSpellsKnown": "6f77b957-9ebc-4f98-b5f4-28837ddd300d",
