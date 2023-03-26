@@ -45,12 +45,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.IgnorePrerequisites = false;
                 bp.m_AllFeatures = new BlueprintFeatureReference[0];
                 bp.m_Features = new BlueprintFeatureReference[0];
-                bp.AddPrerequisite<PrerequisiteClassLevel>(c => { c.m_CharacterClass = Classes.IsekaiProtagonist.IsekaiProtagonistClass.GetReference();
-                    c.Level = 5;
-                });
             });
             AbilitySelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = AbilitySelection.ToReference<BlueprintFeatureReference>(); });
-
 
             VillainLegacySelection.Configure();
             EdgeLordLegacySelection.Configure();
@@ -148,10 +144,18 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             PlayerComputerNerdLegacy.PatchProgression();
             PlayerPartTimeWorkerLegacy.PatchProgression();
 
+            LegacySelection.Finish();
             VillainLegacySelection.Finish();
             EdgeLordLegacySelection.Finish();
             HeroLegacySelection.Finish();
             GodEmperorLegacySelection.Finish();
+        }
+
+        public static void Finish() {
+            AbilitySelection.AddPrerequisite<PrerequisiteClassLevel>(c => {
+                c.m_CharacterClass = Classes.IsekaiProtagonist.IsekaiProtagonistClass.GetReference();
+                c.Level = 5;
+            });
         }
     }
 }
