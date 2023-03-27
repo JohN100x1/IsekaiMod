@@ -21,7 +21,8 @@ namespace IsekaiMod.Content.Dialogue {
              */
             // Answer
             var IsekaiDialogueAneviaReply2 = ThingsNotHandledByTTTCore.CreateCue("IsekaiDialogueAneviaReply2", bp => {
-                bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiDialogueAneviaReply2.Text", "\"Don't let Irabeth catch you saying that, or you might not be able to ask that again.\"");
+                bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiDialogueAneviaReply2.Text",
+                    "\"Also, for no particular reason, would you be interested in a spare of coffin I have lying around?\"");
                 bp.Speaker = new DialogSpeaker() {
                     m_Blueprint = null,
                     MoveCamera = true
@@ -29,7 +30,7 @@ namespace IsekaiMod.Content.Dialogue {
                 bp.Answers = AnswersList_0003.Answers;
             });
             var IsekaiDialogueAneviaReply = ThingsNotHandledByTTTCore.CreateCue("IsekaiDialogueAneviaReply", bp => {
-                bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiDialogueAneviaReply.Text", "...");
+                bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiDialogueAneviaReply.Text", "Sure thing, only if you can convince Irabeth to join.");
                 bp.Speaker = new DialogSpeaker() {
                     m_Blueprint = null,
                     MoveCamera = true
