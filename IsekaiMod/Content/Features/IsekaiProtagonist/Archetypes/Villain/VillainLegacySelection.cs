@@ -48,9 +48,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain {
                 ClassSelection.AddFeatures(feature);
             }
             if (IsekaiContext.AddedContent.Other.IsDisabled("Relax Legacy Choices")) {
+                BlueprintArchetypeReference archetypeRef = Classes.IsekaiProtagonist.Archetypes.Villain.GetReference();
                 foreach (BlueprintFeature feature in prohibited) {
                     feature.AddComponent<PrerequisiteNoArchetype>(c => { 
-                        c.m_Archetype = Classes.IsekaiProtagonist.Archetypes.Villain.GetReference();
+                        c.m_Archetype = archetypeRef;
                         c.m_CharacterClass = Classes.IsekaiProtagonist.IsekaiProtagonistClass.GetReference();
                     });
                 }
