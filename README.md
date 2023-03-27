@@ -215,7 +215,8 @@ Exception to this is the God Emperor as all options that were changed were not p
 - New Dialogue
 	- Prologue, speaking with Hulrun at Kenabres Festival.
 	- Prologue, speaking with Horgus at Neathholm.
-	- Act 1, Shield Maze after finding Radiance.
+	- Prologue, after finding Radiance in the Shield Maze.
+	- Act 1, first encounter with Minagho in Gray Garrison.
 	- Random encounter, during drow ambush.
 
 ### Isekai Protagonist Spell progression
