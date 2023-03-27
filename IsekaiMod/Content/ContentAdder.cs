@@ -218,6 +218,7 @@ namespace IsekaiMod.Content {
                 Dialogue.IsekaiKaylessaDrowLeader.Add();
                 Dialogue.IsekaiHorgus.Add();
                 Dialogue.IsekaiMinagho.Add();
+                Dialogue.IsekaiAnevia.Add();
             }
             public static void AddIsekaiHeritages() {
                 // Add Heritages

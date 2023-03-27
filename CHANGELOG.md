@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Meta Luck` OP ability.
 - Added Isekai Protagonist dialogue with Horgus when asking for help escaping the Kenabres caves.
 - Added Isekai Protagonist dialogue to insult Minagho during first encounter in Gray Garrison.
+- Added Isekai Protagonist dialogue with Anevia in the Bad Luck Tavern.
 - Added UMM option to change the default clothes on the Isekai Protagonist Class.
 - Added new legacies:
 	1. `Druid Legacy - Nature Mage`

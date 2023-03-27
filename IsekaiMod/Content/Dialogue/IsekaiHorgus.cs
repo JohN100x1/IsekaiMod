@@ -29,8 +29,8 @@ namespace IsekaiMod.Content.Dialogue {
             // Reply
             var IsekaiDialogueHorgusReply = ThingsNotHandledByTTTCore.CreateCue("IsekaiDialogueHorgusReply", bp => {
                 bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiDialogueHorgusReply.Text",
-                    "My daughter? {n}Horgus takes a quick glance at Camellia.{/n} I don't think you know what sort of person she is. {n}Horgus takes a breath.{/n} "
-                    + "Regardless, it seems my previous offer was somewhat insulting. Two thousand gold it is.");
+                    "\"My daughter?\" {n}Horgus takes a quick glance at Camellia.{/n} \"I don't think you know what sort of person she is. {n}Horgus takes a breath.{/n} "
+                    + "Regardless, it seems my previous offer was somewhat insulting. Two thousand gold it is.\"");
                 bp.Speaker = new DialogSpeaker() {
                     m_Blueprint = Horgus.ToReference<BlueprintUnitReference>(),
                     MoveCamera = true
