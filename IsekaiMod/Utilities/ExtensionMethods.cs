@@ -1,6 +1,7 @@
 ﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.DialogSystem.Blueprints;
 using Kingmaker.Localization;
 using System;
 using TabletopTweaks.Core.ModLogic;
@@ -12,7 +13,7 @@ namespace IsekaiMod.Utilities {
 
         public static void SetLocalisedName(this BlueprintUnit Unit, ModContextBase modContext, string name) {
             Unit.LocalizedName = ScriptableObject.CreateInstance<SharedStringAsset>();
-            Unit.LocalizedName.String = Helpers.CreateString(modContext, Unit.LocalizedName + "LocalizedName", name);
+            Unit.LocalizedName.String = Helpers.CreateString(modContext, $"{Unit.LocalizedName}.LocalizedName", name);
         }
 
         public static void AddToSelection(this BlueprintFeatureSelection selection, BlueprintFeature feature) {
@@ -21,6 +22,13 @@ namespace IsekaiMod.Utilities {
 
         public static void RemoveFromSelection(this BlueprintFeatureSelection selection, BlueprintFeature feature) {
             selection.m_AllFeatures = selection.m_AllFeatures.RemoveFromArray(feature.ToReference<BlueprintFeatureReference>());
+        }
+
+        public static void SetText(this BlueprintCue Cue, ModContextBase modContext, string name) {
+            Cue.Text = Helpers.CreateString(modContext, $"{Cue.name}.Text", name);
+        }
+        public static void SetText(this BlueprintAnswer Cue, ModContextBase modContext, string name) {
+            Cue.Text = Helpers.CreateString(modContext, $"{Cue.name}.Text", name);
         }
 
         public static void AddToFirst(this BlueprintFeatureSelection selection, BlueprintFeature feature) {
