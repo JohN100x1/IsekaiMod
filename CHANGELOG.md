@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-# [Unreleased]
+# [4.3.0] - 2023-03-28
 ### Added
 - Added `Meta Luck` OP ability.
 - Added Isekai Protagonist dialogue with Horgus when asking for help escaping the Kenabres caves.
@@ -40,6 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `Edge Lord`'s `Fast Movement` obtained from level 7 -> 8.
 - Changed `God Emperor`'s `Aura Of Divine Fury` obtained from level 15 -> 14.
 - Changed `God Emperor`'s `Armor Saint` obtained from level 5 -> 4.
+- Replaced feature name/descriptions with existing base game localisaed strings to reduce mod localisation.
 - Updated description for `Infinite Space` OP ability.
 - Updated description for `Instakill` OP ability.
 - Updated description for `Mind Control` OP ability.
