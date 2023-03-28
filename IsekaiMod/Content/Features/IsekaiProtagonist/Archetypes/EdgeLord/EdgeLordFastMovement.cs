@@ -14,7 +14,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord {
         public static void Add() {
             var EdgeLordFastMovement = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "EdgeLordFastMovement", bp => {
                 bp.SetName(IsekaiContext, "Very Fast Movement");
-                bp.SetDescription(IsekaiContext, "At 7th level, you gain an +20 {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g}.");
+                bp.SetDescription(IsekaiContext, "At 8th level, you gain an +20 {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g}.");
                 bp.m_Icon = Icon_FastMovement;
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.UntypedStackable;

@@ -6,8 +6,10 @@ using Kingmaker.Blueprints.Root;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Enums;
 using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
+using Kingmaker.ResourceManagement;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Alignments;
@@ -15,14 +17,12 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using TabletopTweaks.Core.ModLogic;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Utilities {
 
-    //Classname is a partial lie, some are just not handled well *coughs*
     internal class ThingsNotHandledByTTTCore {
         public static void RegisterClass(BlueprintCharacterClass classToRegister) {
             var existingClasses = ClassTools.Classes.AllClasses;
@@ -71,6 +71,26 @@ namespace IsekaiMod.Utilities {
                 bp.OnSelect = ActionFlow.DoNothing();
                 bp.FakeChecks = new CheckData[0];
                 bp.AlignmentShift = new AlignmentShift() { Direction = AlignmentShiftDirection.TrueNeutral, Value = 0, Description = new LocalizedString() };
+            });
+            init?.Invoke(result);
+            return result;
+        }
+        public static BlueprintCue CreateCue(string name, Action<BlueprintCue> init = null) {
+            var result = Helpers.CreateBlueprint<BlueprintCue>(IsekaiContext, name, bp => {
+                bp.ShowOnce = false;
+                bp.ShowOnceCurrentDialog = false;
+                bp.Conditions = ActionFlow.EmptyCondition();
+                bp.Experience = DialogExperience.NoExperience;
+                bp.TurnSpeaker = true;
+                bp.Animation = DialogAnimation.None;
+                bp.OnShow = ActionFlow.DoNothing();
+                bp.OnStop = ActionFlow.DoNothing();
+                bp.AlignmentShift = new AlignmentShift() { Direction = AlignmentShiftDirection.TrueNeutral, Value = 0, Description = new LocalizedString() };
+                bp.Answers = new List<BlueprintAnswerBaseReference>();
+                bp.Continue = new CueSelection() {
+                    Cues = new List<BlueprintCueBaseReference>(),
+                    Strategy = Strategy.First
+                };
             });
             init?.Invoke(result);
             return result;
@@ -126,9 +146,35 @@ namespace IsekaiMod.Utilities {
     }
 
     internal class AssetLoaderExtension : AssetLoader {
+        public static Sprite LoadPortrait(string imagePath, string file, Vector2Int size) {
+            return Image2SpriteExtension.Create(Path.Combine(imagePath, file), size);
+        }
 
-        public static Sprite LoadInternal(ModContextBase modContext, string folder, string file, Vector2Int size) {
-            return Image2SpriteExtension.Create($"{modContext.ModEntry.Path}Assets{Path.DirectorySeparatorChar}{folder}{Path.DirectorySeparatorChar}{file}", size);
+        public static PortraitData LoadPortraitData(string folder) {
+            var imageFolderPath = Path.Combine(IsekaiContext.ModEntry.Path, "Assets", "Portraits", folder);
+            var smallImagePath = Path.Combine(imageFolderPath, "Small.png");
+            var mediumImagePath = Path.Combine(imageFolderPath, "Medium.png");
+            var fullImagePath = Path.Combine(imageFolderPath, "FullLength.png");
+            var smallPortraitHandle = new CustomPortraitHandle(smallImagePath, PortraitType.SmallPortrait, CustomPortraitsManager.Instance.Storage) {
+                Request = new SpriteLoadingRequest(smallImagePath) {
+                    Resource = Image2SpriteExtension.Create(smallImagePath, new Vector2Int(185, 242))
+                }
+            };
+            var mediumPortraitHandle = new CustomPortraitHandle(mediumImagePath, PortraitType.HalfLengthPortrait, CustomPortraitsManager.Instance.Storage) {
+                Request = new SpriteLoadingRequest(mediumImagePath) {
+                    Resource = Image2SpriteExtension.Create(mediumImagePath, new Vector2Int(330, 432))
+                }
+            };
+            var fullPortraitHandle = new CustomPortraitHandle(fullImagePath, PortraitType.FullLengthPortrait, CustomPortraitsManager.Instance.Storage) {
+                Request = new SpriteLoadingRequest(fullImagePath) {
+                    Resource = Image2SpriteExtension.Create(fullImagePath, new Vector2Int(692, 1024))
+                }
+            };
+            return new PortraitData(folder) {
+                SmallPortraitHandle = smallPortraitHandle,
+                HalfPortraitHandle = mediumPortraitHandle,
+                FullPortraitHandle = fullPortraitHandle
+            };
         }
 
         public static class Image2SpriteExtension {

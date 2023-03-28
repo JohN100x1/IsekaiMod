@@ -124,7 +124,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Point;
                 bp.ActionType = UnitCommand.CommandType.Swift;
                 bp.AvailableMetamagic = Metamagic.Extend | Metamagic.Heighten | Metamagic.Reach;
-                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "Until the target of the Mark is dead");
+                bp.LocalizedDuration = StaticReferences.Strings.Duration.UntilTargetOfSmiteIsDead;
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
             var TrueMarkFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "TrueMarkFeature", bp => {

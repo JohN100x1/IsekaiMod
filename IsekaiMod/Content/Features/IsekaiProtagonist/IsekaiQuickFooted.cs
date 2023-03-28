@@ -15,7 +15,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         public static void Add() {
             var IsekaiQuickFooted = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiQuickFooted", bp => {
                 bp.SetName(IsekaiContext, "Quick-Footed");
-                bp.SetDescription(IsekaiContext, "At 15th level, you gain a competence {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}checks{/g} equal to your {g|Encyclopedia:Charisma}Charisma{/g} modifier.");
+                bp.SetDescription(IsekaiContext, "At 16th level, you gain a competence {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}checks{/g} equal to your {g|Encyclopedia:Charisma}Charisma{/g} modifier.");
                 bp.m_Icon = Icon_ExpeditiousRetreat;
                 bp.AddComponent<DerivativeStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Competence;

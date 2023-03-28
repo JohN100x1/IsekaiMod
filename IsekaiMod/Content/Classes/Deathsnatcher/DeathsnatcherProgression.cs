@@ -1,6 +1,7 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Localization;
 using System.Collections.Generic;
 using System.Linq;
 using TabletopTweaks.Core.Utilities;
@@ -32,8 +33,8 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
 
             // Deathsnatcher Level Progression
             var DeathsnatcherCompanionProgression = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "DeathsnatcherCompanionProgression", bp => {
-                bp.SetName(IsekaiContext, "");
-                bp.SetDescription(IsekaiContext, "");
+                bp.SetName(new LocalizedString());
+                bp.SetDescription(new LocalizedString());
                 bp.IsClassFeature = true;
                 bp.m_FeaturesRankIncrease = new List<BlueprintFeatureReference>();
                 bp.m_Archetypes = new BlueprintProgression.ArchetypeWithLevel[0];
@@ -58,7 +59,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
 
             // Deathsnatcher Class Progression
             var DeathsnatcherClassProgression = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "DeathsnatcherClassProgression", bp => {
-                bp.SetName(IsekaiContext, "");
+                bp.SetName(new LocalizedString());
                 bp.SetDescription(IsekaiContext, "This bipedal jackal has vulture wings and a rat tail ending in a scorpion’s stinger. Each of its four arms ends in a clawed hand.");
                 bp.IsClassFeature = true;
                 bp.m_FeaturesRankIncrease = new List<BlueprintFeatureReference>();

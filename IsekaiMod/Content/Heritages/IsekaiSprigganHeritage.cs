@@ -1,8 +1,6 @@
-﻿using HarmonyLib;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
@@ -112,7 +110,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.Groups = new FeatureGroup[0];
             });
 
-            StaticReferences.Selections.GnomeHeritageSelection.AddToSelection(IsekaiSprigganHeritage);
+            FeatTools.Selections.GnomeHeritageSelection.AddToSelection(IsekaiSprigganHeritage);
         }
     }
 }

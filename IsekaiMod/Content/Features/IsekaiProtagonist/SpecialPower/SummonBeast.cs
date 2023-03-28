@@ -124,7 +124,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Quicken;
                 bp.m_IsFullRoundAction = true;
-                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "1 round/level");
+                bp.LocalizedDuration = StaticReferences.Strings.Duration.OneRoundPerLevel;
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
             init?.Invoke(result);

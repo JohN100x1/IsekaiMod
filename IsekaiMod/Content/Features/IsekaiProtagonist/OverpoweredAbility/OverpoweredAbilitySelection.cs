@@ -45,7 +45,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var OverpoweredAbilityMythicSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilityMythicSelection", bp => {
                 bp.SetName(IsekaiContext, "Mythic Overpowered Ability");
-                bp.SetDescription(IsekaiContext, "You use your mythic powers to gain an additional Overpowered Ability.");
+                bp.SetDescription(IsekaiContext, "You use your mythic powers to gain an additional Overpowered Ability.\nSource: Isekai Mod");
                 bp.m_Icon = Icon_TrickFate;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -53,7 +53,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.m_Features = new BlueprintFeatureReference[0];
             });
 
-            // If MultipleMythicOPAbility setting is disabled, Mythic Overpowered Ability can only be selected once
+            // If MultipleMythicOPAbility is disabled, Mythic Overpowered Ability can only be selected once
             if (!IsekaiContext.AddedContent.MultipleMythicOPAbility) {
                 OverpoweredAbilityMythicSelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = OverpoweredAbilityMythicSelection.ToReference<BlueprintFeatureReference>(); });
             }
@@ -66,7 +66,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             }
 
-            StaticReferences.Selections.MythicAbilitySelection.AddToSelection(OverpoweredAbilityMythicSelection);
+            FeatTools.Selections.MythicAbilitySelection.AddToSelection(OverpoweredAbilityMythicSelection);
+            FeatTools.Selections.ExtraMythicAbilityMythicFeat.AddToSelection(OverpoweredAbilityMythicSelection);
         }
 
         public static void AddToSelection(BlueprintFeature feature) {
@@ -76,7 +77,18 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionVillain"),
                 BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilityMythicSelection"),
             };
-            foreach(BlueprintFeatureSelection selection in OverpoweredAbilitySelections) {
+            foreach (BlueprintFeatureSelection selection in OverpoweredAbilitySelections) {
+                selection.m_Features = selection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+                selection.m_AllFeatures = selection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            }
+        }
+        public static void AddToNonMythicSelection(BlueprintFeature feature) {
+            var OverpoweredAbilitySelections = new BlueprintFeatureSelection[] {
+                BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection"),
+                BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2"),
+                BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionVillain"),
+            };
+            foreach (BlueprintFeatureSelection selection in OverpoweredAbilitySelections) {
                 selection.m_Features = selection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
                 selection.m_AllFeatures = selection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
             }

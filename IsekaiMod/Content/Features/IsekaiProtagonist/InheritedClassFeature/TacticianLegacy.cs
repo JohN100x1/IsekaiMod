@@ -13,7 +13,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static void Configure() {
             var prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "TacticianLegacy", bp => {
                 bp.SetName(IsekaiContext, "Tactician Legacy - Isekai Tactician");
-                bp.SetDescription(IsekaiContext, "You are used to telling people what to do. \nYou were the tactician who led your guild to first kill Onyxia. \nThis, as far as you are concerned, is just another raid to conquer with your brilliant tactics and perfect preparation...");
+                bp.SetDescription(IsekaiContext, "Deprecated");
                 bp.GiveFeaturesForPreviousLevels = true;
                 bp.IsClassFeature = true;
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
@@ -38,10 +38,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateUIGroup(StaticReferences.SoloTactics, StaticReferences.Teamwork, StaticReferences.ForesterTactics, StaticReferences.AnimalTeamwork,StaticReferences.SummonTactics)
                 };
             });
-            LegacySelection.GetClassFeature().AddFeatures(prog);
-            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
-            HeroLegacySelection.getClassFeature().AddFeatures(prog);
-            VillainLegacySelection.getClassFeature().AddFeatures(prog);
         }
     }
 }

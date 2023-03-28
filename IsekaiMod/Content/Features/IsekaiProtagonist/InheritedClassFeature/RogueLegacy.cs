@@ -1,5 +1,7 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
@@ -19,11 +21,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.GiveFeaturesForPreviousLevels = true;
             });
 
-            LegacySelection.GetClassFeature().AddFeatures(prog);
-            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
-
-            EdgeLordLegacySelection.getClassFeature().AddFeatures(prog);
-            VillainLegacySelection.getClassFeature().AddFeatures(prog);
+            LegacySelection.Register(prog);
+            EdgeLordLegacySelection.Register(prog);
+            //HeroLegacySelection.Register(prog);
+            VillainLegacySelection.Register(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
         }
         public static void PatchProgression() {
             if (prog != null) {

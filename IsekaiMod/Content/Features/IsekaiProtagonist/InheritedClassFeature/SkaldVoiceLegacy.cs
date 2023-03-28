@@ -6,6 +6,9 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class SkaldVoiceLegacy {
@@ -22,19 +25,26 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.GiveFeaturesForPreviousLevels = true;
             });
 
-            LegacySelection.GetClassFeature().AddFeatures(prog);
-            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
-            EdgeLordLegacySelection.getClassFeature().AddFeatures(prog);
-            HeroLegacySelection.getClassFeature().AddFeatures(prog);
+            LegacySelection.Register(prog);
+            EdgeLordLegacySelection.Register(prog);
+            HeroLegacySelection.Register(prog);
+            VillainLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
         }
 
         public static void PatchProgression() {
-            //please note that this only patches the knight progression so this only works in combination of the already done patch by the other version
+             
 
             prog = StaticReferences.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.SkaldClass, BaseArchetype, null);
             BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.KineticistClass;
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
             StaticReferences.PatchProgressionFeaturesBasedOnReferenceArchetype(myClass, refClass, BaseArchetype);
+
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BardLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BarbarianLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = SkaldSilverTongueLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = SkaldBaseLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BloodragerChimeraLegacy.Get().ToReference<BlueprintFeatureReference>(); });
         }
 
         public static BlueprintProgression Get() {

@@ -35,6 +35,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             InheritedClassFeature.ExtraBloodlineSelection.Get().AddFeatures(IsekaiArcana);
             InheritedClassFeature.ExtraOracleSelection.Get().AddFeatures(IsekaiArcana);
             InheritedClassFeature.ShamanSelection.Get().AddFeatures(IsekaiArcana);
+            InheritedClassFeature.WitchPatronSelection.Get().AddFeatures(IsekaiArcana);
             StaticReferences.SorcererBloodlineArcanaSelection.AddFeatures(IsekaiArcana);
         }
 

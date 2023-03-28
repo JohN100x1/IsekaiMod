@@ -7,6 +7,7 @@
   "MultipleMythicOPAbility": false,
   "MultipleMythicSpecialPower": false,
   "MergeIsekaiSpellList": false,
+  "IsekaiDefaultClothes": 20,
   "Isekai": {
     "DisableAll": false,
     "Settings": {
@@ -14,6 +15,11 @@
         "Enabled": true,
         "Homebrew": true,
         "Description": "Adds the Isekai Protagonist class."
+      },
+      "Isekai Dialogue": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds extra dialogue for the Isekai Protagonist."
       },
       "Isekai Heritages": {
         "Enabled": true,
@@ -40,6 +46,11 @@
         "Enabled": true,
         "Homebrew": true,
         "Description": "Adds Exceptional feats to feat selection."
+      },
+      "Relax Legacy Choices": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Do not restrict what Legacy choices are available as a second choice by archetype."
       },
       "Mythic Class Feature": {
         "Enabled": true,

@@ -130,8 +130,8 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Point;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = CommandUndeadAbility.AvailableMetamagic;
-                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "1 round/level");
-                bp.LocalizedSavingThrow = Helpers.CreateString(IsekaiContext, $"{bp.name}.SavingThrow", "Will negates (save each round)");
+                bp.LocalizedDuration = StaticReferences.Strings.Duration.OneRoundPerLevel;
+                bp.LocalizedSavingThrow = StaticReferences.Strings.SavingThrow.WillNegatesSaveEachRound;
             });
             var DeathsnatcherCommandUndeadFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherCommandUndeadFeature", bp => {
                 bp.SetName(IsekaiContext, "Command Undead");

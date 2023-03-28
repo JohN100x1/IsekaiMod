@@ -8,11 +8,13 @@ using Kingmaker.Blueprints.Items.Weapons;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
 using Kingmaker.Visual.HitSystem;
 using Kingmaker.Visual.Sound;
+using System.IO;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
 using static IsekaiMod.Main;
@@ -104,11 +106,12 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
                 bp.HideNotAvailibleInUI = true;
             });
             var DeathsnatcherPortrait = Helpers.CreateBlueprint<BlueprintPortrait>(IsekaiContext, "DeathsnatcherPortrait", bp => {
-                bp.Data = new PortraitData();
+                bp.Data = AssetLoaderExtension.LoadPortraitData("Deathsnatcher");
             });
+            // TODO: REMOVE DeathsnatcherFact IN 5.0.0
             var DeathsnatcherFact = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFact", bp => {
-                bp.SetName(IsekaiContext, "DeathsnatcherFact");
-                bp.SetDescription(IsekaiContext, "");
+                bp.SetName(new LocalizedString());
+                bp.SetDescription(new LocalizedString());
                 bp.HideInUI = true;
             });
             var DeathsnatcherUnit = Helpers.CreateBlueprint<BlueprintUnit>(IsekaiContext, "DeathsnatcherUnit", bp => {
@@ -210,10 +213,8 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
                 bp.IsFake = false;
             });
 
-            FullPortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoaderExtension.LoadInternal(IsekaiContext, "Portraits", "DeathsnatcherFull.png", new Vector2Int(692, 1024));
-            HalfPortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoaderExtension.LoadInternal(IsekaiContext, "Portraits", "DeathsnatcherMedium.png", new Vector2Int(330, 432));
-            SmallPortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoaderExtension.LoadInternal(IsekaiContext, "Portraits", "DeathsnatcherSmall.png", new Vector2Int(185, 242));
-            EyePortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoaderExtension.LoadInternal(IsekaiContext, "Portraits", "DeathsnatcherPetEye.png", new Vector2Int(176, 24));
+            var DeathsnatcherPetEyePath = Path.Combine(IsekaiContext.ModEntry.Path, "Assets", "Portraits", "Deathsnatcher", "PetEye.png");
+            EyePortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoaderExtension.Image2SpriteExtension.Create(DeathsnatcherPetEyePath, new Vector2Int(176, 24));
 
             var DeathsnatcherFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFeature", bp => {
                 bp.SetName(IsekaiContext, "Deathsnatcher");

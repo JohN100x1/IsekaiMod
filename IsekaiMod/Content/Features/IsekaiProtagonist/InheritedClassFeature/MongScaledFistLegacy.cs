@@ -1,5 +1,6 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
@@ -31,19 +32,20 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             });
 
 
-            LegacySelection.GetClassFeature().AddFeatures(prog);
-            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
-            VillainLegacySelection.getClassFeature().AddFeatures(prog);
-            HeroLegacySelection.getClassFeature().AddFeatures(prog);
-            EdgeLordLegacySelection.getClassFeature().AddFeatures(prog);
+            LegacySelection.Register(prog);
+            EdgeLordLegacySelection.Register(prog);
+            HeroLegacySelection.Register(prog);
+            VillainLegacySelection.Prohibit(prog);
+            //GodEmperorLegacySelection.Register(prog);
         }
         public static void PatchProgression() {
-            //please note that this only patches the knight progression so this only works in combination of the already done patch by the other version
+             
 
             prog = StaticReferences.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.MonkClass, BaseArchetype, null);
-            BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.KineticistClass;
+            BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.MonkClass;
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
             StaticReferences.PatchProgressionFeaturesBasedOnReferenceArchetype(myClass, refClass, BaseArchetype);
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = MonkLegacy.Get().ToReference<BlueprintFeatureReference>(); });
         }
         public static BlueprintProgression Get() {
             if (prog != null) return prog;

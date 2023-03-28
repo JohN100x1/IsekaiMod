@@ -39,7 +39,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, LegacySelection.GetClassFeature()),
                     Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection2),
                     Helpers.CreateLevelEntry(8, IsekaiFastMovement),
-                    Helpers.CreateLevelEntry(9, FriendlyAuraFeature),
+                    Helpers.CreateLevelEntry(10, FriendlyAuraFeature),
                     Helpers.CreateLevelEntry(10, OverpoweredAbilitySelection2),
                     Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection2),
                     Helpers.CreateLevelEntry(20, SecondReincarnation),
@@ -47,7 +47,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, EdgeLordProficiencies, SupersonicCombat, EdgeLordLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(5, SpecialPowerSelection, ExtraStrike),
-                    Helpers.CreateLevelEntry(7, EdgeLordFastMovement),
+                    Helpers.CreateLevelEntry(8, EdgeLordFastMovement),
                     Helpers.CreateLevelEntry(10, ExtraStrike),
                     Helpers.CreateLevelEntry(15, SpecialPowerSelection, ExtraStrike),
                     Helpers.CreateLevelEntry(20, ExtraStrike),

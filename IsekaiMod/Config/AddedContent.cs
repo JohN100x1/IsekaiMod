@@ -11,6 +11,7 @@ namespace IsekaiMod.Config {
         public bool MultipleMythicOPAbility = false;
         public bool MultipleMythicSpecialPower = false;
         public bool MergeIsekaiSpellList = false;
+        public int IsekaiDefaultClothes = 20;
         public SettingGroup Isekai = new();
         public SettingGroup Other = new();
 
@@ -30,6 +31,9 @@ namespace IsekaiMod.Config {
             // Allow Multiple Selections
             MultipleMythicOPAbility = loadedSettings.MultipleMythicOPAbility;
             MultipleMythicSpecialPower = loadedSettings.MultipleMythicSpecialPower;
+
+            // Change Isekai Protagonist Default Clothes
+            IsekaiDefaultClothes = loadedSettings.IsekaiDefaultClothes;
 
             MergeIsekaiSpellList = loadedSettings.MergeIsekaiSpellList;
             Isekai.LoadSettingGroup(loadedSettings.Isekai, NewSettingsOffByDefault);

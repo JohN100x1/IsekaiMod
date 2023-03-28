@@ -1,8 +1,6 @@
-﻿using HarmonyLib;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
@@ -77,7 +75,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.ReapplyOnLevelUp = true;
             });
 
-            StaticReferences.Selections.ElvenHeritageSelection.AddToSelection(IsekaiHighElfHeritage);
+            FeatTools.Selections.ElvenHeritageSelection.AddToSelection(IsekaiHighElfHeritage);
         }
     }
 }

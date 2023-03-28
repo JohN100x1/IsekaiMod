@@ -87,28 +87,42 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateLevelEntry(6, IsekaiProtagonistBonusFeatSelection, SignatureMoveSelection),
                 Helpers.CreateLevelEntry(7, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(8, IsekaiProtagonistBonusFeatSelection, IsekaiFastMovement),
-                Helpers.CreateLevelEntry(9, SpecialPowerSelection, FriendlyAuraFeature),
-                Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2),
+                Helpers.CreateLevelEntry(9, SpecialPowerSelection),
+                Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2, FriendlyAuraFeature),
                 Helpers.CreateLevelEntry(11, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(12, IsekaiProtagonistBonusFeatSelection, BeachEpisodeSelection),
                 Helpers.CreateLevelEntry(13, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(14, IsekaiProtagonistBonusFeatSelection),
-                Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection2, OtherworldlyStamina, IsekaiQuickFooted),
-                Helpers.CreateLevelEntry(16, IsekaiProtagonistBonusFeatSelection),
+                Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection2, OtherworldlyStamina),
+                Helpers.CreateLevelEntry(16, IsekaiProtagonistBonusFeatSelection, IsekaiQuickFooted),
                 Helpers.CreateLevelEntry(17, SpecialPowerSelection, SummonHaremFeature),
                 Helpers.CreateLevelEntry(18, IsekaiProtagonistBonusFeatSelection),
                 Helpers.CreateLevelEntry(19, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(20, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2, SecondReincarnation)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
-                Helpers.CreateUIGroup(OverpoweredAbilitySelectionVillain,  IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, VillainQuickFooted, SecondFormFeature),
-                Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike, EdgeLordFastMovement),
+                
+                // Isekai UI group
+                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, FriendlyAuraFeature, DarkAuraFeature,
+                IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, VillainQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
+                
+                // Edge Lord UI group
+                Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike),
+                
+                // God Emperor UI group
+                Helpers.CreateUIGroup(NascentApotheosis, DivineArray, GodEmperorEnergySelection, AuraOfGoldenProtectionFeature, AuraOfMajestyFeature, SiphoningAuraFeature, GodlyVessel, Godhood,
+                
+                // Hero UI group
+                GracefulCombat, IsekaiChannelPositiveEnergyFeature, AuraOfDivineFuryFeature, CelestialRealmFeature, HerosPresenceFeature, ArmorSaint),
+                
+                // Villain UI group
+                Helpers.CreateUIGroup(OverpoweredAbilitySelectionVillain,  IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, SecondFormFeature),
                 Helpers.CreateUIGroup(SlayerStudyTargetFeature, SlayerSwiftStudyTargetFeature),
-                Helpers.CreateUIGroup(GracefulCombat, IsekaiChannelPositiveEnergyFeature, AuraOfDivineFuryFeature, CelestialRealmFeature, HerosPresenceFeature, ArmorSaint),
-                Helpers.CreateUIGroup(NascentApotheosis, DivineArray, GodEmperorEnergySelection, AuraOfGoldenProtectionFeature, AuraOfMajestyFeature, SiphoningAuraFeature, GodlyVessel, Godhood),
+                
+                // OP ability and Special Power UI group
                 Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, SpecialPowerSelection),
-                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, FriendlyAuraFeature, DarkAuraFeature, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
-                Helpers.CreateUIGroup(IsekaiPetSelection, IsekaiFastMovement, IsekaiQuickFooted),
+
+                // Legacy UI groups
                 Helpers.CreateUIGroup(LegacySelection.GetClassFeature()),
                 Helpers.CreateUIGroup(HeroLegacySelection.getClassFeature()),
                 Helpers.CreateUIGroup(VillainLegacySelection.getClassFeature()),
@@ -121,7 +135,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 VillainProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiProtagonistProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiProtagonistCantripsFeature.ToReference<BlueprintFeatureBaseReference>(),
-                StartingWeaponSelection.ToReference<BlueprintFeatureBaseReference>()
+                StartingWeaponSelection.ToReference<BlueprintFeatureBaseReference>(),
+                IsekaiPetSelection.ToReference<BlueprintFeatureBaseReference>()
             };
             IsekaiProtagonistClass.SetProgression(IsekaiProtagonistProgression);
         }

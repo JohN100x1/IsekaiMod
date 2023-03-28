@@ -44,12 +44,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             m_IsExtendable = true
         };
 
-        private static readonly ContextDiceValue DiceValueOne = new() {
-            DiceType = DiceType.Zero,
-            DiceCountValue = 0,
-            BonusValue = 1
-        };
-
         public static void Add() {
             var SummonHaremAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "SummonHaremAbility", bp => {
                 bp.SetName(IsekaiContext, "Summon Harem");
@@ -92,7 +86,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Quicken;
                 bp.m_IsFullRoundAction = true;
-                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "1 round/level");
+                bp.LocalizedDuration = StaticReferences.Strings.Duration.OneRoundPerLevel;
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
             var SummonHaremFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SummonHaremFeature", bp => {
@@ -109,7 +103,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             var t = new ContextActionSpawnMonster() {
                 m_SummonPool = SummonMonsterPool.ToReference<BlueprintSummonPoolReference>(),
                 DurationValue = RankDuration,
-                CountValue = DiceValueOne,
+                CountValue = Values.Dice.One,
                 LevelValue = 0,
                 AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
                     c.Permanent = true;

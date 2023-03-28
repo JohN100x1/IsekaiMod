@@ -20,7 +20,7 @@ namespace IsekaiMod.Content.Backgrounds {
                 bp.m_AllFeatures = new BlueprintFeatureReference[0];
             });
 
-            StaticReferences.Selections.BackgroundSelection.AddToSelection(IsekaiBackgroundSelection);
+            FeatTools.Selections.BackgroundsBaseSelection.AddToSelection(IsekaiBackgroundSelection);
         }
 
         public static void AddToSelection(BlueprintFeature background) {

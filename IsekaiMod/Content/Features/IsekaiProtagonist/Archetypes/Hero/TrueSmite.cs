@@ -62,6 +62,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
                 });
                 bp.AddComponent<DamageBonusAgainstTarget>(c => {
                     c.CheckCaster = true;
+                    c.CheckCasterFriend = true;
                     c.ApplyToSpellDamage = true;
                     c.Value = Values.CreateContextSharedValue(AbilitySharedValue.DamageBonus);
                 });
@@ -151,7 +152,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Point;
                 bp.ActionType = UnitCommand.CommandType.Swift;
                 bp.AvailableMetamagic = Metamagic.Heighten | Metamagic.Reach;
-                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "Until the target of the smite is dead");
+                bp.LocalizedDuration = StaticReferences.Strings.Duration.UntilTargetOfSmiteIsDead;
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
             var TrueSmiteFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteFeature", bp => {

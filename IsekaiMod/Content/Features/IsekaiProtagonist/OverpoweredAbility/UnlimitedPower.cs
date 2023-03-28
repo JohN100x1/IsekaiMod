@@ -24,7 +24,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             var Icon_Unlimited_Power = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_UNLIMITED_POWER.png");
             var UnlimitedPowerAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "UnlimitedPowerAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Unlimited Power");
-                bp.SetDescription(IsekaiContext, "As a free action, you restore all abilities and spell slots.");
+                bp.SetDescription(IsekaiContext, "On the brink of defeat, the enemies have surrounded and exhausted you. "
+                    + "Just as they are about to deliver the finishing blow, you get up and saying the following words: Not today."
+                    + "\nBenefit: As a free action, you restore all abilities and spell slots.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = Helpers.CreateActionList(
                         new ContextRestoreResource() {
@@ -57,7 +59,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var UnlimitedPowerFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "UnlimitedPowerFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Unlimited Power");
-                bp.SetDescription(IsekaiContext, "As a free action, you restore all abilities and spell slots.");
+                bp.SetDescription(IsekaiContext, "On the brink of defeat, the enemies have surrounded and exhausted you. "
+                    + "Just as they are about to deliver the finishing blow, you get up and saying the following words: Not today."
+                    + "\nBenefit: As a free action, you restore all abilities and spell slots.");
                 bp.m_Icon = Icon_Unlimited_Power;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { UnlimitedPowerAbility.ToReference<BlueprintUnitFactReference>() };

@@ -26,7 +26,8 @@ namespace IsekaiMod.Content.Dialogue {
              */
             // Answer
             var IsekaiDialogueHulrun = ThingsNotHandledByTTTCore.CreateAnswer("IsekaiDialogueHulrun", bp => {
-                bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiDialogueHulrun.Text", "(Isekai Protagonist) \"Other than being hit by a truck, I don't remember anything at all...\"");
+                bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiDialogueHulrun.Text",
+                    "(Isekai Protagonist) \"Other than being hit by a truck, I don't remember anything at all...\"");
                 bp.NextCue = new CueSelection() {
                     Cues = new List<BlueprintCueBaseReference>() { DontRememberCue.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
@@ -44,7 +45,6 @@ namespace IsekaiMod.Content.Dialogue {
 
             // Add Answer to answers list
             var AnswersList_0020 = BlueprintTools.GetBlueprint<BlueprintAnswersList>("e27807b731f3b1a4eb19c1a04fdfcf53");
-
             AnswersList_0020.Answers.Insert(0, IsekaiDialogueHulrun.ToReference<BlueprintAnswerBaseReference>());
         }
     }

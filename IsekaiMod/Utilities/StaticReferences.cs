@@ -5,6 +5,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.Localization;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
@@ -18,6 +19,35 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Utilities {
 
     public class StaticReferences {
+        // Base Classes
+        public static readonly BlueprintCharacterClass[] BaseClasses = new BlueprintCharacterClass[25] {
+                ClassTools.Classes.AlchemistClass,
+                ClassTools.Classes.ArcanistClass,
+                ClassTools.Classes.BarbarianClass,
+                ClassTools.Classes.BardClass,
+                ClassTools.Classes.BloodragerClass,
+                ClassTools.Classes.CavalierClass,
+                ClassTools.Classes.ClericClass,
+                ClassTools.Classes.DruidClass,
+                ClassTools.Classes.FighterClass,
+                ClassTools.Classes.HunterClass,
+                ClassTools.Classes.InquisitorClass,
+                ClassTools.Classes.KineticistClass,
+                ClassTools.Classes.MagusClass,
+                ClassTools.Classes.MonkClass,
+                ClassTools.Classes.OracleClass,
+                ClassTools.Classes.PaladinClass,
+                ClassTools.Classes.RangerClass,
+                ClassTools.Classes.RogueClass,
+                ClassTools.Classes.ShamanClass,
+                ClassTools.Classes.SkaldClass,
+                ClassTools.Classes.SlayerClass,
+                ClassTools.Classes.SorcererClass,
+                ClassTools.Classes.WarpriestClass,
+                ClassTools.Classes.WitchClass,
+                ClassTools.Classes.WizardClass
+            };
+
         //Oracle
         public static BlueprintFeatureSelection OracleCurseSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("b0a5118b4fb793241bc7042464b23fab");
         public static BlueprintFeatureSelection OracleMysterySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("5531b975dcdf0e24c98f1ff7e017e741");
@@ -46,7 +76,14 @@ namespace IsekaiMod.Utilities {
         public static BlueprintFeature SoloTactics = BlueprintTools.GetBlueprint<BlueprintFeature>("87d6de4d30adc7244b7a3427d041dcaa");
         public static BlueprintFeature ForesterTactics = BlueprintTools.GetBlueprint<BlueprintFeature>("994db4abfa0d6194eb3c847605e6f148");
 
-        public static readonly BlueprintFeatureBase[] FeaturesIgnoredWhenPatching = new BlueprintFeatureBase[] { FeatTools.Selections.BasicFeatSelection, FeatTools.Selections.FighterFeatSelection, FeatTools.Selections.CombatTrick, FeatTools.Selections.SkaldFeatSelection };
+        public static readonly BlueprintFeatureBase[] FeaturesIgnoredWhenPatching = new BlueprintFeatureBase[] { 
+            FeatTools.Selections.BasicFeatSelection, 
+            FeatTools.Selections.FighterFeatSelection, 
+            FeatTools.Selections.CombatTrick, 
+            FeatTools.Selections.SkaldFeatSelection,
+            FeatTools.Selections.AnimalCompanionSelectionDomain,
+            FeatTools.Selections.WarDomainGreaterFeatSelection
+        };
 
         private static BlueprintProgression PatchPatchClassProgressionBasedOnRefClassStep1(BlueprintProgression prog, BlueprintCharacterClass refClass) {
             prog.IsClassFeature = true;
@@ -63,26 +100,33 @@ namespace IsekaiMod.Utilities {
             });
             prog.LevelEntries = new LevelEntry[] { };
             var referenceUIGroups = refClass.Progression.UIGroups;
-            prog.UIGroups = new UIGroup[] {
-                };
+            prog.UIGroups = new UIGroup[] { };
             foreach (var referenceUIGroup in referenceUIGroups) {
-                prog.UIGroups = prog.UIGroups.AddToArray<UIGroup>(referenceUIGroup);
+                prog.UIGroups = prog.UIGroups.AddToArray(referenceUIGroup);
             }
             prog.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] { };
             var referenceUIDeterminators = refClass.Progression.UIDeterminatorsGroup;
             foreach (var UIDetermin in referenceUIDeterminators) {
-                prog.m_UIDeterminatorsGroup = prog.m_UIDeterminatorsGroup.AddToArray<BlueprintFeatureBaseReference>(UIDetermin.ToReference<BlueprintFeatureBaseReference>());
+                prog.m_UIDeterminatorsGroup = prog.m_UIDeterminatorsGroup.AddToArray(UIDetermin.ToReference<BlueprintFeatureBaseReference>());
             }
             return prog;
         }
         public static BlueprintProgression PatchClassProgressionBasedOnRefClass(BlueprintProgression prog, BlueprintCharacterClass refClass) {
             prog = PatchPatchClassProgressionBasedOnRefClassStep1(prog, refClass);
-            var referenceLevels = refClass.Progression.LevelEntries;            
+            var referenceLevels = refClass.Progression.LevelEntries;
             foreach (var referenceLevel in referenceLevels) {
                 BlueprintFeatureBaseReference[] features = referenceLevel.m_Features.ToArray();
-                prog.LevelEntries = prog.LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(referenceLevel.Level, features));
+                prog.LevelEntries = prog.LevelEntries.AddToArray(Helpers.CreateLevelEntry(referenceLevel.Level, features));
             };            
             return prog;
+        }
+
+        public static BlueprintProgression PatchClassProgressionBasedOnSeparateLists(BlueprintProgression prog, BlueprintCharacterClass refClass, LevelEntry[] additionalReference, LevelEntry[] removedReference) {
+            BlueprintArchetype archetype = new BlueprintArchetype {
+                RemoveFeatures = removedReference,
+                AddFeatures = additionalReference
+            };
+            return PatchClassProgressionBasedonRefArchetype(prog, refClass, archetype, null);
         }
 
         public static BlueprintProgression PatchClassProgressionBasedonRefArchetype(BlueprintProgression prog, BlueprintCharacterClass refClass, BlueprintArchetype refArchetype, LevelEntry[] additionalReference) {
@@ -129,7 +173,7 @@ namespace IsekaiMod.Utilities {
                         }
                     }
                 }
-                prog.LevelEntries = prog.LevelEntries.AddToArray<LevelEntry>(Helpers.CreateLevelEntry(referenceLevel.Level, features));
+                prog.LevelEntries = prog.LevelEntries.AddToArray(Helpers.CreateLevelEntry(referenceLevel.Level, features));
             };
             //run through them again to get references to levels that had no features previously
             if (additionalReference != null) {
@@ -141,7 +185,7 @@ namespace IsekaiMod.Utilities {
                         }
                     }
                     if (!found) {
-                        prog.LevelEntries = prog.LevelEntries.AddToArray<LevelEntry>(level);
+                        prog.LevelEntries = prog.LevelEntries.AddToArray(level);
                         foreach (var feature in level.m_Features) { if (!MissingUIGroup.Contains(feature)) { MissingUIGroup = MissingUIGroup.AddToArray(feature); } }
                     }
                 }
@@ -172,7 +216,7 @@ namespace IsekaiMod.Utilities {
 
         public static void PatchProgressionFeaturesBasedOnReferenceClass(BlueprintProgression prog, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass) {
             var features = new HashSet<BlueprintFeatureBase>();
-            foreach (LevelEntry levelEntry in prog.LevelEntries) { 
+            foreach (LevelEntry levelEntry in prog.LevelEntries) {
                 foreach (var levelitem in levelEntry.Features) {
                     if (!features.Contains(levelitem)) { features.Add(levelitem); }
                 }
@@ -182,7 +226,7 @@ namespace IsekaiMod.Utilities {
                     PatchClassIntoFeatureOfReferenceClass(progression, myClass, referenceClass, 0, new BlueprintFeatureBase[] { });
                 } else {
                     if (levelitem is BlueprintFeature feature) {
-                        PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass, 0, new BlueprintFeatureBase[] {});
+                        PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass, 0, new BlueprintFeatureBase[] { });
                     }
                 }
             }
@@ -190,12 +234,15 @@ namespace IsekaiMod.Utilities {
 
         public static void PatchClassIntoFeatureOfReferenceClass(BlueprintFeature feature, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level, BlueprintFeatureBase[] loopPrevention) {
             var mylevel = level+1;
-            if (mylevel > 20) {
-                IsekaiContext.Logger.LogError("Attempt to patch Progression Tree stopped at Level 20 to prevent endless loop, if you see this message please report so we can figure out if someone created a loop here or if this limit needs to be higher");
+            if (mylevel > 10) {
+                IsekaiContext.Logger.LogError("Attempt to patch Progression Tree stopped at Level 10 to prevent endless loop, if you see this message please report so we can figure out if someone created a loop here or if this limit needs to be higher");
                 if (feature.Name != null) {
-                    IsekaiContext.Logger.LogError("reference class= "+ referenceClass.guid+" Stop Feature= " + feature.AssetGuid + " name= " + feature.Name);
+                    IsekaiContext.Logger.LogError("reference class= "+ referenceClass.Guid+" Stop Feature= " + feature.AssetGuid + " name= " + feature.Name);
+                    foreach(BlueprintFeatureBase calltrace in loopPrevention) {
+                        IsekaiContext.Logger.LogError("guid= "+calltrace.AssetGuid);
+                    }
                 } else {
-                    IsekaiContext.Logger.LogError("reference class= " + referenceClass.guid + " Stop Feature= " + feature.AssetGuid);
+                    IsekaiContext.Logger.LogError("reference class= " + referenceClass.Guid + " Stop Feature= " + feature.AssetGuid);
                 }
                 return;
             }
@@ -208,14 +255,16 @@ namespace IsekaiMod.Utilities {
                 return;
             }
             if (loopPrevention.Contains(feature)) {
-                IsekaiContext.Logger.Log("reference class= " + referenceClass.guid + " feature re-encountered at level= " + mylevel + " guid= " + feature.AssetGuid + " name= " + feature.Name);
+                IsekaiContext.Logger.Log("reference class= " + referenceClass.Guid + " feature re-encountered at level= " + mylevel + " guid= " + feature.AssetGuid + " name= " + feature.Name);
             } else {
                 loopPrevention = loopPrevention.AddToArray(feature);
             }
             try {
                 if (feature is BlueprintProgression progression) {
                     progression.GiveFeaturesForPreviousLevels = true;
-                    progression.AddClass(myClass);
+                    if (progression.m_Classes != null && progression.m_Classes.Length > 0) {
+                        progression.AddClass(myClass);
+                     }
                     foreach (LevelEntry item in progression.LevelEntries) {
                         foreach (var levelitem in item.Features) {
                             if (levelitem is BlueprintProgression progression2) {
@@ -226,7 +275,6 @@ namespace IsekaiMod.Utilities {
                                 }
                             }
                         }
-
                     }
                 }
                 if (feature is BlueprintFeatureSelection selection) {
@@ -307,7 +355,7 @@ namespace IsekaiMod.Utilities {
                     if (factRef is BlueprintAbility ability) {
                         ContextRankConfig sample = null;
                         bool alreadyPatched = false;
-                        foreach (var component2 in ability.Components) {
+                        foreach (var component2 in ability.Components) { 
                             if (component2 is ContextRankConfig rankConfig && rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel && rankConfig.m_Class.Contains(referenceClass)) {
                                 sample = rankConfig;
                                 bool classlocked = false;
@@ -356,12 +404,12 @@ namespace IsekaiMod.Utilities {
                 BlueprintAbilityResourceReference resRef = addResource.m_Resource;
                 if (resRef != null) {
                     BlueprintAbilityResource res = resRef.Get();
-                    Boolean classlocked = false;
-                    Boolean alreadyPatched = false;
-                    if (res.m_MaxAmount.m_ClassDiv != null && res.m_MaxAmount.m_ClassDiv.Contains<BlueprintCharacterClassReference>(referenceClass)) {
+                    bool classlocked = false;
+                    bool alreadyPatched = false;
+                    if (res.m_MaxAmount.m_ClassDiv != null && res.m_MaxAmount.m_ClassDiv.Contains(referenceClass)) {
                         classlocked = true;
                     }
-                    if (res.m_MaxAmount.m_ClassDiv != null && res.m_MaxAmount.m_ClassDiv.Contains<BlueprintCharacterClassReference>(myClass)) {
+                    if (res.m_MaxAmount.m_ClassDiv != null && res.m_MaxAmount.m_ClassDiv.Contains(myClass)) {
                         alreadyPatched = true;
                     }
                     if (classlocked && !alreadyPatched) { 
@@ -448,17 +496,23 @@ namespace IsekaiMod.Utilities {
             public override int GetHashCode() => value.GetHashCode();
         }
 
-        internal class Selections {
-            public static BlueprintFeatureSelection BackgroundSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("f926dabeee7f8a54db8f2010b323383c");
-            public static BlueprintFeatureSelection AasimarHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("67aabcbce8f8ae643a9d08a6ca67cabd");
-            public static BlueprintFeatureSelection TieflingHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("c862fd0e4046d2d4d9702dd60474a181");
-            public static BlueprintFeatureSelection ElvenHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("5482f879dcfd40f9a3168fdb48bc938c");
-            public static BlueprintFeatureSelection GnomeHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("584d8b50817b49b2bb7aab3d6add8d3a");
-            public static BlueprintFeatureSelection DhampirHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("1246f548304a7654c97d8f2e9488e25f");
-            public static BlueprintFeatureSelection KitsuneHeritageSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ec40cc350b18c8c47a59b782feb91d1f");
-            public static BlueprintFeatureSelection DeitySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("59e7a76987fe3b547b9cce045f4db3e4");
-            public static BlueprintFeatureSelection BasicFeatSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("247a4068296e8be42890143f451b4b45");
-            public static BlueprintFeatureSelection MythicAbilitySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ba0e5a900b775be4a99702f1ed08914d");
+        internal static class Strings {
+            public static class Duration {
+                public static readonly LocalizedString OneDay = new() { m_Key = "b2581d37-9b43-4473-a755-f675929feaa2" };
+                public static readonly LocalizedString OneMinute = new() { m_Key = "70e2c2f0-b2c6-423a-b6ec-c05084530366" };
+
+                public static readonly LocalizedString OneMinutePerLevel = new() { m_Key = "00b2e4c2-aafe-487b-b890-d57473373da7" };
+                public static readonly LocalizedString OneRoundPerLevel = new() { m_Key = "6250ccf0-1ed0-460f-8ce7-094c2da7e198" };
+
+                public static readonly LocalizedString UntilTargetOfSmiteIsDead = new() { m_Key = "cd623bdb-7aa6-43d2-afdc-865357596efb" };
+            }
+
+            public static class SavingThrow {
+                public static readonly LocalizedString FortitudeNegates = new() { m_Key = "c8ec9dfb-37ba-485d-8c08-c45a6bfc88f3" };
+                public static readonly LocalizedString FortitudePartial = new() { m_Key = "af1a01bb-3924-4663-94e8-79e080287aaa" };
+                public static readonly LocalizedString WillNegates = new() { m_Key = "7ac9f1bb-ab14-4d64-8543-4c97a64a71bd" };
+                public static readonly LocalizedString WillNegatesSaveEachRound = new() { m_Key = "50f1639f-a789-4939-bab6-557375828c4d" };
+            }
         }
     }
 }

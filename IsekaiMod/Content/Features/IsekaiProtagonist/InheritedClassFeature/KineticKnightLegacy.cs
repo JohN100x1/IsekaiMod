@@ -1,9 +1,13 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -11,34 +15,34 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class KineticKnightLegacy {
         private static BlueprintArchetype BaseKnight = BlueprintTools.GetBlueprint<BlueprintArchetype>("7d61d9b2250260a45b18c5634524a8fb");
-        private static BlueprintFeature EnergizeWeapon = BlueprintTools.GetBlueprint<BlueprintFeature>("fb9fe27f13934807bcd62dfeec477758");
 
         private static BlueprintProgression prog;
 
-        public static void ConfigureEmptyShell() {
+        public static void Configure() {
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "KineticKnightLegacy", bp => { });
-            }
+        }
 
 
-        public static void configure() {
+
+        public static void PatchProgression() {
             var IsekaiKineticistTraining = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiKineticistTraining");
 
-            prog.SetName(IsekaiContext, "Kineticist Legacy - Kinetic Knight");
-            prog.SetDescription(IsekaiContext, "Just like all Kinetic Knights your sanity is somewhat questionable, after all you willingly choose to forego fighting at range and instead choose to use energy blasts as melee weapons...\nAnd why? Because the burning blade looked cool.");
+            prog.SetName(IsekaiContext, "Kinetic Legacy - Kinetic Knight");
+            prog.SetDescription(IsekaiContext, "Just like all Kinetic Knights your sanity is somewhat questionable, after all you willingly choose to forego fighting at range and instead choose to use energy blasts as melee weapons...\n" +
+                "And why? Because the burning blade looked cool.");
             prog.GiveFeaturesForPreviousLevels = true;
-            
+
             prog.AddComponent<AddProficiencies>(c => {
                 c.WeaponProficiencies = new Kingmaker.Enums.WeaponCategory[] { Kingmaker.Enums.WeaponCategory.KineticBlast };
             });
 
-            LegacySelection.GetClassFeature().AddFeatures(prog);
-            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
-            EdgeLordLegacySelection.getClassFeature().AddFeatures(prog);
-            HeroLegacySelection.getClassFeature().AddFeatures(prog);
-        }
-        public static void PatchProgression() {
-            //please note that this only patches the knight progression so this only works in combination of the already done patch by the other version
+            LegacySelection.Register(prog);
+            EdgeLordLegacySelection.Register(prog);
+            HeroLegacySelection.Register(prog);
+            VillainLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
 
+            BlueprintFeature EnergizeWeapon = BlueprintTools.GetBlueprint<BlueprintFeature>("fb9fe27f13934807bcd62dfeec477758");
             LevelEntry[] additionalReferencedFeats = null;
             if (ModSupport.IsExpandedElementEnabled() && EnergizeWeapon != null) {
                 additionalReferencedFeats = new LevelEntry[] { Helpers.CreateLevelEntry(1, EnergizeWeapon) };
@@ -47,6 +51,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.KineticistClass;
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
             StaticReferences.PatchProgressionFeaturesBasedOnReferenceArchetype(myClass, refClass, BaseKnight);
+
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticDarkElementalistLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticOverwhelmingSoulLegacy.Get().ToReference<BlueprintFeatureReference>(); });
         }
         public static BlueprintProgression Get() {
             if (prog != null) return prog;

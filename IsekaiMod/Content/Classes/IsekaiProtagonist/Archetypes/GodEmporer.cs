@@ -1,4 +1,6 @@
-﻿using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
+﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
+using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
@@ -48,7 +50,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(3, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection2),
                     Helpers.CreateLevelEntry(7, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(9, SpecialPowerSelection, FriendlyAuraFeature),
+                    Helpers.CreateLevelEntry(9, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(10, FriendlyAuraFeature),
                     Helpers.CreateLevelEntry(11, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(12, BeachEpisodeSelection),
                     Helpers.CreateLevelEntry(13, SpecialPowerSelection),
@@ -58,14 +61,16 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(20, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, NascentApotheosis, GodEmperorProficiencies),
+                    Helpers.CreateLevelEntry(1, NascentApotheosis, GodEmperorProficiencies, GodEmperorLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(3, DivineArray),
-                    Helpers.CreateLevelEntry(5, GodEmperorEnergySelection, ArmorSaint),
+                    Helpers.CreateLevelEntry(4, ArmorSaint),
+                    Helpers.CreateLevelEntry(5, GodEmperorEnergySelection),
                     Helpers.CreateLevelEntry(7, AuraOfGoldenProtectionFeature),
                     Helpers.CreateLevelEntry(9, AuraOfMajestyFeature),
                     Helpers.CreateLevelEntry(10, DarkAuraFeature),
                     Helpers.CreateLevelEntry(12, SiphoningAuraFeature),
-                    Helpers.CreateLevelEntry(15, GodlyVessel, AuraOfDivineFuryFeature),
+                    Helpers.CreateLevelEntry(14, AuraOfDivineFuryFeature),
+                    Helpers.CreateLevelEntry(15, GodlyVessel),
                     Helpers.CreateLevelEntry(17, CelestialRealmFeature),
                     Helpers.CreateLevelEntry(20, Godhood),
                 };
@@ -73,6 +78,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
             // Add Archetype to Class
             IsekaiProtagonistClass.RegisterArchetype(GodEmperorArchetype);
+        }
+        public static BlueprintArchetype Get() {
+            return BlueprintTools.GetModBlueprint<BlueprintArchetype>(IsekaiContext, "GodEmperorArchetype");
+        }
+
+        public static BlueprintArchetypeReference GetReference() {
+            return Get().ToReference<BlueprintArchetypeReference>();
         }
     }
 }

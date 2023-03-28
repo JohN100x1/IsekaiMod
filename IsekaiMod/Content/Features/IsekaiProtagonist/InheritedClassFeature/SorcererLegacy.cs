@@ -1,8 +1,12 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -17,7 +21,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             var ExtraSelection = ExtraBloodlineSelection.Get();
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "SorcererLegacyProgression", bp => {
                 bp.SetName(IsekaiContext, "Sorcerer Legacy - Chimera");
-                bp.SetDescription(IsekaiContext, "Their otherworldly knowledge and point of view allow Chimeras to imbue themselves with different bloodlines in order to gain power and strength. \nChimeras are constantly seeking out new sources of power, and their ability to absorb and incorporate these different bloodlines allows them to become truly formidable foes. \nHowever, their constant experimentation with bloodlines can also lead to confusion and uncertainty about their own heritage and identity, as their original ancestry becomes harder to discern over time.");
+                bp.SetDescription(IsekaiContext, "Their otherworldly knowledge and point of view allow Chimeras to imbue themselves with different bloodlines in order to gain power and strength. \n" +
+                    "Chimeras are constantly seeking out new sources of power, and their ability to absorb and incorporate these different bloodlines allows them to become truly formidable foes. \n" +
+                    "However, their constant experimentation with bloodlines can also lead to confusion and uncertainty about their own heritage and identity, as their original ancestry becomes harder to discern over time.");
                 bp.GiveFeaturesForPreviousLevels = false;
                 bp.IsClassFeature = true;
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
@@ -27,7 +33,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     }
 
                 };
-                //do not place the bloodline at level 1, when inside a progression it does not like that and makes all options invalid, strangely for oracle it works and that is a progression too...
                 bp.LevelEntries = new LevelEntry[] {
                     Helpers.CreateLevelEntry (1, ExtraSelection ),
                     Helpers.CreateLevelEntry(3, ExtraSelection),
@@ -41,14 +46,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateUIGroup( ExtraSelection),
                 };
             });
-            LegacySelection.GetClassFeature().AddFeatures(prog);
-            LegacySelection.GetOverwhelmingFeature().AddFeatures(prog);
-            VillainLegacySelection.getClassFeature().AddFeatures(prog);
+            LegacySelection.Register(prog);
+            EdgeLordLegacySelection.Prohibit(prog);
+            HeroLegacySelection.Register(prog);
+            VillainLegacySelection.Register(prog);
+            GodEmperorLegacySelection.Register(prog);
 
         }
         public static void PatchProgression() {
             BlueprintCharacterClassReference refClass = ClassTools.Classes.SorcererClass.ToReference<BlueprintCharacterClassReference>();
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BloodragerChimeraLegacy.Get().ToReference<BlueprintFeatureReference>(); });
             StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.SorcererBloodlineSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
         }
 

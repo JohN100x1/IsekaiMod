@@ -1,4 +1,5 @@
 ﻿using IsekaiMod.Content.Classes.Deathsnatcher;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
@@ -75,7 +76,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = CreateUndeadAbility.AvailableMetamagic;
                 bp.m_IsFullRoundAction = true;
-                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "1 round/level");
+                bp.LocalizedDuration = StaticReferences.Strings.Duration.OneRoundPerLevel;
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
             var DeathsnatcherCreateUndeadFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherCreateUndeadFeature", bp => {

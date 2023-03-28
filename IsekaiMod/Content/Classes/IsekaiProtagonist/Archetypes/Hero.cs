@@ -1,5 +1,6 @@
 ﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -61,6 +62,14 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
             // Add Archetype to Class
             IsekaiProtagonistClass.RegisterArchetype(HeroArchetype);
+        }
+
+        public static BlueprintArchetype Get() {
+            return BlueprintTools.GetModBlueprint<BlueprintArchetype>(IsekaiContext, "HeroArchetype");
+        }
+
+        public static BlueprintArchetypeReference GetReference() {
+            return Get().ToReference<BlueprintArchetypeReference>();
         }
     }
 }

@@ -29,12 +29,17 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
         private static readonly BlueprintStatProgression BABFull = BlueprintTools.GetBlueprint<BlueprintStatProgression>("b3057560ffff3514299e8b93e7648a9d");
         private static readonly BlueprintStatProgression SavesHigh = BlueprintTools.GetBlueprint<BlueprintStatProgression>("ff4662bde9e75f145853417313842751");
 
-        // Used in Class
-        private static readonly BlueprintCharacterClass SlayerClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("c75e0971973957d4dbad24bc7957e4fb");
+        // Animal Class
         private static readonly BlueprintCharacterClass AnimalClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("4cd1757a0eea7694ba5c933729a53920");
 
         public static void Add() {
             // TODO: Load localisation instead of hardcoded strings
+
+            // Decide which default clothes to use (default 20 is the Slayer Class' clothes)
+            var defaultClothesIndex = 20;
+            var clothesIndex = IsekaiContext.AddedContent.IsekaiDefaultClothes;
+            var maxClothesIndex = StaticReferences.BaseClasses.Length;
+            var clothesClass = StaticReferences.BaseClasses[clothesIndex > 0 && clothesIndex < maxClothesIndex ? clothesIndex : defaultClothesIndex];
 
             // Class Signature Features
             var IsekaiProtagonistPlotArmorFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistPlotArmorFeat", bp => {
@@ -108,8 +113,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 bp.StartingGold = 69420;
                 bp.PrimaryColor = 9;
                 bp.SecondaryColor = 9;
-                bp.MaleEquipmentEntities = SlayerClass.MaleEquipmentEntities;
-                bp.FemaleEquipmentEntities = SlayerClass.FemaleEquipmentEntities;
+                bp.MaleEquipmentEntities = clothesClass.MaleEquipmentEntities;
+                bp.FemaleEquipmentEntities = clothesClass.FemaleEquipmentEntities;
                 bp.m_SignatureAbilities = new BlueprintFeatureReference[5] {
                     IsekaiProtagonistPlotArmorFeat.ToReference<BlueprintFeatureReference>(),
                     IsekaiProtagonistSpecialPowerFeat.ToReference<BlueprintFeatureReference>(),

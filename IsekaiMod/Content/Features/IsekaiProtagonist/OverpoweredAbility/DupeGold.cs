@@ -19,13 +19,18 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
     internal class DupeGold {
+        private const string Name = "Overpowered Ability — Dupe Gold";
+        private const string Description = "In this new world, you will never be cold or hungry again."
+            + "\nBenefit: As a standard action, you gain 1 million gold.";
+
+        // Referenced blueprints
         private static readonly BlueprintItem GoldCoins = BlueprintTools.GetBlueprint<BlueprintItem>("f2bc0997c24e573448c6c91d2be88afa");
 
         public static void Add() {
             var Icon_Dupe_Gold = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_DUPE_GOLD.png");
             var DupeGoldAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "DupeGoldAbility", bp => {
-                bp.SetName(IsekaiContext, "Overpowered Ability — Dupe Gold");
-                bp.SetDescription(IsekaiContext, "As a standard action, you gain 1 million gold.");
+                bp.SetName(IsekaiContext, Name);
+                bp.SetDescription(IsekaiContext, Description);
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<AddItemToPlayer>(c => {
                         c.m_ItemToGive = GoldCoins.ToReference<BlueprintItemReference>();
@@ -59,8 +64,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
             var DupeGoldFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DupeGoldFeature", bp => {
-                bp.SetName(IsekaiContext, "Overpowered Ability — Dupe Gold");
-                bp.SetDescription(IsekaiContext, "As a standard action, you gain 1 million gold.");
+                bp.SetName(IsekaiContext, Name);
+                bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_Dupe_Gold;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { DupeGoldAbility.ToReference<BlueprintUnitFactReference>() };

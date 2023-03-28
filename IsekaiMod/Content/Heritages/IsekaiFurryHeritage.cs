@@ -1,8 +1,6 @@
-﻿using HarmonyLib;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
@@ -74,7 +72,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.ReapplyOnLevelUp = true;
             });
 
-            StaticReferences.Selections.KitsuneHeritageSelection.AddToSelection(IsekaiFurryHeritage);
+            FeatTools.Selections.KitsuneHeritageSelection.AddToSelection(IsekaiFurryHeritage);
         }
     }
 }

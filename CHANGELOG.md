@@ -4,6 +4,60 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [4.3.0] - 2023-03-28
+### Added
+- Added `Meta Luck` OP ability.
+- Added Isekai Protagonist dialogue with Horgus when asking for help escaping the Kenabres caves.
+- Added Isekai Protagonist dialogue to insult Minagho during first encounter in Gray Garrison.
+- Added Isekai Protagonist dialogue with Anevia in the Bad Luck Tavern.
+- Added UMM option to change the default clothes on the Isekai Protagonist Class.
+- Added new legacies:
+	1. `Druid Legacy - Nature Mage`
+	2. `Fighter Legacy - Two Handed Fighter`
+	3. `Fighter Legacy - Guardian Shield`
+	4. `Inquisitor Legacy - Domain Lord`
+	5. `Inquisitor Legacy - Judge`
+	6. `Inquisitor Legacy - Tactician` (replaces `Tactician Legacy - Isekai Tactician`)
+	7. `Paladin Legacy - Hero of Light` (replaces a legacy of the same name, see Fixed below for more details)
+	8. `Witch Legacy - Pactmaker`
+	9. `Bloodrager Legacy - Chimeric Rager`
+	10. `Player Legacy - Computer Nerd`
+	11. `Player Legacy - Part Timer`
+- Added legacy selection for `God Emperor`
+### Changed
+- Changed `Dual Legacy` restriction to require IP as a class so people that jsut use the OP feats through mythic feats don't accidentally pick it
+- Changed `Dual Legacy` to now require at least level 5
+- Changed `Dual Legacy` to be removed from special powers selection, now can only be gained through `Overpowered Ability`.
+- Changed `Mythic Class Feature` to appear in Mythic selection directly when choosing a mythic ability.
+- added more restrictions on what is available for each archetype as a legacy and added a toggle so people can choose if they actually want to enforce that restriction on the dual legacy
+- properly added restrictions on overlapping archetypes(bard with skald, skald with bard and barbarian, fighter subtypes, etc.)
+- old versions of `Paladin Legacy - Hero of Light` and `Tactician Legacy - Isekai Tactician` removed from the selection so people don't accidentally pick them instead of the new buffed versions replacing them, the progressions themself are still there to ensure downwards compatibility for people already using them
+- Changed `Channel Positive Energy` Special Power to allow neutral users.
+- Changed `Channel Negative Energy` Special Power to allow neutral users.
+- Changed `Reflect` Special Power to be a toggle ability.
+- Changed `Isekai Protagonist`'s `Friendly Aura` obtained from level 9 -> 10.
+- Changed `Isekai Protagonist` and `Villain`'s '`Quicked-Footed` obtained from level 15 -> 16.
+- Changed `Edge Lord`'s `Fast Movement` obtained from level 7 -> 8.
+- Changed `God Emperor`'s `Aura Of Divine Fury` obtained from level 15 -> 14.
+- Changed `God Emperor`'s `Armor Saint` obtained from level 5 -> 4.
+- Replaced feature name/descriptions with existing base game localisaed strings to reduce mod localisation.
+- Updated description for `Infinite Space` OP ability.
+- Updated description for `Instakill` OP ability.
+- Updated description for `Mind Control` OP ability.
+- Updated description for `Dupe Gold` OP ability.
+- Updated description for `Perfect Roll` OP ability.
+- Updated description for `Summon Calamity` OP ability.
+- Updated description for `Supreme Being` OP ability.
+- Updated description for `Unlimited Power` OP ability.
+- Updated description for `Kinetic Power` Special Power with deprecation message.
+### Fixed
+- Fixed white background for `Deathsnatcher` small portrait.
+- Fixed `True Smite` damage bonus applies correctly on allies.
+- Fixed `Paladin Legacy - Hero of Light` legacy bug fixed as much as possible so people should be able to use it without having to use a respec mod on it
+- Fixed shaman legacy capstone is part of the legacy again if TabletopTweaks-Base is installed and the feature is enabled
+- Fixed `Mythic Overpowered Ability` and `Mythic Special Power` to be included in `Extra Mythic Ability` mythic feat.
+- Fixed `Mythic Class Feature` and appear properly in `Extra Mythic Ability` mythic feat.
+
 # [4.2.0] - 2023-03-20
 ### Added
 - Added `Auto Rime` OP ability (requires TabletopTweaks-Base).

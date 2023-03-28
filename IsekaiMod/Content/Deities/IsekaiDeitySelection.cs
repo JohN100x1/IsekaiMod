@@ -1,5 +1,4 @@
-﻿using HarmonyLib;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -22,7 +21,7 @@ namespace IsekaiMod.Content.Deities {
                 bp.Group = FeatureGroup.Deities;
             });
 
-            StaticReferences.Selections.DeitySelection.AddToSelection(IsekaiDeitySelection);
+            FeatTools.Selections.DeitySelection.AddToSelection(IsekaiDeitySelection);
         }
 
         /** wasn't us that broke it but I am adding the patch here anyway
@@ -32,7 +31,7 @@ namespace IsekaiMod.Content.Deities {
         public static void PatchDeitySelection() {
             var myDeityList = new Dictionary<int, HashSet<BlueprintFeatureSelection>>();
             var levelList = new HashSet<BlueprintFeatureSelection> {
-                StaticReferences.Selections.DeitySelection
+                FeatTools.Selections.DeitySelection
             };
             myDeityList.Add(1, levelList);
             var knownDeities = new HashSet<BlueprintFeature>();
