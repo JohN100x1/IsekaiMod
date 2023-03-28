@@ -99,8 +99,7 @@ namespace IsekaiMod.Utilities {
             });
             prog.LevelEntries = new LevelEntry[] { };
             var referenceUIGroups = refClass.Progression.UIGroups;
-            prog.UIGroups = new UIGroup[] {
-                };
+            prog.UIGroups = new UIGroup[] { };
             foreach (var referenceUIGroup in referenceUIGroups) {
                 prog.UIGroups = prog.UIGroups.AddToArray(referenceUIGroup);
             }

@@ -15,9 +15,9 @@ namespace IsekaiMod.Content.Heritages {
 
         public static void Patch() {
             // Get Isekai Heritages
-            var IsekaiDarkElfHeritage = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiDarkElfHeritage");
-            var IsekaiHighElfHeritage = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiHighElfHeritage");
-            var IsekaiWoodElfHeritage = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiWoodElfHeritage");
+            var IsekaiDarkElfHeritageReference = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiDarkElfHeritage").ToReference<BlueprintUnitFactReference>();
+            var IsekaiHighElfHeritageReference = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiHighElfHeritage").ToReference<BlueprintUnitFactReference>();
+            var IsekaiWoodElfHeritageReference = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiWoodElfHeritage").ToReference<BlueprintUnitFactReference>();
 
             // Don't Add stat bonuses from Elf Race if Isekai Elf Heritage is selected
             var ElfRace = BlueprintTools.GetBlueprint<BlueprintRace>("25a5878d125338244896ebd3238226c8");
@@ -28,9 +28,9 @@ namespace IsekaiMod.Content.Heritages {
                 c.Stat = StatType.Dexterity;
                 c.Value = 2;
                 c.m_CheckedFacts = new BlueprintUnitFactReference[] {
-                    IsekaiDarkElfHeritage.ToReference<BlueprintUnitFactReference>(),
-                    IsekaiHighElfHeritage.ToReference<BlueprintUnitFactReference>(),
-                    IsekaiWoodElfHeritage.ToReference<BlueprintUnitFactReference>(),
+                    IsekaiDarkElfHeritageReference,
+                    IsekaiHighElfHeritageReference,
+                    IsekaiWoodElfHeritageReference,
                 };
             });
             ElfRace.AddComponent<AddStatBonusIfNotHasFact>(c => {
@@ -38,9 +38,9 @@ namespace IsekaiMod.Content.Heritages {
                 c.Stat = StatType.Intelligence;
                 c.Value = 2;
                 c.m_CheckedFacts = new BlueprintUnitFactReference[] {
-                    IsekaiDarkElfHeritage.ToReference<BlueprintUnitFactReference>(),
-                    IsekaiHighElfHeritage.ToReference<BlueprintUnitFactReference>(),
-                    IsekaiWoodElfHeritage.ToReference<BlueprintUnitFactReference>(),
+                    IsekaiDarkElfHeritageReference,
+                    IsekaiHighElfHeritageReference,
+                    IsekaiWoodElfHeritageReference,
                 };
             });
             ElfRace.AddComponent<AddStatBonusIfNotHasFact>(c => {
@@ -49,9 +49,9 @@ namespace IsekaiMod.Content.Heritages {
                 c.Value = -2;
                 c.m_CheckedFacts = new BlueprintUnitFactReference[] {
                     DestinyBeyondBirthMythicFeat.ToReference<BlueprintUnitFactReference>(),
-                    IsekaiDarkElfHeritage.ToReference<BlueprintUnitFactReference>(),
-                    IsekaiHighElfHeritage.ToReference<BlueprintUnitFactReference>(),
-                    IsekaiWoodElfHeritage.ToReference<BlueprintUnitFactReference>(),
+                    IsekaiDarkElfHeritageReference,
+                    IsekaiHighElfHeritageReference,
+                    IsekaiWoodElfHeritageReference,
                 };
             });
         }
