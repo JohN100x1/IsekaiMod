@@ -8,6 +8,7 @@ using Kingmaker.Blueprints.Items.Weapons;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
@@ -107,9 +108,10 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
             var DeathsnatcherPortrait = Helpers.CreateBlueprint<BlueprintPortrait>(IsekaiContext, "DeathsnatcherPortrait", bp => {
                 bp.Data = AssetLoaderExtension.LoadPortraitData("Deathsnatcher");
             });
+            // TODO: REMOVE DeathsnatcherFact IN 5.0.0
             var DeathsnatcherFact = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFact", bp => {
-                bp.SetName(IsekaiContext, "DeathsnatcherFact");
-                bp.SetDescription(IsekaiContext, "");
+                bp.SetName(new LocalizedString());
+                bp.SetDescription(new LocalizedString());
                 bp.HideInUI = true;
             });
             var DeathsnatcherUnit = Helpers.CreateBlueprint<BlueprintUnit>(IsekaiContext, "DeathsnatcherUnit", bp => {
