@@ -242,7 +242,6 @@
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\IsekaiChannelNegativeEnergy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\IsekaiChannelPositiveEnergy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\KillingIntent.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\KineticPower.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\MagicalAmplification.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\MundaneAura.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\OmegaStrike.cs" />
