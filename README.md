@@ -217,6 +217,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 	- Prologue, speaking with Horgus at Neathholm.
 	- Prologue, after finding Radiance in the Shield Maze.
 	- Act 1, first encounter with Minagho in Gray Garrison.
+	- Act 1, speaking with Anevia in the Bad Luck Tavern.
 	- Random encounter, during drow ambush.
 
 ### Isekai Protagonist Spell progression
