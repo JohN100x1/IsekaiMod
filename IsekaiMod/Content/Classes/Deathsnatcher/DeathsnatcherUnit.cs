@@ -108,12 +108,6 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
             var DeathsnatcherPortrait = Helpers.CreateBlueprint<BlueprintPortrait>(IsekaiContext, "DeathsnatcherPortrait", bp => {
                 bp.Data = AssetLoaderExtension.LoadPortraitData("Deathsnatcher");
             });
-            // TODO: REMOVE DeathsnatcherFact IN 5.0.0
-            var DeathsnatcherFact = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFact", bp => {
-                bp.SetName(new LocalizedString());
-                bp.SetDescription(new LocalizedString());
-                bp.HideInUI = true;
-            });
             var DeathsnatcherUnit = Helpers.CreateBlueprint<BlueprintUnit>(IsekaiContext, "DeathsnatcherUnit", bp => {
                 bp.SetLocalisedName(IsekaiContext, "Deathsnatcher");
                 bp.AddComponent<AddClassLevels>(c => {
@@ -205,7 +199,6 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
                 bp.m_AddFacts = new BlueprintUnitFactReference[] {
                     DeathsnatcherSlotFeature.ToReference<BlueprintUnitFactReference>(),
                     MonstrousHumanoidType.ToReference<BlueprintUnitFactReference>(),
-                    DeathsnatcherFact.ToReference<BlueprintUnitFactReference>(),
                     DeathsnatcherSizeBaby.ToReference<BlueprintUnitFactReference>(),
                     Airborne.ToReference<BlueprintUnitFactReference>()
                 };
