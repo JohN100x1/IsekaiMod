@@ -4,12 +4,17 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Localization;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
     internal class EdgeLord {
+        private static readonly LocalizedString Name = Helpers.CreateString(IsekaiContext, $"EdgeLordArchetype.Name", "Edge Lord");
+        private static readonly LocalizedString Description = Helpers.CreateString(IsekaiContext, $"EdgeLordArchetype.Description",
+            "After reincarnating into Golarion, some protagonists use their newfound abilities to look cool and stylish. "
+            + "Their attacks become flashy and myriad, moving so fast that side characters would be lucky to even see the afterimage.");
 
         public static void Add() {
             // Archetype features
@@ -28,11 +33,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
             // Archetype
             var EdgeLordArchetype = Helpers.CreateBlueprint<BlueprintArchetype>(IsekaiContext, "EdgeLordArchetype", bp => {
-                bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"EdgeLordArchetype.Name", "Edge Lord");
-                bp.LocalizedDescription = Helpers.CreateString(IsekaiContext, $"EdgeLordArchetype.Description", "After reincarnating into Golarion, some protagonists use their newfound abilities "
-                    + "to look cool and stylish. Their attacks become flashy and myriad, moving so fast that side characters would be lucky to even see the afterimage.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString(IsekaiContext, $"EdgeLordArchetype.DescriptionShort", "After reincarnating into Golarion, some protagonists use their newfound abilities "
-                    + "to look cool and stylish. Their attacks become flashy and myriad, moving so fast that side characters would be lucky to even see the afterimage.");
+                bp.LocalizedName = Name
+                bp.LocalizedDescription = Description;
+                bp.LocalizedDescriptionShort = Description;
                 bp.IsArcaneCaster = true;
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {

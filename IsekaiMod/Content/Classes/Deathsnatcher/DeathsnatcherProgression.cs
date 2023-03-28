@@ -73,7 +73,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
                     }
                 };
                 bp.LevelEntries = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, DeathsnatcherResistances, /*DeathsnatcherHiddenFacts,*/ DeathsnatcherCommandUndeadFeature, DeathsnatcherSizeBabyFeature),
+                    Helpers.CreateLevelEntry(1, DeathsnatcherResistances, DeathsnatcherCommandUndeadFeature, DeathsnatcherSizeBabyFeature),
                     Helpers.CreateLevelEntry(2, Evasion),
                     Helpers.CreateLevelEntry(4, Pounce),
                     Helpers.CreateLevelEntry(7, DeathsnatcherAnimateDeadFeature),

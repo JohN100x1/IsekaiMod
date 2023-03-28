@@ -5,6 +5,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Localization;
 using Kingmaker.UnitLogic.Alignments;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -12,6 +13,10 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
     internal class Hero {
+        private static readonly LocalizedString Name = Helpers.CreateString(IsekaiContext, $"HeroArchetype.Name", "Hero");
+        private static readonly LocalizedString Description = Helpers.CreateString(IsekaiContext, $"HeroArchetype.Description",
+            "Heroes use their newfound powers for good. After realising the suffering and despair of the inhabitants of the new world, "
+            + "the hero sets out to bring knowledge from their old world in order to save them.");
 
         public static void Add() {
             // Archetype features
@@ -30,11 +35,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
             // Archetype
             var HeroArchetype = Helpers.CreateBlueprint<BlueprintArchetype>(IsekaiContext, "HeroArchetype", bp => {
-                bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"HeroArchetype.Name", "Hero");
-                bp.LocalizedDescription = Helpers.CreateString(IsekaiContext, $"HeroArchetype.Description", "Heroes use their newfound powers for good. After realising the suffering and "
-                    + "despair of the inhabitants of the new world, the hero sets out to bring knowledge from their old world in order to save them.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString(IsekaiContext, $"HeroArchetype.DescriptionShort", "Heroes use their newfound powers for good. After realising the suffering and "
-                    + "despair of the inhabitants of the new world, the hero sets out to bring knowledge from their old world in order to save them.");
+                bp.LocalizedName = Name;
+                bp.LocalizedDescription = Description;
+                bp.LocalizedDescriptionShort = Description;
                 bp.IsArcaneCaster = true;
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {

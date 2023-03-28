@@ -6,6 +6,7 @@ using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Localization;
 using Kingmaker.UnitLogic.Alignments;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -13,6 +14,11 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
     internal class Villain {
+        private static readonly LocalizedString Name = Helpers.CreateString(IsekaiContext, $"VillainArchetype.Name", "Villain");
+        private static readonly LocalizedString Description = Helpers.CreateString(IsekaiContext, $"VillainArchetype.Description",
+            "After obtaining ungodly amounts of power, some protagonists become villains. "
+            + "They view the new world as theirs to play with, and the new inhabitants as theirs to torment. Villains seek to increase their power even further, "
+            + "often by establishing their own kingdom.\nYou cast spells like an Arcanist with a number of slots equal to your spells per day.");
 
         public static void Add() {
             // Archetype features
@@ -38,13 +44,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
             // Archetype
             var VillainArchetype = Helpers.CreateBlueprint<BlueprintArchetype>(IsekaiContext, "VillainArchetype", bp => {
-                bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"VillainArchetype.Name", "Villain");
-                bp.LocalizedDescription = Helpers.CreateString(IsekaiContext, $"VillainArchetype.Description", "After obtaining ungodly amounts of power, some protagonists become villains. "
-                    + "They view the new world as theirs to play with, and the new inhabitants as theirs to torment. Villains seek to increase their power even further, "
-                    + "often by establishing their own kingdom.\nYou cast spells like an Arcanist with a number of slots equal to your spells per day.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString(IsekaiContext, $"VillainArchetype.DescriptionShort", "After obtaining ungodly amounts of power, some protagonists become villains. "
-                    + "They view the new world as theirs to play with, and the new inhabitants as theirs to torment. Villains seek to increase their power even further, "
-                    + "often by establishing their own kingdom.\nYou cast spells like an Arcanist with a number of slots equal to your spells per day.");
+                bp.LocalizedName = Name;
+                bp.LocalizedDescription = Description;
+                bp.LocalizedDescriptionShort = Description;
                 bp.IsArcaneCaster = true;
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {

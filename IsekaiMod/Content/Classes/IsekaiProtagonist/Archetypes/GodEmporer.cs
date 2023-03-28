@@ -3,12 +3,17 @@ using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Localization;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
     internal class GodEmperor {
+        private static readonly LocalizedString Name = Helpers.CreateString(IsekaiContext, $"GodEmperorArchetype.Name", "God Emperor");
+        private static readonly LocalizedString Description = Helpers.CreateString(IsekaiContext, $"GodEmperorArchetype.Description",
+            "Rather than wandering aimlessly, collecting harems, or defeating demon lords, some protagonists decide to become gods. "
+            + "They sacrifice their special powers and sneak attack to gain powerful auras and a journey towards godhood.");
 
         public static void Add() {
             // Archetype features
@@ -38,11 +43,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
             // Archetype
             var GodEmperorArchetype = Helpers.CreateBlueprint<BlueprintArchetype>(IsekaiContext, "GodEmperorArchetype", bp => {
-                bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"GodEmperorArchetype.Name", "God Emperor");
-                bp.LocalizedDescription = Helpers.CreateString(IsekaiContext, $"GodEmperorArchetype.Description", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
-                    + "some protagonists decide to become gods. They sacrifice their special powers and sneak attack to gain powerful auras and a journey towards godhood.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString(IsekaiContext, $"GodEmperorArchetype.DescriptionShort", "Rather than wandering aimlessly, collecting harems, or defeating demon lords, "
-                    + "some protagonists decide to become gods. They sacrifice their special powers and sneak attack to gain powerful auras and a journey towards godhood.");
+                bp.LocalizedName = Name;
+                bp.LocalizedDescription = Description;
+                bp.LocalizedDescriptionShort = Description;
                 bp.IsArcaneCaster = true;
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
