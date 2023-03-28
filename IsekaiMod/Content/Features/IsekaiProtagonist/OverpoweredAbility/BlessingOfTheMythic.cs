@@ -1,4 +1,6 @@
 ﻿using HarmonyLib;
+using IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -13,7 +15,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         public static void Configure() {
             var MythicAeonSpellsKnown = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "AeonSpellsKnown", bp => {
                 bp.SetName(IsekaiContext, "Mythic Aeon Spells");
-                bp.SetDescription(IsekaiContext, "Gain the Spells of an Aeon");
+                bp.SetDescription(IsekaiContext, "Gain the spells of an Aeon.");
                 bp.Ranks = 1;
                 bp.ReapplyOnLevelUp = false;
                 bp.IsClassFeature = true;
@@ -30,7 +32,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var MythicAngelSpellsKnown = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "AngelSpellsKnown", bp => {
                 bp.SetName(IsekaiContext, "Mythic Angel Spells");
-                bp.SetDescription(IsekaiContext, "Gain the Spells of an Angel");
+                bp.SetDescription(IsekaiContext, "Gain the spells of an Angel.");
                 bp.Ranks = 1;
                 bp.ReapplyOnLevelUp = false;
                 bp.IsClassFeature = true;
@@ -47,7 +49,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var MythicAzataSpellsKnown = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "AzataSpellsKnown", bp => {
                 bp.SetName(IsekaiContext, "Mythic Azata Spells");
-                bp.SetDescription(IsekaiContext, "Gain the Spells of an Azata");
+                bp.SetDescription(IsekaiContext, "Gain the spells of an Azata.");
                 bp.Ranks = 1;
                 bp.ReapplyOnLevelUp = false;
                 bp.IsClassFeature = true;
@@ -64,7 +66,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var MythicDemonSpellsKnown = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DemonSpellsKnown", bp => {
                 bp.SetName(IsekaiContext, "Mythic Demon Spells");
-                bp.SetDescription(IsekaiContext, "Gain the Spells of an Demon");
+                bp.SetDescription(IsekaiContext, "Gain the spells of a Demon.");
                 bp.Ranks = 1;
                 bp.ReapplyOnLevelUp = false;
                 bp.IsClassFeature = true;
@@ -81,7 +83,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var MythicLichSpellsKnown = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "LichSpellsKnown", bp => {
                 bp.SetName(IsekaiContext, "Mythic Lich Spells");
-                bp.SetDescription(IsekaiContext, "Gain the Spells of an Lich");
+                bp.SetDescription(IsekaiContext, "Gain the spells of a Lich.");
                 bp.Ranks = 1;
                 bp.ReapplyOnLevelUp = false;
                 bp.IsClassFeature = true;
@@ -98,7 +100,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var MythicTricksterSpellsKnown = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "TricksterSpellsKnown", bp => {
                 bp.SetName(IsekaiContext, "Mythic Trickster Spells");
-                bp.SetDescription(IsekaiContext, "Gain the Spells of an Trickster");
+                bp.SetDescription(IsekaiContext, "Gain the spells of a Trickster.");
                 bp.Ranks = 1;
                 bp.ReapplyOnLevelUp = false;
                 bp.IsClassFeature = true;
@@ -115,7 +117,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var TricksterSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BlessingOfTheTrickster", bp => {
                 bp.SetName(IsekaiContext, "Trickster Mythic Class Feature");
-                bp.SetDescription(IsekaiContext, "A feat worthy of a trickster");
+                bp.SetDescription(IsekaiContext, "A feat worthy of a Trickster.");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.IgnorePrerequisites = false;
@@ -160,7 +162,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
             var MythicSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BlessingOfTheMythic", bp => {
                 bp.SetName(IsekaiContext, "Mythic Class Feature");
-                bp.SetDescription(IsekaiContext, "So I am an angel, is that really a reason not to cast demonic spells? \nOr to deny myself some of those sweet abilities of the trickster?\nSome of you Aeons are far too unflexible.\nSpeaking of Aeons, you got some great spells as well, didn't you?\nLet me quickly learn them...");
+                bp.SetDescription(IsekaiContext, "So I am an angel, is that really a reason not to cast demonic spells? "
+                    + "\nOr to deny myself some of those sweet abilities of the trickster?\nSome of you Aeons are far too unflexible."
+                    + "\nSpeaking of Aeons, you got some great spells as well, didn't you?\nLet me quickly learn them..."
+                    + "\nSource: Isekai Mod");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.IgnorePrerequisites = false;
@@ -177,8 +182,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                     AngelSelection.ToReference<BlueprintFeatureReference>(),
                 };
             });
-            OverpoweredAbilitySelection.AddToSelection(MythicSelection);
-            SpecialPower.SpecialPowerSelection.AddToSelection(MythicSelection);
+
+            OverpoweredAbilitySelection.AddToNonMythicSelection(MythicSelection);
+            SpecialPowerSelection.AddToNonMythicSelection(MythicSelection);
+            FeatTools.Selections.MythicAbilitySelection.AddToSelection(MythicSelection);
+            FeatTools.Selections.ExtraMythicAbilityMythicFeat.AddToSelection(MythicSelection);
         }
     }
 }

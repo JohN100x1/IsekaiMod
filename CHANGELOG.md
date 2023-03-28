@@ -27,7 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Changed `Dual Legacy` restriction to require IP as a class so people that jsut use the OP feats through mythic feats don't accidentally pick it
 - Changed `Dual Legacy` to now require at least level 5
-- Changed `Dual Legacy` to be removed from special powers selection, now can only be gained through `Overpowered Ability`
+- Changed `Dual Legacy` to be removed from special powers selection, now can only be gained through `Overpowered Ability`.
+- Changed `Mythic Class Feature` to appear in Mythic selection directly when choosing a mythic ability.
 - added more restrictions on what is available for each archetype as a legacy and added a toggle so people can choose if they actually want to enforce that restriction on the dual legacy
 - properly added restrictions on overlapping archetypes(bard with skald, skald with bard and barbarian, fighter subtypes, etc.)
 - old versions of `Paladin Legacy - Hero of Light` and `Tactician Legacy - Isekai Tactician` removed from the selection so people don't accidentally pick them instead of the new buffed versions replacing them, the progressions themself are still there to ensure downwards compatibility for people already using them
@@ -53,6 +54,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed `True Smite` damage bonus applies correctly on allies.
 - Fixed `Paladin Legacy - Hero of Light` legacy bug fixed as much as possible so people should be able to use it without having to use a respec mod on it
 - Fixed shaman legacy capstone is part of the legacy again if TabletopTweaks-Base is installed and the feature is enabled
+- Fixed `Mythic Overpowered Ability` and `Mythic Special Power` to be included in `Extra Mythic Ability` mythic feat.
+- Fixed `Mythic Class Feature` and appear properly in `Extra Mythic Ability` mythic feat.
 
 # [4.2.0] - 2023-03-20
 ### Added
