@@ -132,7 +132,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Self;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Reach;
-                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "24 hours");
+                bp.LocalizedDuration = StaticReferences.Strings.Duration.OneDay;
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
             var SuperBuffDismissAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "SuperBuffDismissAbility", bp => {
@@ -159,7 +159,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Self;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Reach;
-                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "24 hours");
+                bp.LocalizedDuration = new LocalizedString();
                 bp.LocalizedSavingThrow = new LocalizedString();
             });
             var SuperBuffFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SuperBuffFeature", bp => {

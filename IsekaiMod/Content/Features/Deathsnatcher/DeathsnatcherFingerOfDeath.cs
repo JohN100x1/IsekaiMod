@@ -125,7 +125,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = FingerOfDeathAbility.AvailableMetamagic;
                 bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = Helpers.CreateString(IsekaiContext, $"{bp.name}.SavingThrow", "Fortitude partial");
+                bp.LocalizedSavingThrow = StaticReferences.Strings.SavingThrow.FortitudePartial;
             });
             var DeathsnatcherFingerOfDeathFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFingerOfDeathFeature", bp => {
                 bp.SetName(IsekaiContext, "Finger of Death");

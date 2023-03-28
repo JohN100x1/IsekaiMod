@@ -127,8 +127,8 @@ namespace IsekaiMod.Content.Heritages {
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.EnchantWeapon;
                 bp.ActionType = UnitCommand.CommandType.Swift;
                 bp.AvailableMetamagic = Metamagic.Heighten;
-                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "1 minute");
-                bp.LocalizedSavingThrow = Helpers.CreateString(IsekaiContext, $"{bp.name}.SavingThrow", "Fortitude negates");
+                bp.LocalizedDuration = StaticReferences.Strings.Duration.OneMinute;
+                bp.LocalizedSavingThrow = StaticReferences.Strings.SavingThrow.FortitudeNegates;
             });
 
             // Dark Elf Heritage

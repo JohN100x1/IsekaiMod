@@ -95,8 +95,8 @@ namespace IsekaiMod.Content.Heritages {
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Directional;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Heighten | Metamagic.Reach | Metamagic.CompletelyNormal;
-                bp.LocalizedDuration = Helpers.CreateString(IsekaiContext, $"{bp.name}.Duration", "1 minute/level");
-                bp.LocalizedSavingThrow = Helpers.CreateString(IsekaiContext, $"{bp.name}.SavingThrow", "Will negates");
+                bp.LocalizedDuration = StaticReferences.Strings.Duration.OneMinutePerLevel;
+                bp.LocalizedSavingThrow = StaticReferences.Strings.SavingThrow.WillNegates;
             });
             var DevilWingsAbility = BlueprintTools.GetModBlueprint<BlueprintActivatableAbility>(IsekaiContext, "DevilWingsAbility");
             var DemonWingsAbility = BlueprintTools.GetModBlueprint<BlueprintActivatableAbility>(IsekaiContext, "DemonWingsAbility");
