@@ -1,22 +1,12 @@
 ﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
-using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
     internal class PrestigeClassReplaceSpellbook {
-        private static BlueprintFeatureSelection LoremasterSpellbookSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("7a28ab4dfc010834eabc770152997e87");
-        private static BlueprintFeatureSelection HellknightSignifierSpellbook = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("68782aa7a302b6d43a42a71c6e9b5277");
-        private static BlueprintFeatureSelection ArcaneTricksterSpellbookSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ae04b7cdeb88b024b9fd3882cc7d3d76");
-        private static BlueprintFeatureSelection MysticTheurgeArcaneSpellbook = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("97f510c6483523c49bc779e93e4c4568");
-        private static BlueprintFeatureSelection MysticTheurgeDivineSpellbook = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("7cd057944ce7896479717778330a4933");
-        private static BlueprintFeatureSelection DragonDiscipleSpellbookSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("8c1ba14c0b6dcdb439c56341385ee474");
-        private static BlueprintFeatureSelection EldritchKnightSpellbookSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("dc3ab8d0484467a4787979d93114ebc3");
-        private static BlueprintFeatureSelection WinterWitchSpellbookSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ea20b26d9d0ede540af3c74246dade41");
-
         public static void Patch() {
             PatchIsekai();
             PatchVillain();
@@ -206,14 +196,15 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 });
             });
 
-            LoremasterSpellbookSelection.AddToSelection(LoremasterIsekai);
-            HellknightSignifierSpellbook.AddToSelection(HellknightSignifierIsekai);
-            ArcaneTricksterSpellbookSelection.AddToSelection(ArcaneTricksterIsekai);
-            MysticTheurgeArcaneSpellbook.AddToSelection(MysticTheurgeArcaneIsekai);
-            MysticTheurgeDivineSpellbook.AddToSelection(MysticTheurgeDivineIsekai);
-            DragonDiscipleSpellbookSelection.AddToSelection(DragonDiscipleIsekai);
-            EldritchKnightSpellbookSelection.AddToSelection(EldritchKnightIsekai);
-            WinterWitchSpellbookSelection.AddToSelection(WinterWitchIsekai);
+
+            FeatTools.Selections.LoremasterSpellbookSelection.AddToSelection(LoremasterIsekai);
+            FeatTools.Selections.HellknightSigniferSpellbook.AddToSelection(HellknightSignifierIsekai);
+            FeatTools.Selections.ArcaneTricksterSpellbookSelection.AddToSelection(ArcaneTricksterIsekai);
+            FeatTools.Selections.MysticTheurgeArcaneSpellbookSelection.AddToSelection(MysticTheurgeArcaneIsekai);
+            FeatTools.Selections.MysticTheurgeDivineSpellbookSelection.AddToSelection(MysticTheurgeDivineIsekai);
+            FeatTools.Selections.DragonDiscipleSpellbookSelection.AddToSelection(DragonDiscipleIsekai);
+            FeatTools.Selections.EldritchKnightSpellbookSelection.AddToSelection(EldritchKnightIsekai);
+            FeatTools.Selections.WinterWitchSpellbookSelection.AddToSelection(WinterWitchIsekai);
         }
 
         public static void PatchVillain() {
@@ -407,14 +398,15 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 });
             });
 
-            LoremasterSpellbookSelection.AddToSelection(LoremasterVillain);
-            HellknightSignifierSpellbook.AddToSelection(HellknightSignifierVillain);
-            ArcaneTricksterSpellbookSelection.AddToSelection(ArcaneTricksterVillain);
-            MysticTheurgeArcaneSpellbook.AddToSelection(MysticTheurgeArcaneVillain);
-            MysticTheurgeDivineSpellbook.AddToSelection(MysticTheurgeDivineVillain);
-            DragonDiscipleSpellbookSelection.AddToSelection(DragonDiscipleVillain);
-            EldritchKnightSpellbookSelection.AddToSelection(EldritchKnightVillain);
-            WinterWitchSpellbookSelection.AddToSelection(WinterWitchVillain);
+
+            FeatTools.Selections.LoremasterSpellbookSelection.AddToSelection(LoremasterVillain);
+            FeatTools.Selections.HellknightSigniferSpellbook.AddToSelection(HellknightSignifierVillain);
+            FeatTools.Selections.ArcaneTricksterSpellbookSelection.AddToSelection(ArcaneTricksterVillain);
+            FeatTools.Selections.MysticTheurgeArcaneSpellbookSelection.AddToSelection(MysticTheurgeArcaneVillain);
+            FeatTools.Selections.MysticTheurgeDivineSpellbookSelection.AddToSelection(MysticTheurgeDivineVillain);
+            FeatTools.Selections.DragonDiscipleSpellbookSelection.AddToSelection(DragonDiscipleVillain);
+            FeatTools.Selections.EldritchKnightSpellbookSelection.AddToSelection(EldritchKnightVillain);
+            FeatTools.Selections.WinterWitchSpellbookSelection.AddToSelection(WinterWitchVillain);
         }
     }
 }
