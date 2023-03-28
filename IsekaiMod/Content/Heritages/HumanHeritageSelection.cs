@@ -5,6 +5,7 @@ using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Heritages {
+
     internal class HumanHeritageSelection {
         private static BlueprintFeature[] ourHeritages;
         private static BlueprintFeature dummyBasicFeat;
@@ -17,11 +18,11 @@ namespace IsekaiMod.Content.Heritages {
             ourHeritageSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiHumanHeritageSelection", bp => {
                 bp.SetName(IsekaiContext, "Alternate Racial Traits");
                 bp.SetDescription(IsekaiContext, "The following alternate traits are available");
-                bp.IsClassFeature= true;
-                bp.Groups = new[] {FeatureGroup.Racial };
+                bp.IsClassFeature = true;
+                bp.Groups = new[] { FeatureGroup.Racial };
                 bp.Group = FeatureGroup.KitsuneHeritage;
                 bp.m_Features = new BlueprintFeatureReference[] { };
-                bp.m_AllFeatures= new BlueprintFeatureReference[] { };
+                bp.m_AllFeatures = new BlueprintFeatureReference[] { };
             });
             dummyBasicFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiHumanHeritageDummyFeat", bp => {
                 bp.SetName(IsekaiContext, FeatTools.Selections.BasicFeatSelection.m_DisplayName);
@@ -35,7 +36,6 @@ namespace IsekaiMod.Content.Heritages {
                 bp.m_Icon = FeatTools.Selections.BasicFeatSelection.m_Icon;
                 bp.IsClassFeature = true;
             });
-
         }
 
         public static void Register(BlueprintFeature feature) {
@@ -48,7 +48,7 @@ namespace IsekaiMod.Content.Heritages {
             BlueprintFeatureSelection basicFeat = FeatTools.Selections.BasicFeatSelection;
             BlueprintFeatureSelection candidate = null;
 
-            foreach (var toTest in human.m_Features) {                
+            foreach (var toTest in human.m_Features) {
                 if (toTest != null && toTest.Get() is BlueprintFeatureSelection selection && !selection.Equals(basicFeat)) {
                     candidate = selection;
                 }
@@ -73,6 +73,5 @@ namespace IsekaiMod.Content.Heritages {
                 }
             }
         }
-
     }
 }
