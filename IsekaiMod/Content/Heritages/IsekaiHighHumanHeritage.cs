@@ -11,7 +11,10 @@ namespace IsekaiMod.Content.Heritages {
         public static void Add() {
             var ourHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiHighHumanHeritage", bp => {
                 bp.SetName(IsekaiContext, "Isekai High Human");
-                bp.SetDescription(IsekaiContext, "TBD");
+                bp.SetDescription(IsekaiContext,
+                    "Otherworldly entities who are reincarnated into the world of Golarion as a High Human have both extreme beauty and power. "
+                    + "They are diverse, resilient, and possess exceptional drive and capacity to endure and expand.\n"
+                    + "The Isekai High Humans have a +2 racial bonus to all attributes.");
 
                 // Attributes
                 bp.AddComponent<AddStatBonus>(c => {
