@@ -110,7 +110,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.Groups = new FeatureGroup[0];
             });
 
-            StaticReferences.Selections.GnomeHeritageSelection.AddToSelection(IsekaiSprigganHeritage);
+            FeatTools.Selections.GnomeHeritageSelection.AddToSelection(IsekaiSprigganHeritage);
         }
     }
 }

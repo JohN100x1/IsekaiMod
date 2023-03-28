@@ -220,7 +220,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.ReapplyOnLevelUp = true;
             });
 
-            StaticReferences.Selections.TieflingHeritageSelection.AddToSelection(IsekaiSuccubusHeritage);
+            FeatTools.Selections.TieflingHeritageSelection.AddToSelection(IsekaiSuccubusHeritage);
         }
     }
 }

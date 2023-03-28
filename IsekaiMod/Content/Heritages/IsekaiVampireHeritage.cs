@@ -110,7 +110,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.ReapplyOnLevelUp = true;
             });
 
-            StaticReferences.Selections.DhampirHeritageSelection.AddToSelection(IsekaiVampireHeritage);
+            FeatTools.Selections.DhampirHeritageSelection.AddToSelection(IsekaiVampireHeritage);
         }
     }
 }

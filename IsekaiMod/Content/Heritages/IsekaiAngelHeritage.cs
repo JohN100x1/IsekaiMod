@@ -197,7 +197,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.ReapplyOnLevelUp = true;
             });
 
-            StaticReferences.Selections.AasimarHeritageSelection.AddToSelection(IsekaiAngelHeritage);
+            FeatTools.Selections.AasimarHeritageSelection.AddToSelection(IsekaiAngelHeritage);
         }
     }
 }

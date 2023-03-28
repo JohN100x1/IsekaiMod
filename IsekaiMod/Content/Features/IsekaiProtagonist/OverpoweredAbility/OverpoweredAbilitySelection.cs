@@ -66,7 +66,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             }
 
-            StaticReferences.Selections.MythicAbilitySelection.AddToSelection(OverpoweredAbilityMythicSelection);
+            FeatTools.Selections.MythicAbilitySelection.AddToSelection(OverpoweredAbilityMythicSelection);
         }
 
         public static void AddToSelection(BlueprintFeature feature) {

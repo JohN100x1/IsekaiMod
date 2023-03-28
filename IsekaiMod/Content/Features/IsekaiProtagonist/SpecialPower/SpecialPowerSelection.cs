@@ -52,7 +52,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 });
             }
 
-            StaticReferences.Selections.MythicAbilitySelection.AddToSelection(SpecialPowerMythicSelection);
+            FeatTools.Selections.MythicAbilitySelection.AddToSelection(SpecialPowerMythicSelection);
         }
 
         public static void AddToSelection(BlueprintFeature feature) {

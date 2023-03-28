@@ -195,7 +195,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.ReapplyOnLevelUp = true;
             });
 
-            StaticReferences.Selections.ElvenHeritageSelection.AddToSelection(IsekaiDarkElfHeritage);
+            FeatTools.Selections.ElvenHeritageSelection.AddToSelection(IsekaiDarkElfHeritage);
         }
     }
 }

@@ -72,7 +72,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.ReapplyOnLevelUp = true;
             });
 
-            StaticReferences.Selections.KitsuneHeritageSelection.AddToSelection(IsekaiFurryHeritage);
+            FeatTools.Selections.KitsuneHeritageSelection.AddToSelection(IsekaiFurryHeritage);
         }
     }
 }

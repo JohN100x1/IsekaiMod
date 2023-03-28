@@ -75,7 +75,7 @@ namespace IsekaiMod.Content.Heritages {
                 bp.ReapplyOnLevelUp = true;
             });
 
-            StaticReferences.Selections.ElvenHeritageSelection.AddToSelection(IsekaiHighElfHeritage);
+            FeatTools.Selections.ElvenHeritageSelection.AddToSelection(IsekaiHighElfHeritage);
         }
     }
 }
