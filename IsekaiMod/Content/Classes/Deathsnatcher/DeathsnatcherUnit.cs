@@ -46,7 +46,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
             var DeathsnatcherSizeBaby = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherSizeBaby");
 
             var DeathsnatcherSlotFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherSlotFeature", bp => {
-                bp.SetName(IsekaiContext, "Feature not available");
+                bp.SetName(StaticReferences.Strings.Null);
                 bp.AddComponent<LockEquipmentSlot>(c => {
                     c.m_SlotType = LockEquipmentSlot.SlotType.MainHand;
                 });

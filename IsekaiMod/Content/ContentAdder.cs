@@ -103,7 +103,6 @@ namespace IsekaiMod.Content {
                 ExtremeSpeed.Add();
                 IsekaiChannelPositiveEnergy.Add();
                 IsekaiChannelNegativeEnergy.Add();
-                KineticPower.Add();
                 SneakyMagic.Add();
                 SpellMaster.Add();
                 ArmorSaint.Add();

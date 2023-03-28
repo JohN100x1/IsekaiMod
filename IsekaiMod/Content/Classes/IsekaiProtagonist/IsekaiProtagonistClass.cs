@@ -45,7 +45,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var IsekaiProtagonistPlotArmorFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistPlotArmorFeat", bp => {
                 bp.SetName(IsekaiContext, "Plot Armor");
                 bp.SetDescription(IsekaiContext, "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
-                bp.SetNameDescription(IsekaiContext, "Plot Armor", "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
                 bp.m_DescriptionShort = bp.m_Description;
                 bp.m_Icon = Icon_EdictOfImpenetrableFortress;
             });

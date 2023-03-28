@@ -497,13 +497,13 @@ namespace IsekaiMod.Utilities {
         }
 
         internal static class Strings {
+            public static readonly LocalizedString Null = new();
+
             public static class Duration {
                 public static readonly LocalizedString OneDay = new() { m_Key = "b2581d37-9b43-4473-a755-f675929feaa2" };
                 public static readonly LocalizedString OneMinute = new() { m_Key = "70e2c2f0-b2c6-423a-b6ec-c05084530366" };
-
                 public static readonly LocalizedString OneMinutePerLevel = new() { m_Key = "00b2e4c2-aafe-487b-b890-d57473373da7" };
                 public static readonly LocalizedString OneRoundPerLevel = new() { m_Key = "6250ccf0-1ed0-460f-8ce7-094c2da7e198" };
-
                 public static readonly LocalizedString UntilTargetOfSmiteIsDead = new() { m_Key = "cd623bdb-7aa6-43d2-afdc-865357596efb" };
             }
 
