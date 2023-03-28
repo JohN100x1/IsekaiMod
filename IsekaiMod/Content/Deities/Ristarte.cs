@@ -15,7 +15,6 @@ namespace IsekaiMod.Content.Deities {
 
         // Allowed Domain & Energy
         private static readonly BlueprintFeature HealingDomainAllowed = BlueprintTools.GetBlueprint<BlueprintFeature>("73ae164c388990c43ade94cfe8ed5755");
-
         private static readonly BlueprintFeature GoodDomainAllowed = BlueprintTools.GetBlueprint<BlueprintFeature>("882521af8012fc749930b03dc18a69de");
         private static readonly BlueprintFeature TravelDomainAllowed = BlueprintTools.GetBlueprint<BlueprintFeature>("c008853fe044bd442ae8bd22260592b7");
         private static readonly BlueprintFeature LuckDomainAllowed = BlueprintTools.GetBlueprint<BlueprintFeature>("d4e192475bb1a1045859c7664addd461");
@@ -23,24 +22,20 @@ namespace IsekaiMod.Content.Deities {
 
         // Excluded Archetypes
         private static readonly BlueprintArchetype FeralChampionArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>("f68ca492c9c15e241ab73735fbd0fb9f");
-
         private static readonly BlueprintArchetype PriestOfBalance = BlueprintTools.GetBlueprint<BlueprintArchetype>("a4560e3fb5d247d68fb1a2738fcc0855");
 
         // Effective Class
         private static readonly BlueprintCharacterClass ClericClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("67819271767a9dd4fbfd4ae700befea0");
-
         private static readonly BlueprintCharacterClass InquistorClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("f1a70d9e1b0b41e49874e1fa9052a1ce");
         private static readonly BlueprintCharacterClass WarpriestClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("30b5e47d47a0e37438cc5a80c96cfb99");
 
         // Effective Spellbook
         private static readonly BlueprintSpellbook CrusaderSpellbook = BlueprintTools.GetBlueprint<BlueprintSpellbook>("673d39f7da699aa408cdda6282e7dcc0");
-
         private static readonly BlueprintSpellbook ClericSpellbook = BlueprintTools.GetBlueprint<BlueprintSpellbook>("4673d19a0cf2fab4f885cc4d1353da33");
         private static readonly BlueprintSpellbook InquisitorSpellbook = BlueprintTools.GetBlueprint<BlueprintSpellbook>("57fab75111f377248810ece84193a5a5");
 
         // Favored Weapon
         private static readonly BlueprintFeature LongswordProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("62e27ffd9d53e14479f73da29760f64e");
-
         private static readonly BlueprintItem ColdIronLongsword = BlueprintTools.GetBlueprint<BlueprintItem>("533e10c8b4c6a4940a3767d096f4f05d");
 
         public static void Add() {
