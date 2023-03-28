@@ -127,7 +127,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `True Resurrection`: Resurrect a dead companion (no diamond cost).
 		- `Supreme Being`: All your attributes have a base value of 30.
 		- `Mythic Class Feature`: see below
-		- `Dual Legacy`: Pick a second base class to get abilities from, or in the case of the God Emperor your first.
+		- `Dual Legacy`: Pick a second base class to get abilities from.
 		- The following requires TabletopTweaks-Base:
 			- `Auto Rime`: Cold spells entangle the target for a number of rounds.
 			- `Auto Burning`: Acid and fire spells cause acid or fire damage on the next round.
