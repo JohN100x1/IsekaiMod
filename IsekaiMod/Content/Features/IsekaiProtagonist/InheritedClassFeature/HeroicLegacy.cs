@@ -1,6 +1,4 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
@@ -15,13 +13,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class HeroicLegacy {
         private static BlueprintProgression prog;
 
-        private static BlueprintFeature TrueSmiteFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteFeature");
-        private static BlueprintFeature TrueSmiteAdditionalUse = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteAdditionalUse");
-        private static BlueprintFeature TrueMarkFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueMarkFeature");
+        private static readonly BlueprintFeature TrueSmiteFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteFeature");
+        private static readonly BlueprintFeature TrueSmiteAdditionalUse = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteAdditionalUse");
+        private static readonly BlueprintFeature TrueMarkFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueMarkFeature");
 
-        private static BlueprintFeature LayOnHands = BlueprintTools.GetBlueprint<BlueprintFeature>("858a3689c285c844d9e6ce278e686491");
-        private static BlueprintFeatureSelection Mercy = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("02b187038a8dce545bb34bbfb346428d");
-        private static BlueprintAbilityResource LoHRessource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("9dedf41d995ff4446a181f143c3db98c");
+        private static readonly BlueprintFeature LayOnHands = BlueprintTools.GetBlueprint<BlueprintFeature>("858a3689c285c844d9e6ce278e686491");
+        private static readonly BlueprintFeatureSelection Mercy = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("02b187038a8dce545bb34bbfb346428d");
+        private static readonly BlueprintAbilityResource LoHRessource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("9dedf41d995ff4446a181f143c3db98c");
 
         public static void Configure() {
             LoHRessource.m_MaxAmount.Class.m_Array.AppendToArray(IsekaiProtagonistClass.GetReference());
@@ -62,12 +60,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateLevelEntry(16, TrueSmiteAdditionalUse),
                     Helpers.CreateLevelEntry(18, Mercy),
                     Helpers.CreateLevelEntry(19, TrueSmiteAdditionalUse),
-
-            };
+                };
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup(TrueSmiteFeature,TrueSmiteAdditionalUse,TrueMarkFeature, Mercy, LayOnHands)
                 };
-
             });
         }
         public static BlueprintProgression Get() {

@@ -48,7 +48,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(AutoPiercingFeature);
+            OverpoweredAbilitySelection.AddToAllSelection(AutoPiercingFeature);
         }
     }
 }

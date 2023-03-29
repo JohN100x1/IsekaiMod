@@ -3,13 +3,16 @@ using IsekaiMod.Config;
 using IsekaiMod.Content.Classes.Deathsnatcher;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.Deathsnatcher;
 using IsekaiMod.Content.Features.ExceptionalFeats;
 using IsekaiMod.Content.Features.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility;
@@ -171,14 +174,21 @@ namespace IsekaiMod.Content {
                 Hero.Add();
                 Main.LogDebug("Class: Hero");
 
-                // Villain Archetype
-                VillainProficiencies.Add();
+                // Mastermind Archetype
+                MastermindSpellbook.Add();
+                MastermindProficiencies.Add();
+                MastermindQuickFooted.Add();
+                MastermindArchetype.Add();
+                Main.LogDebug("Class: Mastermind");
+
+                // Overlord Archetype
+                OverlordSpellbook.Add();
+                OverlordProficiencies.Add();
                 CorruptAuraFeature.Add();
-                VillainQuickFooted.Add();
+                OverlordQuickFooted.Add();
                 SecondFormFeature.Add();
-                VillainSpellbook.Add();
-                Villain.Add();
-                Main.LogDebug("Class: Villain");
+                OverlordArchetype.Add();
+                Main.LogDebug("Class: Overlord");
 
                 // Add Progression & Prebuild after Class and class-dependent features are added
                 PrebuildIsekaiProtagonistFeatureList.Add();

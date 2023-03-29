@@ -160,7 +160,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 bp.AddComponent<RecommendationRequiresSpellbook>();
             });
 
-            OverpoweredAbilitySelection.AddToSelection(AutoElementalSelection);
+            OverpoweredAbilitySelection.AddToAllSelection(AutoElementalSelection);
         }
     }
 }

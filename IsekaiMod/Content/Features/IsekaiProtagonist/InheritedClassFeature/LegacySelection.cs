@@ -1,7 +1,8 @@
 ﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -48,7 +49,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             });
             AbilitySelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = AbilitySelection.ToReference<BlueprintFeatureReference>(); });
 
-            VillainLegacySelection.Configure();
+            MastermindLegacySelection.Configure();
+            OverlordLegacySelection.Configure();
             EdgeLordLegacySelection.Configure();
             HeroLegacySelection.Configure();
             GodEmperorLegacySelection.Configure();
@@ -75,7 +77,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             OracleLegacy.Configure();
             SorcererLegacy.Configure();
             RogueLegacy.Configure();
-            TacticianLegacy.Configure();
             KineticLegacy.Configure();
             BardLegacy.Configure();
             BarbarianLegacy.Configure();
@@ -145,7 +146,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             PlayerPartTimeWorkerLegacy.PatchProgression();
 
             LegacySelection.Finish();
-            VillainLegacySelection.Finish();
+            OverlordLegacySelection.Finish();
             EdgeLordLegacySelection.Finish();
             HeroLegacySelection.Finish();
             GodEmperorLegacySelection.Finish();

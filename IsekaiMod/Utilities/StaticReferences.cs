@@ -513,6 +513,17 @@ namespace IsekaiMod.Utilities {
                 public static readonly LocalizedString WillNegates = new() { m_Key = "7ac9f1bb-ab14-4d64-8543-4c97a64a71bd" };
                 public static readonly LocalizedString WillNegatesSaveEachRound = new() { m_Key = "50f1639f-a789-4939-bab6-557375828c4d" };
             }
+
+            public static class ReplaceSpellbook {
+                public static readonly LocalizedString Loremaster = new() { m_Key = "c213f6d4-9760-4939-a9fe-9d34f9747240" };
+                public static readonly LocalizedString HellknightSignifier = new() { m_Key = "eb71d1c5-c890-4c44-8790-2fb8c3621e55" };
+                public static readonly LocalizedString ArcaneTrickster = new() { m_Key = "bf9c1e4a-5753-4705-9617-1a54ac291dfc" };
+                public static readonly LocalizedString MysticTheurgeArcane = new() { m_Key = "296a19d9-bc24-47fd-a608-ba1aad556b9c" };
+                public static readonly LocalizedString MysticTheurgeDivine = new() { m_Key = "801d1633-efa1-4ed2-83d1-337231705ae7" };
+                public static readonly LocalizedString DragonDisciple = new() { m_Key = "9a186e08-9d9e-4dfb-98b9-d35127bad905" };
+                public static readonly LocalizedString EldritchKnight = new() { m_Key = "cf828ba6-8a11-48b0-aa36-2d7972b51a5f" };
+                public static readonly LocalizedString WinterWitch = new() { m_Key = "591fbec8-dac1-4198-9a1b-ae7921635af0" };
+            }
         }
     }
 }

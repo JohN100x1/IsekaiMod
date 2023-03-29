@@ -6,9 +6,9 @@ using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord {
 
-    internal class VillainProficiencies {
+    internal class OverlordProficiencies {
         private static readonly BlueprintFeature LightArmorProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("6d3728d4e9c9898458fe5e9532951132");
         private static readonly BlueprintFeature MediumArmorProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("46f4fb320f35704488ba3d513397789d");
         private static readonly BlueprintFeature HeavyArmorProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("1b0f68188dcc435429fb87a022239681");
@@ -19,9 +19,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain {
 
         public static void Add() {
             var ExoticWeaponProficiency = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ExoticWeaponProficiency");
-            var VillainProficiencies = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "VillainProficiencies", bp => {
-                bp.SetName(IsekaiContext, "Villain Proficiences");
-                bp.SetDescription(IsekaiContext, "The Villain is proficient with all simple, martial, and exotic weapons and with all armor (heavy, light, and medium) and shields "
+            var OverlordProficiencies = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "OverlordProficiencies", bp => {
+                bp.SetName(IsekaiContext, "Overlord Proficiences");
+                bp.SetDescription(IsekaiContext, "The Overlord is proficient with all simple, martial, and exotic weapons and with all armor (heavy, light, and medium) and shields "
                     + "(including tower shields). They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor and shields (including tower shields) without "
                     + "incurring the normal {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell failure chance for arcane spells "
                     + "received from other classes.");

@@ -108,7 +108,8 @@
     "GodEmperorArchetype": "2ff78bd9-6224-4376-9f64-720ce94d0616",
     "EdgeLordArchetype": "900db658-4f20-4636-ae84-a198c2b50f58",
     "HeroArchetype": "95b27caf-1d96-40f1-8388-aeb2a822e24b",
-    "VillainArchetype": "7d9fa1f5-c8e2-4c68-adc7-bc493e94ae56",
+    "MastermindArchetype": "180d4203-38cd-47e8-b3c7-3618c2da03ee",
+    "OverlordArchetype": "7d9fa1f5-c8e2-4c68-adc7-bc493e94ae56",
 
     // Isekai Protagonist Class
     "IsekaiProtagonistClass": "051cef8e-2906-4217-a6d5-c8011b1d9f60",
@@ -315,7 +316,8 @@
     // Overpowered Abilities
     "OverpoweredAbilitySelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
     "OverpoweredAbilityMythicSelection": "46d086ef-4932-4fb1-8652-cd4afabada43",
-    "OverpoweredAbilitySelectionVillain": "b8fdf264-0691-4e02-bbcc-6969f0e31d6d",
+    "OverpoweredAbilitySelectionMastermind": "e8aa20f4-4fd9-406a-84c9-da3161ed4ca3",
+    "OverpoweredAbilitySelectionOverlord": "b8fdf264-0691-4e02-bbcc-6969f0e31d6d",
     "AutoBolsterBuff": "0a147ad2-fcb9-4bce-b2bd-27326b3df07d",
     "AutoBolsterAbility": "5ad0040f-cc05-47b6-a22b-45f187af825b",
     "AutoBolsterFeature": "b1221f77-bb0a-45b1-b81d-bc993b1cd728",
@@ -464,9 +466,14 @@
     "TrueMarkAbility": "ba3e0f3b-55fd-4443-952a-f44d2586d2a9",
     "TrueMarkFeature": "8956e383-fe4b-4b41-83f4-d426b40d487c",
 
-    // Villain Features
-    "VillainSpellbook": "9f393ace-2006-436a-85f9-8b47f347d3cd",
-    "VillainProficiencies": "b4d2cd29-c850-4716-95c1-74eca502a30c",
+    // Mastermind Features
+    "MastermindSpellbook": "9f393ace-2006-436a-85f9-8b47f347d3cd",
+    "MastermindProficiencies": "b4d2cd29-c850-4716-95c1-74eca502a30c",
+    "MastermindQuickFooted": "e744ccad-7669-44fb-8052-decc9d75ee7b",
+
+    // Overlord Features
+    "OverlordSpellbook": "5af8935b-58a4-4c06-b2f1-7f511ece6999",
+    "OverlordProficiencies": "11315b12-fa66-4b0c-ba8a-4a8e205a6d03",
     "CorruptAuraBuff": "d4968dff-22ad-435c-bd21-2b3f5afc69a0",
     "CorruptAuraArea": "770151d3-c0d7-4baa-b856-b94b23fdfea6",
     "CorruptAuraAreaBuff": "44a2f1f6-ec06-4f3d-8a41-c5debba18ea6",
@@ -476,7 +483,7 @@
     "SecondFormBuffTrigger": "7a626a0a-758a-4584-a90c-cb6032014bb7",
     "SecondFormBuff": "2601c5aa-4f9b-450f-8a50-69f36d694d3d",
     "SecondFormFeature": "56365f1f-cf02-4ad7-873f-5b6dd6becbb2",
-    "VillainQuickFooted": "2d0e8bf9-5978-45c3-bafc-9b3eefc573c7",
+    "OverlordQuickFooted": "2d0e8bf9-5978-45c3-bafc-9b3eefc573c7",
 
     // Patch Prestige Class Spellbook
     "LoremasterIsekai": "4133ad57-ec5b-4562-96d3-613e90418597",
@@ -487,14 +494,22 @@
     "DragonDiscipleIsekai": "5459c7f4-5b56-4e77-89f4-b8332ddb4aa5",
     "EldritchKnightIsekai": "d8594b8b-7be0-4ed3-b08c-3c96af5e1475",
     "WinterWitchIsekai": "a0413802-73fa-44c6-a9c8-bfeee0b20622",
-    "LoremasterVillain": "63d7461a-e50e-4cb7-9fe5-51b2bdf742b8",
-    "HellknightSignifierVillain": "e40dd66f-a0de-4656-bdb6-f6ca23a93efe",
-    "ArcaneTricksterVillain": "28e0087b-56d1-4ff0-9cdf-b1781cf6c3b5",
-    "MysticTheurgeArcaneVillain": "96f884e0-33b4-4cd7-bdcd-ff1fb683a964",
-    "MysticTheurgeDivineVillain": "5001b591-3223-4a91-88d6-bc5adc2d47eb",
-    "DragonDiscipleVillain": "93177109-389c-4cb0-8662-f18364e1e265",
-    "EldritchKnightVillain": "befb34db-255c-4523-ae30-6e2751b676c8",
-    "WinterWitchVillain": "6b71585a-95fd-4264-bf01-5649461cc8c5",
+    "LoremasterMastermind": "63d7461a-e50e-4cb7-9fe5-51b2bdf742b8",
+    "HellknightSignifierMastermind": "e40dd66f-a0de-4656-bdb6-f6ca23a93efe",
+    "ArcaneTricksterMastermind": "28e0087b-56d1-4ff0-9cdf-b1781cf6c3b5",
+    "MysticTheurgeArcaneMastermind": "96f884e0-33b4-4cd7-bdcd-ff1fb683a964",
+    "MysticTheurgeDivineMastermind": "5001b591-3223-4a91-88d6-bc5adc2d47eb",
+    "DragonDiscipleMastermind": "93177109-389c-4cb0-8662-f18364e1e265",
+    "EldritchKnightMastermind": "befb34db-255c-4523-ae30-6e2751b676c8",
+    "WinterWitchMastermind": "6b71585a-95fd-4264-bf01-5649461cc8c5",
+    "LoremasterOverlord": "9e42bb3c-6873-4de2-b6a4-2a84b6975932",
+    "HellknightSignifierOverlord": "d03c8620-fdcf-470a-9dce-19bf43b4f09b",
+    "ArcaneTricksterOverlord": "8ff6e354-a435-4846-a90b-a89cb12b30c3",
+    "MysticTheurgeArcaneOverlord": "f590995c-9017-47f8-bf43-b1244778ba77",
+    "MysticTheurgeDivineOverlord": "23172d62-c778-4d68-b351-897879b54e1c",
+    "DragonDiscipleOverlord": "d03769d9-29f1-4940-b147-576527e12c44",
+    "EldritchKnightOverlord": "a2ff95a9-001c-43ba-b0f2-7fbcd5ec904f",
+    "WinterWitchOverlord": "33fa2b2d-34a7-488b-9621-503936285ac5",
 
     // Deathsnatcher
     "DeathsnatcherClass": "e44a0435-06db-43e8-8762-35cd775bfd86",
@@ -557,7 +572,6 @@
     "HeroicLegacy": "7cefe668-4db4-4910-8e32-22db340e6d45",
     "HeroLegacySelection": "8024a569-be06-40ed-a6fb-75a020213799",
     "IsekaiBloodlineSelection": "acfd99e8-06a9-49ea-92f4-aed5d1269790",
-    "IsekaiKineticistTraining": "999ed314-5b33-4fec-8b9c-6f751f14e1e2",
     "IsekaiOracleCurseSelection": "bca6aef0-565d-4ea1-baa2-069f0ad1260d",
     "IsekaiOracleMysterySelection": "81225acc-6215-4336-a472-15f038c0b2be",
     "IsekaiOracleSelection": "c174da80-d702-4a20-a576-f9cbf4afac83",
@@ -570,9 +584,9 @@
     "OracleLegacyProgression": "6907b45f-3415-494d-af28-9e5c156b04eb",
     "RogueLegacy": "a94d1775-5e28-4836-a946-344ae44a311b",
     "SorcererLegacyProgression": "3f97724c-fd08-4800-85ca-f20d15bb363f",
-    "TacticianLegacy": "d8f63e00-9db7-4fbf-aff9-e43c0098b132",
     "TricksterSpellsKnown": "3e1cc954-707d-45cb-85b4-93b4b868dbb8",
-    "VillainLegacySelection": "4fa068ba-60ae-4b76-ba8f-a1d0a9001e82",
+    "MastermindLegacySelection": "4fa068ba-60ae-4b76-ba8f-a1d0a9001e82",
+    "OverlordLegacySelection": "0b37b4b8-16a0-4453-8aa2-1559268c521c",
 
     "IsekaiHexSelection": "a2f9ad9e-06d1-4e8b-875f-090e4ac44522",
     "IsekaiShamanSelection": "90c3002e-5a04-4c00-ac0f-9b5eab4869b2",

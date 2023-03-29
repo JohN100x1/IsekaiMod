@@ -2,7 +2,8 @@
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -17,26 +18,19 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         private static BlueprintProgression prog;
         private static BlueprintFeature training;
 
-        private static BlueprintFeature SpellStrike = BlueprintTools.GetBlueprint<BlueprintFeature>("be50f4e97fff8a24ba92561f1694a945");
-        private static BlueprintFeature SpellCombat = BlueprintTools.GetBlueprint<BlueprintFeature>("2464ba53317c7fc4d88f383fac2b45f9");
-        private static BlueprintFeature SpellCombatImproved = BlueprintTools.GetBlueprint<BlueprintFeature>("836879fcd5b29754eb664a090bd6c22f");
-        private static BlueprintFeature SpellCombatGreater = BlueprintTools.GetBlueprint<BlueprintFeature>("379887a82a7248946bbf6d0158663b5e");
+        private static readonly BlueprintFeature SpellStrike = BlueprintTools.GetBlueprint<BlueprintFeature>("be50f4e97fff8a24ba92561f1694a945");
+        private static readonly BlueprintFeature SpellCombat = BlueprintTools.GetBlueprint<BlueprintFeature>("2464ba53317c7fc4d88f383fac2b45f9");
+        private static readonly BlueprintFeature SpellCombatImproved = BlueprintTools.GetBlueprint<BlueprintFeature>("836879fcd5b29754eb664a090bd6c22f");
+        private static readonly BlueprintFeature SpellCombatGreater = BlueprintTools.GetBlueprint<BlueprintFeature>("379887a82a7248946bbf6d0158663b5e");
 
+        private static readonly BlueprintFeature ArcanaPoolFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("3ce9bb90749c21249adc639031d5eed1");
+        private static readonly BlueprintAbilityResource ArcanaPoolResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("effc3e386331f864e9e06d19dc218b37");
+        private static readonly BlueprintFeature ArcanaWeapon2 = BlueprintTools.GetBlueprint<BlueprintFeature>("36b609a6946733c42930c55ac540416b");
+        private static readonly BlueprintFeature ArcanaWeapon3 = BlueprintTools.GetBlueprint<BlueprintFeature>("70be888059f99a245a79d6d61b90edc5");
+        private static readonly BlueprintFeature ArcanaWeapon4 = BlueprintTools.GetBlueprint<BlueprintFeature>("1804187264121cd439d70a96234d4ddb");
+        private static readonly BlueprintFeature ArcanaWeapon5 = BlueprintTools.GetBlueprint<BlueprintFeature>("3cbe3e308342b3247ba2f4fbaf5e6307");
 
-        private static BlueprintFeature ArcanaPoolFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("3ce9bb90749c21249adc639031d5eed1");
-        private static BlueprintAbilityResource ArcanaPoolResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("effc3e386331f864e9e06d19dc218b37");
-        private static BlueprintFeature ArcanaWeapon2 = BlueprintTools.GetBlueprint<BlueprintFeature>("36b609a6946733c42930c55ac540416b");
-        private static BlueprintFeature ArcanaWeapon3 = BlueprintTools.GetBlueprint<BlueprintFeature>("70be888059f99a245a79d6d61b90edc5");
-        private static BlueprintFeature ArcanaWeapon4 = BlueprintTools.GetBlueprint<BlueprintFeature>("1804187264121cd439d70a96234d4ddb");
-        private static BlueprintFeature ArcanaWeapon5 = BlueprintTools.GetBlueprint<BlueprintFeature>("3cbe3e308342b3247ba2f4fbaf5e6307");
-
-        private static BlueprintFeatureSelection ArcanaSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("e9dc4dfc73eaaf94aae27e0ed6cc9ada");
-
-
-        /* Magus
-         * Arcana Weapon
-         * 
-         */
+        private static readonly BlueprintFeatureSelection ArcanaSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("e9dc4dfc73eaaf94aae27e0ed6cc9ada");
 
         public static void Configure() {
             var IsekaiKMagusTraining = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiKMagusTraining", bp => {
@@ -87,7 +81,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Register(prog);
             HeroLegacySelection.Register(prog);
-            VillainLegacySelection.Prohibit(prog);
+            MastermindLegacySelection.Prohibit(prog);
+            OverlordLegacySelection.Register(prog);
             GodEmperorLegacySelection.Register(prog);
         }
         public static BlueprintProgression Get() {

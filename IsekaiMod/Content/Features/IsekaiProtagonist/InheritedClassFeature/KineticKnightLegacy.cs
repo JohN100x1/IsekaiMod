@@ -1,9 +1,9 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -25,8 +25,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
 
         public static void PatchProgression() {
-            var IsekaiKineticistTraining = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiKineticistTraining");
-
             prog.SetName(IsekaiContext, "Kinetic Legacy - Kinetic Knight");
             prog.SetDescription(IsekaiContext, "Just like all Kinetic Knights your sanity is somewhat questionable, after all you willingly choose to forego fighting at range and instead choose to use energy blasts as melee weapons...\n" +
                 "And why? Because the burning blade looked cool.");
@@ -39,7 +37,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Register(prog);
             HeroLegacySelection.Register(prog);
-            VillainLegacySelection.Prohibit(prog);
+            MastermindLegacySelection.Prohibit(prog);
+            OverlordLegacySelection.Register(prog);
             GodEmperorLegacySelection.Prohibit(prog);
 
             BlueprintFeature EnergizeWeapon = BlueprintTools.GetBlueprint<BlueprintFeature>("fb9fe27f13934807bcd62dfeec477758");

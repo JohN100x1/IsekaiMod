@@ -18,7 +18,7 @@ using Kingmaker.UnitLogic.Mechanics.Properties;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord {
 
     internal class SecondFormFeature {
 

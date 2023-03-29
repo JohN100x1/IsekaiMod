@@ -5,20 +5,20 @@ using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind {
 
-    internal class VillainLegacySelection {
+    internal class MastermindLegacySelection {
         private static BlueprintFeatureSelection ClassSelection;
         private static BlueprintProgression[] registered;
         private static BlueprintProgression[] prohibited;
 
         public static void Configure() {
             if (ClassSelection != null) {
-                IsekaiContext.Logger.LogWarning("repeated configuration of =VillainLegacySelection");
+                IsekaiContext.Logger.LogWarning("repeated configuration of =MastermindLegacySelection");
                 return;
             }
-            ClassSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "VillainLegacySelection", bp => {
-                bp.SetName(IsekaiContext, "Villainous Legacy");
+            ClassSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "MastermindLegacySelection", bp => {
+                bp.SetName(IsekaiContext, "Mastermind Legacy");
                 bp.SetDescription(IsekaiContext, "This is neither disney, nor are you the kind to lose your mind...");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -34,7 +34,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain {
             if (ClassSelection != null) {
                 return ClassSelection;
             }
-            return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "VillainLegacySelection");
+            return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "MastermindLegacySelection");
         }
         public static void Register(BlueprintProgression prog) {
             registered = registered.AppendToArray(prog);
@@ -48,7 +48,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain {
                 ClassSelection.AddFeatures(feature);
             }
             if (IsekaiContext.AddedContent.Other.IsDisabled("Relax Legacy Choices")) {
-                BlueprintArchetypeReference archetypeRef = Classes.IsekaiProtagonist.Archetypes.Villain.GetReference();
+                BlueprintArchetypeReference archetypeRef = Classes.IsekaiProtagonist.Archetypes.MastermindArchetype.GetReference();
                 foreach (BlueprintFeature feature in prohibited) {
                     feature.AddComponent<PrerequisiteNoArchetype>(c => { 
                         c.m_Archetype = archetypeRef;

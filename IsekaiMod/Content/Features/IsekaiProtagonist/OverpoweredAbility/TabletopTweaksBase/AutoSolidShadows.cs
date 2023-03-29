@@ -46,7 +46,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(AutoSolidShadowsFeature);
+            OverpoweredAbilitySelection.AddToAllSelection(AutoSolidShadowsFeature);
         }
     }
 }

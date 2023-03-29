@@ -1,6 +1,6 @@
 ﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
             var EdgeLordProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "EdgeLordProficiencies");
             var GodEmperorProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodEmperorProficiencies");
-            var VillainProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "VillainProficiencies");
+            var MastermindProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindProficiencies");
             var HeroProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HeroProficiencies");
 
             var IsekaiProtagonistCantripsFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistCantripsFeature");
@@ -31,7 +31,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var IsekaiFighterTraining = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiFighterTraining");
             var IsekaiFastMovement = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiFastMovement");
             var IsekaiQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiQuickFooted");
-            var VillainQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "VillainQuickFooted");
+            var MastermindQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindQuickFooted");
+            var OverlordQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OverlordQuickFooted");
             var FriendlyAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "FriendlyAuraFeature");
             var DarkAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DarkAuraFeature");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
@@ -60,7 +61,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
             var IsekaiPetSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiPetSelection");
             var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
-            var OverpoweredAbilitySelectionVillain = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionVillain");
+            var OverpoweredAbilitySelectionMastermind = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionMastermind");
             var BeachEpisodeSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeSelection");
             var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
 
@@ -104,7 +105,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 
                 // Isekai UI group
                 Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, FriendlyAuraFeature, DarkAuraFeature,
-                IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, VillainQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
+                IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, MastermindQuickFooted, OverlordQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
                 
                 // Edge Lord UI group
                 Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike),
@@ -115,8 +116,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 // Hero UI group
                 GracefulCombat, IsekaiChannelPositiveEnergyFeature, AuraOfDivineFuryFeature, CelestialRealmFeature, HerosPresenceFeature, ArmorSaint),
                 
-                // Villain UI group
-                Helpers.CreateUIGroup(OverpoweredAbilitySelectionVillain,  IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, SecondFormFeature),
+                // Mastermind UI group
+                Helpers.CreateUIGroup(OverpoweredAbilitySelectionMastermind,  IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, SecondFormFeature),
                 Helpers.CreateUIGroup(SlayerStudyTargetFeature, SlayerSwiftStudyTargetFeature),
                 
                 // OP ability and Special Power UI group
@@ -125,14 +126,14 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 // Legacy UI groups
                 Helpers.CreateUIGroup(LegacySelection.GetClassFeature()),
                 Helpers.CreateUIGroup(HeroLegacySelection.getClassFeature()),
-                Helpers.CreateUIGroup(VillainLegacySelection.getClassFeature()),
+                Helpers.CreateUIGroup(OverlordLegacySelection.getClassFeature()),
                 Helpers.CreateUIGroup(EdgeLordLegacySelection.getClassFeature())
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
                 HeroProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 EdgeLordProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 GodEmperorProficiencies.ToReference<BlueprintFeatureBaseReference>(),
-                VillainProficiencies.ToReference<BlueprintFeatureBaseReference>(),
+                MastermindProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiProtagonistProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiProtagonistCantripsFeature.ToReference<BlueprintFeatureBaseReference>(),
                 StartingWeaponSelection.ToReference<BlueprintFeatureBaseReference>(),

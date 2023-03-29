@@ -7,13 +7,14 @@ using TabletopTweaks.Core.Utilities;
 using UnityEngine;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind {
 
-    internal class VillainQuickFooted {
+    internal class MastermindQuickFooted
+    {
         private static readonly Sprite Icon_ExpeditiousRetreat = BlueprintTools.GetBlueprint<BlueprintAbility>("4f8181e7a7f1d904fbaea64220e83379").m_Icon;
 
         public static void Add() {
-            var VillainQuickFooted = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "VillainQuickFooted", bp => {
+            var MastermindQuickFooted = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "MastermindQuickFooted", bp => {
                 bp.SetName(IsekaiContext, "Quick-Footed");
                 bp.SetDescription(IsekaiContext, "At 16th level, you gain a competence {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Initiative}initiative{/g} "
                     + "{g|Encyclopedia:Check}checks{/g} equal to your {g|Encyclopedia:Intelligence}Intelligence{/g} modifier.");

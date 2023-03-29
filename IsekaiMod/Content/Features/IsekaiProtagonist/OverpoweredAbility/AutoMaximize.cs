@@ -42,7 +42,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(AutoMaximizeFeature);
+            OverpoweredAbilitySelection.AddToAllSelection(AutoMaximizeFeature);
         }
     }
 }

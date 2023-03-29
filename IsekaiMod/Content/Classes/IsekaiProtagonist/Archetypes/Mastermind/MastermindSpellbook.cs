@@ -7,28 +7,27 @@ using Kingmaker.Localization;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
+namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind {
 
-    internal class IsekaiProtagonistSpellbook {
+    internal class MastermindSpellbook {
 
         public static void Add() {
             var IsekaiProtagonistSpellList = BlueprintTools.GetModBlueprint<BlueprintSpellList>(IsekaiContext, "IsekaiProtagonistSpellList");
             var IsekaiProtagonistSpellsPerDay = BlueprintTools.GetModBlueprint<BlueprintSpellsTable>(IsekaiContext, "IsekaiProtagonistSpellsPerDay");
-            var IsekaiProtagonistSpellsKnown = BlueprintTools.GetModBlueprint<BlueprintSpellsTable>(IsekaiContext, "IsekaiProtagonistSpellsKnown");
-            var IsekaiProtagonistSpellbook = Helpers.CreateBlueprint<BlueprintSpellbook>(IsekaiContext, "IsekaiProtagonistSpellbook", bp => {
-                bp.Name = Helpers.CreateString(IsekaiContext, "$IsekaiProtagonistSpellbook.Name", "Isekai Protagonist");
+            var MastermindSpellbook = Helpers.CreateBlueprint<BlueprintSpellbook>(IsekaiContext, "MastermindSpellbook", bp => {
+                bp.Name = Helpers.CreateString(IsekaiContext, "MastermindSpellbook.Name", "Mastermind");
                 bp.Spontaneous = true;
-                bp.CastingAttribute = StatType.Charisma;
+                bp.CastingAttribute = StatType.Intelligence;
                 bp.CantripsType = CantripsType.Cantrips;
                 bp.IsArcane = true;
-                bp.IsArcanist = false;
+                bp.IsArcanist = true;
                 bp.m_SpellsPerDay = IsekaiProtagonistSpellsPerDay.ToReference<BlueprintSpellsTableReference>();
-                bp.m_SpellsKnown = IsekaiProtagonistSpellsKnown.ToReference<BlueprintSpellsTableReference>();
+                bp.m_SpellsKnown = null;
                 bp.m_SpellList = IsekaiProtagonistSpellList.ToReference<BlueprintSpellListReference>();
-                bp.m_SpellSlots = null;
-                bp.SpellsPerLevel = 0;
+                bp.m_SpellSlots = IsekaiProtagonistSpellsPerDay.ToReference<BlueprintSpellsTableReference>();
+                bp.SpellsPerLevel = 4;
                 bp.AllSpellsKnown = false;
-                bp.CanCopyScrolls = false;
+                bp.CanCopyScrolls = true;
 
                 // Mythic spellbook related
                 bp.IsMythic = false;
@@ -42,17 +41,12 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             // Allow Spellbook to be merged with angel and lich
             var AngelIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
             var LichIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
-            ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AngelIncorporateSpellBook, IsekaiProtagonistSpellbook);
-            ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(LichIncorporateSpellBook, IsekaiProtagonistSpellbook);
-        }
-
-        public static void SetCharacterClass(BlueprintCharacterClass characterClass) {
-            BlueprintSpellbook SpellBook = Get();
-            SpellBook.m_CharacterClass = characterClass.ToReference<BlueprintCharacterClassReference>();
+            ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AngelIncorporateSpellBook, MastermindSpellbook);
+            ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(LichIncorporateSpellBook, MastermindSpellbook);
         }
 
         public static BlueprintSpellbook Get() {
-            return BlueprintTools.GetModBlueprint<BlueprintSpellbook>(IsekaiContext, "IsekaiProtagonistSpellbook");
+            return BlueprintTools.GetModBlueprint<BlueprintSpellbook>(IsekaiContext, "MastermindSpellbook");
         }
 
         public static BlueprintSpellbookReference GetReference() {

@@ -1,5 +1,7 @@
 ﻿using HarmonyLib;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.TabletopTweaksBase;
 using Kingmaker.Blueprints;
@@ -78,16 +80,14 @@ namespace IsekaiMod.Utilities {
                     var AzataIncorporateSpellbook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("83385d9f4d714e4e94618703be762a20");
                     var DemonIncorporateSpellbook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("f3ff8515355e4738b128c3d01483f1ca");
                     var TricksterIncorporateSpellbook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("c4ef6975167d4cf5acbfd66b60e63f9c");
-                    // Add Isekai Protagonist Spellbook
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AeonIncorporateSpellBook, IsekaiProtagonistSpellbook.Get());
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AzataIncorporateSpellbook, IsekaiProtagonistSpellbook.Get());
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(DemonIncorporateSpellbook, IsekaiProtagonistSpellbook.Get());
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(TricksterIncorporateSpellbook, IsekaiProtagonistSpellbook.Get());
-                    // Add Villain Spellbook
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AeonIncorporateSpellBook, VillainSpellbook.Get());
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AzataIncorporateSpellbook, VillainSpellbook.Get());
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(DemonIncorporateSpellbook, VillainSpellbook.Get());
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(TricksterIncorporateSpellbook, VillainSpellbook.Get());
+
+                    BlueprintSpellbook[] spellbooks = new BlueprintSpellbook[] { IsekaiProtagonistSpellbook.Get(), MastermindSpellbook.Get(), OverlordSpellbook.Get() };
+                    foreach (BlueprintSpellbook spellbook in spellbooks) {
+                        ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AeonIncorporateSpellBook, spellbook);
+                        ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AzataIncorporateSpellbook, spellbook);
+                        ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(DemonIncorporateSpellbook, spellbook);
+                        ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(TricksterIncorporateSpellbook, spellbook);
+                    }
                 }
             }
 

@@ -15,7 +15,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         // Spells - 0
         public static readonly BlueprintAbility MageLightAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("95f206566c5261c42aa5b3e7e0d1e36c");
-
         public static readonly BlueprintAbility JoltAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("16e23c7a8ae53cc42a93066d19766404");
         public static readonly BlueprintAbility DisruptUndeadAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("652739779aa05504a9ad5db1db6d02ae");
         public static readonly BlueprintAbility AcidSplashAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("0c852a2405dd9f14a8bbcfaf245ff823");
@@ -31,7 +30,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         // Spells - 1
         public static readonly BlueprintAbility SnowBallAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("9f10909f0be1f5141bf1c102041f93d9");
-
         public static readonly BlueprintAbility VanishAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("f001c73999fb5a543a199f890108d936");
         public static readonly BlueprintAbility ColorSprayAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("91da41b9793a4624797921f221db653c");
         public static readonly BlueprintAbility ShockingGraspAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("ab395d2335d3f384e99dddee8562978f");
@@ -87,7 +85,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         // Spells - 2
         public static readonly BlueprintAbility OwlsWisdomAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("f0455c9295b53904f9e02fc571dd2ce1");
-
         public static readonly BlueprintAbility BurningArcAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("eaac3d36e0336cb479209a6f65e25e7c");
         public static readonly BlueprintAbility FalseLifeAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("7a5b5bf845779a941a67251539545762");
         public static readonly BlueprintAbility AnimalAspectAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("d4b28341acdfa9443a3a779acb58be51");
@@ -149,7 +146,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         // Spells - 3
         public static readonly BlueprintAbility VampiricTouchAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("8a28a811ca5d20d49a863e832c31cce1");
-
         public static readonly BlueprintAbility MagicWeaponGreaterAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("0f92caa35619f234298d95a4b6dda90d");
         public static readonly BlueprintAbility ProtectionFromArrowsCommunalAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("96c9d98b6a9a7c249b6c4572e4977157");
         public static readonly BlueprintAbility ProtectionFromEnergyAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("d2f116cfe05fcdd4a94e80143b67046f");
@@ -208,7 +204,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         // Spells - 4
         public static readonly BlueprintAbility OverwhelmingGriefAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("dd2918e4a77c50044acba1ac93494c36");
-
         public static readonly BlueprintAbility CrushingDespairAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("4baf4109145de4345861fe0f2209d903");
         public static readonly BlueprintAbility ObsidianFlowAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("e48638596c955a74c8a32dbc90b518c1");
         public static readonly BlueprintAbility RainbowPatternAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("4b8265132f9c8174f87ce7fa6d0fe47b");
@@ -265,7 +260,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         // Spells - 5
         public static readonly BlueprintAbility AngelicAspectAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("75a10d5a635986641bfbcceceec87217");
-
         public static readonly BlueprintAbility AcidicSprayAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("c543eef6d725b184ea8669dd09b3894c");
         public static readonly BlueprintAbility HoldMonsterAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("41e8a952da7a5c247b3ec1c2dbb73018");
         public static readonly BlueprintAbility ConstrictingCoilsAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("3fce8e988a51a2a4ea366324d6153001");
@@ -321,7 +315,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         // Spells - 6
         public static readonly BlueprintAbility ChainsOfLightAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("f8cea58227f59c64399044a82c9735c4");
-
         public static readonly BlueprintAbility ElementalAssessorAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("6303b404df12b0f4793fa0763b21dd2c");
         public static readonly BlueprintAbility StoneToFleshAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("e243740dfdb17a246b116b334ed0b165");
         public static readonly BlueprintAbility SummonMonsterVIAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("e740afbab0147944dab35d83faa0ae1c");
@@ -373,7 +366,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         // Spells - 7
         public static readonly BlueprintAbility UmbralStrikeAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("474ed0aa656cc38499cc9a073d113716");
-
         public static readonly BlueprintAbility InsanityAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("2b044152b3620c841badb090e01ed9de");
         public static readonly BlueprintAbility PolymorphGreaterAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("a9fc28e147dbb364ea4a3c1831e7e55f");
         public static readonly BlueprintAbility PowerWordBlindAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("261e1788bfc5ac1419eec68b1d485dbc");
@@ -417,7 +409,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         // Spells - 8
         public static readonly BlueprintAbility AngelicAspectGreaterAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("b1c7576bd06812b42bda3f09ab202f14");
-
         public static readonly BlueprintAbility ShoutGreaterAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("fd0d3840c48cafb44bb29e8eb74df204");
         public static readonly BlueprintAbility ProtectionFromSpellsAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("42aa71adc7343714fa92e471baa98d42");
         public static readonly BlueprintAbility SummonMonsterVIIIAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("d3ac756a229830243a72e84f3ab050d0");
@@ -450,7 +441,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         // Spells - 9
         public static readonly BlueprintAbility OverwhelmingPresenceAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("41cf93453b027b94886901dbfc680cb9");
-
         public static readonly BlueprintAbility IcyPrisonMassAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("1852a9393a23d5741b650a1ea7078abc");
         public static readonly BlueprintAbility ShadesAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("70e12191790f69a439ea0132c75f83aa");
         public static readonly BlueprintAbility TsunamiAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("d8144161e352ca846a73cf90e85bf9ac");
