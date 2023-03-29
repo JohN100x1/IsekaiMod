@@ -12,7 +12,7 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
-    internal class Hero {
+    internal class HeroArchetype {
         private static readonly LocalizedString Name = Helpers.CreateString(IsekaiContext, $"HeroArchetype.Name", "Hero");
         private static readonly LocalizedString Description = Helpers.CreateString(IsekaiContext, $"HeroArchetype.Description",
             "Heroes use their newfound powers for good. After realising the suffering and despair of the inhabitants of the new world, "

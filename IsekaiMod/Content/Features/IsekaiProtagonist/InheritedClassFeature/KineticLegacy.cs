@@ -28,7 +28,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.AddComponent<AddProficiencies>(c => {
                     c.WeaponProficiencies = new Kingmaker.Enums.WeaponCategory[] { Kingmaker.Enums.WeaponCategory.KineticBlast };
                 });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => { c.m_Archetype = EdgeLord.GetReference(); });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => { c.m_Archetype = EdgeLordArchetype.GetReference(); });
             });
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);

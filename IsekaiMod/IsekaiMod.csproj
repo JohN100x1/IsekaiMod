@@ -222,9 +222,9 @@
     <Compile Include="Content\Features\IsekaiProtagonist\SignatureMoveSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\StartingWeaponSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SummonHarem.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\EdgeLord\EdgeLord.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperor.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Hero\Hero.cs" />
+    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\EdgeLord\EdgeLordArchetype.cs" />
+    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorArchetype.cs" />
+    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Hero\HeroArchetype.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\BeachEpisode\BeachEpisodeSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\BeachEpisode\HealthyBody.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\BeachEpisode\InnerPower.cs" />

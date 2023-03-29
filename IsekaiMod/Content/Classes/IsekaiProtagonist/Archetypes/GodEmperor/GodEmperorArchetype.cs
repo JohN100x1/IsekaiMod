@@ -9,7 +9,7 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
-    internal class GodEmperor {
+    internal class GodEmperorArchetype {
         private static readonly LocalizedString Name = Helpers.CreateString(IsekaiContext, $"GodEmperorArchetype.Name", "God Emperor");
         private static readonly LocalizedString Description = Helpers.CreateString(IsekaiContext, $"GodEmperorArchetype.Description",
             "Rather than wandering aimlessly, collecting harems, or defeating demon lords, some protagonists decide to become gods. "

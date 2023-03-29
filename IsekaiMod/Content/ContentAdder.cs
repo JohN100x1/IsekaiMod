@@ -154,7 +154,7 @@ namespace IsekaiMod.Content {
                 SiphoningAuraFeature.Add();
                 CelestialRealm.Add();
                 Godhood.Add();
-                GodEmperor.Add();
+                GodEmperorArchetype.Add();
                 Main.LogDebug("Class: Emperor");
 
                 // Edge Lord Archetype
@@ -162,7 +162,7 @@ namespace IsekaiMod.Content {
                 SupersonicCombat.Add();
                 EdgeLordFastMovement.Add();
                 ExtraStrike.Add();
-                EdgeLord.Add();
+                EdgeLordArchetype.Add();
                 Main.LogDebug("Class: EdgeLord");
 
                 // Hero Archetype
@@ -171,7 +171,7 @@ namespace IsekaiMod.Content {
                 TrueSmite.Add();
                 TrueMark.Add();
                 HerosPresence.Add();
-                Hero.Add();
+                HeroArchetype.Add();
                 Main.LogDebug("Class: Hero");
 
                 // Mastermind Archetype

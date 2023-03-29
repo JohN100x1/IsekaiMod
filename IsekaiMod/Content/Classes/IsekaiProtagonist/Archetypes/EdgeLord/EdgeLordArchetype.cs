@@ -10,7 +10,7 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
-    internal class EdgeLord {
+    internal class EdgeLordArchetype {
         private static readonly LocalizedString Name = Helpers.CreateString(IsekaiContext, $"EdgeLordArchetype.Name", "Edge Lord");
         private static readonly LocalizedString Description = Helpers.CreateString(IsekaiContext, $"EdgeLordArchetype.Description",
             "After reincarnating into Golarion, some protagonists use their newfound abilities to look cool and stylish. "
