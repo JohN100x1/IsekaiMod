@@ -33,7 +33,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
             // Archetype
             var EdgeLordArchetype = Helpers.CreateBlueprint<BlueprintArchetype>(IsekaiContext, "EdgeLordArchetype", bp => {
-                bp.LocalizedName = Name
+                bp.LocalizedName = Name;
                 bp.LocalizedDescription = Description;
                 bp.LocalizedDescriptionShort = Description;
                 bp.IsArcaneCaster = true;
