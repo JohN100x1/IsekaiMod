@@ -53,7 +53,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var IsekaiProtagonistBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiProtagonistBonusFeatSelection");
             var SignatureMoveSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveSelection");
             var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
-            var OverpoweredAbilitySelection2 = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2");
             var BeachEpisodeSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeSelection");
             var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
 
@@ -133,13 +132,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                         {
                             m_Selection = OverpoweredAbilitySelection.ToReference<BlueprintFeatureSelectionReference>(),
                             m_Features = new BlueprintFeatureReference[]{
-                                AutoQuickenFeature.ToReference<BlueprintFeatureReference>()
-                            }
-                        },
-                        new SelectionEntry()
-                        {
-                            m_Selection = OverpoweredAbilitySelection2.ToReference<BlueprintFeatureSelectionReference>(),
-                            m_Features = new BlueprintFeatureReference[]{
+                                AutoQuickenFeature.ToReference<BlueprintFeatureReference>(),
                                 AutoMaximizeFeature.ToReference<BlueprintFeatureReference>(),
                                 AutoSelectiveFeature.ToReference<BlueprintFeatureReference>(),
                                 AutoEmpowerFeature.ToReference<BlueprintFeatureReference>(),

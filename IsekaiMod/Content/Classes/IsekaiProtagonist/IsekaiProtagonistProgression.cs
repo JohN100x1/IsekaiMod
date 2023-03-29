@@ -60,7 +60,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
             var IsekaiPetSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiPetSelection");
             var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
-            var OverpoweredAbilitySelection2 = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2");
             var OverpoweredAbilitySelectionVillain = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionVillain");
             var BeachEpisodeSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeSelection");
             var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
@@ -84,22 +83,22 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateLevelEntry(2, IsekaiProtagonistBonusFeatSelection),
                 Helpers.CreateLevelEntry(3, IsekaiFighterTraining, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(4, IsekaiProtagonistBonusFeatSelection),
-                Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection2),
+                Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection),
                 Helpers.CreateLevelEntry(6, IsekaiProtagonistBonusFeatSelection, SignatureMoveSelection),
                 Helpers.CreateLevelEntry(7, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(8, IsekaiProtagonistBonusFeatSelection, IsekaiFastMovement),
                 Helpers.CreateLevelEntry(9, SpecialPowerSelection),
-                Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2, FriendlyAuraFeature),
+                Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, FriendlyAuraFeature),
                 Helpers.CreateLevelEntry(11, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(12, IsekaiProtagonistBonusFeatSelection, BeachEpisodeSelection),
                 Helpers.CreateLevelEntry(13, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(14, IsekaiProtagonistBonusFeatSelection),
-                Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection2, OtherworldlyStamina),
+                Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection, OtherworldlyStamina),
                 Helpers.CreateLevelEntry(16, IsekaiProtagonistBonusFeatSelection, IsekaiQuickFooted),
                 Helpers.CreateLevelEntry(17, SpecialPowerSelection, SummonHaremFeature),
                 Helpers.CreateLevelEntry(18, IsekaiProtagonistBonusFeatSelection),
                 Helpers.CreateLevelEntry(19, SpecialPowerSelection),
-                Helpers.CreateLevelEntry(20, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2, SecondReincarnation)
+                Helpers.CreateLevelEntry(20, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, SecondReincarnation)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 
@@ -121,7 +120,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateUIGroup(SlayerStudyTargetFeature, SlayerSwiftStudyTargetFeature),
                 
                 // OP ability and Special Power UI group
-                Helpers.CreateUIGroup(OverpoweredAbilitySelection, OverpoweredAbilitySelection2, SpecialPowerSelection),
+                Helpers.CreateUIGroup(OverpoweredAbilitySelection, SpecialPowerSelection),
 
                 // Legacy UI groups
                 Helpers.CreateUIGroup(LegacySelection.GetClassFeature()),

@@ -28,7 +28,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var Godhood = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Godhood");
             var GodlyVessel = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodlyVessel");
             var SiphoningAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SiphoningAuraFeature");
-            var OverpoweredAbilitySelection2 = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2");
+            var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
             var ArmorSaint = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ArmorSaint");
             var AuraOfDivineFuryFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfDivineFuryFeature");
 
@@ -51,14 +51,14 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, LegacySelection.GetClassFeature()),
                     Helpers.CreateLevelEntry(3, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection2),
+                    Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection),
                     Helpers.CreateLevelEntry(7, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(9, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(10, FriendlyAuraFeature),
                     Helpers.CreateLevelEntry(11, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(12, BeachEpisodeSelection),
                     Helpers.CreateLevelEntry(13, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection2, OtherworldlyStamina),
+                    Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection, OtherworldlyStamina),
                     Helpers.CreateLevelEntry(17, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(19, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(20, SecondReincarnation),

@@ -39,7 +39,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var FriendlyAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "FriendlyAuraFeature");
             var IsekaiQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiQuickFooted");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
-            var OverpoweredAbilitySelection2 = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2");
+            var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
             var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
 
             // Archetype
@@ -56,7 +56,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(4, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(6, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(8, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection2, FriendlyAuraFeature),
+                    Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, FriendlyAuraFeature),
                     Helpers.CreateLevelEntry(12, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(14, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(16, IsekaiQuickFooted),

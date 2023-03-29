@@ -29,7 +29,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
             // Removed features
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
-            var OverpoweredAbilitySelection2 = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2");
+            var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
             var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
 
@@ -43,7 +43,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, LegacySelection.GetClassFeature()),
                     Helpers.CreateLevelEntry(3, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(10, OverpoweredAbilitySelection2),
+                    Helpers.CreateLevelEntry(10, OverpoweredAbilitySelection),
                     Helpers.CreateLevelEntry(17,  SpecialPowerSelection),
                     Helpers.CreateLevelEntry(20, SecondReincarnation),
                 };
