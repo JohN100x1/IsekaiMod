@@ -10,7 +10,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         private static readonly BlueprintFeature CripplingStrike = BlueprintTools.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
         private static readonly BlueprintFeature DispellingAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
         private static readonly BlueprintFeature ConfoundingBlades = BlueprintTools.GetBlueprint<BlueprintFeature>("ce72662a812b1f242849417b2c784b5e");
-
         private static readonly BlueprintFeature Opportunist = BlueprintTools.GetBlueprint<BlueprintFeature>("5bb6dc5ce00550441880a6ff8ad4c968");
         private static readonly BlueprintFeature FastStealth = BlueprintTools.GetBlueprint<BlueprintFeature>("97a6aa2b64dd21a4fac67658a91067d7");
         private static readonly BlueprintFeature FocusingAttackConfused = BlueprintTools.GetBlueprint<BlueprintFeature>("955ff81c596c1c3489406d03e81e6087");

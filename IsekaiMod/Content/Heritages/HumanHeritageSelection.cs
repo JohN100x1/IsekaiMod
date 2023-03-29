@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Heritages {
 
             ourHeritageSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiHumanHeritageSelection", bp => {
                 bp.SetName(IsekaiContext, "Alternate Racial Traits");
-                bp.SetDescription(IsekaiContext, "The following alternate traits are available");
+                bp.SetDescription(IsekaiContext, "The following alternate traits are available.");
                 bp.IsClassFeature = true;
                 bp.Groups = new[] { FeatureGroup.Racial };
                 bp.Group = FeatureGroup.KitsuneHeritage;

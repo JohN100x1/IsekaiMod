@@ -1,6 +1,7 @@
 ﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Blueprints.Items.Ecnchantments;
 using Kingmaker.DialogSystem.Blueprints;
 using Kingmaker.Localization;
 using System;
@@ -29,6 +30,13 @@ namespace IsekaiMod.Utilities {
         }
         public static void SetText(this BlueprintAnswer Cue, ModContextBase modContext, string name) {
             Cue.Text = Helpers.CreateString(modContext, $"{Cue.name}.Text", name);
+        }
+
+        public static void SetName(this BlueprintWeaponEnchantment enchantment, ModContextBase modContext, string name) {
+            enchantment.m_EnchantName = Helpers.CreateString(modContext, $"{enchantment.name}.EnchantName", name);
+        }
+        public static void SetDescription(this BlueprintWeaponEnchantment enchantment, ModContextBase modContext, string name) {
+            enchantment.m_Description = Helpers.CreateString(modContext, $"{enchantment.name}.Description", name);
         }
 
         public static void AddToFirst(this BlueprintFeatureSelection selection, BlueprintFeature feature) {
