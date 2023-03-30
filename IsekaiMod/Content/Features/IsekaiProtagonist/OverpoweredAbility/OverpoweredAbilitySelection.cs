@@ -13,6 +13,8 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
     internal class OverpoweredAbilitySelection {
+
+        private static readonly Sprite Icon_AutoMagic = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AUTO_MAGIC.png");
         private static readonly Sprite Icon_TrickFate = BlueprintTools.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
         public static void Add() {
             // Overpowered Ability Selection
@@ -26,9 +28,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.m_Features = new BlueprintFeatureReference[0];
             });
             var OverpoweredAbilitySelectionMastermind = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionMastermind", bp => {
-                bp.SetName(IsekaiContext, "Mastermind Overpowered Ability");
-                bp.SetDescription(IsekaiContext, "Masterminds get to select an additional Overpowered Abilities.");
-                bp.m_Icon = Icon_TrickFate;
+                bp.SetName(IsekaiContext, "Mastermind Auto magic");
+                bp.SetDescription(IsekaiContext, "Masterminds get to select powerful auto-metamagics.");
+                bp.m_Icon = Icon_AutoMagic;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[0];
