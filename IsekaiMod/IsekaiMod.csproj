@@ -322,7 +322,6 @@
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\CorruptAuraFeature.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\OverlordLegacySelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\OverlordProficiencies.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\OverlordQuickFooted.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\SecondFormFeature.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\TabletopTweaksBase\AutoBurning.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\TabletopTweaksBase\AutoElemental.cs" />

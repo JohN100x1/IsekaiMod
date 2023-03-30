@@ -30,6 +30,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var SummonHaremFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SummonHaremFeature");
             var OtherworldlyStamina = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OtherworldlyStamina");
             var SignatureMoveSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureMoveSelection");
+            var SignatureAbility = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureAbility");
+            var SignatureMove = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureMove");
             var IsekaiFighterTraining = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiFighterTraining");
             var IsekaiFastMovement = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiFastMovement");
             var IsekaiQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiQuickFooted");
@@ -93,10 +95,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, IsekaiAuraSelection),
                 Helpers.CreateLevelEntry(11, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(12, IsekaiProtagonistBonusFeatSelection, BeachEpisodeSelection),
-                Helpers.CreateLevelEntry(13, SpecialPowerSelection),
+                Helpers.CreateLevelEntry(13, SpecialPowerSelection, OtherworldlyStamina),
                 Helpers.CreateLevelEntry(14, IsekaiProtagonistBonusFeatSelection),
-                Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection, OtherworldlyStamina),
-                Helpers.CreateLevelEntry(16, IsekaiProtagonistBonusFeatSelection, IsekaiQuickFooted),
+                Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection, IsekaiQuickFooted),
+                Helpers.CreateLevelEntry(16, IsekaiProtagonistBonusFeatSelection),
                 Helpers.CreateLevelEntry(17, SpecialPowerSelection, SummonHaremFeature),
                 Helpers.CreateLevelEntry(18, IsekaiProtagonistBonusFeatSelection),
                 Helpers.CreateLevelEntry(19, SpecialPowerSelection),
@@ -105,7 +107,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 
                 // Isekai UI group
-                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, IsekaiAuraSelection, DarkAuraFeature,
+                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAbility, SignatureMove, SignatureMoveSelection, SummonHaremFeature, IsekaiAuraSelection, DarkAuraFeature,
                 IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, MastermindQuickFooted, OverlordQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
                 
                 // Edge Lord UI group

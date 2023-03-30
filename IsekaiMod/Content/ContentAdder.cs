@@ -184,7 +184,6 @@ namespace IsekaiMod.Content {
                 OverlordSpellbook.Add();
                 OverlordProficiencies.Add();
                 CorruptAuraFeature.Add();
-                OverlordQuickFooted.Add();
                 SecondFormFeature.Add();
                 OverlordArchetype.Add();
                 Main.LogDebug("Class: Overlord");
