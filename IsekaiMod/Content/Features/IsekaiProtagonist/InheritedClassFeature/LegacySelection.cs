@@ -146,6 +146,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             PlayerPartTimeWorkerLegacy.PatchProgression();
 
             LegacySelection.Finish();
+            MastermindLegacySelection.Finish();
             OverlordLegacySelection.Finish();
             EdgeLordLegacySelection.Finish();
             HeroLegacySelection.Finish();

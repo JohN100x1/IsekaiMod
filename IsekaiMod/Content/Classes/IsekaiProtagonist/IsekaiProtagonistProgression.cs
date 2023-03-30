@@ -1,5 +1,6 @@
 ﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using IsekaiMod.Utilities;
@@ -127,19 +128,20 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 // Legacy UI groups
                 Helpers.CreateUIGroup(LegacySelection.GetClassFeature()),
                 Helpers.CreateUIGroup(HeroLegacySelection.getClassFeature()),
+                Helpers.CreateUIGroup(MastermindLegacySelection.getClassFeature()),
                 Helpers.CreateUIGroup(OverlordLegacySelection.getClassFeature()),
-                Helpers.CreateUIGroup(EdgeLordLegacySelection.getClassFeature())
+                Helpers.CreateUIGroup(EdgeLordLegacySelection.getClassFeature()),
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
+                IsekaiProtagonistCantripsFeature.ToReference<BlueprintFeatureBaseReference>(),
+                StartingWeaponSelection.ToReference<BlueprintFeatureBaseReference>(),
+                IsekaiPetSelection.ToReference<BlueprintFeatureBaseReference>(),
+                IsekaiProtagonistProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 EdgeLordProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 GodEmperorProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 HeroProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 MastermindProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 OverlordProficiencies.ToReference<BlueprintFeatureBaseReference>(),
-                IsekaiProtagonistProficiencies.ToReference<BlueprintFeatureBaseReference>(),
-                IsekaiProtagonistCantripsFeature.ToReference<BlueprintFeatureBaseReference>(),
-                StartingWeaponSelection.ToReference<BlueprintFeatureBaseReference>(),
-                IsekaiPetSelection.ToReference<BlueprintFeatureBaseReference>()
             };
             IsekaiProtagonistClass.SetProgression(IsekaiProtagonistProgression);
         }
