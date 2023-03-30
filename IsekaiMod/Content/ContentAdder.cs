@@ -78,7 +78,7 @@ namespace IsekaiMod.Content {
                 IsekaiFastMovement.Add();
                 OtherworldlyStamina.Add();
                 IsekaiQuickFooted.Add();
-                FriendlyAuraFeature.Add();
+                IsekaiAuraSelection.Add();
                 SummonHarem.Add();
                 SecondReincarnation.Add();
                 Main.LogDebug("Class: Features");
@@ -148,7 +148,6 @@ namespace IsekaiMod.Content {
                 DivineArray.Add();
                 GodEmperorEnergySelection.Add();
                 AuraOfGoldenProtection.Add();
-                DarkAuraFeature.Add();
                 AuraOfMajesty.Add();
                 GodlyVessel.Add();
                 SiphoningAuraFeature.Add();

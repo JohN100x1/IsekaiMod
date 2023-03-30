@@ -13,7 +13,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
         private static readonly LocalizedString Name = Helpers.CreateString(IsekaiContext, $"GodEmperorArchetype.Name", "God Emperor");
         private static readonly LocalizedString Description = Helpers.CreateString(IsekaiContext, $"GodEmperorArchetype.Description",
             "Rather than wandering aimlessly, collecting harems, or defeating demon lords, some protagonists decide to become gods. "
-            + "They sacrifice their special powers and sneak attack to gain powerful auras and a journey towards godhood.");
+            + "They sacrifice their special powers to gain powerful auras and a journey towards godhood.");
 
         public static void Add() {
             // Archetype features
@@ -34,7 +34,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
             // Removed features
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
-            var FriendlyAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "FriendlyAuraFeature");
+            var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAuraSelection");
             var OtherworldlyStamina = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OtherworldlyStamina");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
 
@@ -51,14 +51,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, LegacySelection.GetClassFeature()),
                     Helpers.CreateLevelEntry(3, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection),
                     Helpers.CreateLevelEntry(7, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(9, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(10, FriendlyAuraFeature),
+                    Helpers.CreateLevelEntry(10, IsekaiAuraSelection),
                     Helpers.CreateLevelEntry(11, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(12, BeachEpisodeSelection),
                     Helpers.CreateLevelEntry(13, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection, OtherworldlyStamina),
+                    Helpers.CreateLevelEntry(15, OtherworldlyStamina),
                     Helpers.CreateLevelEntry(17, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(19, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(20, SecondReincarnation),

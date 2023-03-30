@@ -17,35 +17,35 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         public static void PatchIsekai() {
             var LoremasterIsekai = CreateReplaceIsekaiSpellbook("LoremasterIsekai", 3, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.Loremaster);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.Loremaster);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.MythicAdditionalProgressions };
             });
             var HellknightSignifierIsekai = CreateReplaceIsekaiSpellbook("HellknightSignifierIsekai", 3, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.HellknightSignifier);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.HellknightSignifier);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.HellknightSigniferSpellbook };
             });
             var ArcaneTricksterIsekai = CreateReplaceIsekaiSpellbook("ArcaneTricksterIsekai", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.ArcaneTrickster);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.ArcaneTrickster);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.ArcaneTricksterSpellbook };
             });
             var MysticTheurgeArcaneIsekai = CreateReplaceIsekaiSpellbook("MysticTheurgeArcaneIsekai", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.MysticTheurgeArcane);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeArcane);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeArcaneSpellbook };
             });
             var MysticTheurgeDivineIsekai = CreateReplaceIsekaiSpellbook("MysticTheurgeDivineIsekai", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.MysticTheurgeDivine);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeDivine);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeDivineSpellbook };
             });
             var DragonDiscipleIsekai = CreateReplaceIsekaiSpellbook("DragonDiscipleIsekai", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.DragonDisciple);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.DragonDisciple);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.DragonDiscipleSpellbook };
             });
             var EldritchKnightIsekai = CreateReplaceIsekaiSpellbook("EldritchKnightIsekai", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.EldritchKnight);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.EldritchKnight);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.EldritchKnightSpellbook };
             });
             var WinterWitchIsekai = CreateReplaceIsekaiSpellbook("WinterWitchIsekai", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.WinterWitch);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.WinterWitch);
                 bp.Groups = new FeatureGroup[0];
             });
 
@@ -62,35 +62,35 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         public static void PatchMastermind() {
             var LoremasterMastermind = CreateReplaceMastermindSpellbook("LoremasterMastermind", 3, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.Loremaster);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.Loremaster);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.MythicAdditionalProgressions };
             });
             var HellknightSignifierMastermind = CreateReplaceMastermindSpellbook("HellknightSignifierMastermind", 3, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.HellknightSignifier);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.HellknightSignifier);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.HellknightSigniferSpellbook };
             });
             var ArcaneTricksterMastermind = CreateReplaceMastermindSpellbook("ArcaneTricksterMastermind", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.ArcaneTrickster);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.ArcaneTrickster);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.ArcaneTricksterSpellbook };
             });
             var MysticTheurgeArcaneMastermind = CreateReplaceMastermindSpellbook("MysticTheurgeArcaneMastermind", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.MysticTheurgeArcane);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeArcane);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeArcaneSpellbook };
             });
             var MysticTheurgeDivineMastermind = CreateReplaceMastermindSpellbook("MysticTheurgeDivineMastermind", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.MysticTheurgeDivine);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeDivine);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeDivineSpellbook };
             });
             var DragonDiscipleMastermind = CreateReplaceMastermindSpellbook("DragonDiscipleMastermind", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.DragonDisciple);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.DragonDisciple);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.DragonDiscipleSpellbook };
             });
             var EldritchKnightMastermind = CreateReplaceMastermindSpellbook("EldritchKnightMastermind", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.EldritchKnight);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.EldritchKnight);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.EldritchKnightSpellbook };
             });
             var WinterWitchMastermind = CreateReplaceMastermindSpellbook("WinterWitchMastermind", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.WinterWitch);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.WinterWitch);
                 bp.Groups = new FeatureGroup[0];
             });
 
@@ -107,35 +107,35 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         public static void PatchOverlord() {
             var LoremasterOverlord = CreateReplaceOverlordSpellbook("LoremasterOverlord", 3, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.Loremaster);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.Loremaster);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.MythicAdditionalProgressions };
             });
             var HellknightSignifierOverlord = CreateReplaceOverlordSpellbook("HellknightSignifierOverlord", 3, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.HellknightSignifier);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.HellknightSignifier);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.HellknightSigniferSpellbook };
             });
             var ArcaneTricksterOverlord = CreateReplaceOverlordSpellbook("ArcaneTricksterOverlord", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.ArcaneTrickster);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.ArcaneTrickster);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.ArcaneTricksterSpellbook };
             });
             var MysticTheurgeArcaneOverlord = CreateReplaceOverlordSpellbook("MysticTheurgeArcaneOverlord", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.MysticTheurgeArcane);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeArcane);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeArcaneSpellbook };
             });
             var MysticTheurgeDivineOverlord = CreateReplaceOverlordSpellbook("MysticTheurgeDivineOverlord", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.MysticTheurgeDivine);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeDivine);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeDivineSpellbook };
             });
             var DragonDiscipleOverlord = CreateReplaceOverlordSpellbook("DragonDiscipleOverlord", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.DragonDisciple);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.DragonDisciple);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.DragonDiscipleSpellbook };
             });
             var EldritchKnightOverlord = CreateReplaceOverlordSpellbook("EldritchKnightOverlord", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.EldritchKnight);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.EldritchKnight);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.EldritchKnightSpellbook };
             });
             var WinterWitchOverlord = CreateReplaceOverlordSpellbook("WinterWitchOverlord", 2, bp => {
-                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbook.WinterWitch);
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.WinterWitch);
                 bp.Groups = new FeatureGroup[0];
             });
 

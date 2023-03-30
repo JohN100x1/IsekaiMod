@@ -22,16 +22,14 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var MastermindSpellbook = BlueprintTools.GetModBlueprint<BlueprintSpellbook>(IsekaiContext, "MastermindSpellbook");
             var MastermindProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindProficiencies");
             var DarkAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DarkAuraFeature");
-            var SlayerStudyTargetFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("09bdd9445ac38044389476689ae8d5a1");
-            var SlayerSwiftStudyTargetFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("40d4f55a5ac0e4f469d67d36c0dfc40b");
             var OverpoweredAbilitySelectionMastermind = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OverpoweredAbilitySelectionMastermind");
             var MastermindQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindQuickFooted");
-            var IsekaiChannelNegativeEnergyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelNegativeEnergyFeature");
 
             // Removed features
             var IsekaiProtagonistBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiProtagonistBonusFeatSelection");
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
-            var FriendlyAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "FriendlyAuraFeature");
+            var IsekaiFighterTraining = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiFighterTraining");
+            var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAuraSelection");
             var IsekaiQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiQuickFooted");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
             var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
@@ -48,11 +46,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, IsekaiProtagonistBonusFeatSelection, IsekaiProtagonistProficiencies, LegacySelection.GetClassFeature()),
                     Helpers.CreateLevelEntry(2, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(3, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(3, SpecialPowerSelection, IsekaiFighterTraining),
                     Helpers.CreateLevelEntry(4, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(6, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(8, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, FriendlyAuraFeature),
+                    Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, IsekaiAuraSelection),
                     Helpers.CreateLevelEntry(12, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(14, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(16, IsekaiQuickFooted),
@@ -61,17 +59,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(20, IsekaiProtagonistBonusFeatSelection, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, MastermindProficiencies, OverpoweredAbilitySelectionMastermind, SlayerStudyTargetFeature, MastermindLegacySelection.getClassFeature()),
-                    Helpers.CreateLevelEntry(3, IsekaiChannelNegativeEnergyFeature),
-                    Helpers.CreateLevelEntry(5, SlayerStudyTargetFeature, OverpoweredAbilitySelectionMastermind),
-                    Helpers.CreateLevelEntry(7, SlayerSwiftStudyTargetFeature),
+                    Helpers.CreateLevelEntry(1, MastermindProficiencies, OverpoweredAbilitySelectionMastermind, MastermindLegacySelection.getClassFeature()),
+                    Helpers.CreateLevelEntry(5, OverpoweredAbilitySelectionMastermind),
                     Helpers.CreateLevelEntry(9, OverpoweredAbilitySelectionMastermind),
-                    Helpers.CreateLevelEntry(10, SlayerStudyTargetFeature, DarkAuraFeature),
+                    Helpers.CreateLevelEntry(10, DarkAuraFeature),
                     Helpers.CreateLevelEntry(13, OverpoweredAbilitySelectionMastermind),
-                    Helpers.CreateLevelEntry(15, SlayerStudyTargetFeature),
                     Helpers.CreateLevelEntry(16, MastermindQuickFooted),
                     Helpers.CreateLevelEntry(17, OverpoweredAbilitySelectionMastermind),
-                    Helpers.CreateLevelEntry(20, SlayerStudyTargetFeature),
                 };
                 bp.OverrideAttributeRecommendations = true;
                 bp.m_ReplaceSpellbook = MastermindSpellbook.ToReference<BlueprintSpellbookReference>();

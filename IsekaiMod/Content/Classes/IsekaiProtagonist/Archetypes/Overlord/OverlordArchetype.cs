@@ -5,7 +5,6 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
-using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Localization;
 using Kingmaker.UnitLogic.Alignments;
 using TabletopTweaks.Core.Utilities;
@@ -24,8 +23,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var OverlordSpellbook = BlueprintTools.GetModBlueprint<BlueprintSpellbook>(IsekaiContext, "OverlordSpellbook");
             var OverlordProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OverlordProficiencies");
             var DarkAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DarkAuraFeature");
-            var SlayerStudyTargetFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("09bdd9445ac38044389476689ae8d5a1");
-            var SlayerSwiftStudyTargetFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("40d4f55a5ac0e4f469d67d36c0dfc40b");
             var OverpoweredAbilitySelectionOverlord = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OverpoweredAbilitySelectionOverlord");
             var CorruptAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CorruptAuraFeature");
             var OverlordQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OverlordQuickFooted");
@@ -35,7 +32,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             // Removed features
             var IsekaiProtagonistBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiProtagonistBonusFeatSelection");
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
-            var FriendlyAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "FriendlyAuraFeature");
+            var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAuraSelection");
             var IsekaiQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiQuickFooted");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
             var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
@@ -56,7 +53,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(4, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(6, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(8, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, FriendlyAuraFeature),
+                    Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, IsekaiAuraSelection),
                     Helpers.CreateLevelEntry(12, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(14, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(16, IsekaiQuickFooted),
@@ -65,17 +62,15 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(20, IsekaiProtagonistBonusFeatSelection, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, OverlordProficiencies, OverpoweredAbilitySelectionOverlord, SlayerStudyTargetFeature, OverlordLegacySelection.getClassFeature()),
+                    Helpers.CreateLevelEntry(1, OverlordProficiencies, OverpoweredAbilitySelectionOverlord, OverlordLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(3, IsekaiChannelNegativeEnergyFeature),
-                    Helpers.CreateLevelEntry(5, SlayerStudyTargetFeature, OverpoweredAbilitySelectionOverlord),
-                    Helpers.CreateLevelEntry(7, SlayerSwiftStudyTargetFeature),
+                    Helpers.CreateLevelEntry(5, OverpoweredAbilitySelectionOverlord),
                     Helpers.CreateLevelEntry(9, OverpoweredAbilitySelectionOverlord),
-                    Helpers.CreateLevelEntry(10, CorruptAuraFeature, SlayerStudyTargetFeature, DarkAuraFeature),
+                    Helpers.CreateLevelEntry(10, CorruptAuraFeature, DarkAuraFeature),
                     Helpers.CreateLevelEntry(13, OverpoweredAbilitySelectionOverlord),
-                    Helpers.CreateLevelEntry(15, SlayerStudyTargetFeature),
                     Helpers.CreateLevelEntry(16, OverlordQuickFooted),
                     Helpers.CreateLevelEntry(17, OverpoweredAbilitySelectionOverlord),
-                    Helpers.CreateLevelEntry(20, SlayerStudyTargetFeature, SecondFormFeature),
+                    Helpers.CreateLevelEntry(20, SecondFormFeature),
                 };
                 bp.AddComponent<PrerequisiteAlignment>(c => {
                     c.Group = Prerequisite.GroupType.Any;

@@ -207,7 +207,7 @@
     <Compile Include="Content\Features\ExceptionalFeats\ExceptionalSummoningSelection.cs" />
     <Compile Include="Content\Features\ExceptionalFeats\ExceptionalWeaponSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\ArcanaSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\FriendlyAuraFeature.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiAuraSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\IsekaiFastMovement.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\IsekaiFighterTraining.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\IsekaiPetSelection.cs" />
@@ -305,7 +305,6 @@
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\AuraOfGoldenProtection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\AuraOfMajesty.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\CelestialRealm.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\DarkAuraFeature.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\DivineArray.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorEnergySelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorLegacySelection.cs" />

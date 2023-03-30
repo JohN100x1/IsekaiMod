@@ -35,7 +35,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var IsekaiQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiQuickFooted");
             var MastermindQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindQuickFooted");
             var OverlordQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OverlordQuickFooted");
-            var FriendlyAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "FriendlyAuraFeature");
+            var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAuraSelection");
             var DarkAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DarkAuraFeature");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
             var CelestialRealmFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CelestialRealmFeature");
@@ -51,8 +51,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var AuraOfDivineFuryFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfDivineFuryFeature");
             var SupersonicCombat = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SupersonicCombat");
             var EdgeLordFastMovement = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "EdgeLordFastMovement");
-            var SlayerStudyTargetFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("09bdd9445ac38044389476689ae8d5a1");
-            var SlayerSwiftStudyTargetFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("40d4f55a5ac0e4f469d67d36c0dfc40b");
             var ExtraStrike = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ExtraStrike");
             var CorruptAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CorruptAuraFeature");
             var SecondFormFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondFormFeature");
@@ -64,6 +62,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var IsekaiPetSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiPetSelection");
             var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
             var OverpoweredAbilitySelectionMastermind = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionMastermind");
+            var OverpoweredAbilitySelectionOverlord = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionOverlord");
             var BeachEpisodeSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeSelection");
             var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
 
@@ -91,7 +90,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateLevelEntry(7, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(8, IsekaiProtagonistBonusFeatSelection, IsekaiFastMovement),
                 Helpers.CreateLevelEntry(9, SpecialPowerSelection),
-                Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, FriendlyAuraFeature),
+                Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, IsekaiAuraSelection),
                 Helpers.CreateLevelEntry(11, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(12, IsekaiProtagonistBonusFeatSelection, BeachEpisodeSelection),
                 Helpers.CreateLevelEntry(13, SpecialPowerSelection),
@@ -106,7 +105,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 
                 // Isekai UI group
-                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, FriendlyAuraFeature, DarkAuraFeature,
+                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureMoveSelection, SummonHaremFeature, IsekaiAuraSelection, DarkAuraFeature,
                 IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, MastermindQuickFooted, OverlordQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
                 
                 // Edge Lord UI group
@@ -119,8 +118,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 GracefulCombat, IsekaiChannelPositiveEnergyFeature, AuraOfDivineFuryFeature, CelestialRealmFeature, HerosPresenceFeature, ArmorSaint),
                 
                 // Mastermind UI group
-                Helpers.CreateUIGroup(OverpoweredAbilitySelectionMastermind,  IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, SecondFormFeature),
-                Helpers.CreateUIGroup(SlayerStudyTargetFeature, SlayerSwiftStudyTargetFeature),
+                Helpers.CreateUIGroup(OverpoweredAbilitySelectionMastermind),
+
+                // Overlord UI group
+                Helpers.CreateUIGroup(OverpoweredAbilitySelectionOverlord),
+                Helpers.CreateUIGroup(IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, SecondFormFeature),
                 
                 // OP ability and Special Power UI group
                 Helpers.CreateUIGroup(OverpoweredAbilitySelection, SpecialPowerSelection),

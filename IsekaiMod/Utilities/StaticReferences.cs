@@ -514,7 +514,7 @@ namespace IsekaiMod.Utilities {
                 public static readonly LocalizedString WillNegatesSaveEachRound = new() { m_Key = "50f1639f-a789-4939-bab6-557375828c4d" };
             }
 
-            public static class ReplaceSpellbook {
+            public static class ReplaceSpellbookDescription {
                 public static readonly LocalizedString Loremaster = new() { m_Key = "c213f6d4-9760-4939-a9fe-9d34f9747240" };
                 public static readonly LocalizedString HellknightSignifier = new() { m_Key = "eb71d1c5-c890-4c44-8790-2fb8c3621e55" };
                 public static readonly LocalizedString ArcaneTrickster = new() { m_Key = "bf9c1e4a-5753-4705-9617-1a54ac291dfc" };
@@ -524,6 +524,17 @@ namespace IsekaiMod.Utilities {
                 public static readonly LocalizedString EldritchKnight = new() { m_Key = "cf828ba6-8a11-48b0-aa36-2d7972b51a5f" };
                 public static readonly LocalizedString WinterWitch = new() { m_Key = "591fbec8-dac1-4198-9a1b-ae7921635af0" };
             }
+        }
+
+        internal static class Proficiencies {
+            public static readonly BlueprintFeature LightArmorProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("6d3728d4e9c9898458fe5e9532951132");
+            public static readonly BlueprintFeature MediumArmorProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("46f4fb320f35704488ba3d513397789d");
+            public static readonly BlueprintFeature HeavyArmorProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("1b0f68188dcc435429fb87a022239681");
+            public static readonly BlueprintFeature SimpleWeaponProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("e70ecf1ed95ca2f40b754f1adb22bbdd");
+            public static readonly BlueprintFeature MartialWeaponProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("203992ef5b35c864390b4e4a1e200629");
+            public static readonly BlueprintFeature ShieldsProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("cb8686e7357a68c42bdd9d4e65334633");
+            public static readonly BlueprintFeature TowerShieldProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("6105f450bb2acbd458d277e71e19d835");
+            public static BlueprintFeature ExoticWeaponProficiency => BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ExoticWeaponProficiency");
         }
     }
 }

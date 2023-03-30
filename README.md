@@ -71,9 +71,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- Uses charisma for damage and attack rolls.
 	- `Mastermind` (Isekai Protagonist Archetype)
 		- Intelligence based caster that memorizes spells like an arcanist.
-		- Can pick a non-heroic, non-disney, non-Barbarian legacy class feature.
 	- `Overlord` (Isekai Protagonist Archetype)
-		- Strength based caster.
 		- Has much more Overpowered Abilities.
 - New Features
 	- `Exceptional feats`: Strong feats that can be chosen in place of a feat/bonus feat.
