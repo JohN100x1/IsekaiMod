@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added `Mastermind` Archetype (Isekai Protagonist).
 - Added `Overlord` Archetype (Isekai Protagonist).
+### Changed
+- Changed `Edge Lord` to get another OP ability at 10th level.
 ### Removed
 - Removed `Villain` Archetype (Isekai Protagonist).
 - Removed `Kinetic Power` Special Power.

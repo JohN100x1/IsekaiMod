@@ -43,7 +43,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection),
                     Helpers.CreateLevelEntry(8, IsekaiFastMovement),
                     Helpers.CreateLevelEntry(10, FriendlyAuraFeature),
-                    Helpers.CreateLevelEntry(10, OverpoweredAbilitySelection),
                     Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection),
                     Helpers.CreateLevelEntry(20, SecondReincarnation),
                 };
