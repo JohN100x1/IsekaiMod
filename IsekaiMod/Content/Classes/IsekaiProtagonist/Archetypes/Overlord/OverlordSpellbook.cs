@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord {
             var OverlordSpellbook = Helpers.CreateBlueprint<BlueprintSpellbook>(IsekaiContext, "OverlordSpellbook", bp => {
                 bp.Name = Helpers.CreateString(IsekaiContext, "OverlordSpellbook.Name", "Overlord");
                 bp.Spontaneous = true;
-                bp.CastingAttribute = StatType.Strength;
+                bp.CastingAttribute = StatType.Charisma;
                 bp.CantripsType = CantripsType.Cantrips;
                 bp.IsArcane = true;
                 bp.IsArcanist = false;

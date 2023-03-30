@@ -77,13 +77,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(17, OverpoweredAbilitySelectionOverlord),
                     Helpers.CreateLevelEntry(20, SlayerStudyTargetFeature, SecondFormFeature),
                 };
-                bp.OverrideAttributeRecommendations = true;
                 bp.AddComponent<PrerequisiteAlignment>(c => {
                     c.Group = Prerequisite.GroupType.Any;
                     c.Alignment = AlignmentMaskType.Evil;
                 });
                 bp.m_ReplaceSpellbook = OverlordSpellbook.ToReference<BlueprintSpellbookReference>();
-                bp.RecommendedAttributes = new StatType[] { StatType.Intelligence, StatType.Strength };
             });
 
             // Add Archetype to Class
