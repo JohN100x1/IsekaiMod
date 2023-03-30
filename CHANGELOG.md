@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Buffed `Isekai Protagonist` to be able to choose between `Dark Aura` and `Friendly Aura`.
 - Buffed `Edge Lord` to get another OP ability at 10th level.
+- Buffed `Edge Lord` to get Exotic Weapon Proficiency.
 - Buffed `God Emperor` to get another OP ability at 5th and 15th level.
 - Buffed `Hero` to get another Special Power at 3rd and 17th level.
 - Buffed `Hero` to get Tower shield proficiency.
