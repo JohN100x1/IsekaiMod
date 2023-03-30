@@ -15,8 +15,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord {
                 bp.SetName(IsekaiContext, "Edge Lord Proficiencies");
                 bp.SetDescription(IsekaiContext, "The Edge Lord is proficient with all simple, martial, and exotic weapons as well as light and medium armor. "
                     + "They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor without incurring the normal "
-                    + "{g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell "
-                    + "failure chance for arcane spells received from other classes.");
+                    + "{g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}, but they incur the normal arcane spell failure chance for arcane spells received from other classes.");
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
                         StaticReferences.Proficiencies.LightArmorProficiency.ToReference<BlueprintUnitFactReference>(),
