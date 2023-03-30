@@ -15,7 +15,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
             var Icon_DivineArray = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_ENERGY_ARRAY.png");
             var DivineArray = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DivineArray", bp => {
                 bp.SetName(IsekaiContext, "Divine Array");
-                bp.SetDescription(IsekaiContext, "At 3rd level, the God Emperor gains spell resistance, resistance to acid, cold, electricity, fire, and sonic equal to 5 times their character level.");
+                bp.SetDescription(IsekaiContext, "At 5th level, the God Emperor gains spell resistance, resistance to acid, cold, electricity, fire, and sonic equal to 5 times their character level.");
                 bp.m_Icon = Icon_DivineArray;
                 bp.AddComponent<AddDamageResistanceEnergy>(c => {
                     c.Type = DamageEnergyType.Acid;
