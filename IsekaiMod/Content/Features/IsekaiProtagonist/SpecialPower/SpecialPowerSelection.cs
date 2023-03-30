@@ -16,6 +16,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
         private static readonly Sprite Icon_ForetellAidBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("faf473e3a977fd4428cd3f1a526346d2").m_Icon;
 
         public static void Add() {
+            BlueprintFeatureReference[] Features = new BlueprintFeatureReference[] {
+                IsekaiProtagonistTalentSelection.GetReference(),
+                IsekaiChannelNegativeEnergy.GetReference(),
+                IsekaiChannelPositiveEnergy.GetReference(),
+            };
+
             var SpecialPowerSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection", bp => {
                 bp.SetName(IsekaiContext, "Special Power");
                 bp.SetDescription(IsekaiContext, "As you increase your level, you gain special powers that allow you to wreck your enemies more easily.");
@@ -24,8 +30,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.IsClassFeature = true;
 
                 // Special Powers are added in later (IsekaiProtagonistTalentSelection is added here because it was defined before SpecialPowerSelection)
-                bp.m_Features = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.GetReference() };
-                bp.m_AllFeatures = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.GetReference() };
+                bp.m_Features = Features;
+                bp.m_AllFeatures = Features;
             });
             var SpecialPowerMythicSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerMythicSelection", bp => {
                 bp.SetName(IsekaiContext, "Mythic Special Power");
@@ -35,8 +41,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.IsClassFeature = true;
 
                 // Special Powers are added in later (IsekaiProtagonistTalentSelection is added here because it was defined before SpecialPowerSelection)
-                bp.m_Features = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.GetReference() };
-                bp.m_AllFeatures = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.GetReference() };
+                bp.m_Features = Features;
+                bp.m_AllFeatures = Features;
             });
 
             // If MultipleMythicSpecialPower is disabled, Mythic Special Power can only be selected once

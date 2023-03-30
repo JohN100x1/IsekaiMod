@@ -175,6 +175,7 @@
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\PlayerComputerNerdLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\PlayerPartTimeWorkerLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\WitchBaseLegacy.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\ReleaseEnergy.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="UMMSettingsUI.cs" />
     <Compile Include="Config\*.cs" />
@@ -283,8 +284,8 @@
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\EnergyImmunitySelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\ExtremeSpeed.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\GammaStrike.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\IsekaiChannelNegativeEnergy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\IsekaiChannelPositiveEnergy.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiChannelNegativeEnergy.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiChannelPositiveEnergy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\KillingIntent.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\MagicalAmplification.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\MundaneAura.cs" />

@@ -81,6 +81,9 @@ namespace IsekaiMod.Content {
                 IsekaiAuraSelection.Add();
                 SummonHarem.Add();
                 SecondReincarnation.Add();
+                IsekaiChannelPositiveEnergy.Add();
+                IsekaiChannelNegativeEnergy.Add();
+                ReleaseEnergy.Add();
                 Main.LogDebug("Class: Features");
 
                 // Beach Episode Selection
@@ -104,8 +107,6 @@ namespace IsekaiMod.Content {
                 BodyStrengthening.Add();
                 SpellNegation.Add();
                 ExtremeSpeed.Add();
-                IsekaiChannelPositiveEnergy.Add();
-                IsekaiChannelNegativeEnergy.Add();
                 SneakyMagic.Add();
                 SpellMaster.Add();
                 ArmorSaint.Add();

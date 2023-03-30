@@ -1,4 +1,5 @@
-﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+﻿using IsekaiMod.Content.Features.IsekaiProtagonist;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
@@ -85,7 +86,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
                 Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, PlotArmor, StartingWeaponSelection, IsekaiPetSelection, LegacySelection.GetClassFeature()),
                 Helpers.CreateLevelEntry(2, IsekaiProtagonistBonusFeatSelection),
-                Helpers.CreateLevelEntry(3, IsekaiFighterTraining, SpecialPowerSelection),
+                Helpers.CreateLevelEntry(3, IsekaiFighterTraining, SpecialPowerSelection, ReleaseEnergy.Get()),
                 Helpers.CreateLevelEntry(4, IsekaiProtagonistBonusFeatSelection),
                 Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection),
                 Helpers.CreateLevelEntry(6, IsekaiProtagonistBonusFeatSelection, SignatureMoveSelection),
@@ -107,8 +108,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 
                 // Isekai UI group
-                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAbility, SignatureMove, SignatureMoveSelection, SummonHaremFeature, IsekaiAuraSelection, DarkAuraFeature,
-                IsekaiFastMovement, EdgeLordFastMovement, IsekaiQuickFooted, MastermindQuickFooted, OverlordQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
+                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAbility, SignatureMove,
+                SignatureMoveSelection, SummonHaremFeature, IsekaiAuraSelection, DarkAuraFeature, IsekaiFastMovement, EdgeLordFastMovement,
+                IsekaiQuickFooted, MastermindQuickFooted, OverlordQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
+                Helpers.CreateUIGroup(ReleaseEnergy.Get()),
                 
                 // Edge Lord UI group
                 Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike),

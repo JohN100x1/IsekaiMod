@@ -1,4 +1,5 @@
-﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
+﻿using IsekaiMod.Content.Features.IsekaiProtagonist;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -50,7 +51,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, LegacySelection.GetClassFeature()),
-                    Helpers.CreateLevelEntry(3, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(3, SpecialPowerSelection, ReleaseEnergy.Get()),
                     Helpers.CreateLevelEntry(7, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(9, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(10, IsekaiAuraSelection),

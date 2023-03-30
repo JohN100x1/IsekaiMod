@@ -30,9 +30,13 @@ using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist {
 
     internal class IsekaiChannelNegativeEnergy {
+        private static BlueprintFeature Feature;
+
+        private static readonly BlueprintFeature ExtraChannel = BlueprintTools.GetBlueprint<BlueprintFeature>("cd9f19775bd9d3343a31a065e93f0c47");
+        private static readonly BlueprintFeature SelectiveChannel = BlueprintTools.GetBlueprint<BlueprintFeature>("fd30c69417b434d47b6b03b9c1f568ff");
         private static readonly BlueprintFeature NegativeEnergyAffinity = BlueprintTools.GetBlueprint<BlueprintFeature>("d5ee498e19722854198439629c1841a5");
         private static readonly BlueprintAbility ChannelNegativeEnergy = BlueprintTools.GetBlueprint<BlueprintAbility>("89df18039ef22174b81052e2e419c728");
         private static readonly BlueprintAbility ChannelNegativeHeal = BlueprintTools.GetBlueprint<BlueprintAbility>("9be3aa47a13d5654cbcb8dbd40c325f2");
@@ -44,9 +48,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
         private static readonly PrefabLink HealTargetFX = new() { AssetId = "9a38d742801be084d89bd34318c600e8" };
 
         public static void Add() {
-            var ExtraChannel = BlueprintTools.GetBlueprint<BlueprintFeature>("cd9f19775bd9d3343a31a065e93f0c47");
-            var SelectiveChannel = BlueprintTools.GetBlueprint<BlueprintFeature>("fd30c69417b434d47b6b03b9c1f568ff");
-            var IsekaiChannelNegativeEnergyAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "IsekaiChannelNegativeEnergyAbility", bp => {
+            var HarmAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "IsekaiChannelNegativeEnergyAbility", bp => {
                 bp.SetName(IsekaiContext, "Channel Negative Energy - Damage Living");
                 bp.SetDescription(IsekaiContext, "Channeling negative energy causes a burst that damages every living creature in a 30-foot radius centered on the caster. The amount of damage "
                     + "inflicted is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on). "
@@ -175,7 +177,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                     });
                 });
             });
-            var IsekaiChannelNegativeHealAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "IsekaiChannelNegativeHealAbility", bp => {
+            var HealAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "IsekaiChannelNegativeHealAbility", bp => {
                 bp.SetName(IsekaiContext, "Channel Negative Energy - Heal Undead");
                 bp.SetDescription(IsekaiContext, "Channeling negative energy causes a burst that heals every undead creature in a 30-foot radius centered on the caster. The amount of damage "
                     + "healed is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on).");
@@ -352,7 +354,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                     c.Descriptor = SpellDescriptor.RestoreHP | SpellDescriptor.ChannelNegativeHeal;
                 });
             });
-            var IsekaiChannelNegativeEnergyFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelNegativeEnergyFeature", bp => {
+            Feature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelNegativeEnergyFeature", bp => {
                 bp.SetName(IsekaiContext, "Channel Negative Energy");
                 bp.SetDescription(IsekaiContext, "You gain the supernatural ability to channel negative energy like a cleric. You use your character level as your effective cleric level when "
                     + "channeling negative energy. You can channel energy a number of times per day equal to 3 + your Charisma modifier.");
@@ -361,8 +363,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
                         ChannelEnergyFact.ToReference<BlueprintUnitFactReference>(),
-                        IsekaiChannelNegativeEnergyAbility.ToReference<BlueprintUnitFactReference>(),
-                        IsekaiChannelNegativeHealAbility.ToReference<BlueprintUnitFactReference>()
+                        HarmAbility.ToReference<BlueprintUnitFactReference>(),
+                        HealAbility.ToReference<BlueprintUnitFactReference>()
                     };
                 });
                 bp.AddComponent<PrerequisiteAlignment>(c => {
@@ -372,11 +374,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             });
 
             // Patch extra channel and selective channel feats
-            SelectiveChannel.AddPrerequisiteFeature(IsekaiChannelNegativeEnergyFeature, Prerequisite.GroupType.Any);
-            ExtraChannel.AddPrerequisiteFeature(IsekaiChannelNegativeEnergyFeature, Prerequisite.GroupType.Any);
-
-            // Add to selection
-            SpecialPowerSelection.AddToSelection(IsekaiChannelNegativeEnergyFeature);
+            SelectiveChannel.AddPrerequisiteFeature(Feature, Prerequisite.GroupType.Any);
+            ExtraChannel.AddPrerequisiteFeature(Feature, Prerequisite.GroupType.Any);
+        }
+        public static BlueprintFeature Get() {
+            return Feature;
+        }
+        public static BlueprintFeatureReference GetReference() {
+            return Feature.ToReference<BlueprintFeatureReference>();
         }
     }
 }
