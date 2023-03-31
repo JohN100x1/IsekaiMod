@@ -31,6 +31,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
             var SignatureMoveSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureMoveSelection");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
+            var Gifted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Gifted");
             var IsekaiFighterTraining = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiFighterTraining");
             var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAuraSelection");
             var IsekaiQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiQuickFooted");
@@ -47,7 +48,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.IsDivineCaster = true;
                 bp.ChangeCasterType = true;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, IsekaiProtagonistBonusFeatSelection, IsekaiProtagonistProficiencies, LegacySelection.GetClassFeature()),
+                    Helpers.CreateLevelEntry(1, IsekaiProtagonistBonusFeatSelection, IsekaiProtagonistProficiencies, Gifted, LegacySelection.GetClassFeature()),
                     Helpers.CreateLevelEntry(2, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(3, IsekaiFighterTraining, ReleaseEnergy),
                     Helpers.CreateLevelEntry(4, IsekaiProtagonistBonusFeatSelection),

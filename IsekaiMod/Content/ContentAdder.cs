@@ -84,6 +84,7 @@ namespace IsekaiMod.Content {
                 IsekaiChannelPositiveEnergy.Add();
                 IsekaiChannelNegativeEnergy.Add();
                 ReleaseEnergy.Add();
+                Gifted.Add();
                 Main.LogDebug("Class: Features");
 
                 // Beach Episode Selection

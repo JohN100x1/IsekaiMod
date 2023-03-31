@@ -37,6 +37,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var IsekaiQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiQuickFooted");
             var MastermindQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindQuickFooted");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
+            var Gifted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Gifted");
             var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAuraSelection");
             var DarkAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DarkAuraFeature");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
@@ -83,7 +84,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 };
             });
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
-                Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, PlotArmor, StartingWeaponSelection, IsekaiPetSelection, LegacySelection.GetClassFeature()),
+                Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiProtagonistBonusFeatSelection,
+                    OverpoweredAbilitySelection, PlotArmor, StartingWeaponSelection, IsekaiPetSelection, Gifted, LegacySelection.GetClassFeature()),
                 Helpers.CreateLevelEntry(2, IsekaiProtagonistBonusFeatSelection),
                 Helpers.CreateLevelEntry(3, IsekaiFighterTraining, SpecialPowerSelection, ReleaseEnergy),
                 Helpers.CreateLevelEntry(4, IsekaiProtagonistBonusFeatSelection),
@@ -110,7 +112,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAbility, SignatureMove,
                 SignatureMoveSelection, SummonHaremFeature, IsekaiAuraSelection, DarkAuraFeature, IsekaiFastMovement, EdgeLordFastMovement,
                 IsekaiQuickFooted, MastermindQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
-                Helpers.CreateUIGroup(ReleaseEnergy),
+                Helpers.CreateUIGroup(ReleaseEnergy, Gifted),
                 
                 // Edge Lord UI group
                 Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike),

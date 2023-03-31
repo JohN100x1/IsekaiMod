@@ -31,6 +31,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
             var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAuraSelection");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
+            var Gifted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Gifted");
             var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
             var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
@@ -43,7 +44,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.IsArcaneCaster = true;
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, LegacySelection.GetClassFeature()),
+                    Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, Gifted, LegacySelection.GetClassFeature()),
                     Helpers.CreateLevelEntry(3, ReleaseEnergy),
                     Helpers.CreateLevelEntry(10, OverpoweredAbilitySelection, IsekaiAuraSelection),
                     Helpers.CreateLevelEntry(20, SecondReincarnation),

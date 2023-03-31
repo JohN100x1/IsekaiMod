@@ -164,6 +164,7 @@
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindLegacySelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindProficiencies.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindQuickFooted.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\Gifted.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\BloodragerChimeraLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\DruidBaseLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\Fighter2HandedLegacy.cs" />
