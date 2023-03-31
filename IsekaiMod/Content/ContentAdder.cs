@@ -233,6 +233,7 @@ namespace IsekaiMod.Content {
                 Heritages.IsekaiFurryHeritage.Add();
 
                 Heritages.IsekaiHighHumanHeritage.Add();
+                Heritages.IsekaiHumanCrossbreedLegacy.Add();
 
                 // Patch Heritages
                 Heritages.ElfHeritagePatcher.Patch();
@@ -289,7 +290,7 @@ namespace IsekaiMod.Content {
             Deities.IsekaiDeitySelection.PatchDeitySelection();
             Main.LogDebug("Postfix Patching: Deities fixed");
 
-            if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Heritages")) Heritages.HumanHeritageSelection.Patch();
+            if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Heritages")) PatchHeritages();
 
             if (IsekaiContext.AddedContent.Isekai.IsDisabled("Isekai Protagonist")) return;
 
@@ -328,6 +329,11 @@ namespace IsekaiMod.Content {
                 SorcererLegacy.Get().LevelEntries = SorcererLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, sorcerercapstone));
             }
             MagusLegacy.PatchForBroadStudy();
+        }
+
+        private static void PatchHeritages() {
+            Heritages.IsekaiHumanCrossbreedLegacy.Patch();
+            Heritages.HumanHeritageSelection.Patch();
         }
 
     }
