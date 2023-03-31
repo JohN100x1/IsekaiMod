@@ -34,7 +34,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var Gifted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Gifted");
             var SignatureMoveSelectionBonus = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureMoveSelectionBonus");
             var IsekaiFighterTraining = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiFighterTraining");
-            var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAuraSelection");
             var IsekaiQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiQuickFooted");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
             var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
@@ -55,7 +54,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(4, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(6, IsekaiProtagonistBonusFeatSelection, SignatureMoveSelection, SignatureMoveSelectionBonus),
                     Helpers.CreateLevelEntry(8, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, IsekaiAuraSelection),
+                    Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection),
                     Helpers.CreateLevelEntry(12, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(14, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(15, IsekaiQuickFooted),
@@ -68,7 +67,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(5, OverpoweredAbilitySelectionMastermind),
                     Helpers.CreateLevelEntry(6, SignatureAbility),
                     Helpers.CreateLevelEntry(9, OverpoweredAbilitySelectionMastermind),
-                    Helpers.CreateLevelEntry(10, DarkAuraFeature),
                     Helpers.CreateLevelEntry(13, OverpoweredAbilitySelectionMastermind),
                     Helpers.CreateLevelEntry(15, MastermindQuickFooted),
                     Helpers.CreateLevelEntry(17, OverpoweredAbilitySelectionMastermind),

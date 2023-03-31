@@ -29,7 +29,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
             // Removed features
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
-            var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAuraSelection");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
             var Gifted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Gifted");
             var SignatureMoveSelectionBonus = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureMoveSelectionBonus");
@@ -48,7 +47,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, Gifted, LegacySelection.GetClassFeature()),
                     Helpers.CreateLevelEntry(3, ReleaseEnergy),
                     Helpers.CreateLevelEntry(6, SignatureMoveSelectionBonus),
-                    Helpers.CreateLevelEntry(10, OverpoweredAbilitySelection, IsekaiAuraSelection),
+                    Helpers.CreateLevelEntry(10, OverpoweredAbilitySelection),
                     Helpers.CreateLevelEntry(20, SecondReincarnation),
                 };
                 bp.AddFeatures = new LevelEntry[] {

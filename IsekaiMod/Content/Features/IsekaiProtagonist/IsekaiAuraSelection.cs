@@ -19,7 +19,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
 
         public static void Add() {
             const string FriendlyAuraName = "Friendly Aura";
-            const string FriendlyAuraDesc = "Enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack and damage rolls.";
+            const string FriendlyAuraDesc = "You emit an aura of friendship that cause enemies to subconsciously hold back."
+                + "\nEnemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack and damage rolls.";
             const string FriendlyAuraDescBuff = "This creature has a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.";
             var Icon_Friendly_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_FRIENDLY_AURA.png");
             var FriendlyAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("FriendlyAuraBuff", bp => {
@@ -73,7 +74,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
 
             const string DarkAuraName = "Dark Aura";
-            const string DarkAuraDesc = "Enemies within 40 feet take a –4 penalty on AC and saving throws.";
+            const string DarkAuraDesc = "You emit an aura of darkness that cause enemies to become uneasy and vulnerable."
+                + "\nEnemies within 40 feet take a –4 penalty on AC and saving throws.";
             const string DarkAuraDescBuff = "This creature has a –4 penalty on AC and saving throws.";
             var Icon_Dark_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_DARK_AURA.png");
             var DarkAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("DarkAuraBuff", bp => {
@@ -137,8 +139,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
 
             const string DivineAuraName = "Divine Aura";
-            const string DivineAuraDesc = "Enemies within 40 feet take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.";
-            const string DivineAuraDescBuff = "This creature has a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.";
+            const string DivineAuraDesc = "You emit an aura of divinity that cause enemies to be overcome with feelings of futility."
+                + "\nEnemies within 40 feet take a –4 penalty on all attributes.";
+            const string DivineAuraDescBuff = "This creature has a –4 penalty on all attributes.";
             var Icon_Divine_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_DIVINE_AURA.png");
             var DivineAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("DivineAuraBuff", bp => {
                 bp.SetName(IsekaiContext, DivineAuraName);
@@ -147,27 +150,32 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.m_Icon = Icon_Divine_Aura;
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
-                    c.Stat = StatType.AdditionalAttackBonus;
+                    c.Stat = StatType.Strength;
                     c.Value = -4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
-                    c.Stat = StatType.AC;
+                    c.Stat = StatType.Dexterity;
                     c.Value = -4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
-                    c.Stat = StatType.SaveFortitude;
+                    c.Stat = StatType.Constitution;
                     c.Value = -4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
-                    c.Stat = StatType.SaveReflex;
+                    c.Stat = StatType.Intelligence;
                     c.Value = -4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
-                    c.Stat = StatType.SaveWill;
+                    c.Stat = StatType.Wisdom;
+                    c.Value = -4;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Penalty;
+                    c.Stat = StatType.Charisma;
                     c.Value = -4;
                 });
             });

@@ -41,6 +41,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var Gifted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Gifted");
             var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAuraSelection");
             var DarkAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DarkAuraFeature");
+            var DivineAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DivineAuraFeature");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
             var CelestialRealmFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CelestialRealmFeature");
             var Godhood = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Godhood");
@@ -111,7 +112,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 
                 // Isekai UI group
                 Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAbility, SignatureMove,
-                SignatureMoveSelection, SummonHaremFeature, IsekaiAuraSelection, DarkAuraFeature, IsekaiFastMovement, EdgeLordFastMovement,
+                SignatureMoveSelection, SummonHaremFeature, IsekaiAuraSelection, DarkAuraFeature, DivineAuraFeature, IsekaiFastMovement, EdgeLordFastMovement,
                 IsekaiQuickFooted, MastermindQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
                 Helpers.CreateUIGroup(ReleaseEnergy, Gifted, SignatureMoveSelectionBonus),
                 

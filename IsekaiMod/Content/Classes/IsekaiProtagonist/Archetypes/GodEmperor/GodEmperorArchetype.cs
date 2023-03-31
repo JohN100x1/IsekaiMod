@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var DivineArray = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DivineArray");
             var GodEmperorEnergySelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodEmperorEnergySelection");
             var AuraOfGoldenProtectionFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfGoldenProtectionFeature");
-            var DarkAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DarkAuraFeature");
+            var DivineAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DivineAuraFeature");
             var AuraOfMajestyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfMajestyFeature");
             var CelestialRealmFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CelestialRealmFeature");
             var Godhood = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Godhood");
@@ -72,7 +72,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(5, DivineArray),
                     Helpers.CreateLevelEntry(7, AuraOfGoldenProtectionFeature),
                     Helpers.CreateLevelEntry(9, AuraOfMajestyFeature),
-                    Helpers.CreateLevelEntry(10, DarkAuraFeature),
+                    Helpers.CreateLevelEntry(10, DivineAuraFeature),
                     Helpers.CreateLevelEntry(12, SiphoningAuraFeature),
                     Helpers.CreateLevelEntry(14, AuraOfDivineFuryFeature),
                     Helpers.CreateLevelEntry(15, GodlyVessel),
