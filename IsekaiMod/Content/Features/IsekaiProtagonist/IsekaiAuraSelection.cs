@@ -19,8 +19,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
 
         public static void Add() {
             const string FriendlyAuraName = "Friendly Aura";
-            const string FriendlyAuraDesc = "Enemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.";
-            const string FriendlyAuraDescBuff = "This creature has a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.";
+            const string FriendlyAuraDesc = "Enemies within 40 feet of the Isekai Protagonist take a –6 penalty on attack and damage rolls.";
+            const string FriendlyAuraDescBuff = "This creature has a –6 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.";
             var Icon_Friendly_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_FRIENDLY_AURA.png");
             var FriendlyAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("FriendlyAuraBuff", bp => {
                 bp.SetName(IsekaiContext, FriendlyAuraName);
@@ -30,7 +30,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.AdditionalAttackBonus;
-                    c.Value = -4;
+                    c.Value = -6;
+                });
+                bp.AddComponent<AddStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Penalty;
+                    c.Stat = StatType.AdditionalDamage;
+                    c.Value = -6;
                 });
             });
             var FriendlyAuraArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, "FriendlyAuraArea", bp => {
