@@ -102,7 +102,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
 
             // Energy Immunity Selection
             var EnergyImmunitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "EnergyImmunitySelection", bp => {
-                bp.SetName(IsekaiContext, "Energy Immunity Selection");
+                bp.SetName(IsekaiContext, "Energy Immunity");
                 bp.SetDescription(IsekaiContext, "You gain energy immunity of a particular type.");
                 bp.m_Icon = Icon_ProtectionFromEnergy;
                 bp.Ranks = 1;
