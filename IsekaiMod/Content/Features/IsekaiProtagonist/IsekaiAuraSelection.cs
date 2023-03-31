@@ -73,8 +73,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
 
             const string DarkAuraName = "Dark Aura";
-            const string DarkAuraDesc = "Enemies within 40 feet take a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.";
-            const string DarkAuraDescBuff = "This creature has a –2 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.";
+            const string DarkAuraDesc = "Enemies within 40 feet take a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.";
+            const string DarkAuraDescBuff = "This creature has a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}, AC, and saving throws.";
             var Icon_Dark_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_DARK_AURA.png");
             var DarkAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("DarkAuraBuff", bp => {
                 bp.SetName(IsekaiContext, DarkAuraName);
@@ -84,27 +84,27 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.AdditionalAttackBonus;
-                    c.Value = -2;
+                    c.Value = -4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.AC;
-                    c.Value = -2;
+                    c.Value = -4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.SaveFortitude;
-                    c.Value = -2;
+                    c.Value = -4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.SaveReflex;
-                    c.Value = -2;
+                    c.Value = -4;
                 });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.SaveWill;
-                    c.Value = -2;
+                    c.Value = -4;
                 });
             });
             var DarkAuraArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, "DarkAuraArea", bp => {
