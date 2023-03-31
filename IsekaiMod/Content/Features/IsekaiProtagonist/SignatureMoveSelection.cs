@@ -70,6 +70,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                     SignatureAbility.ToReference<BlueprintFeatureReference>(),
                 };
             });
+            var SignatureMoveSelectionBonus = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveSelectionBonus", bp => {
+                bp.SetName(IsekaiContext, "Signature Move");
+                bp.SetDescription(IsekaiContext, "You have mastery of both swords and magic.");
+                bp.m_Icon = Icon_SwordSaintWeaponMastery;
+                bp.IgnorePrerequisites = true;
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    SignatureAttack.ToReference<BlueprintFeatureReference>(),
+                    SignatureAbility.ToReference<BlueprintFeatureReference>(),
+                };
+            });
         }
     }
 }

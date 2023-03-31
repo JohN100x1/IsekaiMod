@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Buffed `Friendly Aura` debuff from -4 -> -6 and also affects damage rolls.
 - Buffed `Dark Aura` debuff from -2 -> -4.
 - Buffed `Isekai Protagonist` to be able to choose between `Dark Aura` and `Friendly Aura`.
+- Buffed `Isekai Protagonist` to be able to choose two `Signature Move` abilities.
 - Buffed `Edge Lord` to get another OP ability at 10th level.
 - Buffed `Edge Lord` to get Exotic Weapon Proficiency.
 - Buffed `God Emperor` to get another OP ability at 5th and 15th level.
