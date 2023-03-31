@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `Isekai Protagonist` `Quick-Footed` obtained from level 16 -> 15.
 - Changed `God Emperor` `Divine Array` obtained from level 3 -> 5.
 - Changed `God Emperor` `Channel Energy` obtained from level 5 -> 3.
+- Updated icon for `Hero` `Graceful Combat` feature.
 ### Removed
 - Removed `Villain` Archetype (Isekai Protagonist).
 - Removed `Kinetic Power` Special Power.
