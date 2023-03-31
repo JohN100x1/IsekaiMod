@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Mastermind` Archetype (Isekai Protagonist).
 - Added `Overlord` Archetype (Isekai Protagonist).
 ### Changed
-- Buffed `Friendly Aura` debuff from -4 -> -6 and also affects damage rolls.
+- Buffed `Friendly Aura` to also affect damage rolls.
 - Buffed `Dark Aura` debuff from -2 -> -4.
 - Buffed `Isekai Protagonist` to be able to choose between `Dark Aura` and `Friendly Aura`.
 - Buffed `Isekai Protagonist` to be able to choose two `Signature Move` abilities.
