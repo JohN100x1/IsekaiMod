@@ -12,7 +12,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Overlord` Archetype (Isekai Protagonist).
 ### Changed
 - Buffed `Friendly Aura` to also affect damage rolls.
-- Buffed `Dark Aura` debuff from -2 -> -4.
 - Buffed `Isekai Protagonist` to be able to choose between `Dark Aura` and `Friendly Aura`.
 - Buffed `Isekai Protagonist` to be able to choose two `Signature Move` abilities.
 - Buffed `Edge Lord` to get another OP ability at 10th level.
@@ -20,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Buffed `God Emperor` to get another OP ability at 5th and 15th level.
 - Buffed `Hero` to get another Special Power at 3rd and 17th level.
 - Buffed `Hero` to get Tower shield and exotic weapon proficiency.
+- Changed `Dark Aura` debuff from -2 -> -4 but no longer affects attack rolls.
 - Changed `Isekai Protagonist` `Otherworldly Stamina` obtained from level 15 -> 13.
 - Changed `Isekai Protagonist` `Quick-Footed` obtained from level 16 -> 15.
 - Changed `God Emperor` `Divine Array` obtained from level 3 -> 5.
