@@ -143,7 +143,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
 
             var IsekaiAuraSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiAuraSelection", bp => {
                 bp.SetName(IsekaiContext, "Isekai Aura");
-                bp.SetDescription(IsekaiContext, "At 10th level, the Isekai Protagonist is able to choose an aura.");
+                bp.SetDescription(IsekaiContext, "At 10th level, you are able to choose an aura.");
                 bp.m_Icon = Icon_Friendly_Aura;
                 bp.IgnorePrerequisites = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
