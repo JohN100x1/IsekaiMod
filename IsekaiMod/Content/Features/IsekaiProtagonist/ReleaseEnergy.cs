@@ -6,7 +6,7 @@ using UnityEngine;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist {
-    class ReleaseEnergy {
+    static class ReleaseEnergy {
         public static BlueprintFeature Feature;
 
         private static readonly Sprite Icon_AngelfireApostleChannel = BlueprintTools.GetBlueprint<BlueprintFeature>("9d30d6cc7bfcda44aab7505f7ed3f933").m_Icon;
