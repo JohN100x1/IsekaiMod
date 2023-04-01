@@ -69,391 +69,61 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         private static readonly Sprite Icon_StartWeapon = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_START_WEAPON.png");
 
         public static void Add() {
-            var StartingWeaponDagger = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponDagger", bp => {
-                bp.SetName(Dagger.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron dagger.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Dagger.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponLightMace = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponLightMace", bp => {
-                bp.SetName(LightMace.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron light mace.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { LightMace.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponPunchingDagger = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponPunchingDagger", bp => {
-                bp.SetName(PunchingDagger.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron punching dagger.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { PunchingDagger.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponSickle = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponSickle", bp => {
-                bp.SetName(Sickle.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron sickle.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Sickle.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponClub = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponClub", bp => {
-                bp.SetName(Club.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron club.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Club.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponHeavyMace = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponHeavyMace", bp => {
-                bp.SetName(HeavyMace.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron heavy mace.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { HeavyMace.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponShortspear = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponShortspear", bp => {
-                bp.SetName(Shortspear.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron shortspear.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Shortspear.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponGreatclub = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponGreatclub", bp => {
-                bp.SetName(Greatclub.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron greatclub.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Greatclub.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponLongspear = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponLongspear", bp => {
-                bp.SetName(Longspear.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron longspear.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Longspear.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponQuarterstaff = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponQuarterstaff", bp => {
-                bp.SetName(Quarterstaff.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a quarterstaff.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Quarterstaff.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponSpear = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponSpear", bp => {
-                bp.SetName(Spear.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron spear.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Spear.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponTrident = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponTrident", bp => {
-                bp.SetName(Trident.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron trident.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Trident.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponDart = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponDart", bp => {
-                bp.SetName(Dart.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron dart.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Dart.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponLightCrossbow = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponLightCrossbow", bp => {
-                bp.SetName(LightCrossbow.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a light crossbow.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { LightCrossbow.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponHeavyCrossbow = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponHeavyCrossbow", bp => {
-                bp.SetName(HeavyCrossbow.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a heavy crossbow.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { HeavyCrossbow.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponJavelin = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponJavelin", bp => {
-                bp.SetName(Javelin.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron javelin.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Javelin.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponHandaxe = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponHandaxe", bp => {
-                bp.SetName(Handaxe.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron handaxe.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Handaxe.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponKukri = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponKukri", bp => {
-                bp.SetName(Kukri.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron kukri.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Kukri.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponLightHammer = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponLightHammer", bp => {
-                bp.SetName(LightHammer.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron light hammer.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { LightHammer.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponShortsword = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponShortsword", bp => {
-                bp.SetName(Shortsword.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron shortsword.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Shortsword.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponLightPick = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponLightPick", bp => {
-                bp.SetName(LightPick.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron light pick.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { LightPick.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponStarknife = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponStarknife", bp => {
-                bp.SetName(Starknife.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron starknife.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Starknife.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponBattleaxe = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponBattleaxe", bp => {
-                bp.SetName(Battleaxe.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron battleaxe.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Battleaxe.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponFlail = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponFlail", bp => {
-                bp.SetName(Flail.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron flail.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Flail.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponHeavyPick = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponHeavyPick", bp => {
-                bp.SetName(HeavyPick.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron heavy pick.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { HeavyPick.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponLongsword = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponLongsword", bp => {
-                bp.SetName(Longsword.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron longsword.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Longsword.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponRapier = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponRapier", bp => {
-                bp.SetName(Rapier.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron rapier.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Rapier.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponScimitar = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponScimitar", bp => {
-                bp.SetName(Scimitar.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron scimitar.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Scimitar.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponWarhammer = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponWarhammer", bp => {
-                bp.SetName(Warhammer.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron warhammer.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Warhammer.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponEarthbreaker = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponEarthbreaker", bp => {
-                bp.SetName(Earthbreaker.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron earthbreaker.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Earthbreaker.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponFalchion = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponFalchion", bp => {
-                bp.SetName(Falchion.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron falchion.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Falchion.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponGlaive = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponGlaive", bp => {
-                bp.SetName(Glaive.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron glaive.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Glaive.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponGreataxe = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponGreataxe", bp => {
-                bp.SetName(Greataxe.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron greataxe.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Greataxe.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponGreatsword = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponGreatsword", bp => {
-                bp.SetName(Greatsword.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron greatsword.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Greatsword.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponHeavyFlail = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponHeavyFlail", bp => {
-                bp.SetName(HeavyFlail.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron heavy flail.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { HeavyFlail.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponScythe = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponScythe", bp => {
-                bp.SetName(Scythe.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron scythe.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Scythe.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponShortbow = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponShortbow", bp => {
-                bp.SetName(Shortbow.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a shortbow.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Shortbow.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponLongbow = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponLongbow", bp => {
-                bp.SetName(Longbow.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a longbow.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Longbow.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponKama = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponKama", bp => {
-                bp.SetName(Kama.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron kama.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Kama.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponNunchaku = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponNunchaku", bp => {
-                bp.SetName(Nunchaku.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron nunchaku.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Nunchaku.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponSai = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponSai", bp => {
-                bp.SetName(Sai.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron sai.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Sai.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponBastardSword = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponBastardSword", bp => {
-                bp.SetName(BastardSword.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron bastard sword.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { BastardSword.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponDuelingSword = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponDuelingSword", bp => {
-                bp.SetName(DuelingSword.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron dueling sword.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { DuelingSword.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponDwarvenWaraxe = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponDwarvenWaraxe", bp => {
-                bp.SetName(DwarvenWaraxe.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron dwarven waraxe.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { DwarvenWaraxe.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponEstoc = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponEstoc", bp => {
-                bp.SetName(Estoc.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron estoc.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Estoc.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponFalcata = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponFalcata", bp => {
-                bp.SetName(Falcata.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron falcata.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Falcata.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponTongi = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponTongi", bp => {
-                bp.SetName(Tongi.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron tongi.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Tongi.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponElvenCurvedBlade = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponElvenCurvedBlade", bp => {
-                bp.SetName(ElvenCurvedBlade.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron elven curved blade.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { ElvenCurvedBlade.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponFauchard = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponFauchard", bp => {
-                bp.SetName(Fauchard.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron fauchard.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Fauchard.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponBardiche = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponBardiche", bp => {
-                bp.SetName(Bardiche.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron bardiche.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Bardiche.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponDoubleSword = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponDoubleSword", bp => {
-                bp.SetName(DoubleSword.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron double sword.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { DoubleSword.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponDoubleAxe = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponDoubleAxe", bp => {
-                bp.SetName(DoubleAxe.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron double axe.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { DoubleAxe.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponUrgrosh = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponUrgrosh", bp => {
-                bp.SetName(Urgrosh.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron urgrosh.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { Urgrosh.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponHookedHammer = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponHookedHammer", bp => {
-                bp.SetName(HookedHammer.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron hooked hammer.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { HookedHammer.ToReference<BlueprintItemReference>() };
-                });
-            });
-            var StartingWeaponThrowingAxe = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponThrowingAxe", bp => {
-                bp.SetName(ThrowingAxe.m_Type.Get().m_DefaultNameText);
-                bp.SetDescription(IsekaiContext, "You start with a cold iron throwing axe.");
-                bp.AddComponent<AddStartingEquipment>(c => {
-                    c.m_BasicItems = new BlueprintItemReference[1] { ThrowingAxe.ToReference<BlueprintItemReference>() };
-                });
-            });
+            var StartingWeaponDagger = CreateStartingWeaponFeature("StartingWeaponDagger", "You start with a cold iron dagger.", Dagger);
+            var StartingWeaponLightMace = CreateStartingWeaponFeature("StartingWeaponLightMace", "You start with a cold iron light mace.", LightMace);
+            var StartingWeaponPunchingDagger = CreateStartingWeaponFeature("StartingWeaponPunchingDagger", "You start with a cold iron punching dagger.", PunchingDagger);
+            var StartingWeaponSickle = CreateStartingWeaponFeature("StartingWeaponSickle", "You start with a cold iron sickle.", Sickle);
+            var StartingWeaponClub = CreateStartingWeaponFeature("StartingWeaponClub", "You start with a cold iron club.", Club);
+            var StartingWeaponHeavyMace = CreateStartingWeaponFeature("StartingWeaponHeavyMace", "You start with a cold iron heavy mace.", HeavyMace);
+            var StartingWeaponShortspear = CreateStartingWeaponFeature("StartingWeaponShortspear", "You start with a cold iron shortspear.", Shortspear);
+            var StartingWeaponGreatclub = CreateStartingWeaponFeature("StartingWeaponGreatclub", "You start with a cold iron greatclub.", Greatclub);
+            var StartingWeaponLongspear = CreateStartingWeaponFeature("StartingWeaponLongspear", "You start with a cold iron longspear.", Longspear);
+            var StartingWeaponQuarterstaff = CreateStartingWeaponFeature("StartingWeaponQuarterstaff", "You start with a quarterstaff.", Quarterstaff);
+            var StartingWeaponSpear = CreateStartingWeaponFeature("StartingWeaponSpear", "You start with a cold iron spear.", Spear);
+            var StartingWeaponTrident = CreateStartingWeaponFeature("StartingWeaponTrident", "You start with a cold iron trident.", Trident);
+            var StartingWeaponDart = CreateStartingWeaponFeature("StartingWeaponDart", "You start with a cold iron dart.", Dart);
+            var StartingWeaponLightCrossbow = CreateStartingWeaponFeature("StartingWeaponLightCrossbow", "You start with a light crossbow.", LightCrossbow);
+            var StartingWeaponHeavyCrossbow = CreateStartingWeaponFeature("StartingWeaponHeavyCrossbow", "You start with a heavy crossbow.", HeavyCrossbow);
+            var StartingWeaponJavelin = CreateStartingWeaponFeature("StartingWeaponJavelin", "You start with a cold iron javelin.", Javelin);
+            var StartingWeaponHandaxe = CreateStartingWeaponFeature("StartingWeaponHandaxe", "You start with a cold iron handaxe.", Handaxe);
+            var StartingWeaponKukri = CreateStartingWeaponFeature("StartingWeaponKukri", "You start with a cold iron kukri.", Kukri);
+            var StartingWeaponLightHammer = CreateStartingWeaponFeature("StartingWeaponLightHammer", "You start with a cold iron light hammer.", LightHammer);
+            var StartingWeaponShortsword = CreateStartingWeaponFeature("StartingWeaponShortsword", "You start with a cold iron shortsword.", Shortsword);
+            var StartingWeaponLightPick = CreateStartingWeaponFeature("StartingWeaponLightPick", "You start with a cold iron light pick.", LightPick);
+            var StartingWeaponStarknife = CreateStartingWeaponFeature("StartingWeaponStarknife", "You start with a cold iron starknife.", Starknife);
+            var StartingWeaponBattleaxe = CreateStartingWeaponFeature("StartingWeaponBattleaxe", "You start with a cold iron battleaxe.", Battleaxe);
+            var StartingWeaponFlail = CreateStartingWeaponFeature("StartingWeaponFlail", "You start with a cold iron flail.", Flail);
+            var StartingWeaponHeavyPick = CreateStartingWeaponFeature("StartingWeaponHeavyPick", "You start with a cold iron heavy pick.", HeavyPick);
+            var StartingWeaponLongsword = CreateStartingWeaponFeature("StartingWeaponLongsword", "You start with a cold iron longsword.", Longsword);
+            var StartingWeaponRapier = CreateStartingWeaponFeature("StartingWeaponRapier", "You start with a cold iron rapier.", Rapier);
+            var StartingWeaponScimitar = CreateStartingWeaponFeature("StartingWeaponScimitar", "You start with a cold iron scimitar.", Scimitar);
+            var StartingWeaponWarhammer = CreateStartingWeaponFeature("StartingWeaponWarhammer", "You start with a cold iron warhammer.", Warhammer);
+            var StartingWeaponEarthbreaker = CreateStartingWeaponFeature("StartingWeaponEarthbreaker", "You start with a cold iron earthbreaker.", Earthbreaker);
+            var StartingWeaponFalchion = CreateStartingWeaponFeature("StartingWeaponFalchion", "You start with a cold iron falchion.", Falchion);
+            var StartingWeaponGlaive = CreateStartingWeaponFeature("StartingWeaponGlaive", "You start with a cold iron glaive.", Glaive);
+            var StartingWeaponGreataxe = CreateStartingWeaponFeature("StartingWeaponGreataxe", "You start with a cold iron greataxe.", Greataxe);
+            var StartingWeaponGreatsword = CreateStartingWeaponFeature("StartingWeaponGreatsword", "You start with a cold iron greatsword.", Greatsword);
+            var StartingWeaponHeavyFlail = CreateStartingWeaponFeature("StartingWeaponHeavyFlail", "You start with a cold iron heavy flail.", HeavyFlail);
+            var StartingWeaponScythe = CreateStartingWeaponFeature("StartingWeaponScythe", "You start with a cold iron scythe.", Scythe);
+            var StartingWeaponShortbow = CreateStartingWeaponFeature("StartingWeaponShortbow", "You start with a shortbow.", Shortbow);
+            var StartingWeaponLongbow = CreateStartingWeaponFeature("StartingWeaponLongbow", "You start with a longbow.", Longbow);
+            var StartingWeaponKama = CreateStartingWeaponFeature("StartingWeaponKama", "You start with a cold iron kama.", Kama);
+            var StartingWeaponNunchaku = CreateStartingWeaponFeature("StartingWeaponNunchaku", "You start with a cold iron nunchaku.", Nunchaku);
+            var StartingWeaponSai = CreateStartingWeaponFeature("StartingWeaponSai", "You start with a cold iron sai.", Sai);
+            var StartingWeaponBastardSword = CreateStartingWeaponFeature("StartingWeaponBastardSword", "You start with a cold iron bastard sword.", BastardSword);
+            var StartingWeaponDuelingSword = CreateStartingWeaponFeature("StartingWeaponDuelingSword", "You start with a cold iron dueling sword.", DuelingSword);
+            var StartingWeaponDwarvenWaraxe = CreateStartingWeaponFeature("StartingWeaponDwarvenWaraxe", "You start with a cold iron dwarven waraxe.", DwarvenWaraxe);
+            var StartingWeaponEstoc = CreateStartingWeaponFeature("StartingWeaponEstoc", "You start with a cold iron estoc.", Estoc);
+            var StartingWeaponFalcata = CreateStartingWeaponFeature("StartingWeaponFalcata", "You start with a cold iron falcata.", Falcata);
+            var StartingWeaponTongi = CreateStartingWeaponFeature("StartingWeaponTongi", "You start with a cold iron tongi.", Tongi);
+            var StartingWeaponElvenCurvedBlade = CreateStartingWeaponFeature("StartingWeaponElvenCurvedBlade", "You start with a cold iron elven curved blade.", ElvenCurvedBlade);
+            var StartingWeaponFauchard = CreateStartingWeaponFeature("StartingWeaponFauchard", "You start with a cold iron fauchard.", Fauchard);
+            var StartingWeaponBardiche = CreateStartingWeaponFeature("StartingWeaponBardiche", "You start with a cold iron bardiche.", Bardiche);
+            var StartingWeaponDoubleSword = CreateStartingWeaponFeature("StartingWeaponDoubleSword", "You start with a cold iron double sword.", DoubleSword);
+            var StartingWeaponDoubleAxe = CreateStartingWeaponFeature("StartingWeaponDoubleAxe", "You start with a cold iron double axe.", DoubleAxe);
+            var StartingWeaponUrgrosh = CreateStartingWeaponFeature("StartingWeaponUrgrosh", "You start with a cold iron urgrosh.", Urgrosh);
+            var StartingWeaponHookedHammer = CreateStartingWeaponFeature("StartingWeaponHookedHammer", "You start with a cold iron hooked hammer.", HookedHammer);
+            var StartingWeaponThrowingAxe = CreateStartingWeaponFeature("StartingWeaponThrowingAxe", "You start with a cold iron throwing axe.", ThrowingAxe);
 
             var StartingWeaponSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "StartingWeaponSelection", bp => {
                 bp.SetName(IsekaiContext, "Starting Weapon");
@@ -517,6 +187,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                     StartingWeaponHookedHammer.ToReference<BlueprintFeatureReference>(),
                     StartingWeaponThrowingAxe.ToReference<BlueprintFeatureReference>(),
                 };
+            });
+        }
+        private static BlueprintFeature CreateStartingWeaponFeature(string name, string description, BlueprintItemWeapon weapon) {
+            return Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, name, bp => {
+                bp.SetName(weapon.m_Type.Get().m_DefaultNameText);
+                bp.SetDescription(IsekaiContext, description);
+                bp.m_Icon = Icon_StartWeapon;
+                bp.AddComponent<AddStartingEquipment>(c => {
+                    c.m_BasicItems = new BlueprintItemReference[1] { weapon.ToReference<BlueprintItemReference>() };
+                });
             });
         }
     }
