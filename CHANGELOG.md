@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `God Emperor` `Channel Energy` obtained from level 5 -> 3.
 - Renamed `Energy Immunity Selection` to `Energy Immunity`.
 - Updated icon for `Hero` `Graceful Combat` feature.
+- Updated icon for `Starting Weapon` feature.
 ### Removed
 - Removed `Villain` Archetype (Isekai Protagonist).
 - Removed `Kinetic Power` Special Power.

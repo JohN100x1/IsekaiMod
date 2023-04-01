@@ -4,6 +4,7 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Items.Weapons;
 using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist {
@@ -64,6 +65,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         private static readonly BlueprintItemWeapon Urgrosh = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("ecfaa8983906848479648ab0659d98f7");
         private static readonly BlueprintItemWeapon HookedHammer = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("3fb96c96ac146294ba1e92fdb9509a5d");
         private static readonly BlueprintItemWeapon ThrowingAxe = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("a29eacae30ee2f04398c3b2784861109");
+
+        private static readonly Sprite Icon_StartWeapon = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_START_WEAPON.png");
 
         public static void Add() {
             var StartingWeaponDagger = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "StartingWeaponDagger", bp => {
@@ -456,6 +459,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.SetName(IsekaiContext, "Starting Weapon");
                 bp.SetDescription(IsekaiContext, "At 1st level, you get to select a starting weapon. The weapon can be found in the Kenarbes festival chest.");
                 bp.IgnorePrerequisites = true;
+                bp.m_Icon = Icon_StartWeapon;
                 bp.m_AllFeatures = new BlueprintFeatureReference[55] {
                     StartingWeaponDagger.ToReference<BlueprintFeatureReference>(),
                     StartingWeaponLightMace.ToReference<BlueprintFeatureReference>(),
