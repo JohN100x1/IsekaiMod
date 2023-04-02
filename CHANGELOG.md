@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `Dark Aura` debuff from -2 -> -4 but no longer affects attack rolls.
 - Changed `Isekai Protagonist` `Otherworldly Stamina` obtained from level 15 -> 13.
 - Changed `Isekai Protagonist` `Quick-Footed` obtained from level 16 -> 15.
+- Changed `God Emperor` casting stat to WIS.
 - Changed `God Emperor` `Divine Array` obtained from level 3 -> 5.
 - Changed `God Emperor` `Channel Energy` obtained from level 5 -> 3.
 - Renamed `Energy Immunity Selection` to `Energy Immunity`.
