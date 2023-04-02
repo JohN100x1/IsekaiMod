@@ -34,11 +34,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.NeutralGood;
                 });
             });
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Register(prog);
+            //GodEmperorLegacySelection.Register(prog);
             HeroLegacySelection.Register(prog);
             VillainLegacySelection.Prohibit(prog);
-            //GodEmperorLegacySelection.Register(prog);
         }
         public static void PatchProgression() {
             if (prog != null) {

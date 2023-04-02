@@ -17,11 +17,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         private static BlueprintProgression prog;
 
         public static void Configure() {
-            var IsekaiBarbarianTraining = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "BarbarianTraining", bp => {
-                bp.SetName(IsekaiContext, "Deprecated");
-                bp.SetDescription(IsekaiContext, "Old Feature, reference kept so your save won't crash!");
-                bp.m_Icon = StaticReferences.SorcererArcana.m_Icon;
-            });
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "BarbarianLegacy", bp => {
                 bp.SetName(IsekaiContext, "Barbarian Legacy - Ball of Rage");
                 bp.SetDescription(IsekaiContext, "You really are just a walking bundle of issues waiting to explode at anyone getting too close, aren't you?");
@@ -29,11 +24,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             });
 
 
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Register(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
             //HeroLegacySelection.Prohibit(prog);
             VillainLegacySelection.Prohibit(prog);
-            GodEmperorLegacySelection.Prohibit(prog);
         }
         public static void PatchProgression() {
             if (prog != null) {

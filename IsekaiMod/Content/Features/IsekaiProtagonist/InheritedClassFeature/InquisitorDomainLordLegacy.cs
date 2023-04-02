@@ -24,14 +24,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     "The difference might not be easily visible at the beginning. \n" +
                     "But as time passes it will slowly grow, granting you access to more and more domains.");
                 bp.GiveFeaturesForPreviousLevels = true;
-                bp.AddPrerequisite<PrerequisiteAlignment>(c => { c.Alignment = Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Lawful; });
             });
 
-            LegacySelection.Register(prog);
+            LegacySelection.RegisterForFeat(prog);
+            //LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Register(prog);
             HeroLegacySelection.Register(prog);
             VillainLegacySelection.Register(prog);
-            GodEmperorLegacySelection.Register(prog);
         }
 
         public static void PatchProgression() {

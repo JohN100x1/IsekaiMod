@@ -35,11 +35,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.IsClassFeature = true;
             });
 
-            LegacySelection.Register(prog);
+            LegacySelection.RegisterForFeat(prog);
+            //LegacySelection.Register(prog);
             EdgeLordLegacySelection.Register(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
             HeroLegacySelection.Prohibit(prog);
             VillainLegacySelection.Prohibit(prog);
-            GodEmperorLegacySelection.Prohibit(prog);
         }
 
         public static void PatchProgression() {

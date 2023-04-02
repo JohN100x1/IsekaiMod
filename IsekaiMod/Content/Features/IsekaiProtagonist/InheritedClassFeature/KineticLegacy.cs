@@ -20,12 +20,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         private static BlueprintProgression prog;
 
         public static void Configure() {
-            var IsekaiKineticistTraining = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiKineticistTraining", bp => {
-                bp.SetName(IsekaiContext, "Deprecated");
-                bp.SetDescription(IsekaiContext, "Old Feature, reference kept so your save won't crash!");
-                bp.m_Icon = StaticReferences.SorcererArcana.m_Icon;
-                
-            });
 
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "KineticLegacy", bp => {
                 bp.SetName(IsekaiContext, "Kinetic Legacy - Kinetic Lord");
@@ -36,11 +30,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 });
                 bp.AddComponent<PrerequisiteNoArchetype>(c => { c.m_Archetype = EdgeLord.GetReference(); });
             });
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
             HeroLegacySelection.Register(prog);
             VillainLegacySelection.Prohibit(prog);
-            GodEmperorLegacySelection.Prohibit(prog);
         }
         public static void PatchProgression() {
             if (prog != null) {

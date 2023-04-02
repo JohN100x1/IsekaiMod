@@ -36,11 +36,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 c.WeaponProficiencies = new Kingmaker.Enums.WeaponCategory[] { Kingmaker.Enums.WeaponCategory.KineticBlast };
             });
 
-            LegacySelection.Register(prog);
+            LegacySelection.RegisterForFeat(prog);
+            //LegacySelection.Register(prog);
             EdgeLordLegacySelection.Register(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
             HeroLegacySelection.Register(prog);
             VillainLegacySelection.Prohibit(prog);
-            GodEmperorLegacySelection.Prohibit(prog);
 
             BlueprintFeature EnergizeWeapon = BlueprintTools.GetBlueprint<BlueprintFeature>("fb9fe27f13934807bcd62dfeec477758");
             LevelEntry[] additionalReferencedFeats = null;

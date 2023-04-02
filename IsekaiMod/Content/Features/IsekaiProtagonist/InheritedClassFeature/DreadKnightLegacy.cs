@@ -29,7 +29,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 || DreadKnight == null) return;
 
             prog.SetName(IsekaiContext, "Dread Knight Legacy - Dread Lord");
-            prog.SetDescription(IsekaiContext, "*Blinks and slowly backs away*, Uhm are you certain you want to play this? I mean Dread Knights are kind of evil, you know? \n As in the they are the opposite of anything a paladin represents...");
+            prog.SetDescription(IsekaiContext, 
+                "*Blinks and slowly backs away*, Uhm are you certain you want to play this? I mean Dread Knights are kind of evil, you know? \n" +
+                "As in the they are the opposite of anything a paladin represents..."
+                );
             prog.GiveFeaturesForPreviousLevels = true;
             prog.AddComponent<PrerequisiteAlignment>(c => { c.Alignment = Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Evil; });
             prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, DreadKnight);
@@ -38,11 +41,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, DreadKnight.ToReference<BlueprintCharacterClassReference>());
 
 
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Register(prog);
+            GodEmperorLegacySelection.Register(prog);
             HeroLegacySelection.Prohibit(prog);
             VillainLegacySelection.Register(prog);
-            GodEmperorLegacySelection.Register(prog);
         }
 
         public static BlueprintProgression Get() {

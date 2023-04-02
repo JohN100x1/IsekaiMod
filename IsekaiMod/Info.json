@@ -4,7 +4,7 @@
   "Author": "JohN100x1",
   "Version": "4.3.0",
   "ManagerVersion": "0.24.0",
-  "Requirements": [ "TabletopTweaks-Core-0.5.3" ],
+  "Requirements": [ "TabletopTweaks-Core-0.5.13" ],
   "AssemblyName": "IsekaiMod.dll",
   "EntryMethod": "IsekaiMod.Main.Load",
   "LoadAfter": [

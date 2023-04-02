@@ -304,9 +304,6 @@ namespace IsekaiMod.Content {
             if (ModSupport.IsTableTopTweakBaseEnabled()) {
                 PatchTableTopTweakCore();
             }
-            if (ModSupport.IsExpandedContentEnabled()) { 
-                DreadKnightLegacy.PatchProgression();
-            }
         }
 
         private static void PatchTableTopTweakCore() {

@@ -20,7 +20,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "PaladinBaseLegacy", bp => {
                 bp.SetName(IsekaiContext, "Paladin Legacy - Hero of Light");
-                bp.SetDescription(IsekaiContext, "You are a true hero, representing all that is good and holy in the world.\n" +
+                bp.SetDescription(IsekaiContext, 
+                    "You are a true hero, representing all that is good and holy in the world.\n" +
                     "Protecting the innocent and smiting the evil.\n" +
                     "Less benevolent people might actually throw up a little just from talking to you just because of how inherently good you are.");
                 bp.GiveFeaturesForPreviousLevels = true;
@@ -28,11 +29,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             });
 
 
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Register(prog);
             HeroLegacySelection.Register(prog);
             VillainLegacySelection.Prohibit(prog);
-            GodEmperorLegacySelection.Register(prog);
         }
         public static void PatchProgression() {
             BlueprintFeature TrueSmiteFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "TrueSmiteFeature");

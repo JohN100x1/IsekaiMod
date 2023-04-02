@@ -36,11 +36,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.IsClassFeature = true;
             });
 
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Register(prog);
             HeroLegacySelection.Register(prog);
             VillainLegacySelection.Register(prog);
-            GodEmperorLegacySelection.Register(prog);
         }
 
         public static void PatchProgression() {
@@ -73,6 +74,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = InquisitorJudgeLegacy.Get().ToReference<BlueprintFeatureReference>(); });
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = InquisitorDomainLordLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = CavalierBasicLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = CavalierStandardBearerLegacy.Get().ToReference<BlueprintFeatureReference>(); });
             }
         }
 

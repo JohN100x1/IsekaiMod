@@ -37,6 +37,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateUIGroup( LegacySelection.GetClassFeature()),
                 };
             });
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Register(prog);
             HeroLegacySelection.Register(prog);

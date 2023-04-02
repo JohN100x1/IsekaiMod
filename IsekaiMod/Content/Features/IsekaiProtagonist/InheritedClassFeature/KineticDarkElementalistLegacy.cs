@@ -14,7 +14,8 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class KineticDarkElementalistLegacy {
-        private static BlueprintArchetype BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>("f12f18ae8842425489d29f302e69134c");
+        private static string BaseArchetypeId = "f12f18ae8842425489d29f302e69134c";
+        private static BlueprintArchetype BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);
 
         private static BlueprintProgression prog;
 
@@ -33,23 +34,30 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.AddComponent<PrerequisiteAlignment>(c => { c.Alignment = Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Evil; });
             });
 
-            LegacySelection.Register(prog);
+            LegacySelection.RegisterForFeat(prog);
+            //LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
+            //GodEmperorLegacySelection.Prohibit(prog);
             HeroLegacySelection.Prohibit(prog);
             VillainLegacySelection.Register(prog);
-            //GodEmperorLegacySelection.Prohibit(prog);
         }
         public static void PatchProgression() {
-             
+            if (prog != null) {
+                if (BaseArchetype == null) {
+                    BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);
+                    if (BaseArchetype == null) { return; }
+                }
 
-            BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.KineticistClass;
-            BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
-            prog = StaticReferences.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.KineticistClass, BaseArchetype, null);
-            StaticReferences.PatchProgressionFeaturesBasedOnReferenceArchetype(myClass, refClass, BaseArchetype);
 
-            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticKnightLegacy.Get().ToReference<BlueprintFeatureReference>(); });
-            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticLegacy.Get().ToReference<BlueprintFeatureReference>(); });
-            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticOverwhelmingSoulLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.KineticistClass;
+                BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
+                prog = StaticReferences.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.KineticistClass, BaseArchetype, null);
+                StaticReferences.PatchProgressionFeaturesBasedOnReferenceArchetype(myClass, refClass, BaseArchetype);
+
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticKnightLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticOverwhelmingSoulLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            }
         }
         public static BlueprintProgression Get() {
             if (prog != null) return prog;
