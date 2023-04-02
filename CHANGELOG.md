@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `God Emperor` `Divine Array` obtained from level 3 -> 5.
 - Changed `God Emperor` `Channel Energy` obtained from level 5 -> 3.
 - Renamed `Energy Immunity Selection` to `Energy Immunity`.
+- Updated icon for `Exceptional Feats`.
 - Updated icon for `Hero` `Graceful Combat` feature.
 - Updated icon for `Starting Weapon` feature.
 ### Removed
