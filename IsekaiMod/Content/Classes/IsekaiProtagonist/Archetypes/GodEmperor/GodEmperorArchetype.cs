@@ -1,8 +1,10 @@
-﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.GodEmperor;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Localization;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -79,6 +81,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(17, CelestialRealmFeature),
                     Helpers.CreateLevelEntry(20, Godhood),
                 };
+                bp.OverrideAttributeRecommendations = true;
+                bp.m_ReplaceSpellbook = GodEmperorSpellbook.GetReference();
+                bp.RecommendedAttributes = new StatType[] { StatType.Wisdom };
             });
 
             // Add Archetype to Class

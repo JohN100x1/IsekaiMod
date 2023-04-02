@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
 using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.IsekaiProtagonist;
@@ -81,7 +82,12 @@ namespace IsekaiMod.Utilities {
                     var DemonIncorporateSpellbook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("f3ff8515355e4738b128c3d01483f1ca");
                     var TricksterIncorporateSpellbook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("c4ef6975167d4cf5acbfd66b60e63f9c");
 
-                    BlueprintSpellbook[] spellbooks = new BlueprintSpellbook[] { IsekaiProtagonistSpellbook.Get(), MastermindSpellbook.Get(), OverlordSpellbook.Get() };
+                    BlueprintSpellbook[] spellbooks = new BlueprintSpellbook[] {
+                        IsekaiProtagonistSpellbook.Get(),
+                        GodEmperorSpellbook.Get(),
+                        MastermindSpellbook.Get(),
+                        OverlordSpellbook.Get()
+                    };
                     foreach (BlueprintSpellbook spellbook in spellbooks) {
                         ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AeonIncorporateSpellBook, spellbook);
                         ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AzataIncorporateSpellbook, spellbook);

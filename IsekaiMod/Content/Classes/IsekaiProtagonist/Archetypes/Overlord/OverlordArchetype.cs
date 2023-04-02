@@ -1,10 +1,10 @@
-﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Localization;
 using Kingmaker.UnitLogic.Alignments;
 using TabletopTweaks.Core.Utilities;
@@ -20,7 +20,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
         public static void Add() {
             // Archetype features
-            var OverlordSpellbook = BlueprintTools.GetModBlueprint<BlueprintSpellbook>(IsekaiContext, "OverlordSpellbook");
             var OverlordProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OverlordProficiencies");
             var DarkAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DarkAuraFeature");
             var OverpoweredAbilitySelectionOverlord = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OverpoweredAbilitySelectionOverlord");
@@ -75,7 +74,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     c.Group = Prerequisite.GroupType.Any;
                     c.Alignment = AlignmentMaskType.Evil;
                 });
-                bp.m_ReplaceSpellbook = OverlordSpellbook.ToReference<BlueprintSpellbookReference>();
+                bp.m_ReplaceSpellbook = OverlordSpellbook.GetReference();
             });
 
             // Add Archetype to Class

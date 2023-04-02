@@ -17,9 +17,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
 
         public static void Add() {
             // Add more Exceptional feats later
-            var ExceptionalFeatures = MythicFeatSelection.m_AllFeatures
-                    .RemoveFromArray(ExtraFeatMythicFeat.ToReference<BlueprintFeatureReference>())
-                    .RemoveFromArray(ExtraMythicAbilityMythicFeat.ToReference<BlueprintFeatureReference>());
+            BlueprintFeatureReference[] ExceptionalFeatures = MythicFeatSelection.m_AllFeatures
+                .RemoveFromArray(ExtraFeatMythicFeat.ToReference<BlueprintFeatureReference>())
+                .RemoveFromArray(ExtraMythicAbilityMythicFeat.ToReference<BlueprintFeatureReference>());
 
             // The reason for two copies is to avoid a UI bug when exceptional feats are selected both in feat and bonus feat.
             var ExceptionalFeatSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalFeatSelection", bp => {

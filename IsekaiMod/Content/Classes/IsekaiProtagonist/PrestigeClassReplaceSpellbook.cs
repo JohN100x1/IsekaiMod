@@ -1,4 +1,6 @@
-﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.GodEmperor;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
@@ -11,6 +13,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
     internal class PrestigeClassReplaceSpellbook {
         public static void Patch() {
             PatchIsekai();
+            PatchGodEmperor();
             PatchMastermind();
             PatchOverlord();
         }
@@ -49,7 +52,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 bp.Groups = new FeatureGroup[0];
             });
 
-
             FeatTools.Selections.LoremasterSpellbookSelection.AddToSelection(LoremasterIsekai);
             FeatTools.Selections.HellknightSigniferSpellbook.AddToSelection(HellknightSignifierIsekai);
             FeatTools.Selections.ArcaneTricksterSpellbookSelection.AddToSelection(ArcaneTricksterIsekai);
@@ -58,6 +60,49 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             FeatTools.Selections.DragonDiscipleSpellbookSelection.AddToSelection(DragonDiscipleIsekai);
             FeatTools.Selections.EldritchKnightSpellbookSelection.AddToSelection(EldritchKnightIsekai);
             FeatTools.Selections.WinterWitchSpellbookSelection.AddToSelection(WinterWitchIsekai);
+        }
+        public static void PatchGodEmperor() {
+            var LoremasterGodEmperor = CreateReplaceGodEmperorSpellbook("LoremasterGodEmperor", 3, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.Loremaster);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MythicAdditionalProgressions };
+            });
+            var HellknightSignifierGodEmperor = CreateReplaceGodEmperorSpellbook("HellknightSignifierGodEmperor", 3, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.HellknightSignifier);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.HellknightSigniferSpellbook };
+            });
+            var ArcaneTricksterGodEmperor = CreateReplaceGodEmperorSpellbook("ArcaneTricksterGodEmperor", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.ArcaneTrickster);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.ArcaneTricksterSpellbook };
+            });
+            var MysticTheurgeArcaneGodEmperor = CreateReplaceGodEmperorSpellbook("MysticTheurgeArcaneGodEmperor", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeArcane);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeArcaneSpellbook };
+            });
+            var MysticTheurgeDivineGodEmperor = CreateReplaceGodEmperorSpellbook("MysticTheurgeDivineGodEmperor", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeDivine);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeDivineSpellbook };
+            });
+            var DragonDiscipleGodEmperor = CreateReplaceGodEmperorSpellbook("DragonDiscipleGodEmperor", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.DragonDisciple);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.DragonDiscipleSpellbook };
+            });
+            var EldritchKnightGodEmperor = CreateReplaceGodEmperorSpellbook("EldritchKnightGodEmperor", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.EldritchKnight);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.EldritchKnightSpellbook };
+            });
+            var WinterWitchGodEmperor = CreateReplaceGodEmperorSpellbook("WinterWitchGodEmperor", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.WinterWitch);
+                bp.Groups = new FeatureGroup[0];
+            });
+
+            FeatTools.Selections.LoremasterSpellbookSelection.AddToSelection(LoremasterGodEmperor);
+            FeatTools.Selections.HellknightSigniferSpellbook.AddToSelection(HellknightSignifierGodEmperor);
+            FeatTools.Selections.ArcaneTricksterSpellbookSelection.AddToSelection(ArcaneTricksterGodEmperor);
+            FeatTools.Selections.MysticTheurgeArcaneSpellbookSelection.AddToSelection(MysticTheurgeArcaneGodEmperor);
+            FeatTools.Selections.MysticTheurgeDivineSpellbookSelection.AddToSelection(MysticTheurgeDivineGodEmperor);
+            FeatTools.Selections.DragonDiscipleSpellbookSelection.AddToSelection(DragonDiscipleGodEmperor);
+            FeatTools.Selections.EldritchKnightSpellbookSelection.AddToSelection(EldritchKnightGodEmperor);
+            FeatTools.Selections.WinterWitchSpellbookSelection.AddToSelection(WinterWitchGodEmperor);
         }
 
         public static void PatchMastermind() {
@@ -93,7 +138,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.WinterWitch);
                 bp.Groups = new FeatureGroup[0];
             });
-
 
             FeatTools.Selections.LoremasterSpellbookSelection.AddToSelection(LoremasterMastermind);
             FeatTools.Selections.HellknightSigniferSpellbook.AddToSelection(HellknightSignifierMastermind);
@@ -139,7 +183,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 bp.Groups = new FeatureGroup[0];
             });
 
-
             FeatTools.Selections.LoremasterSpellbookSelection.AddToSelection(LoremasterOverlord);
             FeatTools.Selections.HellknightSigniferSpellbook.AddToSelection(HellknightSignifierOverlord);
             FeatTools.Selections.ArcaneTricksterSpellbookSelection.AddToSelection(ArcaneTricksterOverlord);
@@ -163,6 +206,45 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.RequiredSpellLevel = level;
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.GodEmperorArchetype.GetReference();
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.MastermindArchetype.GetReference();
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.OverlordArchetype.GetReference();
+                });
+            });
+            init?.Invoke(result);
+            return result;
+        }
+        public static BlueprintFeatureReplaceSpellbook CreateReplaceGodEmperorSpellbook(string name, int level, Action<BlueprintFeatureReplaceSpellbook> init = null) {
+            var result = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, name, bp => {
+                bp.SetName(IsekaiContext, "God Emperor");
+                bp.HideInUI = true;
+                bp.HideNotAvailibleInUI = true;
+                bp.HideInCharacterSheetAndLevelUp = false;
+                bp.Ranks = 1;
+                bp.IsClassFeature = true;
+                bp.m_Spellbook = GodEmperorSpellbook.GetReference();
+                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.RequiredSpellLevel = level;
+                });
+                bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.GodEmperorArchetype.GetReference();
+                    c.Level = 1;
                 });
                 bp.AddComponent<PrerequisiteNoArchetype>(c => {
                     c.Group = Prerequisite.GroupType.All;
@@ -192,6 +274,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.RequiredSpellLevel = level;
                 });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.GodEmperorArchetype.GetReference();
+                });
                 bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
@@ -215,22 +302,27 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 bp.HideInCharacterSheetAndLevelUp = false;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_Spellbook = MastermindSpellbook.GetReference();
+                bp.m_Spellbook = OverlordSpellbook.GetReference();
                 bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.RequiredSpellLevel = level;
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.GodEmperorArchetype.GetReference();
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.MastermindArchetype.GetReference();
                 });
                 bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
                     c.m_Archetype = Archetypes.OverlordArchetype.GetReference();
                     c.Level = 1;
-                });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.MastermindArchetype.GetReference();
                 });
             });
             init?.Invoke(result);

@@ -1,9 +1,9 @@
-﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Localization;
 using TabletopTweaks.Core.Utilities;
@@ -19,7 +19,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
         public static void Add() {
             // Archetype features
-            var MastermindSpellbook = BlueprintTools.GetModBlueprint<BlueprintSpellbook>(IsekaiContext, "MastermindSpellbook");
             var MastermindProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindProficiencies");
             var DarkAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DarkAuraFeature");
             var SignatureAbility = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureAbility");
@@ -72,7 +71,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(17, OverpoweredAbilitySelectionMastermind),
                 };
                 bp.OverrideAttributeRecommendations = true;
-                bp.m_ReplaceSpellbook = MastermindSpellbook.ToReference<BlueprintSpellbookReference>();
+                bp.m_ReplaceSpellbook = MastermindSpellbook.GetReference();
                 bp.RecommendedAttributes = new StatType[] { StatType.Intelligence };
             });
 

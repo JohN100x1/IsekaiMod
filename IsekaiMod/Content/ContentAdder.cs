@@ -3,6 +3,7 @@ using IsekaiMod.Config;
 using IsekaiMod.Content.Classes.Deathsnatcher;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
 using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.Deathsnatcher;
@@ -145,7 +146,9 @@ namespace IsekaiMod.Content {
                 Main.LogDebug("Class: OP");
 
                 // God Emperor Archetype
+                GodEmperorSpellbook.Add();
                 GodEmperorProficiencies.Add();
+                GodEmperorQuickFooted.Add();
                 NascentApotheosis.Add();
                 DivineArray.Add();
                 GodEmperorEnergySelection.Add();

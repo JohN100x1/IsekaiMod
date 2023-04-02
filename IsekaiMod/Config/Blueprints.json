@@ -452,6 +452,7 @@
     "CelestialRealmAreaBuff": "2d2d6956-caaa-4c71-b2d0-b7a576cc264a",
     "CelestialRealmAbility": "454f97b6-a9a5-4fe7-946d-6ae46c830a73",
     "CelestialRealmFeature": "2e6d56c2-ee78-4d74-b625-6c92fd3a4637",
+    "GodEmperorQuickFooted": "0417e3a9-51ad-44d0-b851-5e695d26119f",
 
     // Edge Lord Features
     "EdgeLordProficiencies": "08979809-7770-475e-934f-f69c270e3cf5",
@@ -518,6 +519,14 @@
     "DragonDiscipleOverlord": "d03769d9-29f1-4940-b147-576527e12c44",
     "EldritchKnightOverlord": "a2ff95a9-001c-43ba-b0f2-7fbcd5ec904f",
     "WinterWitchOverlord": "33fa2b2d-34a7-488b-9621-503936285ac5",
+    "LoremasterGodEmperor": "afe29c72-32cb-4e6b-a694-37e459b604a6",
+    "HellknightSignifierGodEmperor": "fa9b1a8c-90aa-4382-9055-5432f9eb9927",
+    "ArcaneTricksterGodEmperor": "bace8b14-ad31-489c-a37e-48c8d10f1c30",
+    "MysticTheurgeArcaneGodEmperor": "c2c49fa8-503a-4022-8248-df28519de2f9",
+    "MysticTheurgeDivineGodEmperor": "3bfc209b-8d4f-4c1d-a971-61a90a133362",
+    "DragonDiscipleGodEmperor": "65c6877b-d15f-4bde-9b76-d6196a6a51b8",
+    "EldritchKnightGodEmperor": "af30529a-7fd2-43c5-99c2-3222da5f911c",
+    "WinterWitchGodEmperor": "dfe90f97-9551-49d7-a152-3a6a59fa1a2d",
 
     // Deathsnatcher
     "DeathsnatcherClass": "e44a0435-06db-43e8-8762-35cd775bfd86",

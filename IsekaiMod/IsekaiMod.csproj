@@ -157,10 +157,12 @@
   </ItemGroup>
   <ItemGroup>
     <!-- any TTW Based Mod -->
+    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorSpellbook.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Mastermind\MastermindArchetype.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Mastermind\MastermindSpellbook.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Overlord\OverlordSpellbook.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Overlord\OverlordArchetype.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorQuickFooted.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindLegacySelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindProficiencies.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindQuickFooted.cs" />
@@ -176,6 +178,7 @@
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\PlayerComputerNerdLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\PlayerPartTimeWorkerLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\WitchBaseLegacy.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\MagicalAscendancy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\ReleaseEnergy.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="UMMSettingsUI.cs" />

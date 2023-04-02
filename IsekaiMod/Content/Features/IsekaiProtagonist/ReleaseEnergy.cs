@@ -7,11 +7,9 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist {
     static class ReleaseEnergy {
-        public static BlueprintFeature Feature;
-
         private static readonly Sprite Icon_AngelfireApostleChannel = BlueprintTools.GetBlueprint<BlueprintFeature>("9d30d6cc7bfcda44aab7505f7ed3f933").m_Icon;
         public static void Add() {
-            Feature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy", bp => {
+            var ReleaseEnergy = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy", bp => {
                 bp.SetName(IsekaiContext, "Release Energy");
                 bp.SetDescription(IsekaiContext, "The Isekai Protagonist is able to channel both positive energy and negative energy."
                     + "\nSo this what happens when you channel one percent of your power...");
@@ -23,9 +21,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                     };
                 });
             });
-        }
-        public static BlueprintFeature Get() {
-            return Feature;
         }
     }
 }
