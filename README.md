@@ -99,7 +99,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Kinetic Power`: You can select a kinetic blast (air, earth, fire, water).
 		- `Sneaky Magic`: You can add your sneak attack damage to spells against flat-footed.
 		- `Spell Master`: Increase your spell DC by 4.
-		- `Magical Amplification`: Your spell damage dice become d12.
+		- `Magical Amplification`: Your spell damage dice become d10.
 		- `Armor Saint`: You can move at normal speed while wearing armor, reduce your armor check penalty to zero, and increase your max dexterity bonus by 20.
 		- `Armor of Strength`: Get a natural armor bonus to AC equal to Strength modifier.
 		- `Summon Beast`: Summon a hydra, owlbear, roc, or minotaur.

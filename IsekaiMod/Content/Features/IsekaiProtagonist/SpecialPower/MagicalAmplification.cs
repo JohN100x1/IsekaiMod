@@ -13,11 +13,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
         public static void Add() {
             var MagicalAmplification = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "MagicalAmplification", bp => {
                 bp.SetName(IsekaiContext, "Magical Amplification");
-                bp.SetDescription(IsekaiContext, "Any {g|Encyclopedia:Spell}spells{/g} dealing {g|Encyclopedia:Damage}damage{/g} now change their dice to d12, if it was not d12 or greater. "
-                    + "If it already was d12 or greater, instead the spell deals one additional point of damage per dice rolled.");
+                bp.SetDescription(IsekaiContext, "Any {g|Encyclopedia:Spell}spells{/g} dealing {g|Encyclopedia:Damage}damage{/g} now change their dice to d10, if it was not d10 or greater. "
+                    + "If it already was d10 or greater, instead the spell deals one additional point of damage per dice rolled.");
                 bp.m_Icon = Icon_TelekineticStrike;
                 bp.AddComponent<PromoteSpellDices>(c => {
-                    c.MinDice = Kingmaker.RuleSystem.DiceType.D12;
+                    c.MinDice = Kingmaker.RuleSystem.DiceType.D10;
                     c.Bonus = 1;
                 });
             });

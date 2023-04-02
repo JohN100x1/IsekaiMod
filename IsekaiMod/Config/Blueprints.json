@@ -8,6 +8,9 @@
     "DevilWingsAbility": "92f9474f-1fe0-4ea2-8848-a6fd9ccd2bc1",
     "DemonWingsAbility": "bcbf5c15-38ff-4aba-a31d-71eb474041e3",
 
+    // Extra Feats
+    "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",
+
     // Isekai Succubus Heritage
     "SuccubusCharmUnitProperty": "bc4e0bec-cfa4-4505-a7b1-eac579153d48",
     "SuccubusCharmAbility": "0e19dd2f-5e66-4d6b-8a48-9f00c221698d",
@@ -425,7 +428,7 @@
     "AutoElementalSelection": "6ee86b35-cbac-4c84-a0ca-1eef4a2e619f",
 
     // God Emperor Features
-    "ExoticWeaponProficiency": "fde57853-1e20-4c24-8191-529f51c18772",
+    "GodEmperorSpellbook": "51f83cfe-aac9-4c49-8eac-294cd5dc8e1a",
     "GodEmperorProficiencies": "1f112bb6-3b8e-44ca-8158-325436f6b308",
     "NascentApotheosis": "c2ffd60b-ed95-4c7b-8486-948e870ad38c",
     "DivineArray": "f5880fc0-9d39-4e61-9f2b-afde46d152c2",
