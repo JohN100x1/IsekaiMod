@@ -34,7 +34,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var SignatureAbility = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureAbility");
             var SignatureMove = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureMove");
             var IsekaiFighterTraining = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiFighterTraining");
-            var IsekaiFastMovement = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiFastMovement");
+            var Afterimage = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Afterimage");
             var IsekaiQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiQuickFooted");
             var MastermindQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindQuickFooted");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
@@ -55,7 +55,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var ArmorSaint = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ArmorSaint");
             var AuraOfDivineFuryFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfDivineFuryFeature");
             var SupersonicCombat = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SupersonicCombat");
-            var EdgeLordFastMovement = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "EdgeLordFastMovement");
             var ExtraStrike = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ExtraStrike");
             var CorruptAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CorruptAuraFeature");
             var SecondFormFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondFormFeature");
@@ -94,7 +93,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection),
                 Helpers.CreateLevelEntry(6, IsekaiProtagonistBonusFeatSelection, SignatureMoveSelection, SignatureMoveSelectionBonus),
                 Helpers.CreateLevelEntry(7, SpecialPowerSelection),
-                Helpers.CreateLevelEntry(8, IsekaiProtagonistBonusFeatSelection, IsekaiFastMovement),
+                Helpers.CreateLevelEntry(8, IsekaiProtagonistBonusFeatSelection, Afterimage),
                 Helpers.CreateLevelEntry(9, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, IsekaiAuraSelection),
                 Helpers.CreateLevelEntry(11, SpecialPowerSelection),
@@ -112,7 +111,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 
                 // Isekai UI group
                 Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAbility, SignatureMove,
-                SignatureMoveSelection, SummonHaremFeature, IsekaiAuraSelection, DarkAuraFeature, DivineAuraFeature, IsekaiFastMovement, EdgeLordFastMovement,
+                SignatureMoveSelection, SummonHaremFeature, IsekaiAuraSelection, DarkAuraFeature, DivineAuraFeature, Afterimage,
                 IsekaiQuickFooted, MastermindQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
                 Helpers.CreateUIGroup(ReleaseEnergy, Gifted, SignatureMoveSelectionBonus),
                 

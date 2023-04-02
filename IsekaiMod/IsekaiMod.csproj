@@ -213,7 +213,7 @@
     <Compile Include="Content\Features\ExceptionalFeats\ExceptionalWeaponSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\ArcanaSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\IsekaiAuraSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiFastMovement.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\Afterimage.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\IsekaiFighterTraining.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\IsekaiPetSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\IsekaiProtagonistBonusFeatSelection.cs" />
@@ -302,7 +302,6 @@
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\SpellNegation.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\SummonBeast.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\TrainingMontage.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\EdgeLordFastMovement.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\EdgeLordLegacySelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\EdgeLordProficiencies.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\ExtraStrike.cs" />

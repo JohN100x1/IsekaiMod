@@ -48,6 +48,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 });
                 bp.ReapplyOnLevelUp = true;
             });
+            // TODO: Add IfNotHasFact component target `Godhood` feature
         }
     }
 }

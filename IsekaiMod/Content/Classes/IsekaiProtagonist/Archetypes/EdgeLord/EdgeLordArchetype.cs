@@ -14,18 +14,16 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
         private static readonly LocalizedString Name = Helpers.CreateString(IsekaiContext, $"EdgeLordArchetype.Name", "Edge Lord");
         private static readonly LocalizedString Description = Helpers.CreateString(IsekaiContext, $"EdgeLordArchetype.Description",
             "After reincarnating into Golarion, some protagonists use their newfound abilities to look cool and stylish. "
-            + "Their attacks become flashy and myriad, moving so fast that side characters would be lucky to even see the afterimage.");
+            + "Their attacks become flashy and myriad, moving so fast that side characters would be lucky to even see the Afterimage.");
 
         public static void Add() {
             // Archetype features
             var EdgeLordProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "EdgeLordProficiencies");
             var SupersonicCombat = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SupersonicCombat");
-            var EdgeLordFastMovement = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "EdgeLordFastMovement");
             var ExtraStrike = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ExtraStrike");
 
             // Removed features
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
-            var IsekaiFastMovement = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiFastMovement");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
             var Gifted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Gifted");
             var SignatureMoveSelectionBonus = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureMoveSelectionBonus");
@@ -46,7 +44,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(3, ReleaseEnergy),
                     Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection),
                     Helpers.CreateLevelEntry(6, SignatureMoveSelectionBonus),
-                    Helpers.CreateLevelEntry(8, IsekaiFastMovement),
                     Helpers.CreateLevelEntry(10, IsekaiAuraSelection),
                     Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection),
                     Helpers.CreateLevelEntry(20, SecondReincarnation),
@@ -54,7 +51,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, EdgeLordProficiencies, SupersonicCombat, EdgeLordLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(5, SpecialPowerSelection, ExtraStrike),
-                    Helpers.CreateLevelEntry(8, EdgeLordFastMovement),
                     Helpers.CreateLevelEntry(10, ExtraStrike),
                     Helpers.CreateLevelEntry(15, SpecialPowerSelection, ExtraStrike),
                     Helpers.CreateLevelEntry(20, ExtraStrike),

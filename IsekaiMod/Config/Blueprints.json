@@ -145,7 +145,7 @@
     "SignatureMoveSelection": "9f2929df-e9fc-4cd2-9d40-6240763eb91f",
     "SignatureMoveSelectionBonus": "3bb9b5da-01c7-4bc5-bafa-6661db4e0708",
     "IsekaiFighterTraining": "61c3c186-fc1a-4735-97e3-99e8b6eac959",
-    "IsekaiFastMovement": "7ad9bfd8-d189-4b7a-89c6-f93c401f1c7c",
+    "Afterimage": "7ad9bfd8-d189-4b7a-89c6-f93c401f1c7c",
     "IsekaiQuickFooted": "f178a6db-1e64-40d2-84ee-87483c9d681a",
     "SecondReincarnation": "d174a98e-9963-4c90-8a0a-68a2d648195e",
     "SecondReincarnationBuff": "7fee4dae-16d8-46b8-be24-59d64101d75c",
@@ -460,7 +460,6 @@
     // Edge Lord Features
     "EdgeLordProficiencies": "08979809-7770-475e-934f-f69c270e3cf5",
     "SupersonicCombat": "89a4f509-0847-4956-9564-0b6a04645f77",
-    "EdgeLordFastMovement": "087e0c42-d008-44c3-bb4b-d5b95387f862",
     "ExtraStrike": "5c37047c-4030-47c7-ab09-dac2d523f8ce",
 
     // Hero Features

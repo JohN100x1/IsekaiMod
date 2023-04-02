@@ -59,6 +59,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 });
                 bp.ReapplyOnLevelUp = true;
             });
+            // TODO: Signature Strike (extra sneak attacks per 1/2 character level)
 
             var SignatureMoveSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveSelection", bp => {
                 bp.SetName(IsekaiContext, "Signature Move");

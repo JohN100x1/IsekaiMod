@@ -76,7 +76,7 @@ namespace IsekaiMod.Content {
                 StartingWeaponSelection.Add();
                 IsekaiFighterTraining.Add();
                 SignatureMoveSelection.Add();
-                IsekaiFastMovement.Add();
+                Afterimage.Add();
                 OtherworldlyStamina.Add();
                 IsekaiQuickFooted.Add();
                 IsekaiAuraSelection.Add();
@@ -164,7 +164,6 @@ namespace IsekaiMod.Content {
                 // Edge Lord Archetype
                 EdgeLordProficiencies.Add();
                 SupersonicCombat.Add();
-                EdgeLordFastMovement.Add();
                 ExtraStrike.Add();
                 EdgeLordArchetype.Add();
                 Main.LogDebug("Class: EdgeLord");

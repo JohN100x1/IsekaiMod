@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Unreleased]
 ### Added
 - Added `Divine Aura` feature to `Isekai Aura` selection.
+- Added `Afterimage` feature to `Isekai Protagonist` progression.
 - Added `Gifted` feature to `Isekai Protagonist` progression.
 - Added `Release Energy` feature to `Isekai Protagonist` progression.
 - Added `Mastermind` Archetype (Isekai Protagonist).
@@ -33,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated icon for `Starting Weapon` feature.
 ### Removed
 - Removed `Villain` Archetype (Isekai Protagonist).
+- Removed `Fast Movement` and `Very Fast Movement` features from `Isekai Protagonist` progression.
 - Removed `Kinetic Power` Special Power.
 
 # [4.3.0] - 2023-03-28
