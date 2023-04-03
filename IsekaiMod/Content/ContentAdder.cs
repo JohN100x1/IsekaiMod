@@ -142,7 +142,8 @@ namespace IsekaiMod.Content {
                 SecondReincarnation.Add();
                 ReleaseEnergy.Add();
                 Gifted.Add();
-                SecretPower.Add();
+                SecretPowerSelection.Add();
+                HaxSelection.Add();
                 Main.LogDebug("Class: Features");
 
                 // God Emperor Archetype

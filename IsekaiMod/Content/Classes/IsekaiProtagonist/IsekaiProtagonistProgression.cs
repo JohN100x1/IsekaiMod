@@ -35,7 +35,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var SignatureMove = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureMove");
             var IsekaiFighterTraining = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiFighterTraining");
             var Afterimage = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Afterimage");
-            var SecretPower = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecretPower");
+            var SecretPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecretPowerSelection");
             var IsekaiQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiQuickFooted");
             var MastermindQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindQuickFooted");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
@@ -44,6 +44,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var DarkAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DarkAuraFeature");
             var DivineAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DivineAuraFeature");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
+            var HaxSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HaxSelection");
             var CelestialRealmFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CelestialRealmFeature");
             var Godhood = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Godhood");
             var GodlyVessel = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodlyVessel");
@@ -96,25 +97,25 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateLevelEntry(7, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(8, IsekaiProtagonistBonusFeatSelection, Afterimage),
                 Helpers.CreateLevelEntry(9, SpecialPowerSelection),
-                Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, IsekaiAuraSelection, SecretPower),
+                Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, IsekaiAuraSelection, SecretPowerSelection),
                 Helpers.CreateLevelEntry(11, SpecialPowerSelection),
                 Helpers.CreateLevelEntry(12, IsekaiProtagonistBonusFeatSelection, BeachEpisodeSelection),
                 Helpers.CreateLevelEntry(13, SpecialPowerSelection, OtherworldlyStamina),
                 Helpers.CreateLevelEntry(14, IsekaiProtagonistBonusFeatSelection),
-                Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection, IsekaiQuickFooted),
+                Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection, IsekaiQuickFooted, SecondReincarnation),
                 Helpers.CreateLevelEntry(16, IsekaiProtagonistBonusFeatSelection),
                 Helpers.CreateLevelEntry(17, SpecialPowerSelection, SummonHaremFeature),
                 Helpers.CreateLevelEntry(18, IsekaiProtagonistBonusFeatSelection),
                 Helpers.CreateLevelEntry(19, SpecialPowerSelection),
-                Helpers.CreateLevelEntry(20, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, SecondReincarnation)
+                Helpers.CreateLevelEntry(20, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, HaxSelection)
             };
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 
                 // Isekai UI group
                 Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAbility, SignatureMove,
                 SignatureMoveSelection, SummonHaremFeature, IsekaiAuraSelection, DarkAuraFeature, DivineAuraFeature, Afterimage,
-                IsekaiQuickFooted, MastermindQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, SecondReincarnation),
-                Helpers.CreateUIGroup(ReleaseEnergy, Gifted, SignatureMoveSelectionBonus, SecretPower),
+                IsekaiQuickFooted, MastermindQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, HaxSelection),
+                Helpers.CreateUIGroup(ReleaseEnergy, Gifted, SignatureMoveSelectionBonus, SecretPowerSelection, SecondReincarnation),
                 
                 // Edge Lord UI group
                 Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike),

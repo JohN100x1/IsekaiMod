@@ -169,7 +169,11 @@
     "SummonHaremFeature": "78eabb74-8980-4195-a198-1f0aa4f550ac",
     "ReleaseEnergy": "a70f0191-2380-49f0-a0a4-0e699915861b",
     "Gifted": "c9ce6b96-5283-4c9c-831a-fad3fec7bd9b",
-    "SecretPower": "a4c0de87-2d22-4602-a139-50d7c42a178e",
+    "SecretPowerSelection": "a4c0de87-2d22-4602-a139-50d7c42a178e",
+    "HaxSelection": "529f358d-1c66-465f-b4b0-a0b776edd434",
+    "SeriousStrike": "100e8182-0870-4168-b844-b8fc1722a408",
+    "Invincibility": "02487aed-58d6-4d2d-a308-04178ad69e3b",
+    "FasterThanLight": "9bf4c81c-6511-4cc0-909e-55cdab2e2bbf",
 
     // Starting Weapon
     "StartingWeaponSelection": "1dbbd5c3-19e6-4128-8707-b6e138221c1f",

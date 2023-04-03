@@ -31,7 +31,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
             var Gifted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Gifted");
-            var SecretPower = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecretPower");
+            var SecretPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecretPowerSelection");
+            var HaxSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HaxSelection");
             var SignatureMoveSelectionBonus = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureMoveSelectionBonus");
             var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
@@ -47,14 +48,14 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, Gifted, LegacySelection.GetClassFeature()),
                     Helpers.CreateLevelEntry(3, ReleaseEnergy),
                     Helpers.CreateLevelEntry(6, SignatureMoveSelectionBonus),
-                    Helpers.CreateLevelEntry(10, SecretPower),
-                    Helpers.CreateLevelEntry(20, SecondReincarnation),
+                    Helpers.CreateLevelEntry(10, SecretPowerSelection),
+                    Helpers.CreateLevelEntry(15, SecondReincarnation),
+                    Helpers.CreateLevelEntry(20, HaxSelection),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, HeroProficiencies, GracefulCombat, HeroLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(3, IsekaiChannelPositiveEnergyFeature),
                     Helpers.CreateLevelEntry(10, AuraOfDivineFuryFeature),
-
                     Helpers.CreateLevelEntry(17, CelestialRealmFeature),
                     Helpers.CreateLevelEntry(20, HerosPresenceFeature),
                 };

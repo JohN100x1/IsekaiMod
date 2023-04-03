@@ -39,7 +39,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAuraSelection");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
             var Gifted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Gifted");
-            var SecretPower = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecretPower");
+            var SecretPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecretPowerSelection");
+            var HaxSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HaxSelection");
             var SignatureMoveSelectionBonus = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureMoveSelectionBonus");
             var OtherworldlyStamina = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OtherworldlyStamina");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
@@ -60,13 +61,14 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(6, SignatureMoveSelectionBonus),
                     Helpers.CreateLevelEntry(7, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(9, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(10, IsekaiAuraSelection, SecretPower),
+                    Helpers.CreateLevelEntry(10, IsekaiAuraSelection, SecretPowerSelection),
                     Helpers.CreateLevelEntry(11, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(12, BeachEpisodeSelection),
                     Helpers.CreateLevelEntry(13, SpecialPowerSelection, OtherworldlyStamina),
+                    Helpers.CreateLevelEntry(15, SecondReincarnation),
                     Helpers.CreateLevelEntry(17, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(19, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(20, SecondReincarnation),
+                    Helpers.CreateLevelEntry(20, HaxSelection),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, NascentApotheosis, GodEmperorProficiencies, GodEmperorLegacySelection.getClassFeature()),

@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Unreleased]
 ### Added
 - Added `Divine Aura` feature to `Isekai Aura` selection.
-- Added `Secret Power` feature to `Isekai Protagonist` progression.
+- Added `Hax` selection to `Isekai Protagonist` progression.
+- Added `Secret Power` selection to `Isekai Protagonist` progression.
 - Added `Afterimage` feature to `Isekai Protagonist` progression.
 - Added `Gifted` feature to `Isekai Protagonist` progression.
 - Added `Release Energy` feature to `Isekai Protagonist` progression.
@@ -25,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Buffed `Hero` to get Tower shield and exotic weapon proficiency.
 - Nerfed `Magical Amplification` spell dice from d12 -> d10.
 - Changed `Dark Aura` debuff from -2 -> -4 but no longer affects attack rolls.
+- Changed `Isekai Protagonist` `Second Reincarnation` obtained from level 20 -> 15.
 - Changed `Isekai Protagonist` `Otherworldly Stamina` obtained from level 15 -> 13.
 - Changed `Isekai Protagonist` `Quick-Footed` obtained from level 16 -> 15.
 - Changed `God Emperor` casting stat to WIS.

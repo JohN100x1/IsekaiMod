@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <!-- any TTW Based Mod -->
+    <Compile Include="Components\SetAttackerAutoMiss.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorSpellbook.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Mastermind\MastermindArchetype.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Mastermind\MastermindSpellbook.cs" />
@@ -178,7 +179,8 @@
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\PlayerComputerNerdLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\PlayerPartTimeWorkerLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\WitchBaseLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SecretPower.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\HaxSelection.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\SecretPowerSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\ReleaseEnergy.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="UMMSettingsUI.cs" />
@@ -336,7 +338,15 @@
     <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\TabletopTweaksBase\AutoRime.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\TabletopTweaksBase\AutoSolidShadows.cs" />
     <Compile Include="Content\*\*\*\*\*\*.cs" />
-    <Compile Include="Components\*.cs" />
+    <Compile Include="Components\AddExtraAttack.cs" />
+    <Compile Include="Components\AddExtraOffHandAttack.cs" />
+    <Compile Include="Components\AddStatBonusIfNotHasFact.cs" />
+    <Compile Include="Components\ArmorNoSpeedPenalty.cs" />
+    <Compile Include="Components\ContextActionOnNearbyPoint.cs" />
+    <Compile Include="Components\IncreaseSpellDamage.cs" />
+    <Compile Include="Components\PrerequisiteIsMainCharacter.cs" />
+    <Compile Include="Components\ReflectDamage.cs" />
+    <Compile Include="Components\SetBaseStat.cs" />
     <Compile Include="Utilities\ActionFlow.cs" />
     <Compile Include="Utilities\AuraUtils.cs" />
     <Compile Include="Utilities\DescriptionTools.cs" />
@@ -486,6 +496,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" AfterTargets="BeforeClean">
     <PropertyGroup>

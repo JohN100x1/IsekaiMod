@@ -33,7 +33,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAuraSelection");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
             var Gifted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Gifted");
-            var SecretPower = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecretPower");
+            var SecretPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecretPowerSelection");
+            var HaxSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HaxSelection");
             var SignatureMoveSelectionBonus = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureMoveSelectionBonus");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
             var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
@@ -54,12 +55,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(4, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(6, IsekaiProtagonistBonusFeatSelection, SignatureMoveSelectionBonus),
                     Helpers.CreateLevelEntry(8, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, IsekaiAuraSelection, SecretPower),
+                    Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, IsekaiAuraSelection, SecretPowerSelection),
                     Helpers.CreateLevelEntry(12, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(14, IsekaiProtagonistBonusFeatSelection),
+                    Helpers.CreateLevelEntry(15, SecondReincarnation),
                     Helpers.CreateLevelEntry(16, IsekaiProtagonistBonusFeatSelection),
                     Helpers.CreateLevelEntry(18, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(20, IsekaiProtagonistBonusFeatSelection, SecondReincarnation),
+                    Helpers.CreateLevelEntry(20, IsekaiProtagonistBonusFeatSelection, HaxSelection),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, OverlordProficiencies, OverpoweredAbilitySelectionOverlord, OverlordLegacySelection.getClassFeature()),
