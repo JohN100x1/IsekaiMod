@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Afterimage` feature to `Isekai Protagonist` progression.
 - Added `Gifted` feature to `Isekai Protagonist` progression.
 - Added `Release Energy` feature to `Isekai Protagonist` progression.
+- Added `Chuunibyou Power` feature to `Edge Lord` progression.
 - Added `Mastermind` Archetype (Isekai Protagonist).
 - Added `Overlord` Archetype (Isekai Protagonist).
 ### Changed

@@ -166,6 +166,7 @@ namespace IsekaiMod.Content {
                 EdgeLordProficiencies.Add();
                 SupersonicCombat.Add();
                 ExtraStrike.Add();
+                ChuunibyouPower.Add();
                 EdgeLordArchetype.Add();
                 Main.LogDebug("Class: EdgeLord");
 

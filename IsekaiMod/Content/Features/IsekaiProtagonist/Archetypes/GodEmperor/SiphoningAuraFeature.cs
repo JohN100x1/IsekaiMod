@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
 
     internal class SiphoningAuraFeature {
         private static readonly Sprite Icon_SiphoningDebuff = BlueprintTools.GetBlueprint<BlueprintBuff>("886c7407dc629dc499b9f1465ff382df").m_Icon;
-
+        // TODO: rework
         public static void Add() {
             var Icon_SiphoningAura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SIPHONING_AURA.png");
             var SiphoningAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("SiphoningAuraBuff", bp => {
