@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Buffed `Edge Lord` to get Exotic Weapon Proficiency.
 - Buffed `God Emperor` to get another OP ability at 5th and 15th level.
 - Buffed `Hero` to get another Special Power at 3rd and 17th level.
+- Buffed `Hero` to get another OP Ability at 10th level.
 - Buffed `Hero` to get Tower shield and exotic weapon proficiency.
 - Nerfed `Magical Amplification` spell dice from d12 -> d10.
 - Changed `Dark Aura` debuff from -2 -> -4 but no longer affects attack rolls.
