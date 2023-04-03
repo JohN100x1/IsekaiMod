@@ -54,11 +54,7 @@ namespace IsekaiMod.Components {
                 Owner.Stats.GetStat(Stat).AddModifierUnique(value, Runtime, Descriptor);
                 return;
             }
-            ModifiableValue stat = Owner.Stats.GetStat(Stat);
-            if (stat == null) {
-                return;
-            }
-            stat.RemoveModifiersFrom(Runtime);
+            Cancel();
         }
 
         public void Cancel() {
