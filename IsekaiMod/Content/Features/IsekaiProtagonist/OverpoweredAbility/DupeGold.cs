@@ -72,7 +72,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(DupeGoldFeature);
+            OverpoweredAbilitySelection.AddToNonAutoSelection(DupeGoldFeature);
         }
     }
 }

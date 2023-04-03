@@ -114,7 +114,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(AuraOfRighteousWrathFeature);
+            OverpoweredAbilitySelection.AddToNonAutoSelection(AuraOfRighteousWrathFeature);
         }
     }
 }

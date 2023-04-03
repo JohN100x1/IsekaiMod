@@ -66,7 +66,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(MetaLuckFeature);
+            OverpoweredAbilitySelection.AddToNonAutoSelection(MetaLuckFeature);
         }
     }
 }

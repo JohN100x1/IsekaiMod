@@ -109,7 +109,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             PlayerPartTimeWorkerLegacy.Configure();
             //always do this last to ensure any legacy that might get an arcana goes before
             ArcanaSelection.Configure();
-            OverpoweredAbilitySelection.AddToSelection(GetOverwhelmingFeature());
+            OverpoweredAbilitySelection.AddToNonAutoSelection(GetOverwhelmingFeature());
 
         }
 

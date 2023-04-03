@@ -141,7 +141,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 };
             });
 
-            OverpoweredAbilitySelection.AddToSelection(SummonCalamityFeature);
+            OverpoweredAbilitySelection.AddToNonAutoSelection(SummonCalamityFeature);
         }
 
         private static BlueprintAbility CreateSummonAbility(string name, Action<BlueprintAbility> init = null) {

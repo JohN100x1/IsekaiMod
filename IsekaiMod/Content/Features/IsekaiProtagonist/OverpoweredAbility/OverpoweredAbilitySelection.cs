@@ -72,7 +72,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             FeatTools.Selections.ExtraMythicAbilityMythicFeat.AddToSelection(OverpoweredAbilityMythicSelection);
         }
 
-        public static void AddToSelection(BlueprintFeature feature) {
+        public static void AddToNonAutoSelection(BlueprintFeature feature) {
             var OverpoweredAbilitySelections = new BlueprintFeatureSelection[] {
                 BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection"),
                 BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionOverlord"),

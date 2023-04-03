@@ -115,7 +115,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(MindControlFeature);
+            OverpoweredAbilitySelection.AddToNonAutoSelection(MindControlFeature);
         }
     }
 }
