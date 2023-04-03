@@ -30,7 +30,7 @@ using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Features.IsekaiProtagonist {
+namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
 
     internal class IsekaiChannelNegativeEnergy {
         private static BlueprintFeature Feature;

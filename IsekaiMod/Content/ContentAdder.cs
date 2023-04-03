@@ -66,28 +66,6 @@ namespace IsekaiMod.Content {
                 IsekaiProtagonistClass.Add();
                 Main.LogDebug("Class: Configured");
 
-                // Isekai Protagonist Features
-                IsekaiProtagonistProficiencies.Add();
-                IsekaiProtagonistCantrips.Add();
-                IsekaiProtagonistBonusFeatSelection.Add();
-                IsekaiProtagonistTalentSelection.Add();
-                IsekaiPetSelection.Add();
-                PlotArmor.Add();
-                StartingWeaponSelection.Add();
-                IsekaiFighterTraining.Add();
-                SignatureMoveSelection.Add();
-                Afterimage.Add();
-                OtherworldlyStamina.Add();
-                IsekaiQuickFooted.Add();
-                IsekaiAuraSelection.Add();
-                SummonHarem.Add();
-                SecondReincarnation.Add();
-                IsekaiChannelPositiveEnergy.Add();
-                IsekaiChannelNegativeEnergy.Add();
-                ReleaseEnergy.Add();
-                Gifted.Add();
-                Main.LogDebug("Class: Features");
-
                 // Beach Episode Selection
                 BeachEpisodeSelection.Add();
                 HealthyBody.Add();
@@ -118,6 +96,8 @@ namespace IsekaiMod.Content {
                 KillingIntent.Add();
                 MagicalAmplification.Add();
                 Reflect.Add();
+                IsekaiChannelPositiveEnergy.Add();
+                IsekaiChannelNegativeEnergy.Add();
                 Main.LogDebug("Class: SpecialPower");
 
                 // OP Ability
@@ -142,8 +122,28 @@ namespace IsekaiMod.Content {
                 MetaLuck.Add();
                 AuraOfRighteousWrath.Add();
                 if (Other.IsEnabled("Mythic Class Feature")) BlessingOfTheMythic.Configure();
-                
                 Main.LogDebug("Class: OP");
+
+                // Isekai Protagonist Features
+                IsekaiProtagonistProficiencies.Add();
+                IsekaiProtagonistCantrips.Add();
+                IsekaiProtagonistBonusFeatSelection.Add();
+                IsekaiProtagonistTalentSelection.Add();
+                IsekaiPetSelection.Add();
+                PlotArmor.Add();
+                StartingWeaponSelection.Add();
+                IsekaiFighterTraining.Add();
+                SignatureMoveSelection.Add();
+                Afterimage.Add();
+                OtherworldlyStamina.Add();
+                IsekaiQuickFooted.Add();
+                IsekaiAuraSelection.Add();
+                SummonHarem.Add();
+                SecondReincarnation.Add();
+                ReleaseEnergy.Add();
+                Gifted.Add();
+                SecretPower.Add();
+                Main.LogDebug("Class: Features");
 
                 // God Emperor Archetype
                 GodEmperorSpellbook.Add();

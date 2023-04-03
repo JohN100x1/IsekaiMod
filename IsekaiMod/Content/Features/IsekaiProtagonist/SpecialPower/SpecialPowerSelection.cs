@@ -77,5 +77,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             selection.m_Features = selection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
             selection.m_AllFeatures = selection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
         }
+
+        public static BlueprintFeatureSelection Get() {
+            return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
+        }
     }
 }

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Unreleased]
 ### Added
 - Added `Divine Aura` feature to `Isekai Aura` selection.
+- Added `Secret Power` feature to `Isekai Protagonist` progression.
 - Added `Afterimage` feature to `Isekai Protagonist` progression.
 - Added `Gifted` feature to `Isekai Protagonist` progression.
 - Added `Release Energy` feature to `Isekai Protagonist` progression.
