@@ -17,7 +17,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
 
         public static void Add() {
             BlueprintFeatureReference[] Features = new BlueprintFeatureReference[] {
-                IsekaiProtagonistTalentSelection.GetReference(),
                 IsekaiChannelNegativeEnergy.GetReference(),
                 IsekaiChannelPositiveEnergy.GetReference(),
             };

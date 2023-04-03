@@ -1,4 +1,5 @@
-﻿using Kingmaker.Blueprints;
+﻿using IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using TabletopTweaks.Core.Utilities;
@@ -37,6 +38,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                     FocusingAttackSickened.ToReference<BlueprintFeatureReference>(),
                 };
             });
+
+            SpecialPowerSelection.AddToSelection(IsekaiProtagonistTalentSelection);
         }
 
         public static BlueprintFeatureSelection Get() {
