@@ -37,6 +37,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated icon for `Exceptional Feats`.
 - Updated icon for `Hero` `Graceful Combat` feature.
 - Updated icon for `Starting Weapon` feature.
+### Fixed
+- Fixed `Graceful Combat` not applying the 1.5x damage bonus to two-handed weapons.
 ### Removed
 - Removed `Villain` Archetype (Isekai Protagonist).
 - Removed `Fast Movement` and `Very Fast Movement` features from `Isekai Protagonist` progression.

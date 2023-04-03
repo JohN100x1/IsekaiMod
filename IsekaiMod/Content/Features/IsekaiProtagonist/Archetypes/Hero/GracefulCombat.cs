@@ -1,4 +1,5 @@
-﻿using Kingmaker.Blueprints.Classes;
+﻿using IsekaiMod.Components;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -24,10 +25,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
                 bp.AddComponent<AttackStatReplacement>(c => {
                     c.ReplacementStat = StatType.Charisma;
                 });
-                bp.AddComponent<AnyWeaponDamageStatReplacement>(c => {
+                bp.AddComponent<AnyWeaponDamageStatReplacementFixed>(c => {
                     c.Stat = StatType.Charisma;
-                    c.OnlyMelee = false;
-                    c.CheckSubCategory = false;
                 });
                 bp.AddComponent<ReplaceStatForPrerequisites>(c => {
                     c.OldStat = StatType.Strength;
