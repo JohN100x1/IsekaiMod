@@ -22,8 +22,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "MagusDancerLegacy", bp => {
                 bp.SetName(IsekaiContext, "Magus Legacy - Spell Dancer");
                 bp.SetDescription(IsekaiContext,
-                    "So they were not really martial arts. \n" +
-                    "More like hundrets of hours of ballet lessons that now serve as he basis of some really good dodging skills. \n" +
+                    "So you were not really into martial arts or physical fighting of any kind. \n" +
+                    "More like hundrets of hours of ballet lessons now serve as he basis of some really good dodging skills. \n" +
                     "Now with magical powers running through your veins you are even more flexible and thus have an even easier time dodging. \n" +
                     "According to some elf you met this is actually a special elven form of magic called spell dancing."
                     );

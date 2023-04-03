@@ -32,7 +32,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.SetName(FeatTools.Selections.DomainsSelection.m_DisplayName);
                 bp.SetDescription(FeatTools.Selections.DomainsSelection.m_Description);
                 bp.Ranks = 1;
-                bp.IgnorePrerequisites= true;
                 bp.IsClassFeature = true;
             });
 
@@ -48,6 +47,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             if (prog != null) {
                 LevelEntry[] addentries = new LevelEntry[] { };
                 LevelEntry[] removeentries = new LevelEntry[] { };
+
+                domains.SetFeatures(FeatTools.Selections.DomainsSelection.m_AllFeatures);
+
                 BlueprintFeatureSelection alternateCapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("208662443a1e46d5a97a5e1bff663da1");
                 BlueprintFeature teamLeader = BlueprintTools.GetBlueprint<BlueprintFeature>("dd442ac7be344355887d937fd74e9ff7");
                 if (ModSupport.IsTableTopTweakBaseEnabled() && alternateCapstone != null && teamLeader != null) {
@@ -55,11 +57,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(20, teamLeader));
                 }
                 removeentries = removeentries.AppendToArray(Helpers.CreateLevelEntry(1,FeatTools.Selections.DomainsSelection));
-                domains.SetFeatures(FeatTools.Selections.DomainsSelection.Features.m_Array);
 
                 BlueprintFeature share = BlueprintTools.GetBlueprint<BlueprintFeature>("93e78cad499b1b54c859a970cbe4f585");
                 BlueprintFeature shareswift = BlueprintTools.GetBlueprint<BlueprintFeature>("4ca47c023f1c158428bd55deb44c735f");
-                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(1, domains));
+                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(2, domains));
                 // Animal Teamwork
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(3, BlueprintTools.GetBlueprint<BlueprintFeature>("1b9916f7675d6ef4fb427081250d49de"), share));
                 //Summon Tactics

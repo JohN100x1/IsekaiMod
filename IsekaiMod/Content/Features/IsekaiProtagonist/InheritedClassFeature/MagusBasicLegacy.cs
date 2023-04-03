@@ -7,6 +7,7 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
+using TabletopTweaks.Core.NewComponents.AbilitySpecific;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
@@ -48,6 +49,29 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static BlueprintProgression Get() {
             if (prog != null) return prog;
             return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "MagusBasicLegacy");
+        }
+
+        public static void PatchForBroadStudy() {
+            if (prog != null) {
+                prog.AddComponent<BroadStudyComponent>(c => {
+                    c.CharacterClass = IsekaiProtagonistClass.GetReference();
+                });
+            }
+            if (MagusArcherLegacy.Get() != null) {
+                MagusArcherLegacy.Get().AddComponent<BroadStudyComponent>(c => {
+                    c.CharacterClass = IsekaiProtagonistClass.GetReference();
+                });
+            }
+            if (MagusDancerLegacy.Get() != null) {
+                MagusDancerLegacy.Get().AddComponent<BroadStudyComponent>(c => {
+                    c.CharacterClass = IsekaiProtagonistClass.GetReference();
+                });
+            }
+            if (MagusSpellbladeLegacy.Get() != null) {
+                MagusSpellbladeLegacy.Get().AddComponent<BroadStudyComponent>(c => {
+                    c.CharacterClass = IsekaiProtagonistClass.GetReference();
+                });
+            }
         }
     }
 }
