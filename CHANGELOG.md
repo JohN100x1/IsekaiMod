@@ -39,6 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated icon for `Exceptional Feats`.
 - Updated icon for `Hero` `Graceful Combat` feature.
 - Updated icon for `Starting Weapon` feature.
+- Updated icon for `Siphoning Aura`.
 ### Fixed
 - Fixed `Graceful Combat` not applying the 1.5x damage bonus to two-handed weapons.
 ### Removed

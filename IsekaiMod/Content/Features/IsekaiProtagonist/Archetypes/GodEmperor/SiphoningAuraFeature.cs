@@ -5,7 +5,6 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
@@ -16,15 +15,15 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
 
     internal class SiphoningAuraFeature {
-        private static readonly Sprite Icon_SiphoningDebuff = BlueprintTools.GetBlueprint<BlueprintBuff>("886c7407dc629dc499b9f1465ff382df").m_Icon;
-        // TODO: rework
+        private static readonly Sprite Icon_SiphoningAura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SIPHONING_AURA.png");
+        private static readonly Sprite Icon_HellsSeal = BlueprintTools.GetBlueprint<BlueprintFeature>("b6798b29d36982b4786a32dfd81a914f").m_Icon;
+
         public static void Add() {
-            var Icon_SiphoningAura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SIPHONING_AURA.png");
             var SiphoningAuraBuff = TTCoreExtensions.CreateBuff("SiphoningAuraBuff", bp => {
                 bp.SetName(IsekaiContext, "Siphoning Aura");
                 bp.SetDescription(IsekaiContext, "This creature has a –4 penalty on all attributes.");
                 bp.IsClassFeature = true;
-                bp.m_Icon = Icon_SiphoningDebuff;
+                bp.m_Icon = Icon_HellsSeal; // TODO: rework
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
                     c.Stat = StatType.Strength;
