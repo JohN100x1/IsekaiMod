@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Dialogue {
             // Answer
             var IsekaiDialogueAneviaReply2 = ThingsNotHandledByTTTCore.CreateCue("IsekaiDialogueAneviaReply2", bp => {
                 bp.SetText(IsekaiContext, "\"Also, for no particular reason, would you be interested in a spare of coffin I have lying around?\"");
-                bp.Speaker = new DialogSpeaker() {
+                bp.Speaker = new DialogSpeaker {
                     m_Blueprint = null,
                     MoveCamera = true
                 };
@@ -30,11 +30,11 @@ namespace IsekaiMod.Content.Dialogue {
             });
             var IsekaiDialogueAneviaReply = ThingsNotHandledByTTTCore.CreateCue("IsekaiDialogueAneviaReply", bp => {
                 bp.SetText(IsekaiContext, "Sure thing, only if you can convince Irabeth to join.");
-                bp.Speaker = new DialogSpeaker() {
+                bp.Speaker = new DialogSpeaker {
                     m_Blueprint = null,
                     MoveCamera = true
                 };
-                bp.Continue = new CueSelection() {
+                bp.Continue = new CueSelection {
                     Cues = new List<BlueprintCueBaseReference>() { IsekaiDialogueAneviaReply2.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };

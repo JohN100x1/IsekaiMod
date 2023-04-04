@@ -29,7 +29,7 @@ namespace IsekaiMod.Content.Dialogue {
             var IsekaiDialogueHorgusReply = ThingsNotHandledByTTTCore.CreateCue("IsekaiDialogueHorgusReply", bp => {
                 bp.SetText(IsekaiContext, "\"My daughter?\" {n}Horgus takes a quick glance at Camellia.{/n} \"I don't think you know what sort of person she is. "
                     + "{n}Horgus takes a breath.{/n} Regardless, it seems my previous offer was somewhat insulting. Two thousand gold it is.\"");
-                bp.Speaker = new DialogSpeaker() {
+                bp.Speaker = new DialogSpeaker {
                     m_Blueprint = Horgus.ToReference<BlueprintUnitReference>(),
                     MoveCamera = true
                 };
@@ -42,7 +42,7 @@ namespace IsekaiMod.Content.Dialogue {
             // Answer
             var IsekaiDialogueHorgus = ThingsNotHandledByTTTCore.CreateAnswer("IsekaiDialogueHorgus", bp => {
                 bp.SetText(IsekaiContext, "(Isekai Protagonist) \"Two thousand gold... And your daughter joins my harem.\"");
-                bp.NextCue = new CueSelection() {
+                bp.NextCue = new CueSelection {
                     Cues = new List<BlueprintCueBaseReference>() { IsekaiDialogueHorgusReply.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
@@ -60,7 +60,7 @@ namespace IsekaiMod.Content.Dialogue {
 
             // Ptach "Two Thousand gold." answer in dialogue
             Answer_0011.ShowConditions.Conditions = Answer_0011.ShowConditions.Conditions.AppendToArray(
-                new AnswerSelected() {
+                new AnswerSelected {
                     Not = true,
                     m_Answer = IsekaiDialogueHorgus.ToReference<BlueprintAnswerReference>()
                 });

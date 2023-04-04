@@ -60,7 +60,7 @@ namespace IsekaiMod.Content.Dialogue {
             // Answer
             var IsekaiDialogueRadiance = ThingsNotHandledByTTTCore.CreateAnswer("IsekaiDialogueRadiance", bp => {
                 bp.SetText(IsekaiContext, "(Isekai Protagonist) [Pound the sword repeatedly] \"You better power up right now or you're going to reincarnate as a broken blade.\"");
-                bp.NextCue = new CueSelection() {
+                bp.NextCue = new CueSelection {
                     Cues = new List<BlueprintCueBaseReference>() { UpgradeRadianceCue.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
