@@ -159,25 +159,22 @@ namespace IsekaiMod.Utilities {
             var smallImagePath = Path.Combine(imageFolderPath, "Small.png");
             var mediumImagePath = Path.Combine(imageFolderPath, "Medium.png");
             var fullImagePath = Path.Combine(imageFolderPath, "FullLength.png");
-            var smallPortraitHandle = new CustomPortraitHandle(smallImagePath, PortraitType.SmallPortrait, CustomPortraitsManager.Instance.Storage) {
-                Request = new SpriteLoadingRequest(smallImagePath) {
-                    Resource = LoadPortrait(smallImagePath, new Vector2Int(185, 242))
-                }
-            };
-            var mediumPortraitHandle = new CustomPortraitHandle(mediumImagePath, PortraitType.HalfLengthPortrait, CustomPortraitsManager.Instance.Storage) {
-                Request = new SpriteLoadingRequest(mediumImagePath) {
-                    Resource = LoadPortrait(mediumImagePath, new Vector2Int(330, 432))
-                }
-            };
-            var fullPortraitHandle = new CustomPortraitHandle(fullImagePath, PortraitType.FullLengthPortrait, CustomPortraitsManager.Instance.Storage) {
-                Request = new SpriteLoadingRequest(fullImagePath) {
-                    Resource = LoadPortrait(fullImagePath, new Vector2Int(692, 1024))
-                }
-            };
+
+            var smallPortraitHandle = CreateCustomPortraitHandle(smallImagePath, PortraitType.SmallPortrait, new Vector2Int(185, 242));
+            var mediumPortraitHandle = CreateCustomPortraitHandle(mediumImagePath, PortraitType.HalfLengthPortrait, new Vector2Int(330, 432));
+            var fullPortraitHandle = CreateCustomPortraitHandle(fullImagePath, PortraitType.FullLengthPortrait, new Vector2Int(692, 1024));
+
             return new PortraitData(folder) {
                 SmallPortraitHandle = smallPortraitHandle,
                 HalfPortraitHandle = mediumPortraitHandle,
                 FullPortraitHandle = fullPortraitHandle
+            };
+        }
+        private static CustomPortraitHandle CreateCustomPortraitHandle(string path, PortraitType type, Vector2Int size) {
+            return new CustomPortraitHandle(path, type, CustomPortraitsManager.Instance.Storage) {
+                Request = new SpriteLoadingRequest(path) {
+                    Resource = LoadPortrait(path, size)
+                }
             };
         }
     }
