@@ -206,7 +206,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
             });
 
             var DeathsnatcherPetEyePath = Path.Combine(IsekaiContext.ModEntry.Path, "Assets", "Portraits", "Deathsnatcher", "PetEye.png");
-            EyePortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoaderExtension.Image2SpriteExtension.Create(DeathsnatcherPetEyePath, new Vector2Int(176, 24));
+            EyePortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoaderExtension.LoadPortrait(DeathsnatcherPetEyePath, new Vector2Int(176, 24));
 
             var DeathsnatcherFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFeature", bp => {
                 bp.SetName(IsekaiContext, "Deathsnatcher");

@@ -75,6 +75,7 @@ namespace IsekaiMod.Utilities {
             init?.Invoke(result);
             return result;
         }
+
         public static BlueprintCue CreateCue(string name, Action<BlueprintCue> init = null) {
             var result = Helpers.CreateBlueprint<BlueprintCue>(IsekaiContext, name, bp => {
                 bp.ShowOnce = false;
@@ -146,8 +147,11 @@ namespace IsekaiMod.Utilities {
     }
 
     internal class AssetLoaderExtension : AssetLoader {
-        public static Sprite LoadPortrait(string imagePath, string file, Vector2Int size) {
-            return Image2SpriteExtension.Create(Path.Combine(imagePath, file), size);
+        public static Sprite LoadPortrait(string imagePath, Vector2Int size) {
+            var bytes = File.ReadAllBytes(imagePath);
+            var texture = new Texture2D(size.x, size.y, TextureFormat.RGBA32, false) { mipMapBias = 15.0f };
+            _ = texture.LoadImage(bytes);
+            return Sprite.Create(texture, new Rect(0, 0, size.x, size.y), new Vector2(0, 0));
         }
 
         public static PortraitData LoadPortraitData(string folder) {
@@ -157,17 +161,17 @@ namespace IsekaiMod.Utilities {
             var fullImagePath = Path.Combine(imageFolderPath, "FullLength.png");
             var smallPortraitHandle = new CustomPortraitHandle(smallImagePath, PortraitType.SmallPortrait, CustomPortraitsManager.Instance.Storage) {
                 Request = new SpriteLoadingRequest(smallImagePath) {
-                    Resource = Image2SpriteExtension.Create(smallImagePath, new Vector2Int(185, 242))
+                    Resource = LoadPortrait(smallImagePath, new Vector2Int(185, 242))
                 }
             };
             var mediumPortraitHandle = new CustomPortraitHandle(mediumImagePath, PortraitType.HalfLengthPortrait, CustomPortraitsManager.Instance.Storage) {
                 Request = new SpriteLoadingRequest(mediumImagePath) {
-                    Resource = Image2SpriteExtension.Create(mediumImagePath, new Vector2Int(330, 432))
+                    Resource = LoadPortrait(mediumImagePath, new Vector2Int(330, 432))
                 }
             };
             var fullPortraitHandle = new CustomPortraitHandle(fullImagePath, PortraitType.FullLengthPortrait, CustomPortraitsManager.Instance.Storage) {
                 Request = new SpriteLoadingRequest(fullImagePath) {
-                    Resource = Image2SpriteExtension.Create(fullImagePath, new Vector2Int(692, 1024))
+                    Resource = LoadPortrait(fullImagePath, new Vector2Int(692, 1024))
                 }
             };
             return new PortraitData(folder) {
@@ -175,17 +179,6 @@ namespace IsekaiMod.Utilities {
                 HalfPortraitHandle = mediumPortraitHandle,
                 FullPortraitHandle = fullPortraitHandle
             };
-        }
-
-        public static class Image2SpriteExtension {
-            public static string icons_folder = "";
-
-            public static Sprite Create(string filePath, Vector2Int size) {
-                var bytes = File.ReadAllBytes(icons_folder + filePath);
-                var texture = new Texture2D(size.x, size.y, TextureFormat.RGBA32, false) { mipMapBias = 15.0f };
-                _ = texture.LoadImage(bytes);
-                return Sprite.Create(texture, new Rect(0, 0, size.x, size.y), new Vector2(0, 0));
-            }
         }
     }
 }
