@@ -32,7 +32,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var SiphoningAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SiphoningAuraFeature");
             var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
             var ArmorSaint = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ArmorSaint");
-            var AuraOfDivineFuryFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfDivineFuryFeature");
 
             // Removed features
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
@@ -78,7 +77,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(9, AuraOfMajestyFeature),
                     Helpers.CreateLevelEntry(10, DivineAuraFeature),
                     Helpers.CreateLevelEntry(12, SiphoningAuraFeature),
-                    Helpers.CreateLevelEntry(14, AuraOfDivineFuryFeature),
                     Helpers.CreateLevelEntry(15, GodlyVessel),
                     Helpers.CreateLevelEntry(17, CelestialRealmFeature),
                     Helpers.CreateLevelEntry(20, Godhood),

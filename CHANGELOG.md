@@ -46,6 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed `Reflect` to not affect attacks from the owner.
 ### Removed
 - Removed `Villain` Archetype (Isekai Protagonist).
+- Removed `Aura of Divine Fury` feature from `God Emperor` progression.
 - Removed `Fast Movement` and `Very Fast Movement` features from `Isekai Protagonist` progression.
 - Removed `Kinetic Power` Special Power.
 
