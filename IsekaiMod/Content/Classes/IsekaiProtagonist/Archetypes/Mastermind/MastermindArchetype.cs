@@ -26,7 +26,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var MastermindQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindQuickFooted");
 
             // Removed features
-            var IsekaiProtagonistBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiProtagonistBonusFeatSelection");
+            var IsekaiBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiBonusFeatSelection");
             var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
             var SignatureMoveSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureMoveSelection");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
@@ -49,19 +49,19 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.IsDivineCaster = true;
                 bp.ChangeCasterType = true;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, IsekaiProtagonistBonusFeatSelection, IsekaiProtagonistProficiencies, Gifted, LegacySelection.GetClassFeature()),
-                    Helpers.CreateLevelEntry(2, IsekaiProtagonistBonusFeatSelection),
+                    Helpers.CreateLevelEntry(1, IsekaiBonusFeatSelection, IsekaiProtagonistProficiencies, Gifted, LegacySelection.GetClassFeature()),
+                    Helpers.CreateLevelEntry(2, IsekaiBonusFeatSelection),
                     Helpers.CreateLevelEntry(3, IsekaiFighterTraining, ReleaseEnergy),
-                    Helpers.CreateLevelEntry(4, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(6, IsekaiProtagonistBonusFeatSelection, SignatureMoveSelection, SignatureMoveSelectionBonus),
-                    Helpers.CreateLevelEntry(8, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(10, IsekaiProtagonistBonusFeatSelection, OverpoweredAbilitySelection, SecretPowerSelection),
-                    Helpers.CreateLevelEntry(12, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(14, IsekaiProtagonistBonusFeatSelection),
+                    Helpers.CreateLevelEntry(4, IsekaiBonusFeatSelection),
+                    Helpers.CreateLevelEntry(6, IsekaiBonusFeatSelection, SignatureMoveSelection, SignatureMoveSelectionBonus),
+                    Helpers.CreateLevelEntry(8, IsekaiBonusFeatSelection),
+                    Helpers.CreateLevelEntry(10, IsekaiBonusFeatSelection, OverpoweredAbilitySelection, SecretPowerSelection),
+                    Helpers.CreateLevelEntry(12, IsekaiBonusFeatSelection),
+                    Helpers.CreateLevelEntry(14, IsekaiBonusFeatSelection),
                     Helpers.CreateLevelEntry(15, IsekaiQuickFooted, SecondReincarnation),
-                    Helpers.CreateLevelEntry(16, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(18, IsekaiProtagonistBonusFeatSelection),
-                    Helpers.CreateLevelEntry(20, IsekaiProtagonistBonusFeatSelection, HaxSelection),
+                    Helpers.CreateLevelEntry(16, IsekaiBonusFeatSelection),
+                    Helpers.CreateLevelEntry(18, IsekaiBonusFeatSelection),
+                    Helpers.CreateLevelEntry(20, IsekaiBonusFeatSelection, HaxSelection),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, MastermindProficiencies, OverpoweredAbilitySelectionMastermind, MastermindLegacySelection.getClassFeature()),

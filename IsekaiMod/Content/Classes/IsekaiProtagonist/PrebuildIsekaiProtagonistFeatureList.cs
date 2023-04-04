@@ -50,7 +50,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
             var StartingWeaponSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "StartingWeaponSelection");
             var IsekaiPetSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiPetSelection");
-            var IsekaiProtagonistBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiProtagonistBonusFeatSelection");
+            var IsekaiBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiBonusFeatSelection");
             var SignatureMoveSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveSelection");
             var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
             var BeachEpisodeSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeSelection");
@@ -113,7 +113,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                         },
                         new SelectionEntry()
                         {
-                            m_Selection = IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Selection = IsekaiBonusFeatSelection.ToReference<BlueprintFeatureSelectionReference>(),
                             m_Features = new BlueprintFeatureReference[]{
                                 Cleave.ToReference<BlueprintFeatureReference>(),
                                 CleavingFinish.ToReference<BlueprintFeatureReference>(),
