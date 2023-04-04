@@ -48,7 +48,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 });
                 bp.ReapplyOnLevelUp = true;
             });
-            // TODO: Add IfNotHasFact component target `Godhood` feature
+            // TODO: Add IfNotHasFact component target `Godhood` feature, so resistances don't show if we have immunity
         }
     }
 }

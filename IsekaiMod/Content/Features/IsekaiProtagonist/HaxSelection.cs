@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         public static void Add() {
             var SeriousStrike = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SeriousStrike", bp => {
                 bp.SetName(IsekaiContext, "Serious Strike");
-                bp.SetDescription(IsekaiContext, "Enemies die in one hit."); // TODO: doesn't work
+                bp.SetDescription(IsekaiContext, "Enemies die in one hit.");
                 bp.m_Icon = Icon_Hax;
                 bp.AddComponent<AddOutgoingDamageTrigger>(c => {
                     c.Actions = ActionFlow.DoSingle<ContextActionKill>(c => {
