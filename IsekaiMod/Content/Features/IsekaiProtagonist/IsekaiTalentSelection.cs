@@ -7,7 +7,7 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist {
 
-    internal class IsekaiProtagonistTalentSelection {
+    internal class IsekaiTalentSelection {
         private static readonly BlueprintFeature CripplingStrike = BlueprintTools.GetBlueprint<BlueprintFeature>("b696bd7cb38da194fa3404032483d1db");
         private static readonly BlueprintFeature DispellingAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("1b92146b8a9830d4bb97ab694335fa7c");
         private static readonly BlueprintFeature ConfoundingBlades = BlueprintTools.GetBlueprint<BlueprintFeature>("ce72662a812b1f242849417b2c784b5e");
@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         private static readonly BlueprintFeature FocusingAttackSickened = BlueprintTools.GetBlueprint<BlueprintFeature>("79475c263e538c94f8e23907bd570a35");
 
         public static void Add() {
-            var IsekaiProtagonistTalentSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiProtagonistTalentSelection", bp => {
+            var IsekaiTalentSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiTalentSelection", bp => {
                 bp.SetName(IsekaiContext, "Rogue Talents");
                 bp.SetDescription(IsekaiContext, "You can select a rogue talent from a limited set of rogue talents, ignoring any prerequisites for these talents.");
                 bp.Ranks = 1;
@@ -39,11 +39,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 };
             });
 
-            SpecialPowerSelection.AddToSelection(IsekaiProtagonistTalentSelection);
+            SpecialPowerSelection.AddToSelection(IsekaiTalentSelection);
         }
 
         public static BlueprintFeatureSelection Get() {
-            return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiProtagonistTalentSelection");
+            return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiTalentSelection");
         }
 
         public static BlueprintFeatureReference GetReference() {

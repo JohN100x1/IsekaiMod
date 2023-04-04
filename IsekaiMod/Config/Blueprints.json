@@ -132,8 +132,8 @@
 
     // Isekai Protagonist Features
     "IsekaiProficiencies": "f85b2b09-e16e-4cd6-acba-d262d2a27881",
-    "IsekaiProtagonistCantripsFeature": "7075cc91-de39-47f0-bbfe-e47b679ce1d0",
-    "IsekaiProtagonistTalentSelection": "b27a3573-9bbd-4653-bee5-9c022008c490",
+    "IsekaiCantrips": "7075cc91-de39-47f0-bbfe-e47b679ce1d0",
+    "IsekaiTalentSelection": "b27a3573-9bbd-4653-bee5-9c022008c490",
     "IsekaiBonusFeatSelection": "039dec4f-d83c-4e4b-9be9-e4aae6fe4b5b",
     "IsekaiNoPetFeature": "c11cf805-dfa1-4c07-b054-fa32335b4201",
     "IsekaiFamiliarSelection": "6988b26a-2bc0-4a9e-9411-e7cce90fb134",

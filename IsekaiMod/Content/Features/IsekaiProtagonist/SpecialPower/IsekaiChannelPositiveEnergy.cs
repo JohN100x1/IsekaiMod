@@ -33,7 +33,7 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
 
     internal class IsekaiChannelPositiveEnergy {
-        private static BlueprintFeature Feature;
+        private static BlueprintFeature Feature; // TODO: simplify AbilityEffectRunAction logic by copying directly
 
         private static readonly BlueprintFeature ExtraChannel = BlueprintTools.GetBlueprint<BlueprintFeature>("cd9f19775bd9d3343a31a065e93f0c47");
         private static readonly BlueprintFeature SelectiveChannel = BlueprintTools.GetBlueprint<BlueprintFeature>("fd30c69417b434d47b6b03b9c1f568ff");
@@ -374,6 +374,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             // Patch extra channel and selective channel feats
             SelectiveChannel.AddPrerequisiteFeature(Feature, Prerequisite.GroupType.Any);
             ExtraChannel.AddPrerequisiteFeature(Feature, Prerequisite.GroupType.Any);
+
+            // Add to Selection
+            SpecialPowerSelection.AddToSelection(Feature);
         }
         public static BlueprintFeature Get() {
             return Feature;

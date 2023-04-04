@@ -221,9 +221,9 @@
     <Compile Include="Content\Features\IsekaiProtagonist\IsekaiFighterTraining.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\IsekaiPetSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\IsekaiBonusFeatSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiProtagonistCantrips.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiCantrips.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\IsekaiProficiencies.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiProtagonistTalentSelection.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiTalentSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\IsekaiQuickFooted.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\OtherworldlyStamina.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\PlotArmor.cs" />

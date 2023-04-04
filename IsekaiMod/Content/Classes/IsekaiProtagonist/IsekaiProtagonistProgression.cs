@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
         public static void Add() {
             // Isekai Protagonist
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
-            var IsekaiProtagonistCantripsFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistCantripsFeature");
+            var IsekaiCantrips = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiCantrips");
             BlueprintFeatureSelection IsekaiBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiBonusFeatSelection");
             BlueprintFeatureSelection IsekaiPetSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiPetSelection");
             BlueprintFeatureSelection StartingWeaponSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "StartingWeaponSelection");
@@ -100,7 +100,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 };
             });
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
-                Helpers.CreateLevelEntry(1, IsekaiProficiencies, IsekaiProtagonistCantripsFeature, IsekaiBonusFeatSelection,
+                Helpers.CreateLevelEntry(1, IsekaiProficiencies, IsekaiCantrips, IsekaiBonusFeatSelection,
                     OverpoweredAbilitySelection, PlotArmor, StartingWeaponSelection, IsekaiPetSelection, Gifted, LegacySelection.GetClassFeature()),
                 Helpers.CreateLevelEntry(2, IsekaiBonusFeatSelection),
                 Helpers.CreateLevelEntry(3, IsekaiFighterTraining, SpecialPowerSelection, ReleaseEnergy),
@@ -157,7 +157,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateUIGroup(EdgeLordLegacySelection.getClassFeature()),
             };
             IsekaiProtagonistProgression.m_UIDeterminatorsGroup = new BlueprintFeatureBaseReference[] {
-                IsekaiProtagonistCantripsFeature.ToReference<BlueprintFeatureBaseReference>(),
+                IsekaiCantrips.ToReference<BlueprintFeatureBaseReference>(),
                 StartingWeaponSelection.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiPetSelection.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiProficiencies.ToReference<BlueprintFeatureBaseReference>(),

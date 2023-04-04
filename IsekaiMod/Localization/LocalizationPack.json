@@ -4259,7 +4259,7 @@
     },
     {
       "Key": "79442c6ee8fe4f57955cda72c7d16a09",
-      "SimpleName": "IsekaiProtagonistCantripsFeature.Description",
+      "SimpleName": "IsekaiCantrips.Description",
       "ProcessTemplates": true,
       "enGB": "You can cast a number of {g|Encyclopedia:Cantrips_Orisons}cantrips{/g}, or 0-level {g|Encyclopedia:Spell}spells{/g}. These spells are cast like any other spell, but they are not expended when cast and may be used again.",
       "ruRU": null,
@@ -4270,7 +4270,7 @@
     },
     {
       "Key": "7c54e72107044e0d8287f82318b14df9",
-      "SimpleName": "IsekaiProtagonistCantripsFeature.Name",
+      "SimpleName": "IsekaiCantrips.Name",
       "ProcessTemplates": false,
       "enGB": "Cantrips",
       "ruRU": null,
@@ -4413,7 +4413,7 @@
     },
     {
       "Key": "6d8cdd27962a41d4ad18117743f0d6bc",
-      "SimpleName": "IsekaiProtagonistTalentSelection.Description",
+      "SimpleName": "IsekaiTalentSelection.Description",
       "ProcessTemplates": true,
       "enGB": "You can select a rogue talent from a limited set of rogue talents, ignoring any prerequisites for these talents.",
       "ruRU": null,
@@ -4424,7 +4424,7 @@
     },
     {
       "Key": "432178f7930b4feda193bd5bea975b26",
-      "SimpleName": "IsekaiProtagonistTalentSelection.Name",
+      "SimpleName": "IsekaiTalentSelection.Name",
       "ProcessTemplates": false,
       "enGB": "Rogue Talents",
       "ruRU": null,

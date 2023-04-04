@@ -1041,7 +1041,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 }
             }
             var cantrips = IsekaiSpellList.GetSpells(0);
-            var IsekaiCantrips = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistCantripsFeature");
+            var IsekaiCantrips = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiCantrips");
             IsekaiCantrips.AddComponent<AddFacts>(c => {
                 c.m_Facts = new BlueprintUnitFactReference[0];
                 foreach (var spell in cantrips) {

@@ -126,9 +126,9 @@ namespace IsekaiMod.Content {
 
                 // Isekai Protagonist Features
                 IsekaiProficiencies.Add();
-                IsekaiProtagonistCantrips.Add();
+                IsekaiCantrips.Add();
                 IsekaiBonusFeatSelection.Add();
-                IsekaiProtagonistTalentSelection.Add();
+                IsekaiTalentSelection.Add();
                 IsekaiPetSelection.Add();
                 PlotArmor.Add();
                 StartingWeaponSelection.Add();
