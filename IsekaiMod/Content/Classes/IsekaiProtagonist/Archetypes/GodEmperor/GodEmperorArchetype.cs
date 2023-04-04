@@ -72,8 +72,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, NascentApotheosis, GodEmperorProficiencies, GodEmperorLegacySelection.getClassFeature()),
-                    Helpers.CreateLevelEntry(3, GodEmperorEnergySelection),
-                    Helpers.CreateLevelEntry(4, ArmorSaint),
+                    Helpers.CreateLevelEntry(3, GodEmperorEnergySelection, ArmorSaint),
                     Helpers.CreateLevelEntry(5, DivineArray),
                     Helpers.CreateLevelEntry(7, AuraOfGoldenProtectionFeature),
                     Helpers.CreateLevelEntry(9, AuraOfMajestyFeature),

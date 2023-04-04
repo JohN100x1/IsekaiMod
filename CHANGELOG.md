@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `God Emperor` casting stat to WIS.
 - Changed `God Emperor` `Divine Array` obtained from level 3 -> 5.
 - Changed `God Emperor` `Channel Energy` obtained from level 5 -> 3.
+- Changed `God Emperor` `Armor Saint` obtained from level 4 -> 3.
 - Renamed `Energy Immunity Selection` to `Energy Immunity`.
 - Updated description for `Isekai Protagonist` `Fighter Training`.
 - Updated icon for `Exceptional Feats`.

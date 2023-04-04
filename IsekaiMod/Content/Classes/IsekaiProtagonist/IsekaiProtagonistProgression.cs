@@ -137,7 +137,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateUIGroup(NascentApotheosis, DivineArray, GodEmperorEnergySelection, AuraOfGoldenProtectionFeature, AuraOfMajestyFeature, SiphoningAuraFeature, GodlyVessel, Godhood,
                 
                 // Hero UI group
-                GracefulCombat, IsekaiChannelPositiveEnergyFeature, AuraOfDivineFuryFeature, CelestialRealmFeature, HerosPresenceFeature, ArmorSaint),
+                GracefulCombat, IsekaiChannelPositiveEnergyFeature, AuraOfDivineFuryFeature, CelestialRealmFeature, HerosPresenceFeature),
                 
                 // Mastermind UI group
                 Helpers.CreateUIGroup(OverpoweredAbilitySelectionMastermind),
@@ -147,7 +147,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateUIGroup(IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, SecondFormFeature),
                 
                 // OP ability and Special Power UI group
-                Helpers.CreateUIGroup(OverpoweredAbilitySelection, SpecialPowerSelection),
+                Helpers.CreateUIGroup(OverpoweredAbilitySelection, SpecialPowerSelection, ArmorSaint),
 
                 // Legacy UI groups
                 Helpers.CreateUIGroup(LegacySelection.GetClassFeature()),
