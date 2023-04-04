@@ -8,7 +8,7 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist {
 
-    internal class IsekaiProtagonistProficiencies {
+    internal class IsekaiProficiencies {
         private static readonly BlueprintFeature LightArmorProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("6d3728d4e9c9898458fe5e9532951132");
         private static readonly BlueprintFeature MediumArmorProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("46f4fb320f35704488ba3d513397789d");
         private static readonly BlueprintFeature HeavyArmorProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("1b0f68188dcc435429fb87a022239681");
@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         private static readonly BlueprintFeature TowerShieldProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("6105f450bb2acbd458d277e71e19d835");
 
         public static void Add() {
-            var IsekaiProtagonistProficiencies = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies", bp => {
+            var IsekaiProficiencies = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies", bp => {
                 bp.SetName(IsekaiContext, "Isekai Protagonist Proficiences");
                 bp.SetDescription(IsekaiContext, "Isekai Protagonists are proficient with all simple and {g|Encyclopedia:Weapon_Proficiency}martial weapons{/g} and with all armor "
                     + "(heavy, light, and medium) and shields (including tower shields). They can cast {g|Encyclopedia:Spell}spells{/g} from this class while wearing armor and shields "

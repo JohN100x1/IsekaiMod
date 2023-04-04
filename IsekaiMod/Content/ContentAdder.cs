@@ -125,7 +125,7 @@ namespace IsekaiMod.Content {
                 Main.LogDebug("Class: OP");
 
                 // Isekai Protagonist Features
-                IsekaiProtagonistProficiencies.Add();
+                IsekaiProficiencies.Add();
                 IsekaiProtagonistCantrips.Add();
                 IsekaiBonusFeatSelection.Add();
                 IsekaiProtagonistTalentSelection.Add();

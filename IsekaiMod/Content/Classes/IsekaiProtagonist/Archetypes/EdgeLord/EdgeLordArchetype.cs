@@ -24,7 +24,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var ChuunibyouPowerFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ChuunibyouPowerFeature");
 
             // Removed features
-            var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
+            var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
             var Gifted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Gifted");
             var SecretPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecretPowerSelection");
@@ -43,7 +43,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.IsArcaneCaster = true;
                 bp.IsDivineCaster = true;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, Gifted, LegacySelection.GetClassFeature()),
+                    Helpers.CreateLevelEntry(1, IsekaiProficiencies, Gifted, LegacySelection.GetClassFeature()),
                     Helpers.CreateLevelEntry(3, ReleaseEnergy),
                     Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection),
                     Helpers.CreateLevelEntry(6, SignatureMoveSelectionBonus),

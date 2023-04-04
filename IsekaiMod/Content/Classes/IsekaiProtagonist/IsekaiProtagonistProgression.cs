@@ -16,7 +16,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         public static void Add() {
             // Isekai Protagonist
-            var IsekaiProtagonistProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistProficiencies");
+            var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
             var IsekaiProtagonistCantripsFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistCantripsFeature");
             BlueprintFeatureSelection IsekaiBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiBonusFeatSelection");
             BlueprintFeatureSelection IsekaiPetSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiPetSelection");
@@ -100,7 +100,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 };
             });
             IsekaiProtagonistProgression.LevelEntries = new LevelEntry[20] {
-                Helpers.CreateLevelEntry(1, IsekaiProtagonistProficiencies, IsekaiProtagonistCantripsFeature, IsekaiBonusFeatSelection,
+                Helpers.CreateLevelEntry(1, IsekaiProficiencies, IsekaiProtagonistCantripsFeature, IsekaiBonusFeatSelection,
                     OverpoweredAbilitySelection, PlotArmor, StartingWeaponSelection, IsekaiPetSelection, Gifted, LegacySelection.GetClassFeature()),
                 Helpers.CreateLevelEntry(2, IsekaiBonusFeatSelection),
                 Helpers.CreateLevelEntry(3, IsekaiFighterTraining, SpecialPowerSelection, ReleaseEnergy),
@@ -160,7 +160,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 IsekaiProtagonistCantripsFeature.ToReference<BlueprintFeatureBaseReference>(),
                 StartingWeaponSelection.ToReference<BlueprintFeatureBaseReference>(),
                 IsekaiPetSelection.ToReference<BlueprintFeatureBaseReference>(),
-                IsekaiProtagonistProficiencies.ToReference<BlueprintFeatureBaseReference>(),
+                IsekaiProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 EdgeLordProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 GodEmperorProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 HeroProficiencies.ToReference<BlueprintFeatureBaseReference>(),
