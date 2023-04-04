@@ -6162,7 +6162,7 @@
     },
     {
       "Key": "baeaab2e9ada4238bbb2bb78fb76583b",
-      "SimpleName": "SignatureMoveSelectionBonus.Description",
+      "SimpleName": "SignatureMoveBonusSelection.Description",
       "ProcessTemplates": true,
       "enGB": "At 6th level, you choose to have either a signature attack or a signature ability.",
       "ruRU": null,

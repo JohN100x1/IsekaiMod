@@ -71,7 +71,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                     SignatureAbility.ToReference<BlueprintFeatureReference>(),
                 };
             });
-            var SignatureMoveSelectionBonus = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveSelectionBonus", bp => {
+            var SignatureMoveBonusSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveBonusSelection", bp => {
                 bp.SetName(IsekaiContext, "Signature Move");
                 bp.SetDescription(IsekaiContext, "At 6th level, you choose to have either a signature attack or a signature ability.");
                 bp.m_Icon = Icon_SwordSaintWeaponMastery;
