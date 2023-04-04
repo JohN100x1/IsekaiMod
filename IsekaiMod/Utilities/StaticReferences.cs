@@ -21,32 +21,32 @@ namespace IsekaiMod.Utilities {
     public class StaticReferences {
         // Base Classes
         public static readonly BlueprintCharacterClass[] BaseClasses = new BlueprintCharacterClass[25] {
-                ClassTools.Classes.AlchemistClass,
-                ClassTools.Classes.ArcanistClass,
-                ClassTools.Classes.BarbarianClass,
-                ClassTools.Classes.BardClass,
-                ClassTools.Classes.BloodragerClass,
-                ClassTools.Classes.CavalierClass,
-                ClassTools.Classes.ClericClass,
-                ClassTools.Classes.DruidClass,
-                ClassTools.Classes.FighterClass,
-                ClassTools.Classes.HunterClass,
-                ClassTools.Classes.InquisitorClass,
-                ClassTools.Classes.KineticistClass,
-                ClassTools.Classes.MagusClass,
-                ClassTools.Classes.MonkClass,
-                ClassTools.Classes.OracleClass,
-                ClassTools.Classes.PaladinClass,
-                ClassTools.Classes.RangerClass,
-                ClassTools.Classes.RogueClass,
-                ClassTools.Classes.ShamanClass,
-                ClassTools.Classes.SkaldClass,
-                ClassTools.Classes.SlayerClass,
-                ClassTools.Classes.SorcererClass,
-                ClassTools.Classes.WarpriestClass,
-                ClassTools.Classes.WitchClass,
-                ClassTools.Classes.WizardClass
-            };
+            ClassTools.Classes.AlchemistClass,
+            ClassTools.Classes.ArcanistClass,
+            ClassTools.Classes.BarbarianClass,
+            ClassTools.Classes.BardClass,
+            ClassTools.Classes.BloodragerClass,
+            ClassTools.Classes.CavalierClass,
+            ClassTools.Classes.ClericClass,
+            ClassTools.Classes.DruidClass,
+            ClassTools.Classes.FighterClass,
+            ClassTools.Classes.HunterClass,
+            ClassTools.Classes.InquisitorClass,
+            ClassTools.Classes.KineticistClass,
+            ClassTools.Classes.MagusClass,
+            ClassTools.Classes.MonkClass,
+            ClassTools.Classes.OracleClass,
+            ClassTools.Classes.PaladinClass,
+            ClassTools.Classes.RangerClass,
+            ClassTools.Classes.RogueClass,
+            ClassTools.Classes.ShamanClass,
+            ClassTools.Classes.SkaldClass,
+            ClassTools.Classes.SlayerClass,
+            ClassTools.Classes.SorcererClass,
+            ClassTools.Classes.WarpriestClass,
+            ClassTools.Classes.WitchClass,
+            ClassTools.Classes.WizardClass
+        };
 
         //Oracle
         public static BlueprintFeatureSelection OracleCurseSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("b0a5118b4fb793241bc7042464b23fab");
@@ -334,7 +334,7 @@ namespace IsekaiMod.Utilities {
                 PatchClassIntoFeatureOfReferenceClass(asFeat.m_Feature.Get(), myClass, referenceClass, mylevel, loopPrevention);
                 //only add our class as an additional class if the original entry was not valid for all classes but was restricted to the correct base class
                 if (asFeat.m_Class != null && asFeat.m_Class == referenceClass
-                    && (asFeat.m_AdditionalClasses == null || !asFeat.m_AdditionalClasses.Contains<BlueprintCharacterClassReference>(myClass))) {
+                    && (asFeat.m_AdditionalClasses == null || !asFeat.m_AdditionalClasses.Contains(myClass))) {
                     asFeat.m_AdditionalClasses.AddItem(myClass);
                 }
             }
@@ -433,12 +433,12 @@ namespace IsekaiMod.Utilities {
                 }
 
                 // Optimization for a common success case.
-                if (Object.ReferenceEquals(this, p)) {
+                if (ReferenceEquals(this, p)) {
                     return true;
                 }
 
                 // If run-time types are not exactly the same, return false.
-                if (this.GetType() != p.GetType()) {
+                if (GetType() != GetType()) {
                     return false;
                 }
 
@@ -471,12 +471,12 @@ namespace IsekaiMod.Utilities {
                 }
 
                 // Optimization for a common success case.
-                if (Object.ReferenceEquals(this, p)) {
+                if (ReferenceEquals(this, p)) {
                     return true;
                 }
 
                 // If run-time types are not exactly the same, return false.
-                if (this.GetType() != p.GetType()) {
+                if (GetType() != GetType()) {
                     return false;
                 }
 
