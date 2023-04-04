@@ -16,7 +16,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
         private static readonly Sprite Icon_SpellResistance = BlueprintTools.GetBlueprint<BlueprintAbility>("0a5ddfbcfb3989543ac7c936fc256889").m_Icon;
 
         public static void Add() {
-            var SpellNegationBuff = ThingsNotHandledByTTTCore.CreateBuff("SpellNegationBuff", bp => {
+            var SpellNegationBuff = TTCoreExtensions.CreateBuff("SpellNegationBuff", bp => {
                 bp.SetName(IsekaiContext, "Spell Negation");
                 bp.SetDescription(IsekaiContext, "You gain spell resistance equal to 10 + twice your character level.");
                 bp.m_Icon = Icon_SpellResistance;
@@ -33,7 +33,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var SpellNegationAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("SpellNegationAbility", bp => {
+            var SpellNegationAbility = TTCoreExtensions.CreateActivatableAbility("SpellNegationAbility", bp => {
                 bp.SetName(IsekaiContext, "Spell Negation");
                 bp.SetDescription(IsekaiContext, "You gain spell resistance equal to 10 + twice your character level.");
                 bp.m_Icon = Icon_SpellResistance;

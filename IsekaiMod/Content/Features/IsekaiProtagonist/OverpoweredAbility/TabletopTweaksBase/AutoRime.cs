@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
         private static readonly Sprite Icon_RimeSpell = BlueprintTools.GetBlueprint<BlueprintFeature>("192b00c671a64c4c8643f7c18bd1542e").m_Icon;
 
         public static void Add() {
-            var AutoRimeBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoRimeBuff", bp => {
+            var AutoRimeBuff = TTCoreExtensions.CreateBuff("AutoRimeBuff", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_RimeSpell;
@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoRimeAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoRimeAbility", bp => {
+            var AutoRimeAbility = TTCoreExtensions.CreateActivatableAbility("AutoRimeAbility", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_RimeSpell;

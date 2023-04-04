@@ -993,21 +993,21 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             foreach (var spellLevel in SpellTools.SpellList.ClericSpellList.SpellsByLevel) {
                 foreach (var spell in spellLevel.Spells) {
                     if (!excludeSpell(spell)) {
-                        ThingsNotHandledByTTTCore.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
+                        TTCoreExtensions.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
                     }
                 }
             }
             foreach (var spellLevel in SpellTools.SpellList.WizardSpellList.SpellsByLevel) {
                 foreach (var spell in spellLevel.Spells) {
                     if (!excludeSpell(spell)) {
-                        ThingsNotHandledByTTTCore.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
+                        TTCoreExtensions.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
                     }
                 }
             }
             foreach (var spellLevel in SpellTools.SpellList.DruidSpellList.SpellsByLevel) {
                 foreach (var spell in spellLevel.Spells) {
                     if (!excludeSpell(spell)) {
-                        ThingsNotHandledByTTTCore.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
+                        TTCoreExtensions.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
                     }
                 }
             }
@@ -1035,7 +1035,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 foreach (var spellLevel in spellList.SpellsByLevel) {
                     foreach (var spell in spellLevel.Spells) {
                         if (!excludeSpell(spell)) {
-                            ThingsNotHandledByTTTCore.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
+                            TTCoreExtensions.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
                         }
                     }
                 }

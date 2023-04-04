@@ -30,13 +30,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         public static void Add() {
             var Icon_Mind_Control = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_MIND_CONTROL.png");
             var Icon_Mind_Control_Immune = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_MIND_CONTROL_IMMUNE.png");
-            var MindControlImmunity = ThingsNotHandledByTTTCore.CreateBuff("MindControlImmunity", bp => {
+            var MindControlImmunity = TTCoreExtensions.CreateBuff("MindControlImmunity", bp => {
                 bp.SetName(IsekaiContext, "Mind Control Immunity");
                 bp.SetDescription(IsekaiContext, "This creature cannot be mind controlled again.");
                 bp.m_Icon = Icon_Mind_Control_Immune;
                 bp.AddComponent<IsPositiveEffect>();
             });
-            var MindControlBuff = ThingsNotHandledByTTTCore.CreateBuff("MindControlBuff", bp => {
+            var MindControlBuff = TTCoreExtensions.CreateBuff("MindControlBuff", bp => {
                 bp.SetName(IsekaiContext, "Mind Controlled");
                 bp.SetDescription(IsekaiContext, "This creature has been mind controlled.");
                 bp.m_Icon = Icon_Mind_Control;

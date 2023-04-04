@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
         private static readonly Sprite Icon_PiercingSpell = BlueprintTools.GetBlueprint<BlueprintFeature>("fc6bc9b9c2e54bbba96e074070d3c5be").m_Icon;
 
         public static void Add() {
-            var AutoPiercingBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoPiercingBuff", bp => {
+            var AutoPiercingBuff = TTCoreExtensions.CreateBuff("AutoPiercingBuff", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_PiercingSpell;
@@ -33,7 +33,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoPiercingAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoPiercingAbility", bp => {
+            var AutoPiercingAbility = TTCoreExtensions.CreateActivatableAbility("AutoPiercingAbility", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_PiercingSpell;

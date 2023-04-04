@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
 
         public static void Add() {
             var Icon_Heros_Presence = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_HEROS_PRESENCE.png");
-            var HerosPresenceBuff = ThingsNotHandledByTTTCore.CreateBuff("HerosPresenceBuff", bp => {
+            var HerosPresenceBuff = TTCoreExtensions.CreateBuff("HerosPresenceBuff", bp => {
                 bp.SetName(IsekaiContext, "Hero's Presence");
                 bp.SetDescription(IsekaiContext, "This character has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil.");
                 bp.IsClassFeature = true;
@@ -67,7 +67,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(HerosPresenceBuff.ToReference<BlueprintBuffReference>()));
             });
-            var HerosPresenceAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("HerosPresenceAreaBuff", bp => {
+            var HerosPresenceAreaBuff = TTCoreExtensions.CreateBuff("HerosPresenceAreaBuff", bp => {
                 bp.SetName(IsekaiContext, "Hero's Presence");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of the Hero has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil.");
                 bp.m_Icon = Icon_Heros_Presence;

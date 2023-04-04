@@ -25,7 +25,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord {
         public static void Add() {
             var Icon_SecondForm = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SECOND_FORM.png");
             var Icon_SecondFormInactive = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SECOND_FORM_INACTIVE.png");
-            var SecondFormBuffEffect = ThingsNotHandledByTTTCore.CreateBuff("SecondFormBuffEffect", bp => {
+            var SecondFormBuffEffect = TTCoreExtensions.CreateBuff("SecondFormBuffEffect", bp => {
                 bp.SetName(IsekaiContext, "Second Form");
                 bp.SetDescription(IsekaiContext, "You gain a +10 profane bonus to all attributes and your size increases by one size category for 24 hours.");
                 bp.m_Icon = Icon_SecondForm;
@@ -79,14 +79,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord {
                 });
                 bp.Stacking = StackingType.Replace;
             });
-            var SecondFormBuffTrigger = ThingsNotHandledByTTTCore.CreateBuff("SecondFormBuffTrigger", bp => {
+            var SecondFormBuffTrigger = TTCoreExtensions.CreateBuff("SecondFormBuffTrigger", bp => {
                 bp.SetName(IsekaiContext, "Second Form Trigger");
                 bp.SetDescription(IsekaiContext, "");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
             });
-            var SecondFormBuff = ThingsNotHandledByTTTCore.CreateBuff("SecondFormBuff", bp => {
+            var SecondFormBuff = TTCoreExtensions.CreateBuff("SecondFormBuff", bp => {
                 bp.SetName(IsekaiContext, "Second Form");
                 bp.SetDescription(IsekaiContext, "Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain. "
                     + "You also gain a +10 profane bonus to all attributes and your size also increases by one size category for 24 hours.");

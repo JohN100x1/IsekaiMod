@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord {
 
         public static void Add() {
             var Icon_Corrupt_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_CORRUPT_AURA.png");
-            var CorruptAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("CorruptAuraBuff", bp => {
+            var CorruptAuraBuff = TTCoreExtensions.CreateBuff("CorruptAuraBuff", bp => {
                 bp.SetName(IsekaiContext, "Corrupt Aura");
                 bp.SetDescription(IsekaiContext, "This character has a +4 profane bonus to attack, damage, AC and saving throws. "
                     + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
@@ -70,7 +70,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord {
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(CorruptAuraBuff.ToReference<BlueprintBuffReference>()));
             });
-            var CorruptAuraAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("CorruptAuraAreaBuff", bp => {
+            var CorruptAuraAreaBuff = TTCoreExtensions.CreateBuff("CorruptAuraAreaBuff", bp => {
                 bp.SetName(IsekaiContext, "Corrupt Aura");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of the Overlord has a +4 profane bonus to attack, damage, AC and saving throws. "
                     + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
@@ -81,7 +81,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord {
                     c.m_AreaEffect = CorruptAuraArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var CorruptAuraAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("CorruptAuraAbility", bp => {
+            var CorruptAuraAbility = TTCoreExtensions.CreateActivatableAbility("CorruptAuraAbility", bp => {
                 bp.SetName(IsekaiContext, "Corrupt Aura");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of the Overlord has a +4 profane bonus to attack, damage, AC and saving throws. "
                     + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");

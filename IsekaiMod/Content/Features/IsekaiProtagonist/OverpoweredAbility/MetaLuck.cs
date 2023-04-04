@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         private static readonly Sprite Icon_Fortune = BlueprintTools.GetBlueprint<BlueprintAbility>("eaf7077a8ff35644883df6d4f7b2084c").m_Icon;
 
         public static void Add() {
-            var MetaLuckDebuff = ThingsNotHandledByTTTCore.CreateBuff("MetaLuckDebuff", bp => {
+            var MetaLuckDebuff = TTCoreExtensions.CreateBuff("MetaLuckDebuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Meta Luck (Debuff)");
                 bp.SetDescription(IsekaiContext, "This creature takes the lower of two d20 rolls.");
                 bp.m_Icon = Icon_Fortune;
@@ -28,7 +28,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
             });
-            var MetaLuckBuff = ThingsNotHandledByTTTCore.CreateBuff("MetaLuckBuff", bp => {
+            var MetaLuckBuff = TTCoreExtensions.CreateBuff("MetaLuckBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Meta Luck (Buff)");
                 bp.SetDescription(IsekaiContext, "This character always takes the higher of two d20 rolls.");
                 bp.m_Icon = Icon_Fortune;
@@ -47,7 +47,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
             });
-            var MetaLuckAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("MetaLuckAbility", bp => {
+            var MetaLuckAbility = TTCoreExtensions.CreateActivatableAbility("MetaLuckAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Meta Luck");
                 bp.SetDescription(IsekaiContext, "Everyone mistakes you for a prodigal genius, treating every action you make as a calculated move in your 1000 year plan. "
                     + "Enemies tremble in fear as meet you, hallucinating a universe-sized gap between them your power level."

@@ -25,7 +25,7 @@ namespace IsekaiMod.Content.Dialogue {
              * "Now, who are you? I don't remember seeing you before, and I have an excellent memory for faces."
              */
             // Answer
-            var IsekaiDialogueHulrun = ThingsNotHandledByTTTCore.CreateAnswer("IsekaiDialogueHulrun", bp => {
+            var IsekaiDialogueHulrun = TTCoreExtensions.CreateAnswer("IsekaiDialogueHulrun", bp => {
                 bp.SetText(IsekaiContext, "(Isekai Protagonist) \"Other than being hit by a truck, I don't remember anything at all...\"");
                 bp.NextCue = new CueSelection {
                     Cues = new List<BlueprintCueBaseReference>() { DontRememberCue.ToReference<BlueprintCueBaseReference>() },

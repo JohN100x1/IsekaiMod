@@ -26,7 +26,7 @@ namespace IsekaiMod.Content.Dialogue {
              */
 
             // Reply
-            var IsekaiDialogueHorgusReply = ThingsNotHandledByTTTCore.CreateCue("IsekaiDialogueHorgusReply", bp => {
+            var IsekaiDialogueHorgusReply = TTCoreExtensions.CreateCue("IsekaiDialogueHorgusReply", bp => {
                 bp.SetText(IsekaiContext, "\"My daughter?\" {n}Horgus takes a quick glance at Camellia.{/n} \"I don't think you know what sort of person she is. "
                     + "{n}Horgus takes a breath.{/n} Regardless, it seems my previous offer was somewhat insulting. Two thousand gold it is.\"");
                 bp.Speaker = new DialogSpeaker {
@@ -40,7 +40,7 @@ namespace IsekaiMod.Content.Dialogue {
                 bp.Answers = AnswersList_0009.Answers;
             });
             // Answer
-            var IsekaiDialogueHorgus = ThingsNotHandledByTTTCore.CreateAnswer("IsekaiDialogueHorgus", bp => {
+            var IsekaiDialogueHorgus = TTCoreExtensions.CreateAnswer("IsekaiDialogueHorgus", bp => {
                 bp.SetText(IsekaiContext, "(Isekai Protagonist) \"Two thousand gold... And your daughter joins my harem.\"");
                 bp.NextCue = new CueSelection {
                     Cues = new List<BlueprintCueBaseReference>() { IsekaiDialogueHorgusReply.ToReference<BlueprintCueBaseReference>() },

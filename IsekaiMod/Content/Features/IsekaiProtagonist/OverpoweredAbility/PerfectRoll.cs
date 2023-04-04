@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         private static readonly Sprite Icon_TrickFate = BlueprintTools.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
 
         public static void Add() {
-            var PerfectRollBuff = ThingsNotHandledByTTTCore.CreateBuff("PerfectRollBuff", bp => {
+            var PerfectRollBuff = TTCoreExtensions.CreateBuff("PerfectRollBuff", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, DescriptionBuff);
                 bp.m_Icon = Icon_TrickFate;
@@ -34,7 +34,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var PerfectRollAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("PerfectRollAbility", bp => {
+            var PerfectRollAbility = TTCoreExtensions.CreateActivatableAbility("PerfectRollAbility", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_TrickFate;

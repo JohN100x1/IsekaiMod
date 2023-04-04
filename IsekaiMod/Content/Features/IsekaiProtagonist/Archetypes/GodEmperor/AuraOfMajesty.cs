@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
 
         public static void Add() {
             var Icon_AuraOfMajesty = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_MAJESTY.png");
-            var AuraOfMajestyBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfMajestyBuff", bp => {
+            var AuraOfMajestyBuff = TTCoreExtensions.CreateBuff("AuraOfMajestyBuff", bp => {
                 bp.SetName(IsekaiContext, "Aura of Majesty");
                 bp.SetDescription(IsekaiContext, "This character has a sacred bonus to all attributes equal to 1/2 the God Emperor's character level.");
                 bp.IsClassFeature = true;
@@ -70,7 +70,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(AuraOfMajestyBuff.ToReference<BlueprintBuffReference>()));
             });
-            var AuraOfMajestyAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfMajestyAreaBuff", bp => {
+            var AuraOfMajestyAreaBuff = TTCoreExtensions.CreateBuff("AuraOfMajestyAreaBuff", bp => {
                 bp.SetName(IsekaiContext, "Aura of Majesty");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of the God Emperor gain a sacred bonus to all attributes equal to 1/2 the God Emperor's character level.");
                 bp.m_Icon = Icon_AuraOfMajesty;
@@ -80,7 +80,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                     c.m_AreaEffect = AuraOfMajestyArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var AuraOfMajestyAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AuraOfMajestyAbility", bp => {
+            var AuraOfMajestyAbility = TTCoreExtensions.CreateActivatableAbility("AuraOfMajestyAbility", bp => {
                 bp.SetName(IsekaiContext, "Aura of Majesty");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of the God Emperor gain a +4 sacred bonus to all attributes.");
                 bp.m_Icon = Icon_AuraOfMajesty;

@@ -25,7 +25,7 @@ namespace IsekaiMod.Content.Dialogue {
              * She must be back to finish what she started!\"
              */
             // Answer
-            var IsekaiDialogueMinaghoSeelahReply = ThingsNotHandledByTTTCore.CreateCue("IsekaiDialogueMinaghoSeelahReply", bp => {
+            var IsekaiDialogueMinaghoSeelahReply = TTCoreExtensions.CreateCue("IsekaiDialogueMinaghoSeelahReply", bp => {
                 bp.SetText(IsekaiContext, "{n}Seelah smiles and gives you a thumbs up!{/n}");
                 bp.Speaker = new DialogSpeaker {
                     m_Blueprint = Seelah.ToReference<BlueprintUnitReference>(),
@@ -36,7 +36,7 @@ namespace IsekaiMod.Content.Dialogue {
                     Strategy = Strategy.First
                 };
             });
-            var IsekaiDialogueMinaghoCamelliaReply = ThingsNotHandledByTTTCore.CreateCue("IsekaiDialogueMinaghoCamelliaReply", bp => {
+            var IsekaiDialogueMinaghoCamelliaReply = TTCoreExtensions.CreateCue("IsekaiDialogueMinaghoCamelliaReply", bp => {
                 bp.SetText(IsekaiContext, "...");
                 bp.Speaker = new DialogSpeaker {
                     m_Blueprint = Camellia.ToReference<BlueprintUnitReference>(),
@@ -47,7 +47,7 @@ namespace IsekaiMod.Content.Dialogue {
                     Strategy = Strategy.First
                 };
             });
-            var IsekaiDialogueMinaghoIrabethReply = ThingsNotHandledByTTTCore.CreateCue("IsekaiDialogueMinaghoIrabethReply", bp => {
+            var IsekaiDialogueMinaghoIrabethReply = TTCoreExtensions.CreateCue("IsekaiDialogueMinaghoIrabethReply", bp => {
                 bp.SetText(IsekaiContext, "...");
                 bp.Speaker = new DialogSpeaker {
                     m_Blueprint = IrabethTirabladeGG.ToReference<BlueprintUnitReference>(),
@@ -59,7 +59,7 @@ namespace IsekaiMod.Content.Dialogue {
                 };
                 bp.TurnSpeaker = false;
             });
-            var IsekaiDialogueMinagho = ThingsNotHandledByTTTCore.CreateAnswer("IsekaiDialogueMinagho", bp => {
+            var IsekaiDialogueMinagho = TTCoreExtensions.CreateAnswer("IsekaiDialogueMinagho", bp => {
                 bp.SetText(IsekaiContext, "(Isekai Protagonist) \"Minagho? More like Minag-hoe!\"");
                 bp.NextCue = new CueSelection {
                     Cues = new List<BlueprintCueBaseReference>() { IsekaiDialogueMinaghoIrabethReply.ToReference<BlueprintCueBaseReference>() },

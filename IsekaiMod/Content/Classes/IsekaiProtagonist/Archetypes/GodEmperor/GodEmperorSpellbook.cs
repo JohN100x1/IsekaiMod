@@ -42,8 +42,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.GodEmperor {
             // Allow Spellbook to be merged with angel and lich
             var AngelIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
             var LichIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
-            ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AngelIncorporateSpellBook, GodEmperorSpellbook);
-            ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(LichIncorporateSpellBook, GodEmperorSpellbook);
+            TTCoreExtensions.RegisterForPrestigeSpellbook(AngelIncorporateSpellBook, GodEmperorSpellbook);
+            TTCoreExtensions.RegisterForPrestigeSpellbook(LichIncorporateSpellBook, GodEmperorSpellbook);
         }
 
         public static BlueprintSpellbook Get() {

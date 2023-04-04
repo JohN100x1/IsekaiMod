@@ -20,7 +20,7 @@ namespace IsekaiMod.Content.Dialogue {
             /* It is good to see you. What can I do for you? Would you like to renew your forces with excellent fighters?
              */
             // Answer
-            var IsekaiDialogueAneviaReply2 = ThingsNotHandledByTTTCore.CreateCue("IsekaiDialogueAneviaReply2", bp => {
+            var IsekaiDialogueAneviaReply2 = TTCoreExtensions.CreateCue("IsekaiDialogueAneviaReply2", bp => {
                 bp.SetText(IsekaiContext, "\"Also, for no particular reason, would you be interested in a spare of coffin I have lying around?\"");
                 bp.Speaker = new DialogSpeaker {
                     m_Blueprint = null,
@@ -28,7 +28,7 @@ namespace IsekaiMod.Content.Dialogue {
                 };
                 bp.Answers = AnswersList_0003.Answers;
             });
-            var IsekaiDialogueAneviaReply = ThingsNotHandledByTTTCore.CreateCue("IsekaiDialogueAneviaReply", bp => {
+            var IsekaiDialogueAneviaReply = TTCoreExtensions.CreateCue("IsekaiDialogueAneviaReply", bp => {
                 bp.SetText(IsekaiContext, "Sure thing, only if you can convince Irabeth to join.");
                 bp.Speaker = new DialogSpeaker {
                     m_Blueprint = null,
@@ -39,7 +39,7 @@ namespace IsekaiMod.Content.Dialogue {
                     Strategy = Strategy.First
                 };
             });
-            var IsekaiDialogueAnevia = ThingsNotHandledByTTTCore.CreateAnswer("IsekaiDialogueAnevia", bp => {
+            var IsekaiDialogueAnevia = TTCoreExtensions.CreateAnswer("IsekaiDialogueAnevia", bp => {
                 bp.SetText(IsekaiContext, "(Isekai Protagonist) \"Do you want to join my harem?\"");
                 bp.NextCue = new CueSelection() {
                     Cues = new List<BlueprintCueBaseReference>() { IsekaiDialogueAneviaReply.ToReference<BlueprintCueBaseReference>() },

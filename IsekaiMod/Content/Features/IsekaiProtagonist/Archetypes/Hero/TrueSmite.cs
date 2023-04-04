@@ -47,7 +47,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
                     ResourceBonusStat = StatType.Unknown,
                 };
             });
-            var TrueSmiteBuff = ThingsNotHandledByTTTCore.CreateBuff("TrueSmiteBuff", bp => {
+            var TrueSmiteBuff = TTCoreExtensions.CreateBuff("TrueSmiteBuff", bp => {
                 bp.SetName(IsekaiContext, "True Smite");
                 bp.SetDescription(IsekaiContext, "The hero adds her {g|Encyclopedia:Charisma}Cha{/g} {g|Encyclopedia:Bonus}bonus{/g} (if any) to her {g|Encyclopedia:Attack}attack rolls{/g} against this "
                     + "creature and adds her character level to all {g|Encyclopedia:Damage}damage rolls{/g} against this creature."

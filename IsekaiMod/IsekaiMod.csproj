@@ -355,7 +355,7 @@
     <Compile Include="Utilities\ExtensionMethods.cs" />
     <Compile Include="Utilities\PortraitInjector.cs" />
     <Compile Include="Utilities\StaticReferences.cs" />
-    <Compile Include="Utilities\ThingsNotHandledByTTTCore.cs" />
+    <Compile Include="Utilities\TTCoreExtensions.cs" />
     <Compile Include="Utilities\Values.cs" />
   </ItemGroup>
   <ItemGroup>

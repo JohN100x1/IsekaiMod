@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
         private static readonly BlueprintItemEnchantment Thundering = BlueprintTools.GetBlueprint<BlueprintItemEnchantment>("690e762f7704e1f4aa1ac69ef0ce6a96");
 
         public static void Add() {
-            var CorrosiveWeaponBuff = ThingsNotHandledByTTTCore.CreateBuff("CorrosiveWeaponBuff", bp => {
+            var CorrosiveWeaponBuff = TTCoreExtensions.CreateBuff("CorrosiveWeaponBuff", bp => {
                 bp.SetName(IsekaiContext, "Corrosive Weapon");
                 bp.SetDescription(IsekaiContext, "Your attacks have Corrosive. They deal an additional 1d6 acid damage.");
                 bp.m_Icon = Icon_ArcaneWeaponUnholyBuff;
@@ -46,7 +46,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var CorrosiveWeaponAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("CorrosiveWeaponAbility", bp => {
+            var CorrosiveWeaponAbility = TTCoreExtensions.CreateActivatableAbility("CorrosiveWeaponAbility", bp => {
                 bp.SetName(IsekaiContext, "Corrosive Weapon");
                 bp.SetDescription(IsekaiContext, "Your attacks have Corrosive. They deal an additional 1d6 acid damage.");
                 bp.m_Icon = Icon_ArcaneWeaponUnholyBuff;
@@ -62,7 +62,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                     };
                 });
             });
-            var FrostWeaponBuff = ThingsNotHandledByTTTCore.CreateBuff("FrostWeaponBuff", bp => {
+            var FrostWeaponBuff = TTCoreExtensions.CreateBuff("FrostWeaponBuff", bp => {
                 bp.SetName(IsekaiContext, "Frost Weapon");
                 bp.SetDescription(IsekaiContext, "Your attacks have Frost. They deal an additional 1d6 cold damage.");
                 bp.m_Icon = Icon_ArcaneWeaponFrostBuff;
@@ -81,7 +81,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var FrostWeaponAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("FrostWeaponAbility", bp => {
+            var FrostWeaponAbility = TTCoreExtensions.CreateActivatableAbility("FrostWeaponAbility", bp => {
                 bp.SetName(IsekaiContext, "Frost Weapon");
                 bp.SetDescription(IsekaiContext, "Your attacks have Frost. They deal an additional 1d6 cold damage.");
                 bp.m_Icon = Icon_ArcaneWeaponFrostBuff;
@@ -97,7 +97,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                     };
                 });
             });
-            var ShockWeaponBuff = ThingsNotHandledByTTTCore.CreateBuff("ShockWeaponBuff", bp => {
+            var ShockWeaponBuff = TTCoreExtensions.CreateBuff("ShockWeaponBuff", bp => {
                 bp.SetName(IsekaiContext, "Shock Weapon");
                 bp.SetDescription(IsekaiContext, "Your attacks have Shock. They deal an additional 1d6 electricity damage.");
                 bp.m_Icon = Icon_ArcaneWeaponShockBuff;
@@ -116,7 +116,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var ShockWeaponAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("ShockWeaponAbility", bp => {
+            var ShockWeaponAbility = TTCoreExtensions.CreateActivatableAbility("ShockWeaponAbility", bp => {
                 bp.SetName(IsekaiContext, "Shock Weapon");
                 bp.SetDescription(IsekaiContext, "Your attacks have Shock. They deal an additional 1d6 electricity damage.");
                 bp.m_Icon = Icon_ArcaneWeaponShockBuff;
@@ -132,7 +132,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                     };
                 });
             });
-            var FlamingWeaponBuff = ThingsNotHandledByTTTCore.CreateBuff("FlamingWeaponBuff", bp => {
+            var FlamingWeaponBuff = TTCoreExtensions.CreateBuff("FlamingWeaponBuff", bp => {
                 bp.SetName(IsekaiContext, "Flaming Weapon");
                 bp.SetDescription(IsekaiContext, "Your attacks have Flaming. They deal an additional 1d6 fire damage.");
                 bp.m_Icon = Icon_ArcaneWeaponFlamingBuff;
@@ -151,7 +151,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var FlamingWeaponAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("FlamingWeaponAbility", bp => {
+            var FlamingWeaponAbility = TTCoreExtensions.CreateActivatableAbility("FlamingWeaponAbility", bp => {
                 bp.SetName(IsekaiContext, "Flaming Weapon");
                 bp.SetDescription(IsekaiContext, "Your attacks have Flaming. They deal an additional 1d6 fire damage.");
                 bp.m_Icon = Icon_ArcaneWeaponFlamingBuff;
@@ -167,7 +167,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                     };
                 });
             });
-            var ThunderingWeaponBuff = ThingsNotHandledByTTTCore.CreateBuff("ThunderingWeaponBuff", bp => {
+            var ThunderingWeaponBuff = TTCoreExtensions.CreateBuff("ThunderingWeaponBuff", bp => {
                 bp.SetName(IsekaiContext, "Thundering Weapon");
                 bp.SetDescription(IsekaiContext, "Your attacks have Thundering. They deal an additional 1d6 sonic damage.");
                 bp.m_Icon = Icon_ArcaneWeaponKeenBuff;
@@ -186,7 +186,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var ThunderingWeaponAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("ThunderingWeaponAbility", bp => {
+            var ThunderingWeaponAbility = TTCoreExtensions.CreateActivatableAbility("ThunderingWeaponAbility", bp => {
                 bp.SetName(IsekaiContext, "Thundering Weapon");
                 bp.SetDescription(IsekaiContext, "Your attacks have Thundering. They deal an additional 1d6 sonic damage.");
                 bp.m_Icon = Icon_ArcaneWeaponKeenBuff;

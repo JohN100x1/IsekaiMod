@@ -26,7 +26,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
         private static readonly BlueprintActivatableAbility ElementalSpellSplitAbility = BlueprintTools.GetBlueprint<BlueprintActivatableAbility>("36a26221b979415584190e8197adcd0c");
 
         public static void Add() {
-            var AutoElementalAcidBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoElementalAcidBuff", bp => {
+            var AutoElementalAcidBuff = TTCoreExtensions.CreateBuff("AutoElementalAcidBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Elemental (Acid)");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, you can replace or split its damage with acid damage, as though using the Elemental Spell (Acid) feat.");
                 bp.m_Icon = Icon_ElementalAcidSpell;
@@ -38,7 +38,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoElementalAcidAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoElementalAcidAbility", bp => {
+            var AutoElementalAcidAbility = TTCoreExtensions.CreateActivatableAbility("AutoElementalAcidAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Elemental (Acid)");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, you can replace or split its damage with acid damage, as though using the Elemental Spell (Acid) feat.");
                 bp.m_Icon = Icon_ElementalAcidSpell;
@@ -52,7 +52,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                     c.m_Facts = new BlueprintUnitFactReference[] { AutoElementalAcidAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
-            var AutoElementalColdBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoElementalColdBuff", bp => {
+            var AutoElementalColdBuff = TTCoreExtensions.CreateBuff("AutoElementalColdBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Elemental (Cold)");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, you can replace or split its damage with cold damage, as though using the Elemental Spell (Cold) feat.");
                 bp.m_Icon = Icon_ElementalColdSpell;
@@ -64,7 +64,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoElementalColdAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoElementalColdAbility", bp => {
+            var AutoElementalColdAbility = TTCoreExtensions.CreateActivatableAbility("AutoElementalColdAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Elemental (Cold)");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, you can replace or split its damage with cold damage, as though using the Elemental Spell (Cold) feat.");
                 bp.m_Icon = Icon_ElementalColdSpell;
@@ -78,7 +78,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                     c.m_Facts = new BlueprintUnitFactReference[] { AutoElementalColdAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
-            var AutoElementalElectricityBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoElementalElectricityBuff", bp => {
+            var AutoElementalElectricityBuff = TTCoreExtensions.CreateBuff("AutoElementalElectricityBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Elemental (Electricity)");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, you can replace or split its damage with electricity damage, as though using the Elemental Spell (Electricity) feat.");
                 bp.m_Icon = Icon_ElementalElectricitySpell;
@@ -90,7 +90,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoElementalElectricityAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoElementalElectricityAbility", bp => {
+            var AutoElementalElectricityAbility = TTCoreExtensions.CreateActivatableAbility("AutoElementalElectricityAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Elemental (Electricity)");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, you can replace or split its damage with electricity damage, as though using the Elemental Spell (Electricity) feat.");
                 bp.m_Icon = Icon_ElementalElectricitySpell;
@@ -104,7 +104,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                     c.m_Facts = new BlueprintUnitFactReference[] { AutoElementalElectricityAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
-            var AutoElementalFireBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoElementalFireBuff", bp => {
+            var AutoElementalFireBuff = TTCoreExtensions.CreateBuff("AutoElementalFireBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Elemental (Fire)");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, you can replace or split its damage with fire damage, as though using the Elemental Spell (Fire) feat.");
                 bp.m_Icon = Icon_ElementalFireSpell;
@@ -116,7 +116,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoElementalFireAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoElementalFireAbility", bp => {
+            var AutoElementalFireAbility = TTCoreExtensions.CreateActivatableAbility("AutoElementalFireAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Elemental (Fire)");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, you can replace or split its damage with fire damage, as though using the Elemental Spell (Fire) feat.");
                 bp.m_Icon = Icon_ElementalFireSpell;

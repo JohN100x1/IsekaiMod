@@ -23,7 +23,7 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Utilities {
 
-    internal class ThingsNotHandledByTTTCore {
+    internal class TTCoreExtensions {
         public static void RegisterClass(BlueprintCharacterClass classToRegister) {
             var existingClasses = ClassTools.Classes.AllClasses;
             if (ContainsClass(existingClasses, classToRegister)) {

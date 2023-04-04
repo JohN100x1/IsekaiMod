@@ -41,8 +41,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind {
             // Allow Spellbook to be merged with angel and lich
             var AngelIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
             var LichIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
-            ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AngelIncorporateSpellBook, MastermindSpellbook);
-            ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(LichIncorporateSpellBook, MastermindSpellbook);
+            TTCoreExtensions.RegisterForPrestigeSpellbook(AngelIncorporateSpellBook, MastermindSpellbook);
+            TTCoreExtensions.RegisterForPrestigeSpellbook(LichIncorporateSpellBook, MastermindSpellbook);
         }
 
         public static BlueprintSpellbook Get() {

@@ -26,7 +26,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
 
         public static void Add() {
             var Icon_ChuunibyouPower = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_CHUUNIBYOU.png");
-            var ChuunibyouPowerBuff = ThingsNotHandledByTTTCore.CreateBuff("ChuunibyouPowerBuff", bp => {
+            var ChuunibyouPowerBuff = TTCoreExtensions.CreateBuff("ChuunibyouPowerBuff", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, DescriptionBuff);
                 bp.IsClassFeature = true;
@@ -55,7 +55,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(ChuunibyouPowerBuff.ToReference<BlueprintBuffReference>()));
             });
-            var ChuunibyouPowerAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("ChuunibyouPowerAreaBuff", bp => {
+            var ChuunibyouPowerAreaBuff = TTCoreExtensions.CreateBuff("ChuunibyouPowerAreaBuff", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_ChuunibyouPower;

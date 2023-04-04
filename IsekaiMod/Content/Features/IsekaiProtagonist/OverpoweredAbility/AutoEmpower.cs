@@ -15,7 +15,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         private static readonly Sprite Icon_EmpowerSpell = BlueprintTools.GetBlueprint<BlueprintFeature>("a1de1e4f92195b442adb946f0e2b9d4e").m_Icon;
 
         public static void Add() {
-            var AutoEmpowerBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoEmpowerBuff", bp => {
+            var AutoEmpowerBuff = TTCoreExtensions.CreateBuff("AutoEmpowerBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Empower");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat.");
                 bp.m_Icon = Icon_EmpowerSpell;
@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoEmpowerAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoEmpowerAbility", bp => {
+            var AutoEmpowerAbility = TTCoreExtensions.CreateActivatableAbility("AutoEmpowerAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Empower");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes empowered, as though using the Empower Spell feat.");
                 bp.m_Icon = Icon_EmpowerSpell;

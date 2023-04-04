@@ -23,7 +23,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 + "\nEnemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack and damage rolls.";
             const string FriendlyAuraDescBuff = "This creature has a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.";
             var Icon_Friendly_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_FRIENDLY_AURA.png");
-            var FriendlyAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("FriendlyAuraBuff", bp => {
+            var FriendlyAuraBuff = TTCoreExtensions.CreateBuff("FriendlyAuraBuff", bp => {
                 bp.SetName(IsekaiContext, FriendlyAuraName);
                 bp.SetDescription(IsekaiContext, FriendlyAuraDescBuff);
                 bp.IsClassFeature = true;
@@ -47,7 +47,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(FriendlyAuraBuff.ToReference<BlueprintBuffReference>()));
             });
-            var FriendlyAuraAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("FriendlyAuraAreaBuff", bp => {
+            var FriendlyAuraAreaBuff = TTCoreExtensions.CreateBuff("FriendlyAuraAreaBuff", bp => {
                 bp.SetName(IsekaiContext, FriendlyAuraName);
                 bp.SetDescription(IsekaiContext, FriendlyAuraDesc);
                 bp.m_Icon = Icon_Friendly_Aura;
@@ -57,7 +57,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 });
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var FriendlyAuraAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("FriendlyAuraAbility", bp => {
+            var FriendlyAuraAbility = TTCoreExtensions.CreateActivatableAbility("FriendlyAuraAbility", bp => {
                 bp.SetName(IsekaiContext, FriendlyAuraName);
                 bp.SetDescription(IsekaiContext, FriendlyAuraDesc);
                 bp.m_Icon = Icon_Friendly_Aura;
@@ -78,7 +78,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 + "\nEnemies within 40 feet take a –4 penalty on AC and saving throws.";
             const string DarkAuraDescBuff = "This creature has a –4 penalty on AC and saving throws.";
             var Icon_Dark_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_DARK_AURA.png");
-            var DarkAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("DarkAuraBuff", bp => {
+            var DarkAuraBuff = TTCoreExtensions.CreateBuff("DarkAuraBuff", bp => {
                 bp.SetName(IsekaiContext, DarkAuraName);
                 bp.SetDescription(IsekaiContext, DarkAuraDescBuff);
                 bp.IsClassFeature = true;
@@ -112,7 +112,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(DarkAuraBuff.ToReference<BlueprintBuffReference>()));
             });
-            var DarkAuraAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("DarkAuraAreaBuff", bp => {
+            var DarkAuraAreaBuff = TTCoreExtensions.CreateBuff("DarkAuraAreaBuff", bp => {
                 bp.SetName(IsekaiContext, DarkAuraName);
                 bp.SetDescription(IsekaiContext, DarkAuraDesc);
                 bp.m_Icon = Icon_Dark_Aura;
@@ -122,7 +122,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 });
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var DarkAuraAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("DarkAuraAbility", bp => {
+            var DarkAuraAbility = TTCoreExtensions.CreateActivatableAbility("DarkAuraAbility", bp => {
                 bp.SetName(IsekaiContext, DarkAuraName);
                 bp.SetDescription(IsekaiContext, DarkAuraDesc);
                 bp.m_Icon = Icon_Dark_Aura;
@@ -143,7 +143,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 + "\nEnemies within 40 feet take a –4 penalty on all attributes.";
             const string DivineAuraDescBuff = "This creature has a –4 penalty on all attributes.";
             var Icon_Divine_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_DIVINE_AURA.png");
-            var DivineAuraBuff = ThingsNotHandledByTTTCore.CreateBuff("DivineAuraBuff", bp => {
+            var DivineAuraBuff = TTCoreExtensions.CreateBuff("DivineAuraBuff", bp => {
                 bp.SetName(IsekaiContext, DivineAuraName);
                 bp.SetDescription(IsekaiContext, DivineAuraDescBuff);
                 bp.IsClassFeature = true;
@@ -187,7 +187,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(DivineAuraBuff.ToReference<BlueprintBuffReference>()));
             });
-            var DivineAuraAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("DivineAuraAreaBuff", bp => {
+            var DivineAuraAreaBuff = TTCoreExtensions.CreateBuff("DivineAuraAreaBuff", bp => {
                 bp.SetName(IsekaiContext, DivineAuraName);
                 bp.SetDescription(IsekaiContext, DivineAuraDesc);
                 bp.m_Icon = Icon_Divine_Aura;
@@ -197,7 +197,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 });
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
             });
-            var DivineAuraAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("DivineAuraAbility", bp => {
+            var DivineAuraAbility = TTCoreExtensions.CreateActivatableAbility("DivineAuraAbility", bp => {
                 bp.SetName(IsekaiContext, DivineAuraName);
                 bp.SetDescription(IsekaiContext, DivineAuraDesc);
                 bp.m_Icon = Icon_Divine_Aura;

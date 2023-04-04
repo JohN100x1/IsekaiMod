@@ -147,7 +147,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             IsekaiProtagonistSpellbook.SetCharacterClass(isekaiProtagonistClass);
 
             // Register Class
-            ThingsNotHandledByTTTCore.RegisterClass(isekaiProtagonistClass);
+            TTCoreExtensions.RegisterClass(isekaiProtagonistClass);
         }
 
         public static void RegisterArchetype(BlueprintArchetype archetype) {

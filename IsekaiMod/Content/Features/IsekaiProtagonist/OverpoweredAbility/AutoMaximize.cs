@@ -15,7 +15,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         private static readonly Sprite Icon_MaximizeSpell = BlueprintTools.GetBlueprint<BlueprintFeature>("7f2b282626862e345935bbea5e66424b").m_Icon;
 
         public static void Add() {
-            var AutoMaximizeBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoMaximizeBuff", bp => {
+            var AutoMaximizeBuff = TTCoreExtensions.CreateBuff("AutoMaximizeBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Maximize");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat.");
                 bp.m_Icon = Icon_MaximizeSpell;
@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoMaximizeAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoMaximizeAbility", bp => {
+            var AutoMaximizeAbility = TTCoreExtensions.CreateActivatableAbility("AutoMaximizeAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Maximize");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes maximized, as though using the Maximize Spell feat.");
                 bp.m_Icon = Icon_MaximizeSpell;

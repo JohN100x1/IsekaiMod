@@ -32,7 +32,7 @@ namespace IsekaiMod.Content.Features {
 
         public static void Add() {
             Main.LogDebug("Patch Black Wings Start");
-            var BlackWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("BlackWingsAbility", bp => {
+            var BlackWingsAbility = TTCoreExtensions.CreateActivatableAbility("BlackWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Black)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -45,7 +45,7 @@ namespace IsekaiMod.Content.Features {
                 bp.WeightInGroup = 1;
             });
             Main.LogDebug("Patch Ghost Wings Start");
-            var GhostWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("GhostWingsAbility", bp => {
+            var GhostWingsAbility = TTCoreExtensions.CreateActivatableAbility("GhostWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Ghostly)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -60,7 +60,7 @@ namespace IsekaiMod.Content.Features {
 
             Main.LogDebug("Patch Devil Wings Start");
 
-            var DevilWingsBuff = ThingsNotHandledByTTTCore.CreateBuff("DevilWingsBuff", bp => {
+            var DevilWingsBuff = TTCoreExtensions.CreateBuff("DevilWingsBuff", bp => {
                 bp.SetName(IsekaiContext, "Wings");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -93,7 +93,7 @@ namespace IsekaiMod.Content.Features {
 
             Main.LogDebug("Patch Devil Wings Buff");
 
-            var DevilWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("DevilWingsAbility", bp => {
+            var DevilWingsAbility = TTCoreExtensions.CreateActivatableAbility("DevilWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Devilish)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;
@@ -105,7 +105,7 @@ namespace IsekaiMod.Content.Features {
                 bp.Group = ActivatableAbilityGroup.Wings;
                 bp.WeightInGroup = 1;
             });
-            var DemonWingsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("DemonWingsAbility", bp => {
+            var DemonWingsAbility = TTCoreExtensions.CreateActivatableAbility("DemonWingsAbility", bp => {
                 bp.SetName(IsekaiContext, "Wings (Demonic)");
                 bp.m_Description = WingsAngel.m_Description;
                 bp.m_Icon = WingsAngel.m_Icon;

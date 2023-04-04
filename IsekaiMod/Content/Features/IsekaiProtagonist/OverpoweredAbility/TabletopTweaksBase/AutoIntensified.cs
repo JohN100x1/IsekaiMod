@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
         private static readonly Sprite Icon_IntensifiedSpell = BlueprintTools.GetBlueprint<BlueprintFeature>("b77d7b23bf6d46a5bf80da7ca9674e83").m_Icon;
 
         public static void Add() {
-            var AutoIntensifiedBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoIntensifiedBuff", bp => {
+            var AutoIntensifiedBuff = TTCoreExtensions.CreateBuff("AutoIntensifiedBuff", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_IntensifiedSpell;
@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoIntensifiedAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoIntensifiedAbility", bp => {
+            var AutoIntensifiedAbility = TTCoreExtensions.CreateActivatableAbility("AutoIntensifiedAbility", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_IntensifiedSpell;

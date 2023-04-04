@@ -20,7 +20,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
         private static readonly Sprite Icon_SupersonicSpeed = BlueprintTools.GetBlueprint<BlueprintFeature>("505456aa17dd18a4e8bd8172811a4fdc").m_Icon;
 
         public static void Add() {
-            var ExtremeSpeedBuff = ThingsNotHandledByTTTCore.CreateBuff("ExtremeSpeedBuff", bp => {
+            var ExtremeSpeedBuff = TTCoreExtensions.CreateBuff("ExtremeSpeedBuff", bp => {
                 bp.SetName(IsekaiContext, "Extreme Speed");
                 bp.SetDescription(IsekaiContext, "This creature gains a {g|Encyclopedia:Bonus}bonus{/g} to their {g|Encyclopedia:Speed}speed{/g}.");
                 bp.IsClassFeature = true;
@@ -44,7 +44,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(ExtremeSpeedBuff.ToReference<BlueprintBuffReference>()));
             });
-            var ExtremeSpeedAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("ExtremeSpeedAreaBuff", bp => {
+            var ExtremeSpeedAreaBuff = TTCoreExtensions.CreateBuff("ExtremeSpeedAreaBuff", bp => {
                 bp.SetName(IsekaiContext, "Extreme Speed");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of you gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times your character level.");
                 bp.m_Icon = Icon_SupersonicSpeed;
@@ -54,7 +54,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                     c.m_AreaEffect = ExtremeSpeedArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var ExtremeSpeedAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("ExtremeSpeedAbility", bp => {
+            var ExtremeSpeedAbility = TTCoreExtensions.CreateActivatableAbility("ExtremeSpeedAbility", bp => {
                 bp.SetName(IsekaiContext, "Extreme Speed");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of you gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times your character level.");
                 bp.m_Icon = Icon_SupersonicSpeed;
