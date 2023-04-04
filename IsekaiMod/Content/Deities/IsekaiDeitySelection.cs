@@ -41,7 +41,7 @@ namespace IsekaiMod.Content.Deities {
             //any potential god patches that are not the above bugfix should go here, after commenting the if clause in
         }
 
-        private static bool isKnownSelection(BlueprintFeatureSelection selection, Dictionary<int, HashSet<BlueprintFeatureSelection>> knownselections) {
+        private static bool IsKnownSelection(BlueprintFeatureSelection selection, Dictionary<int, HashSet<BlueprintFeatureSelection>> knownselections) {
             foreach (var key in knownselections.Keys) {
                 foreach (var checkselection in knownselections.Get(key)) { if (checkselection.AssetGuid == selection.AssetGuid) { return true; } }
             }
@@ -56,7 +56,7 @@ namespace IsekaiMod.Content.Deities {
                     var unRef = item.Get();
                     if (unRef != null) {
                         if (unRef is BlueprintFeatureSelection selection2) {
-                            if (isKnownSelection(selection2, knownselections)) {
+                            if (IsKnownSelection(selection2, knownselections)) {
                                 //IsekaiContext.Logger.Log("Duplicate Deity Selection=" + unRef.AssetGuid);
                                 selection.RemoveFeatures(selection2);
                             } else {
