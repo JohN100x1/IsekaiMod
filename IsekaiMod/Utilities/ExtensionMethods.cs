@@ -10,7 +10,8 @@ using TabletopTweaks.Core.Utilities;
 using UnityEngine;
 
 namespace IsekaiMod.Utilities {
-    static class ExtensionMethods {
+
+    internal static class ExtensionMethods {
 
         public static void SetLocalisedName(this BlueprintUnit Unit, ModContextBase modContext, string name) {
             Unit.LocalizedName = ScriptableObject.CreateInstance<SharedStringAsset>();
@@ -28,6 +29,7 @@ namespace IsekaiMod.Utilities {
         public static void SetText(this BlueprintCue Cue, ModContextBase modContext, string name) {
             Cue.Text = Helpers.CreateString(modContext, $"{Cue.name}.Text", name);
         }
+
         public static void SetText(this BlueprintAnswer Cue, ModContextBase modContext, string name) {
             Cue.Text = Helpers.CreateString(modContext, $"{Cue.name}.Text", name);
         }
@@ -35,6 +37,7 @@ namespace IsekaiMod.Utilities {
         public static void SetName(this BlueprintWeaponEnchantment enchantment, ModContextBase modContext, string name) {
             enchantment.m_EnchantName = Helpers.CreateString(modContext, $"{enchantment.name}.EnchantName", name);
         }
+
         public static void SetDescription(this BlueprintWeaponEnchantment enchantment, ModContextBase modContext, string name) {
             enchantment.m_Description = Helpers.CreateString(modContext, $"{enchantment.name}.Description", name);
         }
