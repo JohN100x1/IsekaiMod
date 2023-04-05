@@ -321,7 +321,7 @@
     },
     {
       "Key": "f8b0dc4d563b44159772c35ae64436a9",
-      "SimpleName": "AuraOfMajestyAbility.Description",
+      "SimpleName": "MajesticAuraAbility.Description",
       "ProcessTemplates": true,
       "enGB": "Allies within 40 feet of the God Emperor gain a +4 sacred bonus to all attributes.",
       "ruRU": null,
@@ -332,7 +332,7 @@
     },
     {
       "Key": "31814a422b3342d8a09149cbd9b00ab7",
-      "SimpleName": "AuraOfMajestyAreaBuff.Description",
+      "SimpleName": "MajesticAuraAreaBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Allies within 40 feet of the God Emperor gain a sacred bonus to all attributes equal to 1/2 the God Emperor's character level.",
       "ruRU": null,
@@ -343,7 +343,7 @@
     },
     {
       "Key": "90e64e535ca14bf3823a6d5bd896ed94",
-      "SimpleName": "AuraOfMajestyBuff.Description",
+      "SimpleName": "MajesticAuraBuff.Description",
       "ProcessTemplates": true,
       "enGB": "This character has a sacred bonus to all attributes equal to 1/2 the God Emperor's character level.",
       "ruRU": null,
@@ -354,7 +354,7 @@
     },
     {
       "Key": "989a345a1bf34035a638bd63c106f88f",
-      "SimpleName": "AuraOfMajestyBuff.Name",
+      "SimpleName": "MajesticAuraBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Aura of Majesty",
       "ruRU": null,
@@ -365,7 +365,7 @@
     },
     {
       "Key": "20bfa217607f45b5ab2600aa03d230b5",
-      "SimpleName": "AuraOfMajestyFeature.Description",
+      "SimpleName": "MajesticAuraFeature.Description",
       "ProcessTemplates": true,
       "enGB": "At 9th level, allies within 40 feet of the God Emperor gain a sacred bonus to all attributes equal to 1/2 the God Emperor's character level.",
       "ruRU": null,

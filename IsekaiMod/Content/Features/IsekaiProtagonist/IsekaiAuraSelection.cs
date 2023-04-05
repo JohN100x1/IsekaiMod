@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             const string FriendlyAuraDesc = "You emit an aura of friendship that cause enemies to subconsciously hold back."
                 + "\nEnemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack and damage rolls.";
             const string FriendlyAuraDescBuff = "This creature has a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.";
-            var Icon_Friendly_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_FRIENDLY_AURA.png");
+            var Icon_Friendly_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_FRIENDLY.png");
             var FriendlyAuraBuff = TTCoreExtensions.CreateBuff("FriendlyAuraBuff", bp => {
                 bp.SetName(IsekaiContext, FriendlyAuraName);
                 bp.SetDescription(IsekaiContext, FriendlyAuraDescBuff);
@@ -77,7 +77,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             const string DarkAuraDesc = "You emit an aura of darkness that cause enemies to become uneasy and vulnerable."
                 + "\nEnemies within 40 feet take a –4 penalty on AC and saving throws.";
             const string DarkAuraDescBuff = "This creature has a –4 penalty on AC and saving throws.";
-            var Icon_Dark_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_DARK_AURA.png");
+            var Icon_Dark_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_DARK.png");
             var DarkAuraBuff = TTCoreExtensions.CreateBuff("DarkAuraBuff", bp => {
                 bp.SetName(IsekaiContext, DarkAuraName);
                 bp.SetDescription(IsekaiContext, DarkAuraDescBuff);
@@ -142,7 +142,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             const string DivineAuraDesc = "You emit an aura of divinity that cause enemies to be overcome with feelings of futility."
                 + "\nEnemies within 40 feet take a –4 penalty on all attributes.";
             const string DivineAuraDescBuff = "This creature has a –4 penalty on all attributes.";
-            var Icon_Divine_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_DIVINE_AURA.png");
+            var Icon_Divine_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_DIVINE.png");
             var DivineAuraBuff = TTCoreExtensions.CreateBuff("DivineAuraBuff", bp => {
                 bp.SetName(IsekaiContext, DivineAuraName);
                 bp.SetDescription(IsekaiContext, DivineAuraDescBuff);

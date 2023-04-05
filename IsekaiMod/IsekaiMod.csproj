@@ -165,6 +165,7 @@
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Overlord\OverlordSpellbook.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Overlord\OverlordArchetype.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\ChuunibyouPower.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\BodyMindAuraSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorQuickFooted.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindLegacySelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindProficiencies.cs" />
@@ -188,8 +189,9 @@
     <Compile Include="UMMSettingsUI.cs" />
     <Compile Include="Config\*.cs" />
     <Compile Include="ModLogic\*.cs" />
+    <Compile Include="Content\BlueprintAdder.cs" />
+    <Compile Include="Content\ContentAdder.cs" />
     <!-- mod specific -->
-    <Compile Include="Content\*.cs" />
     <Compile Include="Content\*\*.cs" />
     <Compile Include="Content\Classes\Deathsnatcher\DeathsnatcherClass.cs" />
     <Compile Include="Content\Classes\Deathsnatcher\DeathsnatcherProgression.cs" />
@@ -311,7 +313,6 @@
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\ExtraStrike.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\SupersonicCombat.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\AuraOfGoldenProtection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\AuraOfMajesty.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\CelestialRealm.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\DivineArray.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorEnergySelection.cs" />
@@ -320,7 +321,6 @@
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\Godhood.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodlyVessel.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\NascentApotheosis.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\SiphoningAuraFeature.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\GracefulCombat.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\HeroLegacySelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\HeroProficiencies.cs" />

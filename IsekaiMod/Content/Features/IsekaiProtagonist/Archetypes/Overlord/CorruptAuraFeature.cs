@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord {
     internal class CorruptAuraFeature {
 
         public static void Add() {
-            var Icon_Corrupt_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_CORRUPT_AURA.png");
+            var Icon_Corrupt_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_CORRUPT.png");
             var CorruptAuraBuff = TTCoreExtensions.CreateBuff("CorruptAuraBuff", bp => {
                 bp.SetName(IsekaiContext, "Corrupt Aura");
                 bp.SetDescription(IsekaiContext, "This character has a +4 profane bonus to attack, damage, AC and saving throws. "
