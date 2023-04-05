@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var EdgeLordProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "EdgeLordProficiencies");
             var SupersonicCombat = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SupersonicCombat");
             var ExtraStrike = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ExtraStrike");
-            var ChuunibyouPowerFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ChuunibyouPowerFeature");
+            var ChuunibyouActualisationFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ChuunibyouActualisationFeature");
 
             // Removed features
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
@@ -56,7 +56,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(5, SpecialPowerSelection, ExtraStrike),
                     Helpers.CreateLevelEntry(10, ExtraStrike),
                     Helpers.CreateLevelEntry(15, SpecialPowerSelection, ExtraStrike),
-                    Helpers.CreateLevelEntry(20, ExtraStrike, ChuunibyouPowerFeature),
+                    Helpers.CreateLevelEntry(20, ExtraStrike, ChuunibyouActualisationFeature),
                 };
                 bp.OverrideAttributeRecommendations = true;
                 bp.RecommendedAttributes = new StatType[] { StatType.Dexterity, StatType.Charisma };

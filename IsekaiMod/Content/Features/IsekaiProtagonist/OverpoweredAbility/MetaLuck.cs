@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
         public static void Add() {
             var MetaLuckDebuff = TTCoreExtensions.CreateBuff("MetaLuckDebuff", bp => {
-                bp.SetName(IsekaiContext, "Overpowered Ability — Meta Luck (Debuff)");
+                bp.SetName(IsekaiContext, "Meta Luck (Debuff)");
                 bp.SetDescription(IsekaiContext, "This creature takes the lower of two d20 rolls.");
                 bp.m_Icon = Icon_Fortune;
                 bp.AddComponent<ModifyD20>(c => {
@@ -29,7 +29,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.IsClassFeature = true;
             });
             var MetaLuckBuff = TTCoreExtensions.CreateBuff("MetaLuckBuff", bp => {
-                bp.SetName(IsekaiContext, "Overpowered Ability — Meta Luck (Buff)");
+                bp.SetName(IsekaiContext, "Meta Luck");
                 bp.SetDescription(IsekaiContext, "This character always takes the higher of two d20 rolls.");
                 bp.m_Icon = Icon_Fortune;
                 bp.AddComponent<ModifyD20>(c => {

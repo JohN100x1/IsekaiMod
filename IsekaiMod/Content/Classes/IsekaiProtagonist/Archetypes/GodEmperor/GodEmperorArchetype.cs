@@ -33,6 +33,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
             var GodEmperorEnergySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "GodEmperorEnergySelection");
             var GodEmperorAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "GodEmperorAuraSelection");
+            var BarrierSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BarrierSelection");
             var BodyMindAlterSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BodyMindAlterSelection");
 
             // Removed features
@@ -76,7 +77,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, NascentApotheosis, GodEmperorProficiencies, GodEmperorLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(3, GodEmperorEnergySelection, ArmorSaint),
-                    Helpers.CreateLevelEntry(5, DivineArray),
+                    Helpers.CreateLevelEntry(5, BarrierSelection),
                     Helpers.CreateLevelEntry(7, AuraOfGoldenProtectionFeature),
                     Helpers.CreateLevelEntry(10, GodEmperorAuraSelection, BodyMindAlterSelection),
                     Helpers.CreateLevelEntry(15, GodlyVessel, GodEmperorQuickFooted),

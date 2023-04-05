@@ -17,20 +17,20 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
 
-    internal class ChuunibyouPower {
-        private const string Name = "Chuunibyou Power";
+    internal class ChuunibyouActualisation {
+        private const string Name = "Chuunibyou Actualisation";
         private const string Description = "Allies within 120 feet gain 1 additional {g|Encyclopedia:Attack}attack{/g} to their main weapon, "
             + "a +10 bonus to speed, and attacks have a 50% chance to miss them.";
         private const string DescriptionBuff = "This character has 1 additional {g|Encyclopedia:Attack}attack{/g} to their main weapon, "
             + "a +10 bonus to speed, and attacks have a 50% chance to miss them.";
 
         public static void Add() {
-            var Icon_ChuunibyouPower = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_CHUUNIBYOU.png");
-            var ChuunibyouPowerBuff = TTCoreExtensions.CreateBuff("ChuunibyouPowerBuff", bp => {
+            var Icon_ChuunibyouActualisation = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_CHUUNIBYOU.png");
+            var ChuunibyouActualisationBuff = TTCoreExtensions.CreateBuff("ChuunibyouActualisationBuff", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, DescriptionBuff);
                 bp.IsClassFeature = true;
-                bp.m_Icon = Icon_ChuunibyouPower;
+                bp.m_Icon = Icon_ChuunibyouActualisation;
                 bp.AddComponent<AddExtraAttack>(c => {
                     c.Number = 1;
                 });
@@ -45,7 +45,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
                     c.Conditions = ActionFlow.EmptyCondition();
                 });
             });
-            var ChuunibyouPowerArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, "ChuunibyouPowerArea", bp => {
+            var ChuunibyouActualisationArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, "ChuunibyouActualisationArea", bp => {
                 bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Ally;
                 bp.SpellResistance = false;
                 bp.AggroEnemies = false;
@@ -53,25 +53,25 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
                 bp.Shape = AreaEffectShape.Cylinder;
                 bp.Size = new Feet(120);
                 bp.Fx = new PrefabLink();
-                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(ChuunibyouPowerBuff.ToReference<BlueprintBuffReference>()));
+                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(ChuunibyouActualisationBuff.ToReference<BlueprintBuffReference>()));
             });
-            var ChuunibyouPowerAreaBuff = TTCoreExtensions.CreateBuff("ChuunibyouPowerAreaBuff", bp => {
+            var ChuunibyouActualisationAreaBuff = TTCoreExtensions.CreateBuff("ChuunibyouActualisationAreaBuff", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
-                bp.m_Icon = Icon_ChuunibyouPower;
+                bp.m_Icon = Icon_ChuunibyouActualisation;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
                 bp.AddComponent<AddAreaEffect>(c => {
-                    c.m_AreaEffect = ChuunibyouPowerArea.ToReference<BlueprintAbilityAreaEffectReference>();
+                    c.m_AreaEffect = ChuunibyouActualisationArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var ChuunibyouPowerFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "ChuunibyouPowerFeature", bp => {
+            var ChuunibyouActualisationFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "ChuunibyouActualisationFeature", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
-                bp.m_Icon = Icon_ChuunibyouPower;
+                bp.m_Icon = Icon_ChuunibyouActualisation;
                 bp.Ranks = 1;
                 bp.AddComponent<AuraFeatureComponent>(c => {
-                    c.m_Buff = ChuunibyouPowerAreaBuff.ToReference<BlueprintBuffReference>();
+                    c.m_Buff = ChuunibyouActualisationAreaBuff.ToReference<BlueprintBuffReference>();
                 });
             });
         }

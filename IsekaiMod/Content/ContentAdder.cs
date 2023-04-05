@@ -151,7 +151,7 @@ namespace IsekaiMod.Content {
                 GodEmperorProficiencies.Add();
                 GodEmperorQuickFooted.Add();
                 NascentApotheosis.Add();
-                DivineArray.Add();
+                BarrierSelection.Add();
                 GodEmperorEnergySelection.Add();
                 GodEmperorAuraSelection.Add();
                 AuraOfGoldenProtection.Add();
@@ -166,7 +166,7 @@ namespace IsekaiMod.Content {
                 EdgeLordProficiencies.Add();
                 SupersonicCombat.Add();
                 ExtraStrike.Add();
-                ChuunibyouPower.Add();
+                ChuunibyouActualisation.Add();
                 EdgeLordArchetype.Add();
                 Main.LogDebug("Class: EdgeLord");
 
