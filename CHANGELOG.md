@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Gifted` feature to `Isekai Protagonist` progression.
 - Added `Release Energy` feature to `Isekai Protagonist` progression.
 - Added `Chuunibyou Power` feature to `Edge Lord` progression.
+- Added `Alteration of body and mind` selection to `God Emperor` progression.
 - Added `Mastermind` Archetype (Isekai Protagonist).
 - Added `Overlord` Archetype (Isekai Protagonist).
 ### Changed
@@ -26,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Buffed `Hero` to get another Special Power at 3rd and 17th level.
 - Buffed `Hero` to get another OP Ability at 10th level.
 - Buffed `Hero` to get Tower shield and exotic weapon proficiency.
+- Buffed `Siphoning Aura` to scale 1/2 character level.
 - Nerfed `Magical Amplification` spell dice from d12 -> d10.
 - Changed `Dark Aura` debuff from -2 -> -4 but no longer affects attack rolls.
 - Changed `Isekai Protagonist` `Second Reincarnation` obtained from level 20 -> 15.

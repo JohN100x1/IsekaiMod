@@ -1,6 +1,7 @@
 ﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
@@ -100,7 +101,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 });
             });
 
-            const string SiphoningAuraName = "Siphoning Aura"; // TODO: add selections to line of features (name them appropriately)
+            const string SiphoningAuraName = "Siphoning Aura";
             const string SiphoningAuraDesc = "Enemies within 40 feet of you take a penalty on all attributes equal to 1/2 your character level.";
             const string SiphoningAuraDescBuff = "This creature has a penalty on all attributes equal to 1/2 your character level.";
             var SiphoningAuraBuff = TTCoreExtensions.CreateBuff("SiphoningAuraBuff", bp => {
@@ -178,6 +179,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { SiphoningAuraAbility.ToReference<BlueprintUnitFactReference>() };
                 });
+            });
+
+            var BodyMindAuraSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BodyMindAuraSelection", bp => {
+                bp.SetName(IsekaiContext, "Alteration of Body and Mind");
+                bp.SetDescription(IsekaiContext, "At 10th level, you gain the ability to alter the body and mind of those around you.");
+                bp.m_Icon = Icon_MajesticAura;
+                bp.IgnorePrerequisites = true;
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    MajesticAuraFeature.ToReference<BlueprintFeatureReference>(),
+                    SiphoningAuraFeature.ToReference<BlueprintFeatureReference>(),
+                };
             });
         }
     }

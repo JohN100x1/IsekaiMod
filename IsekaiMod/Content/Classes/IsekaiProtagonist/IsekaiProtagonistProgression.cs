@@ -49,12 +49,12 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
             // God Emperor
             BlueprintFeatureSelection GodEmperorEnergySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "GodEmperorEnergySelection");
+            BlueprintFeatureSelection BodyMindAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BodyMindAuraSelection");
             var GodEmperorProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodEmperorProficiencies");
             var GodEmperorQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodEmperorQuickFooted");
             var NascentApotheosis = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "NascentApotheosis");
             var DivineArray = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DivineArray");
             var AuraOfGoldenProtectionFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfGoldenProtectionFeature");
-            var MajesticAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MajesticAuraFeature");
             var SiphoningAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SiphoningAuraFeature");
             var GodlyVessel = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodlyVessel");
             var CelestialRealmFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CelestialRealmFeature");
@@ -126,26 +126,28 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             IsekaiProtagonistProgression.UIGroups = new UIGroup[] {
                 
                 // Isekai UI group
-                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAbility, SignatureMove,
-                SignatureMoveSelection, SummonHaremFeature, IsekaiAuraSelection, DarkAuraFeature, DivineAuraFeature, Afterimage,
-                IsekaiQuickFooted, GodEmperorQuickFooted, MastermindQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, HaxSelection, ChuunibyouPowerFeature),
+                Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAbility, SignatureMove, SignatureMoveSelection,
+                    SummonHaremFeature, IsekaiAuraSelection, DarkAuraFeature, DivineAuraFeature, Afterimage,
+                    IsekaiQuickFooted, GodEmperorQuickFooted, MastermindQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, HaxSelection,
+                    ChuunibyouPowerFeature),
                 Helpers.CreateUIGroup(ReleaseEnergy, Gifted, SignatureMoveBonusSelection, SecretPowerSelection, SecondReincarnation),
                 
                 // Edge Lord UI group
                 Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike),
                 
                 // God Emperor UI group
-                Helpers.CreateUIGroup(NascentApotheosis, DivineArray, GodEmperorEnergySelection, AuraOfGoldenProtectionFeature, MajesticAuraFeature, SiphoningAuraFeature, GodlyVessel, Godhood,
+                Helpers.CreateUIGroup(NascentApotheosis, DivineArray, GodEmperorEnergySelection, AuraOfGoldenProtectionFeature, BodyMindAuraSelection,
+                    GodlyVessel, Godhood,
                 
                 // Hero UI group
-                GracefulCombat, IsekaiChannelPositiveEnergyFeature, AuraOfDivineFuryFeature, CelestialRealmFeature, HerosPresenceFeature),
+                    GracefulCombat, IsekaiChannelPositiveEnergyFeature, AuraOfDivineFuryFeature, CelestialRealmFeature, HerosPresenceFeature),
                 
                 // Mastermind UI group
                 Helpers.CreateUIGroup(OverpoweredAbilitySelectionMastermind),
 
                 // Overlord UI group
                 Helpers.CreateUIGroup(OverpoweredAbilitySelectionOverlord),
-                Helpers.CreateUIGroup(IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, SecondFormFeature),
+                Helpers.CreateUIGroup(IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, SecondFormFeature, SiphoningAuraFeature),
                 
                 // OP ability and Special Power UI group
                 Helpers.CreateUIGroup(OverpoweredAbilitySelection, SpecialPowerSelection, ArmorSaint),

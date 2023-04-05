@@ -33,6 +33,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var ArmorSaint = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ArmorSaint");
 
             var GodEmperorEnergySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "GodEmperorEnergySelection");
+            var BodyMindAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BodyMindAuraSelection");
 
             // Removed features
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
@@ -77,9 +78,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(3, GodEmperorEnergySelection, ArmorSaint),
                     Helpers.CreateLevelEntry(5, DivineArray),
                     Helpers.CreateLevelEntry(7, AuraOfGoldenProtectionFeature),
-                    Helpers.CreateLevelEntry(9, MajesticAuraFeature),
-                    Helpers.CreateLevelEntry(10, DivineAuraFeature),
-                    Helpers.CreateLevelEntry(12, SiphoningAuraFeature),
+                    Helpers.CreateLevelEntry(10, DivineAuraFeature, BodyMindAuraSelection),
                     Helpers.CreateLevelEntry(15, GodlyVessel, GodEmperorQuickFooted),
                     Helpers.CreateLevelEntry(17, CelestialRealmFeature),
                     Helpers.CreateLevelEntry(20, Godhood),
