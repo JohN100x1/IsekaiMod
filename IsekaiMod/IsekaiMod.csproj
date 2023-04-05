@@ -189,7 +189,6 @@
     <Compile Include="UMMSettingsUI.cs" />
     <Compile Include="Config\*.cs" />
     <Compile Include="ModLogic\*.cs" />
-    <Compile Include="Content\BlueprintAdder.cs" />
     <Compile Include="Content\ContentAdder.cs" />
     <!-- mod specific -->
     <Compile Include="Content\*\*.cs" />

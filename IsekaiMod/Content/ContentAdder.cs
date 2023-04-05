@@ -154,7 +154,7 @@ namespace IsekaiMod.Content {
                 DivineArray.Add();
                 GodEmperorEnergySelection.Add();
                 AuraOfGoldenProtection.Add();
-                BodyMindAuraSelection.Add();
+                BodyMindAlterSelection.Add();
                 GodlyVessel.Add();
                 CelestialRealm.Add();
                 Godhood.Add();

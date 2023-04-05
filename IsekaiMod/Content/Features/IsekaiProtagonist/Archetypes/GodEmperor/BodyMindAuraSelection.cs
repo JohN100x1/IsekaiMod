@@ -16,7 +16,7 @@ using UnityEngine;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
-    internal class BodyMindAuraSelection {
+    internal class BodyMindAlterSelection {
         private static readonly Sprite Icon_MajesticAura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_MAJESTIC.png");
         private static readonly Sprite Icon_SiphoningAura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_SIPHONING.png");
         private static readonly Sprite Icon_HellsSeal = BlueprintTools.GetBlueprint<BlueprintFeature>("b6798b29d36982b4786a32dfd81a914f").m_Icon;
@@ -181,7 +181,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 });
             });
 
-            var BodyMindAuraSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BodyMindAuraSelection", bp => {
+            var BodyMindAlterSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BodyMindAlterSelection", bp => {
                 bp.SetName(IsekaiContext, "Alteration of Body and Mind");
                 bp.SetDescription(IsekaiContext, "At 10th level, you gain the ability to alter the body and mind of those around you.");
                 bp.m_Icon = Icon_MajesticAura;
