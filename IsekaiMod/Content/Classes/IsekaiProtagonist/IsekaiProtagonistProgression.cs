@@ -49,6 +49,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
             // God Emperor
             BlueprintFeatureSelection GodEmperorEnergySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "GodEmperorEnergySelection");
+            BlueprintFeatureSelection GodEmperorAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "GodEmperorAuraSelection");
             BlueprintFeatureSelection BodyMindAlterSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BodyMindAlterSelection");
             var GodEmperorProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodEmperorProficiencies");
             var GodEmperorQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodEmperorQuickFooted");
@@ -127,7 +128,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 
                 // Isekai UI group
                 Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAbility, SignatureMove, SignatureMoveSelection,
-                    SummonHaremFeature, IsekaiAuraSelection, DarkAuraFeature, DivineAuraFeature, Afterimage,
+                    SummonHaremFeature, IsekaiAuraSelection, GodEmperorAuraSelection, DarkAuraFeature, Afterimage,
                     IsekaiQuickFooted, GodEmperorQuickFooted, MastermindQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, HaxSelection,
                     ChuunibyouPowerFeature),
                 Helpers.CreateUIGroup(ReleaseEnergy, Gifted, SignatureMoveBonusSelection, SecretPowerSelection, SecondReincarnation),

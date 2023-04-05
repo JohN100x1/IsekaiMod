@@ -153,6 +153,7 @@ namespace IsekaiMod.Content {
                 NascentApotheosis.Add();
                 DivineArray.Add();
                 GodEmperorEnergySelection.Add();
+                GodEmperorAuraSelection.Add();
                 AuraOfGoldenProtection.Add();
                 BodyMindAlterSelection.Add();
                 GodlyVessel.Add();

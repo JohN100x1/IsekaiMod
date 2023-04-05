@@ -24,7 +24,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var DivineArray = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DivineArray");
             var GodEmperorQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodEmperorQuickFooted");
             var AuraOfGoldenProtectionFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfGoldenProtectionFeature");
-            var DivineAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DivineAuraFeature");
             var MajesticAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MajesticAuraFeature");
             var CelestialRealmFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CelestialRealmFeature");
             var Godhood = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Godhood");
@@ -33,6 +32,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var ArmorSaint = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ArmorSaint");
 
             var GodEmperorEnergySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "GodEmperorEnergySelection");
+            var GodEmperorAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "GodEmperorAuraSelection");
             var BodyMindAlterSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BodyMindAlterSelection");
 
             // Removed features
@@ -78,7 +78,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(3, GodEmperorEnergySelection, ArmorSaint),
                     Helpers.CreateLevelEntry(5, DivineArray),
                     Helpers.CreateLevelEntry(7, AuraOfGoldenProtectionFeature),
-                    Helpers.CreateLevelEntry(10, DivineAuraFeature, BodyMindAlterSelection),
+                    Helpers.CreateLevelEntry(10, GodEmperorAuraSelection, BodyMindAlterSelection),
                     Helpers.CreateLevelEntry(15, GodlyVessel, GodEmperorQuickFooted),
                     Helpers.CreateLevelEntry(17, CelestialRealmFeature),
                     Helpers.CreateLevelEntry(20, Godhood),
