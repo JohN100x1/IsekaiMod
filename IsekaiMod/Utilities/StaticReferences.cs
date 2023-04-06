@@ -60,21 +60,6 @@ namespace IsekaiMod.Utilities {
         public static BlueprintFeatureSelection SorcererBloodlineArcanaSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("20a2435574bdd7f4e947f405df2b25ce");
         public static readonly BlueprintParametrizedFeature SorcererArcana = BlueprintTools.GetBlueprint<BlueprintParametrizedFeature>("4a2e8388c2f0dd3478811d9c947bebfb");
 
-        //Rogue
-        public static BlueprintFeature RogueSneakAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
-        public static BlueprintFeature RogueUncannyDodge = BlueprintTools.GetBlueprint<BlueprintFeature>("3c08d842e802c3e4eb19d15496145709");
-        public static BlueprintFeature RogueImprovedUncannyDodge = BlueprintTools.GetBlueprint<BlueprintFeature>("485a18c05792521459c7d06c63128c79");
-        public static BlueprintFeature RogueEvasion = BlueprintTools.GetBlueprint<BlueprintFeature>("576933720c440aa4d8d42b0c54b77e80");
-        public static BlueprintFeature RogueImprovedEvasion = BlueprintTools.GetBlueprint<BlueprintFeature>("ce96af454a6137d47b9c6a1e02e66803");
-        public static BlueprintFeatureSelection RogueTalentSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("c074a5d615200494b8f2a9c845799d93");
-        public static BlueprintFeature RogueAdvancedTalents = BlueprintTools.GetBlueprint<BlueprintFeature>("a33b99f95322d6741af83e9381b2391c");
-
-        //Tactician
-        public static BlueprintFeature Teamwork = BlueprintTools.GetBlueprint<BlueprintFeature>("01046afc774beee48abde8e35da0f4ba");
-        public static BlueprintFeature AnimalTeamwork = BlueprintTools.GetBlueprint<BlueprintFeature>("1b9916f7675d6ef4fb427081250d49de");
-        public static BlueprintFeature SummonTactics = BlueprintTools.GetBlueprint<BlueprintFeature>("c3abcce19f9f80640a867c9e75f880b2");
-        public static BlueprintFeature SoloTactics = BlueprintTools.GetBlueprint<BlueprintFeature>("87d6de4d30adc7244b7a3427d041dcaa");
-        public static BlueprintFeature ForesterTactics = BlueprintTools.GetBlueprint<BlueprintFeature>("994db4abfa0d6194eb3c847605e6f148");
 
         public static readonly BlueprintFeatureBase[] FeaturesIgnoredWhenPatching = new BlueprintFeatureBase[] { 
             FeatTools.Selections.BasicFeatSelection, 
@@ -82,7 +67,10 @@ namespace IsekaiMod.Utilities {
             FeatTools.Selections.CombatTrick, 
             FeatTools.Selections.SkaldFeatSelection,
             FeatTools.Selections.AnimalCompanionSelectionDomain,
-            FeatTools.Selections.WarDomainGreaterFeatSelection
+            FeatTools.Selections.WarDomainGreaterFeatSelection,
+            FeatTools.Selections.MagusFeatSelection,
+            FeatTools.Selections.CavalierBonusFeatSelection,
+            BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("f1add10c87fa4563ad5f71779eecde19")
         };
 
         private static BlueprintProgression PatchPatchClassProgressionBasedOnRefClassStep1(BlueprintProgression prog, BlueprintCharacterClass refClass) {
@@ -265,19 +253,40 @@ namespace IsekaiMod.Utilities {
                     if (progression.m_Classes != null && progression.m_Classes.Length > 0) {
                         progression.AddClass(myClass);
                      }
+                    BlueprintFeatureBase[] flatten = new BlueprintFeatureBase[] { };
                     foreach (LevelEntry item in progression.LevelEntries) {
                         foreach (var levelitem in item.Features) {
-                            if (levelitem is BlueprintProgression progression2) {
-                                PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, mylevel, loopPrevention);
-                            } else {
-                                if (levelitem is BlueprintFeature feature2) {
-                                    PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
-                                }
+                            if (levelitem != null && !flatten.Contains(levelitem)) { 
+                                flatten = flatten.AddToArray(levelitem);
+                            }                            
+                        }
+                    }
+                    foreach (var levelItem in flatten) {
+                        if (levelItem is BlueprintProgression progression2) {
+                            PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, mylevel, loopPrevention);
+                        } else {
+                            if (levelItem is BlueprintFeature feature2) {
+                                PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
                             }
                         }
                     }
                 }
                 if (feature is BlueprintFeatureSelection selection) {
+                    //don't trust selections past a certain size to actually contain class features rather than just a selection of basic feats unless they are selections that are known to be that size for a valid reason(revelations, hexes, rage powers)
+                    if (selection.m_AllFeatures.Length> 30 && !(
+                        feature.AssetGuid.ToString().Equals("60008a10ad7ad6543b1f63016741a5d2")
+                        || feature.AssetGuid.ToString().Equals("c074a5d615200494b8f2a9c845799d93")
+                        || feature.AssetGuid.ToString().Equals("4223fe18c75d4d14787af196a04e14e7")
+                        || feature.AssetGuid.ToString().Equals("28710502f46848d48b3f0d6132817c4e")
+                        || feature.AssetGuid.ToString().Equals("2476514e31791394fa140f1a07941c96")
+                        || feature.AssetGuid.ToString().Equals("9846043cf51251a4897728ed6e24e76f")
+                        || feature.AssetGuid.ToString().Equals("99999999000900000009000000000001")
+                        || feature.AssetGuid.ToString().Equals("58d6f8e9eea63f6418b107ce64f315ea")
+                        || feature.AssetGuid.ToString().Equals("5c883ae0cd6d7d5448b7a420f51f8459")
+                        )) {
+                        IsekaiContext.Logger.LogError("reference class= " + referenceClass.Guid + " Stop Feature= " + feature.AssetGuid + " name= " + feature.Name+ " reason= selection contains too many features and thus likely is a basic feat variation");
+                        return;
+                    }
                     foreach (var feature2 in selection.m_AllFeatures) {
                         PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
                     }

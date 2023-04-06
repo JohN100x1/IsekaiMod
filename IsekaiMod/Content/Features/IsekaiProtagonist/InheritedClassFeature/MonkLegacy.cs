@@ -33,8 +33,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.NeutralGood;
                 });
             });
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Register(prog);
+            //GodEmperorLegacySelection.Register(prog);
             HeroLegacySelection.Register(prog);
             MastermindLegacySelection.Prohibit(prog);
             OverlordLegacySelection.Register(prog);

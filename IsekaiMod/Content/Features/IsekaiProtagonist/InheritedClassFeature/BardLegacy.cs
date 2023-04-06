@@ -20,13 +20,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static void Configure() {
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "BardLegacy", bp => {
                 bp.SetName(IsekaiContext, "Bard Legacy - Musical Prodige");
-                bp.SetDescription(IsekaiContext, "You know what is even more effective in gathering a great harem than being a great hero? "
-                    + "\nThat is right, music the language of romance, there is a reason why so many males hate bards...");
+                bp.SetDescription(IsekaiContext, 
+                    "You know what is even more effective in gathering a great harem than being a great hero? \n" +
+                    "That is right, music the language of romance, there is a reason why so many males hate bards..."
+                    );
                 bp.GiveFeaturesForPreviousLevels = true;
             });
 
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
             HeroLegacySelection.Register(prog);
             MastermindLegacySelection.Prohibit(prog);
             OverlordLegacySelection.Prohibit(prog);

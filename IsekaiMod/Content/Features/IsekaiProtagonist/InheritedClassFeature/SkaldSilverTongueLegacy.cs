@@ -13,7 +13,8 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class SkaldSilverTongueLegacy {
-        private static BlueprintArchetype BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>("5e63586bebd229649bdafe0fde4caaec");
+        private static string BaseArchetypeId = "5e63586bebd229649bdafe0fde4caaec";
+        private static BlueprintArchetype BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);
 
         private static BlueprintProgression prog;
 
@@ -26,8 +27,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.GiveFeaturesForPreviousLevels = true;
             });
 
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
             HeroLegacySelection.Register(prog);
             MastermindLegacySelection.Register(prog);
             OverlordLegacySelection.Prohibit(prog);
@@ -35,18 +38,24 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         }
 
         public static void PatchProgression() {
-             
+            if (prog != null) {
+                if (BaseArchetype == null) {
+                    BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);
+                    if (BaseArchetype == null) { return; }
+                }
 
-            prog = StaticReferences.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.SkaldClass, BaseArchetype, null);
-            BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.SkaldClass;
-            BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
-            StaticReferences.PatchProgressionFeaturesBasedOnReferenceArchetype(myClass, refClass, BaseArchetype);
 
-            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BardLegacy.Get().ToReference<BlueprintFeatureReference>(); });
-            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BarbarianLegacy.Get().ToReference<BlueprintFeatureReference>(); });
-            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = SkaldVoiceLegacy.Get().ToReference<BlueprintFeatureReference>(); });
-            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = SkaldBaseLegacy.Get().ToReference<BlueprintFeatureReference>(); });
-            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BloodragerChimeraLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog = StaticReferences.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.SkaldClass, BaseArchetype, null);
+                BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.SkaldClass;
+                BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
+                StaticReferences.PatchProgressionFeaturesBasedOnReferenceArchetype(myClass, refClass, BaseArchetype);
+
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BardLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BarbarianLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = SkaldVoiceLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = SkaldBaseLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BloodragerChimeraLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            }
         }
 
         public static BlueprintProgression Get() {

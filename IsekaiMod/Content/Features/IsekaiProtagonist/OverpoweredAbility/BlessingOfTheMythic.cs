@@ -142,7 +142,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.m_AllFeatures = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("1f646b820a37d3d4a8ab116a24ee0022").m_AllFeatures
                 .AddToArray(BlueprintTools.GetBlueprint<BlueprintFeature>("9703d79082dc75e4aaaa4387b9c95229").ToReference<BlueprintFeatureReference>())
                 .AddToArray(BlueprintTools.GetBlueprint<BlueprintFeature>("eea98a8c70c68ff489967c6f9cf1876c").ToReference<BlueprintFeatureReference>())
-                .AddToArray(BlueprintTools.GetBlueprint<BlueprintFeature>("eea98a8c70c68ff489967c6f9cf1876c").ToReference<BlueprintFeatureReference>())
                 ;
             });
             var AngelSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BlessingOfTheAngel", bp => {

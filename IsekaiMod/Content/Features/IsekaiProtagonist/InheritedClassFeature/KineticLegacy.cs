@@ -30,8 +30,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 });
                 bp.AddComponent<PrerequisiteNoArchetype>(c => { c.m_Archetype = EdgeLordArchetype.GetReference(); });
             });
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
             HeroLegacySelection.Register(prog);
             MastermindLegacySelection.Prohibit(prog);
             OverlordLegacySelection.Register(prog);

@@ -28,6 +28,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.AddPrerequisite<PrerequisiteAlignment>(c => { c.Alignment = Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Lawful; });
             });
 
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
             HeroLegacySelection.Register(prog);
@@ -42,7 +43,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 LevelEntry[] removeentries = new LevelEntry[] { };
                 
                 removeentries = removeentries.AppendToArray(Helpers.CreateLevelEntry(1, FeatTools.Selections.DomainsSelection));
-                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(1, InquisitorTacticianLegacy.GetDomains()));
+                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(2, InquisitorTacticianLegacy.GetDomains()));
 
                 BlueprintArchetype archetype = BlueprintTools.GetBlueprint<BlueprintArchetype>("0e5e91c17f114d358910e0da4ae29b50");
 

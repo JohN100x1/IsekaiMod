@@ -29,8 +29,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.GiveFeaturesForPreviousLevels = true;
             });
 
+            LegacySelection.RegisterForFeat(prog);
+
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Register(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
             HeroLegacySelection.Prohibit(prog);
             MastermindLegacySelection.Prohibit(prog);
             OverlordLegacySelection.Prohibit(prog);

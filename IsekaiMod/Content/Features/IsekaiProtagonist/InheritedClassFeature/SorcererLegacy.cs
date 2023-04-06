@@ -47,8 +47,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateUIGroup( ExtraSelection),
                 };
             });
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Register(prog);
             HeroLegacySelection.Register(prog);
             MastermindLegacySelection.Register(prog);
             OverlordLegacySelection.Register(prog);
@@ -58,7 +60,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static void PatchProgression() {
             BlueprintCharacterClassReference refClass = ClassTools.Classes.SorcererClass.ToReference<BlueprintCharacterClassReference>();
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
+
             prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BloodragerChimeraLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+
             StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.SorcererBloodlineSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
         }
 

@@ -317,21 +317,14 @@ namespace IsekaiMod.Content {
             if (ModSupport.IsTableTopTweakBaseEnabled()) {
                 PatchTableTopTweakCore();
             }
-            if (ModSupport.IsExpandedContentEnabled()) { 
-                DreadKnightLegacy.PatchProgression();
-            }
         }
 
         private static void PatchTableTopTweakCore() {
-            var paladincapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("a92b9d62930247759b2796a6c2103c0e");
             var oraclecapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("c898b6e4918c41c3a351c9a882c65cea");
             var shamancapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("6e32488a2cec4ba586508db4f78b062d");
             var sorcerercapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("40f13b4925c24e50bc8f3d5fe4d42a05");
             
             
-            if (paladincapstone != null) {
-                HeroicLegacy.Get().LevelEntries = HeroicLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, paladincapstone));
-            }
             if (oraclecapstone != null) {
                 OracleLegacy.Get().LevelEntries = OracleLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, oraclecapstone));
             }
@@ -341,7 +334,7 @@ namespace IsekaiMod.Content {
             if (sorcerercapstone != null) {
                 SorcererLegacy.Get().LevelEntries = SorcererLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, sorcerercapstone));
             }
-            MagusLegacy.PatchForBroadStudy();
+            MagusBasicLegacy.PatchForBroadStudy();
         }
 
         private static void PatchHeritages() {

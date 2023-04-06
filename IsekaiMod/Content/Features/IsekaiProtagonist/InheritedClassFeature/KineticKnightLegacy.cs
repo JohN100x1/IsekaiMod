@@ -34,8 +34,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 c.WeaponProficiencies = new Kingmaker.Enums.WeaponCategory[] { Kingmaker.Enums.WeaponCategory.KineticBlast };
             });
 
-            LegacySelection.Register(prog);
+            LegacySelection.RegisterForFeat(prog);
+            //LegacySelection.Register(prog);
             EdgeLordLegacySelection.Register(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
             HeroLegacySelection.Register(prog);
             MastermindLegacySelection.Prohibit(prog);
             OverlordLegacySelection.Register(prog);

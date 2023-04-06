@@ -1,34 +1,33 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Blueprints.Classes.Prerequisites;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
-    internal class ShifterDragonLegacy {
-        private static string BaseArchetypeId = "2d5b06e413a9408cbd5bb999b5a4cc4a";
+    internal class ShifterHolyLegacy {
+        private static string BaseArchetypeId = "0aa6bd7be7fb4bcaabe38cbc82d296e1";
         private static BlueprintArchetype BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);
 
         private static BlueprintProgression prog;
 
         public static void Configure() {
             if (ClassTools.Classes.ShifterClass == null) { return; }
-            prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "ShifterDragonLegacy", bp => {
-                bp.SetName(IsekaiContext, "Shifter Legacy - Shapeshifted Baby Dragon");
+            prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "ShifterHolyLegacy", bp => {
+                bp.SetName(IsekaiContext, "Shifter Legacy - Divine Beast");
                 bp.SetDescription(IsekaiContext,
-                    "When reincaranting you wanted to be a dragon. \n" +
-                    "Because dragons are cool! \n" +
-                    "But sadly  that would have been too balancebreaking according to the god of reincarnation. \n" +
-                    "Weirdly enough being a shapeshifted baby dragon that learns to reassume his natural form with time is not. \n" +
-                    "So one day you will soar through the sky in your draconic form. \n" +
-                    "Dragon Claws are useful in the meantime...");
+                    "Your reincarnation was the action of a god. \n" +
+                    "They send you to this world to be a hero, so while you feel a connection to nature this connection is in a way \"tainted\" by that divine connection. \n" +
+                    "Your kin are not the normal animals roaming the woods but the divine beasts of your deities realm."
+                    );
                 bp.GiveFeaturesForPreviousLevels = true;
+                bp.AddComponent<PrerequisiteAlignment>(c => { c.Alignment = Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Good; });
             });
 
 
@@ -38,18 +37,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             if (BaseArchetype == null) {
                 BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);
-                if (BaseArchetype == null) { return; }
+                if (BaseArchetype == null) return;
             }
-
+            
 
             LegacySelection.RegisterForFeat(prog);
-            LegacySelection.Register(prog);
-            //EdgeLordLegacySelection.Register(prog);
-            GodEmperorLegacySelection.Prohibit(prog);
+            //LegacySelection.Register(prog);
+            EdgeLordLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Register(prog);
             HeroLegacySelection.Register(prog);
-            MastermindLegacySelection.Prohibit(prog);
-            OverlordLegacySelection.Register(prog);
-            GodEmperorLegacySelection.Prohibit(prog);
+            VillainLegacySelection.Prohibit(prog);
 
             prog = StaticReferences.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.ShifterClass, BaseArchetype, null);
             BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.ShifterClass;
@@ -58,14 +55,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterBaseLegacy.Get().ToReference<BlueprintFeatureReference>(); });
             prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterBaseLegacy.GetEvilAlternate().ToReference<BlueprintFeatureReference>(); });
-            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterGriffonLegacy.Get().ToReference<BlueprintFeatureReference>(); });
-            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterHolyLegacy.Get().ToReference<BlueprintFeatureReference>(); });
             prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterStingerLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterGriffonLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterDragonLegacy.Get().ToReference<BlueprintFeatureReference>(); });
             prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = DruidBaseLegacy.Get().ToReference<BlueprintFeatureReference>(); });
         }
         public static BlueprintProgression Get() {
             if (prog != null) return prog;
-            return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "ShifterDragonLegacy");
+            return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "ShifterHolyLegacy");
         }
     }
 }

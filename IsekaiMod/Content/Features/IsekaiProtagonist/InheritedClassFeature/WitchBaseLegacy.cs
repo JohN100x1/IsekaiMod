@@ -30,8 +30,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             });
             WitchPatronSelection.Configure();
 
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
-            EdgeLordLegacySelection.Register(prog);
+            EdgeLordLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
             HeroLegacySelection.Register(prog);
             MastermindLegacySelection.Register(prog);
             OverlordLegacySelection.Prohibit(prog);

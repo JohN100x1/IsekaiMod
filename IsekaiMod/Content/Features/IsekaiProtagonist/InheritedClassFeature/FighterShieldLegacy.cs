@@ -13,7 +13,8 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class FighterShieldLegacy {
-        private static BlueprintArchetype BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>("a599da9a8a6b9e54083b0a4d2a25db59");
+        private static string BaseArchetypeId = "a599da9a8a6b9e54083b0a4d2a25db59";
+        private static BlueprintArchetype BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);
 
         private static BlueprintProgression prog;
 
@@ -27,21 +28,31 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.GiveFeaturesForPreviousLevels = true;
             });
 
-            LegacySelection.Register(prog);
+            LegacySelection.RegisterForFeat(prog);
+            //LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
+            //GodEmperorLegacySelection.Prohibit(prog);
             HeroLegacySelection.Register(prog);
             MastermindLegacySelection.Prohibit(prog);
             OverlordLegacySelection.Register(prog);
             GodEmperorLegacySelection.Prohibit(prog);
         }
         public static void PatchProgression() {
-            BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.FighterClass;
-            BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
-            prog = StaticReferences.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.FighterClass, BaseArchetype, null);
-            StaticReferences.PatchProgressionFeaturesBasedOnReferenceArchetype(myClass, refClass, BaseArchetype);
+            if (prog != null) {
+                if (BaseArchetype == null) {
+                    BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);
+                    if (BaseArchetype == null) { return; }
+                }
 
-            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = FighterBasicLegacy.Get().ToReference<BlueprintFeatureReference>(); });
-            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = Fighter2HandedLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+
+                BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.FighterClass;
+                BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
+                prog = StaticReferences.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.FighterClass, BaseArchetype, null);
+                StaticReferences.PatchProgressionFeaturesBasedOnReferenceArchetype(myClass, refClass, BaseArchetype);
+
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = FighterBasicLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = Fighter2HandedLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            }
         }
         public static BlueprintProgression Get() {
             if (prog != null) return prog;

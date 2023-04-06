@@ -33,8 +33,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static void PatchProgression() {
             if (ClassTools.Classes.ShifterClass == null) { return; }
 
+            if (BaseArchetype == null) {
+                BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>("1a51b5856d3b48d78b3e967dc5f20bd6");
+                if (BaseArchetype == null) return;
+            }
+
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
-            EdgeLordLegacySelection.Register(prog);
+            EdgeLordLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
             HeroLegacySelection.Prohibit(prog);
             MastermindLegacySelection.Register(prog);
             OverlordLegacySelection.Register(prog);
@@ -46,6 +53,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             StaticReferences.PatchProgressionFeaturesBasedOnReferenceArchetype(myClass, refClass, BaseArchetype);
 
             prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterBaseLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterBaseLegacy.GetEvilAlternate().ToReference<BlueprintFeatureReference>(); });
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterGriffonLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+            prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterHolyLegacy.Get().ToReference<BlueprintFeatureReference>(); });
             prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterDragonLegacy.Get().ToReference<BlueprintFeatureReference>(); });
             prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = DruidBaseLegacy.Get().ToReference<BlueprintFeatureReference>(); });
         }

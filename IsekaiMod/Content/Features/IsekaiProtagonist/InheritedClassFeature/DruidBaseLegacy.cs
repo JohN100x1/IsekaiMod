@@ -26,10 +26,19 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     "You can cast spells that manipulate the elements, summon creatures, and enhance your own abilities. \n" +
                     "You are a protector of nature and a friend to all living.");
                 bp.GiveFeaturesForPreviousLevels = true;
+                bp.AddComponent<PrerequisiteAlignment>(c => {
+                    c.Alignment = Kingmaker.UnitLogic.Alignments.AlignmentMaskType.NeutralEvil
+                    | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.NeutralGood
+                    | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.ChaoticNeutral
+                    | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.LawfulNeutral
+                    | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.TrueNeutral;
+                });
             });
 
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Prohibit(prog);
             HeroLegacySelection.Register(prog);
             MastermindLegacySelection.Prohibit(prog);
             OverlordLegacySelection.Prohibit(prog);
@@ -51,6 +60,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterBaseLegacy.Get().ToReference<BlueprintFeatureReference>(); });
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterDragonLegacy.Get().ToReference<BlueprintFeatureReference>(); });
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterStingerLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterGriffonLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterHolyLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterBaseLegacy.GetEvilAlternate().ToReference<BlueprintFeatureReference>(); });
             }
         }
 

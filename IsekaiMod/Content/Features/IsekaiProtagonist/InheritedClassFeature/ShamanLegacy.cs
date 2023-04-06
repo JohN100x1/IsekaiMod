@@ -51,8 +51,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateUIGroup(shamanFeat)
                 };
             });
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Register(prog);
             HeroLegacySelection.Register(prog);
             MastermindLegacySelection.Register(prog);
             OverlordLegacySelection.Prohibit(prog);
