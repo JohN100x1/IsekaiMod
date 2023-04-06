@@ -25,8 +25,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
 
         public static void PatchProgression() {
-            var IsekaiKineticistTraining = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiKineticistTraining");
-
             prog.SetName(IsekaiContext, "Kinetic Legacy - Kinetic Knight");
             prog.SetDescription(IsekaiContext, "Just like all Kinetic Knights your sanity is somewhat questionable, after all you willingly choose to forego fighting at range and instead choose to use energy blasts as melee weapons...\n" +
                 "And why? Because the burning blade looked cool.");
