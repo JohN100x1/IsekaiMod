@@ -68,7 +68,9 @@ namespace IsekaiMod.Utilities {
             FeatTools.Selections.SkaldFeatSelection,
             FeatTools.Selections.AnimalCompanionSelectionDomain,
             FeatTools.Selections.WarDomainGreaterFeatSelection,
-            FeatTools.Selections.MagusFeatSelection
+            FeatTools.Selections.MagusFeatSelection,
+            FeatTools.Selections.CavalierBonusFeatSelection,
+            BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("f1add10c87fa4563ad5f71779eecde19")
         };
 
         private static BlueprintProgression PatchPatchClassProgressionBasedOnRefClassStep1(BlueprintProgression prog, BlueprintCharacterClass refClass) {
@@ -251,19 +253,40 @@ namespace IsekaiMod.Utilities {
                     if (progression.m_Classes != null && progression.m_Classes.Length > 0) {
                         progression.AddClass(myClass);
                      }
+                    BlueprintFeatureBase[] flatten = new BlueprintFeatureBase[] { };
                     foreach (LevelEntry item in progression.LevelEntries) {
                         foreach (var levelitem in item.Features) {
-                            if (levelitem is BlueprintProgression progression2) {
-                                PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, mylevel, loopPrevention);
-                            } else {
-                                if (levelitem is BlueprintFeature feature2) {
-                                    PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
-                                }
+                            if (levelitem != null && !flatten.Contains(levelitem)) { 
+                                flatten = flatten.AddToArray(levelitem);
+                            }                            
+                        }
+                    }
+                    foreach (var levelItem in flatten) {
+                        if (levelItem is BlueprintProgression progression2) {
+                            PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, mylevel, loopPrevention);
+                        } else {
+                            if (levelItem is BlueprintFeature feature2) {
+                                PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
                             }
                         }
                     }
                 }
                 if (feature is BlueprintFeatureSelection selection) {
+                    //don't trust selections past a certain size to actually contain class features rather than just a selection of basic feats unless they are selections that are known to be that size for a valid reason(revelations, hexes, rage powers)
+                    if (selection.m_AllFeatures.Length> 30 && !(
+                        feature.AssetGuid.ToString().Equals("60008a10ad7ad6543b1f63016741a5d2")
+                        || feature.AssetGuid.ToString().Equals("c074a5d615200494b8f2a9c845799d93")
+                        || feature.AssetGuid.ToString().Equals("4223fe18c75d4d14787af196a04e14e7")
+                        || feature.AssetGuid.ToString().Equals("28710502f46848d48b3f0d6132817c4e")
+                        || feature.AssetGuid.ToString().Equals("2476514e31791394fa140f1a07941c96")
+                        || feature.AssetGuid.ToString().Equals("9846043cf51251a4897728ed6e24e76f")
+                        || feature.AssetGuid.ToString().Equals("99999999000900000009000000000001")
+                        || feature.AssetGuid.ToString().Equals("58d6f8e9eea63f6418b107ce64f315ea")
+                        || feature.AssetGuid.ToString().Equals("5c883ae0cd6d7d5448b7a420f51f8459")
+                        )) {
+                        IsekaiContext.Logger.LogError("reference class= " + referenceClass.Guid + " Stop Feature= " + feature.AssetGuid + " name= " + feature.Name+ " reason= selection contains too many features and thus likely is a basic feat variation");
+                        return;
+                    }
                     foreach (var feature2 in selection.m_AllFeatures) {
                         PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
                     }
