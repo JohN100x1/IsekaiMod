@@ -48,8 +48,8 @@ namespace IsekaiMod {
             UI.Toggle("Restrict Exceptional Feats to the Isekai Protagonist Class.", ref addedContent.RestrictExceptionalFeats);
             UI.Toggle("Restrict Mythic Overpowered Abilities to the Isekai Protagonist Class.", ref addedContent.RestrictMythicOPAbility);
             UI.Toggle("Restrict Mythic Special Powers to the Isekai Protagonist Class.", ref addedContent.RestrictMythicSpecialPower);
-            UI.Toggle("Allow multiple Mythic Overpowered Abilities to be selected.", ref addedContent.MultipleMythicOPAbility);
-            UI.Toggle("Allow multiple Mythic Special Powers to be selected.", ref addedContent.MultipleMythicSpecialPower);
+            UI.Toggle("Mythic Overpowered Abilities no longer restricted to one.", ref addedContent.MultipleMythicOPAbility);
+            UI.Toggle("Mythic Special Powers no longer restricted to one.", ref addedContent.MultipleMythicSpecialPower);
             UI.Toggle("Apply a merge function on all canon baseclass spell lists to create the Isekai Spell list.", ref addedContent.MergeIsekaiSpellList);
         }
     }
