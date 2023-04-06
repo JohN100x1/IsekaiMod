@@ -45,7 +45,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             HeroLegacySelection.Prohibit(prog);
             MastermindLegacySelection.Register(prog);
             OverlordLegacySelection.Register(prog);
-            GodEmperorLegacySelection.Prohibit(prog);
 
             prog = StaticReferences.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.ShifterClass, BaseArchetype, null);
             BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.ShifterClass;

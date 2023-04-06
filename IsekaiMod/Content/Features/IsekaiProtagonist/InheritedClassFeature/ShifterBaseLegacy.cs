@@ -78,7 +78,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 EdgeLordLegacySelection.Register(progAlternate);
                 GodEmperorLegacySelection.Prohibit(progAlternate);
                 HeroLegacySelection.Prohibit(progAlternate);
-                VillainLegacySelection.Prohibit(progAlternate);
+                MastermindLegacySelection.Prohibit(progAlternate);
+                OverlordLegacySelection.Register(progAlternate);
 
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterStingerLegacy.Get().ToReference<BlueprintFeatureReference>(); });
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = ShifterDragonLegacy.Get().ToReference<BlueprintFeatureReference>(); });

@@ -50,11 +50,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             });
             AbilitySelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = AbilitySelection.ToReference<BlueprintFeatureReference>(); });
 
+            EdgeLordLegacySelection.Configure();
+            GodEmperorLegacySelection.Configure();
+            HeroLegacySelection.Configure();
             MastermindLegacySelection.Configure();
             OverlordLegacySelection.Configure();
-            EdgeLordLegacySelection.Configure();
-            HeroLegacySelection.Configure();
-            GodEmperorLegacySelection.Configure();
         }
         public static BlueprintFeatureSelection GetClassFeature() {
             if (ClassSelection != null) {

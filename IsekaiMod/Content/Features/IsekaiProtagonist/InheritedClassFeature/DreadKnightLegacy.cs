@@ -48,7 +48,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             HeroLegacySelection.Prohibit(prog);
             MastermindLegacySelection.Register(prog);
             OverlordLegacySelection.Register(prog);
-            GodEmperorLegacySelection.Register(prog);
         }
 
         public static BlueprintProgression Get() {

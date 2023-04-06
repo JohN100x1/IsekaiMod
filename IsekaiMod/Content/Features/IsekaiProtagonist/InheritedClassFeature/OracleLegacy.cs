@@ -55,7 +55,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             HeroLegacySelection.Register(prog);
             MastermindLegacySelection.Register(prog);
             OverlordLegacySelection.Prohibit(prog);
-            GodEmperorLegacySelection.Register(prog);
         }
 
         public static void PatchProgression() {
