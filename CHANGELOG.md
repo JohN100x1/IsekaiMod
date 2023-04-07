@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # [Unreleased]
 ### Added
-- Added `Divine Aura` feature to `Isekai Aura` selection.
+- Added `Divine Aura` feature to `Otherwordly Aura` selection.
 - Added `Hax` selection to `Isekai Protagonist` progression.
 - Added `Secret Power` selection to `Isekai Protagonist` progression.
 - Added `Afterimage` feature to `Isekai Protagonist` progression.
@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Buffed `Isekai Protagonist` to be able to choose between `Divine Aura`, `Dark Aura`, and `Friendly Aura`.
 - Buffed `Isekai Protagonist` to be able to choose two `Signature Move` abilities.
 - Buffed `Edge Lord` to get another OP ability at 10th level.
-- Buffed `Edge Lord` to get `Isekai Aura` at 10th level.
+- Buffed `Edge Lord` to get `Otherwordly Aura` at 10th level.
 - Buffed `Edge Lord` to get Exotic Weapon Proficiency.
 - Buffed `Isekai Protagonist` to be able to choose between `Divine Aura` and `Dark Aura`.
 - Buffed `God Emperor` to get another OP ability at 5th and 15th level.

@@ -214,7 +214,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
 
             var IsekaiAuraSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiAuraSelection", bp => {
-                bp.SetName(IsekaiContext, "Isekai Aura");
+                bp.SetName(IsekaiContext, "Otherworldly Aura");
                 bp.SetDescription(IsekaiContext, "At 10th level, you are able to choose an aura.");
                 bp.m_Icon = Icon_Friendly_Aura;
                 bp.IgnorePrerequisites = true;
@@ -222,6 +222,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                     FriendlyAuraFeature.ToReference<BlueprintFeatureReference>(),
                     DarkAuraFeature.ToReference<BlueprintFeatureReference>(),
                     DivineAuraFeature.ToReference<BlueprintFeatureReference>(),
+                };
+            });
+            var GodEmperorAuraSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "GodEmperorAuraSelection", bp => {
+                bp.SetName(IsekaiContext, "Regal Aura");
+                bp.SetDescription(IsekaiContext, "At 10th level, you are able to choose an aura.");
+                bp.m_Icon = DivineAuraFeature.m_Icon;
+                bp.IgnorePrerequisites = true;
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    DivineAuraFeature.ToReference<BlueprintFeatureReference>(),
+                    DarkAuraFeature.ToReference<BlueprintFeatureReference>(),
                 };
             });
         }
