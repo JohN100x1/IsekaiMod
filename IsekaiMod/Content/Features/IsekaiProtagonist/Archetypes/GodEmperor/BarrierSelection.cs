@@ -1,6 +1,7 @@
 ﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
@@ -84,6 +85,85 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { GoldBarrierAbility.ToReference<BlueprintUnitFactReference>() };
                 });
+            });
+
+            const string VoidBarrierName = "Void Barrier";
+            const string VoidBarrierDescription = "Allies within 40 feet of you gain a profane bonus to AC and saving throws equal to 1/2 your character level.";
+            const string VoidBarrierDescriptionBuff = "This character has a profane bonus to AC and saving throws equal to 1/2 your character level.";
+            var Icon_VoidBarrier = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_BARRIER_VOID.png");
+            var VoidBarrierBuff = TTCoreExtensions.CreateBuff("VoidBarrierBuff", bp => {
+                bp.SetName(IsekaiContext, VoidBarrierName);
+                bp.SetDescription(IsekaiContext, VoidBarrierDescriptionBuff);
+                bp.IsClassFeature = true;
+                bp.m_Icon = Icon_VoidBarrier;
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Profane;
+                    c.Stat = StatType.AC;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Profane;
+                    c.Stat = StatType.SaveFortitude;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Profane;
+                    c.Stat = StatType.SaveReflex;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<AddContextStatBonus>(c => {
+                    c.Descriptor = ModifierDescriptor.Profane;
+                    c.Stat = StatType.SaveWill;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.StatBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.Div2;
+                });
+            });
+            var VoidBarrierArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, "VoidBarrierArea", bp => {
+                bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Ally;
+                bp.Shape = AreaEffectShape.Cylinder;
+                bp.Size = new Feet(40);
+                bp.Fx = new PrefabLink();
+                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(VoidBarrierBuff.ToReference<BlueprintBuffReference>()));
+            });
+            var VoidBarrierAreaBuff = TTCoreExtensions.CreateBuff("VoidBarrierAreaBuff", bp => {
+                bp.SetName(IsekaiContext, VoidBarrierName);
+                bp.SetDescription(IsekaiContext, VoidBarrierDescription);
+                bp.m_Icon = Icon_VoidBarrier;
+                bp.IsClassFeature = true;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
+                bp.AddComponent<AddAreaEffect>(c => {
+                    c.m_AreaEffect = VoidBarrierArea.ToReference<BlueprintAbilityAreaEffectReference>();
+                });
+            });
+            var VoidBarrierAbility = TTCoreExtensions.CreateActivatableAbility("VoidBarrierAbility", bp => {
+                bp.SetName(IsekaiContext, VoidBarrierName);
+                bp.SetDescription(IsekaiContext, VoidBarrierDescription);
+                bp.m_Icon = Icon_VoidBarrier;
+                bp.m_Buff = VoidBarrierAreaBuff.ToReference<BlueprintBuffReference>();
+                bp.DoNotTurnOffOnRest = true;
+            });
+            var VoidBarrierFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "VoidBarrierFeature", bp => {
+                bp.SetName(IsekaiContext, VoidBarrierName);
+                bp.SetDescription(IsekaiContext, VoidBarrierDescription);
+                bp.m_Icon = Icon_VoidBarrier;
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] { VoidBarrierAbility.ToReference<BlueprintUnitFactReference>() };
+                });
+            });
+
+            var BarrierSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BarrierSelection", bp => {
+                bp.SetName(IsekaiContext, "Energy Barrier");
+                bp.SetDescription(IsekaiContext, "At 7th level, you are able to channel your energy to shield allies from physical and magical attacks.");
+                bp.m_Icon = Icon_GoldBarrier;
+                bp.IgnorePrerequisites = true;
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    GoldBarrierFeature.ToReference<BlueprintFeatureReference>(),
+                    VoidBarrierFeature.ToReference<BlueprintFeatureReference>(),
+                };
             });
         }
     }

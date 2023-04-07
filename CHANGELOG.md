@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Chuunibyou Power` feature to `Edge Lord` progression.
 - Added `Alteration of body and mind` selection to `God Emperor` progression.
 - Added `Energy Condensation` selection to `God Emperor` progression.
+- Added `Energy Barrier` selection to `God Emperor` progression.
 - Added `God Emperor Aura` selection to `God Emperor` progression.
 - Added `Mastermind` Archetype (Isekai Protagonist).
 - Added `Overlord` Archetype (Isekai Protagonist).
