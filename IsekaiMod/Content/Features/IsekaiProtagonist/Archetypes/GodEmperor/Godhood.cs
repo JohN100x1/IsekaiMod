@@ -15,9 +15,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
             var Icon_Godhood = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_GODHOOD.png");
             var Godhood = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "Godhood", bp => {
                 bp.SetName(IsekaiContext, "Godhood");
-                bp.SetDescription(IsekaiContext, "At 20th level, you become a god. You are immune to acid, cold, electricity, fire, sonic, spells and "
-                    + "{g|Encyclopedia:Physical_Damage}physical damage{/g}. Your attacks ignore concealment and damage reduction. "
-                    + "Your spells ignore spell resistance and spell immunity.");
+                bp.SetDescription(IsekaiContext, "At 20th level, you surpass the pinnacle of this physical reality. "
+                    + "You are immune to acid, cold, electricity, fire, sonic, spells and {g|Encyclopedia:Physical_Damage}physical damage{/g}. "
+                    + "Your attacks ignore concealment and damage reduction. Your spells ignore spell resistance and spell immunity.");
                 bp.m_Icon = Icon_Godhood;
                 bp.AddComponent<AddSpellImmunity>();
                 bp.AddComponent<AreaEffectImmunity>();
