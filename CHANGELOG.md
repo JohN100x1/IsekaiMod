@@ -14,12 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Release Energy` feature to `Isekai Protagonist` progression.
 - Added `Chuunibyou Power` feature to `Edge Lord` progression.
 - Added `Alteration of body and mind` selection to `God Emperor` progression.
-- Added `God Emperor Barrier` selection to `God Emperor` progression.
+- Added `Energy Condensation` selection to `God Emperor` progression.
 - Added `God Emperor Aura` selection to `God Emperor` progression.
 - Added `Mastermind` Archetype (Isekai Protagonist).
 - Added `Overlord` Archetype (Isekai Protagonist).
 ### Changed
-- Reworked `God Emperor` `Divine Array` feature.
 - Buffed `Friendly Aura` to also affect damage rolls.
 - Buffed `Isekai Protagonist` to be able to choose between `Divine Aura`, `Dark Aura`, and `Friendly Aura`.
 - Buffed `Isekai Protagonist` to be able to choose two `Signature Move` abilities.
@@ -46,13 +45,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated icon for `Hero` `Graceful Combat` feature.
 - Updated icon for `Starting Weapon` feature.
 - Updated icon for `Siphoning Aura`.
+- Updated icon for `Dark Aura`.
 ### Fixed
 - Fixed `Graceful Combat` not applying the 1.5x damage bonus to two-handed weapons.
 - Fixed `Reflect` to not affect attacks from the owner.
 ### Removed
 - Removed `Villain` Archetype (Isekai Protagonist).
-- Removed `Aura of Divine Fury` feature from `God Emperor` progression.
 - Removed `Fast Movement` and `Very Fast Movement` features from `Isekai Protagonist` progression.
+- Removed `Aura of Divine Fury` feature from `God Emperor` progression.
+- Removed `Divine Array` feature from `God Emperor` progression.
 - Removed `Kinetic Power` Special Power.
 
 # [4.3.0] - 2023-03-28

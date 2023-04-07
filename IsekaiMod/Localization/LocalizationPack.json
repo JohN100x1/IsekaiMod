@@ -2015,7 +2015,7 @@
     },
     {
       "Key": "714d7e19d41942ae8bc95e02d601912e",
-      "SimpleName": "DivineArray.Description",
+      "SimpleName": "LightEnergyCondensation.Description",
       "ProcessTemplates": true,
       "enGB": "At 5th level, the God Emperor gains spell resistance, resistance to acid, cold, electricity, fire, and sonic equal to 5 times their character level.",
       "ruRU": null,
@@ -2026,7 +2026,7 @@
     },
     {
       "Key": "a262b300e9804324915c271976443260",
-      "SimpleName": "DivineArray.Name",
+      "SimpleName": "LightEnergyCondensation.Name",
       "ProcessTemplates": false,
       "enGB": "Divine Array",
       "ruRU": null,

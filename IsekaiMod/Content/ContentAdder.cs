@@ -151,7 +151,7 @@ namespace IsekaiMod.Content {
                 GodEmperorProficiencies.Add();
                 GodEmperorQuickFooted.Add();
                 NascentApotheosis.Add();
-                BarrierSelection.Add();
+                EnergyCondensationSelection.Add();
                 GodEmperorEnergySelection.Add();
                 GodEmperorAuraSelection.Add();
                 AuraOfGoldenProtection.Add();

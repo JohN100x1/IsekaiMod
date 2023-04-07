@@ -183,7 +183,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
 
             var BodyMindAlterSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BodyMindAlterSelection", bp => {
                 bp.SetName(IsekaiContext, "Alteration of Body and Mind");
-                bp.SetDescription(IsekaiContext, "At 10th level, you gain the ability to alter the body and mind of those around you.");
+                bp.SetDescription(IsekaiContext, "At 10th level, you gain the ability to alter the bodies and minds of those around you.");
                 bp.m_Icon = Icon_MajesticAura;
                 bp.IgnorePrerequisites = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
