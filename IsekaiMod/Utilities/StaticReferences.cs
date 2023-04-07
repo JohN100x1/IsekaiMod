@@ -4,8 +4,10 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
+using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Localization;
+using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
@@ -205,7 +207,7 @@ namespace IsekaiMod.Utilities {
         public static void PatchProgressionFeaturesBasedOnReferenceClass(BlueprintProgression prog, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass) {
             var features = new HashSet<BlueprintFeatureBase>();
             foreach (LevelEntry levelEntry in prog.LevelEntries) {
-                foreach (var levelitem in levelEntry.Features) {
+                foreach (var levelitem in levelEntry.m_Features) {
                     if (!features.Contains(levelitem)) { features.Add(levelitem); }
                 }
             }
@@ -239,7 +241,7 @@ namespace IsekaiMod.Utilities {
                 return;
             }
             if (FeaturesIgnoredWhenPatching.Contains(feature)) {
-                //these lists are to be ignored by definition because they are essentially the basic feat list granted by specific classes
+                //these lists are to be ignored because they are known to be massive but are mostly subsets of the basic feat list or other things that should never contain something class specific that needs patching
                 return;
             }
             if (loopPrevention.Contains(feature)) {
@@ -295,9 +297,20 @@ namespace IsekaiMod.Utilities {
                 //and since the cast to Blueptintfeature will work since it "supposedly" implements it checking if the field is null is the safest solution
                 if (feature.Components != null) {
                     var mySpellSet = new HashSet<SpellReference>();
+                    ContextRankConfig sample = null;
+                    bool alreadyPatched = false;
                     foreach (var component in feature.Components) {
                         //check if component is addSpell or addFeat
                         HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component, loopPrevention);
+                        if (component is ContextRankConfig rankConfig && rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel) {
+                            if (rankConfig.m_Class.Contains(referenceClass)) {
+                                sample = rankConfig;
+                            } else {
+                                if (rankConfig.m_Class.Contains(myClass)) {
+                                    alreadyPatched = true;
+                                }
+                            }                            
+                        } 
                     }
                     foreach (var spellReference in mySpellSet) {
                         feature.AddComponent<AddKnownSpell>(c => {
@@ -306,6 +319,24 @@ namespace IsekaiMod.Utilities {
                             c.m_CharacterClass = myClass;
 
                         });
+                    }
+                    if (sample != null && !alreadyPatched) {
+                        feature.AddComponent<ContextRankConfig>(c => {
+                            c.m_BaseValueType = ContextRankBaseValueType.ClassLevel;
+                            c.m_Type = sample.m_Type;
+                            c.m_StartLevel = sample.m_StartLevel;
+                            c.m_Progression = sample.m_Progression;
+                            c.m_Flags = sample.m_Flags;
+                            c.m_BuffRankMultiplier = sample.m_BuffRankMultiplier;
+                            c.m_Class = new BlueprintCharacterClassReference[] { myClass };
+                            c.m_CustomProgression = sample.m_CustomProgression;
+                            c.m_Max = sample.m_Max;
+                            c.m_Min = sample.m_Min;
+                            c.m_Stat = sample.m_Stat;
+                            c.m_StepLevel = sample.m_StepLevel;
+                            c.m_ExceptClasses = sample.m_ExceptClasses;
+                        });
+                        //Main.Log("rank progression patched= " + feature.AssetGuid + " added class= " + myClass.Guid + " for ref= " + referenceClass.Guid);
                     }
                 }
             } catch(NullReferenceException e)  {
@@ -347,6 +378,22 @@ namespace IsekaiMod.Utilities {
                     asFeat.m_AdditionalClasses.AddItem(myClass);
                 }
             }
+            if (component is MonkNoArmorFeatureUnlock addUnarmedFact) {
+                var fact = addUnarmedFact.m_NewFact.Get();
+                if (fact != null) {
+                    if (fact is BlueprintFeature feature2) {
+                        PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
+                    }
+                    if (fact is BlueprintProgression progression2) {
+                        PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, mylevel, loopPrevention);
+                    }
+                    if (fact is BlueprintUnitFact unitFact) {
+                        foreach (var component2 in unitFact.Components) {
+                            HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component2, loopPrevention);
+                        }
+                    }
+                }
+            }
             // check if component is add facts because features could also be added as facts rather than on level...
             if (component is AddFacts addFact) {
                 foreach (var factRef in addFact.Facts) {
@@ -364,27 +411,14 @@ namespace IsekaiMod.Utilities {
                     if (factRef is BlueprintAbility ability) {
                         ContextRankConfig sample = null;
                         bool alreadyPatched = false;
-                        foreach (var component2 in ability.Components) { 
-                            if (component2 is ContextRankConfig rankConfig && rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel && rankConfig.m_Class.Contains(referenceClass)) {
-                                sample = rankConfig;
-                                bool classlocked = false;
-                                
-                                if (rankConfig.m_Class != null && rankConfig.m_Class.Length > 0) {
-                                    if (rankConfig.m_Class.Contains(referenceClass)) {
-                                        classlocked = true;
-                                    }
+                        foreach (var component2 in ability.Components) {
+                            if (component2 is ContextRankConfig rankConfig && rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel) {
+                                if (rankConfig.m_Class.Contains(referenceClass)) {
+                                    sample = rankConfig;
+                                } else {
                                     if (rankConfig.m_Class.Contains(myClass)) {
                                         alreadyPatched = true;
                                     }
-                                }
-                                if (classlocked && !alreadyPatched) {
-                                    rankConfig.m_Class.AddItem(myClass);
-
-                                    
-                                }
-                            } else {
-                                if (component2 is ContextRankConfig rankConfig2 && rankConfig2.m_BaseValueType == ContextRankBaseValueType.ClassLevel && rankConfig2.m_Class.Contains(myClass)) {
-                                    alreadyPatched = true;
                                 }
                             }
                         }
