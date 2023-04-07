@@ -323,7 +323,7 @@
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\EdgeLordProficiencies.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\ExtraStrike.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\SupersonicCombat.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\AuraOfGoldenProtection.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\BarrierSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\CelestialRealm.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\EnergyCondensationSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorEnergySelection.cs" />

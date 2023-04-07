@@ -153,7 +153,7 @@ namespace IsekaiMod.Content {
                 NascentApotheosis.Add();
                 EnergyCondensationSelection.Add();
                 GodEmperorEnergySelection.Add();
-                AuraOfGoldenProtection.Add();
+                BarrierSelection.Add();
                 BodyMindAlterSelection.Add();
                 GodlyVessel.Add();
                 CelestialRealm.Add();

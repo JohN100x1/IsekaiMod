@@ -17,6 +17,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
     internal class CelestialRealm {
 
         public static void Add() {
+
+            // TODO: shadow realm (celestial realm alt)
+            // TODO: partial versions
+
             var Icon_CelestialRealm = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_CELESTIAL_REALM.png");
             var CelestialRealmBuff = TTCoreExtensions.CreateBuff("CelestialRealmBuff", bp => {
                 bp.SetName(IsekaiContext, "Celestial Realm");

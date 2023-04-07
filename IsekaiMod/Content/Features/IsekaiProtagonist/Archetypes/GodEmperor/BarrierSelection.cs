@@ -15,15 +15,18 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
 
-    internal class AuraOfGoldenProtection {
+    internal class BarrierSelection {
 
         public static void Add() {
-            var Icon_AuraOfGoldenProtection = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_GOLDEN_PROTECTION.png");
-            var AuraOfGoldenProtectionBuff = TTCoreExtensions.CreateBuff("AuraOfGoldenProtectionBuff", bp => {
-                bp.SetName(IsekaiContext, "Aura of Golden Protection");
-                bp.SetDescription(IsekaiContext, "This character has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.");
+            const string GoldBarrierName = "Gold Barrier";
+            const string GoldBarrierDescription = "Allies within 40 feet of you gain a sacred bonus to AC and saving throws equal to 1/2 your character level.";
+            const string GoldBarrierDescriptionBuff = "This character has a sacred bonus to AC and saving throws equal to 1/2 your character level.";
+            var Icon_GoldBarrier = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_BARRIER_GOLD.png");
+            var GoldBarrierBuff = TTCoreExtensions.CreateBuff("GoldBarrierBuff", bp => {
+                bp.SetName(IsekaiContext, GoldBarrierName);
+                bp.SetDescription(IsekaiContext, GoldBarrierDescriptionBuff);
                 bp.IsClassFeature = true;
-                bp.m_Icon = Icon_AuraOfGoldenProtection;
+                bp.m_Icon = Icon_GoldBarrier;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Sacred;
                     c.Stat = StatType.AC;
@@ -50,36 +53,36 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                     c.m_Progression = ContextRankProgression.Div2;
                 });
             });
-            var AuraOfGoldenProtectionArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, "AuraOfGoldenProtectionArea", bp => {
+            var GoldBarrierArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, "GoldBarrierArea", bp => {
                 bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Ally;
                 bp.Shape = AreaEffectShape.Cylinder;
                 bp.Size = new Feet(40);
                 bp.Fx = new PrefabLink();
-                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(AuraOfGoldenProtectionBuff.ToReference<BlueprintBuffReference>()));
+                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(GoldBarrierBuff.ToReference<BlueprintBuffReference>()));
             });
-            var AuraOfGoldenProtectionAreaBuff = TTCoreExtensions.CreateBuff("AuraOfGoldenProtectionAreaBuff", bp => {
-                bp.SetName(IsekaiContext, "Aura of Golden Protection");
-                bp.SetDescription(IsekaiContext, "Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.");
-                bp.m_Icon = Icon_AuraOfGoldenProtection;
+            var GoldBarrierAreaBuff = TTCoreExtensions.CreateBuff("GoldBarrierAreaBuff", bp => {
+                bp.SetName(IsekaiContext, GoldBarrierName);
+                bp.SetDescription(IsekaiContext, GoldBarrierDescription);
+                bp.m_Icon = Icon_GoldBarrier;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
                 bp.AddComponent<AddAreaEffect>(c => {
-                    c.m_AreaEffect = AuraOfGoldenProtectionArea.ToReference<BlueprintAbilityAreaEffectReference>();
+                    c.m_AreaEffect = GoldBarrierArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var AuraOfGoldenProtectionAbility = TTCoreExtensions.CreateActivatableAbility("AuraOfGoldenProtectionAbility", bp => {
-                bp.SetName(IsekaiContext, "Aura of Golden Protection");
-                bp.SetDescription(IsekaiContext, "Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.");
-                bp.m_Icon = Icon_AuraOfGoldenProtection;
-                bp.m_Buff = AuraOfGoldenProtectionAreaBuff.ToReference<BlueprintBuffReference>();
+            var GoldBarrierAbility = TTCoreExtensions.CreateActivatableAbility("GoldBarrierAbility", bp => {
+                bp.SetName(IsekaiContext, GoldBarrierName);
+                bp.SetDescription(IsekaiContext, GoldBarrierDescription);
+                bp.m_Icon = Icon_GoldBarrier;
+                bp.m_Buff = GoldBarrierAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
-            var AuraOfGoldenProtectionFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "AuraOfGoldenProtectionFeature", bp => {
-                bp.SetName(IsekaiContext, "Aura of Golden Protection");
-                bp.SetDescription(IsekaiContext, "At 7th level, allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.");
-                bp.m_Icon = Icon_AuraOfGoldenProtection;
+            var GoldBarrierFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "GoldBarrierFeature", bp => {
+                bp.SetName(IsekaiContext, GoldBarrierName);
+                bp.SetDescription(IsekaiContext, GoldBarrierDescription);
+                bp.m_Icon = Icon_GoldBarrier;
                 bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] { AuraOfGoldenProtectionAbility.ToReference<BlueprintUnitFactReference>() };
+                    c.m_Facts = new BlueprintUnitFactReference[] { GoldBarrierAbility.ToReference<BlueprintUnitFactReference>() };
                 });
             });
         }

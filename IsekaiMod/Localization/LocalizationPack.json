@@ -266,7 +266,7 @@
     },
     {
       "Key": "73bf39bf472a44598a3142694d05e1d9",
-      "SimpleName": "AuraOfGoldenProtectionAbility.Description",
+      "SimpleName": "GoldBarrierAbility.Description",
       "ProcessTemplates": true,
       "enGB": "Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.",
       "ruRU": null,
@@ -277,7 +277,7 @@
     },
     {
       "Key": "cba54056226f431892fc2e0f6de4a95f",
-      "SimpleName": "AuraOfGoldenProtectionAreaBuff.Description",
+      "SimpleName": "GoldBarrierAreaBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.",
       "ruRU": null,
@@ -288,7 +288,7 @@
     },
     {
       "Key": "d03516b112e444c9a60fa514895d2274",
-      "SimpleName": "AuraOfGoldenProtectionBuff.Description",
+      "SimpleName": "GoldBarrierBuff.Description",
       "ProcessTemplates": true,
       "enGB": "This character has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.",
       "ruRU": null,
@@ -299,7 +299,7 @@
     },
     {
       "Key": "1d47d9682fa94b03b28e009a9d24728d",
-      "SimpleName": "AuraOfGoldenProtectionBuff.Name",
+      "SimpleName": "GoldBarrierBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Aura of Golden Protection",
       "ruRU": null,
@@ -310,7 +310,7 @@
     },
     {
       "Key": "96f977a36bdf4bbbb7697081b8cb489f",
-      "SimpleName": "AuraOfGoldenProtectionFeature.Description",
+      "SimpleName": "GoldBarrierFeature.Description",
       "ProcessTemplates": true,
       "enGB": "At 7th level, allies within 40 feet of the God Emperor has a sacred bonus to AC and saving throws equal to 1/2 the God Emperor's character level.",
       "ruRU": null,
