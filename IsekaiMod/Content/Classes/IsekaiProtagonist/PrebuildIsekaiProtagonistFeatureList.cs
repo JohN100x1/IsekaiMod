@@ -50,10 +50,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
             var StartingWeaponSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "StartingWeaponSelection");
             var IsekaiPetSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiPetSelection");
-            var IsekaiProtagonistBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiProtagonistBonusFeatSelection");
+            var IsekaiBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiBonusFeatSelection");
             var SignatureMoveSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveSelection");
             var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
-            var OverpoweredAbilitySelection2 = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2");
             var BeachEpisodeSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeSelection");
             var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
 
@@ -114,7 +113,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                         },
                         new SelectionEntry()
                         {
-                            m_Selection = IsekaiProtagonistBonusFeatSelection.ToReference<BlueprintFeatureSelectionReference>(),
+                            m_Selection = IsekaiBonusFeatSelection.ToReference<BlueprintFeatureSelectionReference>(),
                             m_Features = new BlueprintFeatureReference[]{
                                 Cleave.ToReference<BlueprintFeatureReference>(),
                                 CleavingFinish.ToReference<BlueprintFeatureReference>(),
@@ -133,13 +132,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                         {
                             m_Selection = OverpoweredAbilitySelection.ToReference<BlueprintFeatureSelectionReference>(),
                             m_Features = new BlueprintFeatureReference[]{
-                                AutoQuickenFeature.ToReference<BlueprintFeatureReference>()
-                            }
-                        },
-                        new SelectionEntry()
-                        {
-                            m_Selection = OverpoweredAbilitySelection2.ToReference<BlueprintFeatureSelectionReference>(),
-                            m_Features = new BlueprintFeatureReference[]{
+                                AutoQuickenFeature.ToReference<BlueprintFeatureReference>(),
                                 AutoMaximizeFeature.ToReference<BlueprintFeatureReference>(),
                                 AutoSelectiveFeature.ToReference<BlueprintFeatureReference>(),
                                 AutoEmpowerFeature.ToReference<BlueprintFeatureReference>(),

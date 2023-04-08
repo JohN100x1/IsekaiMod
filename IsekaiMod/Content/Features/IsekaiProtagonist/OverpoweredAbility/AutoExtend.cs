@@ -15,7 +15,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         private static readonly Sprite Icon_ExtendSpell = BlueprintTools.GetBlueprint<BlueprintFeature>("f180e72e4a9cbaa4da8be9bc958132ef").m_Icon;
 
         public static void Add() {
-            var AutoExtendBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoExtendBuff", bp => {
+            var AutoExtendBuff = TTCoreExtensions.CreateBuff("AutoExtendBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Extend");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes extended, as though using the Extend Spell feat.");
                 bp.m_Icon = Icon_ExtendSpell;
@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoExtendAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoExtendAbility", bp => {
+            var AutoExtendAbility = TTCoreExtensions.CreateActivatableAbility("AutoExtendAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Extend");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes extended, as though using the Extend Spell feat.");
                 bp.m_Icon = Icon_ExtendSpell;
@@ -42,7 +42,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(AutoExtendFeature);
+            OverpoweredAbilitySelection.AddToAllSelection(AutoExtendFeature);
         }
     }
 }

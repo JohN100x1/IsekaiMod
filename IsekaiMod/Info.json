@@ -2,9 +2,9 @@
   "Id": "IsekaiMod",
   "DisplayName": "Isekai Mod",
   "Author": "JohN100x1",
-  "Version": "4.3.0",
+  "Version": "5.0.0",
   "ManagerVersion": "0.24.0",
-  "Requirements": [ "TabletopTweaks-Core-0.5.13" ],
+  "Requirements": [ "TabletopTweaks-Core-0.6.2" ],
   "AssemblyName": "IsekaiMod.dll",
   "EntryMethod": "IsekaiMod.Main.Load",
   "LoadAfter": [

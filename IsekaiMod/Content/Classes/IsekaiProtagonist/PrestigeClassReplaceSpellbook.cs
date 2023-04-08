@@ -1,420 +1,332 @@
-﻿using IsekaiMod.Utilities;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.GodEmperor;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
-using Kingmaker.Blueprints.Classes.Selection;
+using System;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
     internal class PrestigeClassReplaceSpellbook {
-        private static BlueprintFeatureSelection LoremasterSpellbookSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("7a28ab4dfc010834eabc770152997e87");
-        private static BlueprintFeatureSelection HellknightSignifierSpellbook = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("68782aa7a302b6d43a42a71c6e9b5277");
-        private static BlueprintFeatureSelection ArcaneTricksterSpellbookSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ae04b7cdeb88b024b9fd3882cc7d3d76");
-        private static BlueprintFeatureSelection MysticTheurgeArcaneSpellbook = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("97f510c6483523c49bc779e93e4c4568");
-        private static BlueprintFeatureSelection MysticTheurgeDivineSpellbook = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("7cd057944ce7896479717778330a4933");
-        private static BlueprintFeatureSelection DragonDiscipleSpellbookSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("8c1ba14c0b6dcdb439c56341385ee474");
-        private static BlueprintFeatureSelection EldritchKnightSpellbookSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("dc3ab8d0484467a4787979d93114ebc3");
-        private static BlueprintFeatureSelection WinterWitchSpellbookSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("ea20b26d9d0ede540af3c74246dade41");
-
         public static void Patch() {
             PatchIsekai();
-            PatchVillain();
+            PatchGodEmperor();
+            PatchMastermind();
+            PatchOverlord();
         }
 
         public static void PatchIsekai() {
-            var LoremasterIsekai = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "LoremasterIsekai", bp => {
-                bp.SetName(IsekaiContext, "Isekai Protagonist");
-                bp.SetDescription(IsekaiContext, "When a new loremaster level is gained, the character gains new {g|Encyclopedia:Spell}spells{/g} per day as if he had also gained a level in a "
-                    + "spellcasting class he belonged to before adding the prestige class. He does not, however, gain other benefits a character of that class would have gained, "
-                    + "except for additional spells per day, spells known (if he is a spontaneous spellcaster), and an increased effective level of spellcasting. If a character had "
-                    + "more than one spellcasting class before becoming a loremaster, he must decide to which class he adds the new level for purposes of determining the number of "
-                    + "spells per day.");
-                bp.HideInUI = true;
-                bp.HideNotAvailibleInUI = true;
-                bp.HideInCharacterSheetAndLevelUp = false;
+            var LoremasterIsekai = CreateReplaceIsekaiSpellbook("LoremasterIsekai", 3, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.Loremaster);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.MythicAdditionalProgressions };
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
-                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 3;
-                });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
-                });
             });
-            var HellknightSignifierIsekai = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "HellknightSignifierIsekai", bp => {
-                bp.SetName(IsekaiContext, "Isekai Protagonist");
-                bp.SetDescription(IsekaiContext, "At 1st level, and at every level thereafter, a Hellknight signifer gains new {g|Encyclopedia:Spell}spells{/g} per day as if he had also gained a "
-                    + "level in a spellcasting class he belonged to before adding the prestige class. He does not, however, gain any other benefit a character of that class would "
-                    + "have gained, except for additional spells per day, spells known, and an increased effective level of spellcasting. If a character had more than one spellcasting "
-                    + "class before becoming a Hellknight signifer, he must decide to which class he adds the new level for purposes of determining spells per day.");
-                bp.HideInUI = true;
-                bp.HideNotAvailibleInUI = true;
-                bp.HideInCharacterSheetAndLevelUp = false;
+            var HellknightSignifierIsekai = CreateReplaceIsekaiSpellbook("HellknightSignifierIsekai", 3, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.HellknightSignifier);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.HellknightSigniferSpellbook };
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
-                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 3;
-                });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
-                });
             });
-            var ArcaneTricksterIsekai = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "ArcaneTricksterIsekai", bp => {
-                bp.SetName(IsekaiContext, "Isekai Protagonist");
-                bp.SetDescription(IsekaiContext, "At 1st level, an arcane trickster selects an arcane {g|Encyclopedia:Spell}spellcasting{/g} class she belonged to before adding the prestige class. "
-                    + "When a new arcane trickster level is gained, the character gains new spells per day and new spells known as if she had also gained a level in "
-                    + "that spellcasting class.");
-                bp.HideInUI = true;
-                bp.HideNotAvailibleInUI = true;
+            var ArcaneTricksterIsekai = CreateReplaceIsekaiSpellbook("ArcaneTricksterIsekai", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.ArcaneTrickster);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.ArcaneTricksterSpellbook };
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
-                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 2;
-                });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
-                });
             });
-            var MysticTheurgeArcaneIsekai = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "MysticTheurgeArcaneIsekai", bp => {
-                bp.SetName(IsekaiContext, "Isekai Protagonist");
-                bp.SetDescription(IsekaiContext, "At 1st level, the mystic theurge selects an arcane {g|Encyclopedia:Spell}spellcasting{/g} class she belonged to before adding the prestige class. "
-                    + "When a new mystic theurge level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.");
-                bp.HideInUI = true;
-                bp.HideNotAvailibleInUI = true;
+            var MysticTheurgeArcaneIsekai = CreateReplaceIsekaiSpellbook("MysticTheurgeArcaneIsekai", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeArcane);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeArcaneSpellbook };
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
-                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 2;
-                });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
-                });
             });
-            var MysticTheurgeDivineIsekai = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "MysticTheurgeDivineIsekai", bp => {
-                bp.SetName(IsekaiContext, "Isekai Protagonist");
-                bp.SetDescription(IsekaiContext, "At 1st level, the mystic theurge selects a divine {g|Encyclopedia:Spell}spellcasting{/g} class she belonged to before adding the prestige class. "
-                    + "When a new mystic theurge level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.");
-                bp.HideInUI = true;
-                bp.HideNotAvailibleInUI = true;
+            var MysticTheurgeDivineIsekai = CreateReplaceIsekaiSpellbook("MysticTheurgeDivineIsekai", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeDivine);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeDivineSpellbook };
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
-                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 2;
-                });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
-                });
             });
-            var DragonDiscipleIsekai = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "DragonDiscipleIsekai", bp => {
-                bp.SetName(IsekaiContext, "Isekai Protagonist");
-                bp.SetDescription(IsekaiContext, "At 2nd level, and at every level thereafter, with an exception for 5th and 9th levels, a Dragon Disciple gains new {g|Encyclopedia:Spell}spells{/g} "
-                    + "per day as if he had also gained a level in an arcane spellcasting class he belonged to before adding the prestige class. He does not, however, gain any other "
-                    + "benefit a character of that class would have gained, except for additional spells per day, spells known, and an increased effective level of spellcasting. "
-                    + "If a character had more than one arcane spellcasting class before becoming an Dragon Disciple, he must decide to which class he adds the new level for purposes "
-                    + "of determining spells per day.");
-                bp.HideInUI = true;
-                bp.HideNotAvailibleInUI = true;
+            var DragonDiscipleIsekai = CreateReplaceIsekaiSpellbook("DragonDiscipleIsekai", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.DragonDisciple);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.DragonDiscipleSpellbook };
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
-                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 2;
-                });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
-                });
             });
-            var EldritchKnightIsekai = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "EldritchKnightIsekai", bp => {
-                bp.SetName(IsekaiContext, "Isekai Protagonist");
-                bp.SetDescription(IsekaiContext, "At 2nd level, and at every level thereafter, an eldritch knight gains new {g|Encyclopedia:Spell}spells{/g} per day as if he had also gained a level "
-                    + "in an arcane spellcasting class he belonged to before adding the prestige class. He does not, however, gain any other benefit a character of that class would have "
-                    + "gained, except for additional spells per day, spells known, and an increased effective level of spellcasting. If a character had more than one arcane spellcasting "
-                    + "class before becoming an eldritch knight, he must decide to which class he adds the new level for purposes of determining spells per day.");
-                bp.HideInUI = true;
-                bp.HideNotAvailibleInUI = true;
+            var EldritchKnightIsekai = CreateReplaceIsekaiSpellbook("EldritchKnightIsekai", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.EldritchKnight);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.EldritchKnightSpellbook };
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
-                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 2;
-                });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
-                });
             });
-            var WinterWitchIsekai = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "WinterWitchIsekai", bp => {
-                bp.SetName(IsekaiContext, "Isekai Protagonist");
-                bp.SetDescription(IsekaiContext, "When a new winter witch level is gained, the character gains new {g|Encyclopedia:Spell}spells{/g} per day as if she had also gained a level in witch "
-                    + "or shaman spellcasting class she belonged to before she added the prestige class. Additionally, at 2nd level, and every two level after, a winter witch gets a "
-                    + "new hex depending on the chosen spellcasting class.");
-                bp.HideInUI = true;
-                bp.HideNotAvailibleInUI = true;
+            var WinterWitchIsekai = CreateReplaceIsekaiSpellbook("WinterWitchIsekai", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.WinterWitch);
                 bp.Groups = new FeatureGroup[0];
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
-                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 2;
-                });
-                bp.AddComponent<PrerequisiteNoArchetype>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
-                });
             });
 
-            LoremasterSpellbookSelection.AddToSelection(LoremasterIsekai);
-            HellknightSignifierSpellbook.AddToSelection(HellknightSignifierIsekai);
-            ArcaneTricksterSpellbookSelection.AddToSelection(ArcaneTricksterIsekai);
-            MysticTheurgeArcaneSpellbook.AddToSelection(MysticTheurgeArcaneIsekai);
-            MysticTheurgeDivineSpellbook.AddToSelection(MysticTheurgeDivineIsekai);
-            DragonDiscipleSpellbookSelection.AddToSelection(DragonDiscipleIsekai);
-            EldritchKnightSpellbookSelection.AddToSelection(EldritchKnightIsekai);
-            WinterWitchSpellbookSelection.AddToSelection(WinterWitchIsekai);
+            FeatTools.Selections.LoremasterSpellbookSelection.AddToSelection(LoremasterIsekai);
+            FeatTools.Selections.HellknightSigniferSpellbook.AddToSelection(HellknightSignifierIsekai);
+            FeatTools.Selections.ArcaneTricksterSpellbookSelection.AddToSelection(ArcaneTricksterIsekai);
+            FeatTools.Selections.MysticTheurgeArcaneSpellbookSelection.AddToSelection(MysticTheurgeArcaneIsekai);
+            FeatTools.Selections.MysticTheurgeDivineSpellbookSelection.AddToSelection(MysticTheurgeDivineIsekai);
+            FeatTools.Selections.DragonDiscipleSpellbookSelection.AddToSelection(DragonDiscipleIsekai);
+            FeatTools.Selections.EldritchKnightSpellbookSelection.AddToSelection(EldritchKnightIsekai);
+            FeatTools.Selections.WinterWitchSpellbookSelection.AddToSelection(WinterWitchIsekai);
+        }
+        public static void PatchGodEmperor() {
+            var LoremasterGodEmperor = CreateReplaceGodEmperorSpellbook("LoremasterGodEmperor", 3, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.Loremaster);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MythicAdditionalProgressions };
+            });
+            var HellknightSignifierGodEmperor = CreateReplaceGodEmperorSpellbook("HellknightSignifierGodEmperor", 3, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.HellknightSignifier);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.HellknightSigniferSpellbook };
+            });
+            var ArcaneTricksterGodEmperor = CreateReplaceGodEmperorSpellbook("ArcaneTricksterGodEmperor", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.ArcaneTrickster);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.ArcaneTricksterSpellbook };
+            });
+            var MysticTheurgeArcaneGodEmperor = CreateReplaceGodEmperorSpellbook("MysticTheurgeArcaneGodEmperor", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeArcane);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeArcaneSpellbook };
+            });
+            var MysticTheurgeDivineGodEmperor = CreateReplaceGodEmperorSpellbook("MysticTheurgeDivineGodEmperor", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeDivine);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeDivineSpellbook };
+            });
+            var DragonDiscipleGodEmperor = CreateReplaceGodEmperorSpellbook("DragonDiscipleGodEmperor", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.DragonDisciple);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.DragonDiscipleSpellbook };
+            });
+            var EldritchKnightGodEmperor = CreateReplaceGodEmperorSpellbook("EldritchKnightGodEmperor", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.EldritchKnight);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.EldritchKnightSpellbook };
+            });
+            var WinterWitchGodEmperor = CreateReplaceGodEmperorSpellbook("WinterWitchGodEmperor", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.WinterWitch);
+                bp.Groups = new FeatureGroup[0];
+            });
+
+            FeatTools.Selections.LoremasterSpellbookSelection.AddToSelection(LoremasterGodEmperor);
+            FeatTools.Selections.HellknightSigniferSpellbook.AddToSelection(HellknightSignifierGodEmperor);
+            FeatTools.Selections.ArcaneTricksterSpellbookSelection.AddToSelection(ArcaneTricksterGodEmperor);
+            FeatTools.Selections.MysticTheurgeArcaneSpellbookSelection.AddToSelection(MysticTheurgeArcaneGodEmperor);
+            FeatTools.Selections.MysticTheurgeDivineSpellbookSelection.AddToSelection(MysticTheurgeDivineGodEmperor);
+            FeatTools.Selections.DragonDiscipleSpellbookSelection.AddToSelection(DragonDiscipleGodEmperor);
+            FeatTools.Selections.EldritchKnightSpellbookSelection.AddToSelection(EldritchKnightGodEmperor);
+            FeatTools.Selections.WinterWitchSpellbookSelection.AddToSelection(WinterWitchGodEmperor);
         }
 
-        public static void PatchVillain() {
-            var LoremasterVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "LoremasterVillain", bp => {
-                bp.SetName(IsekaiContext, "Isekai Villain");
-                bp.SetDescription(IsekaiContext, "When a new loremaster level is gained, the character gains new {g|Encyclopedia:Spell}spells{/g} per day as if he had also gained a level in a "
-                    + "spellcasting class he belonged to before adding the prestige class. He does not, however, gain other benefits a character of that class would have gained, "
-                    + "except for additional spells per day, spells known (if he is a spontaneous spellcaster), and an increased effective level of spellcasting. If a character had "
-                    + "more than one spellcasting class before becoming a loremaster, he must decide to which class he adds the new level for purposes of determining the number of "
-                    + "spells per day.");
+        public static void PatchMastermind() {
+            var LoremasterMastermind = CreateReplaceMastermindSpellbook("LoremasterMastermind", 3, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.Loremaster);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MythicAdditionalProgressions };
+            });
+            var HellknightSignifierMastermind = CreateReplaceMastermindSpellbook("HellknightSignifierMastermind", 3, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.HellknightSignifier);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.HellknightSigniferSpellbook };
+            });
+            var ArcaneTricksterMastermind = CreateReplaceMastermindSpellbook("ArcaneTricksterMastermind", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.ArcaneTrickster);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.ArcaneTricksterSpellbook };
+            });
+            var MysticTheurgeArcaneMastermind = CreateReplaceMastermindSpellbook("MysticTheurgeArcaneMastermind", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeArcane);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeArcaneSpellbook };
+            });
+            var MysticTheurgeDivineMastermind = CreateReplaceMastermindSpellbook("MysticTheurgeDivineMastermind", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeDivine);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeDivineSpellbook };
+            });
+            var DragonDiscipleMastermind = CreateReplaceMastermindSpellbook("DragonDiscipleMastermind", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.DragonDisciple);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.DragonDiscipleSpellbook };
+            });
+            var EldritchKnightMastermind = CreateReplaceMastermindSpellbook("EldritchKnightMastermind", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.EldritchKnight);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.EldritchKnightSpellbook };
+            });
+            var WinterWitchMastermind = CreateReplaceMastermindSpellbook("WinterWitchMastermind", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.WinterWitch);
+                bp.Groups = new FeatureGroup[0];
+            });
+
+            FeatTools.Selections.LoremasterSpellbookSelection.AddToSelection(LoremasterMastermind);
+            FeatTools.Selections.HellknightSigniferSpellbook.AddToSelection(HellknightSignifierMastermind);
+            FeatTools.Selections.ArcaneTricksterSpellbookSelection.AddToSelection(ArcaneTricksterMastermind);
+            FeatTools.Selections.MysticTheurgeArcaneSpellbookSelection.AddToSelection(MysticTheurgeArcaneMastermind);
+            FeatTools.Selections.MysticTheurgeDivineSpellbookSelection.AddToSelection(MysticTheurgeDivineMastermind);
+            FeatTools.Selections.DragonDiscipleSpellbookSelection.AddToSelection(DragonDiscipleMastermind);
+            FeatTools.Selections.EldritchKnightSpellbookSelection.AddToSelection(EldritchKnightMastermind);
+            FeatTools.Selections.WinterWitchSpellbookSelection.AddToSelection(WinterWitchMastermind);
+        }
+
+        public static void PatchOverlord() {
+            var LoremasterOverlord = CreateReplaceOverlordSpellbook("LoremasterOverlord", 3, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.Loremaster);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MythicAdditionalProgressions };
+            });
+            var HellknightSignifierOverlord = CreateReplaceOverlordSpellbook("HellknightSignifierOverlord", 3, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.HellknightSignifier);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.HellknightSigniferSpellbook };
+            });
+            var ArcaneTricksterOverlord = CreateReplaceOverlordSpellbook("ArcaneTricksterOverlord", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.ArcaneTrickster);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.ArcaneTricksterSpellbook };
+            });
+            var MysticTheurgeArcaneOverlord = CreateReplaceOverlordSpellbook("MysticTheurgeArcaneOverlord", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeArcane);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeArcaneSpellbook };
+            });
+            var MysticTheurgeDivineOverlord = CreateReplaceOverlordSpellbook("MysticTheurgeDivineOverlord", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.MysticTheurgeDivine);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeDivineSpellbook };
+            });
+            var DragonDiscipleOverlord = CreateReplaceOverlordSpellbook("DragonDiscipleOverlord", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.DragonDisciple);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.DragonDiscipleSpellbook };
+            });
+            var EldritchKnightOverlord = CreateReplaceOverlordSpellbook("EldritchKnightOverlord", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.EldritchKnight);
+                bp.Groups = new FeatureGroup[] { FeatureGroup.EldritchKnightSpellbook };
+            });
+            var WinterWitchOverlord = CreateReplaceOverlordSpellbook("WinterWitchOverlord", 2, bp => {
+                bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.WinterWitch);
+                bp.Groups = new FeatureGroup[0];
+            });
+
+            FeatTools.Selections.LoremasterSpellbookSelection.AddToSelection(LoremasterOverlord);
+            FeatTools.Selections.HellknightSigniferSpellbook.AddToSelection(HellknightSignifierOverlord);
+            FeatTools.Selections.ArcaneTricksterSpellbookSelection.AddToSelection(ArcaneTricksterOverlord);
+            FeatTools.Selections.MysticTheurgeArcaneSpellbookSelection.AddToSelection(MysticTheurgeArcaneOverlord);
+            FeatTools.Selections.MysticTheurgeDivineSpellbookSelection.AddToSelection(MysticTheurgeDivineOverlord);
+            FeatTools.Selections.DragonDiscipleSpellbookSelection.AddToSelection(DragonDiscipleOverlord);
+            FeatTools.Selections.EldritchKnightSpellbookSelection.AddToSelection(EldritchKnightOverlord);
+            FeatTools.Selections.WinterWitchSpellbookSelection.AddToSelection(WinterWitchOverlord);
+        }
+
+        public static BlueprintFeatureReplaceSpellbook CreateReplaceIsekaiSpellbook(string name, int level, Action<BlueprintFeatureReplaceSpellbook> init = null) {
+            var result = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, name, bp => {
+                bp.SetName(IsekaiContext, "Isekai Protagonist");
                 bp.HideInUI = true;
                 bp.HideNotAvailibleInUI = true;
                 bp.HideInCharacterSheetAndLevelUp = false;
-                bp.Groups = new FeatureGroup[] { FeatureGroup.MythicAdditionalProgressions };
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_Spellbook = VillainSpellbook.GetReference();
+                bp.m_Spellbook = IsekaiProtagonistSpellbook.GetReference();
                 bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 3;
+                    c.RequiredSpellLevel = level;
                 });
-                bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
-                    c.Level = 1;
+                    c.m_Archetype = Archetypes.GodEmperorArchetype.GetReference();
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.MastermindArchetype.GetReference();
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.OverlordArchetype.GetReference();
                 });
             });
-            var HellknightSignifierVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "HellknightSignifierVillain", bp => {
-                bp.SetName(IsekaiContext, "Isekai Villain");
-                bp.SetDescription(IsekaiContext, "At 1st level, and at every level thereafter, a Hellknight signifer gains new {g|Encyclopedia:Spell}spells{/g} per day as if he had also gained a "
-                    + "level in a spellcasting class he belonged to before adding the prestige class. He does not, however, gain any other benefit a character of that class would "
-                    + "have gained, except for additional spells per day, spells known, and an increased effective level of spellcasting. If a character had more than one spellcasting "
-                    + "class before becoming a Hellknight signifer, he must decide to which class he adds the new level for purposes of determining spells per day.");
+            init?.Invoke(result);
+            return result;
+        }
+        public static BlueprintFeatureReplaceSpellbook CreateReplaceGodEmperorSpellbook(string name, int level, Action<BlueprintFeatureReplaceSpellbook> init = null) {
+            var result = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, name, bp => {
+                bp.SetName(IsekaiContext, "God Emperor");
                 bp.HideInUI = true;
                 bp.HideNotAvailibleInUI = true;
-                bp.Groups = new FeatureGroup[] { FeatureGroup.HellknightSigniferSpellbook };
+                bp.HideInCharacterSheetAndLevelUp = false;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_Spellbook = VillainSpellbook.GetReference();
+                bp.m_Spellbook = GodEmperorSpellbook.GetReference();
                 bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 3;
+                    c.RequiredSpellLevel = level;
                 });
                 bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
+                    c.m_Archetype = Archetypes.GodEmperorArchetype.GetReference();
                     c.Level = 1;
                 });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.MastermindArchetype.GetReference();
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.OverlordArchetype.GetReference();
+                });
             });
-            var ArcaneTricksterVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "ArcaneTricksterVillain", bp => {
-                bp.SetName(IsekaiContext, "Isekai Villain");
-                bp.SetDescription(IsekaiContext, "At 1st level, an arcane trickster selects an arcane {g|Encyclopedia:Spell}spellcasting{/g} class she belonged to before adding the prestige class. "
-                    + "When a new arcane trickster level is gained, the character gains new spells per day and new spells known as if she had also gained a level in "
-                    + "that spellcasting class.");
+            init?.Invoke(result);
+            return result;
+        }
+        public static BlueprintFeatureReplaceSpellbook CreateReplaceMastermindSpellbook(string name, int level, Action<BlueprintFeatureReplaceSpellbook> init = null) {
+            var result = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, name, bp => {
+                bp.SetName(IsekaiContext, "Mastermind");
                 bp.HideInUI = true;
                 bp.HideNotAvailibleInUI = true;
-                bp.Groups = new FeatureGroup[] { FeatureGroup.ArcaneTricksterSpellbook };
+                bp.HideInCharacterSheetAndLevelUp = false;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_Spellbook = VillainSpellbook.GetReference();
+                bp.m_Spellbook = MastermindSpellbook.GetReference();
                 bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 2;
+                    c.RequiredSpellLevel = level;
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.GodEmperorArchetype.GetReference();
                 });
                 bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
+                    c.m_Archetype = Archetypes.MastermindArchetype.GetReference();
                     c.Level = 1;
                 });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.OverlordArchetype.GetReference();
+                });
             });
-            var MysticTheurgeArcaneVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "MysticTheurgeArcaneVillain", bp => {
-                bp.SetName(IsekaiContext, "Isekai Villain");
-                bp.SetDescription(IsekaiContext, "At 1st level, the mystic theurge selects an arcane {g|Encyclopedia:Spell}spellcasting{/g} class she belonged to before adding the prestige class. "
-                    + "When a new mystic theurge level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.");
+            init?.Invoke(result);
+            return result;
+        }
+        public static BlueprintFeatureReplaceSpellbook CreateReplaceOverlordSpellbook(string name, int level, Action<BlueprintFeatureReplaceSpellbook> init = null) {
+            var result = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, name, bp => {
+                bp.SetName(IsekaiContext, "Overlord");
                 bp.HideInUI = true;
                 bp.HideNotAvailibleInUI = true;
-                bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeArcaneSpellbook };
+                bp.HideInCharacterSheetAndLevelUp = false;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_Spellbook = VillainSpellbook.GetReference();
+                bp.m_Spellbook = OverlordSpellbook.GetReference();
                 bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 2;
+                    c.RequiredSpellLevel = level;
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.GodEmperorArchetype.GetReference();
+                });
+                bp.AddComponent<PrerequisiteNoArchetype>(c => {
+                    c.Group = Prerequisite.GroupType.All;
+                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                    c.m_Archetype = Archetypes.MastermindArchetype.GetReference();
                 });
                 bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
+                    c.m_Archetype = Archetypes.OverlordArchetype.GetReference();
                     c.Level = 1;
                 });
             });
-            var MysticTheurgeDivineVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "MysticTheurgeDivineVillain", bp => {
-                bp.SetName(IsekaiContext, "Isekai Villain");
-                bp.SetDescription(IsekaiContext, "At 1st level, the mystic theurge selects a divine {g|Encyclopedia:Spell}spellcasting{/g} class she belonged to before adding the prestige class. "
-                    + "When a new mystic theurge level is gained, the character gains new spells per day and new spells known as if she had also gained a level in that spellcasting class.");
-                bp.HideInUI = true;
-                bp.HideNotAvailibleInUI = true;
-                bp.Groups = new FeatureGroup[] { FeatureGroup.MysticTheurgeDivineSpellbook };
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.m_Spellbook = VillainSpellbook.GetReference();
-                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 2;
-                });
-                bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
-                    c.Level = 1;
-                });
-            });
-            var DragonDiscipleVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "DragonDiscipleVillain", bp => {
-                bp.SetName(IsekaiContext, "Isekai Villain");
-                bp.SetDescription(IsekaiContext, "At 2nd level, and at every level thereafter, with an exception for 5th and 9th levels, a Dragon Disciple gains new {g|Encyclopedia:Spell}spells{/g} "
-                    + "per day as if he had also gained a level in an arcane spellcasting class he belonged to before adding the prestige class. He does not, however, gain any other "
-                    + "benefit a character of that class would have gained, except for additional spells per day, spells known, and an increased effective level of spellcasting. "
-                    + "If a character had more than one arcane spellcasting class before becoming an Dragon Disciple, he must decide to which class he adds the new level for purposes "
-                    + "of determining spells per day.");
-                bp.HideInUI = true;
-                bp.HideNotAvailibleInUI = true;
-                bp.Groups = new FeatureGroup[] { FeatureGroup.DragonDiscipleSpellbook };
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.m_Spellbook = VillainSpellbook.GetReference();
-                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 2;
-                });
-                bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
-                    c.Level = 1;
-                });
-            });
-            var EldritchKnightVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "EldritchKnightVillain", bp => {
-                bp.SetName(IsekaiContext, "Isekai Villain");
-                bp.SetDescription(IsekaiContext, "At 2nd level, and at every level thereafter, an eldritch knight gains new {g|Encyclopedia:Spell}spells{/g} per day as if he had also gained a level "
-                    + "in an arcane spellcasting class he belonged to before adding the prestige class. He does not, however, gain any other benefit a character of that class would have "
-                    + "gained, except for additional spells per day, spells known, and an increased effective level of spellcasting. If a character had more than one arcane spellcasting "
-                    + "class before becoming an eldritch knight, he must decide to which class he adds the new level for purposes of determining spells per day.");
-                bp.HideInUI = true;
-                bp.HideNotAvailibleInUI = true;
-                bp.Groups = new FeatureGroup[] { FeatureGroup.EldritchKnightSpellbook };
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.m_Spellbook = VillainSpellbook.GetReference();
-                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 2;
-                });
-                bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
-                    c.Level = 1;
-                });
-            });
-            var WinterWitchVillain = Helpers.CreateBlueprint<BlueprintFeatureReplaceSpellbook>(IsekaiContext, "WinterWitchVillain", bp => {
-                bp.SetName(IsekaiContext, "Isekai Villain");
-                bp.SetDescription(IsekaiContext, "When a new winter witch level is gained, the character gains new {g|Encyclopedia:Spell}spells{/g} per day as if she had also gained a level in witch "
-                    + "or shaman spellcasting class she belonged to before she added the prestige class. Additionally, at 2nd level, and every two level after, a winter witch gets a "
-                    + "new hex depending on the chosen spellcasting class.");
-                bp.HideInUI = true;
-                bp.HideNotAvailibleInUI = true;
-                bp.Groups = new FeatureGroup[0];
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.m_Spellbook = VillainSpellbook.GetReference();
-                bp.AddComponent<PrerequisiteClassSpellLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.RequiredSpellLevel = 2;
-                });
-                bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.Villain.GetReference();
-                    c.Level = 1;
-                });
-            });
-
-            LoremasterSpellbookSelection.AddToSelection(LoremasterVillain);
-            HellknightSignifierSpellbook.AddToSelection(HellknightSignifierVillain);
-            ArcaneTricksterSpellbookSelection.AddToSelection(ArcaneTricksterVillain);
-            MysticTheurgeArcaneSpellbook.AddToSelection(MysticTheurgeArcaneVillain);
-            MysticTheurgeDivineSpellbook.AddToSelection(MysticTheurgeDivineVillain);
-            DragonDiscipleSpellbookSelection.AddToSelection(DragonDiscipleVillain);
-            EldritchKnightSpellbookSelection.AddToSelection(EldritchKnightVillain);
-            WinterWitchSpellbookSelection.AddToSelection(WinterWitchVillain);
+            init?.Invoke(result);
+            return result;
         }
     }
 }

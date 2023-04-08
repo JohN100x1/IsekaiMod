@@ -59,8 +59,19 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 });
                 bp.ReapplyOnLevelUp = true;
             });
+            // TODO: Signature Strike (extra sneak attacks per 1/2 character level)
 
             var SignatureMoveSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveSelection", bp => {
+                bp.SetName(IsekaiContext, "Signature Move");
+                bp.SetDescription(IsekaiContext, "At 6th level, you choose to have either a signature attack or a signature ability.");
+                bp.m_Icon = Icon_SwordSaintWeaponMastery;
+                bp.IgnorePrerequisites = true;
+                bp.m_AllFeatures = new BlueprintFeatureReference[] {
+                    SignatureAttack.ToReference<BlueprintFeatureReference>(),
+                    SignatureAbility.ToReference<BlueprintFeatureReference>(),
+                };
+            });
+            var SignatureMoveBonusSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveBonusSelection", bp => {
                 bp.SetName(IsekaiContext, "Signature Move");
                 bp.SetDescription(IsekaiContext, "At 6th level, you choose to have either a signature attack or a signature ability.");
                 bp.m_Icon = Icon_SwordSaintWeaponMastery;

@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(InfiniteSpaceFeature);
+            OverpoweredAbilitySelection.AddToNonAutoSelection(InfiniteSpaceFeature);
         }
     }
 }

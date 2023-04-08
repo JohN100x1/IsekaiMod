@@ -15,7 +15,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
         private static readonly Sprite Icon_ShieldOfDawn = BlueprintTools.GetBlueprint<BlueprintAbility>("62888999171921e4dafb46de83f4d67d").m_Icon;
 
         public static void Add() {
-            var ReflectBuff = ThingsNotHandledByTTTCore.CreateBuff("ReflectBuff", bp => {
+            var ReflectBuff = TTCoreExtensions.CreateBuff("ReflectBuff", bp => {
                 bp.SetName(IsekaiContext, "Reflect");
                 bp.SetDescription(IsekaiContext, "You deal damage to enemies equal to the damage you receive.");
                 bp.m_Icon = Icon_ShieldOfDawn;
@@ -24,7 +24,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var ReflectAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("ReflectAbility", bp => {
+            var ReflectAbility = TTCoreExtensions.CreateActivatableAbility("ReflectAbility", bp => {
                 bp.SetName(IsekaiContext, "Reflect");
                 bp.SetDescription(IsekaiContext, "You deal damage to enemies equal to the damage you receive.");
                 bp.m_Icon = Icon_ShieldOfDawn;

@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
         private static readonly Sprite Icon_EncouragingSpell = BlueprintTools.GetBlueprint<BlueprintFeature>("392608e8033a409ab96afdfbf315e028").m_Icon;
 
         public static void Add() {
-            var AutoEncouragingBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoEncouragingBuff", bp => {
+            var AutoEncouragingBuff = TTCoreExtensions.CreateBuff("AutoEncouragingBuff", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_EncouragingSpell;
@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoEncouragingAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoEncouragingAbility", bp => {
+            var AutoEncouragingAbility = TTCoreExtensions.CreateActivatableAbility("AutoEncouragingAbility", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_EncouragingSpell;
@@ -46,7 +46,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(AutoEncouragingFeature);
+            OverpoweredAbilitySelection.AddToAllSelection(AutoEncouragingFeature);
         }
     }
 }

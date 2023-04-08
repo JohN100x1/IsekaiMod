@@ -1,5 +1,8 @@
 ﻿using HarmonyLib;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.GodEmperor;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.TabletopTweaksBase;
 using Kingmaker.Blueprints;
@@ -78,16 +81,19 @@ namespace IsekaiMod.Utilities {
                     var AzataIncorporateSpellbook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("83385d9f4d714e4e94618703be762a20");
                     var DemonIncorporateSpellbook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("f3ff8515355e4738b128c3d01483f1ca");
                     var TricksterIncorporateSpellbook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("c4ef6975167d4cf5acbfd66b60e63f9c");
-                    // Add Isekai Protagonist Spellbook
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AeonIncorporateSpellBook, IsekaiProtagonistSpellbook.Get());
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AzataIncorporateSpellbook, IsekaiProtagonistSpellbook.Get());
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(DemonIncorporateSpellbook, IsekaiProtagonistSpellbook.Get());
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(TricksterIncorporateSpellbook, IsekaiProtagonistSpellbook.Get());
-                    // Add Villain Spellbook
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AeonIncorporateSpellBook, VillainSpellbook.Get());
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(AzataIncorporateSpellbook, VillainSpellbook.Get());
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(DemonIncorporateSpellbook, VillainSpellbook.Get());
-                    ThingsNotHandledByTTTCore.RegisterForPrestigeSpellbook(TricksterIncorporateSpellbook, VillainSpellbook.Get());
+
+                    BlueprintSpellbook[] spellbooks = new BlueprintSpellbook[] {
+                        IsekaiProtagonistSpellbook.Get(),
+                        GodEmperorSpellbook.Get(),
+                        MastermindSpellbook.Get(),
+                        OverlordSpellbook.Get()
+                    };
+                    foreach (BlueprintSpellbook spellbook in spellbooks) {
+                        TTCoreExtensions.RegisterForPrestigeSpellbook(AeonIncorporateSpellBook, spellbook);
+                        TTCoreExtensions.RegisterForPrestigeSpellbook(AzataIncorporateSpellbook, spellbook);
+                        TTCoreExtensions.RegisterForPrestigeSpellbook(DemonIncorporateSpellbook, spellbook);
+                        TTCoreExtensions.RegisterForPrestigeSpellbook(TricksterIncorporateSpellbook, spellbook);
+                    }
                 }
             }
 
@@ -121,31 +127,31 @@ namespace IsekaiMod.Utilities {
                 BlueprintAbility DeadlyFinaleAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("3385edd23aad4795861425acfa798d64");
                 BlueprintAbility PurgingFinaleAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("6eff7010684143c5bcd47120718c75ef");
                 BlueprintAbility StunningFinaleAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("a1f0d4c3ce2c4c2eb705b18861f14708");
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, ShieldOfFortificationAbility, 1);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, EntropicShieldAbility, 1);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, GoodberryAbility, 1);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, HydraulicPushAbility, 1);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, HypnoticPatternAbility, 2);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, FuryOftheSunAbility, 2);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, HollowBladesAbility, 2);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, InflictPainAbility, 2);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, SlipstreamAbility, 2);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, ShieldOfFortificationGreaterAbility, 3);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, ClaySkinAbility, 3);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, ZephyrsFleetnessAbility, 3);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, RevivingFinaleAbility, 3);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, PurgingFinaleAbility, 3);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, GloomblindBoltsAbility, 3);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, DanceOfAHundredCutsAbility, 4);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, WallOfFireAbility, 4);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, InvokeDeityAbility, 4);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, RigorMortisAbility, 4);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, StunningFinaleAbility, 5);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, InflictPainMassAbility, 5);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, DanceOfAThousandCutsAbility, 6);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, DeadlyFinaleAbility, 6);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, SteamRayFusilladeAbility, 7);
-                ThingsNotHandledByTTTCore.RegisterSpell(spellList, ScourgeOfTheHorsemenAbility, 9);
+                TTCoreExtensions.RegisterSpell(spellList, ShieldOfFortificationAbility, 1);
+                TTCoreExtensions.RegisterSpell(spellList, EntropicShieldAbility, 1);
+                TTCoreExtensions.RegisterSpell(spellList, GoodberryAbility, 1);
+                TTCoreExtensions.RegisterSpell(spellList, HydraulicPushAbility, 1);
+                TTCoreExtensions.RegisterSpell(spellList, HypnoticPatternAbility, 2);
+                TTCoreExtensions.RegisterSpell(spellList, FuryOftheSunAbility, 2);
+                TTCoreExtensions.RegisterSpell(spellList, HollowBladesAbility, 2);
+                TTCoreExtensions.RegisterSpell(spellList, InflictPainAbility, 2);
+                TTCoreExtensions.RegisterSpell(spellList, SlipstreamAbility, 2);
+                TTCoreExtensions.RegisterSpell(spellList, ShieldOfFortificationGreaterAbility, 3);
+                TTCoreExtensions.RegisterSpell(spellList, ClaySkinAbility, 3);
+                TTCoreExtensions.RegisterSpell(spellList, ZephyrsFleetnessAbility, 3);
+                TTCoreExtensions.RegisterSpell(spellList, RevivingFinaleAbility, 3);
+                TTCoreExtensions.RegisterSpell(spellList, PurgingFinaleAbility, 3);
+                TTCoreExtensions.RegisterSpell(spellList, GloomblindBoltsAbility, 3);
+                TTCoreExtensions.RegisterSpell(spellList, DanceOfAHundredCutsAbility, 4);
+                TTCoreExtensions.RegisterSpell(spellList, WallOfFireAbility, 4);
+                TTCoreExtensions.RegisterSpell(spellList, InvokeDeityAbility, 4);
+                TTCoreExtensions.RegisterSpell(spellList, RigorMortisAbility, 4);
+                TTCoreExtensions.RegisterSpell(spellList, StunningFinaleAbility, 5);
+                TTCoreExtensions.RegisterSpell(spellList, InflictPainMassAbility, 5);
+                TTCoreExtensions.RegisterSpell(spellList, DanceOfAThousandCutsAbility, 6);
+                TTCoreExtensions.RegisterSpell(spellList, DeadlyFinaleAbility, 6);
+                TTCoreExtensions.RegisterSpell(spellList, SteamRayFusilladeAbility, 7);
+                TTCoreExtensions.RegisterSpell(spellList, ScourgeOfTheHorsemenAbility, 9);
             }
 
             public static void AddExpandedContentDrakes(BlueprintCharacterClass characterClass) {

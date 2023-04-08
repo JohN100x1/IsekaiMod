@@ -32,7 +32,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
         public static void Add() {
             var TrueSmiteResource = BlueprintTools.GetModBlueprint<BlueprintAbilityResource>(IsekaiContext, "TrueSmiteResource");
 
-            var TrueMarkBuff = ThingsNotHandledByTTTCore.CreateBuff("TrueMarkBuff", bp => {
+            var TrueMarkBuff = TTCoreExtensions.CreateBuff("TrueMarkBuff", bp => {
                 bp.SetName(IsekaiContext, "True Mark");
                 bp.SetDescription(IsekaiContext, "The creature is easier to hit and takes more damage from the hero's allies.");
                 bp.m_Icon = Icon_MarkOfJustice;

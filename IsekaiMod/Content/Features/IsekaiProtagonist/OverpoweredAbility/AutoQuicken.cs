@@ -15,7 +15,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         private static readonly Sprite Icon_QuickenSpell = BlueprintTools.GetBlueprint<BlueprintFeature>("ef7ece7bb5bb66a41b256976b27f424e").m_Icon;
 
         public static void Add() {
-            var AutoQuickenBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoQuickenBuff", bp => {
+            var AutoQuickenBuff = TTCoreExtensions.CreateBuff("AutoQuickenBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Quicken");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes quickened, as though using the Quicken Spell feat.");
                 bp.m_Icon = Icon_QuickenSpell;
@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoQuickenAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoQuickenAbility", bp => {
+            var AutoQuickenAbility = TTCoreExtensions.CreateActivatableAbility("AutoQuickenAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Quicken");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, it becomes quickened, as though using the Quicken Spell feat.");
                 bp.m_Icon = Icon_QuickenSpell;
@@ -42,7 +42,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(AutoQuickenFeature);
+            OverpoweredAbilitySelection.AddToAllSelection(AutoQuickenFeature);
         }
     }
 }

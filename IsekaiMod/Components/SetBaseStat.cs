@@ -18,7 +18,6 @@ namespace IsekaiMod.Components {
         public int Value;
 
         public class ComponentData {
-
             [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
             public int BaseStatValue;
         }

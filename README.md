@@ -69,11 +69,10 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- Can pick a melee focused legacy class feature.
 	- `Hero` (Isekai Protagonist Archetype)
 		- Uses charisma for damage and attack rolls.
-	- `Villain` (Isekai Protagonist Archetype)
-		- Has Study target.
-		- Has Much more Overpowered Abilities.
+	- `Mastermind` (Isekai Protagonist Archetype)
 		- Intelligence based caster that memorizes spells like an arcanist.
-		- Can pick a non-heroic, non-disney, non-Barbarian legacy class feature.
+	- `Overlord` (Isekai Protagonist Archetype)
+		- Has much more Overpowered Abilities.
 - New Features
 	- `Exceptional feats`: Strong feats that can be chosen in place of a feat/bonus feat.
 		- `Mythic feat`: You can choose a mythic feat instead of a normal/bonus feat.
@@ -100,7 +99,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Kinetic Power`: You can select a kinetic blast (air, earth, fire, water).
 		- `Sneaky Magic`: You can add your sneak attack damage to spells against flat-footed.
 		- `Spell Master`: Increase your spell DC by 4.
-		- `Magical Amplification`: Your spell damage dice become d12.
+		- `Magical Amplification`: Your spell damage dice become d10.
 		- `Armor Saint`: You can move at normal speed while wearing armor, reduce your armor check penalty to zero, and increase your max dexterity bonus by 20.
 		- `Armor of Strength`: Get a natural armor bonus to AC equal to Strength modifier.
 		- `Summon Beast`: Summon a hydra, owlbear, roc, or minotaur.
@@ -126,6 +125,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Summon Calamity`: Summon a Devastator, Baphomet, Deskari, Nocticula, Mephistopheles, or Areshkagal.
 		- `True Resurrection`: Resurrect a dead companion (no diamond cost).
 		- `Supreme Being`: All your attributes have a base value of 30.
+		- `Meta Luck`: Always take the higher of two d20 rolls.
 		- `Mythic Class Feature`: see below
 		- `Dual Legacy`: Pick a second base class to get abilities from.
 		- The following requires TabletopTweaks-Base:
@@ -196,7 +196,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 	- `Highschool Student`: Get a +1 trait bonus to all attributes.
 	- `Reborn Demon Lord`: Get a +2 trait bonus to Strength and Electricity resistance 20.
 	- `Otaku`: Adds all skills as class skills except Persuasion.
-	- `Gamer`: Get a +4 competence bonus to all knowledge, lore, and perception checks.
+	- `Gamer`: Get a +8 competence bonus to all knowledge, lore, and perception checks.
 	- `Beta Tester`: Get +10 Initiative and adds lore, knowledge and perceptions skills as class skills.
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.

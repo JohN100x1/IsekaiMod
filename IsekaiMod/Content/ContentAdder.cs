@@ -3,13 +3,17 @@ using IsekaiMod.Config;
 using IsekaiMod.Content.Classes.Deathsnatcher;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.GodEmperor;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.Deathsnatcher;
 using IsekaiMod.Content.Features.ExceptionalFeats;
 using IsekaiMod.Content.Features.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility;
@@ -62,24 +66,6 @@ namespace IsekaiMod.Content {
                 IsekaiProtagonistClass.Add();
                 Main.LogDebug("Class: Configured");
 
-                // Isekai Protagonist Features
-                IsekaiProtagonistProficiencies.Add();
-                IsekaiProtagonistCantrips.Add();
-                IsekaiProtagonistBonusFeatSelection.Add();
-                IsekaiProtagonistTalentSelection.Add();
-                IsekaiPetSelection.Add();
-                PlotArmor.Add();
-                StartingWeaponSelection.Add();
-                IsekaiFighterTraining.Add();
-                SignatureMoveSelection.Add();
-                IsekaiFastMovement.Add();
-                OtherworldlyStamina.Add();
-                IsekaiQuickFooted.Add();
-                FriendlyAuraFeature.Add();
-                SummonHarem.Add();
-                SecondReincarnation.Add();
-                Main.LogDebug("Class: Features");
-
                 // Beach Episode Selection
                 BeachEpisodeSelection.Add();
                 HealthyBody.Add();
@@ -101,9 +87,6 @@ namespace IsekaiMod.Content {
                 BodyStrengthening.Add();
                 SpellNegation.Add();
                 ExtremeSpeed.Add();
-                IsekaiChannelPositiveEnergy.Add();
-                IsekaiChannelNegativeEnergy.Add();
-                KineticPower.Add();
                 SneakyMagic.Add();
                 SpellMaster.Add();
                 ArmorSaint.Add();
@@ -113,6 +96,8 @@ namespace IsekaiMod.Content {
                 KillingIntent.Add();
                 MagicalAmplification.Add();
                 Reflect.Add();
+                IsekaiChannelPositiveEnergy.Add();
+                IsekaiChannelNegativeEnergy.Add();
                 Main.LogDebug("Class: SpecialPower");
 
                 // OP Ability
@@ -137,30 +122,51 @@ namespace IsekaiMod.Content {
                 MetaLuck.Add();
                 AuraOfRighteousWrath.Add();
                 if (Other.IsEnabled("Mythic Class Feature")) BlessingOfTheMythic.Configure();
-                
                 Main.LogDebug("Class: OP");
 
+                // Isekai Protagonist Features
+                IsekaiProficiencies.Add();
+                IsekaiCantrips.Add();
+                IsekaiBonusFeatSelection.Add();
+                IsekaiTalentSelection.Add();
+                IsekaiPetSelection.Add();
+                PlotArmor.Add();
+                StartingWeaponSelection.Add();
+                IsekaiFighterTraining.Add();
+                SignatureMoveSelection.Add();
+                Afterimage.Add();
+                OtherworldlyStamina.Add();
+                IsekaiQuickFooted.Add();
+                IsekaiAuraSelection.Add();
+                SummonHarem.Add();
+                SecondReincarnation.Add();
+                ReleaseEnergy.Add();
+                Gifted.Add();
+                SecretPowerSelection.Add();
+                HaxSelection.Add();
+                Main.LogDebug("Class: Features");
+
                 // God Emperor Archetype
+                GodEmperorSpellbook.Add();
                 GodEmperorProficiencies.Add();
+                GodEmperorQuickFooted.Add();
                 NascentApotheosis.Add();
-                DivineArray.Add();
+                EnergyCondensationSelection.Add();
                 GodEmperorEnergySelection.Add();
-                AuraOfGoldenProtection.Add();
-                DarkAuraFeature.Add();
-                AuraOfMajesty.Add();
+                BarrierSelection.Add();
+                BodyMindAlterSelection.Add();
                 GodlyVessel.Add();
-                SiphoningAuraFeature.Add();
                 CelestialRealm.Add();
                 Godhood.Add();
-                GodEmperor.Add();
+                GodEmperorArchetype.Add();
                 Main.LogDebug("Class: Emperor");
 
                 // Edge Lord Archetype
                 EdgeLordProficiencies.Add();
                 SupersonicCombat.Add();
-                EdgeLordFastMovement.Add();
                 ExtraStrike.Add();
-                EdgeLord.Add();
+                ChuunibyouActualisation.Add();
+                EdgeLordArchetype.Add();
                 Main.LogDebug("Class: EdgeLord");
 
                 // Hero Archetype
@@ -169,17 +175,23 @@ namespace IsekaiMod.Content {
                 TrueSmite.Add();
                 TrueMark.Add();
                 HerosPresence.Add();
-                Hero.Add();
+                HeroArchetype.Add();
                 Main.LogDebug("Class: Hero");
 
-                // Villain Archetype
-                VillainProficiencies.Add();
+                // Mastermind Archetype
+                MastermindSpellbook.Add();
+                MastermindProficiencies.Add();
+                MastermindQuickFooted.Add();
+                MastermindArchetype.Add();
+                Main.LogDebug("Class: Mastermind");
+
+                // Overlord Archetype
+                OverlordSpellbook.Add();
+                OverlordProficiencies.Add();
                 CorruptAuraFeature.Add();
-                VillainQuickFooted.Add();
                 SecondFormFeature.Add();
-                VillainSpellbook.Add();
-                Villain.Add();
-                Main.LogDebug("Class: Villain");
+                OverlordArchetype.Add();
+                Main.LogDebug("Class: Overlord");
 
                 // Add Progression & Prebuild after Class and class-dependent features are added
                 PrebuildIsekaiProtagonistFeatureList.Add();

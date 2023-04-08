@@ -2,7 +2,8 @@
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -16,7 +17,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         private static BlueprintProgression prog;
 
         public static void Configure() {
-            //Configure an empty shell during the blueprint phase, otherwise the game will always want ro remove the blueprint as unused since we are technically only creating it at a stage where that should no longer be done
+            //Configure an empty shell during the blueprint phase, otherwise the game will always want to remove the blueprint as unused since we are technically only creating it at a stage where that should no longer be done
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "DreadKnightLegacy", bp => {
             });
          }
@@ -25,8 +26,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static void PatchProgression() {
             BlueprintCharacterClass DreadKnight = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("d0eb4ca44e11417c9b2f0208491067a0");
             //only add this stereotype if the Dread Knight Class has been added
-            if (!ModSupport.IsExpandedContentEnabled()
-                || DreadKnight == null) return;
+            if (!ModSupport.IsExpandedContentEnabled() || DreadKnight == null) return;
 
             prog.SetName(IsekaiContext, "Dread Knight Legacy - Dread Lord");
             prog.SetDescription(IsekaiContext, 
@@ -46,7 +46,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             EdgeLordLegacySelection.Register(prog);
             GodEmperorLegacySelection.Register(prog);
             HeroLegacySelection.Prohibit(prog);
-            VillainLegacySelection.Register(prog);
+            MastermindLegacySelection.Prohibit(prog);
+            OverlordLegacySelection.Register(prog);
         }
 
         public static BlueprintProgression Get() {

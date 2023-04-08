@@ -27,9 +27,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         public static void Add() {
             var Icon_AuraOfRighteousWrath = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_RIGHTEOUS_WRATH.png");
             var AuraOfRighteousWrathEnchantment = Helpers.CreateBlueprint<BlueprintWeaponEnchantment>(IsekaiContext, "AuraOfRighteousWrathEnchantment", bp => {
-                bp.m_EnchantName = Helpers.CreateString(IsekaiContext, "AuraOfRighteousWrathEnchantment.Name", "Overpowered Ability — Aura of Righteous Wrath");
-                bp.m_Description = Helpers.CreateString(IsekaiContext, "AuraOfRighteousWrathEnchantment.Description", "This creature has two extra attacks and deal an additional 5d6 physical damage. "
-                    + "It also has additional sneak attack damage.");
+                bp.SetName(IsekaiContext, "Overpowered Ability — Aura of Righteous Wrath");
+                bp.SetDescription(IsekaiContext, "This creature has two extra attacks and deal an additional 5d6 physical damage. It also has additional sneak attack damage.");
                 bp.SetPrefix(IsekaiContext, "");
                 bp.SetSuffix(IsekaiContext, "");
                 bp.AddComponent<WeaponConditionalDamageDice>(c => {
@@ -49,7 +48,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                     c.Conditions = ActionFlow.EmptyCondition();
                 });
             });
-            var AuraOfRighteousWrathBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfRighteousWrathBuff", bp => {
+            var AuraOfRighteousWrathBuff = TTCoreExtensions.CreateBuff("AuraOfRighteousWrathBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Aura of Righteous Wrath");
                 bp.SetDescription(IsekaiContext, "This creature has two extra attacks and deal an additional 5d6 physical damage. It also has additional sneak attack damage.");
                 bp.IsClassFeature = true;
@@ -86,7 +85,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(AuraOfRighteousWrathBuff.ToReference<BlueprintBuffReference>()));
             });
-            var AuraOfRighteousWrathAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfRighteousWrathAreaBuff", bp => {
+            var AuraOfRighteousWrathAreaBuff = TTCoreExtensions.CreateBuff("AuraOfRighteousWrathAreaBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Aura of Righteous Wrath");
                 bp.SetDescription(IsekaiContext, "Allies within 120 feet of you has two extra attacks and deal an additional 5d6 physical damage. "
                     + "They also gain 1d6 sneak attack equal to 1/2 your character level.");
@@ -97,7 +96,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                     c.m_AreaEffect = AuraOfRighteousWrathArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var AuraOfRighteousWrathAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AuraOfRighteousWrathAbility", bp => {
+            var AuraOfRighteousWrathAbility = TTCoreExtensions.CreateActivatableAbility("AuraOfRighteousWrathAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Aura of Righteous Wrath");
                 bp.SetDescription(IsekaiContext, "Allies within 120 feet of you has two extra attacks and deal an additional 5d6 physical damage. "
                     + "They also gain 1d6 sneak attack equal to 1/2 your character level.");
@@ -115,7 +114,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(AuraOfRighteousWrathFeature);
+            OverpoweredAbilitySelection.AddToNonAutoSelection(AuraOfRighteousWrathFeature);
         }
     }
 }

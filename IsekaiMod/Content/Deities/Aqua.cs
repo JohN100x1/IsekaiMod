@@ -1,7 +1,6 @@
 ﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
-using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Items;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.Alignments;
@@ -24,16 +23,6 @@ namespace IsekaiMod.Content.Deities {
         private static readonly BlueprintArchetype FeralChampionArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>("f68ca492c9c15e241ab73735fbd0fb9f");
         private static readonly BlueprintArchetype PriestOfBalance = BlueprintTools.GetBlueprint<BlueprintArchetype>("a4560e3fb5d247d68fb1a2738fcc0855");
 
-        // Effective Class
-        private static readonly BlueprintCharacterClass ClericClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("67819271767a9dd4fbfd4ae700befea0");
-        private static readonly BlueprintCharacterClass InquistorClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("f1a70d9e1b0b41e49874e1fa9052a1ce");
-        private static readonly BlueprintCharacterClass WarpriestClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("30b5e47d47a0e37438cc5a80c96cfb99");
-
-        // Effective Spellbook
-        private static readonly BlueprintSpellbook CrusaderSpellbook = BlueprintTools.GetBlueprint<BlueprintSpellbook>("673d39f7da699aa408cdda6282e7dcc0");
-        private static readonly BlueprintSpellbook ClericSpellbook = BlueprintTools.GetBlueprint<BlueprintSpellbook>("4673d19a0cf2fab4f885cc4d1353da33");
-        private static readonly BlueprintSpellbook InquisitorSpellbook = BlueprintTools.GetBlueprint<BlueprintSpellbook>("57fab75111f377248810ece84193a5a5");
-
         // Favored Weapon
         private static readonly BlueprintFeature QuarterstaffProficiency = BlueprintTools.GetBlueprint<BlueprintFeature>("aed4f88b52ae0fb468895f90da854ad4");
         private static readonly BlueprintItem QuarterstaffPlus1 = BlueprintTools.GetBlueprint<BlueprintItem>("2c4a3077efc2378499c60b03d2b0527a");
@@ -54,11 +43,11 @@ namespace IsekaiMod.Content.Deities {
 
                 // Exclude from Archetypes
                 bp.AddComponent<PrerequisiteNoArchetype>(c => {
-                    c.m_CharacterClass = ClericClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_CharacterClass = ClassTools.ClassReferences.ClericClass;
                     c.m_Archetype = PriestOfBalance.ToReference<BlueprintArchetypeReference>();
                 });
                 bp.AddComponent<PrerequisiteNoArchetype>(c => {
-                    c.m_CharacterClass = WarpriestClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_CharacterClass = ClassTools.ClassReferences.WarpriestClass;
                     c.m_Archetype = FeralChampionArchetype.ToReference<BlueprintArchetypeReference>();
                 });
 
@@ -81,29 +70,29 @@ namespace IsekaiMod.Content.Deities {
                 // Lock Spellbook on off-alignment
                 bp.AddComponent<ForbidSpellbookOnAlignmentDeviation>(c => {
                     c.m_Spellbooks = new BlueprintSpellbookReference[] {
-                        CrusaderSpellbook.ToReference<BlueprintSpellbookReference>(),
-                        ClericSpellbook.ToReference<BlueprintSpellbookReference>(),
-                        InquisitorSpellbook.ToReference<BlueprintSpellbookReference>()
+                        SpellTools.Spellbook.CrusaderSpellbook.ToReference<BlueprintSpellbookReference>(),
+                        SpellTools.Spellbook.ClericSpellbook.ToReference<BlueprintSpellbookReference>(),
+                        SpellTools.Spellbook.InquisitorSpellbook.ToReference<BlueprintSpellbookReference>()
                     };
                 });
 
                 // Cleric, Inquistor, Warpriest starting proficiency and weapon
                 bp.AddComponent<AddFeatureOnClassLevel>(c => {
-                    c.m_Class = ClericClass.ToReference<BlueprintCharacterClassReference>();
+                    c.m_Class = ClassTools.ClassReferences.ClericClass;
                     c.m_Feature = QuarterstaffProficiency.ToReference<BlueprintFeatureReference>();
                     c.Level = 1;
                     c.m_Archetypes = null;
                     c.m_AdditionalClasses = new BlueprintCharacterClassReference[2] {
-                        InquistorClass.ToReference<BlueprintCharacterClassReference>(),
-                        WarpriestClass.ToReference<BlueprintCharacterClassReference>()
+                        ClassTools.ClassReferences.InquisitorClass,
+                        ClassTools.ClassReferences.WarpriestClass
                     };
                 });
                 bp.AddComponent<AddStartingEquipment>(c => {
                     c.m_BasicItems = new BlueprintItemReference[1] { QuarterstaffPlus1.ToReference<BlueprintItemReference>() };
                     c.m_RestrictedByClass = new BlueprintCharacterClassReference[3] {
-                        ClericClass.ToReference<BlueprintCharacterClassReference>(),
-                        InquistorClass.ToReference<BlueprintCharacterClassReference>(),
-                        WarpriestClass.ToReference<BlueprintCharacterClassReference>()
+                        ClassTools.ClassReferences.ClericClass,
+                        ClassTools.ClassReferences.InquisitorClass,
+                        ClassTools.ClassReferences.WarpriestClass
                     };
                 });
             }));

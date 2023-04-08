@@ -14,11 +14,10 @@ namespace IsekaiMod.Content.Dialogue {
     internal class IsekaiHorgus {
 
         // Answers: Answer_0011 = "Two thousand gold."
-        private static BlueprintAnswersList AnswersList_0009 = BlueprintTools.GetBlueprint<BlueprintAnswersList>("12e42316950f8c9498afb8b0fb2baaae");
-        private static BlueprintAnswer Answer_0011 = BlueprintTools.GetBlueprint<BlueprintAnswer>("3ab564082485b034a9d0a7b550e1a3e2");
-        private static BlueprintUnit Horgus = BlueprintTools.GetBlueprint<BlueprintUnit>("c02e641bf8cf0984fb49604afa224563");
-        private static BlueprintUnlockableFlag Horgus_GetMeOut_price = BlueprintTools.GetBlueprint<BlueprintUnlockableFlag>("ddfedbdeab95ed941b6968b06162c921");
-
+        private static readonly BlueprintAnswersList AnswersList_0009 = BlueprintTools.GetBlueprint<BlueprintAnswersList>("12e42316950f8c9498afb8b0fb2baaae");
+        private static readonly BlueprintAnswer Answer_0011 = BlueprintTools.GetBlueprint<BlueprintAnswer>("3ab564082485b034a9d0a7b550e1a3e2");
+        private static readonly BlueprintUnit Horgus = BlueprintTools.GetBlueprint<BlueprintUnit>("c02e641bf8cf0984fb49604afa224563");
+        private static readonly BlueprintUnlockableFlag Horgus_GetMeOut_price = BlueprintTools.GetBlueprint<BlueprintUnlockableFlag>("ddfedbdeab95ed941b6968b06162c921");
 
         public static void Add() {
             // Prompt (Hulrun, at Kenabres festival)
@@ -27,11 +26,10 @@ namespace IsekaiMod.Content.Dialogue {
              */
 
             // Reply
-            var IsekaiDialogueHorgusReply = ThingsNotHandledByTTTCore.CreateCue("IsekaiDialogueHorgusReply", bp => {
-                bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiDialogueHorgusReply.Text",
-                    "\"My daughter?\" {n}Horgus takes a quick glance at Camellia.{/n} \"I don't think you know what sort of person she is. {n}Horgus takes a breath.{/n} "
-                    + "Regardless, it seems my previous offer was somewhat insulting. Two thousand gold it is.\"");
-                bp.Speaker = new DialogSpeaker() {
+            var IsekaiDialogueHorgusReply = TTCoreExtensions.CreateCue("IsekaiDialogueHorgusReply", bp => {
+                bp.SetText(IsekaiContext, "\"My daughter?\" {n}Horgus takes a quick glance at Camellia.{/n} \"I don't think you know what sort of person she is. "
+                    + "{n}Horgus takes a breath.{/n} Regardless, it seems my previous offer was somewhat insulting. Two thousand gold it is.\"");
+                bp.Speaker = new DialogSpeaker {
                     m_Blueprint = Horgus.ToReference<BlueprintUnitReference>(),
                     MoveCamera = true
                 };
@@ -42,10 +40,9 @@ namespace IsekaiMod.Content.Dialogue {
                 bp.Answers = AnswersList_0009.Answers;
             });
             // Answer
-            var IsekaiDialogueHorgus = ThingsNotHandledByTTTCore.CreateAnswer("IsekaiDialogueHorgus", bp => {
-                bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiDialogueHorgus.Text",
-                    "(Isekai Protagonist) \"Two thousand gold... And your daughter joins my harem.\"");
-                bp.NextCue = new CueSelection() {
+            var IsekaiDialogueHorgus = TTCoreExtensions.CreateAnswer("IsekaiDialogueHorgus", bp => {
+                bp.SetText(IsekaiContext, "(Isekai Protagonist) \"Two thousand gold... And your daughter joins my harem.\"");
+                bp.NextCue = new CueSelection {
                     Cues = new List<BlueprintCueBaseReference>() { IsekaiDialogueHorgusReply.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
@@ -63,7 +60,7 @@ namespace IsekaiMod.Content.Dialogue {
 
             // Ptach "Two Thousand gold." answer in dialogue
             Answer_0011.ShowConditions.Conditions = Answer_0011.ShowConditions.Conditions.AppendToArray(
-                new AnswerSelected() {
+                new AnswerSelected {
                     Not = true,
                     m_Answer = IsekaiDialogueHorgus.ToReference<BlueprintAnswerReference>()
                 });

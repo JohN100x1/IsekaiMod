@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
         private static readonly Sprite Icon_SolidShadowsSpell = BlueprintTools.GetBlueprint<BlueprintFeature>("48cba171d3bc4042ae2a18d503816b50").m_Icon;
 
         public static void Add() {
-            var AutoSolidShadowsBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoSolidShadowsBuff", bp => {
+            var AutoSolidShadowsBuff = TTCoreExtensions.CreateBuff("AutoSolidShadowsBuff", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_SolidShadowsSpell;
@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoSolidShadowsAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoSolidShadowsAbility", bp => {
+            var AutoSolidShadowsAbility = TTCoreExtensions.CreateActivatableAbility("AutoSolidShadowsAbility", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_SolidShadowsSpell;
@@ -46,7 +46,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(AutoSolidShadowsFeature);
+            OverpoweredAbilitySelection.AddToAllSelection(AutoSolidShadowsFeature);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
         private static readonly BlueprintUnitFact NaturalArmor16 = BlueprintTools.GetBlueprint<BlueprintUnitFact>("73a90b2a70d576f429ad401e7a5a8a4f");
 
         public static void Add() {
-            var DeathsnatcherSizeBabyBuff = ThingsNotHandledByTTTCore.CreateBuff("DeathsnatcherSizeBabyBuff", bp => {
+            var DeathsnatcherSizeBabyBuff = TTCoreExtensions.CreateBuff("DeathsnatcherSizeBabyBuff", bp => {
                 bp.SetName(IsekaiContext, "Baby Deathsnatcher");
                 bp.SetDescription(IsekaiContext, "The Deathsnatcher matures at 4th level. When this occurs, the Deathsnatcher’s natural armor bonus to its AC increases by 6, and gains "
                     + "the following ability scores adjustments: Str +6, Dex –4, Con +4.");

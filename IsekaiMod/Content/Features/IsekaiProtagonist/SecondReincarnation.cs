@@ -22,10 +22,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
 
         public static void Add() {
             var Icon_SecondReincarnation = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SECOND_REINCARNATION.png");
-            var SecondReincarnationBuff = ThingsNotHandledByTTTCore.CreateBuff("SecondReincarnationBuff", bp => {
+            var SecondReincarnationBuff = TTCoreExtensions.CreateBuff("SecondReincarnationBuff", bp => {
                 bp.SetName(IsekaiContext, "Second Reincarnation");
-                bp.SetDescription(IsekaiContext, "Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.\n"
-                    + "Your attacks ignore damage reduction and your spells ignore spell resistance and spell immunity.");
+                bp.SetDescription(IsekaiContext, "Your attacks ignore damage reduction and your spells ignore spell resistance and spell immunity."
+                    +"\nOnce per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.");
                 bp.m_Icon = Icon_SecondReincarnation;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -68,8 +68,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
             var SecondReincarnation = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation", bp => {
                 bp.SetName(IsekaiContext, "Second Reincarnation");
-                bp.SetDescription(IsekaiContext, "Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.\n"
-                    + "Your attacks ignore damage reduction and your spells ignore spell resistance and spell immunity.");
+                bp.SetDescription(IsekaiContext, "Your attacks ignore damage reduction and your spells ignore spell resistance and spell immunity."
+                    + "\nOnce per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain.");
                 bp.m_Icon = Icon_SecondReincarnation;
                 bp.AddComponent<IgnoreDamageReductionOnAttack>();
                 bp.AddComponent<IgnoreSpellImmunity>(c => {

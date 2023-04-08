@@ -89,7 +89,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(InstakillFeature);
+            OverpoweredAbilitySelection.AddToNonAutoSelection(InstakillFeature);
         }
     }
 }

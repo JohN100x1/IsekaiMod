@@ -321,7 +321,7 @@ namespace IsekaiMod.Utilities {
 
         private class EncyclopediaEntry {
             public string Entry = "";
-            public List<string> Patterns = new List<string>();
+            public List<string> Patterns = new();
 
             public string Tag(string keyword) {
                 return $"{{g|Encyclopedia:{Entry}}}{keyword}{{/g}}";

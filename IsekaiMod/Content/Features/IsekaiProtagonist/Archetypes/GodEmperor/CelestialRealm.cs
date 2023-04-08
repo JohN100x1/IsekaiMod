@@ -17,8 +17,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
     internal class CelestialRealm {
 
         public static void Add() {
+
+            // TODO: shadow realm (celestial realm alt)
+            // TODO: partial versions
+
             var Icon_CelestialRealm = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_CELESTIAL_REALM.png");
-            var CelestialRealmBuff = ThingsNotHandledByTTTCore.CreateBuff("CelestialRealmBuff", bp => {
+            var CelestialRealmBuff = TTCoreExtensions.CreateBuff("CelestialRealmBuff", bp => {
                 bp.SetName(IsekaiContext, "Celestial Realm");
                 bp.SetDescription(IsekaiContext, "This character transforms their damage type into divine.");
                 bp.IsClassFeature = true;
@@ -39,7 +43,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(CelestialRealmBuff.ToReference<BlueprintBuffReference>()));
             });
-            var CelestialRealmAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("CelestialRealmAreaBuff", bp => {
+            var CelestialRealmAreaBuff = TTCoreExtensions.CreateBuff("CelestialRealmAreaBuff", bp => {
                 bp.SetName(IsekaiContext, "Celestial Realm");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of you transform their damage type into divine.");
                 bp.m_Icon = Icon_CelestialRealm;
@@ -49,7 +53,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                     c.m_AreaEffect = CelestialRealmArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var CelestialRealmAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("CelestialRealmAbility", bp => {
+            var CelestialRealmAbility = TTCoreExtensions.CreateActivatableAbility("CelestialRealmAbility", bp => {
                 bp.SetName(IsekaiContext, "Celestial Realm");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of you transform their damage type into divine.");
                 bp.m_Icon = Icon_CelestialRealm;

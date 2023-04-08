@@ -19,10 +19,9 @@ namespace IsekaiMod.Content.Dialogue {
              */
 
             // Answer
-            var IsekaiKaylessaDrowLeader = ThingsNotHandledByTTTCore.CreateAnswer("IsekaiKaylessaDrowLeader", bp => {
-                bp.Text = Helpers.CreateString(IsekaiContext, "IsekaiKaylessaDrowLeader.Text",
-                    "(Isekai Protagonist) [Attack] \"Nice acting, Mr. background character. Now it's time for your unmomentous death scene.\"");
-                bp.NextCue = new CueSelection() {
+            var IsekaiKaylessaDrowLeader = TTCoreExtensions.CreateAnswer("IsekaiKaylessaDrowLeader", bp => {
+                bp.SetText(IsekaiContext, "(Isekai Protagonist) [Attack] \"Nice acting, Mr. background character. Now it's time for your unmomentous death scene.\"");
+                bp.NextCue = new CueSelection {
                     Cues = new List<BlueprintCueBaseReference>() { Cue_0067.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };

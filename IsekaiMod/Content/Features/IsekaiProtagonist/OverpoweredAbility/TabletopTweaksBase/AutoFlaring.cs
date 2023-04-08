@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
         private static readonly Sprite Icon_FlaringSpell = BlueprintTools.GetBlueprint<BlueprintFeature>("59e1695070ef481aa958d69cb370592b").m_Icon;
 
         public static void Add() {
-            var AutoFlaringBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoFlaringBuff", bp => {
+            var AutoFlaringBuff = TTCoreExtensions.CreateBuff("AutoFlaringBuff", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_FlaringSpell;
@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoFlaringAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoFlaringAbility", bp => {
+            var AutoFlaringAbility = TTCoreExtensions.CreateActivatableAbility("AutoFlaringAbility", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_FlaringSpell;
@@ -46,7 +46,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(AutoFlaringFeature);
+            OverpoweredAbilitySelection.AddToAllSelection(AutoFlaringFeature);
         }
     }
 }

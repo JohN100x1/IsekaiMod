@@ -15,7 +15,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         private static readonly Sprite Icon_ReachSpell = BlueprintTools.GetBlueprint<BlueprintFeature>("46fad72f54a33dc4692d3b62eca7bb78").m_Icon;
 
         public static void Add() {
-            var AutoReachBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoReachBuff", bp => {
+            var AutoReachBuff = TTCoreExtensions.CreateBuff("AutoReachBuff", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Reach");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat.");
                 bp.m_Icon = Icon_ReachSpell;
@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoReachAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoReachAbility", bp => {
+            var AutoReachAbility = TTCoreExtensions.CreateActivatableAbility("AutoReachAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Auto Reach");
                 bp.SetDescription(IsekaiContext, "Every time you cast a spell, it increases its range by one range category, as though using the Reach Spell feat.");
                 bp.m_Icon = Icon_ReachSpell;
@@ -42,7 +42,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(AutoReachFeature);
+            OverpoweredAbilitySelection.AddToAllSelection(AutoReachFeature);
         }
     }
 }

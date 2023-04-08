@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
         private static readonly Sprite Icon_AngelBladeOfTheSun = BlueprintTools.GetBlueprint<BlueprintAbility>("cc8be337fff61284caabe3340fc48294").m_Icon;
 
         public static void Add() {
-            var AuraOfDivineFuryBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfDivineFuryBuff", bp => {
+            var AuraOfDivineFuryBuff = TTCoreExtensions.CreateBuff("AuraOfDivineFuryBuff", bp => {
                 bp.SetName(IsekaiContext, "Aura of Divine Fury");
                 bp.SetDescription(IsekaiContext, "This creature has a +10 sacred bonus to attack damage and hit point damage from spells.");
                 bp.IsClassFeature = true;
@@ -42,7 +42,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.Fx = new PrefabLink();
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(AuraOfDivineFuryBuff.ToReference<BlueprintBuffReference>()));
             });
-            var AuraOfDivineFuryAreaBuff = ThingsNotHandledByTTTCore.CreateBuff("AuraOfDivineFuryAreaBuff", bp => {
+            var AuraOfDivineFuryAreaBuff = TTCoreExtensions.CreateBuff("AuraOfDivineFuryAreaBuff", bp => {
                 bp.SetName(IsekaiContext, "Aura of Divine Fury");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells.");
                 bp.m_Icon = Icon_AngelBladeOfTheSun;
@@ -52,7 +52,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                     c.m_AreaEffect = AuraOfDivineFuryArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
-            var AuraOfDivineFuryAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AuraOfDivineFuryAbility", bp => {
+            var AuraOfDivineFuryAbility = TTCoreExtensions.CreateActivatableAbility("AuraOfDivineFuryAbility", bp => {
                 bp.SetName(IsekaiContext, "Aura of Divine Fury");
                 bp.SetDescription(IsekaiContext, "Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells.");
                 bp.m_Icon = Icon_AngelBladeOfTheSun;

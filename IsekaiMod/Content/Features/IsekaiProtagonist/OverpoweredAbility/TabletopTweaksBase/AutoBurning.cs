@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
         private static readonly Sprite Icon_BurningSpell = BlueprintTools.GetBlueprint<BlueprintFeature>("4732a4b7b53f46848ae34a9dae66dbb2").m_Icon;
 
         public static void Add() {
-            var AutoBurningBuff = ThingsNotHandledByTTTCore.CreateBuff("AutoBurningBuff", bp => {
+            var AutoBurningBuff = TTCoreExtensions.CreateBuff("AutoBurningBuff", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_BurningSpell;
@@ -31,7 +31,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath;
             });
-            var AutoBurningAbility = ThingsNotHandledByTTTCore.CreateActivatableAbility("AutoBurningAbility", bp => {
+            var AutoBurningAbility = TTCoreExtensions.CreateActivatableAbility("AutoBurningAbility", bp => {
                 bp.SetName(IsekaiContext, Name);
                 bp.SetDescription(IsekaiContext, Description);
                 bp.m_Icon = Icon_BurningSpell;
@@ -46,7 +46,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                 });
             });
 
-            OverpoweredAbilitySelection.AddToSelection(AutoBurningFeature);
+            OverpoweredAbilitySelection.AddToAllSelection(AutoBurningFeature);
         }
     }
 }

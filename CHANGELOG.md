@@ -4,6 +4,60 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [Unreleased]
+### Added
+- Added `Divine Aura` feature to `Otherwordly Aura` selection.
+- Added `Hax` selection to `Isekai Protagonist` progression.
+- Added `Secret Power` selection to `Isekai Protagonist` progression.
+- Added `Afterimage` feature to `Isekai Protagonist` progression.
+- Added `Gifted` feature to `Isekai Protagonist` progression.
+- Added `Release Energy` feature to `Isekai Protagonist` progression.
+- Added `Chuunibyou Power` feature to `Edge Lord` progression.
+- Added `Alteration of body and mind` selection to `God Emperor` progression.
+- Added `Energy Condensation` selection to `God Emperor` progression.
+- Added `Energy Barrier` selection to `God Emperor` progression.
+- Added `God Emperor Aura` selection to `God Emperor` progression.
+- Added `Mastermind` Archetype (Isekai Protagonist).
+- Added `Overlord` Archetype (Isekai Protagonist).
+### Changed
+- Buffed `Friendly Aura` to also affect damage rolls.
+- Buffed `Isekai Protagonist` to be able to choose between `Divine Aura`, `Dark Aura`, and `Friendly Aura`.
+- Buffed `Isekai Protagonist` to be able to choose two `Signature Move` abilities.
+- Buffed `Edge Lord` to get another OP ability at 10th level.
+- Buffed `Edge Lord` to get `Otherwordly Aura` at 10th level.
+- Buffed `Edge Lord` to get Exotic Weapon Proficiency.
+- Buffed `Isekai Protagonist` to be able to choose between `Divine Aura` and `Dark Aura`.
+- Buffed `God Emperor` to get another OP ability at 5th and 15th level.
+- Buffed `Hero` to get another Special Power at 3rd and 17th level.
+- Buffed `Hero` to get another OP Ability at 10th level.
+- Buffed `Hero` to get Tower shield and exotic weapon proficiency.
+- Buffed `Siphoning Aura` to scale 1/2 character level.
+- Nerfed `Magical Amplification` spell dice from d12 -> d10.
+- Changed `Dark Aura` debuff from -2 -> -4 but no longer affects attack rolls.
+- Changed `Isekai Protagonist` `Second Reincarnation` obtained from level 20 -> 15.
+- Changed `Isekai Protagonist` `Otherworldly Stamina` obtained from level 15 -> 13.
+- Changed `Isekai Protagonist` `Quick-Footed` obtained from level 16 -> 15.
+- Changed `God Emperor` casting stat to WIS.
+- Changed `God Emperor` `Channel Energy` obtained from level 5 -> 3.
+- Changed `God Emperor` `Armor Saint` obtained from level 4 -> 3.
+- Renamed `Energy Immunity Selection` to `Energy Immunity`.
+- Renamed `Aura of Golden Protection` to `Gold Barrier`.
+- Updated description for `Isekai Protagonist` `Fighter Training`.
+- Updated icon for `Exceptional Feats`.
+- Updated icon for `Hero` `Graceful Combat` feature.
+- Updated icon for `Starting Weapon` feature.
+- Updated icon for `Siphoning Aura`.
+- Updated icon for `Dark Aura`.
+### Fixed
+- Fixed `Graceful Combat` not applying the 1.5x damage bonus to two-handed weapons.
+- Fixed `Reflect` to not affect attacks from the owner.
+### Removed
+- Removed `Villain` Archetype (Isekai Protagonist).
+- Removed `Fast Movement` and `Very Fast Movement` features from `Isekai Protagonist` progression.
+- Removed `Aura of Divine Fury` feature from `God Emperor` progression.
+- Removed `Divine Array` feature from `God Emperor` progression.
+- Removed `Kinetic Power` Special Power.
+
 # [4.3.0] - 2023-03-28
 ### Added
 - Added `Meta Luck` OP ability.
