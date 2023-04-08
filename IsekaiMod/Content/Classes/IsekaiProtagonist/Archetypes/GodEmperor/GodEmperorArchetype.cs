@@ -24,7 +24,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var LightEnergyCondensation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "LightEnergyCondensation");
             var GodEmperorQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodEmperorQuickFooted");
             var MajesticAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MajesticAuraFeature");
-            var CelestialRealmFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CelestialRealmFeature");
             var Godhood = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Godhood");
             var GodlyVessel = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodlyVessel");
             var SiphoningAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SiphoningAuraFeature");
@@ -36,6 +35,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var BarrierSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BarrierSelection");
             var BodyMindAlterSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BodyMindAlterSelection");
             var PathSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "PathSelection");
+            var RealmSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "RealmSelection");
 
             // Removed features
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
@@ -82,7 +82,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(10, GodEmperorAuraSelection, BodyMindAlterSelection),
                     Helpers.CreateLevelEntry(12, PathSelection),
                     Helpers.CreateLevelEntry(15, GodlyVessel, GodEmperorQuickFooted),
-                    Helpers.CreateLevelEntry(17, CelestialRealmFeature),
+                    Helpers.CreateLevelEntry(17, RealmSelection),
                     Helpers.CreateLevelEntry(20, Godhood),
                 };
                 bp.OverrideAttributeRecommendations = true;

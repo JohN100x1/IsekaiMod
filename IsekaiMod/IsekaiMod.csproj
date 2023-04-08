@@ -326,7 +326,7 @@
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\ExtraStrike.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\SupersonicCombat.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\BarrierSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\CelestialRealm.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\RealmSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\EnergyCondensationSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorEnergySelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorLegacySelection.cs" />

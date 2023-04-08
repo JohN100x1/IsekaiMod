@@ -27,10 +27,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 bp.AddComponent<SplitOutgoingDamage>(c => {
                     c.Element = DamageEnergyType.Divine;
                 });
-                bp.AddComponent<PrerequisiteAlignment>(c => {
-                    c.Group = Prerequisite.GroupType.Any;
-                    c.Alignment = AlignmentMaskType.Good | AlignmentMaskType.ChaoticNeutral | AlignmentMaskType.TrueNeutral | AlignmentMaskType.LawfulNeutral;
-                });
             });
             var RighteousPathAbility = TTCoreExtensions.CreateActivatableAbility("RighteousPathAbility", bp => {
                 bp.SetName(IsekaiContext, RighteousPathName);
@@ -58,10 +54,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 bp.m_Icon = Icon_UnjustPath;
                 bp.AddComponent<SplitOutgoingDamage>(c => {
                     c.Element = DamageEnergyType.Unholy;
-                });
-                bp.AddComponent<PrerequisiteAlignment>(c => {
-                    c.Group = Prerequisite.GroupType.Any;
-                    c.Alignment = AlignmentMaskType.Evil | AlignmentMaskType.ChaoticNeutral | AlignmentMaskType.TrueNeutral | AlignmentMaskType.LawfulNeutral;
                 });
             });
             var UnjustPathAbility = TTCoreExtensions.CreateActivatableAbility("UnjustPathAbility", bp => {

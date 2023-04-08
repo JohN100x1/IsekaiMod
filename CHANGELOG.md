@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Energy Condensation` selection to `God Emperor` progression.
 - Added `Energy Barrier` selection to `God Emperor` progression.
 - Added `Chosen Path` selection to `God Emperor` progression.
+- Added `Transcendental Realm` selection to `God Emperor` progression.
 - Added `God Emperor Aura` selection to `God Emperor` progression.
 - Added `Mastermind` Archetype (Isekai Protagonist).
 - Added `Overlord` Archetype (Isekai Protagonist).

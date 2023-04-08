@@ -157,7 +157,7 @@ namespace IsekaiMod.Content {
                 BodyMindAlterSelection.Add();
                 PathSelection.Add();
                 GodlyVessel.Add();
-                CelestialRealm.Add();
+                RealmSelection.Add();
                 Godhood.Add();
                 GodEmperorArchetype.Add();
                 Main.LogDebug("Class: Emperor");
