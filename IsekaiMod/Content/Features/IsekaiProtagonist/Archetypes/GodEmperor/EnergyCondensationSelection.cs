@@ -95,7 +95,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
 
             var EnergyCondensationSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "EnergyCondensationSelection", bp => {
                 bp.SetName(IsekaiContext, "Energy Condensation");
-                bp.SetDescription(IsekaiContext, "At 5th level, you are able to condense your own internal energy to form a protective layer "
+                bp.SetDescription(IsekaiContext, "At 5th level, you are able to condense your channelled energy to form a protective layer "
                     + "around you, giving you resistance against elemental damage.");
                 bp.m_Icon = Icon_LightEnergyCondensation;
                 bp.IgnorePrerequisites = true;

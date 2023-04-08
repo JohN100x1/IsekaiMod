@@ -21,7 +21,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
             // TODO: shadow realm (celestial realm alt)
             // TODO: partial versions
 
-            var Icon_CelestialRealm = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_CELESTIAL_REALM.png");
+            var Icon_CelestialRealm = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_REALM_CELESTIAL.png");
             var CelestialRealmBuff = TTCoreExtensions.CreateBuff("CelestialRealmBuff", bp => {
                 bp.SetName(IsekaiContext, "Celestial Realm");
                 bp.SetDescription(IsekaiContext, "This character transforms their damage type into divine.");

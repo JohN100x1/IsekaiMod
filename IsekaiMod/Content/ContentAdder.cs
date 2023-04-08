@@ -155,6 +155,7 @@ namespace IsekaiMod.Content {
                 GodEmperorEnergySelection.Add();
                 BarrierSelection.Add();
                 BodyMindAlterSelection.Add();
+                PathSelection.Add();
                 GodlyVessel.Add();
                 CelestialRealm.Add();
                 Godhood.Add();

@@ -158,6 +158,7 @@
   <ItemGroup>
     <!-- any TTW Based Mod -->
     <Compile Include="Components\AnyWeaponStatReplacementFixed.cs" />
+    <Compile Include="Components\SplitOutgoingDamage.cs" />
     <Compile Include="Components\SetAttackerAutoMiss.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorSpellbook.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Mastermind\MastermindArchetype.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Overlord\OverlordSpellbook.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Overlord\OverlordArchetype.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\ChuunibyouActualisation.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\PathSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\BodyMindAuraSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorQuickFooted.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindLegacySelection.cs" />

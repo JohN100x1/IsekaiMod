@@ -53,6 +53,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             BlueprintFeatureSelection EnergyCondensationSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "EnergyCondensationSelection");
             BlueprintFeatureSelection BarrierSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BarrierSelection");
             BlueprintFeatureSelection BodyMindAlterSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BodyMindAlterSelection");
+            BlueprintFeatureSelection PathSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "PathSelection");
             var GodEmperorProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodEmperorProficiencies");
             var GodEmperorQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GodEmperorQuickFooted");
             var NascentApotheosis = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "NascentApotheosis");
@@ -139,7 +140,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 
                 // God Emperor UI group
                 Helpers.CreateUIGroup(NascentApotheosis, LightEnergyCondensation, GodEmperorEnergySelection, BodyMindAlterSelection,
-                    EnergyCondensationSelection, BarrierSelection, GodlyVessel, Godhood,
+                    EnergyCondensationSelection, BarrierSelection, PathSelection, GodlyVessel, Godhood,
                 
                 // Hero UI group
                     GracefulCombat, IsekaiChannelPositiveEnergyFeature, AuraOfDivineFuryFeature, CelestialRealmFeature, HerosPresenceFeature),

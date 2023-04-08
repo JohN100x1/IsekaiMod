@@ -157,7 +157,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
 
             var BarrierSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BarrierSelection", bp => {
                 bp.SetName(IsekaiContext, "Energy Barrier");
-                bp.SetDescription(IsekaiContext, "At 7th level, you are able to channel your energy to shield allies from physical and magical attacks.");
+                bp.SetDescription(IsekaiContext, "At 7th level, you are able to channel your energy to form a solid barrier to shield allies "
+                    + "from physical and magical attacks.");
                 bp.m_Icon = Icon_GoldBarrier;
                 bp.IgnorePrerequisites = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {

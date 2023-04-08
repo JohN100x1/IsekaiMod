@@ -35,13 +35,13 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var EnergyCondensationSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "EnergyCondensationSelection");
             var BarrierSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BarrierSelection");
             var BodyMindAlterSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BodyMindAlterSelection");
+            var PathSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "PathSelection");
 
             // Removed features
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
             var IsekaiQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiQuickFooted");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
             var Gifted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Gifted");
-            var OtherworldlyStamina = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OtherworldlyStamina");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
 
             var HaxSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "HaxSelection");
@@ -68,7 +68,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(10, IsekaiAuraSelection, SecretPowerSelection),
                     Helpers.CreateLevelEntry(11, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(12, BeachEpisodeSelection),
-                    Helpers.CreateLevelEntry(13, SpecialPowerSelection, OtherworldlyStamina),
+                    Helpers.CreateLevelEntry(13, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(15, IsekaiQuickFooted, SecondReincarnation),
                     Helpers.CreateLevelEntry(17, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(19, SpecialPowerSelection),
@@ -80,6 +80,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(5, EnergyCondensationSelection),
                     Helpers.CreateLevelEntry(7, BarrierSelection),
                     Helpers.CreateLevelEntry(10, GodEmperorAuraSelection, BodyMindAlterSelection),
+                    Helpers.CreateLevelEntry(12, PathSelection),
                     Helpers.CreateLevelEntry(15, GodlyVessel, GodEmperorQuickFooted),
                     Helpers.CreateLevelEntry(17, CelestialRealmFeature),
                     Helpers.CreateLevelEntry(20, Godhood),
