@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Chosen Path` selection to `God Emperor` progression.
 - Added `Transcendental Realm` selection to `God Emperor` progression.
 - Added `God Emperor Aura` selection to `God Emperor` progression.
+- Added `Heroic Aura` selection to `Hero` progression.
+- Added `Gold Barrier` to `Hero` progression.
 - Added `Mastermind` Archetype (Isekai Protagonist).
 - Added `Overlord` Archetype (Isekai Protagonist).
 ### Changed
@@ -56,7 +58,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - Removed `Villain` Archetype (Isekai Protagonist).
 - Removed `Fast Movement` and `Very Fast Movement` features from `Isekai Protagonist` progression.
-- Removed `Aura of Divine Fury` feature from `God Emperor` progression.
+- Removed `Aura of Divine Fury` feature from `God Emperor` and `Hero` progression.
 - Removed `Divine Array` feature from `God Emperor` progression.
 - Removed `Kinetic Power` Special Power.
 

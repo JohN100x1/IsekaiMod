@@ -92,7 +92,6 @@ namespace IsekaiMod.Content {
                 ArmorSaint.Add();
                 ArmorOfStrength.Add();
                 SummonBeast.Add();
-                AuraOfDivineFury.Add();
                 KillingIntent.Add();
                 MagicalAmplification.Add();
                 Reflect.Add();

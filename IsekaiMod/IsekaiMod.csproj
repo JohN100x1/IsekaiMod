@@ -300,7 +300,6 @@
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\AlphaStrike.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\ArmorOfStrength.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\ArmorSaint.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\AuraOfDivineFury.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\BetaStrike.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\BodyStrengthening.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\EnergyImmunitySelection.cs" />
