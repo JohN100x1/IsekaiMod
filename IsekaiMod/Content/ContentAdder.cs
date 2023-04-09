@@ -172,8 +172,7 @@ namespace IsekaiMod.Content {
                 // Hero Archetype
                 HeroProficiencies.Add();
                 GracefulCombat.Add();
-                TrueSmite.Add();
-                TrueMark.Add();
+                HandsOfSalvation.Add();
                 HerosPresence.Add();
                 HeroArchetype.Add();
                 Main.LogDebug("Class: Hero");

@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Transcendental Realm` selection to `God Emperor` progression.
 - Added `God Emperor Aura` selection to `God Emperor` progression.
 - Added `Heroic Aura` selection to `Hero` progression.
+- Added `Hands of Salvation` to `Hero` progression.
 - Added `Gold Barrier` to `Hero` progression.
 - Added `Mastermind` Archetype (Isekai Protagonist).
 - Added `Overlord` Archetype (Isekai Protagonist).
@@ -60,6 +61,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed `Fast Movement` and `Very Fast Movement` features from `Isekai Protagonist` progression.
 - Removed `Aura of Divine Fury` feature from `God Emperor` and `Hero` progression.
 - Removed `Divine Array` feature from `God Emperor` progression.
+- Removed `True Smite` and `True Mark` from `Paladin Legacy - Hero of Light` legacy.
 - Removed `Kinetic Power` Special Power.
 
 # [4.3.0] - 2023-03-28

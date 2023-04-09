@@ -168,6 +168,7 @@
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\PathSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\BodyMindAuraSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorQuickFooted.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\HandsOfSalvation.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindLegacySelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindProficiencies.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindQuickFooted.cs" />
@@ -257,13 +258,11 @@
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\BardLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\DreadKnightLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\FighterBasicLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\HeroicLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\KineticDarkElementalistLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\KineticKnightLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\KineticLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\KineticOverwhelmingSoulLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\LegacySelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\MagusLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\MongScaledFistLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\MonkLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\OracleLegacy.cs" />
@@ -336,8 +335,6 @@
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\HeroLegacySelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\HeroProficiencies.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\HerosPresence.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\TrueMark.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\TrueSmite.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\CorruptAuraFeature.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\OverlordLegacySelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\OverlordProficiencies.cs" />

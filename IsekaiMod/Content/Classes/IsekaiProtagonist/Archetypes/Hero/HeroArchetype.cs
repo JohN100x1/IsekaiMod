@@ -23,6 +23,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var HeroProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HeroProficiencies");
             var GracefulCombat = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GracefulCombat");
             var IsekaiChannelPositiveEnergyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelPositiveEnergyFeature");
+            var HandsOfSalvation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HandsOfSalvation");
             var GoldBarrierFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GoldBarrierFeature");
             var CelestialRealmFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CelestialRealmFeature");
             var HerosPresenceFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HerosPresenceFeature");
@@ -59,6 +60,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, HeroProficiencies, GracefulCombat, HeroLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(3, IsekaiChannelPositiveEnergyFeature),
+                    Helpers.CreateLevelEntry(4, HandsOfSalvation),
                     Helpers.CreateLevelEntry(7, GoldBarrierFeature),
                     Helpers.CreateLevelEntry(10, HeroAuraSelection),
                     Helpers.CreateLevelEntry(17, CelestialRealmFeature),
