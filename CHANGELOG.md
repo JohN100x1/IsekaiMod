@@ -22,6 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Heroic Aura` selection to `Hero` progression.
 - Added `Hands of Salvation` to `Hero` progression.
 - Added `Gold Barrier` to `Hero` progression.
+- Added `Greater Gold Barrier` to `Hero` progression.
+- Added `Grand Gold Barrier` to `Hero` progression.
 - Added `Mastermind` Archetype (Isekai Protagonist).
 - Added `Overlord` Archetype (Isekai Protagonist).
 ### Changed

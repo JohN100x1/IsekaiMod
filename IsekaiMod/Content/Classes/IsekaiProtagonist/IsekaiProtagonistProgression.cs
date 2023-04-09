@@ -15,6 +15,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
     internal class IsekaiProtagonistProgression {
 
         public static void Add() {
+
+            // TODO: add feature/ability that uses ICON_EXCALIBUR.png
+
             // Isekai Protagonist
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
             var IsekaiCantrips = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiCantrips");
@@ -68,6 +71,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var GracefulCombat = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GracefulCombat");
             var HandsOfSalvation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HandsOfSalvation");
             var GoldBarrierFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GoldBarrierFeature");
+            var GoldBarrierHeroism = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GoldBarrierHeroism");
+            var GoldBarrierFastHealing = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GoldBarrierFastHealing");
             var HerosPresenceFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HerosPresenceFeature");
             var CelestialRealmFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CelestialRealmFeature");
 
@@ -147,7 +152,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 
                 // Hero UI group
                     GracefulCombat, IsekaiChannelPositiveEnergyFeature, HandsOfSalvation, GoldBarrierFeature, CelestialRealmFeature,
-                    HerosPresenceFeature),
+                    GoldBarrierHeroism, GoldBarrierFastHealing, HerosPresenceFeature),
                 
                 // Mastermind UI group
                 Helpers.CreateUIGroup(OverpoweredAbilitySelectionMastermind),
