@@ -7,7 +7,6 @@ using Kingmaker.Blueprints.Facts;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Localization;
-using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
@@ -107,7 +106,7 @@ namespace IsekaiMod.Utilities {
             foreach (var referenceLevel in referenceLevels) {
                 BlueprintFeatureBaseReference[] features = referenceLevel.m_Features.ToArray();
                 prog.LevelEntries = prog.LevelEntries.AddToArray(Helpers.CreateLevelEntry(referenceLevel.Level, features));
-            };            
+            };
             return prog;
         }
 

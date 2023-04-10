@@ -44,7 +44,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.AddComponent<IgnoreDamageReductionOnAttack>();
                 bp.AddComponent<IgnoreSpellImmunity>(c => {
                     c.SpellDescriptor = SpellDescriptor.None;
-                    // TODO: IgnoreSpellImmunity doesn't actually affect the target?
+                    // TODO: IgnoreSpellImmunity doesn't actually affect the target? (search all IgnoreSpellImmunity)
                     // See IgnoreSpellResistanceForSpells and RuleSpellResistanceCheck.TargetIsImmune
                 });
                 bp.AddComponent<IgnoreSpellResistanceForSpells>(c => {
