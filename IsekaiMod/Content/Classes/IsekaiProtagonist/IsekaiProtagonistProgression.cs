@@ -148,10 +148,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 
                 // God Emperor UI group
                 Helpers.CreateUIGroup(NascentApotheosis, LightEnergyCondensation, GodEmperorEnergySelection, BodyMindAlterSelection,
-                    EnergyCondensationSelection, BarrierSelection, PathSelection, RealmSelection, GodlyVessel, Godhood,
+                    EnergyCondensationSelection, BarrierSelection, PathSelection, RealmSelection, GodlyVessel, Godhood),
                 
                 // Hero UI group
-                    GracefulCombat, IsekaiChannelPositiveEnergyFeature, HandsOfSalvation, GoldBarrierFeature,
+                Helpers.CreateUIGroup(GracefulCombat, IsekaiChannelPositiveEnergyFeature, HandsOfSalvation, GoldBarrierFeature,
                     GoldBarrierHeroism, GoldBarrierFastHealing, GoldBarrierResistance, DeusExMachinaFeature),
                 
                 // Mastermind UI group

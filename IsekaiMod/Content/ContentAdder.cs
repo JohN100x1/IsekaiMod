@@ -307,6 +307,7 @@ namespace IsekaiMod.Content {
 
             LegacySelection.ConfigureStep3();
 
+            MastermindArchetype.PatchMastermindArcanistFeatures();
 
 
             //done here because it should be done after all spells have been initialized and were added to the canon books
