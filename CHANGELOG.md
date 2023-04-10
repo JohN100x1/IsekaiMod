@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added features to `God Emperor` progression: `Energy Condensation`, `Energy Barrier`, `Alteration of body and mind`, `Chosen Path`, `Transcendental Realm`.
 - Added features to `Hero` progression: `Hands of Salvation`, `Gold Barrier`, `Improved Gold Barrier`, `Greater Gold Barrier`, `Grand Gold Barrier`, `Deus Ex Machina`.
 - Added `Divine Aura` feature to `Otherwordly Aura` selection.
+- Added `Sneak attack Immunity` to `Effect Immunity` selection.
+- Added `Critical hit Immunity` to `Effect Immunity` selection.
 ### Changed
 - Buffed `Friendly Aura` to also affect damage rolls.
 - Buffed `Siphoning Aura` to scale 1/2 character level.
@@ -34,6 +36,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- `Divine Array` replaced with `Energy Condensation`.
 	- `Celestial Realm` replaced with `Transcendental Realm`.
 	- `Dark Aura` replaced with `Regal Aura`.
+	- Moved all effect immunities from `Godly Vessel` to `Nascent Apotheosis`.
+	- Moved elemental immunities from `Godhood` to `Godly Vessel`.
 	- Added another OP ability at 5th and 15th level.
 	- Replaced casting stat to WIS.
 	- Moved `Channel Energy` feature from level 5 -> 3.

@@ -322,6 +322,9 @@
     "DeathImmunity": "e3b3fa3f-9b10-4d54-8a75-b7aca3eba1e3",
     "BleedImmunity": "3bedcb37-0103-4ca5-af11-eb56aac5ffbf",
     "HexImmunity": "879a6f61-cf23-4ad5-9267-9912828e30da",
+    "StatDamageNegativeLevelImmunity": "7ec90704-9d47-4a44-86ca-6079c191542b",
+    "SneakAttackImmunity": "2a6c29c6-1c24-4105-bf35-d9bc42140bfe",
+    "CriticalHitImmunity": "d4cc8e7a-4b55-406a-afa3-e4c581618c83",
 
     // Beach Episode Features
     "BeachEpisodeSelection": "7697c19c-c07c-4411-ada4-5ece5b0a58fc",
