@@ -49,7 +49,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 LevelEntry[] addentries = new LevelEntry[] { };
                 LevelEntry[] removeentries = new LevelEntry[] { };
                 removeentries = removeentries.AppendToArray(Helpers.CreateLevelEntry(1, FeatTools.Selections.BloodragerBloodlineSelection));
-                bloodlines.SetFeatures(FeatTools.Selections.BloodragerBloodlineSelection.Features.m_Array);
+                bloodlines.SetFeatures(FeatTools.Selections.BloodragerBloodlineSelection.m_AllFeatures);
 
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(1, bloodlines));
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(5, bloodlines));
