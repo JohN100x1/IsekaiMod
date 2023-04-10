@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
             var Icon_Serenity = BlueprintTools.GetBlueprint<BlueprintAbility>("d316d3d94d20c674db2c24d7de96f6a7").m_Icon;
             var NascentApotheosis = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "NascentApotheosis", bp => {
                 bp.SetName(IsekaiContext, "Nascent Apotheosis");
-                bp.SetDescription(IsekaiContext, "The God Emperor gains an inherent bonus to all attributes equal to 1/2 their character level. "
+                bp.SetDescription(IsekaiContext, "The God Emperor gains an inherent bonus to all attributes equal to 1/2 their character level "
                     + "and {g|Encyclopedia:Damage_Reduction}DR{/g}/— and spell resistance equal to their character level."
                     + "\nAs they increase their level, they gain more immunities.");
                 bp.m_Icon = Icon_Serenity;
