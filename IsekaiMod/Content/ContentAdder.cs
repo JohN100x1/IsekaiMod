@@ -47,12 +47,12 @@ namespace IsekaiMod.Content {
                 Features.ExoticWeaponProficiency.Add();
                 Main.LogDebug("first init call start if block");
 
-                if (Other.IsEnabled("Exceptional Feats")) AddExceptionalFeats();
+                AddExceptionalFeats(); // Add blueprints into cache so we can use exceptionals feats later on.
                 if (Isekai.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
                 if (Isekai.IsEnabled("Isekai Deities")) AddIsekaiDeities();
                 if (Isekai.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
                 if (Isekai.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
-                if (Other.IsEnabled("Exceptional Feats") && Isekai.IsEnabled("Isekai Protagonist") && AddedContent.RestrictExceptionalFeats) RestrictExceptionalFeats();
+                if (Isekai.IsEnabled("Isekai Protagonist") && AddedContent.RestrictExceptionalFeats) RestrictExceptionalFeats();
             }
 
             public static void AddIsekaiProtagonistClass() {

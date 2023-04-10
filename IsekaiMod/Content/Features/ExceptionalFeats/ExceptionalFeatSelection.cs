@@ -45,7 +45,9 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                 bp.m_AllFeatures = ExceptionalFeatures;
             });
 
-            FeatTools.Selections.BasicFeatSelection.AddToFirst(ExceptionalFeatSelection);
+            if (IsekaiContext.AddedContent.Other.IsEnabled("Exceptional Feats")) {
+                FeatTools.Selections.BasicFeatSelection.AddToFirst(ExceptionalFeatSelection);
+            }
         }
 
         public static void AddToSelection(BlueprintFeatureSelection selection, BlueprintFeatureSelection bonusSelection) {
