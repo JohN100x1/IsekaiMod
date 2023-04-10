@@ -3302,7 +3302,7 @@
     },
     {
       "Key": "fce2bb8b02c74ac284af586c32f75592",
-      "SimpleName": "HerosPresenceAreaBuff.Description",
+      "SimpleName": "DeusExMachinaAreaBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Allies within 40 feet of the Hero has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil.",
       "ruRU": null,
@@ -3313,7 +3313,7 @@
     },
     {
       "Key": "710049e51de04c75a2fd66043f154a69",
-      "SimpleName": "HerosPresenceBuff.Description",
+      "SimpleName": "DeusExMachinaBuff.Description",
       "ProcessTemplates": true,
       "enGB": "This character has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil.",
       "ruRU": null,
@@ -3324,7 +3324,7 @@
     },
     {
       "Key": "3a5edf485d79451a9a968fd490ca1b54",
-      "SimpleName": "HerosPresenceBuff.Name",
+      "SimpleName": "DeusExMachinaBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Hero's Presence",
       "ruRU": null,
@@ -3335,7 +3335,7 @@
     },
     {
       "Key": "f01119f7ad5a44339bf4cf5d9da5da36",
-      "SimpleName": "HerosPresenceFeature.Description",
+      "SimpleName": "DeusExMachinaFeature.Description",
       "ProcessTemplates": true,
       "enGB": "At 20th level, allies within 40 feet of the Hero has a +20 sacred bonus to AC, saving throws, attack, and damage rolls against evil creatures and 20 DR/Evil.",
       "ruRU": null,

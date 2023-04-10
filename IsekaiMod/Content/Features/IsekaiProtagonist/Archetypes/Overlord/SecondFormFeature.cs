@@ -85,6 +85,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord {
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
+
+                // TODO: use AddIncomingDamageTrigger (see second reincarnation)
             });
             var SecondFormBuff = TTCoreExtensions.CreateBuff("SecondFormBuff", bp => {
                 bp.SetName(IsekaiContext, "Second Form");

@@ -173,7 +173,7 @@ namespace IsekaiMod.Content {
                 HeroProficiencies.Add();
                 GracefulCombat.Add();
                 HandsOfSalvation.Add();
-                HerosPresence.Add();
+                DeusExMachina.Add();
                 HeroArchetype.Add();
                 Main.LogDebug("Class: Hero");
 

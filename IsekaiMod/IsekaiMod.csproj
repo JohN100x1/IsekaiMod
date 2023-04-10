@@ -334,7 +334,7 @@
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\GracefulCombat.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\HeroLegacySelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\HeroProficiencies.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\HerosPresence.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\DeusExMachina.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\CorruptAuraFeature.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\OverlordLegacySelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\OverlordProficiencies.cs" />

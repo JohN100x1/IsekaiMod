@@ -499,10 +499,9 @@
     "GoldBarrierFastHealingBuff": "3dcc0e7b-c425-4ed7-ae29-c48052e8c2da",
     "GoldBarrierResistance": "769ad250-864a-4361-80d7-9110c35c3b93",
     "GoldBarrierResistanceBuff": "26d76f90-4ece-45cf-9770-9ca40c909fd9",
-    "HerosPresenceBuff": "0719c960-ce1b-4ebf-bd45-b64d6bcbdd62",
-    "HerosPresenceArea": "28ad0556-3ec1-44a2-ae81-bef4a2ef5c98",
-    "HerosPresenceAreaBuff": "be14db2b-cf86-4bb2-bb12-7b34a45cecf9",
-    "HerosPresenceFeature": "230d2557-97cb-4935-a251-2939b525c7c2",
+    "DeusExMachinaBuff": "0719c960-ce1b-4ebf-bd45-b64d6bcbdd62",
+    "DeusExMachinaArea": "28ad0556-3ec1-44a2-ae81-bef4a2ef5c98",
+    "DeusExMachinaFeature": "230d2557-97cb-4935-a251-2939b525c7c2",
 
     // Mastermind Features
     "MastermindSpellbook": "9f393ace-2006-436a-85f9-8b47f347d3cd",

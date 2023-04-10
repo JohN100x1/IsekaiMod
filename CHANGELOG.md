@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added features to `Isekai Protagonist` progression: `Gifted`, `Release Energy, `Afterimage`, `Secret Power`, `Hax`.
 - Added features to `Edge Lord` progression: `Chuunibyou Power`.
 - Added features to `God Emperor` progression: `Energy Condensation`, `Energy Barrier`, `Alteration of body and mind`, `Chosen Path`, `Transcendental Realm`.
-- Added features to `Hero` progression: `Hands of Salvation`, `Gold Barrier`, `Improved Gold Barrier`, `Greater Gold Barrier`, `Grand Gold Barrier`.
+- Added features to `Hero` progression: `Hands of Salvation`, `Gold Barrier`, `Improved Gold Barrier`, `Greater Gold Barrier`, `Grand Gold Barrier`, `Deus Ex Machina`.
 - Added `Divine Aura` feature to `Otherwordly Aura` selection.
 ### Changed
 - Buffed `Friendly Aura` to also affect damage rolls.
@@ -33,14 +33,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changes for `God Emperor`:
 	- `Divine Array` replaced with `Energy Condensation`.
 	- `Celestial Realm` replaced with `Transcendental Realm`.
-	- `Regal Aura` replaces `Dark Aura`.
+	- `Dark Aura` replaced with `Regal Aura`.
 	- Added another OP ability at 5th and 15th level.
 	- Replaced casting stat to WIS.
 	- Moved `Channel Energy` feature from level 5 -> 3.
 	- Moved `Armor Saint` feature from level 4 -> 3.
 - Changed for `Hero`:
 	- Now has Tower shield and exotic weapon proficiency at 1st level.
-	- `Heroic Aura` replaces `Friendly Aura`.
+	- `Friendly Aura` replaced with `Heroic Aura`.
+	- `Hero's Presence' replaced with `Deus Ex Machina`.
 	- Added another OP Ability at 10th level.
 	- Added another Special Power at 3rd and 17th level.
 	- Removed Special Power at 9th and 11th level.
