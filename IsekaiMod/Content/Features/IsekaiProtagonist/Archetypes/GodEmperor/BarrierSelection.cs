@@ -5,6 +5,7 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.Enums.Damage;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
@@ -32,17 +33,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
 
             // Extra effects for Hero progression
             var GoldBarrierHeroism = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "GoldBarrierHeroism", bp => {
-                bp.SetName(IsekaiContext, "Greater Gold Barrier");
+                bp.SetName(IsekaiContext, "Improved Gold Barrier");
                 bp.SetDescription(IsekaiContext, "At 10th level, Gold Barrier now also grants Greater Heroism to your allies.");
                 bp.m_Icon = Icon_GoldBarrier;
             });
             var GoldBarrierFastHealing = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "GoldBarrierFastHealing", bp => {
-                bp.SetName(IsekaiContext, "Grand Gold Barrier");
+                bp.SetName(IsekaiContext, "Greater Gold Barrier");
                 bp.SetDescription(IsekaiContext, "At 12th level, Gold Barrier now also grants fast healing equal to your character level.");
                 bp.m_Icon = Icon_GoldBarrier;
             });
             var GoldBarrierFastHealingBuff = TTCoreExtensions.CreateBuff("GoldBarrierFastHealingBuff", bp => {
-                bp.SetName(IsekaiContext, "Grand Gold Barrier");
+                bp.SetName(IsekaiContext, "Greater Gold Barrier");
                 bp.SetDescription(IsekaiContext, "This character has fast healing equal to your character level.");
                 bp.m_Icon = Icon_GoldBarrier;
                 bp.AddComponent<AddEffectFastHealing>(c => {
@@ -52,6 +53,46 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;
                     c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                });
+            });
+            var GoldBarrierResistance = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "GoldBarrierResistance", bp => {
+                bp.SetName(IsekaiContext, "Grand Gold Barrier");
+                bp.SetDescription(IsekaiContext, "At 15th level, Gold Barrier now also grants DR/— "
+                    + "and resistance against all elements (acid, cold, electricity, fire, and sonic) equal to 1/2 your character level.");
+                bp.m_Icon = Icon_GoldBarrier;
+            });
+            var GoldBarrierResistanceBuff = TTCoreExtensions.CreateBuff("GoldBarrierResistanceBuff", bp => {
+                bp.SetName(IsekaiContext, "Grand Gold Barrier");
+                bp.SetDescription(IsekaiContext, "This character has DR/— and resistance against all elements "
+                    + "(acid, cold, electricity, fire, and sonic) equal to 1/2 your character level.");
+                bp.m_Icon = Icon_GoldBarrier;
+                bp.AddComponent<AddDamageResistancePhysical>(c => {
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<AddDamageResistanceEnergy>(c => {
+                    c.Type = DamageEnergyType.Acid;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<AddDamageResistanceEnergy>(c => {
+                    c.Type = DamageEnergyType.Cold;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<AddDamageResistanceEnergy>(c => {
+                    c.Type = DamageEnergyType.Electricity;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<AddDamageResistanceEnergy>(c => {
+                    c.Type = DamageEnergyType.Fire;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<AddDamageResistanceEnergy>(c => {
+                    c.Type = DamageEnergyType.Sonic;
+                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                });
+                bp.AddComponent<ContextRankConfig>(c => {
+                    c.m_Type = AbilityRankType.StatBonus;
+                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                    c.m_Progression = ContextRankProgression.Div2;
                 });
             });
 
@@ -103,6 +144,18 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                         },
                         new Conditional {
                             ConditionsChecker = ActionFlow.IfSingle<ContextConditionCasterHasFact>(c => {
+                                c.m_Fact = GoldBarrierHeroism.ToReference<BlueprintUnitFactReference>();
+                                c.Not = false;
+                            }),
+                            IfTrue = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
+                                c.m_Buff = HeroismGreaterBuff.ToReference<BlueprintBuffReference>();
+                                c.Permanent = true;
+                                c.DurationValue = Values.Duration.Zero;
+                            }),
+                            IfFalse = ActionFlow.DoNothing()
+                        },
+                        new Conditional {
+                            ConditionsChecker = ActionFlow.IfSingle<ContextConditionCasterHasFact>(c => {
                                 c.m_Fact = GoldBarrierFastHealing.ToReference<BlueprintUnitFactReference>();
                                 c.Not = false;
                             }),
@@ -115,11 +168,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                         },
                         new Conditional {
                             ConditionsChecker = ActionFlow.IfSingle<ContextConditionCasterHasFact>(c => {
-                                c.m_Fact = GoldBarrierHeroism.ToReference<BlueprintUnitFactReference>();
+                                c.m_Fact = GoldBarrierResistance.ToReference<BlueprintUnitFactReference>();
                                 c.Not = false;
                             }),
                             IfTrue = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
-                                c.m_Buff = HeroismGreaterBuff.ToReference<BlueprintBuffReference>();
+                                c.m_Buff = GoldBarrierResistanceBuff.ToReference<BlueprintBuffReference>();
                                 c.Permanent = true;
                                 c.DurationValue = Values.Duration.Zero;
                             }),
@@ -134,13 +187,19 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                             OnlyFromCaster = true
                         },
                         new ContextActionRemoveBuff {
+                            m_Buff = HeroismGreaterBuff.ToReference<BlueprintBuffReference>(),
+                            RemoveRank = false,
+                            ToCaster = false,
+                            OnlyFromCaster = true
+                        },
+                        new ContextActionRemoveBuff {
                             m_Buff = GoldBarrierFastHealingBuff.ToReference<BlueprintBuffReference>(),
                             RemoveRank = false,
                             ToCaster = false,
                             OnlyFromCaster = true
                         },
                         new ContextActionRemoveBuff {
-                            m_Buff = HeroismGreaterBuff.ToReference<BlueprintBuffReference>(),
+                            m_Buff = GoldBarrierResistanceBuff.ToReference<BlueprintBuffReference>(),
                             RemoveRank = false,
                             ToCaster = false,
                             OnlyFromCaster = true

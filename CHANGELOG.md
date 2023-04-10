@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Heroic Aura` selection to `Hero` progression.
 - Added `Hands of Salvation` to `Hero` progression.
 - Added `Gold Barrier` to `Hero` progression.
+- Added `Improved Gold Barrier` to `Hero` progression.
 - Added `Greater Gold Barrier` to `Hero` progression.
 - Added `Grand Gold Barrier` to `Hero` progression.
 - Added `Mastermind` Archetype (Isekai Protagonist).
@@ -35,7 +36,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Buffed `Edge Lord` to get Exotic Weapon Proficiency.
 - Buffed `Isekai Protagonist` to be able to choose between `Divine Aura` and `Dark Aura`.
 - Buffed `God Emperor` to get another OP ability at 5th and 15th level.
-- Buffed `Hero` to get another Special Power at 3rd and 17th level.
 - Buffed `Hero` to get another OP Ability at 10th level.
 - Buffed `Hero` to get Tower shield and exotic weapon proficiency.
 - Buffed `Siphoning Aura` to scale 1/2 character level.
@@ -47,6 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `God Emperor` casting stat to WIS.
 - Changed `God Emperor` `Channel Energy` obtained from level 5 -> 3.
 - Changed `God Emperor` `Armor Saint` obtained from level 4 -> 3.
+- Changed `Hero` to get another Special Power at 3rd and 17th level but removed for 9th and 11th level.
 - Renamed `Energy Immunity Selection` to `Energy Immunity`.
 - Renamed `Aura of Golden Protection` to `Gold Barrier`.
 - Updated description for `Isekai Protagonist` `Fighter Training`.
