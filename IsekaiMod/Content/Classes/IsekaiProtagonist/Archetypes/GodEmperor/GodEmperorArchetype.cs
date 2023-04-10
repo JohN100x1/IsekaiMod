@@ -81,8 +81,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(7, BarrierSelection),
                     Helpers.CreateLevelEntry(10, GodEmperorAuraSelection, BodyMindAlterSelection),
                     Helpers.CreateLevelEntry(12, PathSelection),
-                    Helpers.CreateLevelEntry(15, GodlyVessel, GodEmperorQuickFooted),
-                    Helpers.CreateLevelEntry(17, RealmSelection),
+                    Helpers.CreateLevelEntry(15, RealmSelection, GodEmperorQuickFooted),
+                    Helpers.CreateLevelEntry(17, GodlyVessel),
                     Helpers.CreateLevelEntry(20, Godhood),
                 };
                 bp.OverrideAttributeRecommendations = true;

@@ -123,7 +123,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
 
             var RealmSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "RealmSelection", bp => {
                 bp.SetName(IsekaiContext, "Transcendental Realm");
-                bp.SetDescription(IsekaiContext, "At 17th level, you are able to ascend into a higher plane of existence and harness its energies.");
+                bp.SetDescription(IsekaiContext, "At 15th level, you are able to ascend into a higher plane of existence and harness its energies.");
                 bp.m_Icon = Icon_CelestialRealm;
                 bp.IgnorePrerequisites = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {

@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- Replaced casting stat to WIS.
 	- Moved `Channel Energy` feature from level 5 -> 3.
 	- Moved `Armor Saint` feature from level 4 -> 3.
+	- Moved `Godly Vessel` feature from level 15 -> 17.
 - Changed for `Hero`:
 	- Now has Tower shield and exotic weapon proficiency at 1st level.
 	- `Friendly Aura` replaced with `Heroic Aura`.
