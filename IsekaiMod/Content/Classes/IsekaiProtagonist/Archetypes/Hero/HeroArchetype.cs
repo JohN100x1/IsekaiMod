@@ -28,7 +28,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var GoldBarrierHeroism = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GoldBarrierHeroism");
             var GoldBarrierFastHealing = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GoldBarrierFastHealing");
             var GoldBarrierResistance = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GoldBarrierResistance");
-            var CelestialRealmFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CelestialRealmFeature");
             var HerosPresenceFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HerosPresenceFeature");
 
             var HeroAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "HeroAuraSelection");
@@ -70,7 +69,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(10, HeroAuraSelection, GoldBarrierHeroism),
                     Helpers.CreateLevelEntry(12, GoldBarrierFastHealing),
                     Helpers.CreateLevelEntry(15, GoldBarrierResistance),
-                    Helpers.CreateLevelEntry(17, CelestialRealmFeature),
                     Helpers.CreateLevelEntry(20, HerosPresenceFeature),
                 };
                 bp.AddComponent<PrerequisiteAlignment>(c => {

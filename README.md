@@ -68,6 +68,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- Uses dexterity for damage and attack rolls.
 		- Can pick a melee focused legacy class feature.
 	- `Hero` (Isekai Protagonist Archetype)
+		- Focuses to protective auras for allies.
 		- Uses charisma for damage and attack rolls.
 	- `Mastermind` (Isekai Protagonist Archetype)
 		- Intelligence based caster that memorizes spells like an arcanist.

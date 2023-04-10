@@ -75,7 +75,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var GoldBarrierFastHealing = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GoldBarrierFastHealing");
             var HerosPresenceFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HerosPresenceFeature");
             var GoldBarrierResistance = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "GoldBarrierResistance");
-            var CelestialRealmFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CelestialRealmFeature");
 
             // Mastermind
             var MastermindProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindProficiencies");
@@ -152,7 +151,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                     EnergyCondensationSelection, BarrierSelection, PathSelection, RealmSelection, GodlyVessel, Godhood,
                 
                 // Hero UI group
-                    GracefulCombat, IsekaiChannelPositiveEnergyFeature, HandsOfSalvation, GoldBarrierFeature, CelestialRealmFeature,
+                    GracefulCombat, IsekaiChannelPositiveEnergyFeature, HandsOfSalvation, GoldBarrierFeature,
                     GoldBarrierHeroism, GoldBarrierFastHealing, GoldBarrierResistance, HerosPresenceFeature),
                 
                 // Mastermind UI group
