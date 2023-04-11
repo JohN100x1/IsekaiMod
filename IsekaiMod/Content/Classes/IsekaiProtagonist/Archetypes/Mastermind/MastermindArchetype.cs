@@ -35,14 +35,19 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var EldritchFontImprovedSurge = BlueprintTools.GetBlueprint<BlueprintFeature>("718fe8e143d38cc4899ae798dd098b6e");
             var EldritchFontGreaterSurge = BlueprintTools.GetBlueprint<BlueprintFeature>("685ee64e43fcb6546b65436a3deb98bd");
 
+            var ArcanistExploitSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("b8bf3d5023f2d8c428fdf6438cecaea7");
+
             var OverpoweredAbilitySelectionMastermind = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionMastermind");
 
             // Removed features
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
             var Gifted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Gifted");
+            var Afterimage = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Afterimage");
             var IsekaiQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiQuickFooted");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
+            var OtherworldlyStamina = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OtherworldlyStamina");
+            var IsekaiFighterTraining = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiFighterTraining");
 
             var SecretPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SecretPowerSelection");
             var HaxSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "HaxSelection");
@@ -62,12 +67,15 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, IsekaiBonusFeatSelection, IsekaiProficiencies, Gifted, LegacySelection.GetClassFeature()),
                     Helpers.CreateLevelEntry(2, IsekaiBonusFeatSelection),
-                    Helpers.CreateLevelEntry(3, ReleaseEnergy),
+                    Helpers.CreateLevelEntry(3, ReleaseEnergy, IsekaiFighterTraining),
                     Helpers.CreateLevelEntry(4, IsekaiBonusFeatSelection),
                     Helpers.CreateLevelEntry(6, IsekaiBonusFeatSelection, SignatureMoveSelection, SignatureMoveBonusSelection),
-                    Helpers.CreateLevelEntry(8, IsekaiBonusFeatSelection),
+                    Helpers.CreateLevelEntry(8, IsekaiBonusFeatSelection, Afterimage),
+                    Helpers.CreateLevelEntry(9, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(10, IsekaiBonusFeatSelection, SecretPowerSelection),
+                    Helpers.CreateLevelEntry(11, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(12, IsekaiBonusFeatSelection),
+                    Helpers.CreateLevelEntry(13, OtherworldlyStamina),
                     Helpers.CreateLevelEntry(14, IsekaiBonusFeatSelection),
                     Helpers.CreateLevelEntry(15, IsekaiQuickFooted, SecondReincarnation),
                     Helpers.CreateLevelEntry(16, IsekaiBonusFeatSelection),
@@ -76,14 +84,16 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, MastermindProficiencies, OverpoweredAbilitySelectionMastermind, ArcanistArcaneReservoirFeature, ArcanistConsumeSpells, MastermindLegacySelection.getClassFeature()),
-                    Helpers.CreateLevelEntry(3, EldritchFontEldritchSurge),
+                    Helpers.CreateLevelEntry(3, ArcanistExploitSelection, EldritchFontEldritchSurge),
                     Helpers.CreateLevelEntry(5, OverpoweredAbilitySelectionMastermind),
                     Helpers.CreateLevelEntry(6, SignatureAbility),
-                    Helpers.CreateLevelEntry(7, EldritchFontImprovedSurge),
+                    Helpers.CreateLevelEntry(7, ArcanistExploitSelection, EldritchFontImprovedSurge),
                     Helpers.CreateLevelEntry(9, OverpoweredAbilitySelectionMastermind),
+                    Helpers.CreateLevelEntry(11, ArcanistExploitSelection),
                     Helpers.CreateLevelEntry(13, OverpoweredAbilitySelectionMastermind, EldritchFontGreaterSurge),
-                    Helpers.CreateLevelEntry(15, MastermindQuickFooted),
+                    Helpers.CreateLevelEntry(15, ArcanistExploitSelection, MastermindQuickFooted),
                     Helpers.CreateLevelEntry(17, OverpoweredAbilitySelectionMastermind),
+                    Helpers.CreateLevelEntry(19, ArcanistExploitSelection),
                     Helpers.CreateLevelEntry(20, MasterplanFeature),
                 };
                 bp.OverrideAttributeRecommendations = true;
