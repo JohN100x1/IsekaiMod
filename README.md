@@ -2,7 +2,7 @@
 This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Isekai Protagonist` Class into the game.
 ## Development Guide
 ### Requirements
-- Visual Studio 2019 (You can use the latest version if you know what you're doing)
+- Visual Studio
 ### Setup
 - Add `WrathPath` as an environment variable with the value `C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure` or wherever your game directory is.
 - Open Visual Studio and [publicize your assemblies](https://github.com/WittleWolfie/OwlcatModdingWiki/wiki/Publicize-Assemblies).

@@ -510,6 +510,10 @@
     "MastermindSpellbook": "9f393ace-2006-436a-85f9-8b47f347d3cd",
     "MastermindProficiencies": "b4d2cd29-c850-4716-95c1-74eca502a30c",
     "MastermindQuickFooted": "e744ccad-7669-44fb-8052-decc9d75ee7b",
+    "MasterplanBuff": "e76a6173-b411-469f-a28e-67a02dc17564",
+    "MasterplanArea": "8f585b71-c4e1-4d0b-a3f6-24c33a584c63",
+    "MasterplanAreaBuff": "074a5e83-7f2b-47aa-8b0d-1c5788531281",
+    "MasterplanFeature": "b4d16513-0c4d-42f4-b934-a32f4973692e",
 
     // Overlord Features
     "OverlordSpellbook": "5af8935b-58a4-4c06-b2f1-7f511ece6999",

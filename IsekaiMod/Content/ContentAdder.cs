@@ -181,6 +181,7 @@ namespace IsekaiMod.Content {
                 MastermindSpellbook.Add();
                 MastermindProficiencies.Add();
                 MastermindQuickFooted.Add();
+                Masterplan.Add();
                 MastermindArchetype.Add();
                 Main.LogDebug("Class: Mastermind");
 
