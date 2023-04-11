@@ -31,6 +31,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var ArcanistArcaneReservoirFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("55db1859bd72fd04f9bd3fe1f10e4cbb");
             var ArcanistConsumeSpells = BlueprintTools.GetBlueprint<BlueprintFeature>("69cfb4ab0d9812249b924b8f23d6d19f");
             var EldritchFontEldritchSurge = BlueprintTools.GetBlueprint<BlueprintFeature>("644c0e9618e417947bd0a1252a5e6ecf");
+            var EldritchFontImprovedSurge = BlueprintTools.GetBlueprint<BlueprintFeature>("718fe8e143d38cc4899ae798dd098b6e");
+            var EldritchFontGreaterSurge = BlueprintTools.GetBlueprint<BlueprintFeature>("685ee64e43fcb6546b65436a3deb98bd");
 
             var OverpoweredAbilitySelectionMastermind = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionMastermind");
 
@@ -78,8 +80,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(3, EldritchFontEldritchSurge),
                     Helpers.CreateLevelEntry(5, OverpoweredAbilitySelectionMastermind),
                     Helpers.CreateLevelEntry(6, SignatureAbility),
+                    Helpers.CreateLevelEntry(7, EldritchFontImprovedSurge),
                     Helpers.CreateLevelEntry(9, OverpoweredAbilitySelectionMastermind),
-                    Helpers.CreateLevelEntry(13, OverpoweredAbilitySelectionMastermind),
+                    Helpers.CreateLevelEntry(13, OverpoweredAbilitySelectionMastermind, EldritchFontGreaterSurge),
                     Helpers.CreateLevelEntry(15, MastermindQuickFooted),
                     Helpers.CreateLevelEntry(17, OverpoweredAbilitySelectionMastermind),
                 };
@@ -110,6 +113,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var ArcanistArcaneReservoirDCBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("db4b91a8a297c4247b13cfb6ea228bf3");
             var EldritchFontEldritchSurgeCLBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("a27a3c5e45f9416428ce983e0d4bd2d2");
             var EldritchFontEldritchSurgeDCBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("91b2762997f0d8044baeeef0871eac6f");
+            var EldritchFontImprovedEldritchSurgeAttackBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("9aab299fb44ff3c49af5b8527a23fcf7");
+            var EldritchFontGreaterSurgeBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("4425d831546249647b8c9ad06d7ed0e7");
 
             var ArcanistConsumeSpells = BlueprintTools.GetBlueprint<BlueprintFeature>("69cfb4ab0d9812249b924b8f23d6d19f");
             var ArcanistConsumeSpellsResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("d67ddd98ad019854d926f3d6a4e681c5");
@@ -128,11 +133,16 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             EldritchFontEldritchSurgeCLBuff.GetComponent<AddCasterLevelForSpellbook>().m_Spellbooks = EldritchFontEldritchSurgeCLBuff.GetComponent<AddCasterLevelForSpellbook>().m_Spellbooks.AppendToArray(mySpellbookRef);
             EldritchFontEldritchSurgeDCBuff.GetComponent<AddAbilityUseTrigger>().m_Spellbooks = EldritchFontEldritchSurgeDCBuff.GetComponent<AddAbilityUseTrigger>().m_Spellbooks.AppendToArray(mySpellbookRef);
             EldritchFontEldritchSurgeDCBuff.GetComponent<IncreaseSpellSpellbookDC>().m_Spellbooks = EldritchFontEldritchSurgeDCBuff.GetComponent<IncreaseSpellSpellbookDC>().m_Spellbooks.AppendToArray(mySpellbookRef);
+            foreach(AddAbilityUseTrigger improvedSurgeAbilityUseTrigger in EldritchFontImprovedEldritchSurgeAttackBuff.GetComponents<AddAbilityUseTrigger>()) {
+                improvedSurgeAbilityUseTrigger.m_Spellbooks = improvedSurgeAbilityUseTrigger.m_Spellbooks.AppendToArray(mySpellbookRef);
+            }
+            foreach (AddAbilityUseTrigger greaterSurgeAbilityUseTrigger in EldritchFontGreaterSurgeBuff.GetComponents<AddAbilityUseTrigger>()) {
+                greaterSurgeAbilityUseTrigger.m_Spellbooks = greaterSurgeAbilityUseTrigger.m_Spellbooks.AppendToArray(mySpellbookRef);
+            }
 
-            var ArcanistConsumeSpellAbilities = ArcanistConsumeSpells.GetComponent<SpontaneousSpellConversion>().m_SpellsByLevel;
             ArcanistConsumeSpells.AddComponent<SpontaneousSpellConversion>(c => {
                 c.m_CharacterClass = myClassRef;
-                c.m_SpellsByLevel = ArcanistConsumeSpellAbilities;
+                c.m_SpellsByLevel = ArcanistConsumeSpells.GetComponent<SpontaneousSpellConversion>().m_SpellsByLevel;
             });
             ArcanistConsumeSpellsResource.m_MaxAmount.m_Class = ArcanistConsumeSpellsResource.m_MaxAmount.m_Class.AppendToArray(myClassRef);
         }
