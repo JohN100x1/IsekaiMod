@@ -66,10 +66,10 @@ namespace IsekaiMod.Utilities {
         private static BlueprintSpellbookReference[] patchableSpellBooks = new BlueprintSpellbookReference[] { };
 
 
-        public static readonly BlueprintFeatureBase[] FeaturesIgnoredWhenPatching = new BlueprintFeatureBase[] { 
-            FeatTools.Selections.BasicFeatSelection, 
-            FeatTools.Selections.FighterFeatSelection, 
-            FeatTools.Selections.CombatTrick, 
+        public static readonly BlueprintFeatureBase[] FeaturesIgnoredWhenPatching = new BlueprintFeatureBase[] {
+            FeatTools.Selections.BasicFeatSelection,
+            FeatTools.Selections.FighterFeatSelection,
+            FeatTools.Selections.CombatTrick,
             FeatTools.Selections.SkaldFeatSelection,
             FeatTools.Selections.AnimalCompanionSelectionDomain,
             FeatTools.Selections.WarDomainGreaterFeatSelection,
@@ -78,10 +78,10 @@ namespace IsekaiMod.Utilities {
             BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("f1add10c87fa4563ad5f71779eecde19")
         };
 
-        
+
 
         public static void RegisterSpellbook(BlueprintSpellbook spellbook) {
-            if (spellbook != null && ! patchableSpellBooks.Contains(spellbook.ToReference<BlueprintSpellbookReference>())) {
+            if (spellbook != null && !patchableSpellBooks.Contains(spellbook.ToReference<BlueprintSpellbookReference>())) {
                 var bookRef = spellbook.ToReference<BlueprintSpellbookReference>();
                 if (!patchableSpellBooks.Contains(bookRef)) {
                     patchableSpellBooks = patchableSpellBooks.AddToArray(bookRef);
@@ -126,7 +126,7 @@ namespace IsekaiMod.Utilities {
             foreach (var referenceLevel in referenceLevels) {
                 BlueprintFeatureBaseReference[] features = referenceLevel.m_Features.ToArray();
                 prog.LevelEntries = prog.LevelEntries.AddToArray(Helpers.CreateLevelEntry(referenceLevel.Level, features));
-            };            
+            };
             return prog;
         }
 
@@ -144,14 +144,14 @@ namespace IsekaiMod.Utilities {
             BlueprintFeatureBase[] MissingUIGroup = new BlueprintFeatureBase[] { };
             foreach (var referenceLevel in referenceLevels) {
                 BlueprintFeatureBaseReference[] features = new BlueprintFeatureBaseReference[] { };
-                var addItems = referenceLevel.m_Features.ToArray() ;
+                var addItems = referenceLevel.m_Features.ToArray();
                 BlueprintFeatureBaseReference[] removed = new BlueprintFeatureBaseReference[] { };
                 foreach (var candidate in refArchetype.RemoveFeatures) {
-                    if(candidate.Level == referenceLevel.Level) {
+                    if (candidate.Level == referenceLevel.Level) {
                         removed = removed.AddRangeToArray(candidate.m_Features.ToArray());
                     }
                 }
-                foreach ( var feature in addItems) {
+                foreach (var feature in addItems) {
                     if (!removed.Contains(feature)) {
                         features = features.AddToArray(feature);
                     }
@@ -169,7 +169,7 @@ namespace IsekaiMod.Utilities {
                     }
                 }
                 if (additionalReference != null) {
-                    LevelEntry additionalFeatures= null;
+                    LevelEntry additionalFeatures = null;
                     foreach (var candidate in additionalReference) {
                         if (candidate.Level == referenceLevel.Level) {
                             additionalFeatures = candidate;
@@ -189,7 +189,7 @@ namespace IsekaiMod.Utilities {
                 foreach (var level in additionalReference) {
                     bool found = false;
                     foreach (var refLevel in prog.LevelEntries) {
-                        if (refLevel.Level== level.Level) {
+                        if (refLevel.Level == level.Level) {
                             found = true;
                         }
                     }
@@ -199,7 +199,7 @@ namespace IsekaiMod.Utilities {
                     }
                 }
             }
-            if (MissingUIGroup.Length> 0) {
+            if (MissingUIGroup.Length > 0) {
                 prog.UIGroups = prog.UIGroups.AddToArray(Helpers.CreateUIGroup(MissingUIGroup));
             }
             return prog;
@@ -242,13 +242,13 @@ namespace IsekaiMod.Utilities {
         }
 
         public static void PatchClassIntoFeatureOfReferenceClass(BlueprintFeature feature, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level, BlueprintFeatureBase[] loopPrevention) {
-            var mylevel = level+1;
+            var mylevel = level + 1;
             if (mylevel > 10) {
                 IsekaiContext.Logger.LogError("Attempt to patch Progression Tree stopped at Level 10 to prevent endless loop, if you see this message please report so we can figure out if someone created a loop here or if this limit needs to be higher");
                 if (feature.Name != null) {
-                    IsekaiContext.Logger.LogError("reference class= "+ referenceClass.Guid+" Stop Feature= " + feature.AssetGuid + " name= " + feature.Name);
-                    foreach(BlueprintFeatureBase calltrace in loopPrevention) {
-                        IsekaiContext.Logger.LogError("guid= "+calltrace.AssetGuid);
+                    IsekaiContext.Logger.LogError("reference class= " + referenceClass.Guid + " Stop Feature= " + feature.AssetGuid + " name= " + feature.Name);
+                    foreach (BlueprintFeatureBase calltrace in loopPrevention) {
+                        IsekaiContext.Logger.LogError("guid= " + calltrace.AssetGuid);
                     }
                 } else {
                     IsekaiContext.Logger.LogError("reference class= " + referenceClass.Guid + " Stop Feature= " + feature.AssetGuid);
@@ -273,13 +273,13 @@ namespace IsekaiMod.Utilities {
                     progression.GiveFeaturesForPreviousLevels = true;
                     if (progression.m_Classes != null && progression.m_Classes.Length > 0) {
                         progression.AddClass(myClass);
-                     }
+                    }
                     BlueprintFeatureBase[] flatten = new BlueprintFeatureBase[] { };
                     foreach (LevelEntry item in progression.LevelEntries) {
                         foreach (var levelitem in item.Features) {
-                            if (levelitem != null && !flatten.Contains(levelitem)) { 
+                            if (levelitem != null && !flatten.Contains(levelitem)) {
                                 flatten = flatten.AddToArray(levelitem);
-                            }                            
+                            }
                         }
                     }
                     foreach (var levelItem in flatten) {
@@ -294,7 +294,7 @@ namespace IsekaiMod.Utilities {
                 }
                 if (feature is BlueprintFeatureSelection selection) {
                     //don't trust selections past a certain size to actually contain class features rather than just a selection of basic feats unless they are selections that are known to be that size for a valid reason(revelations, hexes, rage powers)
-                    if (selection.m_AllFeatures.Length> 30 && !(
+                    if (selection.m_AllFeatures.Length > 30 && !(
                         feature.AssetGuid.ToString().Equals("60008a10ad7ad6543b1f63016741a5d2")
                         || feature.AssetGuid.ToString().Equals("c074a5d615200494b8f2a9c845799d93")
                         || feature.AssetGuid.ToString().Equals("4223fe18c75d4d14787af196a04e14e7")
@@ -305,7 +305,7 @@ namespace IsekaiMod.Utilities {
                         || feature.AssetGuid.ToString().Equals("58d6f8e9eea63f6418b107ce64f315ea")
                         || feature.AssetGuid.ToString().Equals("5c883ae0cd6d7d5448b7a420f51f8459")
                         )) {
-                        IsekaiContext.Logger.LogError("reference class= " + referenceClass.Guid + " Stop Feature= " + feature.AssetGuid + " name= " + feature.Name+ " reason= selection contains too many features and thus likely is a basic feat variation");
+                        IsekaiContext.Logger.LogError("reference class= " + referenceClass.Guid + " Stop Feature= " + feature.AssetGuid + " name= " + feature.Name + " reason= selection contains too many features and thus likely is a basic feat variation");
                         return;
                     }
                     foreach (var feature2 in selection.m_AllFeatures) {
@@ -329,9 +329,9 @@ namespace IsekaiMod.Utilities {
                                 if (rankConfig.m_Class.Contains(myClass)) {
                                     alreadyPatched = true;
                                 }
-                            }                            
+                            }
                         }
-                        if (component is SpontaneousSpellConversion conversion && conversion.m_CharacterClass!= null && conversion.m_CharacterClass.Equals(referenceClass)) {
+                        if (component is SpontaneousSpellConversion conversion && conversion.m_CharacterClass != null && conversion.m_CharacterClass.Equals(referenceClass)) {
                             conversions = conversions.AddToArray(conversion);
                         }
                     }
@@ -361,7 +361,7 @@ namespace IsekaiMod.Utilities {
                         });
                         //Main.Log("rank progression patched= " + feature.AssetGuid + " added class= " + myClass.Guid + " for ref= " + referenceClass.Guid);
                     }
-                    if (conversions.Length >0) {
+                    if (conversions.Length > 0) {
                         foreach (var conversion in conversions) {
                             feature.AddComponent<SpontaneousSpellConversion>(c => {
                                 c.m_CharacterClass = myClass;
@@ -371,17 +371,17 @@ namespace IsekaiMod.Utilities {
                         }
                     }
                 }
-            } catch(NullReferenceException e)  {
-                if (feature.Name != null) { 
-                    IsekaiContext.Logger.LogError("Unpatachable Feature= " + feature.AssetGuid + "name= "+feature.Name+" at level= " + mylevel + " reason= " + e.Message); 
-                } else { 
-                    IsekaiContext.Logger.LogError("Unpatachable Feature= " + feature.AssetGuid + " at level= " + mylevel + " reason= " + e.Message); 
+            } catch (NullReferenceException e) {
+                if (feature.Name != null) {
+                    IsekaiContext.Logger.LogError("Unpatachable Feature= " + feature.AssetGuid + "name= " + feature.Name + " at level= " + mylevel + " reason= " + e.Message);
+                } else {
+                    IsekaiContext.Logger.LogError("Unpatachable Feature= " + feature.AssetGuid + " at level= " + mylevel + " reason= " + e.Message);
                 }
             }
         }
 
         private static void HandleComponent(BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level, HashSet<SpellReference> mySpellSet, BlueprintComponent component, BlueprintFeatureBase[] loopPrevention) {
-            var mylevel = level+1;
+            var mylevel = level + 1;
             if (mylevel > 20) {
                 IsekaiContext.Logger.LogError("Attempt to patch Progression Tree stopped at Level 20 to prevent endless loop, if you see this message please report so we can figure out if someone created a loop here or if this limit needs to be higher");
                 return;
@@ -401,7 +401,7 @@ namespace IsekaiMod.Utilities {
                     }
                 }
             }
-            if (component is AddAbilityUseTrigger trigger && trigger.m_Spellbooks != null && trigger.m_Spellbooks.Length> 0) {
+            if (component is AddAbilityUseTrigger trigger && trigger.m_Spellbooks != null && trigger.m_Spellbooks.Length > 0) {
                 trigger.m_Spellbooks = trigger.m_Spellbooks.AddRangeToArray(patchableSpellBooks);
             }
             if (component is AddCasterLevelForSpellbook cl && cl.m_Spellbooks != null && cl.m_Spellbooks.Length > 0) {
@@ -472,12 +472,12 @@ namespace IsekaiMod.Utilities {
                                 c.m_Flags = sample.m_Flags;
                                 c.m_BuffRankMultiplier = sample.m_BuffRankMultiplier;
                                 c.m_Class = new BlueprintCharacterClassReference[] { myClass };
-                                c.m_CustomProgression= sample.m_CustomProgression;
+                                c.m_CustomProgression = sample.m_CustomProgression;
                                 c.m_Max = sample.m_Max;
                                 c.m_Min = sample.m_Min;
-                                c.m_Stat= sample.m_Stat;
-                                c.m_StepLevel= sample.m_StepLevel;
-                                c.m_ExceptClasses= sample.m_ExceptClasses;
+                                c.m_Stat = sample.m_Stat;
+                                c.m_StepLevel = sample.m_StepLevel;
+                                c.m_ExceptClasses = sample.m_ExceptClasses;
                             });
                             //Main.Log("rank progression patched= " + ability.AssetGuid + " added class= " + myClass.Guid + " for ref= " + referenceClass.Guid);
                         }
