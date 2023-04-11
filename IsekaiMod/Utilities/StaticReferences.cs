@@ -3,6 +3,7 @@ using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
@@ -62,6 +63,8 @@ namespace IsekaiMod.Utilities {
         public static BlueprintFeatureSelection SorcererBloodlineArcanaSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("20a2435574bdd7f4e947f405df2b25ce");
         public static readonly BlueprintParametrizedFeature SorcererArcana = BlueprintTools.GetBlueprint<BlueprintParametrizedFeature>("4a2e8388c2f0dd3478811d9c947bebfb");
 
+        private static BlueprintSpellbookReference[] patchableSpellBooks = new BlueprintSpellbookReference[] { };
+
 
         public static readonly BlueprintFeatureBase[] FeaturesIgnoredWhenPatching = new BlueprintFeatureBase[] { 
             FeatTools.Selections.BasicFeatSelection, 
@@ -74,6 +77,22 @@ namespace IsekaiMod.Utilities {
             FeatTools.Selections.CavalierBonusFeatSelection,
             BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("f1add10c87fa4563ad5f71779eecde19")
         };
+
+        
+
+        public static void RegisterSpellbook(BlueprintSpellbook spellbook) {
+            if (spellbook != null && ! patchableSpellBooks.Contains(spellbook.ToReference<BlueprintSpellbookReference>())) {
+                var bookRef = spellbook.ToReference<BlueprintSpellbookReference>();
+                if (!patchableSpellBooks.Contains(bookRef)) {
+                    patchableSpellBooks = patchableSpellBooks.AddToArray(bookRef);
+                    // Allow Spellbook to be merged with angel and lich
+                    var AngelIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
+                    var LichIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
+                    TTCoreExtensions.RegisterForPrestigeSpellbook(AngelIncorporateSpellBook, spellbook);
+                    TTCoreExtensions.RegisterForPrestigeSpellbook(LichIncorporateSpellBook, spellbook);
+                }
+            }
+        }
 
         private static BlueprintProgression PatchPatchClassProgressionBasedOnRefClassStep1(BlueprintProgression prog, BlueprintCharacterClass refClass) {
             prog.IsClassFeature = true;
@@ -298,6 +317,7 @@ namespace IsekaiMod.Utilities {
                 if (feature.Components != null) {
                     var mySpellSet = new HashSet<SpellReference>();
                     ContextRankConfig sample = null;
+                    SpontaneousSpellConversion[] conversions = new SpontaneousSpellConversion[] { };
                     bool alreadyPatched = false;
                     foreach (var component in feature.Components) {
                         //check if component is addSpell or addFeat
@@ -310,7 +330,10 @@ namespace IsekaiMod.Utilities {
                                     alreadyPatched = true;
                                 }
                             }                            
-                        } 
+                        }
+                        if (component is SpontaneousSpellConversion conversion && conversion.m_CharacterClass!= null && conversion.m_CharacterClass.Equals(referenceClass)) {
+                            conversions = conversions.AddToArray(conversion);
+                        }
                     }
                     foreach (var spellReference in mySpellSet) {
                         feature.AddComponent<AddKnownSpell>(c => {
@@ -337,6 +360,15 @@ namespace IsekaiMod.Utilities {
                             c.m_ExceptClasses = sample.m_ExceptClasses;
                         });
                         //Main.Log("rank progression patched= " + feature.AssetGuid + " added class= " + myClass.Guid + " for ref= " + referenceClass.Guid);
+                    }
+                    if (conversions.Length >0) {
+                        foreach (var conversion in conversions) {
+                            feature.AddComponent<SpontaneousSpellConversion>(c => {
+                                c.m_CharacterClass = myClass;
+                                c.m_SpellsByLevel = conversion.m_SpellsByLevel;
+                            }
+                                );
+                        }
                     }
                 }
             } catch(NullReferenceException e)  {
@@ -368,6 +400,15 @@ namespace IsekaiMod.Utilities {
                         mySpellSet.Add(new SpellReference(level2.SpellLevel, spell));
                     }
                 }
+            }
+            if (component is AddAbilityUseTrigger trigger && trigger.m_Spellbooks != null && trigger.m_Spellbooks.Length> 0) {
+                trigger.m_Spellbooks = trigger.m_Spellbooks.AddRangeToArray(patchableSpellBooks);
+            }
+            if (component is AddCasterLevelForSpellbook cl && cl.m_Spellbooks != null && cl.m_Spellbooks.Length > 0) {
+                cl.m_Spellbooks = cl.m_Spellbooks.AddRangeToArray(patchableSpellBooks);
+            }
+            if (component is IncreaseSpellSpellbookDC cdc && cdc.m_Spellbooks != null && cdc.m_Spellbooks.Length > 0) {
+                cdc.m_Spellbooks = cdc.m_Spellbooks.AddRangeToArray(patchableSpellBooks);
             }
             //check if component is AddFeature
             if (component is AddFeatureOnClassLevel asFeat) {
