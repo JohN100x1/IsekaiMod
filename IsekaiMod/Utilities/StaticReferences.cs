@@ -490,16 +490,32 @@ namespace IsekaiMod.Utilities {
                     BlueprintAbilityResource res = resRef.Get();
                     bool classlocked = false;
                     bool alreadyPatched = false;
-                    if (res.m_MaxAmount.m_ClassDiv != null && res.m_MaxAmount.m_ClassDiv.Contains(referenceClass)) {
-                        classlocked = true;
+                    if (res.m_MaxAmount.m_ClassDiv != null && res.m_MaxAmount.m_ClassDiv.Length > 0) {
+                        if (res.m_MaxAmount.m_ClassDiv.Contains(referenceClass)) {
+                            classlocked = true;
+                        }
+                        if (res.m_MaxAmount.m_ClassDiv.Contains(myClass)) {
+                            alreadyPatched = true;
+                        }
+                        if (classlocked && !alreadyPatched) {
+                            res.m_MaxAmount.m_ClassDiv.AddItem(myClass);
+                            //Main.Log("class resource patched= " + resRef.Guid); 
+                        }
                     }
-                    if (res.m_MaxAmount.m_ClassDiv != null && res.m_MaxAmount.m_ClassDiv.Contains(myClass)) {
-                        alreadyPatched = true;
+                    if (!classlocked && res.m_MaxAmount.m_Class != null && res.m_MaxAmount.m_Class.Length > 0) {
+                        if (res.m_MaxAmount.m_Class.Contains(referenceClass)) {
+                            classlocked = true;
+                        }
+                        if (res.m_MaxAmount.m_Class.Contains(myClass)) {
+                            alreadyPatched = true;
+                        }
+                        if (classlocked && !alreadyPatched) {
+                            res.m_MaxAmount.m_Class.AddItem(myClass);
+                            //Main.Log("class resource patched= " + resRef.Guid); 
+                        }
+
                     }
-                    if (classlocked && !alreadyPatched) { 
-                        res.m_MaxAmount.m_ClassDiv.AddItem(myClass); 
-                        //Main.Log("class resource patched= " + resRef.Guid); 
-                    }
+
                 }
             }
         }
