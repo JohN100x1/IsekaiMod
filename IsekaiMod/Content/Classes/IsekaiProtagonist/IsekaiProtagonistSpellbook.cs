@@ -12,9 +12,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
     internal class IsekaiProtagonistSpellbook {
 
         public static void Add() {
-            var IsekaiProtagonistSpellList = BlueprintTools.GetModBlueprint<BlueprintSpellList>(IsekaiContext, "IsekaiProtagonistSpellList");
-            var IsekaiProtagonistSpellsPerDay = BlueprintTools.GetModBlueprint<BlueprintSpellsTable>(IsekaiContext, "IsekaiProtagonistSpellsPerDay");
-            var IsekaiProtagonistSpellsKnown = BlueprintTools.GetModBlueprint<BlueprintSpellsTable>(IsekaiContext, "IsekaiProtagonistSpellsKnown");
             var IsekaiProtagonistSpellbook = Helpers.CreateBlueprint<BlueprintSpellbook>(IsekaiContext, "IsekaiProtagonistSpellbook", bp => {
                 bp.Name = Helpers.CreateString(IsekaiContext, "$IsekaiProtagonistSpellbook.Name", "Isekai Protagonist");
                 bp.Spontaneous = true;
@@ -22,9 +19,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 bp.CantripsType = CantripsType.Cantrips;
                 bp.IsArcane = true;
                 bp.IsArcanist = false;
-                bp.m_SpellsPerDay = IsekaiProtagonistSpellsPerDay.ToReference<BlueprintSpellsTableReference>();
-                bp.m_SpellsKnown = IsekaiProtagonistSpellsKnown.ToReference<BlueprintSpellsTableReference>();
-                bp.m_SpellList = IsekaiProtagonistSpellList.ToReference<BlueprintSpellListReference>();
+                bp.m_SpellsPerDay = IsekaiProtagonistSpellsPerDay.GetReference();
+                bp.m_SpellsKnown = IsekaiProtagonistSpellsKnown.GetReference();
+                bp.m_SpellList = IsekaiProtagonistSpellList.GetReference();
                 bp.m_SpellSlots = null;
                 bp.SpellsPerLevel = 0;
                 bp.AllSpellsKnown = false;
@@ -42,8 +39,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             // Allow Spellbook to be merged with angel and lich
             var AngelIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
             var LichIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
-            TTCoreExtensions.RegisterForPrestigeSpellbook(AngelIncorporateSpellBook, IsekaiProtagonistSpellbook);
-            TTCoreExtensions.RegisterForPrestigeSpellbook(LichIncorporateSpellBook, IsekaiProtagonistSpellbook);
+            TTCoreExtensions.RegisterForMythicSpellbook(AngelIncorporateSpellBook, IsekaiProtagonistSpellbook);
+            TTCoreExtensions.RegisterForMythicSpellbook(LichIncorporateSpellBook, IsekaiProtagonistSpellbook);
         }
 
         public static void SetCharacterClass(BlueprintCharacterClass characterClass) {

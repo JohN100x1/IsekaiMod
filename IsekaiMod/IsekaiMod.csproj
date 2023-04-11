@@ -160,6 +160,7 @@
     <Compile Include="Components\AnyWeaponStatReplacementFixed.cs" />
     <Compile Include="Components\SetAttackerAutoMiss.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorSpellbook.cs" />
+    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Mastermind\MastermindSpellList.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Mastermind\MastermindArchetype.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Mastermind\MastermindSpellbook.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Overlord\OverlordSpellbook.cs" />

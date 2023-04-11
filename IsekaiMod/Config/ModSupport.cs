@@ -89,10 +89,10 @@ namespace IsekaiMod.Utilities {
                         OverlordSpellbook.Get()
                     };
                     foreach (BlueprintSpellbook spellbook in spellbooks) {
-                        TTCoreExtensions.RegisterForPrestigeSpellbook(AeonIncorporateSpellBook, spellbook);
-                        TTCoreExtensions.RegisterForPrestigeSpellbook(AzataIncorporateSpellbook, spellbook);
-                        TTCoreExtensions.RegisterForPrestigeSpellbook(DemonIncorporateSpellbook, spellbook);
-                        TTCoreExtensions.RegisterForPrestigeSpellbook(TricksterIncorporateSpellbook, spellbook);
+                        TTCoreExtensions.RegisterForMythicSpellbook(AeonIncorporateSpellBook, spellbook);
+                        TTCoreExtensions.RegisterForMythicSpellbook(AzataIncorporateSpellbook, spellbook);
+                        TTCoreExtensions.RegisterForMythicSpellbook(DemonIncorporateSpellbook, spellbook);
+                        TTCoreExtensions.RegisterForMythicSpellbook(TricksterIncorporateSpellbook, spellbook);
                     }
                 }
             }

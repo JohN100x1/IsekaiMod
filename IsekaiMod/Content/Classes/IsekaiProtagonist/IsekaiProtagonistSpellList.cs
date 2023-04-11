@@ -946,6 +946,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
         public static BlueprintSpellList Get() {
             return BlueprintTools.GetModBlueprint<BlueprintSpellList>(IsekaiContext, "IsekaiProtagonistSpellList");
         }
+        public static BlueprintSpellListReference GetReference() {
+            return BlueprintTools.GetModBlueprintReference<BlueprintSpellListReference>(IsekaiContext, "IsekaiProtagonistSpellList");
+        }
 
         // spells that are technically their own spell but should be excluded because they are things like Protection From Chaos or Protection From Evil that are also covered by a more general spell that is a feature Selection
         private static bool ExcludeSpell(BlueprintAbility spell) {

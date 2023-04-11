@@ -1,4 +1,5 @@
-﻿using Kingmaker.Blueprints.Classes.Spells;
+﻿using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes.Spells;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
@@ -40,6 +41,14 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                     new SpellsLevelEntry() { Count = new int[] { 0, 12, 12, 12, 12, 12, 12, 12, 12, 12, 2 } }
                 };
             });
+        }
+
+        public static BlueprintSpellsTable Get() {
+            return BlueprintTools.GetModBlueprint<BlueprintSpellsTable>(IsekaiContext, "IsekaiProtagonistSpellsPerDay");
+        }
+
+        public static BlueprintSpellsTableReference GetReference() {
+            return BlueprintTools.GetModBlueprintReference<BlueprintSpellsTableReference>(IsekaiContext, "IsekaiProtagonistSpellsPerDay");
         }
     }
 }

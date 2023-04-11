@@ -173,7 +173,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
         }
 
         public static BlueprintCharacterClassReference GetReference() {
-            return Get().ToReference<BlueprintCharacterClassReference>();
+            return BlueprintTools.GetModBlueprintReference<BlueprintCharacterClassReference>(IsekaiContext, "IsekaiProtagonistClass");
         }
     }
 }

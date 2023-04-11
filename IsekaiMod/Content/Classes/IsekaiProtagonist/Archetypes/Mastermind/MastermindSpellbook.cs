@@ -12,8 +12,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind {
     internal class MastermindSpellbook {
 
         public static void Add() {
-            var IsekaiProtagonistSpellList = BlueprintTools.GetModBlueprint<BlueprintSpellList>(IsekaiContext, "IsekaiProtagonistSpellList");
-            var IsekaiProtagonistSpellsPerDay = BlueprintTools.GetModBlueprint<BlueprintSpellsTable>(IsekaiContext, "IsekaiProtagonistSpellsPerDay");
             var MastermindSpellbook = Helpers.CreateBlueprint<BlueprintSpellbook>(IsekaiContext, "MastermindSpellbook", bp => {
                 bp.Name = Helpers.CreateString(IsekaiContext, "MastermindSpellbook.Name", "Mastermind");
                 bp.Spontaneous = true;
@@ -21,10 +19,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind {
                 bp.CantripsType = CantripsType.Cantrips;
                 bp.IsArcane = true;
                 bp.IsArcanist = true;
-                bp.m_SpellsPerDay = IsekaiProtagonistSpellsPerDay.ToReference<BlueprintSpellsTableReference>();
+                bp.m_SpellsPerDay = IsekaiProtagonistSpellsPerDay.GetReference();
                 bp.m_SpellsKnown = null;
-                bp.m_SpellList = IsekaiProtagonistSpellList.ToReference<BlueprintSpellListReference>();
-                bp.m_SpellSlots = IsekaiProtagonistSpellsPerDay.ToReference<BlueprintSpellsTableReference>();
+                bp.m_SpellList = IsekaiProtagonistSpellList.GetReference();
+                bp.m_SpellSlots = IsekaiProtagonistSpellsPerDay.GetReference();
                 bp.SpellsPerLevel = 4;
                 bp.AllSpellsKnown = false;
                 bp.CanCopyScrolls = true;
@@ -41,8 +39,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind {
             // Allow Spellbook to be merged with angel and lich
             var AngelIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
             var LichIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
-            TTCoreExtensions.RegisterForPrestigeSpellbook(AngelIncorporateSpellBook, MastermindSpellbook);
-            TTCoreExtensions.RegisterForPrestigeSpellbook(LichIncorporateSpellBook, MastermindSpellbook);
+            TTCoreExtensions.RegisterForMythicSpellbook(AngelIncorporateSpellBook, MastermindSpellbook);
+            TTCoreExtensions.RegisterForMythicSpellbook(LichIncorporateSpellBook, MastermindSpellbook);
         }
 
         public static BlueprintSpellbook Get() {

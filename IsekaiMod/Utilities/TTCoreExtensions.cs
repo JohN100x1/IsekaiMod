@@ -44,7 +44,7 @@ namespace IsekaiMod.Utilities {
             spell.AddToSpellList(list, level);
         }
 
-        public static void RegisterForPrestigeSpellbook(BlueprintFeatureSelectMythicSpellbook mythicSpellbook, BlueprintSpellbook spellBook) {
+        public static void RegisterForMythicSpellbook(BlueprintFeatureSelectMythicSpellbook mythicSpellbook, BlueprintSpellbook spellBook) {
             if (ContainsSpellbook(mythicSpellbook.AllowedSpellbooks, spellBook)) {
                 IsekaiContext.Logger.LogWarning("spellbook already registered= " + spellBook.name + " gui id=" + spellBook.AssetGuid.m_Guid.ToString("N") + " for mythic= " + mythicSpellbook.Name);
                 return;
