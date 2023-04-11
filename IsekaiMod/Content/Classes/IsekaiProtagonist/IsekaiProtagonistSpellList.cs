@@ -948,7 +948,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
         }
 
         // spells that are technically their own spell but should be excluded because they are things like Protection From Chaos or Protection From Evil that are also covered by a more general spell that is a feature Selection
-        private static Boolean excludeSpell(BlueprintAbility spell) {
+        private static bool ExcludeSpell(BlueprintAbility spell) {
             var GUIId = spell.AssetGuid.m_Guid.ToString("N");
             if ("0ec75ec95d9e39d47a23610123ba1bad".Equals(GUIId)) return true;
             if ("b6da529f710491b4fa789a5838c1ae8f".Equals(GUIId)) return true;
@@ -992,21 +992,21 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             /* merge the three major first then everything else after*/
             foreach (var spellLevel in SpellTools.SpellList.ClericSpellList.SpellsByLevel) {
                 foreach (var spell in spellLevel.Spells) {
-                    if (!excludeSpell(spell)) {
+                    if (!ExcludeSpell(spell)) {
                         TTCoreExtensions.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
                     }
                 }
             }
             foreach (var spellLevel in SpellTools.SpellList.WizardSpellList.SpellsByLevel) {
                 foreach (var spell in spellLevel.Spells) {
-                    if (!excludeSpell(spell)) {
+                    if (!ExcludeSpell(spell)) {
                         TTCoreExtensions.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
                     }
                 }
             }
             foreach (var spellLevel in SpellTools.SpellList.DruidSpellList.SpellsByLevel) {
                 foreach (var spell in spellLevel.Spells) {
-                    if (!excludeSpell(spell)) {
+                    if (!ExcludeSpell(spell)) {
                         TTCoreExtensions.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
                     }
                 }
@@ -1034,7 +1034,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             foreach (var spellList in mergeSpellLists) {
                 foreach (var spellLevel in spellList.SpellsByLevel) {
                     foreach (var spell in spellLevel.Spells) {
-                        if (!excludeSpell(spell)) {
+                        if (!ExcludeSpell(spell)) {
                             TTCoreExtensions.RegisterSpell(IsekaiSpellList, spell, spellLevel.SpellLevel);
                         }
                     }
