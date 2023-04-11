@@ -178,6 +178,8 @@ namespace IsekaiMod.Content {
                 Main.LogDebug("Class: Hero");
 
                 // Mastermind Archetype
+                MastermindSpellList.Add();
+                MastermindSpellsPerDay.Add();
                 MastermindSpellbook.Add();
                 MastermindProficiencies.Add();
                 MastermindQuickFooted.Add();
@@ -312,7 +314,11 @@ namespace IsekaiMod.Content {
 
 
             //done here because it should be done after all spells have been initialized and were added to the canon books
-            if (IsekaiContext.AddedContent.MergeIsekaiSpellList) IsekaiProtagonistSpellList.MergeSpellLists();
+            if (IsekaiContext.AddedContent.MergeIsekaiSpellList) {
+                IsekaiProtagonistSpellList.MergeSpellLists();
+            }
+            // Copy spell list into mastermind spell list after merge
+            MastermindSpellList.PatchMastermindSpellList();
 
             if (ModSupport.IsTableTopTweakBaseEnabled()) {
                 PatchTableTopTweakCore();

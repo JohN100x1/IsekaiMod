@@ -19,10 +19,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind {
                 bp.CantripsType = CantripsType.Cantrips;
                 bp.IsArcane = true;
                 bp.IsArcanist = true;
-                bp.m_SpellsPerDay = IsekaiProtagonistSpellsPerDay.GetReference();
+                bp.m_SpellsPerDay = MastermindSpellsPerDay.GetReference();
                 bp.m_SpellsKnown = null;
-                bp.m_SpellList = IsekaiProtagonistSpellList.GetReference();
-                bp.m_SpellSlots = IsekaiProtagonistSpellsPerDay.GetReference();
+                bp.m_SpellList = MastermindSpellList.GetReference();
+                bp.m_SpellSlots = MastermindSpellsPerDay.GetReference();
                 bp.SpellsPerLevel = 4;
                 bp.AllSpellsKnown = false;
                 bp.CanCopyScrolls = true;

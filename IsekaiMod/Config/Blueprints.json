@@ -507,6 +507,8 @@
     "DeusExMachinaFeature": "230d2557-97cb-4935-a251-2939b525c7c2",
 
     // Mastermind Features
+    "MastermindSpellList": "c584ebea-5016-4e19-9910-0dac308e9456",
+    "MastermindSpellsPerDay": "43769461-bf66-4d5f-8362-ee9f4b0d30eb",
     "MastermindSpellbook": "9f393ace-2006-436a-85f9-8b47f347d3cd",
     "MastermindProficiencies": "b4d2cd29-c850-4716-95c1-74eca502a30c",
     "MastermindQuickFooted": "e744ccad-7669-44fb-8052-decc9d75ee7b",
