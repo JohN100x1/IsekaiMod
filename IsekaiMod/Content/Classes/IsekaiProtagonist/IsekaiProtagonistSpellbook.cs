@@ -36,7 +36,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 bp.SpecialSpellListName = new LocalizedString();
             });
 
-            StaticReferences.RegisterSpellbook(IsekaiProtagonistSpellbook);
+            PatchTools.RegisterSpellbook(IsekaiProtagonistSpellbook);
 
         }
 

@@ -35,7 +35,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind {
                 bp.SpecialSpellListName = new LocalizedString();
             });
 
-            StaticReferences.RegisterSpellbook(MastermindSpellbook);
+            PatchTools.RegisterSpellbook(MastermindSpellbook);
         }
 
         public static BlueprintSpellbook Get() {

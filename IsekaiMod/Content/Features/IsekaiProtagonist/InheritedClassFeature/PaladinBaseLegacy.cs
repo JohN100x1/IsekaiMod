@@ -44,11 +44,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateLevelEntry(1, BlueprintTools.GetBlueprint<BlueprintFeature>("f8c91c0135d5fc3458fcc131c4b77e96"))
                 };
 
-                //prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.PaladinClass);
+                //prog = PatchTools.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.PaladinClass);
 
-                prog = StaticReferences.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.PaladinClass, addentries, removeentries);
+                prog = PatchTools.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.PaladinClass, addentries, removeentries);
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
-                StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.PaladinClass);
+                PatchTools.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.PaladinClass);
             }
         }
         public static BlueprintProgression Get() {

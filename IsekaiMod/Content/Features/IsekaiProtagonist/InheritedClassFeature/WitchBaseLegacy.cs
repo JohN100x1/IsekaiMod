@@ -41,9 +41,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
         public static void PatchProgression() {
             if (prog != null) {
-                prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.WitchClass);
+                prog = PatchTools.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.WitchClass);
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
-                StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.WitchClass);
+                PatchTools.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.WitchClass);
                 prog.LevelEntries.AddItem(Helpers.CreateLevelEntry(5, WitchPatronSelection.Get()));
                 prog.LevelEntries.AddItem(Helpers.CreateLevelEntry(10, WitchPatronSelection.Get()));
                 prog.LevelEntries.AddItem(Helpers.CreateLevelEntry(15, WitchPatronSelection.Get()));

@@ -35,7 +35,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord {
                 bp.SpecialSpellListName = new LocalizedString();
             });
 
-            StaticReferences.RegisterSpellbook(OverlordSpellbook);
+            PatchTools.RegisterSpellbook(OverlordSpellbook);
         }
 
         public static BlueprintSpellbook Get() {

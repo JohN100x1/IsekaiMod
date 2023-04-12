@@ -35,7 +35,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.GodEmperor {
                 bp.SpecialSpellListName = new LocalizedString();
             });
 
-            StaticReferences.RegisterSpellbook(GodEmperorSpellbook);
+            PatchTools.RegisterSpellbook(GodEmperorSpellbook);
         }
 
         public static BlueprintSpellbook Get() {

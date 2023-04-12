@@ -35,10 +35,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 );
             prog.GiveFeaturesForPreviousLevels = true;
             prog.AddComponent<PrerequisiteAlignment>(c => { c.Alignment = Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Evil; });
-            prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, DreadKnight);
+            prog = PatchTools.PatchClassProgressionBasedOnRefClass(prog, DreadKnight);
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
             //KJK: given when we actually initialize this there is no point in patching later
-            StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, DreadKnight.ToReference<BlueprintCharacterClassReference>());
+            PatchTools.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, DreadKnight.ToReference<BlueprintCharacterClassReference>());
 
 
             LegacySelection.RegisterForFeat(prog);

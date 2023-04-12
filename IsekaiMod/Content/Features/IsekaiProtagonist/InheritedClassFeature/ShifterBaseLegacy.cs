@@ -57,10 +57,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     return;
                 }
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
-                prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.ShifterClass);
-                StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.ShifterClass);
+                prog = PatchTools.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.ShifterClass);
+                PatchTools.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.ShifterClass);
 
-                progAlternate = StaticReferences.PatchClassProgressionBasedOnRefClass(progAlternate, ClassTools.Classes.ShifterClass);
+                progAlternate = PatchTools.PatchClassProgressionBasedOnRefClass(progAlternate, ClassTools.Classes.ShifterClass);
 
 
                 LegacySelection.RegisterForFeat(prog);
