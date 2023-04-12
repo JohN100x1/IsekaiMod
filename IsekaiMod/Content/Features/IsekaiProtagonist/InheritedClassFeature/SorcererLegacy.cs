@@ -62,7 +62,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BloodragerChimeraLegacy.Get().ToReference<BlueprintFeatureReference>(); });
 
-            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.SorcererBloodlineSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
+            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.SorcererBloodlineSelection, myClass, refClass);
         }
 
         public static BlueprintProgression Get() {

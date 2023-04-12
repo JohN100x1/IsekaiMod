@@ -158,7 +158,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             ArcanistConsumeSpellsResource.m_MaxAmount.m_Class = ArcanistConsumeSpellsResource.m_MaxAmount.m_Class.AppendToArray(myClassRef);
 
             var ArcanistExploitSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("b8bf3d5023f2d8c428fdf6438cecaea7");
-            PatchTools.PatchClassIntoFeatureOfReferenceClass(ArcanistExploitSelection, myClassRef, ClassTools.ClassReferences.ArcanistClass, 0, new BlueprintFeatureBase[] { });
+            PatchTools.PatchClassIntoFeatureOfReferenceClass(ArcanistExploitSelection, myClassRef, ClassTools.ClassReferences.ArcanistClass);
         }
     }
 }

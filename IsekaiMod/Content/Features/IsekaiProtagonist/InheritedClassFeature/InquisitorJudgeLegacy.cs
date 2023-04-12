@@ -56,10 +56,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 foreach (var level in archetype.AddFeatures) {
                     foreach (var candidate in level.Features) {
                         if (candidate != null && candidate is BlueprintFeatureSelection selection) {
-                            PatchTools.PatchClassIntoFeatureOfReferenceClass(selection, myClass, ClassTools.ClassReferences.InquisitorClass, 0, new BlueprintFeatureBase[] { });
+                            PatchTools.PatchClassIntoFeatureOfReferenceClass(selection, myClass, ClassTools.ClassReferences.InquisitorClass);
                         } else {
                             if (candidate != null && candidate is BlueprintFeature feature) {
-                                PatchTools.PatchClassIntoFeatureOfReferenceClass(feature, myClass, ClassTools.ClassReferences.InquisitorClass, 0, new BlueprintFeatureBase[] { });
+                                PatchTools.PatchClassIntoFeatureOfReferenceClass(feature, myClass, ClassTools.ClassReferences.InquisitorClass);
                             }
                         }
                     }

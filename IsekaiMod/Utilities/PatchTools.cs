@@ -173,10 +173,10 @@ namespace IsekaiMod.Utilities {
             }
             foreach (BlueprintFeatureBase levelitem in features) {
                 if (levelitem is BlueprintProgression progression) {
-                    PatchClassIntoFeatureOfReferenceClass(progression, myClass, referenceClass, 0, new BlueprintFeatureBase[] { });
+                    PatchClassIntoFeatureOfReferenceClass(progression, myClass, referenceClass);
                 } else {
                     if (levelitem is BlueprintFeature feature) {
-                        PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass, 0, new BlueprintFeatureBase[] { });
+                        PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass);
                     }
                 }
             }
@@ -191,18 +191,19 @@ namespace IsekaiMod.Utilities {
             }
             foreach (BlueprintFeatureBase levelitem in features) {
                 if (levelitem is BlueprintProgression progression) {
-                    PatchClassIntoFeatureOfReferenceClass(progression, myClass, referenceClass, 0, new BlueprintFeatureBase[] { });
+                    PatchClassIntoFeatureOfReferenceClass(progression, myClass, referenceClass);
                 } else {
                     if (levelitem is BlueprintFeature feature) {
-                        PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass, 0, new BlueprintFeatureBase[] { });
+                        PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass);
                     }
                 }
             }
         }
 
 
-        public static void PatchClassIntoFeatureOfReferenceClass(BlueprintFeature feature, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level, BlueprintFeatureBase[] loopPrevention) {
-            var mylevel = level + 1;
+        public static void PatchClassIntoFeatureOfReferenceClass(BlueprintFeature feature, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level = 0, BlueprintFeatureBase[] loopPrevention = null) {
+            loopPrevention ??= new BlueprintFeatureBase[0];
+            int mylevel = level + 1;
             if (mylevel > 10) {
                 IsekaiContext.Logger.LogError("Attempt to patch Progression Tree stopped at Level 10 to prevent endless loop, if you see this message please report so we can figure out if someone created a loop here or if this limit needs to be higher");
                 if (feature.Name != null) {

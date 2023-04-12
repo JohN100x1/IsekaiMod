@@ -60,10 +60,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static void PatchProgression() {
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
             BlueprintCharacterClassReference refClass = ClassTools.Classes.OracleClass.ToReference<BlueprintCharacterClassReference>();
-            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleCurseSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
-            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleMysterySelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
-            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleRevelationSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
-            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleCureOrInflictSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
+            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleCurseSelection, myClass, refClass);
+            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleMysterySelection, myClass, refClass);
+            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleRevelationSelection, myClass, refClass);
+            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleCureOrInflictSelection, myClass, refClass);
         }
         public static BlueprintProgression Get() {
             if (prog != null) return prog;
