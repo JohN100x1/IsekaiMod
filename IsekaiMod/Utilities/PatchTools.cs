@@ -32,7 +32,7 @@ namespace IsekaiMod.Utilities {
             FeatTools.Selections.WarDomainGreaterFeatSelection,
             FeatTools.Selections.MagusFeatSelection,
             FeatTools.Selections.CavalierBonusFeatSelection,
-            BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("f1add10c87fa4563ad5f71779eecde19")
+            BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("f1add10c87fa4563ad5f71779eecde19") // GriffonheartShifterFeatSelection
         };
 
         public static void RegisterSpellbook(BlueprintSpellbook spellbook) {
@@ -95,24 +95,24 @@ namespace IsekaiMod.Utilities {
 
         public static BlueprintProgression PatchClassProgressionBasedonRefArchetype(BlueprintProgression prog, BlueprintCharacterClass refClass, BlueprintArchetype refArchetype, LevelEntry[] additionalReference) {
             prog = PatchPatchClassProgressionBasedOnRefClassStep1(prog, refClass);
-            var referenceLevels = refClass.Progression.LevelEntries;
+            LevelEntry[] referenceLevels = refClass.Progression.LevelEntries;
             BlueprintFeatureBase[] MissingUIGroup = new BlueprintFeatureBase[] { };
-            foreach (var referenceLevel in referenceLevels) {
+            foreach (LevelEntry referenceLevel in referenceLevels) {
                 BlueprintFeatureBaseReference[] features = new BlueprintFeatureBaseReference[] { };
-                var addItems = referenceLevel.m_Features.ToArray();
+                BlueprintFeatureBaseReference[] addItems = referenceLevel.m_Features.ToArray();
                 BlueprintFeatureBaseReference[] removed = new BlueprintFeatureBaseReference[] { };
-                foreach (var candidate in refArchetype.RemoveFeatures) {
+                foreach (LevelEntry candidate in refArchetype.RemoveFeatures) {
                     if (candidate.Level == referenceLevel.Level) {
                         removed = removed.AddRangeToArray(candidate.m_Features.ToArray());
                     }
                 }
-                foreach (var feature in addItems) {
+                foreach (BlueprintFeatureBaseReference feature in addItems) {
                     if (!removed.Contains(feature)) {
                         features = features.AddToArray(feature);
                     }
                 }
                 BlueprintFeatureBaseReference[] added = new BlueprintFeatureBaseReference[] { };
-                foreach (var candidate in refArchetype.AddFeatures) {
+                foreach (LevelEntry candidate in refArchetype.AddFeatures) {
                     if (candidate.Level == referenceLevel.Level) {
                         added = added.AddRangeToArray(candidate.m_Features.ToArray());
                     }
@@ -125,13 +125,13 @@ namespace IsekaiMod.Utilities {
                 }
                 if (additionalReference != null) {
                     LevelEntry additionalFeatures = null;
-                    foreach (var candidate in additionalReference) {
+                    foreach (LevelEntry candidate in additionalReference) {
                         if (candidate.Level == referenceLevel.Level) {
                             additionalFeatures = candidate;
                         }
                     }
                     if (additionalFeatures != null) {
-                        foreach (var feature in additionalFeatures.m_Features) {
+                        foreach (BlueprintFeatureBaseReference feature in additionalFeatures.m_Features) {
                             features = features.AddToArray(feature);
                             if (!MissingUIGroup.Contains(feature)) { MissingUIGroup = MissingUIGroup.AddToArray(feature); }
                         }
@@ -141,16 +141,20 @@ namespace IsekaiMod.Utilities {
             };
             //run through them again to get references to levels that had no features previously
             if (additionalReference != null) {
-                foreach (var level in additionalReference) {
+                foreach (LevelEntry level in additionalReference) {
                     bool found = false;
-                    foreach (var refLevel in prog.LevelEntries) {
+                    foreach (LevelEntry refLevel in prog.LevelEntries) {
                         if (refLevel.Level == level.Level) {
                             found = true;
                         }
                     }
                     if (!found) {
                         prog.LevelEntries = prog.LevelEntries.AddToArray(level);
-                        foreach (var feature in level.m_Features) { if (!MissingUIGroup.Contains(feature)) { MissingUIGroup = MissingUIGroup.AddToArray(feature); } }
+                        foreach (BlueprintFeatureBaseReference feature in level.m_Features) {
+                            if (!MissingUIGroup.Contains(feature)) {
+                                MissingUIGroup = MissingUIGroup.AddToArray(feature);
+                            }
+                        }
                     }
                 }
             }
@@ -163,7 +167,7 @@ namespace IsekaiMod.Utilities {
         public static void PatchProgressionFeaturesBasedOnReferenceArchetype(BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, BlueprintArchetype refArchetype) {
             var features = new HashSet<BlueprintFeatureBase>();
             foreach (LevelEntry levelEntry in refArchetype.AddFeatures) {
-                foreach (var levelitem in levelEntry.Features) {
+                foreach (BlueprintFeatureBase levelitem in levelEntry.Features) {
                     if (!features.Contains(levelitem)) { features.Add(levelitem); }
                 }
             }
@@ -250,16 +254,17 @@ namespace IsekaiMod.Utilities {
                 }
                 if (feature is BlueprintFeatureSelection selection) {
                     //don't trust selections past a certain size to actually contain class features rather than just a selection of basic feats unless they are selections that are known to be that size for a valid reason(revelations, hexes, rage powers)
+                    string selectionGuid = feature.AssetGuid.ToString();
                     if (selection.m_AllFeatures.Length > 30 && !(
-                        feature.AssetGuid.ToString().Equals("60008a10ad7ad6543b1f63016741a5d2")
-                        || feature.AssetGuid.ToString().Equals("c074a5d615200494b8f2a9c845799d93")
-                        || feature.AssetGuid.ToString().Equals("4223fe18c75d4d14787af196a04e14e7")
-                        || feature.AssetGuid.ToString().Equals("28710502f46848d48b3f0d6132817c4e")
-                        || feature.AssetGuid.ToString().Equals("2476514e31791394fa140f1a07941c96")
-                        || feature.AssetGuid.ToString().Equals("9846043cf51251a4897728ed6e24e76f")
-                        || feature.AssetGuid.ToString().Equals("99999999000900000009000000000001")
-                        || feature.AssetGuid.ToString().Equals("58d6f8e9eea63f6418b107ce64f315ea")
-                        || feature.AssetGuid.ToString().Equals("5c883ae0cd6d7d5448b7a420f51f8459")
+                        selectionGuid.Equals("60008a10ad7ad6543b1f63016741a5d2") // OracleRevelationSelection
+                        || selectionGuid.Equals("c074a5d615200494b8f2a9c845799d93") // RogueTalentSelection
+                        || selectionGuid.Equals("4223fe18c75d4d14787af196a04e14e7") // ShamanHexSelection
+                        || selectionGuid.Equals("28710502f46848d48b3f0d6132817c4e") // RagePowerSelection
+                        || selectionGuid.Equals("2476514e31791394fa140f1a07941c96") // SkaldRagePowerSelection
+                        || selectionGuid.Equals("9846043cf51251a4897728ed6e24e76f") // WitchHexSelection
+                        || selectionGuid.Equals("99999999000900000009000000000001") // InquisitorDomains (In our mod)
+                        || selectionGuid.Equals("58d6f8e9eea63f6418b107ce64f315ea") // InfusionSelection
+                        || selectionGuid.Equals("5c883ae0cd6d7d5448b7a420f51f8459") // WildTalentSelection
                         )) {
                         IsekaiContext.Logger.LogError("reference class= " + referenceClass.Guid + " Stop Feature= " + feature.AssetGuid + " name= " + feature.Name + " reason= selection contains too many features and thus likely is a basic feat variation");
                         return;
@@ -481,19 +486,13 @@ namespace IsekaiMod.Utilities {
                 value = inValue;
             }
             public override bool Equals(object p) {
-                if (p is null) {
-                    return false;
-                }
+                if (p is null) return false;
 
                 // Optimization for a common success case.
-                if (ReferenceEquals(this, p)) {
-                    return true;
-                }
+                if (ReferenceEquals(this, p)) return true;
 
                 // If run-time types are not exactly the same, return false.
-                if (GetType() != GetType()) {
-                    return false;
-                }
+                if (GetType() != GetType()) return false;
 
                 // Return true if the fields match.
                 // Note that the base class is not invoked because it is
