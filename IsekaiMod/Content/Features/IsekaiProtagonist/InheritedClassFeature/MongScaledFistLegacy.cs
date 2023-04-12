@@ -41,7 +41,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             OverlordLegacySelection.Register(prog);
         }
         public static void PatchProgression() {
-             
+
 
             prog = StaticReferences.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.MonkClass, BaseArchetype, null);
             BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.MonkClass;

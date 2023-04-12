@@ -9,8 +9,7 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind {
 
-    internal class MastermindQuickFooted
-    {
+    internal class MastermindQuickFooted {
         private static readonly Sprite Icon_ExpeditiousRetreat = BlueprintTools.GetBlueprint<BlueprintAbility>("4f8181e7a7f1d904fbaea64220e83379").m_Icon;
 
         public static void Add() {

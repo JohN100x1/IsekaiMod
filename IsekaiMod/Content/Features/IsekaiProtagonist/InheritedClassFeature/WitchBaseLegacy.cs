@@ -59,10 +59,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "WitchBaseLegacy");
         }
     }
-    internal class  WitchPatronSelection {
+    internal class WitchPatronSelection {
         private static BlueprintFeatureSelection myfeat;
 
-        public static void Configure() {  
+        public static void Configure() {
 
             myfeat = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiWitchSelection", bp => {
                 bp.SetName(IsekaiContext, "Patrons Blessing");

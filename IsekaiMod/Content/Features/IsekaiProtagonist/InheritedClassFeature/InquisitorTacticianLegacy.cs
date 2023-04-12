@@ -57,7 +57,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     removeentries = removeentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(20, alternateCapstone));
                     addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(20, teamLeader));
                 }
-                removeentries = removeentries.AppendToArray(Helpers.CreateLevelEntry(1,FeatTools.Selections.DomainsSelection));
+                removeentries = removeentries.AppendToArray(Helpers.CreateLevelEntry(1, FeatTools.Selections.DomainsSelection));
 
                 BlueprintFeature share = BlueprintTools.GetBlueprint<BlueprintFeature>("93e78cad499b1b54c859a970cbe4f585");
                 BlueprintFeature shareswift = BlueprintTools.GetBlueprint<BlueprintFeature>("4ca47c023f1c158428bd55deb44c735f");

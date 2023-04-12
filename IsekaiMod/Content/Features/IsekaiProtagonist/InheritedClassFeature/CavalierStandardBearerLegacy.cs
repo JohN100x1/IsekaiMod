@@ -1,16 +1,16 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
-using TabletopTweaks.Core.Utilities;
-using Kingmaker.Blueprints.Classes.Prerequisites;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using static IsekaiMod.Main;
-using Kingmaker.Blueprints.Classes.Selection;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
+using IsekaiMod.Utilities;
+using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Prerequisites;
+using Kingmaker.Blueprints.Classes.Selection;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class CavalierStandardBearerLegacy {
@@ -59,7 +59,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 //Summon Tactics
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(5, BlueprintTools.GetBlueprint<BlueprintFeature>("c3abcce19f9f80640a867c9e75f880b2"), BlueprintTools.GetBlueprint<BlueprintFeature>("7bc55b5e381358c45b42153b8b2603a6")));
 
-                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(15,  BlueprintTools.GetBlueprint<BlueprintFeature>("7bc55b5e381358c45b42153b8b2603a6")));
+                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(15, BlueprintTools.GetBlueprint<BlueprintFeature>("7bc55b5e381358c45b42153b8b2603a6")));
 
                 // 7bc55b5e381358c45b42153b8b2603a6
 

@@ -13,7 +13,7 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
     internal class MonkLegacy {
-        
+
 
         private static BlueprintProgression prog;
 
@@ -48,7 +48,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.MonkClass);
 
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = MonkScaledFistLegacy.Get().ToReference<BlueprintFeatureReference>(); });
-            }            
+            }
         }
 
         public static BlueprintProgression Get() {

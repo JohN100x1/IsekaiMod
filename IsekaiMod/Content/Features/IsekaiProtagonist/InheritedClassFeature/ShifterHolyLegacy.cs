@@ -1,15 +1,15 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
-using Kingmaker.Blueprints.Classes.Prerequisites;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class ShifterHolyLegacy {
@@ -40,7 +40,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);
                 if (BaseArchetype == null) return;
             }
-            
+
 
             LegacySelection.RegisterForFeat(prog);
             //LegacySelection.Register(prog);

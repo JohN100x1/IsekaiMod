@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static void Configure() {
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "DruidBaseLegacy", bp => {
                 bp.SetName(IsekaiContext, "Druid Legacy - Nature Mage");
-                bp.SetDescription(IsekaiContext, 
+                bp.SetDescription(IsekaiContext,
                     "You were a nature lover in your previous world, but you lived in a polluted and crowded city that stifled your connection to the natural world. \n" +
                     "You dreamed of escaping to a place where you could be free and wild, and one day you got your wish. \n" +
                     "You have been reincarnated in a world where nature is abundant and diverse, and you have learned how to tap into its primal magic. \n" +
@@ -48,11 +48,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             if (prog != null) {
                 LevelEntry[] addentries = new LevelEntry[] { };
                 LevelEntry[] removeentries = new LevelEntry[] { };
-                removeentries = removeentries.AppendToArray(Helpers.CreateLevelEntry(1, FeatTools.Selections.DruidBondSelection, 
-                    BlueprintTools.GetBlueprint<BlueprintFeature>("b296531ffe013c8499ad712f8ae97f6b"), 
+                removeentries = removeentries.AppendToArray(Helpers.CreateLevelEntry(1, FeatTools.Selections.DruidBondSelection,
+                    BlueprintTools.GetBlueprint<BlueprintFeature>("b296531ffe013c8499ad712f8ae97f6b"),
                     BlueprintTools.GetBlueprint<BlueprintFeature>("d00ff3791359311449c481126fbf71ce")));
 
-                prog = StaticReferences.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.DruidClass,addentries,removeentries);
+                prog = StaticReferences.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.DruidClass, addentries, removeentries);
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
                 StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.DruidClass);
 

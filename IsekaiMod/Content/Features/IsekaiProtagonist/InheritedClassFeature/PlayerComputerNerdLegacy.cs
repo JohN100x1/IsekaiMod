@@ -45,7 +45,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             OverlordLegacySelection.Register(prog);
 
         }
-        public static void PatchProgression() {            
+        public static void PatchProgression() {
         }
 
         public static BlueprintProgression Get() {

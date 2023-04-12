@@ -1,7 +1,6 @@
 ﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
-using Kingmaker.UnitLogic.FactLogic;
 using System.Linq;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -13,13 +12,13 @@ namespace IsekaiMod.Content.Heritages {
         public static void Add() {
             ourHeritage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiHumanCrossbreedLegacy", bp => {
                 bp.SetName(IsekaiContext, "Isekai Crossbreed Human");
-                bp.SetDescription(IsekaiContext, 
+                bp.SetDescription(IsekaiContext,
                     "Let us be honest, there is a reason why for any mixed race classification it is always enough to name the non human options. \n" +
                     "Because generally it is simply save to assume that the other part of it will be human. \n" +
                     "There is no other race, except for dragons, that is as flexible when it comes to its choice of bed partners and none as flexible when it comes to being fertile when crossbreeding and realistically by now there are no true pure humans left because everyone is at least (1/2)^100 something else. \n" +
                     "And no matter how close to 0 that number is it is not 0 and for some reason in you all that blood became active in a way that allows you access to some of your ancestors powers.");
 
-                
+
                 bp.Groups = new FeatureGroup[0];
                 bp.ReapplyOnLevelUp = true;
             });
@@ -57,7 +56,7 @@ namespace IsekaiMod.Content.Heritages {
                             feature.AddComponent<PrerequisiteFeature>(c => {
                                 c.Group = Prerequisite.GroupType.Any;
                                 c.CheckInProgression = false;
-                                c.HideInUI= false;
+                                c.HideInUI = false;
                                 c.m_Feature = ourHeritage.ToReference<BlueprintFeatureReference>();
                             });
                         }

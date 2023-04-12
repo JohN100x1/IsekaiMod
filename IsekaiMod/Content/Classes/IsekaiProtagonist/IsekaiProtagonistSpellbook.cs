@@ -37,7 +37,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             });
 
             StaticReferences.RegisterSpellbook(IsekaiProtagonistSpellbook);
-            
+
         }
 
         public static void SetCharacterClass(BlueprintCharacterClass characterClass) {

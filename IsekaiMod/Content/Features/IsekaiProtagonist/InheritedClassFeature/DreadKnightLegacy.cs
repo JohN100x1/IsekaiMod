@@ -20,7 +20,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             //Configure an empty shell during the blueprint phase, otherwise the game will always want to remove the blueprint as unused since we are technically only creating it at a stage where that should no longer be done
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "DreadKnightLegacy", bp => {
             });
-         }
+        }
 
 
         public static void PatchProgression() {
@@ -29,7 +29,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             if (!ModSupport.IsExpandedContentEnabled || DreadKnight == null) return;
 
             prog.SetName(IsekaiContext, "Dread Knight Legacy - Dread Lord");
-            prog.SetDescription(IsekaiContext, 
+            prog.SetDescription(IsekaiContext,
                 "*Blinks and slowly backs away*, Uhm are you certain you want to play this? I mean Dread Knights are kind of evil, you know? \n" +
                 "As in the they are the opposite of anything a paladin represents..."
                 );

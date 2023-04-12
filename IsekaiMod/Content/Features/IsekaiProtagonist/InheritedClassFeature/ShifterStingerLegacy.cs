@@ -28,7 +28,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             });
 
 
-            
+
         }
         public static void PatchProgression() {
             if (ClassTools.Classes.ShifterClass == null) { return; }

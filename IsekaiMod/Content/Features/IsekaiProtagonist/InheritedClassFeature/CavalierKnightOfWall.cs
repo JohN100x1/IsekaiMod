@@ -36,7 +36,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             MastermindLegacySelection.Prohibit(prog);
             OverlordLegacySelection.Register(prog);
         }
-        public static void PatchProgression() { 
+        public static void PatchProgression() {
             if (prog != null) {
                 if (BaseArchetype == null) {
                     BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);

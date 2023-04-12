@@ -28,12 +28,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     "As a result of the nature of your shapeshifter ability you have less choice (you will never be a tree or an elemental) but greater control, allowing for partial shifts."
                     );
                 bp.GiveFeaturesForPreviousLevels = true;
-                bp.AddComponent<PrerequisiteAlignment>(c => { 
-                    c.Alignment = Kingmaker.UnitLogic.Alignments.AlignmentMaskType.NeutralEvil 
+                bp.AddComponent<PrerequisiteAlignment>(c => {
+                    c.Alignment = Kingmaker.UnitLogic.Alignments.AlignmentMaskType.NeutralEvil
                     | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.NeutralGood
                     | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.ChaoticNeutral
                     | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.LawfulNeutral
-                    | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.TrueNeutral; });
+                    | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.TrueNeutral;
+                });
             });
             progAlternate = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "ShifterEvilLegacy", bp => {
                 bp.SetName(IsekaiContext, "Shifter Legacy - Skinwalker");

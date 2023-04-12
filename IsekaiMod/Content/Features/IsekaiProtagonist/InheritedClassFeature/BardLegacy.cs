@@ -15,12 +15,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
     internal class BardLegacy {
         private static BlueprintProgression prog;
-        
+
 
         public static void Configure() {
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "BardLegacy", bp => {
                 bp.SetName(IsekaiContext, "Bard Legacy - Musical Prodige");
-                bp.SetDescription(IsekaiContext, 
+                bp.SetDescription(IsekaiContext,
                     "You know what is even more effective in gathering a great harem than being a great hero? \n" +
                     "That is right, music the language of romance, there is a reason why so many males hate bards..."
                     );

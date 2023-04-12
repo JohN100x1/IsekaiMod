@@ -144,7 +144,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             EldritchFontEldritchSurgeCLBuff.GetComponent<AddCasterLevelForSpellbook>().m_Spellbooks = EldritchFontEldritchSurgeCLBuff.GetComponent<AddCasterLevelForSpellbook>().m_Spellbooks.AppendToArray(mySpellbookRef);
             EldritchFontEldritchSurgeDCBuff.GetComponent<AddAbilityUseTrigger>().m_Spellbooks = EldritchFontEldritchSurgeDCBuff.GetComponent<AddAbilityUseTrigger>().m_Spellbooks.AppendToArray(mySpellbookRef);
             EldritchFontEldritchSurgeDCBuff.GetComponent<IncreaseSpellSpellbookDC>().m_Spellbooks = EldritchFontEldritchSurgeDCBuff.GetComponent<IncreaseSpellSpellbookDC>().m_Spellbooks.AppendToArray(mySpellbookRef);
-            foreach(AddAbilityUseTrigger improvedSurgeAbilityUseTrigger in EldritchFontImprovedEldritchSurgeAttackBuff.GetComponents<AddAbilityUseTrigger>()) {
+            foreach (AddAbilityUseTrigger improvedSurgeAbilityUseTrigger in EldritchFontImprovedEldritchSurgeAttackBuff.GetComponents<AddAbilityUseTrigger>()) {
                 improvedSurgeAbilityUseTrigger.m_Spellbooks = improvedSurgeAbilityUseTrigger.m_Spellbooks.AppendToArray(mySpellbookRef);
             }
             foreach (AddAbilityUseTrigger greaterSurgeAbilityUseTrigger in EldritchFontGreaterSurgeBuff.GetComponents<AddAbilityUseTrigger>()) {

@@ -16,10 +16,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         private static BlueprintProgression prog;
 
         public static void Configure() {
-            
+
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "PaladinBaseLegacy", bp => {
                 bp.SetName(IsekaiContext, "Paladin Legacy - Hero of Light");
-                bp.SetDescription(IsekaiContext, 
+                bp.SetDescription(IsekaiContext,
                     "You are a true hero, representing all that is good and holy in the world.\n" +
                     "Protecting the innocent and smiting the evil.\n" +
                     "Less benevolent people might actually throw up a little just from talking to you just because of how inherently good you are.");

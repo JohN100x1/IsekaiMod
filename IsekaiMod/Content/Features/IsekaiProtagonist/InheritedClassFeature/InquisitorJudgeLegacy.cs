@@ -41,7 +41,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             if (prog != null) {
                 LevelEntry[] addentries = new LevelEntry[] { };
                 LevelEntry[] removeentries = new LevelEntry[] { };
-                
+
                 removeentries = removeentries.AppendToArray(Helpers.CreateLevelEntry(1, FeatTools.Selections.DomainsSelection));
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(2, InquisitorTacticianLegacy.GetDomains()));
 

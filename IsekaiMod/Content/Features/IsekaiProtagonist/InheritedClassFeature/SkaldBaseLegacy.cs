@@ -14,7 +14,7 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
     internal class SkaldBaseLegacy {
-        
+
 
         private static BlueprintProgression prog;
 
@@ -22,7 +22,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "SkaldBaseLegacy", bp => {
                 bp.SetName(IsekaiContext, "Skald Legacy - Metal Singer");
-                bp.SetDescription(IsekaiContext, 
+                bp.SetDescription(IsekaiContext,
                     "Your songs scream out your rage at the world. \n" +
                     "Inspiring your allies to rage along with your songs."
                     );
@@ -49,7 +49,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = SkaldVoiceLegacy.Get().ToReference<BlueprintFeatureReference>(); });
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = SkaldSilverTongueLegacy.Get().ToReference<BlueprintFeatureReference>(); });
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BloodragerChimeraLegacy.Get().ToReference<BlueprintFeatureReference>(); });
-            }            
+            }
         }
 
         public static BlueprintProgression Get() {

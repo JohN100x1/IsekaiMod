@@ -42,7 +42,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 removeentries = removeentries.AppendToArray(Helpers.CreateLevelEntry(1, FeatTools.Selections.CavalierMountSelection
                     ));
                 // Animal Teamwork, Solo Tactics
-                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(3, 
+                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(3,
                     BlueprintTools.GetBlueprint<BlueprintFeature>("1b9916f7675d6ef4fb427081250d49de"),
                     BlueprintTools.GetBlueprint<BlueprintFeature>("a318fa1af8424638ab10c4f98c11ee6a")));
                 //Summon Tactics

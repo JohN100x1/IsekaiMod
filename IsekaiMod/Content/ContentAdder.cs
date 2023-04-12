@@ -292,13 +292,13 @@ namespace IsekaiMod.Content {
         }
     }
 
-    [HarmonyPriority(-100)]    
+    [HarmonyPriority(-100)]
     [HarmonyPatch(typeof(StartGameLoader), "LoadAllJson")]
     static class StartGameLoader_LoadAllJson {
         private static bool Run = false;
 
         static void Postfix() {
-            if (Run) return; 
+            if (Run) return;
             Run = true;
             Main.LogDebug("Postfix Patching: Start");
             Deities.IsekaiDeitySelection.PatchDeitySelection();
@@ -314,23 +314,20 @@ namespace IsekaiMod.Content {
 
 
             //done here because it should be done after all spells have been initialized and were added to the canon books
-            if (IsekaiContext.AddedContent.MergeIsekaiSpellList) {
-                IsekaiProtagonistSpellList.MergeSpellLists();
-            }
+            if (IsekaiContext.AddedContent.MergeIsekaiSpellList) IsekaiProtagonistSpellList.MergeSpellLists();
+
             // Copy spell list into mastermind spell list after merge
             MastermindSpellList.PatchMastermindSpellList();
 
-            if (ModSupport.IsTableTopTweakBaseEnabled) {
-                PatchTableTopTweakCore();
-            }
+            if (ModSupport.IsTableTopTweakBaseEnabled) PatchTableTopTweakCore();
         }
 
         private static void PatchTableTopTweakCore() {
             var oraclecapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("c898b6e4918c41c3a351c9a882c65cea");
             var shamancapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("6e32488a2cec4ba586508db4f78b062d");
             var sorcerercapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("40f13b4925c24e50bc8f3d5fe4d42a05");
-            
-            
+
+
             if (oraclecapstone != null) {
                 OracleLegacy.Get().LevelEntries = OracleLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, oraclecapstone));
             }
