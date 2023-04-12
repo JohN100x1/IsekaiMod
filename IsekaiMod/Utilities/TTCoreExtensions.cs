@@ -25,8 +25,7 @@ namespace IsekaiMod.Utilities {
 
     internal class TTCoreExtensions {
         public static void RegisterClass(BlueprintCharacterClass classToRegister) {
-            var existingClasses = ClassTools.Classes.AllClasses;
-            if (ContainsClass(existingClasses, classToRegister)) {
+            if (ContainsClass(ClassTools.Classes.AllClasses, classToRegister)) {
                 IsekaiContext.Logger.LogWarning("class already registered= " + classToRegister.name + " gui id=" + classToRegister.AssetGuid.m_Guid.ToString("N"));
                 return;
             }
@@ -170,6 +169,7 @@ namespace IsekaiMod.Utilities {
                 FullPortraitHandle = fullPortraitHandle
             };
         }
+
         private static CustomPortraitHandle CreateCustomPortraitHandle(string path, PortraitType type, Vector2Int size) {
             return new CustomPortraitHandle(path, type, CustomPortraitsManager.Instance.Storage) {
                 Request = new SpriteLoadingRequest(path) {

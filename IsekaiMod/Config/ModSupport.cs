@@ -21,25 +21,11 @@ namespace IsekaiMod.Utilities {
 
     internal class ModSupport {
 
-        public static bool IsExpandedContentEnabled() {
-            return IsModEnabled("ExpandedContent");
-        }
-
-        public static bool IsMysticalMayhemEnabled() {
-            return IsModEnabled("MysticalMayhem");
-        }
-
-        public static bool IsSpellbookMergeEnabled() {
-            return IsModEnabled("SpellbookMerge");
-        }
-
-        public static bool IsExpandedElementEnabled() {
-            return IsModEnabled("KineticistElementsExpanded");
-        }
-
-        public static bool IsTableTopTweakBaseEnabled() {
-            return IsModEnabled("TabletopTweaks-Base");
-        }
+        public static bool IsExpandedContentEnabled => IsModEnabled("ExpandedContent");
+        public static bool IsMysticalMayhemEnabled => IsModEnabled("MysticalMayhem");
+        public static bool IsSpellbookMergeEnabled => IsModEnabled("SpellbookMerge");
+        public static bool IsExpandedElementEnabled => IsModEnabled("KineticistElementsExpanded");
+        public static bool IsTableTopTweakBaseEnabled => IsModEnabled("TabletopTweaks-Base");
 
         [HarmonyPatch(typeof(BlueprintsCache), "Init")]
         private static class BlueprintsCache_Init_Patch {
@@ -50,7 +36,7 @@ namespace IsekaiMod.Utilities {
                 if (Initialized) return;
                 Initialized = true;
                 if (IsekaiContext.AddedContent.Isekai.IsDisabled("Isekai Protagonist")) return;
-                if (IsTableTopTweakBaseEnabled()) {
+                if (IsTableTopTweakBaseEnabled) {
                     Main.Log("TabletopTweaks-Base 2.5.2 Support Enabled.");
                     AutoRime.Add();
                     AutoBurning.Add();
@@ -61,19 +47,19 @@ namespace IsekaiMod.Utilities {
                     AutoIntensified.Add();
                     AutoElemental.Add();
                 }
-                if (IsMysticalMayhemEnabled()) {
+                if (IsMysticalMayhemEnabled) {
                     Main.Log("Mystical Mayhem 0.1.5 Support Enabled.");
                     if (!IsekaiContext.AddedContent.MergeIsekaiSpellList) {
                         BlueprintAbility MeteorSwarmAbility = BlueprintTools.GetBlueprint<BlueprintAbility>("d0cd103b15494866b0444c1a961bc40f");
                         IsekaiProtagonistSpellList.Get().SpellsByLevel[9].m_Spells.Add(MeteorSwarmAbility.ToReference<BlueprintAbilityReference>());
                     }
                 }
-                if (IsExpandedContentEnabled()) {
+                if (IsExpandedContentEnabled) {
                     Main.Log("Expanded Content 0.5.2 Support Enabled.");
                     AddExpandedContentSpells(IsekaiProtagonistSpellList.Get());
                     AddExpandedContentDrakes(IsekaiProtagonistClass.Get());
                 }
-                if (IsSpellbookMergeEnabled()) {
+                if (IsSpellbookMergeEnabled) {
                     Main.Log("Spellbook Merge 1.7.1 Support Enabled.");
 
                     // Allow Spellbook to be merged with Aeon, Azata, Demon, and Trickster

@@ -82,8 +82,8 @@ namespace IsekaiMod.Utilities {
             if (spellbook == null) return;
             BlueprintSpellbookReference spellbookRef = spellbook.ToReference<BlueprintSpellbookReference>();
             if (patchableSpellBooks.Contains(spellbookRef)) return;
-
             patchableSpellBooks = patchableSpellBooks.AddToArray(spellbookRef);
+
             // Allow Spellbook to be merged with angel and lich
             var AngelIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
             var LichIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
@@ -509,9 +509,7 @@ namespace IsekaiMod.Utilities {
                             res.m_MaxAmount.m_Class.AddItem(myClass);
                             //Main.Log("class resource patched= " + resRef.Guid);
                         }
-
                     }
-
                 }
             }
         }

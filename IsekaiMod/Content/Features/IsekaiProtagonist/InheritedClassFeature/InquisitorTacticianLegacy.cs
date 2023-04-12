@@ -53,7 +53,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
                 BlueprintFeatureSelection alternateCapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("208662443a1e46d5a97a5e1bff663da1");
                 BlueprintFeature teamLeader = BlueprintTools.GetBlueprint<BlueprintFeature>("dd442ac7be344355887d937fd74e9ff7");
-                if (ModSupport.IsTableTopTweakBaseEnabled() && alternateCapstone != null && teamLeader != null) {
+                if (ModSupport.IsTableTopTweakBaseEnabled && alternateCapstone != null && teamLeader != null) {
                     removeentries = removeentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(20, alternateCapstone));
                     addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(20, teamLeader));
                 }

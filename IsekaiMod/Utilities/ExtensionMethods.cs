@@ -26,12 +26,12 @@ namespace IsekaiMod.Utilities {
             selection.m_AllFeatures = selection.m_AllFeatures.RemoveFromArray(feature.ToReference<BlueprintFeatureReference>());
         }
 
-        public static void SetText(this BlueprintCue Cue, ModContextBase modContext, string name) {
-            Cue.Text = Helpers.CreateString(modContext, $"{Cue.name}.Text", name);
+        public static void SetText(this BlueprintCue cue, ModContextBase modContext, string name) {
+            cue.Text = Helpers.CreateString(modContext, $"{cue.name}.Text", name);
         }
 
-        public static void SetText(this BlueprintAnswer Cue, ModContextBase modContext, string name) {
-            Cue.Text = Helpers.CreateString(modContext, $"{Cue.name}.Text", name);
+        public static void SetText(this BlueprintAnswer answer, ModContextBase modContext, string name) {
+            answer.Text = Helpers.CreateString(modContext, $"{answer.name}.Text", name);
         }
 
         public static void SetName(this BlueprintWeaponEnchantment enchantment, ModContextBase modContext, string name) {
@@ -43,11 +43,9 @@ namespace IsekaiMod.Utilities {
         }
 
         public static void AddToFirst(this BlueprintFeatureSelection selection, BlueprintFeature feature) {
-            BlueprintFeatureReference itemToBeAdded = feature.ToReference<BlueprintFeatureReference>();
-            BlueprintFeatureReference[] array = selection.m_AllFeatures;
-            BlueprintFeatureReference[] extendedArray = new BlueprintFeatureReference[array.Length + 1];
-            Array.Copy(array, 0, extendedArray, 1, array.Length);
-            extendedArray[0] = itemToBeAdded;
+            BlueprintFeatureReference[] extendedArray = new BlueprintFeatureReference[selection.m_AllFeatures.Length + 1];
+            Array.Copy(selection.m_AllFeatures, 0, extendedArray, 1, selection.m_AllFeatures.Length);
+            extendedArray[0] = feature.ToReference<BlueprintFeatureReference>();
             selection.m_AllFeatures = extendedArray;
         }
     }

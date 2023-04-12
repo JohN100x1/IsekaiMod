@@ -44,7 +44,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             BlueprintFeature EnergizeWeapon = BlueprintTools.GetBlueprint<BlueprintFeature>("fb9fe27f13934807bcd62dfeec477758");
             LevelEntry[] additionalReferencedFeats = null;
-            if (ModSupport.IsExpandedElementEnabled() && EnergizeWeapon != null) {
+            if (ModSupport.IsExpandedElementEnabled && EnergizeWeapon != null) {
                 additionalReferencedFeats = new LevelEntry[] { Helpers.CreateLevelEntry(1, EnergizeWeapon) };
             }
             prog = StaticReferences.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.KineticistClass, BaseKnight, additionalReferencedFeats);

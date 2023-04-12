@@ -320,7 +320,7 @@ namespace IsekaiMod.Content {
             // Copy spell list into mastermind spell list after merge
             MastermindSpellList.PatchMastermindSpellList();
 
-            if (ModSupport.IsTableTopTweakBaseEnabled()) {
+            if (ModSupport.IsTableTopTweakBaseEnabled) {
                 PatchTableTopTweakCore();
             }
         }

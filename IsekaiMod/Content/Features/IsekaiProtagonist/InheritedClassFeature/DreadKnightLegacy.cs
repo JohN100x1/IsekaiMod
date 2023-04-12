@@ -26,7 +26,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static void PatchProgression() {
             BlueprintCharacterClass DreadKnight = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("d0eb4ca44e11417c9b2f0208491067a0");
             //only add this stereotype if the Dread Knight Class has been added
-            if (!ModSupport.IsExpandedContentEnabled() || DreadKnight == null) return;
+            if (!ModSupport.IsExpandedContentEnabled || DreadKnight == null) return;
 
             prog.SetName(IsekaiContext, "Dread Knight Legacy - Dread Lord");
             prog.SetDescription(IsekaiContext, 
