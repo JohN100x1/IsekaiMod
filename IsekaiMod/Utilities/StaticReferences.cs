@@ -433,7 +433,7 @@ namespace IsekaiMod.Utilities {
             }
             // check if component is add facts because features could also be added as facts rather than on level...
             if (component is AddFacts addFact) {
-                foreach (var factRef in addFact.Facts) {
+                foreach (BlueprintUnitFact factRef in addFact.Facts) {
                     if (factRef is BlueprintFeature feature2) {
                         PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
                     }
@@ -549,42 +549,6 @@ namespace IsekaiMod.Utilities {
                 return false;
             }
             public static bool operator !=(SpellReference left, SpellReference right) { return !(left == right); }
-            public override int GetHashCode() => value.GetHashCode();
-        }
-
-        internal class FeatureOnLevelReference {
-            public int level;
-            public BlueprintFeatureReference value;
-            public FeatureOnLevelReference(int inLevel, BlueprintFeatureReference inValue) {
-                level = inLevel;
-                value = inValue;
-            }
-            public override bool Equals(object p) {
-                if (p is null) {
-                    return false;
-                }
-
-                // Optimization for a common success case.
-                if (ReferenceEquals(this, p)) {
-                    return true;
-                }
-
-                // If run-time types are not exactly the same, return false.
-                if (GetType() != GetType()) {
-                    return false;
-                }
-
-                // Return true if the fields match.
-                // Note that the base class is not invoked because it is
-                // System.Object, which defines Equals as reference equality.
-                return value.Guid.ToString() == ((FeatureOnLevelReference)p).value.Guid.ToString();
-            }
-            public static bool operator ==(FeatureOnLevelReference left, FeatureOnLevelReference right) {
-                if (left is null && right is null) return true;
-                if (left is not null) return left.Equals(right);
-                return false;
-            }
-            public static bool operator !=(FeatureOnLevelReference left, FeatureOnLevelReference right) { return !(left == right); }
             public override int GetHashCode() => value.GetHashCode();
         }
 
