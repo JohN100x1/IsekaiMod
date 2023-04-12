@@ -1,6 +1,7 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -155,6 +156,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 c.m_SpellsByLevel = ArcanistConsumeSpells.GetComponent<SpontaneousSpellConversion>().m_SpellsByLevel;
             });
             ArcanistConsumeSpellsResource.m_MaxAmount.m_Class = ArcanistConsumeSpellsResource.m_MaxAmount.m_Class.AppendToArray(myClassRef);
+
+            var ArcanistExploitSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("b8bf3d5023f2d8c428fdf6438cecaea7");
+            StaticReferences.PatchClassIntoFeatureOfReferenceClass(ArcanistExploitSelection, myClassRef, ClassTools.ClassReferences.ArcanistClass, 0, new BlueprintFeatureBase[] { });
         }
     }
 }
