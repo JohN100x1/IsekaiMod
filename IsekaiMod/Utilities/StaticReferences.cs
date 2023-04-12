@@ -78,19 +78,17 @@ namespace IsekaiMod.Utilities {
         };
 
 
-
         public static void RegisterSpellbook(BlueprintSpellbook spellbook) {
-            if (spellbook != null && !patchableSpellBooks.Contains(spellbook.ToReference<BlueprintSpellbookReference>())) {
-                var bookRef = spellbook.ToReference<BlueprintSpellbookReference>();
-                if (!patchableSpellBooks.Contains(bookRef)) {
-                    patchableSpellBooks = patchableSpellBooks.AddToArray(bookRef);
-                    // Allow Spellbook to be merged with angel and lich
-                    var AngelIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
-                    var LichIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
-                    TTCoreExtensions.RegisterForMythicSpellbook(AngelIncorporateSpellBook, spellbook);
-                    TTCoreExtensions.RegisterForMythicSpellbook(LichIncorporateSpellBook, spellbook);
-                }
-            }
+            if (spellbook == null) return;
+            BlueprintSpellbookReference spellbookRef = spellbook.ToReference<BlueprintSpellbookReference>();
+            if (patchableSpellBooks.Contains(spellbookRef)) return;
+
+            patchableSpellBooks = patchableSpellBooks.AddToArray(spellbookRef);
+            // Allow Spellbook to be merged with angel and lich
+            var AngelIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
+            var LichIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
+            TTCoreExtensions.RegisterForMythicSpellbook(AngelIncorporateSpellBook, spellbook);
+            TTCoreExtensions.RegisterForMythicSpellbook(LichIncorporateSpellBook, spellbook);
         }
 
         private static BlueprintProgression PatchPatchClassProgressionBasedOnRefClassStep1(BlueprintProgression prog, BlueprintCharacterClass refClass) {
@@ -497,7 +495,7 @@ namespace IsekaiMod.Utilities {
                         }
                         if (classlocked && !alreadyPatched) {
                             res.m_MaxAmount.m_ClassDiv.AddItem(myClass);
-                            //Main.Log("class resource patched= " + resRef.Guid); 
+                            //Main.Log("class resource patched= " + resRef.Guid);
                         }
                     }
                     if (!classlocked && res.m_MaxAmount.m_Class != null && res.m_MaxAmount.m_Class.Length > 0) {
@@ -509,7 +507,7 @@ namespace IsekaiMod.Utilities {
                         }
                         if (classlocked && !alreadyPatched) {
                             res.m_MaxAmount.m_Class.AddItem(myClass);
-                            //Main.Log("class resource patched= " + resRef.Guid); 
+                            //Main.Log("class resource patched= " + resRef.Guid);
                         }
 
                     }
