@@ -365,8 +365,7 @@ namespace IsekaiMod.Utilities {
                             feature.AddComponent<SpontaneousSpellConversion>(c => {
                                 c.m_CharacterClass = myClass;
                                 c.m_SpellsByLevel = conversion.m_SpellsByLevel;
-                            }
-                                );
+                            });
                         }
                     }
                 }
@@ -548,7 +547,7 @@ namespace IsekaiMod.Utilities {
             }
             public static bool operator ==(SpellReference left, SpellReference right) {
                 if (left is null && right is null) return true;
-                if (!(left is null)) {
+                if (left is not null) {
                     return left.Equals(right);
                 }
                 return false;
@@ -586,9 +585,7 @@ namespace IsekaiMod.Utilities {
             }
             public static bool operator ==(FeatureOnLevelReference left, FeatureOnLevelReference right) {
                 if (left is null && right is null) return true;
-                if (!(left is null)) {
-                    return left.Equals(right);
-                }
+                if (left is not null) return left.Equals(right);
                 return false;
             }
             public static bool operator !=(FeatureOnLevelReference left, FeatureOnLevelReference right) { return !(left == right); }

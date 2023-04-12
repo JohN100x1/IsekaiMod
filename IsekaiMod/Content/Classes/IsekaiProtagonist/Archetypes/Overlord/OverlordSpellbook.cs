@@ -1,6 +1,5 @@
 ﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Localization;
@@ -36,11 +35,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord {
                 bp.SpecialSpellListName = new LocalizedString();
             });
 
-            // Allow Spellbook to be merged with angel and lich
-            var AngelIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("e1fbb0e0e610a3a4d91e5e5284587939");
-            var LichIncorporateSpellBook = BlueprintTools.GetBlueprint<BlueprintFeatureSelectMythicSpellbook>("3f16e9caf7c683c40884c7c455ed26af");
-            TTCoreExtensions.RegisterForMythicSpellbook(AngelIncorporateSpellBook, OverlordSpellbook);
-            TTCoreExtensions.RegisterForMythicSpellbook(LichIncorporateSpellBook, OverlordSpellbook);
+            StaticReferences.RegisterSpellbook(OverlordSpellbook);
         }
 
         public static BlueprintSpellbook Get() {
