@@ -11,9 +11,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
 
         public static void Configure() {
             BlueprintParametrizedFeature IsekaiArcana = Helpers.CreateBlueprint<BlueprintParametrizedFeature>(IsekaiContext, "IsekaiProtagonistArcana", bp => {
-                bp.m_DisplayName = StaticReferences.SorcererArcana.m_DisplayName;
-                bp.m_Description = StaticReferences.SorcererArcana.m_Description;
-                bp.m_Icon = StaticReferences.SorcererArcana.m_Icon;
+                bp.m_DisplayName = StaticReferences.BloodlineArcaneNewArcanaFeature.m_DisplayName;
+                bp.m_Description = StaticReferences.BloodlineArcaneNewArcanaFeature.m_Description;
+                bp.m_Icon = StaticReferences.BloodlineArcaneNewArcanaFeature.m_Icon;
                 bp.Ranks = 1;
                 bp.ReapplyOnLevelUp = false;
                 bp.IsClassFeature = true;
@@ -36,7 +36,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             InheritedClassFeature.ExtraOracleSelection.Get().AddFeatures(IsekaiArcana);
             InheritedClassFeature.ShamanSelection.Get().AddFeatures(IsekaiArcana);
             InheritedClassFeature.WitchPatronSelection.Get().AddFeatures(IsekaiArcana);
-            StaticReferences.SorcererBloodlineArcanaSelection.AddFeatures(IsekaiArcana);
+            FeatTools.Selections.BloodlineArcaneNewArcanaSelection.AddFeatures(IsekaiArcana);
         }
 
         public static BlueprintParametrizedFeature get() {
