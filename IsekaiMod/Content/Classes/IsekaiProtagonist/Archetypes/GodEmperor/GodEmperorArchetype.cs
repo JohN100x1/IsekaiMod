@@ -49,6 +49,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiAuraSelection");
             var SignatureMoveBonusSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveBonusSelection");
             var BeachEpisodeSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeSelection");
+            var BeachEpisodeBonusSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeBonusSelection");
             var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
             var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
 
@@ -67,7 +68,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(9, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(10, IsekaiAuraSelection, SecretPowerSelection),
                     Helpers.CreateLevelEntry(11, SpecialPowerSelection),
-                    Helpers.CreateLevelEntry(12, BeachEpisodeSelection),
+                    Helpers.CreateLevelEntry(12, BeachEpisodeSelection, BeachEpisodeBonusSelection),
                     Helpers.CreateLevelEntry(13, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(15, IsekaiQuickFooted, SecondReincarnation),
                     Helpers.CreateLevelEntry(17, SpecialPowerSelection),

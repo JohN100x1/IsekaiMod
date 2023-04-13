@@ -23,7 +23,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changes for `Isekai Protagonist`:
 	- `Fast Movement` replaced with `Afterimage`.
 	- `Friendly Aura` replaced with `Otherwordly Aura`.
-	- Can now choose both `Signature Move` features.
+	- Can now choose two `Signature Move` features.
+	- Can now choose two `Beach Episode` features.
 	- Moved `Second Reincarnation` feature from level 20 -> 15.
 	- Moved `Otherworldly Stamina` feature from level 15 -> 13.
 	- Moved `Quick-Footed` feature from level 16 -> 15.

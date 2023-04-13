@@ -176,6 +176,7 @@
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindProficiencies.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\Masterplan.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindQuickFooted.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\Excalibur.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Gifted.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\ArcanistBasicLegacy.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\ArcanistBrownFurLegacy.cs" />
