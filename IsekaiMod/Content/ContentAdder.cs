@@ -269,6 +269,7 @@ namespace IsekaiMod.Content {
                 Backgrounds.BetaTester.Add();
                 Backgrounds.DemonicCultivator.Add();
                 Backgrounds.EnlightenedSage.Add();
+                Backgrounds.Musician.Add();
             }
             public static void AddIsekaiDeities() {
                 // Add the Selection First

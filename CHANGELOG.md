@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Overlord` archetype (Isekai Protagonist).
 - Added `Demonic Cultivator` Isekai background.
 - Added `Enlightened Sage` Isekai background.
+- Added `Musician` Isekai background.
 - Added `Supermassive` Special Power.
 - Added features to `Isekai Protagonist` progression: `Gifted`, `Release Energy`, `Afterimage`, `Secret Power`, `Hax`.
 - Added features to `Edge Lord` progression: `Chuunibyou Actualisation`, `Extra Special Power`.
