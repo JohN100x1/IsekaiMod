@@ -106,6 +106,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Aura of Divine Fury`: Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells (requires character level 15).
 		- `Killing Intent`: Enemies within 40 feet who fail a will save become shaken, frightened, and cowering.
 		- `Reflect`: Deal damage to enemies equal to damage you receive.
+		- `Supermassive`: Gain bonus HP based on your Constitution modifier. You also get fast healing but have a penalty to AC.
 		- `Mythic Class Feature`: see below
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
@@ -198,6 +199,8 @@ Exception to this is the God Emperor as all options that were changed were not p
 	- `Otaku`: Adds all skills as class skills except Persuasion.
 	- `Gamer`: Get a +8 competence bonus to all knowledge, lore, and perception checks.
 	- `Beta Tester`: Get +4 Initiative and adds lore, knowledge and perceptions skills as class skills.
+	- `Demonic Cultivator`: Adds athletics and mobility as a class skills. Uses the higher of STR and DEX for athletics and mobility checks.
+	- `Enlightened Scholar`: Adds lore, knowledge, and perception skills as class skills. Uses the higher of INT and WIS for these checks.
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.

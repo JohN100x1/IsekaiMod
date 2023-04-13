@@ -268,7 +268,7 @@ namespace IsekaiMod.Content {
                 Backgrounds.Gamer.Add();
                 Backgrounds.BetaTester.Add();
                 Backgrounds.DemonicCultivator.Add();
-                Backgrounds.SageScholar.Add();
+                Backgrounds.EnlightenedSage.Add();
             }
             public static void AddIsekaiDeities() {
                 // Add the Selection First

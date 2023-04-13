@@ -7,13 +7,13 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Backgrounds {
 
-    internal class SageScholar {
+    internal class EnlightenedSage {
 
         public static void Add() {
             // Background
-            var BackgroundSageScholar = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "BackgroundSageScholar", bp => {
-                bp.SetName(IsekaiContext, "Sage Scholar");
-                bp.SetBackgroundDescription(IsekaiContext, "The Sage Scholar adds {g|Encyclopedia:Lore_Nature}Lore (Nature){/g}, "
+            var BackgroundEnlightenedSage = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "BackgroundEnlightenedSage", bp => {
+                bp.SetName(IsekaiContext, "Enlightened Sage");
+                bp.SetBackgroundDescription(IsekaiContext, "The Enlightened Sage adds {g|Encyclopedia:Lore_Nature}Lore (Nature){/g}, "
                     + "{g|Encyclopedia:Lore_Religion}Lore (Religion){/g}, {g|Encyclopedia:Knowledge_World}Knowledge (World){/g}, "
                     + "{g|Encyclopedia:Knowledge_Arcana}Knowledge (Arcana){/g}, and {g|Encyclopedia:Perception}Perception{/g} to the list of "
                     + "her class {g|Encyclopedia:Skills}skills{/g} and can use the higher of {g|Encyclopedia:Intelligence}Intelligence{/g} and "
@@ -77,7 +77,7 @@ namespace IsekaiMod.Content.Backgrounds {
             });
 
             // Register Background
-            IsekaiBackgroundSelection.AddToSelection(BackgroundSageScholar);
+            IsekaiBackgroundSelection.AddToSelection(BackgroundEnlightenedSage);
         }
     }
 }
