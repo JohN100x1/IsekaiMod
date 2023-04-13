@@ -49,7 +49,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var ExtraStrike = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ExtraStrike");
             var ChuunibyouActualisationFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ChuunibyouActualisationFeature");
 
-            BlueprintFeatureSelection HiddenPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "HiddenPowerSelection");
+            BlueprintFeatureSelection ExtraSpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExtraSpecialPowerSelection");
 
             // God Emperor
             BlueprintFeatureSelection GodEmperorEnergySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "GodEmperorEnergySelection");
@@ -154,7 +154,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateUIGroup(ReleaseEnergy, Gifted, SignatureMoveBonusSelection, SecretPowerSelection, SecondReincarnation),
                 
                 // Edge Lord UI group
-                Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike, HiddenPowerSelection),
+                Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike, ExtraSpecialPowerSelection),
                 
                 // God Emperor UI group
                 Helpers.CreateUIGroup(NascentApotheosis, LightEnergyCondensation, GodEmperorEnergySelection, BodyMindAlterSelection,

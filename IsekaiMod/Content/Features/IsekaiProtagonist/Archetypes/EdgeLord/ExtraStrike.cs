@@ -25,6 +25,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord {
                 });
                 bp.Ranks = 20;
             });
+
+            SecretPowerSelection.AddToSelection(ExtraStrike);
         }
     }
 }

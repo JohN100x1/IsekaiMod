@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
     internal class DupeGold {
         private const string Name = "Overpowered Ability — Dupe Gold";
-        private const string Description = "In this new world, you will never be cold or hungry again."
+        private const string Description = "In this new world, you will have limitless wealth."
             + "\nBenefit: As a standard action, you gain 1 million gold.";
 
         // Referenced blueprints

@@ -90,6 +90,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                     UnjustPathFeature.ToReference<BlueprintFeatureReference>(),
                 };
             });
+
+            SecretPowerSelection.AddToSelection(RighteousPathFeature);
+            SecretPowerSelection.AddToSelection(UnjustPathFeature);
         }
     }
 }

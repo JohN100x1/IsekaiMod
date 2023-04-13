@@ -37,8 +37,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.m_Features = new BlueprintFeatureReference[0];
             });
             var OverpoweredAbilitySelectionOverlord = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionOverlord", bp => {
-                bp.SetName(IsekaiContext, "Overlord Overpowered Ability");
-                bp.SetDescription(IsekaiContext, "Overlords get to select an additional Overpowered Abilities.");
+                bp.SetName(IsekaiContext, "Additional Overpowered Ability");
+                bp.SetDescription(IsekaiContext, "Overlords get to select additional Overpowered Abilities.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

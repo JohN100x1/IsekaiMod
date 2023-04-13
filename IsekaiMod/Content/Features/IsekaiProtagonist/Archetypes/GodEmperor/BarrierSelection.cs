@@ -313,6 +313,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                     VoidBarrierFeature.ToReference<BlueprintFeatureReference>(),
                 };
             });
+
+            SecretPowerSelection.AddToSelection(GoldBarrierFeature);
+            SecretPowerSelection.AddToSelection(VoidBarrierFeature);
         }
     }
 }

@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Overlord` archetype (Isekai Protagonist).
 - Added `Supermassive` Special Power.
 - Added features to `Isekai Protagonist` progression: `Gifted`, `Release Energy`, `Afterimage`, `Secret Power`, `Hax`.
-- Added features to `Edge Lord` progression: `Chuunibyou Actualisation`, `Hidden Power`.
+- Added features to `Edge Lord` progression: `Chuunibyou Actualisation`, `Extra Special Power`.
 - Added features to `God Emperor` progression: `Energy Condensation`, `Energy Barrier`, `Alteration of body and mind`, `Chosen Path`, `Transcendental Realm`.
 - Added features to `Hero` progression: `Hands of Salvation`, `Gold Barrier`, `Improved Gold Barrier`, `Greater Gold Barrier`, `Grand Gold Barrier`, `Deus Ex Machina`.
 - Added `Divine Aura` feature to `Otherwordly Aura` selection.
@@ -31,9 +31,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- Updated icon for `Starting Weapon` feature.
 - Changes for `Edge Lord`:
 	- Now has Exotic Weapon Proficiency at 1st level.
-	- Added `Hidden Power` at 3rd level.
-	- Added another OP ability at 10th level.
+	- Added `Extra Special Power` at 3rd and 7th level.
+	- Added OP ability at 5th, 10th, and 15th level.
 	- Added `Otherwordly Aura` at 10th level.
+	- Removed Special Power at 5th and 15th level.
 - Changes for `God Emperor`:
 	- `Divine Array` replaced with `Energy Condensation`.
 	- `Celestial Realm` replaced with `Transcendental Realm`.
@@ -56,6 +57,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed `Dark Aura` debuff from -2 -> -4 but no longer affects attack rolls.
 - Renamed `Energy Immunity Selection` to `Energy Immunity`.
 - Renamed `Aura of Golden Protection` to `Gold Barrier`.
+- Updated description for `Dupe Gold` OP ability.
 - Updated icon for `Exceptional Feats`.
 - Updated icon for `Siphoning Aura`.
 - Updated icon for `Dark Aura`.

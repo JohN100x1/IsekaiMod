@@ -191,6 +191,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                     SiphoningAuraFeature.ToReference<BlueprintFeatureReference>(),
                 };
             });
+
+            SecretPowerSelection.AddToSelection(MajesticAuraFeature);
+            SecretPowerSelection.AddToSelection(SiphoningAuraFeature);
         }
     }
 }
