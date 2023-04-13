@@ -5,9 +5,12 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Facts;
+using Kingmaker.Cheats;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Buffs;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
@@ -500,6 +503,96 @@ namespace IsekaiMod.Utilities {
             }
             public static bool operator !=(SpellReference left, SpellReference right) { return !(left == right); }
             public override int GetHashCode() => value.GetHashCode();
+        }
+
+        internal static void PatchResource(BlueprintAbilityResource resource, BlueprintCharacterClassReference classRef) {
+            if (resource.m_MaxAmount.m_Class == null || resource.m_MaxAmount.m_Class.Length == 0) return;
+            resource.m_MaxAmount.m_Class = resource.m_MaxAmount.m_Class.AppendToArray(classRef);
+        }
+
+        internal static void PatchAbility(BlueprintAbility ability, BlueprintCharacterClassReference classRef) {
+            foreach (BlueprintComponent comp in ability.Components) {
+                if (comp is ContextRankConfig rankConfig && rankConfig.m_Class != null && rankConfig.m_Class.Length > 0) {
+                    rankConfig.m_Class = rankConfig.m_Class.AppendToArray(classRef);
+                }
+            }
+        }
+        private static void PatchBuff(BlueprintBuff buff, BlueprintSpellbookReference spellbookRef) {
+            foreach (BlueprintComponent comp in buff.Components) {
+                if (comp is AddAbilityUseTrigger triggerComp) {
+                    triggerComp.m_Spellbooks = triggerComp.m_Spellbooks.AppendToArray(spellbookRef);
+                } else if (comp is AddCasterLevelForSpellbook casterLevelComp) {
+                    casterLevelComp.m_Spellbooks = casterLevelComp.m_Spellbooks.AppendToArray(spellbookRef);
+                } else if (comp is IncreaseSpellSpellbookDC increaseSpellComp) {
+                    increaseSpellComp.m_Spellbooks = increaseSpellComp.m_Spellbooks.AppendToArray(spellbookRef);
+                }
+            }
+        }
+        private static void PatchBuff(BlueprintBuff buff, BlueprintCharacterClassReference classRef) {
+            foreach (BlueprintComponent comp in buff.Components) {
+                if (comp is ContextRankConfig rankConfig && rankConfig.m_Class != null && rankConfig.m_Class.Length > 0) {
+                    rankConfig.m_Class = rankConfig.m_Class.AppendToArray(classRef);
+                }
+            }
+        }
+
+        internal static class ArcanistPatcher {
+            public static void Patch(BlueprintCharacterClassReference classRef, BlueprintSpellbookReference spellbookRef) {
+                PatchArcaneResrvoir(classRef, spellbookRef);
+                PatchConsumeSpells(classRef);
+                PatchArcanistExploits(classRef);
+            }
+            private static void PatchArcaneResrvoir(BlueprintCharacterClassReference classRef, BlueprintSpellbookReference spellbookRef) {
+                var ArcanistArcaneReservoirResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("cac948cbbe79b55459459dd6a8fe44ce");
+                var ArcanistArcaneReservoirResourceBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("1dd776b7b27dcd54ab3cedbbaf440cf3");
+                PatchBuff(ArcanistArcaneReservoirResourceBuff, classRef);
+                PatchResource(ArcanistArcaneReservoirResource, classRef);
+                PatchArcaneReservoirBuffs(spellbookRef);
+            }
+            private static void PatchConsumeSpells(BlueprintCharacterClassReference classRef) {
+                var ArcanistConsumeSpells = BlueprintTools.GetBlueprint<BlueprintFeature>("69cfb4ab0d9812249b924b8f23d6d19f");
+                var ArcanistConsumeSpellsResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("d67ddd98ad019854d926f3d6a4e681c5");
+                ArcanistConsumeSpells.AddComponent<SpontaneousSpellConversion>(c => {
+                    c.m_CharacterClass = classRef;
+                    c.m_SpellsByLevel = ArcanistConsumeSpells.GetComponent<SpontaneousSpellConversion>().m_SpellsByLevel;
+                });
+                PatchResource(ArcanistConsumeSpellsResource, classRef);
+            }
+            private static void PatchArcanistExploits(BlueprintCharacterClassReference classRef) {
+                var ArcanistExploitSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("b8bf3d5023f2d8c428fdf6438cecaea7");
+                foreach (BlueprintFeature feature in ArcanistExploitSelection.AllFeatures) {
+                    AddFacts addFacts = feature.GetComponent<AddFacts>();
+                    if (addFacts == null) continue;
+                    foreach (BlueprintUnitFact fact in addFacts.Facts) {
+                        if (fact is BlueprintAbility ability) {
+                            PatchAbility(ability, classRef);
+                        }
+                    }
+                }
+                BlueprintBuff[] buffs = new BlueprintBuff[] {
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("d3361a1d65825aa4a952476639248792"), // ArcanistExploitLingeringAcidBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("d3a217dba1100f9449e7f249d2916f86"), // ArcanistExploitSpellResistanceBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("7b392a6348fe3ef4d907ce168a4c7773"), // ArcanistExploitSpellResistanceGreaterBuff
+                };
+                foreach (BlueprintBuff buff in buffs) {
+                    PatchBuff(buff, classRef);
+                }
+            }
+            private static void PatchArcaneReservoirBuffs(BlueprintSpellbookReference spellbookRef) {
+                BlueprintBuff[] buffs = new BlueprintBuff[] {
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("33e0c3a2a54c0e7489fa4ec4d79a581b"), // ArcanistArcaneReservoirCLBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("db4b91a8a297c4247b13cfb6ea228bf3"), // ArcanistArcaneReservoirDCBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("ea01ddf2c1878354990000d1c7fc5ce4"), // ArcanistArcaneReservoirCLPotentBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("6fea993ed5782054a88fa54037a3e6dd"), // ArcanistArcaneReservoirDCPotentBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("a27a3c5e45f9416428ce983e0d4bd2d2"), // EldritchFontEldritchSurgeCLBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("91b2762997f0d8044baeeef0871eac6f"), // EldritchFontEldritchSurgeDCBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("9aab299fb44ff3c49af5b8527a23fcf7"), // EldritchFontImprovedEldritchSurgeAttackBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("4425d831546249647b8c9ad06d7ed0e7"), // EldritchFontGreaterSurgeBuff
+                };
+                foreach (BlueprintBuff buff in buffs) {
+                    PatchBuff(buff, spellbookRef);
+                }
+            }
         }
     }
 }

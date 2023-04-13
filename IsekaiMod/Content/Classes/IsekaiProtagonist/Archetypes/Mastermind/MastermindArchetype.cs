@@ -115,50 +115,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
         }
 
         public static void PatchMastermindArcanistFeatures() {
-
-            // TODO: patch potent magic versions of ArcanistArcaneReservoirCLBuff and ArcanistArcaneReservoirDCBuff
-
-            var ArcanistArcaneReservoirResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("cac948cbbe79b55459459dd6a8fe44ce");
-            var ArcanistArcaneReservoirResourceBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("1dd776b7b27dcd54ab3cedbbaf440cf3");
-            var ArcanistArcaneReservoirCLBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("33e0c3a2a54c0e7489fa4ec4d79a581b");
-            var ArcanistArcaneReservoirDCBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("db4b91a8a297c4247b13cfb6ea228bf3");
-            var EldritchFontEldritchSurgeCLBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("a27a3c5e45f9416428ce983e0d4bd2d2");
-            var EldritchFontEldritchSurgeDCBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("91b2762997f0d8044baeeef0871eac6f");
-            var EldritchFontImprovedEldritchSurgeAttackBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("9aab299fb44ff3c49af5b8527a23fcf7");
-            var EldritchFontGreaterSurgeBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("4425d831546249647b8c9ad06d7ed0e7");
-
-            var ArcanistConsumeSpells = BlueprintTools.GetBlueprint<BlueprintFeature>("69cfb4ab0d9812249b924b8f23d6d19f");
-            var ArcanistConsumeSpellsResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("d67ddd98ad019854d926f3d6a4e681c5");
-
-            BlueprintCharacterClassReference myClassRef = IsekaiProtagonistClass.GetReference();
-            BlueprintSpellbookReference mySpellbookRef = MastermindSpellbook.GetReference();
-
-            ArcanistArcaneReservoirResource.m_MaxAmount.m_Class = ArcanistArcaneReservoirResource.m_MaxAmount.m_Class.AppendToArray(myClassRef);
-            ArcanistArcaneReservoirResourceBuff.GetComponent<ContextRankConfig>().m_Class = ArcanistArcaneReservoirResourceBuff.GetComponent<ContextRankConfig>().m_Class.AppendToArray(myClassRef);
-            ArcanistArcaneReservoirCLBuff.GetComponent<AddAbilityUseTrigger>().m_Spellbooks = ArcanistArcaneReservoirCLBuff.GetComponent<AddAbilityUseTrigger>().m_Spellbooks.AppendToArray(mySpellbookRef);
-            ArcanistArcaneReservoirCLBuff.GetComponent<AddCasterLevelForSpellbook>().m_Spellbooks = ArcanistArcaneReservoirCLBuff.GetComponent<AddCasterLevelForSpellbook>().m_Spellbooks.AppendToArray(mySpellbookRef);
-            ArcanistArcaneReservoirDCBuff.GetComponent<AddAbilityUseTrigger>().m_Spellbooks = ArcanistArcaneReservoirDCBuff.GetComponent<AddAbilityUseTrigger>().m_Spellbooks.AppendToArray(mySpellbookRef);
-            ArcanistArcaneReservoirDCBuff.GetComponent<IncreaseSpellSpellbookDC>().m_Spellbooks = ArcanistArcaneReservoirDCBuff.GetComponent<IncreaseSpellSpellbookDC>().m_Spellbooks.AppendToArray(mySpellbookRef);
-
-            EldritchFontEldritchSurgeCLBuff.GetComponent<AddAbilityUseTrigger>().m_Spellbooks = EldritchFontEldritchSurgeCLBuff.GetComponent<AddAbilityUseTrigger>().m_Spellbooks.AppendToArray(mySpellbookRef);
-            EldritchFontEldritchSurgeCLBuff.GetComponent<AddCasterLevelForSpellbook>().m_Spellbooks = EldritchFontEldritchSurgeCLBuff.GetComponent<AddCasterLevelForSpellbook>().m_Spellbooks.AppendToArray(mySpellbookRef);
-            EldritchFontEldritchSurgeDCBuff.GetComponent<AddAbilityUseTrigger>().m_Spellbooks = EldritchFontEldritchSurgeDCBuff.GetComponent<AddAbilityUseTrigger>().m_Spellbooks.AppendToArray(mySpellbookRef);
-            EldritchFontEldritchSurgeDCBuff.GetComponent<IncreaseSpellSpellbookDC>().m_Spellbooks = EldritchFontEldritchSurgeDCBuff.GetComponent<IncreaseSpellSpellbookDC>().m_Spellbooks.AppendToArray(mySpellbookRef);
-            foreach (AddAbilityUseTrigger improvedSurgeAbilityUseTrigger in EldritchFontImprovedEldritchSurgeAttackBuff.GetComponents<AddAbilityUseTrigger>()) {
-                improvedSurgeAbilityUseTrigger.m_Spellbooks = improvedSurgeAbilityUseTrigger.m_Spellbooks.AppendToArray(mySpellbookRef);
-            }
-            foreach (AddAbilityUseTrigger greaterSurgeAbilityUseTrigger in EldritchFontGreaterSurgeBuff.GetComponents<AddAbilityUseTrigger>()) {
-                greaterSurgeAbilityUseTrigger.m_Spellbooks = greaterSurgeAbilityUseTrigger.m_Spellbooks.AppendToArray(mySpellbookRef);
-            }
-
-            ArcanistConsumeSpells.AddComponent<SpontaneousSpellConversion>(c => {
-                c.m_CharacterClass = myClassRef;
-                c.m_SpellsByLevel = ArcanistConsumeSpells.GetComponent<SpontaneousSpellConversion>().m_SpellsByLevel;
-            });
-            ArcanistConsumeSpellsResource.m_MaxAmount.m_Class = ArcanistConsumeSpellsResource.m_MaxAmount.m_Class.AppendToArray(myClassRef);
-
-            var ArcanistExploitSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("b8bf3d5023f2d8c428fdf6438cecaea7");
-            PatchTools.PatchClassIntoFeatureOfReferenceClass(ArcanistExploitSelection, myClassRef, ClassTools.ClassReferences.ArcanistClass);
+            PatchTools.ArcanistPatcher.Patch(IsekaiProtagonistClass.GetReference(), MastermindSpellbook.GetReference());
         }
     }
 }
