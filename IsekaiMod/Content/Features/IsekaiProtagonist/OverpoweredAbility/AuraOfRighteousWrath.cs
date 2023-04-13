@@ -24,7 +24,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
     internal class AuraOfRighteousWrath {
 
-        public static void Add() {
+        public static void Add() { // TODO: remove effect on additional limb
             var Icon_AuraOfRighteousWrath = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_RIGHTEOUS_WRATH.png");
             var AuraOfRighteousWrathEnchantment = Helpers.CreateBlueprint<BlueprintWeaponEnchantment>(IsekaiContext, "AuraOfRighteousWrathEnchantment", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Aura of Righteous Wrath");

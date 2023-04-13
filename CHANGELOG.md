@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Buffed `Siphoning Aura` to scale 1/2 character level.
 - Nerfed `Beta Tester` background form initiative bonus from 10 -> 4.
 - Nerfed `Magical Amplification` spell dice from d12 -> d10.
+- Nerfed `Exceptional Weapon` feats to only affect primary and secondary hand weapon.
 - Changes for `Isekai Protagonist`:
 	- `Fast Movement` replaced with `Afterimage`.
 	- `Friendly Aura` replaced with `Otherwordly Aura`.

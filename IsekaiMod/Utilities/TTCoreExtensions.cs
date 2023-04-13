@@ -10,13 +10,16 @@ using Kingmaker.Enums;
 using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.ResourceManagement;
+using Kingmaker.UI.GenericSlot;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Alignments;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.UnitLogic.FactLogic;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
 using static IsekaiMod.Main;
@@ -113,6 +116,36 @@ namespace IsekaiMod.Utilities {
             });
             init?.Invoke(result);
             return result;
+        }
+
+        public static BlueprintFeature CreateToggleBuff(string name, string description, Sprite icon,  Action<BlueprintBuff> init = null) {
+            string displayName = string.Concat(name.Select(x => char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
+            LocalizedString displayDesc = Helpers.CreateString(IsekaiContext, $"{name}.Description", description);
+
+            var buff = CreateBuff($"{name}Buff", bp => {
+                bp.SetName(IsekaiContext, displayName);
+                bp.SetDescription(displayDesc);
+                bp.m_Icon = icon;
+                bp.IsClassFeature = true;
+            });
+            init?.Invoke(buff);
+            var ability = CreateActivatableAbility($"{name}Ability", bp => {
+                bp.SetName(IsekaiContext, displayName);
+                bp.SetDescription(displayDesc);
+                bp.m_Icon = icon;
+                bp.m_Buff = buff.ToReference<BlueprintBuffReference>();
+            });
+            var feature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, $"{name}Feature", bp => {
+                bp.SetName(IsekaiContext, displayName);
+                bp.SetDescription(displayDesc);
+                bp.m_Icon = icon;
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] {
+                        ability.ToReference<BlueprintUnitFactReference>()
+                    };
+                });
+            });
+            return feature;
         }
 
         private static bool ListContainsSpell(BlueprintSpellList list, BlueprintAbility spell) {
