@@ -100,6 +100,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var ArmorSaint = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ArmorSaint");
             var IsekaiChannelPositiveEnergyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelPositiveEnergyFeature");
             var IsekaiChannelNegativeEnergyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelNegativeEnergyFeature");
+            var Supermassive = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "Supermassive");
 
             // Overpowered Ability
             BlueprintFeatureSelection OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");

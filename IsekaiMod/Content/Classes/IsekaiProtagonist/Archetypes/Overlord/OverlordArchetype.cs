@@ -27,6 +27,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var SecondPhaseFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondPhaseFeature");
             var IsekaiChannelNegativeEnergyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelNegativeEnergyFeature");
 
+            var SiphoningAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SiphoningAuraFeature");
+
             // Removed features
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
             var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAuraSelection");
@@ -60,8 +62,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(1, OverlordProficiencies, OverpoweredAbilitySelectionOverlord, OverlordLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(3, IsekaiChannelNegativeEnergyFeature),
                     Helpers.CreateLevelEntry(5, OverpoweredAbilitySelectionOverlord),
+                    Helpers.CreateLevelEntry(7, CorruptAuraFeature),
                     Helpers.CreateLevelEntry(9, OverpoweredAbilitySelectionOverlord),
-                    Helpers.CreateLevelEntry(10, CorruptAuraFeature, DarkAuraFeature),
+                    Helpers.CreateLevelEntry(10, DarkAuraFeature),
+                    Helpers.CreateLevelEntry(11, SiphoningAuraFeature),
                     Helpers.CreateLevelEntry(13, OverpoweredAbilitySelectionOverlord),
                     Helpers.CreateLevelEntry(17, OverpoweredAbilitySelectionOverlord),
                     Helpers.CreateLevelEntry(20, SecondPhaseFeature),

@@ -6,8 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # [Unreleased]
 ### Added
-- Added new `Mastermind` archetype (Isekai Protagonist).
-- Added new `Overlord` archetype (Isekai Protagonist).
+- Added `Mastermind` archetype (Isekai Protagonist).
+- Added `Overlord` archetype (Isekai Protagonist).
+- Added `Supermassive` Special Power.
 - Added features to `Isekai Protagonist` progression: `Gifted`, `Release Energy`, `Afterimage`, `Secret Power`, `Hax`.
 - Added features to `Edge Lord` progression: `Chuunibyou Actualisation`, `Hidden Power`.
 - Added features to `God Emperor` progression: `Energy Condensation`, `Energy Barrier`, `Alteration of body and mind`, `Chosen Path`, `Transcendental Realm`.

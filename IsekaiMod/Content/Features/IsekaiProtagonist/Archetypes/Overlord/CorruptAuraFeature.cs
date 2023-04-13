@@ -4,6 +4,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
@@ -11,18 +12,24 @@ using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord {
 
     internal class CorruptAuraFeature {
+        private const string CorruptAuraName = "Corrupt Aura";
+        private const string CorruptAuraDescBuff = "This character has a +4 profane bonus to attack, damage, AC and saving throws. "
+            + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.";
+        private static readonly LocalizedString CorruptAuraDesc = Helpers.CreateString(IsekaiContext, "CorruptAura.Description",
+            "Allies within 40 feet of the Overlord has a +4 profane bonus to attack, damage, AC and saving throws. "
+            + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
+        private static readonly Sprite Icon_Corrupt_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_CORRUPT.png");
 
         public static void Add() {
-            var Icon_Corrupt_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_CORRUPT.png");
             var CorruptAuraBuff = TTCoreExtensions.CreateBuff("CorruptAuraBuff", bp => {
-                bp.SetName(IsekaiContext, "Corrupt Aura");
-                bp.SetDescription(IsekaiContext, "This character has a +4 profane bonus to attack, damage, AC and saving throws. "
-                    + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
+                bp.SetName(IsekaiContext, CorruptAuraName);
+                bp.SetDescription(IsekaiContext, CorruptAuraDescBuff);
                 bp.IsClassFeature = true;
                 bp.m_Icon = Icon_Corrupt_Aura;
                 bp.AddComponent<AddStatBonus>(c => {
@@ -71,9 +78,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord {
                 bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(CorruptAuraBuff.ToReference<BlueprintBuffReference>()));
             });
             var CorruptAuraAreaBuff = TTCoreExtensions.CreateBuff("CorruptAuraAreaBuff", bp => {
-                bp.SetName(IsekaiContext, "Corrupt Aura");
-                bp.SetDescription(IsekaiContext, "Allies within 40 feet of the Overlord has a +4 profane bonus to attack, damage, AC and saving throws. "
-                    + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
+                bp.SetName(IsekaiContext, CorruptAuraName);
+                bp.SetDescription(CorruptAuraDesc);
                 bp.m_Icon = Icon_Corrupt_Aura;
                 bp.IsClassFeature = true;
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
@@ -82,17 +88,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord {
                 });
             });
             var CorruptAuraAbility = TTCoreExtensions.CreateActivatableAbility("CorruptAuraAbility", bp => {
-                bp.SetName(IsekaiContext, "Corrupt Aura");
-                bp.SetDescription(IsekaiContext, "Allies within 40 feet of the Overlord has a +4 profane bonus to attack, damage, AC and saving throws. "
-                    + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
+                bp.SetName(IsekaiContext, CorruptAuraName);
+                bp.SetDescription(CorruptAuraDesc);
                 bp.m_Icon = Icon_Corrupt_Aura;
                 bp.m_Buff = CorruptAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
             var CorruptAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "CorruptAuraFeature", bp => {
-                bp.SetName(IsekaiContext, "Corrupt Aura");
-                bp.SetDescription(IsekaiContext, "At 10th level, allies within 40 feet of the Overlord has a +4 profane bonus to attack, damage, AC and saving throws. "
-                    + "Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.");
+                bp.SetName(IsekaiContext, CorruptAuraName);
+                bp.SetDescription(CorruptAuraDesc);
                 bp.m_Icon = Icon_Corrupt_Aura;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { CorruptAuraAbility.ToReference<BlueprintUnitFactReference>() };

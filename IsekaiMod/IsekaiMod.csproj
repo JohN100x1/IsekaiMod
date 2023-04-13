@@ -203,6 +203,7 @@
     <Compile Include="Content\Features\IsekaiProtagonist\HaxSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\SecretPowerSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\ReleaseEnergy.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\Supermassive.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="UMMSettingsUI.cs" />
     <Compile Include="Config\*.cs" />
