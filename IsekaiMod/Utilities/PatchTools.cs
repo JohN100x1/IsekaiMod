@@ -18,7 +18,7 @@ using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Utilities {
-    internal class PatchTools {
+    internal static class PatchTools {
         // Spellbooks to patch
         private static BlueprintSpellbookReference[] patchableSpellBooks = new BlueprintSpellbookReference[0];
 
@@ -174,10 +174,8 @@ namespace IsekaiMod.Utilities {
             foreach (BlueprintFeatureBase levelitem in features) {
                 if (levelitem is BlueprintProgression progression) {
                     PatchClassIntoFeatureOfReferenceClass(progression, myClass, referenceClass);
-                } else {
-                    if (levelitem is BlueprintFeature feature) {
-                        PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass);
-                    }
+                } else if (levelitem is BlueprintFeature feature) {
+                    PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass);
                 }
             }
         }
@@ -185,17 +183,15 @@ namespace IsekaiMod.Utilities {
         public static void PatchProgressionFeaturesBasedOnReferenceClass(BlueprintProgression prog, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass) {
             var features = new HashSet<BlueprintFeatureBase>();
             foreach (LevelEntry levelEntry in prog.LevelEntries) {
-                foreach (var levelitem in levelEntry.m_Features) {
+                foreach (BlueprintFeatureBaseReference levelitem in levelEntry.m_Features) {
                     if (!features.Contains(levelitem)) { features.Add(levelitem); }
                 }
             }
             foreach (BlueprintFeatureBase levelitem in features) {
                 if (levelitem is BlueprintProgression progression) {
                     PatchClassIntoFeatureOfReferenceClass(progression, myClass, referenceClass);
-                } else {
-                    if (levelitem is BlueprintFeature feature) {
-                        PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass);
-                    }
+                } else if (levelitem is BlueprintFeature feature) {
+                    PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass);
                 }
             }
         }
@@ -246,10 +242,9 @@ namespace IsekaiMod.Utilities {
                     foreach (var levelItem in flatten) {
                         if (levelItem is BlueprintProgression progression2) {
                             PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, mylevel, loopPrevention);
-                        } else {
-                            if (levelItem is BlueprintFeature feature2) {
-                                PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
-                            }
+                        } else if (levelItem is BlueprintFeature feature2)
+                        {
+                            PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
                         }
                     }
                 }
@@ -287,10 +282,8 @@ namespace IsekaiMod.Utilities {
                         if (component is ContextRankConfig rankConfig && rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel) {
                             if (rankConfig.m_Class.Contains(referenceClass)) {
                                 sample = rankConfig;
-                            } else {
-                                if (rankConfig.m_Class.Contains(myClass)) {
-                                    alreadyPatched = true;
-                                }
+                            } else if (rankConfig.m_Class.Contains(myClass)) {
+                                alreadyPatched = true;
                             }
                         }
                         if (component is SpontaneousSpellConversion conversion && conversion.m_CharacterClass != null && conversion.m_CharacterClass.Equals(referenceClass)) {
@@ -417,10 +410,9 @@ namespace IsekaiMod.Utilities {
                             if (component2 is ContextRankConfig rankConfig && rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel) {
                                 if (rankConfig.m_Class.Contains(referenceClass)) {
                                     sample = rankConfig;
-                                } else {
-                                    if (rankConfig.m_Class.Contains(myClass)) {
-                                        alreadyPatched = true;
-                                    }
+                                } else if (rankConfig.m_Class.Contains(myClass))
+                                {
+                                    alreadyPatched = true;
                                 }
                             }
                         }
