@@ -24,7 +24,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var DarkAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DarkAuraFeature");
             var OverpoweredAbilitySelectionOverlord = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "OverpoweredAbilitySelectionOverlord");
             var CorruptAuraFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "CorruptAuraFeature");
-            var SecondFormFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondFormFeature");
+            var SecondPhaseFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondPhaseFeature");
             var IsekaiChannelNegativeEnergyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelNegativeEnergyFeature");
 
             // Removed features
@@ -64,7 +64,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(10, CorruptAuraFeature, DarkAuraFeature),
                     Helpers.CreateLevelEntry(13, OverpoweredAbilitySelectionOverlord),
                     Helpers.CreateLevelEntry(17, OverpoweredAbilitySelectionOverlord),
-                    Helpers.CreateLevelEntry(20, SecondFormFeature),
+                    Helpers.CreateLevelEntry(20, SecondPhaseFeature),
                 };
                 bp.AddComponent<PrerequisiteAlignment>(c => {
                     c.Group = Prerequisite.GroupType.Any;

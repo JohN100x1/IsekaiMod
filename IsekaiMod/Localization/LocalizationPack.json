@@ -6261,7 +6261,7 @@
     },
     {
       "Key": "1c83d44afdb3428fa58acb0501c39db9",
-      "SimpleName": "SecondFormBuff.Description",
+      "SimpleName": "SecondPhaseBuff.Description",
       "ProcessTemplates": true,
       "enGB": "Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain. You also gain a +10 profane bonus to all attributes and your size also increases by one size category for 24 hours.",
       "ruRU": null,
@@ -6272,7 +6272,7 @@
     },
     {
       "Key": "a74b748d1f7a4303b72e11dc385ef740",
-      "SimpleName": "SecondFormBuffEffect.Description",
+      "SimpleName": "SecondPhaseBuffEffect.Description",
       "ProcessTemplates": true,
       "enGB": "You gain a +10 profane bonus to all attributes and your size increases by one size category for 24 hours.",
       "ruRU": null,
@@ -6283,7 +6283,7 @@
     },
     {
       "Key": "76cfa0f7429746e3a8f13e16173debce",
-      "SimpleName": "SecondFormBuffEffect.Name",
+      "SimpleName": "SecondPhaseBuffEffect.Name",
       "ProcessTemplates": false,
       "enGB": "Second Form",
       "ruRU": null,
@@ -6294,7 +6294,7 @@
     },
     {
       "Key": "cb1b788527cb43489d280b3e7ebb0baa",
-      "SimpleName": "SecondFormBuffTrigger.Name",
+      "SimpleName": "SecondPhaseBuffTrigger.Name",
       "ProcessTemplates": false,
       "enGB": "Second Form Trigger",
       "ruRU": null,
@@ -6305,7 +6305,7 @@
     },
     {
       "Key": "607b2336c6334f209d3883ae5a3c349b",
-      "SimpleName": "SecondFormFeature.Description",
+      "SimpleName": "SecondPhaseFeature.Description",
       "ProcessTemplates": true,
       "enGB": "At 20th level, you become a boss. Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are restored to full HP, ability damage, and ability drain. You also gain a +10 profane bonus to all attributes and your size also increases by one size category for 24 hours.",
       "ruRU": null,
