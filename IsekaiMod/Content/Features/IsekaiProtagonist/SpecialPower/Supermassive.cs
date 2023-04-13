@@ -19,37 +19,31 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
         public static void Add() {
             var Supermassive = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "Supermassive", bp => {
                 bp.SetName(IsekaiContext, "Supermassive");
-                bp.SetDescription(IsekaiContext, "You gain a size bonus to HP equal to your 20 times your Constitution modifier. "
-                    + "You have fast healing equal to 5% of your max HP but a -30 penalty to AC.");
+                bp.SetDescription(IsekaiContext, "You gain a size bonus to HP equal to your 10 times your Constitution modifier. "
+                    + "You also have fast healing equal to your Constitution modifier but a -10 penalty to AC.");
                 bp.m_Icon = Icon_TricksterMicroscopicProportions;
                 bp.AddComponent<AddContextStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Size;
+                    c.Stat = StatType.HitPoints;
                     c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    c.Multiplier = 10;
+                });
+                bp.AddComponent<AddEffectFastHealing>(c => {
+                    c.Heal = 0;
+                    c.Bonus = Values.CreateContextRankValue(AbilityRankType.StatBonus);
                 });
                 bp.AddComponent<ContextRankConfig>(c => {
                     c.m_Type = AbilityRankType.StatBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.BaseStat;
+                    c.m_BaseValueType = ContextRankBaseValueType.StatBonus;
                     c.m_Stat = StatType.Constitution;
-                    c.m_Progression = ContextRankProgression.MultiplyByModifier;
-                    c.m_StepLevel = 20;
                 });
                 bp.AddComponent<RecalculateOnStatChange>(c => {
                     c.Stat = StatType.Constitution;
                 });
-                bp.AddComponent<AddEffectFastHealing>(c => {
-                    c.Heal = 0;
-                    c.Bonus = Values.CreateContextRankValue(AbilityRankType.Default);
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.Default;
-                    c.m_BaseValueType = ContextRankBaseValueType.BaseStat;
-                    c.m_Stat = StatType.HitPoints;
-                    c.m_Progression = ContextRankProgression.DivStep;
-                    c.m_StepLevel = 20;
-                });
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Penalty;
-                    c.Value = -20;
+                    c.Stat = StatType.AC;
+                    c.Value = -10;
                 });
             });
 
