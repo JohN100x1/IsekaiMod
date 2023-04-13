@@ -162,8 +162,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                     GoldBarrierHeroism, GoldBarrierFastHealing, GoldBarrierResistance, DeusExMachinaFeature),
                 
                 // Mastermind UI group
-                Helpers.CreateUIGroup(OverpoweredAbilitySelectionMastermind),
-                Helpers.CreateUIGroup(ArcanistArcaneReservoirFeature, ArcanistExploitSelection),
+                Helpers.CreateUIGroup(OverpoweredAbilitySelectionMastermind, ArcanistExploitSelection),
                 Helpers.CreateUIGroup(ArcanistConsumeSpells, EldritchFontEldritchSurge, EldritchFontImprovedSurge, EldritchFontGreaterSurge),
 
                 // Overlord UI group
@@ -190,6 +189,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 HeroProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 MastermindProficiencies.ToReference<BlueprintFeatureBaseReference>(),
                 OverlordProficiencies.ToReference<BlueprintFeatureBaseReference>(),
+                ArcanistArcaneReservoirFeature.ToReference<BlueprintFeatureBaseReference>(),
             };
             IsekaiProtagonistClass.SetProgression(IsekaiProtagonistProgression);
         }
