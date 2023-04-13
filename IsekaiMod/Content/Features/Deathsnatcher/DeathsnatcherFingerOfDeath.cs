@@ -7,7 +7,6 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
-using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules.Damage;
@@ -124,7 +123,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Directional;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = FingerOfDeathAbility.AvailableMetamagic;
-                bp.LocalizedDuration = new LocalizedString();
+                bp.LocalizedDuration = StaticReferences.Strings.Null;
                 bp.LocalizedSavingThrow = StaticReferences.Strings.SavingThrow.FortitudePartial;
             });
             var DeathsnatcherFingerOfDeathFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFingerOfDeathFeature", bp => {

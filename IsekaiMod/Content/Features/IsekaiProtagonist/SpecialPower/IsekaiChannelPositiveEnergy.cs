@@ -8,7 +8,6 @@ using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
-using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules.Damage;
@@ -55,8 +54,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                     + "Creatures that take damage from channeled energy receive a Will save to halve the damage. "
                     + "The DC of this save is equal to 10 + 1/2 the character level + Charisma modifier.");
                 bp.m_Icon = ChannelPositiveHarm.Icon;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
+                bp.LocalizedDuration = StaticReferences.Strings.Null;
+                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
                 bp.AvailableMetamagic = Metamagic.Empower | Metamagic.Maximize | Metamagic.Heighten | Metamagic.Quicken;
                 bp.Range = AbilityRange.Personal;
                 bp.Type = AbilityType.Special;
@@ -187,8 +186,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.SetDescription(IsekaiContext, "Channeling positive energy causes a burst that heals every living creature in a 30-foot radius centered on the caster. The amount of damage "
                     + "healed is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on).");
                 bp.m_Icon = ChannelPositiveHeal.Icon;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
+                bp.LocalizedDuration = StaticReferences.Strings.Null;
+                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
                 bp.AvailableMetamagic = Metamagic.Empower | Metamagic.Maximize | Metamagic.Heighten | Metamagic.Quicken;
                 bp.Range = AbilityRange.Personal;
                 bp.Type = AbilityType.Special;

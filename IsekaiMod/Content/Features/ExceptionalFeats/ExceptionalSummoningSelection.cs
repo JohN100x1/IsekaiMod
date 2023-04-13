@@ -8,7 +8,6 @@ using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
-using Kingmaker.Localization;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
@@ -58,7 +57,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
             });
             var MightySummoningBuff = TTCoreExtensions.CreateBuff("MightySummoningBuff", bp => {
                 bp.SetName(IsekaiContext, "Mighty Summoning");
-                bp.m_Description = new LocalizedString();
+                bp.m_Description = StaticReferences.Strings.Null;
                 bp.m_Icon = Icon_ExceptionalSummoning;
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
@@ -135,7 +134,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
             });
             var MagicalSummoningBuff = TTCoreExtensions.CreateBuff("MagicalSummoningBuff", bp => {
                 bp.SetName(IsekaiContext, "Magical Summoning");
-                bp.m_Description = new LocalizedString();
+                bp.m_Description = StaticReferences.Strings.Null;
                 bp.m_Icon = Icon_ExceptionalSummoning;
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
@@ -214,7 +213,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
             });
             var ForbiddenSummoningBuff = TTCoreExtensions.CreateBuff("ForbiddenSummoningBuff", bp => {
                 bp.SetName(IsekaiContext, "Forbidden Summoning");
-                bp.m_Description = new LocalizedString();
+                bp.m_Description = StaticReferences.Strings.Null;
                 bp.m_Icon = Icon_ForbiddenSummoning;
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;
@@ -277,7 +276,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
             });
             var FerociousSummoningBuff = TTCoreExtensions.CreateBuff("FerociousSummoningBuff", bp => {
                 bp.SetName(IsekaiContext, "Ferocious Summoning");
-                bp.m_Description = new LocalizedString();
+                bp.m_Description = StaticReferences.Strings.Null;
                 bp.m_Icon = Icon_FerociousSummoning;
                 bp.Stacking = StackingType.Replace;
                 bp.IsClassFeature = true;

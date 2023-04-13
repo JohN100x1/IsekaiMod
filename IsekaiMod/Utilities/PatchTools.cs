@@ -196,7 +196,6 @@ namespace IsekaiMod.Utilities {
             }
         }
 
-
         public static void PatchClassIntoFeatureOfReferenceClass(BlueprintFeature feature, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level = 0, BlueprintFeatureBase[] loopPrevention = null) {
             loopPrevention ??= new BlueprintFeatureBase[0];
             int mylevel = level + 1;

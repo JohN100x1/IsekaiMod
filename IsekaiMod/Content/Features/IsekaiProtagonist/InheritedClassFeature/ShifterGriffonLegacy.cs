@@ -11,7 +11,7 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class ShifterGriffonLegacy {
-        private static string BaseArchetypeId = "aed5b306ad734a6da5d5638edcb667c9";
+        private static readonly string BaseArchetypeId = "aed5b306ad734a6da5d5638edcb667c9";
         private static BlueprintArchetype BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);
 
         private static BlueprintProgression prog;
@@ -28,9 +28,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.GiveFeaturesForPreviousLevels = true;
                 bp.AddComponent<PrerequisiteAlignment>(c => { c.Alignment = Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Good; });
             });
-
-
         }
+
         public static void PatchProgression() {
             if (ClassTools.Classes.ShifterClass == null) { return; }
 
@@ -39,8 +38,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);
                 if (BaseArchetype == null) { return; }
             }
-
-
 
             LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);

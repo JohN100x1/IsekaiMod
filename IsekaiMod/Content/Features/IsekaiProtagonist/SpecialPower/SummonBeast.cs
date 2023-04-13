@@ -4,7 +4,6 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.ElementsSystem;
 using Kingmaker.Enums;
-using Kingmaker.Localization;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -120,7 +119,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.AvailableMetamagic = Metamagic.Quicken;
                 bp.m_IsFullRoundAction = true;
                 bp.LocalizedDuration = StaticReferences.Strings.Duration.OneRoundPerLevel;
-                bp.LocalizedSavingThrow = new LocalizedString();
+                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
             });
             init?.Invoke(result);
             return result;

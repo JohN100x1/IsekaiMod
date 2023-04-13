@@ -2,7 +2,6 @@
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
-using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -52,7 +51,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.m_IsFullRoundAction = true;
                 bp.AvailableMetamagic = Metamagic.Quicken | Metamagic.Heighten | Metamagic.CompletelyNormal;
                 bp.LocalizedDuration = StaticReferences.Strings.Duration.OneRoundPerLevel;
-                bp.LocalizedSavingThrow = new LocalizedString();
+                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
             });
             var TrueResurrectionFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "TrueResurrectionFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — True Resurrection");

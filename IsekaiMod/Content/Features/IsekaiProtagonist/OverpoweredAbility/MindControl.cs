@@ -4,7 +4,6 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.Enums;
-using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
@@ -102,7 +101,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Reach | Metamagic.CompletelyNormal;
                 bp.LocalizedDuration = StaticReferences.Strings.Duration.OneRoundPerLevel;
-                bp.LocalizedSavingThrow = new LocalizedString();
+                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
             });
             var MindControlFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "MindControlFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Mind Control");

@@ -4,7 +4,6 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Enums;
-using Kingmaker.Localization;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -86,7 +85,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.AvailableMetamagic = Metamagic.Quicken;
                 bp.m_IsFullRoundAction = true;
                 bp.LocalizedDuration = StaticReferences.Strings.Duration.OneRoundPerLevel;
-                bp.LocalizedSavingThrow = new LocalizedString();
+                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
             });
             var SummonHaremFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SummonHaremFeature", bp => {
                 bp.SetName(IsekaiContext, "Summon Harem");

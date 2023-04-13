@@ -3,7 +3,6 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.ElementsSystem;
-using Kingmaker.Localization;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
@@ -133,7 +132,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Reach;
                 bp.LocalizedDuration = StaticReferences.Strings.Duration.OneDay;
-                bp.LocalizedSavingThrow = new LocalizedString();
+                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
             });
             var SuperBuffDismissAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "SuperBuffDismissAbility", bp => {
                 bp.SetName(IsekaiContext, "Dismiss Super Buff");
@@ -159,8 +158,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Self;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Reach;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
+                bp.LocalizedDuration = StaticReferences.Strings.Null;
+                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
             });
             var SuperBuffFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SuperBuffFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Super Buff");
