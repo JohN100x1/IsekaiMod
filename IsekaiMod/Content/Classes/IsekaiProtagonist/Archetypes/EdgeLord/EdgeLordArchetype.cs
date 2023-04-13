@@ -23,6 +23,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var ExtraStrike = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ExtraStrike");
             var ChuunibyouActualisationFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ChuunibyouActualisationFeature");
 
+            var HiddenPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "HiddenPowerSelection");
+
             // Removed features
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
@@ -53,6 +55,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, EdgeLordProficiencies, SupersonicCombat, EdgeLordLegacySelection.getClassFeature()),
+                    Helpers.CreateLevelEntry(3, HiddenPowerSelection),
                     Helpers.CreateLevelEntry(5, SpecialPowerSelection, ExtraStrike),
                     Helpers.CreateLevelEntry(10, ExtraStrike),
                     Helpers.CreateLevelEntry(15, SpecialPowerSelection, ExtraStrike),

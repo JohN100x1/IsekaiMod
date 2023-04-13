@@ -167,6 +167,7 @@
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Overlord\OverlordSpellbook.cs" />
     <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Overlord\OverlordArchetype.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\ChuunibyouActualisation.cs" />
+    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\HiddenPowerSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\PathSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\BodyMindAuraSelection.cs" />
     <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorQuickFooted.cs" />

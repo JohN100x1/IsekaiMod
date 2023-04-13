@@ -28,7 +28,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var IsekaiChannelNegativeEnergyFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelNegativeEnergyFeature");
 
             // Removed features
-            var IsekaiBonusFeatSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiBonusFeatSelection");
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
             var IsekaiAuraSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiAuraSelection");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
@@ -37,7 +36,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var HaxSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "HaxSelection");
             var SignatureMoveBonusSelection = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureMoveBonusSelection");
             var SecondReincarnation = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation");
-            var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
             var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
 
             // Archetype
@@ -49,19 +47,14 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.IsDivineCaster = true;
                 bp.ChangeCasterType = true;
                 bp.RemoveFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, IsekaiBonusFeatSelection, IsekaiProficiencies, Gifted, LegacySelection.GetClassFeature()),
-                    Helpers.CreateLevelEntry(2, IsekaiBonusFeatSelection),
+                    Helpers.CreateLevelEntry(1, IsekaiProficiencies, Gifted, LegacySelection.GetClassFeature()),
                     Helpers.CreateLevelEntry(3, ReleaseEnergy),
-                    Helpers.CreateLevelEntry(4, IsekaiBonusFeatSelection),
-                    Helpers.CreateLevelEntry(6, IsekaiBonusFeatSelection, SignatureMoveBonusSelection),
-                    Helpers.CreateLevelEntry(8, IsekaiBonusFeatSelection),
-                    Helpers.CreateLevelEntry(10, IsekaiBonusFeatSelection, OverpoweredAbilitySelection, IsekaiAuraSelection, SecretPowerSelection),
-                    Helpers.CreateLevelEntry(12, IsekaiBonusFeatSelection),
-                    Helpers.CreateLevelEntry(14, IsekaiBonusFeatSelection),
+                    Helpers.CreateLevelEntry(6, SignatureMoveBonusSelection),
+                    Helpers.CreateLevelEntry(9, SpecialPowerSelection),
+                    Helpers.CreateLevelEntry(10, IsekaiAuraSelection, SecretPowerSelection),
+                    Helpers.CreateLevelEntry(11, SpecialPowerSelection),
                     Helpers.CreateLevelEntry(15, SecondReincarnation),
-                    Helpers.CreateLevelEntry(16, IsekaiBonusFeatSelection),
-                    Helpers.CreateLevelEntry(18, IsekaiBonusFeatSelection),
-                    Helpers.CreateLevelEntry(20, IsekaiBonusFeatSelection, HaxSelection),
+                    Helpers.CreateLevelEntry(20, HaxSelection),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, OverlordProficiencies, OverpoweredAbilitySelectionOverlord, OverlordLegacySelection.getClassFeature()),

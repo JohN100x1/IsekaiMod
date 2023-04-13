@@ -16,7 +16,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         public static void Add() {
 
-            // TODO: add feature/ability that uses ICON_EXCALIBUR.png
+            // TODO: add excalibur attack ability that uses ICON_EXCALIBUR.png for Isekai protagonist at 12th level
 
             // Isekai Protagonist
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
@@ -48,6 +48,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var SupersonicCombat = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SupersonicCombat");
             var ExtraStrike = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ExtraStrike");
             var ChuunibyouActualisationFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ChuunibyouActualisationFeature");
+
+            BlueprintFeatureSelection HiddenPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "HiddenPowerSelection");
 
             // God Emperor
             BlueprintFeatureSelection GodEmperorEnergySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "GodEmperorEnergySelection");
@@ -147,11 +149,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAbility, SignatureMoveSelection,
                     SummonHaremFeature, IsekaiAuraSelection, GodEmperorAuraSelection, DarkAuraFeature, HeroAuraSelection, Afterimage,
                     IsekaiQuickFooted, GodEmperorQuickFooted, MastermindQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, HaxSelection,
-                    ChuunibyouActualisationFeature, DeusExMachinaFeature, MasterplanFeature),
+                    ChuunibyouActualisationFeature, DeusExMachinaFeature, MasterplanFeature, SecondFormFeature),
                 Helpers.CreateUIGroup(ReleaseEnergy, Gifted, SignatureMoveBonusSelection, SecretPowerSelection, SecondReincarnation),
                 
                 // Edge Lord UI group
-                Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike),
+                Helpers.CreateUIGroup(SupersonicCombat, ExtraStrike, HiddenPowerSelection),
                 
                 // God Emperor UI group
                 Helpers.CreateUIGroup(NascentApotheosis, LightEnergyCondensation, GodEmperorEnergySelection, BodyMindAlterSelection,
@@ -166,8 +168,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateUIGroup(ArcanistConsumeSpells, EldritchFontEldritchSurge, EldritchFontImprovedSurge, EldritchFontGreaterSurge),
 
                 // Overlord UI group
-                Helpers.CreateUIGroup(OverpoweredAbilitySelectionOverlord),
-                Helpers.CreateUIGroup(IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, SecondFormFeature, SiphoningAuraFeature),
+                Helpers.CreateUIGroup(OverpoweredAbilitySelectionOverlord, IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, SiphoningAuraFeature),
                 
                 // OP ability and Special Power UI group
                 Helpers.CreateUIGroup(OverpoweredAbilitySelection, SpecialPowerSelection, ArmorSaint),
