@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added `Mastermind` archetype (Isekai Protagonist).
 - Added `Overlord` archetype (Isekai Protagonist).
+- Added `Demonic Cultivator` Isekai background.
 - Added `Supermassive` Special Power.
 - Added features to `Isekai Protagonist` progression: `Gifted`, `Release Energy`, `Afterimage`, `Secret Power`, `Hax`.
 - Added features to `Edge Lord` progression: `Chuunibyou Actualisation`, `Extra Special Power`.
@@ -19,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Buffed `Friendly Aura` to also affect damage rolls.
 - Buffed `Siphoning Aura` to scale 1/2 character level.
+- Nerfed `Beta Tester` background form initiative bonus from 10 -> 4.
 - Nerfed `Magical Amplification` spell dice from d12 -> d10.
 - Changes for `Isekai Protagonist`:
 	- `Fast Movement` replaced with `Afterimage`.

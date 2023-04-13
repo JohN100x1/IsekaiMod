@@ -1,4 +1,5 @@
-﻿using Kingmaker.Blueprints;
+﻿using IsekaiMod.Content.Backgrounds;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Items.Ecnchantments;
@@ -12,6 +13,9 @@ using UnityEngine;
 namespace IsekaiMod.Utilities {
 
     internal static class ExtensionMethods {
+        public static void SetBackgroundDescription(this BlueprintFeature feature, ModContextBase modContext, string desciption) {
+            feature.m_Description = Helpers.CreateString(modContext, $"{feature.name}.Description", desciption + IsekaiBackgroundSelection.DescAppendix, shouldProcess: true);
+        }
 
         public static void SetLocalisedName(this BlueprintUnit Unit, ModContextBase modContext, string name) {
             Unit.LocalizedName = ScriptableObject.CreateInstance<SharedStringAsset>();
