@@ -48,6 +48,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(3, ReleaseEnergy),
                     Helpers.CreateLevelEntry(6, SignatureMoveBonusSelection),
                     Helpers.CreateLevelEntry(10, SecretPowerSelection),
+                    Helpers.CreateLevelEntry(12, BeachEpisodeBonusSelection),
                     Helpers.CreateLevelEntry(15, SecondReincarnation),
                     Helpers.CreateLevelEntry(20, HaxSelection),
                 };
@@ -55,9 +56,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(1, EdgeLordProficiencies, SupersonicCombat, EdgeLordLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(3, ExtraSpecialPowerSelection),
                     Helpers.CreateLevelEntry(5, ExtraStrike),
-                    Helpers.CreateLevelEntry(7, ExtraSpecialPowerSelection),
                     Helpers.CreateLevelEntry(10, ExtraStrike),
-                    Helpers.CreateLevelEntry(12, BeachEpisodeBonusSelection),
                     Helpers.CreateLevelEntry(15, ExtraStrike),
                     Helpers.CreateLevelEntry(20, ExtraStrike, ChuunibyouActualisationFeature),
                 };

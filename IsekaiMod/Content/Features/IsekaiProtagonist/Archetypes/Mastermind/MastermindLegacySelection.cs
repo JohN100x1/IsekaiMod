@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind {
                 return;
             }
             ClassSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "MastermindLegacySelection", bp => {
-                bp.SetName(IsekaiContext, "Mastermind Legacy");
+                bp.SetName(IsekaiContext, "Genious Legacy");
                 bp.SetDescription(IsekaiContext, "This is neither disney, nor are you the kind to lose your mind...");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

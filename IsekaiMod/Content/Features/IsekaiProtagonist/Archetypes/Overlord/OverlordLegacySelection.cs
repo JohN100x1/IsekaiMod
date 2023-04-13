@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord {
                 return;
             }
             ClassSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverlordLegacySelection", bp => {
-                bp.SetName(IsekaiContext, "Overlord Legacy");
+                bp.SetName(IsekaiContext, "Evil Legacy");
                 bp.SetDescription(IsekaiContext, "This is neither disney, nor are you the kind to lose your mind...");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;

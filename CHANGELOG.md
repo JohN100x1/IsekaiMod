@@ -32,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- Updated icon for `Starting Weapon` feature.
 - Changes for `Edge Lord`:
 	- Now has Exotic Weapon Proficiency at 1st level.
-	- Added `Extra Special Power` at 3rd and 7th level.
+	- Added `Extra Special Power` at 3rd level.
 	- Added OP ability at 5th, 10th, and 15th level.
 	- Added `Otherwordly Aura` at 10th level.
 	- Removed Special Power at 5th and 15th level.
