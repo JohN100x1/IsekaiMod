@@ -66,138 +66,85 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         private static readonly BlueprintItemWeapon HookedHammer = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("3fb96c96ac146294ba1e92fdb9509a5d");
         private static readonly BlueprintItemWeapon ThrowingAxe = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("a29eacae30ee2f04398c3b2784861109");
 
-        private static readonly Sprite Icon_StartWeapon = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_START_WEAPON.png");
+        private static readonly Sprite Icon_StartSword = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_START_SWORD.png");
+        private static readonly Sprite Icon_StartBlunt = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_START_BLUNT.png");
+        private static readonly Sprite Icon_StartRanged = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_START_RANGED.png");
 
         public static void Add() {
-            var StartingWeaponDagger = CreateStartingWeaponFeature("StartingWeaponDagger", "You start with a cold iron dagger.", Dagger);
-            var StartingWeaponLightMace = CreateStartingWeaponFeature("StartingWeaponLightMace", "You start with a cold iron light mace.", LightMace);
-            var StartingWeaponPunchingDagger = CreateStartingWeaponFeature("StartingWeaponPunchingDagger", "You start with a cold iron punching dagger.", PunchingDagger);
-            var StartingWeaponSickle = CreateStartingWeaponFeature("StartingWeaponSickle", "You start with a cold iron sickle.", Sickle);
-            var StartingWeaponClub = CreateStartingWeaponFeature("StartingWeaponClub", "You start with a cold iron club.", Club);
-            var StartingWeaponHeavyMace = CreateStartingWeaponFeature("StartingWeaponHeavyMace", "You start with a cold iron heavy mace.", HeavyMace);
-            var StartingWeaponShortspear = CreateStartingWeaponFeature("StartingWeaponShortspear", "You start with a cold iron shortspear.", Shortspear);
-            var StartingWeaponGreatclub = CreateStartingWeaponFeature("StartingWeaponGreatclub", "You start with a cold iron greatclub.", Greatclub);
-            var StartingWeaponLongspear = CreateStartingWeaponFeature("StartingWeaponLongspear", "You start with a cold iron longspear.", Longspear);
-            var StartingWeaponQuarterstaff = CreateStartingWeaponFeature("StartingWeaponQuarterstaff", "You start with a quarterstaff.", Quarterstaff);
-            var StartingWeaponSpear = CreateStartingWeaponFeature("StartingWeaponSpear", "You start with a cold iron spear.", Spear);
-            var StartingWeaponTrident = CreateStartingWeaponFeature("StartingWeaponTrident", "You start with a cold iron trident.", Trident);
-            var StartingWeaponDart = CreateStartingWeaponFeature("StartingWeaponDart", "You start with a cold iron dart.", Dart);
-            var StartingWeaponLightCrossbow = CreateStartingWeaponFeature("StartingWeaponLightCrossbow", "You start with a light crossbow.", LightCrossbow);
-            var StartingWeaponHeavyCrossbow = CreateStartingWeaponFeature("StartingWeaponHeavyCrossbow", "You start with a heavy crossbow.", HeavyCrossbow);
-            var StartingWeaponJavelin = CreateStartingWeaponFeature("StartingWeaponJavelin", "You start with a cold iron javelin.", Javelin);
-            var StartingWeaponHandaxe = CreateStartingWeaponFeature("StartingWeaponHandaxe", "You start with a cold iron handaxe.", Handaxe);
-            var StartingWeaponKukri = CreateStartingWeaponFeature("StartingWeaponKukri", "You start with a cold iron kukri.", Kukri);
-            var StartingWeaponLightHammer = CreateStartingWeaponFeature("StartingWeaponLightHammer", "You start with a cold iron light hammer.", LightHammer);
-            var StartingWeaponShortsword = CreateStartingWeaponFeature("StartingWeaponShortsword", "You start with a cold iron shortsword.", Shortsword);
-            var StartingWeaponLightPick = CreateStartingWeaponFeature("StartingWeaponLightPick", "You start with a cold iron light pick.", LightPick);
-            var StartingWeaponStarknife = CreateStartingWeaponFeature("StartingWeaponStarknife", "You start with a cold iron starknife.", Starknife);
-            var StartingWeaponBattleaxe = CreateStartingWeaponFeature("StartingWeaponBattleaxe", "You start with a cold iron battleaxe.", Battleaxe);
-            var StartingWeaponFlail = CreateStartingWeaponFeature("StartingWeaponFlail", "You start with a cold iron flail.", Flail);
-            var StartingWeaponHeavyPick = CreateStartingWeaponFeature("StartingWeaponHeavyPick", "You start with a cold iron heavy pick.", HeavyPick);
-            var StartingWeaponLongsword = CreateStartingWeaponFeature("StartingWeaponLongsword", "You start with a cold iron longsword.", Longsword);
-            var StartingWeaponRapier = CreateStartingWeaponFeature("StartingWeaponRapier", "You start with a cold iron rapier.", Rapier);
-            var StartingWeaponScimitar = CreateStartingWeaponFeature("StartingWeaponScimitar", "You start with a cold iron scimitar.", Scimitar);
-            var StartingWeaponWarhammer = CreateStartingWeaponFeature("StartingWeaponWarhammer", "You start with a cold iron warhammer.", Warhammer);
-            var StartingWeaponEarthbreaker = CreateStartingWeaponFeature("StartingWeaponEarthbreaker", "You start with a cold iron earthbreaker.", Earthbreaker);
-            var StartingWeaponFalchion = CreateStartingWeaponFeature("StartingWeaponFalchion", "You start with a cold iron falchion.", Falchion);
-            var StartingWeaponGlaive = CreateStartingWeaponFeature("StartingWeaponGlaive", "You start with a cold iron glaive.", Glaive);
-            var StartingWeaponGreataxe = CreateStartingWeaponFeature("StartingWeaponGreataxe", "You start with a cold iron greataxe.", Greataxe);
-            var StartingWeaponGreatsword = CreateStartingWeaponFeature("StartingWeaponGreatsword", "You start with a cold iron greatsword.", Greatsword);
-            var StartingWeaponHeavyFlail = CreateStartingWeaponFeature("StartingWeaponHeavyFlail", "You start with a cold iron heavy flail.", HeavyFlail);
-            var StartingWeaponScythe = CreateStartingWeaponFeature("StartingWeaponScythe", "You start with a cold iron scythe.", Scythe);
-            var StartingWeaponShortbow = CreateStartingWeaponFeature("StartingWeaponShortbow", "You start with a shortbow.", Shortbow);
-            var StartingWeaponLongbow = CreateStartingWeaponFeature("StartingWeaponLongbow", "You start with a longbow.", Longbow);
-            var StartingWeaponKama = CreateStartingWeaponFeature("StartingWeaponKama", "You start with a cold iron kama.", Kama);
-            var StartingWeaponNunchaku = CreateStartingWeaponFeature("StartingWeaponNunchaku", "You start with a cold iron nunchaku.", Nunchaku);
-            var StartingWeaponSai = CreateStartingWeaponFeature("StartingWeaponSai", "You start with a cold iron sai.", Sai);
-            var StartingWeaponBastardSword = CreateStartingWeaponFeature("StartingWeaponBastardSword", "You start with a cold iron bastard sword.", BastardSword);
-            var StartingWeaponDuelingSword = CreateStartingWeaponFeature("StartingWeaponDuelingSword", "You start with a cold iron dueling sword.", DuelingSword);
-            var StartingWeaponDwarvenWaraxe = CreateStartingWeaponFeature("StartingWeaponDwarvenWaraxe", "You start with a cold iron dwarven waraxe.", DwarvenWaraxe);
-            var StartingWeaponEstoc = CreateStartingWeaponFeature("StartingWeaponEstoc", "You start with a cold iron estoc.", Estoc);
-            var StartingWeaponFalcata = CreateStartingWeaponFeature("StartingWeaponFalcata", "You start with a cold iron falcata.", Falcata);
-            var StartingWeaponTongi = CreateStartingWeaponFeature("StartingWeaponTongi", "You start with a cold iron tongi.", Tongi);
-            var StartingWeaponElvenCurvedBlade = CreateStartingWeaponFeature("StartingWeaponElvenCurvedBlade", "You start with a cold iron elven curved blade.", ElvenCurvedBlade);
-            var StartingWeaponFauchard = CreateStartingWeaponFeature("StartingWeaponFauchard", "You start with a cold iron fauchard.", Fauchard);
-            var StartingWeaponBardiche = CreateStartingWeaponFeature("StartingWeaponBardiche", "You start with a cold iron bardiche.", Bardiche);
-            var StartingWeaponDoubleSword = CreateStartingWeaponFeature("StartingWeaponDoubleSword", "You start with a cold iron double sword.", DoubleSword);
-            var StartingWeaponDoubleAxe = CreateStartingWeaponFeature("StartingWeaponDoubleAxe", "You start with a cold iron double axe.", DoubleAxe);
-            var StartingWeaponUrgrosh = CreateStartingWeaponFeature("StartingWeaponUrgrosh", "You start with a cold iron urgrosh.", Urgrosh);
-            var StartingWeaponHookedHammer = CreateStartingWeaponFeature("StartingWeaponHookedHammer", "You start with a cold iron hooked hammer.", HookedHammer);
-            var StartingWeaponThrowingAxe = CreateStartingWeaponFeature("StartingWeaponThrowingAxe", "You start with a cold iron throwing axe.", ThrowingAxe);
-
             var StartingWeaponSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "StartingWeaponSelection", bp => {
                 bp.SetName(IsekaiContext, "Starting Weapon");
                 bp.SetDescription(IsekaiContext, "At 1st level, you get to select a starting weapon. The weapon can be found in the Kenarbes festival chest.");
                 bp.IgnorePrerequisites = true;
-                bp.m_Icon = Icon_StartWeapon;
+                bp.m_Icon = Icon_StartSword;
                 bp.m_AllFeatures = new BlueprintFeatureReference[55] {
-                    StartingWeaponDagger.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponLightMace.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponPunchingDagger.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponSickle.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponClub.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponHeavyMace.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponShortspear.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponGreatclub.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponLongspear.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponQuarterstaff.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponSpear.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponTrident.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponDart.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponLightCrossbow.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponHeavyCrossbow.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponJavelin.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponHandaxe.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponKukri.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponLightHammer.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponShortsword.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponLightPick.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponStarknife.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponBattleaxe.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponFlail.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponHeavyPick.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponLongsword.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponRapier.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponScimitar.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponWarhammer.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponEarthbreaker.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponFalchion.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponGlaive.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponGreataxe.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponGreatsword.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponHeavyFlail.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponScythe.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponShortbow.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponLongbow.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponKama.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponNunchaku.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponSai.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponBastardSword.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponDuelingSword.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponDwarvenWaraxe.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponEstoc.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponFalcata.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponTongi.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponElvenCurvedBlade.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponFauchard.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponBardiche.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponDoubleSword.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponDoubleAxe.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponUrgrosh.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponHookedHammer.ToReference<BlueprintFeatureReference>(),
-                    StartingWeaponThrowingAxe.ToReference<BlueprintFeatureReference>(),
+                    CreateStartingWeapon("StartingWeaponDagger", "You start with a cold iron dagger.", Dagger, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponLightMace", "You start with a cold iron light mace.", LightMace, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponPunchingDagger", "You start with a cold iron punching dagger.", PunchingDagger, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponSickle", "You start with a cold iron sickle.", Sickle, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponClub", "You start with a cold iron club.", Club, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponHeavyMace", "You start with a cold iron heavy mace.", HeavyMace, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponShortspear", "You start with a cold iron shortspear.", Shortspear, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponGreatclub", "You start with a cold iron greatclub.", Greatclub, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponLongspear", "You start with a cold iron longspear.", Longspear, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponQuarterstaff", "You start with a quarterstaff.", Quarterstaff, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponSpear", "You start with a cold iron spear.", Spear, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponTrident", "You start with a cold iron trident.", Trident, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponDart", "You start with a cold iron dart.", Dart, Icon_StartRanged),
+                    CreateStartingWeapon("StartingWeaponLightCrossbow", "You start with a light crossbow.", LightCrossbow, Icon_StartRanged),
+                    CreateStartingWeapon("StartingWeaponHeavyCrossbow", "You start with a heavy crossbow.", HeavyCrossbow, Icon_StartRanged),
+                    CreateStartingWeapon("StartingWeaponJavelin", "You start with a cold iron javelin.", Javelin, Icon_StartRanged),
+                    CreateStartingWeapon("StartingWeaponHandaxe", "You start with a cold iron handaxe.", Handaxe, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponKukri", "You start with a cold iron kukri.", Kukri, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponLightHammer", "You start with a cold iron light hammer.", LightHammer, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponShortsword", "You start with a cold iron shortsword.", Shortsword, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponLightPick", "You start with a cold iron light pick.", LightPick, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponStarknife", "You start with a cold iron starknife.", Starknife, Icon_StartRanged),
+                    CreateStartingWeapon("StartingWeaponBattleaxe", "You start with a cold iron battleaxe.", Battleaxe, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponFlail", "You start with a cold iron flail.", Flail, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponHeavyPick", "You start with a cold iron heavy pick.", HeavyPick, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponLongsword", "You start with a cold iron longsword.", Longsword, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponRapier", "You start with a cold iron rapier.", Rapier, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponScimitar", "You start with a cold iron scimitar.", Scimitar, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponWarhammer", "You start with a cold iron warhammer.", Warhammer, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponEarthbreaker", "You start with a cold iron earthbreaker.", Earthbreaker, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponFalchion", "You start with a cold iron falchion.", Falchion, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponGlaive", "You start with a cold iron glaive.", Glaive, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponGreataxe", "You start with a cold iron greataxe.", Greataxe, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponGreatsword", "You start with a cold iron greatsword.", Greatsword, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponHeavyFlail", "You start with a cold iron heavy flail.", HeavyFlail, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponScythe", "You start with a cold iron scythe.", Scythe, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponShortbow", "You start with a shortbow.", Shortbow, Icon_StartRanged),
+                    CreateStartingWeapon("StartingWeaponLongbow", "You start with a longbow.", Longbow, Icon_StartRanged),
+                    CreateStartingWeapon("StartingWeaponKama", "You start with a cold iron kama.", Kama, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponNunchaku", "You start with a cold iron nunchaku.", Nunchaku, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponSai", "You start with a cold iron sai.", Sai, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponBastardSword", "You start with a cold iron bastard sword.", BastardSword, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponDuelingSword", "You start with a cold iron dueling sword.", DuelingSword, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponDwarvenWaraxe", "You start with a cold iron dwarven waraxe.", DwarvenWaraxe, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponEstoc", "You start with a cold iron estoc.", Estoc, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponFalcata", "You start with a cold iron falcata.", Falcata, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponTongi", "You start with a cold iron tongi.", Tongi, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponElvenCurvedBlade", "You start with a cold iron elven curved blade.", ElvenCurvedBlade, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponFauchard", "You start with a cold iron fauchard.", Fauchard, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponBardiche", "You start with a cold iron bardiche.", Bardiche, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponDoubleSword", "You start with a cold iron double sword.", DoubleSword, Icon_StartSword),
+                    CreateStartingWeapon("StartingWeaponDoubleAxe", "You start with a cold iron double axe.", DoubleAxe, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponUrgrosh", "You start with a cold iron urgrosh.", Urgrosh, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponHookedHammer", "You start with a cold iron hooked hammer.", HookedHammer, Icon_StartBlunt),
+                    CreateStartingWeapon("StartingWeaponThrowingAxe", "You start with a cold iron throwing axe.", ThrowingAxe, Icon_StartBlunt),
                 };
             });
         }
-        private static BlueprintFeature CreateStartingWeaponFeature(string name, string description, BlueprintItemWeapon weapon) {
-            return Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, name, bp => {
+        private static BlueprintFeatureReference CreateStartingWeapon(string name, string description, BlueprintItemWeapon weapon, Sprite icon) {
+            var feature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, name, bp => {
                 bp.SetName(weapon.m_Type.Get().m_DefaultNameText);
                 bp.SetDescription(IsekaiContext, description);
-                bp.m_Icon = Icon_StartWeapon;
+                bp.m_Icon = icon;
                 bp.AddComponent<AddStartingEquipment>(c => {
                     c.m_BasicItems = new BlueprintItemReference[1] { weapon.ToReference<BlueprintItemReference>() };
                 });
             });
+            return feature.ToReference<BlueprintFeatureReference>();
         }
     }
 }

@@ -147,7 +147,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 Helpers.CreateUIGroup(PlotArmor, IsekaiFighterTraining, SignatureAbility, SignatureMoveSelection,
                     SummonHaremFeature, IsekaiAuraSelection, GodEmperorAuraSelection, DarkAuraFeature, HeroAuraSelection, Afterimage,
                     IsekaiQuickFooted, GodEmperorQuickFooted, MastermindQuickFooted, BeachEpisodeSelection, OtherworldlyStamina, HaxSelection,
-                    ChuunibyouActualisationFeature, MasterplanFeature),
+                    ChuunibyouActualisationFeature, DeusExMachinaFeature, MasterplanFeature),
                 Helpers.CreateUIGroup(ReleaseEnergy, Gifted, SignatureMoveBonusSelection, SecretPowerSelection, SecondReincarnation),
                 
                 // Edge Lord UI group
@@ -159,7 +159,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 
                 // Hero UI group
                 Helpers.CreateUIGroup(GracefulCombat, IsekaiChannelPositiveEnergyFeature, HandsOfSalvation, GoldBarrierFeature,
-                    GoldBarrierHeroism, GoldBarrierFastHealing, GoldBarrierResistance, DeusExMachinaFeature),
+                    GoldBarrierHeroism, GoldBarrierFastHealing, GoldBarrierResistance),
                 
                 // Mastermind UI group
                 Helpers.CreateUIGroup(OverpoweredAbilitySelectionMastermind, ArcanistExploitSelection),

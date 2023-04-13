@@ -57,8 +57,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind {
                 bp.Ranks = 1;
                 bp.AddComponent<IgnoreSpellImmunity>(c => {
                     c.SpellDescriptor = SpellDescriptor.None;
-                    // TODO: IgnoreSpellImmunity doesn't actually affect the target? (search all IgnoreSpellImmunity)
-                    // See IgnoreSpellResistanceForSpells and RuleSpellResistanceCheck.TargetIsImmune
                 });
                 bp.AddComponent<IgnoreSpellResistanceForSpells>(c => {
                     c.m_AbilityList = new BlueprintAbilityReference[0];
