@@ -45,8 +45,8 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
                 };
             });
             var DeathsnatcherFingerOfDeathAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "DeathsnatcherFingerOfDeathAbility", bp => {
-                bp.m_DisplayName = FingerOfDeathAbility.m_DisplayName;
-                bp.m_Description = FingerOfDeathAbility.m_Description;
+                bp.SetName(FingerOfDeathAbility.m_DisplayName);
+                bp.SetDescription(FingerOfDeathAbility.m_Description);
                 bp.m_Icon = FingerOfDeathAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Fortitude;
@@ -127,7 +127,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
                 bp.LocalizedSavingThrow = StaticReferences.Strings.SavingThrow.FortitudePartial;
             });
             var DeathsnatcherFingerOfDeathFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFingerOfDeathFeature", bp => {
-                bp.SetName(IsekaiContext, "Finger of Death");
+                bp.SetName(FingerOfDeathAbility.m_DisplayName);
                 bp.SetDescription(IsekaiContext, "At 16th level, the Deathsnatcher gains Finger of Death as a spell-like ability once per day.");
                 bp.m_Icon = FingerOfDeathAbility.m_Icon;
                 bp.AddComponent<AddAbilityResources>(c => {

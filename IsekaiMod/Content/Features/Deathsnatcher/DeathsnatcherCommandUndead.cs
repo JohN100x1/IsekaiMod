@@ -50,8 +50,8 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
                 };
             });
             var DeathsnatcherCommandUndeadAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "DeathsnatcherCommandUndeadAbility", bp => {
-                bp.m_DisplayName = CommandUndeadAbility.m_DisplayName;
-                bp.m_Description = CommandUndeadAbility.m_Description;
+                bp.SetName(CommandUndeadAbility.m_DisplayName);
+                bp.SetDescription(CommandUndeadAbility.m_Description);
                 bp.m_Icon = CommandUndeadAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.SavingThrowType = SavingThrowType.Will;
@@ -134,7 +134,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
                 bp.LocalizedSavingThrow = StaticReferences.Strings.SavingThrow.WillNegatesSaveEachRound;
             });
             var DeathsnatcherCommandUndeadFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherCommandUndeadFeature", bp => {
-                bp.SetName(IsekaiContext, "Command Undead");
+                bp.SetName(CommandUndeadAbility.m_DisplayName);
                 bp.SetDescription(IsekaiContext, "At 1st level, the Deathsnatcher gains Command Undead as a spell-like ability 10 times per day.");
                 bp.m_Icon = CommandUndeadAbility.m_Icon;
                 bp.AddComponent<AddAbilityResources>(c => {

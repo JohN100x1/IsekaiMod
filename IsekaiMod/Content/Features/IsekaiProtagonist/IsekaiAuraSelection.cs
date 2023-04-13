@@ -4,6 +4,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
@@ -19,9 +20,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
 
         public static void Add() {
             const string FriendlyAuraName = "Friendly Aura";
-            const string FriendlyAuraDesc = "You emit an aura of friendship that cause enemies to subconsciously hold back."
-                + "\nEnemies within 40 feet of the Isekai Protagonist take a –4 penalty on attack and damage rolls.";
             const string FriendlyAuraDescBuff = "This creature has a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.";
+            LocalizedString FriendlyAuraDesc = Helpers.CreateString(IsekaiContext, "FriendlyAura.Description",
+                "You emit an aura of friendship that cause enemies to subconsciously hold back."
+                + "\nEnemies within 40 feet take a –4 penalty on attack and damage rolls.");
             var Icon_Friendly_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_FRIENDLY.png");
             var FriendlyAuraBuff = TTCoreExtensions.CreateBuff("FriendlyAuraBuff", bp => {
                 bp.SetName(IsekaiContext, FriendlyAuraName);
@@ -49,7 +51,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
             var FriendlyAuraAreaBuff = TTCoreExtensions.CreateBuff("FriendlyAuraAreaBuff", bp => {
                 bp.SetName(IsekaiContext, FriendlyAuraName);
-                bp.SetDescription(IsekaiContext, FriendlyAuraDesc);
+                bp.SetDescription(FriendlyAuraDesc);
                 bp.m_Icon = Icon_Friendly_Aura;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddAreaEffect>(c => {
@@ -59,14 +61,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
             var FriendlyAuraAbility = TTCoreExtensions.CreateActivatableAbility("FriendlyAuraAbility", bp => {
                 bp.SetName(IsekaiContext, FriendlyAuraName);
-                bp.SetDescription(IsekaiContext, FriendlyAuraDesc);
+                bp.SetDescription(FriendlyAuraDesc);
                 bp.m_Icon = Icon_Friendly_Aura;
                 bp.m_Buff = FriendlyAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
             var FriendlyAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "FriendlyAuraFeature", bp => {
                 bp.SetName(IsekaiContext, FriendlyAuraName);
-                bp.SetDescription(IsekaiContext, FriendlyAuraDesc);
+                bp.SetDescription(FriendlyAuraDesc);
                 bp.m_Icon = Icon_Friendly_Aura;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { FriendlyAuraAbility.ToReference<BlueprintUnitFactReference>() };
@@ -74,9 +76,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
 
             const string DarkAuraName = "Dark Aura";
-            const string DarkAuraDesc = "You emit an aura of darkness that cause enemies to become uneasy and vulnerable."
-                + "\nEnemies within 40 feet take a –4 penalty on AC and saving throws.";
             const string DarkAuraDescBuff = "This creature has a –4 penalty on AC and saving throws.";
+            LocalizedString DarkAuraDesc = Helpers.CreateString(IsekaiContext, "DarkAura.Description",
+                "You emit an aura of darkness that cause enemies to become uneasy and vulnerable."
+                + "\nEnemies within 40 feet take a –4 penalty on AC and saving throws.");
             var Icon_Dark_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_DARK.png");
             var DarkAuraBuff = TTCoreExtensions.CreateBuff("DarkAuraBuff", bp => {
                 bp.SetName(IsekaiContext, DarkAuraName);
@@ -114,7 +117,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
             var DarkAuraAreaBuff = TTCoreExtensions.CreateBuff("DarkAuraAreaBuff", bp => {
                 bp.SetName(IsekaiContext, DarkAuraName);
-                bp.SetDescription(IsekaiContext, DarkAuraDesc);
+                bp.SetDescription(DarkAuraDesc);
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddAreaEffect>(c => {
@@ -124,14 +127,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
             var DarkAuraAbility = TTCoreExtensions.CreateActivatableAbility("DarkAuraAbility", bp => {
                 bp.SetName(IsekaiContext, DarkAuraName);
-                bp.SetDescription(IsekaiContext, DarkAuraDesc);
+                bp.SetDescription(DarkAuraDesc);
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.m_Buff = DarkAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
             var DarkAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DarkAuraFeature", bp => {
                 bp.SetName(IsekaiContext, DarkAuraName);
-                bp.SetDescription(IsekaiContext, DarkAuraDesc);
+                bp.SetDescription(DarkAuraDesc);
                 bp.m_Icon = Icon_Dark_Aura;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { DarkAuraAbility.ToReference<BlueprintUnitFactReference>() };
@@ -139,9 +142,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
 
             const string DivineAuraName = "Divine Aura";
-            const string DivineAuraDesc = "You emit an aura of divinity that cause enemies to be overcome with feelings of futility."
-                + "\nEnemies within 40 feet take a –4 penalty on all attributes.";
             const string DivineAuraDescBuff = "This creature has a –4 penalty on all attributes.";
+            LocalizedString DivineAuraDesc = Helpers.CreateString(IsekaiContext, "DivineAura.Description",
+                "You emit an aura of divinity that cause enemies to be overcome with feelings of futility."
+                + "\nEnemies within 40 feet take a –4 penalty on all attributes.");
             var Icon_Divine_Aura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_DIVINE.png");
             var DivineAuraBuff = TTCoreExtensions.CreateBuff("DivineAuraBuff", bp => {
                 bp.SetName(IsekaiContext, DivineAuraName);
@@ -189,7 +193,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
             var DivineAuraAreaBuff = TTCoreExtensions.CreateBuff("DivineAuraAreaBuff", bp => {
                 bp.SetName(IsekaiContext, DivineAuraName);
-                bp.SetDescription(IsekaiContext, DivineAuraDesc);
+                bp.SetDescription(DivineAuraDesc);
                 bp.m_Icon = Icon_Divine_Aura;
                 bp.IsClassFeature = true;
                 bp.AddComponent<AddAreaEffect>(c => {
@@ -199,14 +203,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
             var DivineAuraAbility = TTCoreExtensions.CreateActivatableAbility("DivineAuraAbility", bp => {
                 bp.SetName(IsekaiContext, DivineAuraName);
-                bp.SetDescription(IsekaiContext, DivineAuraDesc);
+                bp.SetDescription(DivineAuraDesc);
                 bp.m_Icon = Icon_Divine_Aura;
                 bp.m_Buff = DivineAuraAreaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
             var DivineAuraFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DivineAuraFeature", bp => {
                 bp.SetName(IsekaiContext, DivineAuraName);
-                bp.SetDescription(IsekaiContext, DivineAuraDesc);
+                bp.SetDescription(DivineAuraDesc);
                 bp.m_Icon = Icon_Divine_Aura;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { DivineAuraAbility.ToReference<BlueprintUnitFactReference>() };

@@ -40,8 +40,8 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
                 };
             });
             var DeathsnatcherCreateUndeadAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "DeathsnatcherCreateUndeadAbility", bp => {
-                bp.m_DisplayName = CreateUndeadAbility.m_DisplayName;
-                bp.m_Description = CreateUndeadAbility.m_Description;
+                bp.SetName(CreateUndeadAbility.m_DisplayName);
+                bp.SetDescription(CreateUndeadAbility.m_Description);
                 bp.m_Icon = CreateUndeadAbility.m_Icon;
                 bp.AddComponent<AbilityVariants>(c => {
                     c.m_Variants = new BlueprintAbilityReference[]
@@ -79,7 +79,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
                 bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
             });
             var DeathsnatcherCreateUndeadFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherCreateUndeadFeature", bp => {
-                bp.SetName(IsekaiContext, "Create Undead");
+                bp.SetName(CreateUndeadAbility.m_DisplayName);
                 bp.SetDescription(IsekaiContext, "At 13th level, the Deathsnatcher gains Create Undead as a spell-like ability once per day.");
                 bp.m_Icon = CreateUndeadAbility.m_Icon;
                 bp.AddComponent<AddAbilityResources>(c => {
