@@ -92,7 +92,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 //bp.Group = FeatureGroup.BloodLine;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     IsekaiBloodlineSelection.ToReference<BlueprintFeatureReference>(),
-                    StaticReferences.SorcererFeatSelection.ToReference<BlueprintFeatureReference>(),
+                    FeatTools.Selections.SorcererBonusFeat.ToReference<BlueprintFeatureReference>(),
+                    FeatTools.Selections.SorcererFeatSelection.ToReference<BlueprintFeatureReference>()
                 };
             });
 
