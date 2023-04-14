@@ -1,23 +1,17 @@
 ﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
-using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Abilities.Components;
-using Kingmaker.UnitLogic.Abilities.Components.Base;
+using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using Kingmaker.UnitLogic.Commands.Base;
+using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
-using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
-using Kingmaker.Visual.Animation.Kingmaker.Actions;
-using System.Collections.Generic;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
 using static IsekaiMod.Main;
@@ -31,118 +25,92 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
         private static readonly BlueprintBuff Cowering = BlueprintTools.GetBlueprint<BlueprintBuff>("6062e3a8206a4284d867cbb7120dc091");
 
         public static void Add() {
-            var KillingIntentResource = Helpers.CreateBlueprint<BlueprintAbilityResource>(IsekaiContext, "KillingIntentResource", bp => {
-                bp.m_MaxAmount = new BlueprintAbilityResource.Amount {
-                    BaseValue = 1,
-                    IncreasedByLevel = false,
-                    LevelIncrease = 0,
-                    IncreasedByLevelStartPlusDivStep = false,
-                    StartingLevel = 0,
-                    StartingIncrease = 0,
-                    LevelStep = 0,
-                    PerStepIncrease = 0,
-                    MinClassLevelIncrease = 0,
-                    OtherClassesModifier = 0,
-                    IncreasedByStat = false,
-                    ResourceBonusStat = StatType.Unknown,
-                };
-            });
-            var KillingIntentAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "KillingIntentAbility", bp => {
-                bp.SetName(IsekaiContext, "Killing Intent");
-                bp.SetDescription(IsekaiContext, "Enemies within 40 feet of you who fails a DC 50 Will saving throw become shaken, frightened, and cowering for 1d4 rounds.");
-                bp.m_Icon = Icon_ConsumeFear;
-                bp.LocalizedDuration = StaticReferences.Strings.Null;
-                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
-                bp.AvailableMetamagic = Metamagic.Heighten | Metamagic.Extend | Metamagic.Heighten | Metamagic.Reach;
-                bp.Range = AbilityRange.Personal;
-                bp.Type = AbilityType.Special;
-                bp.CanTargetEnemies = true;
-                bp.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
-                bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Omni;
-                bp.ActionType = UnitCommand.CommandType.Free;
-                bp.AddComponent<AbilityResourceLogic>(c => {
-                    c.m_RequiredResource = KillingIntentResource.ToReference<BlueprintAbilityResourceReference>();
-                    c.m_IsSpendResource = true;
-                    c.Amount = 1;
-                    c.ResourceCostIncreasingFacts = new List<BlueprintUnitFactReference>();
-                    c.ResourceCostDecreasingFacts = new List<BlueprintUnitFactReference>();
-                });
-                bp.AddComponent<AbilityTargetsAround>(c => {
-                    c.m_Radius = new Feet(40);
-                    c.m_TargetType = TargetType.Enemy;
-                    c.m_Condition = ActionFlow.EmptyCondition();
-                });
-                bp.AddComponent<AbilitySpawnFx>(c => {
-                    c.PrefabLink = new PrefabLink() { AssetId = "d80d51c0a08f35140b10dd1526e540c4" };
-                    c.Time = AbilitySpawnFxTime.OnApplyEffect;
-                    c.Anchor = AbilitySpawnFxAnchor.Caster;
-                });
-                bp.AddComponent<AbilityEffectRunAction>(c => {
-                    c.Actions = ActionFlow.DoSingle<ContextActionSavingThrow>(c => {
-                        c.Type = SavingThrowType.Will;
-                        c.m_ConditionalDCIncrease = new ContextActionSavingThrow.ConditionalDCIncrease[0];
-                        c.HasCustomDC = false;
-                        c.CustomDC = 0;
-                        c.Actions = ActionFlow.DoSingle<ContextActionConditionalSaved>(c => {
-                            c.Succeed = ActionFlow.DoNothing();
-                            c.Failed = Helpers.CreateActionList(
-                                new ContextActionApplyBuff() {
-                                    m_Buff = Shaken.ToReference<BlueprintBuffReference>(),
-                                    DurationValue = new() {
-                                        Rate = DurationRate.Rounds,
-                                        DiceType = DiceType.D4,
-                                        DiceCountValue = 1,
-                                        BonusValue = 0,
-                                        m_IsExtendable = true,
-                                    }
-                                },
-                                new ContextActionApplyBuff() {
-                                    m_Buff = Frightened.ToReference<BlueprintBuffReference>(),
-                                    DurationValue = new() {
-                                        Rate = DurationRate.Rounds,
-                                        DiceType = DiceType.D4,
-                                        DiceCountValue = 1,
-                                        BonusValue = 0,
-                                        m_IsExtendable = true,
-                                    }
-                                },
-                                new ContextActionApplyBuff() {
-                                    m_Buff = Cowering.ToReference<BlueprintBuffReference>(),
-                                    DurationValue = new() {
-                                        Rate = DurationRate.Rounds,
-                                        DiceType = DiceType.D4,
-                                        DiceCountValue = 1,
-                                        BonusValue = 0,
-                                        m_IsExtendable = true,
-                                    }
-                                });
+            const string KillingIntentName = "Killing Intent";
+            LocalizedString KingmakerIntentDesc = Helpers.CreateString(IsekaiContext, "KillingIntent.Description",
+                "Enemies within 40 feet of you become shaken, frightened, and cowering.");
+
+            var KillingIntentArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, "KillingIntentArea", bp => {
+                bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Enemy;
+                bp.Shape = AreaEffectShape.Cylinder;
+                bp.Size = new Feet(40);
+                bp.AffectEnemies = true;
+                bp.Fx = new PrefabLink();
+                bp.AddComponent<AbilityAreaEffectRunAction>(c => {
+                    c.UnitEnter = Helpers.CreateActionList(
+                        new ContextActionApplyBuff() {
+                            m_Buff = Shaken.ToReference<BlueprintBuffReference>(),
+                            DurationValue = new() {
+                                Rate = DurationRate.Rounds,
+                                DiceType = DiceType.D4,
+                                DiceCountValue = 1,
+                                BonusValue = 0,
+                                m_IsExtendable = true,
+                            }
+                        },
+                        new ContextActionApplyBuff() {
+                            m_Buff = Frightened.ToReference<BlueprintBuffReference>(),
+                            DurationValue = new() {
+                                Rate = DurationRate.Rounds,
+                                DiceType = DiceType.D4,
+                                DiceCountValue = 1,
+                                BonusValue = 0,
+                                m_IsExtendable = true,
+                            }
+                        },
+                        new ContextActionApplyBuff() {
+                            m_Buff = Cowering.ToReference<BlueprintBuffReference>(),
+                            DurationValue = new() {
+                                Rate = DurationRate.Rounds,
+                                DiceType = DiceType.D4,
+                                DiceCountValue = 1,
+                                BonusValue = 0,
+                                m_IsExtendable = true,
+                            }
                         });
+                    c.UnitExit = Helpers.CreateActionList(
+                        new ContextActionRemoveBuff() {
+                            m_Buff = Shaken.ToReference<BlueprintBuffReference>(),
+                            OnlyFromCaster = true,
+                        },
+                        new ContextActionRemoveBuff() {
+                            m_Buff = Frightened.ToReference<BlueprintBuffReference>(),
+                            OnlyFromCaster = true,
+                        },
+                        new ContextActionRemoveBuff() {
+                            m_Buff = Cowering.ToReference<BlueprintBuffReference>(),
+                            OnlyFromCaster = true,
+                        });
+                    c.UnitMove = ActionFlow.DoNothing();
+                    c.Round = ActionFlow.DoSingle<ContextActionSpawnFx>(c => {
+                        c.PrefabLink = new PrefabLink() { AssetId = "d80d51c0a08f35140b10dd1526e540c4" };
                     });
                 });
-                bp.AddComponent<ContextSetAbilityParams>(c => {
-                    c.DC = 50;
+            });
+            var KillingIntentAreaBuff = TTCoreExtensions.CreateBuff($"KillingIntentAreaBuff", bp => {
+                bp.SetName(IsekaiContext, KillingIntentName);
+                bp.SetDescription(KingmakerIntentDesc);
+                bp.m_Icon = Icon_ConsumeFear;
+                bp.IsClassFeature = true;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
+                bp.AddComponent<AddAreaEffect>(c => {
+                    c.m_AreaEffect = KillingIntentArea.ToReference<BlueprintAbilityAreaEffectReference>();
                 });
             });
+            var KillingIntentAbility = TTCoreExtensions.CreateActivatableAbility("KillingIntentAbility", bp => {
+                bp.SetName(IsekaiContext, KillingIntentName);
+                bp.SetDescription(KingmakerIntentDesc);
+                bp.m_Icon = Icon_ConsumeFear;
+                bp.m_Buff = KillingIntentAreaBuff.ToReference<BlueprintBuffReference>();
+                bp.DoNotTurnOffOnRest = true;
+            });
             var KillingIntentFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "KillingIntentFeature", bp => {
-                bp.SetName(IsekaiContext, "Killing Intent");
-                bp.SetDescription(IsekaiContext, "Once per Combat, as a free action, enemies within 40 feet of you who fails a DC 50 Will saving throw become shaken, frightened, and cowering for 1d4 rounds.");
+                bp.SetName(IsekaiContext, KillingIntentName);
+                bp.SetDescription(KingmakerIntentDesc);
                 bp.m_Icon = Icon_ConsumeFear;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
                         KillingIntentAbility.ToReference<BlueprintUnitFactReference>(),
                     };
-                });
-                bp.AddComponent<AddAbilityResources>(c => {
-                    c.m_Resource = KillingIntentResource.ToReference<BlueprintAbilityResourceReference>();
-                    c.RestoreAmount = true;
-                });
-                bp.AddComponent<CombatStateTrigger>(c => {
-                    c.CombatStartActions = ActionFlow.DoNothing();
-                    c.CombatEndActions = ActionFlow.DoSingle<ContextRestoreResource>(c => {
-                        c.m_Resource = KillingIntentResource.ToReference<BlueprintAbilityResourceReference>();
-                        c.ContextValueRestoration = false;
-                        c.Value = 0;
-                    });
                 });
             });
 

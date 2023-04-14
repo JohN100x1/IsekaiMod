@@ -94,8 +94,8 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Body Strengthening`: Get a DR/— equal to character level.
 		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
 		- `Extreme Speed`: Allies within 40 feet of you get a speed bonus equal to 5 times your character level.
-		- `Channel Positive Energy`: You can channel positive energy (requires good alignment).
-		- `Channel Negative Energy`: You can channel negative energy (requires evil alignment).
+		- `Channel Positive Energy`: You can channel positive energy.
+		- `Channel Negative Energy`: You can channel negative energy.
 		- `Kinetic Power`: You can select a kinetic blast (air, earth, fire, water).
 		- `Sneaky Magic`: You can add your sneak attack damage to spells against flat-footed.
 		- `Spell Master`: Increase your spell DC by 4.
@@ -104,7 +104,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Armor of Strength`: Get a natural armor bonus to AC equal to Strength modifier.
 		- `Summon Beast`: Summon a hydra, owlbear, roc, or minotaur.
 		- `Aura of Divine Fury`: Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells (requires character level 15).
-		- `Killing Intent`: Enemies within 40 feet who fail a will save become shaken, frightened, and cowering.
+		- `Killing Intent`: Enemies within 40 feet become shaken, frightened, and cowering.
 		- `Reflect`: Deal damage to enemies equal to damage you receive.
 		- `Supermassive`: Gain bonus HP based on your Constitution modifier. You also get fast healing but have a penalty to AC.
 		- `Mythic Class Feature`: see below
