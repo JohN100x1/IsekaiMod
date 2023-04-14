@@ -62,7 +62,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BloodragerChimeraLegacy.Get().ToReference<BlueprintFeatureReference>(); });
 
-            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.SorcererBloodlineSelection, myClass, refClass);
+            PatchTools.PatchClassIntoFeatureOfReferenceClass(StaticReferences.SorcererBloodlineSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
         }
 
         public static BlueprintProgression Get() {
@@ -82,7 +82,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.IsClassFeature = true;
                 bp.IgnorePrerequisites = true;
                 //bp.Group = FeatureGroup.BloodLine;
-                bp.m_AllFeatures = FeatTools.Selections.SorcererBloodlineSelection.m_AllFeatures;
+                bp.m_AllFeatures = StaticReferences.SorcererBloodlineSelection.m_AllFeatures;
             });
             IsekaiSorcererSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiSorcererSelection", bp => {
                 bp.SetName(IsekaiContext, "Bloodline Evolution");
@@ -92,7 +92,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 //bp.Group = FeatureGroup.BloodLine;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     IsekaiBloodlineSelection.ToReference<BlueprintFeatureReference>(),
-                    FeatTools.Selections.SorcererFeatSelection.ToReference<BlueprintFeatureReference>(),
+                    FeatTools.Selections.SorcererBonusFeat.ToReference<BlueprintFeatureReference>(),
+                    FeatTools.Selections.SorcererFeatSelection.ToReference<BlueprintFeatureReference>()
                 };
             });
 
