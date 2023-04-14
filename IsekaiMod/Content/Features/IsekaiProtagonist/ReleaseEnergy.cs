@@ -10,9 +10,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
     static class ReleaseEnergy {
         private static readonly Sprite Icon_AngelfireApostleChannel = BlueprintTools.GetBlueprint<BlueprintFeature>("9d30d6cc7bfcda44aab7505f7ed3f933").m_Icon;
         public static void Add() {
-            var IsekaiChannelPositiveEnergyRef = BlueprintTools.GetModBlueprintReference<BlueprintUnitFactReference>(IsekaiContext, "IsekaiChannelPositiveEnergy");
-            var IsekaiChannelNegativeEnergyRef = BlueprintTools.GetModBlueprintReference<BlueprintUnitFactReference>(IsekaiContext, "IsekaiChannelNegativeEnergy");
-
             var ReleaseEnergy = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy", bp => {
                 bp.SetName(IsekaiContext, "Release Energy");
                 bp.SetDescription(IsekaiContext, "The Isekai Protagonist is able to channel both positive energy and negative energy."
@@ -20,8 +17,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.m_Icon = Icon_AngelfireApostleChannel;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
-                        IsekaiChannelPositiveEnergyRef,
-                        IsekaiChannelNegativeEnergyRef
+                        BlueprintTools.GetModBlueprintReference<BlueprintUnitFactReference>(IsekaiContext, "IsekaiChannelPositiveEnergy"),
+                        BlueprintTools.GetModBlueprintReference<BlueprintUnitFactReference>(IsekaiContext, "IsekaiChannelNegativeEnergy")
                     };
                 });
             });
