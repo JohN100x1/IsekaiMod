@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Backgrounds {
             var BackgroundMusician = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "BackgroundMusician", bp => {
                 bp.SetName(IsekaiContext, "Musician");
                 bp.SetBackgroundDescription(IsekaiContext, "The Musician add Persuasion to the list of her class skills and "
-                    + "has a +2 competence bonus to caster level for Sonic spells.");
+                    + "has a +2 bonus to caster level for Sonic spells.");
                 bp.AddComponent<AddClassSkill>(c => {
                     c.Skill = StatType.SkillPersuasion;
                 });
@@ -27,7 +27,7 @@ namespace IsekaiMod.Content.Backgrounds {
                 bp.AddComponent<IncreaseSpellDescriptorCasterLevel>(c => {
                     c.Descriptor = SpellDescriptor.Sonic;
                     c.BonusCasterLevel = 2;
-                    c.ModifierDescriptor = ModifierDescriptor.Competence;
+                    c.ModifierDescriptor = ModifierDescriptor.UntypedStackable;
                 });
             });
 

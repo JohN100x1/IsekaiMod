@@ -201,7 +201,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 	- `Beta Tester`: Get +4 Initiative and adds lore, knowledge and perceptions skills as class skills.
 	- `Demonic Cultivator`: Adds athletics and mobility as a class skills. Uses the higher of STR and DEX for athletics and mobility checks.
 	- `Enlightened Scholar`: Adds lore, knowledge, and perception skills as class skills. Uses the higher of INT and WIS for these checks.
-	- `Musician`: Adds Persuasion as a class skill. Has a +2 competence bonus to caster level for Sonic spells.
+	- `Musician`: Adds Persuasion as a class skill. Has a +2 bonus to caster level for Sonic spells.
 	- `Rationalist`: Has Immunity to spell and spell-like abilities but cannot cast spells.
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
