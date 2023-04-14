@@ -39,11 +39,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
         public static void Add() {
             var SummonBeastAbility = CreateSummonAbility("SummonBeastAbility", bp => {
                 bp.SetName(IsekaiContext, "Summon Beast");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Hydra, an Owlbear, a Roc, or a Minotaur. " + StandardSummonDescription);
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Hydra, an Owlbear, a Roc, or a Minotaur.");
             });
             var SummonHydra = CreateSummonAbility("SummonHydra", bp => {
                 bp.SetName(IsekaiContext, "Summon Beast (Hydra)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Hydra. " + StandardSummonDescription);
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Hydra.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnBeast(c => {
                         c.m_Blueprint = CR7_HydraAdvanced.ToReference<BlueprintUnitReference>();
@@ -52,7 +52,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             });
             var SummonOwlbear = CreateSummonAbility("SummonOwlbear", bp => {
                 bp.SetName(IsekaiContext, "Summon Beast (Owlbear)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons an Owlbear. " + StandardSummonDescription);
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons an Owlbear.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnBeast(c => {
                         c.m_Blueprint = CR9_OwlbearAdvanced.ToReference<BlueprintUnitReference>();
@@ -61,7 +61,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             });
             var SummonRoc = CreateSummonAbility("SummonRoc", bp => {
                 bp.SetName(IsekaiContext, "Summon Beast (Roc)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Roc. " + StandardSummonDescription);
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Roc. ");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnBeast(c => {
                         c.m_Blueprint = CR9_RocStandard.ToReference<BlueprintUnitReference>();
@@ -70,7 +70,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             });
             var SummonMinotaur = CreateSummonAbility("SummonMinotaur", bp => {
                 bp.SetName(IsekaiContext, "Summon Beast (Minotaur)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Minotaur. " + StandardSummonDescription);
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Minotaur. ");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnBeast(c => {
                         c.m_Blueprint = CR10_FiendishMinotaur_Guard.ToReference<BlueprintUnitReference>();

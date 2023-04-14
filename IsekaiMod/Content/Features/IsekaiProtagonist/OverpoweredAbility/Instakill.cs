@@ -3,6 +3,7 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -25,12 +26,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         private static readonly Sprite Icon_TwoHandedFighterDevastatingBlow = BlueprintTools.GetBlueprint<BlueprintFeature>("687aa977ef0d3f849af8bee2f40930df").m_Icon;
 
         public static void Add() {
+
+            LocalizedString InstaKillDesc = Helpers.CreateString(IsekaiContext, "Instakill.Description",
+                "Who will live and who will die? This power to change fate lay within your hands. Will you use this power sparingly? "
+                + "Or will you become god of the new world?"
+                + "\nBenefit: Kills the targeted creature if they fail a DC 99 fortitude saving throw, otherwise they are stunned for 1 round. "
+                + "This ability bypasses death immunity.");
+
             var InstakillAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "InstakillAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Instakill");
-                bp.SetDescription(IsekaiContext, "Who will live and who will die? This power to change fate lay within your hands. Will you use this power sparingly? "
-                    + "Or will you become god of the new world?"
-                    + "\nBenefit: Kills the targeted creature if they fail a DC 99 fortitude saving throw, otherwise they are stunned for 1 round. "
-                    + "This ability bypasses death immunity.");
+                bp.SetDescription(InstaKillDesc);
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<ContextActionSavingThrow>(c => {
                         c.Type = SavingThrowType.Fortitude;
@@ -78,10 +83,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var InstakillFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "InstakillFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Instakill");
-                bp.SetDescription(IsekaiContext, "Who will live and who will die? This power to change fate lay within your hands. Will you use this power sparingly? "
-                    + "Or will you become god of the new world?"
-                    + "\nBenefit: Kills the targeted creature if they fail a DC 99 fortitude saving throw, otherwise they are stunned for 1 round. "
-                    + "This ability bypasses death immunity.");
+                bp.SetDescription(InstaKillDesc);
                 bp.m_Icon = Icon_TwoHandedFighterDevastatingBlow;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { InstakillAbility.ToReference<BlueprintUnitFactReference>() };

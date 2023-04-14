@@ -3,6 +3,7 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Actions;
@@ -18,11 +19,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         public static void Add() {
 
             const string SecondReincarnationName = "Second Reincarnation";
-            const string SecondReincarnationDesc = "Your attacks ignore damage reduction and your spells ignore spell resistance and spell immunity."
-                + "\nOnce per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are resurrected to full health.";
+            LocalizedString SecondReincarnationDesc = Helpers.CreateString(IsekaiContext, "SecondReincarnation.Description",
+                "Your attacks ignore damage reduction and your spells ignore spell resistance and spell immunity."
+                + "\nOnce per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are resurrected to full health.");
             var SecondReincarnationBuff = TTCoreExtensions.CreateBuff("SecondReincarnationBuff", bp => {
                 bp.SetName(IsekaiContext, SecondReincarnationName);
-                bp.SetDescription(IsekaiContext, SecondReincarnationDesc);
+                bp.SetDescription(SecondReincarnationDesc);
                 bp.m_Icon = Icon_SecondReincarnation;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -39,7 +41,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
             var SecondReincarnation = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SecondReincarnation", bp => {
                 bp.SetName(IsekaiContext, SecondReincarnationName);
-                bp.SetDescription(IsekaiContext, SecondReincarnationDesc);
+                bp.SetDescription(SecondReincarnationDesc);
                 bp.m_Icon = Icon_SecondReincarnation;
                 bp.AddComponent<IgnoreDamageReductionOnAttack>();
                 bp.AddComponent<IgnoreSpellImmunity>(c => {

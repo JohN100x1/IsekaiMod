@@ -5,14 +5,42 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Items.Ecnchantments;
 using Kingmaker.DialogSystem.Blueprints;
 using Kingmaker.Localization;
+using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
+using Kingmaker.UnitLogic.Mechanics.Actions;
+using Kingmaker.UnitLogic.Mechanics;
 using System;
 using TabletopTweaks.Core.ModLogic;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
 
 namespace IsekaiMod.Utilities {
 
     internal static class ExtensionMethods {
+        public static void AddUnconditionalAuraEffect(this BlueprintScriptableObject obj, BlueprintBuffReference buff) {
+            obj.AddComponent<AbilityAreaEffectRunAction>(c => {
+                c.UnitEnter = ActionFlow.DoSingle<ContextActionApplyBuff>(b => {
+                    b.m_Buff = buff;
+                    b.Permanent = true;
+                    b.DurationValue = new ContextDurationValue();
+                });
+                c.UnitExit = ActionFlow.DoSingle<ContextActionRemoveBuff>(b => {
+                    b.m_Buff = buff;
+                    b.RemoveRank = false;
+                    b.ToCaster = false;
+                });
+                c.UnitMove = ActionFlow.DoNothing();
+                c.Round = ActionFlow.DoNothing();
+            });
+        }
+
+        public static void SetSummonDescription(this BlueprintAbility ability, ModContextBase modContext, string desciption) {
+            const string StandardSummonDescription = " Summoned monsters appear where you designate and act according to their "
+                + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} "
+                + "your opponents to the best of their ability.";
+            ability.m_Description = Helpers.CreateString(modContext, $"{ability.name}.Description", desciption + StandardSummonDescription, shouldProcess: true);
+        }
+
         public static void SetBackgroundDescription(this BlueprintFeature feature, ModContextBase modContext, string desciption) {
             feature.m_Description = Helpers.CreateString(modContext, $"{feature.name}.Description", desciption + IsekaiBackgroundSelection.DescAppendix, shouldProcess: true);
         }

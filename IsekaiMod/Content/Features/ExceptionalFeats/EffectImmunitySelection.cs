@@ -2,6 +2,7 @@
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.Localization;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.FactLogic;
 using System;
@@ -76,11 +77,12 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
 
             BlueprintFeatureReference[] EffectImmunityList = EffectImmunities.Select(bp => bp.ToReference<BlueprintFeatureReference>()).ToArray();
 
+            LocalizedString EffectImmunitySelectionDesc = Helpers.CreateString(IsekaiContext, "EffectImmunitySelection.Description",
+                "You gain immunity to a specific condition or effect.");
 
-            // Effect Immunity Selection
             var EffectImmunitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "EffectImmunitySelection", bp => {
                 bp.SetName(IsekaiContext, "Effect Immunity");
-                bp.SetDescription(IsekaiContext, "You gain immunity to a specific condition or effect.");
+                bp.SetDescription(EffectImmunitySelectionDesc);
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_Features = EffectImmunityList;
@@ -88,7 +90,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
             });
             var EffectImmunityBonusSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "EffectImmunityBonusSelection", bp => {
                 bp.SetName(IsekaiContext, "Effect Immunity");
-                bp.SetDescription(IsekaiContext, "You gain immunity to a specific condition or effect.");
+                bp.SetDescription(EffectImmunitySelectionDesc);
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_Features = EffectImmunityList;

@@ -29,8 +29,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             var AuraOfRighteousWrathEnchantment = Helpers.CreateBlueprint<BlueprintWeaponEnchantment>(IsekaiContext, "AuraOfRighteousWrathEnchantment", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Aura of Righteous Wrath");
                 bp.SetDescription(IsekaiContext, "This creature has two extra attacks and deal an additional 5d6 physical damage. It also has additional sneak attack damage.");
-                bp.SetPrefix(IsekaiContext, "");
-                bp.SetSuffix(IsekaiContext, "");
+                bp.m_Prefix = StaticReferences.Strings.Null;
+                bp.m_Suffix = StaticReferences.Strings.Null;
                 bp.AddComponent<WeaponConditionalDamageDice>(c => {
                     c.Damage = new DamageDescription() {
                         Dice = new DiceFormula() {

@@ -34,19 +34,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         private static readonly BlueprintBuff SummonedCreatureSpawnMonsterVI_IX = BlueprintTools.GetBlueprint<BlueprintBuff>("0dff842f06edace43baf8a2f44207045");
         private static readonly Sprite Icon_SummonMonsterIX = BlueprintTools.GetBlueprint<BlueprintAbility>("52b5df2a97df18242aec67610616ded0").m_Icon;
 
-        private static readonly ContextDurationValue RankDuration = new() {
-            Rate = DurationRate.Rounds,
-            DiceType = DiceType.Zero,
-            DiceCountValue = 0,
-            BonusValue = Values.CreateContextRankValue(AbilityRankType.Default),
-            m_IsExtendable = true
-        };
-
         public static void Add() {
             var SummonHaremAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "SummonHaremAbility", bp => {
                 bp.SetName(IsekaiContext, "Summon Harem");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Succubus, Nymph, Astral Deva, and an Erinyes. Summoned monsters appear where you designate and act according to their "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Succubus, Nymph, Astral Deva, and an Erinyes.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<ContextActionOnNearbyPoint>(c => {
                         c.Actions = Helpers.CreateActionList(
@@ -100,7 +91,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         private static ContextActionSpawnMonster SpawnMonster(Action<ContextActionSpawnMonster> init = null) {
             var t = new ContextActionSpawnMonster() {
                 m_SummonPool = SummonMonsterPool.ToReference<BlueprintSummonPoolReference>(),
-                DurationValue = RankDuration,
+                DurationValue = new() {
+                    Rate = DurationRate.Rounds,
+                    DiceType = DiceType.Zero,
+                    DiceCountValue = 0,
+                    BonusValue = Values.CreateContextRankValue(AbilityRankType.Default),
+                    m_IsExtendable = true
+                },
                 CountValue = Values.Dice.One,
                 LevelValue = 0,
                 AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {

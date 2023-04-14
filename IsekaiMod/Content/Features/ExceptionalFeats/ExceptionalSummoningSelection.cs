@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
 
     internal class ExceptionalSummoningSelection {
 
-        public static void Add() {
+        public static void Add() { // TODO: reduce duplication
             // Mighty Summoning
             var Icon_ExceptionalSummoning = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_EXCEPTIONAL_SUMMONING.png");
             var MightySummoningSummonBuff = TTCoreExtensions.CreateBuff("MightySummoningSummonBuff", bp => {

@@ -15,7 +15,10 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Alignments;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.UnitLogic.Mechanics.Components;
+using Kingmaker.Utility;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -118,17 +121,25 @@ namespace IsekaiMod.Utilities {
             return result;
         }
 
-        public static BlueprintFeature CreateToggleBuff(string name, string description, Sprite icon,  Action<BlueprintBuff> init = null) {
+        public static BlueprintFeature CreateToggleBuffFeature(string name, string description, Sprite icon, Action<BlueprintBuff> buffEffect = null) {
             string displayName = string.Concat(name.Select(x => char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
+            return CreateToggleBuffFeature(name, displayName, description, displayName, description, icon, buffEffect);
+        }
+        public static BlueprintFeature CreateToggleBuffFeature(string name, string displayName, string description, Sprite icon, Action<BlueprintBuff> buffEffect = null) {
+            return CreateToggleBuffFeature(name, displayName, description, displayName, description, icon, buffEffect);
+        }
+
+        public static BlueprintFeature CreateToggleBuffFeature(string name, string displayName, string description, string displayNameBuff, string descriptionBuff, Sprite icon, Action<BlueprintBuff> buffEffect = null) {
             LocalizedString displayDesc = Helpers.CreateString(IsekaiContext, $"{name}.Description", description);
+            LocalizedString buffDesc = Helpers.CreateString(IsekaiContext, $"{name}Buff.Description", descriptionBuff);
 
             var buff = CreateBuff($"{name}Buff", bp => {
-                bp.SetName(IsekaiContext, displayName);
-                bp.SetDescription(displayDesc);
+                bp.SetName(IsekaiContext, displayNameBuff);
+                bp.SetDescription(buffDesc);
                 bp.m_Icon = icon;
                 bp.IsClassFeature = true;
             });
-            init?.Invoke(buff);
+            buffEffect?.Invoke(buff);
             var ability = CreateActivatableAbility($"{name}Ability", bp => {
                 bp.SetName(IsekaiContext, displayName);
                 bp.SetDescription(displayDesc);
@@ -145,6 +156,53 @@ namespace IsekaiMod.Utilities {
                     };
                 });
             });
+            return feature;
+        }
+
+        public static BlueprintFeature CreateToggleAuraFeature(string name, string description, string descriptionBuff, Sprite icon, BlueprintAbilityAreaEffect.TargetType targetType, Feet auraSize, bool affectEnemies = false, Action<BlueprintBuff> buffEffect = null) {
+            string displayName = string.Concat(name.Select(x => char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
+            LocalizedString displayDesc = Helpers.CreateString(IsekaiContext, $"{name}.Description", description);
+            BlueprintBuff buff = CreateBuff($"{name}Buff", bp => {
+                bp.SetName(IsekaiContext, displayName);
+                bp.SetDescription(IsekaiContext, descriptionBuff);
+                bp.IsClassFeature = true;
+                bp.m_Icon = icon;
+            });
+            buffEffect?.Invoke(buff);
+            BlueprintAbilityAreaEffect area = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, $"{name}Area", bp => {
+                bp.m_TargetType = targetType;
+                bp.Shape = AreaEffectShape.Cylinder;
+                bp.Size = auraSize;
+                bp.AffectEnemies = affectEnemies;
+                bp.Fx = new PrefabLink();
+                bp.AddUnconditionalAuraEffect(buff.ToReference<BlueprintBuffReference>());
+            });
+            BlueprintBuff areaBuff = CreateBuff($"{name}AreaBuff", bp => {
+                bp.SetName(IsekaiContext, displayName);
+                bp.SetDescription(displayDesc);
+                bp.m_Icon = icon;
+                bp.IsClassFeature = true;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
+                bp.AddComponent<AddAreaEffect>(c => {
+                    c.m_AreaEffect = area.ToReference<BlueprintAbilityAreaEffectReference>();
+                });
+            });
+            BlueprintActivatableAbility ability = CreateActivatableAbility($"{name}Ability", bp => {
+                bp.SetName(IsekaiContext, displayName);
+                bp.SetDescription(displayDesc);
+                bp.m_Icon = icon;
+                bp.m_Buff = areaBuff.ToReference<BlueprintBuffReference>();
+                bp.DoNotTurnOffOnRest = true;
+            });
+            BlueprintFeature feature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, $"{name}Feature", bp => {
+                bp.SetName(IsekaiContext, displayName);
+                bp.SetDescription(displayDesc);
+                bp.m_Icon = icon;
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] { ability.ToReference<BlueprintUnitFactReference>() };
+                });
+            });
+
             return feature;
         }
 

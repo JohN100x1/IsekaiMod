@@ -38,10 +38,12 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
                 CreateExceptionalWeapon("ThunderingWeapon", "Your attacks have Thundering. They deal an additional 1d6 sonic damage.", Icon_ArcaneWeaponKeenBuff, Thundering),
             };
 
-            // Exceptional Weapon Selection
+            LocalizedString ExceptionalWeaponSelectionDesc = Helpers.CreateString(IsekaiContext, "ExceptionalWeaponSelection.Description",
+                "Your attacks have an additional enchantment. This enchantment does not stack with existing enchantments on weapons.");
+
             var ExceptionalWeaponSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalWeaponSelection", bp => {
                 bp.SetName(IsekaiContext, "Exceptional Weapon");
-                bp.SetDescription(IsekaiContext, "Your attacks have an additional enchantment. This enchantment does not stack with existing enchantments on weapons.");
+                bp.SetDescription(ExceptionalWeaponSelectionDesc);
                 bp.m_Icon = Icon_ArcaneWeapon;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -49,7 +51,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
             });
             var ExceptionalWeaponBonusSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalWeaponBonusSelection", bp => {
                 bp.SetName(IsekaiContext, "Exceptional Weapon");
-                bp.SetDescription(IsekaiContext, "Your attacks have an additional enchantment. This enchantment does not stack with existing enchantments on weapons.");
+                bp.SetDescription(ExceptionalWeaponSelectionDesc);
                 bp.m_Icon = Icon_ArcaneWeapon;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -58,7 +60,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
             ExceptionalFeatSelection.AddToSelection(ExceptionalWeaponSelection, ExceptionalWeaponBonusSelection);
         }
         private static BlueprintFeatureReference CreateExceptionalWeapon(string name, string description, Sprite icon, BlueprintItemEnchantment enchantment) {
-            var feature = TTCoreExtensions.CreateToggleBuff(name, description, icon, bp => {
+            var feature = TTCoreExtensions.CreateToggleBuffFeature(name, description, icon, bp => {
                 bp.AddComponent<BuffEnchantAnyWeapon>(c => {
                     c.m_EnchantmentBlueprint = enchantment.ToReference<BlueprintItemEnchantmentReference>();
                     c.Slot = EquipSlotBase.SlotType.PrimaryHand;

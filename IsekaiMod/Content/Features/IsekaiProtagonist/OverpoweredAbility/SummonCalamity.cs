@@ -23,12 +23,7 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
     internal class SummonCalamity {
-        private const string StandardSummonDescription = "Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} "
-            + "{g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.";
-
-        // Units
         private static readonly BlueprintUnit Devastator = BlueprintTools.GetBlueprint<BlueprintUnit>("99c16c4360534129b45706841a7df3fe");
-
         private static readonly BlueprintUnit PlayfulDarkness = BlueprintTools.GetBlueprint<BlueprintUnit>("a1b06220efb4f0545a870ce52fadd678");
         private static readonly BlueprintUnit Baphomet = BlueprintTools.GetBlueprint<BlueprintUnit>("f8007503fe211da4eb027e070eeb3f8c");
         private static readonly BlueprintUnit DemonLordDeskari = BlueprintTools.GetBlueprint<BlueprintUnit>("5a75db49bf7aeaf4c9f0264cac3eed5c");
@@ -40,23 +35,15 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         private static readonly BlueprintBuff SummonedCreatureSpawnMonsterVI_IX = BlueprintTools.GetBlueprint<BlueprintBuff>("0dff842f06edace43baf8a2f44207045");
         private static readonly Sprite Icon_SummonMonsterIX = BlueprintTools.GetBlueprint<BlueprintAbility>("52b5df2a97df18242aec67610616ded0").m_Icon;
 
-        private static readonly ContextDurationValue RankDuration = new() {
-            Rate = DurationRate.Rounds,
-            DiceType = DiceType.Zero,
-            DiceCountValue = 0,
-            BonusValue = Values.CreateContextRankValue(AbilityRankType.Default),
-            m_IsExtendable = true
-        };
-
         public static void Add() {
             var SummonCalamityAbility = CreateSummonAbility("SummonCalamityAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Devastator, Playful Darkness, Baphomet, Deskari, Nocticula, Mephistopheles, or Areshkagal."
-                    + StandardSummonDescription);
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Devastator, Playful Darkness, "
+                    + "Baphomet, Deskari, Nocticula, Mephistopheles, or Areshkagal.");
             });
             var SummonDevastator = CreateSummonAbility("SummonDevastator", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity (Devastator)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Devastator. " + StandardSummonDescription);
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Devastator.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = Devastator.ToReference<BlueprintUnitReference>();
@@ -65,7 +52,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var SummonPlayfulDarkness = CreateSummonAbility("SummonPlayfulDarkness", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity (Playful Darkness)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Playful Darkness. " + StandardSummonDescription);
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Playful Darkness.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = PlayfulDarkness.ToReference<BlueprintUnitReference>();
@@ -74,7 +61,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var SummonBaphomet = CreateSummonAbility("SummonBaphomet", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity (Baphomet)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Baphomet. " + StandardSummonDescription);
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Baphomet.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = Baphomet.ToReference<BlueprintUnitReference>();
@@ -83,7 +70,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var SummonDemonLordDeskari = CreateSummonAbility("SummonDemonLordDeskari", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity (Deskari)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Deskari. " + StandardSummonDescription);
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Deskari.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = DemonLordDeskari.ToReference<BlueprintUnitReference>();
@@ -92,7 +79,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var SummonDemonNocticula = CreateSummonAbility("SummonDemonNocticula", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity (Nocticula)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Nocticula. " + StandardSummonDescription);
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Demon Lord Nocticula.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = Nocticula.ToReference<BlueprintUnitReference>();
@@ -101,7 +88,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var SummonDemonMephistopheles = CreateSummonAbility("SummonDemonMephistopheles", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity (Mephistopheles)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Archdevil Mephistopheles. " + StandardSummonDescription);
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Archdevil Mephistopheles.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = Mephistopheles.ToReference<BlueprintUnitReference>();
@@ -110,7 +97,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             });
             var SummonAreshkagal = CreateSummonAbility("SummonAreshkagal", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Summon Calamity (Areshkagal)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Areshkagal. " + StandardSummonDescription);
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons Areshkagal.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnCalamity(c => {
                         c.m_Blueprint = Areshkagal.ToReference<BlueprintUnitReference>();
@@ -174,7 +161,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         private static ActionList SpawnCalamity(Action<ContextActionSpawnMonster> init = null) {
             var t = new ContextActionSpawnMonster() {
                 m_SummonPool = SummonMonsterPool.ToReference<BlueprintSummonPoolReference>(),
-                DurationValue = RankDuration,
+                DurationValue = new() {
+                    Rate = DurationRate.Rounds,
+                    DiceType = DiceType.Zero,
+                    DiceCountValue = 0,
+                    BonusValue = Values.CreateContextRankValue(AbilityRankType.Default),
+                    m_IsExtendable = true
+                },
                 CountValue = Values.Dice.One,
                 LevelValue = 0,
                 AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
