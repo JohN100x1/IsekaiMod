@@ -5,14 +5,14 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Items.Ecnchantments;
 using Kingmaker.DialogSystem.Blueprints;
 using Kingmaker.Localization;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
-using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics;
+using Kingmaker.UnitLogic.Mechanics.Actions;
 using System;
 using TabletopTweaks.Core.ModLogic;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
-using Kingmaker.UnitLogic.Abilities.Blueprints;
 
 namespace IsekaiMod.Utilities {
 

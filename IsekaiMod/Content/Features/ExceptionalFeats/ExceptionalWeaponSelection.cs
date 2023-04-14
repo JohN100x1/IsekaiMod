@@ -7,7 +7,6 @@ using Kingmaker.Localization;
 using Kingmaker.UI.GenericSlot;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
-using System.Linq;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
 using static IsekaiMod.Main;
@@ -39,7 +38,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
             };
 
             LocalizedString ExceptionalWeaponSelectionDesc = Helpers.CreateString(IsekaiContext, "ExceptionalWeaponSelection.Description",
-                "Your attacks have an additional enchantment. This enchantment does not stack with existing enchantments on weapons.");
+                "Your primary and secondary weapons have an additional enchantment.");
 
             var ExceptionalWeaponSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalWeaponSelection", bp => {
                 bp.SetName(IsekaiContext, "Exceptional Weapon");

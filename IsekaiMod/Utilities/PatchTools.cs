@@ -5,11 +5,9 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Facts;
-using Kingmaker.Cheats;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
@@ -244,8 +242,7 @@ namespace IsekaiMod.Utilities {
                     foreach (var levelItem in flatten) {
                         if (levelItem is BlueprintProgression progression2) {
                             PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, mylevel, loopPrevention);
-                        } else if (levelItem is BlueprintFeature feature2)
-                        {
+                        } else if (levelItem is BlueprintFeature feature2) {
                             PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
                         }
                     }
@@ -412,8 +409,7 @@ namespace IsekaiMod.Utilities {
                             if (component2 is ContextRankConfig rankConfig && rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel) {
                                 if (rankConfig.m_Class.Contains(referenceClass)) {
                                     sample = rankConfig;
-                                } else if (rankConfig.m_Class.Contains(myClass))
-                                {
+                                } else if (rankConfig.m_Class.Contains(myClass)) {
                                     alreadyPatched = true;
                                 }
                             }

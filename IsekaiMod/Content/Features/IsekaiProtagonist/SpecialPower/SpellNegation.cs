@@ -1,15 +1,10 @@
-﻿using IsekaiMod.Components;
-using IsekaiMod.Utilities;
-using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
-using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
 

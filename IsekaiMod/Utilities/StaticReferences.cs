@@ -38,7 +38,7 @@ namespace IsekaiMod.Utilities {
 
         // Sorcerer
         public static readonly BlueprintParametrizedFeature BloodlineArcaneNewArcanaFeature = BlueprintTools.GetBlueprint<BlueprintParametrizedFeature>("4a2e8388c2f0dd3478811d9c947bebfb");
-        
+
         internal static class Strings {
             public static readonly LocalizedString Null = new();
 

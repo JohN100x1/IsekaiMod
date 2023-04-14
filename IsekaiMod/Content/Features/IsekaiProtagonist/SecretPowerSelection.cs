@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
