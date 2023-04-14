@@ -16,8 +16,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
         public static void Add() {
 
-            // TODO: add excalibur attack ability that uses ICON_EXCALIBUR.png for Isekai protagonist at 12th level
-
             // Isekai Protagonist
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
             var IsekaiCantrips = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiCantrips");
