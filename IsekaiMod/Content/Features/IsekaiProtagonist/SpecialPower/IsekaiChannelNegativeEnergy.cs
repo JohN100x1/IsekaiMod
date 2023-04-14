@@ -80,10 +80,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                         HealAbility.ToReference<BlueprintUnitFactReference>()
                     };
                 });
-                bp.AddComponent<PrerequisiteAlignment>(c => {
-                    c.Group = Prerequisite.GroupType.Any;
-                    c.Alignment = AlignmentMaskType.Evil | AlignmentMaskType.ChaoticNeutral | AlignmentMaskType.TrueNeutral | AlignmentMaskType.LawfulNeutral;
-                });
             });
 
             // Patch extra channel and selective channel feats
