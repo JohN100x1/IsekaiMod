@@ -1,4 +1,5 @@
-﻿using Kingmaker.Blueprints.Classes;
+﻿using IsekaiMod.Utilities;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
@@ -12,13 +13,12 @@ namespace IsekaiMod.Content.Backgrounds {
             // Background
             var BackgroundTabletopRPGPlayer = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "BackgroundTabletopRPGPlayer", bp => {
                 bp.SetName(IsekaiContext, "Tabletop RPG Player");
-                bp.SetDescription(IsekaiContext, "The Tabletop RPG Player adds {g|Encyclopedia:Lore_Nature}Lore (Nature){/g}, {g|Encyclopedia:Lore_Religion}Lore (Religion){/g}, "
-                    + "{g|Encyclopedia:Knowledge_World}Knowledge (World){/g} and {g|Encyclopedia:Knowledge_Arcana}Knowledge (Arcana){/g} to the list of her class {g|Encyclopedia:Skills}skills{/g} "
-                    + "and can use her {g|Encyclopedia:Charisma}Charisma{/g} instead of {g|Encyclopedia:Intelligence}Intelligence{/g} or {g|Encyclopedia:Wisdom}Wisdom{/g} while attempting "
-                    + "Knowledge (World), Knowledge (Arcana), Lore (Religion), or Lore (Nature) {g|Encyclopedia:Check}checks{/g}.\n"
-                    + "If the character already has the class skill, {g|Encyclopedia:Weapon_Proficiency}weapon proficiency{/g} or armor proficiency granted by the selected background "
-                    + "from her class during character creation, then the corresponding {g|Encyclopedia:Bonus}bonuses{/g} from background change to a +1 competence bonus in case of skills, "
-                    + "a +1 enhancement bonus in case of weapon proficiency and a -1 Armor {g|Encyclopedia:Check}Check{/g} {g|Encyclopedia:Penalty}Penalty{/g} reduction in case of armor proficiency.");
+                bp.SetBackgroundDescription(IsekaiContext, "The Tabletop RPG Player adds {g|Encyclopedia:Lore_Nature}Lore (Nature){/g}, "
+                    + "{g|Encyclopedia:Lore_Religion}Lore (Religion){/g}, {g|Encyclopedia:Knowledge_World}Knowledge (World){/g} and "
+                    + "{g|Encyclopedia:Knowledge_Arcana}Knowledge (Arcana){/g} to the list of her class {g|Encyclopedia:Skills}skills{/g} "
+                    + "and can use her {g|Encyclopedia:Charisma}Charisma{/g} instead of {g|Encyclopedia:Intelligence}Intelligence{/g} or "
+                    + "{g|Encyclopedia:Wisdom}Wisdom{/g} while attempting Knowledge (World), Knowledge (Arcana), Lore (Religion), or Lore (Nature) "
+                    + "{g|Encyclopedia:Check}checks{/g}.");
                 bp.AddComponent<AddClassSkill>(c => {
                     c.Skill = StatType.SkillKnowledgeWorld;
                 });

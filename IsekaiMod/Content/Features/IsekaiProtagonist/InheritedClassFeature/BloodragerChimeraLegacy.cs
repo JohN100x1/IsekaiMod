@@ -56,10 +56,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(10, bloodlines));
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(15, bloodlines));
 
-                prog = StaticReferences.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.BloodragerClass, addentries, removeentries);
+                prog = PatchTools.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.BloodragerClass, addentries, removeentries);
 
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
-                StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.BloodragerClass);
+                PatchTools.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.BloodragerClass);
 
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = SorcererLegacy.Get().ToReference<BlueprintFeatureReference>(); });
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BarbarianLegacy.Get().ToReference<BlueprintFeatureReference>(); });

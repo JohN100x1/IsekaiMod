@@ -60,11 +60,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         public static void PatchProgression() {
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
             BlueprintCharacterClassReference refClass = ClassTools.Classes.OracleClass.ToReference<BlueprintCharacterClassReference>();
-            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.OracleCurseSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
-            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.OracleMysterySelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
-            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.OracleRevelationSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
-            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.OraclePositiveNegativeSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
-
+            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleCurseSelection, myClass, refClass);
+            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleMysterySelection, myClass, refClass);
+            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleRevelationSelection, myClass, refClass);
+            PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleCureOrInflictSelection, myClass, refClass);
         }
         public static BlueprintProgression Get() {
             if (prog != null) return prog;
@@ -79,14 +78,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.SetDescription(IsekaiContext, "Gain a curse, but some curses are blessings in disguise.");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = StaticReferences.OracleCurseSelection.m_AllFeatures;
+                bp.m_AllFeatures = FeatTools.Selections.OracleCurseSelection.m_AllFeatures;
             });
             var MysterySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiOracleMysterySelection", bp => {
                 bp.SetName(IsekaiContext, "Divine Mystery");
                 bp.SetDescription(IsekaiContext, "Master another part of reality...");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-                bp.m_AllFeatures = StaticReferences.OracleMysterySelection.m_AllFeatures;
+                bp.m_AllFeatures = FeatTools.Selections.OracleMysterySelection.m_AllFeatures;
             });
 
             var PrimarySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiOracleSelection", bp => {
@@ -97,8 +96,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     CurseSelection.ToReference<BlueprintFeatureReference>(),
                     MysterySelection.ToReference<BlueprintFeatureReference>(),
-                    StaticReferences.OracleRevelationSelection.ToReference<BlueprintFeatureReference>(),
-                    StaticReferences.OraclePositiveNegativeSelection.ToReference<BlueprintFeatureReference>()
+                    FeatTools.Selections.OracleRevelationSelection.ToReference<BlueprintFeatureReference>(),
+                    FeatTools.Selections.OracleCureOrInflictSelection.ToReference<BlueprintFeatureReference>()
                 };
             });
 

@@ -31,9 +31,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         }
         public static void PatchProgression() {
             if (prog != null) {
-                prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.RogueClass);
+                prog = PatchTools.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.RogueClass);
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
-                StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.RogueClass);
+                PatchTools.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.RogueClass);
             }
         }
         public static BlueprintProgression Get() {

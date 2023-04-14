@@ -2,7 +2,7 @@
 This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Isekai Protagonist` Class into the game.
 ## Development Guide
 ### Requirements
-- Visual Studio 2019 (You can use the latest version if you know what you're doing)
+- Visual Studio
 ### Setup
 - Add `WrathPath` as an environment variable with the value `C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure` or wherever your game directory is.
 - Open Visual Studio and [publicize your assemblies](https://github.com/WittleWolfie/OwlcatModdingWiki/wiki/Publicize-Assemblies).
@@ -59,18 +59,18 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- Has Overpowered Abilities.
 		- Can merge their spellbook with angel or lich.
 		- Can choose a familiar or animal companion... or a deathsnatcher.
-		- Has a legacy class feature from the list below.
+		- Can choose a legacy class feature (features from other classes).
 	- `God Emperor` (Isekai Protagonist Archetype)
-		- Has powerful auras that buff allies and debuff enemies.
-		- Has powerful immunities in the late game.
+		- Has powerful scaling immunities and auras.
 	- `Edge Lord` (Isekai Protagonist Archetype)
 		- Has alot of extra attacks.
 		- Uses dexterity for damage and attack rolls.
-		- Can pick a melee focused legacy class feature.
 	- `Hero` (Isekai Protagonist Archetype)
+		- Focuses to protective auras for allies.
 		- Uses charisma for damage and attack rolls.
 	- `Mastermind` (Isekai Protagonist Archetype)
 		- Intelligence based caster that memorizes spells like an arcanist.
+		- Spellbook has 10th level spells.
 	- `Overlord` (Isekai Protagonist Archetype)
 		- Has much more Overpowered Abilities.
 - New Features
@@ -106,6 +106,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Aura of Divine Fury`: Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells (requires character level 15).
 		- `Killing Intent`: Enemies within 40 feet who fail a will save become shaken, frightened, and cowering.
 		- `Reflect`: Deal damage to enemies equal to damage you receive.
+		- `Supermassive`: Gain bonus HP based on your Constitution modifier. You also get fast healing but have a penalty to AC.
 		- `Mythic Class Feature`: see below
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
@@ -197,7 +198,11 @@ Exception to this is the God Emperor as all options that were changed were not p
 	- `Reborn Demon Lord`: Get a +2 trait bonus to Strength and Electricity resistance 20.
 	- `Otaku`: Adds all skills as class skills except Persuasion.
 	- `Gamer`: Get a +8 competence bonus to all knowledge, lore, and perception checks.
-	- `Beta Tester`: Get +10 Initiative and adds lore, knowledge and perceptions skills as class skills.
+	- `Beta Tester`: Get +4 Initiative and adds lore, knowledge and perceptions skills as class skills.
+	- `Demonic Cultivator`: Adds athletics and mobility as a class skills. Uses the higher of STR and DEX for athletics and mobility checks.
+	- `Enlightened Scholar`: Adds lore, knowledge, and perception skills as class skills. Uses the higher of INT and WIS for these checks.
+	- `Musician`: Adds Persuasion as a class skill. Has a +2 competence bonus to caster level for Sonic spells.
+	- `Rationalist`: Has Immunity to spell and spell-like abilities but cannot cast spells.
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.

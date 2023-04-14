@@ -12,7 +12,10 @@ using Kingmaker.Localization;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using System;
+using System.Linq;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.ExceptionalFeats {
@@ -20,306 +23,174 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
     internal class ExceptionalSummoningSelection {
 
         public static void Add() {
-            // Mighty Summoning
             var Icon_ExceptionalSummoning = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_EXCEPTIONAL_SUMMONING.png");
-            var MightySummoningSummonBuff = TTCoreExtensions.CreateBuff("MightySummoningSummonBuff", bp => {
-                bp.SetName(IsekaiContext, "Mighty Summon");
-                bp.SetDescription(IsekaiContext, "This creature gets a +5 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, and AC per character level.");
-                bp.m_Icon = Icon_ExceptionalSummoning;
-                bp.Stacking = StackingType.Replace;
-                bp.IsClassFeature = true;
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.HitPoints;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.Default);
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.AdditionalAttackBonus;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.AdditionalDamage;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.AC;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.Default;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.MultiplyByModifier;
-                    c.m_StepLevel = 5;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.StatBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.AsIs;
-                });
-            });
-            var MightySummoningBuff = TTCoreExtensions.CreateBuff("MightySummoningBuff", bp => {
-                bp.SetName(IsekaiContext, "Mighty Summoning");
-                bp.m_Description = new LocalizedString();
-                bp.m_Icon = Icon_ExceptionalSummoning;
-                bp.Stacking = StackingType.Replace;
-                bp.IsClassFeature = true;
-                bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
-            });
-            var MightySummoningAbility = TTCoreExtensions.CreateActivatableAbility("MightySummoningAbility", bp => {
-                bp.SetName(IsekaiContext, "Mighty Summoning");
-                bp.SetDescription(IsekaiContext, "Your summoned creatures get a +5 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, and AC per character level.");
-                bp.m_Icon = Icon_ExceptionalSummoning;
-                bp.m_Buff = MightySummoningBuff.ToReference<BlueprintBuffReference>();
-            });
-            var MightySummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "MightySummoningFeature", bp => {
-                bp.SetName(IsekaiContext, "Mighty Summoning");
-                bp.SetDescription(IsekaiContext, "Your summoned creatures get a +5 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, and AC per character level.");
-                bp.m_Icon = Icon_ExceptionalSummoning;
-                bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] { MightySummoningAbility.ToReference<BlueprintUnitFactReference>() };
-                });
-                bp.ReapplyOnLevelUp = true;
-            });
-            MightySummoningBuff.AddComponent<OnSpawnBuff>(c => {
-                c.m_IfHaveFact = MightySummoningFeature.ToReference<BlueprintFeatureReference>();
-                c.m_buff = MightySummoningSummonBuff.ToReference<BlueprintBuffReference>();
-                c.IsInfinity = true;
-            });
-
-            // Magical Summoning
-            var MagicalSummoningSummonBuff = TTCoreExtensions.CreateBuff("MagicalSummoningSummonBuff", bp => {
-                bp.SetName(IsekaiContext, "Magical Summon");
-                bp.SetDescription(IsekaiContext, "This creature gets a +5 bonus to maximum Hit Points per character level and a +1 bonus to spell penetration, spell DC, spell damage, "
-                    + "and saving throws per character level.");
-                bp.m_Icon = Icon_ExceptionalSummoning;
-                bp.Stacking = StackingType.Replace;
-                bp.IsClassFeature = true;
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.HitPoints;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.Default);
-                });
-                bp.AddComponent<SpellPenetrationBonus>(c => {
-                    c.Descriptor = ModifierDescriptor.UntypedStackable;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<IncreaseAllSpellsDC>(c => {
-                    c.SpellsOnly = true;
-                    c.Descriptor = ModifierDescriptor.UntypedStackable;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<IncreaseSpellDamage>(c => {
-                    c.DamageBonus = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.SaveFortitude;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.SaveReflex;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.SaveWill;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.Default;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.MultiplyByModifier;
-                    c.m_StepLevel = 5;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.StatBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.AsIs;
-                });
-            });
-            var MagicalSummoningBuff = TTCoreExtensions.CreateBuff("MagicalSummoningBuff", bp => {
-                bp.SetName(IsekaiContext, "Magical Summoning");
-                bp.m_Description = new LocalizedString();
-                bp.m_Icon = Icon_ExceptionalSummoning;
-                bp.Stacking = StackingType.Replace;
-                bp.IsClassFeature = true;
-                bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
-            });
-            var MagicalSummoningAbility = TTCoreExtensions.CreateActivatableAbility("MagicalSummoningAbility", bp => {
-                bp.SetName(IsekaiContext, "Magical Summoning");
-                bp.SetDescription(IsekaiContext, "Your summoned creatures get a +5 bonus to maximum Hit Points per character level and a +1 bonus to spell penetration, spell DC, spell damage, "
-                    + "and saving throws per character level.");
-                bp.m_Icon = Icon_ExceptionalSummoning;
-                bp.m_Buff = MagicalSummoningBuff.ToReference<BlueprintBuffReference>();
-            });
-            var MagicalSummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "MagicalSummoningFeature", bp => {
-                bp.SetName(IsekaiContext, "Magical Summoning");
-                bp.SetDescription(IsekaiContext, "Your summoned creatures get a +5 bonus to maximum Hit Points per character level and a +1 bonus to spell penetration, spell DC, spell damage, "
-                    + "and saving throws per character level.");
-                bp.m_Icon = Icon_ExceptionalSummoning;
-                bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] { MagicalSummoningAbility.ToReference<BlueprintUnitFactReference>() };
-                });
-                bp.ReapplyOnLevelUp = true;
-            });
-            MagicalSummoningBuff.AddComponent<OnSpawnBuff>(c => {
-                c.m_IfHaveFact = MagicalSummoningFeature.ToReference<BlueprintFeatureReference>();
-                c.m_buff = MagicalSummoningSummonBuff.ToReference<BlueprintBuffReference>();
-                c.IsInfinity = true;
-            });
-
-            // Forbidden Summoning
             var Icon_ForbiddenSummoning = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_FORBIDDEN_SUMMONING.png");
-            var ForbiddenSummoningSummonBuff = TTCoreExtensions.CreateBuff("ForbiddenSummoningSummonBuff", bp => {
-                bp.SetName(IsekaiContext, "Forbidden Summon");
-                bp.SetDescription(IsekaiContext, "This creature gains a +10 bonus to maximum Hit Points per character level and a +1 bonus to all attributes per character level.");
-                bp.m_Icon = Icon_ForbiddenSummoning;
-                bp.Stacking = StackingType.Replace;
-                bp.IsClassFeature = true;
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.HitPoints;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.Default);
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.Strength;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.Dexterity;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.Constitution;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.Intelligence;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.Wisdom;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.Charisma;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.Default;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.MultiplyByModifier;
-                    c.m_StepLevel = 10;
-                });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.StatBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.AsIs;
-                });
-            });
-            var ForbiddenSummoningBuff = TTCoreExtensions.CreateBuff("ForbiddenSummoningBuff", bp => {
-                bp.SetName(IsekaiContext, "Forbidden Summoning");
-                bp.m_Description = new LocalizedString();
-                bp.m_Icon = Icon_ForbiddenSummoning;
-                bp.Stacking = StackingType.Replace;
-                bp.IsClassFeature = true;
-                bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
-            });
-            var ForbiddenSummoningAbility = TTCoreExtensions.CreateActivatableAbility("ForbiddenSummoningAbility", bp => {
-                bp.SetName(IsekaiContext, "Forbidden Summoning");
-                bp.SetDescription(IsekaiContext, "Your summoned creatures gain a +10 bonus to hit points per character level and a +1 bonus to all attributes per character level.");
-                bp.m_Icon = Icon_ForbiddenSummoning;
-                bp.m_Buff = ForbiddenSummoningBuff.ToReference<BlueprintBuffReference>();
-            });
-            var ForbiddenSummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "ForbiddenSummoningFeature", bp => {
-                bp.SetName(IsekaiContext, "Forbidden Summoning");
-                bp.SetDescription(IsekaiContext, "Your summoned creatures gain a +10 bonus to hit points per character level and a +1 bonus to all attributes per character level.");
-                bp.m_Icon = Icon_ForbiddenSummoning;
-                bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] { ForbiddenSummoningAbility.ToReference<BlueprintUnitFactReference>() };
-                });
-                bp.AddComponent<PrerequisiteFeature>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_Feature = MightySummoningFeature.ToReference<BlueprintFeatureReference>();
-                });
-                bp.AddComponent<PrerequisiteFeature>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_Feature = MagicalSummoningFeature.ToReference<BlueprintFeatureReference>();
-                });
-                bp.ReapplyOnLevelUp = true;
-            });
-            ForbiddenSummoningBuff.AddComponent<OnSpawnBuff>(c => {
-                c.m_IfHaveFact = ForbiddenSummoningFeature.ToReference<BlueprintFeatureReference>();
-                c.m_buff = ForbiddenSummoningSummonBuff.ToReference<BlueprintBuffReference>();
-                c.IsInfinity = true;
-            });
-
-            // Ferocious Summoning
             var Icon_FerociousSummoning = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_FEROCIOUS_SUMMONING.png");
-            var FerociousSummoningSummonBuff = TTCoreExtensions.CreateBuff("FerociousSummoningSummonBuff", bp => {
-                bp.SetName(IsekaiContext, "Ferocious Summon");
-                bp.SetDescription(IsekaiContext, "This creature has 2 additional attacks and gains a +10 bonus to speed. It also gains 1d6 sneak attack per character level.");
-                bp.m_Icon = Icon_FerociousSummoning;
-                bp.Stacking = StackingType.Replace;
-                bp.IsClassFeature = true;
-                bp.AddComponent<BuffExtraAttack>(c => {
-                    c.Number = 2;
-                    c.Haste = false;
+
+            var MightySummoningFeature = CreateSummonBuffToggleFeature(
+                name: "MightySummoning",
+                description: "Your summoned creatures get a +5 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, and AC per character level.",
+                descriptionBuff: "This creature gets a +5 bonus to maximum Hit Points per character level and a +1 bonus to Attack, damage, and AC per character level.",
+                icon: Icon_ExceptionalSummoning,
+                summonBuffEffect: bp => {
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.HitPoints;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                        c.Multiplier = 5;
+                    });
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.AdditionalAttackBonus;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.AdditionalDamage;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.AC;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<ContextRankConfig>(c => {
+                        c.m_Type = AbilityRankType.StatBonus;
+                        c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                        c.m_Progression = ContextRankProgression.AsIs;
+                    });
                 });
-                bp.AddComponent<AddStatBonus>(c => {
-                    c.Stat = StatType.Speed;
-                    c.Value = 10;
+
+            var MagicalSummoningFeature = CreateSummonBuffToggleFeature(
+                name: "MagicalSummoning",
+                description: "Your summoned creatures get a +5 bonus to maximum Hit Points per character level and a +1 bonus to spell penetration, spell DC, spell damage, and saving throws per character level.",
+                descriptionBuff: "This creature gets a +5 bonus to maximum Hit Points per character level and a +1 bonus to spell penetration, spell DC, spell damage, and saving throws per character level.",
+                icon: Icon_ExceptionalSummoning,
+                summonBuffEffect: bp => {
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.HitPoints;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                        c.Multiplier = 5;
+                    });
+                    bp.AddComponent<SpellPenetrationBonus>(c => {
+                        c.Descriptor = ModifierDescriptor.UntypedStackable;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<IncreaseAllSpellsDC>(c => {
+                        c.SpellsOnly = true;
+                        c.Descriptor = ModifierDescriptor.UntypedStackable;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<IncreaseSpellDamage>(c => {
+                        c.DamageBonus = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.SaveFortitude;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.SaveReflex;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.SaveWill;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<ContextRankConfig>(c => {
+                        c.m_Type = AbilityRankType.StatBonus;
+                        c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                        c.m_Progression = ContextRankProgression.AsIs;
+                    });
                 });
-                bp.AddComponent<AddContextStatBonus>(c => {
-                    c.Stat = StatType.SneakAttack;
-                    c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+
+            var ForbiddenSummoningFeature = CreateSummonBuffToggleFeature(
+                name: "ForbiddenSummoning",
+                description: "Your summoned creatures gain a +10 bonus to hit points per character level and a +1 bonus to all attributes per character level.",
+                descriptionBuff: "This creature gains a +10 bonus to maximum Hit Points per character level and a +1 bonus to all attributes per character level.",
+                icon: Icon_ForbiddenSummoning,
+                summonBuffEffect: bp => {
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.HitPoints;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                        c.Multiplier = 5;
+                    });
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.Strength;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.Dexterity;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.Constitution;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.Intelligence;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.Wisdom;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.Charisma;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<ContextRankConfig>(c => {
+                        c.m_Type = AbilityRankType.StatBonus;
+                        c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                        c.m_Progression = ContextRankProgression.AsIs;
+                    });
                 });
-                bp.AddComponent<ContextRankConfig>(c => {
-                    c.m_Type = AbilityRankType.StatBonus;
-                    c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
-                    c.m_Progression = ContextRankProgression.AsIs;
-                });
+            ForbiddenSummoningFeature.AddComponent<PrerequisiteFeature>(c => {
+                c.Group = Prerequisite.GroupType.All;
+                c.m_Feature = MightySummoningFeature.ToReference<BlueprintFeatureReference>();
             });
-            var FerociousSummoningBuff = TTCoreExtensions.CreateBuff("FerociousSummoningBuff", bp => {
-                bp.SetName(IsekaiContext, "Ferocious Summoning");
-                bp.m_Description = new LocalizedString();
-                bp.m_Icon = Icon_FerociousSummoning;
-                bp.Stacking = StackingType.Replace;
-                bp.IsClassFeature = true;
-                bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
-            });
-            var FerociousSummoningAbility = TTCoreExtensions.CreateActivatableAbility("FerociousSummoningAbility", bp => {
-                bp.SetName(IsekaiContext, "Ferocious Summoning");
-                bp.SetDescription(IsekaiContext, "Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level.");
-                bp.m_Icon = Icon_FerociousSummoning;
-                bp.m_Buff = FerociousSummoningBuff.ToReference<BlueprintBuffReference>();
-            });
-            var FerociousSummoningFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "FerociousSummoningFeature", bp => {
-                bp.SetName(IsekaiContext, "Ferocious Summoning");
-                bp.SetDescription(IsekaiContext, "Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level.");
-                bp.m_Icon = Icon_FerociousSummoning;
-                bp.AddComponent<AddFacts>(c => {
-                    c.m_Facts = new BlueprintUnitFactReference[] { FerociousSummoningAbility.ToReference<BlueprintUnitFactReference>() };
-                });
-                bp.AddComponent<PrerequisiteFeature>(c => {
-                    c.Group = Prerequisite.GroupType.All;
-                    c.m_Feature = ForbiddenSummoningFeature.ToReference<BlueprintFeatureReference>();
-                });
-                bp.ReapplyOnLevelUp = true;
-            });
-            FerociousSummoningBuff.AddComponent<OnSpawnBuff>(c => {
-                c.m_IfHaveFact = FerociousSummoningFeature.ToReference<BlueprintFeatureReference>();
-                c.m_buff = FerociousSummoningSummonBuff.ToReference<BlueprintBuffReference>();
-                c.IsInfinity = true;
+            ForbiddenSummoningFeature.AddComponent<PrerequisiteFeature>(c => {
+                c.Group = Prerequisite.GroupType.All;
+                c.m_Feature = MagicalSummoningFeature.ToReference<BlueprintFeatureReference>();
             });
 
-            var ExceptionalSummoingFeatures = new BlueprintFeatureReference[]
-            {
+            var FerociousSummoningFeature = CreateSummonBuffToggleFeature(
+                name: "FerociousSummoning",
+                description: "Your summoned creatures have 2 additional attacks and gain a +10 bonus to speed. It also gains 1d6 sneak attack per character level.",
+                descriptionBuff: "This creature has 2 additional attacks and gains a +10 bonus to speed. It also gains 1d6 sneak attack per character level.",
+                icon: Icon_FerociousSummoning,
+                summonBuffEffect: bp => {
+                    bp.AddComponent<BuffExtraAttack>(c => {
+                        c.Number = 2;
+                        c.Haste = false;
+                    });
+                    bp.AddComponent<AddStatBonus>(c => {
+                        c.Stat = StatType.Speed;
+                        c.Value = 10;
+                    });
+                    bp.AddComponent<AddContextStatBonus>(c => {
+                        c.Stat = StatType.SneakAttack;
+                        c.Value = Values.CreateContextRankValue(AbilityRankType.StatBonus);
+                    });
+                    bp.AddComponent<ContextRankConfig>(c => {
+                        c.m_Type = AbilityRankType.StatBonus;
+                        c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                        c.m_Progression = ContextRankProgression.AsIs;
+                    });
+                });
+            FerociousSummoningFeature.AddComponent<PrerequisiteFeature>(c => {
+                c.Group = Prerequisite.GroupType.All;
+                c.m_Feature = ForbiddenSummoningFeature.ToReference<BlueprintFeatureReference>();
+            });
+
+            var ExceptionalSummoingFeatures = new BlueprintFeatureReference[] {
                 MightySummoningFeature.ToReference<BlueprintFeatureReference>(),
                 MagicalSummoningFeature.ToReference<BlueprintFeatureReference>(),
                 ForbiddenSummoningFeature.ToReference<BlueprintFeatureReference>(),
                 FerociousSummoningFeature.ToReference<BlueprintFeatureReference>(),
             };
 
-            // Exceptional Summoning Selection
+            LocalizedString ExceptionalSummoningDesc = Helpers.CreateString(IsekaiContext, "ExceptionalSummoningSelection.Description",
+                "Your summons become more powerful as you increase your level.");
+
             var ExceptionalSummoningSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalSummoningSelection", bp => {
                 bp.SetName(IsekaiContext, "Exceptional Summoning");
-                bp.SetDescription(IsekaiContext, "Your summons become more powerful as you increase your level.");
+                bp.SetDescription(ExceptionalSummoningDesc);
                 bp.m_Icon = Icon_ExceptionalSummoning;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -327,7 +198,7 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
             });
             var ExceptionalSummoningBonusSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExceptionalSummoningBonusSelection", bp => {
                 bp.SetName(IsekaiContext, "Exceptional Summoning");
-                bp.SetDescription(IsekaiContext, "Your summons become more powerful as you increase your level.");
+                bp.SetDescription(ExceptionalSummoningDesc);
                 bp.m_Icon = Icon_ExceptionalSummoning;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -335,6 +206,49 @@ namespace IsekaiMod.Content.Features.ExceptionalFeats {
             });
 
             ExceptionalFeatSelection.AddToSelection(ExceptionalSummoningSelection, ExceptionalSummoningBonusSelection);
+        }
+
+        private static BlueprintFeature CreateSummonBuffToggleFeature(string name, string description, string descriptionBuff, Sprite icon, Action<BlueprintBuff> summonBuffEffect = null) {
+            string displayName = string.Concat(name.Select(x => char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
+            LocalizedString displayDesc = Helpers.CreateString(IsekaiContext, $"{name}.Description", description);
+            LocalizedString buffDesc = Helpers.CreateString(IsekaiContext, $"{name}SummonBuff.Description", descriptionBuff);
+
+            var summonBuff = TTCoreExtensions.CreateBuff($"{name}SummonBuff", bp => {
+                bp.SetName(IsekaiContext, displayName);
+                bp.SetDescription(buffDesc);
+                bp.m_Icon = icon;
+                bp.Stacking = StackingType.Replace;
+                bp.IsClassFeature = true;
+            });
+            summonBuffEffect?.Invoke(summonBuff);
+            var buff = TTCoreExtensions.CreateBuff($"{name}Buff", bp => {
+                bp.SetName(IsekaiContext, displayName);
+                bp.m_Description = StaticReferences.Strings.Null;
+                bp.m_Icon = icon;
+                bp.IsClassFeature = true;
+                bp.m_Flags = BlueprintBuff.Flags.StayOnDeath | BlueprintBuff.Flags.HiddenInUi;
+            });
+            var ability = TTCoreExtensions.CreateActivatableAbility($"{name}Ability", bp => {
+                bp.SetName(IsekaiContext, displayName);
+                bp.SetDescription(displayDesc);
+                bp.m_Icon = icon;
+                bp.m_Buff = buff.ToReference<BlueprintBuffReference>();
+            });
+            var feature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, $"{name}Feature", bp => {
+                bp.SetName(IsekaiContext, displayName);
+                bp.SetDescription(displayDesc);
+                bp.m_Icon = icon;
+                bp.AddComponent<AddFacts>(c => {
+                    c.m_Facts = new BlueprintUnitFactReference[] { ability.ToReference<BlueprintUnitFactReference>() };
+                });
+                bp.ReapplyOnLevelUp = true;
+            });
+            buff.AddComponent<OnSpawnBuff>(c => {
+                c.m_IfHaveFact = feature.ToReference<BlueprintFeatureReference>();
+                c.m_buff = summonBuff.ToReference<BlueprintBuffReference>();
+                c.IsInfinity = true;
+            });
+            return feature;
         }
     }
 }

@@ -20,25 +20,25 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             //Configure an empty shell during the blueprint phase, otherwise the game will always want to remove the blueprint as unused since we are technically only creating it at a stage where that should no longer be done
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "DreadKnightLegacy", bp => {
             });
-         }
+        }
 
 
         public static void PatchProgression() {
             BlueprintCharacterClass DreadKnight = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("d0eb4ca44e11417c9b2f0208491067a0");
             //only add this stereotype if the Dread Knight Class has been added
-            if (!ModSupport.IsExpandedContentEnabled() || DreadKnight == null) return;
+            if (!ModSupport.IsExpandedContentEnabled || DreadKnight == null) return;
 
             prog.SetName(IsekaiContext, "Dread Knight Legacy - Dread Lord");
-            prog.SetDescription(IsekaiContext, 
+            prog.SetDescription(IsekaiContext,
                 "*Blinks and slowly backs away*, Uhm are you certain you want to play this? I mean Dread Knights are kind of evil, you know? \n" +
                 "As in the they are the opposite of anything a paladin represents..."
                 );
             prog.GiveFeaturesForPreviousLevels = true;
             prog.AddComponent<PrerequisiteAlignment>(c => { c.Alignment = Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Evil; });
-            prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, DreadKnight);
+            prog = PatchTools.PatchClassProgressionBasedOnRefClass(prog, DreadKnight);
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
             //KJK: given when we actually initialize this there is no point in patching later
-            StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, DreadKnight.ToReference<BlueprintCharacterClassReference>());
+            PatchTools.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, DreadKnight.ToReference<BlueprintCharacterClassReference>());
 
 
             LegacySelection.RegisterForFeat(prog);

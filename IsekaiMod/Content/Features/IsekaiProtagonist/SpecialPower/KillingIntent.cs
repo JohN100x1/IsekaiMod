@@ -3,7 +3,6 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
-using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
@@ -52,8 +51,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.SetName(IsekaiContext, "Killing Intent");
                 bp.SetDescription(IsekaiContext, "Enemies within 40 feet of you who fails a DC 50 Will saving throw become shaken, frightened, and cowering for 1d4 rounds.");
                 bp.m_Icon = Icon_ConsumeFear;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
+                bp.LocalizedDuration = StaticReferences.Strings.Null;
+                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
                 bp.AvailableMetamagic = Metamagic.Heighten | Metamagic.Extend | Metamagic.Heighten | Metamagic.Reach;
                 bp.Range = AbilityRange.Personal;
                 bp.Type = AbilityType.Special;

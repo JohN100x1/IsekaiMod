@@ -16,7 +16,7 @@ namespace IsekaiMod.Components {
         }
 
         public class Runtime : EntityFactComponent<UnitEntityData, SetAttackerAutoMiss>, IRulebookHandler<RuleAttackRoll>, ITargetRulebookHandler<RuleAttackRoll>, ISubscriber, ITargetRulebookSubscriber {
-            
+
             public override void OnTurnOn() {
             }
 

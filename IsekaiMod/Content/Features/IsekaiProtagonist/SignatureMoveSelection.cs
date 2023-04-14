@@ -6,6 +6,7 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.Localization;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using TabletopTweaks.Core.Utilities;
@@ -61,9 +62,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
             // TODO: Signature Strike (extra sneak attacks per 1/2 character level)
 
+            LocalizedString SignatureMoveSelectionDesc = Helpers.CreateString(IsekaiContext, "SignatureMoveSelection.Description",
+                "At 6th level, you choose to have either a signature attack or a signature ability.");
+
             var SignatureMoveSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveSelection", bp => {
                 bp.SetName(IsekaiContext, "Signature Move");
-                bp.SetDescription(IsekaiContext, "At 6th level, you choose to have either a signature attack or a signature ability.");
+                bp.SetDescription(SignatureMoveSelectionDesc);
                 bp.m_Icon = Icon_SwordSaintWeaponMastery;
                 bp.IgnorePrerequisites = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
@@ -73,7 +77,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
             });
             var SignatureMoveBonusSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveBonusSelection", bp => {
                 bp.SetName(IsekaiContext, "Signature Move");
-                bp.SetDescription(IsekaiContext, "At 6th level, you choose to have either a signature attack or a signature ability.");
+                bp.SetDescription(SignatureMoveSelectionDesc);
                 bp.m_Icon = Icon_SwordSaintWeaponMastery;
                 bp.IgnorePrerequisites = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {

@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind {
                 return;
             }
             ClassSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "MastermindLegacySelection", bp => {
-                bp.SetName(IsekaiContext, "Mastermind Legacy");
+                bp.SetName(IsekaiContext, "Genious Legacy");
                 bp.SetDescription(IsekaiContext, "This is neither disney, nor are you the kind to lose your mind...");
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -50,7 +50,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind {
             if (IsekaiContext.AddedContent.Other.IsDisabled("Relax Legacy Choices")) {
                 BlueprintArchetypeReference archetypeRef = Classes.IsekaiProtagonist.Archetypes.MastermindArchetype.GetReference();
                 foreach (BlueprintFeature feature in prohibited) {
-                    feature.AddComponent<PrerequisiteNoArchetype>(c => { 
+                    feature.AddComponent<PrerequisiteNoArchetype>(c => {
                         c.m_Archetype = archetypeRef;
                         c.m_CharacterClass = Classes.IsekaiProtagonist.IsekaiProtagonistClass.GetReference();
                     });

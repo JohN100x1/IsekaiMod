@@ -1,9 +1,14 @@
-﻿using Kingmaker.Blueprints;
+﻿using IsekaiMod.Content.Backgrounds;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Items.Ecnchantments;
 using Kingmaker.DialogSystem.Blueprints;
 using Kingmaker.Localization;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
+using Kingmaker.UnitLogic.Mechanics;
+using Kingmaker.UnitLogic.Mechanics.Actions;
 using System;
 using TabletopTweaks.Core.ModLogic;
 using TabletopTweaks.Core.Utilities;
@@ -12,6 +17,33 @@ using UnityEngine;
 namespace IsekaiMod.Utilities {
 
     internal static class ExtensionMethods {
+        public static void AddUnconditionalAuraEffect(this BlueprintScriptableObject obj, BlueprintBuffReference buff) {
+            obj.AddComponent<AbilityAreaEffectRunAction>(c => {
+                c.UnitEnter = ActionFlow.DoSingle<ContextActionApplyBuff>(b => {
+                    b.m_Buff = buff;
+                    b.Permanent = true;
+                    b.DurationValue = new ContextDurationValue();
+                });
+                c.UnitExit = ActionFlow.DoSingle<ContextActionRemoveBuff>(b => {
+                    b.m_Buff = buff;
+                    b.RemoveRank = false;
+                    b.ToCaster = false;
+                });
+                c.UnitMove = ActionFlow.DoNothing();
+                c.Round = ActionFlow.DoNothing();
+            });
+        }
+
+        public static void SetSummonDescription(this BlueprintAbility ability, ModContextBase modContext, string desciption) {
+            const string StandardSummonDescription = " Summoned monsters appear where you designate and act according to their "
+                + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} "
+                + "your opponents to the best of their ability.";
+            ability.m_Description = Helpers.CreateString(modContext, $"{ability.name}.Description", desciption + StandardSummonDescription, shouldProcess: true);
+        }
+
+        public static void SetBackgroundDescription(this BlueprintFeature feature, ModContextBase modContext, string desciption) {
+            feature.m_Description = Helpers.CreateString(modContext, $"{feature.name}.Description", desciption + IsekaiBackgroundSelection.DescAppendix, shouldProcess: true);
+        }
 
         public static void SetLocalisedName(this BlueprintUnit Unit, ModContextBase modContext, string name) {
             Unit.LocalizedName = ScriptableObject.CreateInstance<SharedStringAsset>();
@@ -26,12 +58,12 @@ namespace IsekaiMod.Utilities {
             selection.m_AllFeatures = selection.m_AllFeatures.RemoveFromArray(feature.ToReference<BlueprintFeatureReference>());
         }
 
-        public static void SetText(this BlueprintCue Cue, ModContextBase modContext, string name) {
-            Cue.Text = Helpers.CreateString(modContext, $"{Cue.name}.Text", name);
+        public static void SetText(this BlueprintCue cue, ModContextBase modContext, string name) {
+            cue.Text = Helpers.CreateString(modContext, $"{cue.name}.Text", name);
         }
 
-        public static void SetText(this BlueprintAnswer Cue, ModContextBase modContext, string name) {
-            Cue.Text = Helpers.CreateString(modContext, $"{Cue.name}.Text", name);
+        public static void SetText(this BlueprintAnswer answer, ModContextBase modContext, string name) {
+            answer.Text = Helpers.CreateString(modContext, $"{answer.name}.Text", name);
         }
 
         public static void SetName(this BlueprintWeaponEnchantment enchantment, ModContextBase modContext, string name) {
@@ -43,11 +75,9 @@ namespace IsekaiMod.Utilities {
         }
 
         public static void AddToFirst(this BlueprintFeatureSelection selection, BlueprintFeature feature) {
-            BlueprintFeatureReference itemToBeAdded = feature.ToReference<BlueprintFeatureReference>();
-            BlueprintFeatureReference[] array = selection.m_AllFeatures;
-            BlueprintFeatureReference[] extendedArray = new BlueprintFeatureReference[array.Length + 1];
-            Array.Copy(array, 0, extendedArray, 1, array.Length);
-            extendedArray[0] = itemToBeAdded;
+            BlueprintFeatureReference[] extendedArray = new BlueprintFeatureReference[selection.m_AllFeatures.Length + 1];
+            Array.Copy(selection.m_AllFeatures, 0, extendedArray, 1, selection.m_AllFeatures.Length);
+            extendedArray[0] = feature.ToReference<BlueprintFeatureReference>();
             selection.m_AllFeatures = extendedArray;
         }
     }

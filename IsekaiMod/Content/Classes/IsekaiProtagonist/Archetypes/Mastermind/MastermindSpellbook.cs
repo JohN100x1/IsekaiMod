@@ -1,9 +1,7 @@
 ﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Stats;
-using Kingmaker.Localization;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
@@ -12,8 +10,6 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind {
     internal class MastermindSpellbook {
 
         public static void Add() {
-            var IsekaiProtagonistSpellList = BlueprintTools.GetModBlueprint<BlueprintSpellList>(IsekaiContext, "IsekaiProtagonistSpellList");
-            var IsekaiProtagonistSpellsPerDay = BlueprintTools.GetModBlueprint<BlueprintSpellsTable>(IsekaiContext, "IsekaiProtagonistSpellsPerDay");
             var MastermindSpellbook = Helpers.CreateBlueprint<BlueprintSpellbook>(IsekaiContext, "MastermindSpellbook", bp => {
                 bp.Name = Helpers.CreateString(IsekaiContext, "MastermindSpellbook.Name", "Mastermind");
                 bp.Spontaneous = true;
@@ -21,10 +17,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind {
                 bp.CantripsType = CantripsType.Cantrips;
                 bp.IsArcane = true;
                 bp.IsArcanist = true;
-                bp.m_SpellsPerDay = IsekaiProtagonistSpellsPerDay.ToReference<BlueprintSpellsTableReference>();
+                bp.m_SpellsPerDay = MastermindSpellsPerDay.GetReference();
                 bp.m_SpellsKnown = null;
-                bp.m_SpellList = IsekaiProtagonistSpellList.ToReference<BlueprintSpellListReference>();
-                bp.m_SpellSlots = IsekaiProtagonistSpellsPerDay.ToReference<BlueprintSpellsTableReference>();
+                bp.m_SpellList = MastermindSpellList.GetReference();
+                bp.m_SpellSlots = MastermindSpellsPerDay.GetReference();
                 bp.SpellsPerLevel = 4;
                 bp.AllSpellsKnown = false;
                 bp.CanCopyScrolls = true;
@@ -35,10 +31,10 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind {
 
                 // These relate to special spell slots (like wizard's favourite school spell slots or shaman's spirit magic slots)
                 bp.HasSpecialSpellList = false;
-                bp.SpecialSpellListName = new LocalizedString();
+                bp.SpecialSpellListName = StaticReferences.Strings.Null;
             });
 
-            StaticReferences.RegisterSpellbook(MastermindSpellbook);
+            PatchTools.RegisterSpellbook(MastermindSpellbook);
         }
 
         public static BlueprintSpellbook Get() {

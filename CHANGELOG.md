@@ -6,56 +6,76 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # [Unreleased]
 ### Added
+- Added `Mastermind` archetype (Isekai Protagonist).
+- Added `Overlord` archetype (Isekai Protagonist).
+- Added `Demonic Cultivator` Isekai background.
+- Added `Enlightened Sage` Isekai background.
+- Added `Musician` Isekai background.
+- Added `Rationalist` Isekai background.
+- Added `Supermassive` Special Power.
+- Added features to `Isekai Protagonist` progression: `Gifted`, `Release Energy`, `Afterimage`, `Secret Power`, `Hax`.
+- Added features to `Edge Lord` progression: `Chuunibyou Actualisation`, `Extra Special Power`.
+- Added features to `God Emperor` progression: `Energy Condensation`, `Energy Barrier`, `Alteration of body and mind`, `Chosen Path`, `Transcendental Realm`.
+- Added features to `Hero` progression: `Hands of Salvation`, `Gold Barrier`, `Improved Gold Barrier`, `Greater Gold Barrier`, `Grand Gold Barrier`, `Deus Ex Machina`.
 - Added `Divine Aura` feature to `Otherwordly Aura` selection.
-- Added `Hax` selection to `Isekai Protagonist` progression.
-- Added `Secret Power` selection to `Isekai Protagonist` progression.
-- Added `Afterimage` feature to `Isekai Protagonist` progression.
-- Added `Gifted` feature to `Isekai Protagonist` progression.
-- Added `Release Energy` feature to `Isekai Protagonist` progression.
-- Added `Chuunibyou Power` feature to `Edge Lord` progression.
-- Added `Alteration of body and mind` selection to `God Emperor` progression.
-- Added `Energy Condensation` selection to `God Emperor` progression.
-- Added `Energy Barrier` selection to `God Emperor` progression.
-- Added `God Emperor Aura` selection to `God Emperor` progression.
-- Added `Mastermind` Archetype (Isekai Protagonist).
-- Added `Overlord` Archetype (Isekai Protagonist).
+- Added `Sneak attack Immunity` to `Effect Immunity` selection.
+- Added `Critical hit Immunity` to `Effect Immunity` selection.
 ### Changed
 - Buffed `Friendly Aura` to also affect damage rolls.
-- Buffed `Isekai Protagonist` to be able to choose between `Divine Aura`, `Dark Aura`, and `Friendly Aura`.
-- Buffed `Isekai Protagonist` to be able to choose two `Signature Move` abilities.
-- Buffed `Edge Lord` to get another OP ability at 10th level.
-- Buffed `Edge Lord` to get `Otherwordly Aura` at 10th level.
-- Buffed `Edge Lord` to get Exotic Weapon Proficiency.
-- Buffed `Isekai Protagonist` to be able to choose between `Divine Aura` and `Dark Aura`.
-- Buffed `God Emperor` to get another OP ability at 5th and 15th level.
-- Buffed `Hero` to get another Special Power at 3rd and 17th level.
-- Buffed `Hero` to get another OP Ability at 10th level.
-- Buffed `Hero` to get Tower shield and exotic weapon proficiency.
 - Buffed `Siphoning Aura` to scale 1/2 character level.
+- Buffed `Extreme Speed` Special Power range from 40 -> 120.
+- Nerfed `Beta Tester` background form initiative bonus from 10 -> 4.
 - Nerfed `Magical Amplification` spell dice from d12 -> d10.
+- Nerfed `Exceptional Weapon` feats to only affect primary and secondary hand weapon.
+- Changes for `Isekai Protagonist`:
+	- `Fast Movement` replaced with `Afterimage`.
+	- `Friendly Aura` replaced with `Otherwordly Aura`.
+	- Can now choose two `Signature Move` features.
+	- Can now choose two `Beach Episode` features.
+	- Moved `Second Reincarnation` feature from level 20 -> 15.
+	- Moved `Otherworldly Stamina` feature from level 15 -> 13.
+	- Moved `Quick-Footed` feature from level 16 -> 15.
+	- Updated description for `Fighter Training`.
+	- Updated icon for `Starting Weapon` feature.
+- Changes for `Edge Lord`:
+	- Now has Exotic Weapon Proficiency at 1st level.
+	- Added `Extra Special Power` at 3rd level.
+	- Added OP ability at 5th, 10th, and 15th level.
+	- Added `Otherwordly Aura` at 10th level.
+	- Removed Special Power at 5th and 15th level.
+- Changes for `God Emperor`:
+	- `Divine Array` replaced with `Energy Condensation`.
+	- `Celestial Realm` replaced with `Transcendental Realm`.
+	- `Dark Aura` replaced with `Regal Aura`.
+	- Moved all effect immunities from `Godly Vessel` to `Nascent Apotheosis`.
+	- Moved elemental immunities from `Godhood` to `Godly Vessel`.
+	- Added another OP ability at 5th and 15th level.
+	- Replaced casting stat to WIS.
+	- Moved `Channel Energy` feature from level 5 -> 3.
+	- Moved `Armor Saint` feature from level 4 -> 3.
+	- Moved `Godly Vessel` feature from level 15 -> 17.
+- Changed for `Hero`:
+	- Now has Tower shield and exotic weapon proficiency at 1st level.
+	- `Friendly Aura` replaced with `Heroic Aura`.
+	- `Hero's Presence' replaced with `Deus Ex Machina`.
+	- Added another OP Ability at 10th level.
+	- Added another Special Power at 3rd and 17th level.
+	- Removed Special Power at 9th and 11th level.
+	- Updated icon for `Graceful Combat` feature.
 - Changed `Dark Aura` debuff from -2 -> -4 but no longer affects attack rolls.
-- Changed `Isekai Protagonist` `Second Reincarnation` obtained from level 20 -> 15.
-- Changed `Isekai Protagonist` `Otherworldly Stamina` obtained from level 15 -> 13.
-- Changed `Isekai Protagonist` `Quick-Footed` obtained from level 16 -> 15.
-- Changed `God Emperor` casting stat to WIS.
-- Changed `God Emperor` `Channel Energy` obtained from level 5 -> 3.
-- Changed `God Emperor` `Armor Saint` obtained from level 4 -> 3.
 - Renamed `Energy Immunity Selection` to `Energy Immunity`.
 - Renamed `Aura of Golden Protection` to `Gold Barrier`.
-- Updated description for `Isekai Protagonist` `Fighter Training`.
+- Updated description for `Dupe Gold` OP ability.
 - Updated icon for `Exceptional Feats`.
-- Updated icon for `Hero` `Graceful Combat` feature.
-- Updated icon for `Starting Weapon` feature.
 - Updated icon for `Siphoning Aura`.
 - Updated icon for `Dark Aura`.
 ### Fixed
 - Fixed `Graceful Combat` not applying the 1.5x damage bonus to two-handed weapons.
 - Fixed `Reflect` to not affect attacks from the owner.
 ### Removed
-- Removed `Villain` Archetype (Isekai Protagonist).
-- Removed `Fast Movement` and `Very Fast Movement` features from `Isekai Protagonist` progression.
-- Removed `Aura of Divine Fury` feature from `God Emperor` progression.
-- Removed `Divine Array` feature from `God Emperor` progression.
+- Removed `Villain` archetype (Isekai Protagonist).
+- Removed `Aura of Divine Fury` feature from `God Emperor` and `Hero` progression.
+- Removed `True Smite` and `True Mark` from `Paladin Legacy - Hero of Light` legacy.
 - Removed `Kinetic Power` Special Power.
 
 # [4.3.0] - 2023-03-28

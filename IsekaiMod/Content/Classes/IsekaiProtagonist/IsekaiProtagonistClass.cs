@@ -45,7 +45,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             var defaultClothesIndex = 20;
             var clothesIndex = IsekaiContext.AddedContent.IsekaiDefaultClothes;
             var maxClothesIndex = StaticReferences.BaseClasses.Length;
-            var clothesClass = StaticReferences.BaseClasses[clothesIndex > 0 && clothesIndex < maxClothesIndex ? clothesIndex : defaultClothesIndex];
+            var clothesClass = StaticReferences.BaseClasses[clothesIndex > -1 && clothesIndex < maxClothesIndex ? clothesIndex : defaultClothesIndex];
 
             // Class Signature Features
             var IsekaiProtagonistPlotArmorFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistPlotArmorFeat", bp => {
@@ -138,7 +138,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 // Register Archetypes later using RegisterArchetype
                 bp.m_Archetypes = new BlueprintArchetypeReference[0];
 
-                // Set Progression later using SetProgression (This is because some features in the progression reference IsekaiProtagonistClass which doeesn't exist yet)
+                // Set Progression later using SetProgression (Some features in the progression reference IsekaiProtagonistClass which doeesn't exist yet)
                 bp.m_Progression = null;
 
                 // Set Default Build later using SetDefaultBuild
@@ -173,7 +173,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
         }
 
         public static BlueprintCharacterClassReference GetReference() {
-            return Get().ToReference<BlueprintCharacterClassReference>();
+            return BlueprintTools.GetModBlueprintReference<BlueprintCharacterClassReference>(IsekaiContext, "IsekaiProtagonistClass");
         }
     }
 }

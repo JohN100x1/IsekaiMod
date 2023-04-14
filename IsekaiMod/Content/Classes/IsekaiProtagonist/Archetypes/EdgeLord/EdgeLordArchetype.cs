@@ -23,6 +23,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var ExtraStrike = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ExtraStrike");
             var ChuunibyouActualisationFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ChuunibyouActualisationFeature");
 
+            var ExtraSpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "ExtraSpecialPowerSelection");
+
             // Removed features
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
             var ReleaseEnergy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ReleaseEnergy");
@@ -32,8 +34,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
             var HaxSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "HaxSelection");
             var SecretPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SecretPowerSelection");
             var SignatureMoveBonusSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveBonusSelection");
-            var OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
-            var SpecialPowerSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
+            var BeachEpisodeBonusSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeBonusSelection");
 
             // Archetype
             var EdgeLordArchetype = Helpers.CreateBlueprint<BlueprintArchetype>(IsekaiContext, "EdgeLordArchetype", bp => {
@@ -45,17 +46,18 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.RemoveFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, IsekaiProficiencies, Gifted, LegacySelection.GetClassFeature()),
                     Helpers.CreateLevelEntry(3, ReleaseEnergy),
-                    Helpers.CreateLevelEntry(5, OverpoweredAbilitySelection),
                     Helpers.CreateLevelEntry(6, SignatureMoveBonusSelection),
                     Helpers.CreateLevelEntry(10, SecretPowerSelection),
-                    Helpers.CreateLevelEntry(15, OverpoweredAbilitySelection, SecondReincarnation),
+                    Helpers.CreateLevelEntry(12, BeachEpisodeBonusSelection),
+                    Helpers.CreateLevelEntry(15, SecondReincarnation),
                     Helpers.CreateLevelEntry(20, HaxSelection),
                 };
                 bp.AddFeatures = new LevelEntry[] {
                     Helpers.CreateLevelEntry(1, EdgeLordProficiencies, SupersonicCombat, EdgeLordLegacySelection.getClassFeature()),
-                    Helpers.CreateLevelEntry(5, SpecialPowerSelection, ExtraStrike),
+                    Helpers.CreateLevelEntry(3, ExtraSpecialPowerSelection),
+                    Helpers.CreateLevelEntry(5, ExtraStrike),
                     Helpers.CreateLevelEntry(10, ExtraStrike),
-                    Helpers.CreateLevelEntry(15, SpecialPowerSelection, ExtraStrike),
+                    Helpers.CreateLevelEntry(15, ExtraStrike),
                     Helpers.CreateLevelEntry(20, ExtraStrike, ChuunibyouActualisationFeature),
                 };
                 bp.OverrideAttributeRecommendations = true;

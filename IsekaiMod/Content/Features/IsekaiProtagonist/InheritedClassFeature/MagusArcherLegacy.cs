@@ -1,16 +1,15 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using TabletopTweaks.Core.Utilities;
 using Kingmaker.Blueprints.Classes.Prerequisites;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using static IsekaiMod.Main;
 using Kingmaker.Blueprints.Classes.Selection;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class MagusArcherLegacy {
@@ -50,16 +49,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 removeentries = removeentries.AppendToArray(BaseArchetype.RemoveFeatures);
                 addentries = addentries.AppendToArray(BaseArchetype.AddFeatures);
 
-                prog = StaticReferences.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.MagusClass, addentries, removeentries);
+                prog = PatchTools.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.MagusClass, addentries, removeentries);
 
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
                 foreach (var level in BaseArchetype.AddFeatures) {
                     foreach (var candidate in level.Features) {
                         if (candidate != null && candidate is BlueprintFeatureSelection selection) {
-                            StaticReferences.PatchClassIntoFeatureOfReferenceClass(selection, myClass, ClassTools.ClassReferences.MagusClass, 0, new BlueprintFeatureBase[] { });
+                            PatchTools.PatchClassIntoFeatureOfReferenceClass(selection, myClass, ClassTools.ClassReferences.MagusClass);
                         } else {
                             if (candidate != null && candidate is BlueprintFeature feature) {
-                                StaticReferences.PatchClassIntoFeatureOfReferenceClass(feature, myClass, ClassTools.ClassReferences.MagusClass, 0, new BlueprintFeatureBase[] { });
+                                PatchTools.PatchClassIntoFeatureOfReferenceClass(feature, myClass, ClassTools.ClassReferences.MagusClass);
                             }
                         }
                     }

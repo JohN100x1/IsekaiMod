@@ -44,13 +44,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             BlueprintFeature EnergizeWeapon = BlueprintTools.GetBlueprint<BlueprintFeature>("fb9fe27f13934807bcd62dfeec477758");
             LevelEntry[] additionalReferencedFeats = null;
-            if (ModSupport.IsExpandedElementEnabled() && EnergizeWeapon != null) {
+            if (ModSupport.IsExpandedElementEnabled && EnergizeWeapon != null) {
                 additionalReferencedFeats = new LevelEntry[] { Helpers.CreateLevelEntry(1, EnergizeWeapon) };
             }
-            prog = StaticReferences.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.KineticistClass, BaseKnight, additionalReferencedFeats);
+            prog = PatchTools.PatchClassProgressionBasedonRefArchetype(prog, ClassTools.Classes.KineticistClass, BaseKnight, additionalReferencedFeats);
             BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.KineticistClass;
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
-            StaticReferences.PatchProgressionFeaturesBasedOnReferenceArchetype(myClass, refClass, BaseKnight);
+            PatchTools.PatchProgressionFeaturesBasedOnReferenceArchetype(myClass, refClass, BaseKnight);
 
             prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticDarkElementalistLegacy.Get().ToReference<BlueprintFeatureReference>(); });
             prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticLegacy.Get().ToReference<BlueprintFeatureReference>(); });

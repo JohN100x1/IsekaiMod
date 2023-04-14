@@ -2,7 +2,6 @@
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Localization;
 using System.Collections.Generic;
 using System.Linq;
 using TabletopTweaks.Core.Utilities;

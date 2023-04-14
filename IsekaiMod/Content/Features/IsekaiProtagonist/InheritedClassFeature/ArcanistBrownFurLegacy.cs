@@ -2,15 +2,10 @@
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using TabletopTweaks.Core.Utilities;
 using Kingmaker.Blueprints.Classes.Prerequisites;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using static IsekaiMod.Main;
 using Kingmaker.Blueprints.Classes.Selection;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
+using TabletopTweaks.Core.Utilities;
+using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class ArcanistBrownFurLegacy {
@@ -49,16 +44,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 addentries = addentries.AppendToArray(BaseArchetype.AddFeatures);
                 prog.SetDescription(BaseArchetype.LocalizedDescription);
 
-                prog = StaticReferences.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.ArcanistClass, addentries, removeentries);
+                prog = PatchTools.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.ArcanistClass, addentries, removeentries);
 
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
                 foreach (var level in BaseArchetype.AddFeatures) {
                     foreach (var candidate in level.Features) {
                         if (candidate != null && candidate is BlueprintFeatureSelection selection) {
-                            StaticReferences.PatchClassIntoFeatureOfReferenceClass(selection, myClass, ClassTools.ClassReferences.ArcanistClass, 0, new BlueprintFeatureBase[] { });
+                            PatchTools.PatchClassIntoFeatureOfReferenceClass(selection, myClass, ClassTools.ClassReferences.ArcanistClass);
                         } else {
                             if (candidate != null && candidate is BlueprintFeature feature) {
-                                StaticReferences.PatchClassIntoFeatureOfReferenceClass(feature, myClass, ClassTools.ClassReferences.ArcanistClass, 0, new BlueprintFeatureBase[] { });
+                                PatchTools.PatchClassIntoFeatureOfReferenceClass(feature, myClass, ClassTools.ClassReferences.ArcanistClass);
                             }
                         }
                     }

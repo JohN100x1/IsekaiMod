@@ -36,7 +36,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             MastermindLegacySelection.Prohibit(prog);
             OverlordLegacySelection.Register(prog);
         }
-        public static void PatchProgression() { 
+        public static void PatchProgression() {
             if (prog != null) {
                 if (BaseArchetype == null) {
                     BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);
@@ -50,16 +50,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 removeentries = removeentries.AppendToArray(BaseArchetype.RemoveFeatures);
                 addentries = addentries.AppendToArray(BaseArchetype.AddFeatures);
 
-                prog = StaticReferences.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.CavalierClass, addentries, removeentries);
+                prog = PatchTools.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.CavalierClass, addentries, removeentries);
 
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
                 foreach (var level in BaseArchetype.AddFeatures) {
                     foreach (var candidate in level.Features) {
                         if (candidate != null && candidate is BlueprintFeatureSelection selection) {
-                            StaticReferences.PatchClassIntoFeatureOfReferenceClass(selection, myClass, ClassTools.ClassReferences.CavalierClass, 0, new BlueprintFeatureBase[] { });
+                            PatchTools.PatchClassIntoFeatureOfReferenceClass(selection, myClass, ClassTools.ClassReferences.CavalierClass);
                         } else {
                             if (candidate != null && candidate is BlueprintFeature feature) {
-                                StaticReferences.PatchClassIntoFeatureOfReferenceClass(feature, myClass, ClassTools.ClassReferences.CavalierClass, 0, new BlueprintFeatureBase[] { });
+                                PatchTools.PatchClassIntoFeatureOfReferenceClass(feature, myClass, ClassTools.ClassReferences.CavalierClass);
                             }
                         }
                     }

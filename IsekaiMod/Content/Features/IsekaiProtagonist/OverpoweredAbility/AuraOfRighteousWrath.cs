@@ -24,13 +24,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
     internal class AuraOfRighteousWrath {
 
-        public static void Add() {
+        public static void Add() { // TODO: remove effect on additional limb
             var Icon_AuraOfRighteousWrath = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_RIGHTEOUS_WRATH.png");
             var AuraOfRighteousWrathEnchantment = Helpers.CreateBlueprint<BlueprintWeaponEnchantment>(IsekaiContext, "AuraOfRighteousWrathEnchantment", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Aura of Righteous Wrath");
                 bp.SetDescription(IsekaiContext, "This creature has two extra attacks and deal an additional 5d6 physical damage. It also has additional sneak attack damage.");
-                bp.SetPrefix(IsekaiContext, "");
-                bp.SetSuffix(IsekaiContext, "");
+                bp.m_Prefix = StaticReferences.Strings.Null;
+                bp.m_Suffix = StaticReferences.Strings.Null;
                 bp.AddComponent<WeaponConditionalDamageDice>(c => {
                     c.Damage = new DamageDescription() {
                         Dice = new DiceFormula() {

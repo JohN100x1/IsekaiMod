@@ -5,6 +5,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
@@ -19,10 +20,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
 
     internal class ChuunibyouActualisation {
         private const string Name = "Chuunibyou Actualisation";
-        private const string Description = "Allies within 120 feet gain 1 additional {g|Encyclopedia:Attack}attack{/g} to their main weapon, "
-            + "a +10 bonus to speed, and attacks have a 50% chance to miss them.";
         private const string DescriptionBuff = "This character has 1 additional {g|Encyclopedia:Attack}attack{/g} to their main weapon, "
             + "a +10 bonus to speed, and attacks have a 50% chance to miss them.";
+        private static readonly LocalizedString Description = Helpers.CreateString(IsekaiContext, "ChuunibyouActualisation.Description",
+            "Allies within 120 feet gain 1 additional {g|Encyclopedia:Attack}attack{/g} to their main weapon, "
+            + "a +10 bonus to speed, and attacks have a 50% chance to miss them.");
 
         public static void Add() {
             var Icon_ChuunibyouActualisation = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_CHUUNIBYOU.png");

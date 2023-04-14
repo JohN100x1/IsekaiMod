@@ -1,21 +1,6 @@
-﻿using HarmonyLib;
-using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
+﻿using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Blueprints.Classes.Spells;
-using Kingmaker.Blueprints.Facts;
-using Kingmaker.Designers.Mechanics.Buffs;
-using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Localization;
-using Kingmaker.UnitLogic.Abilities;
-using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics.Components;
-using Kingmaker.Utility;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
@@ -51,6 +36,7 @@ namespace IsekaiMod.Utilities {
             ClassTools.Classes.WizardClass
         };
 
+<<<<<<< HEAD
         //Oracle
         public static BlueprintFeatureSelection OracleCurseSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("b0a5118b4fb793241bc7042464b23fab");
         public static BlueprintFeatureSelection OracleMysterySelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("5531b975dcdf0e24c98f1ff7e017e741");
@@ -594,6 +580,10 @@ namespace IsekaiMod.Utilities {
             public static bool operator !=(FeatureOnLevelReference left, FeatureOnLevelReference right) { return !(left == right); }
             public override int GetHashCode() => value.GetHashCode();
         }
+=======
+        // Sorcerer
+        public static readonly BlueprintParametrizedFeature BloodlineArcaneNewArcanaFeature = BlueprintTools.GetBlueprint<BlueprintParametrizedFeature>("4a2e8388c2f0dd3478811d9c947bebfb");
+>>>>>>> origin/JOHN_5-0-0
 
         internal static class Strings {
             public static readonly LocalizedString Null = new();

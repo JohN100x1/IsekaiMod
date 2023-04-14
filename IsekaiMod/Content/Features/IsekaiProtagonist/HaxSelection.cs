@@ -1,5 +1,4 @@
 ﻿using IsekaiMod.Components;
-using IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
