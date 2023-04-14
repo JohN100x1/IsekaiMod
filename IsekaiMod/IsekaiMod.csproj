@@ -53,30 +53,22 @@
     <MakeDir Directories="$(SolutionDir)lib" />
   </Target>
   <Target Name="Publicise" AfterTargets="CreateLib">
-    <ItemGroup>
+  <ItemGroup>
       <PubliciseAssemblyCSharp Include="$(WrathPath)\Wrath_Data\Managed\Assembly-CSharp.dll" />
-      <PubliciseUniRx Include="$(WrathPath)\Wrath_Data\Managed\UniRx.dll" />
-      <PubliciseRuntimeUI Include="$(WrathPath)\Wrath_Data\Managed\Owlcat.Runtime.UI.dll" />
     </ItemGroup>
     <Publicise InputAssemblies="@(PubliciseAssemblyCSharp)" OutputPath="$(SolutionDir)lib/" PubliciseCompilerGenerated="true" />
-    <Publicise InputAssemblies="@(PubliciseUniRx)" OutputPath="$(SolutionDir)lib/" PubliciseCompilerGenerated="true" />
-    <Publicise InputAssemblies="@(PubliciseRuntimeUI)" OutputPath="$(SolutionDir)lib/" PubliciseCompilerGenerated="true" />
   </Target>
   <Target Name="RenameAssembly" AfterTargets="Publicise" Condition="Exists('$(SolutionDir)lib/Assembly-CSharp_public.dll')">
-    <Move SourceFiles="$(SolutionDir)lib/Assembly-CSharp_public.dll" DestinationFiles="$(SolutionDir)\lib\Assembly-CSharp.dll" />
   </Target>
-  <ItemGroup>
+  <ItemGroup>    
     <Reference Include="Assembly-CSharp">
       <HintPath>$(SolutionDir)lib\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
-    </Reference>
+    </Reference>	
     <Reference Include="0Harmony, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>$(WrathPath)\Wrath_Data\Managed\0Harmony.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <!--<Reference Include="Assembly-CSharp_public">
-      <HintPath>$(WrathPath)\Wrath_Data\Managed\Assembly-CSharp_public.dll</HintPath>
-    </Reference>-->
     <Reference Include="Owlcat.Runtime.Visual">
       <HintPath>$(WrathPath)\Wrath_Data\Managed\Owlcat.Runtime.Visual.dll</HintPath>
       <Private>False</Private>
@@ -157,221 +149,19 @@
   </ItemGroup>
   <ItemGroup>
     <!-- any TTW Based Mod -->
-    <Compile Include="Components\AnyWeaponStatReplacementFixed.cs" />
-    <Compile Include="Components\SetAttackerAutoMiss.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorSpellbook.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Mastermind\MastermindSpellsPerDay.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Mastermind\MastermindSpellList.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Mastermind\MastermindArchetype.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Mastermind\MastermindSpellbook.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Overlord\OverlordSpellbook.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Overlord\OverlordArchetype.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\ChuunibyouActualisation.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\ExtraSpecialPowerSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\PathSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\BodyMindAuraSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorQuickFooted.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\HandsOfSalvation.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindLegacySelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindProficiencies.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\Masterplan.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Mastermind\MastermindQuickFooted.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\Excalibur.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Gifted.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\ArcanistBasicLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\ArcanistBrownFurLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\ArcanistEldritchFontLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\BloodragerChimeraLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\CavalierBasicLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\CavalierKnightOfWall.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\CavalierStandardBearerLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\DruidBaseLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\Fighter2HandedLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\FighterShieldLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\InquisitorDomainLordLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\InquisitorJudgeLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\InquisitorTacticianLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\MagusArcherLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\MagusBasicLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\MagusDancerLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\MagusSpellbladeLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\PaladinBaseLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\PlayerComputerNerdLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\PlayerPartTimeWorkerLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\ShifterGriffonLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\ShifterHolyLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\WitchBaseLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\HaxSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SecretPowerSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\ReleaseEnergy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\Supermassive.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="UMMSettingsUI.cs" />
     <Compile Include="Config\*.cs" />
     <Compile Include="ModLogic\*.cs" />
-    <Compile Include="Content\ContentAdder.cs" />
     <!-- mod specific -->
+    <Compile Include="Content\*.cs" />
     <Compile Include="Content\*\*.cs" />
-    <Compile Include="Content\Classes\Deathsnatcher\DeathsnatcherClass.cs" />
-    <Compile Include="Content\Classes\Deathsnatcher\DeathsnatcherProgression.cs" />
-    <Compile Include="Content\Classes\Deathsnatcher\DeathsnatcherUnit.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\IsekaiProtagonistClass.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\IsekaiProtagonistProgression.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\IsekaiProtagonistSpellbook.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\IsekaiProtagonistSpellList.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\IsekaiProtagonistSpellsKnown.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\IsekaiProtagonistSpellsPerDay.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\PrebuildIsekaiProtagonistFeatureList.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\PrestigeClassReplaceSpellbook.cs" />
-    <Compile Include="Content\Features\Deathsnatcher\DeathsnatcherAnimateDead.cs" />
-    <Compile Include="Content\Features\Deathsnatcher\DeathsnatcherCommandUndead.cs" />
-    <Compile Include="Content\Features\Deathsnatcher\DeathsnatcherCreateUndead.cs" />
-    <Compile Include="Content\Features\Deathsnatcher\DeathSnatcherFastHealing.cs" />
-    <Compile Include="Content\Features\Deathsnatcher\DeathsnatcherFingerOfDeath.cs" />
-    <Compile Include="Content\Features\Deathsnatcher\DeathsnatcherPoisonSting.cs" />
-    <Compile Include="Content\Features\Deathsnatcher\DeathsnatcherResistances.cs" />
-    <Compile Include="Content\Features\Deathsnatcher\DeathsnatcherSizeBaby.cs" />
-    <Compile Include="Content\Features\Deathsnatcher\DeathsnatcherUndeadMaster.cs" />
-    <Compile Include="Content\Features\ExceptionalFeats\EffectImmunitySelection.cs" />
-    <Compile Include="Content\Features\ExceptionalFeats\ExceptionalFeatSelection.cs" />
-    <Compile Include="Content\Features\ExceptionalFeats\ExceptionalSummoningSelection.cs" />
-    <Compile Include="Content\Features\ExceptionalFeats\ExceptionalWeaponSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\ArcanaSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiAuraSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Afterimage.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiFighterTraining.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiPetSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiBonusFeatSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiCantrips.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiProficiencies.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiTalentSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\IsekaiQuickFooted.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OtherworldlyStamina.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\PlotArmor.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SecondReincarnation.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SignatureMoveSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\StartingWeaponSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SummonHarem.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\EdgeLord\EdgeLordArchetype.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorArchetype.cs" />
-    <Compile Include="Content\Classes\IsekaiProtagonist\Archetypes\Hero\HeroArchetype.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\BeachEpisode\BeachEpisodeSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\BeachEpisode\HealthyBody.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\BeachEpisode\InnerPower.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\BeachEpisode\MasterSelf.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\BeachEpisode\Tenacious.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\BarbarianLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\BardLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\DreadKnightLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\FighterBasicLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\KineticDarkElementalistLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\KineticKnightLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\KineticLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\KineticOverwhelmingSoulLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\LegacySelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\MongScaledFistLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\MonkLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\OracleLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\RogueLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\ShamanLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\ShifterBaseLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\ShifterDragonLegacy .cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\ShifterStingerLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\SkaldBaseLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\SkaldSilverTongueLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\SkaldVoiceLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\InheritedClassFeature\SorcererLegacy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\AuraOfRighteousWrath.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\AutoBolster.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\AutoEmpower.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\AutoExtend.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\AutoMaximize.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\AutoQuicken.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\AutoReach.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\AutoSelective.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\BlessingOfTheMythic.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\DupeGold.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\InfiniteSpace.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\Instakill.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\MindControl.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\OverpoweredAbilitySelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\MetaLuck.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\SummonCalamity.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\SuperBuff.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\SupremeBeing.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\TrueResurrection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\UnlimitedPower.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\PerfectRoll.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\AlphaStrike.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\ArmorOfStrength.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\ArmorSaint.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\BetaStrike.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\BodyStrengthening.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\EnergyImmunitySelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\ExtremeSpeed.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\GammaStrike.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\IsekaiChannelNegativeEnergy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\IsekaiChannelPositiveEnergy.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\KillingIntent.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\MagicalAmplification.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\MundaneAura.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\OmegaStrike.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\Reflect.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\Regeneration.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\SneakyMagic.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\SpecialPowerSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\SpellMaster.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\SpellNegation.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\SummonBeast.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\SpecialPower\TrainingMontage.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\EdgeLordLegacySelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\EdgeLordProficiencies.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\ExtraStrike.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\EdgeLord\SupersonicCombat.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\BarrierSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\RealmSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\EnergyCondensationSelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorEnergySelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorLegacySelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodEmperorProficiencies.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\Godhood.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\GodlyVessel.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\GodEmperor\NascentApotheosis.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\GracefulCombat.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\HeroLegacySelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\HeroProficiencies.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Hero\DeusExMachina.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\CorruptAuraFeature.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\OverlordLegacySelection.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\OverlordProficiencies.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\Archetypes\Overlord\SecondPhaseFeature.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\TabletopTweaksBase\AutoBurning.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\TabletopTweaksBase\AutoElemental.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\TabletopTweaksBase\AutoEncouraging.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\TabletopTweaksBase\AutoFlaring.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\TabletopTweaksBase\AutoIntensified.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\TabletopTweaksBase\AutoPiercing.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\TabletopTweaksBase\AutoRime.cs" />
-    <Compile Include="Content\Features\IsekaiProtagonist\OverpoweredAbility\TabletopTweaksBase\AutoSolidShadows.cs" />
+    <Compile Include="Content\*\*\*.cs" />
+    <Compile Include="Content\*\*\*\*.cs" />
+    <Compile Include="Content\*\*\*\*\*.cs" />
     <Compile Include="Content\*\*\*\*\*\*.cs" />
-    <Compile Include="Components\AddExtraAttack.cs" />
-    <Compile Include="Components\AddExtraOffHandAttack.cs" />
-    <Compile Include="Components\AddStatBonusIfNotHasFact.cs" />
-    <Compile Include="Components\ArmorNoSpeedPenalty.cs" />
-    <Compile Include="Components\ContextActionOnNearbyPoint.cs" />
-    <Compile Include="Components\IncreaseSpellDamage.cs" />
-    <Compile Include="Components\PrerequisiteIsMainCharacter.cs" />
-    <Compile Include="Components\ReflectDamage.cs" />
-    <Compile Include="Components\SetBaseStat.cs" />
-    <Compile Include="Utilities\ActionFlow.cs" />
-    <Compile Include="Utilities\AuraUtils.cs" />
-    <Compile Include="Utilities\DescriptionTools.cs" />
-    <Compile Include="Utilities\ExtensionMethods.cs" />
-    <Compile Include="Utilities\PatchTools.cs" />
-    <Compile Include="Utilities\PortraitInjector.cs" />
-    <Compile Include="Utilities\StaticReferences.cs" />
-    <Compile Include="Utilities\TTCoreExtensions.cs" />
-    <Compile Include="Utilities\Values.cs" />
+    <Compile Include="Components\*.cs" />
+    <Compile Include="Utilities\*.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
@@ -513,7 +303,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" AfterTargets="BeforeClean">
     <PropertyGroup>
