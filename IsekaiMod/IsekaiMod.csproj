@@ -59,6 +59,7 @@
     <Publicise InputAssemblies="@(PubliciseAssemblyCSharp)" OutputPath="$(SolutionDir)lib/" PubliciseCompilerGenerated="true" />
   </Target>
   <Target Name="RenameAssembly" AfterTargets="Publicise" Condition="Exists('$(SolutionDir)lib/Assembly-CSharp_public.dll')">
+    <Move SourceFiles="$(SolutionDir)lib/Assembly-CSharp_public.dll" DestinationFiles="$(SolutionDir)\lib\Assembly-CSharp.dll" />
   </Target>
   <ItemGroup>    
     <Reference Include="Assembly-CSharp">
