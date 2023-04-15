@@ -13,6 +13,7 @@ using Kingmaker.ResourceManagement;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Alignments;
+using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
@@ -123,6 +124,7 @@ namespace IsekaiMod.Utilities {
             string displayName = string.Concat(name.Select(x => char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
             return CreateToggleBuffFeature(name, displayName, description, displayName, description, icon, buffEffect);
         }
+        
         public static BlueprintFeature CreateToggleBuffFeature(string name, string displayName, string description, Sprite icon, Action<BlueprintBuff> buffEffect = null) {
             return CreateToggleBuffFeature(name, displayName, description, displayName, description, icon, buffEffect);
         }
@@ -158,23 +160,44 @@ namespace IsekaiMod.Utilities {
         }
 
         public static BlueprintFeature CreateToggleAuraFeature(string name, string description, string descriptionBuff, Sprite icon, BlueprintAbilityAreaEffect.TargetType targetType, Feet auraSize, bool affectEnemies = false, Action<BlueprintBuff> buffEffect = null) {
+            LocalizedString displayDescBuff = Helpers.CreateString(IsekaiContext, $"{name}Buff.Description", descriptionBuff);
+            return CreateToggleAuraFeature(name, description, displayDescBuff, icon, targetType, auraSize, affectEnemies, buffEffect);
+        }
+
+        public static BlueprintFeature CreateToggleAuraFeature(string name, string description, LocalizedString displayDescBuff, Sprite icon, BlueprintAbilityAreaEffect.TargetType targetType, Feet auraSize, bool affectEnemies = false, Action<BlueprintBuff> buffEffect = null) {
             string displayName = string.Concat(name.Select(x => char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
-            LocalizedString displayDesc = Helpers.CreateString(IsekaiContext, $"{name}.Description", description);
+            return CreateToggleAuraFeature(name, displayName, description, displayDescBuff, icon, targetType, auraSize, affectEnemies, buffEffect);
+        }
+
+        public static BlueprintFeature CreateToggleAuraFeature(string name, string displayName, string description, LocalizedString displayDescBuff, Sprite icon, BlueprintAbilityAreaEffect.TargetType targetType, Feet auraSize, bool affectEnemies = false, Action<BlueprintBuff> buffEffect = null) {
             BlueprintBuff buff = CreateBuff($"{name}Buff", bp => {
                 bp.SetName(IsekaiContext, displayName);
-                bp.SetDescription(IsekaiContext, descriptionBuff);
+                bp.SetDescription(displayDescBuff);
                 bp.IsClassFeature = true;
                 bp.m_Icon = icon;
             });
             buffEffect?.Invoke(buff);
+            return CreateToggleAuraFeature(
+                name: name,
+                displayName: displayName,
+                description: description,
+                icon: icon,
+                areaEffect: bp => {
+                    bp.m_TargetType = targetType;
+                    bp.Size = auraSize;
+                    bp.AffectEnemies = affectEnemies;
+                    bp.AddUnconditionalAuraEffect(buff.ToReference<BlueprintBuffReference>());
+                });
+        }
+
+        public static BlueprintFeature CreateToggleAuraFeature(string name, string displayName, string description, Sprite icon, Action<BlueprintAbilityAreaEffect> areaEffect = null) {
+            LocalizedString displayDesc = Helpers.CreateString(IsekaiContext, $"{name}.Description", description);
+
             BlueprintAbilityAreaEffect area = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, $"{name}Area", bp => {
-                bp.m_TargetType = targetType;
                 bp.Shape = AreaEffectShape.Cylinder;
-                bp.Size = auraSize;
-                bp.AffectEnemies = affectEnemies;
                 bp.Fx = new PrefabLink();
-                bp.AddUnconditionalAuraEffect(buff.ToReference<BlueprintBuffReference>());
             });
+            areaEffect?.Invoke(area);
             BlueprintBuff areaBuff = CreateBuff($"{name}AreaBuff", bp => {
                 bp.SetName(IsekaiContext, displayName);
                 bp.SetDescription(displayDesc);

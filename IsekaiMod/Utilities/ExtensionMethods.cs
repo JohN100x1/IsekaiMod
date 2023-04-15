@@ -58,20 +58,23 @@ namespace IsekaiMod.Utilities {
             selection.m_AllFeatures = selection.m_AllFeatures.RemoveFromArray(feature.ToReference<BlueprintFeatureReference>());
         }
 
-        public static void SetText(this BlueprintCue cue, ModContextBase modContext, string name) {
-            cue.Text = Helpers.CreateString(modContext, $"{cue.name}.Text", name);
+        public static void SetText(this BlueprintCue cue, ModContextBase modContext, string text) {
+            cue.Text = Helpers.CreateString(modContext, $"{cue.name}.Text", text);
         }
 
-        public static void SetText(this BlueprintAnswer answer, ModContextBase modContext, string name) {
-            answer.Text = Helpers.CreateString(modContext, $"{answer.name}.Text", name);
+        public static void SetText(this BlueprintAnswer answer, ModContextBase modContext, string text) {
+            answer.Text = Helpers.CreateString(modContext, $"{answer.name}.Text", text);
         }
 
         public static void SetName(this BlueprintWeaponEnchantment enchantment, ModContextBase modContext, string name) {
             enchantment.m_EnchantName = Helpers.CreateString(modContext, $"{enchantment.name}.EnchantName", name);
         }
 
-        public static void SetDescription(this BlueprintWeaponEnchantment enchantment, ModContextBase modContext, string name) {
-            enchantment.m_Description = Helpers.CreateString(modContext, $"{enchantment.name}.Description", name);
+        public static void SetDescription(this BlueprintWeaponEnchantment enchantment, ModContextBase modContext, string desc) {
+            enchantment.m_Description = Helpers.CreateString(modContext, $"{enchantment.name}.Description", desc);
+        }
+        public static void SetDescription(this BlueprintWeaponEnchantment enchantment, LocalizedString description) {
+            enchantment.m_Description = description;
         }
 
         public static void AddToFirst(this BlueprintFeatureSelection selection, BlueprintFeature feature) {
