@@ -1,5 +1,7 @@
 ﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -16,7 +18,13 @@ namespace IsekaiMod.Content.Backgrounds {
                     + "{g|Encyclopedia:Special_Abilities}spell-like ability{/g} that allows {g|Encyclopedia:Spell_Resistance}spell resistance{/g} "
                     + "but cannot cast any spells");
                 bp.AddComponent<AddSpellImmunity>();
-                bp.AddComponent<ForbidSpellCasting>();
+                bp.AddComponent<AreaEffectImmunity>(c => {
+                    c.m_CasterType = TargetType.Any;
+                    c.m_SpecificAreaEffects = false;
+                });
+                bp.AddComponent<AddCondition>(c => {
+                    c.Condition = UnitCondition.SpellcastingForbidden;
+                });
             });
 
             // Register Background
