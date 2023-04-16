@@ -229,6 +229,12 @@ namespace IsekaiMod.Utilities {
                 if (feature is BlueprintProgression progression) {
                     progression.GiveFeaturesForPreviousLevels = true;
                     if (progression.m_Classes != null && progression.m_Classes.Length > 0) {
+                        foreach (var refClass in progression.m_Classes) {
+                            if (refClass != null && myClass.Equals(refClass.m_Class)) {
+                                //already patched return
+                                return;
+                            }
+                        }
                         progression.AddClass(myClass);
                     }
                     BlueprintFeatureBase[] flatten = new BlueprintFeatureBase[] { };
@@ -272,18 +278,22 @@ namespace IsekaiMod.Utilities {
                 //and since the cast to Blueptintfeature will work since it "supposedly" implements it checking if the field is null is the safest solution
                 if (feature.Components != null) {
                     var mySpellSet = new HashSet<SpellReference>();
-                    ContextRankConfig sample = null;
                     SpontaneousSpellConversion[] conversions = new SpontaneousSpellConversion[] { };
-                    bool alreadyPatched = false;
                     foreach (var component in feature.Components) {
                         //check if component is addSpell or addFeat
                         HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component, loopPrevention);
-                        if (component is ContextRankConfig rankConfig && rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel) {
-                            if (rankConfig.m_Class.Contains(referenceClass)) {
-                                sample = rankConfig;
-                            } else if (rankConfig.m_Class.Contains(myClass)) {
-                                alreadyPatched = true;
+                        if (component is ContextRankConfig rankConfig && (
+                            rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel ||
+                            rankConfig.m_BaseValueType == ContextRankBaseValueType.SummClassLevelWithArchetype)) {
+                            if (rankConfig.m_Class.Contains(myClass)) {
+                                //already patched return
+                                return;
                             }
+                            if (rankConfig.m_Class.Contains(referenceClass)) {
+                                rankConfig.m_Class = rankConfig.m_Class.AddToArray(myClass);
+                                //test at level 20 if needed
+                                //rankConfig.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype;
+                            } 
                         }
                         if (component is SpontaneousSpellConversion conversion && conversion.m_CharacterClass != null && conversion.m_CharacterClass.Equals(referenceClass)) {
                             conversions = conversions.AddToArray(conversion);
@@ -296,13 +306,6 @@ namespace IsekaiMod.Utilities {
                             c.m_CharacterClass = myClass;
 
                         });
-                    }
-                    if (sample != null && !alreadyPatched) {
-                        feature.AddComponent<ContextRankConfig>(c => {
-                            sample.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype;
-                            sample.m_Class = sample.m_Class.AddToArray(myClass);
-                        });
-                        //Main.Log("rank progression patched= " + feature.AssetGuid + " added class= " + myClass.Guid + " for ref= " + referenceClass.Guid);
                     }
                     if (conversions.Length > 0) {
                         foreach (var conversion in conversions) {
@@ -392,20 +395,19 @@ namespace IsekaiMod.Utilities {
                         }
                     }
                     if (factRef is BlueprintAbility ability) {
-                        ContextRankConfig sample = null;
-                        bool alreadyPatched = false;
                         foreach (var component2 in ability.Components) {
-                            if (component2 is ContextRankConfig rankConfig && rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel) {
-                                if (rankConfig.m_Class.Contains(referenceClass)) {
-                                    sample = rankConfig;
-                                } else if (rankConfig.m_Class.Contains(myClass)) {
-                                    alreadyPatched = true;
+                            if (component2 is ContextRankConfig rankConfig && (
+                                rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel ||
+                                rankConfig.m_BaseValueType == ContextRankBaseValueType.SummClassLevelWithArchetype)) {
+                                if (rankConfig.m_Class.Contains(myClass)) {
+                                    //already patched return
+                                    return;
                                 }
+                                if (rankConfig.m_Class.Contains(referenceClass)) {
+                                    //rankConfig.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype;
+                                    rankConfig.m_Class = rankConfig.m_Class.AddToArray(myClass);
+                                } 
                             }
-                        }
-                        if (sample != null && !alreadyPatched) {
-                            sample.m_BaseValueType= ContextRankBaseValueType.SummClassLevelWithArchetype;
-                            sample.m_Class = sample.m_Class.AddToArray(myClass);
                         }
                     }
                 }
