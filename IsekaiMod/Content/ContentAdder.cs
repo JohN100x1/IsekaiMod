@@ -78,6 +78,7 @@ namespace IsekaiMod.Content {
                 BetaStrike.Add();
                 GammaStrike.Add();
                 OmegaStrike.Add();
+                SigmaStrike.Add();
                 Regeneration.Add();
                 EnergyImmunitySelection.Add();
                 TrainingMontage.Add();

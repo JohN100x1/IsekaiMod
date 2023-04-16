@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Musician` Isekai background.
 - Added `Rationalist` Isekai background.
 - Added `Supermassive` Special Power.
+- Added `Sigma Strike` Special Power.
 - Added `Power Leveling` Overpowered ability.
 - Added features to `Isekai Protagonist` progression: `Gifted`, `Release Energy`, `Afterimage`, `Secret Power`, `Hax`.
 - Added features to `Edge Lord` progression: `Chuunibyou Actualisation`, `Extra Special Power`.

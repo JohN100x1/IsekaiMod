@@ -89,6 +89,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
 		- `Omega Strike`: Increase your damage multipler by 1.
+		- `Sigma Strike`: Increase your critical threat range by 2.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
 		- `Regeneration`: Get regeneration 10/acid or fire (requires character level 10).
 		- `Training Montage`: Get a +8 bonus to all attributes.
