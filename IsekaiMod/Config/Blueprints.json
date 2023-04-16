@@ -420,6 +420,10 @@
     "MetaLuckBuff": "1906fcb9-af99-4d8c-8d2f-5ed427ab5196",
     "MetaLuckAbility": "20313ba6-d5e9-4f74-bc76-873117d0ea42",
     "MetaLuckFeature": "81553aaf-e241-44ba-9e6e-330871e3ffa0",
+    "PowerLevelingBuff": "f4a7a6e7-9d87-4cb1-ae29-58356a887fce",
+    "PowerLevelingArea": "5b0854ec-6ce1-4525-bef3-55698e8a9b5b",
+    "PowerLevelingAreaBuff": "691fd2b1-2e51-405e-90b1-067959bbb244",
+    "PowerLevelingFeature": "98f66657-5797-450c-9ecf-09fa0ef8a20a",
 
     // TabletopTweaks-Base AutoMetamagic OP abilities
     "AutoRimeBuff": "e1b63a2c-23e9-49e3-acaf-6ee89aeabc99",
