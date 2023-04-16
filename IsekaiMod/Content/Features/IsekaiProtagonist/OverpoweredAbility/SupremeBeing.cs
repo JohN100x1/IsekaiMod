@@ -44,7 +44,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             });
 
-            OverpoweredAbilitySelection.AddToNonAutoSelection(SupremeBeing);
+            OverpoweredAbilitySelection.AddToSelection(SupremeBeing);
         }
     }
 }

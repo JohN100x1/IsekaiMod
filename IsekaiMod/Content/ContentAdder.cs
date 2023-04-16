@@ -99,13 +99,7 @@ namespace IsekaiMod.Content {
 
                 // OP Ability
                 OverpoweredAbilitySelection.Add();
-                AutoBolster.Add();
-                AutoEmpower.Add();
-                AutoExtend.Add();
-                AutoMaximize.Add();
-                AutoQuicken.Add();
-                AutoReach.Add();
-                AutoSelective.Add();
+                AutoMetamagicSelection.Add();
                 Instakill.Add();
                 DupeGold.Add();
                 PerfectRoll.Add();
@@ -117,7 +111,7 @@ namespace IsekaiMod.Content {
                 TrueResurrection.Add();
                 SupremeBeing.Add();
                 MetaLuck.Add();
-                OverpoweredAura.Add();
+                OverpoweredAuraSelection.Add();
                 if (Other.IsEnabled("Mythic Class Feature")) BlessingOfTheMythic.Configure();
                 Main.LogDebug("Class: OP");
 

@@ -339,7 +339,6 @@
     // Overpowered Abilities
     "OverpoweredAbilitySelection": "e74b529d-8ff2-4822-9abc-e475e446e6fb",
     "OverpoweredAbilityMythicSelection": "46d086ef-4932-4fb1-8652-cd4afabada43",
-    "OverpoweredAbilitySelectionMastermind": "e8aa20f4-4fd9-406a-84c9-da3161ed4ca3",
     "OverpoweredAbilitySelectionOverlord": "b8fdf264-0691-4e02-bbcc-6969f0e31d6d",
     "AutoBolsterBuff": "0a147ad2-fcb9-4bce-b2bd-27326b3df07d",
     "AutoBolsterAbility": "5ad0040f-cc05-47b6-a22b-45f187af825b",
@@ -362,6 +361,8 @@
     "AutoSelectiveBuff": "f6acf6bc-d6d5-48f5-a34b-82d8784607c5",
     "AutoSelectiveAbility": "200e9eab-fdd8-4e5e-9461-b49c855416a5",
     "AutoSelectiveFeature": "d65a5f18-5014-4697-afaa-c5858f06116e",
+    "AutoMetamagicSelection": "e8aa20f4-4fd9-406a-84c9-da3161ed4ca3",
+    "AutoMetamagicSelectionMastermind": "3db86b8e-6723-45db-a2da-d2902c1e33ce",
     "InstakillAbility": "55e06f68-8f56-4d4b-824f-f6bbaa46899d",
     "InstakillFeature": "d9c8316e-3a4f-4737-ae7c-56838eb42540",
     "DupeGoldAbility": "ec30bae3-78a1-4c58-81aa-4722f3dd9469",
@@ -420,7 +421,7 @@
     "MetaLuckAbility": "20313ba6-d5e9-4f74-bc76-873117d0ea42",
     "MetaLuckFeature": "81553aaf-e241-44ba-9e6e-330871e3ffa0",
 
-    // TabletopTweaks-Base OP abilities
+    // TabletopTweaks-Base AutoMetamagic OP abilities
     "AutoRimeBuff": "e1b63a2c-23e9-49e3-acaf-6ee89aeabc99",
     "AutoRimeAbility": "f9831ed2-c84a-4692-8597-e0c017bb510a",
     "AutoRimeFeature": "75b0ba47-4248-43fd-b657-b7116d08b03f",
@@ -454,7 +455,6 @@
     "AutoElementalFireBuff": "02ffed6a-3255-4f21-87f6-3824eafea87f",
     "AutoElementalFireAbility": "b64159e6-2fbf-4ece-96a5-c162f827dd2d",
     "AutoElementalFireFeature": "335ef0b6-c890-4e3a-8dec-85171831aafa",
-    "AutoElementalSelection": "6ee86b35-cbac-4c84-a0ca-1eef4a2e619f",
 
     // God Emperor Features
     "GodEmperorSpellbook": "51f83cfe-aac9-4c49-8eac-294cd5dc8e1a",

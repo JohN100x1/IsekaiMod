@@ -70,7 +70,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             });
 
-            OverpoweredAbilitySelection.AddToNonAutoSelection(UnlimitedPowerFeature);
+            OverpoweredAbilitySelection.AddToSelection(UnlimitedPowerFeature);
         }
     }
 }

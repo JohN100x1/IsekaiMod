@@ -103,7 +103,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
             // Overpowered Ability
             BlueprintFeatureSelection OverpoweredAbilitySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection");
-            BlueprintFeatureSelection OverpoweredAbilitySelectionMastermind = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionMastermind");
+            BlueprintFeatureSelection AutoMetamagicSelectionMastermind = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "AutoMetamagicSelectionMastermind");
             BlueprintFeatureSelection OverpoweredAbilitySelectionOverlord = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionOverlord");
 
             var IsekaiProtagonistProgression = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "IsekaiProtagonistProgression", bp => {
@@ -165,7 +165,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                     GoldBarrierHeroism, GoldBarrierFastHealing, GoldBarrierResistance),
                 
                 // Mastermind UI group
-                Helpers.CreateUIGroup(OverpoweredAbilitySelectionMastermind, ArcanistExploitSelection),
+                Helpers.CreateUIGroup(AutoMetamagicSelectionMastermind, ArcanistExploitSelection),
                 Helpers.CreateUIGroup(ArcanistConsumeSpells, EldritchFontEldritchSurge, EldritchFontImprovedSurge, EldritchFontGreaterSurge),
 
                 // Overlord UI group

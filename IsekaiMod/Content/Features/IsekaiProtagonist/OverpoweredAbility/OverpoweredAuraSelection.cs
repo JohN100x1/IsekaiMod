@@ -27,7 +27,7 @@ using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
-    internal class OverpoweredAura {
+    internal class OverpoweredAuraSelection {
         public static void Add() {
 
             var Icon_RighteousWrath = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_OP_AURA_RIGHTEOUS_WRATH.png");
@@ -261,7 +261,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 };
             });
 
-            OverpoweredAbilitySelection.AddToNonAutoSelection(OverpoweredAuraSelection);
+            OverpoweredAbilitySelection.AddToSelection(OverpoweredAuraSelection);
         }
 
         private static BlueprintFeature CreateOPAuraFeature(string name, LocalizedString displayName, LocalizedString displayDesc, Sprite icon, BlueprintBuff buff, AlignmentComponent alignment, AlignmentMaskType alignmentMask) {
