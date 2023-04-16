@@ -1,6 +1,4 @@
-﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.GodEmperor;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
@@ -18,7 +16,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             PatchOverlord();
         }
 
-        public static void PatchIsekai() {
+        public static void PatchIsekai() { // TODO: shorten
             var LoremasterIsekai = CreateReplaceIsekaiSpellbook("LoremasterIsekai", 3, bp => {
                 bp.SetDescription(StaticReferences.Strings.ReplaceSpellbookDescription.Loremaster);
                 bp.Groups = new FeatureGroup[] { FeatureGroup.MythicAdditionalProgressions };
@@ -210,17 +208,17 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 bp.AddComponent<PrerequisiteNoArchetype>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.GodEmperorArchetype.GetReference();
+                    c.m_Archetype = GodEmperorArchetype.GetReference();
                 });
                 bp.AddComponent<PrerequisiteNoArchetype>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.MastermindArchetype.GetReference();
+                    c.m_Archetype = MastermindArchetype.GetReference();
                 });
                 bp.AddComponent<PrerequisiteNoArchetype>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.OverlordArchetype.GetReference();
+                    c.m_Archetype = OverlordArchetype.GetReference();
                 });
             });
             init?.Invoke(result);
@@ -243,18 +241,18 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.GodEmperorArchetype.GetReference();
+                    c.m_Archetype = GodEmperorArchetype.GetReference();
                     c.Level = 1;
                 });
                 bp.AddComponent<PrerequisiteNoArchetype>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.MastermindArchetype.GetReference();
+                    c.m_Archetype = MastermindArchetype.GetReference();
                 });
                 bp.AddComponent<PrerequisiteNoArchetype>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.OverlordArchetype.GetReference();
+                    c.m_Archetype = OverlordArchetype.GetReference();
                 });
             });
             init?.Invoke(result);
@@ -277,18 +275,18 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 bp.AddComponent<PrerequisiteNoArchetype>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.GodEmperorArchetype.GetReference();
+                    c.m_Archetype = GodEmperorArchetype.GetReference();
                 });
                 bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.MastermindArchetype.GetReference();
+                    c.m_Archetype = MastermindArchetype.GetReference();
                     c.Level = 1;
                 });
                 bp.AddComponent<PrerequisiteNoArchetype>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.OverlordArchetype.GetReference();
+                    c.m_Archetype = OverlordArchetype.GetReference();
                 });
             });
             init?.Invoke(result);
@@ -311,17 +309,17 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 bp.AddComponent<PrerequisiteNoArchetype>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.GodEmperorArchetype.GetReference();
+                    c.m_Archetype = GodEmperorArchetype.GetReference();
                 });
                 bp.AddComponent<PrerequisiteNoArchetype>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.MastermindArchetype.GetReference();
+                    c.m_Archetype = MastermindArchetype.GetReference();
                 });
                 bp.AddComponent<PrerequisiteArchetypeLevel>(c => {
                     c.Group = Prerequisite.GroupType.All;
                     c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                    c.m_Archetype = Archetypes.OverlordArchetype.GetReference();
+                    c.m_Archetype = OverlordArchetype.GetReference();
                     c.Level = 1;
                 });
             });

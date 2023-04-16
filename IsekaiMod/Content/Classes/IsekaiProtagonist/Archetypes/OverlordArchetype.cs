@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
+﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;

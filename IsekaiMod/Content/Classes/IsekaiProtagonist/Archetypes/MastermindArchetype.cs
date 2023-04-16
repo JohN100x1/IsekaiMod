@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
