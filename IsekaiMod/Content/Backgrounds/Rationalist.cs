@@ -19,7 +19,7 @@ namespace IsekaiMod.Content.Backgrounds {
                     + "but cannot cast any spells");
                 bp.AddComponent<AddSpellImmunity>();
                 bp.AddComponent<AreaEffectImmunity>(c => {
-                    c.m_CasterType = TargetType.Any;
+                    c.m_CasterType = TargetType.Enemy;
                     c.m_SpecificAreaEffects = false;
                 });
                 bp.AddComponent<AddCondition>(c => {

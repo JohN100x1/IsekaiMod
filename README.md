@@ -127,6 +127,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `True Resurrection`: Resurrect a dead companion (no diamond cost).
 		- `Supreme Being`: All your attributes have a base value of 30.
 		- `Meta Luck`: Always take the higher of two d20 rolls.
+		- `Overpowered Aura`: 4 different alignment based auras which give either extra attack(s) and/or damage.
 		- `Mythic Class Feature`: see below
 		- `Dual Legacy`: Pick a second base class to get abilities from.
 		- The following requires TabletopTweaks-Base:

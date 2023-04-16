@@ -63,6 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- Removed Special Power at 9th and 11th level.
 	- Updated icon for `Graceful Combat` feature.
 - Changed `Dark Aura` debuff from -2 -> -4 but no longer affects attack rolls.
+- Replaced `Aura of Righteous Wrath` with 4 different alignment based variants.
 - Removed alignment restrictions for `Isekai Channel Positive Energy` and `Isekai Channel Negative Energy`.
 - Renamed `Energy Immunity Selection` to `Energy Immunity`.
 - Renamed `Aura of Golden Protection` to `Gold Barrier`.

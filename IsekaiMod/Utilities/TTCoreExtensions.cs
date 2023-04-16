@@ -40,7 +40,7 @@ namespace IsekaiMod.Utilities {
         public static void RegisterSpell(BlueprintSpellList list, BlueprintAbility spell, int level) {
             // Core method check if spell already exists uses a simple contains check that fails if multiple instances of the spell were created (for example if it exists in multiple spellbooks)
             // the Core method does a few other nice things though, like correctly adding the spell to specialist lists so should be called after ones own security check
-            if (ListContainsSpell(list, spell)) {
+            if (ContainsSpell(list, spell)) {
                 //Comment back in if you are trying to fix bugs in the spelllist but otherwise this just blows up the log for no good purpose
                 //IsekaiContext.Logger.LogWarning("spell already registered= " + spell.name + " gui id=" + spell.AssetGuid.m_Guid.ToString("N"));
                 return;
@@ -54,6 +54,35 @@ namespace IsekaiMod.Utilities {
                 return;
             }
             mythicSpellbook.m_AllowedSpellbooks = mythicSpellbook.m_AllowedSpellbooks.AddToArray(spellBook.ToReference<BlueprintSpellbookReference>());
+        }
+
+        private static bool ContainsSpell(BlueprintSpellList list, BlueprintAbility spell) {
+            foreach (var level in list.SpellsByLevel) {
+                foreach (var comparespell in level.Spells) {
+                    if (spell.AssetGuid.m_Guid.ToString("N").Equals(comparespell.AssetGuid.m_Guid.ToString("N"))) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private static bool ContainsClass(BlueprintCharacterClass[] array, BlueprintCharacterClass classToCheck) {
+            foreach (var arrayClass in array) {
+                if (arrayClass.AssetGuid.m_Guid.ToString("N").Equals(classToCheck.AssetGuid.m_Guid.ToString("N"))) { return true; }
+            }
+            return false;
+        }
+
+        private static bool ContainsSpellbook(BlueprintSpellbookReference[] array, BlueprintSpellbook classToCheck) {
+            foreach (var arrayClass in array) {
+                if (arrayClass != null && arrayClass.Guid != null) {
+                    if (arrayClass.Guid.Equals(classToCheck.AssetGuid.m_Guid.ToString("N"))) { return true; }
+                } else {
+                    IsekaiContext.Logger.LogWarning("prestige class spellbook array contained null value");
+                }
+            }
+            return false;
         }
 
         public static BlueprintAnswer CreateAnswer(string name, Action<BlueprintAnswer> init = null) {
@@ -159,19 +188,13 @@ namespace IsekaiMod.Utilities {
             return feature;
         }
 
-        public static BlueprintFeature CreateToggleAuraFeature(string name, string description, string descriptionBuff, Sprite icon, BlueprintAbilityAreaEffect.TargetType targetType, Feet auraSize, bool affectEnemies = false, Action<BlueprintBuff> buffEffect = null) {
+        public static BlueprintFeature CreateToggleAuraBuffFeature(string name, string description, string descriptionBuff, Sprite icon, BlueprintAbilityAreaEffect.TargetType targetType, Feet auraSize, bool affectEnemies = false, Action<BlueprintBuff> buffEffect = null) {
+            string displayNameFromName = string.Concat(name.Select(x => char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
+            LocalizedString displayName = Helpers.CreateString(IsekaiContext, $"{name}.Name", displayNameFromName);
+            LocalizedString displayDesc = Helpers.CreateString(IsekaiContext, $"{name}.Description", description);
             LocalizedString displayDescBuff = Helpers.CreateString(IsekaiContext, $"{name}Buff.Description", descriptionBuff);
-            return CreateToggleAuraFeature(name, description, displayDescBuff, icon, targetType, auraSize, affectEnemies, buffEffect);
-        }
-
-        public static BlueprintFeature CreateToggleAuraFeature(string name, string description, LocalizedString displayDescBuff, Sprite icon, BlueprintAbilityAreaEffect.TargetType targetType, Feet auraSize, bool affectEnemies = false, Action<BlueprintBuff> buffEffect = null) {
-            string displayName = string.Concat(name.Select(x => char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
-            return CreateToggleAuraFeature(name, displayName, description, displayDescBuff, icon, targetType, auraSize, affectEnemies, buffEffect);
-        }
-
-        public static BlueprintFeature CreateToggleAuraFeature(string name, string displayName, string description, LocalizedString displayDescBuff, Sprite icon, BlueprintAbilityAreaEffect.TargetType targetType, Feet auraSize, bool affectEnemies = false, Action<BlueprintBuff> buffEffect = null) {
             BlueprintBuff buff = CreateBuff($"{name}Buff", bp => {
-                bp.SetName(IsekaiContext, displayName);
+                bp.SetName(displayName);
                 bp.SetDescription(displayDescBuff);
                 bp.IsClassFeature = true;
                 bp.m_Icon = icon;
@@ -180,7 +203,7 @@ namespace IsekaiMod.Utilities {
             return CreateToggleAuraFeature(
                 name: name,
                 displayName: displayName,
-                description: description,
+                displayDesc: displayDesc,
                 icon: icon,
                 areaEffect: bp => {
                     bp.m_TargetType = targetType;
@@ -190,16 +213,15 @@ namespace IsekaiMod.Utilities {
                 });
         }
 
-        public static BlueprintFeature CreateToggleAuraFeature(string name, string displayName, string description, Sprite icon, Action<BlueprintAbilityAreaEffect> areaEffect = null) {
-            LocalizedString displayDesc = Helpers.CreateString(IsekaiContext, $"{name}.Description", description);
-
+        public static BlueprintFeature CreateToggleAuraFeature(string name, LocalizedString displayName, LocalizedString displayDesc, Sprite icon, Action<BlueprintAbilityAreaEffect> areaEffect = null) {
             BlueprintAbilityAreaEffect area = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, $"{name}Area", bp => {
                 bp.Shape = AreaEffectShape.Cylinder;
                 bp.Fx = new PrefabLink();
+                bp.AggroEnemies = false;
             });
             areaEffect?.Invoke(area);
             BlueprintBuff areaBuff = CreateBuff($"{name}AreaBuff", bp => {
-                bp.SetName(IsekaiContext, displayName);
+                bp.SetName(displayName);
                 bp.SetDescription(displayDesc);
                 bp.m_Icon = icon;
                 bp.IsClassFeature = true;
@@ -209,14 +231,14 @@ namespace IsekaiMod.Utilities {
                 });
             });
             BlueprintActivatableAbility ability = CreateActivatableAbility($"{name}Ability", bp => {
-                bp.SetName(IsekaiContext, displayName);
+                bp.SetName(displayName);
                 bp.SetDescription(displayDesc);
                 bp.m_Icon = icon;
                 bp.m_Buff = areaBuff.ToReference<BlueprintBuffReference>();
                 bp.DoNotTurnOffOnRest = true;
             });
             BlueprintFeature feature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, $"{name}Feature", bp => {
-                bp.SetName(IsekaiContext, displayName);
+                bp.SetName(displayName);
                 bp.SetDescription(displayDesc);
                 bp.m_Icon = icon;
                 bp.AddComponent<AddFacts>(c => {
@@ -227,34 +249,6 @@ namespace IsekaiMod.Utilities {
             return feature;
         }
 
-        private static bool ListContainsSpell(BlueprintSpellList list, BlueprintAbility spell) {
-            foreach (var level in list.SpellsByLevel) {
-                foreach (var comparespell in level.Spells) {
-                    if (spell.AssetGuid.m_Guid.ToString("N").Equals(comparespell.AssetGuid.m_Guid.ToString("N"))) {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-
-        private static bool ContainsClass(BlueprintCharacterClass[] array, BlueprintCharacterClass classToCheck) {
-            foreach (var arrayClass in array) {
-                if (arrayClass.AssetGuid.m_Guid.ToString("N").Equals(classToCheck.AssetGuid.m_Guid.ToString("N"))) { return true; }
-            }
-            return false;
-        }
-
-        private static bool ContainsSpellbook(BlueprintSpellbookReference[] array, BlueprintSpellbook classToCheck) {
-            foreach (var arrayClass in array) {
-                if (arrayClass != null && arrayClass.Guid != null) {
-                    if (arrayClass.Guid.Equals(classToCheck.AssetGuid.m_Guid.ToString("N"))) { return true; }
-                } else {
-                    IsekaiContext.Logger.LogWarning("prestige class spellbook array contained null value");
-                }
-            }
-            return false;
-        }
     }
 
     internal class AssetLoaderExtension : AssetLoader {

@@ -53,7 +53,7 @@
     <MakeDir Directories="$(SolutionDir)lib" />
   </Target>
   <Target Name="Publicise" AfterTargets="CreateLib">
-  <ItemGroup>
+    <ItemGroup>
       <PubliciseAssemblyCSharp Include="$(WrathPath)\Wrath_Data\Managed\Assembly-CSharp.dll" />
     </ItemGroup>
     <Publicise InputAssemblies="@(PubliciseAssemblyCSharp)" OutputPath="$(SolutionDir)lib/" PubliciseCompilerGenerated="true" />
@@ -61,11 +61,11 @@
   <Target Name="RenameAssembly" AfterTargets="Publicise" Condition="Exists('$(SolutionDir)lib/Assembly-CSharp_public.dll')">
     <Move SourceFiles="$(SolutionDir)lib/Assembly-CSharp_public.dll" DestinationFiles="$(SolutionDir)\lib\Assembly-CSharp.dll" />
   </Target>
-  <ItemGroup>    
+  <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>$(SolutionDir)lib\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
-    </Reference>	
+    </Reference>
     <Reference Include="0Harmony, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>$(WrathPath)\Wrath_Data\Managed\0Harmony.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
@@ -162,7 +162,14 @@
     <Compile Include="Content\*\*\*\*\*.cs" />
     <Compile Include="Content\*\*\*\*\*\*.cs" />
     <Compile Include="Components\*.cs" />
-    <Compile Include="Utilities\*.cs" />
+    <Compile Include="Utilities\ActionFlow.cs" />
+    <Compile Include="Utilities\DescriptionTools.cs" />
+    <Compile Include="Utilities\ExtensionMethods.cs" />
+    <Compile Include="Utilities\PatchTools.cs" />
+    <Compile Include="Utilities\PortraitInjector.cs" />
+    <Compile Include="Utilities\StaticReferences.cs" />
+    <Compile Include="Utilities\TTCoreExtensions.cs" />
+    <Compile Include="Utilities\Values.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />

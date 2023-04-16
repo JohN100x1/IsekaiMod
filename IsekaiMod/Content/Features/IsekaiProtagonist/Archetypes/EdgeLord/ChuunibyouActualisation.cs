@@ -55,7 +55,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
                 bp.Shape = AreaEffectShape.Cylinder;
                 bp.Size = new Feet(120);
                 bp.Fx = new PrefabLink();
-                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(ChuunibyouActualisationBuff.ToReference<BlueprintBuffReference>()));
+                bp.AddUnconditionalAuraEffect(ChuunibyouActualisationBuff.ToReference<BlueprintBuffReference>());
             });
             var ChuunibyouActualisationAreaBuff = TTCoreExtensions.CreateBuff("ChuunibyouActualisationAreaBuff", bp => {
                 bp.SetName(IsekaiContext, Name);

@@ -120,7 +120,7 @@ namespace IsekaiMod.Content {
                 TrueResurrection.Add();
                 SupremeBeing.Add();
                 MetaLuck.Add();
-                AuraOfRighteousWrath.Add();
+                OverpoweredAura.Add();
                 if (Other.IsEnabled("Mythic Class Feature")) BlessingOfTheMythic.Configure();
                 Main.LogDebug("Class: OP");
 

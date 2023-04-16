@@ -20,7 +20,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
 
         public static void Add() {
 
-            var FriendlyAuraFeature = TTCoreExtensions.CreateToggleAuraFeature(
+            var FriendlyAuraFeature = TTCoreExtensions.CreateToggleAuraBuffFeature(
                 name: "FriendlyAura",
                 description: "You emit an aura of friendship that cause enemies to subconsciously hold back.\nEnemies within 40 feet take a –4 penalty on attack and damage rolls.",
                 descriptionBuff: "This creature has a –4 penalty on attack {g|Encyclopedia:Dice}rolls{/g}.",
@@ -41,7 +41,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                     });
                 });
 
-            var DarkAuraFeature = TTCoreExtensions.CreateToggleAuraFeature(
+            var DarkAuraFeature = TTCoreExtensions.CreateToggleAuraBuffFeature(
                 name: "DarkAura",
                 description: "You emit an aura of darkness that cause enemies to become uneasy and vulnerable.\nEnemies within 40 feet take a –4 penalty on AC and saving throws.",
                 descriptionBuff: "This creature has a –4 penalty on AC and saving throws.",
@@ -72,7 +72,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                     });
                 });
 
-            var DivineAuraFeature = TTCoreExtensions.CreateToggleAuraFeature(
+            var DivineAuraFeature = TTCoreExtensions.CreateToggleAuraBuffFeature(
                 name: "DivineAura",
                 description: "You emit an aura of divinity that cause enemies to be overcome with feelings of futility.\nEnemies within 40 feet take a –4 penalty on all attributes.",
                 descriptionBuff: "This creature has a –4 penalty on all attributes.",

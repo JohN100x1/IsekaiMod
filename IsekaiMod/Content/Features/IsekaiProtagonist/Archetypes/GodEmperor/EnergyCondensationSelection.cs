@@ -98,7 +98,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 bp.SetDescription(IsekaiContext, "At 5th level, you are able to condense your channelled energy to form a protective layer "
                     + "around you, giving you resistance against elemental damage.");
                 bp.m_Icon = Icon_LightEnergyCondensation;
-                bp.IgnorePrerequisites = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     LightEnergyCondensation.ToReference<BlueprintFeatureReference>(),
                     DarkEnergyCondensation.ToReference<BlueprintFeatureReference>(),

@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Content.Backgrounds;
-using Kingmaker.Blueprints;
+﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Items.Ecnchantments;
@@ -35,14 +34,19 @@ namespace IsekaiMod.Utilities {
         }
 
         public static void SetSummonDescription(this BlueprintAbility ability, ModContextBase modContext, string desciption) {
-            const string StandardSummonDescription = " Summoned monsters appear where you designate and act according to their "
+            string SummonAppendix = " Summoned monsters appear where you designate and act according to their "
                 + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} "
                 + "your opponents to the best of their ability.";
-            ability.m_Description = Helpers.CreateString(modContext, $"{ability.name}.Description", desciption + StandardSummonDescription, shouldProcess: true);
+            ability.SetDescription(modContext, desciption + SummonAppendix);
         }
 
         public static void SetBackgroundDescription(this BlueprintFeature feature, ModContextBase modContext, string desciption) {
-            feature.m_Description = Helpers.CreateString(modContext, $"{feature.name}.Description", desciption + IsekaiBackgroundSelection.DescAppendix, shouldProcess: true);
+            string BackgroundAppendix = "\nIf the character already has the class skill, {g|Encyclopedia:Weapon_Proficiency}weapon proficiency{/g} "
+                + "or armor proficiency granted by the selected background from her class during character creation, then the corresponding "
+                + "{g|Encyclopedia:Bonus}bonuses{/g} from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case "
+                + "of weapon proficiency and a -1 Armor {g|Encyclopedia:Check}Check{/g} {g|Encyclopedia:Penalty}Penalty{/g} reduction in case "
+                + "of armor proficiency.";
+            feature.SetDescription(modContext, desciption + BackgroundAppendix);
         }
 
         public static void SetLocalisedName(this BlueprintUnit Unit, ModContextBase modContext, string name) {
@@ -66,13 +70,10 @@ namespace IsekaiMod.Utilities {
             answer.Text = Helpers.CreateString(modContext, $"{answer.name}.Text", text);
         }
 
-        public static void SetName(this BlueprintWeaponEnchantment enchantment, ModContextBase modContext, string name) {
-            enchantment.m_EnchantName = Helpers.CreateString(modContext, $"{enchantment.name}.EnchantName", name);
+        public static void SetName(this BlueprintWeaponEnchantment enchantment, LocalizedString name) {
+            enchantment.m_EnchantName = name;
         }
 
-        public static void SetDescription(this BlueprintWeaponEnchantment enchantment, ModContextBase modContext, string desc) {
-            enchantment.m_Description = Helpers.CreateString(modContext, $"{enchantment.name}.Description", desc);
-        }
         public static void SetDescription(this BlueprintWeaponEnchantment enchantment, LocalizedString description) {
             enchantment.m_Description = description;
         }
