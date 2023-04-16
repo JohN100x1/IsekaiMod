@@ -61,6 +61,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- Can choose a familiar or animal companion... or a deathsnatcher.
 		- Can choose a legacy class feature (features from other classes).
 	- `God Emperor` (Isekai Protagonist Archetype)
+		- Spontaneous caster that uses Wisdom.
 		- Has powerful scaling immunities and auras.
 	- `Edge Lord` (Isekai Protagonist Archetype)
 		- Has alot of extra attacks.
