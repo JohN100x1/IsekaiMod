@@ -299,19 +299,8 @@ namespace IsekaiMod.Utilities {
                     }
                     if (sample != null && !alreadyPatched) {
                         feature.AddComponent<ContextRankConfig>(c => {
-                            c.m_BaseValueType = ContextRankBaseValueType.ClassLevel;
-                            c.m_Type = sample.m_Type;
-                            c.m_StartLevel = sample.m_StartLevel;
-                            c.m_Progression = sample.m_Progression;
-                            c.m_Flags = sample.m_Flags;
-                            c.m_BuffRankMultiplier = sample.m_BuffRankMultiplier;
-                            c.m_Class = new BlueprintCharacterClassReference[] { myClass };
-                            c.m_CustomProgression = sample.m_CustomProgression;
-                            c.m_Max = sample.m_Max;
-                            c.m_Min = sample.m_Min;
-                            c.m_Stat = sample.m_Stat;
-                            c.m_StepLevel = sample.m_StepLevel;
-                            c.m_ExceptClasses = sample.m_ExceptClasses;
+                            sample.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype;
+                            sample.m_Class = sample.m_Class.AddToArray(myClass);
                         });
                         //Main.Log("rank progression patched= " + feature.AssetGuid + " added class= " + myClass.Guid + " for ref= " + referenceClass.Guid);
                     }
@@ -415,22 +404,8 @@ namespace IsekaiMod.Utilities {
                             }
                         }
                         if (sample != null && !alreadyPatched) {
-                            ability.AddComponent<ContextRankConfig>(c => {
-                                c.m_BaseValueType = ContextRankBaseValueType.ClassLevel;
-                                c.m_Type = sample.m_Type;
-                                c.m_StartLevel = sample.m_StartLevel;
-                                c.m_Progression = sample.m_Progression;
-                                c.m_Flags = sample.m_Flags;
-                                c.m_BuffRankMultiplier = sample.m_BuffRankMultiplier;
-                                c.m_Class = new BlueprintCharacterClassReference[] { myClass };
-                                c.m_CustomProgression = sample.m_CustomProgression;
-                                c.m_Max = sample.m_Max;
-                                c.m_Min = sample.m_Min;
-                                c.m_Stat = sample.m_Stat;
-                                c.m_StepLevel = sample.m_StepLevel;
-                                c.m_ExceptClasses = sample.m_ExceptClasses;
-                            });
-                            //Main.Log("rank progression patched= " + ability.AssetGuid + " added class= " + myClass.Guid + " for ref= " + referenceClass.Guid);
+                            sample.m_BaseValueType= ContextRankBaseValueType.SummClassLevelWithArchetype;
+                            sample.m_Class = sample.m_Class.AddToArray(myClass);
                         }
                     }
                 }
