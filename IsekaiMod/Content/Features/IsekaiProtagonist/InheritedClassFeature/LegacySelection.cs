@@ -99,6 +99,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             KineticKnightLegacy.Configure();
             KineticOverwhelmingSoulLegacy.Configure();
             KineticDarkElementalistLegacy.Configure();
+            KineticPsychoLegacy.Configure();
             MagusBasicLegacy.Configure();
             MagusArcherLegacy.Configure();
             MagusDancerLegacy.Configure();
@@ -149,6 +150,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             KineticKnightLegacy.PatchProgression();
             KineticOverwhelmingSoulLegacy.PatchProgression();
             KineticDarkElementalistLegacy.PatchProgression();
+            KineticPsychoLegacy.PatchProgression();
             MagusBasicLegacy.PatchProgression();
             MagusArcherLegacy.PatchProgression();
             MagusDancerLegacy.PatchProgression();

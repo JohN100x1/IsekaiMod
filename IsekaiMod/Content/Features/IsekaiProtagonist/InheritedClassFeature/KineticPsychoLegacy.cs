@@ -1,5 +1,6 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
@@ -12,19 +13,18 @@ using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
-    internal class KineticOverwhelmingSoulLegacy {
-        private static string BaseArchetypeId = "aa11888104d17f7459851e8d559ffa98";
+    internal class KineticPsychoLegacy {
+        private static string BaseArchetypeId = "f2847dd4b12fffd41beaa3d7120d27ad";
         private static BlueprintArchetype BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);
 
         private static BlueprintProgression prog;
 
         public static void Configure() {
-            prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "KineticOverwhelmingSoulLegacy", bp => {
-                bp.SetName(IsekaiContext, "Kinetic Legacy - Noble Soul");
+            prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "KineticPsychoLegacy", bp => {
+                bp.SetName(IsekaiContext, "Kinetic Legacy - Elemental Ascendent");
                 bp.SetDescription(IsekaiContext,
-                    "Your soul is stronger than most, for you hail from another world.\n" +
-                    "You command the elements with ease and grace, while others struggle and suffer.\n" +
-                    "You are a noble soul, a revered and feared master of elemental power.");
+                "The unfathomable willpower needed to fuel your own ascenscion allows you to bend the elements as you see fit. \n" +
+                "As your divine essence matures you push the limits of your mind ever so far to claim dominion over the fundamental forces of the multiverse, sometimes at the risk of being overwhelmed by them.");
                 bp.GiveFeaturesForPreviousLevels = true;
                 bp.AddComponent<AddProficiencies>(c => {
                     c.WeaponProficiencies = new Kingmaker.Enums.WeaponCategory[] { Kingmaker.Enums.WeaponCategory.KineticBlast };
@@ -34,11 +34,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
             LegacySelection.RegisterForFeat(prog);
             //LegacySelection.Register(prog);
-            EdgeLordLegacySelection.Prohibit(prog);
-            //GodEmperorLegacySelection.Register(prog);
-            HeroLegacySelection.Register(prog);
-            MastermindLegacySelection.Prohibit(prog);
-            OverlordLegacySelection.Register(prog);
+            //EdgeLordLegacySelection.Prohibit(prog);
+            GodEmperorLegacySelection.Register(prog);
+            //HeroLegacySelection.Register(prog);
+            //MastermindLegacySelection.Prohibit(prog);
+            //OverlordLegacySelection.Register(prog);
         }
         public static void PatchProgression() {
             if (prog != null) {
@@ -55,12 +55,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticDarkElementalistLegacy.Get().ToReference<BlueprintFeatureReference>(); });
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticKnightLegacy.Get().ToReference<BlueprintFeatureReference>(); });
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticLegacy.Get().ToReference<BlueprintFeatureReference>(); });
-                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticPsychoLegacy.Get().ToReference<BlueprintFeatureReference>(); });
+                prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = KineticOverwhelmingSoulLegacy.Get().ToReference<BlueprintFeatureReference>(); });
             }
         }
         public static BlueprintProgression Get() {
             if (prog != null) return prog;
-            return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "KineticOverwhelmingSoulLegacy");
+            return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "KineticPsychoLegacy");
         }
     }
 }
