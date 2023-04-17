@@ -61,7 +61,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed for `Hero`:
 	- Now has Tower shield and exotic weapon proficiency at 1st level.
 	- `Friendly Aura` replaced with `Heroic Aura`.
-	- `Hero's Presence' replaced with `Deus Ex Machina`.
+	- `Hero's Presence` replaced with `Deus Ex Machina`.
 	- Added another OP Ability at 10th level.
 	- Added another Special Power at 3rd and 17th level.
 	- Removed Special Power at 9th and 11th level.
