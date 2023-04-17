@@ -34,7 +34,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             });
 
             LegacySelection.RegisterForFeat(prog);
-            //LegacySelection.Register(prog);
+            LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
             GodEmperorLegacySelection.Register(prog);
             HeroLegacySelection.Register(prog);
