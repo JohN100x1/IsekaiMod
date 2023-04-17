@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-# [Unreleased]
+# [5.0.0] - 2023-04-17
 ### Added
 - Added `Mastermind` archetype (Isekai Protagonist).
 - Added `Overlord` archetype (Isekai Protagonist).
@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Divine Aura` feature to `Otherwordly Aura` selection.
 - Added `Sneak attack Immunity` to `Effect Immunity` selection.
 - Added `Critical hit Immunity` to `Effect Immunity` selection.
+- Added `Signature Strike` to `Signature Move` selection.
 ### Changed
 - Buffed `Friendly Aura` to also affect damage rolls.
 - Buffed `Siphoning Aura` to scale 1/2 character level.
@@ -76,6 +77,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fixed `Graceful Combat` not applying the 1.5x damage bonus to two-handed weapons.
 - Fixed `Reflect` to not affect attacks from the owner.
+- Fixed `Monk Legacy` fast movement not being applied correctly.
+- Fixed `Bloodrager Legacy - Chimeric Rager` bloodlines not being shown.
 ### Removed
 - Removed `Villain` archetype (Isekai Protagonist).
 - Removed `Aura of Divine Fury` feature from `God Emperor` and `Hero` progression.
