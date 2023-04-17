@@ -4,7 +4,6 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.ElementsSystem;
 using Kingmaker.Enums;
-using Kingmaker.Localization;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -24,10 +23,11 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
 
     internal class SummonBeast {
+        private const string StandardSummonDescription = "Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} "
+            + "{g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.";
 
         // Units
         private static readonly BlueprintUnit CR7_HydraAdvanced = BlueprintTools.GetBlueprint<BlueprintUnit>("e135463f804adb541b402bae3f657af4");
-
         private static readonly BlueprintUnit CR9_OwlbearAdvanced = BlueprintTools.GetBlueprint<BlueprintUnit>("7d3bd11169778c845b2631d22d27d465");
         private static readonly BlueprintUnit CR9_RocStandard = BlueprintTools.GetBlueprint<BlueprintUnit>("12d33b211fa5b394fb214e202a2db300");
         private static readonly BlueprintUnit CR10_FiendishMinotaur_Guard = BlueprintTools.GetBlueprint<BlueprintUnit>("962427b9ddb354947ac92655dc637e0c");
@@ -39,14 +39,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
         public static void Add() {
             var SummonBeastAbility = CreateSummonAbility("SummonBeastAbility", bp => {
                 bp.SetName(IsekaiContext, "Summon Beast");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Hydra, an Owlbear, a Roc, or a Minotaur. "
-                    + "Summoned monsters appear where you designate and act according to their {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. "
-                    + "They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Hydra, an Owlbear, a Roc, or a Minotaur.");
             });
             var SummonHydra = CreateSummonAbility("SummonHydra", bp => {
                 bp.SetName(IsekaiContext, "Summon Beast (Hydra)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Hydra. Summoned monsters appear where you designate and act according to their "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Hydra.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnBeast(c => {
                         c.m_Blueprint = CR7_HydraAdvanced.ToReference<BlueprintUnitReference>();
@@ -55,8 +52,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             });
             var SummonOwlbear = CreateSummonAbility("SummonOwlbear", bp => {
                 bp.SetName(IsekaiContext, "Summon Beast (Owlbear)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons an Owlbear. Summoned monsters appear where you designate and act according to their "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons an Owlbear.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnBeast(c => {
                         c.m_Blueprint = CR9_OwlbearAdvanced.ToReference<BlueprintUnitReference>();
@@ -65,8 +61,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             });
             var SummonRoc = CreateSummonAbility("SummonRoc", bp => {
                 bp.SetName(IsekaiContext, "Summon Beast (Roc)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Roc. Summoned monsters appear where you designate and act according to their "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Roc. ");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnBeast(c => {
                         c.m_Blueprint = CR9_RocStandard.ToReference<BlueprintUnitReference>();
@@ -75,8 +70,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             });
             var SummonMinotaur = CreateSummonAbility("SummonMinotaur", bp => {
                 bp.SetName(IsekaiContext, "Summon Beast (Minotaur)");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Minotaur. Summoned monsters appear where you designate and act according to their "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Minotaur. ");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = SpawnBeast(c => {
                         c.m_Blueprint = CR10_FiendishMinotaur_Guard.ToReference<BlueprintUnitReference>();
@@ -125,7 +119,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.AvailableMetamagic = Metamagic.Quicken;
                 bp.m_IsFullRoundAction = true;
                 bp.LocalizedDuration = StaticReferences.Strings.Duration.OneRoundPerLevel;
-                bp.LocalizedSavingThrow = new LocalizedString();
+                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
             });
             init?.Invoke(result);
             return result;

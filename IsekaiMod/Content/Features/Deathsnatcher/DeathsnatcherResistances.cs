@@ -15,7 +15,6 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
     internal class DeathsnatcherResistances {
 
         public static void Add() {
-            // Feature
             var DeathsnatcherResistances = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherResistances", bp => {
                 bp.SetName(IsekaiContext, "Deathsnatcher Resistances");
                 bp.SetDescription(IsekaiContext, "The Deathsnatcher is immune to negative energy and deaths effects, and has cold and fire resistance 30. "

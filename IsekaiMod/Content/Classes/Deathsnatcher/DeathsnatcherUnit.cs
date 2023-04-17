@@ -8,7 +8,6 @@ using Kingmaker.Blueprints.Items.Weapons;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
-using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
@@ -46,7 +45,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
             var DeathsnatcherSizeBaby = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherSizeBaby");
 
             var DeathsnatcherSlotFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherSlotFeature", bp => {
-                bp.SetName(IsekaiContext, "Feature not available");
+                bp.SetName(StaticReferences.Strings.Null);
                 bp.AddComponent<LockEquipmentSlot>(c => {
                     c.m_SlotType = LockEquipmentSlot.SlotType.MainHand;
                 });
@@ -107,12 +106,6 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
             });
             var DeathsnatcherPortrait = Helpers.CreateBlueprint<BlueprintPortrait>(IsekaiContext, "DeathsnatcherPortrait", bp => {
                 bp.Data = AssetLoaderExtension.LoadPortraitData("Deathsnatcher");
-            });
-            // TODO: REMOVE DeathsnatcherFact IN 5.0.0
-            var DeathsnatcherFact = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFact", bp => {
-                bp.SetName(new LocalizedString());
-                bp.SetDescription(new LocalizedString());
-                bp.HideInUI = true;
             });
             var DeathsnatcherUnit = Helpers.CreateBlueprint<BlueprintUnit>(IsekaiContext, "DeathsnatcherUnit", bp => {
                 bp.SetLocalisedName(IsekaiContext, "Deathsnatcher");
@@ -205,7 +198,6 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
                 bp.m_AddFacts = new BlueprintUnitFactReference[] {
                     DeathsnatcherSlotFeature.ToReference<BlueprintUnitFactReference>(),
                     MonstrousHumanoidType.ToReference<BlueprintUnitFactReference>(),
-                    DeathsnatcherFact.ToReference<BlueprintUnitFactReference>(),
                     DeathsnatcherSizeBaby.ToReference<BlueprintUnitFactReference>(),
                     Airborne.ToReference<BlueprintUnitFactReference>()
                 };
@@ -214,7 +206,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
             });
 
             var DeathsnatcherPetEyePath = Path.Combine(IsekaiContext.ModEntry.Path, "Assets", "Portraits", "Deathsnatcher", "PetEye.png");
-            EyePortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoaderExtension.Image2SpriteExtension.Create(DeathsnatcherPetEyePath, new Vector2Int(176, 24));
+            EyePortraitInjector.Replacements[DeathsnatcherUnit.PortraitSafe.Data] = AssetLoaderExtension.LoadPortrait(DeathsnatcherPetEyePath, new Vector2Int(176, 24));
 
             var DeathsnatcherFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherFeature", bp => {
                 bp.SetName(IsekaiContext, "Deathsnatcher");

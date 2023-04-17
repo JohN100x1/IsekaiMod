@@ -1,20 +1,19 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
-using Kingmaker.UI.Tooltip;
-using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
 
     internal class MonkLegacy {
-        
+
 
         private static BlueprintProgression prog;
 
@@ -34,20 +33,22 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     | Kingmaker.UnitLogic.Alignments.AlignmentMaskType.NeutralGood;
                 });
             });
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Register(prog);
-            HeroLegacySelection.Register(prog);
-            VillainLegacySelection.Prohibit(prog);
             //GodEmperorLegacySelection.Register(prog);
+            HeroLegacySelection.Register(prog);
+            MastermindLegacySelection.Prohibit(prog);
+            OverlordLegacySelection.Register(prog);
         }
         public static void PatchProgression() {
             if (prog != null) {
-                prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.MonkClass);
+                prog = PatchTools.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.MonkClass);
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
-                StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.MonkClass);
+                PatchTools.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.MonkClass);
 
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = MonkScaledFistLegacy.Get().ToReference<BlueprintFeatureReference>(); });
-            }            
+            }
         }
 
         public static BlueprintProgression Get() {

@@ -4,6 +4,88 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [5.0.0] - 2023-04-17
+### Added
+- Added `Mastermind` archetype (Isekai Protagonist).
+- Added `Overlord` archetype (Isekai Protagonist).
+- Added `Demonic Cultivator` Isekai background.
+- Added `Enlightened Sage` Isekai background.
+- Added `Musician` Isekai background.
+- Added `Rationalist` Isekai background.
+- Added `Supermassive` Special Power.
+- Added `Sigma Strike` Special Power.
+- Added `Power Leveling` Overpowered ability.
+- Added features to `Isekai Protagonist` progression: `Gifted`, `Release Energy`, `Afterimage`, `Secret Power`, `Hax`.
+- Added features to `Edge Lord` progression: `Chuunibyou Actualisation`, `Extra Special Power`.
+- Added features to `God Emperor` progression: `Energy Condensation`, `Energy Barrier`, `Alteration of body and mind`, `Chosen Path`, `Transcendental Realm`.
+- Added features to `Hero` progression: `Hands of Salvation`, `Gold Barrier`, `Improved Gold Barrier`, `Greater Gold Barrier`, `Grand Gold Barrier`, `Deus Ex Machina`.
+- Added `Divine Aura` feature to `Otherwordly Aura` selection.
+- Added `Sneak attack Immunity` to `Effect Immunity` selection.
+- Added `Critical hit Immunity` to `Effect Immunity` selection.
+- Added `Signature Strike` to `Signature Move` selection.
+### Changed
+- Buffed `Friendly Aura` to also affect damage rolls.
+- Buffed `Siphoning Aura` to scale 1/2 character level.
+- Buffed `Extreme Speed` Special Power range from 40 -> 120.
+- Buffed `Gamer` background skill bonus from 4 -> 8.
+- Nerfed `Beta Tester` background initiative bonus from 10 -> 4.
+- Nerfed `Magical Amplification` spell dice from d12 -> d10.
+- Nerfed `Exceptional Weapon` feats to only affect primary and secondary hand weapon.
+- Changes for `Isekai Protagonist`:
+	- `Fast Movement` replaced with `Afterimage`.
+	- `Friendly Aura` replaced with `Otherwordly Aura`.
+	- Can now choose two `Signature Move` features.
+	- Can now choose two `Beach Episode` features.
+	- Moved `Second Reincarnation` feature from level 20 -> 15.
+	- Moved `Otherworldly Stamina` feature from level 15 -> 13.
+	- Moved `Quick-Footed` feature from level 16 -> 15.
+	- Updated description for `Fighter Training`.
+	- Updated icon for `Starting Weapon` feature.
+- Changes for `Edge Lord`:
+	- Now has Exotic Weapon Proficiency at 1st level.
+	- Added `Extra Special Power` at 3rd level.
+	- Added OP ability at 5th, 10th, and 15th level.
+	- Added `Otherwordly Aura` at 10th level.
+	- Removed Special Power at 5th and 15th level.
+- Changes for `God Emperor`:
+	- `Divine Array` replaced with `Energy Condensation`.
+	- `Celestial Realm` replaced with `Transcendental Realm`.
+	- `Dark Aura` replaced with `Regal Aura`.
+	- Moved all effect immunities from `Godly Vessel` to `Nascent Apotheosis`.
+	- Moved elemental immunities from `Godhood` to `Godly Vessel`.
+	- Added another OP ability at 5th and 15th level.
+	- Replaced casting stat to WIS.
+	- Moved `Channel Energy` feature from level 5 -> 3.
+	- Moved `Armor Saint` feature from level 4 -> 3.
+	- Moved `Godly Vessel` feature from level 15 -> 17.
+- Changed for `Hero`:
+	- Now has Tower shield and exotic weapon proficiency at 1st level.
+	- `Friendly Aura` replaced with `Heroic Aura`.
+	- `Hero's Presence` replaced with `Deus Ex Machina`.
+	- Added another OP Ability at 10th level.
+	- Added another Special Power at 3rd and 17th level.
+	- Removed Special Power at 9th and 11th level.
+	- Updated icon for `Graceful Combat` feature.
+- Changed `Dark Aura` debuff from -2 -> -4 but no longer affects attack rolls.
+- Replaced `Aura of Righteous Wrath` with 4 different alignment based variants.
+- Removed alignment restrictions for `Isekai Channel Positive Energy` and `Isekai Channel Negative Energy`.
+- Renamed `Energy Immunity Selection` to `Energy Immunity`.
+- Renamed `Aura of Golden Protection` to `Gold Barrier`.
+- Updated description for `Dupe Gold` OP ability.
+- Updated icon for `Exceptional Feats`.
+- Updated icon for `Siphoning Aura`.
+- Updated icon for `Dark Aura`.
+### Fixed
+- Fixed `Graceful Combat` not applying the 1.5x damage bonus to two-handed weapons.
+- Fixed `Reflect` to not affect attacks from the owner.
+- Fixed `Monk Legacy` fast movement not being applied correctly.
+- Fixed `Bloodrager Legacy - Chimeric Rager` bloodlines not being shown.
+### Removed
+- Removed `Villain` archetype (Isekai Protagonist).
+- Removed `Aura of Divine Fury` feature from `God Emperor` and `Hero` progression.
+- Removed `True Smite` and `True Mark` from `Paladin Legacy - Hero of Light` legacy.
+- Removed `Kinetic Power` Special Power.
+
 # [4.3.0] - 2023-03-28
 ### Added
 - Added `Meta Luck` OP ability.

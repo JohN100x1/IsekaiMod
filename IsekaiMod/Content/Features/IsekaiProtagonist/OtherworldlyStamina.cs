@@ -14,7 +14,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         public static void Add() {
             var OtherworldlyStamina = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "OtherworldlyStamina", bp => {
                 bp.SetName(IsekaiContext, "Otherworldly Stamina");
-                bp.SetDescription(IsekaiContext, "At 15th Level, you become immune to fatigue and exhaustion.");
+                bp.SetDescription(IsekaiContext, "At 13th Level, you become immune to fatigue and exhaustion.");
                 bp.m_Icon = Icon_Bravery;
                 bp.AddComponent<AddConditionImmunity>(c => {
                     c.Condition = UnitCondition.Fatigued;

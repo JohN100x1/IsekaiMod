@@ -7,6 +7,7 @@ using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.Localization;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
@@ -20,10 +21,14 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
         private static readonly BlueprintUnitFact NaturalArmor16 = BlueprintTools.GetBlueprint<BlueprintUnitFact>("73a90b2a70d576f429ad401e7a5a8a4f");
 
         public static void Add() {
-            var DeathsnatcherSizeBabyBuff = ThingsNotHandledByTTTCore.CreateBuff("DeathsnatcherSizeBabyBuff", bp => {
+
+            LocalizedString DeathsnatcherSizeBabyDesc = Helpers.CreateString(IsekaiContext, "DeathsnatcherSizeBaby.Description",
+                "The Deathsnatcher matures at 4th level. When this occurs, the Deathsnatcher’s natural armor bonus to its AC increases by 6, and gains "
+                + "the following ability scores adjustments: Str +6, Dex –4, Con +4.");
+
+            var DeathsnatcherSizeBabyBuff = TTCoreExtensions.CreateBuff("DeathsnatcherSizeBabyBuff", bp => {
                 bp.SetName(IsekaiContext, "Baby Deathsnatcher");
-                bp.SetDescription(IsekaiContext, "The Deathsnatcher matures at 4th level. When this occurs, the Deathsnatcher’s natural armor bonus to its AC increases by 6, and gains "
-                    + "the following ability scores adjustments: Str +6, Dex –4, Con +4.");
+                bp.SetDescription(DeathsnatcherSizeBabyDesc);
                 bp.m_Flags = BlueprintBuff.Flags.HiddenInUi | BlueprintBuff.Flags.StayOnDeath;
                 bp.AddComponent<ChangeUnitSize>(c => {
                     c.m_Type = ChangeUnitSize.ChangeType.Delta;
@@ -67,8 +72,7 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
             });
             var DeathsnatcherSizeBabyFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherSizeBabyFeature", bp => {
                 bp.SetName(IsekaiContext, "Baby Deathsnatcher");
-                bp.SetDescription(IsekaiContext, "The Deathsnatcher matures at 4th level. When this occurs, the Deathsnatcher’s natural armor bonus to its AC increases by 6, and gains "
-                    + "the following ability scores adjustments: Str +6, Dex –4, Con +4.");
+                bp.SetDescription(DeathsnatcherSizeBabyDesc);
                 bp.AddComponent<AddFeatureOnClassLevel>(c => {
                     c.m_Class = DeathsnatcherClass.GetReference();
                     c.Level = 4;

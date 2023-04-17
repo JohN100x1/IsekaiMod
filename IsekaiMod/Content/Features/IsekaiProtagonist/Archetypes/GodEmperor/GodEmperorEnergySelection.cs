@@ -14,9 +14,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
 
             var GodEmperorEnergySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "GodEmperorEnergySelection", bp => {
                 bp.SetName(IsekaiContext, "Channel Energy");
-                bp.SetDescription(IsekaiContext, "At 5th level, the God Emperor is able to choose between channeling positive energy or negative energy.");
+                bp.SetDescription(IsekaiContext, "At 3rd level, the God Emperor is able to choose between channeling positive energy or negative energy.");
                 bp.m_Icon = IsekaiChannelPositiveEnergyFeature.m_Icon;
-                bp.IgnorePrerequisites = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     IsekaiChannelPositiveEnergyFeature.ToReference<BlueprintFeatureReference>(),
                     IsekaiChannelNegativeEnergyFeature.ToReference<BlueprintFeatureReference>(),

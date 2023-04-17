@@ -2,7 +2,8 @@
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -46,18 +47,22 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                     Helpers.CreateUIGroup( ExtraSelection),
                 };
             });
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
-            HeroLegacySelection.Register(prog);
-            VillainLegacySelection.Register(prog);
             GodEmperorLegacySelection.Register(prog);
+            HeroLegacySelection.Register(prog);
+            MastermindLegacySelection.Register(prog);
+            OverlordLegacySelection.Register(prog);
 
         }
         public static void PatchProgression() {
             BlueprintCharacterClassReference refClass = ClassTools.Classes.SorcererClass.ToReference<BlueprintCharacterClassReference>();
             BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
+
             prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BloodragerChimeraLegacy.Get().ToReference<BlueprintFeatureReference>(); });
-            StaticReferences.PatchClassIntoFeatureOfReferenceClass(StaticReferences.SorcererBloodlineSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
+
+            PatchTools.PatchClassIntoFeatureOfReferenceClass(StaticReferences.SorcererBloodlineSelection, myClass, refClass, 0, new BlueprintFeatureBase[] { });
         }
 
         public static BlueprintProgression Get() {
@@ -87,7 +92,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 //bp.Group = FeatureGroup.BloodLine;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     IsekaiBloodlineSelection.ToReference<BlueprintFeatureReference>(),
-                    StaticReferences.SorcererFeatSelection.ToReference<BlueprintFeatureReference>(),
+                    FeatTools.Selections.SorcererBonusFeat.ToReference<BlueprintFeatureReference>(),
+                    FeatTools.Selections.SorcererFeatSelection.ToReference<BlueprintFeatureReference>()
                 };
             });
 

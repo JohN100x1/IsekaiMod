@@ -1,7 +1,7 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Localization;
 using System.Collections.Generic;
 using System.Linq;
 using TabletopTweaks.Core.Utilities;
@@ -33,8 +33,8 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
 
             // Deathsnatcher Level Progression
             var DeathsnatcherCompanionProgression = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "DeathsnatcherCompanionProgression", bp => {
-                bp.SetName(new LocalizedString());
-                bp.SetDescription(new LocalizedString());
+                bp.SetName(StaticReferences.Strings.Null);
+                bp.SetDescription(StaticReferences.Strings.Null);
                 bp.IsClassFeature = true;
                 bp.m_FeaturesRankIncrease = new List<BlueprintFeatureReference>();
                 bp.m_Archetypes = new BlueprintProgression.ArchetypeWithLevel[0];
@@ -59,7 +59,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
 
             // Deathsnatcher Class Progression
             var DeathsnatcherClassProgression = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "DeathsnatcherClassProgression", bp => {
-                bp.SetName(new LocalizedString());
+                bp.SetName(StaticReferences.Strings.Null);
                 bp.SetDescription(IsekaiContext, "This bipedal jackal has vulture wings and a rat tail ending in a scorpion’s stinger. Each of its four arms ends in a clawed hand.");
                 bp.IsClassFeature = true;
                 bp.m_FeaturesRankIncrease = new List<BlueprintFeatureReference>();
@@ -72,7 +72,7 @@ namespace IsekaiMod.Content.Classes.Deathsnatcher {
                     }
                 };
                 bp.LevelEntries = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, DeathsnatcherResistances, /*DeathsnatcherHiddenFacts,*/ DeathsnatcherCommandUndeadFeature, DeathsnatcherSizeBabyFeature),
+                    Helpers.CreateLevelEntry(1, DeathsnatcherResistances, DeathsnatcherCommandUndeadFeature, DeathsnatcherSizeBabyFeature),
                     Helpers.CreateLevelEntry(2, Evasion),
                     Helpers.CreateLevelEntry(4, Pounce),
                     Helpers.CreateLevelEntry(7, DeathsnatcherAnimateDeadFeature),

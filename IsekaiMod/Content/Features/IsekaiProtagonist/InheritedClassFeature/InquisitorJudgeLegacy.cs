@@ -1,9 +1,9 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -28,36 +28,38 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.AddPrerequisite<PrerequisiteAlignment>(c => { c.Alignment = Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Lawful; });
             });
 
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
             EdgeLordLegacySelection.Prohibit(prog);
-            HeroLegacySelection.Register(prog);
-            VillainLegacySelection.Register(prog);
             GodEmperorLegacySelection.Register(prog);
+            HeroLegacySelection.Register(prog);
+            MastermindLegacySelection.Register(prog);
+            OverlordLegacySelection.Register(prog);
         }
 
         public static void PatchProgression() {
             if (prog != null) {
                 LevelEntry[] addentries = new LevelEntry[] { };
                 LevelEntry[] removeentries = new LevelEntry[] { };
-                
+
                 removeentries = removeentries.AppendToArray(Helpers.CreateLevelEntry(1, FeatTools.Selections.DomainsSelection));
-                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(1, InquisitorTacticianLegacy.GetDomains()));
+                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(2, InquisitorTacticianLegacy.GetDomains()));
 
                 BlueprintArchetype archetype = BlueprintTools.GetBlueprint<BlueprintArchetype>("0e5e91c17f114d358910e0da4ae29b50");
 
                 removeentries = removeentries.AppendToArray(archetype.RemoveFeatures);
                 addentries = addentries.AppendToArray(archetype.AddFeatures);
 
-                prog = StaticReferences.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.InquisitorClass, addentries, removeentries);
+                prog = PatchTools.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.InquisitorClass, addentries, removeentries);
 
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
                 foreach (var level in archetype.AddFeatures) {
                     foreach (var candidate in level.Features) {
                         if (candidate != null && candidate is BlueprintFeatureSelection selection) {
-                            StaticReferences.PatchClassIntoFeatureOfReferenceClass(selection, myClass, ClassTools.ClassReferences.InquisitorClass, 0, new BlueprintFeatureBase[] { });
+                            PatchTools.PatchClassIntoFeatureOfReferenceClass(selection, myClass, ClassTools.ClassReferences.InquisitorClass);
                         } else {
                             if (candidate != null && candidate is BlueprintFeature feature) {
-                                StaticReferences.PatchClassIntoFeatureOfReferenceClass(feature, myClass, ClassTools.ClassReferences.InquisitorClass, 0, new BlueprintFeatureBase[] { });
+                                PatchTools.PatchClassIntoFeatureOfReferenceClass(feature, myClass, ClassTools.ClassReferences.InquisitorClass);
                             }
                         }
                     }

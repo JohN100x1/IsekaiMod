@@ -13,30 +13,22 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
     internal class OverpoweredAbilitySelection {
+
         private static readonly Sprite Icon_TrickFate = BlueprintTools.GetBlueprint<BlueprintAbility>("6e109d21da9e1c44fb772a9eca2cafdd").m_Icon;
         public static void Add() {
             // Overpowered Ability Selection
             var OverpoweredAbilitySelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability");
-                bp.SetDescription(IsekaiContext, "At 1st level, you get to select an Overpowered Ability.");
+                bp.SetDescription(IsekaiContext, "As a being from another world, you are granted an Overpowered Ability which no ordinary being in this world possess.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[0];
                 bp.m_Features = new BlueprintFeatureReference[0];
             });
-            var OverpoweredAbilitySelection2 = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2", bp => {
+            var OverpoweredAbilitySelectionOverlord = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionOverlord", bp => {
                 bp.SetName(IsekaiContext, "Additional Overpowered Ability");
-                bp.SetDescription(IsekaiContext, "You get to select an additional Overpowered Ability.");
-                bp.m_Icon = Icon_TrickFate;
-                bp.Ranks = 1;
-                bp.IsClassFeature = true;
-                bp.m_AllFeatures = new BlueprintFeatureReference[0];
-                bp.m_Features = new BlueprintFeatureReference[0];
-            });
-            var OverpoweredAbilitySelectionVillain = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionVillain", bp => {
-                bp.SetName(IsekaiContext, "Villainous Overpowered Ability");
-                bp.SetDescription(IsekaiContext, "Villains get to select an additional Overpowered Abilities.");
+                bp.SetDescription(IsekaiContext, "Overlords get to select additional Overpowered Abilities.");
                 bp.m_Icon = Icon_TrickFate;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -73,8 +65,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         public static void AddToSelection(BlueprintFeature feature) {
             var OverpoweredAbilitySelections = new BlueprintFeatureSelection[] {
                 BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection"),
-                BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2"),
-                BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionVillain"),
+                BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionOverlord"),
                 BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilityMythicSelection"),
             };
             foreach (BlueprintFeatureSelection selection in OverpoweredAbilitySelections) {
@@ -85,8 +76,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
         public static void AddToNonMythicSelection(BlueprintFeature feature) {
             var OverpoweredAbilitySelections = new BlueprintFeatureSelection[] {
                 BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection"),
-                BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelection2"),
-                BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionVillain"),
+                BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionOverlord"),
             };
             foreach (BlueprintFeatureSelection selection in OverpoweredAbilitySelections) {
                 selection.m_Features = selection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());

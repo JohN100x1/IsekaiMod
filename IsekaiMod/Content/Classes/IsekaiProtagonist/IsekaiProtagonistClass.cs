@@ -6,6 +6,7 @@ using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Localization;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
@@ -16,6 +17,13 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
     internal class IsekaiProtagonistClass {
+        private static readonly LocalizedString Name = Helpers.CreateString(IsekaiContext, $"IsekaiProtagonistClass.Name", "Isekai Protagonist");
+        private static readonly LocalizedString Description = Helpers.CreateString(IsekaiContext, $"IsekaiProtagonistClass.Description",
+            "Isekai protagonists possess immense power, and are able to defeat every enemy with ease using their overpowered abilities. "
+            + "They also have plot armor, which make them hard to kill. They are the main character; everyone else are just NPCs.");
+        private static readonly LocalizedString DescriptionShort = Helpers.CreateString(IsekaiContext, $"IsekaiProtagonistClass.DescriptionShort",
+            "Isekai protagonists are people who have been reincarnated into the world of Golarion with overpowered abilities. "
+            + "As their story progresses, they gain more overpowered abilities to wreck every wannabe villain and side character they face.");
         private static BlueprintCharacterClass isekaiProtagonistClass;
 
         // Icons
@@ -33,19 +41,16 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
         private static readonly BlueprintCharacterClass AnimalClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("4cd1757a0eea7694ba5c933729a53920");
 
         public static void Add() {
-            // TODO: Load localisation instead of hardcoded strings
-
             // Decide which default clothes to use (default 20 is the Slayer Class' clothes)
             var defaultClothesIndex = 20;
             var clothesIndex = IsekaiContext.AddedContent.IsekaiDefaultClothes;
             var maxClothesIndex = StaticReferences.BaseClasses.Length;
-            var clothesClass = StaticReferences.BaseClasses[clothesIndex > 0 && clothesIndex < maxClothesIndex ? clothesIndex : defaultClothesIndex];
+            var clothesClass = StaticReferences.BaseClasses[clothesIndex > -1 && clothesIndex < maxClothesIndex ? clothesIndex : defaultClothesIndex];
 
             // Class Signature Features
             var IsekaiProtagonistPlotArmorFeat = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProtagonistPlotArmorFeat", bp => {
                 bp.SetName(IsekaiContext, "Plot Armor");
                 bp.SetDescription(IsekaiContext, "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
-                bp.SetNameDescription(IsekaiContext, "Plot Armor", "Isekai Protagonists gain a luck bonus to {g|Encyclopedia:Armor_Class}AC{/g} and all {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to their character level.");
                 bp.m_DescriptionShort = bp.m_Description;
                 bp.m_Icon = Icon_EdictOfImpenetrableFortress;
             });
@@ -76,12 +81,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
             // Main Class
             isekaiProtagonistClass = Helpers.CreateBlueprint<BlueprintCharacterClass>(IsekaiContext, "IsekaiProtagonistClass", bp => {
-                bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"IsekaiProtagonistClass.Name", "Isekai Protagonist");
-                bp.LocalizedDescription = Helpers.CreateString(IsekaiContext, $"IsekaiProtagonistClass.Description", "Isekai protagonists possess immense power, and are able to defeat every enemy "
-                    + "with ease using their overpowered abilities. They also have plot armor, which make them hard to kill. They are the main character; everyone else are just NPCs.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString(IsekaiContext, $"IsekaiProtagonistClass.Descriptio",
-                    "Isekai protagonists are people who have been reincarnated into the world of Golarion with overpowered abilities. "
-                    + "As their story progresses, they gain more overpowered abilities to wreck every wannabe villain and side character they face.");
+                bp.LocalizedName = Name;
+                bp.LocalizedDescription = Description;
+                bp.LocalizedDescriptionShort = DescriptionShort;
                 bp.HitDie = DiceType.D12;
                 bp.m_BaseAttackBonus = BABFull.ToReference<BlueprintStatProgressionReference>();
                 bp.m_FortitudeSave = SavesHigh.ToReference<BlueprintStatProgressionReference>();
@@ -136,7 +138,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 // Register Archetypes later using RegisterArchetype
                 bp.m_Archetypes = new BlueprintArchetypeReference[0];
 
-                // Set Progression later using SetProgression (This is because some features in the progression reference IsekaiProtagonistClass which doeesn't exist yet)
+                // Set Progression later using SetProgression (Some features in the progression reference IsekaiProtagonistClass which doeesn't exist yet)
                 bp.m_Progression = null;
 
                 // Set Default Build later using SetDefaultBuild
@@ -145,7 +147,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             IsekaiProtagonistSpellbook.SetCharacterClass(isekaiProtagonistClass);
 
             // Register Class
-            ThingsNotHandledByTTTCore.RegisterClass(isekaiProtagonistClass);
+            TTCoreExtensions.RegisterClass(isekaiProtagonistClass);
         }
 
         public static void RegisterArchetype(BlueprintArchetype archetype) {
@@ -171,7 +173,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
         }
 
         public static BlueprintCharacterClassReference GetReference() {
-            return Get().ToReference<BlueprintCharacterClassReference>();
+            return BlueprintTools.GetModBlueprintReference<BlueprintCharacterClassReference>(IsekaiContext, "IsekaiProtagonistClass");
         }
     }
 }

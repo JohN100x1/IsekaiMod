@@ -1,10 +1,10 @@
 ﻿using HarmonyLib;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -30,18 +30,20 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             });
             WitchPatronSelection.Configure();
 
+            LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
-            EdgeLordLegacySelection.Register(prog);
-            HeroLegacySelection.Register(prog);
-            VillainLegacySelection.Register(prog);
+            EdgeLordLegacySelection.Prohibit(prog);
             GodEmperorLegacySelection.Prohibit(prog);
+            HeroLegacySelection.Register(prog);
+            MastermindLegacySelection.Register(prog);
+            OverlordLegacySelection.Prohibit(prog);
         }
 
         public static void PatchProgression() {
             if (prog != null) {
-                prog = StaticReferences.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.WitchClass);
+                prog = PatchTools.PatchClassProgressionBasedOnRefClass(prog, ClassTools.Classes.WitchClass);
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
-                StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.WitchClass);
+                PatchTools.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.WitchClass);
                 prog.LevelEntries.AddItem(Helpers.CreateLevelEntry(5, WitchPatronSelection.Get()));
                 prog.LevelEntries.AddItem(Helpers.CreateLevelEntry(10, WitchPatronSelection.Get()));
                 prog.LevelEntries.AddItem(Helpers.CreateLevelEntry(15, WitchPatronSelection.Get()));
@@ -57,10 +59,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             return BlueprintTools.GetModBlueprint<BlueprintProgression>(IsekaiContext, "WitchBaseLegacy");
         }
     }
-    internal class  WitchPatronSelection {
+    internal class WitchPatronSelection {
         private static BlueprintFeatureSelection myfeat;
 
-        public static void Configure() {  
+        public static void Configure() {
 
             myfeat = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "IsekaiWitchSelection", bp => {
                 bp.SetName(IsekaiContext, "Patrons Blessing");

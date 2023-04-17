@@ -3,6 +3,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Root;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
 using TabletopTweaks.Core.Utilities;
@@ -11,24 +12,24 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Classes.Deathsnatcher {
 
     internal class DeathsnatcherClass {
+        private static readonly LocalizedString Name = Helpers.CreateString(IsekaiContext, "DeathsnatcherClass.Name", "Deathsnatcher");
+        private static readonly LocalizedString Description = Helpers.CreateString(IsekaiContext, $"DeathsnatcherClass.Description",
+            "This bipedal jackal has vulture wings and a rat tail ending in a scorpion’s stinger. Each of its four arms ends in a clawed hand.");
 
         // Creature Type
         private static readonly BlueprintFeature MonstrousHumanoidType = BlueprintTools.GetBlueprint<BlueprintFeature>("57614b50e8d86b24395931fffc5e409b");
 
         // Stat Progression
         private static readonly BlueprintStatProgression BABFull = BlueprintTools.GetBlueprint<BlueprintStatProgression>("b3057560ffff3514299e8b93e7648a9d");
-
         private static readonly BlueprintStatProgression SavesHigh = BlueprintTools.GetBlueprint<BlueprintStatProgression>("ff4662bde9e75f145853417313842751");
         private static readonly BlueprintStatProgression SavesLow = BlueprintTools.GetBlueprint<BlueprintStatProgression>("dc0c7c1aba755c54f96c089cdf7d14a3");
 
         public static void Add() {
             // Add Deathsnatcher Class
             var DeathsnatcherClass = Helpers.CreateBlueprint<BlueprintCharacterClass>(IsekaiContext, "DeathsnatcherClass", bp => {
-                bp.LocalizedName = Helpers.CreateString(IsekaiContext, $"DeathsnatcherClass.Name", "Deathsnatcher");
-                bp.LocalizedDescription = Helpers.CreateString(IsekaiContext, $"DeathsnatcherClass.Description", "This bipedal jackal has vulture wings and a rat tail ending in a scorpion’s stinger. "
-                    + "Each of its four arms ends in a clawed hand.");
-                bp.LocalizedDescriptionShort = Helpers.CreateString(IsekaiContext, $"DeathsnatcherClass.DescriptionShort", "This bipedal jackal has vulture wings and a rat tail ending in a "
-                    + "scorpion’s stinger. Each of its four arms ends in a clawed hand.");
+                bp.LocalizedName = Name;
+                bp.LocalizedDescription = Description;
+                bp.LocalizedDescriptionShort = Description;
                 bp.HitDie = DiceType.D10;
                 bp.m_BaseAttackBonus = BABFull.ToReference<BlueprintStatProgressionReference>();
                 bp.m_FortitudeSave = SavesLow.ToReference<BlueprintStatProgressionReference>();

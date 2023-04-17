@@ -20,6 +20,16 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
 
     internal class SuperBuff {
+        private static readonly LocalizedString Description = Helpers.CreateString(IsekaiContext, "SuperBuff.Description",
+            "You are able to buff you and your allies with the following effects for 24 hours: resist energy, protection from energy, "
+            + "protection from arrows, haste, mage armor, shield, shield of faith, veil of heaven, veil of positive energy, blur, "
+            + "bull's strength, cat's grace, bear's endurance, fox's cunning, owl's wisdom, eagle's splendor, mirror image, false life, "
+            + "barkskin, aid, protection from evil, bestow grace, aura of greater courage, displacement, magical vestiment, delay poison, "
+            + "invisibility greater, stone skin, death ward, freedom of movement, false life greater, burst of glory, spell resistance, "
+            + "eagle soul, legendary proportions, frightful aspect, seamantle, foresight, unbreakable heart, remove fear, divine favor, "
+            + "magic fang, align weapon good, crusaders edge, magic weapon greater, divine power, true seeing, shield of law, "
+            + "angelic aspect greater, winds of vengeance, hurricane bow, sense vitals, heroism greater, echolocation, life bubble, "
+            + "protection from spells, mind blank, and heroic invocation.");
 
         public static void Add() {
             // Buffs
@@ -104,13 +114,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             var Icon_SuperBuffDismiss = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_SUPER_BUFF_DISMISS.png");
             var SuperBuffAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "SuperBuffAbility", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Super Buff");
-                bp.SetDescription(IsekaiContext, "You and your allies around you gain the following effects for 24 hours: resist energy, protection from energy, protection from arrows, haste, "
-                    + "mage armor, shield, shield of faith, veil of heaven, veil of positive energy, blur, bull's strength, cat's grace, bear's endurance, fox's cunning, owl's wisdom, "
-                    + "eagle's splendor, mirror image, false life, barkskin, aid, protection from evil, bestow grace, aura of greater courage, displacement, magical vestiment, "
-                    + "delay poison, invisibility greater, stone skin, death ward, freedom of movement, false life greater, burst of glory, spell resistance, eagle soul, "
-                    + "legendary proportions, frightful aspect, seamantle, foresight, unbreakable heart, remove fear, divine favor, magic fang, align weapon good, "
-                    + "crusaders edge, magic weapon greater, divine power, true seeing, shield of law, angelic aspect greater, winds of vengeance, hurricane bow, sense vitals, "
-                    + "heroism greater, echolocation, life bubble, protection from spells, mind blank, and heroic invocation.");
+                bp.SetDescription(Description);
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = new ActionList() { Actions = ApplyBuffActions.ToArray() };
                 });
@@ -133,7 +137,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Reach;
                 bp.LocalizedDuration = StaticReferences.Strings.Duration.OneDay;
-                bp.LocalizedSavingThrow = new LocalizedString();
+                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
             });
             var SuperBuffDismissAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "SuperBuffDismissAbility", bp => {
                 bp.SetName(IsekaiContext, "Dismiss Super Buff");
@@ -159,18 +163,12 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.Animation = UnitAnimationActionCastSpell.CastAnimationStyle.Self;
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = Metamagic.Reach;
-                bp.LocalizedDuration = new LocalizedString();
-                bp.LocalizedSavingThrow = new LocalizedString();
+                bp.LocalizedDuration = StaticReferences.Strings.Null;
+                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
             });
             var SuperBuffFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SuperBuffFeature", bp => {
                 bp.SetName(IsekaiContext, "Overpowered Ability — Super Buff");
-                bp.SetDescription(IsekaiContext, "You are able to buff you and your allies with the following effects for 24 hours: resist energy, protection from energy, protection from arrows, haste, "
-                    + "mage armor, shield, shield of faith, veil of heaven, veil of positive energy, blur, bull's strength, cat's grace, bear's endurance, fox's cunning, owl's wisdom, "
-                    + "eagle's splendor, mirror image, false life, barkskin, aid, protection from evil, bestow grace, aura of greater courage, displacement, magical vestiment, "
-                    + "delay poison, invisibility greater, stone skin, death ward, freedom of movement, false life greater, burst of glory, spell resistance, eagle soul, "
-                    + "legendary proportions, frightful aspect, seamantle, foresight, unbreakable heart, remove fear, divine favor, magic fang, align weapon good, "
-                    + "crusaders edge, magic weapon greater, divine power, true seeing, shield of law, angelic aspect greater, winds of vengeance, hurricane bow, sense vitals, "
-                    + "heroism greater, echolocation, life bubble, protection from spells, mind blank, and heroic invocation.");
+                bp.SetDescription(Description);
                 bp.m_Icon = Icon_SuperBuff;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {

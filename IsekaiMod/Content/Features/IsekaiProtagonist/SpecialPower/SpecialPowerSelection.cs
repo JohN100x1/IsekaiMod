@@ -22,10 +22,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.m_Icon = Icon_ForetellAidBuff;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-
-                // Special Powers are added in later (IsekaiProtagonistTalentSelection is added here because it was defined before SpecialPowerSelection)
-                bp.m_Features = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.GetReference() };
-                bp.m_AllFeatures = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.GetReference() };
+                bp.m_Features = new BlueprintFeatureReference[0];
+                bp.m_AllFeatures = new BlueprintFeatureReference[0];
             });
             var SpecialPowerMythicSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerMythicSelection", bp => {
                 bp.SetName(IsekaiContext, "Mythic Special Power");
@@ -33,10 +31,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                 bp.m_Icon = Icon_ForetellAidBuff;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
-
-                // Special Powers are added in later (IsekaiProtagonistTalentSelection is added here because it was defined before SpecialPowerSelection)
-                bp.m_Features = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.GetReference() };
-                bp.m_AllFeatures = new BlueprintFeatureReference[] { IsekaiProtagonistTalentSelection.GetReference() };
+                bp.m_Features = new BlueprintFeatureReference[0];
+                bp.m_AllFeatures = new BlueprintFeatureReference[0];
             });
 
             // If MultipleMythicSpecialPower is disabled, Mythic Special Power can only be selected once
@@ -70,6 +66,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             BlueprintFeatureSelection selection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
             selection.m_Features = selection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
             selection.m_AllFeatures = selection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+        }
+
+        public static BlueprintFeatureSelection Get() {
+            return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SpecialPowerSelection");
         }
     }
 }

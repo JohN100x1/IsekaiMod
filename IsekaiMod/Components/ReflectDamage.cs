@@ -13,9 +13,7 @@ namespace IsekaiMod.Components {
     public class ReflectDamage : UnitFactComponentDelegate, ITargetRulebookSubscriber, IRulebookHandler<RuleDealDamage>, ISubscriber, ITargetRulebookHandler<RuleDealDamage> {
 
         public void TryRunAction(RuleDealDamage e) {
-            if (e.Reason.Fact == Fact || Fact is not IFactContextOwner factContextOwner) {
-                return;
-            }
+            if (e.Reason.Fact == Fact || Fact is not IFactContextOwner factContextOwner || e.Initiator == Owner) return;
             ActionList dealDamageActionList = ActionFlow.DealDamage(c => {
                 c.DamageType = new DamageTypeDescription() {
                     Type = DamageType.Direct,

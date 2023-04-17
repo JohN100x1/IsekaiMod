@@ -2,7 +2,7 @@
 This is a content mod for `Pathfinder: Wrath of the Righteous` that adds an `Isekai Protagonist` Class into the game.
 ## Development Guide
 ### Requirements
-- Visual Studio 2019 (You can use the latest version if you know what you're doing)
+- Visual Studio
 ### Setup
 - Add `WrathPath` as an environment variable with the value `C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure` or wherever your game directory is.
 - Open Visual Studio and [publicize your assemblies](https://github.com/WittleWolfie/OwlcatModdingWiki/wiki/Publicize-Assemblies).
@@ -59,21 +59,21 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- Has Overpowered Abilities.
 		- Can merge their spellbook with angel or lich.
 		- Can choose a familiar or animal companion... or a deathsnatcher.
-		- Has a legacy class feature from the list below.
+		- Can choose a legacy class feature (features from other classes).
 	- `God Emperor` (Isekai Protagonist Archetype)
-		- Has powerful auras that buff allies and debuff enemies.
-		- Has powerful immunities in the late game.
+		- Spontaneous caster that uses Wisdom.
+		- Has powerful scaling immunities and auras.
 	- `Edge Lord` (Isekai Protagonist Archetype)
 		- Has alot of extra attacks.
 		- Uses dexterity for damage and attack rolls.
-		- Can pick a melee focused legacy class feature.
 	- `Hero` (Isekai Protagonist Archetype)
+		- Focuses to protective auras for allies.
 		- Uses charisma for damage and attack rolls.
-	- `Villain` (Isekai Protagonist Archetype)
-		- Has Study target.
-		- Has Much more Overpowered Abilities.
+	- `Mastermind` (Isekai Protagonist Archetype)
 		- Intelligence based caster that memorizes spells like an arcanist.
-		- Can pick a non-heroic, non-disney, non-Barbarian legacy class feature.
+		- Spellbook has 10th level spells.
+	- `Overlord` (Isekai Protagonist Archetype)
+		- Has much more Overpowered Abilities.
 - New Features
 	- `Exceptional feats`: Strong feats that can be chosen in place of a feat/bonus feat.
 		- `Mythic feat`: You can choose a mythic feat instead of a normal/bonus feat.
@@ -89,24 +89,26 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
 		- `Omega Strike`: Increase your damage multipler by 1.
+		- `Sigma Strike`: Increase your critical threat range by 2.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
 		- `Regeneration`: Get regeneration 10/acid or fire (requires character level 10).
 		- `Training Montage`: Get a +8 bonus to all attributes.
 		- `Body Strengthening`: Get a DR/— equal to character level.
 		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
 		- `Extreme Speed`: Allies within 40 feet of you get a speed bonus equal to 5 times your character level.
-		- `Channel Positive Energy`: You can channel positive energy (requires good alignment).
-		- `Channel Negative Energy`: You can channel negative energy (requires evil alignment).
+		- `Channel Positive Energy`: You can channel positive energy.
+		- `Channel Negative Energy`: You can channel negative energy.
 		- `Kinetic Power`: You can select a kinetic blast (air, earth, fire, water).
 		- `Sneaky Magic`: You can add your sneak attack damage to spells against flat-footed.
 		- `Spell Master`: Increase your spell DC by 4.
-		- `Magical Amplification`: Your spell damage dice become d12.
+		- `Magical Amplification`: Your spell damage dice become d10.
 		- `Armor Saint`: You can move at normal speed while wearing armor, reduce your armor check penalty to zero, and increase your max dexterity bonus by 20.
 		- `Armor of Strength`: Get a natural armor bonus to AC equal to Strength modifier.
 		- `Summon Beast`: Summon a hydra, owlbear, roc, or minotaur.
 		- `Aura of Divine Fury`: Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells (requires character level 15).
-		- `Killing Intent`: Enemies within 40 feet who fail a will save become shaken, frightened, and cowering.
+		- `Killing Intent`: Enemies within 40 feet become shaken, frightened, and cowering.
 		- `Reflect`: Deal damage to enemies equal to damage you receive.
+		- `Supermassive`: Gain bonus HP based on your Constitution modifier. You also get fast healing but have a penalty to AC.
 		- `Mythic Class Feature`: see below
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
@@ -126,6 +128,9 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Summon Calamity`: Summon a Devastator, Baphomet, Deskari, Nocticula, Mephistopheles, or Areshkagal.
 		- `True Resurrection`: Resurrect a dead companion (no diamond cost).
 		- `Supreme Being`: All your attributes have a base value of 30.
+		- `Meta Luck`: Always take the higher of two d20 rolls.
+		- `Power Leveling`: Gain extra experience when you kill an enemy.
+		- `Overpowered Aura`: 4 different alignment based auras which give either extra attack(s) and/or damage.
 		- `Mythic Class Feature`: see below
 		- `Dual Legacy`: Pick a second base class to get abilities from.
 		- The following requires TabletopTweaks-Base:
@@ -196,8 +201,12 @@ Exception to this is the God Emperor as all options that were changed were not p
 	- `Highschool Student`: Get a +1 trait bonus to all attributes.
 	- `Reborn Demon Lord`: Get a +2 trait bonus to Strength and Electricity resistance 20.
 	- `Otaku`: Adds all skills as class skills except Persuasion.
-	- `Gamer`: Get a +4 competence bonus to all knowledge, lore, and perception checks.
-	- `Beta Tester`: Get +10 Initiative and adds lore, knowledge and perceptions skills as class skills.
+	- `Gamer`: Get a +8 competence bonus to all knowledge, lore, and perception checks.
+	- `Beta Tester`: Get +4 Initiative and adds lore, knowledge and perceptions skills as class skills.
+	- `Demonic Cultivator`: Adds athletics and mobility as a class skills. Uses the higher of STR and DEX for athletics and mobility checks.
+	- `Enlightened Sage`: Adds lore, knowledge, and perception skills as class skills. Uses the higher of INT and WIS for these checks.
+	- `Musician`: Adds Persuasion as a class skill. Has a +2 bonus to caster level and DC for Sonic spells.
+	- `Rationalist`: Has Immunity to spell and spell-like abilities but cannot cast spells.
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.
 	- `Isekai Succubus` (Tiefling Heritage): A powerful heritage for Tiefling that gives you wings and a powerful charm ability.

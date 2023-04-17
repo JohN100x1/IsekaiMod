@@ -6,7 +6,6 @@ using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
-using Kingmaker.Localization;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
@@ -46,8 +45,8 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
                 };
             });
             var DeathsnatcherAnimateDeadAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "DeathsnatcherAnimateDeadAbility", bp => {
-                bp.m_DisplayName = AnimateDeadAbility.m_DisplayName;
-                bp.m_Description = AnimateDeadAbility.m_Description;
+                bp.SetName(AnimateDeadAbility.m_DisplayName);
+                bp.SetDescription(AnimateDeadAbility.m_Description);
                 bp.m_Icon = AnimateDeadAbility.m_Icon;
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<ContextActionSpawnMonster>(c => {
@@ -99,10 +98,10 @@ namespace IsekaiMod.Content.Features.Deathsnatcher {
                 bp.ActionType = UnitCommand.CommandType.Standard;
                 bp.AvailableMetamagic = AnimateDeadAbility.AvailableMetamagic;
                 bp.LocalizedDuration = StaticReferences.Strings.Duration.OneRoundPerLevel;
-                bp.LocalizedSavingThrow = new LocalizedString();
+                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
             });
             var DeathsnatcherAnimateDeadFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeathsnatcherAnimateDeadFeature", bp => {
-                bp.SetName(IsekaiContext, "Animate Dead");
+                bp.SetName(AnimateDeadAbility.m_DisplayName);
                 bp.SetDescription(IsekaiContext, "At 7th level, the Deathsnatcher gains Animate Dead as a spell-like ability 3 times per day.");
                 bp.m_Icon = AnimateDeadAbility.m_Icon;
                 bp.AddComponent<AddAbilityResources>(c => {

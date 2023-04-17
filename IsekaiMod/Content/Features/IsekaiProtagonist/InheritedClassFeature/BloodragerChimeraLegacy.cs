@@ -1,9 +1,9 @@
 ﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -35,11 +35,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.IsClassFeature = true;
             });
 
-            LegacySelection.Register(prog);
+            LegacySelection.RegisterForFeat(prog);
+            //LegacySelection.Register(prog);
             EdgeLordLegacySelection.Register(prog);
-            HeroLegacySelection.Prohibit(prog);
-            VillainLegacySelection.Prohibit(prog);
             GodEmperorLegacySelection.Prohibit(prog);
+            HeroLegacySelection.Prohibit(prog);
+            MastermindLegacySelection.Prohibit(prog);
+            OverlordLegacySelection.Register(prog);
         }
 
         public static void PatchProgression() {
@@ -47,17 +49,17 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 LevelEntry[] addentries = new LevelEntry[] { };
                 LevelEntry[] removeentries = new LevelEntry[] { };
                 removeentries = removeentries.AppendToArray(Helpers.CreateLevelEntry(1, FeatTools.Selections.BloodragerBloodlineSelection));
-                bloodlines.SetFeatures(FeatTools.Selections.BloodragerBloodlineSelection.Features.m_Array);
+                bloodlines.SetFeatures(FeatTools.Selections.BloodragerBloodlineSelection.m_AllFeatures);
 
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(1, bloodlines));
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(5, bloodlines));
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(10, bloodlines));
                 addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(15, bloodlines));
 
-                prog = StaticReferences.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.BloodragerClass, addentries, removeentries);
+                prog = PatchTools.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.BloodragerClass, addentries, removeentries);
 
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
-                StaticReferences.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.BloodragerClass);
+                PatchTools.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.BloodragerClass);
 
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = SorcererLegacy.Get().ToReference<BlueprintFeatureReference>(); });
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BarbarianLegacy.Get().ToReference<BlueprintFeatureReference>(); });

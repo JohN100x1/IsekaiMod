@@ -9,7 +9,8 @@ using IsekaiMod.Content.Features.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility;
@@ -43,12 +44,12 @@ namespace IsekaiMod.Content {
                 Features.ExoticWeaponProficiency.Add();
                 Main.LogDebug("first init call start if block");
 
-                if (Other.IsEnabled("Exceptional Feats")) AddExceptionalFeats();
+                AddExceptionalFeats(); // Add blueprints into cache so we can use exceptionals feats later on.
                 if (Isekai.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
                 if (Isekai.IsEnabled("Isekai Deities")) AddIsekaiDeities();
                 if (Isekai.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
                 if (Isekai.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
-                if (Other.IsEnabled("Exceptional Feats") && Isekai.IsEnabled("Isekai Protagonist") && AddedContent.RestrictExceptionalFeats) RestrictExceptionalFeats();
+                if (Isekai.IsEnabled("Isekai Protagonist") && AddedContent.RestrictExceptionalFeats) RestrictExceptionalFeats();
             }
 
             public static void AddIsekaiProtagonistClass() {
@@ -61,24 +62,6 @@ namespace IsekaiMod.Content {
                 IsekaiProtagonistSpellbook.Add();
                 IsekaiProtagonistClass.Add();
                 Main.LogDebug("Class: Configured");
-
-                // Isekai Protagonist Features
-                IsekaiProtagonistProficiencies.Add();
-                IsekaiProtagonistCantrips.Add();
-                IsekaiProtagonistBonusFeatSelection.Add();
-                IsekaiProtagonistTalentSelection.Add();
-                IsekaiPetSelection.Add();
-                PlotArmor.Add();
-                StartingWeaponSelection.Add();
-                IsekaiFighterTraining.Add();
-                SignatureMoveSelection.Add();
-                IsekaiFastMovement.Add();
-                OtherworldlyStamina.Add();
-                IsekaiQuickFooted.Add();
-                FriendlyAuraFeature.Add();
-                SummonHarem.Add();
-                SecondReincarnation.Add();
-                Main.LogDebug("Class: Features");
 
                 // Beach Episode Selection
                 BeachEpisodeSelection.Add();
@@ -95,35 +78,29 @@ namespace IsekaiMod.Content {
                 BetaStrike.Add();
                 GammaStrike.Add();
                 OmegaStrike.Add();
+                SigmaStrike.Add();
                 Regeneration.Add();
                 EnergyImmunitySelection.Add();
                 TrainingMontage.Add();
                 BodyStrengthening.Add();
                 SpellNegation.Add();
                 ExtremeSpeed.Add();
-                IsekaiChannelPositiveEnergy.Add();
-                IsekaiChannelNegativeEnergy.Add();
-                KineticPower.Add();
                 SneakyMagic.Add();
                 SpellMaster.Add();
                 ArmorSaint.Add();
                 ArmorOfStrength.Add();
                 SummonBeast.Add();
-                AuraOfDivineFury.Add();
                 KillingIntent.Add();
                 MagicalAmplification.Add();
                 Reflect.Add();
+                IsekaiChannelPositiveEnergy.Add();
+                IsekaiChannelNegativeEnergy.Add();
+                Supermassive.Add();
                 Main.LogDebug("Class: SpecialPower");
 
                 // OP Ability
                 OverpoweredAbilitySelection.Add();
-                AutoBolster.Add();
-                AutoEmpower.Add();
-                AutoExtend.Add();
-                AutoMaximize.Add();
-                AutoQuicken.Add();
-                AutoReach.Add();
-                AutoSelective.Add();
+                AutoMetamagicSelection.Add();
                 Instakill.Add();
                 DupeGold.Add();
                 PerfectRoll.Add();
@@ -135,51 +112,83 @@ namespace IsekaiMod.Content {
                 TrueResurrection.Add();
                 SupremeBeing.Add();
                 MetaLuck.Add();
-                AuraOfRighteousWrath.Add();
+                PowerLeveling.Add();
+                OverpoweredAuraSelection.Add();
                 if (Other.IsEnabled("Mythic Class Feature")) BlessingOfTheMythic.Configure();
-                
                 Main.LogDebug("Class: OP");
 
+                // Isekai Protagonist Features
+                IsekaiProficiencies.Add();
+                IsekaiCantrips.Add();
+                IsekaiBonusFeatSelection.Add();
+                IsekaiTalentSelection.Add();
+                IsekaiPetSelection.Add();
+                PlotArmor.Add();
+                StartingWeaponSelection.Add();
+                IsekaiFighterTraining.Add();
+                SignatureMoveSelection.Add();
+                Afterimage.Add();
+                OtherworldlyStamina.Add();
+                IsekaiQuickFooted.Add();
+                IsekaiAuraSelection.Add();
+                SummonHarem.Add();
+                SecondReincarnation.Add();
+                ReleaseEnergy.Add();
+                Gifted.Add();
+                SecretPowerSelection.Add();
+                HaxSelection.Add();
+                Main.LogDebug("Class: Features");
+
                 // God Emperor Archetype
+                GodEmperorSpellbook.Add();
                 GodEmperorProficiencies.Add();
+                GodEmperorQuickFooted.Add();
                 NascentApotheosis.Add();
-                DivineArray.Add();
+                EnergyCondensationSelection.Add();
                 GodEmperorEnergySelection.Add();
-                AuraOfGoldenProtection.Add();
-                DarkAuraFeature.Add();
-                AuraOfMajesty.Add();
+                BarrierSelection.Add();
+                BodyMindAlterSelection.Add();
+                PathSelection.Add();
                 GodlyVessel.Add();
-                SiphoningAuraFeature.Add();
-                CelestialRealm.Add();
+                RealmSelection.Add();
                 Godhood.Add();
-                GodEmperor.Add();
+                GodEmperorArchetype.Add();
                 Main.LogDebug("Class: Emperor");
 
                 // Edge Lord Archetype
                 EdgeLordProficiencies.Add();
                 SupersonicCombat.Add();
-                EdgeLordFastMovement.Add();
                 ExtraStrike.Add();
-                EdgeLord.Add();
+                ChuunibyouActualisation.Add();
+                ExtraSpecialPowerSelection.Add();
+                EdgeLordArchetype.Add();
                 Main.LogDebug("Class: EdgeLord");
 
                 // Hero Archetype
                 HeroProficiencies.Add();
                 GracefulCombat.Add();
-                TrueSmite.Add();
-                TrueMark.Add();
-                HerosPresence.Add();
-                Hero.Add();
+                HandsOfSalvation.Add();
+                DeusExMachina.Add();
+                HeroArchetype.Add();
                 Main.LogDebug("Class: Hero");
 
-                // Villain Archetype
-                VillainProficiencies.Add();
+                // Mastermind Archetype
+                MastermindSpellList.Add();
+                MastermindSpellsPerDay.Add();
+                MastermindSpellbook.Add();
+                MastermindProficiencies.Add();
+                MastermindQuickFooted.Add();
+                Masterplan.Add();
+                MastermindArchetype.Add();
+                Main.LogDebug("Class: Mastermind");
+
+                // Overlord Archetype
+                OverlordSpellbook.Add();
+                OverlordProficiencies.Add();
                 CorruptAuraFeature.Add();
-                VillainQuickFooted.Add();
-                SecondFormFeature.Add();
-                VillainSpellbook.Add();
-                Villain.Add();
-                Main.LogDebug("Class: Villain");
+                SecondPhaseFeature.Add();
+                OverlordArchetype.Add();
+                Main.LogDebug("Class: Overlord");
 
                 // Add Progression & Prebuild after Class and class-dependent features are added
                 PrebuildIsekaiProtagonistFeatureList.Add();
@@ -233,6 +242,7 @@ namespace IsekaiMod.Content {
                 Heritages.IsekaiFurryHeritage.Add();
 
                 Heritages.IsekaiHighHumanHeritage.Add();
+                Heritages.IsekaiHumanCrossbreedLegacy.Add();
 
                 // Patch Heritages
                 Heritages.ElfHeritagePatcher.Patch();
@@ -250,6 +260,10 @@ namespace IsekaiMod.Content {
                 Backgrounds.Otaku.Add();
                 Backgrounds.Gamer.Add();
                 Backgrounds.BetaTester.Add();
+                Backgrounds.DemonicCultivator.Add();
+                Backgrounds.EnlightenedSage.Add();
+                Backgrounds.Musician.Add();
+                Backgrounds.Rationalist.Add();
             }
             public static void AddIsekaiDeities() {
                 // Add the Selection First
@@ -277,47 +291,42 @@ namespace IsekaiMod.Content {
         }
     }
 
-    [HarmonyPriority(-100)]    
+    [HarmonyPriority(-100)]
     [HarmonyPatch(typeof(StartGameLoader), "LoadAllJson")]
     static class StartGameLoader_LoadAllJson {
         private static bool Run = false;
 
         static void Postfix() {
-            if (Run) return; 
+            if (Run) return;
             Run = true;
             Main.LogDebug("Postfix Patching: Start");
             Deities.IsekaiDeitySelection.PatchDeitySelection();
             Main.LogDebug("Postfix Patching: Deities fixed");
 
-            if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Heritages")) Heritages.HumanHeritageSelection.Patch();
+            if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Heritages")) PatchHeritages();
 
             if (IsekaiContext.AddedContent.Isekai.IsDisabled("Isekai Protagonist")) return;
 
             LegacySelection.ConfigureStep3();
 
+            MastermindArchetype.PatchMastermindArcanistFeatures();
 
 
             //done here because it should be done after all spells have been initialized and were added to the canon books
             if (IsekaiContext.AddedContent.MergeIsekaiSpellList) IsekaiProtagonistSpellList.MergeSpellLists();
 
-            if (ModSupport.IsTableTopTweakBaseEnabled()) {
-                PatchTableTopTweakCore();
-            }
-            if (ModSupport.IsExpandedContentEnabled()) { 
-                DreadKnightLegacy.PatchProgression();
-            }
+            // Copy spell list into mastermind spell list after merge
+            MastermindSpellList.PatchMastermindSpellList();
+
+            if (ModSupport.IsTableTopTweakBaseEnabled) PatchTableTopTweakCore();
         }
 
         private static void PatchTableTopTweakCore() {
-            var paladincapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("a92b9d62930247759b2796a6c2103c0e");
             var oraclecapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("c898b6e4918c41c3a351c9a882c65cea");
             var shamancapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("6e32488a2cec4ba586508db4f78b062d");
             var sorcerercapstone = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("40f13b4925c24e50bc8f3d5fe4d42a05");
-            
-            
-            if (paladincapstone != null) {
-                HeroicLegacy.Get().LevelEntries = HeroicLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, paladincapstone));
-            }
+
+
             if (oraclecapstone != null) {
                 OracleLegacy.Get().LevelEntries = OracleLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, oraclecapstone));
             }
@@ -327,7 +336,12 @@ namespace IsekaiMod.Content {
             if (sorcerercapstone != null) {
                 SorcererLegacy.Get().LevelEntries = SorcererLegacy.Get().LevelEntries.AddToArray(Helpers.CreateLevelEntry(20, sorcerercapstone));
             }
-            MagusLegacy.PatchForBroadStudy();
+            MagusBasicLegacy.PatchForBroadStudy();
+        }
+
+        private static void PatchHeritages() {
+            Heritages.IsekaiHumanCrossbreedLegacy.Patch();
+            Heritages.HumanHeritageSelection.Patch();
         }
 
     }

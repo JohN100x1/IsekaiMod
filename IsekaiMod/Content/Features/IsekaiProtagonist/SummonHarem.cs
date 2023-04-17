@@ -4,7 +4,6 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Enums;
-using Kingmaker.Localization;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -27,7 +26,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
 
         // Units
         private static readonly BlueprintUnit CR20_SuccubusAdvancedFighter = BlueprintTools.GetBlueprint<BlueprintUnit>("2db556136eac2544fa9744314c2a5713");
-
         private static readonly BlueprintUnit CR14_AstralDeva = BlueprintTools.GetBlueprint<BlueprintUnit>("8f3bd0ecea704277a9f2b09296a7b01e");
         private static readonly BlueprintUnit CR7_Nymph = BlueprintTools.GetBlueprint<BlueprintUnit>("0cc7a2526e4557945b1d8eb277d1fb3a");
         private static readonly BlueprintUnit CR22_ErinyesDevilStandard = BlueprintTools.GetBlueprint<BlueprintUnit>("b576f3eb0aa94af44a985f51eda9db7b");
@@ -36,19 +34,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         private static readonly BlueprintBuff SummonedCreatureSpawnMonsterVI_IX = BlueprintTools.GetBlueprint<BlueprintBuff>("0dff842f06edace43baf8a2f44207045");
         private static readonly Sprite Icon_SummonMonsterIX = BlueprintTools.GetBlueprint<BlueprintAbility>("52b5df2a97df18242aec67610616ded0").m_Icon;
 
-        private static readonly ContextDurationValue RankDuration = new() {
-            Rate = DurationRate.Rounds,
-            DiceType = DiceType.Zero,
-            DiceCountValue = 0,
-            BonusValue = Values.CreateContextRankValue(AbilityRankType.Default),
-            m_IsExtendable = true
-        };
-
         public static void Add() {
             var SummonHaremAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "SummonHaremAbility", bp => {
                 bp.SetName(IsekaiContext, "Summon Harem");
-                bp.SetDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Succubus, Nymph, Astral Deva, and an Erinyes. Summoned monsters appear where you designate and act according to their "
-                    + "{g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}check{/g} results. They {g|Encyclopedia:Attack}attack{/g} your opponents to the best of their ability.");
+                bp.SetSummonDescription(IsekaiContext, "This {g|Encyclopedia:Spell}spell{/g} summons a Succubus, Nymph, Astral Deva, and an Erinyes.");
                 bp.AddComponent<AbilityEffectRunAction>(c => {
                     c.Actions = ActionFlow.DoSingle<ContextActionOnNearbyPoint>(c => {
                         c.Actions = Helpers.CreateActionList(
@@ -87,7 +76,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.AvailableMetamagic = Metamagic.Quicken;
                 bp.m_IsFullRoundAction = true;
                 bp.LocalizedDuration = StaticReferences.Strings.Duration.OneRoundPerLevel;
-                bp.LocalizedSavingThrow = new LocalizedString();
+                bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
             });
             var SummonHaremFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SummonHaremFeature", bp => {
                 bp.SetName(IsekaiContext, "Summon Harem");
@@ -102,7 +91,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
         private static ContextActionSpawnMonster SpawnMonster(Action<ContextActionSpawnMonster> init = null) {
             var t = new ContextActionSpawnMonster() {
                 m_SummonPool = SummonMonsterPool.ToReference<BlueprintSummonPoolReference>(),
-                DurationValue = RankDuration,
+                DurationValue = new() {
+                    Rate = DurationRate.Rounds,
+                    DiceType = DiceType.Zero,
+                    DiceCountValue = 0,
+                    BonusValue = Values.CreateContextRankValue(AbilityRankType.Default),
+                    m_IsExtendable = true
+                },
                 CountValue = Values.Dice.One,
                 LevelValue = 0,
                 AfterSpawn = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {

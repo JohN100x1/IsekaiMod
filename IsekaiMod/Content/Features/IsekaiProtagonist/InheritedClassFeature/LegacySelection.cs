@@ -1,7 +1,8 @@
 ﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.EdgeLord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor;
 using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Villain;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -17,6 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         private static readonly Sprite Icon_AllSkilled = BlueprintTools.GetBlueprint<BlueprintFeature>("f3bc6f9c855b2fb4e9aea364b8163aca").m_Icon;
         private static BlueprintFeatureSelection ClassSelection;
         private static BlueprintFeatureSelection AbilitySelection;
+        private static BlueprintProgression[] registered = new BlueprintProgression[] { };
 
         public static void ConfigureStep1() {
 
@@ -48,10 +50,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             });
             AbilitySelection.AddComponent<PrerequisiteNoFeature>(c => { c.m_Feature = AbilitySelection.ToReference<BlueprintFeatureReference>(); });
 
-            VillainLegacySelection.Configure();
             EdgeLordLegacySelection.Configure();
-            HeroLegacySelection.Configure();
             GodEmperorLegacySelection.Configure();
+            HeroLegacySelection.Configure();
+            MastermindLegacySelection.Configure();
+            OverlordLegacySelection.Configure();
         }
         public static BlueprintFeatureSelection GetClassFeature() {
             if (ClassSelection != null) {
@@ -66,46 +69,59 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             return BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "LegacyAbilitySelection");
         }
 
-        public static void Register(BlueprintProgression prog) {
-            ClassSelection.AddFeatures(prog);
+        public static void RegisterForFeat(BlueprintProgression prog) {
             AbilitySelection.AddFeatures(prog);
         }
 
+        public static void Register(BlueprintProgression prog) {
+            registered = registered.AppendToArray(prog);
+        }
+
         public static void ConfigureStep2() {
-            OracleLegacy.Configure();
-            SorcererLegacy.Configure();
-            RogueLegacy.Configure();
-            TacticianLegacy.Configure();
-            KineticLegacy.Configure();
-            BardLegacy.Configure();
+            ArcanistBasicLegacy.Configure();
+            ArcanistBrownFurLegacy.Configure();
+            ArcanistEldritchFontLegacy.Configure();
             BarbarianLegacy.Configure();
+            BardLegacy.Configure();
+            BloodragerChimeraLegacy.Configure();
+            CavalierBasicLegacy.Configure();
+            CavalierKnightOfWall.Configure();
+            CavalierStandardBearerLegacy.Configure();
+            DreadKnightLegacy.Configure();
             DruidBaseLegacy.Configure();
-            WitchBaseLegacy.Configure();
             FighterBasicLegacy.Configure();
             Fighter2HandedLegacy.Configure();
             FighterShieldLegacy.Configure();
-            PaladinBaseLegacy.Configure();
-            MonkLegacy.Configure();
-            HeroicLegacy.Configure();
-            ShamanLegacy.Configure();
-            MagusLegacy.Configure();
-            SkaldBaseLegacy.Configure();
-            ShifterBaseLegacy.Configure();
-            DreadKnightLegacy.Configure();
-            KineticKnightLegacy.Configure();
-            KineticOverwhelmingSoulLegacy.Configure();
-            KineticDarkElementalistLegacy.Configure();
-            MonkScaledFistLegacy.Configure();
-            SkaldSilverTongueLegacy.Configure();
-            SkaldVoiceLegacy.Configure();
-            ShifterStingerLegacy.Configure();
-            ShifterDragonLegacy.Configure();
             InquisitorTacticianLegacy.Configure();
             InquisitorJudgeLegacy.Configure();
             InquisitorDomainLordLegacy.Configure();
-            BloodragerChimeraLegacy.Configure();
+            KineticLegacy.Configure();
+            KineticKnightLegacy.Configure();
+            KineticOverwhelmingSoulLegacy.Configure();
+            KineticDarkElementalistLegacy.Configure();
+            KineticPsychoLegacy.Configure();
+            MagusBasicLegacy.Configure();
+            MagusArcherLegacy.Configure();
+            MagusDancerLegacy.Configure();
+            MagusSpellbladeLegacy.Configure();
+            MonkLegacy.Configure();
+            MonkScaledFistLegacy.Configure();
+            OracleLegacy.Configure();
+            PaladinBaseLegacy.Configure();
             PlayerComputerNerdLegacy.Configure();
             PlayerPartTimeWorkerLegacy.Configure();
+            RogueLegacy.Configure();
+            ShamanLegacy.Configure();
+            ShifterBaseLegacy.Configure();
+            ShifterStingerLegacy.Configure();
+            ShifterDragonLegacy.Configure();
+            ShifterGriffonLegacy.Configure();
+            ShifterHolyLegacy.Configure();
+            SkaldBaseLegacy.Configure();
+            SkaldSilverTongueLegacy.Configure();
+            SkaldVoiceLegacy.Configure();
+            SorcererLegacy.Configure();
+            WitchBaseLegacy.Configure();
             //always do this last to ensure any legacy that might get an arcana goes before
             ArcanaSelection.Configure();
             OverpoweredAbilitySelection.AddToSelection(GetOverwhelmingFeature());
@@ -113,39 +129,54 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         }
 
         public static void ConfigureStep3() {
+            ArcanistBasicLegacy.PatchProgression();
+            ArcanistBrownFurLegacy.PatchProgression();
+            ArcanistEldritchFontLegacy.PatchProgression();
             BarbarianLegacy.PatchProgression();
             BardLegacy.PatchProgression();
+            BloodragerChimeraLegacy.PatchProgression();
+            CavalierBasicLegacy.PatchProgression();
+            CavalierKnightOfWall.PatchProgression();
+            CavalierStandardBearerLegacy.PatchProgression();
+            DreadKnightLegacy.PatchProgression();
+            DruidBaseLegacy.PatchProgression();
             FighterBasicLegacy.PatchProgression();
             Fighter2HandedLegacy.PatchProgression();
             FighterShieldLegacy.PatchProgression();
-            MonkLegacy.PatchProgression();
-            MonkScaledFistLegacy.PatchProgression();
-            RogueLegacy.PatchProgression();
-            DruidBaseLegacy.PatchProgression();
-            WitchBaseLegacy.PatchProgression();
-            SkaldBaseLegacy.PatchProgression();
-            SkaldSilverTongueLegacy.PatchProgression();
-            SkaldVoiceLegacy.PatchProgression();
+            InquisitorTacticianLegacy.PatchProgression();
+            InquisitorJudgeLegacy.PatchProgression();
+            InquisitorDomainLordLegacy.PatchProgression();
             KineticLegacy.PatchProgression();
             KineticKnightLegacy.PatchProgression();
             KineticOverwhelmingSoulLegacy.PatchProgression();
             KineticDarkElementalistLegacy.PatchProgression();
+            KineticPsychoLegacy.PatchProgression();
+            MagusBasicLegacy.PatchProgression();
+            MagusArcherLegacy.PatchProgression();
+            MagusDancerLegacy.PatchProgression();
+            MagusSpellbladeLegacy.PatchProgression();
+            MonkLegacy.PatchProgression();
+            MonkScaledFistLegacy.PatchProgression();
+            OracleLegacy.PatchProgression();
+            PaladinBaseLegacy.PatchProgression();
+            PlayerComputerNerdLegacy.PatchProgression();
+            PlayerPartTimeWorkerLegacy.PatchProgression();
+            RogueLegacy.PatchProgression();
+            ShamanLegacy.PatchProgression();
             ShifterBaseLegacy.PatchProgression();
             ShifterStingerLegacy.PatchProgression();
             ShifterDragonLegacy.PatchProgression();
-            OracleLegacy.PatchProgression();
+            ShifterGriffonLegacy.PatchProgression();
+            ShifterHolyLegacy.PatchProgression();
+            SkaldBaseLegacy.PatchProgression();
+            SkaldSilverTongueLegacy.PatchProgression();
+            SkaldVoiceLegacy.PatchProgression();
             SorcererLegacy.PatchProgression();
-            ShamanLegacy.PatchProgression();
-            PaladinBaseLegacy.PatchProgression();
-            InquisitorTacticianLegacy.PatchProgression();
-            InquisitorJudgeLegacy.PatchProgression();
-            InquisitorDomainLordLegacy.PatchProgression();
-            BloodragerChimeraLegacy.PatchProgression();
-            PlayerComputerNerdLegacy.PatchProgression();
-            PlayerPartTimeWorkerLegacy.PatchProgression();
+            WitchBaseLegacy.PatchProgression();
 
             LegacySelection.Finish();
-            VillainLegacySelection.Finish();
+            MastermindLegacySelection.Finish();
+            OverlordLegacySelection.Finish();
             EdgeLordLegacySelection.Finish();
             HeroLegacySelection.Finish();
             GodEmperorLegacySelection.Finish();
@@ -156,6 +187,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 c.m_CharacterClass = Classes.IsekaiProtagonist.IsekaiProtagonistClass.GetReference();
                 c.Level = 5;
             });
+            foreach (BlueprintFeature feature in registered) {
+                ClassSelection.AddFeatures(feature);
+            }
         }
     }
 }
