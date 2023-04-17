@@ -146,6 +146,7 @@
     "OtherworldlyStamina": "7f0bc8e8-34ad-4691-b66e-a2d526a35d0b",
     "SignatureAttack": "834fc856-6aa1-4abc-aa59-7c100ad190f4",
     "SignatureAbility": "2fd6a680-7fc8-4d67-9394-27074333892f",
+    "SignatureStrike": "335bd25d-8978-42dd-9339-75ef9da6746f",
     "SignatureMoveSelection": "9f2929df-e9fc-4cd2-9d40-6240763eb91f",
     "SignatureMoveBonusSelection": "3bb9b5da-01c7-4bc5-bafa-6661db4e0708",
     "IsekaiFighterTraining": "61c3c186-fc1a-4735-97e3-99e8b6eac959",
@@ -283,6 +284,9 @@
     "ReflectAbility": "f7c13a2e-3857-4ccd-9a38-6c63132a0176",
     "ReflectFeature": "c101a56c-1260-4525-a99d-357db59acef0",
     "Supermassive": "449725cd-7254-4781-a7c1-8f552fe89665",
+    "ExcaliburBuff": "3ad0d21b-eb0f-4e08-bd2d-4ab24ddc273f",
+    "ExcaliburAbility": "53fd6dd1-23ff-447a-8d54-52a7eb12de94",
+    "ExcaliburFeature": "9e2de69b-d55a-4949-b8da-430b2a95fee4",
 
 
     // Energy immunity
