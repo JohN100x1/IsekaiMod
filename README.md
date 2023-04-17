@@ -204,7 +204,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 	- `Gamer`: Get a +8 competence bonus to all knowledge, lore, and perception checks.
 	- `Beta Tester`: Get +4 Initiative and adds lore, knowledge and perceptions skills as class skills.
 	- `Demonic Cultivator`: Adds athletics and mobility as a class skills. Uses the higher of STR and DEX for athletics and mobility checks.
-	- `Enlightened Scholar`: Adds lore, knowledge, and perception skills as class skills. Uses the higher of INT and WIS for these checks.
+	- `Enlightened Sage`: Adds lore, knowledge, and perception skills as class skills. Uses the higher of INT and WIS for these checks.
 	- `Musician`: Adds Persuasion as a class skill. Has a +2 bonus to caster level and DC for Sonic spells.
 	- `Rationalist`: Has Immunity to spell and spell-like abilities but cannot cast spells.
 - New Heritages

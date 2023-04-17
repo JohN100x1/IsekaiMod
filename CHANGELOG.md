@@ -27,7 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Buffed `Friendly Aura` to also affect damage rolls.
 - Buffed `Siphoning Aura` to scale 1/2 character level.
 - Buffed `Extreme Speed` Special Power range from 40 -> 120.
-- Nerfed `Beta Tester` background form initiative bonus from 10 -> 4.
+- Buffed `Gamer` background skill bonus from 4 -> 8.
+- Nerfed `Beta Tester` background initiative bonus from 10 -> 4.
 - Nerfed `Magical Amplification` spell dice from d12 -> d10.
 - Nerfed `Exceptional Weapon` feats to only affect primary and secondary hand weapon.
 - Changes for `Isekai Protagonist`:
