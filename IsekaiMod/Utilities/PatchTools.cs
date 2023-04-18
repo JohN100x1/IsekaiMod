@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -521,12 +522,7 @@ namespace IsekaiMod.Utilities {
                 PatchArcaneReservoirBuffs(spellbookRef);
             }
             private static void PatchConsumeSpells(BlueprintCharacterClassReference classRef) {
-                var ArcanistConsumeSpells = BlueprintTools.GetBlueprint<BlueprintFeature>("69cfb4ab0d9812249b924b8f23d6d19f");
                 var ArcanistConsumeSpellsResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("d67ddd98ad019854d926f3d6a4e681c5");
-                ArcanistConsumeSpells.AddComponent<SpontaneousSpellConversion>(c => {
-                    c.m_CharacterClass = classRef;
-                    c.m_SpellsByLevel = ArcanistConsumeSpells.GetComponent<SpontaneousSpellConversion>().m_SpellsByLevel;
-                });
                 PatchResource(ArcanistConsumeSpellsResource, classRef);
             }
             private static void PatchArcanistExploits(BlueprintCharacterClassReference classRef) {

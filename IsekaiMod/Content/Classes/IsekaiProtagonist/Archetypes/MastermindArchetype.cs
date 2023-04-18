@@ -21,12 +21,12 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
         public static void Add() {
             // Archetype features
             var MastermindProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindProficiencies");
+            var MastermindConsumeSpells = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindConsumeSpells");
             var MastermindQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindQuickFooted");
             var SignatureAbility = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureAbility");
             var MasterplanFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MasterplanFeature");
 
             var ArcanistArcaneReservoirFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("55db1859bd72fd04f9bd3fe1f10e4cbb");
-            var ArcanistConsumeSpells = BlueprintTools.GetBlueprint<BlueprintFeature>("69cfb4ab0d9812249b924b8f23d6d19f");
             var EldritchFontEldritchSurge = BlueprintTools.GetBlueprint<BlueprintFeature>("644c0e9618e417947bd0a1252a5e6ecf");
             var EldritchFontImprovedSurge = BlueprintTools.GetBlueprint<BlueprintFeature>("718fe8e143d38cc4899ae798dd098b6e");
             var EldritchFontGreaterSurge = BlueprintTools.GetBlueprint<BlueprintFeature>("685ee64e43fcb6546b65436a3deb98bd");
@@ -81,7 +81,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(20, IsekaiBonusFeatSelection, HaxSelection),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, MastermindProficiencies, AutoMetamagicSelectionMastermind, ArcanistArcaneReservoirFeature, ArcanistConsumeSpells, MastermindLegacySelection.getClassFeature()),
+                    Helpers.CreateLevelEntry(1, MastermindProficiencies, AutoMetamagicSelectionMastermind, ArcanistArcaneReservoirFeature, MastermindConsumeSpells, MastermindLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(3, ArcanistExploitSelection, EldritchFontEldritchSurge),
                     Helpers.CreateLevelEntry(5, AutoMetamagicSelectionMastermind),
                     Helpers.CreateLevelEntry(6, SignatureAbility),
