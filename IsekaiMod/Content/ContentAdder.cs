@@ -173,6 +173,7 @@ namespace IsekaiMod.Content {
                 Main.LogDebug("Class: Hero");
 
                 // Mastermind Archetype
+                MastermindConsumeSpells.Add();
                 MastermindSpellList.Add();
                 MastermindSpellsPerDay.Add();
                 MastermindSpellbook.Add();

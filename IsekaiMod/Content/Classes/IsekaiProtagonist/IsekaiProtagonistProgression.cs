@@ -78,12 +78,12 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
             // Mastermind
             var MastermindProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindProficiencies");
+            var MastermindConsumeSpells = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindConsumeSpells");
             var MastermindQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindQuickFooted");
             var MasterplanFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MasterplanFeature");
 
             BlueprintFeatureSelection ArcanistExploitSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("b8bf3d5023f2d8c428fdf6438cecaea7");
             var ArcanistArcaneReservoirFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("55db1859bd72fd04f9bd3fe1f10e4cbb");
-            var ArcanistConsumeSpells = BlueprintTools.GetBlueprint<BlueprintFeature>("69cfb4ab0d9812249b924b8f23d6d19f");
             var EldritchFontEldritchSurge = BlueprintTools.GetBlueprint<BlueprintFeature>("644c0e9618e417947bd0a1252a5e6ecf");
             var EldritchFontImprovedSurge = BlueprintTools.GetBlueprint<BlueprintFeature>("718fe8e143d38cc4899ae798dd098b6e");
             var EldritchFontGreaterSurge = BlueprintTools.GetBlueprint<BlueprintFeature>("685ee64e43fcb6546b65436a3deb98bd");
@@ -166,7 +166,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 
                 // Mastermind UI group
                 Helpers.CreateUIGroup(AutoMetamagicSelectionMastermind, ArcanistExploitSelection),
-                Helpers.CreateUIGroup(ArcanistConsumeSpells, EldritchFontEldritchSurge, EldritchFontImprovedSurge, EldritchFontGreaterSurge),
+                Helpers.CreateUIGroup(MastermindConsumeSpells, EldritchFontEldritchSurge, EldritchFontImprovedSurge, EldritchFontGreaterSurge),
 
                 // Overlord UI group
                 Helpers.CreateUIGroup(OverpoweredAbilitySelectionOverlord, IsekaiChannelNegativeEnergyFeature, CorruptAuraFeature, SiphoningAuraFeature),
