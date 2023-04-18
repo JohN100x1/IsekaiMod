@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
-using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
+﻿using IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind;
 using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
@@ -22,19 +21,19 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
         public static void Add() {
             // Archetype features
             var MastermindProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindProficiencies");
+            var MastermindConsumeSpells = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindConsumeSpells");
             var MastermindQuickFooted = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MastermindQuickFooted");
             var SignatureAbility = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SignatureAbility");
             var MasterplanFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "MasterplanFeature");
 
             var ArcanistArcaneReservoirFeature = BlueprintTools.GetBlueprint<BlueprintFeature>("55db1859bd72fd04f9bd3fe1f10e4cbb");
-            var ArcanistConsumeSpells = BlueprintTools.GetBlueprint<BlueprintFeature>("69cfb4ab0d9812249b924b8f23d6d19f");
             var EldritchFontEldritchSurge = BlueprintTools.GetBlueprint<BlueprintFeature>("644c0e9618e417947bd0a1252a5e6ecf");
             var EldritchFontImprovedSurge = BlueprintTools.GetBlueprint<BlueprintFeature>("718fe8e143d38cc4899ae798dd098b6e");
             var EldritchFontGreaterSurge = BlueprintTools.GetBlueprint<BlueprintFeature>("685ee64e43fcb6546b65436a3deb98bd");
 
             var ArcanistExploitSelection = BlueprintTools.GetBlueprint<BlueprintFeatureSelection>("b8bf3d5023f2d8c428fdf6438cecaea7");
 
-            var OverpoweredAbilitySelectionMastermind = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "OverpoweredAbilitySelectionMastermind");
+            var AutoMetamagicSelectionMastermind = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "AutoMetamagicSelectionMastermind");
 
             // Removed features
             var IsekaiProficiencies = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiProficiencies");
@@ -82,16 +81,16 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     Helpers.CreateLevelEntry(20, IsekaiBonusFeatSelection, HaxSelection),
                 };
                 bp.AddFeatures = new LevelEntry[] {
-                    Helpers.CreateLevelEntry(1, MastermindProficiencies, OverpoweredAbilitySelectionMastermind, ArcanistArcaneReservoirFeature, ArcanistConsumeSpells, MastermindLegacySelection.getClassFeature()),
+                    Helpers.CreateLevelEntry(1, MastermindProficiencies, AutoMetamagicSelectionMastermind, ArcanistArcaneReservoirFeature, MastermindConsumeSpells, MastermindLegacySelection.getClassFeature()),
                     Helpers.CreateLevelEntry(3, ArcanistExploitSelection, EldritchFontEldritchSurge),
-                    Helpers.CreateLevelEntry(5, OverpoweredAbilitySelectionMastermind),
+                    Helpers.CreateLevelEntry(5, AutoMetamagicSelectionMastermind),
                     Helpers.CreateLevelEntry(6, SignatureAbility),
                     Helpers.CreateLevelEntry(7, ArcanistExploitSelection, EldritchFontImprovedSurge),
-                    Helpers.CreateLevelEntry(9, OverpoweredAbilitySelectionMastermind),
+                    Helpers.CreateLevelEntry(9, AutoMetamagicSelectionMastermind),
                     Helpers.CreateLevelEntry(11, ArcanistExploitSelection),
-                    Helpers.CreateLevelEntry(13, OverpoweredAbilitySelectionMastermind, EldritchFontGreaterSurge),
+                    Helpers.CreateLevelEntry(13, AutoMetamagicSelectionMastermind, EldritchFontGreaterSurge),
                     Helpers.CreateLevelEntry(15, ArcanistExploitSelection, MastermindQuickFooted),
-                    Helpers.CreateLevelEntry(17, OverpoweredAbilitySelectionMastermind),
+                    Helpers.CreateLevelEntry(17, AutoMetamagicSelectionMastermind),
                     Helpers.CreateLevelEntry(19, ArcanistExploitSelection),
                     Helpers.CreateLevelEntry(20, MasterplanFeature),
                 };

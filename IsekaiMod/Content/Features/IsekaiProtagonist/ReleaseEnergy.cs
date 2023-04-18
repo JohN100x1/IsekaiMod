@@ -17,8 +17,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.m_Icon = Icon_AngelfireApostleChannel;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
-                        IsekaiChannelPositiveEnergy.Get().ToReference<BlueprintUnitFactReference>(),
-                        IsekaiChannelNegativeEnergy.Get().ToReference<BlueprintUnitFactReference>(),
+                        BlueprintTools.GetModBlueprintReference<BlueprintUnitFactReference>(IsekaiContext, "IsekaiChannelPositiveEnergy"),
+                        BlueprintTools.GetModBlueprintReference<BlueprintUnitFactReference>(IsekaiContext, "IsekaiChannelNegativeEnergy")
                     };
                 });
             });

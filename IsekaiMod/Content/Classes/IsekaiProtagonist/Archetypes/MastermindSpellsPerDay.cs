@@ -3,7 +3,7 @@ using Kingmaker.Blueprints.Classes.Spells;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
+namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
     internal class MastermindSpellsPerDay {
 

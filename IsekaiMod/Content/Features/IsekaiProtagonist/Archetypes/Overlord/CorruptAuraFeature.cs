@@ -16,7 +16,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Overlord {
 
         public static void Add() {
 
-            var CorruptAuraFeature = TTCoreExtensions.CreateToggleAuraFeature(
+            var CorruptAuraFeature = TTCoreExtensions.CreateToggleAuraBuffFeature(
                 name: "CorruptAura",
                 description: "Allies within 40 feet of the Overlord has a +4 profane bonus to attack, damage, AC and saving throws. Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.",
                 descriptionBuff: "This character has a +4 profane bonus to attack, damage, AC and saving throws. Their attacks are treated as evil for the purpose of overcoming {g|Encyclopedia:Damage_Reduction}damage reduction{/g}.",

@@ -2,7 +2,6 @@
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
-using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Designers.Mechanics.Recommendations;
 using Kingmaker.EntitySystem.Stats;
@@ -11,7 +10,6 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
-using static IsekaiMod.Main;
 using static TabletopTweaks.Core.MechanicsChanges.MetamagicExtention;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.TabletopTweaksBase {
@@ -74,36 +72,33 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.Tablet
                     });
                 });
 
-            var AutoElementalSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "AutoElementalSelection", bp => {
-                bp.SetName(IsekaiContext, "Overpowered Ability — Auto Elemental");
-                bp.SetDescription(IsekaiContext, "You can manipulate the elemental nature of your spells.\n" +
-                    "Benefit: Choose one energy type: acid, cold, electricity, or fire. You may replace a spell’s normal damage with that energy type " +
-                    "or split the spell’s damage, so that half is of that energy type and half is of its normal type.\n" +
-                    "Special: You can gain this feat multiple times. Each time you must choose a different energy type.");
-                bp.m_Icon = ElementalSpellSplitAbility.m_Icon;
-                bp.Ranks = 1;
-                bp.ReapplyOnLevelUp = true;
-                bp.IsClassFeature = true;
-                bp.Groups = new FeatureGroup[0];
-                bp.AddFeatures(
-                    AutoElementalAcidFeature,
-                    AutoElementalColdFeature,
-                    AutoElementalElectricityFeature,
-                    AutoElementalFireFeature
-                );
-                bp.AddComponent<AddFacts>(c => {
+            var autoElementalFeatures = new BlueprintFeature[] {
+                AutoElementalAcidFeature,
+                AutoElementalColdFeature,
+                AutoElementalElectricityFeature,
+                AutoElementalFireFeature
+            };
+
+            foreach (BlueprintFeature feature in autoElementalFeatures) {
+                feature.Ranks = 1;
+                feature.ReapplyOnLevelUp = true;
+                feature.IsClassFeature = true;
+                feature.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
                         ElementalSpellSplitAbility.ToReference<BlueprintUnitFactReference>(),
                     };
                 });
-                bp.AddPrerequisite<PrerequisiteStatValue>(c => {
+                feature.AddPrerequisite<PrerequisiteStatValue>(c => {
                     c.Stat = StatType.Intelligence;
                     c.Value = 3;
                 });
-                bp.AddComponent<RecommendationRequiresSpellbook>();
-            });
+                feature.AddComponent<RecommendationRequiresSpellbook>();
+            }
 
-            OverpoweredAbilitySelection.AddToAllSelection(AutoElementalSelection);
+            AutoMetamagicSelection.AddToSelection(AutoElementalAcidFeature);
+            AutoMetamagicSelection.AddToSelection(AutoElementalColdFeature);
+            AutoMetamagicSelection.AddToSelection(AutoElementalElectricityFeature);
+            AutoMetamagicSelection.AddToSelection(AutoElementalFireFeature);
         }
     }
 }

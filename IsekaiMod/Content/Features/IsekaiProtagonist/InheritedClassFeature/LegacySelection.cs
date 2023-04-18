@@ -124,7 +124,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             WitchBaseLegacy.Configure();
             //always do this last to ensure any legacy that might get an arcana goes before
             ArcanaSelection.Configure();
-            OverpoweredAbilitySelection.AddToNonAutoSelection(GetOverwhelmingFeature());
+            OverpoweredAbilitySelection.AddToSelection(GetOverwhelmingFeature());
 
         }
 

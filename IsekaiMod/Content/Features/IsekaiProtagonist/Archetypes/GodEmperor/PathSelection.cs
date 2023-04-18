@@ -50,7 +50,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 bp.SetName(IsekaiContext, "Chosen Path");
                 bp.SetDescription(IsekaiContext, "At 12th level, you transform the damage you deal into either divine or unholy.");
                 bp.m_Icon = Icon_Arbitrament;
-                bp.IgnorePrerequisites = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     RighteousPathFeature.ToReference<BlueprintFeatureReference>(),
                     UnjustPathFeature.ToReference<BlueprintFeatureReference>(),

@@ -28,7 +28,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                     });
                 });
 
-            OverpoweredAbilitySelection.AddToNonAutoSelection(PerfectRollFeature);
+            OverpoweredAbilitySelection.AddToSelection(PerfectRollFeature);
         }
     }
 }

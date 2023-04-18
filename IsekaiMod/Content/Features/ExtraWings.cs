@@ -24,7 +24,6 @@ namespace IsekaiMod.Content.Features {
 
         // Wings
         private static readonly BlueprintBuff WingsAngel = BlueprintTools.GetBlueprint<BlueprintBuff>("25699a90ed3299e438b6fd5548930809");
-
         private static readonly BlueprintBuff BuffWingsMutagen = BlueprintTools.GetBlueprint<BlueprintBuff>("e4979934bdb39d842b28bee614606823");
         private static readonly BlueprintBuff WingsAngelBlack = BlueprintTools.GetBlueprint<BlueprintBuff>("a19cda073f4c2b64ca1f8bf8fe285ece");
         private static readonly BlueprintBuff BuffWingsAngelGhost = BlueprintTools.GetBlueprint<BlueprintBuff>("bd6980649fd60fa4085c34aa74ac47f2");

@@ -61,6 +61,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- Can choose a familiar or animal companion... or a deathsnatcher.
 		- Can choose a legacy class feature (features from other classes).
 	- `God Emperor` (Isekai Protagonist Archetype)
+		- Spontaneous caster that uses Wisdom.
 		- Has powerful scaling immunities and auras.
 	- `Edge Lord` (Isekai Protagonist Archetype)
 		- Has alot of extra attacks.
@@ -88,14 +89,15 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Beta Strike`: Get an extra attack with a -4 damage penalty.
 		- `Gamma Strike`: Ignore concealment and your attacks count as adamantine.
 		- `Omega Strike`: Increase your damage multipler by 1.
+		- `Sigma Strike`: Increase your critical threat range by 2.
 		- `Mundane Aura`: Get immunity to sneak attack and critical hits.
 		- `Regeneration`: Get regeneration 10/acid or fire (requires character level 10).
 		- `Training Montage`: Get a +8 bonus to all attributes.
 		- `Body Strengthening`: Get a DR/— equal to character level.
 		- `Spell Negation`: Get Spell resistance equal to 10 + twice character level.
 		- `Extreme Speed`: Allies within 40 feet of you get a speed bonus equal to 5 times your character level.
-		- `Channel Positive Energy`: You can channel positive energy (requires good alignment).
-		- `Channel Negative Energy`: You can channel negative energy (requires evil alignment).
+		- `Channel Positive Energy`: You can channel positive energy.
+		- `Channel Negative Energy`: You can channel negative energy.
 		- `Kinetic Power`: You can select a kinetic blast (air, earth, fire, water).
 		- `Sneaky Magic`: You can add your sneak attack damage to spells against flat-footed.
 		- `Spell Master`: Increase your spell DC by 4.
@@ -104,7 +106,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Armor of Strength`: Get a natural armor bonus to AC equal to Strength modifier.
 		- `Summon Beast`: Summon a hydra, owlbear, roc, or minotaur.
 		- `Aura of Divine Fury`: Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells (requires character level 15).
-		- `Killing Intent`: Enemies within 40 feet who fail a will save become shaken, frightened, and cowering.
+		- `Killing Intent`: Enemies within 40 feet become shaken, frightened, and cowering.
 		- `Reflect`: Deal damage to enemies equal to damage you receive.
 		- `Supermassive`: Gain bonus HP based on your Constitution modifier. You also get fast healing but have a penalty to AC.
 		- `Mythic Class Feature`: see below
@@ -127,6 +129,8 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `True Resurrection`: Resurrect a dead companion (no diamond cost).
 		- `Supreme Being`: All your attributes have a base value of 30.
 		- `Meta Luck`: Always take the higher of two d20 rolls.
+		- `Power Leveling`: Gain extra experience when you kill an enemy.
+		- `Overpowered Aura`: 4 different alignment based auras which give either extra attack(s) and/or damage.
 		- `Mythic Class Feature`: see below
 		- `Dual Legacy`: Pick a second base class to get abilities from.
 		- The following requires TabletopTweaks-Base:
@@ -200,8 +204,8 @@ Exception to this is the God Emperor as all options that were changed were not p
 	- `Gamer`: Get a +8 competence bonus to all knowledge, lore, and perception checks.
 	- `Beta Tester`: Get +4 Initiative and adds lore, knowledge and perceptions skills as class skills.
 	- `Demonic Cultivator`: Adds athletics and mobility as a class skills. Uses the higher of STR and DEX for athletics and mobility checks.
-	- `Enlightened Scholar`: Adds lore, knowledge, and perception skills as class skills. Uses the higher of INT and WIS for these checks.
-	- `Musician`: Adds Persuasion as a class skill. Has a +2 competence bonus to caster level for Sonic spells.
+	- `Enlightened Sage`: Adds lore, knowledge, and perception skills as class skills. Uses the higher of INT and WIS for these checks.
+	- `Musician`: Adds Persuasion as a class skill. Has a +2 bonus to caster level and DC for Sonic spells.
 	- `Rationalist`: Has Immunity to spell and spell-like abilities but cannot cast spells.
 - New Heritages
 	- `Isekai Angel` (Aasimar Heritage): A powerful heritage for Aasimar that gives you wings and a powerful holy damage ability.

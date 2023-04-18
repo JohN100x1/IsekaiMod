@@ -18,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
 
         public static void Add() {
 
-            var CelestialRealmFeature = TTCoreExtensions.CreateToggleAuraFeature(
+            var CelestialRealmFeature = TTCoreExtensions.CreateToggleAuraBuffFeature(
                 name: "CelestialRealm",
                 description: "Allies within 40 feet of you transform their damage type into divine.",
                 descriptionBuff: "This character transforms their damage type into divine.",
@@ -36,7 +36,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                     });
                 });
 
-            var ShadowRealmFeature = TTCoreExtensions.CreateToggleAuraFeature(
+            var ShadowRealmFeature = TTCoreExtensions.CreateToggleAuraBuffFeature(
                 name: "ShadowRealm",
                 description: "Allies within 40 feet of you transform their damage type into unholy.",
                 descriptionBuff: "This character transforms their damage type into unholy.",
@@ -58,7 +58,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 bp.SetName(IsekaiContext, "Transcendental Realm");
                 bp.SetDescription(IsekaiContext, "At 15th level, you are able to ascend into a higher plane of existence and harness its energies.");
                 bp.m_Icon = Icon_CelestialRealm;
-                bp.IgnorePrerequisites = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     CelestialRealmFeature.ToReference<BlueprintFeatureReference>(),
                     ShadowRealmFeature.ToReference<BlueprintFeatureReference>(),

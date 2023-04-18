@@ -37,7 +37,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Mastermind {
                 bp.Shape = AreaEffectShape.Cylinder;
                 bp.Size = new Feet(120);
                 bp.Fx = new PrefabLink();
-                bp.AddComponent(AuraUtils.CreateUnconditionalAuraEffect(MasterplanBuff.ToReference<BlueprintBuffReference>()));
+                bp.AddUnconditionalAuraEffect(MasterplanBuff.ToReference<BlueprintBuffReference>());
             });
             var MasterplanAreaBuff = TTCoreExtensions.CreateBuff("MasterplanAreaBuff", bp => {
                 bp.SetName(IsekaiContext, Name);

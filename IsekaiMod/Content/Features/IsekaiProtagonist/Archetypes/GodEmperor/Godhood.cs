@@ -2,6 +2,7 @@
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
@@ -19,7 +20,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                     + "Your attacks ignore concealment and damage reduction. Your spells ignore spell resistance and spell immunity.");
                 bp.m_Icon = Icon_Godhood;
                 bp.AddComponent<AddSpellImmunity>();
-                bp.AddComponent<AreaEffectImmunity>();
+                bp.AddComponent<AreaEffectImmunity>(c => {
+                    c.m_CasterType = TargetType.Enemy;
+                    c.m_SpecificAreaEffects = false;
+                });
                 bp.AddComponent<AddPhysicalImmunity>();
                 bp.AddComponent<IgnoreConcealment>();
                 bp.AddComponent<IgnoreDamageReductionOnAttack>();

@@ -17,7 +17,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
         private static readonly Sprite Icon_SiphoningAura = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_AURA_SIPHONING.png");
         public static void Add() {
 
-            var MajesticAuraFeature = TTCoreExtensions.CreateToggleAuraFeature(
+            var MajesticAuraFeature = TTCoreExtensions.CreateToggleAuraBuffFeature(
                 name: "MajesticAura",
                 description: "Allies within 40 feet of you gain a sacred bonus to all attributes equal to 1/2 your character level.",
                 descriptionBuff: "This character has a sacred bonus to all attributes equal to 1/2 your character level.",
@@ -62,7 +62,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                     });
                 });
 
-            var SiphoningAuraFeature = TTCoreExtensions.CreateToggleAuraFeature(
+            var SiphoningAuraFeature = TTCoreExtensions.CreateToggleAuraBuffFeature(
                 name: "SiphoningAura",
                 description: "Enemies within 40 feet of you take a penalty on all attributes equal to 1/2 your character level.",
                 descriptionBuff: "This creature has a penalty on all attributes equal to 1/2 your character level.",
@@ -113,7 +113,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 bp.SetName(IsekaiContext, "Alteration of Body and Mind");
                 bp.SetDescription(IsekaiContext, "At 10th level, you gain the ability to alter the bodies and minds of those around you.");
                 bp.m_Icon = Icon_MajesticAura;
-                bp.IgnorePrerequisites = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     MajesticAuraFeature.ToReference<BlueprintFeatureReference>(),
                     SiphoningAuraFeature.ToReference<BlueprintFeatureReference>(),

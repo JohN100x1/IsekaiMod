@@ -1,4 +1,5 @@
 ﻿using IsekaiMod.Components;
+using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -18,8 +19,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
     internal class SignatureMoveSelection {
         private static readonly Sprite Icon_MutagenResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("3b163587f010382408142fc8a97852b6").m_Icon;
         private static readonly Sprite Icon_SwordSaintWeaponMastery = BlueprintTools.GetBlueprint<BlueprintFeature>("5b31af13868166d4c9bb452f19277f19").m_Icon;
+        private static readonly BlueprintFeature SneakAttack = BlueprintTools.GetBlueprint<BlueprintFeature>("9b9eac6709e1c084cb18c3a366e0ec87");
 
         public static void Add() {
+            var SneakAttackRef = SneakAttack.ToReference<BlueprintFeatureReference>();
+
             var SignatureAttack = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SignatureAttack", bp => {
                 bp.SetName(IsekaiContext, "Signature Attack");
                 bp.SetDescription(IsekaiContext, "You gain a luck bonus to {g|Encyclopedia:BAB}attack{/g} and damage rolls equal to 1/2 your character level.");
@@ -60,10 +64,65 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 });
                 bp.ReapplyOnLevelUp = true;
             });
-            // TODO: Signature Strike (extra sneak attacks per 1/2 character level)
+            var SignatureStrike = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "SignatureStrike", bp => {
+                bp.SetName(IsekaiContext, "Signature Strike");
+                bp.SetDescription(IsekaiContext, "You gain an additional 1d6 sneak attack damage equal to 1/2 your Isekai Protagonist class level.");
+                bp.m_Icon = SneakAttack.m_Icon;
+                bp.ReapplyOnLevelUp = true;
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.m_Class = IsekaiProtagonistClass.GetReference();
+                    c.Level = 2;
+                    c.m_Feature = SneakAttackRef;
+                });
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.m_Class = IsekaiProtagonistClass.GetReference();
+                    c.Level = 4;
+                    c.m_Feature = SneakAttackRef;
+                });
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.m_Class = IsekaiProtagonistClass.GetReference();
+                    c.Level = 6;
+                    c.m_Feature = SneakAttackRef;
+                });
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.m_Class = IsekaiProtagonistClass.GetReference();
+                    c.Level = 8;
+                    c.m_Feature = SneakAttackRef;
+                });
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.m_Class = IsekaiProtagonistClass.GetReference();
+                    c.Level = 10;
+                    c.m_Feature = SneakAttackRef;
+                });
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.m_Class = IsekaiProtagonistClass.GetReference();
+                    c.Level = 12;
+                    c.m_Feature = SneakAttackRef;
+                });
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.m_Class = IsekaiProtagonistClass.GetReference();
+                    c.Level = 14;
+                    c.m_Feature = SneakAttackRef;
+                });
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.m_Class = IsekaiProtagonistClass.GetReference();
+                    c.Level = 16;
+                    c.m_Feature = SneakAttackRef;
+                });
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.m_Class = IsekaiProtagonistClass.GetReference();
+                    c.Level = 18;
+                    c.m_Feature = SneakAttackRef;
+                });
+                bp.AddComponent<AddFeatureOnClassLevel>(c => {
+                    c.m_Class = IsekaiProtagonistClass.GetReference();
+                    c.Level = 20;
+                    c.m_Feature = SneakAttackRef;
+                });
+            });
 
             LocalizedString SignatureMoveSelectionDesc = Helpers.CreateString(IsekaiContext, "SignatureMoveSelection.Description",
-                "At 6th level, you choose to have either a signature attack or a signature ability.");
+                "At 6th level, you choose a signature move.");
 
             var SignatureMoveSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveSelection", bp => {
                 bp.SetName(IsekaiContext, "Signature Move");
@@ -73,6 +132,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     SignatureAttack.ToReference<BlueprintFeatureReference>(),
                     SignatureAbility.ToReference<BlueprintFeatureReference>(),
+                    SignatureStrike.ToReference<BlueprintFeatureReference>(),
                 };
             });
             var SignatureMoveBonusSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveBonusSelection", bp => {
@@ -83,6 +143,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     SignatureAttack.ToReference<BlueprintFeatureReference>(),
                     SignatureAbility.ToReference<BlueprintFeatureReference>(),
+                    SignatureStrike.ToReference<BlueprintFeatureReference>(),
                 };
             });
         }

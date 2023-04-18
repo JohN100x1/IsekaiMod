@@ -237,7 +237,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 });
             });
 
-            var VoidBarrierFeature = TTCoreExtensions.CreateToggleAuraFeature(
+            var VoidBarrierFeature = TTCoreExtensions.CreateToggleAuraBuffFeature(
                 name: "VoidBarrier",
                 description: "Allies within 40 feet of you gain a profane bonus to AC and saving throws equal to 1/2 your character level.",
                 descriptionBuff: "This character has a profane bonus to AC and saving throws equal to 1/2 your character level.",
@@ -277,7 +277,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.GodEmperor {
                 bp.SetDescription(IsekaiContext, "At 7th level, you are able to channel your energy to form a solid barrier to shield allies "
                     + "from physical and magical attacks.");
                 bp.m_Icon = Icon_GoldBarrier;
-                bp.IgnorePrerequisites = true;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
                     GoldBarrierFeature.ToReference<BlueprintFeatureReference>(),
                     VoidBarrierFeature.ToReference<BlueprintFeatureReference>(),

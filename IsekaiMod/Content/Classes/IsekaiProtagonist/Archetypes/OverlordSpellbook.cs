@@ -5,7 +5,7 @@ using Kingmaker.EntitySystem.Stats;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord {
+namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
     internal class OverlordSpellbook {
 

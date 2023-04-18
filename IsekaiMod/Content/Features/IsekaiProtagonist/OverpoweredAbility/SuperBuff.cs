@@ -178,7 +178,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 });
             });
 
-            OverpoweredAbilitySelection.AddToNonAutoSelection(SuperBuffFeature);
+            OverpoweredAbilitySelection.AddToSelection(SuperBuffFeature);
         }
 
         private static List<GameAction> CreateApplyBuffActionList(BlueprintBuff[] buffs) {

@@ -5,25 +5,25 @@ using Kingmaker.EntitySystem.Stats;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
-namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind {
+namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
-    internal class MastermindSpellbook {
+    internal class GodEmperorSpellbook {
 
         public static void Add() {
-            var MastermindSpellbook = Helpers.CreateBlueprint<BlueprintSpellbook>(IsekaiContext, "MastermindSpellbook", bp => {
-                bp.Name = Helpers.CreateString(IsekaiContext, "MastermindSpellbook.Name", "Mastermind");
+            var GodEmperorSpellbook = Helpers.CreateBlueprint<BlueprintSpellbook>(IsekaiContext, "GodEmperorSpellbook", bp => {
+                bp.Name = Helpers.CreateString(IsekaiContext, "GodEmperorSpellbook.Name", "GodEmperor");
                 bp.Spontaneous = true;
-                bp.CastingAttribute = StatType.Intelligence;
+                bp.CastingAttribute = StatType.Wisdom;
                 bp.CantripsType = CantripsType.Cantrips;
                 bp.IsArcane = true;
-                bp.IsArcanist = true;
-                bp.m_SpellsPerDay = MastermindSpellsPerDay.GetReference();
-                bp.m_SpellsKnown = null;
-                bp.m_SpellList = MastermindSpellList.GetReference();
-                bp.m_SpellSlots = MastermindSpellsPerDay.GetReference();
-                bp.SpellsPerLevel = 4;
+                bp.IsArcanist = false;
+                bp.m_SpellsPerDay = IsekaiProtagonistSpellsPerDay.GetReference();
+                bp.m_SpellsKnown = IsekaiProtagonistSpellsKnown.GetReference();
+                bp.m_SpellList = IsekaiProtagonistSpellList.GetReference();
+                bp.m_SpellSlots = null;
+                bp.SpellsPerLevel = 0;
                 bp.AllSpellsKnown = false;
-                bp.CanCopyScrolls = true;
+                bp.CanCopyScrolls = false;
 
                 // Mythic spellbook related
                 bp.IsMythic = false;
@@ -34,11 +34,11 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind {
                 bp.SpecialSpellListName = StaticReferences.Strings.Null;
             });
 
-            PatchTools.RegisterSpellbook(MastermindSpellbook);
+            PatchTools.RegisterSpellbook(GodEmperorSpellbook);
         }
 
         public static BlueprintSpellbook Get() {
-            return BlueprintTools.GetModBlueprint<BlueprintSpellbook>(IsekaiContext, "MastermindSpellbook");
+            return BlueprintTools.GetModBlueprint<BlueprintSpellbook>(IsekaiContext, "GodEmperorSpellbook");
         }
 
         public static BlueprintSpellbookReference GetReference() {

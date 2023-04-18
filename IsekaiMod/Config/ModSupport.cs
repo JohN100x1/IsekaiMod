@@ -1,8 +1,6 @@
 ﻿using HarmonyLib;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.GodEmperor;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord;
+using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
 using IsekaiMod.Content.Features.IsekaiProtagonist;
 using IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility.TabletopTweaksBase;
 using Kingmaker.Blueprints;

@@ -3,9 +3,6 @@ using IsekaiMod.Config;
 using IsekaiMod.Content.Classes.Deathsnatcher;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.GodEmperor;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Mastermind;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes.Overlord;
 using IsekaiMod.Content.Features.Deathsnatcher;
 using IsekaiMod.Content.Features.ExceptionalFeats;
 using IsekaiMod.Content.Features.IsekaiProtagonist;
@@ -81,6 +78,7 @@ namespace IsekaiMod.Content {
                 BetaStrike.Add();
                 GammaStrike.Add();
                 OmegaStrike.Add();
+                SigmaStrike.Add();
                 Regeneration.Add();
                 EnergyImmunitySelection.Add();
                 TrainingMontage.Add();
@@ -102,13 +100,7 @@ namespace IsekaiMod.Content {
 
                 // OP Ability
                 OverpoweredAbilitySelection.Add();
-                AutoBolster.Add();
-                AutoEmpower.Add();
-                AutoExtend.Add();
-                AutoMaximize.Add();
-                AutoQuicken.Add();
-                AutoReach.Add();
-                AutoSelective.Add();
+                AutoMetamagicSelection.Add();
                 Instakill.Add();
                 DupeGold.Add();
                 PerfectRoll.Add();
@@ -120,7 +112,8 @@ namespace IsekaiMod.Content {
                 TrueResurrection.Add();
                 SupremeBeing.Add();
                 MetaLuck.Add();
-                AuraOfRighteousWrath.Add();
+                PowerLeveling.Add();
+                OverpoweredAuraSelection.Add();
                 if (Other.IsEnabled("Mythic Class Feature")) BlessingOfTheMythic.Configure();
                 Main.LogDebug("Class: OP");
 
@@ -180,6 +173,7 @@ namespace IsekaiMod.Content {
                 Main.LogDebug("Class: Hero");
 
                 // Mastermind Archetype
+                MastermindConsumeSpells.Add();
                 MastermindSpellList.Add();
                 MastermindSpellsPerDay.Add();
                 MastermindSpellbook.Add();
