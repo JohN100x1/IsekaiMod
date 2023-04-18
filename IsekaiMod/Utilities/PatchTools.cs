@@ -272,32 +272,36 @@ namespace IsekaiMod.Utilities {
                         return;
                     }
                     foreach (var feature2 in selection.m_AllFeatures) {
-                        PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
+                        if (feature2 != null) {
+                            PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
+                        }
                     }
                 }
                 //components is null for BlueprintProgressions despite the fact that they implement Blueprintfeature, that will cause a nullpointer,
                 //and since the cast to Blueptintfeature will work since it "supposedly" implements it checking if the field is null is the safest solution
-                if (feature.Components != null) {
+                if (feature.Components != null  && feature.Components.Length > 0) {
                     var mySpellSet = new HashSet<SpellReference>();
                     SpontaneousSpellConversion[] conversions = new SpontaneousSpellConversion[] { };
                     foreach (var component in feature.Components) {
-                        //check if component is addSpell or addFeat
-                        HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component, loopPrevention);
-                        if (component is ContextRankConfig rankConfig && (
-                            rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel ||
-                            rankConfig.m_BaseValueType == ContextRankBaseValueType.SummClassLevelWithArchetype)) {
-                            if (rankConfig.m_Class.Contains(myClass)) {
-                                //already patched return
-                                return;
+                        if (component != null) {
+                            //check if component is addSpell or addFeat
+                            HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component, loopPrevention);
+                            if (component is ContextRankConfig rankConfig && (
+                                rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel ||
+                                rankConfig.m_BaseValueType == ContextRankBaseValueType.SummClassLevelWithArchetype)) {
+                                if (rankConfig.m_Class.Contains(myClass)) {
+                                    //already patched return
+                                    return;
+                                }
+                                if (rankConfig.m_Class.Contains(referenceClass)) {
+                                    rankConfig.m_Class = rankConfig.m_Class.AddToArray(myClass);
+                                    //test at level 20 if needed
+                                    //rankConfig.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype;
+                                }
                             }
-                            if (rankConfig.m_Class.Contains(referenceClass)) {
-                                rankConfig.m_Class = rankConfig.m_Class.AddToArray(myClass);
-                                //test at level 20 if needed
-                                //rankConfig.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype;
-                            } 
-                        }
-                        if (component is SpontaneousSpellConversion conversion && conversion.m_CharacterClass != null && conversion.m_CharacterClass.Equals(referenceClass)) {
-                            conversions = conversions.AddToArray(conversion);
+                            if (component is SpontaneousSpellConversion conversion && conversion.m_CharacterClass != null && conversion.m_CharacterClass.Equals(referenceClass)) {
+                                conversions = conversions.AddToArray(conversion);
+                            }
                         }
                     }
                     foreach (var spellReference in mySpellSet) {
