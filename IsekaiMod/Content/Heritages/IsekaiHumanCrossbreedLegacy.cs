@@ -40,14 +40,16 @@ namespace IsekaiMod.Content.Heritages {
             }.ToList();
             if (ourHeritage != null) {
                 foreach (var print in FeatTools.Selections.BasicFeatSelection.m_AllFeatures) {
-                    if (print != null && print.Get() is BlueprintFeature feature) {
+                    if (print != null && print.Get() != null && print.Get() is BlueprintFeature feature) {
                         bool toPatch = false;
-                        foreach (var component in feature.Components) {
-                            if (component != null && component is PrerequisiteFeature prereq) {
-                                if (races.Contains(prereq.m_Feature)) {
-                                    toPatch = true;
-                                    if (prereq.Group.Equals(Prerequisite.GroupType.All)) {
-                                        prereq.Group = Prerequisite.GroupType.Any;
+                        if (feature.Components != null && feature.Components.Length > 0) {
+                            foreach (var component in feature.Components) {
+                                if (component != null && component is PrerequisiteFeature prereq) {
+                                    if (prereq.m_Feature != null && races.Contains(prereq.m_Feature)) {
+                                        toPatch = true;
+                                        if (prereq.Group.Equals(Prerequisite.GroupType.All)) {
+                                            prereq.Group = Prerequisite.GroupType.Any;
+                                        }
                                     }
                                 }
                             }
