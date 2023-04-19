@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "localizer"
+version = "0.1.0"
+description = ""
+authors = ["JohN100x1 <JohN100x1@hotmail.co.uk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+msgspec = "^0.14.1"
+
+[tool.poetry.dev-dependencies]
+black = "^23.3.0"
+isort = "^5.10.1"
+pytest = "^7.3.0"
+mypy = "^1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+
+[tool.black]
+line-length = 79
+
+[tool.isort]
+profile = "black"
+line_length = 79

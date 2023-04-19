@@ -5,3 +5,6 @@ screenshots/
 Portraits/
 lib/
 releases/
+
+.idea/
+__pycache__/
