@@ -230,6 +230,12 @@ namespace IsekaiMod.Utilities {
                 if (feature is BlueprintProgression progression) {
                     progression.GiveFeaturesForPreviousLevels = true;
                     if (progression.m_Classes != null && progression.m_Classes.Length > 0) {
+                        foreach (var refClass in progression.m_Classes) {
+                            if (refClass != null && myClass.Equals(refClass.m_Class)) {
+                                //already patched return
+                                return;
+                            }
+                        }
                         progression.AddClass(myClass);
                     }
                     BlueprintFeatureBase[] flatten = new BlueprintFeatureBase[] { };
@@ -266,28 +272,36 @@ namespace IsekaiMod.Utilities {
                         return;
                     }
                     foreach (var feature2 in selection.m_AllFeatures) {
-                        PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
+                        if (feature2 != null) {
+                            PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
+                        }
                     }
                 }
                 //components is null for BlueprintProgressions despite the fact that they implement Blueprintfeature, that will cause a nullpointer,
                 //and since the cast to Blueptintfeature will work since it "supposedly" implements it checking if the field is null is the safest solution
-                if (feature.Components != null) {
+                if (feature.Components != null  && feature.Components.Length > 0) {
                     var mySpellSet = new HashSet<SpellReference>();
-                    ContextRankConfig sample = null;
                     SpontaneousSpellConversion[] conversions = new SpontaneousSpellConversion[] { };
-                    bool alreadyPatched = false;
                     foreach (var component in feature.Components) {
-                        //check if component is addSpell or addFeat
-                        HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component, loopPrevention);
-                        if (component is ContextRankConfig rankConfig && rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel) {
-                            if (rankConfig.m_Class.Contains(referenceClass)) {
-                                sample = rankConfig;
-                            } else if (rankConfig.m_Class.Contains(myClass)) {
-                                alreadyPatched = true;
+                        if (component != null) {
+                            //check if component is addSpell or addFeat
+                            HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component, loopPrevention);
+                            if (component is ContextRankConfig rankConfig && (
+                                rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel ||
+                                rankConfig.m_BaseValueType == ContextRankBaseValueType.SummClassLevelWithArchetype)) {
+                                if (rankConfig.m_Class.Contains(myClass)) {
+                                    //already patched return
+                                    return;
+                                }
+                                if (rankConfig.m_Class.Contains(referenceClass)) {
+                                    rankConfig.m_Class = rankConfig.m_Class.AddToArray(myClass);
+                                    //test at level 20 if needed
+                                    //rankConfig.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype;
+                                }
                             }
-                        }
-                        if (component is SpontaneousSpellConversion conversion && conversion.m_CharacterClass != null && conversion.m_CharacterClass.Equals(referenceClass)) {
-                            conversions = conversions.AddToArray(conversion);
+                            if (component is SpontaneousSpellConversion conversion && conversion.m_CharacterClass != null && conversion.m_CharacterClass.Equals(referenceClass)) {
+                                conversions = conversions.AddToArray(conversion);
+                            }
                         }
                     }
                     foreach (var spellReference in mySpellSet) {
@@ -297,13 +311,6 @@ namespace IsekaiMod.Utilities {
                             c.m_CharacterClass = myClass;
 
                         });
-                    }
-                    if (sample != null && !alreadyPatched) {
-                        feature.AddComponent<ContextRankConfig>(c => {
-                            sample.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype;
-                            sample.m_Class = sample.m_Class.AddToArray(myClass);
-                        });
-                        //Main.Log("rank progression patched= " + feature.AssetGuid + " added class= " + myClass.Guid + " for ref= " + referenceClass.Guid);
                     }
                     if (conversions.Length > 0) {
                         foreach (var conversion in conversions) {
@@ -332,12 +339,12 @@ namespace IsekaiMod.Utilities {
             if (component == null) { return; }
             if (component is AddKnownSpell asSpell) {
                 //don't re add spells already added for my class
-                if (asSpell.m_CharacterClass == referenceClass) {
+                if (asSpell.m_CharacterClass.Equals(referenceClass)) {
                     mySpellSet.Add(new SpellReference(asSpell.SpellLevel, asSpell.m_Spell));
                 }
             }
             // we do not have a special spell list, so just add all such spells to spells known
-            if (component is AddSpecialSpellList asSpellList && asSpellList.m_CharacterClass == referenceClass) {
+            if (component is AddSpecialSpellList asSpellList && asSpellList.m_CharacterClass.Equals(referenceClass)) {
                 foreach (var level2 in asSpellList.SpellList.SpellsByLevel) {
                     foreach (var spell in level2.m_Spells) {
                         mySpellSet.Add(new SpellReference(level2.SpellLevel, spell));
@@ -357,7 +364,7 @@ namespace IsekaiMod.Utilities {
             if (component is AddFeatureOnClassLevel asFeat) {
                 PatchClassIntoFeatureOfReferenceClass(asFeat.m_Feature.Get(), myClass, referenceClass, mylevel, loopPrevention);
                 //only add our class as an additional class if the original entry was not valid for all classes but was restricted to the correct base class
-                if (asFeat.m_Class != null && asFeat.m_Class == referenceClass
+                if (asFeat.m_Class != null && asFeat.m_Class.Equals(referenceClass)
                     && (asFeat.m_AdditionalClasses == null || !asFeat.m_AdditionalClasses.Contains(myClass))) {
                     asFeat.m_AdditionalClasses.AddItem(myClass);
                 }
@@ -393,20 +400,19 @@ namespace IsekaiMod.Utilities {
                         }
                     }
                     if (factRef is BlueprintAbility ability) {
-                        ContextRankConfig sample = null;
-                        bool alreadyPatched = false;
                         foreach (var component2 in ability.Components) {
-                            if (component2 is ContextRankConfig rankConfig && rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel) {
-                                if (rankConfig.m_Class.Contains(referenceClass)) {
-                                    sample = rankConfig;
-                                } else if (rankConfig.m_Class.Contains(myClass)) {
-                                    alreadyPatched = true;
+                            if (component2 is ContextRankConfig rankConfig && (
+                                rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel ||
+                                rankConfig.m_BaseValueType == ContextRankBaseValueType.SummClassLevelWithArchetype)) {
+                                if (rankConfig.m_Class.Contains(myClass)) {
+                                    //already patched return
+                                    return;
                                 }
+                                if (rankConfig.m_Class.Contains(referenceClass)) {
+                                    //rankConfig.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype;
+                                    rankConfig.m_Class = rankConfig.m_Class.AddToArray(myClass);
+                                } 
                             }
-                        }
-                        if (sample != null && !alreadyPatched) {
-                            sample.m_BaseValueType= ContextRankBaseValueType.SummClassLevelWithArchetype;
-                            sample.m_Class = sample.m_Class.AddToArray(myClass);
                         }
                     }
                 }
