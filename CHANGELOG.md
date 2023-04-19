@@ -7,8 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Unreleased]
 # Changed
 - Updated description for `Gifted` feature.
-# Fixed
-- Fixed crash when using Dark Codex mod.
 
 # [5.0.2] - 2023-04-18
 # Fixed
