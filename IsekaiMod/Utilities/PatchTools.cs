@@ -339,7 +339,7 @@ namespace IsekaiMod.Utilities {
             if (component == null) { return; }
             if (component is AddKnownSpell asSpell) {
                 //don't re add spells already added for my class
-                if (asSpell.m_CharacterClass == referenceClass) {
+                if (asSpell.m_CharacterClass.Equals(referenceClass)) {
                     mySpellSet.Add(new SpellReference(asSpell.SpellLevel, asSpell.m_Spell));
                 }
             }
