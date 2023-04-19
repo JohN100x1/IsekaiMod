@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # Changed
 - Updated description for `Gifted` feature.
 
+# [5.0.3] - 2023-04-19
+# Fixed
+- Fixed spells not being added for legacy bloodlines.
+- Fixed crash when using Dark Codex mod.
+
 # [5.0.2] - 2023-04-18
 # Fixed
 - Fixed "Arcanist 0" showing in spellbook list.
