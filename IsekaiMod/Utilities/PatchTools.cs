@@ -340,7 +340,7 @@ namespace IsekaiMod.Utilities {
             try {
                 if (component is AddKnownSpell asSpell) {
                     //don't re add spells already added for my class
-                    if (asSpell.m_CharacterClass == referenceClass) {
+                    if (asSpell.m_CharacterClass.Equals(referenceClass)) {
                         mySpellSet.Add(new SpellReference(asSpell.SpellLevel, asSpell.m_Spell));
                     }
                 }
@@ -349,7 +349,7 @@ namespace IsekaiMod.Utilities {
             }
             try {
                 // we do not have a special spell list, so just add all such spells to spells known
-                if (component is AddSpecialSpellList asSpellList && asSpellList.m_CharacterClass == referenceClass) {
+                if (component is AddSpecialSpellList asSpellList && asSpellList.m_CharacterClass.Equals(referenceClass)) {
                     foreach (var level2 in asSpellList.SpellList.SpellsByLevel) {
                         foreach (var spell in level2.m_Spells) {
                             mySpellSet.Add(new SpellReference(level2.SpellLevel, spell));
@@ -372,7 +372,7 @@ namespace IsekaiMod.Utilities {
             if (component is AddFeatureOnClassLevel asFeat) {
                 PatchClassIntoFeatureOfReferenceClass(asFeat.m_Feature.Get(), myClass, referenceClass, mylevel, loopPrevention);
                 //only add our class as an additional class if the original entry was not valid for all classes but was restricted to the correct base class
-                if (asFeat.m_Class != null && asFeat.m_Class == referenceClass
+                if (asFeat.m_Class != null && asFeat.m_Class.Equals(referenceClass)
                     && (asFeat.m_AdditionalClasses == null || !asFeat.m_AdditionalClasses.Contains(myClass))) {
                     asFeat.m_AdditionalClasses.AddItem(myClass);
                 }
