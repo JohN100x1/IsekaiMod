@@ -279,7 +279,7 @@ namespace IsekaiMod.Utilities {
                 }
                 //components is null for BlueprintProgressions despite the fact that they implement Blueprintfeature, that will cause a nullpointer,
                 //and since the cast to Blueptintfeature will work since it "supposedly" implements it checking if the field is null is the safest solution
-                if (feature.Components != null  && feature.Components.Length > 0) {
+                if (feature.Components != null && feature.Components.Length > 0) {
                     var mySpellSet = new HashSet<SpellReference>();
                     SpontaneousSpellConversion[] conversions = new SpontaneousSpellConversion[] { };
                     foreach (var component in feature.Components) {
@@ -337,19 +337,27 @@ namespace IsekaiMod.Utilities {
                 return;
             }
             if (component == null) { return; }
-            if (component is AddKnownSpell asSpell) {
-                //don't re add spells already added for my class
-                if (asSpell.m_CharacterClass == referenceClass) {
-                    mySpellSet.Add(new SpellReference(asSpell.SpellLevel, asSpell.m_Spell));
-                }
-            }
-            // we do not have a special spell list, so just add all such spells to spells known
-            if (component is AddSpecialSpellList asSpellList && asSpellList.m_CharacterClass == referenceClass) {
-                foreach (var level2 in asSpellList.SpellList.SpellsByLevel) {
-                    foreach (var spell in level2.m_Spells) {
-                        mySpellSet.Add(new SpellReference(level2.SpellLevel, spell));
+            try {
+                if (component is AddKnownSpell asSpell) {
+                    //don't re add spells already added for my class
+                    if (asSpell.m_CharacterClass == referenceClass) {
+                        mySpellSet.Add(new SpellReference(asSpell.SpellLevel, asSpell.m_Spell));
                     }
                 }
+            } catch (NullReferenceException e) {
+                IsekaiContext.Logger.LogError(loopPrevention.Last().AssetGuid.ToString() + " component cast asSpell failed due to Nullpointer");
+            }
+            try {
+                // we do not have a special spell list, so just add all such spells to spells known
+                if (component is AddSpecialSpellList asSpellList && asSpellList.m_CharacterClass == referenceClass) {
+                    foreach (var level2 in asSpellList.SpellList.SpellsByLevel) {
+                        foreach (var spell in level2.m_Spells) {
+                            mySpellSet.Add(new SpellReference(level2.SpellLevel, spell));
+                        }
+                    }
+                }
+            } catch (NullReferenceException e) {
+                IsekaiContext.Logger.LogError(loopPrevention.Last().AssetGuid.ToString() + " component cast AddSpecialSpellList failed due to Nullpointer");
             }
             if (component is AddAbilityUseTrigger trigger && trigger.m_Spellbooks != null && trigger.m_Spellbooks.Length > 0) {
                 trigger.m_Spellbooks = trigger.m_Spellbooks.AddRangeToArray(patchableSpellBooks);
@@ -385,37 +393,45 @@ namespace IsekaiMod.Utilities {
                     }
                 }
             }
-            // check if component is add facts because features could also be added as facts rather than on level...
-            if (component is AddFacts addFact) {
-                foreach (BlueprintUnitFact factRef in addFact.Facts) {
-                    if (factRef is BlueprintFeature feature2) {
-                        PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
-                    }
-                    if (factRef is BlueprintProgression progression2) {
-                        PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, mylevel, loopPrevention);
-                    }
-                    if (factRef is BlueprintUnitFact unitFact) {
-                        foreach (var component2 in unitFact.Components) {
-                            HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component2, loopPrevention);
-                        }
-                    }
-                    if (factRef is BlueprintAbility ability) {
-                        foreach (var component2 in ability.Components) {
-                            if (component2 is ContextRankConfig rankConfig && (
-                                rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel ||
-                                rankConfig.m_BaseValueType == ContextRankBaseValueType.SummClassLevelWithArchetype)) {
-                                if (rankConfig.m_Class.Contains(myClass)) {
-                                    //already patched return
-                                    return;
-                                }
-                                if (rankConfig.m_Class.Contains(referenceClass)) {
-                                    //rankConfig.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype;
-                                    rankConfig.m_Class = rankConfig.m_Class.AddToArray(myClass);
-                                } 
+            try {
+                // check if component is add facts because features could also be added as facts rather than on level...
+                if (component is AddFacts addFact) {
+                    foreach (BlueprintUnitFact factRef in addFact.Facts) {
+                        if (factRef != null) {
+                            if (factRef is BlueprintFeature feature2) {
+                                PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
                             }
+                            if (factRef is BlueprintProgression progression2) {
+                                PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, mylevel, loopPrevention);
+                            }
+                            if (factRef is BlueprintUnitFact unitFact && unitFact.Components != null && unitFact.Components.Length > 0) {
+                                foreach (var component2 in unitFact.Components) {
+                                    HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component2, loopPrevention);
+                                }
+                            }
+                            if (factRef is BlueprintAbility ability && ability.Components != null && ability.Components.Length > 0) {
+                                foreach (var component2 in ability.Components) {
+                                    if (component2 is ContextRankConfig rankConfig && (
+                                        rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel ||
+                                        rankConfig.m_BaseValueType == ContextRankBaseValueType.SummClassLevelWithArchetype)) {
+                                        if (rankConfig.m_Class.Contains(myClass)) {
+                                            //already patched return
+                                            return;
+                                        }
+                                        if (rankConfig.m_Class.Contains(referenceClass)) {
+                                            //rankConfig.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype;
+                                            rankConfig.m_Class = rankConfig.m_Class.AddToArray(myClass);
+                                        }
+                                    }
+                                }
+                            }
+                        } else {
+                            IsekaiContext.Logger.LogError(loopPrevention.Last().AssetGuid.ToString() + " component cast AddFacts factRef was null");
                         }
                     }
                 }
+            } catch (NullReferenceException e) {
+                IsekaiContext.Logger.LogError(loopPrevention.Last().AssetGuid.ToString() + " component cast AddFacts failed due to Nullpointer");
             }
             if (component is AddAbilityResources addResource) {
                 BlueprintAbilityResourceReference resRef = addResource.m_Resource;
