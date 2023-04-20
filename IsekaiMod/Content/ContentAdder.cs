@@ -16,6 +16,7 @@ using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
 using IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility;
 using IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower;
 using IsekaiMod.Utilities;
+using Kingmaker;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.JsonSystem;
@@ -291,12 +292,15 @@ namespace IsekaiMod.Content {
             }
         }
     }
-
-    [HarmonyPriority(-100)]
-    [HarmonyPatch(typeof(StartGameLoader), "LoadAllJson")]
-    static class StartGameLoader_LoadAllJson {
+    
+    
+    [HarmonyPatch]
+    static class FinalPatcher {
         private static bool Run = false;
 
+        [HarmonyPriority(-100)]
+        [HarmonyPatch(typeof(StartGameLoader), nameof(StartGameLoader.LoadAllJson))]
+        [HarmonyPostfix]
         static void Postfix() {
             if (Run) return;
             Run = true;
