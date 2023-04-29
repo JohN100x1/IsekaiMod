@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Unreleased]
 # Changed
 - Updated description for `Gifted` feature.
+- Renamed `Auto Metamagic` to `Overpowered Ability — Auto Metamagic`.
 
 # [5.0.3] - 2023-04-19
 # Fixed
