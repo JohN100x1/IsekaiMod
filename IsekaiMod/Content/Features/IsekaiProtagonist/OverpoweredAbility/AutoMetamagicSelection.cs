@@ -77,7 +77,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
             LocalizedString AutoMetamagicDesc = Helpers.CreateString(IsekaiContext, "AutometamagicSelection.Description",
                 "You gain powerful metamagic effects that automatically apply to your spells.");
             var AutoMetamagicSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "AutoMetamagicSelection", bp => {
-                bp.SetName(IsekaiContext, "Auto Metamagic");
+                bp.SetName(IsekaiContext, "Overpowered Ability — Auto Metamagic");
                 bp.SetDescription(AutoMetamagicDesc);
                 bp.m_Icon = Icon_AutoMagic;
                 bp.m_AllFeatures = new BlueprintFeatureReference[] {
