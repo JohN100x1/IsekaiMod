@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower;
-using Kingmaker.Blueprints;
+﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.UnitLogic.FactLogic;
 using TabletopTweaks.Core.Utilities;
@@ -17,8 +16,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.m_Icon = Icon_AngelfireApostleChannel;
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] {
-                        BlueprintTools.GetModBlueprintReference<BlueprintUnitFactReference>(IsekaiContext, "IsekaiChannelPositiveEnergy"),
-                        BlueprintTools.GetModBlueprintReference<BlueprintUnitFactReference>(IsekaiContext, "IsekaiChannelNegativeEnergy")
+                        BlueprintTools.GetModBlueprintReference<BlueprintUnitFactReference>(IsekaiContext, "IsekaiChannelPositiveEnergyFeature"),
+                        BlueprintTools.GetModBlueprintReference<BlueprintUnitFactReference>(IsekaiContext, "IsekaiChannelNegativeEnergyFeature")
                     };
                 });
             });
