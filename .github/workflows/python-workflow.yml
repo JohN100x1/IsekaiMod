@@ -1,0 +1,39 @@
+name: Fill Localization
+
+on:
+  push:
+    paths:
+      - "LocalizationPack.json"
+
+jobs:
+  build:
+    name: Setup Python Poetry Project
+    runs-on: ubuntu-latest
+    if: github.actor != 'my_bot_account'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          repository: JohN100x1/IsekaiLocalizer
+          ref: master
+
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.11'
+
+      - name: Setup Poetry
+        run: pip install poetry
+
+      - name: Run localization script
+        run: |
+          cd IsekaiLocalizer
+          poetry install
+          poetry run python src/main.py /IsekaiMod/IsekaiMod/Localization/LocalizationPack.json
+
+      - name: Push Changes
+        run: |
+          cd IsekaiMod
+          git add .
+          git commit -m "feat:\ update LocalizationPack.json"
+          git push origin HEAD:${{ github.ref }}

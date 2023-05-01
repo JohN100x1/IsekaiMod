@@ -375,6 +375,17 @@
       "esES": "Obtienes poderosos efectos de metamagia que se aplican automáticamente a tus hechizos."
     },
     {
+      "Key": "4df5f46539984ba1bae15f80ba1ba219",
+      "SimpleName": "AutoMetamagicSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Metamagic",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "27976fd84d2e43afb6a6ab4364086346",
       "SimpleName": "AutoMetamagicSelection.Name",
       "ProcessTemplates": false,
@@ -2762,15 +2773,15 @@
       "esES": "Alas (Espirituales)"
     },
     {
-      "Key": "e081a95038954986bbe9d8e57152ce2f",
+      "Key": "823408f54ece45cf8bb5ecc4a45c156f",
       "SimpleName": "Gifted.Description",
       "ProcessTemplates": true,
-      "enGB": "You are an actual prodigal genius, and every action you take is a calculated move in your 1000 year plan.\nYou gain a +4 competence bonus to all skills and you always take the higher of two d20 rolls.",
-      "ruRU": "Вы - настоящий гениальный прожигатель жизни, и каждое ваше действие является рассчитанным шагом в вашем тысячелетнем плане. Вы получаете бонус компетенции +4 ко всем навыкам и всегда выбираете более высокий результат из двух бросков d20.",
-      "deDE": "Du bist ein wahrhaftiges, geniales Wunderkind und jede Handlung, die du ausführst, ist ein berechneter Schritt in deinem 1000-Jahres-Plan. Du erhältst einen Kompetenzbonus von +4 auf alle Fertigkeiten und nimmst immer den höheren von zwei d20-Würfen.",
-      "frFR": "Vous êtes un génie prodige réel, et chaque action que vous entreprenez est un mouvement calculé dans votre plan de 1000 ans. Vous bénéficiez d'un bonus de compétence de +4 à toutes les compétences et vous choisissez toujours le résultat le plus élevé parmi deux jets de d20.",
-      "zhCN": "您是真正的天才，您所采取的每个行动都是您1000年计划中的计算步骤。您对所有技能获得+4的胜任加值，并且总是选择两个d20投掷中更高的一个结果。",
-      "esES": "Eres un genio prodigioso real, y cada acción que realizas es un movimiento calculado en tu plan de 1000 años. Obtienes un bono de competencia de +4 a todas las habilidades y siempre eliges el resultado más alto de dos tiradas de d20."
+      "enGB": "You are talented in all skills and professions.\nYou gain a +4 competence bonus to all skills and you always take the higher of two d20 rolls.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "85ea0803ea92471aba3cc40377f83b2d",
