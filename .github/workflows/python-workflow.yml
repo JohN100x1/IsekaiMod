@@ -1,9 +1,6 @@
 name: Fill Localization
 
-on:
-  push:
-    paths:
-      - "LocalizationPack.json"
+on: push
 
 jobs:
   build:
