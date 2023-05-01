@@ -24,13 +24,11 @@ jobs:
 
       - name: Run localization script
         run: |
-          cd IsekaiLocalizer
           poetry install
-          poetry run python src/main.py /IsekaiMod/IsekaiMod/Localization/LocalizationPack.json
+          poetry run python src/main.py /IsekaiMod/Localization/LocalizationPack.json
 
       - name: Push Changes
         run: |
-          cd IsekaiMod
           git add .
           git commit -m "feat:\ update LocalizationPack.json"
           git push origin HEAD:${{ github.ref }}
