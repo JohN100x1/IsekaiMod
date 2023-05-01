@@ -379,11 +379,11 @@
       "SimpleName": "AutoMetamagicSelection.Name",
       "ProcessTemplates": false,
       "enGB": "Overpowered Ability — Auto Metamagic",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Слишком мощная способность - Автоматическая метамагия",
+      "deDE": "Übermächtige Fähigkeit - Auto-Metamagie",
+      "frFR": "Capacité surpuissante - Auto-Métamagie",
+      "zhCN": "过度强大的能力 - 自动元咒术",
+      "esES": "Habilidad sobrepotenciada - Metamagia Automática"
     },
     {
       "Key": "27976fd84d2e43afb6a6ab4364086346",
@@ -2777,11 +2777,11 @@
       "SimpleName": "Gifted.Description",
       "ProcessTemplates": true,
       "enGB": "You are talented in all skills and professions.\nYou gain a +4 competence bonus to all skills and you always take the higher of two d20 rolls.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Вы талантливы во всех навыках и профессиях. Вы получаете бонус компетенции +4 ко всем навыкам и всегда выбираете более высокий результат из двух бросков d20.",
+      "deDE": "Du bist talentiert in allen Fähigkeiten und Berufen. Du erhältst einen Kompetenzbonus von +4 auf alle Fertigkeiten und nimmst immer den höheren von zwei Würfen mit einem d20.",
+      "frFR": "Vous êtes doué dans toutes les compétences et professions. Vous obtenez un bonus de compétence de +4 à toutes les compétences et vous choisissez toujours le résultat le plus élevé entre deux jets de d20.",
+      "zhCN": "您在所有技能和职业中都很有天赋。您所有的技能都获得+4的专业加值，并且您总是选择两次d20中的较高一次。",
+      "esES": "Eres talentoso en todas las habilidades y profesiones. Obtienes un bono de competencia de +4 a todas las habilidades y siempre tomas el resultado más alto de dos tiradas de d20."
     },
     {
       "Key": "85ea0803ea92471aba3cc40377f83b2d",
