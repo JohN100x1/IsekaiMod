@@ -11,7 +11,6 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode {
 
     internal class BeachEpisodeSelection {
-        private const string BeachEpisodeName = "Beach Episode";
         private static readonly LocalizedString BeachEpisodeDesc = Helpers.CreateString(IsekaiContext, "BeachEpisode.Description",
             "At 12th level, you and your companions take a short intermission beside a large body of water. "
             + "During this time, you begin a journey of self discovery.");
@@ -19,7 +18,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode {
 
         public static void Add() {
             var BeachEpisodeSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeSelection", bp => {
-                bp.SetName(IsekaiContext, BeachEpisodeName);
+                bp.SetName(IsekaiContext, "Beach Episode");
                 bp.SetDescription(BeachEpisodeDesc);
                 bp.m_Icon = Icon_BeachEpisode;
                 bp.Ranks = 1;
@@ -28,7 +27,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode {
                 bp.m_AllFeatures = new BlueprintFeatureReference[0];
             });
             var BeachEpisodeBonusSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeBonusSelection", bp => {
-                bp.SetName(IsekaiContext, BeachEpisodeName);
+                bp.SetName(IsekaiContext, "Another Beach Episode");
                 bp.SetDescription(BeachEpisodeDesc);
                 bp.m_Icon = Icon_BeachEpisode;
                 bp.Ranks = 1;

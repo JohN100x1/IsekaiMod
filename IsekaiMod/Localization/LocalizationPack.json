@@ -826,6 +826,17 @@
       "esES": "En el nivel 12, tú y tus compañeros hacen una breve pausa junto a un gran cuerpo de agua. Durante este tiempo, empiezas un viaje de auto descubrimiento."
     },
     {
+      "Key": "d8b6c1e832414b23959d7cb175ad2bcc",
+      "SimpleName": "BeachEpisodeBonusSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Another Beach Episode",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "6e0460bebd344e4e8f11e3873ff1d02b",
       "SimpleName": "BeachEpisodeSelection.Name",
       "ProcessTemplates": false,
@@ -6478,6 +6489,17 @@
       "frFR": "Attaque de signature",
       "zhCN": "签名攻击",
       "esES": "Ataque de firma"
+    },
+    {
+      "Key": "5d24321c8912451191bc55905dbc98b0",
+      "SimpleName": "SignatureMoveBonusSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Another Signature Move",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "3eec77c7d5c141b4a88427a7c50340e1",
