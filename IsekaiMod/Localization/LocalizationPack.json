@@ -3,7 +3,7 @@
     {
       "Key": "714b99be4cc74d8ea02500d4c7cffa4e",
       "SimpleName": "$IsekaiProtagonistSpellbook.Name",
-      "ProcessTemplates": true,
+      "ProcessTemplates": false,
       "enGB": "Isekai Protagonist",
       "ruRU": "Протагонист исэкай",
       "deDE": "Isekai-Hauptcharakter",
