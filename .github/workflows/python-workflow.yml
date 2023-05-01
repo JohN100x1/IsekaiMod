@@ -12,7 +12,7 @@ jobs:
     if: github.actor != 'my_bot_account'
     steps:
     
-      - name: Checkout
+      - name: Checkout Mod
         uses: actions/checkout@v3
         with:
           path: mod
@@ -31,7 +31,7 @@ jobs:
       - name: Setup Poetry
         run: pip install poetry
 
-      - name: Run localization script
+      - name: Run Localization Script
         run: |
           cd ${{ github.workspace }}/localizer
           poetry install
