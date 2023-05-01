@@ -38,8 +38,15 @@ jobs:
           poetry run python src/main.py ${{ github.workspace }}/mod/IsekaiMod/Localization/LocalizationPack.json
         env:
           OPENAI_ACCESS_TOKEN: ${{ secrets.OPENAI_ACCESS_TOKEN }}
+          
+      - name: Check Changes
+        id: git_status
+        run: |
+          cd ${{ github.workspace }}/mod
+          echo ::set-output name=has_changes::$(git status --porcelain)
 
       - name: Push Changes
+        if: steps.git_status.outputs.has_changes != ''
         run: |
           cd ${{ github.workspace }}/mod
           git config user.name github-actions
