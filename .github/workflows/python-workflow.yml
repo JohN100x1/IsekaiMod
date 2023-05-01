@@ -43,10 +43,10 @@ jobs:
         id: git_status
         run: |
           cd ${{ github.workspace }}/mod
-          echo "has_changes=$(git status --porcelain)" >> $GITHUB_ENV
+          echo "has_changes=$(git status --porcelain)" >> $GITHUB_OUTPUT
 
       - name: Push Changes
-        if: ${{ env.has_changes }} != ''
+        if: steps.git_status.outputs.has_changes != ''
         run: |
           cd ${{ github.workspace }}/mod
           git config user.name github-actions
