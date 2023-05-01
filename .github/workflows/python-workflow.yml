@@ -30,13 +30,13 @@ jobs:
 
       - name: Run localization script
         run: |
-          cd ${{ GITHUB_WORKSPACE }}/localizer
+          cd ${{ github.workspace }}/localizer
           poetry install
-          poetry run python src/main.py ${{ GITHUB_WORKSPACE }}/mod/IsekaiMod/Localization/LocalizationPack.json
+          poetry run python src/main.py ${{ github.workspace }}/mod/IsekaiMod/Localization/LocalizationPack.json
 
       - name: Push Changes
         run: |
-          cd ${{ GITHUB_WORKSPACE }}/mod
+          cd ${{ github.workspace }}/mod
           git add .
           git commit -m "feat:\ update LocalizationPack.json"
           git push origin HEAD:${{ github.ref }}
