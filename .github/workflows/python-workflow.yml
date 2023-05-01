@@ -33,10 +33,14 @@ jobs:
           cd ${{ github.workspace }}/localizer
           poetry install
           poetry run python src/main.py ${{ github.workspace }}/mod/IsekaiMod/Localization/LocalizationPack.json
+        env:
+          OPENAI_ACCESS_TOKEN: ${{ secrets.OPENAI_ACCESS_TOKEN }}
 
       - name: Push Changes
         run: |
           cd ${{ github.workspace }}/mod
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git add .
           git commit -m "feat:\ update LocalizationPack.json"
           git push origin HEAD:${{ github.ref }}
