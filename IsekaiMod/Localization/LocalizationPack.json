@@ -830,11 +830,11 @@
       "SimpleName": "BeachEpisodeBonusSelection.Name",
       "ProcessTemplates": false,
       "enGB": "Another Beach Episode",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Еще одна серия на пляже",
+      "deDE": "Noch eine Strandepisode",
+      "frFR": "Un autre épisode de plage",
+      "zhCN": "又一集海滩剧集",
+      "esES": "Otro episodio de playa"
     },
     {
       "Key": "6e0460bebd344e4e8f11e3873ff1d02b",
@@ -6495,11 +6495,11 @@
       "SimpleName": "SignatureMoveBonusSelection.Name",
       "ProcessTemplates": false,
       "enGB": "Another Signature Move",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Еще один ход-подпись",
+      "deDE": "Noch ein charakteristischer Zug",
+      "frFR": "Une autre technique signature",
+      "zhCN": "另一个招牌技能",
+      "esES": "Otro movimiento distintivo"
     },
     {
       "Key": "3eec77c7d5c141b4a88427a7c50340e1",
