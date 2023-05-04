@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renamed `Auto Metamagic` to `Overpowered Ability — Auto Metamagic`.
 - Renamed additional `Signature Move` and `Beach Episode` selections for `Isekai Protagonist`.
 
+# [5.0.5] - 2023-05-04
+# Fixed
+- Fixed extra `Beach Episode` selection not appearing.
+- Fixed `Canny Defense` for `Magus Legacy - Sword Saint`.
+
 # [5.0.4] - 2023-04-30
 # Fixed
 - Fixed `Release Energy` not giving channel energy abilities.

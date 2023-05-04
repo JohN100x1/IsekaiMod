@@ -282,6 +282,7 @@ namespace IsekaiMod.Utilities {
                 if (feature.Components != null  && feature.Components.Length > 0) {
                     var mySpellSet = new HashSet<SpellReference>();
                     SpontaneousSpellConversion[] conversions = new SpontaneousSpellConversion[] { };
+                    CannyDefensePermanent[] cannyDefenses = new CannyDefensePermanent[] { };
                     foreach (var component in feature.Components) {
                         if (component != null) {
                             //check if component is addSpell or addFeat
@@ -302,6 +303,9 @@ namespace IsekaiMod.Utilities {
                             if (component is SpontaneousSpellConversion conversion && conversion.m_CharacterClass != null && conversion.m_CharacterClass.Equals(referenceClass)) {
                                 conversions = conversions.AddToArray(conversion);
                             }
+                            if (component is CannyDefensePermanent cannyDefense && cannyDefense.m_CharacterClass != null && cannyDefense.m_CharacterClass.Equals(referenceClass)) {
+                                cannyDefenses = cannyDefenses.AddToArray(cannyDefense);
+                            }
                         }
                     }
                     foreach (var spellReference in mySpellSet) {
@@ -312,13 +316,16 @@ namespace IsekaiMod.Utilities {
 
                         });
                     }
-                    if (conversions.Length > 0) {
-                        foreach (var conversion in conversions) {
-                            feature.AddComponent<SpontaneousSpellConversion>(c => {
-                                c.m_CharacterClass = myClass;
-                                c.m_SpellsByLevel = conversion.m_SpellsByLevel;
-                            });
-                        }
+                    foreach (var conversion in conversions) {
+                        feature.AddComponent<SpontaneousSpellConversion>(c => {
+                            c.m_CharacterClass = myClass;
+                            c.m_SpellsByLevel = conversion.m_SpellsByLevel;
+                        });
+                    }
+                    foreach (var cannyDefense in cannyDefenses) {
+                        feature.AddComponent<CannyDefensePermanent>(c => {
+                            c.m_CharacterClass = myClass;
+                        });
                     }
                 }
             } catch (NullReferenceException e) {

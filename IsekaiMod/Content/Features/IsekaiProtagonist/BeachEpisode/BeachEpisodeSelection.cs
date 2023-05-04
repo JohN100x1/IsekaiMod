@@ -41,6 +41,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.BeachEpisode {
             var BeachEpisodeSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeSelection");
             BeachEpisodeSelection.m_Features = BeachEpisodeSelection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
             BeachEpisodeSelection.m_AllFeatures = BeachEpisodeSelection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            var BeachEpisodeBonusSelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "BeachEpisodeBonusSelection");
+            BeachEpisodeBonusSelection.m_Features = BeachEpisodeBonusSelection.m_Features.AddToArray(feature.ToReference<BlueprintFeatureReference>());
+            BeachEpisodeBonusSelection.m_AllFeatures = BeachEpisodeBonusSelection.m_AllFeatures.AddToArray(feature.ToReference<BlueprintFeatureReference>());
         }
     }
 }
