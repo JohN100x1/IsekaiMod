@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [5.0.5] - 2023-05-04
 # Fixed
 - Fixed extra `Beach Episode` selection not appearing.
+- Fixed `Canny Defense` for `Magus Legacy - Sword Saint`.
 
 # [5.0.4] - 2023-04-30
 # Fixed
