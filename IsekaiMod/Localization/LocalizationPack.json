@@ -2358,12 +2358,12 @@
       "Key": "dadd346477da455887f04fa4e6fc50c3",
       "SimpleName": "ExtraStrike.Description",
       "ProcessTemplates": true,
-      "enGB": "You gain additional attacks based on your level.\nAt 5th level and every 5 levels thereafter (10th, 15th, and 20th level), you gain 1 additional {g|Encyclopedia:Attack}attack{/g}. This also applies to your off-hand weapon if you are wielding a second weapon.",
-      "ruRU": "В зависимости от вашего уровня вы получаете дополнительные атаки. На 5-м уровне и каждые 5 уровней после этого (10-м, 15-м и 20-м уровнях) вы получаете 1 дополнительную {g|Encyclopedia:Attack}атаку{/g}. Это также относится к вашему оружию второй руки, если вы держите два оружия.",
-      "deDE": "Du erhältst zusätzliche Angriffe basierend auf deinem Level. Ab dem 5. Level und jedem 5. Level danach (10., 15. und 20. Level) erhältst du 1 zusätzlichen {g|Encyclopedia:Attack}Angriff{/g}. Dies gilt auch für deine Nebenhandwaffe, falls du eine zweite Waffe führst.",
-      "frFR": "Vous gagnez des attaques supplémentaires en fonction de votre niveau. Au 5e niveau, puis tous les 5 niveaux (10e, 15e et 20e niveau), vous gagnez 1 {g|Encyclopedia:Attack}attaque{/g} supplémentaire. Cela s'applique également à votre arme de main gauche si vous maniez deux armes.",
-      "zhCN": "根据你的等级，你会获得额外的攻击次数。在第5级和每隔5级（10级，15级和20级）时，你会获得1个额外的{g|Encyclopedia:Attack}攻击{/g}。如果你持有第二个武器，那么这也适用于你的副手武器。",
-      "esES": "Obtienes ataques adicionales basados en tu nivel. En el 5º nivel y cada 5 niveles después (10º, 15º y 20º nivel), obtienes 1 {g|Encyclopedia:Attack}ataque{/g} adicional. Esto también se aplica a tu arma de mano secundaria si estás empuñando una segunda arma."
+      "enGB": "You gain 1 additional {g|Encyclopedia:Attack}attack{/g}. This also applies to your off-hand weapon if you are wielding a second weapon.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "46c50228b9b64afd8f718657727260b3",

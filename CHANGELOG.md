@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Unreleased]
 # Changed
 - Updated description for `Gifted` feature.
+- Updated description for `Extra Strike` feature.
 - Renamed `Auto Metamagic` to `Overpowered Ability — Auto Metamagic`.
 - Renamed additional `Signature Move` and `Beach Episode` selections for `Isekai Protagonist`.
 
