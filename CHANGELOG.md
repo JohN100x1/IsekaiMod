@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [5.0.6] - 2023-05-06
 # Fixed
 - Fixed `Canny Defense` for `Magus Legacy - Sword Saint` applying when not wielding chosen weapon.
+- Fixed `Supreme Being` not increasing base stat on level up.
 
 # [5.0.5] - 2023-05-04
 # Fixed

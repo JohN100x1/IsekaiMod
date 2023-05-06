@@ -23,24 +23,20 @@ namespace IsekaiMod.Components {
         }
 
         public override void OnActivate() {
-            Data.BaseStatValue = Owner.Stats.GetStat(Stat).BaseValue;
-            OnTurnOn();
+            Data.BaseStatValue = Owner.Stats.GetAttribute(Stat).BaseValue;
         }
 
         public override void OnDeactivate() {
-            OnTurnOff();
+            Owner.Stats.GetAttribute(Stat).BaseValue = Data.BaseStatValue;
         }
 
         public override void OnTurnOn() {
-            ModifiableValue baseStat = Owner.Stats.GetStat(Stat);
-            if (baseStat == null) {
-                return;
-            }
-            baseStat.BaseValue = Math.Max(baseStat.BaseValue, Math.Max(baseStat.m_BaseValue, Value));
+            ModifiableValueAttributeStat baseStat = Owner.Stats.GetAttribute(Stat);
+            if (baseStat == null) return;
+            baseStat.BaseValue = Math.Max(baseStat.BaseValue, Value);
         }
 
         public override void OnTurnOff() {
-            Owner.Stats.GetStat(Stat).BaseValue = Data.BaseStatValue;
         }
     }
 }
