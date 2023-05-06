@@ -325,6 +325,8 @@ namespace IsekaiMod.Utilities {
                     foreach (var cannyDefense in cannyDefenses) {
                         feature.AddComponent<CannyDefensePermanent>(c => {
                             c.m_CharacterClass = myClass;
+                            c.RequiresKensai = cannyDefense.RequiresKensai;
+                            c.m_ChosenWeaponBlueprint = cannyDefense.m_ChosenWeaponBlueprint;
                         });
                     }
                 }
