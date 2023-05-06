@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
+using IsekaiMod.Components;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -9,6 +9,7 @@ using Kingmaker.Blueprints.Facts;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
@@ -573,6 +574,46 @@ namespace IsekaiMod.Utilities {
                 };
                 foreach (BlueprintBuff buff in buffs) {
                     PatchBuff(buff, spellbookRef);
+                }
+            }
+        }
+
+        internal static class KineticistPatcher {
+            public static void Patch(BlueprintCharacterClassReference classRef) {
+                // TODO: base blasts added by mods would need to be patched here
+                BlueprintAbility[] baseAbilities = new BlueprintAbility[] {
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("0ab1552e2ebdacf44bb7b20f5393366d"), // AirBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("403bcf42f08ca70498432cf62abee434"), // IceBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("e2610c88664e07343b4f3fb6336f210c"), // MudBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("83d5873f306ac954cad95b6aeeeb2d8c"), // FireBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("7980e876b0749fc47ac49b9552e259c1"), // ColdBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("e53f34fb268a7964caf1566afb82dadd"), // EarthBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("3baf01649a92ae640927b0f633db7c11"), // SteamBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("8c25f52fce5113a4491229fd1265fc3c"), // MagmaBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("6276881783962284ea93298c1fe54c48"), // MetalBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("d663a8d40be1e57478f34d6477a67270"), // WaterBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("9afdc3eeca49c594aa7bf00e8e9803ac"), // PlasmaBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("45eb571be891c4c4581b6fcddda72bcd"), // ElectricBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("b93e1f0540a4fa3478a6b47ae3816f32"), // SandstormBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("4e2e066dd4dc8de4d8281ed5b3f4acb6"),  // ChargedWaterBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("b813ceb82d97eed4486ddd86d3f7771b"),  // ThunderstormBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("ba2113cfed0c2c14b93c20e7625a4c74"),  // BloodBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("16617b8c20688e4438a803effeeee8a6"),  // BlizzardBlastBase
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("d29186edb20be6449b23660b39435398"),  // BlueFlameBlastBase
+                };
+                foreach (BlueprintAbility baseAbility in baseAbilities) {
+                    foreach (BlueprintAbilityReference abilityRef in baseAbility.GetComponent<AbilityVariants>().m_Variants) {
+                        var ability = abilityRef.Get();
+                        for (int i = 0; i < ability.ComponentsArray.Length; i++) {
+                            BlueprintComponent component = ability.ComponentsArray[i];
+                            if (component is ContextCalculateAbilityParamsBasedOnClass paramsComponent) {
+                                ability.ComponentsArray[i] = new ContextCalculateAbilityParamsBasedOnClasses() {
+                                    m_CharacterClasses = new BlueprintCharacterClassReference[] { paramsComponent.m_CharacterClass, classRef },
+                                    StatType = paramsComponent.StatType
+                                };
+                            }
+                        }
+                    }
                 }
             }
         }
