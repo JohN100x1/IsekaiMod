@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [5.0.6] - 2023-05-07
+# Fixed
+- Fixed `Canny Defense` for `Magus Legacy - Sword Saint` applying when not wielding chosen weapon.
+- Fixed `Supreme Being` not increasing base stat on level up.
+- Fixed caster level and spell level blast parameters for kineticist legacies.
+
 # [5.0.5] - 2023-05-04
 # Fixed
 - Fixed extra `Beach Episode` selection not appearing.

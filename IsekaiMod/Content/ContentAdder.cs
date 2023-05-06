@@ -22,6 +22,7 @@ using Kingmaker.Blueprints.JsonSystem;
 using TabletopTweaks.Core.Config;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
+using static IsekaiMod.Utilities.PatchTools;
 
 namespace IsekaiMod.Content {
     class ContentAdder {
@@ -311,7 +312,7 @@ namespace IsekaiMod.Content {
             LegacySelection.ConfigureStep3();
 
             MastermindArchetype.PatchMastermindArcanistFeatures();
-
+            KineticistPatcher.Patch(IsekaiProtagonistClass.GetReference());
 
             //done here because it should be done after all spells have been initialized and were added to the canon books
             if (IsekaiContext.AddedContent.MergeIsekaiSpellList) IsekaiProtagonistSpellList.MergeSpellLists();
