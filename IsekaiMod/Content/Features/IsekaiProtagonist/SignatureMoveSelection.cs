@@ -136,7 +136,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 };
             });
             var SignatureMoveBonusSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "SignatureMoveBonusSelection", bp => {
-                bp.SetName(IsekaiContext, "Signature Move");
+                bp.SetName(IsekaiContext, "Another Signature Move");
                 bp.SetDescription(SignatureMoveSelectionDesc);
                 bp.m_Icon = Icon_SwordSaintWeaponMastery;
                 bp.IgnorePrerequisites = true;

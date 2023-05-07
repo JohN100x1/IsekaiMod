@@ -1,0 +1,56 @@
+name: Fill Localization
+
+on:
+  push:
+    paths:
+      - "**/LocalizationPack.json"
+
+jobs:
+  build:
+    name: Fill Localization
+    runs-on: ubuntu-latest
+    if: github.actor != 'my_bot_account'
+    steps:
+    
+      - name: Checkout Mod
+        uses: actions/checkout@v3
+        with:
+          path: mod
+
+      - name: Checkout Localizer
+        uses: actions/checkout@v3
+        with:
+          repository: JohN100x1/IsekaiLocalizer
+          path: localizer
+
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.11'
+
+      - name: Setup Poetry
+        run: pip install poetry
+
+      - name: Run Localization Script
+        run: |
+          cd ${{ github.workspace }}/localizer
+          poetry install
+          poetry run python src/main.py ${{ github.workspace }}/mod/IsekaiMod/Localization/LocalizationPack.json
+        env:
+          OPENAI_ACCESS_TOKEN: ${{ secrets.OPENAI_ACCESS_TOKEN }}
+          
+      - name: Check Changes
+        id: git_status
+        run: |
+          cd ${{ github.workspace }}/mod
+          echo "has_changes=$(git status --porcelain)" >> $GITHUB_OUTPUT
+
+      - name: Push Changes
+        if: steps.git_status.outputs.has_changes != ''
+        run: |
+          cd ${{ github.workspace }}/mod
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "feat: update LocalizationPack.json"
+          git push origin HEAD:${{ github.ref }}

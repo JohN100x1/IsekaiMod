@@ -26,7 +26,7 @@ namespace IsekaiMod.Components {
             public void OnEventAboutToTrigger(RuleAttackRoll evt) {
                 MechanicsContext maybeContext = Fact.MaybeContext;
                 using (maybeContext?.GetDataScope(evt.Initiator)) {
-                    evt.AutoMiss = true; // TODO: use evt.ForceFlatFooted for forcing flat footed
+                    evt.AutoMiss = true;
                 }
             }
 

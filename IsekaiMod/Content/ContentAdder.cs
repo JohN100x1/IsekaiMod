@@ -97,6 +97,9 @@ namespace IsekaiMod.Content {
                 IsekaiChannelPositiveEnergy.Add();
                 IsekaiChannelNegativeEnergy.Add();
                 Supermassive.Add();
+                Excalibur.Add();
+                Unreactable.Add();
+                Haggler.Add();
                 Main.LogDebug("Class: SpecialPower");
 
                 // OP Ability
@@ -115,6 +118,7 @@ namespace IsekaiMod.Content {
                 MetaLuck.Add();
                 PowerLeveling.Add();
                 OverpoweredAuraSelection.Add();
+                UnderpoweredAbilitySelection.Add();
                 if (Other.IsEnabled("Mythic Class Feature")) BlessingOfTheMythic.Configure();
                 Main.LogDebug("Class: OP");
 
