@@ -375,15 +375,15 @@
       "esES": "Obtienes poderosos efectos de metamagia que se aplican automáticamente a tus hechizos."
     },
     {
-      "Key": "27976fd84d2e43afb6a6ab4364086346",
+      "Key": "09a6d3ac1d864d4db4519ad527be4917",
       "SimpleName": "AutoMetamagicSelection.Name",
       "ProcessTemplates": false,
-      "enGB": "Auto Metamagic",
-      "ruRU": "Автоматическая Метамагия",
-      "deDE": "Automatische Metamagie",
-      "frFR": "Métamagie Automatique",
-      "zhCN": "自动魔法",
-      "esES": "Metamagia Automática"
+      "enGB": "Overpowered Ability — Auto Metamagic",
+      "ruRU": "Сверхмощная способность - Автоматическая Метамагия",
+      "deDE": "Übermächtige Fähigkeit - Automatische Metamagie",
+      "frFR": "Capacité Surpuissante - Métamagie Automatique",
+      "zhCN": "超强能力-自动魔法",
+      "esES": "Habilidad Sobrepotenciada - Metamagia Automática"
     },
     {
       "Key": "23ee3aa855cc44bf8e04c5146dce587e",
@@ -815,6 +815,17 @@
       "esES": "En el nivel 12, tú y tus compañeros hacen una breve pausa junto a un gran cuerpo de agua. Durante este tiempo, empiezas un viaje de auto descubrimiento."
     },
     {
+      "Key": "bc35fea7823c40c1b5d5cf25e1e676a7",
+      "SimpleName": "BeachEpisodeBonusSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Another Beach Episode",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "6e0460bebd344e4e8f11e3873ff1d02b",
       "SimpleName": "BeachEpisodeSelection.Name",
       "ProcessTemplates": false,
@@ -1077,6 +1088,28 @@
       "frFR": "Renforcement corporel",
       "zhCN": "身体强化",
       "esES": "Fortalecimiento corporal"
+    },
+    {
+      "Key": "71b8f07456cb4f8289095c05d59a15e7",
+      "SimpleName": "BulkMaster.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain +10 {g|Encyclopedia:HP}hit points{/g} and a +1 bonus to your Strength.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "90b1014a6d6c42ed94fe76bf311c097a",
+      "SimpleName": "BulkMaster.Name",
+      "ProcessTemplates": false,
+      "enGB": "Underpowered Ability — Bulk Master",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "18e2199768e4404da8480204024b2a14",
@@ -1970,6 +2003,28 @@
       "esES": "Esta criatura tiene una penalización de -4 en todos los atributos."
     },
     {
+      "Key": "514ee1afea2b4f4fa9b68cac9d020184",
+      "SimpleName": "DodgeMaster.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain a +2 dodge {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Armor_Class}AC{/g}.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "d648480ce8944192a6056a4b3f03f12d",
+      "SimpleName": "DodgeMaster.Name",
+      "ProcessTemplates": false,
+      "enGB": "Underpowered Ability — Dodge Master",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "c97e9fd28b4b4f6595d8d5b613112fe8",
       "SimpleName": "DrowPoisonAbility.Description",
       "ProcessTemplates": true,
@@ -2377,10 +2432,10 @@
       "esES": "Golpe extra"
     },
     {
-      "Key": "6643b0d12d94405b909159f42e879798",
+      "Key": "58c9a4992cf34fe7b8a6a2f75692e573",
       "SimpleName": "ExtremeSpeed.Description",
       "ProcessTemplates": false,
-      "enGB": "Allies within 40 feet of you gain a {g|Encyclopedia:Bonus}bonus{/g} to their {g|Encyclopedia:Speed}speed{/g} equal to 5 times your character level.",
+      "enGB": "Allies within 40 feet of you gain a {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Speed}speed{/g} equal to 5 times your character level.",
       "ruRU": "Союзники в радиусе 40 футов от вас получают {g|Encyclopedia:Bonus}бонус{/g} к вашей {g|Encyclopedia:Speed}скорости{/g}, равный 5 разам вашего уровня персонажа.",
       "deDE": "Verbündete innerhalb von 40 Fuß von dir erhalten einen {g|Encyclopedia:Bonus}Bonus{/g} auf deine {g|Encyclopedia:Speed}Geschwindigkeit{/g} in Höhe von 5 Mal deinem Charakterlevel.",
       "frFR": "Les alliés dans un rayon de 40 pieds gagnent un {g|Encyclopedia:Bonus}bonus{/g} à leur {g|Encyclopedia:Speed}vitesse{/g} égal à 5 fois votre niveau de personnage.",
@@ -2762,15 +2817,15 @@
       "esES": "Alas (Espirituales)"
     },
     {
-      "Key": "e081a95038954986bbe9d8e57152ce2f",
+      "Key": "0f03d214ae5e422e929e765ee2f6ab04",
       "SimpleName": "Gifted.Description",
       "ProcessTemplates": true,
-      "enGB": "You are an actual prodigal genius, and every action you take is a calculated move in your 1000 year plan.\nYou gain a +4 competence bonus to all skills and you always take the higher of two d20 rolls.",
-      "ruRU": "Вы - настоящий гениальный прожигатель жизни, и каждое ваше действие является рассчитанным шагом в вашем тысячелетнем плане. Вы получаете бонус компетенции +4 ко всем навыкам и всегда выбираете более высокий результат из двух бросков d20.",
-      "deDE": "Du bist ein wahrhaftiges, geniales Wunderkind und jede Handlung, die du ausführst, ist ein berechneter Schritt in deinem 1000-Jahres-Plan. Du erhältst einen Kompetenzbonus von +4 auf alle Fertigkeiten und nimmst immer den höheren von zwei d20-Würfen.",
-      "frFR": "Vous êtes un véritable génie, et chaque action que vous entreprenez est un mouvement étudié de votre plan établi sur 1000 ans. Vous bénéficiez d'un bonus d'aptitude de +4 à toutes les compétences et pour chaque d20 vous lancez deux dés et conservez le meilleur résultat.",
-      "zhCN": "您是真正的天才，您所采取的每个行动都是您1000年计划中的计算步骤。您对所有技能获得+4的胜任加值，并且总是选择两个d20投掷中更高的一个结果。",
-      "esES": "Eres un genio prodigioso real, y cada acción que realizas es un movimiento calculado en tu plan de 1000 años. Obtienes un bono de competencia de +4 a todas las habilidades y siempre eliges el resultado más alto de dos tiradas de d20."
+      "enGB": "You are talented in all skills and professions.\nYou gain a +4 competence bonus to all skills and you always take the higher of two d20 rolls.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "85ea0803ea92471aba3cc40377f83b2d",
@@ -6469,6 +6524,17 @@
       "esES": "Ataque de firma"
     },
     {
+      "Key": "7033fc92b9ca43b795f647aae6b9a6f3",
+      "SimpleName": "SignatureMoveBonusSelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Another Signature Move",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "3eec77c7d5c141b4a88427a7c50340e1",
       "SimpleName": "SignatureMoveSelection.Description",
       "ProcessTemplates": false,
@@ -8053,6 +8119,28 @@
       "esES": "Tenaz"
     },
     {
+      "Key": "759bb74c1d044effa1ec7e2cac00304e",
+      "SimpleName": "ThoughtMaster.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain a +1 bonus to your {g|Encyclopedia:Intelligence}Intelligence{/g} and {g|Encyclopedia:Wisdom}Wisdom{/g}.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "c11568f5565d4e0398f4d7700c057072",
+      "SimpleName": "ThoughtMaster.Name",
+      "ProcessTemplates": false,
+      "enGB": "Underpowered Ability — Thought Master",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "c0566073da7846ddbd789e7af76d8191",
       "SimpleName": "ThunderingWeapon.Description",
       "ProcessTemplates": false,
@@ -8161,6 +8249,28 @@
       "frFR": "Compétence surpuissante - Résurrection Véritable",
       "zhCN": "超强能力 - 真正的复活",
       "esES": "Habilidad desbalanceada - Resurrección Verdadera"
+    },
+    {
+      "Key": "069b17c1eb054b1a9ac80ed840adfee7",
+      "SimpleName": "UnderpoweredAbilitySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "Sometimes you just want to be reborn into a quiet life.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "51d13ea9780040789a7b9a79d877b0d7",
+      "SimpleName": "UnderpoweredAbilitySelection.Name",
+      "ProcessTemplates": false,
+      "enGB": "Underpowered Ability",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "cb8c0cffaeb445fa9766226c6ce54bc8",
