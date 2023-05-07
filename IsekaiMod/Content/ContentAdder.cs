@@ -98,6 +98,7 @@ namespace IsekaiMod.Content {
                 IsekaiChannelNegativeEnergy.Add();
                 Supermassive.Add();
                 Excalibur.Add();
+                Unreactable.Add();
                 Main.LogDebug("Class: SpecialPower");
 
                 // OP Ability

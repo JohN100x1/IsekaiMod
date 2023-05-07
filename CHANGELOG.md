@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # Added
 - Added `Underpowered Ability` selection to OP ability selection.
 - Added `Excalibur` Special Power.
+- Added `Unreactable` Special Power.
 # Changed
 - Updated description for `Gifted` feature.
 - Updated description for `Extra Strike` feature.

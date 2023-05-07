@@ -287,6 +287,9 @@
     "ExcaliburBuff": "3ad0d21b-eb0f-4e08-bd2d-4ab24ddc273f",
     "ExcaliburAbility": "53fd6dd1-23ff-447a-8d54-52a7eb12de94",
     "ExcaliburFeature": "9e2de69b-d55a-4949-b8da-430b2a95fee4",
+    "UnreactableBuff": "c0428d12-7997-4cb4-bbef-60ccac6d81f7",
+    "UnreactableAbility": "1fec2e80-abd2-4bf2-92f5-ee6b07a4dfd2",
+    "UnreactableFeature": "7eb15e66-5b44-4e55-a8fc-4f3aea656079",
 
 
     // Energy immunity

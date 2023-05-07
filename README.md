@@ -102,14 +102,14 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Sneaky Magic`: You can add your sneak attack damage to spells against flat-footed.
 		- `Spell Master`: Increase your spell DC by 4.
 		- `Magical Amplification`: Your spell damage dice become d10.
-		- `Armor Saint`: You can move at normal speed while wearing armor, reduce your armor check penalty to zero, and increase your max dexterity bonus by 20.
+		- `Armor Saint`: You can move at normal speed while wearing armor, reduce your armor check penalty to zero, and increase your max dexterity bonus.
 		- `Armor of Strength`: Get a natural armor bonus to AC equal to Strength modifier.
 		- `Summon Beast`: Summon a hydra, owlbear, roc, or minotaur.
-		- `Aura of Divine Fury`: Allies within 40 feet of you has a +10 sacred bonus to attack damage and hit point damage from spells (requires character level 15).
 		- `Killing Intent`: Enemies within 40 feet become shaken, frightened, and cowering.
 		- `Reflect`: Deal damage to enemies equal to damage you receive.
 		- `Supermassive`: Gain bonus HP based on your Constitution modifier. You also get fast healing but have a penalty to AC.
 		- `Excalibur`: Your weapon gains the holy and radiant enchantments. Your attack range is massively increased.
+		- `Unreactable`: Enemies you attack are treated as flat-footed (requires character level 15).
 		- `Mythic Class Feature`: see below
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
