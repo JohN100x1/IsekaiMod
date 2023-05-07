@@ -99,6 +99,7 @@ namespace IsekaiMod.Content {
                 Supermassive.Add();
                 Excalibur.Add();
                 Unreactable.Add();
+                Haggler.Add();
                 Main.LogDebug("Class: SpecialPower");
 
                 // OP Ability

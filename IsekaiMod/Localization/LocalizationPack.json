@@ -3224,6 +3224,28 @@
       "esES": "Combate grácil"
     },
     {
+      "Key": "10d585956ace445b858885ec830e1cb4",
+      "SimpleName": "Haggler.Description",
+      "ProcessTemplates": true,
+      "enGB": "Vendor prices are reduced by 50%.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "5438dac9e29541c8b254ca31032e2e83",
+      "SimpleName": "Haggler.Name",
+      "ProcessTemplates": false,
+      "enGB": "Haggler",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "fd72dc6ca40c4d348301f48e1d7ffc0e",
       "SimpleName": "HandsOfSalvation.Description",
       "ProcessTemplates": true,
