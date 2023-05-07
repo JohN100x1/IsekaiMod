@@ -3228,22 +3228,22 @@
       "SimpleName": "Haggler.Description",
       "ProcessTemplates": true,
       "enGB": "Vendor prices are reduced by 50%.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Цены у продавцов снижены на 50%.",
+      "deDE": "Die Preise bei Händlern sind um 50% reduziert.",
+      "frFR": "Les prix chez les vendeurs sont réduits de 50%.",
+      "zhCN": "供应商的价格降低了50%。",
+      "esES": "Los precios de los vendedores se han reducido en un 50%."
     },
     {
       "Key": "5438dac9e29541c8b254ca31032e2e83",
       "SimpleName": "Haggler.Name",
       "ProcessTemplates": false,
       "enGB": "Haggler",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Торговец",
+      "deDE": "Feilscher",
+      "frFR": "Marchandage",
+      "zhCN": "讨价还价者",
+      "esES": "Regateador"
     },
     {
       "Key": "fd72dc6ca40c4d348301f48e1d7ffc0e",
