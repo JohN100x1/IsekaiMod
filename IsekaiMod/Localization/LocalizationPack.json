@@ -8354,22 +8354,22 @@
       "SimpleName": "Unreactable.Description",
       "ProcessTemplates": false,
       "enGB": "Enemies you attack are treated as flat-footed.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Враги, которых вы атакуете, считаются обездвиженными.",
+      "deDE": "Feinde, die du angreifst, gelten als flachfüßig.",
+      "frFR": "Les ennemis que vous attaquez sont considérés comme pris au dépourvu.",
+      "zhCN": "你攻击的敌人被视为猝不及防。",
+      "esES": "Los enemigos a los que atacas son considerados como desprevenidos."
     },
     {
       "Key": "0e83f9bddf6c4feca318473110ae0194",
       "SimpleName": "UnreactableBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Unreactable",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Нереагируемый",
+      "deDE": "Unreaktionsfähig",
+      "frFR": "Inréactif",
+      "zhCN": "无法反应",
+      "esES": "Inreaccionable"
     },
     {
       "Key": "65871cd0ca004b709cc5040b442335db",
