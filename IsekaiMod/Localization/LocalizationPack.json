@@ -386,6 +386,17 @@
       "esES": "Habilidad Sobrepotenciada - Metamagia Automática"
     },
     {
+      "Key": "f07306e39b2d4efbb2c0a38b0a1528cf",
+      "SimpleName": "AutoMetamagicSelectionMastermind.Name",
+      "ProcessTemplates": false,
+      "enGB": "Auto Metamagic",
+      "ruRU": "Автоматическая Метамагия",
+      "deDE": "Automatische Metamagie",
+      "frFR": "Métamagie Automatique",
+      "zhCN": "自动魔法",
+      "esES": "Metamagia Automática"
+    },
+    {
       "Key": "23ee3aa855cc44bf8e04c5146dce587e",
       "SimpleName": "AutoQuicken.Description",
       "ProcessTemplates": false,
@@ -2276,6 +2287,28 @@
       "frFR": "Immunité à l'enchevêtrement",
       "zhCN": "缠绕免疫",
       "esES": "Inmunidad al enredo"
+    },
+    {
+      "Key": "ed823d959d7a408abba90e7be10edc0c",
+      "SimpleName": "Excalibur.Description",
+      "ProcessTemplates": false,
+      "enGB": "Your primary weapon gains the holy and radiant enchantments. Your attack range is increased by 40 feet.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "533f76d24b4e4edfa797b52395d1c391",
+      "SimpleName": "ExcaliburBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Excalibur",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "464dd190f07a49ee966288ec9e75f270",

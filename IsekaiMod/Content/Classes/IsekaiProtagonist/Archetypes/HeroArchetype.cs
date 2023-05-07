@@ -83,6 +83,18 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
             // Add Archetype to Class
             IsekaiProtagonistClass.RegisterArchetype(HeroArchetype);
+
+            PatchSpecialPowers();
+        }
+
+        public static void PatchSpecialPowers() {
+            var ExcaliburFeature = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ExcaliburFeature");
+            ExcaliburFeature.AddComponent<PrerequisiteArchetypeLevel>(c => {
+                c.Group = Prerequisite.GroupType.Any;
+                c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
+                c.m_Archetype = GetReference();
+                c.Level = 1;
+            });
         }
 
         public static BlueprintArchetype Get() {
