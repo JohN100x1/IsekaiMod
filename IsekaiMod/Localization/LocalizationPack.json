@@ -2293,22 +2293,22 @@
       "SimpleName": "Excalibur.Description",
       "ProcessTemplates": false,
       "enGB": "Your primary weapon gains the holy and radiant enchantments. Your attack range is increased by 40 feet.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Ваша основная оружия получает священную и сияющую магию. Ваша дальность атаки увеличивается на 40 футов.",
+      "deDE": "Deine Hauptwaffe erhält die heiligen und strahlenden Verzauberungen. Deine Angriffsreichweite wird um 40 Fuß erhöht.",
+      "frFR": "Votre arme principale obtient les enchantements sacrés et radieux. Votre portée d'attaque est augmentée de 40 pieds.",
+      "zhCN": "你的主武器获得了神圣和光辉的附魔。你的攻击范围增加了40英尺。",
+      "esES": "Tu arma principal obtiene los encantamientos santos y radiantes. Tu alcance de ataque se aumenta por 40 pies."
     },
     {
       "Key": "533f76d24b4e4edfa797b52395d1c391",
       "SimpleName": "ExcaliburBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Excalibur",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Экскалибур",
+      "deDE": "Exkalibur",
+      "frFR": "Excalibur",
+      "zhCN": "埃克斯卡利伯",
+      "esES": "Excalibur"
     },
     {
       "Key": "464dd190f07a49ee966288ec9e75f270",
@@ -2854,11 +2854,11 @@
       "SimpleName": "Gifted.Description",
       "ProcessTemplates": true,
       "enGB": "You are talented in all skills and professions.\nYou gain a +4 competence bonus to all skills and you always take the higher of two d20 rolls.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Вы талантливы во всех навыках и профессиях. Вы получаете +4 компетентностный бонус ко всем навыкам и всегда берете высшее из двух бросков d20.",
+      "deDE": "Du bist talentiert in allen Fähigkeiten und Berufen. Du erhältst einen +4 Kompetenzbonus auf alle Fähigkeiten und nimmst immer den höheren von zwei Würfen mit d20.",
+      "frFR": "Vous êtes talentueux dans toutes les compétences et professions. Vous obtenez un bonus de compétence de +4 à toutes les compétences et vous prenez toujours le résultat le plus élevé des deux lancers de d20.",
+      "zhCN": "您在所有技能和职业方面都很有天赋。您所有技能都获得+4的熟练加值，并且您总是选择两次D20掷骰子的较高值。",
+      "esES": "Eres talentoso en todas las habilidades y profesiones. Obtienes un bono de competencia de +4 en todas las habilidades y siempre tomas el resultado más alto de dos tiradas de d20."
     },
     {
       "Key": "85ea0803ea92471aba3cc40377f83b2d",
