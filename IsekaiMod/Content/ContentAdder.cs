@@ -115,6 +115,7 @@ namespace IsekaiMod.Content {
                 MetaLuck.Add();
                 PowerLeveling.Add();
                 OverpoweredAuraSelection.Add();
+                UnderpoweredAbilitySelection.Add();
                 if (Other.IsEnabled("Mythic Class Feature")) BlessingOfTheMythic.Configure();
                 Main.LogDebug("Class: OP");
 
