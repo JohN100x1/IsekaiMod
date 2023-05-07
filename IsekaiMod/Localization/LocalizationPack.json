@@ -8350,6 +8350,28 @@
       "esES": "Habilidad desmesurada - Poder ilimitado"
     },
     {
+      "Key": "3ed3ac8133144a7a80cda13944fbeb0c",
+      "SimpleName": "Unreactable.Description",
+      "ProcessTemplates": false,
+      "enGB": "Enemies you attack are treated as flat-footed.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "0e83f9bddf6c4feca318473110ae0194",
+      "SimpleName": "UnreactableBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Unreactable",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "65871cd0ca004b709cc5040b442335db",
       "SimpleName": "VoidBarrier.Description",
       "ProcessTemplates": false,
