@@ -109,6 +109,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Killing Intent`: Enemies within 40 feet become shaken, frightened, and cowering.
 		- `Reflect`: Deal damage to enemies equal to damage you receive.
 		- `Supermassive`: Gain bonus HP based on your Constitution modifier. You also get fast healing but have a penalty to AC.
+		- `Excalibur`: Your weapon gains the holy and radiant enchantments. Your attack range is massively increased.
 		- `Mythic Class Feature`: see below
 	- `Overpowered Ability`: Powerful gamebreaking abilities.
 		- `AutoBolster`: Bolsters every spell you cast.
@@ -131,6 +132,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Meta Luck`: Always take the higher of two d20 rolls.
 		- `Power Leveling`: Gain extra experience when you kill an enemy.
 		- `Overpowered Aura`: 4 different alignment based auras which give either extra attack(s) and/or damage.
+		- `Underpowered Ability`: A selection of less powerful effects.
 		- `Mythic Class Feature`: see below
 		- `Dual Legacy`: Pick a second base class to get abilities from.
 		- The following requires TabletopTweaks-Base:
