@@ -819,11 +819,11 @@
       "SimpleName": "BeachEpisodeBonusSelection.Name",
       "ProcessTemplates": false,
       "enGB": "Another Beach Episode",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Еще одна эпизод на пляже",
+      "deDE": "Noch eine Strand-Episode",
+      "frFR": "Encore un épisode à la plage",
+      "zhCN": "又一集沙滩剧",
+      "esES": "Otro episodio en la playa"
     },
     {
       "Key": "6e0460bebd344e4e8f11e3873ff1d02b",
@@ -1094,22 +1094,22 @@
       "SimpleName": "BulkMaster.Description",
       "ProcessTemplates": true,
       "enGB": "You gain +10 {g|Encyclopedia:HP}hit points{/g} and a +1 bonus to your Strength.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "+10 {g|Энциклопедия:HP}очков здоровья{/g} и бонус +1 к Силе.",
+      "deDE": "Du erhältst +10 {g|Enzyklopädie:HP}Trefferpunkte{/g} und einen Bonus von +1 auf deine Stärke.",
+      "frFR": "Vous gagnez +10 {g|Encyclopédie:PV}points de vie{/g} et un bonus de +1 à votre Force.",
+      "zhCN": "你获得了+10点 {g|百科全书：HP}生命值{/g}，并获得了+1点力量加成。",
+      "esES": "Obtienes +10 {g|Enciclopedia:PV}puntos de golpe{/g} y un bono de +1 a tu Fuerza."
     },
     {
       "Key": "90b1014a6d6c42ed94fe76bf311c097a",
       "SimpleName": "BulkMaster.Name",
       "ProcessTemplates": false,
       "enGB": "Underpowered Ability — Bulk Master",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Недооцененная способность - Мастер массы",
+      "deDE": "Unterentwickelte Fähigkeit - Massenmeister",
+      "frFR": "Compétence sous-alimentée - Maître des charges",
+      "zhCN": "低能力-重量大师",
+      "esES": "Habilidad subpotenciada - Maestro del Peso"
     },
     {
       "Key": "18e2199768e4404da8480204024b2a14",
@@ -2007,22 +2007,22 @@
       "SimpleName": "DodgeMaster.Description",
       "ProcessTemplates": true,
       "enGB": "You gain a +2 dodge {g|Encyclopedia:Bonus}bonus{/g} to your {g|Encyclopedia:Armor_Class}AC{/g}.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "+2 к уклонению {g|Encyclopedia:Bonus}бонусу{/g} на ваш {g|Encyclopedia:Armor_Class}КД{/g}.",
+      "deDE": "+2 Ausweichen {g|Encyclopedia:Bonus}Bonus{/g} für deine {g|Encyclopedia:Armor_Class}Rüstungsklasse{/g}.",
+      "frFR": "+2 en esquive {g|Encyclopedia:Bonus}bonus{/g} à votre {g|Encyclopedia:Armor_Class}CA{/g}.",
+      "zhCN": "你的{g|Encyclopedia:Armor_Class}AC{/g}获得+2闪避{g|Encyclopedia:Bonus}加值{/g}。",
+      "esES": "Obtienes un {g|Encyclopedia:Bonus}bonificador{/g} de +2 a la esquiva de tu {g|Encyclopedia:Armor_Class}CA{/g}."
     },
     {
       "Key": "d648480ce8944192a6056a4b3f03f12d",
       "SimpleName": "DodgeMaster.Name",
       "ProcessTemplates": false,
       "enGB": "Underpowered Ability — Dodge Master",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Слабый навык — Мастер уклонения",
+      "deDE": "Unterentwickelte Fähigkeit - Meister der Ausweichmanöver",
+      "frFR": "Compétence sous-puissante - Maître de l'esquive",
+      "zhCN": "低效的能力 - 闪避大师",
+      "esES": "Habilidad subdesarrollada - Maestro del esquive"
     },
     {
       "Key": "c97e9fd28b4b4f6595d8d5b613112fe8",
@@ -2414,11 +2414,11 @@
       "SimpleName": "ExtraStrike.Description",
       "ProcessTemplates": true,
       "enGB": "You gain 1 additional {g|Encyclopedia:Attack}attack{/g}. This also applies to your off-hand weapon if you are wielding a second weapon.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Вы получаете 1 дополнительную {g|Encyclopedia:Attack}атаку{/g}. Это также применяется к вашему оружию второй руки, если вы держите второе оружие.",
+      "deDE": "Du erhältst 1 zusätzlichen {g|Encyclopedia:Attack}Angriff{/g}. Dies gilt auch für deine Offhand-Waffe, wenn du eine zweite Waffe schwingst.",
+      "frFR": "Vous gagnez 1 {g|Encyclopedia:Attack}attaque{/g} supplémentaire. Cela s'applique également à votre arme en main secondaire si vous en portez une.",
+      "zhCN": "你获得1次额外的 {g|Encyclopedia:Attack}攻击{/g}。如果你装备了第二件武器，则同样适用于你的副手武器。",
+      "esES": "Obtienes 1 {g|Encyclopedia:Attack}ataque{/g} adicional. Esto también se aplica a tu arma secundaria si estás empuñando una segunda arma."
     },
     {
       "Key": "46c50228b9b64afd8f718657727260b3",
@@ -6528,11 +6528,11 @@
       "SimpleName": "SignatureMoveBonusSelection.Name",
       "ProcessTemplates": false,
       "enGB": "Another Signature Move",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Ещё один ход-фишка",
+      "deDE": "Ein weiterer charakteristischer Zug",
+      "frFR": "Une autre technique signature",
+      "zhCN": "另一个招牌技能",
+      "esES": "Otro movimiento distintivo"
     },
     {
       "Key": "3eec77c7d5c141b4a88427a7c50340e1",
@@ -8123,22 +8123,22 @@
       "SimpleName": "ThoughtMaster.Description",
       "ProcessTemplates": true,
       "enGB": "You gain a +1 bonus to your {g|Encyclopedia:Intelligence}Intelligence{/g} and {g|Encyclopedia:Wisdom}Wisdom{/g}.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": ""
+      "ruRU": "Вы получаете бонус +1 к характеристикам {g|Encyclopedia:Intelligence}Интеллект{/g} и {g|Encyclopedia:Wisdom}Мудрость{/g}.",
+      "deDE": "Du erhältst einen Bonus von +1 auf deine {g|Encyclopedia:Intelligence}Intelligenz{/g} und {g|Encyclopedia:Wisdom}Weisheit{/g}.",
+      "frFR": "Vous gagnez un bonus de +1 à votre {g|Encyclopedia:Intelligence}Intelligence{/g} et votre {g|Encyclopedia:Wisdom}Sagesse{/g}.",
+      "zhCN": "你的 {g|Encyclopedia:Intelligence}智力{/g} 和 {g|Encyclopedia:Wisdom}感知{/g} 获得+1加值。",
+      "esES": "Obtienes un bono de +1 a tu {g|Encyclopedia:Intelligence}Inteligencia{/g} y {g|Encyclopedia:Wisdom}Sabiduría{/g}."
     },
     {
       "Key": "c11568f5565d4e0398f4d7700c057072",
       "SimpleName": "ThoughtMaster.Name",
       "ProcessTemplates": false,
       "enGB": "Underpowered Ability — Thought Master",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Недооцененная способность - Мастер мысли",
+      "deDE": "Unterkühlte Fähigkeit - Gedankenmeister",
+      "frFR": "Compétence sous-estimée - Maître de la pensée",
+      "zhCN": "弱势能力-思维大师",
+      "esES": "Habilidad infravalorada - Maestro del pensamiento"
     },
     {
       "Key": "c0566073da7846ddbd789e7af76d8191",
@@ -8255,22 +8255,22 @@
       "SimpleName": "UnderpoweredAbilitySelection.Description",
       "ProcessTemplates": true,
       "enGB": "Sometimes you just want to be reborn into a quiet life.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Иногда хочется родиться заново в тихой жизни.",
+      "deDE": "Manchmal möchte man einfach in ein ruhiges Leben wiedergeboren werden.",
+      "frFR": "Parfois, on veut juste renaître dans une vie tranquille.",
+      "zhCN": "有时候，你只想重生为一个平静的生活。",
+      "esES": "A veces solo quieres renacer en una vida tranquila."
     },
     {
       "Key": "51d13ea9780040789a7b9a79d877b0d7",
       "SimpleName": "UnderpoweredAbilitySelection.Name",
       "ProcessTemplates": false,
       "enGB": "Underpowered Ability",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Недостаточно сильное умение",
+      "deDE": "Unterentwickelte Fähigkeit",
+      "frFR": "Compétence sous-alimentée",
+      "zhCN": "能力不足",
+      "esES": "Habilidad insuficiente"
     },
     {
       "Key": "cb8c0cffaeb445fa9766226c6ce54bc8",
