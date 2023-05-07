@@ -25,7 +25,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.SetDescription(IsekaiContext, "Seekers of Truth are driven by a desire to uncover the secrets behind the fundamental forces of nature. \n" +
                     "Because of their unique perspective as otherworlders, they are able to approach the world with a fresh and unbiased eye, allowing them to see beyond the surface of things and seek out the deeper truth behind the world around them. \n" +
                     "They are driven by a desire to uncover the secrets of the world that would otherwise remain hidden, and are not satisfied with simply accepting things at face value. \n" +
-                    "This allows them to uncover the secrets of the world that are often only revealed to mortals through revelations.");
+                    "This allows them to uncover the secrets of the world that are often only revealed to mortals through revelations.\n\n" +
+                    "Please note that you do not get previous inheritances when seletcing this at higher levels.");
                 bp.GiveFeaturesForPreviousLevels = false;
                 bp.IsClassFeature = true;
                 bp.m_Classes = new BlueprintProgression.ClassWithLevel[] {
