@@ -281,39 +281,45 @@ namespace IsekaiMod.Utilities {
                 //components is null for BlueprintProgressions despite the fact that they implement Blueprintfeature, that will cause a nullpointer,
                 //and since the cast to Blueptintfeature will work since it "supposedly" implements it checking if the field is null is the safest solution
                 if (feature.Components != null && feature.Components.Length > 0) {
-                    var mySpellSet = new HashSet<SpellReference>();
+                    HashSet<SpellReference> mySpellSet = new HashSet<SpellReference>();
                     SpontaneousSpellConversion[] conversions = new SpontaneousSpellConversion[] { };
                     CannyDefensePermanent[] cannyDefenses = new CannyDefensePermanent[] { };
+                    AddFeatureOnClassLevel[] addFeatureOnClassLevels = new AddFeatureOnClassLevel[] { };
                     foreach (var component in feature.Components) {
-                        if (component != null) {
-                            //check if component is addSpell or addFeat
-                            HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component, loopPrevention);
-                            if (component is ContextRankConfig rankConfig && (
-                                rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel ||
-                                rankConfig.m_BaseValueType == ContextRankBaseValueType.SummClassLevelWithArchetype)) {
-                                if (rankConfig.m_Class.Contains(myClass)) {
-                                    //already patched return
-                                    return;
-                                }
-                                if (rankConfig.m_Class.Contains(referenceClass)) {
-                                    rankConfig.m_Class = rankConfig.m_Class.AddToArray(myClass);
-                                    //test at level 20 if needed
-                                    //rankConfig.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype;
-                                }
+                        if (component == null) continue;
+                        //check if component is addSpell or addFeat
+                        HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component, loopPrevention);
+                        if (component is ContextRankConfig rankConfig && (
+                            rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel ||
+                            rankConfig.m_BaseValueType == ContextRankBaseValueType.SummClassLevelWithArchetype)) {
+                            if (rankConfig.m_Class.Contains(myClass)) {
+                                //already patched return
+                                return;
                             }
-                            if (component is SpontaneousSpellConversion conversion && conversion.m_CharacterClass != null && conversion.m_CharacterClass.Equals(referenceClass)) {
-                                conversions = conversions.AddToArray(conversion);
+                            if (rankConfig.m_Class.Contains(referenceClass)) {
+                                rankConfig.m_Class = rankConfig.m_Class.AddToArray(myClass);
+                                //test at level 20 if needed
+                                //rankConfig.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype;
                             }
-                            if (component is CannyDefensePermanent cannyDefense && cannyDefense.m_CharacterClass != null && cannyDefense.m_CharacterClass.Equals(referenceClass)) {
-                                cannyDefenses = cannyDefenses.AddToArray(cannyDefense);
+                        }
+                        if (component is SpontaneousSpellConversion conversion && conversion.m_CharacterClass != null && conversion.m_CharacterClass.Equals(referenceClass)) {
+                            conversions = conversions.AddToArray(conversion);
+                        }
+                        if (component is CannyDefensePermanent cannyDefense && cannyDefense.m_CharacterClass != null && cannyDefense.m_CharacterClass.Equals(referenceClass)) {
+                            cannyDefenses = cannyDefenses.AddToArray(cannyDefense);
+                        }
+                        if (component is AddFeatureOnClassLevel addFeatureOnLevel) {
+                            PatchClassIntoFeatureOfReferenceClass(addFeatureOnLevel.m_Feature.Get(), myClass, referenceClass, mylevel, loopPrevention);
+                            if (addFeatureOnLevel.m_Class != null && addFeatureOnLevel.m_Class.Equals(referenceClass)) {
+                                addFeatureOnClassLevels = addFeatureOnClassLevels.AddToArray(addFeatureOnLevel);
                             }
                         }
                     }
                     foreach (var spellReference in mySpellSet) {
                         feature.AddComponent<AddKnownSpell>(c => {
+                            c.m_CharacterClass = myClass;
                             c.m_Spell = spellReference.value;
                             c.SpellLevel = spellReference.level;
-                            c.m_CharacterClass = myClass;
 
                         });
                     }
@@ -328,6 +334,16 @@ namespace IsekaiMod.Utilities {
                             c.m_CharacterClass = myClass;
                             c.RequiresKensai = cannyDefense.RequiresKensai;
                             c.m_ChosenWeaponBlueprint = cannyDefense.m_ChosenWeaponBlueprint;
+                        });
+                    }
+                    foreach (var addFeatureOnClassLevel in addFeatureOnClassLevels) {
+                        feature.AddComponent<AddFeatureOnClassLevel>(c => {
+                            c.m_Class = myClass;
+                            c.Level = addFeatureOnClassLevel.Level;
+                            c.BeforeThisLevel = addFeatureOnClassLevel.BeforeThisLevel;
+                            c.m_Feature = addFeatureOnClassLevel.m_Feature;
+                            c.m_AdditionalClasses = addFeatureOnClassLevel.m_AdditionalClasses;
+                            c.m_Archetypes = addFeatureOnClassLevel.m_Archetypes;
                         });
                     }
                 }
@@ -347,16 +363,15 @@ namespace IsekaiMod.Utilities {
                 return;
             }
             if (component == null) { return; }
+
             try {
-                if (component is AddKnownSpell asSpell) {
-                    //don't re add spells already added for my class
-                    if (asSpell.m_CharacterClass.Equals(referenceClass)) {
-                        mySpellSet.Add(new SpellReference(asSpell.SpellLevel, asSpell.m_Spell));
-                    }
+                if (component is AddKnownSpell asSpell && asSpell.m_CharacterClass != null && asSpell.m_CharacterClass.Equals(referenceClass)) {
+                    mySpellSet.Add(new SpellReference(asSpell.SpellLevel, asSpell.m_Spell));
                 }
-            } catch (NullReferenceException e) {
+            } catch (NullReferenceException) {
                 IsekaiContext.Logger.LogError(loopPrevention.Last().AssetGuid.ToString() + " component cast asSpell failed due to Nullpointer");
             }
+
             try {
                 // we do not have a special spell list, so just add all such spells to spells known
                 if (component is AddSpecialSpellList asSpellList && asSpellList.m_CharacterClass.Equals(referenceClass)) {
@@ -366,7 +381,7 @@ namespace IsekaiMod.Utilities {
                         }
                     }
                 }
-            } catch (NullReferenceException e) {
+            } catch (NullReferenceException) {
                 IsekaiContext.Logger.LogError(loopPrevention.Last().AssetGuid.ToString() + " component cast AddSpecialSpellList failed due to Nullpointer");
             }
             if (component is AddAbilityUseTrigger trigger && trigger.m_Spellbooks != null && trigger.m_Spellbooks.Length > 0) {
@@ -377,15 +392,6 @@ namespace IsekaiMod.Utilities {
             }
             if (component is IncreaseSpellSpellbookDC cdc && cdc.m_Spellbooks != null && cdc.m_Spellbooks.Length > 0) {
                 cdc.m_Spellbooks = cdc.m_Spellbooks.AddRangeToArray(patchableSpellBooks);
-            }
-            //check if component is AddFeature
-            if (component is AddFeatureOnClassLevel asFeat) {
-                PatchClassIntoFeatureOfReferenceClass(asFeat.m_Feature.Get(), myClass, referenceClass, mylevel, loopPrevention);
-                //only add our class as an additional class if the original entry was not valid for all classes but was restricted to the correct base class
-                if (asFeat.m_Class != null && asFeat.m_Class.Equals(referenceClass)
-                    && (asFeat.m_AdditionalClasses == null || !asFeat.m_AdditionalClasses.Contains(myClass))) {
-                    asFeat.m_AdditionalClasses.AddItem(myClass);
-                }
             }
             if (component is MonkNoArmorFeatureUnlock addUnarmedFact) {
                 var fact = addUnarmedFact.m_NewFact.Get();
@@ -403,6 +409,7 @@ namespace IsekaiMod.Utilities {
                     }
                 }
             }
+
             try {
                 // check if component is add facts because features could also be added as facts rather than on level...
                 if (component is AddFacts addFact) {
@@ -440,7 +447,7 @@ namespace IsekaiMod.Utilities {
                         }
                     }
                 }
-            } catch (NullReferenceException e) {
+            } catch (NullReferenceException) {
                 IsekaiContext.Logger.LogError(loopPrevention.Last().AssetGuid.ToString() + " component cast AddFacts failed due to Nullpointer");
             }
             if (component is AddAbilityResources addResource) {
