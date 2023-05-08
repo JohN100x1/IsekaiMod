@@ -199,8 +199,8 @@ namespace IsekaiMod.Utilities {
             }
         }
 
-        public static void PatchClassIntoFeatureOfReferenceClass(BlueprintFeature feature, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level = 0, BlueprintFeatureBase[] loopPrevention = null) {
-            loopPrevention ??= new BlueprintFeatureBase[0];
+        public static void PatchClassIntoFeatureOfReferenceClass(BlueprintFeatureBase feature, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level = 0, HashSet<BlueprintFeatureBase> loopPrevention = null) {
+            loopPrevention ??= new();
             int mylevel = level + 1;
             if (mylevel > 10) {
                 IsekaiContext.Logger.LogError("Attempt to patch Progression Tree stopped at Level 10 to prevent endless loop, if you see this message please report so we can figure out if someone created a loop here or if this limit needs to be higher");
@@ -225,35 +225,11 @@ namespace IsekaiMod.Utilities {
             if (loopPrevention.Contains(feature)) {
                 IsekaiContext.Logger.Log("reference class= " + referenceClass.Guid + " feature re-encountered at level= " + mylevel + " guid= " + feature.AssetGuid + " name= " + feature.Name);
             } else {
-                loopPrevention = loopPrevention.AddToArray(feature);
+                loopPrevention.Add(feature);
             }
             try {
                 if (feature is BlueprintProgression progression) {
-                    progression.GiveFeaturesForPreviousLevels = true;
-                    if (progression.m_Classes != null && progression.m_Classes.Length > 0) {
-                        foreach (var refClass in progression.m_Classes) {
-                            if (refClass != null && myClass.Equals(refClass.m_Class)) {
-                                //already patched return
-                                return;
-                            }
-                        }
-                        progression.AddClass(myClass);
-                    }
-                    BlueprintFeatureBase[] flatten = new BlueprintFeatureBase[] { };
-                    foreach (LevelEntry item in progression.LevelEntries) {
-                        foreach (var levelitem in item.Features) {
-                            if (levelitem != null && !flatten.Contains(levelitem)) {
-                                flatten = flatten.AddToArray(levelitem);
-                            }
-                        }
-                    }
-                    foreach (var levelItem in flatten) {
-                        if (levelItem is BlueprintProgression progression2) {
-                            PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, mylevel, loopPrevention);
-                        } else if (levelItem is BlueprintFeature feature2) {
-                            PatchClassIntoFeatureOfReferenceClass(feature2, myClass, referenceClass, mylevel, loopPrevention);
-                        }
-                    }
+                    PatchProgression(progression, myClass, referenceClass, mylevel, loopPrevention);
                 }
                 if (feature is BlueprintFeatureSelection selection) {
                     //don't trust selections past a certain size to actually contain class features rather than just a selection of basic feats unless they are selections that are known to be that size for a valid reason(revelations, hexes, rage powers)
@@ -282,13 +258,13 @@ namespace IsekaiMod.Utilities {
                 //and since the cast to Blueptintfeature will work since it "supposedly" implements it checking if the field is null is the safest solution
                 if (feature.Components != null && feature.Components.Length > 0) {
                     HashSet<SpellReference> mySpellSet = new HashSet<SpellReference>();
-                    SpontaneousSpellConversion[] conversions = new SpontaneousSpellConversion[] { };
-                    CannyDefensePermanent[] cannyDefenses = new CannyDefensePermanent[] { };
-                    AddFeatureOnClassLevel[] addFeatureOnClassLevels = new AddFeatureOnClassLevel[] { };
+                    SpontaneousSpellConversion[] conversions = new SpontaneousSpellConversion[0];
+                    CannyDefensePermanent[] cannyDefenses = new CannyDefensePermanent[0];
+                    AddFeatureOnClassLevel[] addFeatureOnClassLevels = new AddFeatureOnClassLevel[0];
                     foreach (var component in feature.Components) {
                         if (component == null) continue;
                         //check if component is addSpell or addFeat
-                        HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component, loopPrevention);
+                        HandleComponent(feature.AssetGuid, myClass, referenceClass, mylevel, mySpellSet, component, loopPrevention);
                         if (component is ContextRankConfig rankConfig && (
                             rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel ||
                             rankConfig.m_BaseValueType == ContextRankBaseValueType.SummClassLevelWithArchetype)) {
@@ -356,7 +332,28 @@ namespace IsekaiMod.Utilities {
             }
         }
 
-        private static void HandleComponent(BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level, HashSet<SpellReference> mySpellSet, BlueprintComponent component, BlueprintFeatureBase[] loopPrevention) {
+        private static void PatchProgression(BlueprintProgression progression, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int mylevel, HashSet<BlueprintFeatureBase> loopPrevention) {
+            progression.GiveFeaturesForPreviousLevels = true;
+            if (progression.m_Classes != null && progression.m_Classes.Length > 0) {
+                foreach (var refClass in progression.m_Classes) {
+                    if (refClass != null && myClass.Equals(refClass.m_Class)) return;
+                }
+                progression.AddClass(myClass);
+            }
+            HashSet<BlueprintFeatureBase> features = new();
+            foreach (LevelEntry levelEntry in progression.LevelEntries) {
+                foreach (BlueprintFeatureBase levelitem in levelEntry.Features) {
+                    if (levelitem != null && !features.Contains(levelitem)) {
+                        features.Add(levelitem);
+                    }
+                }
+            }
+            foreach (BlueprintFeatureBase feature in features) {
+                PatchClassIntoFeatureOfReferenceClass(feature, myClass, referenceClass, mylevel, loopPrevention);
+            }
+        }
+
+        private static void HandleComponent(BlueprintGuid featureGuid, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level, HashSet<SpellReference> mySpellSet, BlueprintComponent component, HashSet<BlueprintFeatureBase> loopPrevention) {
             var mylevel = level + 1;
             if (mylevel > 20) {
                 IsekaiContext.Logger.LogError("Attempt to patch Progression Tree stopped at Level 20 to prevent endless loop, if you see this message please report so we can figure out if someone created a loop here or if this limit needs to be higher");
@@ -369,7 +366,7 @@ namespace IsekaiMod.Utilities {
                     mySpellSet.Add(new SpellReference(asSpell.SpellLevel, asSpell.m_Spell));
                 }
             } catch (NullReferenceException) {
-                IsekaiContext.Logger.LogError(loopPrevention.Last().AssetGuid.ToString() + " component cast asSpell failed due to Nullpointer");
+                IsekaiContext.Logger.LogError($"{featureGuid} component cast asSpell failed due to Nullpointer");
             }
 
             try {
@@ -382,7 +379,7 @@ namespace IsekaiMod.Utilities {
                     }
                 }
             } catch (NullReferenceException) {
-                IsekaiContext.Logger.LogError(loopPrevention.Last().AssetGuid.ToString() + " component cast AddSpecialSpellList failed due to Nullpointer");
+                IsekaiContext.Logger.LogError($"{featureGuid} component cast AddSpecialSpellList failed due to Nullpointer");
             }
             if (component is AddAbilityUseTrigger trigger && trigger.m_Spellbooks != null && trigger.m_Spellbooks.Length > 0) {
                 trigger.m_Spellbooks = trigger.m_Spellbooks.AddRangeToArray(patchableSpellBooks);
@@ -402,9 +399,9 @@ namespace IsekaiMod.Utilities {
                     if (fact is BlueprintProgression progression2) {
                         PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, mylevel, loopPrevention);
                     }
-                    if (fact is BlueprintUnitFact unitFact) {
-                        foreach (var component2 in unitFact.Components) {
-                            HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component2, loopPrevention);
+                    if (fact is BlueprintUnitFact unitFact2) {
+                        foreach (var component2 in unitFact2.Components) {
+                            HandleComponent(unitFact2.AssetGuid, myClass, referenceClass, mylevel, mySpellSet, component2, loopPrevention);
                         }
                     }
                 }
@@ -421,9 +418,9 @@ namespace IsekaiMod.Utilities {
                             if (factRef is BlueprintProgression progression2) {
                                 PatchClassIntoFeatureOfReferenceClass(progression2, myClass, referenceClass, mylevel, loopPrevention);
                             }
-                            if (factRef is BlueprintUnitFact unitFact && unitFact.Components != null && unitFact.Components.Length > 0) {
-                                foreach (var component2 in unitFact.Components) {
-                                    HandleComponent(myClass, referenceClass, mylevel, mySpellSet, component2, loopPrevention);
+                            if (factRef is BlueprintUnitFact unitFact2 && unitFact2.Components != null && unitFact2.Components.Length > 0) {
+                                foreach (var component2 in unitFact2.Components) {
+                                    HandleComponent(unitFact2.AssetGuid, myClass, referenceClass, mylevel, mySpellSet, component2, loopPrevention);
                                 }
                             }
                             if (factRef is BlueprintAbility ability && ability.Components != null && ability.Components.Length > 0) {
@@ -443,12 +440,12 @@ namespace IsekaiMod.Utilities {
                                 }
                             }
                         } else {
-                            IsekaiContext.Logger.LogError(loopPrevention.Last().AssetGuid.ToString() + " component cast AddFacts factRef was null");
+                            IsekaiContext.Logger.LogError($"{featureGuid} component cast AddFacts factRef was null");
                         }
                     }
                 }
             } catch (NullReferenceException) {
-                IsekaiContext.Logger.LogError(loopPrevention.Last().AssetGuid.ToString() + " component cast AddFacts failed due to Nullpointer");
+                IsekaiContext.Logger.LogError($"{featureGuid} component cast AddFacts failed due to Nullpointer");
             }
             if (component is AddAbilityResources addResource) {
                 BlueprintAbilityResourceReference resRef = addResource.m_Resource;
@@ -520,7 +517,6 @@ namespace IsekaiMod.Utilities {
             if (resource.m_MaxAmount.m_Class == null || resource.m_MaxAmount.m_Class.Length == 0) return;
             resource.m_MaxAmount.m_Class = resource.m_MaxAmount.m_Class.AppendToArray(classRef);
         }
-
         internal static void PatchAbility(BlueprintAbility ability, BlueprintCharacterClassReference classRef) {
             foreach (BlueprintComponent comp in ability.Components) {
                 if (comp is ContextRankConfig rankConfig && rankConfig.m_Class != null && rankConfig.m_Class.Length > 0) {
