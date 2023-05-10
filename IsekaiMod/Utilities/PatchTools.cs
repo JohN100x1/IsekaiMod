@@ -54,11 +54,11 @@ namespace IsekaiMod.Utilities {
         private static BlueprintProgression PatchPatchClassProgressionBasedOnRefClassStep1(BlueprintProgression prog, BlueprintCharacterClass refClass) {
             prog.IsClassFeature = true;
             prog.m_Classes = new BlueprintProgression.ClassWithLevel[] {
-                    new BlueprintProgression.ClassWithLevel {
-                        m_Class = IsekaiProtagonistClass.GetReference(),
-                        AdditionalLevel = 0
-                    }
-                };
+                new BlueprintProgression.ClassWithLevel {
+                    m_Class = IsekaiProtagonistClass.GetReference(),
+                    AdditionalLevel = 0
+                }
+            };
             prog.AddComponent<ClassLevelsForPrerequisites>(c => {
                 c.m_FakeClass = refClass.ToReference<BlueprintCharacterClassReference>();
                 c.m_ActualClass = IsekaiProtagonistClass.GetReference();
@@ -99,11 +99,11 @@ namespace IsekaiMod.Utilities {
         public static BlueprintProgression PatchClassProgressionBasedonRefArchetype(BlueprintProgression prog, BlueprintCharacterClass refClass, BlueprintArchetype refArchetype, LevelEntry[] additionalReference) {
             prog = PatchPatchClassProgressionBasedOnRefClassStep1(prog, refClass);
             LevelEntry[] referenceLevels = refClass.Progression.LevelEntries;
-            BlueprintFeatureBase[] MissingUIGroup = new BlueprintFeatureBase[] { };
+            BlueprintFeatureBase[] MissingUIGroup = new BlueprintFeatureBase[0];
             foreach (LevelEntry referenceLevel in referenceLevels) {
-                BlueprintFeatureBaseReference[] features = new BlueprintFeatureBaseReference[] { };
+                BlueprintFeatureBaseReference[] features = new BlueprintFeatureBaseReference[0];
                 BlueprintFeatureBaseReference[] addItems = referenceLevel.m_Features.ToArray();
-                BlueprintFeatureBaseReference[] removed = new BlueprintFeatureBaseReference[] { };
+                BlueprintFeatureBaseReference[] removed = new BlueprintFeatureBaseReference[0];
                 foreach (LevelEntry candidate in refArchetype.RemoveFeatures) {
                     if (candidate.Level == referenceLevel.Level) {
                         removed = removed.AddRangeToArray(candidate.m_Features.ToArray());
@@ -258,13 +258,13 @@ namespace IsekaiMod.Utilities {
                                 //rankConfig.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype;
                             }
                         }
-                        if (component is SpontaneousSpellConversion conversion && conversion.m_CharacterClass != null && conversion.m_CharacterClass.Equals(referenceClass)) {
+                        else if (component is SpontaneousSpellConversion conversion && conversion.m_CharacterClass != null && conversion.m_CharacterClass.Equals(referenceClass)) {
                             conversions.Add(conversion);
                         }
-                        if (component is CannyDefensePermanent cannyDefense && cannyDefense.m_CharacterClass != null && cannyDefense.m_CharacterClass.Equals(referenceClass)) {
+                        else if (component is CannyDefensePermanent cannyDefense && cannyDefense.m_CharacterClass != null && cannyDefense.m_CharacterClass.Equals(referenceClass)) {
                             cannyDefenses.Add(cannyDefense);
                         }
-                        if (component is AddFeatureOnClassLevel addFeatureOnLevel) {
+                        else if (component is AddFeatureOnClassLevel addFeatureOnLevel) {
                             PatchClassIntoFeatureOfReferenceClass(addFeatureOnLevel.m_Feature.Get(), myClass, referenceClass, mylevel, loopPrevention);
                             if (addFeatureOnLevel.m_Class != null && addFeatureOnLevel.m_Class.Equals(referenceClass)) {
                                 addFeatureOnClassLevels.Add(addFeatureOnLevel);
