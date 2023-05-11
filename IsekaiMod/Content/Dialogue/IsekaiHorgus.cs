@@ -1,4 +1,5 @@
-﻿using IsekaiMod.Utilities;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Experience;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
@@ -47,10 +48,16 @@ namespace IsekaiMod.Content.Dialogue {
                     Strategy = Strategy.First
                 };
                 bp.ShowOnce = true;
-                bp.ShowConditions = ActionFlow.IfSingle<AnswerSelected>(c => {
-                    c.Not = true;
-                    c.m_Answer = Answer_0011.ToReference<BlueprintAnswerReference>();
-                });
+                bp.ShowConditions = ActionFlow.IfAll(
+                    new PlayerSignificantClassIs {
+                        Not = false,
+                        CheckGroup = false,
+                        m_CharacterClass = IsekaiProtagonistClass.GetReference()
+                    },
+                    new AnswerSelected {
+                        Not = true,
+                        m_Answer = Answer_0011.ToReference<BlueprintAnswerReference>()
+                    });
                 bp.OnSelect = ActionFlow.DoSingle<GainExp>(c => {
                     c.Encounter = EncounterType.SkillCheck;
                     c.CR = 2;

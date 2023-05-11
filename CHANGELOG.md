@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Unreleased]
 # Fixed
 - Fixed all legacies which add features on class level.
+- Fixed Isekai dialogue showing up with Horgus when not Isekai Protagonist.
 
 # [5.1.0] - 2023-05-07
 # Added
