@@ -1,5 +1,4 @@
-﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
