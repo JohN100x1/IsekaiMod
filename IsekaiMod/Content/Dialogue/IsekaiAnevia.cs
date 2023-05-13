@@ -45,16 +45,10 @@ namespace IsekaiMod.Content.Dialogue {
                     Cues = new List<BlueprintCueBaseReference>() { IsekaiDialogueAneviaReply.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
-                bp.ShowConditions = ActionFlow.IfAll(
-                    new PlayerSignificantClassIs {
-                        Not = false,
-                        CheckGroup = false,
-                        m_CharacterClass = IsekaiProtagonistClass.GetReference()
-                    },
-                    new CueSeen {
-                        Not = true,
-                        m_Cue = IsekaiDialogueAneviaReply.ToReference<BlueprintCueBaseReference>()
-                    });
+                bp.AddShowCondition<CueSeen>(c => {
+                    c.Not = true;
+                    c.m_Cue = IsekaiDialogueAneviaReply.ToReference<BlueprintCueBaseReference>();
+                });
             });
 
             // Add Answer to answers list

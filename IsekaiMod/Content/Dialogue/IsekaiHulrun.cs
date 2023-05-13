@@ -31,11 +31,6 @@ namespace IsekaiMod.Content.Dialogue {
                     Cues = new List<BlueprintCueBaseReference>() { DontRememberCue.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
-                bp.ShowConditions = ActionFlow.IfSingle<PlayerSignificantClassIs>(c => {
-                    c.Not = false;
-                    c.CheckGroup = false;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                });
                 bp.OnSelect = ActionFlow.DoSingle<StartEtude>(c => {
                     c.Etude = DontRememberEtude.ToReference<BlueprintEtudeReference>();
                     c.Evaluate = false;

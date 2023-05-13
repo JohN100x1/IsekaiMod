@@ -1,8 +1,10 @@
 ﻿using HarmonyLib;
+using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Root;
+using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
 using Kingmaker.EntitySystem.Stats;
@@ -96,7 +98,18 @@ namespace IsekaiMod.Utilities {
                 bp.Experience = DialogExperience.NoExperience;
                 bp.DebugMode = false;
                 bp.CharacterSelection = new CharacterSelection() { SelectionType = CharacterSelection.Type.Clear, ComparisonStats = new StatType[0] };
-                bp.ShowConditions = ActionFlow.EmptyCondition();
+
+                if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Protagonist")) {
+                    bp.ShowConditions = ActionFlow.IfAll(
+                        new PlayerSignificantClassIs {
+                            Not = false,
+                            CheckGroup = false,
+                            m_CharacterClass = IsekaiProtagonistClass.GetReference()
+                        });
+                } else {
+                    bp.ShowConditions = ActionFlow.EmptyCondition();
+                }
+
                 bp.SelectConditions = ActionFlow.EmptyCondition();
                 bp.RequireValidCue = false;
                 bp.AddToHistory = true;

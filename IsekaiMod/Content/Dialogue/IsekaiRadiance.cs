@@ -64,11 +64,6 @@ namespace IsekaiMod.Content.Dialogue {
                     Cues = new List<BlueprintCueBaseReference>() { UpgradeRadianceCue.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
-                bp.ShowConditions = ActionFlow.IfSingle<PlayerSignificantClassIs>(c => {
-                    c.Not = false;
-                    c.CheckGroup = false;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                });
             });
 
             // Add Answer to answers list

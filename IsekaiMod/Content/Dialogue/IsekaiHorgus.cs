@@ -48,20 +48,14 @@ namespace IsekaiMod.Content.Dialogue {
                     Strategy = Strategy.First
                 };
                 bp.ShowOnce = true;
-                bp.ShowConditions = ActionFlow.IfAll(
-                    new PlayerSignificantClassIs {
-                        Not = false,
-                        CheckGroup = false,
-                        m_CharacterClass = IsekaiProtagonistClass.GetReference()
-                    },
-                    new AnswerSelected {
-                        Not = true,
-                        m_Answer = Answer_0011.ToReference<BlueprintAnswerReference>()
-                    });
                 bp.OnSelect = ActionFlow.DoSingle<GainExp>(c => {
                     c.Encounter = EncounterType.SkillCheck;
                     c.CR = 2;
                     c.Modifier = 1f;
+                });
+                bp.AddShowCondition<AnswerSelected>(c => {
+                    c.Not = true;
+                    c.m_Answer = Answer_0011.ToReference<BlueprintAnswerReference>();
                 });
             });
 
