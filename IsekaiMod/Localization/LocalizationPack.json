@@ -5230,22 +5230,22 @@
       "SimpleName": "MasterSummoner.Description",
       "ProcessTemplates": false,
       "enGB": "Each time you cast a summoning {g|Encyclopedia:Spell}spell{/g}, add the highest modifier of Intelligence, Wisdom and Charisma to the total number of creatures summoned.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Каждый раз, когда вы произносите заклинание {g|Encyclopedia:Spell}призыва{/g}, добавьте наибольший модификатор Интеллекта, Мудрости и Харизмы к общему количеству существ, призываемых.",
+      "deDE": "Jedes Mal, wenn du einen Beschwörungszauber {g|Encyclopedia:Spell}wirkst{/g}, füge den höchsten Modifikator von Intelligenz, Weisheit und Charisma zur Gesamtzahl der beschworenen Kreaturen hinzu.",
+      "frFR": "À chaque fois que vous lancez un sort d'invocation {g|Encyclopedia:Spell}{/g}, ajoutez le modificateur le plus élevé entre Intelligence, Sagesse et Charisme au nombre total de créatures invoquées.",
+      "zhCN": "每次你施放一个召唤 {g|Encyclopedia:Spell}法术{/g}，将智力、感知和魅力的最高修饰加到所召唤的生物总数上。",
+      "esES": "Cada vez que lances un conjuro de invocación {g|Encyclopedia:Spell}{/g}, añade el modificador más alto de Inteligencia, Sabiduría y Carisma al número total de criaturas invocadas."
     },
     {
       "Key": "8c4696454556411cae5c24345c907a39",
       "SimpleName": "MasterSummonerBuff.Name",
       "ProcessTemplates": false,
       "enGB": "Overpowered Ability — Master Summoner",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Способность сверхдержавная — Владыка Призыва",
+      "deDE": "Übermächtige Fähigkeit - Meisterbeschwörer",
+      "frFR": "Compétence surpuissante - Maître invocateur",
+      "zhCN": "超强能力-召唤大师",
+      "esES": "Habilidad sobrepotenciada - Maestro invocador"
     },
     {
       "Key": "0bce9965857640939a4960f17e52fe96",
