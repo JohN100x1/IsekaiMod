@@ -5226,6 +5226,28 @@
       "esES": "Domina el autocontrol"
     },
     {
+      "Key": "a0d13a47902f48ff95d9869cb7069a5e",
+      "SimpleName": "MasterSummoner.Description",
+      "ProcessTemplates": false,
+      "enGB": "Each time you cast a summoning {g|Encyclopedia:Spell}spell{/g}, add the highest modifier of Intelligence, Wisdom and Charisma to the total number of creatures summoned.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "8c4696454556411cae5c24345c907a39",
+      "SimpleName": "MasterSummonerBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Master Summoner",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "0bce9965857640939a4960f17e52fe96",
       "SimpleName": "MetaLuck.Description",
       "ProcessTemplates": false,
@@ -5567,10 +5589,10 @@
       "esES": "Golpe Omega"
     },
     {
-      "Key": "2b7797a6a31346e5a40c62f0dbbf3d01",
+      "Key": "fae6ba88703540dea33aafe849144753",
       "SimpleName": "OracleLegacyProgression.Description",
       "ProcessTemplates": true,
-      "enGB": "Seekers of Truth are driven by a desire to uncover the secrets behind the fundamental forces of nature. \nBecause of their unique perspective as otherworlders, they are able to approach the world with a fresh and unbiased eye, allowing them to see beyond the surface of things and seek out the deeper truth behind the world around them. \nThey are driven by a desire to uncover the secrets of the world that would otherwise remain hidden, and are not satisfied with simply accepting things at face value. \nThis allows them to uncover the secrets of the world that are often only revealed to mortals through revelations.",
+      "enGB": "Seekers of Truth are driven by a desire to uncover the secrets behind the fundamental forces of nature. \nBecause of their unique perspective as otherworlders, they are able to approach the world with a fresh and unbiased eye, allowing them to see beyond the surface of things and seek out the deeper truth behind the world around them. \nThey are driven by a desire to uncover the secrets of the world that would otherwise remain hidden, and are not satisfied with simply accepting things at face value. \nThis allows them to uncover the secrets of the world that are often only revealed to mortals through revelations.\n\nPlease note that you do not get previous inheritances when seletcing this at higher levels.",
       "ruRU": "Искатели истины движимы желанием раскрыть тайны основных сил природы. Благодаря своей уникальной перспективе как пришельцы из других миров, они могут подходить к миру с свежим и непредвзятым взглядом, что позволяет им видеть за поверхностью вещей и искать глубинную правду за миром вокруг них. Они движимы желанием раскрыть тайны мира, которые в противном случае останутся скрытыми, и не удовлетворяются простым принятием вещей на веру. Это позволяет им раскрыть тайны мира, которые часто открываются смертным только через откровения.",
       "deDE": "Wahrheitssucher werden von dem Wunsch angetrieben, die Geheimnisse hinter den fundamentalen Kräften der Natur aufzudecken. Durch ihre einzigartige Perspektive als Andersweltler können sie die Welt mit einem frischen und unvoreingenommenen Auge betrachten, was es ihnen ermöglicht, über die Oberfläche der Dinge hinauszusehen und die tiefere Wahrheit hinter der Welt um sie herum zu suchen. Sie werden von dem Wunsch angetrieben, die Geheimnisse der Welt aufzudecken, die sonst verborgen bleiben würden, und sind nicht zufrieden damit, Dinge einfach hinzunehmen. Dies ermöglicht es ihnen, die Geheimnisse der Welt aufzudecken, die oft nur durch Offenbarungen den Sterblichen enthüllt werden.",
       "frFR": "Les Sourciers de Vérité sont animés par le désir de découvrir les secrets des forces fondamentales de la nature. Grâce à leur perspective unique en tant qu'étrangers, ils sont capables d'aborder le monde avec un regard frais et impartial, ce qui leur permet de voir au-delà de la surface des choses et de rechercher la vérité profonde derrière le monde qui les entoure. Ils sont animés par le désir de découvrir les secrets du monde qui resteraient autrement cachés et ne se contentent pas de simplement accepter les choses telles qu'elles sont présentées. Cela leur permet de découvrir les secrets du monde qui sont souvent révélés aux mortels par des révélations.",
@@ -6876,10 +6898,10 @@
       "esES": "Inmunidad sónica"
     },
     {
-      "Key": "30035be8ad404f6b97fb0e004f9599e0",
+      "Key": "e8a65301807a48d68949c5fbdba8ed0d",
       "SimpleName": "SorcererLegacyProgression.Description",
       "ProcessTemplates": true,
-      "enGB": "Their otherworldly knowledge and point of view allow Chimeras to imbue themselves with different bloodlines in order to gain power and strength. \nChimeras are constantly seeking out new sources of power, and their ability to absorb and incorporate these different bloodlines allows them to become truly formidable foes. \nHowever, their constant experimentation with bloodlines can also lead to confusion and uncertainty about their own heritage and identity, as their original ancestry becomes harder to discern over time.",
+      "enGB": "Their otherworldly knowledge and point of view allow Chimeras to imbue themselves with different bloodlines in order to gain power and strength. \nChimeras are constantly seeking out new sources of power, and their ability to absorb and incorporate these different bloodlines allows them to become truly formidable foes. \nHowever, their constant experimentation with bloodlines can also lead to confusion and uncertainty about their own heritage and identity, as their original ancestry becomes harder to discern over time.\n\nPlease note that you do not get previous Bloodline Evolutions when picking this legacy at higher levels.",
       "ruRU": "Их сверхъестественные знания и точка зрения позволяют Химерам пропитывать себя различными кровными линиями, чтобы приобрести силу и мощь. Химеры постоянно ищут новые источники силы, и их способность впитывать и интегрировать эти различные кровные линии позволяет им стать по-настоящему формидабельными противниками. Однако их постоянные эксперименты с кровными линиями также могут привести к путанице и неопределенности относительно их собственного наследия и идентичности, поскольку их исходное происхождение становится все труднее разглядеть со временем.",
       "deDE": "Dank ihres überirdischen Wissens und ihrer Sichtweise können Chimären sich mit verschiedenen Blutlinien versehen, um Kraft und Stärke zu erlangen. Chimären suchen ständig nach neuen Energiequellen, und ihre Fähigkeit, diese verschiedenen Blutlinien aufzunehmen und zu integrieren, ermöglicht es ihnen, wirklich formidablen Gegnern zu werden. Ihre ständigen Experimente mit Blutlinien können jedoch auch zu Verwirrung und Unsicherheit über ihr eigenes Erbe und ihre Identität führen, da ihre ursprüngliche Abstammung im Laufe der Zeit schwerer zu erkennen wird.",
       "frFR": "Leur connaissance et leur point de vue surnaturels permettent aux Chimères de s'imprégner de différents lignages afin de gagner en puissance et en force. Les Chimères cherchent constamment de nouvelles sources de pouvoir, et leur capacité à absorber et à incorporer ces différentes lignées leur permet de devenir des adversaires vraiment redoutables. Cependant, leur expérimentation constante avec les lignages peut également entraîner une confusion et une incertitude quant à leur propre héritage et identité, car leur ascendance d'origine devient de plus en plus difficile à discerner avec le temps.",

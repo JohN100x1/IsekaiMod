@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # [Unreleased]
 # Added
+- Added `Master Summoner` OP ability.
 - Added UMM option to allow Isekai dialogue when Isekai Protagonist is disabled.
 # Fixed
 - Fixed all legacies which add features on class level.

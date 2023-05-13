@@ -117,6 +117,7 @@ namespace IsekaiMod.Content {
                 SupremeBeing.Add();
                 MetaLuck.Add();
                 PowerLeveling.Add();
+                MasterSummoner.Add();
                 OverpoweredAuraSelection.Add();
                 UnderpoweredAbilitySelection.Add();
                 if (Other.IsEnabled("Mythic Class Feature")) BlessingOfTheMythic.Configure();

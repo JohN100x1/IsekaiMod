@@ -433,10 +433,15 @@
     "PowerLevelingArea": "5b0854ec-6ce1-4525-bef3-55698e8a9b5b",
     "PowerLevelingAreaBuff": "691fd2b1-2e51-405e-90b1-067959bbb244",
     "PowerLevelingFeature": "98f66657-5797-450c-9ecf-09fa0ef8a20a",
+    "MasterSummonerBuff": "d8178ef6-2a8b-4de5-b048-bcec32c58d63",
+    "MasterSummonerAbility": "2d5c9ae0-b17f-4d63-8a70-782d48698404",
+    "MasterSummonerFeature": "4566f5f6-6e55-4b8e-a787-6fd83e216e87",
+
+    // Underpowered Abilities
+    "UnderpoweredAbilitySelection": "38b97914-cd27-49a4-9237-9a3b58aa6968",
     "DodgeMaster": "05bcc2a6-187c-4d33-9911-99a83ceac62c",
     "BulkMaster": "e80c568b-73c8-4fc6-bee6-a42c4c647aba",
     "ThoughtMaster": "7fbb9899-6023-4c15-befb-6f15ed186ad3",
-    "UnderpoweredAbilitySelection": "38b97914-cd27-49a4-9237-9a3b58aa6968",
 
     // TabletopTweaks-Base AutoMetamagic OP abilities
     "AutoRimeBuff": "e1b63a2c-23e9-49e3-acaf-6ee89aeabc99",
