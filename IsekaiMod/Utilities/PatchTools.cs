@@ -224,6 +224,7 @@ namespace IsekaiMod.Utilities {
             }
             if (loopPrevention.Contains(feature)) {
                 IsekaiContext.Logger.Log($"reference class={referenceClass.Guid} feature re-encountered at level={mylevel} guid={feature.AssetGuid} name={feature.Name}");
+                return;
             } else {
                 loopPrevention.Add(feature);
             }
