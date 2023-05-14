@@ -7,6 +7,7 @@ using Kingmaker.Blueprints.Root;
 using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
+using Kingmaker.ElementsSystem;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.Localization;
@@ -26,7 +27,6 @@ using System.Linq;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
 using static IsekaiMod.Main;
-
 namespace IsekaiMod.Utilities {
 
     internal class TTCoreExtensions {
@@ -107,7 +107,7 @@ namespace IsekaiMod.Utilities {
                             m_CharacterClass = IsekaiProtagonistClass.GetReference()
                         });
                 } else {
-                    bp.ShowConditions = ActionFlow.EmptyCondition();
+                    bp.ShowConditions = ActionFlow.IfAll(new Condition[0]);
                 }
 
                 bp.SelectConditions = ActionFlow.EmptyCondition();

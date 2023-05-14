@@ -89,7 +89,7 @@ namespace IsekaiMod.Utilities {
 
         public static void AddShowCondition<T>(this BlueprintAnswer answer, Action<T> init = null) where T : Condition, new() {
             var t = new T();
-            init?.Invoke(new T());
+            init?.Invoke(t);
             answer.ShowConditions.Conditions = answer.ShowConditions.Conditions.AddToArray(t);
         }
     }
