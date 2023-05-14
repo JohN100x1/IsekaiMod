@@ -1,4 +1,5 @@
-﻿using IsekaiMod.Utilities;
+﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
@@ -25,9 +26,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             var HarmAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "IsekaiChannelPositiveEnergyAbility", bp => {
                 bp.SetName(IsekaiContext, "Channel Positive Energy - Damage Undead");
                 bp.SetDescription(IsekaiContext, "Channeling positive energy causes a burst that damages every undead creature in a 30-foot radius centered on the caster. The amount of damage "
-                    + "inflicted is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on). "
+                    + "inflicted is equal to 1d6 points of damage plus 1d6 points of damage for every two Isekai Protagonist levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on). "
                     + "Creatures that take damage from channeled energy receive a Will save to halve the damage. "
-                    + "The DC of this save is equal to 10 + 1/2 the character level + Charisma modifier.");
+                    + "The DC of this save is equal to 10 + 1/2 the Isekai Protagonist level + Charisma modifier.");
                 bp.m_Icon = ChannelPositiveHarm.Icon;
                 bp.LocalizedDuration = StaticReferences.Strings.Null;
                 bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
@@ -46,7 +47,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
             var HealAbility = Helpers.CreateBlueprint<BlueprintAbility>(IsekaiContext, "IsekaiChannelPositiveHealAbility", bp => {
                 bp.SetName(IsekaiContext, "Channel Positive Energy - Heal Living");
                 bp.SetDescription(IsekaiContext, "Channeling positive energy causes a burst that heals every living creature in a 30-foot radius centered on the caster. The amount of damage "
-                    + "healed is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on).");
+                    + "healed is equal to 1d6 points of damage plus 1d6 points of damage for every two Isekai Protagonist levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on).");
                 bp.m_Icon = ChannelPositiveHeal.Icon;
                 bp.LocalizedDuration = StaticReferences.Strings.Null;
                 bp.LocalizedSavingThrow = StaticReferences.Strings.Null;
@@ -68,7 +69,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
 
             var Feature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "IsekaiChannelPositiveEnergyFeature", bp => {
                 bp.SetName(IsekaiContext, "Channel Positive Energy");
-                bp.SetDescription(IsekaiContext, "You gain the supernatural ability to channel positive energy like a cleric. You use your character level as your effective cleric level when "
+                bp.SetDescription(IsekaiContext, "You gain the supernatural ability to channel positive energy like a cleric. You use your Isekai Protagonist level as your effective cleric level when "
                     + "channeling positive energy.  You can channel energy a number of times per day equal to 3 + your Charisma modifier.");
                 bp.m_Icon = ChannelPositiveHeal.Icon;
                 bp.Groups = new FeatureGroup[0];
@@ -90,12 +91,13 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
         }
         private static void AddChannelEnergyPatchedComponents(BlueprintAbility ability, BlueprintComponent[] components) {
             foreach (BlueprintComponent component in components) {
-                if (component is ContextRankConfig rankConfig && rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel) {
+                if (component is ContextRankConfig rankConfig && (rankConfig.m_BaseValueType == ContextRankBaseValueType.ClassLevel
+                    || rankConfig.m_BaseValueType == ContextRankBaseValueType.SummClassLevelWithArchetype)) {
                     ability.AddComponent<ContextRankConfig>(c => {
                         c.m_Type = AbilityRankType.Default;
-                        c.m_BaseValueType = ContextRankBaseValueType.CharacterLevel;
+                        c.m_BaseValueType = ContextRankBaseValueType.ClassLevel;
                         c.m_Progression = ContextRankProgression.OnePlusDiv2;
-                        c.m_Class = new BlueprintCharacterClassReference[0];
+                        c.m_Class = new BlueprintCharacterClassReference[] { IsekaiProtagonistClass.GetReference() };
                     });
                 } else {
                     ability.AddComponent(component);

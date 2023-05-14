@@ -3719,15 +3719,15 @@
       "esES": "Trucos de magia"
     },
     {
-      "Key": "e4ba7ff4ec204d99b2efc8db56791b33",
+      "Key": "4f4892bcca034222bc8314c260138b4c",
       "SimpleName": "IsekaiChannelNegativeEnergyAbility.Description",
       "ProcessTemplates": true,
-      "enGB": "Channeling negative energy causes a burst that damages every living creature in a 30-foot radius centered on the caster. The amount of damage inflicted is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on). Creatures that take damage from channeled energy receive a Will save to halve the damage. The DC of this save is equal to 10 + 1/2 the character level + Charisma modifier.",
-      "ruRU": "Канализация отрицательной энергии вызывает взрыв, наносящий урон каждому живому существу в радиусе 30 футов от центра заклинания. Количество наносимого урона равно 1к6 единицам урона плюс 1к6 единицам урона за каждые два уровня персонажа, начиная со 2-го уровня (2к6 на 3-м уровне, 3к6 на 5-м уровне и т.д.). Существа, получившие урон от канализируемой энергии, получают спасбросок Воли, чтобы сократить полученный урон вдвое. Сложность этого спасброска равна 10 + 1/2 уровня персонажа + модификатор Харизмы.",
-      "deDE": "Durch Kanalisieren negativer Energie entsteht eine Explosion, die allen lebenden Wesen im Umkreis von 30 Fuß um den Zaubernden Schaden zufügt. Die Höhe des verursachten Schadens entspricht 1W6 Punkten Schaden plus 1W6 Punkten Schaden für alle zwei Charakterstufen über der 1. Stufe (2W6 auf der 3. Stufe, 3W6 auf der 5. Stufe und so weiter). Kreaturen, die Schaden durch kanalisierte Energie erleiden, erhalten einen Willenswurf, um den Schaden zu halbieren. Der SG dieses Rettungswurfs entspricht 10 + 1/2 der Charakterstufe + dem Charisma-Modifikator.",
-      "frFR": "Canaliser l'énergie négative provoque une rayonnement qui inflige des dégâts à toutes les créatures vivantes dans un rayon de 30 pieds centré sur le lanceur de sorts. Le montant des dégâts infligés est égal à 1d6 points de dégâts plus 1d6 points de dégâts par tranche de deux niveaux de personnage au-delà du 1er (2d6 au 3e, 3d6 au 5e, etc.). Les créatures qui sont blessées par l’énergie canalisée bénéficient d’un jet de Volonté pour diminuer les dégâts de moitié. La DD de ce jet est égale à 10 + 1/2 du niveau de personnage + modificateur de Charisme.",
-      "zhCN": "引导负能量会产生爆炸，在施法者周围半径30英尺的范围内对每个生物造成伤害。造成的伤害量为1d6点伤害加上每超过1级的两个角色级别1d6点伤害（第3级为2d6，第5级为3d6，依此类推）。受到引导能量的伤害的生物可以进行意志豁免以减半伤害。这个豁免的难度等于10 + 1/2角色级别 + 魅力调整值。",
-      "esES": "Canalizar energía negativa provoca una explosión que daña a todas las criaturas vivas en un radio de 30 pies centrado en el conjurador. La cantidad de daño infligido es igual a 1d6 puntos de daño más 1d6 puntos de daño por cada dos niveles de personaje más allá del 1º (2d6 en el 3º, 3d6 en el 5º, y así sucesivamente). Las criaturas que reciben daño de la energía canalizada reciben una tirada de salvación de Voluntad para reducir el daño a la mitad. La CD de esta salvación es igual a 10 + 1/2 el nivel del personaje + el modificador de Carisma."
+      "enGB": "Channeling negative energy causes a burst that damages every living creature in a 30-foot radius centered on the caster. The amount of damage inflicted is equal to 1d6 points of damage plus 1d6 points of damage for every two Isekai Protagonist levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on). Creatures that take damage from channeled energy receive a Will save to halve the damage. The DC of this save is equal to 10 + 1/2 the Isekai Protagonist level + Charisma modifier.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "8a8fd4e9edcb400ca7a2e11be89629e8",
@@ -3741,15 +3741,15 @@
       "esES": "Canalizar energía negativa - Dañar a seres vivos"
     },
     {
-      "Key": "57f2bc25c7164b92ac2d3bce3bb56573",
+      "Key": "e97abaf3fd704a399f0caa2fea378327",
       "SimpleName": "IsekaiChannelNegativeEnergyFeature.Description",
       "ProcessTemplates": true,
-      "enGB": "You gain the supernatural ability to channel negative energy like a cleric. You use your character level as your effective cleric level when channeling negative energy. You can channel energy a number of times per day equal to 3 + your Charisma modifier.",
-      "ruRU": "Вы приобретаете сверхъестественную способность канализировать отрицательную энергию, как клерик. Вы используете ваш уровень персонажа как ваш эффективный уровень клерика, когда канализируете отрицательную энергию. Вы можете использовать каналирование энергии определенное количество раз в день, равное 3 плюс модификатор вашей Харизмы.",
-      "deDE": "Du erlangst die übernatürliche Fähigkeit, negative Energie wie ein Kleriker zu kanalisieren. Bei der Kanalisierung negativer Energie gilt dein Charakterlevel als effektiver Klerikerlevel. Du kannst Energie eine Anzahl Mal am Tag kanalisieren, die gleich 3 + deinem Charisma-Modifikator ist.",
-      "frFR": "Vous acquérez la capacité surnaturelle de canaliser l'énergie négative comme un prêtre. Vous utilisez votre niveau de personnage comme niveau effectif de prêtre lorsque vous canalisez l'énergie négative. Vous pouvez canaliser l'énergie un certain nombre de fois par jour égal à 3 + modificateur de Charisme.",
-      "zhCN": "你获得了像牧师一样引导负能量的超自然能力。当引导负能量时，你使用你的角色等级作为你的牧师等级。你每天可以引导能量的次数等于3 + 你的魅力调整值。",
-      "esES": "Obtienes la capacidad sobrenatural de canalizar energía negativa como un clérigo. Utilizas tu nivel de personaje como tu nivel efectivo de clérigo al canalizar energía negativa. Puedes canalizar energía un número de veces al día igual a 3 + tu modificador de Carisma."
+      "enGB": "You gain the supernatural ability to channel negative energy like a cleric. You use your Isekai Protagonist level as your effective cleric level when channeling negative energy. You can channel energy a number of times per day equal to 3 + your Charisma modifier.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "93378520b1b94208aae7a8926abad27c",
@@ -3763,15 +3763,15 @@
       "esES": "Canalizar energía negativa"
     },
     {
-      "Key": "30c851092fe8419c9f3b77a5703072fe",
+      "Key": "c030e454eb614f0aa5c9810bb92d8229",
       "SimpleName": "IsekaiChannelNegativeHealAbility.Description",
       "ProcessTemplates": true,
-      "enGB": "Channeling negative energy causes a burst that heals every undead creature in a 30-foot radius centered on the caster. The amount of damage healed is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on).",
-      "ruRU": "Подключение отрицательной энергии вызывает взрыв, который лечит каждое нежить в радиусе 30 футов, центрированный на заклинателе. Количество восстановленного урона равно 1к6 пунктов урона плюс 1к6 пунктов урона за каждые два уровня персонажа свыше 1-го (2к6 на 3-м уровне, 3к6 на 5-м уровне и т.д.)",
-      "deDE": "Das Kanalisieren negativer Energie verursacht eine Explosion, die alle Untoten in einem Radius von 30 Fuß um den Zaubernden heilt. Die Menge an geheiltem Schaden entspricht 1W6 Schadenspunkten plus 1W6 Schadenspunkten für jede zweite Charakterstufe über der 1. (2W6 bei 3., 3W6 bei 5. usw.)",
-      "frFR": "Canaliser l'énergie négative provoque un rayonnement qui soigne chaque créature mort-vivante dans un rayon de 30 pieds centré sur le lanceur de sorts. La quantité de dégâts soignés est égale à 1d6 points de dégâts plus 1d6 points de dégâts par tranche de deux niveaux de personnage au-delà du 1er (2d6 au niveau 3, 3d6 au niveau 5, et ainsi de suite).",
-      "zhCN": "引导负能量会引起一次爆炸，治疗施法者中心30英尺半径内的每个亡灵生物。治疗的伤害量为1d6点伤害加上超过1级的每两个角色级别1d6点伤害（第3级为2d6，第5级为3d6，以此类推）。",
-      "esES": "Canalizar energía negativa provoca una explosión que sana a cada criatura no muerta en un radio de 30 pies centrado en el lanzador. La cantidad de daño curado es igual a 1d6 puntos de daño más 1d6 puntos de daño por cada dos niveles de personaje más allá del 1º (2d6 en 3º, 3d6 en 5º, y así sucesivamente)."
+      "enGB": "Channeling negative energy causes a burst that heals every undead creature in a 30-foot radius centered on the caster. The amount of damage healed is equal to 1d6 points of damage plus 1d6 points of damage for every two Isekai Protagonist levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on).",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "4358b26d030c4f938adb8eb9fb040394",
@@ -3785,15 +3785,15 @@
       "esES": "Canalización de energía negativa - Curar no-muertos"
     },
     {
-      "Key": "0916cf716b50487ebe5fcf21504855e3",
+      "Key": "9c62f5dafc534f32a5065995d04bd58c",
       "SimpleName": "IsekaiChannelPositiveEnergyAbility.Description",
       "ProcessTemplates": true,
-      "enGB": "Channeling positive energy causes a burst that damages every undead creature in a 30-foot radius centered on the caster. The amount of damage inflicted is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on). Creatures that take damage from channeled energy receive a Will save to halve the damage. The DC of this save is equal to 10 + 1/2 the character level + Charisma modifier.",
-      "ruRU": "Канализация позитивной энергии вызывает взрыв, который наносит урон каждому нежити в радиусе 30 футов, центрированный на заклинателе. Количество нанесенного урона равно 1d6 единицам урона плюс 1d6 единицам урона за каждые два уровня персонажа, начиная со 2-го (2d6 на 3-м уровне, 3d6 на 5-м уровне и так далее). Существа, получившие урон от канализированной энергии, могут совершить спасбросок Воли, чтобы уменьшить урон вдвое. Сложность спасброска равна 10 + 1/2 уровня персонажа + модификатор Харизмы.",
-      "deDE": "Das Kanalisieren von positiver Energie verursacht eine Explosion, die allen Untoten in einem 30-Fuß-Radius um den Zaubernden Schaden zufügt. Die Schadensmenge entspricht 1W6 Punkten Schaden plus 1W6 Punkten Schaden für alle zwei Charakterstufen über der 1. Stufe (2W6 auf der 3. Stufe, 3W6 auf der 5. Stufe usw.). Kreaturen, die durch kanalisierte Energie Schaden erleiden, erhalten einen Willenswurf, um den Schaden zu halbieren. Der SG dieses Rettungswurfs entspricht 10 + 1/2 der Charakterstufe + Charisma-Modifikator.",
-      "frFR": "Canaliser de l'énergie positive provoque un rayonnement qui inflige des dégâts à chaque créature mort-vivante dans un rayon de 30 pieds centré sur le lanceur de sorts. Le montant des dégâts infligés est égal à 1d6 points de dégâts plus 1d6 points de dégâts par tranche de deux niveaux de personnage au-delà du 1er (2d6 au 3e, 3d6 au 5e, etc.). Les créatures qui sont blessées par l’énergie canalisée bénéficient d’un jet de Volonté pour diminuer les dégâts de moitié. Le DD de ce jet de sauvegarde est égal à 10 + 1/2 du niveau de personnage + modificateur de Charisme.",
-      "zhCN": "释放正能量会导致爆炸，对以施法者为中心，30英尺半径内的所有亡灵造成伤害。伤害量等于1d6点伤害加上每超过1级的两个人物等级1d6点伤害（3级时为2d6，5级时为3d6，依此类推）。受到来自引导能量的伤害的生物可以进行意志豁免，减半伤害。豁免的难度等于10+1/2人物等级+魅力调整值。",
-      "esES": "Canalizar energía positiva provoca una explosión que inflige daño a cada criatura no muerta en un radio de 30 pies centrado en el conjurador. La cantidad de daño infligido es igual a 1d6 puntos de daño más 1d6 puntos de daño por cada dos niveles de personaje por encima del 1º (2d6 en el 3º, 3d6 en el 5º, etc.). Las criaturas que reciben daño de la energía canalizada reciben una salvación de Voluntad para reducir a la mitad el daño. La CD de esta salvación es igual a 10 + 1/2 del nivel de personaje + el modificador de Carisma."
+      "enGB": "Channeling positive energy causes a burst that damages every undead creature in a 30-foot radius centered on the caster. The amount of damage inflicted is equal to 1d6 points of damage plus 1d6 points of damage for every two Isekai Protagonist levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on). Creatures that take damage from channeled energy receive a Will save to halve the damage. The DC of this save is equal to 10 + 1/2 the Isekai Protagonist level + Charisma modifier.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "d2879d54da1e4f34b739b3890f3bf630",
@@ -3805,6 +3805,17 @@
       "frFR": "Canalisation d'énergie positive - Blessure des morts-vivants",
       "zhCN": "正能量通道 - 对不死族造成伤害",
       "esES": "Canalizar energía positiva - Dañar a los no muertos"
+    },
+    {
+      "Key": "be7d58a6bf3c4a33b816416c6e7ac42f",
+      "SimpleName": "IsekaiChannelPositiveEnergyFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain the supernatural ability to channel positive energy like a cleric. You use your Isekai Protagonist level as your effective cleric level when channeling positive energy.  You can channel energy a number of times per day equal to 3 + your Charisma modifier.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "d4ad925cfe9e4aba8ff63c16f2d01ec1",
@@ -3838,6 +3849,17 @@
       "frFR": "Canaliser de l'énergie positive crée un rayonnement qui soigne tous les êtres vivants dans un rayon de 30 pieds centré sur l'incanteur. Le montant de dégâts soignés est égal à 1d6 points de dégâts plus 1d6 points de dégâts par tranche de deux niveaux de personnage au-delà du 1er niveau (2d6 au 3e niveau, 3d6 au 5e niveau, et ainsi de suite).",
       "zhCN": "引导正能量会引起一次爆炸，在施法者中心点为半径30英尺的范围内治愈每个生物。治疗的伤害量等于1d6点伤害加上每两个角色等级超过1级的1d6点伤害（3级为2d6，5级为3d6，依此类推）。",
       "esES": "Canalizar energía positiva causa una explosión que cura a todas las criaturas vivas en un radio de 30 pies centrado en el lanzador. La cantidad de daño curado es igual a 1d6 puntos de daño más 1d6 puntos de daño por cada dos niveles de personaje más allá del 1º (2d6 en el 3º, 3d6 en el 5º, y así sucesivamente)."
+    },
+    {
+      "Key": "420330b0a8ad41ac9359bbead21e9d07",
+      "SimpleName": "IsekaiChannelPositiveHealAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Channeling positive energy causes a burst that heals every living creature in a 30-foot radius centered on the caster. The amount of damage healed is equal to 1d6 points of damage plus 1d6 points of damage for every two Isekai Protagonist levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on).",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "5bb72e28f549477fa2560d3513ca1882",
