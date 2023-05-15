@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed all legacies which add features on class level.
 - Fixed Isekai dialogue showing up with Horgus when not Isekai Protagonist.
 - Fixed `Channel Negative Energy` not scaling with level.
+- Fixed `Oracle Legacy - Seeker of Truth` now count towards Oracle levels.
 
 # [5.1.0] - 2023-05-07
 # Added

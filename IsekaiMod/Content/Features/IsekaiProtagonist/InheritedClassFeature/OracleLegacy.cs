@@ -8,6 +8,7 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Designers.Mechanics.Facts;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
@@ -47,7 +48,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 bp.UIGroups = new UIGroup[] {
                     Helpers.CreateUIGroup(OracleSelection)
                 };
-
             });
             LegacySelection.RegisterForFeat(prog);
             LegacySelection.Register(prog);
@@ -65,6 +65,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleMysterySelection, myClass, refClass);
             PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleRevelationSelection, myClass, refClass);
             PatchTools.PatchClassIntoFeatureOfReferenceClass(FeatTools.Selections.OracleCureOrInflictSelection, myClass, refClass);
+            prog.AddComponent<ClassLevelsForPrerequisites>(c => {
+                c.m_FakeClass = ClassTools.Classes.OracleClass.ToReference<BlueprintCharacterClassReference>();
+                c.m_ActualClass = IsekaiProtagonistClass.GetReference();
+                c.Modifier = 1.0;
+            });
         }
         public static BlueprintProgression Get() {
             if (prog != null) return prog;
