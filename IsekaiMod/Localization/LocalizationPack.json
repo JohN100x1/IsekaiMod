@@ -3921,11 +3921,11 @@
       "SimpleName": "IsekaiDialogueAnevia2.Text",
       "ProcessTemplates": false,
       "enGB": "(Isekai Protagonist) \"I've convinced Irabeth to join the harem.\"",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Я убедил Ирабет присоединиться к гарему.",
+      "deDE": "Ich habe Irabeth davon überzeugt, sich dem Harem anzuschließen.",
+      "frFR": "J'ai convaincu Irabeth de rejoindre le harem.",
+      "zhCN": "我说服了伊拉贝丝加入后宫。",
+      "esES": "Convencí a Irabeth de unirse al harén."
     },
     {
       "Key": "dd6193d3ce934224b6cc64843615360e",
@@ -3954,11 +3954,11 @@
       "SimpleName": "IsekaiDialogueAneviaReply3.Text",
       "ProcessTemplates": false,
       "enGB": "{n}Anevia is astonished.{/n} \"That was completely unexpected. I guess I'll discuss with Irabeth about our glorious future in your harem.\"",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "{n}Аневия поражена.{/n} «Это было полностью неожиданно. Думаю, я поговорю с Ирабет о нашем великолепном будущем в твоем гареме.",
+      "deDE": "{n}Anevia ist erstaunt.{/n} \"Das war völlig unerwartet. Ich denke, ich werde mit Irabeth über unsere glorreiche Zukunft in deinem Harem sprechen.\"",
+      "frFR": "{n}Anevia est stupéfaite.{/n} « C'était totalement inattendu. Je suppose que je vais discuter avec Irabeth de notre glorieux avenir dans ton harem. »",
+      "zhCN": "{n}Anevia感到惊讶。{/n}“这完全出乎意料。我想我会和Irabeth讨论我们在你的后宫中的光辉未来。”",
+      "esES": "{n}Anevia está asombrada.{/n} \"Esto fue completamente inesperado. Supongo que hablaré con Irabeth sobre nuestro glorioso futuro en tu harén.\""
     },
     {
       "Key": "f6b0747fd79244208a32a02247ece79c",
@@ -3998,22 +3998,22 @@
       "SimpleName": "IsekaiDialogueIrabeth.Text",
       "ProcessTemplates": false,
       "enGB": "(Isekai Protagonist) \"Do you want to join my harem? Anevia is also joining.\"",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Вы хотите присоединиться к моему гарему? Аневия тоже присоединяется.",
+      "deDE": "Möchtest du meinem Harem beitreten? Auch Anevia schließt sich an.",
+      "frFR": "Voulez-vous rejoindre mon harem ? Anevia se joint également.",
+      "zhCN": "你想加入我的后宫吗？Anevia也要加入。",
+      "esES": "¿Quieres unirte a mi harén? Anevia también se está uniendo."
     },
     {
       "Key": "4c9331d685d54494af13b1d68d7f2da6",
       "SimpleName": "IsekaiDialogueIrabethAnswer1.Text",
       "ProcessTemplates": false,
       "enGB": "It's true.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Это правда.",
+      "deDE": "Das ist wahr.",
+      "frFR": "C'est vrai.",
+      "zhCN": "这是真的。",
+      "esES": "Es verdad."
     },
     {
       "Key": "471d270348f240128b23adcb7706bb25",
