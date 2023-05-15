@@ -12,14 +12,13 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Dialogue {
 
     internal class IsekaiHorgus {
-
-        // Answers: Answer_0011 = "Two thousand gold."
-        private static readonly BlueprintAnswersList AnswersList_0009 = BlueprintTools.GetBlueprint<BlueprintAnswersList>("12e42316950f8c9498afb8b0fb2baaae");
-        private static readonly BlueprintAnswer Answer_0011 = BlueprintTools.GetBlueprint<BlueprintAnswer>("3ab564082485b034a9d0a7b550e1a3e2");
-        private static readonly BlueprintUnit Horgus = BlueprintTools.GetBlueprint<BlueprintUnit>("c02e641bf8cf0984fb49604afa224563");
-        private static readonly BlueprintUnlockableFlag Horgus_GetMeOut_price = BlueprintTools.GetBlueprint<BlueprintUnlockableFlag>("ddfedbdeab95ed941b6968b06162c921");
-
         public static void Add() {
+            // Answers: Answer_0011 = "Two thousand gold."
+            var AnswersList_0009 = BlueprintTools.GetBlueprint<BlueprintAnswersList>("12e42316950f8c9498afb8b0fb2baaae");
+            var Answer_0011 = BlueprintTools.GetBlueprint<BlueprintAnswer>("3ab564082485b034a9d0a7b550e1a3e2");
+            var Horgus = BlueprintTools.GetBlueprint<BlueprintUnit>("c02e641bf8cf0984fb49604afa224563");
+            var Horgus_GetMeOut_price = BlueprintTools.GetBlueprint<BlueprintUnlockableFlag>("ddfedbdeab95ed941b6968b06162c921");
+
             // Prompt (Hulrun, at Kenabres festival)
             /* "Be quick about it, before it's too late!" {n}The old man leans over you.{/n}
              * "Now, who are you? I don't remember seeing you before, and I have an excellent memory for faces."
@@ -27,7 +26,7 @@ namespace IsekaiMod.Content.Dialogue {
 
             // Reply
             var IsekaiDialogueHorgusReply = TTCoreExtensions.CreateCue("IsekaiDialogueHorgusReply", bp => {
-                bp.SetText(IsekaiContext, "\"My daughter?\" {n}Horgus takes a quick glance at Camellia.{/n} \"I don't think you know what sort of person she is. "
+                    bp.SetText(IsekaiContext, "\"My daughter?\" {n}Horgus takes a quick glance at Camellia.{/n} \"I don't think you know what sort of person she is. "
                     + "{n}Horgus takes a breath.{/n} Regardless, it seems my previous offer was somewhat insulting. Two thousand gold it is.\"");
                 bp.Speaker = new DialogSpeaker {
                     m_Blueprint = Horgus.ToReference<BlueprintUnitReference>(),

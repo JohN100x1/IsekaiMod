@@ -656,6 +656,16 @@
     "IsekaiDialogueAneviaReply2": "abd707f1-1255-4a1c-a907-c4f83362ab1a",
     "IsekaiDialogueAneviaReply": "ffe49efd-87a5-4d6a-88db-4d4f89f01c3a",
     "IsekaiDialogueAnevia": "a0af05f1-e779-4fba-b81e-9479f0872547",
+    "IsekaiDialogueIrabethReplySuccess": "d31a95ac-5f7f-4d90-8c05-37a311767ed8",
+    "IsekaiDialogueIrabethReplyFail": "e6091979-6b1e-4423-8e99-f36079c8b1b1",
+    "IsekaiDialogueIrabethCheck": "d810306a-17fd-4b95-bc29-627b64cb0eb2",
+    "IsekaiDialogueIrabethReply2": "0031a145-e5fd-49eb-b8cd-ce7f4418c7dc",
+    "IsekaiDialogueIrabethAnswer1": "1d75045e-c85e-4a52-8018-b291b457ae17",
+    "IsekaiDialogueIrabethAnswer2": "56fd706a-ed56-452f-bbdf-30672f8e42d3",
+    "IsekaiDialogueIrabethReply": "29d7c0d2-45ac-4297-80ac-3303e58382ec",
+    "IsekaiDialogueIrabeth": "04827180-1d93-44b4-a412-9ae953325663",
+    "IsekaiDialogueAneviaReply3": "5024161e-83c7-4b2b-8125-ca144233f0ae",
+    "IsekaiDialogueAnevia2": "8aeae780-f496-4141-be7f-e5c863e98c0b",
 
     //AddedDefinitions
     "AeonSpellsKnown": "6f77b957-9ebc-4f98-b5f4-28837ddd300d",

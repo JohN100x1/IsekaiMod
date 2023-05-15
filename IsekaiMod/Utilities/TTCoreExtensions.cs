@@ -86,6 +86,18 @@ namespace IsekaiMod.Utilities {
             return false;
         }
 
+        public static BlueprintCheck CreateCheck(string name, Action<BlueprintCheck> init = null) {
+            var result = Helpers.CreateBlueprint<BlueprintCheck>(IsekaiContext, name, bp => {
+                bp.ShowOnce = false;
+                bp.ShowOnceCurrentDialog = false;
+                bp.DCModifiers = new DCModifier[0];
+                bp.Conditions = ActionFlow.EmptyCondition();
+                bp.Experience = DialogExperience.NormalExperience;
+            });
+            init?.Invoke(result);
+            return result;
+        }
+
         public static BlueprintAnswer CreateAnswer(string name, Action<BlueprintAnswer> init = null) {
             var result = Helpers.CreateBlueprint<BlueprintAnswer>(IsekaiContext, name, bp => {
                 bp.NextCue = new CueSelection() {
@@ -123,6 +135,10 @@ namespace IsekaiMod.Utilities {
 
         public static BlueprintCue CreateCue(string name, Action<BlueprintCue> init = null) {
             var result = Helpers.CreateBlueprint<BlueprintCue>(IsekaiContext, name, bp => {
+                bp.Speaker = new DialogSpeaker {
+                    m_Blueprint = null,
+                    MoveCamera = true
+                };
                 bp.ShowOnce = false;
                 bp.ShowOnceCurrentDialog = false;
                 bp.Conditions = ActionFlow.EmptyCondition();

@@ -3917,6 +3917,17 @@
       "esES": "¿Quieres unirte a mi harén?"
     },
     {
+      "Key": "38f28f4e0ff0480395f40e08c3b8d007",
+      "SimpleName": "IsekaiDialogueAnevia2.Text",
+      "ProcessTemplates": false,
+      "enGB": "(Isekai Protagonist) \"I've convinced Irabeth to join the harem.\"",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "dd6193d3ce934224b6cc64843615360e",
       "SimpleName": "IsekaiDialogueAneviaReply.Text",
       "ProcessTemplates": false,
@@ -3937,6 +3948,17 @@
       "frFR": "Et, par hasard, seriez-vous intéressé par un cercueil de rechange qui traîne?",
       "zhCN": "另外，毫无特定原因，您有兴趣试试我这边闲置的棺材吗？",
       "esES": "Por cierto, sin ninguna razón en particular, ¿estarías interesado en un repuesto de ataúd que tengo por aquí?"
+    },
+    {
+      "Key": "a46fca3d7e304a0fb45ecc217bab34d0",
+      "SimpleName": "IsekaiDialogueAneviaReply3.Text",
+      "ProcessTemplates": false,
+      "enGB": "{n}Anevia is astonished.{/n} \"That was completely unexpected. I guess I'll discuss with Irabeth about our glorious future in your harem.\"",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "f6b0747fd79244208a32a02247ece79c",
@@ -3970,6 +3992,83 @@
       "frFR": "Mis à part être renversé par un camion, je ne me souviens de rien du tout...",
       "zhCN": "除了被卡车撞了，我什么也不记得了……",
       "esES": "Aparte de ser atropellado por un camión, no recuerdo nada en absoluto..."
+    },
+    {
+      "Key": "ec06abd2285048a6a4ff0aceaf9ffc7c",
+      "SimpleName": "IsekaiDialogueIrabeth.Text",
+      "ProcessTemplates": false,
+      "enGB": "(Isekai Protagonist) \"Do you want to join my harem? Anevia is also joining.\"",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "4c9331d685d54494af13b1d68d7f2da6",
+      "SimpleName": "IsekaiDialogueIrabethAnswer1.Text",
+      "ProcessTemplates": false,
+      "enGB": "It's true.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "471d270348f240128b23adcb7706bb25",
+      "SimpleName": "IsekaiDialogueIrabethAnswer2.Text",
+      "ProcessTemplates": false,
+      "enGB": "Nevermind. It was a joke.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "cb40b9485864480cb849ff6cfbd511cc",
+      "SimpleName": "IsekaiDialogueIrabethReply.Text",
+      "ProcessTemplates": false,
+      "enGB": "\"Ridiculous! I don't know what sorcery is this, but Anevia would never agree to this.\"",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "8484f356f1aa46e499073ad2352a4d3c",
+      "SimpleName": "IsekaiDialogueIrabethReply2.Text",
+      "ProcessTemplates": false,
+      "enGB": "That's what I thought.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "058adcc857e74bd787014d3e4e3af276",
+      "SimpleName": "IsekaiDialogueIrabethReplyFail.Text",
+      "ProcessTemplates": false,
+      "enGB": "I don't think so.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "a0ac4070453b4f63867b2e3a47b01cf2",
+      "SimpleName": "IsekaiDialogueIrabethReplySuccess.Text",
+      "ProcessTemplates": false,
+      "enGB": "Fine. I'll join your harem after the crusades against the demons is over.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "9b76fd16d94d4b1b8dbb976fe7faf4a2",

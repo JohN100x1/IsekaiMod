@@ -9,9 +9,9 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Dialogue {
 
     internal class IsekaiKaylessaDrowLeader {
-        private static readonly BlueprintCue Cue_0067 = BlueprintTools.GetBlueprint<BlueprintCue>("a8cc736feec11024eb6a5d3dbcb69f5c");
-
         public static void Add() {
+            var Cue_0067 = BlueprintTools.GetBlueprint<BlueprintCue>("a8cc736feec11024eb6a5d3dbcb69f5c");
+
             // Prompt (Tran, at drow ambush)
             /* \"Lady Anemora desires your head! And we'll gladly deliver it!\" {n}The elf, whose voice as Tran was so convincing, lets out a repulsive snicker.{/n}
              */

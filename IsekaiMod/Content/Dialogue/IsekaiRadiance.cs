@@ -9,11 +9,9 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Dialogue {
 
     internal class IsekaiRadiance {
-
-        // Next Cue and Etude
-        private static readonly BlueprintCue UpgradeRadianceCue = BlueprintTools.GetBlueprint<BlueprintCue>("6603e3274d42438faa38af673024a832");
-
         public static void Add() {
+            var UpgradeRadianceCue = BlueprintTools.GetBlueprint<BlueprintCue>("6603e3274d42438faa38af673024a832");
+
             // Prompt (Seelah, after finding Radiance)
             /* {n}Seelah stares at you in amazement.{/n} "Just look at that! The sword seemed to greet you! It senses the hand of a {d|c0 paladin radiance}paladin{/d}.
              * And it seems relieved that we're freeing it from the demons' clutches. A good omen and a good find!"
