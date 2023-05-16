@@ -37,6 +37,11 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                 bp.m_Icon = Icon_Hax;
                 bp.AddComponent<SetAttackerAutoMiss>();
             });
+            var NoHax = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "NoHax", bp => {
+                bp.SetName(IsekaiContext, "None");
+                bp.SetDescription(IsekaiContext, "You decide not to abuse your power.");
+                bp.m_Icon = null;
+            });
             var HaxSelection = Helpers.CreateBlueprint<BlueprintFeatureSelection>(IsekaiContext, "HaxSelection", bp => {
                 bp.SetName(IsekaiContext, "Hax");
                 bp.SetDescription(IsekaiContext, "So this is the result of 100 push-ups, 100 sit-ups, 100 squats and a 10km run...");
@@ -45,6 +50,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist {
                     SeriousStrike.ToReference<BlueprintFeatureReference>(),
                     Invincibility.ToReference<BlueprintFeatureReference>(),
                     FasterThanLight.ToReference<BlueprintFeatureReference>(),
+                    NoHax.ToReference<BlueprintFeatureReference>(),
                 };
             });
         }
