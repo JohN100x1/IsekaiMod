@@ -4027,6 +4027,17 @@
       "esES": null
     },
     {
+      "Key": "65295b6705564315bb2d18e63175f082",
+      "SimpleName": "IsekaiDialogueIrabethReply.Text",
+      "ProcessTemplates": false,
+      "enGB": "Ridiculous! I don't know what sorcery is this, but Anevia would never agree to this.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "cb40b9485864480cb849ff6cfbd511cc",
       "SimpleName": "IsekaiDialogueIrabethReply.Text",
       "ProcessTemplates": false,
@@ -5686,6 +5697,17 @@
       "frFR": "Immunité contre les nausées",
       "zhCN": "恶心免疫",
       "esES": "Inmunidad a Náuseas"
+    },
+    {
+      "Key": "b63b2074fa1849d599e79e504fab8bcb",
+      "SimpleName": "NoHax.Description",
+      "ProcessTemplates": true,
+      "enGB": "You decide not to abuse your power.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "0e8e8f4305dc40b7a9da22a0a03f23d4",

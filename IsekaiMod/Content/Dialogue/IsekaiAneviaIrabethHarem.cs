@@ -92,7 +92,7 @@ namespace IsekaiMod.Content.Dialogue {
                 };
             });
             var IsekaiDialogueIrabethReply = TTCoreExtensions.CreateCue("IsekaiDialogueIrabethReply", bp => {
-                bp.SetText(IsekaiContext, "\"Ridiculous! I don't know what sorcery is this, but Anevia would never agree to this.\"");
+                bp.SetText(IsekaiContext, "Ridiculous! I don't know what sorcery is this, but Anevia would never agree to this.");
                 bp.Answers = new List<BlueprintAnswerBaseReference> {
                     IsekaiDialogueIrabethAnswer1.ToReference<BlueprintAnswerBaseReference>(),
                     IsekaiDialogueIrabethAnswer2.ToReference<BlueprintAnswerBaseReference>()
