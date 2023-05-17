@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added UMM option to allow Isekai dialogue when Isekai Protagonist is disabled.
 - Added additional harem dialogue for Anevia and Irabeth.
 - Added `None` option for `Hax` selection.
+- Added missing DLC spells to Isekai Protagonist spellbook.
 # Changed
 - Changed `Channel Energy` special powers to scale with Isekai Protagonist level rather than character level.
 # Fixed
