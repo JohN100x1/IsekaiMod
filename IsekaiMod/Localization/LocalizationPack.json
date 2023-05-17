@@ -4031,22 +4031,22 @@
       "SimpleName": "IsekaiDialogueIrabethReply.Text",
       "ProcessTemplates": false,
       "enGB": "Ridiculous! I don't know what sorcery is this, but Anevia would never agree to this.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Нелепо! Я не знаю, какая это колдовская сила, но Аневия никогда бы не согласилась на это.",
+      "deDE": "Absurd! Ich weiß nicht, was das für eine Zauberei ist, aber Anevia würde niemals zustimmen.",
+      "frFR": "Ridicule ! Je ne sais pas quelle sorcellerie est-ce, mais Anevia n'accepterait jamais cela.",
+      "zhCN": "荒谬！我不知道这是什么魔法，但是Anevia绝不会同意这个。",
+      "esES": "¡Absurdo! No sé qué tipo de hechicería es esta, pero Anevia nunca estaría de acuerdo con esto."
     },
     {
       "Key": "cb40b9485864480cb849ff6cfbd511cc",
       "SimpleName": "IsekaiDialogueIrabethReply.Text",
       "ProcessTemplates": false,
       "enGB": "\"Ridiculous! I don't know what sorcery is this, but Anevia would never agree to this.\"",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Нелепо! Я не знаю, что это за колдовство, но Аневия никогда бы не согласилась на это.",
+      "deDE": "Absurd! Ich weiß nicht, welche Zauberei das ist, aber Anevia würde dem niemals zustimmen.",
+      "frFR": "Absurde ! Je ne sais pas quelle sorcellerie est-ce, mais Anevia n'accepterait jamais cela.",
+      "zhCN": "荒谬！我不知道这是什么魔法，但安妮维亚绝不会同意这个。",
+      "esES": "¡Absurdo! No sé qué brujería es esta, pero Anevia nunca estaría de acuerdo con esto."
     },
     {
       "Key": "8484f356f1aa46e499073ad2352a4d3c",
