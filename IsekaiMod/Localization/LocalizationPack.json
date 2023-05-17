@@ -3931,23 +3931,23 @@
       "Key": "dd6193d3ce934224b6cc64843615360e",
       "SimpleName": "IsekaiDialogueAneviaReply.Text",
       "ProcessTemplates": false,
-      "enGB": "Sure thing, only if you can convince Irabeth to join.",
-      "ruRU": "Убедить Ирабет присоединиться.",
-      "deDE": "Überzeuge Irabeth, sich uns anzuschließen.",
-      "frFR": "Pourquoi pas, mais seulement si tu arrives à convaincre Irabeth de se joindre à nous.",
-      "zhCN": "说服伊拉贝丝加入我们。",
-      "esES": "Convencer a Irabeth para unirse a nosotros."
+      "enGB": "\"Sure thing, only if you can convince Irabeth to join.\"",
+      "ruRU": "\"Убедить Ирабет присоединиться.\"",
+      "deDE": "\"Überzeuge Irabeth, sich uns anzuschließen.\"",
+      "frFR": "\"Pourquoi pas, mais seulement si tu arrives à convaincre Irabeth de se joindre à nous.\"",
+      "zhCN": "\"说服伊拉贝丝加入我们。\"",
+      "esES": "\"Convencer a Irabeth para unirse a nosotros.\""
     },
     {
       "Key": "b41e9abb7c2f486ab948e467679b2cdc",
       "SimpleName": "IsekaiDialogueAneviaReply2.Text",
       "ProcessTemplates": false,
       "enGB": "\"Also, for no particular reason, would you be interested in a spare of coffin I have lying around?\"",
-      "ruRU": "Кстати, по никакой особой причине, вы не заинтересованы в запасном гробе, который у меня лежит здесь?",
-      "deDE": "Übrigens, aus keinem besonderen Grund, wären Sie an einem Ersatz-Sarg interessiert, den ich hier herumliegen habe?",
-      "frFR": "Et, par hasard, seriez-vous intéressé par un cercueil de rechange qui traîne?",
-      "zhCN": "另外，毫无特定原因，您有兴趣试试我这边闲置的棺材吗？",
-      "esES": "Por cierto, sin ninguna razón en particular, ¿estarías interesado en un repuesto de ataúd que tengo por aquí?"
+      "ruRU": "\"Кстати, по никакой особой причине, вы не заинтересованы в запасном гробе, который у меня лежит здесь?\"",
+      "deDE": "\"Übrigens, aus keinem besonderen Grund, wären Sie an einem Ersatz-Sarg interessiert, den ich hier herumliegen habe?\"",
+      "frFR": "\"Et, par hasard, seriez-vous intéressé par un cercueil de rechange qui traîne?\"",
+      "zhCN": "\"另外，毫无特定原因，您有兴趣试试我这边闲置的棺材吗？\"",
+      "esES": "\"Por cierto, sin ninguna razón en particular, ¿estarías interesado en un repuesto de ataúd que tengo por aquí?\""
     },
     {
       "Key": "a46fca3d7e304a0fb45ecc217bab34d0",
@@ -4008,78 +4008,67 @@
       "Key": "4c9331d685d54494af13b1d68d7f2da6",
       "SimpleName": "IsekaiDialogueIrabethAnswer1.Text",
       "ProcessTemplates": false,
-      "enGB": "It's true.",
-      "ruRU": "Это правда.",
-      "deDE": "Das ist wahr.",
-      "frFR": "C'est vrai.",
-      "zhCN": "这是真的。",
-      "esES": "Es verdad."
+      "enGB": "\"It's true.\"",
+      "ruRU": "\"Это правда.\"",
+      "deDE": "\"Das ist wahr.\"",
+      "frFR": "\"C'est vrai.\"",
+      "zhCN": "\"这是真的。\"",
+      "esES": "\"Es verdad.\""
     },
     {
       "Key": "471d270348f240128b23adcb7706bb25",
       "SimpleName": "IsekaiDialogueIrabethAnswer2.Text",
       "ProcessTemplates": false,
-      "enGB": "Nevermind. It was a joke.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
-    },
-    {
-      "Key": "65295b6705564315bb2d18e63175f082",
-      "SimpleName": "IsekaiDialogueIrabethReply.Text",
-      "ProcessTemplates": false,
-      "enGB": "Ridiculous! I don't know what sorcery is this, but Anevia would never agree to this.",
-      "ruRU": "Нелепо! Я не знаю, какая это колдовская сила, но Аневия никогда бы не согласилась на это.",
-      "deDE": "Absurd! Ich weiß nicht, was das für eine Zauberei ist, aber Anevia würde niemals zustimmen.",
-      "frFR": "Ridicule ! Je ne sais pas quelle sorcellerie est-ce, mais Anevia n'accepterait jamais cela.",
-      "zhCN": "荒谬！我不知道这是什么魔法，但是Anevia绝不会同意这个。",
-      "esES": "¡Absurdo! No sé qué tipo de hechicería es esta, pero Anevia nunca estaría de acuerdo con esto."
+      "enGB": "\"Nevermind. It was a joke.\"",
+      "ruRU": "\"Ничего страшного. Это была шутка.\"",
+      "deDE": "\"Schon gut. Es war ein Witz.\"",
+      "frFR": "\"Ce n'est rien. C'était une blague.\"",
+      "zhCN": "\"没关系。这只是个笑话。\"",
+      "esES": "\"No importa. Fue una broma.\""
     },
     {
       "Key": "cb40b9485864480cb849ff6cfbd511cc",
       "SimpleName": "IsekaiDialogueIrabethReply.Text",
       "ProcessTemplates": false,
       "enGB": "\"Ridiculous! I don't know what sorcery is this, but Anevia would never agree to this.\"",
-      "ruRU": "Нелепо! Я не знаю, что это за колдовство, но Аневия никогда бы не согласилась на это.",
-      "deDE": "Absurd! Ich weiß nicht, welche Zauberei das ist, aber Anevia würde dem niemals zustimmen.",
-      "frFR": "Absurde ! Je ne sais pas quelle sorcellerie est-ce, mais Anevia n'accepterait jamais cela.",
-      "zhCN": "荒谬！我不知道这是什么魔法，但安妮维亚绝不会同意这个。",
-      "esES": "¡Absurdo! No sé qué brujería es esta, pero Anevia nunca estaría de acuerdo con esto."
+      "ruRU": "\"Нелепо! Я не знаю, что это за колдовство, но Аневия никогда бы не согласилась на это.\"",
+      "deDE": "\"Absurd! Ich weiß nicht, welche Zauberei das ist, aber Anevia würde dem niemals zustimmen.\"",
+      "frFR": "\"Absurde ! Je ne sais pas quelle sorcellerie est-ce, mais Anevia n'accepterait jamais cela.\"",
+      "zhCN": "\"荒谬！我不知道这是什么魔法，但安妮维亚绝不会同意这个。\"",
+      "esES": "\"¡Absurdo! No sé qué brujería es esta, pero Anevia nunca estaría de acuerdo con esto.\""
     },
     {
       "Key": "8484f356f1aa46e499073ad2352a4d3c",
       "SimpleName": "IsekaiDialogueIrabethReply2.Text",
       "ProcessTemplates": false,
-      "enGB": "That's what I thought.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "enGB": "\"That's what I thought.\"",
+      "ruRU": "\"Именно то, что я и подумал(а).\"",
+      "deDE": "\"Genau das habe ich gedacht.\"",
+      "frFR": "\"C'est ce que je pensais.\"",
+      "zhCN": "\"那正是我所想的。\"",
+      "esES": "\"Eso es lo que pensé.\""
     },
     {
       "Key": "058adcc857e74bd787014d3e4e3af276",
       "SimpleName": "IsekaiDialogueIrabethReplyFail.Text",
       "ProcessTemplates": false,
-      "enGB": "I don't think so.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "enGB": "\"I don't think so.\"",
+      "ruRU": "\"Я так не думаю.\"",
+      "deDE": "\"Ich denke nicht so.\"",
+      "frFR": "\"Je ne pense pas.\"",
+      "zhCN": "\"我不这么认为。\"",
+      "esES": "\"No creo que sea así.\""
     },
     {
       "Key": "a0ac4070453b4f63867b2e3a47b01cf2",
       "SimpleName": "IsekaiDialogueIrabethReplySuccess.Text",
       "ProcessTemplates": false,
-      "enGB": "Fine. I'll join your harem after the crusades against the demons is over.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "enGB": "\"Fine. I'll join your harem after the crusades against the demons is over.\"",
+      "ruRU": "\"Хорошо. Я присоединюсь к вашему гарему после окончания крестового похода против демонов.\"",
+      "deDE": "\"In Ordnung. Ich werde mich deinem Harem anschließen, nachdem die Kreuzzüge gegen die Dämonen vorbei sind.\"",
+      "frFR": "\"D'accord. Je rejoindrai votre harem après la fin des croisades contre les démons.\"",
+      "zhCN": "\"好吧。在对抗恶魔的十字军战争结束后，我会加入你的后宫。\"",
+      "esES": "\"De acuerdo. Me uniré a tu harén después de que termine la cruzada contra los demonios.\""
     },
     {
       "Key": "9b76fd16d94d4b1b8dbb976fe7faf4a2",
@@ -4108,11 +4097,11 @@
       "SimpleName": "IsekaiDialogueMinaghoSeelahReply.Text",
       "ProcessTemplates": false,
       "enGB": "{n}Seelah smiles and gives you a thumbs up!{/n}",
-      "ruRU": "Сила улыбается и делает вам большой палец вверх!",
-      "deDE": "Seelah lächelt und gibt dir einen Daumen hoch!",
-      "frFR": "Seelah sourit et lève son pouce !",
-      "zhCN": "塞拉微笑着给你竖起了大拇指！",
-      "esES": "Seelah sonríe y te da un pulgar hacia arriba!"
+      "ruRU": "{n}Сила улыбается и делает вам большой палец вверх!{\n}",
+      "deDE": "{n}Seelah lächelt und gibt dir einen Daumen hoch!{\n}",
+      "frFR": "{n}Seelah sourit et lève son pouce!{\n}",
+      "zhCN": "{n}塞拉微笑着给你竖起了大拇指！{\n}",
+      "esES": "{n}Seelah sonríe y te da un pulgar hacia arriba!{\n}"
     },
     {
       "Key": "d87299f2ee974ecb8b528f3506c56d5f",
@@ -5703,11 +5692,11 @@
       "SimpleName": "NoHax.Description",
       "ProcessTemplates": true,
       "enGB": "You decide not to abuse your power.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Вы решаете не злоупотреблять своей властью.",
+      "deDE": "Du entscheidest dich, deine Macht nicht zu missbrauchen.",
+      "frFR": "Vous décidez de ne pas abuser de votre pouvoir.",
+      "zhCN": "你决定不滥用你的权力。",
+      "esES": "Decides no abusar de tu poder."
     },
     {
       "Key": "0e8e8f4305dc40b7a9da22a0a03f23d4",

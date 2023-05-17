@@ -30,7 +30,7 @@ namespace IsekaiMod.Content.Dialogue {
                 bp.Answers = AnswersList_0003.Answers;
             });
             var IsekaiDialogueAneviaReply = TTCoreExtensions.CreateCue("IsekaiDialogueAneviaReply", bp => {
-                bp.SetText(IsekaiContext, "Sure thing, only if you can convince Irabeth to join.");
+                bp.SetText(IsekaiContext, "\"Sure thing, only if you can convince Irabeth to join.\"");
                 bp.Continue = new CueSelection {
                     Cues = new List<BlueprintCueBaseReference>() { IsekaiDialogueAneviaReply2.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
@@ -59,11 +59,11 @@ namespace IsekaiMod.Content.Dialogue {
              */
             // Answer
             var IsekaiDialogueIrabethReplySuccess = TTCoreExtensions.CreateCue("IsekaiDialogueIrabethReplySuccess", bp => {
-                bp.SetText(IsekaiContext, "Fine. I'll join your harem after the crusades against the demons is over.");
+                bp.SetText(IsekaiContext, "\"Fine. I'll join your harem after the crusades against the demons is over.\"");
                 bp.Answers = AnswersList_0009.Answers;
             });
             var IsekaiDialogueIrabethReplyFail = TTCoreExtensions.CreateCue("IsekaiDialogueIrabethReplyFail", bp => {
-                bp.SetText(IsekaiContext, "I don't think so.");
+                bp.SetText(IsekaiContext, "\"I don't think so.\"");
                 bp.Answers = AnswersList_0009.Answers;
             });
             var IsekaiDialogueIrabethCheck = TTCoreExtensions.CreateCheck("IsekaiDialogueIrabethCheck", bp => {
@@ -74,25 +74,25 @@ namespace IsekaiMod.Content.Dialogue {
                 bp.Experience = DialogExperience.LargeExperience;
             });
             var IsekaiDialogueIrabethReply2 = TTCoreExtensions.CreateCue("IsekaiDialogueIrabethReply2", bp => {
-                bp.SetText(IsekaiContext, "That's what I thought.");
+                bp.SetText(IsekaiContext, "\"That's what I thought.\"");
                 bp.Answers = AnswersList_0009.Answers;
             });
             var IsekaiDialogueIrabethAnswer1 = TTCoreExtensions.CreateAnswer("IsekaiDialogueIrabethAnswer1", bp => {
-                bp.SetText(IsekaiContext, "It's true.");
+                bp.SetText(IsekaiContext, "\"It's true.\"");
                 bp.NextCue = new CueSelection() {
                     Cues = new List<BlueprintCueBaseReference>() { IsekaiDialogueIrabethCheck.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
             });
             var IsekaiDialogueIrabethAnswer2 = TTCoreExtensions.CreateAnswer("IsekaiDialogueIrabethAnswer2", bp => {
-                bp.SetText(IsekaiContext, "Nevermind. It was a joke.");
+                bp.SetText(IsekaiContext, "\"Nevermind. It was a joke.\"");
                 bp.NextCue = new CueSelection() {
                     Cues = new List<BlueprintCueBaseReference>() { IsekaiDialogueIrabethReply2.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
             });
             var IsekaiDialogueIrabethReply = TTCoreExtensions.CreateCue("IsekaiDialogueIrabethReply", bp => {
-                bp.SetText(IsekaiContext, "Ridiculous! I don't know what sorcery is this, but Anevia would never agree to this.");
+                bp.SetText(IsekaiContext, "\"Ridiculous! I don't know what sorcery is this, but Anevia would never agree to this.\"");
                 bp.Answers = new List<BlueprintAnswerBaseReference> {
                     IsekaiDialogueIrabethAnswer1.ToReference<BlueprintAnswerBaseReference>(),
                     IsekaiDialogueIrabethAnswer2.ToReference<BlueprintAnswerBaseReference>()
