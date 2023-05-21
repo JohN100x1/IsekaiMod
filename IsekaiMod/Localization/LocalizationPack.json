@@ -3965,22 +3965,22 @@
       "SimpleName": "IsekaiDialogueFinnean.Text",
       "ProcessTemplates": false,
       "enGB": "(Isekai Protagonist) \"Hey can you transform into a hot succubus?\"",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Привет, ты можешь превратиться в горячую суккубу?",
+      "deDE": "Hey, kannst du dich in eine heiße Sukkubus verwandeln?",
+      "frFR": "Hé, peux-tu te transformer en succube sexy ?",
+      "zhCN": "嘿，你能变成一个性感的魅魔吗？",
+      "esES": "Hola, ¿puedes transformarte en una succubo atractiva?"
     },
     {
       "Key": "267aaf8c92d44b97b8b40b421d38a0b3",
       "SimpleName": "IsekaiDialogueFinneanReply.Text",
       "ProcessTemplates": false,
       "enGB": "\"No, but I can transform into a flamberge greatsword to stick up your bitch ass.\"",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Нет, но я могу превратиться в огненный меч с широким клинком, чтобы проткнуть твою ублюдочную задницу.",
+      "deDE": "Nein, aber ich kann mich in ein Flamberge-Großschwert verwandeln, um es in deinen verdammten Hintern zu stecken.",
+      "frFR": "Non, mais je peux me transformer en une épée à deux mains flamberge pour t'enfoncer dans ton sale cul.",
+      "zhCN": "不，但我可以变成一把火舌大剑，插进你这个混蛋的屁股里。",
+      "esES": "No, pero puedo transformarme en una espada bastarda flamígera para clavártela en el maldito culo."
     },
     {
       "Key": "f6b0747fd79244208a32a02247ece79c",
