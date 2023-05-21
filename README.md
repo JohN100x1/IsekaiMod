@@ -132,6 +132,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Supreme Being`: All your attributes have a base value of 30.
 		- `Meta Luck`: Always take the higher of two d20 rolls.
 		- `Power Leveling`: Gain extra experience when you kill an enemy.
+		- `Master Summoner`: Gain extra summons to the total number of creatures summoned.
 		- `Overpowered Aura`: 4 different alignment based auras which give either extra attack(s) and/or damage.
 		- `Underpowered Ability`: A selection of less powerful effects.
 		- `Mythic Class Feature`: see below
