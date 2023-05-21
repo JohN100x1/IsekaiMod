@@ -98,7 +98,6 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Extreme Speed`: Allies within 40 feet of you get a speed bonus equal to 5 times your character level.
 		- `Channel Positive Energy`: You can channel positive energy.
 		- `Channel Negative Energy`: You can channel negative energy.
-		- `Kinetic Power`: You can select a kinetic blast (air, earth, fire, water).
 		- `Sneaky Magic`: You can add your sneak attack damage to spells against flat-footed.
 		- `Spell Master`: Increase your spell DC by 4.
 		- `Magical Amplification`: Your spell damage dice become d10.
