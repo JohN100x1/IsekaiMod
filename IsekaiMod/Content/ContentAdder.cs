@@ -234,6 +234,7 @@ namespace IsekaiMod.Content {
                 Dialogue.IsekaiHorgus.Add();
                 Dialogue.IsekaiMinagho.Add();
                 Dialogue.IsekaiAneviaIrabethHarem.Add();
+                Dialogue.IsekaiFinnean.Add();
             }
             public static void AddIsekaiHeritages() {
                 // Add Heritages
@@ -352,6 +353,5 @@ namespace IsekaiMod.Content {
             Heritages.IsekaiHumanCrossbreedLegacy.Patch();
             Heritages.HumanHeritageSelection.Patch();
         }
-
     }
 }

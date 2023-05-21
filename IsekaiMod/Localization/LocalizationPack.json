@@ -3961,6 +3961,28 @@
       "esES": "{n}Anevia está asombrada.{/n} \"Esto fue completamente inesperado. Supongo que hablaré con Irabeth sobre nuestro glorioso futuro en tu harén.\""
     },
     {
+      "Key": "76ed9a699b9b447db9498263cde5e614",
+      "SimpleName": "IsekaiDialogueFinnean.Text",
+      "ProcessTemplates": false,
+      "enGB": "(Isekai Protagonist) \"Hey can you transform into a hot succubus?\"",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "267aaf8c92d44b97b8b40b421d38a0b3",
+      "SimpleName": "IsekaiDialogueFinneanReply.Text",
+      "ProcessTemplates": false,
+      "enGB": "\"No, but I can transform into a flamberge greatsword to stick up your bitch ass.\"",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "f6b0747fd79244208a32a02247ece79c",
       "SimpleName": "IsekaiDialogueHorgus.Text",
       "ProcessTemplates": false,
