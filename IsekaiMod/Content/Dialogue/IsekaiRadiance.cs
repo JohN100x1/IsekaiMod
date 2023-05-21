@@ -1,7 +1,5 @@
-﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
-using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
 using System.Collections.Generic;
@@ -11,11 +9,9 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Dialogue {
 
     internal class IsekaiRadiance {
-
-        // Next Cue and Etude
-        private static readonly BlueprintCue UpgradeRadianceCue = BlueprintTools.GetBlueprint<BlueprintCue>("6603e3274d42438faa38af673024a832");
-
         public static void Add() {
+            var UpgradeRadianceCue = BlueprintTools.GetBlueprint<BlueprintCue>("6603e3274d42438faa38af673024a832");
+
             // Prompt (Seelah, after finding Radiance)
             /* {n}Seelah stares at you in amazement.{/n} "Just look at that! The sword seemed to greet you! It senses the hand of a {d|c0 paladin radiance}paladin{/d}.
              * And it seems relieved that we're freeing it from the demons' clutches. A good omen and a good find!"
@@ -64,11 +60,6 @@ namespace IsekaiMod.Content.Dialogue {
                     Cues = new List<BlueprintCueBaseReference>() { UpgradeRadianceCue.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
-                bp.ShowConditions = ActionFlow.IfSingle<PlayerSignificantClassIs>(c => {
-                    c.Not = false;
-                    c.CheckGroup = false;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                });
             });
 
             // Add Answer to answers list

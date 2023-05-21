@@ -16,7 +16,7 @@ namespace IsekaiMod.Content.Backgrounds {
                 bp.SetName(IsekaiContext, "Rationalist");
                 bp.SetBackgroundDescription(IsekaiContext, "The Rationalist is immune to any {g|Encyclopedia:Spell}spell{/g} or "
                     + "{g|Encyclopedia:Special_Abilities}spell-like ability{/g} that allows {g|Encyclopedia:Spell_Resistance}spell resistance{/g} "
-                    + "but cannot cast any spells");
+                    + "but cannot cast any spells.");
                 bp.AddComponent<AddSpellImmunity>();
                 bp.AddComponent<AreaEffectImmunity>(c => {
                     c.m_CasterType = TargetType.Enemy;

@@ -132,6 +132,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 		- `Supreme Being`: All your attributes have a base value of 30.
 		- `Meta Luck`: Always take the higher of two d20 rolls.
 		- `Power Leveling`: Gain extra experience when you kill an enemy.
+		- `Master Summoner`: Gain extra summons to the total number of creatures summoned.
 		- `Overpowered Aura`: 4 different alignment based auras which give either extra attack(s) and/or damage.
 		- `Underpowered Ability`: A selection of less powerful effects.
 		- `Mythic Class Feature`: see below
@@ -230,6 +231,8 @@ Exception to this is the God Emperor as all options that were changed were not p
 	- Prologue, after finding Radiance in the Shield Maze.
 	- Act 1, first encounter with Minagho in Gray Garrison.
 	- Act 1, speaking with Anevia in the Bad Luck Tavern.
+	- Act 1, speaking with Irabeth in the Bad Luck Tavern.
+	- Act 1, speaking with Finnean.
 	- Random encounter, during drow ambush.
 
 ### Isekai Protagonist Spell progression

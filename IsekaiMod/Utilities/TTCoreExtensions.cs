@@ -1,10 +1,13 @@
 ﻿using HarmonyLib;
+using IsekaiMod.Content.Classes.IsekaiProtagonist;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Root;
+using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
+using Kingmaker.ElementsSystem;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.Localization;
@@ -13,7 +16,6 @@ using Kingmaker.ResourceManagement;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Alignments;
-using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
@@ -25,7 +27,6 @@ using System.Linq;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
 using static IsekaiMod.Main;
-
 namespace IsekaiMod.Utilities {
 
     internal class TTCoreExtensions {
@@ -85,6 +86,18 @@ namespace IsekaiMod.Utilities {
             return false;
         }
 
+        public static BlueprintCheck CreateCheck(string name, Action<BlueprintCheck> init = null) {
+            var result = Helpers.CreateBlueprint<BlueprintCheck>(IsekaiContext, name, bp => {
+                bp.ShowOnce = false;
+                bp.ShowOnceCurrentDialog = false;
+                bp.DCModifiers = new DCModifier[0];
+                bp.Conditions = ActionFlow.EmptyCondition();
+                bp.Experience = DialogExperience.NormalExperience;
+            });
+            init?.Invoke(result);
+            return result;
+        }
+
         public static BlueprintAnswer CreateAnswer(string name, Action<BlueprintAnswer> init = null) {
             var result = Helpers.CreateBlueprint<BlueprintAnswer>(IsekaiContext, name, bp => {
                 bp.NextCue = new CueSelection() {
@@ -97,7 +110,18 @@ namespace IsekaiMod.Utilities {
                 bp.Experience = DialogExperience.NoExperience;
                 bp.DebugMode = false;
                 bp.CharacterSelection = new CharacterSelection() { SelectionType = CharacterSelection.Type.Clear, ComparisonStats = new StatType[0] };
-                bp.ShowConditions = ActionFlow.EmptyCondition();
+
+                if (IsekaiContext.AddedContent.Isekai.IsEnabled("Isekai Protagonist")) {
+                    bp.ShowConditions = ActionFlow.IfAll(
+                        new PlayerSignificantClassIs {
+                            Not = false,
+                            CheckGroup = false,
+                            m_CharacterClass = IsekaiProtagonistClass.GetReference()
+                        });
+                } else {
+                    bp.ShowConditions = ActionFlow.IfAll(new Condition[0]);
+                }
+
                 bp.SelectConditions = ActionFlow.EmptyCondition();
                 bp.RequireValidCue = false;
                 bp.AddToHistory = true;
@@ -111,6 +135,10 @@ namespace IsekaiMod.Utilities {
 
         public static BlueprintCue CreateCue(string name, Action<BlueprintCue> init = null) {
             var result = Helpers.CreateBlueprint<BlueprintCue>(IsekaiContext, name, bp => {
+                bp.Speaker = new DialogSpeaker {
+                    m_Blueprint = null,
+                    MoveCamera = true
+                };
                 bp.ShowOnce = false;
                 bp.ShowOnceCurrentDialog = false;
                 bp.Conditions = ActionFlow.EmptyCondition();

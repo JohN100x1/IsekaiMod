@@ -1,8 +1,10 @@
-﻿using Kingmaker.Blueprints;
+﻿using HarmonyLib;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Items.Ecnchantments;
 using Kingmaker.DialogSystem.Blueprints;
+using Kingmaker.ElementsSystem;
 using Kingmaker.Localization;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
@@ -83,6 +85,12 @@ namespace IsekaiMod.Utilities {
             Array.Copy(selection.m_AllFeatures, 0, extendedArray, 1, selection.m_AllFeatures.Length);
             extendedArray[0] = feature.ToReference<BlueprintFeatureReference>();
             selection.m_AllFeatures = extendedArray;
+        }
+
+        public static void AddShowCondition<T>(this BlueprintAnswer answer, Action<T> init = null) where T : Condition, new() {
+            var t = new T();
+            init?.Invoke(t);
+            answer.ShowConditions.Conditions = answer.ShowConditions.Conditions.AddToArray(t);
         }
     }
 }

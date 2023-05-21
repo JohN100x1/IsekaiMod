@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [5.2.0] - 2023-05-21
+# Added
+- Added `Master Summoner` OP ability.
+- Added UMM option to allow Isekai dialogue when Isekai Protagonist is disabled.
+- Added additional harem dialogue for Anevia and Irabeth.
+- Added dialogue for Finnean.
+- Added `None` option for `Hax` selection.
+- Added missing DLC spells to Isekai Protagonist spellbook.
+# Changed
+- Changed `Channel Energy` special powers to scale with Isekai Protagonist level rather than character level.
+# Fixed
+- Fixed all legacies which add features on class level.
+- Fixed Isekai dialogue showing up with Horgus when not Isekai Protagonist.
+- Fixed `Channel Negative Energy` not scaling with level.
+- Fixed `Oracle Legacy - Seeker of Truth` now count towards Oracle levels.
+
 # [5.1.0] - 2023-05-07
 # Added
 - Added Localization for Russian, German, French, Chinese, Spanish (machine translated).

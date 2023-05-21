@@ -49,8 +49,11 @@ namespace IsekaiMod.Content {
                 if (Isekai.IsEnabled("Isekai Backgrounds")) AddIsekaiBackgrounds();
                 if (Isekai.IsEnabled("Isekai Deities")) AddIsekaiDeities();
                 if (Isekai.IsEnabled("Isekai Heritages")) AddIsekaiHeritages();
-                if (Isekai.IsEnabled("Isekai Protagonist")) AddIsekaiProtagonistClass();
-                if (Isekai.IsEnabled("Isekai Protagonist") && AddedContent.RestrictExceptionalFeats) RestrictExceptionalFeats();
+                if (Isekai.IsEnabled("Isekai Protagonist")) {
+                    if (AddedContent.RestrictExceptionalFeats) RestrictExceptionalFeats();
+                    AddIsekaiProtagonistClass();
+                }
+                if (Isekai.IsEnabled("Isekai Dialogue")) AddIsekaiDialogue();
             }
 
             public static void AddIsekaiProtagonistClass() {
@@ -117,6 +120,7 @@ namespace IsekaiMod.Content {
                 SupremeBeing.Add();
                 MetaLuck.Add();
                 PowerLeveling.Add();
+                MasterSummoner.Add();
                 OverpoweredAuraSelection.Add();
                 UnderpoweredAbilitySelection.Add();
                 if (Other.IsEnabled("Mythic Class Feature")) BlessingOfTheMythic.Configure();
@@ -219,10 +223,6 @@ namespace IsekaiMod.Content {
                 DeathsnatcherUnit.Add();
                 Main.LogDebug("Class: Deathsnatcher");
 
-                // Add extra dialogue (Depends on IsekaiProtagonistClass)
-                if (Isekai.IsEnabled("Isekai Dialogue")) AddIsekaiDialogue();
-                Main.LogDebug("Class: Dialogue");
-
                 LegacySelection.ConfigureStep2();
                 Main.LogDebug("Class: Done");
 
@@ -233,7 +233,8 @@ namespace IsekaiMod.Content {
                 Dialogue.IsekaiKaylessaDrowLeader.Add();
                 Dialogue.IsekaiHorgus.Add();
                 Dialogue.IsekaiMinagho.Add();
-                Dialogue.IsekaiAnevia.Add();
+                Dialogue.IsekaiAneviaIrabethHarem.Add();
+                Dialogue.IsekaiFinnean.Add();
             }
             public static void AddIsekaiHeritages() {
                 // Add Heritages
@@ -296,12 +297,15 @@ namespace IsekaiMod.Content {
             }
         }
     }
-
-    [HarmonyPriority(-100)]
-    [HarmonyPatch(typeof(StartGameLoader), "LoadAllJson")]
-    static class StartGameLoader_LoadAllJson {
+    
+    
+    [HarmonyPatch]
+    static class FinalPatcher {
         private static bool Run = false;
 
+        [HarmonyPriority(-100)]
+        [HarmonyPatch(typeof(StartGameLoader), nameof(StartGameLoader.LoadAllJson))]
+        [HarmonyPostfix]
         static void Postfix() {
             if (Run) return;
             Run = true;
@@ -349,6 +353,5 @@ namespace IsekaiMod.Content {
             Heritages.IsekaiHumanCrossbreedLegacy.Patch();
             Heritages.HumanHeritageSelection.Patch();
         }
-
     }
 }

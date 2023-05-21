@@ -1,9 +1,7 @@
-﻿using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using IsekaiMod.Utilities;
+﻿using IsekaiMod.Utilities;
 using Kingmaker.AreaLogic.Etudes;
 using Kingmaker.Blueprints;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
-using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
 using System.Collections.Generic;
@@ -13,17 +11,14 @@ using static IsekaiMod.Main;
 namespace IsekaiMod.Content.Dialogue {
 
     internal class IsekaiHulrun {
-
-        // Next Cue and Etude
-        private static readonly BlueprintCue DontRememberCue = BlueprintTools.GetBlueprint<BlueprintCue>("ba9c82193a32275408973a8aebdb3a6d");
-
-        private static readonly BlueprintEtude DontRememberEtude = BlueprintTools.GetBlueprint<BlueprintEtude>("d6c6161d2cf0ac44786f9df67fca5ce9");
-
         public static void Add() {
+            var DontRememberCue = BlueprintTools.GetBlueprint<BlueprintCue>("ba9c82193a32275408973a8aebdb3a6d");
+            var DontRememberEtude = BlueprintTools.GetBlueprint<BlueprintEtude>("d6c6161d2cf0ac44786f9df67fca5ce9");
+
             // Prompt (Hulrun, at Kenabres festival)
             /* "Be quick about it, before it's too late!" {n}The old man leans over you.{/n}
-             * "Now, who are you? I don't remember seeing you before, and I have an excellent memory for faces."
-             */
+                * "Now, who are you? I don't remember seeing you before, and I have an excellent memory for faces."
+                */
             // Answer
             var IsekaiDialogueHulrun = TTCoreExtensions.CreateAnswer("IsekaiDialogueHulrun", bp => {
                 bp.SetText(IsekaiContext, "(Isekai Protagonist) \"Other than being hit by a truck, I don't remember anything at all...\"");
@@ -31,11 +26,6 @@ namespace IsekaiMod.Content.Dialogue {
                     Cues = new List<BlueprintCueBaseReference>() { DontRememberCue.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
-                bp.ShowConditions = ActionFlow.IfSingle<PlayerSignificantClassIs>(c => {
-                    c.Not = false;
-                    c.CheckGroup = false;
-                    c.m_CharacterClass = IsekaiProtagonistClass.GetReference();
-                });
                 bp.OnSelect = ActionFlow.DoSingle<StartEtude>(c => {
                     c.Etude = DontRememberEtude.ToReference<BlueprintEtudeReference>();
                     c.Evaluate = false;

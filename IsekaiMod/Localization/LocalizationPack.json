@@ -664,7 +664,7 @@
       "Key": "196d3de964a9431d9b94f53482679b28",
       "SimpleName": "BackgroundRationalist.Description",
       "ProcessTemplates": true,
-      "enGB": "The Rationalist is immune to any {g|Encyclopedia:Spell}spell{/g} or {g|Encyclopedia:Special_Abilities}spell-like ability{/g} that allows {g|Encyclopedia:Spell_Resistance}spell resistance{/g} but cannot cast any spells\nIf the character already has the class skill, {g|Encyclopedia:Weapon_Proficiency}weapon proficiency{/g} or armor proficiency granted by the selected background from her class during character creation, then the corresponding {g|Encyclopedia:Bonus}bonuses{/g} from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor {g|Encyclopedia:Check}Check{/g} {g|Encyclopedia:Penalty}Penalty{/g} reduction in case of armor proficiency.",
+      "enGB": "The Rationalist is immune to any {g|Encyclopedia:Spell}spell{/g} or {g|Encyclopedia:Special_Abilities}spell-like ability{/g} that allows {g|Encyclopedia:Spell_Resistance}spell resistance{/g} but cannot cast any spells.\nIf the character already has the class skill, {g|Encyclopedia:Weapon_Proficiency}weapon proficiency{/g} or armor proficiency granted by the selected background from her class during character creation, then the corresponding {g|Encyclopedia:Bonus}bonuses{/g} from background change to a +1 competence bonus in case of skills, a +1 enhancement bonus in case of weapon proficiency and a -1 Armor {g|Encyclopedia:Check}Check{/g} {g|Encyclopedia:Penalty}Penalty{/g} reduction in case of armor proficiency.",
       "ruRU": "Рационалист имеет иммунитет к любому {g|Encyclopedia:Spell}заклинанию{/g} или {g|Encyclopedia:Special_Abilities}способности, похожей на заклинание{/g}, которые предоставляют {g|Encyclopedia:Spell_Resistance}сопротивление заклинаниям{/g}, но не может колдовать. Если у персонажа уже есть классовое умение, {g|Encyclopedia:Weapon_Proficiency}владение оружием{/g} или владение бронёй, предоставленное выбранным фоном из его класса при создании персонажа, то соответствующие {g|Encyclopedia:Bonus}бонусы{/g} от фона изменяются на компетентность +1 в случае умений, улучшение +1 в случае владения оружием и снижение штрафа -1 в проверке брони в случае владения бронёй.",
       "deDE": "Der Rationalist ist immun gegenüber jeglichem {g|Encyclopedia:Spell}Zauber{/g} oder {g|Encyclopedia:Special_Abilities}zauberähnlicher Fähigkeit{/g}, die {g|Encyclopedia:Spell_Resistance}Zauberresistenz{/g} gewährt, kann aber selbst keine Zauber wirken. Wenn der Charakter bereits die Klassenfähigkeit {g|Encyclopedia:Weapon_Proficiency}Waffenfertigkeit{/g} oder Rüstungsfertigkeit besitzt, die durch den ausgewählten Hintergrund seiner Klasse während der Charaktererstellung gewährt wird, ändern sich die entsprechenden {g|Encyclopedia:Bonus}Bonuse{/g} des Hintergrunds zu einem +1 Kompetenzbonus in Fertigkeiten, einem +1 Verbesserungsbonus in Waffenfertigkeit und einer -1 Rüstungs {g|Encyclopedia:Check}Check{/g} {g|Encyclopedia:Penalty}Malus{/g} Reduktion bei Rüstungsfertigkeit.",
       "frFR": "Le Rationnaliste est immunisé contre tous les {g|Encyclopedia:Spell}sorts{/g} ou {g|Encyclopedia:Special_Abilities}pouvoirs magiques{/g} qui peuvent être {g|Encyclopedia:Spell_Resistance}résistés{/g}, mais il ne peut pas lancer de sorts. Si le personnage possède déjà d'une compétence de classe, d'un {g|Encyclopedia:Weapon_Proficiency}Maniement des armes{/g} ou du Port d'une armure après avoir choisi ses origines, alors les {g|Encyclopedia:Bonus}bonus{/g} dus aux origines se transforment en bonus d'aptitude de +1 (dans le cas de la compétence), bonus d'amélioration de +1 (dans le cas du maniement) ou diminution du {g|Encyclopedia:Check}malus{/g} d'armure à la CA (dans le cas du port d'armure).",
@@ -3719,15 +3719,15 @@
       "esES": "Trucos de magia"
     },
     {
-      "Key": "e4ba7ff4ec204d99b2efc8db56791b33",
+      "Key": "4f4892bcca034222bc8314c260138b4c",
       "SimpleName": "IsekaiChannelNegativeEnergyAbility.Description",
       "ProcessTemplates": true,
-      "enGB": "Channeling negative energy causes a burst that damages every living creature in a 30-foot radius centered on the caster. The amount of damage inflicted is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on). Creatures that take damage from channeled energy receive a Will save to halve the damage. The DC of this save is equal to 10 + 1/2 the character level + Charisma modifier.",
-      "ruRU": "Канализация отрицательной энергии вызывает взрыв, наносящий урон каждому живому существу в радиусе 30 футов от центра заклинания. Количество наносимого урона равно 1к6 единицам урона плюс 1к6 единицам урона за каждые два уровня персонажа, начиная со 2-го уровня (2к6 на 3-м уровне, 3к6 на 5-м уровне и т.д.). Существа, получившие урон от канализируемой энергии, получают спасбросок Воли, чтобы сократить полученный урон вдвое. Сложность этого спасброска равна 10 + 1/2 уровня персонажа + модификатор Харизмы.",
-      "deDE": "Durch Kanalisieren negativer Energie entsteht eine Explosion, die allen lebenden Wesen im Umkreis von 30 Fuß um den Zaubernden Schaden zufügt. Die Höhe des verursachten Schadens entspricht 1W6 Punkten Schaden plus 1W6 Punkten Schaden für alle zwei Charakterstufen über der 1. Stufe (2W6 auf der 3. Stufe, 3W6 auf der 5. Stufe und so weiter). Kreaturen, die Schaden durch kanalisierte Energie erleiden, erhalten einen Willenswurf, um den Schaden zu halbieren. Der SG dieses Rettungswurfs entspricht 10 + 1/2 der Charakterstufe + dem Charisma-Modifikator.",
-      "frFR": "Canaliser l'énergie négative provoque une rayonnement qui inflige des dégâts à toutes les créatures vivantes dans un rayon de 30 pieds centré sur le lanceur de sorts. Le montant des dégâts infligés est égal à 1d6 points de dégâts plus 1d6 points de dégâts par tranche de deux niveaux de personnage au-delà du 1er (2d6 au 3e, 3d6 au 5e, etc.). Les créatures qui sont blessées par l’énergie canalisée bénéficient d’un jet de Volonté pour diminuer les dégâts de moitié. La DD de ce jet est égale à 10 + 1/2 du niveau de personnage + modificateur de Charisme.",
-      "zhCN": "引导负能量会产生爆炸，在施法者周围半径30英尺的范围内对每个生物造成伤害。造成的伤害量为1d6点伤害加上每超过1级的两个角色级别1d6点伤害（第3级为2d6，第5级为3d6，依此类推）。受到引导能量的伤害的生物可以进行意志豁免以减半伤害。这个豁免的难度等于10 + 1/2角色级别 + 魅力调整值。",
-      "esES": "Canalizar energía negativa provoca una explosión que daña a todas las criaturas vivas en un radio de 30 pies centrado en el conjurador. La cantidad de daño infligido es igual a 1d6 puntos de daño más 1d6 puntos de daño por cada dos niveles de personaje más allá del 1º (2d6 en el 3º, 3d6 en el 5º, y así sucesivamente). Las criaturas que reciben daño de la energía canalizada reciben una tirada de salvación de Voluntad para reducir el daño a la mitad. La CD de esta salvación es igual a 10 + 1/2 el nivel del personaje + el modificador de Carisma."
+      "enGB": "Channeling negative energy causes a burst that damages every living creature in a 30-foot radius centered on the caster. The amount of damage inflicted is equal to 1d6 points of damage plus 1d6 points of damage for every two Isekai Protagonist levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on). Creatures that take damage from channeled energy receive a Will save to halve the damage. The DC of this save is equal to 10 + 1/2 the Isekai Protagonist level + Charisma modifier.",
+      "ruRU": "Канализация негативной энергии вызывает взрыв, который наносит урон каждому живому существу в радиусе 30 футов от центра заклинания. Количество урона равно 1d6 очков урона плюс 1d6 очков урона за каждые два уровня Исекай Протагониста после 1-го уровня (2d6 на 3-м, 3d6 на 5-м уровне и так далее). Существа, получившие урон от канализированной энергии, могут совершить спасбросок Воли, чтобы уменьшить урон вдвое. Сложность спасброска равна 10 + 1/2 уровня Исекай Протагониста + модификатор Харизмы.",
+      "deDE": "Durch Kanalisieren negativer Energie entsteht eine Explosion, die jedem lebenden Wesen in einem 30-Fuß-Radius um den Zaubernden herum Schaden zufügt. Die Höhe des Schadens beträgt 1W6 Punkte plus 1W6 Punkte für jede zweite Stufe des Isekai Protagonisten über der 1. Stufe (2W6 bei 3., 3W6 bei 5. usw.). Wesen, die durch kanalisierte Energie Schaden nehmen, können einen Willenswurf machen, um den Schaden zu halbieren. Der SG dieses Rettungswurfes entspricht 10 + der Hälfte der Stufe des Isekai Protagonisten + des Charisma-Modifikators.",
+      "frFR": "Canaliser l'énergie négative provoque une explosion qui inflige des dégâts à toutes les créatures vivantes dans un rayon de 30 pieds centré sur l'incanteur. Le montant des dégâts infligés est égal à 1d6 points de dégâts plus 1d6 points de dégâts pour chaque deux niveaux de Protagoniste Isekai au-delà du 1er niveau (2d6 au 3e niveau, 3d6 au 5e niveau, et ainsi de suite). Les créatures qui subissent des dégâts de l'énergie canalisée reçoivent un jet de Volonté pour réduire les dégâts de moitié. Le DD de ce jet est égal à 10 + la moitié du niveau de Protagoniste Isekai + le modificateur de Charisme.",
+      "zhCN": "引导负能量会造成爆炸，对施法者中心半径为30英尺的范围内的每个生物造成伤害。造成的伤害量为1d6点伤害加上每两个异世界主角等级之后的1d6点伤害（第3级时为2d6，第5级时为3d6，依此类推）。受到引导能量伤害的生物可以进行意志豁免来减半伤害。豁免 DC 等于 10 + 1/2 异世界主角等级 + 魅力修正。",
+      "esES": "Canalizar energía negativa causa una explosión que daña a todas las criaturas vivas en un radio de 30 pies centrado en el lanzador. La cantidad de daño infligido es igual a 1d6 puntos de daño más 1d6 puntos de daño por cada dos niveles de Protagonista Isekai más allá del 1º (2d6 en el 3º, 3d6 en el 5º, y así sucesivamente). Las criaturas que reciben daño de la energía canalizada reciben una salvación de Voluntad para reducir a la mitad el daño. La CD de esta salvación es igual a 10 + 1/2 del nivel del Protagonista Isekai + el modificador de Carisma."
     },
     {
       "Key": "8a8fd4e9edcb400ca7a2e11be89629e8",
@@ -3741,15 +3741,15 @@
       "esES": "Canalizar energía negativa - Dañar a seres vivos"
     },
     {
-      "Key": "57f2bc25c7164b92ac2d3bce3bb56573",
+      "Key": "e97abaf3fd704a399f0caa2fea378327",
       "SimpleName": "IsekaiChannelNegativeEnergyFeature.Description",
       "ProcessTemplates": true,
-      "enGB": "You gain the supernatural ability to channel negative energy like a cleric. You use your character level as your effective cleric level when channeling negative energy. You can channel energy a number of times per day equal to 3 + your Charisma modifier.",
-      "ruRU": "Вы приобретаете сверхъестественную способность канализировать отрицательную энергию, как клерик. Вы используете ваш уровень персонажа как ваш эффективный уровень клерика, когда канализируете отрицательную энергию. Вы можете использовать каналирование энергии определенное количество раз в день, равное 3 плюс модификатор вашей Харизмы.",
-      "deDE": "Du erlangst die übernatürliche Fähigkeit, negative Energie wie ein Kleriker zu kanalisieren. Bei der Kanalisierung negativer Energie gilt dein Charakterlevel als effektiver Klerikerlevel. Du kannst Energie eine Anzahl Mal am Tag kanalisieren, die gleich 3 + deinem Charisma-Modifikator ist.",
-      "frFR": "Vous acquérez la capacité surnaturelle de canaliser l'énergie négative comme un prêtre. Vous utilisez votre niveau de personnage comme niveau effectif de prêtre lorsque vous canalisez l'énergie négative. Vous pouvez canaliser l'énergie un certain nombre de fois par jour égal à 3 + modificateur de Charisme.",
-      "zhCN": "你获得了像牧师一样引导负能量的超自然能力。当引导负能量时，你使用你的角色等级作为你的牧师等级。你每天可以引导能量的次数等于3 + 你的魅力调整值。",
-      "esES": "Obtienes la capacidad sobrenatural de canalizar energía negativa como un clérigo. Utilizas tu nivel de personaje como tu nivel efectivo de clérigo al canalizar energía negativa. Puedes canalizar energía un número de veces al día igual a 3 + tu modificador de Carisma."
+      "enGB": "You gain the supernatural ability to channel negative energy like a cleric. You use your Isekai Protagonist level as your effective cleric level when channeling negative energy. You can channel energy a number of times per day equal to 3 + your Charisma modifier.",
+      "ruRU": "Вы обретаете сверхъестественную способность канализировать отрицательную энергию, подобно священнику. При использовании канализации отрицательной энергии вы можете использовать свой уровень Исекай Протагониста как эффективный уровень священника. Вы можете использовать канализацию энергии определенное количество раз в день, равное 3 плюс модификатор вашей харизмы.",
+      "deDE": "Du erhältst die übernatürliche Fähigkeit, negative Energie wie ein Kleriker zu kanalisieren. Dein Effektiver Kleriker-Level für das Kanalisieren negativer Energie entspricht deinem Isekai Protagonisten-Level. Du kannst Energie eine Anzahl von Malen pro Tag kanalisieren, die 3 + deinem Charisma-Modifikator entspricht.",
+      "frFR": "Vous gagnez la capacité surnaturelle de canaliser de l'énergie négative comme un clerc. Vous utilisez votre niveau de protagoniste Isekai comme niveau effectif de clerc lors de la canalisation d'énergie négative. Vous pouvez canaliser de l'énergie un nombre de fois par jour égal à 3 + votre modificateur de Charisme.",
+      "zhCN": "你获得了像祭司一样引导负能量的超自然能力。在引导负能量时，你使用你的Isekai Protagonist等级作为你的有效祭司等级。你每天可以引导能量的次数等于3 + 你的魅力修正。",
+      "esES": "Obtienes la habilidad sobrenatural de canalizar energía negativa como un clérigo. Utilizas tu nivel de Protagonista de Isekai como tu nivel efectivo de clérigo al canalizar energía negativa. Puedes canalizar energía un número de veces al día igual a 3 + tu modificador de Carisma."
     },
     {
       "Key": "93378520b1b94208aae7a8926abad27c",
@@ -3763,15 +3763,15 @@
       "esES": "Canalizar energía negativa"
     },
     {
-      "Key": "30c851092fe8419c9f3b77a5703072fe",
+      "Key": "c030e454eb614f0aa5c9810bb92d8229",
       "SimpleName": "IsekaiChannelNegativeHealAbility.Description",
       "ProcessTemplates": true,
-      "enGB": "Channeling negative energy causes a burst that heals every undead creature in a 30-foot radius centered on the caster. The amount of damage healed is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on).",
-      "ruRU": "Подключение отрицательной энергии вызывает взрыв, который лечит каждое нежить в радиусе 30 футов, центрированный на заклинателе. Количество восстановленного урона равно 1к6 пунктов урона плюс 1к6 пунктов урона за каждые два уровня персонажа свыше 1-го (2к6 на 3-м уровне, 3к6 на 5-м уровне и т.д.)",
-      "deDE": "Das Kanalisieren negativer Energie verursacht eine Explosion, die alle Untoten in einem Radius von 30 Fuß um den Zaubernden heilt. Die Menge an geheiltem Schaden entspricht 1W6 Schadenspunkten plus 1W6 Schadenspunkten für jede zweite Charakterstufe über der 1. (2W6 bei 3., 3W6 bei 5. usw.)",
-      "frFR": "Canaliser l'énergie négative provoque un rayonnement qui soigne chaque créature mort-vivante dans un rayon de 30 pieds centré sur le lanceur de sorts. La quantité de dégâts soignés est égale à 1d6 points de dégâts plus 1d6 points de dégâts par tranche de deux niveaux de personnage au-delà du 1er (2d6 au niveau 3, 3d6 au niveau 5, et ainsi de suite).",
-      "zhCN": "引导负能量会引起一次爆炸，治疗施法者中心30英尺半径内的每个亡灵生物。治疗的伤害量为1d6点伤害加上超过1级的每两个角色级别1d6点伤害（第3级为2d6，第5级为3d6，以此类推）。",
-      "esES": "Canalizar energía negativa provoca una explosión que sana a cada criatura no muerta en un radio de 30 pies centrado en el lanzador. La cantidad de daño curado es igual a 1d6 puntos de daño más 1d6 puntos de daño por cada dos niveles de personaje más allá del 1º (2d6 en 3º, 3d6 en 5º, y así sucesivamente)."
+      "enGB": "Channeling negative energy causes a burst that heals every undead creature in a 30-foot radius centered on the caster. The amount of damage healed is equal to 1d6 points of damage plus 1d6 points of damage for every two Isekai Protagonist levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on).",
+      "ruRU": "Канализация негативной энергии вызывает вспышку, которая исцеляет всех нежить в радиусе 30 футов вокруг заклинателя. Количество восстановленного урона равно 1к6 очков урона плюс 1к6 очков урона за каждые два уровня Исекай Протагониста после 1-го (2к6 на 3-м, 3к6 на 5-м уровне и так далее).",
+      "deDE": "Durch das Kanalisieren von negativer Energie entsteht eine Explosion, die jedes untote Wesen in einem 30-Fuß-Radius um den Zaubernden heilt. Die Menge an geheiltem Schaden entspricht 1W6 Punkten Schaden plus 1W6 Punkten Schaden für jeden zweiten Isekai Protagonist-Level über dem 1. Level (2W6 auf dem 3. Level, 3W6 auf dem 5. Level und so weiter).",
+      "frFR": "Canaliser de l'énergie négative provoque une explosion qui soigne chaque créature mort-vivante dans un rayon de 30 pieds centré sur l'incantateur. La quantité de dégâts soignés est égale à 1d6 points de dégâts plus 1d6 points de dégâts pour chaque niveau de Protagoniste Isekai au-delà du 1er (2d6 au 3ème, 3d6 au 5ème, et ainsi de suite).",
+      "zhCN": "引导负能量会导致爆炸，治疗以施法者为中心半径30英尺范围内的每个不死生物。治疗的伤害量相当于1d6点伤害加上每两个Isekai Protagonist等级超过1级的1d6点伤害（第3级为2d6，第5级为3d6，以此类推）。",
+      "esES": "Canalizar energía negativa causa una explosión que cura a todas las criaturas no muertas en un radio de 30 pies centrado en el conjurador. La cantidad de daño curado es igual a 1d6 puntos de daño más 1d6 puntos de daño por cada dos niveles de Protagonista de Isekai más allá del primer nivel (2d6 en el 3º, 3d6 en el 5º, y así sucesivamente)."
     },
     {
       "Key": "4358b26d030c4f938adb8eb9fb040394",
@@ -3785,15 +3785,15 @@
       "esES": "Canalización de energía negativa - Curar no-muertos"
     },
     {
-      "Key": "0916cf716b50487ebe5fcf21504855e3",
+      "Key": "9c62f5dafc534f32a5065995d04bd58c",
       "SimpleName": "IsekaiChannelPositiveEnergyAbility.Description",
       "ProcessTemplates": true,
-      "enGB": "Channeling positive energy causes a burst that damages every undead creature in a 30-foot radius centered on the caster. The amount of damage inflicted is equal to 1d6 points of damage plus 1d6 points of damage for every two character levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on). Creatures that take damage from channeled energy receive a Will save to halve the damage. The DC of this save is equal to 10 + 1/2 the character level + Charisma modifier.",
-      "ruRU": "Канализация позитивной энергии вызывает взрыв, который наносит урон каждому нежити в радиусе 30 футов, центрированный на заклинателе. Количество нанесенного урона равно 1d6 единицам урона плюс 1d6 единицам урона за каждые два уровня персонажа, начиная со 2-го (2d6 на 3-м уровне, 3d6 на 5-м уровне и так далее). Существа, получившие урон от канализированной энергии, могут совершить спасбросок Воли, чтобы уменьшить урон вдвое. Сложность спасброска равна 10 + 1/2 уровня персонажа + модификатор Харизмы.",
-      "deDE": "Das Kanalisieren von positiver Energie verursacht eine Explosion, die allen Untoten in einem 30-Fuß-Radius um den Zaubernden Schaden zufügt. Die Schadensmenge entspricht 1W6 Punkten Schaden plus 1W6 Punkten Schaden für alle zwei Charakterstufen über der 1. Stufe (2W6 auf der 3. Stufe, 3W6 auf der 5. Stufe usw.). Kreaturen, die durch kanalisierte Energie Schaden erleiden, erhalten einen Willenswurf, um den Schaden zu halbieren. Der SG dieses Rettungswurfs entspricht 10 + 1/2 der Charakterstufe + Charisma-Modifikator.",
-      "frFR": "Canaliser de l'énergie positive provoque un rayonnement qui inflige des dégâts à chaque créature mort-vivante dans un rayon de 30 pieds centré sur le lanceur de sorts. Le montant des dégâts infligés est égal à 1d6 points de dégâts plus 1d6 points de dégâts par tranche de deux niveaux de personnage au-delà du 1er (2d6 au 3e, 3d6 au 5e, etc.). Les créatures qui sont blessées par l’énergie canalisée bénéficient d’un jet de Volonté pour diminuer les dégâts de moitié. Le DD de ce jet de sauvegarde est égal à 10 + 1/2 du niveau de personnage + modificateur de Charisme.",
-      "zhCN": "释放正能量会导致爆炸，对以施法者为中心，30英尺半径内的所有亡灵造成伤害。伤害量等于1d6点伤害加上每超过1级的两个人物等级1d6点伤害（3级时为2d6，5级时为3d6，依此类推）。受到来自引导能量的伤害的生物可以进行意志豁免，减半伤害。豁免的难度等于10+1/2人物等级+魅力调整值。",
-      "esES": "Canalizar energía positiva provoca una explosión que inflige daño a cada criatura no muerta en un radio de 30 pies centrado en el conjurador. La cantidad de daño infligido es igual a 1d6 puntos de daño más 1d6 puntos de daño por cada dos niveles de personaje por encima del 1º (2d6 en el 3º, 3d6 en el 5º, etc.). Las criaturas que reciben daño de la energía canalizada reciben una salvación de Voluntad para reducir a la mitad el daño. La CD de esta salvación es igual a 10 + 1/2 del nivel de personaje + el modificador de Carisma."
+      "enGB": "Channeling positive energy causes a burst that damages every undead creature in a 30-foot radius centered on the caster. The amount of damage inflicted is equal to 1d6 points of damage plus 1d6 points of damage for every two Isekai Protagonist levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on). Creatures that take damage from channeled energy receive a Will save to halve the damage. The DC of this save is equal to 10 + 1/2 the Isekai Protagonist level + Charisma modifier.",
+      "ruRU": "Канализация позитивной энергии вызывает взрыв, наносящий урон каждому нежить в радиусе 30 футов, центрированном на заклинателе. Количество нанесенного урона равно 1d6 единицам урона плюс 1d6 единицам урона за каждые два уровня Исекай Протагониста после 1-го (2d6 на 3-м, 3d6 на 5-м уровне и так далее). Существа, получающие урон от канализированной энергии, могут сделать спасбросок Воли, чтобы уменьшить урон вдвое. КС этого спасброска равна 10 + 1/2 уровня Исекай Протагониста + модификатор Харизмы.",
+      "deDE": "Das Kanalisieren positiver Energie verursacht eine Explosion, die jedem untoten Wesen in einem Radius von 30 Fuß um den Zaubernden Schaden zufügt. Die Schadensmenge entspricht 1d6 Schadenspunkten plus 1d6 Schadenspunkten für alle zwei Isekai-Protagonisten-Stufen über der 1. Stufe (2d6 auf der 3. Stufe, 3d6 auf der 5. Stufe usw.). Kreaturen, die Schaden durch kanalisierte Energie erleiden, erhalten einen Willenswurf, um den Schaden zu halbieren. Der SG dieses Rettungswurfs entspricht 10 + 1/2 der Isekai-Protagonisten-Stufe + dem Charisma-Modifikator.",
+      "frFR": "Canaliser une énergie positive provoque une explosion qui inflige des dégâts à chaque créature mort-vivante dans un rayon de 30 pieds centré sur le lanceur de sorts. La quantité de dégâts infligée est égale à 1d6 points de dégâts plus 1d6 points de dégâts pour chaque deux niveaux de Protagoniste d'Isekai au-delà du 1er niveau (2d6 au 3ème niveau, 3d6 au 5ème niveau, et ainsi de suite). Les créatures qui subissent des dégâts provenant d'une énergie canalisée reçoivent un jet de Volonté pour réduire les dégâts de moitié. Le DD de ce jet de sauvegarde est égal à 10 + 1/2 du niveau de Protagoniste d'Isekai + le modificateur de Charisme.",
+      "zhCN": "引导正能量会造成爆炸，对以施法者为中心30英尺半径内的所有亡灵生物造成伤害。所造成的伤害量为1d6点伤害加上每两个异世界主角等级超过1级的1d6点伤害（在3级时为2d6，在5级时为3d6，依此类推）。从引导能量中受到伤害的生物可以进行意志豁免来减半伤害。这个豁免的难度等于10 + 1/2异世界主角等级 + 魅力调整值。",
+      "esES": "Canalizar energía positiva causa una explosión que inflige daño a todas las criaturas no muertas en un radio de 30 pies centrado en el lanzador de conjuros. La cantidad de daño infligido es igual a 1d6 puntos de daño más 1d6 puntos de daño por cada dos niveles de Protagonista de Isekai más allá del primer nivel (2d6 en el 3er nivel, 3d6 en el 5to nivel, y así sucesivamente). Las criaturas que reciben daño de la energía canalizada reciben una salvación de Voluntad para reducir a la mitad el daño. La CD de esta salvación es igual a 10 + 1/2 el nivel de Protagonista de Isekai + el modificador de Carisma."
     },
     {
       "Key": "d2879d54da1e4f34b739b3890f3bf630",
@@ -3805,6 +3805,17 @@
       "frFR": "Canalisation d'énergie positive - Blessure des morts-vivants",
       "zhCN": "正能量通道 - 对不死族造成伤害",
       "esES": "Canalizar energía positiva - Dañar a los no muertos"
+    },
+    {
+      "Key": "be7d58a6bf3c4a33b816416c6e7ac42f",
+      "SimpleName": "IsekaiChannelPositiveEnergyFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain the supernatural ability to channel positive energy like a cleric. You use your Isekai Protagonist level as your effective cleric level when channeling positive energy.  You can channel energy a number of times per day equal to 3 + your Charisma modifier.",
+      "ruRU": "Вы получаете сверхъестественную способность канализации положительной энергии, подобно священнику. Когда вы канализируете положительную энергию, ваш уровень Главного Героя Исекая определяет ваш эффективный уровень священника. Вы можете канализовать энергию определенное количество раз в день, равное 3 плюс модификатор вашей харизмы.",
+      "deDE": "Du erhältst die übernatürliche Fähigkeit, positive Energie wie ein Kleriker zu kanalisieren. Bei der Kanalisierung von positiver Energie entspricht dein Isekai Protagonist-Level deinem effektiven Klerikerlevel. Du kannst Energie eine Anzahl von Malen pro Tag kanalisieren, die 3 + deinem Charisma-Modifikator entspricht.",
+      "frFR": "Vous acquérez la capacité surnaturelle de canaliser de l'énergie positive comme un clerc. Vous utilisez votre niveau de Protagoniste d'Isekai comme niveau de clerc effectif lorsque vous canalisez de l'énergie positive. Vous pouvez canaliser de l'énergie un certain nombre de fois par jour égal à 3 + votre modificateur de Charisme.",
+      "zhCN": "你获得了类似祭司的超自然能力，可以引导正能量。当你引导正能量时，你的异世界主角等级将作为你的有效祭司等级。你每天可以引导能量的次数等于3 + 你的魅力修正。",
+      "esES": "Obtienes la habilidad sobrenatural de canalizar energía positiva como un clérigo. Utilizas tu nivel de Protagonista Isekai como tu nivel efectivo de clérigo al canalizar energía positiva. Puedes canalizar energía un número de veces por día igual a 3 + tu modificador de Carisma."
     },
     {
       "Key": "d4ad925cfe9e4aba8ff63c16f2d01ec1",
@@ -3838,6 +3849,17 @@
       "frFR": "Canaliser de l'énergie positive crée un rayonnement qui soigne tous les êtres vivants dans un rayon de 30 pieds centré sur l'incanteur. Le montant de dégâts soignés est égal à 1d6 points de dégâts plus 1d6 points de dégâts par tranche de deux niveaux de personnage au-delà du 1er niveau (2d6 au 3e niveau, 3d6 au 5e niveau, et ainsi de suite).",
       "zhCN": "引导正能量会引起一次爆炸，在施法者中心点为半径30英尺的范围内治愈每个生物。治疗的伤害量等于1d6点伤害加上每两个角色等级超过1级的1d6点伤害（3级为2d6，5级为3d6，依此类推）。",
       "esES": "Canalizar energía positiva causa una explosión que cura a todas las criaturas vivas en un radio de 30 pies centrado en el lanzador. La cantidad de daño curado es igual a 1d6 puntos de daño más 1d6 puntos de daño por cada dos niveles de personaje más allá del 1º (2d6 en el 3º, 3d6 en el 5º, y así sucesivamente)."
+    },
+    {
+      "Key": "420330b0a8ad41ac9359bbead21e9d07",
+      "SimpleName": "IsekaiChannelPositiveHealAbility.Description",
+      "ProcessTemplates": true,
+      "enGB": "Channeling positive energy causes a burst that heals every living creature in a 30-foot radius centered on the caster. The amount of damage healed is equal to 1d6 points of damage plus 1d6 points of damage for every two Isekai Protagonist levels beyond 1st (2d6 at 3rd, 3d6 at 5th, and so on).",
+      "ruRU": "Применение позитивной энергии вызывает взрыв, исцеляющий всех живых существ в радиусе 30 футов от центра заклинания. Количество восстановленного здоровья равно 1d6 ед. урона плюс 1d6 ед. урона за каждые два уровня Протагониста Исекай после 1-го уровня (2d6 на 3-м уровне, 3d6 на 5-м уровне и т.д.).",
+      "deDE": "Durch Kanalisieren positiver Energie entsteht eine Explosion, die alle lebenden Kreaturen in einem 30-Fuß-Radius um den Zaubernden heilt. Die Menge an geheiltem Schaden entspricht 1W6 Schadenspunkten plus 1W6 Schadenspunkten für jede zweite Stufe des Isekai-Protagonisten nach der ersten (2W6 auf Stufe 3, 3W6 auf Stufe 5 usw.).",
+      "frFR": "Canaliser de l'énergie positive provoque une explosion qui soigne chaque créature vivante dans un rayon de 30 pieds centré sur le lanceur de sorts. La quantité de dégâts soignés est égale à 1d6 points de dégâts plus 1d6 points de dégâts pour chaque deux niveaux de Protagoniste Isekai au-delà du 1er niveau (2d6 au niveau 3, 3d6 au niveau 5, et ainsi de suite).",
+      "zhCN": "引导正能量会引起一次爆发，治疗施法者中心30英尺范围内的所有生物。治疗的伤害量相当于1d6点伤害加上每两个Isekai Protagonist等级超过1级的1d6点伤害（第3级2d6，第5级3d6，以此类推）。",
+      "esES": "Canalizar energía positiva provoca una explosión que sana a todas las criaturas vivas en un radio de 30 pies centrado en el lanzador. La cantidad de daño curado es igual a 1d6 puntos de daño más 1d6 puntos de daño por cada dos niveles de Protagonista Isekai más allá del 1º (2d6 en el 3º, 3d6 en el 5º, y así sucesivamente)."
     },
     {
       "Key": "5bb72e28f549477fa2560d3513ca1882",
@@ -3895,26 +3917,70 @@
       "esES": "¿Quieres unirte a mi harén?"
     },
     {
+      "Key": "38f28f4e0ff0480395f40e08c3b8d007",
+      "SimpleName": "IsekaiDialogueAnevia2.Text",
+      "ProcessTemplates": false,
+      "enGB": "(Isekai Protagonist) \"I've convinced Irabeth to join the harem.\"",
+      "ruRU": "Я убедил Ирабет присоединиться к гарему.",
+      "deDE": "Ich habe Irabeth davon überzeugt, sich dem Harem anzuschließen.",
+      "frFR": "J'ai convaincu Irabeth de rejoindre le harem.",
+      "zhCN": "我说服了伊拉贝丝加入后宫。",
+      "esES": "Convencí a Irabeth de unirse al harén."
+    },
+    {
       "Key": "dd6193d3ce934224b6cc64843615360e",
       "SimpleName": "IsekaiDialogueAneviaReply.Text",
       "ProcessTemplates": false,
-      "enGB": "Sure thing, only if you can convince Irabeth to join.",
-      "ruRU": "Убедить Ирабет присоединиться.",
-      "deDE": "Überzeuge Irabeth, sich uns anzuschließen.",
-      "frFR": "Pourquoi pas, mais seulement si tu arrives à convaincre Irabeth de se joindre à nous.",
-      "zhCN": "说服伊拉贝丝加入我们。",
-      "esES": "Convencer a Irabeth para unirse a nosotros."
+      "enGB": "\"Sure thing, only if you can convince Irabeth to join.\"",
+      "ruRU": "\"Убедить Ирабет присоединиться.\"",
+      "deDE": "\"Überzeuge Irabeth, sich uns anzuschließen.\"",
+      "frFR": "\"Pourquoi pas, mais seulement si tu arrives à convaincre Irabeth de se joindre à nous.\"",
+      "zhCN": "\"说服伊拉贝丝加入我们。\"",
+      "esES": "\"Convencer a Irabeth para unirse a nosotros.\""
     },
     {
       "Key": "b41e9abb7c2f486ab948e467679b2cdc",
       "SimpleName": "IsekaiDialogueAneviaReply2.Text",
       "ProcessTemplates": false,
       "enGB": "\"Also, for no particular reason, would you be interested in a spare of coffin I have lying around?\"",
-      "ruRU": "Кстати, по никакой особой причине, вы не заинтересованы в запасном гробе, который у меня лежит здесь?",
-      "deDE": "Übrigens, aus keinem besonderen Grund, wären Sie an einem Ersatz-Sarg interessiert, den ich hier herumliegen habe?",
-      "frFR": "Et, par hasard, seriez-vous intéressé par un cercueil de rechange qui traîne?",
-      "zhCN": "另外，毫无特定原因，您有兴趣试试我这边闲置的棺材吗？",
-      "esES": "Por cierto, sin ninguna razón en particular, ¿estarías interesado en un repuesto de ataúd que tengo por aquí?"
+      "ruRU": "\"Кстати, по никакой особой причине, вы не заинтересованы в запасном гробе, который у меня лежит здесь?\"",
+      "deDE": "\"Übrigens, aus keinem besonderen Grund, wären Sie an einem Ersatz-Sarg interessiert, den ich hier herumliegen habe?\"",
+      "frFR": "\"Et, par hasard, seriez-vous intéressé par un cercueil de rechange qui traîne?\"",
+      "zhCN": "\"另外，毫无特定原因，您有兴趣试试我这边闲置的棺材吗？\"",
+      "esES": "\"Por cierto, sin ninguna razón en particular, ¿estarías interesado en un repuesto de ataúd que tengo por aquí?\""
+    },
+    {
+      "Key": "a46fca3d7e304a0fb45ecc217bab34d0",
+      "SimpleName": "IsekaiDialogueAneviaReply3.Text",
+      "ProcessTemplates": false,
+      "enGB": "{n}Anevia is astonished.{/n} \"That was completely unexpected. I guess I'll discuss with Irabeth about our glorious future in your harem.\"",
+      "ruRU": "{n}Аневия поражена.{/n} «Это было полностью неожиданно. Думаю, я поговорю с Ирабет о нашем великолепном будущем в твоем гареме.",
+      "deDE": "{n}Anevia ist erstaunt.{/n} \"Das war völlig unerwartet. Ich denke, ich werde mit Irabeth über unsere glorreiche Zukunft in deinem Harem sprechen.\"",
+      "frFR": "{n}Anevia est stupéfaite.{/n} « C'était totalement inattendu. Je suppose que je vais discuter avec Irabeth de notre glorieux avenir dans ton harem. »",
+      "zhCN": "{n}Anevia感到惊讶。{/n}“这完全出乎意料。我想我会和Irabeth讨论我们在你的后宫中的光辉未来。”",
+      "esES": "{n}Anevia está asombrada.{/n} \"Esto fue completamente inesperado. Supongo que hablaré con Irabeth sobre nuestro glorioso futuro en tu harén.\""
+    },
+    {
+      "Key": "76ed9a699b9b447db9498263cde5e614",
+      "SimpleName": "IsekaiDialogueFinnean.Text",
+      "ProcessTemplates": false,
+      "enGB": "(Isekai Protagonist) \"Hey can you transform into a hot succubus?\"",
+      "ruRU": "Привет, ты можешь превратиться в горячую суккубу?",
+      "deDE": "Hey, kannst du dich in eine heiße Sukkubus verwandeln?",
+      "frFR": "Hé, peux-tu te transformer en succube sexy ?",
+      "zhCN": "嘿，你能变成一个性感的魅魔吗？",
+      "esES": "Hola, ¿puedes transformarte en una succubo atractiva?"
+    },
+    {
+      "Key": "267aaf8c92d44b97b8b40b421d38a0b3",
+      "SimpleName": "IsekaiDialogueFinneanReply.Text",
+      "ProcessTemplates": false,
+      "enGB": "\"No, but I can transform into a flamberge greatsword to stick up your bitch ass.\"",
+      "ruRU": "\"Нет, но я могу превратиться в огненный меч с широким клинком, чтобы проткнуть твою ублюдочную задницу.\"",
+      "deDE": "\"Nein, aber ich kann mich in ein Flamberge-Großschwert verwandeln, um es in deinen verdammten Hintern zu stecken.\"",
+      "frFR": "\"Non, mais je peux me transformer en une épée à deux mains flamberge pour t'enfoncer dans ton sale cul.\"",
+      "zhCN": "\"不，但我可以变成一把火舌大剑，插进你这个混蛋的屁股里。\"",
+      "esES": "\"No, pero puedo transformarme en una espada bastarda flamígera para clavártela en el maldito culo.\""
     },
     {
       "Key": "f6b0747fd79244208a32a02247ece79c",
@@ -3950,6 +4016,83 @@
       "esES": "Aparte de ser atropellado por un camión, no recuerdo nada en absoluto..."
     },
     {
+      "Key": "ec06abd2285048a6a4ff0aceaf9ffc7c",
+      "SimpleName": "IsekaiDialogueIrabeth.Text",
+      "ProcessTemplates": false,
+      "enGB": "(Isekai Protagonist) \"Do you want to join my harem? Anevia is also joining.\"",
+      "ruRU": "Вы хотите присоединиться к моему гарему? Аневия тоже присоединяется.",
+      "deDE": "Möchtest du meinem Harem beitreten? Auch Anevia schließt sich an.",
+      "frFR": "Voulez-vous rejoindre mon harem ? Anevia se joint également.",
+      "zhCN": "你想加入我的后宫吗？Anevia也要加入。",
+      "esES": "¿Quieres unirte a mi harén? Anevia también se está uniendo."
+    },
+    {
+      "Key": "4c9331d685d54494af13b1d68d7f2da6",
+      "SimpleName": "IsekaiDialogueIrabethAnswer1.Text",
+      "ProcessTemplates": false,
+      "enGB": "\"It's true.\"",
+      "ruRU": "\"Это правда.\"",
+      "deDE": "\"Das ist wahr.\"",
+      "frFR": "\"C'est vrai.\"",
+      "zhCN": "\"这是真的。\"",
+      "esES": "\"Es verdad.\""
+    },
+    {
+      "Key": "471d270348f240128b23adcb7706bb25",
+      "SimpleName": "IsekaiDialogueIrabethAnswer2.Text",
+      "ProcessTemplates": false,
+      "enGB": "\"Nevermind. It was a joke.\"",
+      "ruRU": "\"Ничего страшного. Это была шутка.\"",
+      "deDE": "\"Schon gut. Es war ein Witz.\"",
+      "frFR": "\"Ce n'est rien. C'était une blague.\"",
+      "zhCN": "\"没关系。这只是个笑话。\"",
+      "esES": "\"No importa. Fue una broma.\""
+    },
+    {
+      "Key": "cb40b9485864480cb849ff6cfbd511cc",
+      "SimpleName": "IsekaiDialogueIrabethReply.Text",
+      "ProcessTemplates": false,
+      "enGB": "\"Ridiculous! I don't know what sorcery is this, but Anevia would never agree to this.\"",
+      "ruRU": "\"Нелепо! Я не знаю, что это за колдовство, но Аневия никогда бы не согласилась на это.\"",
+      "deDE": "\"Absurd! Ich weiß nicht, welche Zauberei das ist, aber Anevia würde dem niemals zustimmen.\"",
+      "frFR": "\"Absurde ! Je ne sais pas quelle sorcellerie est-ce, mais Anevia n'accepterait jamais cela.\"",
+      "zhCN": "\"荒谬！我不知道这是什么魔法，但安妮维亚绝不会同意这个。\"",
+      "esES": "\"¡Absurdo! No sé qué brujería es esta, pero Anevia nunca estaría de acuerdo con esto.\""
+    },
+    {
+      "Key": "8484f356f1aa46e499073ad2352a4d3c",
+      "SimpleName": "IsekaiDialogueIrabethReply2.Text",
+      "ProcessTemplates": false,
+      "enGB": "\"That's what I thought.\"",
+      "ruRU": "\"Именно то, что я и подумал(а).\"",
+      "deDE": "\"Genau das habe ich gedacht.\"",
+      "frFR": "\"C'est ce que je pensais.\"",
+      "zhCN": "\"那正是我所想的。\"",
+      "esES": "\"Eso es lo que pensé.\""
+    },
+    {
+      "Key": "058adcc857e74bd787014d3e4e3af276",
+      "SimpleName": "IsekaiDialogueIrabethReplyFail.Text",
+      "ProcessTemplates": false,
+      "enGB": "\"I don't think so.\"",
+      "ruRU": "\"Я так не думаю.\"",
+      "deDE": "\"Ich denke nicht so.\"",
+      "frFR": "\"Je ne pense pas.\"",
+      "zhCN": "\"我不这么认为。\"",
+      "esES": "\"No creo que sea así.\""
+    },
+    {
+      "Key": "a0ac4070453b4f63867b2e3a47b01cf2",
+      "SimpleName": "IsekaiDialogueIrabethReplySuccess.Text",
+      "ProcessTemplates": false,
+      "enGB": "\"Fine. I'll join your harem after the crusades against the demons is over.\"",
+      "ruRU": "\"Хорошо. Я присоединюсь к вашему гарему после окончания крестового похода против демонов.\"",
+      "deDE": "\"In Ordnung. Ich werde mich deinem Harem anschließen, nachdem die Kreuzzüge gegen die Dämonen vorbei sind.\"",
+      "frFR": "\"D'accord. Je rejoindrai votre harem après la fin des croisades contre les démons.\"",
+      "zhCN": "\"好吧。在对抗恶魔的十字军战争结束后，我会加入你的后宫。\"",
+      "esES": "\"De acuerdo. Me uniré a tu harén después de que termine la cruzada contra los demonios.\""
+    },
+    {
       "Key": "9b76fd16d94d4b1b8dbb976fe7faf4a2",
       "SimpleName": "IsekaiDialogueMinagho.Text",
       "ProcessTemplates": false,
@@ -3976,11 +4119,11 @@
       "SimpleName": "IsekaiDialogueMinaghoSeelahReply.Text",
       "ProcessTemplates": false,
       "enGB": "{n}Seelah smiles and gives you a thumbs up!{/n}",
-      "ruRU": "Сила улыбается и делает вам большой палец вверх!",
-      "deDE": "Seelah lächelt und gibt dir einen Daumen hoch!",
-      "frFR": "Seelah sourit et lève son pouce !",
-      "zhCN": "塞拉微笑着给你竖起了大拇指！",
-      "esES": "Seelah sonríe y te da un pulgar hacia arriba!"
+      "ruRU": "{n}Сила улыбается и делает вам большой палец вверх!{\n}",
+      "deDE": "{n}Seelah lächelt und gibt dir einen Daumen hoch!{\n}",
+      "frFR": "{n}Seelah sourit et lève son pouce!{\n}",
+      "zhCN": "{n}塞拉微笑着给你竖起了大拇指！{\n}",
+      "esES": "{n}Seelah sonríe y te da un pulgar hacia arriba!{\n}"
     },
     {
       "Key": "d87299f2ee974ecb8b528f3506c56d5f",
@@ -5226,6 +5369,28 @@
       "esES": "Domina el autocontrol"
     },
     {
+      "Key": "a0d13a47902f48ff95d9869cb7069a5e",
+      "SimpleName": "MasterSummoner.Description",
+      "ProcessTemplates": false,
+      "enGB": "Each time you cast a summoning {g|Encyclopedia:Spell}spell{/g}, add the highest modifier of Intelligence, Wisdom and Charisma to the total number of creatures summoned.",
+      "ruRU": "Каждый раз, когда вы произносите заклинание {g|Encyclopedia:Spell}призыва{/g}, добавьте наибольший модификатор Интеллекта, Мудрости и Харизмы к общему количеству существ, призываемых.",
+      "deDE": "Jedes Mal, wenn du einen Beschwörungszauber {g|Encyclopedia:Spell}wirkst{/g}, füge den höchsten Modifikator von Intelligenz, Weisheit und Charisma zur Gesamtzahl der beschworenen Kreaturen hinzu.",
+      "frFR": "À chaque fois que vous lancez un sort d'invocation {g|Encyclopedia:Spell}{/g}, ajoutez le modificateur le plus élevé entre Intelligence, Sagesse et Charisme au nombre total de créatures invoquées.",
+      "zhCN": "每次你施放一个召唤 {g|Encyclopedia:Spell}法术{/g}，将智力、感知和魅力的最高修饰加到所召唤的生物总数上。",
+      "esES": "Cada vez que lances un conjuro de invocación {g|Encyclopedia:Spell}{/g}, añade el modificador más alto de Inteligencia, Sabiduría y Carisma al número total de criaturas invocadas."
+    },
+    {
+      "Key": "8c4696454556411cae5c24345c907a39",
+      "SimpleName": "MasterSummonerBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Master Summoner",
+      "ruRU": "Способность сверхдержавная — Владыка Призыва",
+      "deDE": "Übermächtige Fähigkeit - Meisterbeschwörer",
+      "frFR": "Compétence surpuissante - Maître invocateur",
+      "zhCN": "超强能力-召唤大师",
+      "esES": "Habilidad sobrepotenciada - Maestro invocador"
+    },
+    {
       "Key": "0bce9965857640939a4960f17e52fe96",
       "SimpleName": "MetaLuck.Description",
       "ProcessTemplates": false,
@@ -5545,6 +5710,17 @@
       "esES": "Inmunidad a Náuseas"
     },
     {
+      "Key": "b63b2074fa1849d599e79e504fab8bcb",
+      "SimpleName": "NoHax.Description",
+      "ProcessTemplates": true,
+      "enGB": "You decide not to abuse your power.",
+      "ruRU": "Вы решаете не злоупотреблять своей властью.",
+      "deDE": "Du entscheidest dich, deine Macht nicht zu missbrauchen.",
+      "frFR": "Vous décidez de ne pas abuser de votre pouvoir.",
+      "zhCN": "你决定不滥用你的权力。",
+      "esES": "Decides no abusar de tu poder."
+    },
+    {
       "Key": "0e8e8f4305dc40b7a9da22a0a03f23d4",
       "SimpleName": "OmegaStrike.Description",
       "ProcessTemplates": true,
@@ -5567,10 +5743,10 @@
       "esES": "Golpe Omega"
     },
     {
-      "Key": "2b7797a6a31346e5a40c62f0dbbf3d01",
+      "Key": "fae6ba88703540dea33aafe849144753",
       "SimpleName": "OracleLegacyProgression.Description",
       "ProcessTemplates": true,
-      "enGB": "Seekers of Truth are driven by a desire to uncover the secrets behind the fundamental forces of nature. \nBecause of their unique perspective as otherworlders, they are able to approach the world with a fresh and unbiased eye, allowing them to see beyond the surface of things and seek out the deeper truth behind the world around them. \nThey are driven by a desire to uncover the secrets of the world that would otherwise remain hidden, and are not satisfied with simply accepting things at face value. \nThis allows them to uncover the secrets of the world that are often only revealed to mortals through revelations.",
+      "enGB": "Seekers of Truth are driven by a desire to uncover the secrets behind the fundamental forces of nature. \nBecause of their unique perspective as otherworlders, they are able to approach the world with a fresh and unbiased eye, allowing them to see beyond the surface of things and seek out the deeper truth behind the world around them. \nThey are driven by a desire to uncover the secrets of the world that would otherwise remain hidden, and are not satisfied with simply accepting things at face value. \nThis allows them to uncover the secrets of the world that are often only revealed to mortals through revelations.\n\nPlease note that you do not get previous inheritances when seletcing this at higher levels.",
       "ruRU": "Искатели истины движимы желанием раскрыть тайны основных сил природы. Благодаря своей уникальной перспективе как пришельцы из других миров, они могут подходить к миру с свежим и непредвзятым взглядом, что позволяет им видеть за поверхностью вещей и искать глубинную правду за миром вокруг них. Они движимы желанием раскрыть тайны мира, которые в противном случае останутся скрытыми, и не удовлетворяются простым принятием вещей на веру. Это позволяет им раскрыть тайны мира, которые часто открываются смертным только через откровения.",
       "deDE": "Wahrheitssucher werden von dem Wunsch angetrieben, die Geheimnisse hinter den fundamentalen Kräften der Natur aufzudecken. Durch ihre einzigartige Perspektive als Andersweltler können sie die Welt mit einem frischen und unvoreingenommenen Auge betrachten, was es ihnen ermöglicht, über die Oberfläche der Dinge hinauszusehen und die tiefere Wahrheit hinter der Welt um sie herum zu suchen. Sie werden von dem Wunsch angetrieben, die Geheimnisse der Welt aufzudecken, die sonst verborgen bleiben würden, und sind nicht zufrieden damit, Dinge einfach hinzunehmen. Dies ermöglicht es ihnen, die Geheimnisse der Welt aufzudecken, die oft nur durch Offenbarungen den Sterblichen enthüllt werden.",
       "frFR": "Les Sourciers de Vérité sont animés par le désir de découvrir les secrets des forces fondamentales de la nature. Grâce à leur perspective unique en tant qu'étrangers, ils sont capables d'aborder le monde avec un regard frais et impartial, ce qui leur permet de voir au-delà de la surface des choses et de rechercher la vérité profonde derrière le monde qui les entoure. Ils sont animés par le désir de découvrir les secrets du monde qui resteraient autrement cachés et ne se contentent pas de simplement accepter les choses telles qu'elles sont présentées. Cela leur permet de découvrir les secrets du monde qui sont souvent révélés aux mortels par des révélations.",
@@ -6876,10 +7052,10 @@
       "esES": "Inmunidad sónica"
     },
     {
-      "Key": "30035be8ad404f6b97fb0e004f9599e0",
+      "Key": "e8a65301807a48d68949c5fbdba8ed0d",
       "SimpleName": "SorcererLegacyProgression.Description",
       "ProcessTemplates": true,
-      "enGB": "Their otherworldly knowledge and point of view allow Chimeras to imbue themselves with different bloodlines in order to gain power and strength. \nChimeras are constantly seeking out new sources of power, and their ability to absorb and incorporate these different bloodlines allows them to become truly formidable foes. \nHowever, their constant experimentation with bloodlines can also lead to confusion and uncertainty about their own heritage and identity, as their original ancestry becomes harder to discern over time.",
+      "enGB": "Their otherworldly knowledge and point of view allow Chimeras to imbue themselves with different bloodlines in order to gain power and strength. \nChimeras are constantly seeking out new sources of power, and their ability to absorb and incorporate these different bloodlines allows them to become truly formidable foes. \nHowever, their constant experimentation with bloodlines can also lead to confusion and uncertainty about their own heritage and identity, as their original ancestry becomes harder to discern over time.\n\nPlease note that you do not get previous Bloodline Evolutions when picking this legacy at higher levels.",
       "ruRU": "Их сверхъестественные знания и точка зрения позволяют Химерам пропитывать себя различными кровными линиями, чтобы приобрести силу и мощь. Химеры постоянно ищут новые источники силы, и их способность впитывать и интегрировать эти различные кровные линии позволяет им стать по-настоящему формидабельными противниками. Однако их постоянные эксперименты с кровными линиями также могут привести к путанице и неопределенности относительно их собственного наследия и идентичности, поскольку их исходное происхождение становится все труднее разглядеть со временем.",
       "deDE": "Dank ihres überirdischen Wissens und ihrer Sichtweise können Chimären sich mit verschiedenen Blutlinien versehen, um Kraft und Stärke zu erlangen. Chimären suchen ständig nach neuen Energiequellen, und ihre Fähigkeit, diese verschiedenen Blutlinien aufzunehmen und zu integrieren, ermöglicht es ihnen, wirklich formidablen Gegnern zu werden. Ihre ständigen Experimente mit Blutlinien können jedoch auch zu Verwirrung und Unsicherheit über ihr eigenes Erbe und ihre Identität führen, da ihre ursprüngliche Abstammung im Laufe der Zeit schwerer zu erkennen wird.",
       "frFR": "Leur connaissance et leur point de vue surnaturels permettent aux Chimères de s'imprégner de différents lignages afin de gagner en puissance et en force. Les Chimères cherchent constamment de nouvelles sources de pouvoir, et leur capacité à absorber et à incorporer ces différentes lignées leur permet de devenir des adversaires vraiment redoutables. Cependant, leur expérimentation constante avec les lignages peut également entraîner une confusion et une incertitude quant à leur propre héritage et identité, car leur ascendance d'origine devient de plus en plus difficile à discerner avec le temps.",

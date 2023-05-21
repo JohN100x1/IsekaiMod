@@ -179,6 +179,7 @@
     "SeriousStrike": "100e8182-0870-4168-b844-b8fc1722a408",
     "Invincibility": "02487aed-58d6-4d2d-a308-04178ad69e3b",
     "FasterThanLight": "9bf4c81c-6511-4cc0-909e-55cdab2e2bbf",
+    "NoHax": "ba22c462-affc-4fad-8713-591fd10f150a",
 
     // Starting Weapon
     "StartingWeaponSelection": "1dbbd5c3-19e6-4128-8707-b6e138221c1f",
@@ -433,10 +434,15 @@
     "PowerLevelingArea": "5b0854ec-6ce1-4525-bef3-55698e8a9b5b",
     "PowerLevelingAreaBuff": "691fd2b1-2e51-405e-90b1-067959bbb244",
     "PowerLevelingFeature": "98f66657-5797-450c-9ecf-09fa0ef8a20a",
+    "MasterSummonerBuff": "d8178ef6-2a8b-4de5-b048-bcec32c58d63",
+    "MasterSummonerAbility": "2d5c9ae0-b17f-4d63-8a70-782d48698404",
+    "MasterSummonerFeature": "4566f5f6-6e55-4b8e-a787-6fd83e216e87",
+
+    // Underpowered Abilities
+    "UnderpoweredAbilitySelection": "38b97914-cd27-49a4-9237-9a3b58aa6968",
     "DodgeMaster": "05bcc2a6-187c-4d33-9911-99a83ceac62c",
     "BulkMaster": "e80c568b-73c8-4fc6-bee6-a42c4c647aba",
     "ThoughtMaster": "7fbb9899-6023-4c15-befb-6f15ed186ad3",
-    "UnderpoweredAbilitySelection": "38b97914-cd27-49a4-9237-9a3b58aa6968",
 
     // TabletopTweaks-Base AutoMetamagic OP abilities
     "AutoRimeBuff": "e1b63a2c-23e9-49e3-acaf-6ee89aeabc99",
@@ -651,6 +657,18 @@
     "IsekaiDialogueAneviaReply2": "abd707f1-1255-4a1c-a907-c4f83362ab1a",
     "IsekaiDialogueAneviaReply": "ffe49efd-87a5-4d6a-88db-4d4f89f01c3a",
     "IsekaiDialogueAnevia": "a0af05f1-e779-4fba-b81e-9479f0872547",
+    "IsekaiDialogueIrabethReplySuccess": "d31a95ac-5f7f-4d90-8c05-37a311767ed8",
+    "IsekaiDialogueIrabethReplyFail": "e6091979-6b1e-4423-8e99-f36079c8b1b1",
+    "IsekaiDialogueIrabethCheck": "d810306a-17fd-4b95-bc29-627b64cb0eb2",
+    "IsekaiDialogueIrabethReply2": "0031a145-e5fd-49eb-b8cd-ce7f4418c7dc",
+    "IsekaiDialogueIrabethAnswer1": "1d75045e-c85e-4a52-8018-b291b457ae17",
+    "IsekaiDialogueIrabethAnswer2": "56fd706a-ed56-452f-bbdf-30672f8e42d3",
+    "IsekaiDialogueIrabethReply": "29d7c0d2-45ac-4297-80ac-3303e58382ec",
+    "IsekaiDialogueIrabeth": "04827180-1d93-44b4-a412-9ae953325663",
+    "IsekaiDialogueAneviaReply3": "5024161e-83c7-4b2b-8125-ca144233f0ae",
+    "IsekaiDialogueAnevia2": "8aeae780-f496-4141-be7f-e5c863e98c0b",
+    "IsekaiDialogueFinnean": "6e235ead-7aec-4d11-a7bc-3a62b4b9313a",
+    "IsekaiDialogueFinneanReply": "a4b357af-430c-4fba-988c-5a06e9047bb9",
 
     //AddedDefinitions
     "AeonSpellsKnown": "6f77b957-9ebc-4f98-b5f4-28837ddd300d",
