@@ -26,7 +26,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.OverpoweredAbility {
                 bp.m_Icon = Icon_Haste;
                 bp.AddComponent<AddStatBonus>(c => {
                     c.Descriptor = ModifierDescriptor.Dodge;
-                    c.Stat = StatType.Speed;
+                    c.Stat = StatType.AC;
                     c.Value = 2;
                 });
             });
