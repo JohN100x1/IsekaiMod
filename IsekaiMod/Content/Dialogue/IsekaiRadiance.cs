@@ -60,6 +60,7 @@ namespace IsekaiMod.Content.Dialogue {
                     Cues = new List<BlueprintCueBaseReference>() { UpgradeRadianceCue.ToReference<BlueprintCueBaseReference>() },
                     Strategy = Strategy.First
                 };
+                bp.ShowOnce = true;
             });
 
             // Add Answer to answers list
