@@ -11,7 +11,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
 
         public static void Add() {
             var GodEmperorSpellbook = Helpers.CreateBlueprint<BlueprintSpellbook>(IsekaiContext, "GodEmperorSpellbook", bp => {
-                bp.Name = Helpers.CreateString(IsekaiContext, "GodEmperorSpellbook.Name", "GodEmperor");
+                bp.Name = Helpers.CreateString(IsekaiContext, "GodEmperorSpellbook.Name", "God Emperor");
                 bp.Spontaneous = true;
                 bp.CastingAttribute = StatType.Wisdom;
                 bp.CantripsType = CantripsType.Cantrips;
