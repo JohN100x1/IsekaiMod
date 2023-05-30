@@ -644,7 +644,6 @@ namespace IsekaiMod.Utilities {
             }
         }
 
-
         [HarmonyPatch(typeof(UnitPartMagus), "get_Spellbook")]
         public static class UnitPartMagusPatcher {
             public static bool Prefix(UnitPartMagus __instance, ref Spellbook __result) {
