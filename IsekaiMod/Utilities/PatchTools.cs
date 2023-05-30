@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using IsekaiMod.Components;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
+using Kingmaker;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -8,16 +9,19 @@ using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using Kingmaker.UnitLogic.Parts;
 using Kingmaker.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using TabletopTweaks.Core.Utilities;
+using UnityEngine;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Utilities {
@@ -636,6 +640,30 @@ namespace IsekaiMod.Utilities {
                             }
                         }
                     }
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(UnitPartMagus), "get_Spellbook")]
+        public static class UnitPartMagusPatcher {
+            public static bool Prefix(UnitPartMagus __instance, ref Spellbook __result) {
+                ClassData classData = __instance.Owner.Progression.GetClassData(IsekaiProtagonistClass.Get());
+                if (classData == null) {
+                    return false;
+                }
+                BlueprintSpellbook blueprintSpellbook;
+                if ((blueprintSpellbook = (classData?.Spellbook.Or(null))) == null) {
+                    BlueprintCharacterClass blueprintCharacterClass = __instance.Class.Or(null);
+                    blueprintSpellbook = (blueprintCharacterClass?.Spellbook);
+                }
+                BlueprintSpellbook blueprintSpellbook2 = blueprintSpellbook;
+                __instance.m_Spellbook = ((blueprintSpellbook2 != null) ? __instance.Owner.GetSpellbook(blueprintSpellbook2) : null);
+                if (__instance.m_Spellbook == null) {
+                    __instance.m_Spellbook = __result;
+                    return false;
+                } else {
+                    __result = __instance.m_Spellbook;
+                    return true;
                 }
             }
         }
