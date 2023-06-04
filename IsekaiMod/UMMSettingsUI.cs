@@ -51,6 +51,7 @@ namespace IsekaiMod {
             UI.Toggle("Mythic Overpowered Abilities no longer restricted to one.", ref addedContent.MultipleMythicOPAbility);
             UI.Toggle("Mythic Special Powers no longer restricted to one.", ref addedContent.MultipleMythicSpecialPower);
             UI.Toggle("Apply a merge function on all canon baseclass spell lists to create the Isekai Spell list.", ref addedContent.MergeIsekaiSpellList);
+            UI.Slider("Isekai Protagonist Spells Known Increment", ref addedContent.IsekaiSpellsKnownIncrement, 1, 6, 6, "spells per level", UnityEngine.GUILayout.ExpandWidth(false));
         }
     }
 }

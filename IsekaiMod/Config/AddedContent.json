@@ -8,6 +8,7 @@
   "MultipleMythicSpecialPower": false,
   "MergeIsekaiSpellList": false,
   "IsekaiDefaultClothes": 20,
+  "IsekaiSpellsKnownIncrement": 6,
   "Isekai": {
     "DisableAll": false,
     "Settings": {
