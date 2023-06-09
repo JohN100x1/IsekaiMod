@@ -11,6 +11,13 @@ namespace IsekaiMod.Config {
         public bool MultipleMythicOPAbility = false;
         public bool MultipleMythicSpecialPower = false;
         public bool MergeIsekaiSpellList = false;
+
+        public bool DisableSpellbookEdgeLord = false;
+        public bool DisableSpellbookGodEmperor = false;
+        public bool DisableSpellbookHero = false;
+        public bool DisableSpellbookMastermind = false;
+        public bool DisableSpellbookOverlord = false;
+
         public int IsekaiDefaultClothes = 20;
         public int IsekaiSpellsKnownIncrement = 6;
         public SettingGroup Isekai = new();
@@ -38,6 +45,13 @@ namespace IsekaiMod.Config {
 
             // Change Isekai Protagonist Spells Known Increment
             IsekaiSpellsKnownIncrement = loadedSettings.IsekaiSpellsKnownIncrement;
+
+            // Disable Isekai Spellbook
+            DisableSpellbookEdgeLord = loadedSettings.DisableSpellbookEdgeLord;
+            DisableSpellbookGodEmperor = loadedSettings.DisableSpellbookGodEmperor;
+            DisableSpellbookHero = loadedSettings.DisableSpellbookHero;
+            DisableSpellbookMastermind = loadedSettings.DisableSpellbookMastermind;
+            DisableSpellbookOverlord = loadedSettings.DisableSpellbookOverlord;
 
             MergeIsekaiSpellList = loadedSettings.MergeIsekaiSpellList;
             Isekai.LoadSettingGroup(loadedSettings.Isekai, NewSettingsOffByDefault);

@@ -79,6 +79,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 });
                 bp.OverrideAttributeRecommendations = true;
                 bp.RecommendedAttributes = new StatType[] { StatType.Charisma };
+                bp.RemoveSpellbook = IsekaiContext.AddedContent.DisableSpellbookHero;
             });
 
             // Add Archetype to Class

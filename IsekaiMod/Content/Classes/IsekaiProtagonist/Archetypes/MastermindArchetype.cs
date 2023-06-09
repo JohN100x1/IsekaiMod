@@ -97,6 +97,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.OverrideAttributeRecommendations = true;
                 bp.m_ReplaceSpellbook = MastermindSpellbook.GetReference();
                 bp.RecommendedAttributes = new StatType[] { StatType.Intelligence };
+                bp.RemoveSpellbook = IsekaiContext.AddedContent.DisableSpellbookMastermind;
             });
 
             // Add Archetype to Class

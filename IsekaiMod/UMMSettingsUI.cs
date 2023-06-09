@@ -52,6 +52,14 @@ namespace IsekaiMod {
             UI.Toggle("Mythic Special Powers no longer restricted to one.", ref addedContent.MultipleMythicSpecialPower);
             UI.Toggle("Apply a merge function on all canon baseclass spell lists to create the Isekai Spell list.", ref addedContent.MergeIsekaiSpellList);
             UI.Slider("Isekai Protagonist Spells Known Increment", ref addedContent.IsekaiSpellsKnownIncrement, 1, 6, 6, "spells per level", UnityEngine.GUILayout.ExpandWidth(false));
+            UI.Div(0, 25);
+            UI.HStack("Disable Spellbook", 1,
+                () => { UI.Toggle("Disable Edge Lord Spellbook.", ref addedContent.DisableSpellbookEdgeLord); },
+                () => { UI.Toggle("Disable God Emperor Spellbook.", ref addedContent.DisableSpellbookGodEmperor); },
+                () => { UI.Toggle("Disable Hero Spellbook.", ref addedContent.DisableSpellbookHero); },
+                () => { UI.Toggle("Disable Mastermind Spellbook.", ref addedContent.DisableSpellbookMastermind); },
+                () => { UI.Toggle("Disable Overlord Spellbook.", ref addedContent.DisableSpellbookOverlord); }
+                );
         }
     }
 }
