@@ -319,8 +319,9 @@ namespace IsekaiMod.Content {
 
             LegacySelection.ConfigureStep3();
 
-            MastermindArchetype.PatchMastermindArcanistFeatures();
+            ArcanistPatcher.Patch(IsekaiProtagonistClass.GetReference(), MastermindSpellbook.GetReference());
             KineticistPatcher.Patch(IsekaiProtagonistClass.GetReference());
+            ShifterPatcher.Patch(IsekaiProtagonistClass.GetReference());
 
             //done here because it should be done after all spells have been initialized and were added to the canon books
             if (IsekaiContext.AddedContent.MergeIsekaiSpellList) IsekaiProtagonistSpellList.MergeSpellLists();

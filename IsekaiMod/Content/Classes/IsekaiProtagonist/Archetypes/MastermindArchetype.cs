@@ -111,9 +111,5 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
         public static BlueprintArchetypeReference GetReference() {
             return Get().ToReference<BlueprintArchetypeReference>();
         }
-
-        public static void PatchMastermindArcanistFeatures() {
-            PatchTools.ArcanistPatcher.Patch(IsekaiProtagonistClass.GetReference(), MastermindSpellbook.GetReference());
-        }
     }
 }
