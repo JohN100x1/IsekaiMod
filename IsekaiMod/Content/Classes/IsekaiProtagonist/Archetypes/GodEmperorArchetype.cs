@@ -88,6 +88,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                 bp.OverrideAttributeRecommendations = true;
                 bp.m_ReplaceSpellbook = GodEmperorSpellbook.GetReference();
                 bp.RecommendedAttributes = new StatType[] { StatType.Wisdom };
+                bp.RemoveSpellbook = IsekaiContext.AddedContent.DisableSpellbookGodEmperor;
             });
 
             // Add Archetype to Class

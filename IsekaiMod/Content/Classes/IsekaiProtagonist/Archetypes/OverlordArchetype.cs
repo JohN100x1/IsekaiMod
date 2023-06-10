@@ -76,6 +76,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist.Archetypes {
                     c.Alignment = AlignmentMaskType.Evil;
                 });
                 bp.m_ReplaceSpellbook = OverlordSpellbook.GetReference();
+                bp.RemoveSpellbook = IsekaiContext.AddedContent.DisableSpellbookOverlord;
             });
 
             // Add Archetype to Class

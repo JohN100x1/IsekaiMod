@@ -644,6 +644,29 @@ namespace IsekaiMod.Utilities {
             }
         }
 
+        internal static class ShifterPatcher {
+            public static void Patch(BlueprintCharacterClassReference classRef) {
+                BlueprintBuff[] aspectBuffs = new BlueprintBuff[] {
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("a237792fc2644a4ebc6eefa2d325f181"), // ShifterAspectBearBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("0fdc579eafbf4fceae649beed8188a5c"), // ShifterAspectBoarBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("4a981c46dc60474cad17549a2b9f7f65"), // ShifterAspectDinosaurBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("0bdfd34b7e5a4639bf6b716fa2ac0098"), // ShifterAspectHorseBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("29c0e16558b043278f061b128b9d180c"), // ShifterAspectLizardBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("c4c39e7078224b6caaf3c8a02032b5cb"), // ShifterAspectElephantBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("49e196492d2c4aa588bafffea6db8c43"), // ShifterAspectSpiderBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("0555960c7ab8431d86de4e7db0c22160"), // ShifterAspectTigerBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("d61bd26255d4425d929d73e57ef0e6dd"), // ShifterAspectWolfBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("e0b35a32cf234381ab13c831106937f1"), // ShifterAspectWolverineBuff
+                };
+                foreach (BlueprintBuff buff in aspectBuffs) {
+                    foreach(ContextRankConfig rankConfig in buff.GetComponents<ContextRankConfig>()) {
+                        if (rankConfig.m_BaseValueType != ContextRankBaseValueType.ClassLevel) continue;
+                        rankConfig.m_Class = rankConfig.m_Class.AddToArray(classRef);
+                    }
+                }
+            }
+        }
+
         [HarmonyPatch(typeof(UnitPartMagus), "get_Spellbook")]
         public static class UnitPartMagusPatcher {
             public static bool Prefix(UnitPartMagus __instance, ref Spellbook __result) {

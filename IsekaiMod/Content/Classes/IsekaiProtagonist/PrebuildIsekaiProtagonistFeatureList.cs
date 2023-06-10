@@ -1,4 +1,6 @@
-﻿using Kingmaker.Blueprints;
+﻿using HarmonyLib;
+using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.EntitySystem.Stats;
@@ -82,18 +84,18 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                     c.RaceStat = StatType.Strength;
                     c.LevelsStat = StatType.Charisma;
                     c.Skills = new StatType[11] {
-                    StatType.SkillAthletics,
-                    StatType.SkillMobility,
-                    StatType.SkillThievery,
-                    StatType.SkillStealth,
-                    StatType.SkillKnowledgeArcana,
-                    StatType.SkillKnowledgeWorld,
-                    StatType.SkillLoreNature,
-                    StatType.SkillLoreReligion,
-                    StatType.SkillPerception,
-                    StatType.SkillPersuasion,
-                    StatType.SkillUseMagicDevice
-                };
+                        StatType.SkillAthletics,
+                        StatType.SkillMobility,
+                        StatType.SkillThievery,
+                        StatType.SkillStealth,
+                        StatType.SkillKnowledgeArcana,
+                        StatType.SkillKnowledgeWorld,
+                        StatType.SkillLoreNature,
+                        StatType.SkillLoreReligion,
+                        StatType.SkillPerception,
+                        StatType.SkillPersuasion,
+                        StatType.SkillUseMagicDevice
+                    };
                     c.Selections = new SelectionEntry[] {
                         new SelectionEntry()
                         {

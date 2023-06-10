@@ -8,7 +8,7 @@ namespace IsekaiMod.Utilities {
 
     public class StaticReferences {
         // Base Classes
-        public static readonly BlueprintCharacterClass[] BaseClasses = new BlueprintCharacterClass[25] {
+        public static readonly BlueprintCharacterClass[] BaseClasses = new BlueprintCharacterClass[26] {
             ClassTools.Classes.AlchemistClass,
             ClassTools.Classes.ArcanistClass,
             ClassTools.Classes.BarbarianClass,
@@ -28,6 +28,7 @@ namespace IsekaiMod.Utilities {
             ClassTools.Classes.RangerClass,
             ClassTools.Classes.RogueClass,
             ClassTools.Classes.ShamanClass,
+            ClassTools.Classes.ShifterClass,
             ClassTools.Classes.SkaldClass,
             ClassTools.Classes.SlayerClass,
             ClassTools.Classes.SorcererClass,

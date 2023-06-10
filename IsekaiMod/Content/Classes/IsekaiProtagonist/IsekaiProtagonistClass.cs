@@ -10,6 +10,7 @@ using Kingmaker.Localization;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.Utility;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
 using static IsekaiMod.Main;
@@ -41,8 +42,8 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
         private static readonly BlueprintCharacterClass AnimalClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("4cd1757a0eea7694ba5c933729a53920");
 
         public static void Add() {
-            // Decide which default clothes to use (default 20 is the Slayer Class' clothes)
-            var defaultClothesIndex = 20;
+            // Decide which default clothes to use (default index is the Slayer Class' clothes)
+            var defaultClothesIndex = StaticReferences.BaseClasses.IndexOf(ClassTools.Classes.SlayerClass);
             var clothesIndex = IsekaiContext.AddedContent.IsekaiDefaultClothes;
             var maxClothesIndex = StaticReferences.BaseClasses.Length;
             var clothesClass = StaticReferences.BaseClasses[clothesIndex > -1 && clothesIndex < maxClothesIndex ? clothesIndex : defaultClothesIndex];

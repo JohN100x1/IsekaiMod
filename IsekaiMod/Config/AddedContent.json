@@ -8,6 +8,12 @@
   "MultipleMythicSpecialPower": false,
   "MergeIsekaiSpellList": false,
   "IsekaiDefaultClothes": 20,
+  "IsekaiSpellsKnownIncrement": 6,
+  "DisableSpellbookEdgeLord" : false,
+  "DisableSpellbookGodEmperor" : false,
+  "DisableSpellbookHero" : false,
+  "DisableSpellbookMastermind" : false,
+  "DisableSpellbookOverlord" : false,
   "Isekai": {
     "DisableAll": false,
     "Settings": {
