@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [5.3.1] - 2023-06-12
 # Fixed
 - Fixed `Shifter Legacy - Shapeshifted Baby Dragon` features not scaling.
+- Fixed `Oracle Legacy - Seeker of Truth` LifeLink Oracle Revelation not giving any uses.
 
 # [5.3.0] - 2023-06-10
 # Added

@@ -70,6 +70,8 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 c.m_ActualClass = IsekaiProtagonistClass.GetReference();
                 c.Modifier = 1.0;
             });
+            var OracleRevelationLifeLinkResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("5f624fa5d4cd4882b9368e4d123306bd");
+            PatchTools.PatchResource(OracleRevelationLifeLinkResource, myClass);
         }
         public static BlueprintProgression Get() {
             if (prog != null) return prog;
