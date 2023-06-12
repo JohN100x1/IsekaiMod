@@ -203,13 +203,13 @@ namespace IsekaiMod.Utilities {
             }
         }
 
-        public static void PatchClassIntoFeatureOfReferenceClass(BlueprintFeatureBase feature, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level = 0, HashSet<BlueprintFeatureBase> loopPrevention = null) {
+        public static void PatchClassIntoFeatureOfReferenceClass(BlueprintFact feature, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level = 0, HashSet<BlueprintFact> loopPrevention = null) {
             loopPrevention ??= new();
             int mylevel = level + 1;
             if (mylevel > 10) {
                 IsekaiContext.Logger.LogError("Attempt to patch Progression Tree stopped at Level 10 to prevent endless loop, if you see this message please report so we can figure out if someone created a loop here or if this limit needs to be higher");
-                if (feature.Name != null) {
-                    IsekaiContext.Logger.LogError($"reference class={referenceClass.Guid} Stop Feature={feature.AssetGuid} name={feature.Name}");
+                if (feature.name != null) {
+                    IsekaiContext.Logger.LogError($"reference class={referenceClass.Guid} Stop Feature={feature.AssetGuid} name={feature.name}");
                     foreach (BlueprintFeatureBase calltrace in loopPrevention) {
                         IsekaiContext.Logger.LogError($"guid={calltrace.AssetGuid}");
                     }
@@ -227,7 +227,7 @@ namespace IsekaiMod.Utilities {
                 return;
             }
             if (loopPrevention.Contains(feature)) {
-                IsekaiContext.Logger.Log($"reference class={referenceClass.Guid} feature re-encountered at level={mylevel} guid={feature.AssetGuid} name={feature.Name}");
+                IsekaiContext.Logger.Log($"reference class={referenceClass.Guid} feature re-encountered at level={mylevel} guid={feature.AssetGuid} name={feature.name}");
                 return;
             } else {
                 loopPrevention.Add(feature);
@@ -309,15 +309,15 @@ namespace IsekaiMod.Utilities {
                     }
                 }
             } catch (NullReferenceException e) {
-                if (feature.Name != null) {
-                    IsekaiContext.Logger.LogError($"Unpatachable Feature={feature.AssetGuid} name={feature.Name} at level={mylevel} reason={e.Message}");
+                if (feature.name != null) {
+                    IsekaiContext.Logger.LogError($"Unpatachable Feature={feature.AssetGuid} name={feature.name} at level={mylevel} reason={e.Message}");
                 } else {
                     IsekaiContext.Logger.LogError($"Unpatachable Feature={feature.AssetGuid} at level={mylevel} reason={e.Message}");
                 }
             }
         }
 
-        private static void PatchClassProgression(BlueprintProgression progression, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int mylevel, HashSet<BlueprintFeatureBase> loopPrevention) {
+        private static void PatchClassProgression(BlueprintProgression progression, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int mylevel, HashSet<BlueprintFact> loopPrevention) {
             progression.GiveFeaturesForPreviousLevels = true;
             if (progression.m_Classes != null && progression.m_Classes.Length > 0) {
                 foreach (var refClass in progression.m_Classes) {
@@ -338,7 +338,7 @@ namespace IsekaiMod.Utilities {
             }
         }
 
-        private static void PatchClassSelection(BlueprintFeatureSelection selection, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int mylevel, HashSet<BlueprintFeatureBase> loopPrevention) {
+        private static void PatchClassSelection(BlueprintFeatureSelection selection, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int mylevel, HashSet<BlueprintFact> loopPrevention) {
             //don't trust selections past a certain size to actually contain class features rather than just a selection of basic feats unless they are selections that are known to be that size for a valid reason(revelations, hexes, rage powers)
             string selectionGuid = selection.AssetGuid.ToString();
             if (selection.m_AllFeatures.Length > 30 && !(
@@ -360,7 +360,7 @@ namespace IsekaiMod.Utilities {
             }
         }
 
-        private static void HandleComponent(BlueprintGuid featureGuid, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level, HashSet<SpellReference> mySpellSet, BlueprintComponent component, HashSet<BlueprintFeatureBase> loopPrevention) {
+        private static void HandleComponent(BlueprintGuid featureGuid, BlueprintCharacterClassReference myClass, BlueprintCharacterClassReference referenceClass, int level, HashSet<SpellReference> mySpellSet, BlueprintComponent component, HashSet<BlueprintFact> loopPrevention) {
             var mylevel = level + 1;
             if (mylevel > 20) {
                 IsekaiContext.Logger.LogError("Attempt to patch Progression Tree stopped at Level 20 to prevent endless loop, if you see this message please report so we can figure out if someone created a loop here or if this limit needs to be higher");
@@ -521,8 +521,12 @@ namespace IsekaiMod.Utilities {
         }
 
         internal static void PatchResource(BlueprintAbilityResource resource, BlueprintCharacterClassReference classRef) {
-            if (resource.m_MaxAmount.m_Class == null || resource.m_MaxAmount.m_Class.Length == 0) return;
-            resource.m_MaxAmount.m_Class = resource.m_MaxAmount.m_Class.AppendToArray(classRef);
+            if (resource.m_MaxAmount.m_Class != null && resource.m_MaxAmount.m_Class.Length != 0) {
+                resource.m_MaxAmount.m_Class = resource.m_MaxAmount.m_Class.AppendToArray(classRef);
+            }
+            if (resource.m_MaxAmount.m_ClassDiv != null && resource.m_MaxAmount.m_ClassDiv.Length != 0) {
+                resource.m_MaxAmount.m_ClassDiv = resource.m_MaxAmount.m_ClassDiv.AppendToArray(classRef);
+            }
         }
         internal static void PatchAbility(BlueprintAbility ability, BlueprintCharacterClassReference classRef) {
             foreach (BlueprintComponent comp in ability.Components) {
@@ -663,6 +667,31 @@ namespace IsekaiMod.Utilities {
                         if (rankConfig.m_BaseValueType != ContextRankBaseValueType.ClassLevel) continue;
                         rankConfig.m_Class = rankConfig.m_Class.AddToArray(classRef);
                     }
+                }
+
+                BlueprintAbilityResource[] resources = new BlueprintAbilityResource[] {
+                    BlueprintTools.GetBlueprint<BlueprintAbilityResource>("80923bd575dc48f5813c2343517414cf"), // DragonbloodShifterResource
+                    BlueprintTools.GetBlueprint<BlueprintAbilityResource>("72e7ec0822604f7da75c3dd32e93d5ea"), // DragonbloodShifterBreathResource
+                };
+                foreach (BlueprintAbilityResource resource in resources) {
+                    PatchResource(resource, classRef);
+                }
+
+                var shifterClassRef = BlueprintTools.GetBlueprintReference<BlueprintCharacterClassReference>("a406d6ebea5c46bba3160246be03e96f");
+                BlueprintBuff[] dragonAspectBuffs = new BlueprintBuff[] {
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("ace35704bf744216b142adcbd5c58d13"), // DragonbloodShifterBlackBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("627c3f3256494000b3cba6f461b2c44c"), // DragonbloodShifterBlueBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("e850db860994442b83e964d3a43e9358"), // DragonbloodShifterGreenBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("fb71be7bcbc648539d57171b0d0baf79"), // DragonbloodShifterRedBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("cd34e74f0d2844e3ab5580c1dbe3ff7d"), // DragonbloodShifterWhiteBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("ed9ac87aaac7419095395304c7b5d813"), // DragonbloodShifterBrassBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("233617f6876a42ef973de8af502d4fed"), // DragonbloodShifterBronzeBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("566474477be14eaeb860086b82e5e9cf"), // DragonbloodShifterCopperBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("e36d67f4b25a4d5ebf9add1e2bc52e74"), // DragonbloodShifterGoldBuff
+                    BlueprintTools.GetBlueprint<BlueprintBuff>("d9de1c4f6e68416196c193ac87962993"), // DragonbloodShifterSilverBuff
+                };
+                foreach (BlueprintBuff dragonBuff in dragonAspectBuffs) {
+                    PatchClassIntoFeatureOfReferenceClass(dragonBuff, classRef, shifterClassRef);
                 }
             }
         }
