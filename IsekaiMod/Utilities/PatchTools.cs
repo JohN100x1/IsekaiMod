@@ -1,7 +1,6 @@
 ﻿using HarmonyLib;
 using IsekaiMod.Components;
 using IsekaiMod.Content.Classes.IsekaiProtagonist;
-using Kingmaker;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -21,7 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TabletopTweaks.Core.Utilities;
-using UnityEngine;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Utilities {
@@ -413,6 +411,9 @@ namespace IsekaiMod.Utilities {
                     }
                 }
             }
+            if (component is AddFeatureIfHasFact addIfFact) {
+                PatchClassIntoFeatureOfReferenceClass(addIfFact.m_Feature, myClass, referenceClass, mylevel, loopPrevention);
+            }
 
             try {
                 // check if component is add facts because features could also be added as facts rather than on level...
@@ -670,6 +671,7 @@ namespace IsekaiMod.Utilities {
                 }
 
                 BlueprintAbilityResource[] resources = new BlueprintAbilityResource[] {
+                    BlueprintTools.GetBlueprint<BlueprintAbilityResource>("2210cea8cc94431a911dc5d4b6d72cbd"), // ShifterWildShapeResource
                     BlueprintTools.GetBlueprint<BlueprintAbilityResource>("80923bd575dc48f5813c2343517414cf"), // DragonbloodShifterResource
                     BlueprintTools.GetBlueprint<BlueprintAbilityResource>("72e7ec0822604f7da75c3dd32e93d5ea"), // DragonbloodShifterBreathResource
                 };
@@ -678,6 +680,15 @@ namespace IsekaiMod.Utilities {
                 }
 
                 var shifterClassRef = BlueprintTools.GetBlueprintReference<BlueprintCharacterClassReference>("a406d6ebea5c46bba3160246be03e96f");
+                BlueprintAbility[] abilities = new BlueprintAbility[] {
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("c35a9830c7684f76a704aff424128851"), // ShifterDragonForm20Neutral
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("2d52be9832e542bc88b1959be2f3b2e2"), // ShifterDragonForm20Good
+                    BlueprintTools.GetBlueprint<BlueprintAbility>("f619bb36520a48478f900431b20d50c4"), // ShifterDragonForm20Evil
+                };
+                foreach (BlueprintAbility ability in abilities) {
+                    PatchClassIntoFeatureOfReferenceClass(ability, classRef, shifterClassRef);
+                }
+
                 BlueprintBuff[] dragonAspectBuffs = new BlueprintBuff[] {
                     BlueprintTools.GetBlueprint<BlueprintBuff>("ace35704bf744216b142adcbd5c58d13"), // DragonbloodShifterBlackBuff
                     BlueprintTools.GetBlueprint<BlueprintBuff>("627c3f3256494000b3cba6f461b2c44c"), // DragonbloodShifterBlueBuff
