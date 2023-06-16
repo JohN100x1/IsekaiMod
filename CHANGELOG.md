@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [5.3.2] - 2023-06-16
 # Fixed
 - Fixed `Shifter Legacy - Shapeshifted Baby Dragon` not giving forms at 14th and 20th level.
-- 
+
 # [5.3.1] - 2023-06-12
 # Fixed
 - Fixed `Shifter Legacy - Shapeshifted Baby Dragon` features not scaling.
