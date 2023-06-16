@@ -5,89 +5,89 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 # [5.3.2] - 2023-06-16
-# Fixed
+### Fixed
 - Fixed `Shifter Legacy - Shapeshifted Baby Dragon` not giving forms at 14th and 20th level.
 
 # [5.3.1] - 2023-06-12
-# Fixed
+### Fixed
 - Fixed `Shifter Legacy - Shapeshifted Baby Dragon` features not scaling.
 - Fixed `Oracle Legacy - Seeker of Truth` LifeLink Oracle Revelation not giving any uses.
 
 # [5.3.0] - 2023-06-10
-# Added
+### Added
 - Added UMM option to change spells known per level.
 - Added UMM option to disable spellbooks for each Isekai archetype.
 - Added UMM option to change Isekai Protagonist to have the Shifter appearance.
-# Fixed
+### Fixed
 - Fixed Shifter Legacy aspects minor forms not scaling.
 
 # [5.2.3] - 2023-05-30
-# Fixed
+### Fixed
 - Fixed magus legacy spell combat and spellstrike not working with Isekai Protagonist spellbook.
 
 # [5.2.2] - 2023-05-25
-# Fixed
+### Fixed
 - Fixed Isekai Protagonist Radiance dialogue option not disappearing after being selected.
 
 # [5.2.1] - 2023-05-22
-# Fixed
+### Fixed
 - Fixed `Underpowered Ability — Dodge Master` to correctly give AC instead of speed.
 
 # [5.2.0] - 2023-05-21
-# Added
+### Added
 - Added `Master Summoner` OP ability.
 - Added UMM option to allow Isekai dialogue when Isekai Protagonist is disabled.
 - Added additional harem dialogue for Anevia and Irabeth.
 - Added dialogue for Finnean.
 - Added `None` option for `Hax` selection.
 - Added missing DLC spells to Isekai Protagonist spellbook.
-# Changed
+### Changed
 - Changed `Channel Energy` special powers to scale with Isekai Protagonist level rather than character level.
-# Fixed
+### Fixed
 - Fixed all legacies which add features on class level.
 - Fixed Isekai dialogue showing up with Horgus when not Isekai Protagonist.
 - Fixed `Channel Negative Energy` not scaling with level.
 - Fixed `Oracle Legacy - Seeker of Truth` now count towards Oracle levels.
 
 # [5.1.0] - 2023-05-07
-# Added
+### Added
 - Added Localization for Russian, German, French, Chinese, Spanish (machine translated).
 - Added `Underpowered Ability` selection to OP ability selection.
 - Added `Excalibur` Special Power.
 - Added `Unreactable` Special Power.
 - Added `Haggler` Special Power.
-# Changed
+### Changed
 - Updated description for `Gifted` feature.
 - Updated description for `Extra Strike` feature.
 - Renamed `Auto Metamagic` to `Overpowered Ability — Auto Metamagic`.
 - Renamed additional `Signature Move` and `Beach Episode` selections for `Isekai Protagonist`.
 
 # [5.0.6] - 2023-05-07
-# Fixed
+### Fixed
 - Fixed `Canny Defense` for `Magus Legacy - Sword Saint` applying when not wielding chosen weapon.
 - Fixed `Supreme Being` not increasing base stat on level up.
 - Fixed caster level and spell level blast parameters for kineticist legacies.
 
 # [5.0.5] - 2023-05-04
-# Fixed
+### Fixed
 - Fixed extra `Beach Episode` selection not appearing.
 - Fixed `Canny Defense` for `Magus Legacy - Sword Saint`.
 
 # [5.0.4] - 2023-04-30
-# Fixed
+### Fixed
 - Fixed `Release Energy` not giving channel energy abilities.
 
 # [5.0.3] - 2023-04-19
-# Fixed
+### Fixed
 - Fixed spells not being added for legacy bloodlines.
 - Fixed crash when using Dark Codex mod.
 
 # [5.0.2] - 2023-04-18
-# Fixed
+### Fixed
 - Fixed "Arcanist 0" showing in spellbook list.
 
 # [5.0.1] - 2023-04-17
-# Fixed
+### Fixed
 - Fixed missing legacies for base `Isekai Protagonist` class.
 
 # [5.0.0] - 2023-04-17
