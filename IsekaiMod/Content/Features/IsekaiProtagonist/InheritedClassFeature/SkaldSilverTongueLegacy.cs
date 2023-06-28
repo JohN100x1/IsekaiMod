@@ -8,12 +8,13 @@ using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
 using TabletopTweaks.Core.Utilities;
 using static IsekaiMod.Main;
 
 namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class SkaldSilverTongueLegacy {
-        private static string BaseArchetypeId = "5e63586bebd229649bdafe0fde4caaec";
+        private static readonly string BaseArchetypeId = "5e63586bebd229649bdafe0fde4caaec";
         private static BlueprintArchetype BaseArchetype = BlueprintTools.GetBlueprint<BlueprintArchetype>(BaseArchetypeId);
 
         private static BlueprintProgression prog;
@@ -48,6 +49,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 BlueprintCharacterClassReference refClass = ClassTools.ClassReferences.SkaldClass;
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
                 PatchTools.PatchProgressionFeaturesBasedOnReferenceArchetype(myClass, refClass, BaseArchetype);
+
+                var InsightfulContemplationSongEffectBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("70b5a320c87e5f34191caea053a3a1b8");
+                PatchTools.PatchClassIntoFeatureOfReferenceClass(InsightfulContemplationSongEffectBuff, myClass, refClass);
 
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BardLegacy.Get().ToReference<BlueprintFeatureReference>(); });
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = BarbarianLegacy.Get().ToReference<BlueprintFeatureReference>(); });

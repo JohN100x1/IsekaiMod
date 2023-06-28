@@ -1004,6 +1004,9 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             if ("4814f8645d1d77447a70479c0be51c72".Equals(GUIId)) return true;
             //dim door mass
             if ("5bdc37e4acfa209408334326076a43bc".Equals(GUIId)) return true;
+            //dupe spells
+            if ("78e0d5e8ad0e3eb4c8d65e0d34b945b4".Equals(GUIId)) return true;
+            if ("431f783e1a020cd46ab37b8666a92bd3".Equals(GUIId)) return true;
             return false;
         }
 
