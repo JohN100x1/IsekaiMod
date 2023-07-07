@@ -730,5 +730,12 @@ namespace IsekaiMod.Utilities {
                 }
             }
         }
+
+        [HarmonyPatch(typeof(AddVendorDiscount), "OnTurnOn")]
+        public static class AddVendorDiscountPatcher {
+            public static void Prefix(AddVendorDiscount __instance) {
+                __instance.OnInitialize();
+            }
+        }
     }
 }
