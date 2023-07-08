@@ -501,14 +501,14 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
 
             // Shifter Legacy Selection
             var LegacySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "LegacyClassSelection");
-            var ShifterBaseLegacy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ShifterBaseLegacy");
+            var ShifterGriffonLegacy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ShifterGriffonLegacy");
 
             var addClassLevels = PrebuildIsekaiProtagonistFeatureList.GetComponent<AddClassLevels>();
             addClassLevels.Selections = addClassLevels.Selections.AppendToArray(
                 new SelectionEntry() {
                     m_Selection = LegacySelection.ToReference<BlueprintFeatureSelectionReference>(),
                     m_Features = new BlueprintFeatureReference[]{
-                        ShifterBaseLegacy.ToReference<BlueprintFeatureReference>()
+                        ShifterGriffonLegacy.ToReference<BlueprintFeatureReference>()
                     }
                 });
         }
