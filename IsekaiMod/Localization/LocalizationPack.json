@@ -4867,11 +4867,11 @@
       "SimpleName": "KineticDarkElementalistLegacy.Name",
       "ProcessTemplates": false,
       "enGB": "Kinetic Legacy - Soulbinder",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Кинетическое Наследие - Душевяз",
+      "deDE": "Kinestisches Erbe - Seelenbinder",
+      "frFR": "Héritage cinétique - Soulbinder",
+      "zhCN": "动能遗产-灵魂绑定者",
+      "esES": "Legado cinético - Atadura de almas"
     },
     {
       "Key": "4a03b9f796ce4ae8a93f6487eef054fe",
@@ -4889,11 +4889,11 @@
       "SimpleName": "KineticKnightLegacy.Name",
       "ProcessTemplates": false,
       "enGB": "Kinetic Legacy - Kinetic Knight",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Кинетическое наследие - Кинетический рыцарь",
+      "deDE": "Kinetic Legacy - Kinetic Knight",
+      "frFR": "Héritage cinétique - Chevalier cinétique",
+      "zhCN": "动能遗产-动能骑士",
+      "esES": "Legado cinético: Caballero cinético"
     },
     {
       "Key": "3cbcfaf2137e4c62bdb6dbfde711d6ea",
@@ -5274,11 +5274,11 @@
       "SimpleName": "MastermindLegacySelection.Description",
       "ProcessTemplates": true,
       "enGB": "Every move you make is calculated.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Каждый ваш ход рассчитывается.",
+      "deDE": "Jeder deiner Züge wird berechnet.",
+      "frFR": "Chacun de vos mouvements est calculé.",
+      "zhCN": "你的每一步都是经过计算的。",
+      "esES": "Cada movimiento que haces es calculado."
     },
     {
       "Key": "9e206fdaceb74c70a9bc048b9426a711",
