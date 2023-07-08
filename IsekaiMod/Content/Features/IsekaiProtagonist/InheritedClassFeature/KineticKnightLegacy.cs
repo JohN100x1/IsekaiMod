@@ -19,19 +19,14 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
         private static BlueprintProgression prog;
 
         public static void Configure() {
-            prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "KineticKnightLegacy", bp => { });
-        }
-
-
-
-        public static void PatchProgression() {
-            prog.SetName(IsekaiContext, "Kinetic Legacy - Kinetic Knight");
-            prog.SetDescription(IsekaiContext, "Just like all Kinetic Knights your sanity is somewhat questionable, after all you willingly choose to forego fighting at range and instead choose to use energy blasts as melee weapons...\n" +
-                "And why? Because the burning blade looked cool.");
-            prog.GiveFeaturesForPreviousLevels = true;
-
-            prog.AddComponent<AddProficiencies>(c => {
-                c.WeaponProficiencies = new Kingmaker.Enums.WeaponCategory[] { Kingmaker.Enums.WeaponCategory.KineticBlast };
+            prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "KineticKnightLegacy", bp => {
+                bp.SetName(IsekaiContext, "Kinetic Legacy - Kinetic Knight");
+                bp.SetDescription(IsekaiContext, "Just like all Kinetic Knights your sanity is somewhat questionable, after all you willingly choose to forego fighting at range and instead choose to use energy blasts as melee weapons...\n" +
+                    "And why? Because the burning blade looked cool.");
+                bp.GiveFeaturesForPreviousLevels = true;
+                bp.AddComponent<AddProficiencies>(c => {
+                    c.WeaponProficiencies = new Kingmaker.Enums.WeaponCategory[] { Kingmaker.Enums.WeaponCategory.KineticBlast };
+                });
             });
 
             LegacySelection.RegisterForFeat(prog);
@@ -41,7 +36,9 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
             HeroLegacySelection.Register(prog);
             MastermindLegacySelection.Prohibit(prog);
             OverlordLegacySelection.Register(prog);
+        }
 
+        public static void PatchProgression() {
             BlueprintFeature EnergizeWeapon = BlueprintTools.GetBlueprint<BlueprintFeature>("fb9fe27f13934807bcd62dfeec477758");
             LevelEntry[] additionalReferencedFeats = null;
             if (ModSupport.IsExpandedElementEnabled && EnergizeWeapon != null) {

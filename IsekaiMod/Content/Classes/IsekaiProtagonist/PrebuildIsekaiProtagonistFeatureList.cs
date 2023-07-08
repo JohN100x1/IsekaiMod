@@ -495,5 +495,22 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             });
             IsekaiProtagonistClass.SetDefaultBuild(PrebuildIsekaiProtagonistFeatureList);
         }
+
+        public static void PatchLegacySelection() {
+            var PrebuildIsekaiProtagonistFeatureList = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "PrebuildIsekaiProtagonistFeatureList");
+
+            // Shifter Legacy Selection
+            var LegacySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "LegacyClassSelection");
+            var ShifterBaseLegacy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "ShifterBaseLegacy");
+
+            var addClassLevels = PrebuildIsekaiProtagonistFeatureList.GetComponent<AddClassLevels>();
+            addClassLevels.Selections = addClassLevels.Selections.AppendToArray(
+                new SelectionEntry() {
+                    m_Selection = LegacySelection.ToReference<BlueprintFeatureSelectionReference>(),
+                    m_Features = new BlueprintFeatureReference[]{
+                        ShifterBaseLegacy.ToReference<BlueprintFeatureReference>()
+                    }
+                });
+        }
     }
 }

@@ -318,6 +318,7 @@ namespace IsekaiMod.Content {
             if (IsekaiContext.AddedContent.Isekai.IsDisabled("Isekai Protagonist")) return;
 
             LegacySelection.ConfigureStep3();
+            PrebuildIsekaiProtagonistFeatureList.PatchLegacySelection();
 
             ArcanistPatcher.Patch(IsekaiProtagonistClass.GetReference(), MastermindSpellbook.GetReference());
             KineticistPatcher.Patch(IsekaiProtagonistClass.GetReference());

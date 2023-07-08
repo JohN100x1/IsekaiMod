@@ -4863,6 +4863,39 @@
       "esES": "Legado Cinético - Atalma"
     },
     {
+      "Key": "90c3fe3d7635495fbebeece2fca293b2",
+      "SimpleName": "KineticDarkElementalistLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Kinetic Legacy - Soulbinder",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "4a03b9f796ce4ae8a93f6487eef054fe",
+      "SimpleName": "KineticKnightLegacy.Description",
+      "ProcessTemplates": true,
+      "enGB": "Just like all Kinetic Knights your sanity is somewhat questionable, after all you willingly choose to forego fighting at range and instead choose to use energy blasts as melee weapons...\nAnd why? Because the burning blade looked cool.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "9a35e8c2ac2646e184693c0a774d087e",
+      "SimpleName": "KineticKnightLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Kinetic Legacy - Kinetic Knight",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "3cbcfaf2137e4c62bdb6dbfde711d6ea",
       "SimpleName": "KineticLegacy.Description",
       "ProcessTemplates": true,
@@ -5237,15 +5270,15 @@
       "esES": "El cerebro detrás de todo esto tiene una inteligencia sin igual en el nuevo mundo. Puede prever los movimientos de los enemigos cuatro universos paralelos por delante, superándolos con estrategias sorprendentes usando su conocimiento del antiguo mundo. Lanzas conjuros como un Arcanista con un número de espacios igual a tus conjuros por día."
     },
     {
-      "Key": "2c976a4b9fa140c7bf85abad150cc1bd",
+      "Key": "4ea9945fd971488b968ccf6f3e600f38",
       "SimpleName": "MastermindLegacySelection.Description",
       "ProcessTemplates": true,
-      "enGB": "This is neither disney, nor are you the kind to lose your mind...",
-      "ruRU": "Это не Дисней, и вы не тот, кто будет терять свой разум...",
-      "deDE": "Das ist weder Disney, noch bist du die Art von Person, die ihren Verstand verliert...",
-      "frFR": "Ce n'est pas un Disney, et vous n'êtes pas du genre à perdre la tête...",
-      "zhCN": "这既不是迪士尼，也不是你会失去理智的那种人...",
-      "esES": "Esto no es Disney, ni eres el tipo de persona que pierde la cabeza..."
+      "enGB": "Every move you make is calculated.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "9e206fdaceb74c70a9bc048b9426a711",
@@ -5796,6 +5829,17 @@
       "frFR": "Après avoir acquis un pouvoir démesuré, certains protagonistes deviennent des Suzerains. Ils considèrent le nouveau monde comme leur terrain de jeu, et les nouveaux habitants comme des jouets à tourmenter. Les Régents cherchent à accroître leur pouvoir encore plus, souvent en établissant leur propre royaume.",
       "zhCN": "在获得了无比的力量后，一些主角成为了霸主。他们认为新世界是他们的游戏，新居民则是他们的折磨对象。霸主们试图进一步增强他们的力量，通常是通过建立自己的王国来实现。",
       "esES": "Después de obtener cantidades impías de poder, algunos protagonistas se convierten en Señores Supremos. Ven el nuevo mundo como suyo para jugar con él, y a los nuevos habitantes como suyos para atormentarlos. Los Señores Supremos buscan aumentar aún más su poder, a menudo estableciendo su propio reino."
+    },
+    {
+      "Key": "67cb605f5664412786fe9bdb2889a91e",
+      "SimpleName": "OverlordLegacySelection.Description",
+      "ProcessTemplates": true,
+      "enGB": "You have a dark and secret past.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     },
     {
       "Key": "1a913250f7444cd9ad36780fb5bcc402",
