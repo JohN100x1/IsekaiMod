@@ -5835,11 +5835,11 @@
       "SimpleName": "OverlordLegacySelection.Description",
       "ProcessTemplates": true,
       "enGB": "You have a dark and secret past.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "У вас есть тёмное и секретное прошлое.",
+      "deDE": "Du hast eine dunkle und geheime Vergangenheit.",
+      "frFR": "Vous avez un passé sombre et secret.",
+      "zhCN": "你有一个黑暗而秘密的过去。",
+      "esES": "Tienes un pasado oscuro y secreto."
     },
     {
       "Key": "1a913250f7444cd9ad36780fb5bcc402",
