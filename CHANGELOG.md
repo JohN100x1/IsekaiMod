@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fixed Haggler not being applied when game is loaded after quitting the game.
 - Fixed errors in Russian localization. (credit to Necht)
+- Fixed multiple shifter claws appearing.
 - Removed duplicate Cure Critical Wounds from Isekai spellbook when spell list merge option is selected.
 
 # [5.3.3] - 2023-06-28
