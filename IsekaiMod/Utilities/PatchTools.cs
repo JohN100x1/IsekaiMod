@@ -243,7 +243,6 @@ namespace IsekaiMod.Utilities {
                     HashSet<SpellReference> mySpellSet = new HashSet<SpellReference>();
                     List<SpontaneousSpellConversion> conversions = new List<SpontaneousSpellConversion>();
                     List<CannyDefensePermanent> cannyDefenses = new List<CannyDefensePermanent>();
-                    List<AddFeatureOnClassLevel> addFeatureOnClassLevels = new List<AddFeatureOnClassLevel>();
                     foreach (var component in feature.Components) {
                         if (component == null) continue;
                         //check if component is addSpell or addFeat
@@ -267,12 +266,6 @@ namespace IsekaiMod.Utilities {
                         else if (component is CannyDefensePermanent cannyDefense && cannyDefense.m_CharacterClass != null && cannyDefense.m_CharacterClass.Equals(referenceClass)) {
                             cannyDefenses.Add(cannyDefense);
                         }
-                        else if (component is AddFeatureOnClassLevel addFeatureOnLevel) {
-                            PatchClassIntoFeatureOfReferenceClass(addFeatureOnLevel.m_Feature.Get(), myClass, referenceClass, mylevel, loopPrevention);
-                            if (addFeatureOnLevel.m_Class != null && addFeatureOnLevel.m_Class.Equals(referenceClass)) {
-                                addFeatureOnClassLevels.Add(addFeatureOnLevel);
-                            }
-                        }
                     }
                     foreach (var spellReference in mySpellSet) {
                         feature.AddComponent<AddKnownSpell>(c => {
@@ -293,16 +286,6 @@ namespace IsekaiMod.Utilities {
                             c.m_CharacterClass = myClass;
                             c.RequiresKensai = cannyDefense.RequiresKensai;
                             c.m_ChosenWeaponBlueprint = cannyDefense.m_ChosenWeaponBlueprint;
-                        });
-                    }
-                    foreach (AddFeatureOnClassLevel addFeatureOnClassLevel in addFeatureOnClassLevels) {
-                        feature.AddComponent<AddFeatureOnClassLevel>(c => {
-                            c.m_Class = myClass;
-                            c.Level = addFeatureOnClassLevel.Level;
-                            c.BeforeThisLevel = addFeatureOnClassLevel.BeforeThisLevel;
-                            c.m_Feature = addFeatureOnClassLevel.m_Feature;
-                            c.m_AdditionalClasses = addFeatureOnClassLevel.m_AdditionalClasses;
-                            c.m_Archetypes = addFeatureOnClassLevel.m_Archetypes;
                         });
                     }
                 }
@@ -394,6 +377,12 @@ namespace IsekaiMod.Utilities {
             }
             if (component is IncreaseSpellSpellbookDC cdc && cdc.m_Spellbooks != null && cdc.m_Spellbooks.Length > 0) {
                 cdc.m_Spellbooks = cdc.m_Spellbooks.AddRangeToArray(patchableSpellBooks);
+            }
+            if (component is AddFeatureOnClassLevel addFeatureOnLevel) {
+                PatchClassIntoFeatureOfReferenceClass(addFeatureOnLevel.m_Feature.Get(), myClass, referenceClass, mylevel, loopPrevention);
+                if (addFeatureOnLevel.m_Class != null && addFeatureOnLevel.m_Class.Equals(referenceClass)) {
+                    addFeatureOnLevel.m_AdditionalClasses = addFeatureOnLevel.m_AdditionalClasses.AddToArray(myClass);
+                }
             }
             if (component is MonkNoArmorFeatureUnlock addUnarmedFact) {
                 var fact = addUnarmedFact.m_NewFact.Get();
@@ -651,6 +640,20 @@ namespace IsekaiMod.Utilities {
 
         internal static class ShifterPatcher {
             public static void Patch(BlueprintCharacterClassReference classRef) {
+                var shifterClassRef = BlueprintTools.GetBlueprintReference<BlueprintCharacterClassReference>("a406d6ebea5c46bba3160246be03e96f");
+                BlueprintFeature[] clawFeatures = new BlueprintFeature[] {
+                    BlueprintTools.GetBlueprint<BlueprintFeature>("08a8cfba6ae34505a64d6ba00225c4d2"), // ShifterClawsFeatureAddLevel
+                    BlueprintTools.GetBlueprint<BlueprintFeature>("f7996c5b51e348fc9277480d9cc0a88c"), // ShifterClawsFeatureAddLevel1
+                    BlueprintTools.GetBlueprint<BlueprintFeature>("19b7335626b3434cbe2af01fb33582ff"), // ShifterClawsFeatureAddLevel2
+                    BlueprintTools.GetBlueprint<BlueprintFeature>("8d6b338131764a4fb68eaf5b5c6cfe47"), // ShifterClawsFeatureAddLevel3
+                    BlueprintTools.GetBlueprint<BlueprintFeature>("024b8248f85d412cb7c520a9f746c547"), // ShifterClawsFeatureAddLevel4
+                    BlueprintTools.GetBlueprint<BlueprintFeature>("76b8314a83ff4825a145ac8f7b59d6e4"), // ShifterClawsFeatureAddLevel5
+                    BlueprintTools.GetBlueprint<BlueprintFeature>("28991899db1948d9bdd5f958b4add2d8"), // ShifterClawsFeatureAddLevel6
+                };
+                foreach (BlueprintFeature clawFeature in clawFeatures) {
+                    PatchClassIntoFeatureOfReferenceClass(clawFeature, classRef, shifterClassRef);
+                }
+
                 BlueprintBuff[] aspectBuffs = new BlueprintBuff[] {
                     BlueprintTools.GetBlueprint<BlueprintBuff>("a237792fc2644a4ebc6eefa2d325f181"), // ShifterAspectBearBuff
                     BlueprintTools.GetBlueprint<BlueprintBuff>("0fdc579eafbf4fceae649beed8188a5c"), // ShifterAspectBoarBuff
@@ -679,7 +682,6 @@ namespace IsekaiMod.Utilities {
                     PatchResource(resource, classRef);
                 }
 
-                var shifterClassRef = BlueprintTools.GetBlueprintReference<BlueprintCharacterClassReference>("a406d6ebea5c46bba3160246be03e96f");
                 BlueprintAbility[] abilities = new BlueprintAbility[] {
                     BlueprintTools.GetBlueprint<BlueprintAbility>("c35a9830c7684f76a704aff424128851"), // ShifterDragonForm20Neutral
                     BlueprintTools.GetBlueprint<BlueprintAbility>("2d52be9832e542bc88b1959be2f3b2e2"), // ShifterDragonForm20Good
@@ -728,6 +730,13 @@ namespace IsekaiMod.Utilities {
                     __result = __instance.m_Spellbook;
                     return true;
                 }
+            }
+        }
+
+        [HarmonyPatch(typeof(AddVendorDiscount), "OnTurnOn")]
+        public static class AddVendorDiscountPatcher {
+            public static void Prefix(AddVendorDiscount __instance) {
+                __instance.OnInitialize();
             }
         }
     }

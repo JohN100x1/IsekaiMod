@@ -1007,6 +1007,7 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
             //dupe spells
             if ("78e0d5e8ad0e3eb4c8d65e0d34b945b4".Equals(GUIId)) return true;
             if ("431f783e1a020cd46ab37b8666a92bd3".Equals(GUIId)) return true;
+            if ("41c9016596fe1de4faf67425ed691203".Equals(GUIId)) return true;
             return false;
         }
 

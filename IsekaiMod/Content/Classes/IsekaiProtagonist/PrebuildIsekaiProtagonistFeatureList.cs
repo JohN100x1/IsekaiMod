@@ -1,6 +1,4 @@
-﻿using HarmonyLib;
-using IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature;
-using Kingmaker.Blueprints;
+﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.EntitySystem.Stats;
@@ -494,6 +492,23 @@ namespace IsekaiMod.Content.Classes.IsekaiProtagonist {
                 });
             });
             IsekaiProtagonistClass.SetDefaultBuild(PrebuildIsekaiProtagonistFeatureList);
+        }
+
+        public static void PatchLegacySelection() {
+            //var PrebuildIsekaiProtagonistFeatureList = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "PrebuildIsekaiProtagonistFeatureList");
+
+            //// Shifter Legacy Selection
+            //var LegacySelection = BlueprintTools.GetModBlueprint<BlueprintFeatureSelection>(IsekaiContext, "LegacyClassSelection");
+            //var SkaldBaseLegacy = BlueprintTools.GetModBlueprint<BlueprintFeature>(IsekaiContext, "SkaldBaseLegacy");
+
+            //var addClassLevels = PrebuildIsekaiProtagonistFeatureList.GetComponent<AddClassLevels>();
+            //addClassLevels.Selections = addClassLevels.Selections.AppendToArray(
+            //    new SelectionEntry() {
+            //        m_Selection = LegacySelection.ToReference<BlueprintFeatureSelectionReference>(),
+            //        m_Features = new BlueprintFeatureReference[]{
+            //            SkaldBaseLegacy.ToReference<BlueprintFeatureReference>()
+            //        }
+            //    });
         }
     }
 }

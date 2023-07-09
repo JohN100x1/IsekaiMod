@@ -299,6 +299,7 @@ The list of spell lists we merge for this is fairly comprehensive, Cleric, Wizar
 As such almost no spell should need work on our part to add support for it, if you find one please let us know.
 
 ## Credits
+Thanks to Necht for fixing the Russian translation.
 Thanks to kjk001 for contributing alot to this repository, improving the code to use TabletopTweaks-Core as well as adding lots of content.
 Thanks to WittleWolfie for creating this modding guide that helped me get started:
 - https://github.com/WittleWolfie/OwlcatModdingWiki/wiki
