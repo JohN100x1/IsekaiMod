@@ -8309,12 +8309,12 @@
       "Key": "19c415fda5a1487c95bc48f038179d62",
       "SimpleName": "Supermassive.Description",
       "ProcessTemplates": true,
-      "enGB": "You gain a size bonus to HP equal to your 10 times your Constitution modifier. You also have fast healing equal to your Constitution modifier but a -10 penalty to AC.",
-      "ruRU": "Вы получаете бонус к очкам здоровья, равный 10 кратному модификатору вашей выносливости. Вы также обладаете быстрым исцилением, равным вашему модификатору выносливости, но вы получаете штраф -10 к защите.",
-      "deDE": "Du erhältst einen Größenbonus auf deine Trefferpunkte, der deinem 10-fachen Konstitutionsmodifikator entspricht. Außerdem hast du schnelle Heilung, die deinem Konstitutionsmodifikator entspricht, aber einen Malus von -10 auf deine Rüstungsklasse.",
-      "frFR": "Vous obtenez un bonus de taille à vos points de vie équivalent à 10 fois votre modificateur de Constitution. Vous avez également une guérison accélérée équivalente à votre modificateur de Constitution, mais vous subissez un malus de -10 à votre CA.",
-      "zhCN": "你获得相当于你的体质修正值乘以10的生命值加成。你还拥有相当于你的体质修正值的快速恢复能力，但是AC会降低10点。",
-      "esES": "Obtienes un bono de tamaño a tus puntos de vida igual a 10 veces tu modificador de Constitución. Además, tienes una curación rápida igual a tu modificador de Constitución, pero tienes una penalización de -10 a tu CA."
+      "enGB": "You gain a size bonus to HP equal to your 10 times your Constitution modifier.",
+      "ruRU": "Вы получаете бонус к очкам здоровья, равный 10 кратному модификатору вашей выносливости.",
+      "deDE": "Du erhältst einen Größenbonus auf deine Trefferpunkte, der deinem 10-fachen Konstitutionsmodifikator entspricht.",
+      "frFR": "Vous obtenez un bonus de taille à vos points de vie équivalent à 10 fois votre modificateur de Constitution.",
+      "zhCN": "你获得相当于你的体质修正值乘以10的生命值加成。",
+      "esES": "Obtienes un bono de tamaño a tus puntos de vida igual a 10 veces tu modificador de Constitución."
     },
     {
       "Key": "8745afb1661b40659050abcfd6b10179",
