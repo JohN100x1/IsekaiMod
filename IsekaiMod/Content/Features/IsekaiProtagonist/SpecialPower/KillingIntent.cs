@@ -3,13 +3,11 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
-using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.Utility;
 using TabletopTweaks.Core.Utilities;
@@ -39,33 +37,18 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.SpecialPower {
                     c.UnitEnter = Helpers.CreateActionList(
                         new ContextActionApplyBuff() {
                             m_Buff = Shaken.ToReference<BlueprintBuffReference>(),
-                            DurationValue = new() {
-                                Rate = DurationRate.Rounds,
-                                DiceType = DiceType.D4,
-                                DiceCountValue = 1,
-                                BonusValue = 0,
-                                m_IsExtendable = true,
-                            }
+                            Permanent = true,
+                            DurationValue = Values.Duration.Zero,
                         },
                         new ContextActionApplyBuff() {
                             m_Buff = Frightened.ToReference<BlueprintBuffReference>(),
-                            DurationValue = new() {
-                                Rate = DurationRate.Rounds,
-                                DiceType = DiceType.D4,
-                                DiceCountValue = 1,
-                                BonusValue = 0,
-                                m_IsExtendable = true,
-                            }
+                            Permanent = true,
+                            DurationValue = Values.Duration.Zero,
                         },
                         new ContextActionApplyBuff() {
                             m_Buff = Cowering.ToReference<BlueprintBuffReference>(),
-                            DurationValue = new() {
-                                Rate = DurationRate.Rounds,
-                                DiceType = DiceType.D4,
-                                DiceCountValue = 1,
-                                BonusValue = 0,
-                                m_IsExtendable = true,
-                            }
+                            Permanent = true,
+                            DurationValue = Values.Duration.Zero,
                         });
                     c.UnitExit = Helpers.CreateActionList(
                         new ContextActionRemoveBuff() {

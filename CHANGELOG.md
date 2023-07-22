@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # [Unreleased]
 ### Changed
+- Changed `Killing Intent` to last as long as the enemy is within 40ft.
 - Removed AC penalty and fast healing from `Supermassive` Special Power.
 ### Fixed
 - Fixed number of challenges per day for cavalier legacies.
