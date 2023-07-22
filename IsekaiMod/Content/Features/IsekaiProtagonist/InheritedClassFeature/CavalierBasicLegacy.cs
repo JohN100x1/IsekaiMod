@@ -15,7 +15,6 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
     internal class CavalierBasicLegacy {
         private static BlueprintProgression prog;
 
-
         public static void Configure() {
             prog = Helpers.CreateBlueprint<BlueprintProgression>(IsekaiContext, "CavalierBasicLegacy", bp => {
                 bp.SetName(IsekaiContext, "Cavalier Legacy - Frontline Leader");
@@ -42,17 +41,23 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.InheritedClassFeature {
                 removeentries = removeentries.AppendToArray(Helpers.CreateLevelEntry(1, FeatTools.Selections.CavalierMountSelection
                     ));
                 // Animal Teamwork, Solo Tactics
-                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(3,
+                addentries = addentries.AppendToArray(Helpers.CreateLevelEntry(3,
                     BlueprintTools.GetBlueprint<BlueprintFeature>("1b9916f7675d6ef4fb427081250d49de"),
                     BlueprintTools.GetBlueprint<BlueprintFeature>("a318fa1af8424638ab10c4f98c11ee6a")));
                 //Summon Tactics
-                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(5, BlueprintTools.GetBlueprint<BlueprintFeature>("c3abcce19f9f80640a867c9e75f880b2"), BlueprintTools.GetBlueprint<BlueprintFeature>("7bc55b5e381358c45b42153b8b2603a6")));
-
-                addentries = addentries.AppendToArray<LevelEntry>(Helpers.CreateLevelEntry(15, BlueprintTools.GetBlueprint<BlueprintFeature>("7bc55b5e381358c45b42153b8b2603a6")));
+                addentries = addentries.AppendToArray(Helpers.CreateLevelEntry(5,
+                    BlueprintTools.GetBlueprint<BlueprintFeature>("c3abcce19f9f80640a867c9e75f880b2"),
+                    BlueprintTools.GetBlueprint<BlueprintFeature>("7bc55b5e381358c45b42153b8b2603a6")));
+                addentries = addentries.AppendToArray(Helpers.CreateLevelEntry(15,
+                    BlueprintTools.GetBlueprint<BlueprintFeature>("7bc55b5e381358c45b42153b8b2603a6")));
 
                 prog = PatchTools.PatchClassProgressionBasedOnSeparateLists(prog, ClassTools.Classes.CavalierClass, addentries, removeentries);
                 BlueprintCharacterClassReference myClass = IsekaiProtagonistClass.GetReference();
                 PatchTools.PatchProgressionFeaturesBasedOnReferenceClass(prog, myClass, ClassTools.ClassReferences.CavalierClass);
+
+                // Patch Resource
+                var CavalierChallengeResource = BlueprintTools.GetBlueprint<BlueprintAbilityResource>("672e8c9c98db1df4aa66676a66036e71");
+                PatchTools.PatchResource(CavalierChallengeResource, myClass);
 
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = CavalierKnightOfWall.Get().ToReference<BlueprintFeatureReference>(); });
                 prog.AddPrerequisite<PrerequisiteNoFeature>(c => { c.m_Feature = CavalierStandardBearerLegacy.Get().ToReference<BlueprintFeatureReference>(); });

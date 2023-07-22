@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Unreleased]
 ### Changed
 - Removed AC penalty and fast healing from `Supermassive` Special Power.
+### Fixed
+- Fixed number of challenges per day for cavalier legacies.
 
 # [5.3.5] - 2023-07-09
 ### Fixed
