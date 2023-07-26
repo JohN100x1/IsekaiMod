@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added extra Isekai Dialogue during Nenio quest in the Nameless Ruins.
 ### Changed
+- Changed `Excalibur` into a toggle ability.
+- Changed `Magical Amplification` into a toggle ability.
 - Changed `Killing Intent` to last as long as the enemy is within 40ft.
 - Removed AC penalty and fast healing from `Supermassive` Special Power.
 ### Fixed
