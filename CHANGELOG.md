@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 # [Unreleased]
+### Added
+- Added extra Isekai Dialogue during Nenio quest in the Nameless Ruins.
 ### Changed
 - Changed `Killing Intent` to last as long as the enemy is within 40ft.
 - Removed AC penalty and fast healing from `Supermassive` Special Power.
