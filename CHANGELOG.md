@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [5.4.0] - 2023-07-30
+### Added
+- Added extra Isekai Dialogue during Nenio quest in the Nameless Ruins.
+### Changed
+- Buffed `Deus Ex Machina` to now grant maximum healing to healing abilities.
+- Changed `Excalibur` into a toggle ability.
+- Changed `Magical Amplification` into a toggle ability.
+- Changed `Killing Intent` to last as long as the enemy is within 40ft.
+- Removed AC penalty and fast healing from `Supermassive` Special Power.
+### Fixed
+- Fixed number of challenges per day for cavalier legacies.
+
 # [5.3.5] - 2023-07-09
 ### Fixed
 - Fixed errors in Russian localization. (credit to Necht)

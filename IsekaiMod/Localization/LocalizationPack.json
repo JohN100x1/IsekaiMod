@@ -1915,6 +1915,17 @@
       "esES": "Alas (demoníacas)"
     },
     {
+      "Key": "250d97b5da9f40f49f9fb17dbfe037ea",
+      "SimpleName": "DeusExMachina.Description",
+      "ProcessTemplates": false,
+      "enGB": "Your channel energy, cure spells, and restore HP abilities heal the maximum amount.\nOnce per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are resurrected to full health. Allies within 40 feet are then restored to full health while enemies instantly die.",
+      "ruRU": "Ваше канал энергии, лечащие заклинания и способности восстановления HP восстанавливают максимальное количество очков здоровья.",
+      "deDE": "Ihre Kanalisierungsenergie, Heilzauber und HP-Wiederherstellungsfähigkeiten heilen die maximale Menge.",
+      "frFR": "Votre canalisation d'énergie, vos sorts de soins et vos capacités de restauration de PV soignent le montant maximal.",
+      "zhCN": "您的能量通道，治疗法术和恢复生命值的能力会最大程度地恢复生命值。",
+      "esES": "Tus habilidades de canalización de energía, hechizos de curación y restauración de PV sanan la cantidad máxima."
+    },
+    {
       "Key": "1969ee3dd2b54348b0e63729efbe359a",
       "SimpleName": "DeusExMachinaBuff.Description",
       "ProcessTemplates": true,
@@ -3807,17 +3818,6 @@
       "esES": "Canalizar energía positiva - Dañar a los no muertos"
     },
     {
-      "Key": "be7d58a6bf3c4a33b816416c6e7ac42f",
-      "SimpleName": "IsekaiChannelPositiveEnergyFeature.Description",
-      "ProcessTemplates": true,
-      "enGB": "You gain the supernatural ability to channel positive energy like a cleric. You use your Isekai Protagonist level as your effective cleric level when channeling positive energy.  You can channel energy a number of times per day equal to 3 + your Charisma modifier.",
-      "ruRU": "Вы получаете сверхъестественную способность проводить позитивную энергию подобно жрецу, используя свой уровень Главного Героя Исекая вместо уровня жреца при определении количества вылеченного(или нанесенного нежити) урона и сложности. Вы можете применять эту способность 3 + модификатор вашей Харизмы раз в день.",
-      "deDE": "Du erhältst die übernatürliche Fähigkeit, positive Energie wie ein Kleriker zu kanalisieren. Bei der Kanalisierung von positiver Energie entspricht dein Isekai Protagonist-Level deinem effektiven Klerikerlevel. Du kannst Energie eine Anzahl von Malen pro Tag kanalisieren, die 3 + deinem Charisma-Modifikator entspricht.",
-      "frFR": "Vous acquérez la capacité surnaturelle de canaliser de l'énergie positive comme un clerc. Vous utilisez votre niveau de Protagoniste d'Isekai comme niveau de clerc effectif lorsque vous canalisez de l'énergie positive. Vous pouvez canaliser de l'énergie un certain nombre de fois par jour égal à 3 + votre modificateur de Charisme.",
-      "zhCN": "你获得了类似祭司的超自然能力，可以引导正能量。当你引导正能量时，你的异世界主角等级将作为你的有效祭司等级。你每天可以引导能量的次数等于3 + 你的魅力修正。",
-      "esES": "Obtienes la habilidad sobrenatural de canalizar energía positiva como un clérigo. Utilizas tu nivel de Protagonista Isekai como tu nivel efectivo de clérigo al canalizar energía positiva. Puedes canalizar energía un número de veces por día igual a 3 + tu modificador de Carisma."
-    },
-    {
       "Key": "d4ad925cfe9e4aba8ff63c16f2d01ec1",
       "SimpleName": "IsekaiChannelPositiveEnergyFeature.Description",
       "ProcessTemplates": true,
@@ -3827,6 +3827,17 @@
       "frFR": "Vous obtenez la capacité surnaturelle de canaliser de l'énergie positive comme un prêtre. Vous utilisez votre niveau de personnage comme niveau de prêtre effectif lors de la canalisation d'énergie positive. Vous pouvez canaliser l'énergie un nombre de fois par jour égal à 3 + modificateur de Charisme.",
       "zhCN": "你获得了像牧师一样引导正能量的超自然能力。当引导正能量时，你使用你的人物等级作为你的有效牧师等级。你每天可以引导能量的次数等于3 + 你的魅力调整值。",
       "esES": "Obtienes la habilidad sobrenatural de canalizar energía positiva como un clérigo. Usas tu nivel de personaje como tu nivel efectivo de clérigo cuando canalizas energía positiva. Puedes canalizar energía un número de veces al día igual a 3 + tu modificador de Carisma."
+    },
+    {
+      "Key": "be7d58a6bf3c4a33b816416c6e7ac42f",
+      "SimpleName": "IsekaiChannelPositiveEnergyFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You gain the supernatural ability to channel positive energy like a cleric. You use your Isekai Protagonist level as your effective cleric level when channeling positive energy.  You can channel energy a number of times per day equal to 3 + your Charisma modifier.",
+      "ruRU": "Вы получаете сверхъестественную способность проводить позитивную энергию подобно жрецу, используя свой уровень Главного Героя Исекая вместо уровня жреца при определении количества вылеченного(или нанесенного нежити) урона и сложности. Вы можете применять эту способность 3 + модификатор вашей Харизмы раз в день.",
+      "deDE": "Du erhältst die übernatürliche Fähigkeit, positive Energie wie ein Kleriker zu kanalisieren. Bei der Kanalisierung von positiver Energie entspricht dein Isekai Protagonist-Level deinem effektiven Klerikerlevel. Du kannst Energie eine Anzahl von Malen pro Tag kanalisieren, die 3 + deinem Charisma-Modifikator entspricht.",
+      "frFR": "Vous acquérez la capacité surnaturelle de canaliser de l'énergie positive comme un clerc. Vous utilisez votre niveau de Protagoniste d'Isekai comme niveau de clerc effectif lorsque vous canalisez de l'énergie positive. Vous pouvez canaliser de l'énergie un certain nombre de fois par jour égal à 3 + votre modificateur de Charisme.",
+      "zhCN": "你获得了类似祭司的超自然能力，可以引导正能量。当你引导正能量时，你的异世界主角等级将作为你的有效祭司等级。你每天可以引导能量的次数等于3 + 你的魅力修正。",
+      "esES": "Obtienes la habilidad sobrenatural de canalizar energía positiva como un clérigo. Utilizas tu nivel de Protagonista Isekai como tu nivel efectivo de clérigo al canalizar energía positiva. Puedes canalizar energía un número de veces por día igual a 3 + tu modificador de Carisma."
     },
     {
       "Key": "ec9c9568c5194a4b9cc823fa4313b41b",
@@ -4124,6 +4135,83 @@
       "frFR": "{n}Seelah sourit et lève son pouce!{\n}",
       "zhCN": "{n}塞拉微笑着给你竖起了大拇指！{\n}",
       "esES": "{n}Seelah sonríe y te da un pulgar hacia arriba!{\n}"
+    },
+    {
+      "Key": "6d1a688cc1af4c16b972f70bde39205f",
+      "SimpleName": "IsekaiDialogueNenioStatueAnswer1.Text",
+      "ProcessTemplates": false,
+      "enGB": "(Isekai Protagonist) \"I am the bone of my sword.\"",
+      "ruRU": "Я - кость моего меча.",
+      "deDE": "Ich bin das Knochen meines Schwertes.",
+      "frFR": "Je suis l'os de mon épée.",
+      "zhCN": "我是我的剑之骨。",
+      "esES": "Soy el hueso de mi espada."
+    },
+    {
+      "Key": "b4ae53586853499885d9affaa4b95c36",
+      "SimpleName": "IsekaiDialogueNenioStatueAnswer2.Text",
+      "ProcessTemplates": false,
+      "enGB": "(Isekai Protagonist) \"I am the hope of the universe.\"",
+      "ruRU": "Я - надежда вселенной.",
+      "deDE": "Ich bin die Hoffnung des Universums.",
+      "frFR": "Je suis l'espoir de l'univers.",
+      "zhCN": "我是宇宙的希望。",
+      "esES": "Soy la esperanza del universo."
+    },
+    {
+      "Key": "8ac129aee1504d2f9ad2e4dbea268e96",
+      "SimpleName": "IsekaiDialogueNenioStatueAnswer3.Text",
+      "ProcessTemplates": false,
+      "enGB": "(Isekai Protagonist) \"I am just a guy who's a hero for fun.\"",
+      "ruRU": "(Исекай Протагонист) \"Я всего лишь парень, который забавляется геройством.\"",
+      "deDE": "(Isekai Protagonist) \"Ich bin nur ein Typ, der aus Spaß ein Held ist.\"",
+      "frFR": "(Protagoniste d'Isekai) \"Je ne suis qu'un gars qui est un héros pour s'amuser.\"",
+      "zhCN": "(异世界主人公) \"我只是一个为了娱乐而成为英雄的家伙。\"",
+      "esES": "(Protagonista de Isekai) \"Soy solo un chico que es un héroe por diversión.\""
+    },
+    {
+      "Key": "0a294c30391647a5a71c0e7b503086e7",
+      "SimpleName": "IsekaiDialogueNenioStatueAnswer4.Text",
+      "ProcessTemplates": false,
+      "enGB": "(Isekai Protagonist) \"I am Atomic.\"",
+      "ruRU": "Я - Атомный.",
+      "deDE": "Ich bin Atomic.",
+      "frFR": "Je suis Atomic.",
+      "zhCN": "我是原子。",
+      "esES": "Soy Atomic."
+    },
+    {
+      "Key": "a5b5ec8da25e43a4a1e951266cdcbd06",
+      "SimpleName": "IsekaiDialogueNenioStatueAnswer5.Text",
+      "ProcessTemplates": false,
+      "enGB": "(Isekai Protagonist) \"I am God.\"",
+      "ruRU": "(Исэкай Протагонист) \"Я - Бог.\"",
+      "deDE": "(Isekai-Protagonist) \"Ich bin Gott.\"",
+      "frFR": "(Protagoniste d'Isekai) \"Je suis Dieu.\"",
+      "zhCN": "(异世界主角) \"我是神。\"",
+      "esES": "(Protagonista de Isekai) \"Soy Dios.\""
+    },
+    {
+      "Key": "bc78aad3a5134a598df951f608155a60",
+      "SimpleName": "IsekaiDialogueNenioStatueAnswer6.Text",
+      "ProcessTemplates": false,
+      "enGB": "(Isekai Protagonist) \"I am just some guy who got hit by a truck and somehow ended up in this world.\"",
+      "ruRU": "Я всего лишь обычный парень, которого сбил грузовик, и каким-то образом оказался в этом мире.",
+      "deDE": "Ich bin nur ein Typ, der von einem Lastwagen erfasst wurde und irgendwie in dieser Welt gelandet ist.",
+      "frFR": "Je ne suis qu'un gars qui s'est fait renverser par un camion et qui s'est retrouvé mystérieusement dans ce monde.",
+      "zhCN": "我只是个被卡车撞到，然后不知何故来到这个世界的普通人。",
+      "esES": "Soy solo un chico que fue atropellado por un camión y de alguna manera terminé en este mundo."
+    },
+    {
+      "Key": "f55de48b68ec4b939a5ff972060ffd2e",
+      "SimpleName": "IsekaiDialogueNenioStatueReply.Text",
+      "ProcessTemplates": false,
+      "enGB": "{n}The emptiness is bewildered and confused, but cannot deny what you say to be truth.{/n}",
+      "ruRU": "{n}Пустота ошеломлена и смущена, но не может отрицать, что вы говорите правду.{/n}",
+      "deDE": "{n}Die Leere ist verwirrt und verwirrt, kann aber nicht leugnen, dass das, was du sagst, die Wahrheit ist.{/n}",
+      "frFR": "{n}Le vide est déconcerté et confus, mais ne peut nier que ce que vous dites est vrai.{/n}",
+      "zhCN": "{n}虚空感到困惑和迷茫，但不能否认你所说的是真实的。{/n}",
+      "esES": "{n}El vacío está desconcertado y confundido, pero no puede negar que lo que dices es verdad.{/n}"
     },
     {
       "Key": "d87299f2ee974ecb8b528f3506c56d5f",
@@ -4852,17 +4940,6 @@
       "esES": "Has descubierto un oscuro secreto de la manipulación elemental: puedes usar las almas de tus enemigos como combustible para tus poderes. En lugar de esforzarte a ti mismo, puedes usar las almas de aquellos que se oponen a ti y desatar devastadoras explosiones de energía elemental. Eres un maestro del vínculo de almas, una técnica que algunos consideran antinatural ymorbosa. Pero a ti no te importan tales escrúpulos morales; solo te importa tu propia supervivencia y dominio."
     },
     {
-      "Key": "c6e5f25e7cde4d08aa7ca47eed847a30",
-      "SimpleName": "KineticDarkElementalistLegacy.Name",
-      "ProcessTemplates": false,
-      "enGB": "Kinetic Legacy - Soulbinder",
-      "ruRU": "Наследие Кинетика - Связывающий Души",
-      "deDE": "Kinetisches Erbe - Seelenbinder",
-      "frFR": "Héritage du Cinétiste - Lieur d'âmes",
-      "zhCN": "动能传承 - 灵魂绑定者",
-      "esES": "Legado Cinético - Atalma"
-    },
-    {
       "Key": "90c3fe3d7635495fbebeece2fca293b2",
       "SimpleName": "KineticDarkElementalistLegacy.Name",
       "ProcessTemplates": false,
@@ -4872,6 +4949,17 @@
       "frFR": "Héritage cinétique - Soulbinder",
       "zhCN": "动能遗产-灵魂绑定者",
       "esES": "Legado cinético - Atadura de almas"
+    },
+    {
+      "Key": "c6e5f25e7cde4d08aa7ca47eed847a30",
+      "SimpleName": "KineticDarkElementalistLegacy.Name",
+      "ProcessTemplates": false,
+      "enGB": "Kinetic Legacy - Soulbinder",
+      "ruRU": "Наследие Кинетика - Связывающий Души",
+      "deDE": "Kinetisches Erbe - Seelenbinder",
+      "frFR": "Héritage du Cinétiste - Lieur d'âmes",
+      "zhCN": "动能传承 - 灵魂绑定者",
+      "esES": "Legado Cinético - Atalma"
     },
     {
       "Key": "4a03b9f796ce4ae8a93f6487eef054fe",
@@ -5050,9 +5138,9 @@
       "esES": "Condensación de energía luminosa"
     },
     {
-      "Key": "478bcef542244c5cb3983c0ae46635c0",
+      "Key": "728a15e5920c40a0b238aa3d6004cd02",
       "SimpleName": "MagicalAmplification.Description",
-      "ProcessTemplates": true,
+      "ProcessTemplates": false,
       "enGB": "Any {g|Encyclopedia:Spell}spells{/g} dealing {g|Encyclopedia:Damage}damage{/g} now change their dice to d10, if it was not d10 or greater. If it already was d10 or greater, instead the spell deals one additional point of damage per dice rolled.",
       "ruRU": "Любое {g|Encyclopedia:Spell}заклинание{/g}, наносящее {g|Encyclopedia:Damage}урон{/g}, теперь меняет свои кости урона на d10, если они были меньше. Если они уже были равны или больше d10, то вместо этого заклинание наносит на один дополнительный урон за каждую брошенную кость.",
       "deDE": "Alle {g|Encyclopedia:Spell}Zauber{/g}, die {g|Encyclopedia:Damage}Schaden{/g} verursachen, ändern nun ihre Würfel zu d10, wenn sie nicht bereits d10 oder größer sind. Wenn sie bereits d10 oder größer sind, verursacht der Zauber stattdessen einen zusätzlichen Schadenspunkt pro gewürfeltem Würfel.",
@@ -8309,12 +8397,12 @@
       "Key": "19c415fda5a1487c95bc48f038179d62",
       "SimpleName": "Supermassive.Description",
       "ProcessTemplates": true,
-      "enGB": "You gain a size bonus to HP equal to your 10 times your Constitution modifier. You also have fast healing equal to your Constitution modifier but a -10 penalty to AC.",
-      "ruRU": "Вы получаете бонус к очкам здоровья, равный 10 кратному модификатору вашей выносливости. Вы также обладаете быстрым исцилением, равным вашему модификатору выносливости, но вы получаете штраф -10 к защите.",
-      "deDE": "Du erhältst einen Größenbonus auf deine Trefferpunkte, der deinem 10-fachen Konstitutionsmodifikator entspricht. Außerdem hast du schnelle Heilung, die deinem Konstitutionsmodifikator entspricht, aber einen Malus von -10 auf deine Rüstungsklasse.",
-      "frFR": "Vous obtenez un bonus de taille à vos points de vie équivalent à 10 fois votre modificateur de Constitution. Vous avez également une guérison accélérée équivalente à votre modificateur de Constitution, mais vous subissez un malus de -10 à votre CA.",
-      "zhCN": "你获得相当于你的体质修正值乘以10的生命值加成。你还拥有相当于你的体质修正值的快速恢复能力，但是AC会降低10点。",
-      "esES": "Obtienes un bono de tamaño a tus puntos de vida igual a 10 veces tu modificador de Constitución. Además, tienes una curación rápida igual a tu modificador de Constitución, pero tienes una penalización de -10 a tu CA."
+      "enGB": "You gain a size bonus to HP equal to your 10 times your Constitution modifier.",
+      "ruRU": "Вы получаете бонус к очкам здоровья, равный 10 кратному модификатору вашей выносливости.",
+      "deDE": "Du erhältst einen Größenbonus auf deine Trefferpunkte, der deinem 10-fachen Konstitutionsmodifikator entspricht.",
+      "frFR": "Vous obtenez un bonus de taille à vos points de vie équivalent à 10 fois votre modificateur de Constitution.",
+      "zhCN": "你获得相当于你的体质修正值乘以10的生命值加成。",
+      "esES": "Obtienes un bono de tamaño a tus puntos de vida igual a 10 veces tu modificador de Constitución."
     },
     {
       "Key": "8745afb1661b40659050abcfd6b10179",

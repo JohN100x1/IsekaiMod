@@ -235,6 +235,7 @@ namespace IsekaiMod.Content {
                 Dialogue.IsekaiMinagho.Add();
                 Dialogue.IsekaiAneviaIrabethHarem.Add();
                 Dialogue.IsekaiFinnean.Add();
+                Dialogue.IsekaiNenioStatue.Add();
             }
             public static void AddIsekaiHeritages() {
                 // Add Heritages

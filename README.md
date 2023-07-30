@@ -232,6 +232,7 @@ Exception to this is the God Emperor as all options that were changed were not p
 	- Act 1, speaking with Anevia in the Bad Luck Tavern.
 	- Act 1, speaking with Irabeth in the Bad Luck Tavern.
 	- Act 1, speaking with Finnean.
+	- Act 2, speaking with statue in the Nameless Ruins.
 	- Random encounter, during drow ambush.
 
 ### Isekai Protagonist Spell progression
