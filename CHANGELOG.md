@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added extra Isekai Dialogue during Nenio quest in the Nameless Ruins.
 ### Changed
+- Buffed `Deus Ex Machina` to now grant maximum healing to healing abilities.
 - Changed `Excalibur` into a toggle ability.
 - Changed `Magical Amplification` into a toggle ability.
 - Changed `Killing Intent` to last as long as the enemy is within 40ft.

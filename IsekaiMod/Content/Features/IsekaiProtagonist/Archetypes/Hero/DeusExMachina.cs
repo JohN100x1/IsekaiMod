@@ -1,7 +1,10 @@
 ﻿using IsekaiMod.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
+using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.Localization;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -22,8 +25,10 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
 
         public static void Add() {
             const string DeusExMachinaName = "Deus Ex Machina";
-            const string DeusExMachinaDescription = "Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are resurrected to full health. "
-                + "Allies within 40 feet are then restored to full health while enemies instantly die.";
+            LocalizedString DeusExMachinaDescription = Helpers.CreateString(IsekaiContext, "DeusExMachina.Description",
+                "Your channel energy, cure spells, and restore HP abilities heal the maximum amount.\n"
+                + "Once per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are resurrected to full health. "
+                + "Allies within 40 feet are then restored to full health while enemies instantly die.");
             var Icon_DeusExMachina = AssetLoader.LoadInternal(IsekaiContext, "Features", "ICON_DEUS_EX_MACHINA.png");
             var DeusExMachinaArea = Helpers.CreateBlueprint<BlueprintAbilityAreaEffect>(IsekaiContext, "DeusExMachinaArea", bp => {
                 bp.m_TargetType = BlueprintAbilityAreaEffect.TargetType.Any;
@@ -52,7 +57,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
             });
             var DeusExMachinaBuff = TTCoreExtensions.CreateBuff("DeusExMachinaBuff", bp => {
                 bp.SetName(IsekaiContext, DeusExMachinaName);
-                bp.SetDescription(IsekaiContext, DeusExMachinaDescription);
+                bp.SetDescription(DeusExMachinaDescription);
                 bp.m_Icon = Icon_DeusExMachina;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -73,7 +78,7 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
             });
             var DeusExMachinaFeature = Helpers.CreateBlueprint<BlueprintFeature>(IsekaiContext, "DeusExMachinaFeature", bp => {
                 bp.SetName(IsekaiContext, DeusExMachinaName);
-                bp.SetDescription(IsekaiContext, DeusExMachinaDescription);
+                bp.SetDescription(DeusExMachinaDescription);
                 bp.m_Icon = Icon_DeusExMachina;
                 bp.AddComponent<AddRestTrigger>(c => {
                     c.Action = ActionFlow.DoSingle<ContextActionApplyBuff>(c => {
@@ -85,6 +90,16 @@ namespace IsekaiMod.Content.Features.IsekaiProtagonist.Archetypes.Hero {
                 bp.AddComponent<AddFacts>(c => {
                     c.m_Facts = new BlueprintUnitFactReference[] { DeusExMachinaBuff.ToReference<BlueprintUnitFactReference>() };
                     c.DoNotRestoreMissingFacts = true;
+                });
+                bp.AddComponent<AutoMetamagic>(c => {
+                    c.m_AllowedAbilities = AutoMetamagic.AllowedType.Any;
+                    c.Metamagic = Kingmaker.UnitLogic.Abilities.Metamagic.Maximize;
+                    c.Descriptor = SpellDescriptor.Cure
+                    | SpellDescriptor.RestoreHP
+                    | SpellDescriptor.ChannelNegativeHarm
+                    | SpellDescriptor.ChannelNegativeHeal
+                    | SpellDescriptor.ChannelPositiveHarm
+                    | SpellDescriptor.ChannelPositiveHeal;
                 });
             });
         }
