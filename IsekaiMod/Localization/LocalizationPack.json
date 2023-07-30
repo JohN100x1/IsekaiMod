@@ -1919,11 +1919,11 @@
       "SimpleName": "DeusExMachina.Description",
       "ProcessTemplates": false,
       "enGB": "Your channel energy, cure spells, and restore HP abilities heal the maximum amount.\nOnce per day, when your {g|Encyclopedia:HP}HP{/g} drops to 0, you are resurrected to full health. Allies within 40 feet are then restored to full health while enemies instantly die.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Ваше канал энергии, лечащие заклинания и способности восстановления HP восстанавливают максимальное количество очков здоровья.",
+      "deDE": "Ihre Kanalisierungsenergie, Heilzauber und HP-Wiederherstellungsfähigkeiten heilen die maximale Menge.",
+      "frFR": "Votre canalisation d'énergie, vos sorts de soins et vos capacités de restauration de PV soignent le montant maximal.",
+      "zhCN": "您的能量通道，治疗法术和恢复生命值的能力会最大程度地恢复生命值。",
+      "esES": "Tus habilidades de canalización de energía, hechizos de curación y restauración de PV sanan la cantidad máxima."
     },
     {
       "Key": "1969ee3dd2b54348b0e63729efbe359a",
@@ -4141,77 +4141,77 @@
       "SimpleName": "IsekaiDialogueNenioStatueAnswer1.Text",
       "ProcessTemplates": false,
       "enGB": "(Isekai Protagonist) \"I am the bone of my sword.\"",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Я - кость моего меча.",
+      "deDE": "Ich bin das Knochen meines Schwertes.",
+      "frFR": "Je suis l'os de mon épée.",
+      "zhCN": "我是我的剑之骨。",
+      "esES": "Soy el hueso de mi espada."
     },
     {
       "Key": "b4ae53586853499885d9affaa4b95c36",
       "SimpleName": "IsekaiDialogueNenioStatueAnswer2.Text",
       "ProcessTemplates": false,
       "enGB": "(Isekai Protagonist) \"I am the hope of the universe.\"",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Я - надежда вселенной.",
+      "deDE": "Ich bin die Hoffnung des Universums.",
+      "frFR": "Je suis l'espoir de l'univers.",
+      "zhCN": "我是宇宙的希望。",
+      "esES": "Soy la esperanza del universo."
     },
     {
       "Key": "8ac129aee1504d2f9ad2e4dbea268e96",
       "SimpleName": "IsekaiDialogueNenioStatueAnswer3.Text",
       "ProcessTemplates": false,
       "enGB": "(Isekai Protagonist) \"I am just a guy who's a hero for fun.\"",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "(Исекай Протагонист) \"Я всего лишь парень, который забавляется геройством.\"",
+      "deDE": "(Isekai Protagonist) \"Ich bin nur ein Typ, der aus Spaß ein Held ist.\"",
+      "frFR": "(Protagoniste d'Isekai) \"Je ne suis qu'un gars qui est un héros pour s'amuser.\"",
+      "zhCN": "(异世界主人公) \"我只是一个为了娱乐而成为英雄的家伙。\"",
+      "esES": "(Protagonista de Isekai) \"Soy solo un chico que es un héroe por diversión.\""
     },
     {
       "Key": "0a294c30391647a5a71c0e7b503086e7",
       "SimpleName": "IsekaiDialogueNenioStatueAnswer4.Text",
       "ProcessTemplates": false,
       "enGB": "(Isekai Protagonist) \"I am Atomic.\"",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Я - Атомный.",
+      "deDE": "Ich bin Atomic.",
+      "frFR": "Je suis Atomic.",
+      "zhCN": "我是原子。",
+      "esES": "Soy Atomic."
     },
     {
       "Key": "a5b5ec8da25e43a4a1e951266cdcbd06",
       "SimpleName": "IsekaiDialogueNenioStatueAnswer5.Text",
       "ProcessTemplates": false,
       "enGB": "(Isekai Protagonist) \"I am God.\"",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "(Исэкай Протагонист) \"Я - Бог.\"",
+      "deDE": "(Isekai-Protagonist) \"Ich bin Gott.\"",
+      "frFR": "(Protagoniste d'Isekai) \"Je suis Dieu.\"",
+      "zhCN": "(异世界主角) \"我是神。\"",
+      "esES": "(Protagonista de Isekai) \"Soy Dios.\""
     },
     {
       "Key": "bc78aad3a5134a598df951f608155a60",
       "SimpleName": "IsekaiDialogueNenioStatueAnswer6.Text",
       "ProcessTemplates": false,
       "enGB": "(Isekai Protagonist) \"I am just some guy who got hit by a truck and somehow ended up in this world.\"",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "Я всего лишь обычный парень, которого сбил грузовик, и каким-то образом оказался в этом мире.",
+      "deDE": "Ich bin nur ein Typ, der von einem Lastwagen erfasst wurde und irgendwie in dieser Welt gelandet ist.",
+      "frFR": "Je ne suis qu'un gars qui s'est fait renverser par un camion et qui s'est retrouvé mystérieusement dans ce monde.",
+      "zhCN": "我只是个被卡车撞到，然后不知何故来到这个世界的普通人。",
+      "esES": "Soy solo un chico que fue atropellado por un camión y de alguna manera terminé en este mundo."
     },
     {
       "Key": "f55de48b68ec4b939a5ff972060ffd2e",
       "SimpleName": "IsekaiDialogueNenioStatueReply.Text",
       "ProcessTemplates": false,
       "enGB": "{n}The emptiness is bewildered and confused, but cannot deny what you say to be truth.{/n}",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
+      "ruRU": "{n}Пустота ошеломлена и смущена, но не может отрицать, что вы говорите правду.{/n}",
+      "deDE": "{n}Die Leere ist verwirrt und verwirrt, kann aber nicht leugnen, dass das, was du sagst, die Wahrheit ist.{/n}",
+      "frFR": "{n}Le vide est déconcerté et confus, mais ne peut nier que ce que vous dites est vrai.{/n}",
+      "zhCN": "{n}虚空感到困惑和迷茫，但不能否认你所说的是真实的。{/n}",
+      "esES": "{n}El vacío está desconcertado y confundido, pero no puede negar que lo que dices es verdad.{/n}"
     },
     {
       "Key": "d87299f2ee974ecb8b528f3506c56d5f",
