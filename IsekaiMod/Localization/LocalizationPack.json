@@ -4069,7 +4069,7 @@
       "frFR": "Vous obtenez la capacité surnaturelle de canaliser de l'énergie positive comme un prêtre. Vous utilisez votre niveau de personnage comme niveau de prêtre effectif lors de la canalisation d'énergie positive. Vous pouvez canaliser l'énergie un nombre de fois par jour égal à 3 + modificateur de Charisme.",
       "zhCN": "你获得了像牧师一样引导正能量的超自然能力。当引导正能量时，你使用你的角色等级作为你的有效牧师等级。你每天可以引导能量的次数等于3 + 你的魅力调整值。",
       "esES": "Obtienes la habilidad sobrenatural de canalizar energía positiva como un clérigo. Usas tu nivel de personaje como tu nivel efectivo de clérigo cuando canalizas energía positiva. Puedes canalizar energía un número de veces al día igual a 3 + tu modificador de Carisma."
-    },    
+    },
     {
       "Key": "be7d58a6bf3c4a33b816416c6e7ac42f",
       "SimpleName": "IsekaiChannelPositiveEnergyFeature.Description",
