@@ -85,7 +85,7 @@
       "ruRU": "На 8 уровне ваши движения настолько быстры, что оставляют после себя остаточное изображение для ваших врагов. Вы получаете бонус +10 футов к своей скорости перемещения и 10% шанс, что любая атака, нацеленная на вас, промахнется.",
       "deDE": "Auf Stufe 8 sind deine Bewegungen so schnell, dass sie für deine Feinde ein Nachbild hinterlassen. Du erhältst einen +10 \"Bonus\" auf deine \"Geschwindigkeit\" und jede \"Attacke\", die dich zum Ziel hat, hat eine 10% ige Chance zu verfehlen.",
       "frFR": "À partir du niveau 8, vos mouvements sont tellement rapides qu'ils laissent une image rémanente pour vos ennemis. Vous gagnez un bonus de +10 à votre vitesse et toute attaque qui vous cible a 10% de chance de rater.",
-      "zhCN": "当8级时，你的移动变得如此迅速，以至于为敌人留下了残影。\n你的 {g|Encyclopedia:Speed}速度{/g} 获得 +10 {g|Encyclopedia:Bonus}加值{/g}，任何针对你的 {g|Encyclopedia:Attack}攻击{/g} 都有10%的几率会失手。",
+      "zhCN": "当8级时，你的移动变得如此迅速，以至于为敌人留下了残影。\n你的{g|Encyclopedia:Speed}速度{/g}获得 +10{g|Encyclopedia:Bonus}加值{/g}，任何针对你的{g|Encyclopedia:Attack}攻击{/g}都有10%的几率会失手。",
       "esES": "En el nivel 8, tus movimientos son tan rápidos que dejan una imagen residual para tus enemigos. Obtienes un \"bonificación\" de +10 a tu \"velocidad\" y cualquier \"ataque\" que te apunte tiene un 10% de posibilidades de fallar."
     },
     {
@@ -129,7 +129,7 @@
       "ruRU": "Вы выпускаете мощный заряд энергии, который наносит {g|Encyclopedia:Dice}2d6{/g} единиц священного урона за уровень персонажа. Цель должна совершить успешный спасбросок реакции, иначе она будет распластана. \nЕсли цель - злое существо, {g|Encyclopedia:Spell}заклинание{/g} вместо этого наносит 2d8 единиц священного урона за уровень персонажа. Цель должна совершить успешный спасбросок реакции или стать распластаной  и получить {g|Encyclopedia:Penalty}штраф{/g} -2 к {g|Encyclopedia:Armor_Class}защите{/g}, {g|Encyclopedia:Attack}броскам атаки{/g} и спасброскам. \nЕсли целью является злое потустороннее существо или нежить, заклинание вместо этого наносит 2d10 единиц священного урона за уровень персонажа. Цель должна совершить успешный спасбросок реакции или стать распластаной и получить штраф -4 к защите, броскам атаки и спасброскам. \nЕсли целью является повелитель демонов, злой дракон или повелителью нежити (могущественное существо-нежить, такое как личи, дракон-нежить, ночной тенью и тому подобное), заклинание вместо этого наносит 2d12 единиц священного урона за уровень персонажа. Цель получает штраф -4 к защите, броскам атаки и спасброскам. Ему также необходимо совершить успешный спасбросок реакции или будет распластан.",
       "deDE": "Du entlädst einen mächtigen Schlag aus Energie, der {g|Encyclopedia:Dice}2W6{/g} Punkte heiligen {g|Encyclopedia:Damage}Schaden{/g} pro Charakterstufe verursacht. Das Ziel muss einen erfolgreichen Reflexwurf machen, oder es wird niedergeworfen.",
       "frFR": "Vous libérez une puissante onde d'énergie qui inflige {g|Encyclopedia:Dice}2d6{/g} points de dégâts sacrés par niveau de personnage. La cible doit effectuer un jet de Réflexes réussi, ou être mise à terre.",
-      "zhCN": "你释放出一道强大的能量冲击，每个角色等级造成 {g|Encyclopedia:Dice}2d6{/g} 点神圣伤害。目标需要进行成功的反射豁免才能避免倒地。",
+      "zhCN": "你释放出一道强大的能量冲击，每个角色等级造成{g|Encyclopedia:Dice}2d6{/g}点神圣伤害。目标需要进行成功的反射豁免才能避免倒地。",
       "esES": "Liberas una potente ráfaga de energía que inflige {g|Encyclopedia:Dice}2d6{/g} puntos de daño sagrado por nivel de personaje. El objetivo debe hacer una tirada de salvación de Reflejos exitosa, o caerá al suelo."
     },
     {
@@ -250,7 +250,7 @@
       "ruRU": "Вы можете передвигаться с обычной скоростью, когда носите броню. Также штраф за доспехи уменьшается до 0 и увеличивается максимальный бонус ловкости на 20.",
       "deDE": "Du kannst dich in Rüstung mit normaler Geschwindigkeit bewegen. Du reduzierst außerdem deinen Rüstungscheck-Malus auf Null und erhöhst deinen maximalen Geschicklichkeitsbonus um 20.",
       "frFR": "Vous pouvez vous déplacer à vitesse normale tout en portant une armure. Vous réduisez également votre malus d'armure à zéro et augmentez votre bonus de dextérité maximum de 20.",
-      "zhCN": "你可以在穿着护甲时以正常速度移动。你还可以将你的防具检定惩罚值降低到零，并将你的最大敏捷加值提高20。",
+      "zhCN": "你可以在穿着盔甲时以正常速度移动。你还可以将你的防具检定减值降低到零，并将你的最大敏捷加值提高20。",
       "esES": "Puedes moverte a velocidad normal mientras llevas armadura. También reduces tu penalización de chequeo de armadura a cero y aumentas tu bonificación máxima de destreza en 20."
     },
     {
@@ -261,7 +261,7 @@
       "ruRU": "Святой доспех",
       "deDE": "Rüstungsheiliger",
       "frFR": "Saint en armure",
-      "zhCN": "护甲圣徒",
+      "zhCN": "盔甲圣徒",
       "esES": "Santo Armadura"
     },
     {
@@ -283,7 +283,7 @@
       "ruRU": "Каждый раз, когда вы произносите заклинание, оно укрепляется, как если бы вы использовали Метамагию Укрепленное заклинание.",
       "deDE": "Jedes Mal, wenn du einen Zauber wirkst, wird er gestärkt, als ob du die Zauberstärkung-Fertigkeit (Bolster Spell) verwenden würdest.",
       "frFR": "Chaque fois que vous lancez un sort, il est renforcé, comme si vous utilisiez le don Métamagie (Sort renforcé).",
-      "zhCN": "每次你施放一个法术，它都会被强化，如同使用了强化法术（Bolster Spell）专长。",
+      "zhCN": "每次你施放一个法术，它会变得顽强，如同使用了法术顽强专长。",
       "esES": "Cada vez que lanzas un hechizo, se fortalece, como si estuvieras usando el talento de Fortalecer hechizo (Bolster Spell)."
     },
     {
@@ -294,8 +294,118 @@
       "ruRU": "Сверхмощная способность - Автоматически Укрепленное",
       "deDE": "Übermächtige Fähigkeit - Auto-Stärkung",
       "frFR": "Compétence surpuissante - Auto-Renforcement",
-      "zhCN": "作弊能力 - 自动强化",
+      "zhCN": "作弊能力 - 自动顽强",
       "esES": "Habilidad desequilibrada - Refuerzo automático"
+    },
+    {
+      "Key": "67902a27c40e47db9093483985c3febb",
+      "SimpleName": "AutoBurning.Description",
+      "ProcessTemplates": false,
+      "enGB": "Every time you cast a acid of fire spell, it causes acid or fire damage on the next round, as though using the Burning Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "每次你施放一个法术，它都会在下一轮开始造成额外的酸或火伤害，如同使用了燃烧法术专长",
+      "esES": null
+    },
+    {
+      "Key": "376bc95e1feb417f951e41aecf083a23",
+      "SimpleName": "AutoBurningBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Burning",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "作弊能力 - 自动燃烧",
+      "esES": null
+    },
+    {
+      "Key": "656c4ad37a254cd1beaf5acfcdfc6dc9",
+      "SimpleName": "AutoElementalAcid.Description",
+      "ProcessTemplates": false,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with acid damage, as though using the Elemental Spell (Acid) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "每次你施放一个法术，你可以用酸蚀替换法术正常伤害或者拆分它，如同使用了元素法术（酸蚀）专长",
+      "esES": null
+    },
+    {
+      "Key": "80089f10e0cb4a82a25ed3aafa98d60a",
+      "SimpleName": "AutoElementalAcidBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Elemental (Acid)",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "作弊能力 - 自动转酸",
+      "esES": null
+    },
+    {
+      "Key": "ebfff11f910a4b26a34418c67265f332",
+      "SimpleName": "AutoElementalCold.Description",
+      "ProcessTemplates": false,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with cold damage, as though using the Elemental Spell (Cold) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "每次你施放一个法术，你可以用寒冷替换法术正常伤害或者拆分它，如同使用了元素法术（寒冷）专长",
+      "esES": null
+    },
+    {
+      "Key": "30b549b63b7a487bb2df382ed0328059",
+      "SimpleName": "AutoElementalColdBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Elemental (Cold)",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "作弊能力 - 自动转寒",
+      "esES": null
+    },
+    {
+      "Key": "a73441f95fa64c68a37599148254087a",
+      "SimpleName": "AutoElementalElectricity.Description",
+      "ProcessTemplates": false,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with electricity damage, as though using the Elemental Spell (Electricity) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "每次你施放一个法术，你可以用电击替换法术正常伤害或者拆分它，如同使用了元素法术（电击）专长",
+      "esES": null
+    },
+    {
+      "Key": "42e6135e36544e1b8fb92c1707ca652b",
+      "SimpleName": "AutoElementalElectricityBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Elemental (Electricity)",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "作弊能力 - 自动转电",
+      "esES": null
+    },
+    {
+      "Key": "cea428717b7f4987b69a55ef6b0c9fb3",
+      "SimpleName": "AutoElementalFire.Description",
+      "ProcessTemplates": false,
+      "enGB": "Every time you cast a spell, you can replace or split its damage with fire damage, as though using the Elemental Spell (Fire) feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "每次你施放一个法术，你可以用火焰替换法术正常伤害或者拆分它，如同使用了元素法术（火焰）专长",
+      "esES": null
+    },
+    {
+      "Key": "7646dc3cd05646b9b69ed9f3163ed3c4",
+      "SimpleName": "AutoElementalFireBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Elemental (Fire)",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "作弊能力 - 自动转火",
+      "esES": null
     },
     {
       "Key": "ddc72905ceb442289902d43b9d8b367e",
@@ -305,7 +415,7 @@
       "ruRU": "Каждый раз, когда вы произносите заклинание, оно усиливается, как если бы вы использовали Метамагию Усиленное заклинания.",
       "deDE": "Jedes Mal, wenn du einen Zauber wirkst, wird er gestärkt, als ob du die Fähigkeit Zauber stärken benutzt hättest.",
       "frFR": "Chaque fois que vous lancez un sort, il est étendu, comme si vous utilisiez le don Métamagie (Extension d'effet).",
-      "zhCN": "每次你施放一个法术，它都会被强效，如同使用了强效法术（Empower Spell）这个专长。",
+      "zhCN": "每次你施放一个法术，它都会被强效，如同使用了法术强效专长。",
       "esES": "Cada vez que lanzas un hechizo, se vuelve más poderoso, como si estuvieras usando el talento Hechizo mejorado."
     },
     {
@@ -318,6 +428,28 @@
       "frFR": "Capacité surpuissante - Auto-Extension d'effet",
       "zhCN": "作弊能力 - 自动强效",
       "esES": "Habilidad sobrepotenciada - Auto Potenciar"
+    },
+    {
+      "Key": "37c33c665f74457abd3f7f272c2e2aad",
+      "SimpleName": "AutoEncouraging.Description",
+      "ProcessTemplates": false,
+      "enGB": "Every time you cast a spell, increase its morale bonus by 1, as though using the Encouraging Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "每次你施放一个法术，它所提供的士气加值额外+1，如同使用了激励法术专长。",
+      "esES": null
+    },
+    {
+      "Key": "f9966b7ebef046bf8257e81351950cd6",
+      "SimpleName": "AutoEncouragingBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Encouraging",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "作弊能力 - 自动激励",
+      "esES": null
     },
     {
       "Key": "b11d0e9e3bbc48af9d0b78eff5108c37",
@@ -340,6 +472,50 @@
       "frFR": "Capacité surpuissante - Auto-Extension de durée",
       "zhCN": "作弊能力 - 自动延时",
       "esES": "Habilidad sobrepotenciada - Extensión Automática"
+    },
+    {
+      "Key": "4c2b14fd1e654d13b92e103228a642de",
+      "SimpleName": "AutoFlaring.Description",
+      "ProcessTemplates": false,
+      "enGB": "Every time you cast a light, fire, or electricity spell, it causes the dazzling condition, as though using the Flaring Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "每次你施放一个光、火焰或电击法术，它会使收到法术伤害的生物目眩，如同使用了闪耀法术专长",
+      "esES": null
+    },
+    {
+      "Key": "e20574e4191442bcaa659a28dd7c20f0",
+      "SimpleName": "AutoFlaringBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Flaring",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "作弊能力 - 自动闪耀",
+      "esES": null
+    },
+    {
+      "Key": "2fa644f5e1f24c638ceb234c78b5fa82",
+      "SimpleName": "AutoIntensified.Description",
+      "ProcessTemplates": false,
+      "enGB": "Every time you cast a spell, increase its maximum damage dice by 5, as though using the Intensified Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "每次你施放一个法术，它的最大伤害骰增加5，如同使用了强化法术专长。",
+      "esES": null
+    },
+    {
+      "Key": "9d5bb51ca24142f8a89615973bdfe989",
+      "SimpleName": "AutoIntensifiedBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Intensified",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "作弊能力 - 自动强化",
+      "esES": null
     },
     {
       "Key": "328716fd75ee4c85bba52e8cfe5beb82",
@@ -397,6 +573,28 @@
       "esES": "Metamagia Automática"
     },
     {
+      "Key": "79bee31e28f540dea4a13834ecd480f2",
+      "SimpleName": "AutoPiercing.Description",
+      "ProcessTemplates": false,
+      "enGB": "Every time you cast a spell against a target, it treats the spell resistance of the target as 5 lower than its actual SR, as though using the Piercing Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "每次你向一个目标施法时，目标的法术抗力被视为实际抗力-5，如同使用了穿刺魔法专长。",
+      "esES": null
+    },
+    {
+      "Key": "1e26e017a3644dccb51e5ed00cc0ff0b",
+      "SimpleName": "AutoPiercingBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Piercing",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "作弊能力 - 自动穿刺",
+      "esES": null
+    },
+    {
       "Key": "23ee3aa855cc44bf8e04c5146dce587e",
       "SimpleName": "AutoQuicken.Description",
       "ProcessTemplates": false,
@@ -441,6 +639,28 @@
       "esES": "Habilidad Sobrepotenciada - Alcance Automático"
     },
     {
+      "Key": "a207afa84cb54ed68cfa021f40fbe57b",
+      "SimpleName": "AutoRime.Description",
+      "ProcessTemplates": false,
+      "enGB": "Every time you cast a cold spell, it entangles the target, as though using the Rime Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "每次你施放一个寒冷法术，它会令目标陷入纠缠状态，如同使用了霜冻法术专长。",
+      "esES": null
+    },
+    {
+      "Key": "c8fc6e6800c54825bf690efa2641bf74",
+      "SimpleName": "AutoRimeBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Rime",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "作弊能力 - 自动霜冻",
+      "esES": null
+    },
+    {
       "Key": "8410f503063a4fac98bd00d274da7930",
       "SimpleName": "AutoSelective.Description",
       "ProcessTemplates": false,
@@ -461,6 +681,28 @@
       "frFR": "Capacité surpuissante - Auto-Sort sélectif",
       "zhCN": "作弊能力 - 自动甄选",
       "esES": "Habilidad desequilibrada - Selección Automática"
+    },
+    {
+      "Key": "aa1da040888f4b97bb02845445d000ef",
+      "SimpleName": "AutoSolidShadows.Description",
+      "ProcessTemplates": false,
+      "enGB": "Every time you cast a shadow spell, it becomes 20% more real, as though using the Solid Shadows Spell feat.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "每次你施放一个阴影法术，其真实度提升20%，如同使用了实体幽影专长。",
+      "esES": null
+    },
+    {
+      "Key": "7a11cddec336484199029994b266213e",
+      "SimpleName": "AutoSolidShadowsBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Overpowered Ability — Auto Solid Shadows",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": "作弊能力 - 自动固影",
+      "esES": null
     },
     {
       "Key": "ca33dea456ca40918043e680569e394f",
@@ -492,7 +734,7 @@
       "ruRU": "Бета-Тестер получает бонус мастерства +4 к инициативе и добавляет навыки {g|Encyclopedia:Lore_Nature}Знание (Природа){/g}, {g|Encyclopedia:Lore_Religion}Знание (Религия){/g}, {g|Encyclopedia:Knowledge_World}Знание (Мир){/g}, {g|Encyclopedia:Knowledge_Arcana}Знание (Магия){/g} и {g|Encyclopedia:Perception}Внимание{/g} в список классовых {g|Encyclopedia:Skills}навыков{/g}.\nЕсли у персонажа уже есть классовый навык, {g|Encyclopedia:Weapon_Proficiency}умения обращения с оружием{/g} или умение использования брони, даваемое биографией в рамках класса, выбранной в ходе создания персонажа, соответствующие {g|Encyclopedia:Bonus}бонусы{/g} от биографии меняются на бонус мастерства +1 в случае навыков, на бонус усиления +1 в случае умения обращения с оружием и снижением в виде штрафа за броню -1 в случае умения использования брони.",
       "deDE": "Der Beta-Tester erhält einen Kompetenzbonus von +4 auf Initiative und fügt {g|Encyclopedia:Lore_Nature}Wissen (Natur){/g}, {g|Encyclopedia:Lore_Religion}Wissen (Religion){/g}, {g|Encyclopedia:Knowledge_World}Wissen (Welt){/g}, {g|Encyclopedia:Knowledge_Arcana}Wissen (Arkanes){/g} und {g|Encyclopedia:Perception}Wahrnehmung{/g} zur Liste ihrer Klassenfähigkeiten hinzu. Wenn der Charakter bereits über die Klassenfähigkeit, {g|Encyclopedia:Weapon_Proficiency}Waffenfertigkeit{/g} oder Rüstungsfertigkeit verfügt, die während der Charaktererstellung durch den ausgewählten Hintergrund ihres Charakters gewährt wurde, ändern sich die entsprechenden {g|Encyclopedia:Bonus}Bonusbeträge{/g} des Hintergrunds in einen Kompetenzbonus von +1 im Falle von Fähigkeiten, einen Verbesserungsbonus von +1 im Falle von Waffenfertigkeit und eine Verringerung des Rüstungs {g|Encyclopedia:Check}Checks{/g} {g|Encyclopedia:Penalty}Malus{/g} von -1 im Falle von Rüstungsfertigkeit.",
       "frFR": "Le Bêta-testeur bénéficie d'un bonus d'aptitude de +4 à l'initiative et ajoute {g|Encyclopedia:Lore_Nature}Connaissance (Nature){/g}, {g|Encyclopedia:Lore_Religion}Connaissance (Sacré){/g}, {g|Encyclopedia:Knowledge_World}Érudition (Monde){/g}, {g|Encyclopedia:Knowledge_Arcana}Érudition (Mystères){/g} et {g|Encyclopedia:Perception}Perception{/g} à la liste de ses {g|Encyclopedia:Skills}compétences{/g} de classe. Si le personnage possède déjà d'une compétence de classe, d'un {g|Encyclopedia:Weapon_Proficiency}Maniement des armes{/g} ou du Port d'une armure après avoir choisi ses origines, alors les {g|Encyclopedia:Bonus}bonus{/g} dus aux origines se transforment en bonus d'aptitude de +1 (dans le cas de la compétence), bonus d'amélioration de +1 (dans le cas du maniement) ou diminution du {g|Encyclopedia:Check}malus{/g} d'armure à la CA (dans le cas du port d'armure).",
-      "zhCN": "Beta测试员在先攻上获得+4的表现加值，并将 {g|Encyclopedia:Lore_Nature}学识（自然）{/g}、{g|Encyclopedia:Lore_Religion}学识（宗教）{/g}、{g|Encyclopedia:Knowledge_World}学识（世界）{/g}、{g|Encyclopedia:Knowledge_Arcana}学识（神秘）{/g}和 {g|Encyclopedia:Perception}察觉{/g} 添加到本职 {g|Encyclopedia:Skills}技能{/g} 列表中。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g} {g|Encyclopedia:Penalty}减值{/g}-1。",
+      "zhCN": "Beta测试员在先攻上获得+4的表现加值，并将{g|Encyclopedia:Lore_Nature}学识（自然）{/g}、{g|Encyclopedia:Lore_Religion}学识（宗教）{/g}、{g|Encyclopedia:Knowledge_World}知识（世界）{/g}、{g|Encyclopedia:Knowledge_Arcana}知识（神秘）{/g}和{g|Encyclopedia:Perception}察觉{/g}添加到本职{g|Encyclopedia:Skills}技能{/g}列表中。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g}{g|Encyclopedia:Penalty}减值{/g}-1。",
       "esES": "El Tester Beta obtiene un bonificación de competencia +4 en iniciativa y añade {g|Encyclopedia:Lore_Nature}Conocimiento (Naturaleza){/g}, {g|Encyclopedia:Lore_Religion}Conocimiento (Religión){/g}, {g|Encyclopedia:Knowledge_World}Conocimiento (Mundo){/g}, {g|Encyclopedia:Knowledge_Arcana}Conocimiento (Arcano){/g} y {g|Encyclopedia:Perception}Percepción{/g} a la lista de habilidades de clase {g|Encyclopedia:Skills}habilidades{/g}. Si el personaje ya tiene habilidades de clase, {g|Encyclopedia:Weapon_Proficiency}destreza con armas{/g} o destreza con armaduras otorgados por el fondo seleccionado de su clase durante la creación de personajes, entonces los correspondientes {g|Encyclopedia:Bonus}bonificaciones{/g} del fondo cambian a una bonificación de competencia de +1 en el caso de habilidades, una bonificación de mejora de +1 en el caso de destreza con armas y una reducción de -1 en la {g|Encyclopedia:Check}penalización{/g} para las comprobaciones de armadura en el caso de destreza con armaduras."
     },
     {
@@ -503,7 +745,7 @@
       "ruRU": "Бета-тестер",
       "deDE": "Beta-Tester",
       "frFR": "Bêta-testeur",
-      "zhCN": "Beta测试者",
+      "zhCN": "Beta测试员",
       "esES": "Probador Beta"
     },
     {
@@ -514,7 +756,7 @@
       "ruRU": "Демонический Культиватор добавляет Атлетику и Подвижность в список ее классовых умений и использует высшее значение из Силы и Ловкости при попытках проверок Атлетики и Подвижности.\nЕсли у персонажа уже есть классовый навык, {g|Encyclopedia:Weapon_Proficiency}умения обращения с оружием{/g} или умение использования брони, даваемое биографией в рамках класса, выбранной в ходе создания персонажа, соответствующие {g|Encyclopedia:Bonus}бонусы{/g} от биографии меняются на бонус мастерства +1 в случае навыков, на бонус усиления +1 в случае умения обращения с оружием и снижением в виде штрафа за броню -1 в случае умения использования брони.",
       "deDE": "Der dämonische Kultivator fügt Athletics und Mobility zu ihrer Liste der Klassenfähigkeiten hinzu und nutzt bei Versuchen von Athletics- und Mobility-Checks das höhere Attribut aus Stärke und Geschicklichkeit. Wenn der Charakter bereits das Klassenfähigkeit, {g|Encyclopedia:Weapon_Proficiency}Waffenfertigkeit{/g} oder Rüstungsfertigkeit, die durch den ausgewählten Hintergrund in ihrem Klassen während der Charaktererstellung verliehen wurde, besitzt, dann ändern sich die entsprechenden {g|Encyclopedia:Bonus}Bonis{/g} aus dem Hintergrund zu einem +1 Kompetenzbonus im Falle von Fertigkeiten, einem +1 Verbesserungsbonus im Falle von Waffenfertigkeit und einer -1 Rüstungs- {g|Encyclopedia:Check}Prüfung{/g} {g|Encyclopedia:Penalty}Strafe{/g} Verringerung im Falle von Rüstungsfertigkeit.",
       "frFR": "Le Cultivateur démoniaque ajoute Athlétisme et Mobilité à la liste de ses compétences de classe et utilise le bonus le plus élevé entre Force et Dextérité lors des tests d'Athlétisme et de Mobilité. Si le personnage possède déjà d'une compétence de classe, d'un {g|Encyclopedia:Weapon_Proficiency}Maniement des armes{/g} ou du Port d'une armure après avoir choisi ses origines, alors les {g|Encyclopedia:Bonus}bonus{/g} dus aux origines se transforment en bonus d'aptitude de +1 (dans le cas de la compétence), bonus d'amélioration de +1 (dans le cas du maniement) ou diminution du {g|Encyclopedia:Check}malus{/g} d'armure à la CA (dans le cas du port d'armure).",
-      "zhCN": "修魔者将运动和灵巧加入本职技能列表，并取力量和敏捷中的较高者用于尝试运动和灵巧检定。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g} {g|Encyclopedia:Penalty}减值{/g}-1。",
+      "zhCN": "修魔者将运动和灵巧加入本职技能列表，并取力量和敏捷中的较高者用于尝试运动和灵巧检定。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g}{g|Encyclopedia:Penalty}减值{/g}-1。",
       "esES": "El Cultivador Demoníaco agrega Atletismo y Movilidad a la lista de sus habilidades de clase y utiliza el atributo más alto entre Fuerza y Destreza al intentar chequeos de Atletismo y Movilidad. Si el personaje ya tiene la habilidad de clase, {g|Encyclopedia:Weapon_Proficiency}proficiencia en armas{/g} o la proficiencia en armaduras otorgada por el trasfondo seleccionado de su clase durante la creación del personaje, entonces los {g|Encyclopedia:Bonus}bonificaciones{/g} correspondientes del trasfondo cambian a un bono de competencia +1 en caso de habilidades, un bono de mejora +1 en caso de proficiencia en armas y una reducción de la penalización de -1 en las {g|Encyclopedia:Check}comprobaciones{/g} de Armadura en caso de proficiencia en armaduras."
     },
     {
@@ -536,7 +778,7 @@
       "ruRU": "Просветленный мудрец добавляет Знание (Природа), Знание (Религия), Знание (Мир), Знание (Магия) и Внимание в ее список классовых навыков, а также может использовать более высокие показатели Интеллекта и Мудрости при попытках проверки Знание (Мир), Знание (Магия), Знание (Религия) или Знание (Природа).\nЕсли у персонажа уже есть классовый навык, {g|Encyclopedia:Weapon_Proficiency}умения обращения с оружием{/g} или умение использования брони, даваемое биографией в рамках класса, выбранной в ходе создания персонажа, соответствующие {g|Encyclopedia:Bonus}бонусы{/g} от биографии меняются на бонус мастерства +1 в случае навыков, на бонус усиления +1 в случае умения обращения с оружием и снижением в виде штрафа за броню -1 в случае умения использования брони.",
       "deDE": "Der erleuchtete Weise fügt ihrem Klassenfertigkeiten-Set Wissen (Natur), Wissen (Religion), Wissen (Welt), Wissen (Arkan) und Wahrnehmung hinzu. Sie kann zudem den höheren Wert von Intelligenz und Weisheit verwenden, wenn sie Fertigkeitsproben in Wissen (Welt), Wissen (Arkan), Wissen (Religion) oder Wissen (Natur) ablegt. Falls der Charakter bereits die Klassenfertigkeit, Waffen- oder Rüstungsbeherrschung erhält, die durch den ausgewählten Hintergrund bei der Charaktererstellung gewährt wird, ändern sich die entsprechenden Boni aus dem Hintergrund zu einem Kompetenzbonus von +1 bei Fertigkeiten, einem Verbesserungsbonus von +1 bei Waffenbeherrschung und einer -1 Rüstungsüberprüfung.",
       "frFR": "Le Sage éclairé ajoute les compétences Connaissance (Nature), Connaissance (Sacré), Érudition (Monde), Érudition (Mystères) et Perception à sa liste de compétences de classe, et peut utiliser le bonus le plus élevé entre Intelligence et Sagesse lors des tests d'Érudition (Monde), d'Érudition (Mystères), de Connaissance (Sacré) ou de Connaissance (Nature). Si le personnage possède déjà d'une compétence de classe, d'un {g|Encyclopedia:Weapon_Proficiency}Maniement des armes{/g} ou du Port d'une armure après avoir choisi ses origines, alors les {g|Encyclopedia:Bonus}bonus{/g} dus aux origines se transforment en bonus d'aptitude de +1 (dans le cas de la compétence), bonus d'amélioration de +1 (dans le cas du maniement) ou diminution du {g|Encyclopedia:Check}malus{/g} d'armure à la CA (dans le cas du port d'armure).",
-      "zhCN": "启蒙贤者将「学识（自然）」、「学识（宗教）」、「学识（世界）」、「学识（神秘）」和「察觉」添加到其本职技能列表中，并在尝试「学识（世界）」、「学识（神秘）」、「学识（宗教）」或「学识（自然）」的检定时，可以使用较高的智力或感知值。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g} {g|Encyclopedia:Penalty}减值{/g}-1。",
+      "zhCN": "启蒙贤者将学识（自然）、学识（宗教）、知识（世界）、知识（神秘）和察觉添加到其本职技能列表中，并在尝试知识（世界）、知识（神秘）、学识（宗教）或学识（自然）的检定时，可以使用较高的智力或感知值。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g}{g|Encyclopedia:Penalty}减值{/g}-1。",
       "esES": "El Sabio Iluminado añade Saber (Naturaleza), Saber (Religión), Conocimiento (Mundo), Conocimiento (Arcano) y Percepción a la lista de sus habilidades de clase y puede usar el valor más alto entre Inteligencia y Sabiduría mientras intenta pruebas de Saber (Mundo), Saber (Arcano), Saber (Religión) o Saber (Naturaleza). Si el personaje ya tiene la habilidad de clase, la habilidad con armas o la habilidad con armaduras concedida por el trasfondo seleccionado durante la creación del personaje, entonces los correspondientes bonos de trasfondo cambian a un bono de competencia de +1 en el caso de las habilidades, un bono de mejora de +1 en el caso de la habilidad con armas y una reducción de -1 en la comprobación de armadura en el caso de la habilidad con armaduras."
     },
     {
@@ -558,7 +800,7 @@
       "ruRU": "У Игрока есть бонус мастерства +8 ко всем проверкам знание и внимание.\nЕсли у персонажа уже есть классовый навык, {g|Encyclopedia:Weapon_Proficiency}умения обращения с оружием{/g} или умение использования брони, даваемое биографией в рамках класса, выбранной в ходе создания персонажа, соответствующие {g|Encyclopedia:Bonus}бонусы{/g} от биографии меняются на бонус мастерства +1 в случае навыков, на бонус усиления +1 в случае умения обращения с оружием и снижением в виде штрафа за броню -1 в случае умения использования брони",
       "deDE": "Der Spieler hat einen Kompetenzbonus von +8 auf alle Wissens-, Kunde- und Wahrnehmungswürfe.",
       "frFR": "Le joueur bénéficie d'un bonus d'aptitude de +8 pour tous les tests de connaissance, d'érudition et de perception. Si le personnage possède déjà d'une compétence de classe, d'un {g|Encyclopedia:Weapon_Proficiency}Maniement des armes{/g} ou du Port d'une armure après avoir choisi ses origines, alors les {g|Encyclopedia:Bonus}bonus{/g} dus aux origines se transforment en bonus d'aptitude de +1 (dans le cas de la compétence), bonus d'amélioration de +1 (dans le cas du maniement) ou diminution du {g|Encyclopedia:Check}malus{/g} d'armure à la CA (dans le cas du port d'armure).",
-      "zhCN": "玩家在所有知识、传说和感知检定上获得+8的表现加值。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g} {g|Encyclopedia:Penalty}减值{/g}-1。",
+      "zhCN": "玩家在所有知识、学识和察觉检定上获得+8的表现加值。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g}{g|Encyclopedia:Penalty}减值{/g}-1。",
       "esES": "El jugador tiene un bono de competencia de +8 en todas las comprobaciones de conocimiento, sabiduría y percepción."
     },
     {
@@ -580,7 +822,7 @@
       "ruRU": "Старшеклассник получает бонус +1 ко всем характеристикам.\nЕсли у персонажа уже есть классовый навык, {g|Encyclopedia:Weapon_Proficiency}умения обращения с оружием{/g} или умение использования брони, даваемое биографией в рамках класса, выбранной в ходе создания персонажа, соответствующие {g|Encyclopedia:Bonus}бонусы{/g} от биографии меняются на бонус мастерства +1 в случае навыков, на бонус усиления +1 в случае умения обращения с оружием и снижением в виде штрафа за броню -1 в случае умения использования брони.",
       "deDE": "Der Highschool-Schüler erhält einen Bonus von +1 auf alle Attribute. Wenn der Charakter bereits die Klassenfertigkeit {g|Encyclopedia:Weapon_Proficiency}Waffenbeherrschung{/g} oder die Rüstungsbeherrschung, die durch den ausgewählten Hintergrund seiner Klasse während der Charaktererstellung gewährt wird, besitzt, ändern sich die entsprechenden {g|Encyclopedia:Bonus}Bonusbeträge{/g} des Hintergrunds in einen Kompetenzbonus von +1 im Falle von Fertigkeiten, einen Verbesserungsbonus von +1 im Falle von Waffenbeherrschung und eine Verringerung von -1 auf die {g|Encyclopedia:Check}Rüstungsprüfung{/g}{g|Encyclopedia:Penalty}Strafe{/g} im Falle der Rüstungsbeherrschung.",
       "frFR": "Le lycéen obtient un bonus de +1 à tous les attributs. Si le personnage possède déjà d'une compétence de classe, d'un {g|Encyclopedia:Weapon_Proficiency}Maniement des armes{/g} ou du Port d'une armure après avoir choisi ses origines, alors les {g|Encyclopedia:Bonus}bonus{/g} dus aux origines se transforment en bonus d'aptitude de +1 (dans le cas de la compétence), bonus d'amélioration de +1 (dans le cas du maniement) ou diminution du {g|Encyclopedia:Check}malus{/g} d'armure à la CA (dans le cas du port d'armure).",
-      "zhCN": "高中生的所有属性获得+1的加值。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g} {g|Encyclopedia:Penalty}减值{/g}-1。",
+      "zhCN": "高中生的所有属性获得+1的加值。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g}{g|Encyclopedia:Penalty}减值{/g}-1。",
       "esES": "El estudiante de secundaria obtiene un bono de +1 a todos los atributos. Si el personaje ya tiene la habilidad de clase {g|Encyclopedia:Weapon_Proficiency}maestría con armas{/g} o la maestría con armaduras otorgada por el fondo seleccionado de su clase durante la creación del personaje, entonces los {g|Encyclopedia:Bonus}bonos{/g} correspondientes del fondo cambian a un bono de competencia de +1 en el caso de las habilidades, un bono de mejora de +1 en el caso de la maestría con armas y una reducción de -1 en la {g|Encyclopedia:Check}comprobación de armadura{/g}{g|Encyclopedia:Penalty}penalización{/g} en el caso de la maestría con armaduras."
     },
     {
@@ -602,7 +844,7 @@
       "ruRU": "Мастер Боевых Искусств умеет обращаться со всем экзотическим оружием. \nЕсли у персонажа уже есть классовый навык, {g|Encyclopedia:Weapon_Proficiency}умения обращения с оружием{/g} или умение использования брони, даваемое биографией в рамках класса, выбранной в ходе создания персонажа, соответствующие {g|Encyclopedia:Bonus}бонусы{/g} от биографии меняются на бонус мастерства +1 в случае навыков, на бонус усиления +1 в случае умения обращения с оружием и снижением в виде штрафа за броню -1 в случае умения использования брони",
       "deDE": "Der Martial Artist ist geübt im Umgang mit allen exotischen Waffen. Wenn der Charakter bereits während der Charaktererstellung durch seinen Hintergrund die Klassenfertigkeit {g|Encyclopedia:Weapon_Proficiency}Waffenbeherrschung{/g} oder Rüstungsbeherrschung erhalten hat, dann werden die entsprechenden {g|Encyclopedia:Bonus}Bonustabellen{/g} durch einen +1 Kompetenzbonus für Fertigkeiten, einen +1 Verbesserungsbonus für Waffenbeherrschung und eine Reduktion des Rüstungs- {g|Encyclopedia:Check}Malus{/g} um -1 für Rüstungsbeherrschung ersetzt.",
       "frFR": "L'Artiste martial est compétent avec toutes les armes exotiques. Si le personnage possède déjà d'une compétence de classe, d'un {g|Encyclopedia:Weapon_Proficiency}Maniement des armes{/g} ou du Port d'une armure après avoir choisi ses origines, alors les {g|Encyclopedia:Bonus}bonus{/g} dus aux origines se transforment en bonus d'aptitude de +1 (dans le cas de la compétence), bonus d'amélioration de +1 (dans le cas du maniement) ou diminution du {g|Encyclopedia:Check}malus{/g} d'armure à la CA (dans le cas du port d'armure).",
-      "zhCN": "武术家能熟练使用所有异种武器。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g} {g|Encyclopedia:Penalty}减值{/g}-1。",
+      "zhCN": "武术家能熟练使用所有异种武器。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g}{g|Encyclopedia:Penalty}减值{/g}-1。",
       "esES": "El artista marcial es competente con todas las armas exóticas. Si el personaje ya tiene la habilidad de clase {g|Encyclopedia:Weapon_Proficiency}competencia en armas{/g} o competencia en armadura otorgada por el fondo seleccionado en la creación de personaje, entonces los {g|Encyclopedia:Bonus}bonos{/g} correspondientes del fondo cambian a un bono de competencia de +1 en caso de habilidades, un bono de mejora de +1 en caso de competencia en armas y una reducción de -1 en la penalización de {g|Encyclopedia:Check}comprobación{/g} de armadura."
     },
     {
@@ -624,7 +866,7 @@
       "ruRU": "Музыкант добавляет Убеждение в список своих классовых навыков и получает бонус +2 к уровню заклинателя и сложности проверки для звуковых заклинаний.\nЕсли у персонажа уже есть классовый навык, {g|Encyclopedia:Weapon_Proficiency}умения обращения с оружием{/g} или умение использования брони, даваемое биографией в рамках класса, выбранной в ходе создания персонажа, соответствующие {g|Encyclopedia:Bonus}бонусы{/g} от биографии меняются на бонус мастерства +1 в случае навыков, на бонус усиления +1 в случае умения обращения с оружием и снижением в виде штрафа за броню -1 в случае умения использования брони.",
       "deDE": "Der Musiker fügt Überredungskunst zu seinen Klassenfertigkeiten hinzu und erhält einen +2 Bonus auf Zauberstufe und SG für Sonic-Zauber. Wenn der Charakter bereits die Klassenfertigkeit, Waffenbeherrschung oder Rüstungsbeherrschung, die durch den ausgewählten Hintergrund seiner Klasse während der Charaktererstellung gewährt wird, hat, ändern sich die entsprechenden Boni des Hintergrunds in einen Kompetenzbonus von +1 im Falle von Fertigkeiten, einen Verbesserungsbonus von +1 im Falle von Waffenbeherrschung und eine Reduktion von -1 bei der Rüstungsüberprüfung und bei der Rüstungsbeherrschung.",
       "frFR": "Le musicien ajoute Persuasion à la liste de ses compétences de classe et a un bonus de +2 au niveau de lanceur de sorts et au DD des jets de sauvegarde  pour les sorts du registre du Son. Si le personnage possède déjà d'une compétence de classe, d'un {g|Encyclopedia:Weapon_Proficiency}Maniement des armes{/g} ou du Port d'une armure après avoir choisi ses origines, alors les {g|Encyclopedia:Bonus}bonus{/g} dus aux origines se transforment en bonus d'aptitude de +1 (dans le cas de la compétence), bonus d'amélioration de +1 (dans le cas du maniement) ou diminution du {g|Encyclopedia:Check}malus{/g} d'armure à la CA (dans le cas du port d'armure).",
-      "zhCN": "音乐家将沟通添加到其本职技能列表中，对音波法术的施法者等级和豁免检定难度等级获得+2的加值。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g} {g|Encyclopedia:Penalty}减值{/g}-1。",
+      "zhCN": "音乐家将沟通添加到其本职技能列表中，对音波法术的施法者等级和豁免检定难度等级获得+2的加值。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g}{g|Encyclopedia:Penalty}减值{/g}-1。",
       "esES": "El músico añade Persuasión a la lista de sus habilidades de clase y tiene un bono de +2 a nivel de lanzador de conjuros y CD para los conjuros sónicos. Si el personaje ya tiene la habilidad de clase, la maestría de armas o la maestría de armaduras otorgada por el trasfondo seleccionado de su clase durante la creación del personaje, entonces los bonos correspondientes del trasfondo cambian a un bono de competencia de +1 en el caso de habilidades, un bono de mejora de +1 en el caso de la maestría de armas y una reducción de -1 en la Verificación de Armadura y en la Penalización de Maestría de Armadura en el caso de la maestría de armaduras."
     },
     {
@@ -646,7 +888,7 @@
       "ruRU": "Отаку добавляет все навыки в список классовых навыков, кроме Убеждения.\nЕсли у персонажа уже есть классовый навык, {g|Encyclopedia:Weapon_Proficiency}умения обращения с оружием{/g} или умение использования брони, даваемое биографией в рамках класса, выбранной в ходе создания персонажа, соответствующие {g|Encyclopedia:Bonus}бонусы{/g} от биографии меняются на бонус мастерства +1 в случае навыков, на бонус усиления +1 в случае умения обращения с оружием и снижением в виде штрафа за броню -1 в случае умения использования брони.",
       "deDE": "Der Otaku fügt alle Fertigkeiten der Liste seiner Klassenfertigkeiten hinzu, außer Überreden. Falls der Charakter die Klassenfertigkeit bereits besitzt, {g|Encyclopedia:Weapon_Proficiency}Waffenprofizienz{/g} oder Rüstungsprofizienz, die durch den ausgewählten Hintergrund bei der Charaktererstellung gewährt wurden, dann ändern sich die entsprechenden {g|Encyclopedia:Bonus}Bonusbeträge{/g} aus dem Hintergrund in einen +1 Kompetenzbonus in Fällen von Fertigkeiten, einen +1 Verbesserungsbonus in Fällen von Waffenprofizienz und eine -1 Rüstungs {g|Encyclopedia:Check}Prüfung{/g} {g|Encyclopedia:Penalty}Malus{/g} Reduktion in Fällen von Rüstungsprofizienz.",
       "frFR": "L'Otaku ajoute toutes les compétences à la liste de ses compétences de classe, sauf Persuasion. Si le personnage possède déjà d'une compétence de classe, d'un {g|Encyclopedia:Weapon_Proficiency}Maniement des armes{/g} ou du Port d'une armure après avoir choisi ses origines, alors les {g|Encyclopedia:Bonus}bonus{/g} dus aux origines se transforment en bonus d'aptitude de +1 (dans le cas de la compétence), bonus d'amélioration de +1 (dans le cas du maniement) ou diminution du {g|Encyclopedia:Check}malus{/g} d'armure à la CA (dans le cas du port d'armure).",
-      "zhCN": "阿宅将除了沟通技能之外的所有技能加入其本职技能列表。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g} {g|Encyclopedia:Penalty}减值{/g}-1。",
+      "zhCN": "阿宅将除了沟通技能之外的所有技能加入其本职技能列表。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g}{g|Encyclopedia:Penalty}减值{/g}-1。",
       "esES": "El Otaku añade todas las habilidades a la lista de sus habilidades de clase excepto Persuasión. Si el personaje ya tiene la habilidad de clase, {g|Encyclopedia:Weapon_Proficiency}proficiencia en armas{/g} o proficiencia en armaduras otorgada por el trasfondo seleccionado de su clase durante la creación del personaje, entonces los correspondientes {g|Encyclopedia:Bonus}bonificaciones{/g} del trasfondo cambian a un bono de competencia +1 en caso de habilidades, un bono de mejora +1 en caso de proficiencia en armas y una reducción de -1 en la {g|Encyclopedia:Check}penalización{/g} a la verificación de armadura en caso de proficiencia en armaduras."
     },
     {
@@ -668,7 +910,7 @@
       "ruRU": "Рационалист имеет иммунитет к любому {g|Encyclopedia:Spell}заклинанию{/g} или {g|Encyclopedia:Special_Abilities}способности, похожей на заклинание{/g}, которые предоставляют {g|Encyclopedia:Spell_Resistance}сопротивление заклинаниям{/g}, но сам творить заклинания не может.\nЕсли у персонажа уже есть классовый навык, {g|Encyclopedia:Weapon_Proficiency}умения обращения с оружием{/g} или умение использования брони, даваемое биографией в рамках класса, выбранной в ходе создания персонажа, соответствующие {g|Encyclopedia:Bonus}бонусы{/g} от биографии меняются на бонус мастерства +1 в случае навыков, на бонус усиления +1 в случае умения обращения с оружием и снижением в виде штрафа за броню -1 в случае умения использования брони.",
       "deDE": "Der Rationalist ist immun gegenüber jeglichem {g|Encyclopedia:Spell}Zauber{/g} oder {g|Encyclopedia:Special_Abilities}zauberähnlicher Fähigkeit{/g}, die {g|Encyclopedia:Spell_Resistance}Zauberresistenz{/g} gewährt, kann aber selbst keine Zauber wirken. Wenn der Charakter bereits die Klassenfähigkeit {g|Encyclopedia:Weapon_Proficiency}Waffenfertigkeit{/g} oder Rüstungsfertigkeit besitzt, die durch den ausgewählten Hintergrund seiner Klasse während der Charaktererstellung gewährt wird, ändern sich die entsprechenden {g|Encyclopedia:Bonus}Bonuse{/g} des Hintergrunds zu einem +1 Kompetenzbonus in Fertigkeiten, einem +1 Verbesserungsbonus in Waffenfertigkeit und einer -1 Rüstungs {g|Encyclopedia:Check}Check{/g} {g|Encyclopedia:Penalty}Malus{/g} Reduktion bei Rüstungsfertigkeit.",
       "frFR": "Le Rationnaliste est immunisé contre tous les {g|Encyclopedia:Spell}sorts{/g} ou {g|Encyclopedia:Special_Abilities}pouvoirs magiques{/g} qui peuvent être {g|Encyclopedia:Spell_Resistance}résistés{/g}, mais il ne peut pas lancer de sorts. Si le personnage possède déjà d'une compétence de classe, d'un {g|Encyclopedia:Weapon_Proficiency}Maniement des armes{/g} ou du Port d'une armure après avoir choisi ses origines, alors les {g|Encyclopedia:Bonus}bonus{/g} dus aux origines se transforment en bonus d'aptitude de +1 (dans le cas de la compétence), bonus d'amélioration de +1 (dans le cas du maniement) ou diminution du {g|Encyclopedia:Check}malus{/g} d'armure à la CA (dans le cas du port d'armure).",
-      "zhCN": "理性主义者免疫任何允许 {g|Encyclopedia:Spell_Resistance}法术抵抗{/g}的 {g|Encyclopedia:Spell}法术{/g} 或 {g|Encyclopedia:Special_Abilities}类法术能力{/g}，但不能施法。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g} {g|Encyclopedia:Penalty}减值{/g}-1。",
+      "zhCN": "理性主义者免疫任何允许{g|Encyclopedia:Spell_Resistance}法术抗力{/g}的{g|Encyclopedia:Spell}法术{/g}或{g|Encyclopedia:Special_Abilities}类法术能力{/g}，但不能施法。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g}{g|Encyclopedia:Penalty}减值{/g}-1。",
       "esES": "El Racionalista es inmune a cualquier {g|Encyclopedia:Spell}conjuro{/g} o {g|Encyclopedia:Special_Abilities}habilidad similar a un conjuro{/g} que otorgue {g|Encyclopedia:Spell_Resistance}resistencia a los conjuros{/g}, pero no puede lanzar ningún conjuro. Si el personaje ya tiene la habilidad de clase, {g|Encyclopedia:Weapon_Proficiency}proficiencia con armas{/g} o proficiencia con armadura otorgada por el fondo seleccionado de su clase durante la creación del personaje, los {g|Encyclopedia:Bonus}bonos{/g} correspondientes del fondo cambian a un bono de competencia +1 en caso de habilidades, un bono de mejora +1 en caso de proficiencia con armas y una reducción de -1 en la {g|Encyclopedia:Check}comprobación{/g} {g|Encyclopedia:Penalty}penalización{/g} en caso de proficiencia con armadura."
     },
     {
@@ -690,7 +932,7 @@
       "ruRU": "Реинкарнированный Владыка Демонов имеет бонус +2 к силе и сопротивление электричеству 20.\nЕсли у персонажа уже есть классовый навык, {g|Encyclopedia:Weapon_Proficiency}умения обращения с оружием{/g} или умение использования брони, даваемое биографией в рамках класса, выбранной в ходе создания персонажа, соответствующие {g|Encyclopedia:Bonus}бонусы{/g} от биографии меняются на бонус мастерства +1 в случае навыков, на бонус усиления +1 в случае умения обращения с оружием и снижением в виде штрафа за броню -1 в случае умения использования брони.",
       "deDE": "Der wiedergeborene Dämonenfürst hat einen Bonus von +2 auf Stärke und eine Elektrizitätsresistenz von 20. Wenn der Charakter bereits die Klassenfertigkeit {g|Encyclopedia:Weapon_Proficiency}Waffenbeherrschung{/g} oder Rüstungsbeherrschung besitzt, die durch den ausgewählten Hintergrund aus seiner Klasse während der Charaktererstellung gewährt wird, ändern sich die entsprechenden {g|Encyclopedia:Bonus}Bonusbeträge{/g} des Hintergrunds in einen Kompetenzbonus von +1 im Falle von Fertigkeiten, einen Verbesserungsbonus von +1 im Falle von Waffenbeherrschung und eine -1 Rüstungs {g|Encyclopedia:Check}Überprüfungs{/g} {g|Encyclopedia:Penalty}Strafe{/g} Reduktion im Falle von Rüstungsbeherrschung.",
       "frFR": "Le Seigneur démon ressuscité a un bonus de +2 en force et une résistance à l'électricité de 20. Si le personnage possède déjà d'une compétence de classe, d'un {g|Encyclopedia:Weapon_Proficiency}Maniement des armes{/g} ou du Port d'une armure après avoir choisi ses origines, alors les {g|Encyclopedia:Bonus}bonus{/g} dus aux origines se transforment en bonus d'aptitude de +1 (dans le cas de la compétence), bonus d'amélioration de +1 (dans le cas du maniement) ou diminution du {g|Encyclopedia:Check}malus{/g} d'armure à la CA (dans le cas du port d'armure).",
-      "zhCN": "重生魔王拥有力量上+2加值和20点电抗性。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g} {g|Encyclopedia:Penalty}减值{/g}-1。",
+      "zhCN": "重生魔王拥有力量上+2加值和20点电抗性。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g}{g|Encyclopedia:Penalty}减值{/g}-1。",
       "esES": "El Señor demonio renacido tiene un bono de +2 a la fuerza y una resistencia a la electricidad de 20. Si el personaje ya tiene la habilidad de clase {g|Encyclopedia:Weapon_Proficiency}proficiencia en armas{/g} o proficiencia en armadura otorgada por el fondo seleccionado de su clase durante la creación de personaje, entonces los {g|Encyclopedia:Bonus}bonos{/g} correspondientes del fondo cambian a un bono de competencia de +1 en caso de habilidades, un bono de mejora de +1 en caso de proficiencia en armas y una reducción de -1 en la {g|Encyclopedia:Check}comprobación{/g} de armadura y una reducción de {g|Encyclopedia:Penalty}penalización{/g} de armadura."
     },
     {
@@ -712,7 +954,7 @@
       "ruRU": "Сарариман добавляет внимание в список классовых навыков. Он также может использовать Харизму вместо Мудрости при проверках Внимания. \nЕсли у персонажа уже есть классовый навык, {g|Encyclopedia:Weapon_Proficiency}умения обращения с оружием{/g} или умение использования брони, даваемое биографией в рамках класса, выбранной в ходе создания персонажа, соответствующие {g|Encyclopedia:Bonus}бонусы{/g} от биографии меняются на бонус мастерства +1 в случае навыков, на бонус усиления +1 в случае умения обращения с оружием и снижением в виде штрафа за броню -1 в случае умения использования брони.",
       "deDE": "Der Salaryman fügt Wahrnehmung zu seiner Liste der Klassenfertigkeiten hinzu. Er kann auch seine Charisma anstelle von Weisheit verwenden, während er Wahrnehmungsproben durchführt. Wenn der Charakter bereits die Klassenfertigkeit, {g|Encyclopedia:Weapon_Proficiency}Waffenbeherrschung{/g} oder Rüstungsbeherrschung besitzt, die durch den ausgewählten Hintergrund seiner Klasse während der Charaktererstellung gewährt wird, ändern sich die entsprechenden {g|Encyclopedia:Bonus}Bonuse{/g} des Hintergrunds in einen +1 Kompetenzbonus für Fertigkeiten, einen +1 Verbesserungsbonus für Waffenbeherrschung und eine Reduktion von -1 für die Rüstungs {g|Encyclopedia:Check}Überprüfung{/g} {g|Encyclopedia:Penalty}Strafe{/g} in Fällen von Rüstungsbeherrschung.",
       "frFR": "L'employé de bureau ajoute la compétence Perception à sa liste de compétences de classe. Il peut également utiliser son Charisme à la place de la Sagesse lorsqu'il tente des tests de Perception. Si le personnage possède déjà d'une compétence de classe, d'un {g|Encyclopedia:Weapon_Proficiency}Maniement des armes{/g} ou du Port d'une armure après avoir choisi ses origines, alors les {g|Encyclopedia:Bonus}bonus{/g} dus aux origines se transforment en bonus d'aptitude de +1 (dans le cas de la compétence), bonus d'amélioration de +1 (dans le cas du maniement) ou diminution du {g|Encyclopedia:Check}malus{/g} d'armure à la CA (dans le cas du port d'armure).",
-      "zhCN": "社畜将察觉技能添加到其本职技能列表中。当进行察觉检定时，他还可以使用自己的魅力代替感知。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g} {g|Encyclopedia:Penalty}减值{/g}-1。",
+      "zhCN": "社畜将察觉技能添加到其本职技能列表中。当进行察觉检定时，他还可以使用自己的魅力代替感知。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g}{g|Encyclopedia:Penalty}减值{/g}-1。",
       "esES": "El Salaryman agrega Percepción a la lista de sus habilidades de clase. También puede usar su Carisma en lugar de Sabiduría al intentar comprobar la Percepción. Si el personaje ya tiene la habilidad de clase, {g|Encyclopedia:Weapon_Proficiency}mastery de armas{/g} o maestría de armaduras otorgada por el fondo seleccionado de su clase durante la creación del personaje, entonces los {g|Encyclopedia:Bonus}bonos{/g} correspondientes del fondo cambian a un bono de competencia de +1 en el caso de habilidades, un bono de mejora de +1 en el caso de maestría de armas y una reducción de -1 en la {g|Encyclopedia:Check}penalización{/g} de Armadura en el caso de maestría de armaduras."
     },
     {
@@ -734,7 +976,7 @@
       "ruRU": "Игрок настольной РПГ добавляет {g|Encyclopedia:Lore_Nature}Знание (природа){/g}, {g|Encyclopedia:Lore_Religion}Знание (религия){/g}, {g|Encyclopedia:Knowledge_World}Знание (мир){/g} и {g|Encyclopedia:Knowledge_Arcana}Знание (магия){/g} добавляются в список классовых {g|Encyclopedia:Skills}навыков{/g} персонажа, а при проверке навыков Знание (мир), Знание (магия), Знание (религия) и Знание (природа) допускается использование {g|Encyclopedia:Charisma}Харизмы{/g} вместо {g|Encyclopedia:Intelligence}Интеллекта{/g} или {g|Encyclopedia:Wisdom}Мудрости{/g}.\nЕсли у персонажа уже есть классовый навык, {g|Encyclopedia:Weapon_Proficiency}умения обращения с оружием{/g} или умение использования брони, даваемое биографией в рамках класса, выбранной в ходе создания персонажа, соответствующие {g|Encyclopedia:Bonus}бонусы{/g} от биографии меняются на бонус мастерства +1 в случае навыков, на бонус усиления +1 в случае умения обращения с оружием и снижением в виде штрафа за броню -1 в случае умения использования брони.",
       "deDE": "Der Tabletop-RPG-Spieler fügt {g|Encyclopedia:Lore_Nature}Wissen (Natur){/g}, {g|Encyclopedia:Lore_Religion}Wissen (Religion){/g}, {g|Encyclopedia:Knowledge_World}Wissen (Welt){/g} und {g|Encyclopedia:Knowledge_Arcana}Wissen (Arkanes){/g} zur Liste ihrer {g|Encyclopedia:Skills}Fertigkeiten{/g} hinzu und kann bei Wissen (Welt), Wissen (Arkanes), Wissen (Religion) oder Wissen (Natur) ihren {g|Encyclopedia:Charisma}Charisma-Wert{/g} anstelle von {g|Encyclopedia:Intelligence}Intelligenz{/g} oder {g|Encyclopedia:Wisdom}Weisheit{/g} verwenden. Wenn der Charakter bereits die Klassenfertigkeit, {g|Encyclopedia:Weapon_Proficiency}Waffenbeherrschung{/g} oder Rüstungsbeherrschung durch den ausgewählten Hintergrund seiner Klasse während der Charaktererstellung hat, dann ändern sich die entsprechenden {g|Encyclopedia:Bonus}Bonuse{/g} des Hintergrunds zu einem +1 Kompetenzbonus bei Fertigkeiten, einem +1 Verbesserungsbonus bei Waffenbeherrschung und einer -1 {g|Encyclopedia:Armor_Check}Rüstungsüberprüfung{/g} {g|Encyclopedia:Penalty}Strafe{/g} Reduktion bei Rüstungsbeherrschung.",
       "frFR": "Le joueur de jeu de rôle de table ajoute {g|Encyclopedia:Lore_Nature}Connaissance (Nature){/g}, {g|Encyclopedia:Lore_Religion}Connaissance (Sacré){/g}, {g|Encyclopedia:Knowledge_World}Érudition (Monde){/g} et {g|Encyclopedia:Knowledge_Arcana}Érudition (Mystères){/g} à la liste de ses {g|Encyclopedia:Skills}compétences{/g} de classe et peut utiliser son {g|Encyclopedia:Charisma}Charisme{/g} au lieu de son {g|Encyclopedia:Intelligence}Intelligence{/g} ou de sa {g|Encyclopedia:Wisdom}Sagesse{/g} lors des {g|Encyclopedia:Check}tests{/g} d'Érudition (Monde), d'Érudition (Mystères), de Connaissance (Sacré) ou Connaissance (Nature). Si le personnage possède déjà d'une compétence de classe, d'un {g|Encyclopedia:Weapon_Proficiency}Maniement des armes{/g} ou du Port d'une armure après avoir choisi ses origines, alors les {g|Encyclopedia:Bonus}bonus{/g} dus aux origines se transforment en bonus d'aptitude de +1 (dans le cas de la compétence), bonus d'amélioration de +1 (dans le cas du maniement) ou diminution du {g|Encyclopedia:Check}malus{/g} d'armure à la CA (dans le cas du port d'armure).",
-      "zhCN": "TRPG玩家将 {g|Encyclopedia:Lore_Nature}学识（自然）{/g}，{g|Encyclopedia:Lore_Religion}学识（宗教）{/g}，{g|Encyclopedia:Knowledge_World}学识（世界）{/g}，以及 {g|Encyclopedia:Knowledge_Arcana}学识（神秘）{/g} 加入她的本职技能列表，并且在尝试知识 (世界)，知识 (奥秘)，学识 (宗教)，或学识 (自然) {g|Encyclopedia:Check}检定{/g} 时可以使用她的 {g|Encyclopedia:Charisma}魅力值{/g} 代替 {g|Encyclopedia:Intelligence}智力{/g} 或 {g|Encyclopedia:Wisdom}感知{/g}。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g} {g|Encyclopedia:Penalty}减值{/g}-1。",
+      "zhCN": "TRPG玩家将{g|Encyclopedia:Lore_Nature}学识（自然）{/g}，{g|Encyclopedia:Lore_Religion}学识（宗教）{/g}，{g|Encyclopedia:Knowledge_World}知识（世界）{/g}，以及{g|Encyclopedia:Knowledge_Arcana}知识（神秘）{/g} 加入她的本职技能列表，并且在尝试知识 (世界)，知识 (奥秘)，学识 (宗教)，或学识 (自然){g|Encyclopedia:Check}检定{/g} 时可以使用她的{g|Encyclopedia:Charisma}魅力值{/g}代替{g|Encyclopedia:Intelligence}智力{/g}或{g|Encyclopedia:Wisdom}感知{/g}。如果角色已在角色创建过程中，通过职业获取了上述本职技能，{g|Encyclopedia:Weapon_Proficiency}武器擅长{/g}或防具擅长，则背景提供的相应{g|Encyclopedia:Bonus}加值{/g}改为相关技能上+1的表现加值、相关武器上的+1增强加值，相关防具上的防具{g|Encyclopedia:Check}检定{/g}{g|Encyclopedia:Penalty}减值{/g}-1。",
       "esES": "El jugador de JDR de mesa añade {g|Encyclopedia:Lore_Nature}Conocimiento (Naturaleza){/g}, {g|Encyclopedia:Lore_Religion}Conocimiento (Religión){/g}, {g|Encyclopedia:Knowledge_World}Conocimiento (Mundo){/g} y {g|Encyclopedia:Knowledge_Arcana}Conocimiento (Arcana){/g} a la lista de sus {g|Encyclopedia:Skills}habilidades{/g} de clase y puede utilizar su {g|Encyclopedia:Charisma}Carisma{/g} en lugar de {g|Encyclopedia:Intelligence}Inteligencia{/g} o {g|Encyclopedia:Wisdom}Sabiduría{/g} al intentar {g|Encyclopedia:Check}comprobar{/g} Conocimiento (Mundo), Conocimiento (Arcana), Conocimiento (Religión) o Conocimiento (Naturaleza). Si el personaje ya tiene la habilidad de clase, {g|Encyclopedia:Weapon_Proficiency}proficiencia en armas{/g} o proficiencia en armadura otorgada por el trasfondo seleccionado de su clase durante la creación del personaje, entonces los {g|Encyclopedia:Bonus}bonificaciones{/g} correspondientes del trasfondo cambian a un bonus de competencia de +1 en el caso de habilidades, un bonus de mejora de +1 en el caso de la proficiencia en armas y una reducción de -1 {g|Encyclopedia:Armor_Check}en la comprobación{/g} de armadura en el caso de la proficiencia en armadura."
     },
     {
@@ -789,7 +1031,7 @@
       "ruRU": "Наследие Барда - Музыкальное Выступление",
       "deDE": "Barden-Erbe - Musikalisches Wunderkind",
       "frFR": "Héritage du Barde - Prodige musical",
-      "zhCN": "诗人传承-音乐奇才",
+      "zhCN": "诗人传承 - 音乐奇才",
       "esES": "Legado del bardo - Prodigio musical"
     },
     {
@@ -1108,7 +1350,7 @@
       "ruRU": "Вы получаете +10 {g|Encyclopedia:HP}очков здоровья{/g} и бонус +1 к Силе.",
       "deDE": "Du erhältst +10 {g|Enzyklopädie:HP}Trefferpunkte{/g} und einen Bonus von +1 auf deine Stärke.",
       "frFR": "Vous gagnez +10 {g|Encyclopédie:PV}points de vie{/g} et un bonus de +1 à votre Force.",
-      "zhCN": "你获得了+10点 {g|百科全书：HP}生命值{/g}和+1力量。",
+      "zhCN": "你获得了+10点{g|百科全书：HP}生命值{/g}和+1力量。",
       "esES": "Obtienes +10 {g|Enciclopedia:PV}puntos de golpe{/g} y un bono de +1 a tu Fuerza."
     },
     {
@@ -1922,7 +2164,7 @@
       "ruRU": "Ваше канал энергии, лечащие заклинания и способности восстановления HP восстанавливают максимальное количество очков здоровья.",
       "deDE": "Ihre Kanalisierungsenergie, Heilzauber und HP-Wiederherstellungsfähigkeiten heilen die maximale Menge.",
       "frFR": "Votre canalisation d'énergie, vos sorts de soins et vos capacités de restauration de PV soignent le montant maximal.",
-      "zhCN": "你的引导能量、治疗法术和恢复生命值的能力会最大程度地恢复生命值。\n每天一次，当你的 {g|Encyclopedia:HP}HP{/g} 掉到0时，你会被复活到满血。40英尺范围内的盟友将完全恢复健康，而敌人则立即死亡。",
+      "zhCN": "你的引导能量、治疗法术和恢复生命值的能力会最大程度地恢复生命值。\n每天一次，当你的{g|Encyclopedia:HP}HP{/g} 掉到0时，你会被复活到满血。40英尺范围内的盟友将完全恢复健康，而敌人则立即死亡。",
       "esES": "Tus habilidades de canalización de energía, hechizos de curación y restauración de PV sanan la cantidad máxima."
     },
     {
@@ -1933,7 +2175,7 @@
       "ruRU": "Один раз в день, когда ваше {g|Encyclopedia:HP}здоровье{/g} падает до 0, вы воскрешаетесь с максимум здоровья. Союзники в пределах 40 футов также полностью восстанавливают здоровье, а враги мгновенно умирают.",
       "deDE": "Einmal pro Tag, wenn deine {g|Encyclopedia:HP}HP{/g} HP auf 0 fallen, wirst du vollständig geheilt wiederbelebt. Verbündete innerhalb von 40 Fuß werden dann vollständig geheilt, während Feinde sofort sterben.",
       "frFR": "Une fois par jour, lorsque vos {g|Encyclopedia:HP}points de vie{/g} tombent à 0, vous êtes ressuscité en pleine santé. Les alliés dans un rayon de 40 pieds sont intégralement soignés tandis que les ennemis meurent instantanément.",
-      "zhCN": "每天一次，当你的 {g|Encyclopedia:HP}HP{/g} 掉到0时，你会被复活到满血。40英尺范围内的盟友将完全恢复健康，而敌人则立即死亡。",
+      "zhCN": "每天一次，当你的{g|Encyclopedia:HP}HP{/g}掉到0时，你会被复活到满血。40英尺范围内的盟友将完全恢复健康，而敌人则立即死亡。",
       "esES": "Una vez al día, cuando tus {g|Encyclopedia:HP}HP{/g} llegan a 0, eres resucitado a plena salud. Los aliados dentro de 40 pies son entonces restaurados a plena salud mientras que los enemigos mueren instantáneamente."
     },
     {
@@ -2054,7 +2296,7 @@
       "ruRU": "В качестве быстрого действия вы можете смазать свое оружие специальным ядом дроу. Врагам, пораженным отравленным оружием, нужно совершить спасбросокм стойкости или потерять сознание на 1 минуту. Сложность этого спасброска стойкости равна 10 + уровень вашего персонажа + модификатор вашего интеллекта.",
       "deDE": "Als schnelle Aktion kannst du deine Waffe mit einem speziellen Drow-Gift beschichten. Gegner, die von der vergifteten Waffe getroffen werden, müssen einen Fortitude-Rettungswurf machen, um für 1 Minute bewusstlos zu werden. Dieser Fortitude-Rettungswurf entspricht 10 + deinem Charakterlevel + deinem Intelligenz-Modifikator.",
       "frFR": "Par une action rapide, vous enduisez votre arme d'un poison drow spécial. Les ennemis touchés par l'arme empoisonnée doivent réussir un jet de vigueur ou tomber inconscients pendant 1 minute. Le jet de vigueur est égal à 10 + votre niveau de personnage + votre modificateur d'Intelligence.",
-      "zhCN": "作为一个迅捷动作，你可以用一种特殊的卓尔毒药涂抹你的武器。被抹毒武器击中的敌人需要进行一次豁免以避免长达1分钟内的昏迷，其坚韧豁免DC等于10+你的角色等级+你的智力调整。",
+      "zhCN": "使用一个迅捷动作，你可以用一种特殊的卓尔毒药涂抹你的武器。被抹毒武器击中的敌人需要进行一次豁免以避免长达1分钟内的昏迷，其坚韧豁免DC等于10+你的角色等级+你的智力调整。",
       "esES": "Como una acción rápida, puedes cubrir tu arma con un veneno especial de drow. Los enemigos alcanzados por el arma envenenada tendrán que hacer una salvación de Fortaleza o quedar inconscientes durante 1 minuto. Esta salvación de Fortaleza es igual a 10 + tu nivel de personaje + tu modificador de Inteligencia."
     },
     {
@@ -2175,7 +2417,7 @@
       "ruRU": "Эджлорд {g|Encyclopedia:Weapon_Proficiency}умеет обращаться{/g} со всем простым, особым и экзотическим оружием, использовать легкими и средними доспехи. Они могут творить {g|Encyclopedia:Spell}заклинания{/g} своего класса, нося доспехи и щиты (включая башенные щиты), без обычного риска из-за брони и щитов. Если они получают мистические заклинания от уровней в других классов, для этих заклинаний правила по {g|Encyclopedia:Spell_Fail_Chance}риску провала{/g} работают как обычно.",
       "deDE": "Der Kantenfürst ist mit allen einfachen, martialen und exotischen Waffen sowie leichter und mittlerer Rüstung vertraut. Sie können {g|Encyclopedia:Spell}Zauber{/g} aus diesem Klassenzauberbuch wirken, während sie Rüstung tragen, ohne dass die normale {g|Encyclopedia:Spell_Fail_Chance}Chance des arkanen Zauberfehlschlags{/g} besteht. Für arkanische Zauber aus anderen Klassen besteht jedoch die normale Chance des arkanen Zauberfehlschlags.",
       "frFR": "Le Seigneur de l'Amertume est compétent avec toutes les armes simples, martiales et exotiques, ainsi qu'avec les armures légères et moyennes. Il peut lancer {g|Encyclopedia:Spell}des sorts{/g} de cette classe tout en portant une armure sans encourir de {g|Encyclopedia:Spell_Fail_Chance}risque d'échec de sort arcanique{/g}, mais il encourt le risque d'échec de sort pour les sorts arcaniques reçus d'autres classes.",
-      "zhCN": "锋刃之主精通所有简单、军事和异种武器，以及轻甲和中甲。在穿着防具时，他们可以施放该职业的 {g|Encyclopedia:Spell}法术{/g}，而不会承受通常的 {g|Encyclopedia:Spell_Fail_Chance}奥术施法失败几率{/g}，但对于来自其他职业的奥术法术，则会承受通常的奥术施法失败几率。",
+      "zhCN": "锋刃之主精通所有简单、军事和异种武器，以及轻甲和中甲。在穿着防具时，他们可以施放该职业的{g|Encyclopedia:Spell}法术{/g}，而不会承受通常的{g|Encyclopedia:Spell_Fail_Chance}奥术失败率{/g}，但对于来自其他职业的奥术法术，则会承受通常的奥术失败率。",
       "esES": "El Lord de los bordes es competente con todas las armas simples, marciales y exóticas, así como con las armaduras ligeras y medias. Pueden lanzar {g|Encyclopedia:Spell}hechizos{/g} de esta clase mientras llevan armadura sin sufrir la normal {g|Encyclopedia:Spell_Fail_Chance}posibilidad de falla de hechizo arcana{/g}, pero sufren la normal posibilidad de falla de hechizo arcana para hechizos arcana recibidos de otras clases."
     },
     {
@@ -2461,7 +2703,7 @@
       "ruRU": "Вы получаете 1 дополнительную {g|Encyclopedia:Attack}атаку{/g}. Это также применяется к вашему вторичному оружию, если вы держите второе оружие.",
       "deDE": "Du erhältst 1 zusätzlichen {g|Encyclopedia:Attack}Angriff{/g}. Dies gilt auch für deine Offhand-Waffe, wenn du eine zweite Waffe schwingst.",
       "frFR": "Vous gagnez 1 {g|Encyclopedia:Attack}attaque{/g} supplémentaire. Cela s'applique également à votre arme en main secondaire si vous en portez une.",
-      "zhCN": "你获得1次额外的 {g|Encyclopedia:Attack}攻击{/g}。如果你装备了第二件武器，则同样适用于你的副手武器。",
+      "zhCN": "你获得1次额外的{g|Encyclopedia:Attack}攻击{/g}。如果你装备了第二件武器，则同样适用于你的副手武器。",
       "esES": "Obtienes 1 {g|Encyclopedia:Attack}ataque{/g} adicional. Esto también se aplica a tu arma secundaria si estás empuñando una segunda arma."
     },
     {
@@ -2604,7 +2846,7 @@
       "ruRU": "Свирепый Призыв",
       "deDE": "Wütende Beschwörung",
       "frFR": "Invocation féroce",
-      "zhCN": "凶猛召唤",
+      "zhCN": "残暴召唤",
       "esES": "Invocación ferocidad"
     },
     {
@@ -3011,7 +3253,7 @@
       "ruRU": "Бог-Император {g|Encyclopedia:Weapon_Proficiency}умеет обращаться{/g} со всем простым, особым и экзотическим оружием, использовать легкие, средние и тяжелые доспехи, а также щиты(включая башенные). Они могут творить {g|Encyclopedia:Spell}заклинания{/g} своего класса, нося доспехи и щиты (включая башенные щиты), без обычного риска из-за брони и щитов. Если они получают мистические заклинания от уровней в других классов, для этих заклинаний правила по {g|Encyclopedia:Spell_Fail_Chance}риску провала{/g} работают как обычно.",
       "deDE": "Der Gottkaiser ist im Umgang mit allen einfachen, martialen und exotischen Waffen sowie mit allen Rüstungen (schwer, mittel und leicht) und Schilden (einschließlich Turmschilden) versiert. Sie können {g|Encyclopedia:Spell}Zauber{/g} aus dieser Klasse wirken, während sie Rüstungen und Schilde (einschließlich Turmschilden) tragen, ohne das normale {g|Encyclopedia:Spell_Fail_Chance}Arcane-Zauberfehlschlagrisiko{/g} zu tragen, aber sie tragen das normale Arcane-Zauberfehlschlagrisiko für arkanen Zauber, die von anderen Klassen erhalten wurden.",
       "frFR": "Le Dieu-Empereur est compétent dans l'utilisation de toutes les armes simples, martiales et exotiques, ainsi que de toutes les armures (lourdes, légères et intermédiaires) et des boucliers (y compris les pavois). Ils peuvent lancer des {g|Encyclopedia:Spell}sorts{/g} de cette classe tout en portant une armure et des boucliers (y compris les pavois) sans encourir le risque normal d'{g|Encyclopedia:Spell_Fail_Chance}échec de sorts profanes{/g}, mais ils encourent le risque normal d'échec des sorts profanes pour les sorts reçus d'autres classes.",
-      "zhCN": "神皇精通所有简单、军事和异种武器，所有防具（重甲、轻甲和中甲）和盾牌（包括塔盾）。他们可以在穿戴盔甲和盾牌（包括塔盾）时施展来自这个职业的 {g|Encyclopedia:Spell}法术{/g} 而不会承受通常的 {g|Encyclopedia:Spell_Fail_Chance}奥术施法失败几率{/g}，但是他们施放来自其他职业的奥术法术时需要承受通常的奥术施法失败几率。",
+      "zhCN": "神皇精通所有简单、军事和异种武器，所有防具（重甲、轻甲和中甲）和盾牌（包括塔盾）。他们可以在穿戴盔甲和盾牌（包括塔盾）时施展来自这个职业的{g|Encyclopedia:Spell}法术{/g}而不会承受通常的{g|Encyclopedia:Spell_Fail_Chance}奥术失败率{/g}，但是他们施放来自其他职业的奥术法术时需要承受通常的奥术失败率。",
       "esES": "El Emperador Dios es competente contodos los armas simples, marciales y exóticas, así como con todas las armaduras (pesadas, ligeras e intermedias) y escudos (incluidos los escudos de torre). Pueden lanzar {g|Encyclopedia:Spell}hechizos{/g} de esta clase mientras usan armaduras y escudos (incluidos los escudos de torre) sin sufrir la {g|Encyclopedia:Spell_Fail_Chance}probabilidad normal de fallo de hechizo arcana{/g}, pero sufren la probabilidad normal de fallo de hechizo arcana para hechizos arcana recibidos de otras clases."
     },
     {
@@ -3319,7 +3561,7 @@
       "ruRU": "Здоровое тело",
       "deDE": "Gesunder Körper",
       "frFR": "Corps sain",
-      "zhCN": "健康身体",
+      "zhCN": "身强力壮",
       "esES": "Cuerpo sano"
     },
     {
@@ -3385,7 +3627,7 @@
       "ruRU": "Герой {g|Encyclopedia:Weapon_Proficiency}умеет обращаться{/g} со всем простым, особым и экзотическим оружием, использовать легкие, средние и тяжелые доспехи, а также щиты(включая башенные). Они могут творить {g|Encyclopedia:Spell}заклинания{/g} своего класса, нося доспехи и щиты (включая башенные щиты), без обычного риска из-за брони и щитов. Если они получают мистические заклинания от уровней в других классов, для этих заклинаний правила по {g|Encyclopedia:Spell_Fail_Chance}риску провала{/g} работают как обычно.",
       "deDE": "Der Held beherrscht alle einfachen, martialen und exotischen Waffen sowie alle Rüstungen (schwer, leicht und mittel) und Schilde (einschließlich Turmschilde). Sie können {g|Encyclopedia:Spell}Zauber{/g} dieser Klasse zaubern, während sie Rüstungen und Schilde tragen (einschließlich Turmschilde), ohne die normale {g|Encyclopedia:Spell_Fail_Chance}Chance auf arkanen Zauberfehlschlag{/g} zu haben, aber sie haben die normale Chance auf arkanen Zauberfehlschlag für arkanen Zauber, die sie von anderen Klassen erhalten.",
       "frFR": "Le héros est compétent avec toutes les armes simples, martiales et exotiques ainsi qu'avec toutes les armures (lourdes, légères et intermédiaires) et boucliers (y compris les pavois). Ils peuvent lancer des {g|Encyclopedia:Spell}sorts{/g} de cette classe tout en portant des armures et des boucliers (y compris les pavois) sans encourir de {g|Encyclopedia:Spell_Fail_Chance}risque d'échec des sorts profanes{/g}, mais ils encourrent le risque d'échec des sorts profanes pour les sorts reçus d'autres classes.",
-      "zhCN": "英雄精通所有简单、军事和异种武器，所有防具（重甲、轻甲和中甲）和盾牌（包括塔盾）。他们可以在穿戴盔甲和盾牌（包括塔盾）时施展来自这个职业的 {g|Encyclopedia:Spell}法术{/g} 而不会承受通常的 {g|Encyclopedia:Spell_Fail_Chance}奥术施法失败几率{/g}，但是他们施放来自其他职业的奥术法术时需要承受通常的奥术施法失败几率。",
+      "zhCN": "英雄精通所有简单、军事和异种武器，所有防具（重甲、轻甲和中甲）和盾牌（包括塔盾）。他们可以在穿戴盔甲和盾牌（包括塔盾）时施展来自这个职业的{g|Encyclopedia:Spell}法术{/g}而不会承受通常的{g|Encyclopedia:Spell_Fail_Chance}奥术失败率{/g}，但是他们施放来自其他职业的奥术法术时需要承受通常的奥术失败率。",
       "esES": "El héroe es competente con todas las armas simples, marciales y exóticas, así como con todas las armaduras (pesadas, ligeras y medias) y escudos (incluyendo los escudos de torre). Pueden lanzar {g|Encyclopedia:Spell}hechizos{/g} de esta clase mientras usan armaduras y escudos (incluyendo los escudos de torre) sin incurrir en la normal {g|Encyclopedia:Spell_Fail_Chance}probabilidad de fallo de hechizo arcana{/g}, pero incurren en la normal probabilidad de fallo de hechizo arcana para los hechizos arcana recibidos de otras clases."
     },
     {
@@ -3506,7 +3748,7 @@
       "ruRU": "Внутренняя сила",
       "deDE": "Inneres Kraftpotential",
       "frFR": "Pouvoir Intérieur",
-      "zhCN": "内在力量",
+      "zhCN": "内力充沛",
       "esES": "Poder Interno"
     },
     {
@@ -3583,7 +3825,7 @@
       "ruRU": "Кто останется жить, а кто умрет? Эта сила изменения судьбы лежит в ваших руках. Вы будете использовать эту силу бережно? Или станете богом нового мира? \nПреимущество: Позволяет убить целевое существо, если оно не выполняет спасбросок стойкости со сложностью 99, в противном случае оно оглушается на 1 раунд. Эта способность обходит иммунитет к смерти.",
       "deDE": "Wer wird leben und wer wird sterben? Diese Kraft, das Schicksal zu ändern, liegt in deinen Händen. Wirst du diese Kraft sparsam nutzen? Oder wirst du zum Gott der neuen Welt? \nVorteil: Tötet das Zielwesen, wenn es seinen Rettungswurf gegen SG 99 nicht besteht, sonst ist es für 1 Runde betäubt. Diese Fähigkeit umgeht Immunität gegen Tod.",
       "frFR": "Qui vivra et qui mourra ? Le pouvoir de changer le destin est entre vos mains. Utiliserez-vous ce pouvoir avec parcimonie ? Ou deviendrez-vous le dieu du nouveau monde ? \nAvantage : tue la créature ciblée si elle échoue à un jet de Vigueur contre un DD de 99, sinon elle est étourdie pendant 1 round. Cette capacité ignore l'immunité aux effets de mort.",
-      "zhCN": "谁将生存，谁将死亡？这种改变命运的力量掌握在你的手中。你会节俭地使用这种力量吗？还是成为新世界的神？\n优势：如果目标生物未能通过 DC 99 耐力豁免，则杀死目标生物；否则，目标生物会被震慑 1 回合。此能力忽略死亡效果免疫。",
+      "zhCN": "谁将生存，谁将死亡？这种改变命运的力量掌握在你的手中。你会节俭地使用这种力量吗？还是成为新世界的神？\n效果：如果目标生物未能通过 DC 99 强韧豁免，则杀死目标生物；否则，目标生物会被震慑 1 回合。此能力忽略死亡效果免疫。",
       "esES": "¿Quién vivirá y quién morirá? Este poder para cambiar el destino está en tus manos. ¿Usarás este poder con moderación? ¿O te convertirás en el dios del nuevo mundo? \nBeneficio: Mata a la criatura objetivo si no supera una tirada de salvación de Fortaleza CD 99; de lo contrario, queda aturdida durante 1 asalto. Esta habilidad evita la inmunidad a la muerte."
     },
     {
@@ -3827,7 +4069,7 @@
       "frFR": "Vous obtenez la capacité surnaturelle de canaliser de l'énergie positive comme un prêtre. Vous utilisez votre niveau de personnage comme niveau de prêtre effectif lors de la canalisation d'énergie positive. Vous pouvez canaliser l'énergie un nombre de fois par jour égal à 3 + modificateur de Charisme.",
       "zhCN": "你获得了像牧师一样引导正能量的超自然能力。当引导正能量时，你使用你的角色等级作为你的有效牧师等级。你每天可以引导能量的次数等于3 + 你的魅力调整值。",
       "esES": "Obtienes la habilidad sobrenatural de canalizar energía positiva como un clérigo. Usas tu nivel de personaje como tu nivel efectivo de clérigo cuando canalizas energía positiva. Puedes canalizar energía un número de veces al día igual a 3 + tu modificador de Carisma."
-    },
+    },    
     {
       "Key": "be7d58a6bf3c4a33b816416c6e7ac42f",
       "SimpleName": "IsekaiChannelPositiveEnergyFeature.Description",
@@ -3891,7 +4133,7 @@
       "ruRU": "Чужеродные существа, реинкарнированные в мире Голариона в виде Темного Эльфа, обладают исключительной красотой и силой. Они являются жестоким и хитрым темным отражением расы эльфов. Исекай Темный Эльф получает расовый бонус к Интеллекту +4, бонусы к Ловкости и Мудрости по +2, и штраф к Телосложению -2. У них есть сопротивление магии, равное 10 + уровень персонажа. Они также могут использовать способность Яда Дроу в качестве быстрого действия определенное количество раз в день, равное модификатору Интеллекта.",
       "deDE": "Übernatürliche Wesen, die als Dunkelelfen in die Welt von Golarion wiedergeboren wurden, besitzen sowohl extreme Schönheit als auch Macht. Sie sind eine grausame und listige dunkle Reflektion der Elfenrasse. Der Isekai-Dunkelelf erhält einen Rassenbonus von +4 auf Intelligenz, einen Rassenbonus von +2 auf Geschicklichkeit und Weisheit und einen Malus von -2 auf Konstitution. Sie haben einen Zauberwiderstand, der ihrem Charakterlevel entspricht. Außerdem können sie die Fähigkeit Drow Gift als schnelle Aktion eine Anzahl von Malen pro Tag einsetzen, die ihrem Intelligenzmodifikator entspricht.",
       "frFR": "Les entités venues d'ailleurs qui se réincarnent dans le monde de Golarion sous la forme d'un elfe noir possèdent une beauté et une puissance extrêmes. Ils sont le reflet cruel et sombre de la race elfique. L'elfe noir Isekai a un bonus racial de +4 à l'Intelligence, un bonus racial de +2 à la Dextérité et à la Sagesse, et une pénalité de -2 à la Constitution. Ils ont une résistance aux sorts égale à 10 + leur niveau de personnage. Ils peuvent également utiliser la capacité de poison drow par une action rapide un nombre de fois par jour égal à leur modificateur d'Intelligence.",
-      "zhCN": "转生为葛拉利昂黑暗精灵的异界实体拥有极致的美貌和力量。他们是精灵种族残酷和狡猾的反映。异世界黑暗精灵在智力上获得+4增强，敏捷和智慧获得+2增强，体质获得-2。他们的法术抗性等于10+角色等级。他们还可以使用卓尔毒药能力，作为一个迅捷动作，每天可以使用次数等于其智力调整值。",
+      "zhCN": "转生为葛拉利昂黑暗精灵的异界实体拥有极致的美貌和力量。他们是精灵种族残酷和狡猾的反映。异世界黑暗精灵在智力上获得+4增强，敏捷和智慧获得+2增强，体质获得-2。他们的法术抗性等于10+角色等级。他们还可以消耗一个迅捷动作来使用卓尔毒药能力，每天可以使用次数等于其智力调整值。",
       "esES": "Las entidades de otro mundo que son reencarnadas en el mundo de Golarion como un Elfo Oscuro tienen una belleza y poder extremos. Son una cruel y astuta reflexión oscura de la raza élfica. El Elfo Oscuro de Isekai tiene un bonificador racial de +4 a Inteligencia, un bonificador racial de +2 a Destreza y Sabiduría, y una penalización de -2 a Constitución. Tienen resistencia a hechizos igual a 10 + su nivel de personaje. También pueden usar la habilidad de Veneno Drow como una acción rápida un número de veces por día igual a su modificador de Inteligencia."
     },
     {
@@ -3924,7 +4166,7 @@
       "ruRU": "Хочешь присоединиться к моему гарему?",
       "deDE": "Willst du meinem Harem beitreten?",
       "frFR": "Veux-tu rejoindre mon harem ?",
-      "zhCN": "你想加入我的后宫吗？",
+      "zhCN": "(异世界主角)\"你想加入我的后宫吗？\"",
       "esES": "¿Quieres unirte a mi harén?"
     },
     {
@@ -3935,7 +4177,7 @@
       "ruRU": "Я убедил Ирабет присоединиться к гарему.",
       "deDE": "Ich habe Irabeth davon überzeugt, sich dem Harem anzuschließen.",
       "frFR": "J'ai convaincu Irabeth de rejoindre le harem.",
-      "zhCN": "我说服了伊拉贝丝加入后宫。",
+      "zhCN": "(异世界主角)\"我说服了伊拉贝思加入后宫。\"",
       "esES": "Convencí a Irabeth de unirse al harén."
     },
     {
@@ -3946,7 +4188,7 @@
       "ruRU": "\"Конечно, только если ты сможешь убедить Ирабет присоединиться.\"",
       "deDE": "\"Überzeuge Irabeth, sich uns anzuschließen.\"",
       "frFR": "\"Pourquoi pas, mais seulement si tu arrives à convaincre Irabeth de se joindre à nous.\"",
-      "zhCN": "如果你能伊拉贝丝加入，我就答应你。",
+      "zhCN": "如果你能说服伊拉贝思加入，我就答应你。",
       "esES": "\"Convencer a Irabeth para unirse a nosotros.\""
     },
     {
@@ -3968,7 +4210,7 @@
       "ruRU": "{n}Аневия поражена.{/n} «Это было совершенно неожиданно. Думаю, я поговорю с Ирабет о нашем славном будущем в твоем гареме.",
       "deDE": "{n}Anevia ist erstaunt.{/n} \"Das war völlig unerwartet. Ich denke, ich werde mit Irabeth über unsere glorreiche Zukunft in deinem Harem sprechen.\"",
       "frFR": "{n}Anevia est stupéfaite.{/n} « C'était totalement inattendu. Je suppose que je vais discuter avec Irabeth de notre glorieux avenir dans ton harem. »",
-      "zhCN": "{n}安妮维雅感到惊讶。{/n}“这完全出乎意料。我想我会和伊拉贝丝讨论我们在你后宫中的光辉未来。”",
+      "zhCN": "{n}安妮维亚感到惊讶。{/n}“这完全出乎意料。我想我会和伊拉贝思讨论我们在你后宫中的光辉未来。”",
       "esES": "{n}Anevia está asombrada.{/n} \"Esto fue completamente inesperado. Supongo que hablaré con Irabeth sobre nuestro glorioso futuro en tu harén.\""
     },
     {
@@ -3979,7 +4221,7 @@
       "ruRU": "Привет, ты можешь превратиться в горячую суккубу?",
       "deDE": "Hey, kannst du dich in eine heiße Sukkubus verwandeln?",
       "frFR": "Hé, peux-tu te transformer en succube sexy ?",
-      "zhCN": "嘿，你能变成一个性感的魅魔吗？",
+      "zhCN": "(异世界主角) \"嘿，你能变成一个性感的魅魔吗？\"",
       "esES": "Hola, ¿puedes transformarte en una succubo atractiva?"
     },
     {
@@ -4001,7 +4243,7 @@
       "ruRU": "Две тысячи золота... И ваша дочь присоединяется к моему гарему.",
       "deDE": "Zweitausend Goldmünzen... Und deine Tochter wird Teil meines Harems.",
       "frFR": "Deux mille pièces d'or... Et votre fille rejoint mon harem.",
-      "zhCN": "两千金币... 还有你的女儿加入我的后宫。",
+      "zhCN": "(异世界主角)\"两千金币... 还有你的女儿加入我的后宫。\"",
       "esES": "Dos mil monedas de oro... Y tu hija se une a mi harén."
     },
     {
@@ -4012,7 +4254,7 @@
       "ruRU": "«Моя дочь?» {n}Хоргус быстро взглянул на Камеллию.{/n} «Я не думаю, что ты знаешь, какой она человек. {n}Хоргус вздохнул.{/n} Тем не менее, мое предыдущее предложение было несколько оскорбительным. Два тысячи золотых, и все будет в порядке».",
       "deDE": "\"Meine Tochter?\" {n}Horgus wirft Camellia einen schnellen Blick zu.{/n} \"Ich glaube nicht, dass du weißt, was für eine Art von Person sie ist. {n}Horgus atmet tief durch.{/n} Wie auch immer, es scheint, dass mein vorheriges Angebot etwas beleidigend war. Es sind zweitausend Goldmünzen.\"",
       "frFR": "\"Ma fille ?\" {n}Horgus jette un coup d'œil rapide à Camellia.{/n} \"Je ne pense pas que vous sachiez quel genre de personne elle est. {n}Horgus prend une respiration.{/n} Quoi qu'il en soit, il semble que mon offre précédente était quelque peu insultante. Deux mille pièces d'or, c'est ça.\"",
-      "zhCN": "\"我的女儿？\" {n}霍格斯瞥了柯米丽雅一眼。{/n} \"我不认为你知道她是什么样的人。{n}霍格斯深吸了一口气。{/n} 无论如何，似乎我之前的提议有些冒犯。两千金币就这样吧。\"",
+      "zhCN": "\"我的女儿？\"{n}霍尔格斯瞥了柯米丽雅一眼。{/n} \"我不认为你知道她是什么样的人。{n}霍尔格斯深吸了一口气。{/n}无论如何，似乎我之前的提议有些冒犯。两千金币就这样吧。\"",
       "esES": "\"¿Mi hija?\" {n}Horgus echa un rápido vistazo a Camellia.{/n} \"No creo que sepas qué tipo de persona es. {n}Horgus toma una respiración.{/n} De todos modos, parece que mi oferta anterior fue algo insultante. Dos mil monedas de oro está bien.\""
     },
     {
@@ -4023,7 +4265,7 @@
       "ruRU": "Кроме того, что меня сбил грузовик, я ничего не помню...",
       "deDE": "Abgesehen davon, dass ich von einem Lastwagen angefahren wurde, erinnere ich mich an nichts...",
       "frFR": "Mis à part être renversé par un camion, je ne me souviens de rien du tout...",
-      "zhCN": "除了被卡车撞了，我什么也不记得了……",
+      "zhCN": "(异世界主角)\"除了被卡车撞了，我什么也不记得了...\"",
       "esES": "Aparte de ser atropellado por un camión, no recuerdo nada en absoluto..."
     },
     {
@@ -4034,7 +4276,7 @@
       "ruRU": "Вы хотите присоединиться к моему гарему? Аневия тоже присоединяется.",
       "deDE": "Möchtest du meinem Harem beitreten? Auch Anevia schließt sich an.",
       "frFR": "Voulez-vous rejoindre mon harem ? Anevia se joint également.",
-      "zhCN": "你想加入我的后宫吗？安妮维雅也要加入。",
+      "zhCN": "(异世界主角)\"你想加入我的后宫吗？安妮维亚也要加入。\"",
       "esES": "¿Quieres unirte a mi harén? Anevia también se está uniendo."
     },
     {
@@ -4199,7 +4441,7 @@
       "ruRU": "Я всего лишь обычный парень, которого сбил грузовик, и каким-то образом оказался в этом мире.",
       "deDE": "Ich bin nur ein Typ, der von einem Lastwagen erfasst wurde und irgendwie in dieser Welt gelandet ist.",
       "frFR": "Je ne suis qu'un gars qui s'est fait renverser par un camion et qui s'est retrouvé mystérieusement dans ce monde.",
-      "zhCN": "我只是个被卡车撞到，然后不知何故来到这个世界的普通人。",
+      "zhCN": "(异世界主角) \"我只是个被卡车撞到，然后不知何故来到这个世界的普通人。\"",
       "esES": "Soy solo un chico que fue atropellado por un camión y de alguna manera terminé en este mundo."
     },
     {
@@ -4562,7 +4804,7 @@
       "ruRU": "Главный Герой Исекая {g|Encyclopedia:Weapon_Proficiency}умеет обращаться{/g} со всем простым и особым оружием, использовать легкие, средние и тяжелые доспехи, а также щиты(включая башенные). Они могут творить {g|Encyclopedia:Spell}заклинания{/g} своего класса, нося доспехи и щиты (включая башенные щиты), без обычного риска из-за брони и щитов. Если они получают мистические заклинания от уровней в других классов, для этих заклинаний правила по {g|Encyclopedia:Spell_Fail_Chance}риску провала{/g} работают как обычно.",
       "deDE": "Isekai-Protagonisten sind geübt im Umgang mit allen einfachen und {g|Encyclopedia:Weapon_Proficiency}kampffertigen Waffen{/g} sowie mit allen Rüstungen (schwer, leicht und mittel) und Schilde (einschließlich Turmschilde). Sie können {g|Encyclopedia:Spell}Zauber{/g} aus dieser Klasse wirken, während sie Rüstungen und Schilde (einschließlich Turmschilde) tragen, ohne das normale Risiko von Arkanscheitern zu haben, aber sie tragen das normale Risiko von Arkanscheitern für arkane Zauber, die sie von anderen Klassen erhalten.",
       "frFR": "Les protagonistes Isekai sont compétents avec toutes les armes simples et {g|Encyclopedia:Weapon_Proficiency}de guerre{/g} et avec toutes les armures (lourdes, légères et intermédiaires) et les boucliers (y compris les pavois). Ils peuvent lancer des {g|Encyclopedia:Spell}sorts{/g} de cette classe tout en portant des armures et des boucliers (y compris les pavois) sans encourir de risque d'échec des sorts profanes, mais ils encourront le risque normal d'échec des sorts profanes reçus d'autres classes.",
-      "zhCN": "异世界主角精通所有简单和军事武器，所有防具（重甲、轻甲和中甲）和盾牌（包括塔盾）。他们可以在穿戴盔甲和盾牌（包括塔盾）时施展来自这个职业的 {g|Encyclopedia:Spell}法术{/g} 而不会承受通常的 {g|Encyclopedia:Spell_Fail_Chance}奥术施法失败几率{/g}，但是他们施放来自其他职业的奥术法术时需要承受通常的奥术施法失败几率。",
+      "zhCN": "异世界主角精通所有简单和军事武器，所有防具（重甲、轻甲和中甲）和盾牌（包括塔盾）。他们可以在穿戴盔甲和盾牌（包括塔盾）时施展来自这个职业的{g|Encyclopedia:Spell}法术{/g}而不会承受通常的{g|Encyclopedia:Spell_Fail_Chance}奥术失败率{/g}，但是他们施放来自其他职业的奥术法术时需要承受通常的奥术失败率。",
       "esES": "Los protagonistas de Isekai son competentes con todas las armas simples y {g|Encyclopedia:Weapon_Proficiency}armas marciales{/g} y con todas las armaduras (pesadas, ligeras y medianas) y escudos (incluyendo escudos torre). Pueden lanzar {g|Encyclopedia:Spell}hechizos{/g} de esta clase mientras llevan armaduras y escudos (incluyendo escudos torre) sin sufrir la probabilidad normal de fallo arcana, pero sufren la probabilidad normal de fallo arcana para los hechizos arcana recibidos de otras clases."
     },
     {
@@ -4716,7 +4958,7 @@
       "ruRU": "На 15-м уровне вы получаете {g|Encyclopedia:Bonus}бонус{/g} мастерства к проверкам {g|Encyclopedia:Initiative}инициативы{/g} на величину модификатора {g|Encyclopedia:Charisma}Харизмы{/g}.",
       "deDE": "Auf Stufe 15 erhältst du einen Kompetenz {g|Encyclopedia:Bonus}Bonus{/g} zu deinen {g|Encyclopedia:Initiative}Initiative{/g} {g|Encyclopedia:Check}Checks{/g}, der deinem {g|Encyclopedia:Charisma}Charisma{/g}-Modifikator entspricht.",
       "frFR": "Au niveau 15, vous obtenez un {g|Encyclopedia:Bonus}bonus{/g} d'aptitude à vos {g|Encyclopedia:Initiative}jets{/g} d'{g|Encyclopedia:Initiative}initiative{/g} égal à votre modificateur de {g|Encyclopedia:Charisma}Charisme{/g}.",
-      "zhCN": "在15级时，你的 {g|Encyclopedia:Initiative}先攻{/g} {g|Encyclopedia:Check}检定{/g} 会获得一个等同于你的 {g|Encyclopedia:Charisma}魅力{/g} 调整值的 {g|Encyclopedia:Bonus}加值{/g}。",
+      "zhCN": "在15级时，你的{g|Encyclopedia:Initiative}先攻{/g}{g|Encyclopedia:Check}检定{/g}会获得一个等同于你的{g|Encyclopedia:Charisma}魅力{/g}调整值的{g|Encyclopedia:Bonus}加值{/g}。",
       "esES": "A nivel 15, obtienes una competencia {g|Encyclopedia:Bonus}bonificación{/g} a tus {g|Encyclopedia:Initiative}tiradas{/g} de {g|Encyclopedia:Initiative}iniciativa{/g} igual a tu modificador de {g|Encyclopedia:Charisma}Carisma{/g}."
     },
     {
@@ -5134,7 +5376,7 @@
       "ruRU": "Сгущение Светлой энергии",
       "deDE": "Kondensation von Lichtenergie",
       "frFR": "Condensation d'énergie lumineuse",
-      "zhCN": "光能凝结",
+      "zhCN": "光能量凝聚",
       "esES": "Condensación de energía luminosa"
     },
     {
@@ -5145,7 +5387,7 @@
       "ruRU": "Любое {g|Encyclopedia:Spell}заклинание{/g}, наносящее {g|Encyclopedia:Damage}урон{/g}, теперь меняет свои кости урона на d10, если они были меньше. Если они уже были равны или больше d10, то вместо этого заклинание наносит на один дополнительный урон за каждую брошенную кость.",
       "deDE": "Alle {g|Encyclopedia:Spell}Zauber{/g}, die {g|Encyclopedia:Damage}Schaden{/g} verursachen, ändern nun ihre Würfel zu d10, wenn sie nicht bereits d10 oder größer sind. Wenn sie bereits d10 oder größer sind, verursacht der Zauber stattdessen einen zusätzlichen Schadenspunkt pro gewürfeltem Würfel.",
       "frFR": "Tous les {g|Encyclopedia:Spell}sorts{/g} infligeant des {g|Encyclopedia:Damage}dégâts{/g} utilisent désormais des d10, s'ils n'utilisent pas déjà des d10 ou supérieurs. S'ils utilisent déjà des d10 ou supérieurs, le sort inflige à la place un point de dégât supplémentaire par dé.",
-      "zhCN": "任何不是d10或更高伤害骰的{g | Encyclopedia：Spell}法术{/ g}造成伤害骰现在都会变成d10。如果已经是d10或更高，则法术改为每个骰子额外造成一点伤害。",
+      "zhCN": "任何不是d10或更高伤害骰的{g|Encyclopedia:Spell}法术{/g}，伤害骰现在都会变成d10。如果已经是d10或更高，则效果改为每个骰子额外造成一点伤害。",
       "esES": "Cualquier {g|Encyclopedia:Spell}hechizo{/g} que cause {g|Encyclopedia:Damage}daño{/g} ahora cambia sus dados a d10, si no era d10 o mayor. Si ya era d10 o mayor, en cambio, el hechizo inflige un punto adicional de daño por cada dado lanzado."
     },
     {
@@ -5387,7 +5629,7 @@
       "ruRU": "Вдохновитель {g|Encyclopedia:Weapon_Proficiency}умеет обращаться{/g} со всем простым и особым оружием, использовать легкие, средние и тяжелые доспехи. Они могут творить {g|Encyclopedia:Spell}заклинания{/g} своего класса, нося доспехи и щиты (включая башенные щиты), без обычного риска из-за брони и щитов. Если они получают мистические заклинания от уровней в других классов, для этих заклинаний правила по {g|Encyclopedia:Spell_Fail_Chance}риску провала{/g} работают как обычно.",
       "deDE": "Der Mastermind ist mit allen einfachen und martialen Waffen sowie allen Rüstungen (schwer, leicht und mittel) vertraut. Sie können {g|Encyclopedia:Spell}Zauber{/g} aus diesem Klassenzauber wirken, während sie Rüstungen tragen, ohne das normale {g|Encyclopedia:Spell_Fail_Chance}Ausfallrisiko für arkanen Zaubereinsatz{/g} zu erleiden, aber sie unterliegen dem normalen Risiko für arkanen Zaubereinsatz für arkanische Zauber, die sie von anderen Klassen erhalten haben.",
       "frFR": "Le Génie est compétent avec toutes les armes simples et martiales ainsi qu'avec toutes les armures (lourdes, légères et intermédiaires). Ils peuvent lancer des {g|Encyclopedia:Spell}sorts{/g} de cette classe tout en portant une armure sans encourir de risque {g|Encyclopedia:Spell_Fail_Chance}d'échec des sorts profanes{/g}, mais ils encourent le risque normal d'échec des sorts profanes pour les sorts reçus d'autres classes.",
-      "zhCN": "阴谋家精通所有简单和军事武器，所有防具（重甲、轻甲和中甲）和盾牌（包括塔盾）。他们可以在穿戴盔甲和盾牌（包括塔盾）时施展来自这个职业的 {g|Encyclopedia:Spell}法术{/g} 而不会承受通常的 {g|Encyclopedia:Spell_Fail_Chance}奥术施法失败几率{/g}，但是他们施放来自其他职业的奥术法术时需要承受通常的奥术施法失败几率。",
+      "zhCN": "阴谋家精通所有简单和军事武器，所有防具（重甲、轻甲和中甲）和盾牌（包括塔盾）。他们可以在穿戴盔甲和盾牌（包括塔盾）时施展来自这个职业的{g|Encyclopedia:Spell}法术{/g}而不会承受通常的{g|Encyclopedia:Spell_Fail_Chance}奥术失败率{/g}，但是他们施放来自其他职业的奥术法术时需要承受通常的奥术失败率。",
       "esES": "El Maestro Mental es competente con todas las armas simples y marciales y con todas las armaduras (pesadas, ligeras e intermedias). Pueden lanzar {g|Encyclopedia:Spell}hechizos{/g} de esta clase mientras llevan armadura sin sufrir la normal {g|Encyclopedia:Spell_Fail_Chance}posibilidad de fallo de hechizo arcana{/g}, pero sufren la normal posibilidad de fallo de hechizo arcana para los hechizos arcana que reciben de otras clases."
     },
     {
@@ -5486,7 +5728,7 @@
       "ruRU": "Мастер самоконтроля",
       "deDE": "Meistere Selbstbeherrschung",
       "frFR": "Contrôle de soi",
-      "zhCN": "精通自制力",
+      "zhCN": "高度自律",
       "esES": "Domina el autocontrol"
     },
     {
@@ -5497,7 +5739,7 @@
       "ruRU": "Каждый раз, когда вы произносите заклинание {g|Encyclopedia:Spell}призыва{/g}, добавьте наибольший модификатор Интеллекта, Мудрости и Харизмы к общему количеству призываемых существ.",
       "deDE": "Jedes Mal, wenn du einen Beschwörungszauber {g|Encyclopedia:Spell}wirkst{/g}, füge den höchsten Modifikator von Intelligenz, Weisheit und Charisma zur Gesamtzahl der beschworenen Kreaturen hinzu.",
       "frFR": "À chaque fois que vous lancez un sort d'invocation {g|Encyclopedia:Spell}{/g}, ajoutez le modificateur le plus élevé entre Intelligence, Sagesse et Charisme au nombre total de créatures invoquées.",
-      "zhCN": "每次你施放一个召唤 {g|Encyclopedia:Spell}法术{/g}，将智力、感知和魅力中的最高修正值加到所召唤的生物总数上。",
+      "zhCN": "每次你施放一个召唤{g|Encyclopedia:Spell}法术{/g}，将智力、感知和魅力中的最高修正值加到所召唤的生物总数上。",
       "esES": "Cada vez que lances un conjuro de invocación {g|Encyclopedia:Spell}{/g}, añade el modificador más alto de Inteligencia, Sabiduría y Carisma al número total de criaturas invocadas."
     },
     {
@@ -5519,7 +5761,7 @@
       "ruRU": "Все принимают вас за чудо-гения, считая каждое ваше действие продуманным шагом в вашем 1000-летнем плане. Враги дрожат от страха, встречая вас, галлюцинируя о громадной пропасти между ними и вашим уровнем мощности.\nПреимущество: Вы всегда берете больший из двух бросков d20. Враги, которые атакуют вас, получают меньший из двух бросков d20 за один раунд",
       "deDE": "Jeder hält dich für ein Wunderkind und betrachtet jede deiner Handlungen als durchdachten Schritt in deinem 1000-Jahres-Plan. Feinde zittern vor Angst, wenn sie dir begegnen, und halluzinieren eine universumsgroße Kluft zwischen ihnen und deinem Kraftniveau.",
       "frFR": "Tout le monde vous prend pour un génie prodigieux, considérant chaque action que vous faites comme un mouvement calculé dans votre plan sur 1000 ans. Les ennemis tremblent de peur à votre rencontre, constatant un fossé de la taille de l'univers entre eux et votre niveau de puissance.\nBénéfices: A chaque d20 vous conservez le meilleur résultat sur deux jets. Les ennemis qui vous attaquent utilisent le plus mauvais résultat sur deux jets pendant un round.",
-      "zhCN": "每个人都错把你当成一个神童天才，认为你的每个行动都是你千年计划中精心策划的一步。敌人见到你就战栗不已，产生了一种宇宙级别的差距幻觉，认为你的实力超过了他们的太多。",
+      "zhCN": "每个人都错把你当成一个神童天才，认为你的每个行动都是你千年计划中精心策划的一步。敌人见到你就战栗不已，产生了一种宇宙级别的差距幻觉，认为你的实力超过了他们的太多。\n效果：你的掷骰总是取两个d20中较高的一个。攻击你的敌人在一轮内，掷骰总是取两个d20中较低的一个。",
       "esES": "Todo el mundo te confunde con un genio prodigioso, tratando cada acción que haces como un movimiento calculado en tu plan de 1000 años. Los enemigos tiemblan de miedo al encontrarte, alucinando una brecha del tamaño del universo entre ellos y tu nivel de poder."
     },
     {
@@ -5530,7 +5772,7 @@
       "ruRU": "Сверхмощная способность — Мета Удача",
       "deDE": "Übermächtige Fähigkeit - Meta-Glück",
       "frFR": "Capacité surpuissante - Méta-Chance",
-      "zhCN": "作弊能力 - 超幸运",
+      "zhCN": "作弊能力 - 气运缠身",
       "esES": "Habilidad sobrepotenciada - Meta-Suerte"
     },
     {
@@ -5552,7 +5794,7 @@
       "ruRU": "Мета Удача",
       "deDE": "Meta-Glück",
       "frFR": "Méta-Chance",
-      "zhCN": "超幸运",
+      "zhCN": "气运缠身",
       "esES": "Suerte meta"
     },
     {
@@ -5574,7 +5816,7 @@
       "ruRU": "Мета Удача (дебафф)",
       "deDE": "Meta-Glück (Debuff)",
       "frFR": "Méta-Chance (Debuff)",
-      "zhCN": "超幸运（减益）",
+      "zhCN": "气运缠身（减益）",
       "esES": "Meta Suerte (Debuff)"
     },
     {
@@ -5607,7 +5849,7 @@
       "ruRU": "Могучий Призыв",
       "deDE": "Mächtige Beschwörung",
       "frFR": "Invocation puissante",
-      "zhCN": "强大召唤",
+      "zhCN": "强力召唤",
       "esES": "Poderosa invocación"
     },
     {
@@ -5618,7 +5860,7 @@
       "ruRU": "Отныне вы невосприимчивы к воздействующим на разум эффектам.",
       "deDE": "Du erhältst Immunität gegenüber geistbeeinflussenden Effekten.",
       "frFR": "Vous gagnez une immunité aux effets mentaux.",
-      "zhCN": "你获得了免疫影响心智效果的能力。",
+      "zhCN": "你获得了免疫心智效果的能力。",
       "esES": "Obtienes inmunidad a los efectos que afectan a la mente."
     },
     {
@@ -5629,7 +5871,7 @@
       "ruRU": "Невосприимчивость к воздействию на разум",
       "deDE": "Immunität gegen geistige Beeinflussung",
       "frFR": "Immunité aux effets mentaux",
-      "zhCN": "免疫影响心智效果",
+      "zhCN": "心智效果免疫",
       "esES": "Inmunidad contra efectos mentales"
     },
     {
@@ -5948,7 +6190,7 @@
       "ruRU": "Владыка {g|Encyclopedia:Weapon_Proficiency}умеет обращаться{/g} со всем простым, особым и экзотическим оружием, использовать легкие, средние и тяжелые доспехи, а также щиты(включая башенные). Они могут творить {g|Encyclopedia:Spell}заклинания{/g} своего класса, нося доспехи и щиты (включая башенные щиты), без обычного риска из-за брони и щитов. Если они получают мистические заклинания от уровней в других классов, для этих заклинаний правила по {g|Encyclopedia:Spell_Fail_Chance}риску провала{/g} работают как обычно.",
       "deDE": "Der Overlord ist geübt im Umgang mit allen einfachen, martialen und exotischen Waffen sowie allen Rüstungen (schwer, mittel und leicht) und Schilden (einschließlich Turmschilden). Sie können {g|Encyclopedia:Spell}Zauber{/g} dieser Klasse wirken, während sie Rüstungen und Schilder (einschließlich Turmschilder) tragen, ohne das normale Risiko von {g|Encyclopedia:Spell_Fail_Chance}magischem Patzer{/g} aufgrund des Tragens von Rüstungen zu tragen, aber sie tragen das normale Risiko von arkanen Patzern für arkanische Zauber, die von anderen Klassen erhalten wurden.",
       "frFR": "Le Suzerain est compétent dans toutes les armes simples, martiales et exotiques, ainsi que dans toutes les armures (lourdes, légères et intermédiaires) et les boucliers (y compris les pavois). Ils peuvent lancer des {g|Encyclopedia:Spell}sorts{/g} de cette classe tout en portant des armures et des boucliers (y compris les pavois) sans encourir de risque d'{g|Encyclopedia:Spell_Fail_Chance}échec de sorts profanes{/g} en raison du port d'armures, mais ils encourent le risque normal d'échec de sort profanes pour les sorts reçus d'autres classes.",
-      "zhCN": "霸主精通所有简单、军事和异种武器，所有防具（重甲、轻甲和中甲）和盾牌（包括塔盾）。他们可以在穿戴盔甲和盾牌（包括塔盾）时施展来自这个职业的 {g|Encyclopedia:Spell}法术{/g} 而不会承受通常的 {g|Encyclopedia:Spell_Fail_Chance}奥术施法失败几率{/g}，但是他们施放来自其他职业的奥术法术时需要承受通常的奥术施法失败几率。",
+      "zhCN": "霸主精通所有简单、军事和异种武器，所有防具（重甲、轻甲和中甲）和盾牌（包括塔盾）。他们可以在穿戴盔甲和盾牌（包括塔盾）时施展来自这个职业的{g|Encyclopedia:Spell}法术{/g}而不会承受通常的{g|Encyclopedia:Spell_Fail_Chance}奥术失败率{/g}，但是他们施放来自其他职业的奥术法术时需要承受通常的奥术失败率。",
       "esES": "El Overlord es competente con todas las armas simples, marciales y exóticas, así como con todas las armaduras (pesadas, ligeras y medianas) y escudos (incluidos los escudos torre). Pueden lanzar {g|Encyclopedia:Spell}hechizos{/g} de esta clase mientras llevan armaduras y escudos (incluidos los escudos torre) sin sufrir el riesgo normal de {g|Encyclopedia:Spell_Fail_Chance}fracaso mágico{/g} debido al uso de armaduras, pero sufren el riesgo normal de fracaso mágico arcana para los hechizos arcana recibidos de otras clases."
     },
     {
@@ -6135,7 +6377,7 @@
       "ruRU": "Вы ориентируетесь в каждом разговоре и ведете бой с идеальной точностью. Каждое слово предсказано, каждое действие предвидено. Ваши предчувствия направляют вас в ваших поисках, как будто вы уже испытывали это раньше... \nПреимущества: Вы всегда бросаете 20 на всех бросках d20.",
       "deDE": "Du navigierst jede Konversation und jeden Kampf mit perfekter Genauigkeit. Jedes Wort ist vorhersehbar; jede Aktion ist vorhergesehen. Deine Vorahnungen führen dich auf deiner Quest, als hättest du dies bereits erlebt... Vorteil: Du würfelst immer eine 20 bei allen d20-Würfen.",
       "frFR": "Vous naviguez dans chaque conversation et combat avec une précision parfaite. Chaque mot est prédit; chaque action est prévue. Vos prémonitions vous guident dans votre quête, comme si vous l'aviez déjà vécue auparavant ... Avantage : vous obtenez toujours un 20 sur tous les jets de d20.",
-      "zhCN": "你可以完美地掌控每一个对话和战斗。每个词都可以预测，每个行动都可以预见。你的预知在你的任务中指引你，就好像你已经经历过这一切... 效果：你在所有d20骰子中总是掷出20。",
+      "zhCN": "你可以完美地掌控每一个对话和战斗。每个词都可以预测，每个行动都可以预见。你的预知在你的任务中指引你，就好像你已经经历过这一切...\n效果：你在所有d20骰子中总是掷出20。",
       "esES": "Navegas por cada conversación y lucha con precisión perfecta. Cada palabra es predicha; cada acción es prevista. Tus premoniciones te guían en tu búsqueda, como si hubieras experimentado esto antes... Beneficio: siempre sacas un 20 en todos los lanzamientos de d20."
     },
     {
@@ -6157,7 +6399,7 @@
       "ruRU": "Этот персонаж всегда {g|Encyclopedia:Dice}выбрасывает{/g} 20 на всех бросках d20.",
       "deDE": "Dieser Charakter würfelt immer {g|Encyclopedia:Dice}20{/g} bei allen Würfen mit einem d20.",
       "frFR": "Ce personnage obtient toujours {g|Encyclopedia:Dice}20{/g} sur tous les jets de d20.",
-      "zhCN": "这个角色在 {g|Encyclopedia:Dice}掷骰{/g} D20的时候总是掷出20。",
+      "zhCN": "这个角色在{g|Encyclopedia:Dice}掷骰{/g}D20的时候总是掷出20。",
       "esES": "Este personaje siempre {g|Encyclopedia:Dice}saca{/g} un 20 en todos los lanzamientos de D20."
     },
     {
@@ -6245,7 +6487,7 @@
       "ruRU": "Вы получаете бонус удачи к {g|Encyclopedia:Armor_Class}защите{/g} и всем {g|Encyclopedia:Saving_Throw}спасброскам{/g}, равный вашему уровню персонажа.",
       "deDE": "Du erhältst einen Glücksbonus auf deine {g|Encyclopedia:Armor_Class}Rüstungsklasse{/g} und alle {g|Encyclopedia:Saving_Throw}Rettungswürfe{/g}, der deinem Charakterlevel entspricht.",
       "frFR": "Vous obtenez un bonus de chance à votre {g|Encyclopedia:Armor_Class}classe d'armure{/g} et à tous les {g|Encyclopedia:Saving_Throw}jets de sauvegarde{/g} égal à votre niveau de personnage.",
-      "zhCN": "你的 {g|Encyclopedia:Armor_Class}AC{/g} 和所有 {g|Encyclopedia:Saving_Throw}豁免检定{/g} 获得等同于你角色等级的幸运加值。",
+      "zhCN": "你的{g|Encyclopedia:Armor_Class}AC{/g}和所有{g|Encyclopedia:Saving_Throw}豁免检定{/g}获得等同于你角色等级的幸运加值。",
       "esES": "Obtienes un bonificador de suerte a tu {g|Encyclopedia:Armor_Class}Clase de Armadura{/g} y a todas las {g|Encyclopedia:Saving_Throw}tiradas de salvación{/g} igual a tu nivel de personaje."
     },
     {
@@ -6586,7 +6828,7 @@
       "ruRU": "Мир Теней",
       "deDE": "Schattenreich",
       "frFR": "Royaume des Ombres",
-      "zhCN": "暗影界",
+      "zhCN": "影界",
       "esES": "Reino de las Sombras"
     },
     {
@@ -6982,7 +7224,7 @@
       "ruRU": "Основным действием, вы можете увеличить ваш размер на две категории и получить бонус +10 к скорости, +12 к силе, -2 к ловкости, +6 к выносливости и штраф -2 к защите.",
       "deDE": "Als Standardaktion erhöhe deine Größe um zwei Größenkategorien und erhalte +10 Geschwindigkeit, +12 Stärke, -2 Geschicklichkeit, +6 Konstitution und einen -2 Malus auf die RK.",
       "frFR": "Par une action standard, augmentez votre taille de deux catégories et gagnez +10 en Vitesse, +12 en Force, -2 en Dextérité, +6 en Constitution et une pénalité de -2 à l'AC.",
-      "zhCN": "作为一个标准动作，将你的体型增加两个级别，并获得+10速度，+12力量，-2敏捷，+6体质和-2AC。",
+      "zhCN": "使用一个标准动作，将你的体型增加两个级别，并获得+10速度，+12力量，-2敏捷，+6体质和-2AC。",
       "esES": "Como acción estándar, aumenta tu tamaño en dos categorías de tamaño y gana +10 a la velocidad, +12 a la fuerza, -2 a la destreza, +6 a la constitución y una penalización de -2 a la CA."
     },
     {
@@ -7147,7 +7389,7 @@
       "ruRU": "Вы можете прибавить {g|Encyclopedia:Damage}урон{/g} своей {g|Encyclopedia:Attack}атаки{/g} исподтишка к любому {g|Encyclopedia:Spell}заклинанию{/g}, которое наносит урон, если цели {g|Encyclopedia:Flat_Footed}застигнуты в расплох{/g}. Этот дополнительный урон применяется только к заклинаниям, которые наносят урон очкам здоровья, и он является того же типа, что и заклинание. Если заклинание позволяет {g|Encyclopedia:Saving_Throw}спасбросок{/g} для отмены или уменьшения урона, то он также отменяет или уменьшает урон от атаки исподтишка.",
       "deDE": "Du kannst deinen Schleichangriff {g|Encyclopedia:Attack}Schaden{/g} zu jedem {g|Encyclopedia:Spell}Zauber{/g} hinzufügen, der Schaden verursacht, wenn das Ziel {g|Encyclopedia:Flat_Footed}überrascht{/g} ist. Dieser zusätzliche Schaden gilt nur für Zauber, die Trefferpunktschaden verursachen, und der zusätzliche Schaden ist vom gleichen Typ wie der Zauber. Wenn der Zauber einen {g|Encyclopedia:Saving_Throw}Rettungswurf{/g} zulässt, um den Schaden zu negieren oder zu halbieren, negiert oder halbiert er auch den Schleichangriffsschaden.",
       "frFR": "Vous pouvez ajouter vos dégâts d'attaque sournoise à n'importe quel {g|Encyclopedia:Spell}sort{/g} qui inflige des dégâts, si les cibles sont {g|Encyclopedia:Flat_Footed}prises au dépourvu{/g}. Ces dégâts supplémentaires ne s'appliquent qu'aux sorts qui infligent des dégâts aux points de vie, et les dégâts supplémentaires sont du même type que le sort. Si le sort permet un {g|Encyclopedia:Saving_Throw}jet de sauvegarde{/g} pour annuler ou réduire les dégâts, il annule également ou réduit les dégâts de l'attaque sournoise.",
-      "zhCN": "如果目标处于 {g|Encyclopedia:Flat_Footed}措手不及{/g} 状态，你可以将你的潜行 {g|Encyclopedia:Attack}攻击{/g} 和 {g|Encyclopedia:Damage}伤害{/g} 添加到任何造成伤害的 {g|Encyclopedia:Spell}法术{/g} 中。这个额外伤害仅适用于对生命值造成伤害的法术，并且额外伤害与法术的伤害类型相同。如果法术允许 {g|Encyclopedia:Saving_Throw}豁免检定{/g} 来抵消或减半伤害，则也会抵消或减半偷袭的伤害。",
+      "zhCN": "如果目标处于{g|Encyclopedia:Flat_Footed}措手不及{/g}状态，你可以将你的潜行{g|Encyclopedia:Attack}攻击{/g}和{g|Encyclopedia:Damage}伤害{/g}添加到任何造成伤害的{g|Encyclopedia:Spell}法术{/g}中。这个额外伤害仅适用于对生命值造成伤害的法术，并且额外伤害与法术的伤害类型相同。如果法术允许{g|Encyclopedia:Saving_Throw}豁免检定{/g}来抵消或减半伤害，则也会抵消或减半偷袭的伤害。",
       "esES": "Puedes agregar tu ataque sigiloso {g|Encyclopedia:Attack}ataque{/g} y tu {g|Encyclopedia:Damage}daño{/g} a cualquier {g|Encyclopedia:Spell}hechizo{/g} que cause daño, si los objetivos están {g|Encyclopedia:Flat_Footed}desprevenidos{/g}. Este daño adicional solo se aplica a los hechizos que causan daño a los puntos de golpe, y el daño adicional es del mismo tipo que el hechizo. Si el hechizo permite un {g|Encyclopedia:Saving_Throw}tirada de salvación{/g} para negar o reducir el daño, también niega o reduce el daño del ataque sigiloso."
     },
     {
@@ -7279,7 +7521,7 @@
       "ruRU": "Вы обладаете устойчивостью к магии, равной 10 + удвоенный уровень вашего персонажа.",
       "deDE": "Du erhältst Zauberei-Resistenz gleich 10 + dem Doppelten deines Charakterlevels.",
       "frFR": "Vous gagnez une résistance à la magie égale à 10 + deux fois votre niveau de personnage.",
-      "zhCN": "你获得法术抵抗，其数值等于10加上你的角色等级的两倍。",
+      "zhCN": "你获得法术抗力，其数值等于10加上你的角色等级的两倍。",
       "esES": "Obtienes una resistencia a la magia igual a 10 + el doble de tu nivel de personaje."
     },
     {
@@ -7290,7 +7532,7 @@
       "ruRU": "Защита от Магии",
       "deDE": "Zauberneutralisation",
       "frFR": "Annulation de sort",
-      "zhCN": "法术抵消",
+      "zhCN": "法术否决",
       "esES": "Negación de hechizo"
     },
     {
@@ -7356,7 +7598,7 @@
       "ruRU": "Вы начинаете с оружием Дубинка из холодного железа.",
       "deDE": "Du startest mit einem kalten Eisenclub.",
       "frFR": "Vous commencez avec un gourdin en fer froid.",
-      "zhCN": "你携带一根寒铁棍棒开始旅程。",
+      "zhCN": "你携带一根寒铁木棒开始旅程。",
       "esES": "Comienzas con un palo de hierro frío."
     },
     {
@@ -7389,7 +7631,7 @@
       "ruRU": "Вы начинаете с оружием Орочий обоюдоострый топор из холодного железа.",
       "deDE": "Du startest mit einer kalten Eisen-Doppelaxt.",
       "frFR": "Vous commencez avec une double hache en fer froid.",
-      "zhCN": "你携带一把寒铁双头斧开始旅程。",
+      "zhCN": "你携带一把寒铁兽人双头斧开始旅程。",
       "esES": "Comienzas con un hacha doble de hierro frío."
     },
     {
@@ -7444,7 +7686,7 @@
       "ruRU": "Вы начинаете с оружием Эльфийский изогнутый клинок из холодного железа.",
       "deDE": "Du startest mit einer kalten Eisenelfen-Krummsäbel.",
       "frFR": "Vous commencez avec une lame elfique courbe en fer froid.",
-      "zhCN": "你携带一把寒铁精灵曲剑开始旅程。",
+      "zhCN": "你携带一把寒铁精灵曲刃开始旅程。",
       "esES": "Comienzas con una hoja elfica curvada de hierro frío."
     },
     {
@@ -7532,7 +7774,7 @@
       "ruRU": "Вы начинаете с оружием Большая палица из холодного железа.",
       "deDE": "Du startest mit einem Kalteisen-Großknüppel.",
       "frFR": "Vous commencez avec un grand gourdin en fer froid.",
-      "zhCN": "你携带一根寒铁巨型棍棒开始旅程。",
+      "zhCN": "你携带一根寒铁巨木棒开始旅程。",
       "esES": "Comienzas con un gran garrote de hierro frío."
     },
     {
@@ -7730,7 +7972,7 @@
       "ruRU": "Вы начинаете с оружием Нунчаки из холодного железа.",
       "deDE": "Du startest mit einem Nunchaku aus kaltem Eisen.",
       "frFR": "Vous commencez avec un nunchaku en fer froid.",
-      "zhCN": "你携带一把寒铁双节棍开始旅程。",
+      "zhCN": "你携带一把寒铁双截棍开始旅程。",
       "esES": "Empiezas con un nunchaku de hierro frío."
     },
     {
@@ -7906,7 +8148,7 @@
       "ruRU": "Вы начинаете с оружием Тонги из холодного железа.",
       "deDE": "Du startest mit einer Kalt-Eisen-Tongi.",
       "frFR": "Vous commencez avec une tongi en fer froid.",
-      "zhCN": "你携带一把寒铁双截棍开始旅程。",
+      "zhCN": "你携带一把寒铁钉斧开始旅程。",
       "esES": "Comienzas con una tenaza de hierro frío."
     },
     {
@@ -7928,7 +8170,7 @@
       "ruRU": "Вы начинаете с оружием Дварфийский ургрош из холодного железа.",
       "deDE": "Du startest mit einem Kaltiron-Urgrosh.",
       "frFR": "Vous commencez avec un urgrosh en fer froid.",
-      "zhCN": "你携带一把寒铁钉斧开始旅程。",
+      "zhCN": "你携带一把寒铁矮人矛斧开始旅程。",
       "esES": "Comienzas con un urgrosh de hierro frío."
     },
     {
@@ -8016,7 +8258,7 @@
       "ruRU": "Это {g|Encyclopedia:Spell}заклинание{/g} призывает Аришкагаль. Призванные монстры появляются там, где вы укажете, и действуют в соответствии с результатами своей  {g|Encyclopedia:Check}проверки{/g} {g|Encyclopedia:Initiative}инициативы{/g}. Они {g|Encyclopedia:Attack}атакуют{/g} ваших противников так хорошо, как могут.",
       "deDE": "Dieser {g|Encyclopedia:Spell}Zauber{/g} beschwört Areshkagal herbei. Beschörte Monster erscheinen an der Stelle, die Sie bestimmen, und handeln entsprechend ihrer {g|Encyclopedia:Initiative}Initiative{/g} {g|Encyclopedia:Check}Wurf{/g} Ergebnisse. Sie {g|Encyclopedia:Attack}greifen{/g} Ihre Gegner nach bestem Wissen und Gewissen an.",
       "frFR": "Ce {g|Encyclopedia:Spell}sort{/g} invoque Areshkagal. Les monstres invoqués apparaissent où vous les désignez et agissent selon les résultats de leur {g|Encyclopedia:Initiative}initiative{/g}. Ils {g|Encyclopedia:Attack}attaquent{/g} vos adversaires au mieux de leurs capacités.",
-      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤出了阿雷什卡高。召唤的怪物会出现在你指定的地方，并根据它们的{g|Encyclopedia:Initiative}先攻值{/g}和{g|Encyclopedia:Check}检定结果{/g}进行行动。它们将尽最大努力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
+      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤出了阿雷什卡高。被召唤的怪物出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻值{/g}{g|Encyclopedia:Check}检定{/g}结果行动。它们会尽力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
       "esES": "Este {g|Encyclopedia:Spell}hechizo{/g} invoca a Areshkagal. Los monstruos invocados aparecen donde designes y actúan de acuerdo a sus resultados de {g|Encyclopedia:Initiative}iniciativa{/g} y {g|Encyclopedia:Check}comprobación{/g}. {g|Encyclopedia:Attack}Atacan{/g} a tus oponentes con lo mejor de sus habilidades."
     },
     {
@@ -8038,7 +8280,7 @@
       "ruRU": "Это {g|Encyclopedia:Spell}заклинание{/g} призывает лорда демонов Бафомета. Призванные монстры появляются там, где вы укажете, и действуют в соответствии с результатами своей  {g|Encyclopedia:Check}проверки{/g} {g|Encyclopedia:Initiative}инициативы{/g}. Они {g|Encyclopedia:Attack}атакуют{/g} ваших противников так хорошо, как могут.",
       "deDE": "Dieser {g|Encyclopedia:Spell}Zauber{/g} beschwört den Dämonenfürsten Baphomet herbei. Die beschworenen Monster erscheinen an der Stelle, die du bestimmst, und handeln entsprechend ihren {g|Encyclopedia:Initiative}Initiative{/g}-{g|Encyclopedia:Check}Würfelergebnissen{/g}. Sie {g|Encyclopedia:Attack}greifen{/g} deine Gegner nach bestem Vermögen an.",
       "frFR": "Ce {g|Encyclopedia:Spell}sort{/g} invoque le Seigneur démon Baphomet. Les monstres invoqués apparaissent là où vous le désignez et agissent en fonction de leurs {g|Encyclopedia:Initiative}initiatives{/g}. Ils {g|Encyclopedia:Attack}attaquent{/g} vos adversaires du mieux qu'ils peuvent.",
-      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤恶魔领主巴弗灭。召唤出的怪物会出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻{/g}{g|Encyclopedia:Check}检定{/g}结果行动。它们将以最佳能力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
+      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤恶魔领主巴弗灭。被召唤的怪物出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻值{/g}{g|Encyclopedia:Check}检定{/g}结果行动。它们会尽力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
       "esES": "Este {g|Encyclopedia:Spell}conjuro{/g} invoca al Señor demonio Baphomet. Los monstruos invocados aparecen donde designes y actúan de acuerdo a los resultados de su {g|Encyclopedia:Initiative}iniciativa{/g} y {g|Encyclopedia:Check}comprobación{/g}. {g|Encyclopedia:Attack}Atacan{/g} a tus oponentes lo mejor que puedan."
     },
     {
@@ -8093,7 +8335,7 @@
       "ruRU": "Заклинание {g|Encyclopedia:Spell}призывает{/g} Опустошителя, Игривую Тьму, Бафомета, Дескари, Ноктикулу, Мефистофеля или Аришкагаль. Призванные монстры появляются там, где вы укажете, и действуют в соответствии с результатами своей  {g|Encyclopedia:Check}проверки{/g} {g|Encyclopedia:Initiative}инициативы{/g}. Они {g|Encyclopedia:Attack}атакуют{/g} ваших противников так хорошо, как могут.",
       "deDE": "Dieser {g|Encyclopedia:Spell}Zauber{/g} beschwört einen Verwüster, einen verspielten Schatten, Baphomet, Deskari, Nocticula, Mephistopheles oder Areshkagal herauf. Die beschworenen Monster erscheinen dort, wo du es bestimmst, und handeln entsprechend ihrem {g|Encyclopedia:Initiative}Initiative{/g} {g|Encyclopedia:Check}Ergebnis{/g}. Sie {g|Encyclopedia:Attack}greifen{/g} deine Gegner nach besten Kräften an.",
       "frFR": "Ce {g|Encyclopedia:Spell}sort{/g} invoque un Destructeur, une Ombre Joueuse, Baphomet, Deskari, Nocticula, Mephistopheles ou Areshkagal. Les monstres invoqués apparaissent où vous le désignez et agissent en fonction de leur {g|Encyclopedia:Initiative}initiative{/g}. Ils {g|Encyclopedia:Attack}attaquent{/g} vos adversaires de leur mieux.",
-      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤毁灭者、取乐黑暗、巴弗灭、德斯卡瑞、诺提库拉、墨菲斯托菲勒斯或者阿雷什卡高。召唤出的怪物出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻值{/g} {g|Encyclopedia:Check}结果{/g}行动。它们会尽最大努力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
+      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤歼灭魔机、取乐黑暗、巴弗灭、德斯卡瑞、诺提库拉、墨菲斯托菲勒斯或者阿雷什卡高。被召唤的怪物出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻值{/g}{g|Encyclopedia:Check}检定{/g}结果行动。它们会尽力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
       "esES": "Este {g|Encyclopedia:Spell}hechizo{/g} convoca a un Devastador, Oscuridad Juguetona, Baphomet, Deskari, Nocticula, Mefistófeles o Areshkagal. Los monstruos invocados aparecen donde lo designas y actúan de acuerdo con sus {g|Encyclopedia:Initiative}resultados de iniciativa{/g} {g|Encyclopedia:Check}de comprobación{/g}. Atacan a tus oponentes lo mejor que puedan."
     },
     {
@@ -8115,7 +8357,7 @@
       "ruRU": "Нет ничего, чего бы вы не смогли призвать. Ваши призывы услышаны; ваши команды безусловны. Даже лорды демонов не проявляют пренебрежения... и трепетно повинуются. Преимущество: \nДействием полного раунда вы призываете могущественное существо, способное стать Бедствием. Вы можете призвать одно из следующих существ: Опустошителя, Игривую Тьму, Бафомета, Дескари, Ноктикулу, Мефистофеля или Аришкагаль.",
       "deDE": "Es gibt nichts, was du nicht beschwören kannst. Deine Rufe werden erhört; deine Befehle sind absolut. Selbst Dämonenfürsten zeigen keine Fahrlässigkeit... und gehorchen zitternd.",
       "frFR": "Il n'y a rien que vous ne puissiez invoquer. Vos appels sont entendus; vos ordres sont absolus. Même les seigneurs démoniaques ne montrent aucune négligence... et obéissent en tremblants.",
-      "zhCN": "没有任何东西可以阻止你的召唤。你的召唤会被听从；你的命令是绝对的。即使是魔鬼领主也毫不疏忽……并且战战兢兢地服从。",
+      "zhCN": "没有任何东西可以阻止你的召唤。你的召唤会被听从；你的命令是绝对的。即使是魔鬼领主也毫不疏忽……并且战战兢兢地服从。\n效果：使用一个标准动作，你召唤了一些强大的存在从而给世间带来灾厄。你可以召唤以下存在中的一个：歼灭魔机、取乐黑暗、巴弗灭、德斯卡瑞、诺提库拉、墨菲斯托菲勒斯或者阿雷什卡高。",
       "esES": "No hay nada que no puedas invocar. Tus llamados son atendidos; tus órdenes son absolutas. Incluso los señores demonios no muestran negligencia... y obedecen temblorosamente."
     },
     {
@@ -8126,7 +8368,7 @@
       "ruRU": "Это заклинание вызывает лорда демонов Дескари. Призванные монстры появляются там, где вы укажете, и действуют в соответствии с результатами своей  {g|Encyclopedia:Check}проверки{/g} {g|Encyclopedia:Initiative}инициативы{/g}. Они {g|Encyclopedia:Attack}атакуют{/g} ваших противников так хорошо, как могут.",
       "deDE": "Dieser Zauber beschwört Dämonenfürst Deskari herbei. Beschworene Monster erscheinen an der Stelle, die du bestimmst, und handeln entsprechend ihrem Initiative- und Wurfresultat. Sie greifen deine Gegner nach bestem Können an.",
       "frFR": "Ce sort invoque le Seigneur démon Deskari. Les monstres invoqués apparaissent à l'endroit que vous avez désigné et agissent en fonction de leur initiative et de leurs résultats de jet. Ils attaquent vos adversaires du mieux qu'ils peuvent.",
-      "zhCN": "这个法术召唤恶魔领主德斯卡瑞。召唤的怪物出现在你指定的位置，并根据其先攻检定结果行动。他们会尽力攻击你的对手。",
+      "zhCN": "这个法术召唤恶魔领主德斯卡瑞。被召唤的怪物出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻值{/g}{g|Encyclopedia:Check}检定{/g}结果行动。它们会尽力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
       "esES": "Este hechizo invoca al Señor Demonio Deskari. Los monstruos invocados aparecen donde lo designes y actúan según sus resultados de iniciativa y de chequeo. Atacan a tus oponentes con lo mejor de su habilidad."
     },
     {
@@ -8148,7 +8390,7 @@
       "ruRU": "Заклинание {g|Encyclopedia:Spell}призывает{/g} Архидьявола Мефистофеля. Призванные монстры появляются там, где вы укажете, и действуют в соответствии с результатами своей  {g|Encyclopedia:Check}проверки{/g} {g|Encyclopedia:Initiative}инициативы{/g}. Они {g|Encyclopedia:Attack}атакуют{/g} ваших противников так хорошо, как могут.",
       "deDE": "Dieses {g|Encyclopedia:Spell}Zauber{/g} beschwört Erz-Teufel Mephistopheles herbei. Beschworene Monster erscheinen dort, wo du es anordnest und handeln entsprechend ihrem {g|Encyclopedia:Initiative}Initiative{/g} {g|Encyclopedia:Check}Ergebnis{/g}. Sie {g|Encyclopedia:Attack}greifen{/g} deine Gegner nach besten Kräften an.",
       "frFR": "Ce {g|Encyclopedia:Spell}sort{/g} invoque l'Archidiable Mephistopheles. Les monstres invoqués apparaissent où vous le désignez et agissent en fonction de leur {g|Encyclopedia:Initiative}initiative{/g}. Ils {g|Encyclopedia:Attack}attaquent{/g} vos adversaires de leur mieux.",
-      "zhCN": "此{g|Encyclopedia:Spell}法术{/g}召唤大恶魔墨菲斯托菲勒斯。召唤出的怪物将出现在你指定的地点，并根据它们的 {g|Encyclopedia:Initiative}先攻值{/g} {g|Encyclopedia:Check}检定结果{/g}来行动。它们会尽最大努力 {g|Encyclopedia:Attack}攻击{/g} 你的对手。",
+      "zhCN": "此{g|Encyclopedia:Spell}法术{/g}召唤大恶魔墨菲斯托菲勒斯。被召唤的怪物出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻值{/g}{g|Encyclopedia:Check}检定{/g}结果行动。它们会尽力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
       "esES": "Este {g|Encyclopedia:Spell}conjuro{/g} convoca al Archidiablo Mefistófeles. Los monstruos convocados aparecen donde designes y actúan según sus {g|Encyclopedia:Initiative}resultados de iniciativa{/g} {g|Encyclopedia:Check}de chequeo{/g}. Ellos {g|Encyclopedia:Attack}atacarán{/g} a tus oponentes con lo mejor de sus habilidades."
     },
     {
@@ -8170,7 +8412,7 @@
       "ruRU": "Это заклинание призывает лорда демонов Ноктикулу. Призванные монстры появляются там, где вы укажете, и действуют в соответствии с результатами своей  {g|Encyclopedia:Check}проверки{/g} {g|Encyclopedia:Initiative}инициативы{/g}. Они {g|Encyclopedia:Attack}атакуют{/g} ваших противников так хорошо, как могут.",
       "deDE": "Dieser {g|Encyclopedia:Spell}Zauber{/g} beschwört Dämonenfürstin Nocticula herbei. Beschriebene Monster erscheinen an dem Ort, den Sie bestimmen, und handeln entsprechend ihren {g|Encyclopedia:Initiative}Initiativ{/g}- {g|Encyclopedia:Check}Prüfung{/g} Ergebnissen. Sie {g|Encyclopedia:Attack}greifen{/g} Ihre Gegner nach bestem Wissen und Gewissen an.",
       "frFR": "Ce {g|Encyclopedia:Spell}sort{/g} invoque le Seigneur démon Nocticula. Les monstres invoqués apparaissent où vous le désignez et agissent selon leur initiative. Ils {g|Encyclopedia:Attack}attaquent{/g} vos adversaires du mieux qu'ils peuvent.",
-      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤恶魔领主诺提库拉。召唤出的怪物将出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻{/g} {g|Encyclopedia:Check}检定{/g}结果行动。它们会尽力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
+      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤恶魔领主诺提库拉。被召唤的怪物出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻值{/g}{g|Encyclopedia:Check}检定{/g}结果行动。它们会尽力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
       "esES": "Este {g|Encyclopedia:Spell}hechizo{/g} convoca al Señor demonio Nocticula. Los monstruos convocados aparecen donde los designes y actúan según los resultados de su {g|Encyclopedia:Initiative}iniciativa{/g} y {g|Encyclopedia:Check}comprobación{/g}. {g|Encyclopedia:Attack}Atacarán{/g} a tus oponentes de la mejor manera posible."
     },
     {
@@ -8192,7 +8434,7 @@
       "ruRU": "Это заклинание призывает Опустошителя. Призванные монстры появляются там, где вы укажете, и действуют в соответствии с результатами своей  {g|Encyclopedia:Check}проверки{/g} {g|Encyclopedia:Initiative}инициативы{/g}. Они {g|Encyclopedia:Attack}атакуют{/g} ваших противников так хорошо, как могут.",
       "deDE": "Dieser {g|Encyclopedia:Spell}Zauber{/g} beschwört einen Verwüster. Beschworene Monster erscheinen an der von dir bestimmten Stelle und handeln entsprechend ihren Ergebnissen bei der {g|Encyclopedia:Initiative}Initiative{/g}-{g|Encyclopedia:Check}Probe{/g}. Sie {g|Encyclopedia:Attack}greifen{/g} deine Gegner nach bestem Vermögen an.",
       "frFR": "Ce {g|Encyclopedia:Spell}sort{/g} invoque un Destructeur. Les monstres invoqués apparaissent à l'endroit que vous désignez et agissent selon leur {g|Encyclopedia:Initiative}initiative{/g}. Ils {g|Encyclopedia:Attack}attaquent{/g} vos adversaires de leur mieux.",
-      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤了一个毁灭者。召唤的怪物出现在你指定的位置，并根据他们的{g|Encyclopedia:Initiative}先攻{/g} {g|Encyclopedia:Check}检定{/g}结果行动。他们会尽力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
+      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤了一个歼灭魔机。被召唤的怪物出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻值{/g}{g|Encyclopedia:Check}检定{/g}结果行动。它们会尽力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
       "esES": "Este {g|Encyclopedia:Spell}hechizo{/g} invoca a un Devastador. Los monstruos invocados aparecen donde tú designes y actúan según los resultados de su {g|Encyclopedia:Initiative}iniciativa{/g} y {g|Encyclopedia:Check}comprobaciones{/g}. {g|Encyclopedia:Attack}Atacan{/g} a tus oponentes lo mejor que puedan."
     },
     {
@@ -8203,7 +8445,7 @@
       "ruRU": "Сверхмощная Способность - Призыв Бедствия (Опустошитель)",
       "deDE": "Übermächtige Fähigkeit - Katastropheneinberufung (Verwüster)",
       "frFR": "Capacité surpuissante - Invocation de Calamité (Dévastateur)",
-      "zhCN": "作弊能力 - 召唤灾厄（毁灭者）",
+      "zhCN": "作弊能力 - 召唤灾厄（歼灭魔机）",
       "esES": "Habilidad sobrepotenciada - Invocar la calamidad (Devastador)"
     },
     {
@@ -8247,7 +8489,7 @@
       "ruRU": "Это {g|Encyclopedia:Spell}заклинание{/g} призывает Гидру. Призванные монстры появляются там, где вы укажете, и действуют в соответствии с результатами своей  {g|Encyclopedia:Check}проверки{/g} {g|Encyclopedia:Initiative}инициативы{/g}. Они {g|Encyclopedia:Attack}атакуют{/g} ваших противников так хорошо, как могут.",
       "deDE": "Dieser {g|Encyclopedia:Spell}Zauber{/g} beschwört eine Hydra herbei. Beschworene Monster erscheinen an den von Ihnen bestimmten Orten und handeln entsprechend ihren {g|Encyclopedia:Initiative}Initiative{/g} {g|Encyclopedia:Check}Überprüfungsergebnissen{/g}. Sie {g|Encyclopedia:Attack}greifen{/g} Ihre Gegner nach bestem Vermögen an.",
       "frFR": "Ce {g|Encyclopedia:Spell}sort{/g} invoque une hydre. Les monstres invoqués apparaissent à l'endroit que vous désignez et agissent selon leur {g|Encyclopedia:Initiative}initiative{/g}. Ils {g|Encyclopedia:Attack}attaquent{/g} vos adversaires de leur mieux.",
-      "zhCN": "这个 {g|Encyclopedia:Spell}法术{/g} 召唤了一头九头蛇。召唤的怪物出现在你指定的位置，并根据他们的 {g|Encyclopedia:Initiative}先攻{/g} {g|Encyclopedia:Check}检定结果{/g}行动。它们会尽力 {g|Encyclopedia:Attack}攻击{/g} 你的对手。",
+      "zhCN": "这个 {g|Encyclopedia:Spell}法术{/g} 召唤了一头九头蛇。被召唤的怪物出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻值{/g}{g|Encyclopedia:Check}检定{/g}结果行动。它们会尽力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
       "esES": "Este {g|Encyclopedia:Spell}hechizo{/g} convoca una hidra. Los monstruos convocados aparecen donde designe y actúan según los resultados de su {g|Encyclopedia:Initiative}iniciativa{/g} {g|Encyclopedia:Check}de comprobación{/g}. Atacan a sus oponentes lo mejor que puedan."
     },
     {
@@ -8269,7 +8511,7 @@
       "ruRU": "Это {g|Encyclopedia:Spell}заклинание{/g} призывает минотавра. Призванные монстры появляются там, где вы укажете, и действуют в соответствии с результатами своей  {g|Encyclopedia:Check}проверки{/g} {g|Encyclopedia:Initiative}инициативы{/g}. Они {g|Encyclopedia:Attack}атакуют{/g} ваших противников так хорошо, как могут.",
       "deDE": "Dieser {g|Encyclopedia:Spell}Zauber{/g} beschwört einen Minotaurus. Beschworene Monster erscheinen an der von dir bestimmten Stelle und handeln entsprechend ihrem {g|Encyclopedia:Initiative}Initiative{/g} {g|Encyclopedia:Check}Wurf{/g} Ergebnis. Sie {g|Encyclopedia:Attack}greifen{/g} deine Gegner nach bestem Wissen und Gewissen an.",
       "frFR": "Ce {g|Encyclopedia:Spell}sort{/g} invoque un minotaure. Les monstres invoqués apparaissent là où vous les désignez et agissent en fonction de leur {g|Encyclopedia:Initiative}initiative{/g}. Ils {g|Encyclopedia:Attack}attaquent{/g} vos adversaires de leur mieux.",
-      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤一个牛头怪。召唤出来的怪物出现在你指定的地方，并根据它们的 {g|Encyclopedia:Initiative}先攻值{/g}的 {g|Encyclopedia:Check}检定{/g}结果行动。它们将尽其所能{g|Encyclopedia:Attack}攻击{/g}你的对手。",
+      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤一个牛头怪。被召唤的怪物出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻值{/g}{g|Encyclopedia:Check}检定{/g}结果行动。它们会尽力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
       "esES": "Este {g|Encyclopedia:Spell}hechizo{/g} convoca a un Minotauro. Los monstruos convocados aparecen donde los designes y actúan según sus resultados de {g|Encyclopedia:Check}iniciativa{/g} y {g|Encyclopedia:Check}comprobación{/g}. {g|Encyclopedia:Attack}Atacarán{/g} a tus oponentes lo mejor que puedan."
     },
     {
@@ -8291,7 +8533,7 @@
       "ruRU": "Это заклинание призывает совуха. Призванные монстры появляются там, где вы укажете, и действуют в соответствии с результатами своей  {g|Encyclopedia:Check}проверки{/g} {g|Encyclopedia:Initiative}инициативы{/g}. Они {g|Encyclopedia:Attack}атакуют{/g} ваших противников так хорошо, как могут.",
       "deDE": "Dieser {g|Encyclopedia:Spell}Zauber{/g} beschwört einen Eulenbären herbei. Beschworene Monster erscheinen an der von Ihnen bestimmten Stelle und handeln gemäß ihren Ergebnissen bei der {g|Encyclopedia:Initiative}Initiative{/g}-{g|Encyclopedia:Check}Prüfung{/g}. Sie {g|Encyclopedia:Attack}greifen{/g} Ihre Gegner nach bestem Wissen und Gewissen an.",
       "frFR": "Ce {g|Encyclopedia:Spell}sort{/g} invoque un ours-hibou. Les monstres invoqués apparaissent où vous les désignez et agissent selon leur {g|Encyclopedia:Initiative}initiative{/g}. Ils {g|Encyclopedia:Attack}attaquent{/g} vos adversaires de leur mieux.",
-      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤一只枭熊。被召唤的怪物出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻值{/g} {g|Encyclopedia:Check}检定{/g}结果行动。它们会尽力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
+      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤一只枭熊。被召唤的怪物出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻值{/g}{g|Encyclopedia:Check}检定{/g}结果行动。它们会尽力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
       "esES": "Este {g|Encyclopedia:Spell}conjuro{/g} convoca a un oso búho. Los monstruos convocados aparecen donde usted los designe y actúan de acuerdo a los resultados de su {g|Encyclopedia:Initiative}iniciativa{/g} {g|Encyclopedia:Check}de comprobación{/g}. Atacan a sus oponentes con la mayor habilidad posible."
     },
     {
@@ -8335,7 +8577,7 @@
       "ruRU": "Это {g|Encyclopedia:Spell}заклинание{/g} призывает Птицу рух. Призванные монстры появляются там, где вы укажете, и действуют в соответствии с результатами своей  {g|Encyclopedia:Check}проверки{/g} {g|Encyclopedia:Initiative}инициативы{/g}. Они {g|Encyclopedia:Attack}атакуют{/g} ваших противников так хорошо, как могут.",
       "deDE": "Dieser {g|Encyclopedia:Spell}Zauber{/g} beschwört einen Roc herbei. Herbeigerufene Monster erscheinen an dem von Ihnen bestimmten Ort und handeln entsprechend ihrem {g|Encyclopedia:Initiative}Initiative{/g} {g|Encyclopedia:Check}Prüfungsergebnis{/g}. Sie {g|Encyclopedia:Attack}greifen{/g} Ihre Gegner nach bestem Vermögen an.",
       "frFR": "Ce {g|Encyclopedia:Spell}sort{/g} invoque un Roc. Les monstres invoqués apparaissent où vous l'avez désigné et agissent en fonction de leur {g|Encyclopedia:Initiative}initiative{/g}. Ils {g|Encyclopedia:Attack}attaquent{/g} vos adversaires de leur mieux.",
-      "zhCN": "这个 {g|Encyclopedia:Spell}法术{/g} 召唤一只大鹏。召唤出的怪物将出现在你指定的位置，并根据它们的 {g|Encyclopedia:Initiative}先攻值{/g} 和 {g|Encyclopedia:Check}检定结果{/g} 行动。它们会尽其所能地 {g|Encyclopedia:Attack}攻击{/g} 你的对手。",
+      "zhCN": "这个{g|Encyclopedia:Spell}法术{/g}召唤一只大鹏。被召唤的怪物出现在你指定的位置，并根据它们的{g|Encyclopedia:Initiative}先攻值{/g}{g|Encyclopedia:Check}检定{/g}结果行动。它们会尽力{g|Encyclopedia:Attack}攻击{/g}你的对手。",
       "esES": "Este {g|Encyclopedia:Spell}hechizo{/g} convoca a un Roc. Los monstruos invocados aparecen donde usted designe y actúan según su {g|Encyclopedia:Initiative}iniciativa{/g} y los resultados de su {g|Encyclopedia:Check}comprobación{/g}. Ellos {g|Encyclopedia:Attack}atacan{/g} a tus oponentes lo mejor que puedan."
     },
     {
@@ -8357,7 +8599,7 @@
       "ruRU": "Вы можете усилить себя и своих союзников следующими эффектами на 24 часа: устойчивость к стихии, защита от стихии, защита от стрел, ускорение, магический доспех, щит, щит веры, покров небес, покров позитивной энергии, размытость, бычья сила, кошачья грация, медвежья выносливость, лисья хитрость, совинная мудрость, орилное великолепие, зеркальное отражение, ложная жизнь, дубовая кожа, помощь, защита от зла, дар благодати, аура большего мужества, смещение, магический наряд, задержка яда, невидимость большая, каменная кожа, защита от смерти, свобода передвижения, ложная жизнь большая, вспышка славы, сопротивление заклинаниям, душа орла, легендарные пропорции, страшный облик, мантия моряка, предвидение, несокрушимое сердце, изгнание страха, божественное благоволение, магический клык, оружие союзника хорошее, крестовый поход, магическое оружие большее, божественная мощь, истинное зрение, щит закона, ангельский облик большой, ветры возмездия, лук урагана, чувство жизни, героизм большой, эколокация, пузырь жизни, защита от заклинаний, бланк разума и героическое призывание.",
       "deDE": "Du kannst dich und deine Verbündeten mit den folgenden Effekten für 24 Stunden stärken: Energieresistenz, Schutz vor Energie, Schutz vor Pfeilen, Hast, Magierpanzer, Schild, Schild des Glaubens, Schleier des Himmels, Schleier positiver Energie, Unscharfheit, Stärke des Stieres, Anmut der Katze, Ausdauer des Bären, Schläue des Fuchses, Weisheit der Eule, Pracht des Adlers, Spiegelbild, Falsches Leben, Baumhaut, Hilfe, Schutz vor Bösem, Gnade schenken, Aura des größeren Mutes, Verschiebung, Magische Kleidung, Gift aufschieben, Große Unsichtbarkeit, Steinhaut, Todesschutz,Befreiung der Bewegung, Großes Falsches Leben, Explosion der Herrlichkeit, Zauberresistenz, Adlerseele, Legendäre Proportionen, Furchteinflößendes Aussehen, Seamantel, Voraussicht, Unzerbrechliches Herz, Furcht entfernen, Göttliche Gunst, Magischer Reißzahn, Waffen auf Gut ausrichten, Kreuzfahrer-Rand, Magische Waffe, Groß, Göttliche Macht, Wahre Sicht, Schild des Gesetzes, Großes Engelhaftes Aussehen, Winde der Rache, Hurrikanbogen, Sinn für Vitalität, Großer Heldismus, Echolokation, Lebensblase, Schutz vor Zaubern, Gedankenleere und Heroische Anrufung.",
       "frFR": "Vous êtes capable de renforcer vous-même et vos alliés avec les effets suivants pendant 24 heures : résistance à l'énergie, protection contre l'énergie, protection contre les projectiles, hâte, armure de mage, bouclier, bouclier de la foi, voile céleste, voile d'énergie positive, flou, force du taureau, grâce du chat, endurance de l'ours, ruse du renard, sagesse de la chouette, splendeur de l'aigle, image miroir, simulacre de vie, écorce, aide, protection contre le mal, grâce du bienfait, aura de courage supérieur, déplacement, vêtement magique, retardement de poison, invisibilité supérieure, peau de pierre, protection contre la mort, liberté de mouvement, simulacre de vie supérieur, explosion de gloire, résistance à la magie, âme de l'aigle, proportions légendaires, aspect effrayant, manteau marin, préscience, cœur invincible, suppression de la peur, faveur divine, croc magique, arme alliée bonne, bord du croisé, arme magique supérieure, pouvoir divin, vision lucide, bouclier de la loi, aspect angélique supérieur, vents de la vengeance, arc ouragan, sens des vitalités, héroïsme supérieur, écholocation, bulle de vie, protection contre les sorts, esprit impénétrable, et invocation héroïque.",
-      "zhCN": "你可以在 24 小时内使用以下效果增强自己和盟友：抵抗能量、防护能量、防护箭矢、加速术、法师护甲、护盾术、虔诚护盾、天堂面纱、圣能面纱、朦胧术、牛之蛮力、猫之轻灵、熊之坚韧、狐之狡黠、枭之睿智、鹰之威仪、镜影术、虚假生命、树肤、援助术、防护邪恶、勇士赐福、武勇灵光、移位术、魔化防具、延缓毒发、高等隐形术、石肤术、防死结界、行动自如、高等虚假生命、荣光爆发、法术抵抗、金鹰之魂、伟岸雄姿、可怖外表、水幕拒敌、预警、绝不动摇、移除恐惧、神圣恩典、魔牙术、祝福武器、圣战之刃、高等魔化武器、神能、真知术、秩序之盾、高等天使之貌、复仇旋风、飓风之弓、识破命门、高等英雄气概、回声定位、维生气泡、防护魔法、心灵屏障和英勇祈神。",
+      "zhCN": "你可以使用以下效果增强自己和盟友24小时：抵抗能量、防护能量、防护箭矢、加速术、法师护甲、护盾术、虔诚护盾、天堂面纱、圣能面纱、朦胧术、牛之蛮力、猫之轻灵、熊之坚韧、狐之狡黠、枭之睿智、鹰之威仪、镜影术、虚假生命、树肤、援助术、防护邪恶、勇士赐福、武勇灵光、移位术、魔化防具、延缓毒发、高等隐形术、石肤术、防死结界、行动自如、高等虚假生命、荣光爆发、法术抵抗、金鹰之魂、伟岸雄姿、可怖外表、水幕拒敌、预警、绝不动摇、移除恐惧、神圣恩典、魔牙术、祝福武器、圣战之刃、高等魔化武器、神能、真知术、秩序之盾、高等天使之貌、复仇旋风、飓风之弓、识破命门、高等英雄气概、回声定位、维生气泡、防护魔法、心灵屏障和英雄祈神。",
       "esES": "Puedes mejorar a ti y a tus aliados con los siguientes efectos durante 24 horas: resistencia a la energía, protección contra la energía, protección contra flechas, prisa, armadura de mago, escudo, escudo de fe, velo del cielo, velo de energía positiva, desenfoque, fuerza del toro, gracia del gato, resistencia del oso, astucia del zorro, sabiduría del búho, esplendor del águila, imagen reflejada, vida falsa, piel de corteza, ayuda, protección contra el mal, conceder gracia, aura de coraje superior, desplazamiento, vestidura mágica, demora veneno, invisibilidad mayor, piel de piedra, guardia contra la muerte, libertad de movimiento, vida falsa superior, explosión de gloria, resistencia a hechizos, alma de águila, proporciones legendarias, aspecto temible, manto de sirena, previsión, corazón irrompible, eliminar el miedo, favor divino, colmillo mágico, arma alinear bien, borde de cruzado, arma mágica mayor, poder divino, verdadero ver, escudo de la ley, aspecto angelical mayor, vientos de venganza, arco de huracán, sentir vitales, heroísmo mayor, ecolocalización, burbuja de vida, protección contra conjuros, mente en blanco e invocación heroica."
     },
     {
@@ -8445,7 +8687,7 @@
       "ruRU": "Вы забыли о трудностях смертного бытия и том, каким человеком вы были раньше. Были вы глупым? Были вы слабым? Это больше не имеет значения. Здесь, в этом новом мире, вы совершенны.\nПреимущество: Все ваши характеристики имеют базовое значение не менее 30",
       "deDE": "Du hast die Mühen der Sterblichkeit vergessen und welche Art von Person du früher warst. Warst du dumm? Warst du schwach? Es spielt jetzt keine Rolle mehr. Hier in dieser neuen Welt bist du perfekt.",
       "frFR": "Vous avez oublié les difficultés de la mortalité et le genre de personne que vous étiez auparavant. Étiez-vous stupide ? Étiez-vous faible ? Cela n'a plus d'importance. Ici, dans ce nouveau monde, vous êtes parfait.",
-      "zhCN": "你已经忘记了凡人的艰辛以及你以前的人生。你是愚蠢的吗？你是软弱的吗？现在已经不重要了。在这个新世界中，你是完美的。",
+      "zhCN": "你已经忘记了凡人的艰辛以及你以前的人生。你是愚蠢的吗？你是软弱的吗？现在已经不重要了。在这个新世界中，你是完美的。\n效果：你的所有属性基础值变为30。",
       "esES": "Has olvidado las dificultades de la mortalidad y qué tipo de persona eras antes. ¿Eras estúpido? ¿Eras débil? Ya no importa. Aquí en este nuevo mundo, eres perfecto."
     },
     {
@@ -8489,7 +8731,7 @@
       "ruRU": "Вы получаете бонус +1 к характеристикам {g|Encyclopedia:Intelligence}Интеллекта{/g} и {g|Encyclopedia:Wisdom}Мудрости{/g}.",
       "deDE": "Du erhältst einen Bonus von +1 auf deine {g|Encyclopedia:Intelligence}Intelligenz{/g} und {g|Encyclopedia:Wisdom}Weisheit{/g}.",
       "frFR": "Vous gagnez un bonus de +1 à votre {g|Encyclopedia:Intelligence}Intelligence{/g} et votre {g|Encyclopedia:Wisdom}Sagesse{/g}.",
-      "zhCN": "你的 {g|Encyclopedia:Intelligence}智力{/g} 和 {g|Encyclopedia:Wisdom}感知{/g} 获得+1加值。",
+      "zhCN": "你的{g|Encyclopedia:Intelligence}智力{/g}和{g|Encyclopedia:Wisdom}感知{/g}获得+1加值。",
       "esES": "Obtienes un bono de +1 a tu {g|Encyclopedia:Intelligence}Inteligencia{/g} y {g|Encyclopedia:Wisdom}Sabiduría{/g}."
     },
     {
@@ -8544,7 +8786,7 @@
       "ruRU": "Монтаж Тренировок",
       "deDE": "Training Montage",
       "frFR": "Entraînement intense",
-      "zhCN": "训练蒙太奇",
+      "zhCN": "特训剪辑",
       "esES": "Montaje de entrenamiento"
     },
     {
@@ -8654,7 +8896,7 @@
       "ruRU": "Несправедливый Путь",
       "deDE": "Ungerechter Pfad",
       "frFR": "Chemin Injuste",
-      "zhCN": "不公正之路",
+      "zhCN": "不义之路",
       "esES": "Camino injusto"
     },
     {
@@ -8665,7 +8907,7 @@
       "ruRU": "Вас окружили и изнулири, вы находитесь на грани поражения. Но когда они были готовы нанести решающий удар, вы поднимаетесь и говорите следующие слова: \"Не сегодня\".\n\nПреимущество: Свободным действием, вы восстанавливаете все способности и ячейки заклинаний.",
       "deDE": "Am Rande der Niederlage haben die Feinde Sie umzingelt und erschöpft. Gerade als sie dabei sind, den finalen Schlag auszuführen, stehen Sie auf und sagen die folgenden Worte: \"Nicht heute\".\n\nVorteil: Als kostenlose Aktion stellen Sie alle Fähigkeiten und Zauber-Slots wieder her.",
       "frFR": "Au bord de la défaite, les ennemis vous ont encerclé et épuisé. Juste au moment où ils allaient porter le coup fatal, vous vous relevez et prononcez les paroles suivantes: \"Pas aujourd'hui\".\n\nAvantage : Par une action libre, vous restaurez toutes vos capacités et emplacements de sorts.",
-      "zhCN": "你在被打败的边缘，已经筋疲力尽并且被重重包围。就在敌人即将进行最后一击的时候，你站了起来并且说道：“今天不行。”\n效果：作为一个自由动作，你恢复所有能力和法术。",
+      "zhCN": "你在被打败的边缘，已经筋疲力尽并且被重重包围。就在敌人即将进行最后一击的时候，你站了起来并且说道：“今天不行。”\n效果：使用一个自由动作，你恢复所有能力和法术。",
       "esES": "Al borde de la derrota, los enemigos te han rodeado y agotado. Justo cuando están a punto de asestar el golpe final, te levantas y pronuncias las siguientes palabras: \"Hoy no\".\n\nBeneficio: Como acción libre, restauras todas tus habilidades y ranuras de hechizo."
     },
     {
@@ -8753,7 +8995,7 @@
       "ruRU": "Наследие Ведьмы - Составитель Договоров",
       "deDE": "Hexenerbe - Paktmacher",
       "frFR": "Héritage de la sorcière - Façonneur de pacte",
-      "zhCN": "女巫传承 - 契约制造者",
+      "zhCN": "巫师传承 - 契约缔造者",
       "esES": "Legado de bruja - Pactero"
     }
   ]
